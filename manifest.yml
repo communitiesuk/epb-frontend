@@ -1,0 +1,7 @@
+---
+applications:
+- name: epb-frontend
+  memory: 64M
+  buildpacks:
+  - staticfile_buildpack
+
