@@ -2,6 +2,6 @@
 applications:
 - name: epb-frontend
   memory: 64M
+  command: node server.js
   buildpacks:
-  - staticfile_buildpack
-
+  - nodejs_buildpack
