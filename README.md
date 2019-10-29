@@ -10,16 +10,14 @@ Follow the steps below to get started.
 3. change into the cloned repository - `$ cd epb-frontend`
 4. install the node modules/packages - `$ npm install`
 
-## Compile
+## Start
 
 Change directory into the root of the cloned folder:
 
 `$ cd epb-frontend`
 
-Compile the `application.scss` file using the following command:
+Start the web server using the following command:
 
 `$ npm run start`
-
-## View
 
 Open `http://localhost` in your favourite browser.
