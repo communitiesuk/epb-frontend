@@ -18,8 +18,8 @@ Change directory into the root of the cloned folder:
 
 Compile the `application.scss` file using the following command:
 
-`$ npm run sass`
+`$ npm run start`
 
 ## View
 
-Open `index.html` in your favourite browser.
+Open `http://localhost` in your favourite browser.
