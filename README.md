@@ -18,7 +18,7 @@ Change directory into the root of the cloned folder:
 
 Compile the `application.scss` file using the following command:
 
-`$ sass assets/sass/application.scss assets/sass/application.css`
+`$ npm run sass`
 
 ## View
 
