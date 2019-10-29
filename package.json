@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Frontend for the Energy Performance of Buildings Register",
   "scripts": {
-    "sass": "node-sass assets/sass/application.scss -o assets/css"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -16,8 +16,11 @@
   },
   "homepage": "https://github.com/communitiesuk/epb-frontend#readme",
   "dependencies": {
+    "connect": "^3.7.0",
     "govuk-frontend": "^3.3.0",
     "node-sass": "^4.13.0",
-    "nunjucks": "^3.2.0"
+    "node-sass-middleware": "^0.11.0",
+    "nunjucks": "^3.2.0",
+    "serve-static": "^1.14.1"
   }
 }
