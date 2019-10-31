@@ -37,9 +37,3 @@ deploy-app: ## Deploys the app to PaaS
 
 	cf v3-apply-manifest -f manifest.yml
 	cf v3-zdt-push "${DEPLOY_APPNAME}" --wait-for-deploy-complete
-
-	##@echo "Waiting to ensure new app's assigned service credentials have taken effect..."
-	##sleep 60
-
-	##@echo "Starting app..."
-	##cf start ${APPLICATION_NAME}-release
