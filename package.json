@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Frontend for the Energy Performance of Buildings Register",
   "scripts": {
+    "build": "node-sass assets/sass/application.scss assets/css/application.css",
     "start": "node server.js"
   },
   "repository": {
