@@ -24,6 +24,7 @@ generate-manifest: ## Generate manifest file for PaaS
 frontend-build: ## Run the frontend build process to compile sass
 	@echo "Building frontend assets..."
 	npm install
+	node-sass assets/sass/application.scss assets/css/application.css
 
 .PHONY: deploy-app
 deploy-app: ## Deploys the app to PaaS
