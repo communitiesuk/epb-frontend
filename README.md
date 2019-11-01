@@ -21,3 +21,28 @@ Start the web server using the following command:
 `$ npm run start`
 
 Open `http://localhost` in your favourite browser.
+
+## Deploy
+
+To deploy to GOV.UK PaaS you will need to be logged in to your CloudFoundry account, and set the correct space as target, e.g.:
+```bash
+cf target -o mhclg-energy-performance -s integration
+```
+
+Set the variables `APPLICATION_NAME` and `STAGE` to relevant values, e.g.
+```bash
+export APPLICATION_NAME=epb-frontend-ui 
+export STAGE=integration 
+```
+(The `STAGE` should generally match the name of the current CloudFoundry space.)
+
+Then run 
+```bash
+make deploy-app
+```
+
+This will:
+* Check that your current target space is active
+* Run the frontend build to generate assets
+* Generate a manifest file suitable for the current space
+* Push the local app to the target application
