@@ -12,7 +12,7 @@ runtime-versions:
     PAAS_PW_INTEGRATION: "epbr-govpaas-integration-pw"
     PAAS_SPACE_INTEGRATION: "epbr-govpaas-integration-space"
     PAAS_API: "epbr-govpaas-api"
-    PAAS_ORG: "mhclg-energy-performance"
+    PAAS_ORG: "epbr-govpaas-orgname"
 
 phases:
   install:
@@ -23,7 +23,6 @@ phases:
       - echo "deb https://packages.cloudfoundry.org/debian stable main" | tee /etc/apt/sources.list.d/cloudfoundry-cli.list
       - apt-get update
       - apt-get install cf-cli
- 
   build:
     commands:
       - scripts/generate-paas-manifest.sh $DEPLOY_APPNAME > manifest.yml
