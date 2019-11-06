@@ -23,13 +23,10 @@ phases:
       - echo "deb https://packages.cloudfoundry.org/debian stable main" | tee /etc/apt/sources.list.d/cloudfoundry-cli.list
       - apt-get update
       - apt-get install cf-cli
-
-  pre-build:
-    commands:
-      - scripts/generate-paas-manifest.sh $DEPLOY_APPNAME > manifest.yml
-      
+ 
   build:
     commands:
+      - scripts/generate-paas-manifest.sh $DEPLOY_APPNAME > manifest.yml
       - echo ">>>>>>>> DEPLOY TO INTEGRATION ENV"
       - cf login -a $PAAS_API -u $PAAS_LOGIN_INTEGRATION -p "$PAAS_PW_INTEGRATION" -o $PAAS_ORG -s $PAAS_SPACE_INTEGRATION
       - cf v3-apply-manifest -f manifest.yml
