@@ -3,8 +3,8 @@ version: 0.2
 runtime-versions:
   nodejs: 10  
 
-  env:
-  exported-variables:
+env:
+  variables:
     DEPLOY_APPNAME: "mhclg-epb-frontend-ui-integration"
 
   parameter-store:
