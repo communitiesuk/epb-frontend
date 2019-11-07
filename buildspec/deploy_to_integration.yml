@@ -23,8 +23,10 @@ phases:
       - echo "deb https://packages.cloudfoundry.org/debian stable main" | tee /etc/apt/sources.list.d/cloudfoundry-cli.list
       - apt-get update
       - apt-get install cf-cli
+      - npm install
   build:
     commands:
+      - npm run build
       - scripts/generate-paas-manifest.sh $DEPLOY_APPNAME > manifest.yml
       - cat manifest.yml
       - echo ">>>>>>>> DEPLOY TO INTEGRATION ENV"
