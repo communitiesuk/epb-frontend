@@ -28,8 +28,8 @@ phases:
     commands:
       - npm run build
       - scripts/generate-paas-manifest.sh $DEPLOY_APPNAME > manifest.yml
-      - echo ">>>>>>>> DEPLOY TO INTEGRATION ENV"
-      - cf login -a $PAAS_API -u $PAAS_LOGIN_INTEGRATION -p "$PAAS_PW_INTEGRATION" -o $PAAS_ORG -s $PAAS_SPACE_INTEGRATION
+      - echo ">>>>>>>> DEPLOY TO PRODUCTION ENV"
+      - cf login -a $PAAS_API -u $PAAS_LOGIN_PRODUCTION -p "$PAAS_PW_PRODUCTION" -o $PAAS_ORG -s $PAAS_SPACE_PRODUCTION
       - cf v3-apply-manifest -f manifest.yml
       - cf v3-zdt-push $DEPLOY_APPNAME --wait-for-deploy-complete
       - cf logout
