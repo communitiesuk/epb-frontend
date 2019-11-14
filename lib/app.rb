@@ -1,6 +1,6 @@
 require 'sinatra/base'
 
-class AssessorService < Sinatra::Base
+class FrontendService < Sinatra::Base
   get '/' do
     'Hello world!'
   end
