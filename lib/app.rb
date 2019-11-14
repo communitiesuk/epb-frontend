@@ -2,7 +2,7 @@ require 'sinatra/base'
 
 class FrontendService < Sinatra::Base
   get '/' do
-    'Hello world!'
+    erb :index
   end
 
   get '/healthcheck' do
