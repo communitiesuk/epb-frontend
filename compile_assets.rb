@@ -1,0 +1,20 @@
+require 'fileutils'
+require 'sassc'
+
+puts 'Creating directory structure'
+FileUtils.mkdir_p 'public/css'
+
+puts 'Building SASS files'
+input_file = './assets/sass/application.scss'
+output_file = './public/application.css'
+
+scss = File.read(input_file)
+css = SassC::Engine.new(scss, style: :compressed).render
+
+File.write(output_file, css)
+
+puts 'Copying fonts'
+FileUtils.copy_entry './assets/fonts', './public/fonts'
+
+puts 'Copying images'
+FileUtils.copy_entry './assets/images', './public/images'

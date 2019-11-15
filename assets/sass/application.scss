@@ -1,5 +1,5 @@
 $govuk-global-styles: true;
-$govuk-assets-path: '../../assets/';
+$govuk-assets-path: '';
 
-@import "../../node_modules/govuk-frontend/govuk/all";
-@import "../components/cookie-banner";
+@import "./node_modules/govuk-frontend/govuk/all";
+@import "./assets/components/cookie-banner";
