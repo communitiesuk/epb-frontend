@@ -1,9 +1,6 @@
 require 'fileutils'
 require 'sassc'
 
-puts 'Creating directory structure'
-FileUtils.mkdir_p 'public/css'
-
 puts 'Building SASS files'
 input_file = './assets/sass/application.scss'
 output_file = './public/application.css'
