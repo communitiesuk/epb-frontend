@@ -21,10 +21,10 @@ generate-manifest: ## Generate manifest file for PaaS
 	@scripts/generate-paas-manifest.sh ${DEPLOY_APPNAME} > manifest.yml
 
 .PHONY: frontend-build
-frontend-build: ## Run the frontend build process to compile sass
+frontend-build: ## Run the frontend build process to compile sass and move asset files to public
 	@echo "Building frontend assets..."
-	npm install
-	npm run build
+	bundle install
+	ruby ./compile_assets.rb
 
 .PHONY: deploy-app
 deploy-app: ## Deploys the app to PaaS
