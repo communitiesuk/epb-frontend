@@ -6,6 +6,10 @@ class FrontendService < Sinatra::Base
   get '/' do
     erb :index
   end
+  
+  get '/schemes' do
+    erb :schemes
+  end
 
   get '/healthcheck' do
     200
