@@ -73,6 +73,7 @@
     </p>
   </div>
 
+<% if request.path == '/' %>
   <div class="govuk-breadcrumbs">
     <ol class="govuk-breadcrumbs__list">
       <li class="govuk-breadcrumbs__list-item">
@@ -83,6 +84,9 @@
       </li>
     </ol>
   </div>
+<%else%>
+  <a href="/" class="govuk-back-link">Back</a>
+<%end%>
 
   <main class="govuk-main-wrapper" id="main-content" role="main">
     <%= yield %>
