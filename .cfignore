@@ -5,3 +5,7 @@
 node_modules
 package-lock.json
 .sass-cache/*
+buildspec/*
+assets/*
+scripts/*
+spec/*
