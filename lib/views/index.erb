@@ -1,48 +1,41 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">
-      <%= t('index.title') %>
+      Find an energy assessor for a residential property
     </h1>
     <p class="govuk-body">
-      <%= t('index.introduction.what_you_need') %>
+      You need a recent Energy Performance Certificate (EPC) before you sell or let a residential property.
     </p>
     <p class="govuk-body">
-      <%= t('index.introduction.how_it_works') %>
+      Use this service to find a qualified assessor to measure the energy efficiency of your property, or the
+      property of someone you represent. The assessor will create an EPC.
     </p>
     <p class="govuk-body">
-      <%= t('index.scotland') %>
+      If your property is in Scotland, you should use the 
+      <a href="https://www.gov.scot/publications/energy-performance-certificates-introduction/">
+        Scottish government’s EPC service.
+      </a>
     </p>
 
-    <h3 class="govuk-heading-s">
-      <%= t('index.negative_epc.title') %>
-    </h3>
+    <h3 class="govuk-heading-s">You do not need an EPC if the property:</h3>
     <ul class="govuk-list govuk-list--bullet">
-      <li>
-        <%= t('index.negative_epc.size') %></li>
-      <li>
-        <%= t('index.negative_epc.property_type') %></li>
-      <li>
-        <%= t('index.negative_epc.temporary') %></li>
-      <li>
-        <%= t('index.negative_epc.demolished') %></li>
+      <li>is less than 50m<sup>2</sup></li>
+      <li>is not a residential property</li>
+      <li>is temporarily residential, with a planned use of 2 years or less</li>
+      <li>will be demolished</li>
     </ul>
 
     <details class="govuk-details" data-module="govuk-details">
       <summary class="govuk-details__summary">
         <span class="govuk-details__summary-text">
-          <%= t('index.assessment.title') %>
+          What is involved in an assessment
         </span>
       </summary>
       <div class="govuk-details__text">
         <li class='govuk-list'>
-          <li>
-            <%= t('index.assessment.30_minutes') %></li>
-          <li>
-            <%= t('index.assessment.presence') %>
-          </li>
-          <li>
-            <%= t('index.assessment.no_damage') %>
-          </li>
+          <li>An assessment takes around 30 minutes, depending on the size of your property.</li>
+          <li>Someone must be at the property to let the assessor in.</li>
+          <li>The assessment should not cause any damage to harm the property.</li>
         </ul>
       </div>
     </details>
@@ -53,7 +46,7 @@
       draggable="false" 
       class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"  
       data-module="govuk-button">
-        <%= t('index.cta') %>
+      Start now
       <svg 
         class="govuk-button__start-icon" 
         xmlns="http://www.w3.org/2000/svg" 
@@ -66,20 +59,27 @@
       </svg>
     </a>
 
-    <h2 class="govuk-heading-m">
-      <%= t('index.before_you_start.title') %>
-    </h2>
+    <h2 class="govuk-heading-m">Before you start</h2>
 
       <p class="govuk-body">
-        <%= t('index.before_you_start.phone') %>
+        The service is also available by calling 
+        <a href="tel:098765432">
+          0987 65432
+        </a>.
       </p>
 
       <p class="govuk-body">
-        <%= t('index.before_you_start.welsh') %>
+        The online service is also available in 
+        <a href="#">
+          Welsh (Cymraeg)
+        </a>.
       </p>
 
       <p class="govuk-body">
-        <%= t('index.before_you_start.commercial') %>
+        If your property is for commercial use, you need to use a 
+        <a href="/schemes" class="govuk-link">
+          commercial energy assessment service
+        </a>.
       </p>
   </div>
 </div>
