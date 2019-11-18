@@ -1,0 +1,24 @@
+en-GB:
+  index:
+    title: 'Find an energy assessor for a residential property'
+    introduction:
+      what_you_need: 'You need a recent Energy Performance Certificate (EPC) before you sell or let a residential property.'
+      how_it_works: 'Use this service to find a qualified assessor to measure the energy efficiency of your property, or the property of someone you represent. The assessor will create an EPC.'
+    scotland: 'If your property is in Scotland, you should use the <a href="https://www.gov.scot/publications/energy-performance-certificates-introduction/">Scottish government’s EPC service.</a>'
+    negative_epc:
+      title: 'You do not need an EPC if the property:'
+      size: 'is less than 50m<sup>2</sup>'
+      property_type: 'is not a residential property'
+      temporary: 'is temporarily residential, with a planned use of 2 years or less'
+      demolished: 'will be demolished'
+    assessment:
+      title: 'What is involved in an assessment'
+      30_minutes: 'An assessment takes around 30 minutes, depending on the size of your property.'
+      precense: 'Someone must be at the property to let the assessor in.'
+      no_damage: 'The assessment should not cause any damage to harm the property.'
+    cta: 'Start now'
+    before_you_start:
+      title: 'Before you start'
+      phone: 'The service is also available by calling <a href="tel:098765432">0987 65432</a>.'
+      welsh: 'The online service is also available in <a href="#">Welsh (Cymraeg)</a>.'
+      commercial: 'If your property is for commercial use, you need to use a <a href="#" class="govuk-link">commercial energy assessment service</a>.'
