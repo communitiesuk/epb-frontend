@@ -1,9 +1,7 @@
 require 'sinatra/base'
 
 class FrontendService < Sinatra::Base
-  set :public_folder, proc do
-    File.join(root, '/../public')
-  end
+  set :public_folder, Proc.new { File.join(root, "/../public") }
 
   get '/' do
     erb :index
