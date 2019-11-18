@@ -2,7 +2,7 @@ version: 0.2
 
 runtime-versions:
   ruby: 2.6
-  node: 10
+  nodejs: 10
 
 env:
   variables:
@@ -19,7 +19,7 @@ phases:
   install:
     runtime-versions:
       ruby: 2.6
-      node: 10
+      nodejs: 10
     commands:
       - gem install bundler:2.0.2
       - bundle install
