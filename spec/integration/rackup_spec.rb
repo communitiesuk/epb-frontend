@@ -18,19 +18,26 @@ describe 'starts server outside of ruby'  do
     end
 
     let(:request) { Net::HTTP.new('localhost', 9292) }
- 
-    context 'it is running' do
-      it 'returns status 200' do
+
+    context 'when the server is up' do
+      it 'renders the home page' do
+        req = Net::HTTP::Get.new('/')
+        response = request.request(req)
+        expect(response.code).to eq('200')
+        expect(response.body).to include('Energy performance of buildings')
+      end
+
+      it 'passes a healthcheck' do
         req = Net::HTTP::Get.new('/healthcheck')
         response = request.request(req)
         expect(response.code).to eq('200')
       end
 
-      it 'returns status 404' do
-        req = Net::HTTP::Get.new('/error-message')
+      it 'errors on a non-existent page' do
+        req = Net::HTTP::Get.new('/this-page-does-not-exist')
         response = request.request(req)
         expect(response.code).to eq('404')
       end
     end
-  end 
-end 
+  end
+end
