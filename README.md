@@ -5,10 +5,12 @@ Frontend for the Energy Performance of Buildings Register.
 
 Follow the steps below to get started.
 
-1. make sure you have Node Package Manager (NPM) installed
+1. make sure you have Node Package Manager (NPM) and bundler installed
 2. clone the repository - `$ git clone git@github.com:communitiesuk/epb-frontend.git`
 3. change into the cloned repository - `$ cd epb-frontend`
 4. install the node modules/packages - `$ npm install`
+5. install the ruby modules/packages - `$ bundle install`
+6. build the frontend assets - `$ make frontend-build`
 
 ## Start
 
@@ -18,9 +20,9 @@ Change directory into the root of the cloned folder:
 
 Start the web server using the following command:
 
-`$ npm run start`
+`$ rackup`
 
-Open `http://localhost` in your favourite browser.
+Open `http://localhost:9292` in your favourite browser.
 
 ## Deploy
 
