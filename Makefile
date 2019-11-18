@@ -23,7 +23,6 @@ generate-manifest: ## Generate manifest file for PaaS
 .PHONY: frontend-build
 frontend-build: ## Run the frontend build process to compile sass and move asset files to public
 	@echo "Building frontend assets..."
-	bundle install
 	ruby ./compile_assets.rb
 
 .PHONY: deploy-app
@@ -38,3 +37,7 @@ deploy-app: ## Deploys the app to PaaS
 
 	cf v3-apply-manifest -f manifest.yml
 	cf v3-zdt-push "${DEPLOY_APPNAME}" --wait-for-deploy-complete
+
+.PHONY: test
+test:
+	rake spec

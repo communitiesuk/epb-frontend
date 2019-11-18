@@ -1,7 +1,8 @@
 version: 0.2
 
 runtime-versions:
-  nodejs: 10
+  ruby: 2.6
+  node: 10
 
 env:
   variables:
@@ -17,12 +18,15 @@ env:
 phases:
   install:
     runtime-versions:
-      nodejs: 10
+      ruby: 2.6
+      node: 10
     commands:
+      - gem install bundler:2.0.2
+      - bundle install
       - npm install
   build:
     commands:
-      - npm run build
+      - make frontend-build
       - scripts/generate-paas-manifest.sh $DEPLOY_APPNAME > manifest.yml
       - echo ">>>>>>>> DEPLOY TO PRODUCTION ENV"
       - cf login -a $PAAS_API -u $PAAS_LOGIN_PRODUCTION -p "$PAAS_PW_PRODUCTION" -o $PAAS_ORG -s $PAAS_SPACE_PRODUCTION
