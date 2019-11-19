@@ -13,8 +13,8 @@ class FrontendService < Sinatra::Base
   I18n::Backend::Simple.send(:include, I18n::Backend::Fallbacks)
   I18n.backend.load_translations
 
-  I18n.enforce_available_locales = false
-  I18n.available_locales = [:cy, 'en-GB']
+  I18n.enforce_available_locales = true
+  I18n.available_locales = [:cy, :en]
 
   def t(*args)
     I18n.t(*args)
