@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="<%= I18n.locale %>" class="govuk-template ">
+<html lang="<%= I18n.locale %>" class="govuk-template">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -12,7 +12,7 @@
         type="text/css">
   <!--<![endif]-->
 
-  <title>Energy performance of buildings register</title>
+  <title><%=t('layout.head.title')%></title>
 
   <!-- All this for a Favicon... -->
   <link rel="shortcut icon" type="image/x-icon" sizes="16x16 32x32 48x48" href="/images/favicon.ico" />
@@ -26,11 +26,11 @@
 </head>
 
 <body class="govuk-template__body">
-<a href="#main-content" class="govuk-skip-link">Skip to main content</a>
+<a href="#main-content" class="govuk-skip-link"><%=t('layout.body.skip')%></a>
 
 <div class="app-cookie-banner">
   <p class="app-cookie-banner__message">
-    GOV.UK uses cookies to make the site simpler. <a href="#">Find out more about cookies</a>
+    <%=t('layout.body.cookies')%>
   </p>
 </div>
 
@@ -46,7 +46,7 @@
               </path>
             </svg>
             <span class="govuk-header__logotype-text">
-              GOV.UK
+              <%=t('layout.body.govuk')%>
             </span>
           </span>
       </a>
@@ -54,7 +54,7 @@
     <div class="govuk-header__content">
       <a href="#"
          class="govuk-header__link govuk-header__link--service-name">
-        Energy Performance of Buildings Register
+        <%=t('layout.body.title')%>
       </a>
     </div>
   </div>
@@ -64,11 +64,10 @@
   <div class="govuk-phase-banner">
     <p class="govuk-phase-banner__content">
       <strong class="govuk-tag govuk-phase-banner__content__tag ">
-        beta
+        <%=t('layout.body.beta.title')%>
       </strong>
       <span class="govuk-phase-banner__text">
-          This is a new service – your
-          <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+          <%=t('layout.body.beta.description')%>
         </span>
     </p>
   </div>
@@ -77,15 +76,15 @@
   <div class="govuk-breadcrumbs">
     <ol class="govuk-breadcrumbs__list">
       <li class="govuk-breadcrumbs__list-item">
-        <a class="govuk-breadcrumbs__link" href="https://www.gov.uk/">Home</a>
+        <a class="govuk-breadcrumbs__link" href="https://www.gov.uk/"><%=t('layout.body.breadcrumb.home')%></a>
       </li>
       <li class="govuk-breadcrumbs__list-item" aria-current="page">
-        Energy performance of buildings register
+        <%=t('layout.body.breadcrumb.epbr')%>
       </li>
     </ol>
   </div>
 <%else%>
-  <a href="/" class="govuk-back-link">Back</a>
+  <a href="/" class="govuk-back-link"><%=t('layout.body.breadcrumb.back')%></a>
 <%end%>
 
   <main class="govuk-main-wrapper" id="main-content" role="main">
@@ -97,7 +96,7 @@
   <div class="govuk-width-container">
     <div class="govuk-footer__meta">
       <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
-        <h2 class="govuk-visually-hidden">Support links</h2>
+        <h2 class="govuk-visually-hidden"><%=t('layout.body.footer.title')%></h2>
         <svg role="presentation" focusable="false" class="govuk-footer__licence-logo"
              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 483.2 195.7" height="17" width="41">
           <path fill="currentColor"
@@ -105,16 +104,11 @@
           </path>
         </svg>
         <span class="govuk-footer__licence-description">
-            All content is available under the
-            <a class="govuk-footer__link" href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">
-              Open Government Licence v3.0
-            </a>, except where otherwise stated
-          </span>
+          <%=t('layout.body.footer.license')%>
+        </span>
       </div>
       <div class="govuk-footer__meta-item">
-        <a class="govuk-footer__link govuk-footer__copyright-logo" href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/">
-          © Crown copyright
-        </a>
+        <%=t('layout.body.footer.copyright')%>
       </div>
     </div>
   </div>
