@@ -14,7 +14,7 @@ en:
     assessment:
       title: 'What is involved in an assessment'
       30_minutes: 'An assessment takes around 30 minutes, depending on the size of your property.'
-      precense: 'Someone must be at the property to let the assessor in.'
+      presence: 'Someone must be at the property to let the assessor in.'
       no_damage: 'The assessment should not cause any damage to harm the property.'
     cta: 'Start now'
     before_you_start:
