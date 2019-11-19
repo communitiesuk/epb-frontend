@@ -1,4 +1,23 @@
 en:
+  layout:
+    head:
+      title: 'Energy performance of buildings register'
+    body:
+      title: 'Energy Performance of Buildings Register'
+      skip: 'Skip to main content'
+      cookies: 'GOV.UK uses cookies to make the site simpler. <a href="#">Find out more about cookies</a>'
+      govuk: 'GOV.UK'
+      beta:
+        title: 'beta'
+        description: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+      breadcrumb:
+        home: 'Home'
+        epbr: 'Energy performance of buildings register'
+        back: 'Back'
+      footer:
+        title: 'Support links'
+        license: 'All content is available under the <a class="govuk-footer__link" href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated'
+        copyright: '<a class="govuk-footer__link govuk-footer__copyright-logo" href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/">&copy; Crown copyright</a>'
   index:
     title: 'Find an energy assessor for a residential property'
     introduction:
