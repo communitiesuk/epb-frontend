@@ -22,3 +22,40 @@ en:
       phone: 'The service is also available by calling <a href="tel:098765432">0987 65432</a>.'
       welsh: 'The online service is also available in <a href="#">Welsh (Cymraeg)</a>.'
       commercial: 'If your property is for commercial use, you need to use a <a href="/schemes" class="govuk-link">commercial energy assessment service</a>.'
+  schemes:
+    title: 'Contact accreditation schemes for energy assessors'
+    description: 'A scheme is an entity outside of government. They accredit assessors in issuing Energy Performance Certification and other certifications.'
+
+    when:
+      title: 'When you should contact a scheme directly'
+      cannot_find: 'You can&quot;t find an assessor'
+      problem: 'There was a problem with your assessor'
+      no_internet: 'You need to help someone without internet with their assessment'
+    schemes:
+      title: 'The Schemes'
+      cta: 'Go to website'
+      commercial: 'Commercial <br />properties only'
+      cibse:
+        name: 'CIBSE'
+        phone: '020 8772 3649'
+        url: 'https://www.cibsecertification.co.uk'
+      ecmk:
+        name: 'ECMK'
+        phone: '0333 123 1418'
+        url: 'https://www.ecmk.co.uk'
+      elmhurstenergy:
+        name: 'Elmhurst Energy'
+        phone: '01455 883 250'
+        url: 'https://www.elmhurstenergy.co.uk'
+      sterling:
+        name: 'Sterling'
+        phone: '0161 727 4303'
+        url: 'http://www.sterlingaccreditation.com'
+      stroma:
+        name: 'Stroma'
+        phone: '0845 621 11 11'
+        url: 'https://www.stroma.com/certification'
+      quidos:
+        name: 'Quidos'
+        phone: '01225667570'
+        url: 'https://quidos.co.uk'
