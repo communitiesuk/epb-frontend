@@ -21,4 +21,4 @@ en-GB:
       title: 'Before you start'
       phone: 'The service is also available by calling <a href="tel:098765432">0987 65432</a>.'
       welsh: 'The online service is also available in <a href="#">Welsh (Cymraeg)</a>.'
-      commercial: 'If your property is for commercial use, you need to use a <a href="#" class="govuk-link">commercial energy assessment service</a>.'
+      commercial: 'If your property is for commercial use, you need to use a <a href="/schemes" class="govuk-link">commercial energy assessment service</a>.'
