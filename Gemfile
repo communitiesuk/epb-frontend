@@ -7,5 +7,4 @@ source 'https://rubygems.org' do
   gem 'sassc', '~> 2.2'
   gem 'sinatra', '~> 2.0', '>= 2.0.7'
   gem 'i18n', '1.7.0'
-  gem 'rack-contrib', '2.1.0'
 end
