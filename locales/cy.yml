@@ -25,7 +25,7 @@ cy:
       how_it_works: 'Welsh: Use this service to find a qualified assessor to measure the energy efficiency of your property, or the property of someone you represent. The assessor will create an EPC.'
     scotland:
       description: 'Welsh: If your property is in Scotland, you should use the %{link}'
-      cta: 'Welsh: Scottish government’s EPC service.'
+      link: 'Welsh: Scottish government’s EPC service.'
     negative_epc:
       title: 'Welsh: You do not need an EPC if the:'
       property_type: 'Welsh: property is not residential'
@@ -38,20 +38,20 @@ cy:
       phone_number: 'Welsh: 0987 65432'
       switch_language:
         description: 'Welsh: The online service is also available in %{link}.'
-        url: 'Welsh: /?lang=cy'
-        cta: 'Welsh: Welsh (Cymraeg)'
+        url: '#/?lang=cy'
+        link: 'Welsh: Welsh (Cymraeg)'
       commercial:
         description: 'Welsh: If your property is for commercial use, you need to use a %{link}.'
-        cta: 'Welsh: commercial energy assessment service'
+        link: 'Welsh: commercial energy assessment service'
   schemes:
     title: 'Welsh: Contact an energy assessor accreditation scheme'
     description: 'Welsh: The following schemes license energy assessors to assess residential properties and create energy certificates.'
 
     when:
       title: 'Welsh: You should contact a scheme if:'
-      cannot_find:
-        description: 'Welsh: you have not found an assessor using our %{link}.'
-        cta: 'Welsh: find an assessor service'
+      cannot_find: 
+        description: 'Welsh: you have not found an assessor using our %{link}'
+        link: 'Welsh: find an assessor service'
       problem: 'Welsh: there was a problem with an assessor you booked'
       no_postcode: 'Welsh: you do not know the postcode of the property'
     schemes:
@@ -61,15 +61,15 @@ cy:
       cibse:
         name: 'Welsh: CIBSE'
         phone: 'Welsh: 020 8772 3649'
-        url: 'Welsh: https://www.cibsecertification.co.uk'
+        url: 'https://www.cibsecertification.co.uk'
       ecmk:
         name: 'Welsh: ECMK'
         phone: 'Welsh: 0333 123 1418'
-        url: 'Welsh: https://www.ecmk.co.uk'
+        url: 'https://www.ecmk.co.uk'
       elmhurstenergy:
         name: 'Welsh: Elmhurst Energy'
         phone: 'Welsh: 01455 883 250'
-        url: 'Welsh: https://www.elmhurstenergy.co.uk'
+        url: 'https://www.elmhurstenergy.co.uk'
       sterling:
         name: 'Welsh: Sterling'
         phone: 'Welsh: 0161 727 4303'
@@ -77,8 +77,8 @@ cy:
       stroma:
         name: 'Welsh: Stroma'
         phone: 'Welsh: 0845 621 11 11'
-        url: 'Welsh: https://www.stroma.com/certification'
+        url: 'https://www.stroma.com/certification'
       quidos:
         name: 'Welsh: Quidos'
         phone: 'Welsh: 01225667570'
-        url: 'Welsh: https://quidos.co.uk'
+        url: 'https://quidos.co.uk'
