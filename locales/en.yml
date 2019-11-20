@@ -31,11 +31,6 @@ en:
       property_type: 'property is not residential'
       temporary: 'property is temporarily residential, with a planned residential use of 2 years or less'
       demolished: 'property’s new owner intends to demolish it and never use it as a residential property'
-    assessment:
-      title: 'What is involved in an assessment'
-      30_minutes: 'An assessment takes around 30 minutes, depending on the size of your property.'
-      presence: 'Someone must be at the property to let the assessor in.'
-      no_damage: 'The assessment should not cause any damage to harm the property.'
     cta: 'Start now'
     before_you_start:
       title: 'Before you start'
