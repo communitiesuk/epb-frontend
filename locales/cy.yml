@@ -21,17 +21,16 @@ cy:
   index:
     title: 'Welsh: Find an energy assessor for a residential property'
     introduction:
-      what_you_need: 'Welsh: You need a recent Energy Performance Certificate (EPC) before you sell or let a residential property.'
+      what_you_need: 'Welsh: You need a valid Energy Performance Certificate (EPC) before you sell or let a residential property.'
       how_it_works: 'Welsh: Use this service to find a qualified assessor to measure the energy efficiency of your property, or the property of someone you represent. The assessor will create an EPC.'
     scotland:
       description: 'Welsh: If your property is in Scotland, you should use the %{link}'
       cta: 'Welsh: Scottish government’s EPC service.'
     negative_epc:
-      title: 'Welsh: You do not need an EPC if the property:'
-      size: 'Welsh: is less than 50m<sup>2</sup>'
-      property_type: 'Welsh: is not a residential property'
-      temporary: 'Welsh: is temporarily residential, with a planned use of 2 years or less'
-      demolished: 'Welsh: will be demolished'
+      title: 'Welsh: You do not need an EPC if the:'
+      property_type: 'Welsh: property is not residential'
+      temporary: 'Welsh: property is temporarily residential, with a planned residential use of 2 years or less'
+      demolished: 'Welsh: property’s new owner intends to demolish it and never use it as a residential property'
     assessment:
       title: 'Welsh: What is involved in an assessment'
       30_minutes: 'Welsh: An assessment takes around 30 minutes, depending on the size of your property.'
