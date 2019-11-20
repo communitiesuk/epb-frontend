@@ -14,7 +14,7 @@ require 'app'
         let(:response) { get '/schemes' }
 
         it 'Then it does display the page title' do
-          expect(response.body).to include('Contact accreditation schemes for energy assessors')
+          expect(response.body).to include('Contact an energy assessor accreditation scheme')
         end
       end
 
