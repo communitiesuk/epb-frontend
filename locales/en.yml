@@ -44,16 +44,18 @@ en:
         description: 'If your property is for commercial use, you need to use a %{link}.'
         link: 'commercial energy assessment service'
   schemes:
-    title: 'Contact accreditation schemes for energy assessors'
-    description: 'A scheme is an entity outside of government. They accredit assessors in issuing Energy Performance Certification and other certifications.'
+    title: 'Contact an energy assessor accreditation scheme'
+    description: 'The following schemes license energy assessors to assess residential properties and create energy certificates.'
 
     when:
-      title: 'When you should contact a scheme directly'
-      cannot_find: 'You can&quot;t find an assessor'
-      problem: 'There was a problem with your assessor'
-      no_internet: 'You need to help someone without internet with their assessment'
+      title: 'You should contact a scheme if:'
+      cannot_find: 
+        description: 'you have not found an assessor using our %{link}'
+        link: 'find an assessor service'
+      problem: 'there was a problem with an assessor you booked'
+      no_postcode: 'you do not know the postcode of the property'
     schemes:
-      title: 'The Schemes'
+      title: 'Energy assessment accreditation schemes'
       cta: 'Go to website'
       commercial: 'Commercial <br />properties only'
       cibse:

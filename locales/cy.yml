@@ -44,16 +44,18 @@ cy:
         description: 'Welsh: If your property is for commercial use, you need to use a %{link}.'
         cta: 'Welsh: commercial energy assessment service'
   schemes:
-    title: 'Welsh: Contact accreditation schemes for energy assessors'
-    description: 'Welsh: A scheme is an entity outside of government. They accredit assessors in issuing Energy Performance Certification and other certifications.'
+    title: 'Welsh: Contact an energy assessor accreditation scheme'
+    description: 'Welsh: The following schemes license energy assessors to assess residential properties and create energy certificates.'
 
     when:
-      title: 'Welsh: When you should contact a scheme directly'
-      cannot_find: 'Welsh: You can&quot;t find an assessor'
-      problem: 'Welsh: There was a problem with your assessor'
-      no_internet: 'Welsh: You need to help someone without internet with their assessment'
+      title: 'Welsh: You should contact a scheme if:'
+      cannot_find:
+        description: 'Welsh: you have not found an assessor using our %{link}.'
+        cta: 'Welsh: find an assessor service'
+      problem: 'Welsh: there was a problem with an assessor you booked'
+      no_postcode: 'Welsh: you do not know the postcode of the property'
     schemes:
-      title: 'Welsh: The Schemes'
+      title: 'Welsh: Energy assessment accreditation schemes'
       cta: 'Welsh: Go to website'
       commercial: 'Welsh: Commercial <br />properties only'
       cibse:
