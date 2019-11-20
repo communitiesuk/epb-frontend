@@ -1,32 +1,22 @@
 require 'sinatra/base'
+require_relative 'helpers'
 require 'i18n'
 require 'i18n/backend/fallbacks'
 
 class FrontendService < Sinatra::Base
+  helpers Sinatra::FrontendService::Helpers
+
   set :public_folder, Proc.new { File.join(root, "/../public") }
 
-  I18n.load_path = Dir[File.join(settings.root, '/../locales', '*.yml')]
-  I18n::Backend::Simple.send(:include, I18n::Backend::Fallbacks)
-  I18n.backend.load_translations
-  I18n.enforce_available_locales = true
-  I18n.available_locales = %w(en cy)
+  def initialize
+    setup_locales
 
-  before /.*/ do
-    if I18n.locale_available?(params['lang'])
-      I18n.locale = params['lang']
-    end
+    super
+
   end
 
-  def t(*args)
-    I18n.t(*args)
-  end
-
-  def path(url)
-    if I18n.locale != I18n.available_locales[0]
-      url + ( url.include?('?') ? '&' : '?' ) + 'lang=' + I18n.locale.to_s
-    end
-
-    url
+  before do
+    set_locale
   end
 
   get '/' do
