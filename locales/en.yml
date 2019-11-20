@@ -23,7 +23,9 @@ en:
     introduction:
       what_you_need: 'You need a recent Energy Performance Certificate (EPC) before you sell or let a residential property.'
       how_it_works: 'Use this service to find a qualified assessor to measure the energy efficiency of your property, or the property of someone you represent. The assessor will create an EPC.'
-    scotland: 'If your property is in Scotland, you should use the <a href="https://www.gov.scot/publications/energy-performance-certificates-introduction/">Scottish government’s EPC service.</a>'
+    scotland:
+      description: 'If your property is in Scotland, you should use the %{link}'
+      link: 'Scottish government’s EPC service.'
     negative_epc:
       title: 'You do not need an EPC if the property:'
       size: 'is less than 50m<sup>2</sup>'
@@ -38,9 +40,15 @@ en:
     cta: 'Start now'
     before_you_start:
       title: 'Before you start'
-      phone: 'The service is also available by calling <a href="tel:098765432">0987 65432</a>.'
-      welsh: 'The online service is also available in <a href="#">Welsh (Cymraeg)</a>.'
-      commercial: 'If your property is for commercial use, you need to use a <a href="/schemes" class="govuk-link">commercial energy assessment service</a>.'
+      phone_text: 'The service is also available by calling %{link}.'
+      phone_number: '0987 65432'
+      switch_language:
+        description: 'The online service is also available in %{link}.'
+        url: '/?lang=cy'
+        link: 'Welsh (Cymraeg)'
+      commercial:
+        description: 'If your property is for commercial use, you need to use a %{link}.'
+        link: 'commercial energy assessment service'
   schemes:
     title: 'Contact accreditation schemes for energy assessors'
     description: 'A scheme is an entity outside of government. They accredit assessors in issuing Energy Performance Certification and other certifications.'
