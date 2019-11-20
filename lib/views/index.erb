@@ -10,7 +10,7 @@
       <%= t('index.introduction.how_it_works') %>
     </p>
     <p class="govuk-body">
-      <%= t('index.scotland') %>
+      <%= t('index.scotland.description', :link => '<a href="https://www.gov.scot/publications/energy-performance-certificates-introduction/">' + t('index.scotland.link') + '</a>') %>
     </p>
 
     <h3 class="govuk-heading-s">
@@ -22,9 +22,11 @@
       <li>
         <%= t('index.negative_epc.property_type') %></li>
       <li>
-        <%= t('index.negative_epc.temporary') %></li>
+        <%= t('index.negative_epc.temporary') %>
+      </li>
       <li>
-        <%= t('index.negative_epc.demolished') %></li>
+        <%= t('index.negative_epc.demolished') %>
+      </li>
     </ul>
 
     <details class="govuk-details" data-module="govuk-details">
@@ -34,7 +36,7 @@
         </span>
       </summary>
       <div class="govuk-details__text">
-        <li class='govuk-list'>
+        <ul class='govuk-list'>
           <li>
             <%= t('index.assessment.30_minutes') %></li>
           <li>
@@ -70,16 +72,16 @@
       <%= t('index.before_you_start.title') %>
     </h2>
 
-      <p class="govuk-body">
-        <%= t('index.before_you_start.phone') %>
-      </p>
+    <p class="govuk-body">
+      <%= t('index.before_you_start.phone_text', :link => '<a href="tel:' + t('index.before_you_start.phone_number') + '">' + t('index.before_you_start.phone_number') + '</a>' ) %>
+    </p>
 
-      <p class="govuk-body">
-        <%= t('index.before_you_start.welsh') %>
-      </p>
+    <p class="govuk-body">
+      <%= t('index.before_you_start.switch_language.description', :link => '<a href="' + t('index.before_you_start.switch_language.url') + '">' + t('index.before_you_start.switch_language.link') + '</a>' ) %>
+    </p>
 
-      <p class="govuk-body">
-        <%= t('index.before_you_start.commercial') %>
-      </p>
+    <p class="govuk-body">
+      <%= t('index.before_you_start.commercial.description', :link => '<a href="' + path('/schemes') + '">' + t('index.before_you_start.commercial.link') + '</a>' ) %>
+    </p>
   </div>
 </div>
