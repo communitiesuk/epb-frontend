@@ -35,7 +35,7 @@ en:
     before_you_start:
       title: 'Before you start'
       phone_text: 'The service is also available by calling %{link}.'
-      phone_number: '0987 65432'
+      phone_number: '0233 788 1234'
       switch_language:
         description: 'The online service is also available in %{link}.'
         url: '#/?lang=cy'
@@ -80,5 +80,5 @@ en:
         url: 'https://www.stroma.com/certification'
       quidos:
         name: 'Quidos'
-        phone: '01225667570'
+        phone: '0122 566 7570'
         url: 'https://quidos.co.uk'

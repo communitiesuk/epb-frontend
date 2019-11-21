@@ -35,7 +35,7 @@ cy:
     before_you_start:
       title: 'Welsh: Before you start'
       phone_text: 'Welsh: The service is also available by calling %{link}.'
-      phone_number: 'Welsh: 0987 65432'
+      phone_number: 'Welsh: 0233 788 1234'
       switch_language:
         description: 'Welsh: The online service is also available in %{link}.'
         url: '#/?lang=cy'
@@ -80,5 +80,5 @@ cy:
         url: 'https://www.stroma.com/certification'
       quidos:
         name: 'Welsh: Quidos'
-        phone: 'Welsh: 01225667570'
+        phone: 'Welsh: 0122 566 7570'
         url: 'https://quidos.co.uk'
