@@ -20,7 +20,7 @@ Change directory into the root of the cloned folder:
 
 Start the web server using the following command:
 
-`$ rackup`
+`$ make run`
 
 Open `http://localhost:9292` in your favourite browser.
 
@@ -33,12 +33,12 @@ cf target -o mhclg-energy-performance -s integration
 
 Set the variables `APPLICATION_NAME` and `STAGE` to relevant values, e.g.
 ```bash
-export APPLICATION_NAME=epb-frontend-ui 
-export STAGE=integration 
+export APPLICATION_NAME=epb-frontend-ui
+export STAGE=integration
 ```
 (The `STAGE` should generally match the name of the current CloudFoundry space.)
 
-Then run 
+Then run
 ```bash
 make deploy-app
 ```

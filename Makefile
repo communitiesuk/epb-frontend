@@ -41,3 +41,7 @@ deploy-app: ## Deploys the app to PaaS
 .PHONY: test
 test:
 	rake spec
+
+.PHONY: run
+run:
+	rackup
