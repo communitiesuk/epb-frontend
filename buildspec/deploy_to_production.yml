@@ -9,9 +9,9 @@ env:
     DEPLOY_APPNAME: "mhclg-epb-frontend-ui-production"
 
   parameter-store:
-    PAAS_LOGIN_PRODUCTION: "epbr-govpaas-production-login"
-    PAAS_PW_PRODUCTION: "epbr-govpaas-production-pw"
-    PAAS_SPACE_PRODUCTION: "epbr-govpaas-production-space"
+    PAAS_LOGIN: "epbr-govpaas-production-login"
+    PAAS_PW: "epbr-govpaas-production-pw"
+    PAAS_SPACE: "epbr-govpaas-production-space"
     PAAS_API: "epbr-govpaas-api"
     PAAS_ORG: "epbr-govpaas-orgname"
 
@@ -26,10 +26,7 @@ phases:
       - npm install
   build:
     commands:
-      - make frontend-build
-      - scripts/generate-paas-manifest.sh $DEPLOY_APPNAME > manifest.yml
+      - cf login -a $PAAS_API -u $PAAS_LOGIN -p "$PAAS_PW" -o $PAAS_ORG -s $PAAS_SPACE
       - echo ">>>>>>>> DEPLOY TO PRODUCTION ENV"
-      - cf login -a $PAAS_API -u $PAAS_LOGIN_PRODUCTION -p "$PAAS_PW_PRODUCTION" -o $PAAS_ORG -s $PAAS_SPACE_PRODUCTION
-      - cf v3-apply-manifest -f manifest.yml
-      - cf v3-zdt-push $DEPLOY_APPNAME --wait-for-deploy-complete
+      - make deploy-app
       - cf logout

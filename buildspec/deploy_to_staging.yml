@@ -9,9 +9,9 @@ env:
     DEPLOY_APPNAME: "mhclg-epb-frontend-ui-staging"
 
   parameter-store:
-    PAAS_LOGIN_STAGING: "epbr-govpaas-staging-login"
-    PAAS_PW_STAGING: "epbr-govpaas-staging-pw"
-    PAAS_SPACE_STAGING: "epbr-govpaas-staging-space"
+    PAAS_LOGIN: "epbr-govpaas-staging-login"
+    PAAS_PW: "epbr-govpaas-staging-pw"
+    PAAS_SPACE: "epbr-govpaas-staging-space"
     PAAS_API: "epbr-govpaas-api"
     PAAS_ORG: "epbr-govpaas-orgname"
 
@@ -26,10 +26,7 @@ phases:
       - npm install
   build:
     commands:
-      - make frontend-build
-      - scripts/generate-paas-manifest.sh $DEPLOY_APPNAME > manifest.yml
+      - cf login -a $PAAS_API -u $PAAS_LOGIN -p "$PAAS_PW" -o $PAAS_ORG -s $PAAS_SPACE
       - echo ">>>>>>>> DEPLOY TO STAGING ENV"
-      - cf login -a $PAAS_API -u $PAAS_LOGIN_STAGING -p "$PAAS_PW_STAGING" -o $PAAS_ORG -s $PAAS_SPACE_STAGING
-      - cf v3-apply-manifest -f manifest.yml
-      - cf v3-zdt-push $DEPLOY_APPNAME --wait-for-deploy-complete
+      - make deploy-app
       - cf logout

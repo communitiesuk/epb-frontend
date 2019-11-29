@@ -9,9 +9,9 @@ env:
     DEPLOY_APPNAME: "mhclg-epb-frontend-ui-integration"
 
   parameter-store:
-    PAAS_LOGIN_INTEGRATION: "epbr-govpaas-integration-login"
-    PAAS_PW_INTEGRATION: "epbr-govpaas-integration-pw"
-    PAAS_SPACE_INTEGRATION: "epbr-govpaas-integration-space"
+    PAAS_LOGIN: "epbr-govpaas-integration-login"
+    PAAS_PW: "epbr-govpaas-integration-pw"
+    PAAS_SPACE: "epbr-govpaas-integration-space"
     PAAS_API: "epbr-govpaas-api"
     PAAS_ORG: "epbr-govpaas-orgname"
 
@@ -26,10 +26,7 @@ phases:
       - npm install
   build:
     commands:
-      - make frontend-build
-      - scripts/generate-paas-manifest.sh $DEPLOY_APPNAME > manifest.yml
+      - cf login -a $PAAS_API -u $PAAS_LOGIN -p "$PAAS_PW" -o $PAAS_ORG -s $PAAS_SPACE
       - echo ">>>>>>>> DEPLOY TO INTEGRATION ENV"
-      - cf login -a $PAAS_API -u $PAAS_LOGIN_INTEGRATION -p "$PAAS_PW_INTEGRATION" -o $PAAS_ORG -s $PAAS_SPACE_INTEGRATION
-      - cf v3-apply-manifest -f manifest.yml
-      - cf v3-zdt-push $DEPLOY_APPNAME --wait-for-deploy-complete
+      - make deploy-app
       - cf logout

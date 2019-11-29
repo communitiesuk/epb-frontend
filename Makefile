@@ -28,10 +28,8 @@ frontend-build: ## Run the frontend build process to compile sass and move asset
 .PHONY: deploy-app
 deploy-app: ## Deploys the app to PaaS
 	$(call check_space)
-	$(if ${APPLICATION_NAME},,$(error Must specify APPLICATION_NAME))
-	$(if ${STAGE},,$(error Must specify STAGE))
+	$(if ${DEPLOY_APPNAME},,$(error Must specify DEPLOY_APPNAME))
 
-	$(eval export DEPLOY_APPNAME="mhclg-${APPLICATION_NAME}-${STAGE}")
 	@$(MAKE) frontend-build
 	@$(MAKE) generate-manifest
 
