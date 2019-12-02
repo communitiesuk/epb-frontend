@@ -24,9 +24,14 @@ phases:
       - gem install bundler:2.0.2
       - bundle install
       - npm install
+  pre_build:
+    commands:
+      - echo ">>>>>>>> DEPLOY TO INTEGRATION ENV"
+      - cf login -a $PAAS_API -u $PAAS_LOGIN -p "$PAAS_PW" -o $PAAS_ORG -s $PAAS_SPACE
+      - cf v3-cancel-zdt-push ${DEPLOY_APPNAME} || true
   build:
     commands:
-      - cf login -a $PAAS_API -u $PAAS_LOGIN -p "$PAAS_PW" -o $PAAS_ORG -s $PAAS_SPACE
-      - echo ">>>>>>>> DEPLOY TO INTEGRATION ENV"
       - make deploy-app
+  post_build:
+    commands:
       - cf logout
