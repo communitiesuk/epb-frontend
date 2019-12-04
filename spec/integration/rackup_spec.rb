@@ -4,7 +4,7 @@ require 'pry'
 
 $process = 0
 
-describe 'starts server outside of ruby'  do
+describe 'starts server outside of ruby' do
   describe 'the server running live' do
     before(:all) do
       $stdout = StringIO.new
@@ -13,11 +13,9 @@ describe 'starts server outside of ruby'  do
       sleep 1
     end
 
-    after(:all) do
-      Process.kill('KILL', $process)
-    end
+    after(:all) { Process.kill('KILL', $process) }
 
-    let(:request) { Net::HTTP.new('localhost', 9292) }
+    let(:request) { Net::HTTP.new('localhost', 9_292) }
 
     context 'when the server is up' do
       it 'renders the home page' do

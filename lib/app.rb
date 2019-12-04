@@ -7,23 +7,20 @@ require_relative 'helpers'
 class FrontendService < Sinatra::Base
   helpers Sinatra::FrontendService::Helpers
 
-  set :public_folder, Proc.new { File.join(root, "/../public") }
+  set :public_folder, Proc.new { File.join(root, '/../public') }
 
   configure :development do
-      require "sinatra/reloader"
-      register Sinatra::Reloader
+    require 'sinatra/reloader'
+    register Sinatra::Reloader
   end
 
   def initialize
     setup_locales
 
     super
-
   end
 
-  before do
-    set_locale
-  end
+  before { set_locale }
 
   get '/' do
     erb :index

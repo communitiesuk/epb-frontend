@@ -4,13 +4,11 @@ module Sinatra
       def setup_locales
         I18n.load_path = Dir[File.join(settings.root, '/../locales', '*.yml')]
         I18n.enforce_available_locales = true
-        I18n.available_locales = %w(en cy)
+        I18n.available_locales = %w[en cy]
       end
 
       def set_locale
-        if I18n.locale_available?(params['lang'])
-          I18n.locale = params['lang']
-        end
+        I18n.locale = params['lang'] if I18n.locale_available?(params['lang'])
       end
 
       def t(*args)
@@ -18,9 +16,7 @@ module Sinatra
       end
 
       def path(url)
-        if I18n.locale != I18n.available_locales[0]
-          url += ( url.include?('?') ? '&' : '?' ) + 'lang=' + I18n.locale.to_s
-        end
+        url += (url.include?('?') ? '&' : '?') + 'lang=' + I18n.locale.to_s if I18n.locale != I18n.available_locales[0]
 
         url
       end
