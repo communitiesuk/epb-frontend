@@ -16,7 +16,9 @@ module Sinatra
       end
 
       def path(url)
-        url += (url.include?('?') ? '&' : '?') + 'lang=' + I18n.locale.to_s if I18n.locale != I18n.available_locales[0]
+        if I18n.locale != I18n.available_locales[0]
+          url += (url.include?('?') ? '&' : '?') + 'lang=' + I18n.locale.to_s
+        end
 
         url
       end

@@ -6,7 +6,9 @@ describe FrontendService do
       let(:response) { get '/' }
 
       it 'Then it does display the page title' do
-        expect(response.body).to include('Find an energy assessor for a residential property')
+        expect(response.body).to include(
+          'Find an energy assessor for a residential property'
+        )
       end
     end
 
@@ -14,7 +16,9 @@ describe FrontendService do
       let(:response) { get '/schemes' }
 
       it 'Then it does display the page title' do
-        expect(response.body).to include('Contact an energy assessor accreditation scheme')
+        expect(response.body).to include(
+          'Contact an energy assessor accreditation scheme'
+        )
       end
     end
 
@@ -22,7 +26,9 @@ describe FrontendService do
       let(:response) { get '/' }
 
       it 'Then it does display the title with tags around it' do
-        expect(response.body).to include('<title>Energy performance of buildings register</title>')
+        expect(response.body).to include(
+          '<title>Energy performance of buildings register</title>'
+        )
       end
     end
 
