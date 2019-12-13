@@ -3,7 +3,7 @@ cy:
     head:
       title: 'Welsh: Energy performance of buildings register'
     body:
-      top_heading: 'Welsh: Energy Performance of Buildings Register'
+      service_name: 'Welsh: Energy Performance of Buildings Register'
       skip: 'Welsh: Skip to main content'
       cookies: 'Welsh: GOV.UK uses cookies to make the site simpler. <a href="#">Find out more about cookies</a>'
       govuk: 'Welsh: GOV.UK'
@@ -41,8 +41,8 @@ cy:
       phone_number: 'Welsh: 0233 788 1234'
       switch_language:
         description: 'Welsh: The online service is also available in %{link}.'
-        url: '#/?lang=cy'
-        link: 'Welsh: Welsh (Cymraeg)'
+        url: '/?lang=en'
+        link: 'Welsh: English (English)'
       commercial:
         description: 'Welsh: If your property is for commercial use, you need to use a %{link}.'
         link: 'Welsh: commercial energy assessment service'

@@ -3,7 +3,7 @@ en:
     head:
       title: 'Energy performance of buildings register'
     body:
-      top_heading: 'Energy Performance of Buildings Register'
+      service_name: 'Energy Performance of Buildings Register'
       skip: 'Skip to main content'
       cookies: 'GOV.UK uses cookies to make the site simpler. <a href="#">Find out more about cookies</a>'
       govuk: 'GOV.UK'
@@ -41,7 +41,7 @@ en:
       phone_number: '0233 788 1234'
       switch_language:
         description: 'The online service is also available in %{link}.'
-        url: '#/?lang=cy'
+        url: '/?lang=cy'
         link: 'Welsh (Cymraeg)'
       commercial:
         description: 'If your property is for commercial use, you need to use a %{link}.'
