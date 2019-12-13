@@ -1,7 +1,6 @@
 require 'app'
 
-describe FrontendService, "running" do
-
+describe FrontendService, 'running' do
   describe '.get /' do
     let(:response) { get '/' }
 
@@ -9,10 +8,14 @@ describe FrontendService, "running" do
       expect(response.status).to eq(200)
     end
     it 'includes the home page title' do
-      expect(response.body).to include('<title>Energy performance of buildings register</title>')
+      expect(response.body).to include(
+        '<title>Energy performance of buildings register</title>'
+      )
     end
     it 'displays the home page heading' do
-      expect(response.body).to include('Find an energy assessor for a residential property')
+      expect(response.body).to include(
+        'Find an energy assessor for a residential property'
+      )
     end
   end
 
@@ -28,7 +31,9 @@ describe FrontendService, "running" do
     let(:response) { get '/schemes' }
 
     it 'displays the schemes page title' do
-      expect(response.body).to include('Contact an energy assessor accreditation scheme')
+      expect(response.body).to include(
+        'Contact an energy assessor accreditation scheme'
+      )
     end
   end
 
@@ -40,4 +45,3 @@ describe FrontendService, "running" do
     end
   end
 end
-
