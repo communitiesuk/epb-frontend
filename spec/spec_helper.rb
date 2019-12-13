@@ -20,3 +20,10 @@ RSpec.configure do |config|
 
   config.shared_context_metadata_behavior = :apply_to_host_groups
 end
+
+RSpec::Matchers.define(:redirect_to) do |path|
+  match do |response|
+    uri = URI.parse(response.headers['Location'])
+    response.status.to_s[0] == '3' && uri.path == path
+  end
+end
