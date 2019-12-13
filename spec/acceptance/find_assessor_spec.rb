@@ -18,5 +18,11 @@ describe FrontendService, 'find assessor' do
     it 'displays the find an assessor page heading' do
       expect(response.body).to include('Find an energy assessor')
     end
+    it 'has a postcode input field' do
+      expect(response.body).to include('<input id="postcode" name="postcode"')
+    end
+    it 'has a Find button' do
+      expect(response.body).to include('<button class="govuk-button" data-module="govuk-button">Find</button>')
+    end
   end
 end

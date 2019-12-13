@@ -92,3 +92,6 @@ cy:
     head:
       title: 'Welsh: Energy performance of buildings register - Find an energy assessor'
     top_heading: 'Welsh: Find an energy assessor'
+    question: 'Welsh: Enter a postcode'
+    hint: 'Welsh: For example SW1A 2AA'
+    find_postcode: 'Welsh: Find a postcode on Royal Mail’s postcode finder'

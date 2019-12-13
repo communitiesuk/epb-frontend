@@ -3,5 +3,22 @@
     <h1 class="govuk-heading-xl">
       <%= t('find_assessor_by_postcode.top_heading') %>
     </h1>
+    <form method="GET" action="/find-an-assessor/postcode">
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="postcode">
+          <%= t('find_assessor_by_postcode.question') %>
+        </label>
+        <span id="postcode-hint" class="govuk-hint">
+          <%= t('find_assessor_by_postcode.hint') %>
+        </span>
+        <input id="postcode" name="postcode" class="govuk-input govuk-input--width-10" type="text" aria-describedby="postcode-hint" autocomplete="postal-code" spellcheck="false">
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">Find</button>
+
+    </form>
+    <p class="govuk-body">
+      <a class="govuk-link" rel="external" href="http://www.royalmail.com/find-a-postcode"><%= t('find_assessor_by_postcode.find_postcode') %></a>
+    </p>
   </div>
 </div>
