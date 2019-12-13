@@ -26,6 +26,10 @@ class FrontendService < Sinatra::Base
     erb :index
   end
 
+  get '/find-an-assessor' do
+    redirect to('/find-an-assessor/postcode')
+  end
+
   get '/schemes' do
     erb :schemes
   end
