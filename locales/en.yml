@@ -87,3 +87,8 @@ en:
         name: 'Quidos'
         phone: '01225 667 570'
         url: 'https://quidos.co.uk'
+
+  find_assessor_by_postcode:
+    head:
+      title: 'Energy performance of buildings register - Find an energy assessor'
+    top_heading: 'Find an energy assessor'

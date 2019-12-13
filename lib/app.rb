@@ -32,6 +32,11 @@ class FrontendService < Sinatra::Base
     redirect to('/find-an-assessor/postcode')
   end
 
+  get '/find-an-assessor/postcode' do
+    @page_title = t('find_assessor_by_postcode.head.title')
+    erb :find_assessor_by_postcode, layout: :layout
+  end
+
   get '/schemes' do
     @page_title = t('schemes.head.title')
     erb :schemes, layout: :layout

@@ -87,3 +87,8 @@ cy:
         name: 'Welsh: Quidos'
         phone: 'Welsh: 01225 667 570'
         url: 'https://quidos.co.uk'
+
+  find_assessor_by_postcode:
+    head:
+      title: 'Welsh: Energy performance of buildings register - Find an energy assessor'
+    top_heading: 'Welsh: Find an energy assessor'
