@@ -3,23 +3,26 @@ cy:
     head:
       title: 'Welsh: Energy performance of buildings register'
     body:
-      title: 'Welsh: Energy Performance of Buildings Register'
+      top_heading: 'Welsh: Energy Performance of Buildings Register'
       skip: 'Welsh: Skip to main content'
       cookies: 'Welsh: GOV.UK uses cookies to make the site simpler. <a href="#">Find out more about cookies</a>'
       govuk: 'Welsh: GOV.UK'
       beta:
-        title: 'Welsh: beta'
+        heading: 'Welsh: beta'
         description: 'Welsh: This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
       breadcrumb:
         home: 'Welsh: Home'
         epbr: 'Welsh: Energy performance of buildings register'
         back: 'Welsh: Back'
       footer:
-        title: 'Welsh: Support links'
+        heading: 'Welsh: Support links'
         license: 'Welsh: All content is available under the <a class="govuk-footer__link" href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated'
         copyright: 'Welsh: <a class="govuk-footer__link govuk-footer__copyright-logo" href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/">&copy; Crown copyright</a>'
+
   index:
-    title: 'Welsh: Find an energy assessor for a residential property'
+    head:
+      title: 'Welsh: Energy performance of buildings register - Find an energy assessor for a residential property'
+    top_heading: 'Welsh: Find an energy assessor for a residential property'
     introduction:
       what_you_need: 'Welsh: You need a valid Energy Performance Certificate (EPC) before you sell or let a residential property.'
       how_it_works: 'Welsh: Use this service to find a qualified assessor to measure the energy efficiency of your property, or the property of someone you represent. The assessor will create an EPC.'
@@ -27,13 +30,13 @@ cy:
       description: 'Welsh: If your property is in Scotland, you should use the %{link}'
       link: 'Welsh: Scottish government’s EPC service.'
     negative_epc:
-      title: 'Welsh: You do not need an EPC if the:'
+      heading: 'Welsh: You do not need an EPC if the:'
       property_type: 'Welsh: property is not residential'
       temporary: 'Welsh: property is temporarily residential, with a planned residential use of 2 years or less'
       demolished: 'Welsh: property’s new owner intends to demolish it and never use it as a residential property'
     cta: 'Welsh: Start now'
     before_you_start:
-      title: 'Welsh: Before you start'
+      heading: 'Welsh: Before you start'
       phone_text: 'Welsh: The service is also available by calling %{link}.'
       phone_number: 'Welsh: 0233 788 1234'
       switch_language:
@@ -43,19 +46,21 @@ cy:
       commercial:
         description: 'Welsh: If your property is for commercial use, you need to use a %{link}.'
         link: 'Welsh: commercial energy assessment service'
-  schemes:
-    title: 'Welsh: Contact an energy assessor accreditation scheme'
-    description: 'Welsh: The following schemes license energy assessors to assess residential properties and create energy certificates.'
 
+  schemes:
+    head:
+      title: 'Welsh: Energy performance of buildings register - Contact an energy assessor accreditation scheme'
+    top_heading: 'Welsh: Contact an energy assessor accreditation scheme'
+    description: 'Welsh: The following schemes license energy assessors to assess residential properties and create energy certificates.'
     when:
-      title: 'Welsh: You should contact a scheme if:'
-      cannot_find: 
+      heading: 'Welsh: You should contact a scheme if:'
+      cannot_find:
         description: 'Welsh: you have not found an assessor using our %{link}'
         link: 'Welsh: find an assessor service'
       problem: 'Welsh: there was a problem with an assessor you booked'
       no_postcode: 'Welsh: you do not know the postcode of the property'
     schemes:
-      title: 'Welsh: Energy assessment accreditation schemes'
+      heading: 'Welsh: Energy assessment accreditation schemes'
       cta: 'Welsh: Go to website'
       commercial: 'Welsh: Commercial <br />properties only'
       cibse:

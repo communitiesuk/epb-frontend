@@ -12,7 +12,7 @@
         type="text/css">
   <!--<![endif]-->
 
-  <title><%=t('layout.head.title')%></title>
+  <title><%=@page_title || t('layout.head.title')%></title>
 
   <!-- All this for a Favicon... -->
   <link rel="shortcut icon" type="image/x-icon" sizes="16x16 32x32 48x48" href="/images/favicon.ico" />
@@ -54,7 +54,7 @@
     <div class="govuk-header__content">
       <a href="#"
          class="govuk-header__link govuk-header__link--service-name">
-        <%=t('layout.body.title')%>
+        <%=t('layout.body.top_heading')%>
       </a>
     </div>
   </div>
@@ -64,7 +64,7 @@
   <div class="govuk-phase-banner">
     <p class="govuk-phase-banner__content">
       <strong class="govuk-tag govuk-phase-banner__content__tag ">
-        <%=t('layout.body.beta.title')%>
+        <%=t('layout.body.beta.heading')%>
       </strong>
       <span class="govuk-phase-banner__text">
           <%=t('layout.body.beta.description')%>
@@ -96,7 +96,7 @@
   <div class="govuk-width-container">
     <div class="govuk-footer__meta">
       <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
-        <h2 class="govuk-visually-hidden"><%=t('layout.body.footer.title')%></h2>
+        <h2 class="govuk-visually-hidden"><%=t('layout.body.footer.heading')%></h2>
         <svg role="presentation" focusable="false" class="govuk-footer__licence-logo"
              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 483.2 195.7" height="17" width="41">
           <path fill="currentColor"

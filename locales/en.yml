@@ -3,23 +3,26 @@ en:
     head:
       title: 'Energy performance of buildings register'
     body:
-      title: 'Energy Performance of Buildings Register'
+      top_heading: 'Energy Performance of Buildings Register'
       skip: 'Skip to main content'
       cookies: 'GOV.UK uses cookies to make the site simpler. <a href="#">Find out more about cookies</a>'
       govuk: 'GOV.UK'
       beta:
-        title: 'beta'
+        heading: 'beta'
         description: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
       breadcrumb:
         home: 'Home'
         epbr: 'Energy performance of buildings register'
         back: 'Back'
       footer:
-        title: 'Support links'
+        heading: 'Support links'
         license: 'All content is available under the <a class="govuk-footer__link" href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated'
         copyright: '<a class="govuk-footer__link govuk-footer__copyright-logo" href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/">&copy; Crown copyright</a>'
+
   index:
-    title: 'Find an energy assessor for a residential property'
+    head:
+      title: 'Energy performance of buildings register - Find an energy assessor for a residential property'
+    top_heading: 'Find an energy assessor for a residential property'
     introduction:
       what_you_need: 'You need a valid Energy Performance Certificate (EPC) before you sell or let a residential property.'
       how_it_works: 'Use this service to find a qualified assessor to measure the energy efficiency of your property, or the property of someone you represent. The assessor will create an EPC.'
@@ -27,13 +30,13 @@ en:
       description: 'If your property is in Scotland, you should use the %{link}'
       link: 'Scottish government’s EPC service.'
     negative_epc:
-      title: 'You do not need an EPC if the:'
+      heading: 'You do not need an EPC if the:'
       property_type: 'property is not residential'
       temporary: 'property is temporarily residential, with a planned residential use of 2 years or less'
       demolished: 'property’s new owner intends to demolish it and never use it as a residential property'
     cta: 'Start now'
     before_you_start:
-      title: 'Before you start'
+      heading: 'Before you start'
       phone_text: 'The service is also available by calling %{link}.'
       phone_number: '0233 788 1234'
       switch_language:
@@ -43,19 +46,21 @@ en:
       commercial:
         description: 'If your property is for commercial use, you need to use a %{link}.'
         link: 'commercial energy assessment service'
-  schemes:
-    title: 'Contact an energy assessor accreditation scheme'
-    description: 'The following schemes license energy assessors to assess residential properties and create energy certificates.'
 
+  schemes:
+    head:
+      title: 'Energy performance of buildings register - Contact an energy assessor accreditation scheme'
+    top_heading: 'Contact an energy assessor accreditation scheme'
+    description: 'The following schemes license energy assessors to assess residential properties and create energy certificates.'
     when:
-      title: 'You should contact a scheme if:'
-      cannot_find: 
+      heading: 'You should contact a scheme if:'
+      cannot_find:
         description: 'you have not found an assessor using our %{link}'
         link: 'find an assessor service'
       problem: 'there was a problem with an assessor you booked'
       no_postcode: 'you do not know the postcode of the property'
     schemes:
-      title: 'Energy assessment accreditation schemes'
+      heading: 'Energy assessment accreditation schemes'
       cta: 'Go to website'
       commercial: 'Commercial <br />properties only'
       cibse:

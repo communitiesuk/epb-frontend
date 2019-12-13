@@ -7,12 +7,13 @@ describe FrontendService, 'running' do
     it 'returns status 200' do
       expect(response.status).to eq(200)
     end
-    it 'includes the home page title' do
+    it 'includes the index page title' do
       expect(response.body).to include(
-        '<title>Energy performance of buildings register</title>'
+        '<title>Energy performance of buildings register - Find an energy '\
+        'assessor for a residential property</title>'
       )
     end
-    it 'displays the home page heading' do
+    it 'displays the index page heading' do
       expect(response.body).to include(
         'Find an energy assessor for a residential property'
       )

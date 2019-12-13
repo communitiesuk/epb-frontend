@@ -7,11 +7,12 @@ require_relative 'helpers'
 class FrontendService < Sinatra::Base
   helpers Sinatra::FrontendService::Helpers
 
-  set :public_folder, Proc.new { File.join(root, '/../public') }
+  set :public_folder, (proc { File.join(root, '/../public') })
 
   configure :development do
     require 'sinatra/reloader'
     register Sinatra::Reloader
+    also_reload 'lib/**/*.rb'
   end
 
   def initialize
@@ -23,7 +24,8 @@ class FrontendService < Sinatra::Base
   before { set_locale }
 
   get '/' do
-    erb :index
+    @page_title = t('index.head.title')
+    erb :index, layout: :layout
   end
 
   get '/find-an-assessor' do
@@ -31,7 +33,8 @@ class FrontendService < Sinatra::Base
   end
 
   get '/schemes' do
-    erb :schemes
+    @page_title = t('schemes.head.title')
+    erb :schemes, layout: :layout
   end
 
   get '/healthcheck' do
