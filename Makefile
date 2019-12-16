@@ -51,5 +51,5 @@ format:
 .PHONY: journey
 journey:
 	rackup -q &
-	taiko ./spec/journey/*.js
+	jest
 	lsof -ti:9292 | xargs kill
