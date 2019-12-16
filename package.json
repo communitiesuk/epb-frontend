@@ -13,6 +13,7 @@
   },
   "homepage": "https://github.com/communitiesuk/epb-frontend#readme",
   "dependencies": {
-    "govuk-frontend": "^3.3.0"
+    "govuk-frontend": "^3.3.0",
+    "taiko": "^1.0.2"
   }
 }
