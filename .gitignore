@@ -1,3 +1,6 @@
+# JetBrains IDEs
+.idea/
+
 # NPM
 node_modules/
 
