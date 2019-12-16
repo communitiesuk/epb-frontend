@@ -47,3 +47,9 @@ run:
 .PHONY: format
 format:
 	bundle exec rbprettier --write '**/*.rb'
+
+.PHONY: journey
+journey:
+	rackup -q &
+	taiko ./spec/journey/*.js
+	lsof -ti:9292 | xargs kill
