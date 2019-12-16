@@ -11,7 +11,7 @@ describe 'Running behind Rack server' do
 
   after(:all) { Process.kill('KILL', @process_id) }
 
-  let(:request) { Net::HTTP.new('localhost', 9_292) }
+  let(:request) { Net::HTTP.new('localhost', 9292) }
 
   describe 'GET /' do
     it 'renders the home page' do
