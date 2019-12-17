@@ -10,7 +10,7 @@ describe('Finding an assessor by postcode', () => {
     process_id = spawn('rackup', ['-q']);
     server = await http.createServer(function (req, res) {
     }).listen(9292);
-    await openBrowser({ headless: false });
+    await openBrowser({ observe: true });
   });
 
   it('finds an assessor by postcode', async () => {
