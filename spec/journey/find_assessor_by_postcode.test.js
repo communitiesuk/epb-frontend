@@ -27,7 +27,14 @@ describe('Finding an assessor by postcode', () => {
       });
     });
 
-    await openBrowser();
+    await openBrowser({ args: [
+        '--disable-gpu',
+        '--disable-dev-shm-usage',
+        '--disable-setuid-sandbox',
+        '--no-first-run',
+        '--no-sandbox',
+        '--no-zygote']
+    });
   });
 
   it('finds an assessor by postcode', async () => {
