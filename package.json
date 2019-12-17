@@ -6,6 +6,9 @@
     "type": "git",
     "url": "git+https://github.com/communitiesuk/epb-frontend.git"
   },
+  "scripts": {
+    "test": "jest"
+  },
   "author": "",
   "license": "ISC",
   "bugs": {
