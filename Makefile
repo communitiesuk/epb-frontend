@@ -50,6 +50,4 @@ format:
 
 .PHONY: journey
 journey:
-	rackup -q &
 	jest
-	lsof -ti:9292 | xargs kill
