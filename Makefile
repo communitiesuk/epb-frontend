@@ -38,15 +38,15 @@ deploy-app: ## Deploys the app to PaaS
 
 .PHONY: test
 test:
-	rake spec
+	@bundle exec rake spec
 
 .PHONY: run
 run:
-	rackup
+	@bundle exec rackup
 
 .PHONY: format
 format:
-	bundle exec rbprettier --write '**/*.rb'
+	@bundle exec rbprettier --write '**/*.rb'
 
 .PHONY: journey
 journey:
