@@ -22,7 +22,9 @@ describe FrontendService, 'find assessor' do
       expect(response.body).to include('<input id="postcode" name="postcode"')
     end
     it 'has a Find button' do
-      expect(response.body).to include('<button class="govuk-button" data-module="govuk-button">Find</button>')
+      expect(response.body).to include(
+        '<button class="govuk-button" data-module="govuk-button">Find</button>'
+      )
     end
   end
 end

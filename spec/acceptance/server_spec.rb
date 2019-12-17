@@ -9,8 +9,8 @@ describe FrontendService, 'running' do
     end
     it 'includes the index page title' do
       expect(response.body).to include(
-        '<title>Energy performance of buildings register - Find an energy '\
-        'assessor for a residential property</title>'
+        '<title>Energy performance of buildings register - Find an energy ' \
+          'assessor for a residential property</title>'
       )
     end
     it 'displays the index page heading' do
