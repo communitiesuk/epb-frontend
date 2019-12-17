@@ -1,16 +1,20 @@
 const { openBrowser, goto, write, into, click, closeBrowser, textBox } = require('taiko');
 const { spawn } = require('child_process');
-const http = require('http');
 
 describe('Finding an assessor by postcode', () => {
-  let process_id;
-  let server;
+  let rackup_pid;
 
   beforeAll(async () => {
-    process_id = spawn('rackup', ['-q']);
-    server = await http.createServer(function (req, res) {
-    }).listen(9292);
-    await openBrowser({ observe: true });
+    rackup_pid = await new Promise((resolve, reject) => {
+      let rackup = spawn('make', ['run']);
+
+      rackup.stderr.on('data', line => {
+        if (line.indexOf('port=9292') !== -1) {
+          resolve(rackup.pid);
+        }
+      });
+    });
+    await openBrowser();
   });
 
   it('finds an assessor by postcode', async () => {
@@ -20,9 +24,8 @@ describe('Finding an assessor by postcode', () => {
     await click('Find');
   }, 30000);
 
-  afterAll(async (done) => {
+  afterAll(async () => {
     await closeBrowser();
-    await server.close(done);
-    process.kill(process_id.pid, "SIGTERM")
+    process.kill(rackup_pid, "SIGTERM")
   });
 });
