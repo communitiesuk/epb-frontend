@@ -3,17 +3,30 @@ const { spawn } = require('child_process');
 
 describe('Finding an assessor by postcode', () => {
   let rackup_pid;
+  let rackup_stdout = '';
+  let rackup_resolved = false;
+  let rackup_rejected = false;
+
 
   beforeAll(async () => {
     rackup_pid = await new Promise((resolve, reject) => {
       let rackup = spawn('make', ['run']);
 
       rackup.stderr.on('data', line => {
-        if (line.indexOf('port=9292') !== -1) {
+        rackup_stdout += line.toString();
+
+        if (line.indexOf('port=9292') !== -1 && !rackup_rejected && !rackup_resolved) {
+          rackup_resolved = true;
           resolve(rackup.pid);
+        }
+
+        if (line.indexOf('*** [run] Error') !== -1 && !rackup_rejected && !rackup_resolved) {
+          rackup_rejected = true;
+          reject(rackup_stdout);
         }
       });
     });
+
     await openBrowser();
   });
 
