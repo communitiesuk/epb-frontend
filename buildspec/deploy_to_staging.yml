@@ -24,6 +24,7 @@ phases:
       - gem install bundler:2.0.2
       - bundle install
       - npm install
+      - make journey
   pre_build:
     commands:
       - echo ">>>>>>>> DEPLOY TO STAGING ENV"
