@@ -50,4 +50,4 @@ format:
 
 .PHONY: journey
 journey:
-	jest
+	@yarn test
