@@ -3,7 +3,11 @@
     <h1 class="govuk-heading-xl">
       <%= t('find_assessor_by_postcode.top_heading') %>
     </h1>
-    <form method="GET" action="/find-an-assessor/postcode">
+    <form method="GET" action="<%=localised_url('/find-an-assessor/postcode')%>" >
+      <% if I18n.locale != I18n.available_locales[0] %>
+        <input type="hidden" name="lang" value="<%= I18n.locale.to_s %>">
+      <% end %>
+
       <div class="govuk-form-group">
         <label class="govuk-label" for="postcode">
           <%= t('find_assessor_by_postcode.question') %>
@@ -15,7 +19,6 @@
       </div>
 
       <button class="govuk-button" data-module="govuk-button"><%= t('find_assessor_by_postcode.button_text') %></button>
-
     </form>
     <p class="govuk-body">
       <a class="govuk-link" rel="external" href="http://www.royalmail.com/find-a-postcode"><%= t('find_assessor_by_postcode.find_postcode') %></a>
