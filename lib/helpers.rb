@@ -15,9 +15,9 @@ module Sinatra
         I18n.t(*args)
       end
 
-      def path(url)
+      def localised_url(url)
         if I18n.locale != I18n.available_locales[0]
-          url += (url.include?('?') ? '&' : '?') + 'lang=' + I18n.locale.to_s
+          url = url_for(url , :lang => I18n.locale.to_s)
         end
 
         url

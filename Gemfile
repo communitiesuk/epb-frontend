@@ -7,7 +7,6 @@ source 'https://rubygems.org' do
   end
 
   gem 'i18n'
-  gem 'emk-sinatra-url-for'
   gem 'pry'
   gem 'rack-contrib'
   gem 'rack-test', '~> 0.8.3'
@@ -15,4 +14,5 @@ source 'https://rubygems.org' do
   gem 'rspec', '~>3.0'
   gem 'sassc', '~> 2.2'
   gem 'sinatra', '~> 2.0', '>= 2.0.7'
+  gem 'sinatra-url-for', :git => 'https://github.com/emk/sinatra-url-for.git', :branch => 'master'
 end

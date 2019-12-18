@@ -28,7 +28,7 @@
     </ul>
 
     <a
-      href=<%= url_for "/find-an-assessor/postcode" %>
+      href=<%= localised_url("/find-an-assessor/postcode") %>
       role="button"
       draggable="false"
       class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"
@@ -59,7 +59,7 @@
     </p>
 
     <p class="govuk-body">
-      <%= t('index.before_you_start.commercial.description', :link => '<a href="' + path('/schemes') + '">' + t('index.before_you_start.commercial.link') + '</a>' ) %>
+      <%= t('index.before_you_start.commercial.description', :link => '<a href="' + localised_url('/schemes') + '">' + t('index.before_you_start.commercial.link') + '</a>' ) %>
     </p>
   </div>
 </div>

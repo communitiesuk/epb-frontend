@@ -52,7 +52,7 @@
       </a>
     </div>
     <div class="govuk-header__content">
-      <a href="/"
+      <a href="<%= localised_url('/')%>"
          class="govuk-header__link govuk-header__link--service-name">
         <%=t('layout.body.service_name')%>
       </a>
@@ -84,7 +84,11 @@
     </ol>
   </div>
 <%else%>
-  <a href="/" class="govuk-back-link"><%=t('layout.body.breadcrumb.back')%></a>
+  <a
+    href="<%= localised_url('/')%>"
+    class="govuk-back-link">
+      <%=t('layout.body.breadcrumb.back')%>
+  </a>
 <%end%>
 
   <main class="govuk-main-wrapper" id="main-content" role="main">

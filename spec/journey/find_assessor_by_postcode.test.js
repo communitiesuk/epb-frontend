@@ -43,7 +43,7 @@ describe('Finding an assessor by postcode', () => {
     await write('SW1A 2AA', into(textBox('postcode')));
     await click('Find');
   }, 30000);
-/*
+
   it('finds an assessor by postcode in Welsh', async () => {
     await goto("localhost:9292");
     await click('Welsh (Cymraeg)')
@@ -51,7 +51,7 @@ describe('Finding an assessor by postcode', () => {
     await write('SW1A 2AA', into(textBox('postcode')));
     await click('Welsh: Find');
   }, 30000);
-*/
+
 
   afterAll(async () => {
     await closeBrowser();
