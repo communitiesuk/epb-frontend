@@ -1,11 +1,13 @@
 require 'i18n'
 require 'i18n/backend/fallbacks'
 require 'sinatra/base'
+require 'sinatra/url_for'
 
 require_relative 'helpers'
 
 class FrontendService < Sinatra::Base
   helpers Sinatra::FrontendService::Helpers
+  helpers Sinatra::UrlForHelper
 
   set :public_folder, (proc { File.join(root, '/../public') })
 
