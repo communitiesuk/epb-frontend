@@ -12,6 +12,17 @@ Follow the steps below to get started.
 5. install the ruby modules/packages - `$ bundle install`
 6. build the frontend assets - `$ make frontend-build`
 
+## Run tests
+
+# Prerequisite for Taiko journey tests
+
+* Yarn (should be installed globally using `npm i -g yarn`)
+
+# Test suites
+
+* RSPEC tests: `make test`
+* Journey tests: `make journey`
+
 ## Start
 
 Change directory into the root of the cloned folder:
