@@ -35,8 +35,14 @@ class FrontendService < Sinatra::Base
   end
 
   get '/find-an-assessor/postcode' do
+    @errors = {}
+    if params['postcode'] and !POSTCODE_REGEX.match(params['postcode'])
+      @errors[:postcode] = t('find_assessor_by_postcode.postcode_error')
+    end
+
     @page_title = t('find_assessor_by_postcode.head.title')
-    erb :find_assessor_by_postcode, layout: :layout
+    erb :find_assessor_by_postcode, layout: :layout, :locals => {:errors => @errors}
+
   end
 
   get '/find-an-assessor/postcode/results' do

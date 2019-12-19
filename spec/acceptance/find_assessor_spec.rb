@@ -26,6 +26,25 @@ describe FrontendService, 'find assessor' do
         '<button class="govuk-button" data-module="govuk-button">Find</button>'
       )
     end
+    it 'does not display an error message' do
+      expect(response.body).not_to include('govuk-error-message')
+    end
+  end
+
+  describe '.get /find-an-assessor/postcode with an invalid postcode param' do
+      let(:response) { get '/find-an-assessor/postcode?postcode=NOT+A+POSTCODE' }
+
+    # TODO: decide if 200 is the right status for an error? Or should be 400?
+    it 'returns status 200' do
+      expect(response.status).to eq(200)
+    end
+    it 'displays the find an assessor page heading' do
+      expect(response.body).to include('Find an energy assessor')
+    end
+    it 'displays an error message' do
+      expect(response.body).to include('<span id="postcode-error" class="govuk-error-message">')
+      expect(response.body).to include('Enter a real postcode')
+    end
   end
 
   describe '.get /find-an-assessor/postcode/results' do
