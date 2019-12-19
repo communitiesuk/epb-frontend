@@ -23,7 +23,7 @@
      <% results.each do |assessor| %>
         <li>
           <div>
-            <h2 class="govuk-heading-m"><%= assessor[:name] %></h2>
+            <h2 class="govuk-heading-m"><%= assessor[:fullName] %></h2>
             <div>
               <dl class="govuk-summary-list govuk-summary-list--no-border">
                 <div class="govuk-summary-list__row">
@@ -40,21 +40,21 @@
                   <dt class="govuk-summary-list__key"><%= t('find_assessor_by_postcode.results.contact_details_text') %></dt>
                   <dd class="govuk-summary-list__value">
                     <p>
-                      <a href="tel:{{assessor.phone}}"><%= assessor[:phone] %></a>
+                      <a href="tel:{{assessor.phone}}"><%= assessor[:telephoneNumber] %></a>
                     </p>
                     <p>
-                      <a href="mailto:{{assessor.email}}"><%= assessor[:email_address] %></a>
+                      <a href="mailto:{{assessor.email}}"><%= assessor[:email] %></a>
                     </p>
                   </dd>
                 </div>
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key"><%= t('find_assessor_by_postcode.results.accredited_by_text') %></dt>
 
-                  <dd class="govuk-summary-list__value"><%= assessor[:accreditation_scheme] %></dd>
+                  <dd class="govuk-summary-list__value"><%= assessor[:accreditationScheme] %></dd>
                 </div>
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key"><%= t('find_assessor_by_postcode.results.assessor_id_text') %></dt>
-                  <dd class="govuk-summary-list__value"><%= assessor[:assessor_ID] %></dd>
+                  <dd class="govuk-summary-list__value"><%= assessor[:schemeAssessorId] %></dd>
                 </div>
               </dl>
             </div>
