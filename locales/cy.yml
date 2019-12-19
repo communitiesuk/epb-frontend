@@ -103,3 +103,10 @@ cy:
       description: 'Welsh: Contact an assessor listed below to book an energy assessment.'
       accreditation_summary_title: 'Welsh: What is an accreditation scheme'
       accreditation_summary_text: 'Welsh: Accreditation schemes check that all the assessors listed below are qualified to carry out energy assessments on residential properties, and to issue Energy Performance Certificates.'
+      distance:
+        heading: 'Welsh: Distance'
+        default_miles_away_text: 'Welsh: Less than 1 mile away'
+        miles_away_text: 'Welsh: miles away'
+      contact_details_text: 'Welsh: Contact details'
+      accredited_by_text: 'Welsh: Accredited by'
+      assessor_id_text: 'Welsh: Assessor ID'

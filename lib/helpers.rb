@@ -22,6 +22,101 @@ module Sinatra
 
         url
       end
+
+      def assessors
+        [
+          {
+            "name": 'William Turner',
+            "distance": 0.2,
+            "phone": '0792 102 1368',
+            "email_address": 'epbassessor@epb.com',
+            "website": 'epbassessments.com',
+            "accreditation_scheme": 'CIBSIE',
+            "assessor_ID": '1234'
+          },
+          {
+            "name": 'Gregg Sellen',
+            "distance": 0.6,
+            "phone": '0792 102 1368',
+            "email_address": 'epbassessor@epb.com',
+            "website": 'epbassessments.com',
+            "accreditation_scheme": 'Sterling',
+            "assessor_ID": '1234'
+          },
+          {
+            "name": 'Juliet Montague',
+            "distance": 0.6,
+            "phone": '0792 102 1368',
+            "email_address": 'epbassessor@epb.com',
+            "website": 'epbassessments.com',
+            "accreditation_scheme": 'ECMK',
+            "assessor_ID": '1234'
+          },
+          {
+            "name": 'Wallace Gromit',
+            "distance": 0.6,
+            "phone": '0792 102 1368',
+            "email_address": 'epbassessor@epb.com',
+            "website": 'epbassessments.com',
+            "accreditation_scheme": 'ECMK',
+            "assessor_ID": '1234'
+          },
+          {
+            "name": 'Martha Stewart',
+            "distance": 0.9,
+            "phone": '0792 102 1368',
+            "email_address": 'epbassessor@epb.com',
+            "website": 'epbassessments.com',
+            "accreditation_scheme": 'CIBSIE',
+            "assessor_ID": '1234'
+          },
+          {
+            "name": 'Donald Duck',
+            "distance": 1,
+            "phone": '0792 102 1368',
+            "email_address": 'epbassessor@epb.com',
+            "website": 'epbassessments.com',
+            "accreditation_scheme": 'ECMK',
+            "assessor_ID": '1234'
+          },
+          {
+            "name": 'John Doe',
+            "distance": 2,
+            "phone": '0792 102 1368',
+            "email_address": 'epbassessor@epb.com',
+            "website": 'epbassessments.com',
+            "accreditation_scheme": 'CIBSIE',
+            "assessor_ID": '1234'
+          },
+          {
+            "name": 'Harald Anderson',
+            "distance": 2,
+            "phone": '0792 102 1368',
+            "email_address": 'epbassessor@epb.com',
+            "website": 'epbassessments.com',
+            "accreditation_scheme": 'Elmhurst Energy',
+            "assessor_ID": '1234'
+          },
+          {
+            "name": 'Daniel Adams',
+            "distance": 4,
+            "phone": '0792 102 1368',
+            "email_address": 'epbassessor@epb.com',
+            "website": 'epbassessments.com',
+            "accreditation_scheme": 'Elmhurst Energy',
+            "assessor_ID": '1234'
+          },
+          {
+            "name": 'Craig Bass',
+            "distance": 5,
+            "phone": '0792 102 1368',
+            "email_address": 'epbassessor@epb.com',
+            "website": 'epbassessments.com',
+            "accreditation_scheme": 'ECMK',
+            "assessor_ID": '1234'
+          }
+        ]
+      end
     end
   end
 end

@@ -18,5 +18,50 @@
         <%= t('find_assessor_by_postcode.results.accreditation_summary_text') %>
       </div>
     </details>
+
+    <ul class="govuk-list">
+     <% results.each do |assessor| %>
+        <li>
+          <div>
+            <h2 class="govuk-heading-m"><%= assessor[:name] %></h2>
+            <div>
+              <dl class="govuk-summary-list govuk-summary-list--no-border">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key"><%= t('find_assessor_by_postcode.results.distance.heading') %></dt>
+                  <dd class="govuk-summary-list__value">
+                    <% if assessor[:distance]<1 %>
+                      <%= t('find_assessor_by_postcode.results.distance.default_miles_away_text') %>
+                    <% else %>
+                    <%= assessor[:distance] %> <%= t('find_assessor_by_postcode.results.distance.miles_away_text') %>
+                    <% end %>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key"><%= t('find_assessor_by_postcode.results.contact_details_text') %></dt>
+                  <dd class="govuk-summary-list__value">
+                    <p>
+                      <a href="tel:{{assessor.phone}}"><%= assessor[:phone] %></a>
+                    </p>
+                    <p>
+                      <a href="mailto:{{assessor.email}}"><%= assessor[:email_address] %></a>
+                    </p>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key"><%= t('find_assessor_by_postcode.results.accredited_by_text') %></dt>
+
+                  <dd class="govuk-summary-list__value"><%= assessor[:accreditation_scheme] %></dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key"><%= t('find_assessor_by_postcode.results.assessor_id_text') %></dt>
+                  <dd class="govuk-summary-list__value"><%= assessor[:assessor_ID] %></dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+        </li>
+      <% end %>
+    </ul>
   </div>
 </div>
