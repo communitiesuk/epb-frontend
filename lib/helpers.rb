@@ -1,6 +1,9 @@
 module Sinatra
   module FrontendService
     module Helpers
+
+      POSTCODE_REGEX = Regexp.new('^[A-Z]{1,2}\d[A-Z\d]?\s?\d[A-Z]{2}$', Regexp::IGNORECASE)
+
       def setup_locales
         I18n.load_path = Dir[File.join(settings.root, '/../locales', '*.yml')]
         I18n.enforce_available_locales = true
