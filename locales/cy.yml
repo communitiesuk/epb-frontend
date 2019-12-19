@@ -96,3 +96,6 @@ cy:
     hint: 'Welsh: For example SW1A 2AA'
     button_text: 'Welsh: Find'
     find_postcode: 'Welsh: Find a postcode on Royal Mail’s postcode finder'
+  results:
+    head:
+      title: 'Welsh: Results for energy assessors near you'

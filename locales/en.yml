@@ -96,3 +96,6 @@ en:
     hint: 'For example SW1A 2AA'
     button_text: 'Find'
     find_postcode: 'Find a postcode on Royal Mail’s postcode finder'
+  results:
+    head:
+      title: 'Results for energy assessors near you'

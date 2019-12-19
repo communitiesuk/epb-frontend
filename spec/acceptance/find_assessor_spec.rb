@@ -27,4 +27,16 @@ describe FrontendService, 'find assessor' do
       )
     end
   end
+
+  describe '.get /find-an-assessor/postcode/results' do
+    let(:response) { get '/find-an-assessor/postcode/results' }
+
+    it 'returns status 200' do
+      expect(response.status).to eq(200)
+    end
+
+    it 'displays the find an assessor page heading' do
+      expect(response.body).to include('Results for energy assessors near you')
+    end
+  end
 end
