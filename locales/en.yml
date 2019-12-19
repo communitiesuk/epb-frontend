@@ -96,19 +96,20 @@ en:
     hint: 'For example SW1A 2AA'
     button_text: 'Find'
     find_postcode: 'Find a postcode on Royal Mail’s postcode finder'
-    results:
-      head:
-        title: 'Energy performance of buildings register - Results for energy assessors near you'
-      top_heading: 'Results for energy assessors near you'
-      description: 'Contact an assessor listed below to book an energy assessment.'
-      accreditation_summary_title: 'What is an accreditation scheme'
-      accreditation_summary_text: 'Accreditation schemes check that all the assessors listed below are qualified to carry out energy assessments on residential properties, and to issue Energy Performance Certificates.'
-      distance:
-        heading: 'Distance'
-        default_miles_away_text: 'Less than 1 mile away'
-        miles_away_text: 'miles away'
-      contact_details_text: 'Contact details'
-      accredited_by_text: 'Accredited by'
-      assessor_id_text: 'Assessor ID'
+
+  find_assessor_results:
+    head:
+      title: 'Energy performance of buildings register - Results for energy assessors near you'
+    top_heading: 'Results for energy assessors near you'
+    description: 'Contact an assessor listed below to book an energy assessment.'
+    accreditation_summary_title: 'What is an accreditation scheme'
+    accreditation_summary_text: 'Accreditation schemes check that all the assessors listed below are qualified to carry out energy assessments on residential properties, and to issue Energy Performance Certificates.'
+    distance:
+      heading: 'Distance'
+      default_miles_away_text: 'Less than 1 mile away'
+      miles_away_text: 'miles away'
+    contact_details_text: 'Contact details'
+    accredited_by_text: 'Accredited by'
+    assessor_id_text: 'Assessor ID'
 
 
