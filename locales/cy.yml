@@ -96,6 +96,10 @@ cy:
     hint: 'Welsh: For example SW1A 2AA'
     button_text: 'Welsh: Find'
     find_postcode: 'Welsh: Find a postcode on Royal Mail’s postcode finder'
-  results:
-    head:
-      title: 'Welsh: Results for energy assessors near you'
+    results:
+      head:
+        title: 'Welsh: Energy performance of buildings register - Results for energy assessors near you'
+      top_heading: 'Welsh: Results for energy assessors near you'
+      description: 'Welsh: Contact an assessor listed below to book an energy assessment.'
+      accreditation_summary_title: 'Welsh: What is an accreditation scheme'
+      accreditation_summary_text: 'Welsh: Accreditation schemes check that all the assessors listed below are qualified to carry out energy assessments on residential properties, and to issue Energy Performance Certificates.'

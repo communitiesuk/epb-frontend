@@ -40,7 +40,8 @@ class FrontendService < Sinatra::Base
   end
 
   get '/find-an-assessor/postcode/results' do
-    @page_title = t('results.head.title')
+    @page_title = t('find_assessor_by_postcode.results.head.title')
+    erb :find_assessor_by_postcode_results, layout: :layout
   end
 
   get '/schemes' do
