@@ -1,7 +1,6 @@
 module Sinatra
   module FrontendService
     module Helpers
-
       def valid_postcode
         Regexp.new('^[A-Z]{1,2}\d[A-Z\d]?\s?\d[A-Z]{2}$', Regexp::IGNORECASE)
       end
