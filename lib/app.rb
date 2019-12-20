@@ -36,7 +36,7 @@ class FrontendService < Sinatra::Base
 
   get '/find-an-assessor/postcode' do
     @errors = {}
-    if params['postcode'] and !POSTCODE_REGEX.match(params['postcode'])
+    if params['postcode'] && !valid_postcode.match(params['postcode'])
       status 400
       @errors[:postcode] = t('find_assessor_by_postcode.postcode_error')
     end

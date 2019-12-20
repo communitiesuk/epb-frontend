@@ -2,7 +2,9 @@ module Sinatra
   module FrontendService
     module Helpers
 
-      POSTCODE_REGEX = Regexp.new('^[A-Z]{1,2}\d[A-Z\d]?\s?\d[A-Z]{2}$', Regexp::IGNORECASE)
+      def valid_postcode
+        Regexp.new('^[A-Z]{1,2}\d[A-Z\d]?\s?\d[A-Z]{2}$', Regexp::IGNORECASE)
+      end
 
       def setup_locales
         I18n.load_path = Dir[File.join(settings.root, '/../locales', '*.yml')]
