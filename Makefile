@@ -46,7 +46,7 @@ run:
 
 .PHONY: format
 format:
-	@bundle exec rbprettier --write '**/*.rb'
+	@bundle exec rbprettier --write '**/*.rb' *.rb config.ru Gemfile
 
 .PHONY: journey
 journey:
