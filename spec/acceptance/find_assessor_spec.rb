@@ -37,6 +37,25 @@ describe FrontendService, 'find assessor' do
     end
   end
 
+  describe '.get /find-an-assessor/postcode with an empty postcode param' do
+    let(:response) { get '/find-an-assessor/postcode?postcode=' }
+
+    it 'returns status 400' do
+      expect(response.status).to eq(400)
+    end
+
+    it 'displays the find an assessor page heading' do
+      expect(response.body).to include('Find an energy assessor')
+    end
+
+    it 'displays an error message' do
+      expect(response.body).to include(
+        '<span id="postcode-error" class="govuk-error-message">'
+      )
+      expect(response.body).to include('Enter a real postcode')
+    end
+  end
+
   describe '.get /find-an-assessor/postcode with an invalid postcode param' do
     let(:response) { get '/find-an-assessor/postcode?postcode=NOT+A+POSTCODE' }
 
