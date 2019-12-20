@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ruby '~>2.6'
 
 source 'https://rubygems.org' do
@@ -14,5 +16,6 @@ source 'https://rubygems.org' do
   gem 'rspec', '~>3.0'
   gem 'sassc', '~> 2.2'
   gem 'sinatra', '~> 2.0', '>= 2.0.7'
-  gem 'sinatra-url-for', :git => 'https://github.com/emk/sinatra-url-for.git', :branch => 'master'
+  gem 'sinatra-url-for',
+      git: 'https://github.com/emk/sinatra-url-for.git', branch: 'master'
 end
