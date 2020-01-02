@@ -12,78 +12,82 @@ describe FrontendService, 'find assessor' do
   end
 
   describe '.get /find-an-assessor/search' do
-    let(:response) { get '/find-an-assessor/search' }
+    context 'when search page rendered' do
+      let(:response) { get '/find-an-assessor/search' }
 
-    it 'returns status 200' do
-      expect(response.status).to eq(200)
+      it 'returns status 200' do
+        expect(response.status).to eq(200)
+      end
+
+      it 'displays the find an assessor page heading' do
+        expect(response.body).to include('Find an energy assessor')
+      end
+
+      it 'has a postcode input field' do
+        expect(response.body).to include('<input id="postcode" name="postcode"')
+      end
+
+      it 'has a Find button' do
+        expect(response.body).to include(
+          '<button class="govuk-button" data-module="govuk-button">Find</button>'
+        )
+      end
+
+      it 'does not display an error message' do
+        expect(response.body).not_to include('govuk-error-message')
+      end
     end
 
-    it 'displays the find an assessor page heading' do
-      expect(response.body).to include('Find an energy assessor')
+    context 'when entering an empty postcode' do
+      let(:response) { get '/find-an-assessor/search?postcode=' }
+
+      it 'returns status 400' do
+        expect(response.status).to eq(400)
+      end
+
+      it 'displays the find an assessor page heading' do
+        expect(response.body).to include('Find an energy assessor')
+      end
+
+      it 'displays an error message' do
+        expect(response.body).to include(
+          '<span id="postcode-error" class="govuk-error-message">'
+        )
+        expect(response.body).to include('Enter a real postcode')
+      end
     end
 
-    it 'has a postcode input field' do
-      expect(response.body).to include('<input id="postcode" name="postcode"')
+    context 'when entering an invalid postcode' do
+      let(:response) { get '/find-an-assessor/search?postcode=NOT+A+POSTCODE' }
+
+      it 'returns status 400' do
+        expect(response.status).to eq(400)
+      end
+
+      it 'displays the find an assessor page heading' do
+        expect(response.body).to include('Find an energy assessor')
+      end
+
+      it 'displays an error message' do
+        expect(response.body).to include(
+          '<span id="postcode-error" class="govuk-error-message">'
+        )
+        expect(response.body).to include('Enter a real postcode')
+      end
     end
 
-    it 'has a Find button' do
-      expect(response.body).to include(
-        '<button class="govuk-button" data-module="govuk-button">Find</button>'
-      )
-    end
+    context 'when entering a valid postcode' do
+      let(:response) { get '/find-an-assessor/search?postcode=SW1A+2AA' }
 
-    it 'does not display an error message' do
-      expect(response.body).not_to include('govuk-error-message')
-    end
-  end
+      it 'returns status 200' do
+        expect(response.status).to eq(200)
+      end
 
-  describe '.get /find-an-assessor/search with an empty postcode param' do
-    let(:response) { get '/find-an-assessor/search?postcode=' }
-
-    it 'returns status 400' do
-      expect(response.status).to eq(400)
-    end
-
-    it 'displays the find an assessor page heading' do
-      expect(response.body).to include('Find an energy assessor')
-    end
-
-    it 'displays an error message' do
-      expect(response.body).to include(
-        '<span id="postcode-error" class="govuk-error-message">'
-      )
-      expect(response.body).to include('Enter a real postcode')
-    end
-  end
-
-  describe '.get /find-an-assessor/search with an invalid postcode param' do
-    let(:response) { get '/find-an-assessor/search?postcode=NOT+A+POSTCODE' }
-
-    it 'returns status 400' do
-      expect(response.status).to eq(400)
-    end
-
-    it 'displays the find an assessor page heading' do
-      expect(response.body).to include('Find an energy assessor')
-    end
-
-    it 'displays an error message' do
-      expect(response.body).to include(
-        '<span id="postcode-error" class="govuk-error-message">'
-      )
-      expect(response.body).to include('Enter a real postcode')
-    end
-  end
-
-  describe '.get /find-an-assessor/search with a valid postcode param' do
-    let(:response) { get '/find-an-assessor/search?postcode=SW1A+2AA' }
-
-    it 'returns status 200' do
-      expect(response.status).to eq(200)
-    end
-
-    it 'displays the find an assessor page heading' do
-      expect(response.body).to include('Results for energy assessors near you')
+      it 'displays the find an assessor page heading' do
+        expect(response.body).to include(
+          'Results for energy assessors near you'
+        )
+      end
     end
   end
 end
