@@ -75,8 +75,8 @@ describe FrontendService, 'find assessor' do
     end
   end
 
-  describe '.get /find-an-assessor/results' do
-    let(:response) { get '/find-an-assessor/results' }
+  describe '.get /find-an-assessor/search with a valid postcode param' do
+    let(:response) { get '/find-an-assessor/search?postcode=SW1A+2AA' }
 
     it 'returns status 200' do
       expect(response.status).to eq(200)
