@@ -1,4 +1,4 @@
-const { openBrowser, goto, write, into, click, closeBrowser, textBox } = require('taiko');
+const { openBrowser, goto, write, into, click, closeBrowser, textBox, text} = require('taiko');
 const { spawn } = require('child_process');
 
 describe('Finding an assessor by postcode', () => {
@@ -52,6 +52,29 @@ describe('Finding an assessor by postcode', () => {
     await click('Welsh: Find');
   }, 30000);
 
+  it('displays an error message when entering an empty postcode', async () => {
+    await goto("localhost:9292");
+    await click("Start now");
+    await write('', into(textBox('postcode')));
+    await click('Find');
+    await text('Enter a real postcode').exists()
+  }, 30000);
+
+  it('displays an error message when entering an invalid postcode', async () => {
+    await goto("localhost:9292");
+    await click("Start now");
+    await write('NOT A POSTCODE', into(textBox('postcode')));
+    await click('Find');
+    await text('Enter a real postcode').exists()
+  }, 30000);
+
+  it('displays the find an assessor page heading when entering a valid postcode ', async () => {
+    await goto("localhost:9292");
+    await click("Start now");
+    await write('SW1A 2AA', into(textBox('postcode')));
+    await click('Find');
+    await text('Results for energy assessors near you').exists()
+  }, 30000);
 
   afterAll(async () => {
     await closeBrowser();
