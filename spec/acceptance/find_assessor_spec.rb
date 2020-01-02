@@ -6,13 +6,13 @@ describe FrontendService, 'find assessor' do
   describe '.get /find-an-assessor' do
     let(:response) { get '/find-an-assessor' }
 
-    it 'redirects to /find-an-assessor/postcode' do
-      expect(response).to redirect_to '/find-an-assessor/postcode'
+    it 'redirects to /find-an-assessor/search' do
+      expect(response).to redirect_to '/find-an-assessor/search'
     end
   end
 
-  describe '.get /find-an-assessor/postcode' do
-    let(:response) { get '/find-an-assessor/postcode' }
+  describe '.get /find-an-assessor/search' do
+    let(:response) { get '/find-an-assessor/search' }
 
     it 'returns status 200' do
       expect(response.status).to eq(200)
@@ -37,8 +37,8 @@ describe FrontendService, 'find assessor' do
     end
   end
 
-  describe '.get /find-an-assessor/postcode with an empty postcode param' do
-    let(:response) { get '/find-an-assessor/postcode?postcode=' }
+  describe '.get /find-an-assessor/search with an empty postcode param' do
+    let(:response) { get '/find-an-assessor/search?postcode=' }
 
     it 'returns status 400' do
       expect(response.status).to eq(400)
@@ -56,8 +56,8 @@ describe FrontendService, 'find assessor' do
     end
   end
 
-  describe '.get /find-an-assessor/postcode with an invalid postcode param' do
-    let(:response) { get '/find-an-assessor/postcode?postcode=NOT+A+POSTCODE' }
+  describe '.get /find-an-assessor/search with an invalid postcode param' do
+    let(:response) { get '/find-an-assessor/search?postcode=NOT+A+POSTCODE' }
 
     it 'returns status 400' do
       expect(response.status).to eq(400)

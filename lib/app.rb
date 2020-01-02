@@ -31,10 +31,10 @@ class FrontendService < Sinatra::Base
   end
 
   get '/find-an-assessor' do
-    redirect to('/find-an-assessor/postcode')
+    redirect to('/find-an-assessor/search')
   end
 
-  get '/find-an-assessor/postcode' do
+  get '/find-an-assessor/search' do
     @errors = {}
     if params['postcode'] && !valid_postcode.match(params['postcode'])
       status 400
