@@ -2,11 +2,11 @@ require 'net/http'
 
 describe 'Running behind Rack server' do
   before(:all) do
-    puts '' # Add newline to test output before WEBrick log output
-    process = IO.popen(['rackup', '-q', err: %i[child out]])
+    process = IO.popen(['rackup', '-q', err: [:child, :out]])
     @process_id = process.pid
 
-    sleep 2
+    unless process.readline.include?('port=9292')
+    end
   end
 
   after(:all) { Process.kill('KILL', @process_id) }
