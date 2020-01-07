@@ -14,6 +14,9 @@ env:
     PAAS_SPACE: "epbr-govpaas-integration-space"
     PAAS_API: "epbr-govpaas-api"
     PAAS_ORG: "epbr-govpaas-orgname"
+    AUTH_CLIENT_ID: "epbr-frontend-auth-client-id-integration"
+    AUTH_CLIENT_SECRET: "epbr-frontend-auth-client-secret-integration"
+    AUTH_SERVER: "epbr-auth-server-integration"
 
 phases:
   install:

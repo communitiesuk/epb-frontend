@@ -8,6 +8,8 @@ source 'https://rubygems.org' do
     gem 'sinatra-contrib'
   end
 
+  gem 'epb_auth_tools',
+      git: 'https://github.com/communitiesuk/epb-auth-tools', branch: 'master'
   gem 'i18n'
   gem 'pry'
   gem 'rack-contrib'

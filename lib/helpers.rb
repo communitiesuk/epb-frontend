@@ -1,3 +1,7 @@
+# frozen_string_literal: true
+
+require 'epb_auth_tools'
+
 module Sinatra
   module FrontendService
     module Helpers
@@ -13,6 +17,12 @@ module Sinatra
 
       def set_locale
         I18n.locale = params['lang'] if I18n.locale_available?(params['lang'])
+      end
+
+      def http_client
+        Auth::HttpClient.new ENV['AUTH_CLIENT_ID'],
+                             ENV['AUTH_CLIENT_SECRET'],
+                             ENV['AUTH_SERVER']
       end
 
       def t(*args)

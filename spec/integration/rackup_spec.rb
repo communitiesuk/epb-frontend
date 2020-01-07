@@ -2,7 +2,7 @@ require 'net/http'
 
 describe 'Running behind Rack server' do
   before(:all) do
-    process = IO.popen(['rackup', '-q', err: [:child, :out]])
+    process = IO.popen(['rackup', '-q', err: %i[child out]])
     @process_id = process.pid
 
     unless process.readline.include?('port=9292')
