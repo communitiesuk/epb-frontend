@@ -2,16 +2,19 @@ require 'net/http'
 
 describe 'Running behind Rack server' do
   before(:all) do
-    process = IO.popen(['rackup', '-q', err: %i[child out]])
+    process =
+      IO.popen(
+        ['rackup', '-q', '-o', '127.0.0.1', '-p', '9393', err: %i[child out]]
+      )
     @process_id = process.pid
 
-    unless process.readline.include?('port=9292')
+    unless process.readline.include?('port=9393')
     end
   end
 
   after(:all) { Process.kill('KILL', @process_id) }
 
-  let(:request) { Net::HTTP.new('localhost', 9_292) }
+  let(:request) { Net::HTTP.new('127.0.0.1', 9_393) }
 
   describe 'GET /' do
     it 'renders the home page' do
