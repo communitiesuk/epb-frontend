@@ -3,51 +3,84 @@ require 'use_case/find_assessor'
 
 describe UseCase::FindAssessor do
   class AssessorsGatewayStub
-    attr_writer :assessors
-
-    def initialize
-      @assessors = {}
-    end
-
     def search(postcode)
-      @assessors
+      {
+        "results": [
+          {
+            "assessor": {
+              "firstName": 'Gregg',
+              "lastName": 'Sellen',
+              "contactDetails": {
+                "telephoneNumber": '0792 102 1368',
+                "email": 'epbassessor@epb.com'
+              },
+              "searchResultsComparisonPostcode": 'SW1A 1AA',
+              "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' }
+            },
+            "distanceFromPostcodeInMiles": 0.1
+          },
+          {
+            "assessor": {
+              "firstName": 'Juliet',
+              "lastName": 'Montague',
+              "contactDetails": {
+                "telephoneNumber": '0792 102 1368',
+                "email": 'epbassessor@epb.com'
+              },
+              "searchResultsComparisonPostcode": 'SW1A 1AA',
+              "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' }
+            },
+            "distanceFromPostcodeInMiles": 0.3
+          }
+        ],
+        "timestamp": 1_234_567,
+        "searchPostcode": 'SW1 5RW'
+      }
     end
   end
 
-  let (:valid_assessors) do
-    [
-      {
-        "fullName": 'Gregg Sellen',
-        "distance": 0,
-        "accreditationScheme": 'accreditationScheme',
-        "schemeAssessorId": 'schemeAssessorId',
-        "telephoneNumber": '0792 102 1368',
-        "email": 'epbassessor@epb.com'
-      },
-      {
-        "fullName": 'Juliet Montague',
-        "distance": 0,
-        "accreditationScheme": 'accreditationScheme',
-        "schemeAssessorId": 'schemeAssessorId',
-        "telephoneNumber": '0792 102 1368',
-        "email": 'epbassessor@epb.com'
-      }
-    ]
+  class NoAssessorsGatewayStub
+    def search(postcode)
+      { "results": [] }
+    end
   end
 
-  let(:assessors_gateway) { AssessorsGatewayStub.new }
-  let(:find_assessor) { described_class.new(assessors_gateway) }
+  context 'when there are no assessors matched by the postcode' do
+    let(:assessors_gateway) { NoAssessorsGatewayStub.new }
+    let(:find_assessor) { described_class.new(assessors_gateway) }
 
-  #TODO: Implement assessor gateway
-  xcontext 'when there are no assessors matched by the postcode' do
-    it 'returns a nil' do
-      expect(find_assessor.execute('SW1A 2AA')).to eq(nil)
+    it 'returns empty array' do
+      expect(find_assessor.execute('SW1A+2AA')).to eq([])
     end
   end
 
   context 'when there are assessors matched by the postcode' do
+    let (:valid_assessors) do
+      [
+        {
+          "fullName": 'Gregg Sellen',
+          "distance": 0.1,
+          "accreditationScheme": 'EPBs 4 U',
+          "schemeAssessorId": '432',
+          "telephoneNumber": '0792 102 1368',
+          "email": 'epbassessor@epb.com'
+        },
+        {
+          "fullName": 'Juliet Montague',
+          "distance": 0.3,
+          "accreditationScheme": 'EPBs 4 U',
+          "schemeAssessorId": '432',
+          "telephoneNumber": '0792 102 1368',
+          "email": 'epbassessor@epb.com'
+        }
+      ]
+    end
+
+    let(:assessors_gateway) { AssessorsGatewayStub.new }
+    let(:find_assessor) { described_class.new(assessors_gateway) }
+
     it 'returns list of assessors' do
-      expect(find_assessor.execute('SW1A 2AB')).to eq(valid_assessors)
+      expect(find_assessor.execute('SW1A+2AB')).to eq(valid_assessors)
     end
   end
 end

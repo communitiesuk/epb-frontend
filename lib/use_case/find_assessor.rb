@@ -6,41 +6,22 @@ module UseCase
 
     def execute(postcode)
       response = []
-      #TODO: Implement assessor gateway
-      #assessors = @assessors_gateway.search(postcode)
 
-      assessors = [
-        {
-          "firstName": 'Gregg',
-          "lastName": 'Sellen',
-          "middleNames": 'Jon',
-          "dateOfBirth": '2020-01-03',
-          "contactDetails": {
-            "telephoneNumber": '0792 102 1368', "email": 'epbassessor@epb.com'
-          }
-        },
-        {
-          "firstName": 'Juliet',
-          "lastName": 'Montague',
-          "middleNames": 'Will',
-          "dateOfBirth": '2020-01-03',
-          "contactDetails": {
-            "telephoneNumber": '0792 102 1368', "email": 'epbassessor@epb.com'
-          }
-        }
-      ]
+      assessors = @assessors_gateway.search('SW1A+2AA')[:results]
 
-      assessors.each do |assessor|
+      assessors.each do |assessors_details|
+        assessor = assessors_details[:assessor]
         response <<
           {
             fullName: "#{assessor[:firstName]} #{assessor[:lastName]}",
-            distance: 0,
-            accreditationScheme: 'accreditationScheme',
-            schemeAssessorId: 'schemeAssessorId',
+            distance: assessors_details[:distanceFromPostcodeInMiles],
+            accreditationScheme: assessor[:registeredBy][:name],
+            schemeAssessorId: assessor[:registeredBy][:schemeId],
             telephoneNumber: assessor[:contactDetails][:telephoneNumber],
             email: assessor[:contactDetails][:email]
           }
       end
+
       response
     end
   end
