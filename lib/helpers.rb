@@ -19,10 +19,11 @@ module Sinatra
         I18n.locale = params['lang'] if I18n.locale_available?(params['lang'])
       end
 
-      def http_client
+      def http_client(base_uri)
         Auth::HttpClient.new ENV['AUTH_CLIENT_ID'],
                              ENV['AUTH_CLIENT_SECRET'],
-                             ENV['AUTH_SERVER']
+                             ENV['AUTH_SERVER'],
+                             base_uri
       end
 
       def t(*args)
