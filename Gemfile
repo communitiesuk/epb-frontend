@@ -6,6 +6,7 @@ source 'https://rubygems.org' do
   group :development do
     gem 'prettier', '~> 0.16.0'
     gem 'sinatra-contrib'
+    gem 'dotenv'
   end
 
   gem 'epb_auth_tools',
