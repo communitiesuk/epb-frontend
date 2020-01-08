@@ -38,7 +38,7 @@ deploy-app: ## Deploys the app to PaaS
 
 .PHONY: test
 test:
-	@bundle exec rake spec
+	@bundle exec rake spec STAGE=integration
 
 .PHONY: run
 run:
