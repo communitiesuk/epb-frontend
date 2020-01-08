@@ -1,5 +1,6 @@
 # JetBrains IDEs
 .idea/
+.env
 
 # NPM
 node_modules/
