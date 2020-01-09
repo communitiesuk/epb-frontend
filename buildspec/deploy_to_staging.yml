@@ -17,6 +17,7 @@ env:
     AUTH_CLIENT_ID: "epbr-frontend-auth-client-id-staging"
     AUTH_CLIENT_SECRET: "epbr-frontend-auth-client-secret-staging"
     AUTH_SERVER: "epbr-auth-server-staging"
+    EPB_API_URL: "epbr-api-url-staging"
 
 phases:
   install:
