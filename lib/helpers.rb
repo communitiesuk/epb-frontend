@@ -19,13 +19,6 @@ module Sinatra
         I18n.locale = params['lang'] if I18n.locale_available?(params['lang'])
       end
 
-      def http_client(base_uri)
-        Auth::HttpClient.new ENV['AUTH_CLIENT_ID'],
-                             ENV['AUTH_CLIENT_SECRET'],
-                             ENV['AUTH_SERVER'],
-                             base_uri
-      end
-
       def t(*args)
         I18n.t(*args)
       end
@@ -38,90 +31,6 @@ module Sinatra
         url
       end
 
-      def assessors
-        [
-          {
-            "fullName": 'William Turner',
-            "distance": 0.2,
-            "accreditationScheme": 'CIBSIE',
-            "schemeAssessorId": '1234',
-            "telephoneNumber": '0792 102 1368',
-            "email": 'epbassessor@epb.com'
-          },
-          {
-            "fullName": 'Gregg Sellen',
-            "distance": 0.6,
-            "accreditationScheme": 'Sterling',
-            "schemeAssessorId": '1234',
-            "telephoneNumber": '0792 102 1368',
-            "email": 'epbassessor@epb.com'
-          },
-          {
-            "fullName": 'Juliet Montague',
-            "distance": 0.6,
-            "accreditationScheme": 'ECMK',
-            "schemeAssessorId": '1234',
-            "telephoneNumber": '0792 102 1368',
-            "email": 'epbassessor@epb.com'
-          },
-          {
-            "fullName": 'Wallace Gromit',
-            "distance": 0.6,
-            "accreditationScheme": 'ECMK',
-            "schemeAssessorId": '1234',
-            "telephoneNumber": '0792 102 1368',
-            "email": 'epbassessor@epb.com'
-          },
-          {
-            "fullName": 'Martha Stewart',
-            "distance": 0.9,
-            "accreditationScheme": 'CIBSIE',
-            "schemeAssessorId": '1234',
-            "telephoneNumber": '0792 102 1368',
-            "email": 'epbassessor@epb.com'
-          },
-          {
-            "fullName": 'Donald Duck',
-            "distance": 1,
-            "accreditationScheme": 'ECMK',
-            "schemeAssessorId": '1234',
-            "telephoneNumber": '0792 102 1368',
-            "email": 'epbassessor@epb.com'
-          },
-          {
-            "fullName": 'John Doe',
-            "distance": 2,
-            "accreditationScheme": 'CIBSIE',
-            "schemeAssessorId": '1234',
-            "telephoneNumber": '0792 102 1368',
-            "email": 'epbassessor@epb.com'
-          },
-          {
-            "fullName": 'Harald Anderson',
-            "distance": 2,
-            "accreditationScheme": 'Elmhurst Energy',
-            "schemeAssessorId": '1234',
-            "telephoneNumber": '0792 102 1368',
-            "email": 'epbassessor@epb.com'
-          },
-          {
-            "fullName": 'Daniel Adams',
-            "distance": 4,
-            "accreditationScheme": 'Elmhurst Energy',
-            "schemeAssessorId": '1234',
-            "telephoneNumber": '0792 102 2368',
-            "email": 'epbassessor@epb.com'
-          },
-          {
-            "fullName": 'Craig Bass',
-            "distance": 5,
-            "accreditationScheme": 'ECMK',
-            "schemeAssessorId": '1234',
-            "telephoneNumber": '0792 102 1388',
-            "email": 'epbassessor@epb.com'
-          }
-        ]
-      end
     end
   end
 end
