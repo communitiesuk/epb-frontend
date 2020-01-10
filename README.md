@@ -14,16 +14,31 @@ Follow the steps below to get started.
 
 ## Run tests
 
-# Prerequisite for Taiko journey tests
+### Prerequisite for Taiko journey tests
 
 * Yarn (should be installed globally using `npm i -g yarn`)
 
-# Test suites
+### Test suites
 
 * RSPEC tests: `make test`
 * Journey tests: `make journey`
 
 ## Start
+
+### Environment configuration
+
+The frontend needs to authenticate and connect to the API.  The following 
+environment variables should be set to specify the auth server and API server to
+use:
+
+```bash
+AUTH_CLIENT_ID=<client-id-that-exists-in-auth-server>
+AUTH_CLIENT_SECRET=<secret-for-auth-server>
+AUTH_SERVER=<url-of-auth-server>
+EPB_API_URL=<url-of-epb-api>
+```
+
+### Running the frontend
 
 Change directory into the root of the cloned folder:
 
