@@ -2,8 +2,10 @@ require 'i18n'
 require 'i18n/backend/fallbacks'
 require 'sinatra/base'
 require 'sinatra/url_for'
-
+require_relative 'container'
 require_relative 'helpers'
+require './lib/gateway/assessors_gateway'
+require './lib/use_case/find_assessor'
 
 class FrontendService < Sinatra::Base
   helpers Sinatra::FrontendService::Helpers
@@ -17,10 +19,11 @@ class FrontendService < Sinatra::Base
     also_reload 'lib/**/*.rb'
   end
 
-  def initialize
+  def initialize(app = nil, container)
+    super(app)
     setup_locales
 
-    super
+    @container = container
   end
 
   before { set_locale }
@@ -38,10 +41,13 @@ class FrontendService < Sinatra::Base
     @errors = {}
     @erb_template = :find_assessor_by_postcode
 
+    response = @container.get_object(:find_assessor_use_case)
+
     if params['postcode']
       if valid_postcode.match(params['postcode'])
         @page_title = t('find_assessor_results.head.title')
         @erb_template = :find_assessor_by_postcode_results
+        @results = response.execute(params['postcode'])
       else
         status 400
         @errors[:postcode] = t('find_assessor_by_postcode.postcode_error')
@@ -50,7 +56,7 @@ class FrontendService < Sinatra::Base
 
     @page_title = t('find_assessor_by_postcode.head.title')
     erb @erb_template,
-        layout: :layout, locals: { errors: @errors, results: assessors }
+        layout: :layout, locals: { errors: @errors, results: @results }
   end
 
   get '/schemes' do
