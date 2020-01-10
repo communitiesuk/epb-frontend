@@ -30,7 +30,6 @@ module Sinatra
 
         url
       end
-
     end
   end
 end
