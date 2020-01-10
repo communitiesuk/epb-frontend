@@ -1,9 +1,25 @@
 require 'rspec'
 require 'rack/test'
+require 'gateway/assessors_gateway'
+require 'stubs/oauth_stub'
+require 'use_case/find_assessor'
+
+ENV['AUTH_CLIENT_ID'] = 'test.id'
+ENV['AUTH_CLIENT_SECRET'] = 'test.client.secret'
+ENV['AUTH_SERVER'] = 'http://localhost:9292'
+ENV['EPB_API_URL'] = 'http://example.com'
 
 module RSpecMixin
   def app
-    described_class
+    container = Container.new(OAuth2Stub::Client)
+
+    described_class.new(container)
+  end
+end
+
+module RSpecUnitMixin
+  def container
+    Container.new(OAuth2Stub::Client)
   end
 end
 
@@ -19,6 +35,8 @@ RSpec.configure do |config|
   end
 
   config.shared_context_metadata_behavior = :apply_to_host_groups
+
+  config.filter_run_when_matching :focus
 end
 
 RSpec::Matchers.define(:redirect_to) do |path|
