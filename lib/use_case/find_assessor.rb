@@ -7,7 +7,7 @@ module UseCase
     def execute(postcode)
       response = []
 
-      assessors = @assessors_gateway.search('SW1A+2AA')[:results]
+      assessors = @assessors_gateway.search(postcode)[:results]
 
       assessors.each do |assessors_details|
         assessor = assessors_details[:assessor]

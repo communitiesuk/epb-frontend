@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-require 'use_case/find_assessor'
 
 describe UseCase::FindAssessor do
   class AssessorsGatewayStub
