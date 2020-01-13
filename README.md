@@ -32,9 +32,9 @@ environment variables should be set to specify the auth server and API server to
 use:
 
 ```bash
-AUTH_CLIENT_ID=<client-id-that-exists-in-auth-server>
-AUTH_CLIENT_SECRET=<secret-for-auth-server>
-AUTH_SERVER=<url-of-auth-server>
+EPB_AUTH_CLIENT_ID=<client-id-that-exists-in-auth-server>
+EPB_AUTH_CLIENT_SECRET=<secret-for-auth-server>
+EPB_AUTH_SERVER=<url-of-auth-server>
 EPB_API_URL=<url-of-epb-api>
 ```
 

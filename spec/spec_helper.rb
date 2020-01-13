@@ -4,9 +4,9 @@ require 'gateway/assessors_gateway'
 require 'stubs/oauth_stub'
 require 'use_case/find_assessor'
 
-ENV['AUTH_CLIENT_ID'] = 'test.id'
-ENV['AUTH_CLIENT_SECRET'] = 'test.client.secret'
-ENV['AUTH_SERVER'] = 'http://localhost:9292'
+ENV['EPB_AUTH_CLIENT_ID'] = 'test.id'
+ENV['EPB_AUTH_CLIENT_SECRET'] = 'test.client.secret'
+ENV['EPB_AUTH_SERVER'] = 'http://localhost:9292'
 ENV['EPB_API_URL'] = 'http://example.com'
 
 module RSpecMixin

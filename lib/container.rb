@@ -1,9 +1,9 @@
 class Container
   def initialize(oauth_client = OAuth2::Client)
     internal_api_client =
-      Auth::HttpClient.new ENV['AUTH_CLIENT_ID'],
-                           ENV['AUTH_CLIENT_SECRET'],
-                           ENV['AUTH_SERVER'],
+      Auth::HttpClient.new ENV['EPB_AUTH_CLIENT_ID'],
+                           ENV['EPB_AUTH_CLIENT_SECRET'],
+                           ENV['EPB_AUTH_SERVER'],
                            ENV['EPB_API_URL'],
                            oauth_client
 

@@ -14,9 +14,9 @@ env:
     PAAS_SPACE: "epbr-govpaas-staging-space"
     PAAS_API: "epbr-govpaas-api"
     PAAS_ORG: "epbr-govpaas-orgname"
-    AUTH_CLIENT_ID: "epbr-frontend-auth-client-id-staging"
-    AUTH_CLIENT_SECRET: "epbr-frontend-auth-client-secret-staging"
-    AUTH_SERVER: "epbr-auth-server-staging"
+    EPB_AUTH_CLIENT_ID: "epbr-frontend-auth-client-id-staging"
+    EPB_AUTH_CLIENT_SECRET: "epbr-frontend-auth-client-secret-staging"
+    EPB_AUTH_SERVER: "epbr-auth-server-staging"
     EPB_API_URL: "epbr-api-url-staging"
 
 phases:
