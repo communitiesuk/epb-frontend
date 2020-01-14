@@ -75,51 +75,55 @@ describe 'find assessor' do
     end
 
     context 'when entering a valid postcode' do
-
       before do
-      stub_request(:get, 'http://test-api.gov.uk/api/assessors/search/SW1A%202AA')
-          .to_return(status: 200, body: {
-              "results": [
-                  {
-                      "assessor": {
-                          "firstName": 'Juan',
-                          "lastName": 'Uno',
-                          "contactDetails": {
-                              "telephoneNumber": 'string', "email": 'user@example.com'
-                          },
-                          "searchResultsComparisonPostcode": 'SW1A 1AA',
-                          "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' }
-                      },
-                      "distanceFromPostcodeInMiles": 0.1
+        stub_request(
+          :get,
+          'http://test-api.gov.uk/api/assessors/search/SW1A%202AA'
+        )
+          .to_return(
+          status: 200,
+          body: {
+            "results": [
+              {
+                "assessor": {
+                  "firstName": 'Juan',
+                  "lastName": 'Uno',
+                  "contactDetails": {
+                    "telephoneNumber": 'string', "email": 'user@example.com'
                   },
-                  {
-                      "assessor": {
-                          "firstName": 'Doux',
-                          "lastName": 'Twose',
-                          "contactDetails": {
-                              "telephoneNumber": 'string', "email": 'user@example.com'
-                          },
-                          "searchResultsComparisonPostcode": 'SW1A 1AA',
-                          "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' }
-                      },
-                      "distanceFromPostcodeInMiles": 0.26780459
+                  "searchResultsComparisonPostcode": 'SW1A 1AA',
+                  "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' }
+                },
+                "distanceFromPostcodeInMiles": 0.1
+              },
+              {
+                "assessor": {
+                  "firstName": 'Doux',
+                  "lastName": 'Twose',
+                  "contactDetails": {
+                    "telephoneNumber": 'string', "email": 'user@example.com'
                   },
-                  {
-                      "assessor": {
-                          "firstName": 'Tri',
-                          "lastName": 'Triple',
-                          "contactDetails": {
-                              "telephoneNumber": 'string', "email": 'user@example.com'
-                          },
-                          "searchResultsComparisonPostcode": 'SW1A 1AA',
-                          "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' }
-                      },
-                      "distanceFromPostcodeInMiles": 0.3
-                  }
-              ],
-              "searchPostcode": 'SW1 5RW'
-          }.to_json)
-
+                  "searchResultsComparisonPostcode": 'SW1A 1AA',
+                  "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' }
+                },
+                "distanceFromPostcodeInMiles": 0.26780459
+              },
+              {
+                "assessor": {
+                  "firstName": 'Tri',
+                  "lastName": 'Triple',
+                  "contactDetails": {
+                    "telephoneNumber": 'string', "email": 'user@example.com'
+                  },
+                  "searchResultsComparisonPostcode": 'SW1A 1AA',
+                  "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' }
+                },
+                "distanceFromPostcodeInMiles": 0.3
+              }
+            ],
+            "searchPostcode": 'SW1 5RW'
+          }.to_json
+        )
       end
 
       let(:response) { get '/find-an-assessor/search?postcode=SW1A+2AA' }

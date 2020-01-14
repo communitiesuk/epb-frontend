@@ -21,5 +21,5 @@ source 'https://rubygems.org' do
   gem 'sinatra-url-for',
       git: 'https://github.com/emk/sinatra-url-for.git', branch: 'master'
 
-  gem "webmock", "~> 3.7"
+  gem 'webmock', '~> 3.7'
 end

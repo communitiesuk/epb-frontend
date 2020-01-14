@@ -12,55 +12,54 @@ describe 'find assessor by postcode' do
 
     before do
       stub_request(:get, 'http://test-api.gov.uk/api/assessors/search/SW1A+2AA')
-          .to_return(status: 200, body: {
-              "results": [
-                  {
-                      "assessor": {
-                          "firstName": 'Juan',
-                          "lastName": 'Uno',
-                          "contactDetails": {
-                              "telephoneNumber": 'string', "email": 'user@example.com'
-                          },
-                          "searchResultsComparisonPostcode": 'SW1A 1AA',
-                          "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' }
-                      },
-                      "distanceFromPostcodeInMiles": 0.1
-                  },
-                  {
-                      "assessor": {
-                          "firstName": 'Doux',
-                          "lastName": 'Twose',
-                          "contactDetails": {
-                              "telephoneNumber": 'string', "email": 'user@example.com'
-                          },
-                          "searchResultsComparisonPostcode": 'SW1A 1AA',
-                          "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' }
-                      },
-                      "distanceFromPostcodeInMiles": 0.26780459
-                  },
-                  {
-                      "assessor": {
-                          "firstName": 'Tri',
-                          "lastName": 'Triple',
-                          "contactDetails": {
-                              "telephoneNumber": 'string', "email": 'user@example.com'
-                          },
-                          "searchResultsComparisonPostcode": 'SW1A 1AA',
-                          "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' }
-                      },
-                      "distanceFromPostcodeInMiles": 0.3
-                  }
-              ],
-              "searchPostcode": 'SW1 5RW'
-          }.to_json)
-
+        .to_return(
+        status: 200,
+        body: {
+          "results": [
+            {
+              "assessor": {
+                "firstName": 'Juan',
+                "lastName": 'Uno',
+                "contactDetails": {
+                  "telephoneNumber": 'string', "email": 'user@example.com'
+                },
+                "searchResultsComparisonPostcode": 'SW1A 1AA',
+                "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' }
+              },
+              "distanceFromPostcodeInMiles": 0.1
+            },
+            {
+              "assessor": {
+                "firstName": 'Doux',
+                "lastName": 'Twose',
+                "contactDetails": {
+                  "telephoneNumber": 'string', "email": 'user@example.com'
+                },
+                "searchResultsComparisonPostcode": 'SW1A 1AA',
+                "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' }
+              },
+              "distanceFromPostcodeInMiles": 0.26780459
+            },
+            {
+              "assessor": {
+                "firstName": 'Tri',
+                "lastName": 'Triple',
+                "contactDetails": {
+                  "telephoneNumber": 'string', "email": 'user@example.com'
+                },
+                "searchResultsComparisonPostcode": 'SW1A 1AA',
+                "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' }
+              },
+              "distanceFromPostcodeInMiles": 0.3
+            }
+          ],
+          "searchPostcode": 'SW1 5RW'
+        }.to_json
+      )
     end
 
     # TODO: Modify test once implement the search by postcode api
     it 'checks the number of assessors returned from the api' do
-
-
-
       expect(response.count).to eq(3)
     end
 
@@ -85,13 +84,10 @@ describe 'find assessor by postcode' do
     let(:response) { find_assessor.execute('BF1+3AA') }
     before do
       stub_request(:get, 'http://test-api.gov.uk/api/assessors/search/BF1+3AA')
-          .to_return(status: 200, body: {
-              "results": [
-
-              ],
-              "searchPostcode": 'SW1 5RW'
-          }.to_json)
-
+        .to_return(
+        status: 200,
+        body: { "results": [], "searchPostcode": 'SW1 5RW' }.to_json
+      )
     end
 
     it 'returns empty results' do

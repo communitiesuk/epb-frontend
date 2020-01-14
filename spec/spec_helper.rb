@@ -37,12 +37,15 @@ RSpec.configure do |config|
   WebMock.disable_net_connect!(allow_localhost: true)
 
   config.before(:each) do
-    WebMock.stub_request(:post, "http://test-auth-server.gov.uk/oauth/token").
-        to_return(status: 200, body: {"access_token" => 'abc', 'expires_in' => 3600, 'token_type' => 'bearer'}.to_json, headers: {
-            'Content-Type'=> 'application/json'
-        })
+    WebMock.stub_request(:post, 'http://test-auth-server.gov.uk/oauth/token')
+      .to_return(
+      status: 200,
+      body: {
+        'access_token' => 'abc', 'expires_in' => 3_600, 'token_type' => 'bearer'
+      }.to_json,
+      headers: { 'Content-Type' => 'application/json' }
+    )
   end
-
 end
 
 RSpec::Matchers.define(:redirect_to) do |path|
