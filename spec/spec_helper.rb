@@ -3,6 +3,7 @@ require 'rack/test'
 require 'gateway/assessors_gateway'
 require 'stubs/internal_client_stub'
 require 'use_case/find_assessor'
+require 'webmock/rspec'
 
 ENV['EPB_AUTH_CLIENT_ID'] = 'test.id'
 ENV['EPB_AUTH_CLIENT_SECRET'] = 'test.client.secret'
@@ -37,6 +38,7 @@ RSpec.configure do |config|
   config.shared_context_metadata_behavior = :apply_to_host_groups
 
   config.filter_run_when_matching :focus
+  WebMock.disable_net_connect!(allow_localhost: true)
 end
 
 RSpec::Matchers.define(:redirect_to) do |path|
