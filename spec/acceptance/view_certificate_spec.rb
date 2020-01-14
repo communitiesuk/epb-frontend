@@ -9,7 +9,10 @@ describe 'view certificate' do
       )
         .to_return(
         status: 200,
-        body: { addressSummary: '2 Marsham Street, London, SW1B 2BB', assessmentId: '123-456'}.to_json
+        body: {
+          addressSummary: '2 Marsham Street, London, SW1B 2BB',
+          assessmentId: '123-456'
+        }.to_json
       )
     end
 
