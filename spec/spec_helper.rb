@@ -1,7 +1,7 @@
 require 'rspec'
 require 'rack/test'
 require 'gateway/assessors_gateway'
-require 'stubs/oauth_stub'
+require 'stubs/internal_client_stub'
 require 'use_case/find_assessor'
 
 ENV['EPB_AUTH_CLIENT_ID'] = 'test.id'
