@@ -58,7 +58,6 @@ describe 'find assessor by postcode' do
       )
     end
 
-    # TODO: Modify test once implement the search by postcode api
     it 'checks the number of assessors returned from the api' do
       expect(response.count).to eq(3)
     end
@@ -75,7 +74,6 @@ describe 'find assessor by postcode' do
     end
   end
 
-  # TODO: Uncomment once implement the search by postcode api
   context 'given invalid postcode' do
     let(:assessors_gateway) do
       Gateway::AssessorsGateway.new(internal_api_client)

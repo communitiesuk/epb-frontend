@@ -58,7 +58,6 @@ describe Gateway::AssessorsGateway do
       )
     end
 
-    # TODO: Modify the test once implement the search by postcode api
     it 'checks the number of assessors returned from the api' do
       expect(response[:results].count).to eq(3)
     end
