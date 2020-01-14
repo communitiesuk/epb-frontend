@@ -9,7 +9,7 @@ module UseCase
     end
 
     def execute(assessment_id)
-      assessment = @assessments_gateway.fetch(assessment_id)
+      assessment = @assessments_gateway.fetch_assessment(assessment_id)
       unless assessment
         raise AssessmentNotFound
       end

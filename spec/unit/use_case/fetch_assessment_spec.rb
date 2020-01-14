@@ -1,7 +1,7 @@
 require './lib/use_case/fetch_assessment'
 describe UseCase::FetchAssessment do
   class GatewayStub
-    def fetch(certificate_id)
+    def fetch_assessment(certificate_id)
       certificate_id == 'doesnt-exist' ? nil : {}
     end
   end

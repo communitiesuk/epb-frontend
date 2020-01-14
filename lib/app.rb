@@ -68,6 +68,20 @@ class FrontendService < Sinatra::Base
     200
   end
 
+  get '/energy-performance-certificate/:assessment_id' do
+    use_case = @container.get_object(:fetch_assessment_use_case)
+    assessment = use_case.execute(params[:assessment_id])
+    200
+
+  rescue Exception => e
+    case e
+    when UseCase::FetchAssessment::AssessmentNotFound
+      404
+    else
+      500
+    end
+  end
+
   # 404 Error!
   not_found do
     status 404
