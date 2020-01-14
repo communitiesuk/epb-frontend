@@ -12,10 +12,6 @@ describe Gateway::AssessorsGateway do
 
     let(:assessor) { response[:results].first[:assessor] }
     before do
-      stub_request(:post, "http://test-auth-server.gov.uk/oauth/token").
-          to_return(status: 200, body: {"access_token" => 'abc', 'expires_in' => 3600, 'token_type' => 'bearer'}.to_json, headers: {
-              'Content-Type'=> 'application/json'
-          })
       stub_request(:get, 'http://test-api.gov.uk/api/assessors/search/SW1A+2AA')
           .to_return(status: 200, body: {
               "results": [
