@@ -112,3 +112,6 @@ cy:
     contact_details_text: 'Welsh: Contact details'
     accredited_by_text: 'Welsh: Accredited by'
     assessor_id_text: 'Welsh: Assessor ID'
+
+  domestic_epc:
+    top_heading: 'Tystysgrif Perfformiad Ynni'

@@ -7,7 +7,10 @@ describe 'view certificate' do
         :get,
         'http://test-api.gov.uk/api/assessments/domestic-energy-performance/123-456'
       )
-        .to_return(status: 200, body: {}.to_json)
+        .to_return(
+        status: 200,
+        body: { addressSummary: '2 Marsham Street, London, SW1B 2BB' }.to_json
+      )
     end
 
     let(:response) { get '/energy-performance-certificate/123-456' }
@@ -17,9 +20,11 @@ describe 'view certificate' do
     end
 
     it 'shows the EPC title' do
-      expect(response.body).to include(
-        'Energy performance certificate'
-      )
+      expect(response.body).to include('Energy performance certificate')
+    end
+
+    it 'shows the address summary' do
+      expect(response.body).to include('2 Marsham Street, London, SW1B 2BB')
     end
   end
   context 'when the assessment doesnt exist' do

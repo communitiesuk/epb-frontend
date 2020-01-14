@@ -72,7 +72,8 @@ class FrontendService < Sinatra::Base
     use_case = @container.get_object(:fetch_assessment_use_case)
     assessment = use_case.execute(params[:assessment_id])
     200
-    erb :domestic_energy_performance_certificate, layout: :layout
+    erb :domestic_energy_performance_certificate,
+        layout: :layout, locals: { assessment: assessment }
   rescue Exception => e
     case e
     when UseCase::FetchAssessment::AssessmentNotFound
