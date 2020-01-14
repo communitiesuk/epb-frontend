@@ -15,6 +15,12 @@ describe 'view certificate' do
     it 'returns status 200' do
       expect(response.status).to eq(200)
     end
+
+    it 'shows the EPC title' do
+      expect(response.body).to include(
+        'Energy performance certificate'
+      )
+    end
   end
   context 'when the assessment doesnt exist' do
     before do
