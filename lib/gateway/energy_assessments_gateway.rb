@@ -6,12 +6,8 @@ module Gateway
 
     def fetch_assessment(assessment_id)
       route = URI.encode("/api/assessments/domestic-energy-performance/#{assessment_id}")
-      begin
-        response = @internal_api_client.get(route)
-        JSON.parse(response.body, symbolize_names: true)
-      rescue Exception => e
-        nil
-      end
+      response = @internal_api_client.get(route)
+      response.status == 404? nil : JSON.parse(response.body, symbolize_names: true)
     end
   end
 end
