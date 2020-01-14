@@ -67,4 +67,10 @@ class FrontendService < Sinatra::Base
   get '/healthcheck' do
     200
   end
+
+  # 404 Error!
+  not_found do
+    status 404
+    erb :error_page_404
+  end
 end

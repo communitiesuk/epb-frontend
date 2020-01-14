@@ -34,10 +34,11 @@ describe 'Running behind Rack server' do
   end
 
   describe 'GET non-existent page' do
-    it 'returns status 404' do
+    it 'returns custom 404 error page' do
       req = Net::HTTP::Get.new('/this-page-does-not-exist')
       response = request.request(req)
       expect(response.code).to eq('404')
+      expect(response.body).to include('If you typed the web address, check it is correct.')
     end
   end
 end
