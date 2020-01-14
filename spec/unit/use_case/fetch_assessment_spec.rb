@@ -6,7 +6,7 @@ describe UseCase::FetchAssessment do
     end
   end
 
-  context 'when a certificate is returned' do
+  context 'when an assessment is returned' do
     let(:assessments_gateway) { GatewayStub.new }
     let(:fetch_assessment) { described_class.new(assessments_gateway) }
 
@@ -15,7 +15,7 @@ describe UseCase::FetchAssessment do
     end
   end
 
-  context 'when a certificate is not found' do
+  context 'when an assessment is not found' do
     let(:assessments_gateway) { GatewayStub.new }
     let(:fetch_assessment) { described_class.new(assessments_gateway) }
 
