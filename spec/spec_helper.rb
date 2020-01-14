@@ -1,36 +1,32 @@
 require 'rspec'
 require 'rack/test'
 require 'gateway/assessors_gateway'
-require 'stubs/internal_client_stub'
 require 'use_case/find_assessor'
+require 'app'
 require 'webmock/rspec'
+
+AUTH_URL = 'http://test-auth-server.gov.uk'
 
 ENV['EPB_AUTH_CLIENT_ID'] = 'test.id'
 ENV['EPB_AUTH_CLIENT_SECRET'] = 'test.client.secret'
-ENV['EPB_AUTH_SERVER'] = 'http://localhost:9292'
-ENV['EPB_API_URL'] = 'http://example.com'
-
-module RSpecMixin
-  def app
-    container = Container.new(Stub::InternalClient.new)
-
-    described_class.new(container)
-  end
-end
+ENV['EPB_AUTH_SERVER'] = AUTH_URL
+ENV['EPB_API_URL'] = 'http://test-api.gov.uk'
 
 module RSpecUnitMixin
   def container
-    Container.new(Stub::InternalClient.new)
+    Container.new
   end
 end
 
+def app
+  FrontendService.new
+end
+
 RSpec.configure do |config|
-  config.include RSpecMixin
   config.include Rack::Test::Methods
   config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
   end
-
   config.mock_with :rspec do |mocks|
     mocks.verify_partial_doubles = true
   end

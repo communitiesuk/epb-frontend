@@ -19,11 +19,11 @@ class FrontendService < Sinatra::Base
     also_reload 'lib/**/*.rb'
   end
 
-  def initialize(app = nil, container)
+  def initialize
     super(app)
     setup_locales
 
-    @container = container
+    @container = Container.new
   end
 
   before { set_locale }
