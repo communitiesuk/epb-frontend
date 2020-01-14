@@ -9,7 +9,7 @@ describe Gateway::EnergyAssessmentsGateway do
   end
 
 
-  context 'when a certificate doesnt exist' do
+  context 'when an assessment doesnt exist' do
     before do
       stub_request(:get, 'http://test-api.gov.uk/api/assessments/domestic-energy-performance/123-456')
           .to_return(
@@ -24,7 +24,7 @@ describe Gateway::EnergyAssessmentsGateway do
     end
   end
 
-  context 'when a certificate does exist' do
+  context 'when an assessment does exist' do
     before do
       stub_request(:get, 'http://test-api.gov.uk/api/assessments/domestic-energy-performance/122-456')
           .to_return(
