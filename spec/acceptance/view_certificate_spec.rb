@@ -36,5 +36,9 @@ describe 'view certificate' do
     it 'returns status 404' do
       expect(response.status).to eq(404)
     end
+
+    it 'shows the error page' do
+      expect(response.body).to include('<h1 class="govuk-heading-xl">Page not found</h1>')
+    end
   end
 end
