@@ -11,7 +11,7 @@ ENV['EPB_API_URL'] = 'http://example.com'
 
 module RSpecMixin
   def app
-    container = Container.new(OAuth2Stub::Client)
+    container = Container.new(Stub::InternalClient.new)
 
     described_class.new(container)
   end
@@ -19,7 +19,7 @@ end
 
 module RSpecUnitMixin
   def container
-    Container.new(OAuth2Stub::Client)
+    Container.new(Stub::InternalClient.new)
   end
 end
 

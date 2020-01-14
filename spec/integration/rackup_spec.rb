@@ -38,7 +38,9 @@ describe 'Running behind Rack server' do
       req = Net::HTTP::Get.new('/this-page-does-not-exist')
       response = request.request(req)
       expect(response.code).to eq('404')
-      expect(response.body).to include('If you typed the web address, check it is correct.')
+      expect(response.body).to include(
+        'If you typed the web address, check it is correct.'
+      )
     end
   end
 end

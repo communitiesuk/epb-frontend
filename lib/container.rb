@@ -1,11 +1,13 @@
 class Container
-  def initialize(oauth_client = OAuth2::Client)
-    internal_api_client =
-      Auth::HttpClient.new ENV['EPB_AUTH_CLIENT_ID'],
-                           ENV['EPB_AUTH_CLIENT_SECRET'],
-                           ENV['EPB_AUTH_SERVER'],
-                           ENV['EPB_API_URL'],
-                           oauth_client
+  def initialize(internal_api_client = nil)
+    unless internal_api_client
+      internal_api_client =
+        Auth::HttpClient.new ENV['EPB_AUTH_CLIENT_ID'],
+                             ENV['EPB_AUTH_CLIENT_SECRET'],
+                             ENV['EPB_AUTH_SERVER'],
+                             ENV['EPB_API_URL'],
+                             OAuth2::Client
+    end
 
     assessors_gateway = Gateway::AssessorsGateway.new(internal_api_client)
 
