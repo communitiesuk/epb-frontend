@@ -4,13 +4,10 @@ describe 'view certificate' do
   context 'when the assessment exists' do
     before do
       stub_request(
-          :get,
-          'http://test-api.gov.uk/api/assessments/domestic-energy-performance/123-456'
+        :get,
+        'http://test-api.gov.uk/api/assessments/domestic-energy-performance/123-456'
       )
-          .to_return(
-              status: 200,
-              body: {}.to_json
-          )
+        .to_return(status: 200, body: {}.to_json)
     end
 
     let(:response) { get '/energy-performance-certificate/123-456' }
@@ -22,13 +19,12 @@ describe 'view certificate' do
   context 'when the assessment doesnt exist' do
     before do
       stub_request(
-          :get,
-          'http://test-api.gov.uk/api/assessments/domestic-energy-performance/123-456'
+        :get,
+        'http://test-api.gov.uk/api/assessments/domestic-energy-performance/123-456'
       )
-          .to_return(
-              status: 404,
-              body: {'error': 'cant find assessment'}.to_json
-          )
+        .to_return(
+        status: 404, body: { 'error': 'cant find assessment' }.to_json
+      )
     end
 
     let(:response) { get '/energy-performance-certificate/123-456' }
@@ -38,7 +34,9 @@ describe 'view certificate' do
     end
 
     it 'shows the error page' do
-      expect(response.body).to include('<h1 class="govuk-heading-xl">Page not found</h1>')
+      expect(response.body).to include(
+        '<h1 class="govuk-heading-xl">Page not found</h1>'
+      )
     end
   end
 end

@@ -72,7 +72,6 @@ class FrontendService < Sinatra::Base
     use_case = @container.get_object(:fetch_assessment_use_case)
     assessment = use_case.execute(params[:assessment_id])
     200
-
   rescue Exception => e
     case e
     when UseCase::FetchAssessment::AssessmentNotFound

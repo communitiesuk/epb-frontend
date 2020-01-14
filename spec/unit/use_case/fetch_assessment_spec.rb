@@ -20,7 +20,9 @@ describe UseCase::FetchAssessment do
     let(:fetch_assessment) { described_class.new(assessments_gateway) }
 
     it 'raises an error' do
-      expect{fetch_assessment.execute('doesnt-exist')}.to raise_exception(UseCase::FetchAssessment::AssessmentNotFound)
+      expect { fetch_assessment.execute('doesnt-exist') }.to raise_exception(
+        UseCase::FetchAssessment::AssessmentNotFound
+      )
     end
   end
 end
