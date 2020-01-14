@@ -7,7 +7,7 @@ cat << EOF
 ---
 applications:
 - name: $APPLICATION_NAME
-  memory: 64M
+  memory: 1G
   buildpacks:
   - ruby_buildpack
   health-check-type: http
