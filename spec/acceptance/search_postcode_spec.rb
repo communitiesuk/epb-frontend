@@ -53,7 +53,7 @@ describe 'find assessor by postcode' do
               "distanceFromPostcodeInMiles": 0.3
             }
           ],
-          "searchPostcode": 'SW1 5RW'
+          "searchPostcode": 'SW1A 2AA'
         }.to_json
       )
     end
@@ -84,7 +84,7 @@ describe 'find assessor by postcode' do
       stub_request(:get, 'http://test-api.gov.uk/api/assessors/search/BF1+3AA')
         .to_return(
         status: 200,
-        body: { "results": [], "searchPostcode": 'SW1 5RW' }.to_json
+        body: { "results": [], "searchPostcode": 'BF1 3AA' }.to_json
       )
     end
 

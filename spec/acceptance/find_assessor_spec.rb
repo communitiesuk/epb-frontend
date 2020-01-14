@@ -121,7 +121,7 @@ describe 'find assessor' do
                 "distanceFromPostcodeInMiles": 0.3
               }
             ],
-            "searchPostcode": 'SW1 5RW'
+            "searchPostcode": 'SW1A 2AA'
           }.to_json
         )
       end
