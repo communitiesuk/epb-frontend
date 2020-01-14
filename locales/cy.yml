@@ -115,3 +115,5 @@ cy:
 
   domestic_epc:
     top_heading: 'Tystysgrif Perfformiad Ynni'
+    labels:
+      certificate_number: 'Welsh: Certificate number'

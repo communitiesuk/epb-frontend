@@ -9,7 +9,7 @@ describe 'view certificate' do
       )
         .to_return(
         status: 200,
-        body: { addressSummary: '2 Marsham Street, London, SW1B 2BB' }.to_json
+        body: { addressSummary: '2 Marsham Street, London, SW1B 2BB', assessmentId: '123-456'}.to_json
       )
     end
 
@@ -25,6 +25,10 @@ describe 'view certificate' do
 
     it 'shows the address summary' do
       expect(response.body).to include('2 Marsham Street, London, SW1B 2BB')
+    end
+
+    it 'shows the certificate number' do
+      expect(response.body).to include('123-456')
     end
   end
   context 'when the assessment doesnt exist' do

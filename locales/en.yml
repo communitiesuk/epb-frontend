@@ -115,4 +115,5 @@ en:
 
   domestic_epc:
     top_heading: 'Energy performance certificate'
-
+    labels:
+      certificate_number: 'Certificate number'
