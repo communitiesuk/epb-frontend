@@ -1,6 +1,8 @@
 module UseCase
   class FindAssessor
     class PostcodeNotRegistered < Exception; end
+    class PostcodeNotValid < Exception; end
+    class SchemeNotFound < Exception; end
 
     def initialize(assessors_gateway)
       @assessors_gateway = assessors_gateway
@@ -13,7 +15,9 @@ module UseCase
 
       if gateway_response.include?(:errors)
         gateway_response[:errors].each do |error|
-          raise PostcodeNotRegistered if error[:code] == "NOT_FOUND"
+          raise PostcodeNotRegistered if error[:code] == 'NOT_FOUND'
+          raise PostcodeNotValid if error[:code] == 'INVALID_REQUEST'
+          raise SchemeNotFound if error[:code] == 'SCHEME_NOT_FOUND'
         end
       end
 
