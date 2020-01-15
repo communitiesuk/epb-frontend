@@ -4,64 +4,69 @@
       <%= t('find_assessor_results.top_heading') %>
     </h1>
 
-    <p class="govuk-body">
-      <%= t('find_assessor_results.description') %>
-    </p>
+    <% if results.size > 0 %>
+      <p class="govuk-body">
+        <%= t('find_assessor_results.description') %>
+      </p>
 
-    <details class="govuk-details" data-module="govuk-details">
-      <summary class="govuk-details__summary">
-        <span class="govuk-details__summary-text">
-          <%= t('find_assessor_results.accreditation_summary_title') %>
-        </span>
-      </summary>
-      <div class="govuk-details__text">
-        <%= t('find_assessor_results.accreditation_summary_text') %>
-      </div>
-    </details>
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            <%= t('find_assessor_results.accreditation_summary_title') %>
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <%= t('find_assessor_results.accreditation_summary_text') %>
+        </div>
+      </details>
 
-    <ul class="govuk-list">
-     <% results.each do |assessor| %>
-        <li>
-          <div>
-            <h2 class="govuk-heading-m"><%= assessor[:fullName] %></h2>
-            <div>
-              <dl class="govuk-summary-list govuk-summary-list--no-border">
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key"><%= t('find_assessor_results.distance.heading') %></dt>
-                  <dd class="govuk-summary-list__value">
-                    <% if assessor[:distance]<1 %>
-                      <%= t('find_assessor_results.distance.default_miles_away_text') %>
-                    <% else %>
-                    <%= assessor[:distance] %> <%= t('find_assessor_results.distance.miles_away_text') %>
-                    <% end %>
-                  </dd>
+      <ul class="govuk-list">
+          <% results.each do |assessor| %>
+            <li>
+              <div>
+                <h2 class="govuk-heading-m"><%= assessor[:fullName] %></h2>
+                <div>
+                  <dl class="govuk-summary-list govuk-summary-list--no-border">
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key"><%= t('find_assessor_results.distance.heading') %></dt>
+                      <dd class="govuk-summary-list__value">
+                        <% if assessor[:distance]<1 %>
+                          <%= t('find_assessor_results.distance.default_miles_away_text') %>
+                        <% else %>
+                        <%= assessor[:distance] %> <%= t('find_assessor_results.distance.miles_away_text') %>
+                        <% end %>
+                      </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key"><%= t('find_assessor_results.contact_details_text') %></dt>
+                      <dd class="govuk-summary-list__value">
+                        <p>
+                          <a href="tel:{{assessor.phone}}"><%= assessor[:telephoneNumber] %></a>
+                        </p>
+                        <p>
+                          <a href="mailto:{{assessor.email}}"><%= assessor[:email] %></a>
+                        </p>
+                      </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key"><%= t('find_assessor_results.accredited_by_text') %></dt>
+                      <dd class="govuk-summary-list__value"><%= assessor[:accreditationScheme] %></dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key"><%= t('find_assessor_results.assessor_id_text') %></dt>
+                      <dd class="govuk-summary-list__value"><%= assessor[:schemeAssessorId] %></dd>
+                    </div>
+                  </dl>
                 </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key"><%= t('find_assessor_results.contact_details_text') %></dt>
-                  <dd class="govuk-summary-list__value">
-                    <p>
-                      <a href="tel:{{assessor.phone}}"><%= assessor[:telephoneNumber] %></a>
-                    </p>
-                    <p>
-                      <a href="mailto:{{assessor.email}}"><%= assessor[:email] %></a>
-                    </p>
-                  </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key"><%= t('find_assessor_results.accredited_by_text') %></dt>
-
-                  <dd class="govuk-summary-list__value"><%= assessor[:accreditationScheme] %></dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key"><%= t('find_assessor_results.assessor_id_text') %></dt>
-                  <dd class="govuk-summary-list__value"><%= assessor[:schemeAssessorId] %></dd>
-                </div>
-              </dl>
-            </div>
-          </div>
-          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-        </li>
-      <% end %>
-    </ul>
+              </div>
+              <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+            </li>
+          <% end %>
+      </ul>
+    <% else %>
+      <p class="govuk-body">
+        <%= t('find_assessor_results.no_assessors') %>
+      </p>
+    <% end %>
   </div>
 </div>
