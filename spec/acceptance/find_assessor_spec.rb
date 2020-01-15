@@ -101,7 +101,8 @@ describe 'find assessor' do
                   "firstName": 'Doux',
                   "lastName": 'Twose',
                   "contactDetails": {
-                    "telephoneNumber": 'string', "email": 'user@example.com'
+                    "telephoneNumber": '07921 021 368',
+                    "email": 'user@example.com'
                   },
                   "searchResultsComparisonPostcode": 'SW1A 1AA',
                   "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' }
@@ -118,7 +119,7 @@ describe 'find assessor' do
                   "searchResultsComparisonPostcode": 'SW1A 1AA',
                   "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' }
                 },
-                "distance": 0.3
+                "distance": 1.36
               }
             ],
             "searchPostcode": 'SW1A 2AA'
@@ -134,16 +135,28 @@ describe 'find assessor' do
 
       it 'displays the find an assessor page heading' do
         expect(response.body).to include(
-                                   'Results for energy assessors near you'
-                                 )
+          'Results for energy assessors near you'
+        )
       end
 
-      it 'shows the name of a person' do
+      it 'shows the name of an entry' do
         expect(response.body).to include('Juan Uno')
       end
 
-      it 'shows the email of a person' do
+      it 'shows the email of an entry' do
         expect(response.body).to include('user@example.com')
+      end
+
+      it 'shows a clickable email' do
+        expect(response.body).to include('mailto:user@example.com')
+      end
+
+      it 'shows a phone number of an entry' do
+        expect(response.body).to include('07921 021 368')
+      end
+
+      it 'shows the correct distance' do
+        expect(response.body).to include('1.4'+' '+I18n.t('find_assessor_results.distance.miles_away_text'))
       end
     end
 
@@ -154,12 +167,9 @@ describe 'find assessor' do
           'http://test-api.gov.uk/api/assessors/search/E1%204FF'
         )
           .to_return(
-            status: 200,
-            body: {
-              "results": [],
-              "searchPostcode": 'E1+4FF'
-            }.to_json
-          )
+          status: 200,
+          body: { "results": [], "searchPostcode": 'E1+4FF' }.to_json
+        )
       end
 
       let(:response) { get '/find-an-assessor/search?postcode=E1+4FF' }
@@ -170,12 +180,14 @@ describe 'find assessor' do
 
       it 'displays the find an assessor page heading' do
         expect(response.body).to include(
-                                   'Results for energy assessors near you'
-                                 )
+          'Results for energy assessors near you'
+        )
       end
 
       it 'explains that no assessors are nearby' do
-        expect(response.body).to include(I18n.t('find_assessor_results.no_assessors'))
+        expect(response.body).to include(
+          I18n.t('find_assessor_results.no_assessors')
+        )
       end
     end
   end
