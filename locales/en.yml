@@ -103,6 +103,7 @@ en:
       title: 'Energy performance of buildings register - Results for energy assessors near you'
     top_heading: 'Results for energy assessors near you'
     description: 'Contact an assessor listed below to book an energy assessment.'
+    no_assessors: 'There are no assessors near you at this point.'
     accreditation_summary_title: 'What is an accreditation scheme'
     accreditation_summary_text: 'Accreditation schemes check that all the assessors listed below are qualified to carry out energy assessments on residential properties, and to issue Energy Performance Certificates.'
     distance:
