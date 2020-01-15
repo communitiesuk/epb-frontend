@@ -134,8 +134,48 @@ describe 'find assessor' do
 
       it 'displays the find an assessor page heading' do
         expect(response.body).to include(
-          'Results for energy assessors near you'
+                                   'Results for energy assessors near you'
+                                 )
+      end
+
+      it 'shows the name of a person' do
+        expect(response.body).to include('Juan Uno')
+      end
+
+      it 'shows the email of a person' do
+        expect(response.body).to include('user@example.com')
+      end
+    end
+
+    context 'when entering a valid postcode where no assessors are near' do
+      before do
+        stub_request(
+          :get,
+          'http://test-api.gov.uk/api/assessors/search/E1%204FF'
         )
+          .to_return(
+            status: 200,
+            body: {
+              "results": [],
+              "searchPostcode": 'E1+4FF'
+            }.to_json
+          )
+      end
+
+      let(:response) { get '/find-an-assessor/search?postcode=E1+4FF' }
+
+      it 'returns status 200' do
+        expect(response.status).to eq(200)
+      end
+
+      it 'displays the find an assessor page heading' do
+        expect(response.body).to include(
+                                   'Results for energy assessors near you'
+                                 )
+      end
+
+      it 'explains that no assessors are nearby' do
+        expect(response.body).to include(I18n.t('find_assessor_results.no_assessors'))
       end
     end
   end
