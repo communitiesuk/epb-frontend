@@ -75,119 +75,203 @@ describe 'find assessor' do
     end
 
     context 'when entering a valid postcode' do
-      before do
-        stub_request(
-          :get,
-          'http://test-api.gov.uk/api/assessors/search/SW1A%202AA'
-        )
-          .to_return(
-          status: 200,
-          body: {
-            "results": [
-              {
-                "assessor": {
-                  "firstName": 'Juan',
-                  "lastName": 'Uno',
-                  "contactDetails": {
-                    "telephoneNumber": 'string', "email": 'user@example.com'
+      context 'shows page' do
+        before do
+          stub_request(
+            :get,
+            'http://test-api.gov.uk/api/assessors/search/SW1A%202AA'
+          )
+            .to_return(
+            status: 200,
+            body: {
+              "results": [
+                {
+                  "assessor": {
+                    "firstName": 'Juan',
+                    "lastName": 'Uno',
+                    "contactDetails": {
+                      "telephoneNumber": 'string', "email": 'user@example.com'
+                    },
+                    "searchResultsComparisonPostcode": 'SW1A 1AA',
+                    "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' }
                   },
-                  "searchResultsComparisonPostcode": 'SW1A 1AA',
-                  "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' }
+                  "distance": 0.1
                 },
-                "distance": 0.1
-              },
-              {
-                "assessor": {
-                  "firstName": 'Doux',
-                  "lastName": 'Twose',
-                  "contactDetails": {
-                    "telephoneNumber": '07921 021 368',
-                    "email": 'user@example.com'
+                {
+                  "assessor": {
+                    "firstName": 'Doux',
+                    "lastName": 'Twose',
+                    "contactDetails": {
+                      "telephoneNumber": '07921 021 368',
+                      "email": 'user@example.com'
+                    },
+                    "searchResultsComparisonPostcode": 'SW1A 1AA',
+                    "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' }
                   },
-                  "searchResultsComparisonPostcode": 'SW1A 1AA',
-                  "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' }
+                  "distance": 0.26780459
                 },
-                "distance": 0.26780459
-              },
-              {
-                "assessor": {
-                  "firstName": 'Tri',
-                  "lastName": 'Triple',
-                  "contactDetails": {
-                    "telephoneNumber": 'string', "email": 'user@example.com'
+                {
+                  "assessor": {
+                    "firstName": 'Tri',
+                    "lastName": 'Triple',
+                    "contactDetails": {
+                      "telephoneNumber": 'string', "email": 'user@example.com'
+                    },
+                    "searchResultsComparisonPostcode": 'SW1A 1AA',
+                    "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' }
                   },
-                  "searchResultsComparisonPostcode": 'SW1A 1AA',
-                  "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' }
-                },
-                "distance": 1.36
-              }
-            ],
-            "searchPostcode": 'SW1A 2AA'
-          }.to_json
-        )
+                  "distance": 1.36
+                }
+              ],
+              "searchPostcode": 'SW1A 2AA'
+            }.to_json
+          )
+        end
+
+        let(:response) { get '/find-an-assessor/search?postcode=SW1A+2AA' }
+
+        it 'returns status 200' do
+          expect(response.status).to eq(200)
+        end
+
+        it 'displays the find an assessor page heading' do
+          expect(response.body).to include(
+            'Results for energy assessors near you'
+          )
+        end
+
+        it 'shows the name of an entry' do
+          expect(response.body).to include('Juan Uno')
+        end
+
+        it 'shows the email of an entry' do
+          expect(response.body).to include('user@example.com')
+        end
+
+        it 'shows a clickable email' do
+          expect(response.body).to include('mailto:user@example.com')
+        end
+
+        it 'shows a phone number of an entry' do
+          expect(response.body).to include('07921 021 368')
+        end
+
+        it 'shows the correct distance' do
+          expect(response.body).to include(
+            '1.4' + ' ' +
+              I18n.t('find_assessor_results.distance.miles_away_text')
+          )
+        end
       end
 
-      let(:response) { get '/find-an-assessor/search?postcode=SW1A+2AA' }
+      context 'where no assessors are near' do
+        before do
+          stub_request(
+            :get,
+            'http://test-api.gov.uk/api/assessors/search/E1%204FF'
+          )
+            .to_return(
+            status: 200,
+            body: { "results": [], "searchPostcode": 'E1+4FF' }.to_json
+          )
+        end
 
-      it 'returns status 200' do
-        expect(response.status).to eq(200)
+        let(:response) { get '/find-an-assessor/search?postcode=E1+4FF' }
+
+        it 'returns status 200' do
+          expect(response.status).to eq(200)
+        end
+
+        it 'displays the find an assessor page heading' do
+          expect(response.body).to include(
+            'Results for energy assessors near you'
+          )
+        end
+
+        it 'explains that no assessors are nearby' do
+          expect(response.body).to include(
+            I18n.t('find_assessor_results.no_assessors')
+          )
+        end
       end
 
-      it 'displays the find an assessor page heading' do
-        expect(response.body).to include(
-          'Results for energy assessors near you'
-        )
+      context 'where the postcode doesnt exist' do
+        before do
+          stub_request(
+            :get,
+            'http://test-api.gov.uk/api/assessors/search/B11%204FF'
+          )
+            .to_return(
+            status: 200,
+            body: {
+              "errors": [
+                {
+                  "code": 'NOT_FOUND',
+                  "message": 'The requested postcode is not registered'
+                }
+              ]
+            }.to_json
+          )
+        end
+
+        let(:response) { get '/find-an-assessor/search?postcode=B11+4FF' }
+
+        it 'returns status 404' do
+          expect(response.status).to eq(404)
+        end
       end
 
-      it 'shows the name of an entry' do
-        expect(response.body).to include('Juan Uno')
+      context 'where the requested postcode is malformed' do
+        before do
+          stub_request(
+            :get,
+            'http://test-api.gov.uk/api/assessors/search/C11%204FF'
+          )
+            .to_return(
+            status: 200,
+            body: {
+              "errors": [
+                {
+                  "code": 'INVALID_REQUEST',
+                  "title": 'The requested postcode is not valid'
+                }
+              ]
+            }.to_json
+          )
+        end
+
+        let(:response) { get '/find-an-assessor/search?postcode=C11+4FF' }
+
+        it 'returns status 400' do
+          expect(response.status).to eq(400)
+        end
       end
 
-      it 'shows the email of an entry' do
-        expect(response.body).to include('user@example.com')
-      end
+      context 'where there is no scheme' do
+        before do
+          stub_request(
+            :get,
+            'http://test-api.gov.uk/api/assessors/search/D11%204FF'
+          )
+            .to_return(
+            status: 200,
+            body: {
+              "errors": [
+                {
+                  "code": 'SCHEME_NOT_FOUND',
+                  "message":
+                    'There is no scheme for one of the requested assessor'
+                }
+              ]
+            }.to_json
+          )
+        end
 
-      it 'shows a clickable email' do
-        expect(response.body).to include('mailto:user@example.com')
-      end
+        let(:response) { get '/find-an-assessor/search?postcode=D11+4FF' }
 
-      it 'shows a phone number of an entry' do
-        expect(response.body).to include('07921 021 368')
-      end
-
-      it 'shows the correct distance' do
-        expect(response.body).to include('1.4'+' '+I18n.t('find_assessor_results.distance.miles_away_text'))
-      end
-    end
-
-    context 'when entering a valid postcode where no assessors are near' do
-      before do
-        stub_request(
-          :get,
-          'http://test-api.gov.uk/api/assessors/search/E1%204FF'
-        )
-          .to_return(
-          status: 200,
-          body: { "results": [], "searchPostcode": 'E1+4FF' }.to_json
-        )
-      end
-
-      let(:response) { get '/find-an-assessor/search?postcode=E1+4FF' }
-
-      it 'returns status 200' do
-        expect(response.status).to eq(200)
-      end
-
-      it 'displays the find an assessor page heading' do
-        expect(response.body).to include(
-          'Results for energy assessors near you'
-        )
-      end
-
-      it 'explains that no assessors are nearby' do
-        expect(response.body).to include(
-          I18n.t('find_assessor_results.no_assessors')
-        )
+        it 'returns status 500' do
+          expect(response.status).to eq(500)
+        end
       end
     end
   end
