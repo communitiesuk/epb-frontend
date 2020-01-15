@@ -33,7 +33,7 @@
                         <% if assessor[:distance]<1 %>
                           <%= t('find_assessor_results.distance.default_miles_away_text') %>
                         <% else %>
-                        <%= assessor[:distance] %> <%= t('find_assessor_results.distance.miles_away_text') %>
+                        <%= ssessor[:distance].round(1) %> <%= t('find_assessor_results.distance.miles_away_text') %>
                         <% end %>
                       </dd>
                     </div>
