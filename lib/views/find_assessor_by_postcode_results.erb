@@ -41,10 +41,10 @@
                       <dt class="govuk-summary-list__key"><%= t('find_assessor_results.contact_details_text') %></dt>
                       <dd class="govuk-summary-list__value">
                         <p>
-                          <a href="tel:{{assessor.phone}}"><%= assessor[:telephoneNumber] %></a>
+                          <a href="tel:<%= assessor[:telephoneNumber] %>"><%= assessor[:telephoneNumber] %></a>
                         </p>
                         <p>
-                          <a href="mailto:{{assessor.email}}"><%= assessor[:email] %></a>
+                          <a href="mailto:<%= assessor[:email] %>"><%= assessor[:email] %></a>
                         </p>
                       </dd>
                     </div>
