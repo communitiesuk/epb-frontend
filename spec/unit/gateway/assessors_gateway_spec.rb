@@ -26,7 +26,7 @@ describe Gateway::AssessorsGateway do
                 "searchResultsComparisonPostcode": 'SW1A 1AA',
                 "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' }
               },
-              "distanceFromPostcodeInMiles": 0.1
+              "distance": 0.1
             },
             {
               "assessor": {
@@ -38,7 +38,7 @@ describe Gateway::AssessorsGateway do
                 "searchResultsComparisonPostcode": 'SW1A 1AA',
                 "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' }
               },
-              "distanceFromPostcodeInMiles": 0.26780459
+              "distance": 0.26780459
             },
             {
               "assessor": {
@@ -50,7 +50,7 @@ describe Gateway::AssessorsGateway do
                 "searchResultsComparisonPostcode": 'SW1A 1AA',
                 "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' }
               },
-              "distanceFromPostcodeInMiles": 0.3
+              "distance": 0.3
             }
           ],
           "searchPostcode": 'SW1A 2AA'
