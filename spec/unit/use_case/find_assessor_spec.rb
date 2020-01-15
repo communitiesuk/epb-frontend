@@ -83,7 +83,7 @@ describe UseCase::FindAssessor do
     end
   end
 
-  it 'returns an error when the postcode is not registered' do
+  it 'returns an error when the postcode doesnt exist' do
     find_assessors_without_existing_postcode =
       described_class.new(AssessorsGatewayWithoutExistingPostcode.new)
 

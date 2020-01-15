@@ -100,7 +100,7 @@ describe Gateway::AssessorsGateway do
     end
   end
 
-  context 'when the postcode is not registered' do
+  context 'when the postcode doesnt exist' do
     let(:response) { gateway.search('AF1+3AA') }
 
     before do
@@ -118,7 +118,7 @@ describe Gateway::AssessorsGateway do
       )
     end
 
-    it 'returns not found error response' do
+    it 'returns not found error' do
       expect(response).to eq(
         {
           "errors": [
@@ -182,7 +182,7 @@ describe Gateway::AssessorsGateway do
       )
     end
 
-    it 'returns invalid request error' do
+    it 'returns scheme not found error' do
       expect(response).to eq(
         {
           "errors": [
