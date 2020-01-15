@@ -47,7 +47,11 @@ class FrontendService < Sinatra::Base
       if valid_postcode.match(params['postcode'])
         @page_title = t('find_assessor_results.head.title')
         @erb_template = :find_assessor_by_postcode_results
-        @results = response.execute(params['postcode'])
+        begin
+          @results = response.execute(params['postcode'])
+        rescue UseCase::FindAssessor::PostcodeNotRegistered => e
+          not_found
+        end
       else
         status 400
         @errors[:postcode] = t('find_assessor_by_postcode.postcode_error')
