@@ -1,14 +1,8 @@
 # frozen_string_literal: true
 
 describe UseCase::FetchAssessment do
-  class GatewayStub
-    def fetch_assessment(certificate_id)
-      certificate_id == 'doesnt-exist' ? nil : {}
-    end
-  end
-
   context 'when an assessment is returned' do
-    let(:assessments_gateway) { GatewayStub.new }
+    let(:assessments_gateway) { EnergyAssessmentsGatewayStub.new }
     let(:fetch_assessment) { described_class.new(assessments_gateway) }
 
     it 'returns empty array' do
@@ -17,7 +11,7 @@ describe UseCase::FetchAssessment do
   end
 
   context 'when an assessment is not found' do
-    let(:assessments_gateway) { GatewayStub.new }
+    let(:assessments_gateway) { EnergyAssessmentsGatewayStub.new }
     let(:fetch_assessment) { described_class.new(assessments_gateway) }
 
     it 'raises an error' do

@@ -12,51 +12,7 @@ describe Gateway::AssessorsGateway do
 
     let(:assessor) { response[:results].first[:assessor] }
     before do
-      stub_request(:get, 'http://test-api.gov.uk/api/assessors/search/SW1A+2AA')
-        .to_return(
-        status: 200,
-        body: {
-          "results": [
-            {
-              "assessor": {
-                "firstName": 'Juan',
-                "lastName": 'Uno',
-                "contactDetails": {
-                  "telephoneNumber": 'string', "email": 'user@example.com'
-                },
-                "searchResultsComparisonPostcode": 'SW1A 1AA',
-                "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' }
-              },
-              "distance": 0.1
-            },
-            {
-              "assessor": {
-                "firstName": 'Doux',
-                "lastName": 'Twose',
-                "contactDetails": {
-                  "telephoneNumber": 'string', "email": 'user@example.com'
-                },
-                "searchResultsComparisonPostcode": 'SW1A 1AA',
-                "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' }
-              },
-              "distance": 0.26780459
-            },
-            {
-              "assessor": {
-                "firstName": 'Tri',
-                "lastName": 'Triple',
-                "contactDetails": {
-                  "telephoneNumber": 'string', "email": 'user@example.com'
-                },
-                "searchResultsComparisonPostcode": 'SW1A 1AA',
-                "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' }
-              },
-              "distance": 0.3
-            }
-          ],
-          "searchPostcode": 'SW1A 2AA'
-        }.to_json
-      )
+      SearchPostcodeStub.search('SW1A+2AA')
     end
 
     it 'checks the number of assessors returned from the api' do
@@ -89,11 +45,7 @@ describe Gateway::AssessorsGateway do
     let(:response) { gateway.search('BF1+3AA') }
 
     before do
-      stub_request(:get, 'http://test-api.gov.uk/api/assessors/search/BF1+3AA')
-        .to_return(
-        status: 200,
-        body: { "results": [], "searchPostcode": 'BF1 3AA' }.to_json
-      )
+      SearchPostcodeNoAssessorsStub.search
     end
 
     it 'returns empty results' do
@@ -105,18 +57,7 @@ describe Gateway::AssessorsGateway do
     let(:response) { gateway.search('AF1+3AA') }
 
     before do
-      stub_request(:get, 'http://test-api.gov.uk/api/assessors/search/AF1+3AA')
-        .to_return(
-        status: 200,
-        body: {
-          "errors": [
-            {
-              "code": 'NOT_FOUND',
-              "message": 'The requested postcode is not registered'
-            }
-          ]
-        }.to_json
-      )
+      SearchPostcodeUnregisteredPostcodeStub.search
     end
 
     it 'returns not found error' do
@@ -135,18 +76,7 @@ describe Gateway::AssessorsGateway do
     let(:response) { gateway.search('1+3AA') }
 
     before do
-      stub_request(:get, 'http://test-api.gov.uk/api/assessors/search/1+3AA')
-        .to_return(
-        status: 200,
-        body: {
-          "errors": [
-            {
-              "code": 'INVALID_REQUEST',
-              "title": 'The requested postcode is not valid'
-            }
-          ]
-        }.to_json
-      )
+      SearchPostcodeInvalidPostcodeStub.search
     end
 
     it 'returns invalid request error' do
@@ -165,18 +95,7 @@ describe Gateway::AssessorsGateway do
     let(:response) { gateway.search('1+3AA') }
 
     before do
-      stub_request(:get, 'http://test-api.gov.uk/api/assessors/search/1+3AA')
-        .to_return(
-        status: 200,
-        body: {
-          "errors": [
-            {
-              "code": 'SCHEME_NOT_FOUND',
-              "message": 'There is no scheme for one of the requested assessor'
-            }
-          ]
-        }.to_json
-      )
+      SearchPostcodeNoSchemeStub.search
     end
 
     it 'returns scheme not found error' do
