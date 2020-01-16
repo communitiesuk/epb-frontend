@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-describe 'find assessor by postcode' do
+describe 'Acceptance::Postcodes' do
   include RSpecUnitMixin
 
   let(:internal_api_client) { container.get_object(:internal_api_client) }

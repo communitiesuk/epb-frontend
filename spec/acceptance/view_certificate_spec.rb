@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-describe 'view certificate' do
+describe 'Acceptance::Certificate' do
   include RSpecFrontendServiceMixin
 
   context 'when the assessment exists' do

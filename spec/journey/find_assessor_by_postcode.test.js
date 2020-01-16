@@ -1,7 +1,7 @@
 const {openBrowser, goto, write, into, click, closeBrowser, textBox, text, intercept} = require('taiko');
 const {spawn} = require('child_process');
 
-describe('Finding an assessor by postcode', () => {
+describe('Journey::Assessor', () => {
   let rackup_pid;
   let rackup_stdout = '';
   let rackup_resolved = false;

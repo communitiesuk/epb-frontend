@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-describe 'find assessor' do
+describe 'Acceptance::Assessor' do
   include RSpecFrontendServiceMixin
 
   describe '.get /find-an-assessor' do

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-describe 'FrontendService', 'internationalisation' do
+describe 'Acceptance::Locales' do
   include RSpecFrontendServiceMixin
 
   describe '.get / with different language parameters' do

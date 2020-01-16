@@ -2,7 +2,7 @@
 
 require 'net/http'
 
-describe 'Running behind Rack server' do
+describe 'Integration::Rackup' do
   before(:all) do
     process =
       IO.popen(

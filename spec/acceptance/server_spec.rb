@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-describe 'FrontendService', 'running' do
+describe 'Acceptance::Server' do
   include RSpecFrontendServiceMixin
 
   describe '.get /' do
