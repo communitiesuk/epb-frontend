@@ -84,7 +84,6 @@ class FrontendService < Sinatra::Base
     200
     erb :domestic_energy_performance_certificate,
         layout: :layout, locals: { assessment: assessment }
-
   rescue Exception => e
     case e
     when UseCase::FetchAssessment::AssessmentNotFound

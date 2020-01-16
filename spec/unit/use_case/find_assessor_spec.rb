@@ -87,27 +87,27 @@ describe UseCase::FindAssessor do
     find_assessors_without_existing_postcode =
       described_class.new(AssessorsGatewayWithoutExistingPostcode.new)
 
-    expect do
+    expect {
       find_assessors_without_existing_postcode.execute('E10 3AD')
-    end.to raise_exception UseCase::FindAssessor::PostcodeNotRegistered
+    }.to raise_exception UseCase::FindAssessor::PostcodeNotRegistered
   end
 
   it 'returns an error when there is no scheme' do
     find_assessor_without_scheme =
       described_class.new(AssessorsGatewayWithoutScheme.new)
 
-    expect do
+    expect {
       find_assessor_without_scheme.execute('E11 0GL')
-    end.to raise_exception UseCase::FindAssessor::SchemeNotFound
+    }.to raise_exception UseCase::FindAssessor::SchemeNotFound
   end
 
   it 'returns an error when the postcode is not valid' do
     find_assessor_without_valid_postcode =
       described_class.new(AssessorsGatewayWithoutValidPostcode.new)
 
-    expect do
+    expect {
       find_assessor_without_valid_postcode.execute('E19 0GL')
-    end.to raise_exception UseCase::FindAssessor::PostcodeNotValid
+    }.to raise_exception UseCase::FindAssessor::PostcodeNotValid
   end
 
   context 'when there are no assessors matched by the postcode' do
