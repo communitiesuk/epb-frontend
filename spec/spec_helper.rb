@@ -2,10 +2,15 @@
 
 require 'rspec'
 require 'rack/test'
-require 'gateway/assessors_gateway'
-require 'use_case/find_assessor'
-require 'app'
 require 'webmock/rspec'
+require 'epb_auth_tools'
+
+require 'zeitwerk'
+
+loader = Zeitwerk::Loader.new
+loader.push_dir("#{__dir__}/../lib/")
+loader.push_dir("#{__dir__}/../spec/test_doubles/")
+loader.setup
 
 AUTH_URL = 'http://test-auth-server.gov.uk'
 
@@ -20,8 +25,12 @@ module RSpecUnitMixin
   end
 end
 
-def app
-  FrontendService.new
+module RSpecFrontendServiceMixin
+  include Rack::Test::Methods
+
+  def app
+    FrontendService
+  end
 end
 
 RSpec.configure do |config|

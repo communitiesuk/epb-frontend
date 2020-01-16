@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 describe 'view certificate' do
+  include RSpecFrontendServiceMixin
+
   context 'when the assessment exists' do
     before do
       stub_request(

@@ -22,7 +22,7 @@ class FrontendService < Sinatra::Base
   end
 
   def initialize
-    super(app)
+    super
     setup_locales
 
     @container = Container.new

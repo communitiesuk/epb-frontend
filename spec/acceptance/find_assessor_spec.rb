@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 describe 'find assessor' do
+  include RSpecFrontendServiceMixin
+
   describe '.get /find-an-assessor' do
     let(:response) { get '/find-an-assessor' }
 

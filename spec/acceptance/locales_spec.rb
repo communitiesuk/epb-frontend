@@ -1,9 +1,10 @@
 # frozen_string_literal: true
 
-require 'app'
+describe 'FrontendService', 'internationalisation' do
+  include RSpecFrontendServiceMixin
 
-describe FrontendService, 'internationalisation' do
   describe '.get / with different language parameters' do
+
     let(:response_welsh) { get '/?lang=cy' }
     let(:response_english) { get '/?lang=en' }
 

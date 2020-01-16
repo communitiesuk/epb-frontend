@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-require 'app'
+describe 'FrontendService', 'running' do
+  include RSpecFrontendServiceMixin
 
-describe FrontendService, 'running' do
   describe '.get /' do
     let(:response) { get '/' }
 

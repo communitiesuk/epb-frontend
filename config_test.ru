@@ -2,7 +2,7 @@
 
 require 'net/http'
 require 'webmock'
-require './lib/app'
+require './lib/frontend_service'
 
 Dir['spec/test_doubles/*.rb'].each do |file|
   require_relative file
