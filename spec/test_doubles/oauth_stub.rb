@@ -2,7 +2,8 @@
 
 class OauthStub
   def self.token
-    WebMock.stub_request(:post, 'http://test-auth-server.gov.uk/oauth/token').with(
+    WebMock.stub_request(:post, 'http://test-auth-server.gov.uk/oauth/token')
+      .with(
       body: {
         client_id: 'test.id',
         client_secret: 'test.client.secret',

@@ -8,13 +8,7 @@ describe Gateway::EnergyAssessmentsGateway do
   end
 
   context 'when an assessment doesnt exist' do
-    before do
-      stub_request(
-        :get,
-        'http://test-api.gov.uk/api/assessments/domestic-energy-performance/123-456'
-      )
-        .to_return(status: 404, body: { error: 'not found' }.to_json)
-    end
+    before { FetchAssessmentNoAssessment.fetch }
 
     it 'returns nil' do
       result = gateway.fetch_assessment('123-456')
@@ -23,13 +17,7 @@ describe Gateway::EnergyAssessmentsGateway do
   end
 
   context 'when an assessment does exist' do
-    before do
-      stub_request(
-        :get,
-        'http://test-api.gov.uk/api/assessments/domestic-energy-performance/122-456'
-      )
-        .to_return(status: 200, body: {}.to_json)
-    end
+    before { FetchAssessmentStub.fetch }
     it 'returns assessments' do
       result = gateway.fetch_assessment('122-456')
       expect(result).to eq({})

@@ -54,7 +54,7 @@ class FrontendService < Sinatra::Base
         rescue UseCase::FindAssessor::PostcodeNotRegistered
           status 404
           @errors[:postcode] =
-              t('find_assessor_by_postcode.postcode_not_registered')
+            t('find_assessor_by_postcode.postcode_not_registered')
         rescue UseCase::FindAssessor::PostcodeNotValid
           status 400
           @errors[:postcode] = t('find_assessor_by_postcode.postcode_not_valid')

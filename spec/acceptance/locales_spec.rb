@@ -4,7 +4,6 @@ describe 'Acceptance::Locales' do
   include RSpecFrontendServiceMixin
 
   describe '.get / with different language parameters' do
-
     let(:response_welsh) { get '/?lang=cy' }
     let(:response_english) { get '/?lang=en' }
 

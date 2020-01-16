@@ -228,8 +228,8 @@ describe 'Acceptance::Assessor' do
 
         it 'displays an error message' do
           expect(response.body).to include(
-                                       '<span id="postcode-error" class="govuk-error-message">'
-                                   )
+            '<span id="postcode-error" class="govuk-error-message">'
+          )
           expect(response.body).to include('Enter a postcode that exists')
         end
       end
@@ -265,11 +265,11 @@ describe 'Acceptance::Assessor' do
 
         it 'displays an error message' do
           expect(response.body).to include(
-                                       '<span id="postcode-error" class="govuk-error-message">'
-                                   )
+            '<span id="postcode-error" class="govuk-error-message">'
+          )
           expect(response.body).to include(
-                                       'Enter a postcode that is not malformed'
-                                   )
+            'Enter a postcode that is not malformed'
+          )
         end
       end
 
@@ -305,8 +305,8 @@ describe 'Acceptance::Assessor' do
 
         it 'displays error page body' do
           expect(response.body).to include(
-                                       'There is no scheme for one of the requested assessor'
-                                   )
+            'There is no scheme for one of the requested assessor'
+          )
         end
       end
     end

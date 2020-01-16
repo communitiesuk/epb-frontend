@@ -11,9 +11,7 @@ describe Gateway::AssessorsGateway do
     let(:response) { gateway.search('SW1A+2AA') }
 
     let(:assessor) { response[:results].first[:assessor] }
-    before do
-      SearchPostcodeStub.search('SW1A+2AA')
-    end
+    before { FindAssessorStub.search('SW1A+2AA') }
 
     it 'checks the number of assessors returned from the api' do
       expect(response[:results].count).to eq(3)
@@ -44,9 +42,7 @@ describe Gateway::AssessorsGateway do
   context 'when an assessor doesnt exist' do
     let(:response) { gateway.search('BF1+3AA') }
 
-    before do
-      SearchPostcodeNoAssessorsStub.search
-    end
+    before { FindAssessorNoAssessorsStub.search }
 
     it 'returns empty results' do
       expect(response).to eq(results: [], searchPostcode: 'BF1 3AA')
@@ -56,9 +52,7 @@ describe Gateway::AssessorsGateway do
   context 'when the postcode doesnt exist' do
     let(:response) { gateway.search('AF1+3AA') }
 
-    before do
-      SearchPostcodeUnregisteredPostcodeStub.search
-    end
+    before { FindPostcodeUnregisteredPostcodeStub.search }
 
     it 'returns not found error' do
       expect(response).to eq(
@@ -75,9 +69,7 @@ describe Gateway::AssessorsGateway do
   context 'when the postcode is not valid' do
     let(:response) { gateway.search('1+3AA') }
 
-    before do
-      SearchPostcodeInvalidPostcodeStub.search
-    end
+    before { FindAssessorInvalidPostcodeStub.search }
 
     it 'returns invalid request error' do
       expect(response).to eq(
@@ -94,9 +86,7 @@ describe Gateway::AssessorsGateway do
   context 'when there is no scheme' do
     let(:response) { gateway.search('1+3AA') }
 
-    before do
-      SearchPostcodeNoSchemeStub.search
-    end
+    before { FindAssessorNoSchemeStub.search }
 
     it 'returns scheme not found error' do
       expect(response).to eq(
