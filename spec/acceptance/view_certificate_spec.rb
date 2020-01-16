@@ -4,19 +4,7 @@ describe 'Acceptance::Certificate' do
   include RSpecFrontendServiceMixin
 
   context 'when the assessment exists' do
-    before do
-      stub_request(
-        :get,
-        'http://test-api.gov.uk/api/assessments/domestic-energy-performance/123-456'
-      )
-        .to_return(
-        status: 200,
-        body: {
-          addressSummary: '2 Marsham Street, London, SW1B 2BB',
-          assessmentId: '123-456'
-        }.to_json
-      )
-    end
+    before { FetchAssessmentStub.fetch('123-456') }
 
     let(:response) { get '/energy-performance-certificate/123-456' }
 
@@ -38,13 +26,7 @@ describe 'Acceptance::Certificate' do
   end
   context 'when the assessment doesnt exist' do
     before do
-      stub_request(
-        :get,
-        'http://test-api.gov.uk/api/assessments/domestic-energy-performance/123-456'
-      )
-        .to_return(
-        status: 404, body: { 'error': 'cant find assessment' }.to_json
-      )
+      FetchAssessmentNoAssessment.fetch
     end
 
     let(:response) { get '/energy-performance-certificate/123-456' }

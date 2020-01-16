@@ -11,56 +11,7 @@ describe 'Acceptance::Postcodes' do
     context 'where assessors are near' do
       let(:response) { find_assessor.execute('SW1A+2AA') }
 
-      before do
-        stub_request(
-          :get,
-          'http://test-api.gov.uk/api/assessors/search/SW1A+2AA'
-        )
-          .to_return(
-          status: 200,
-          body: {
-            "results": [
-              {
-                "assessor": {
-                  "firstName": 'Juan',
-                  "lastName": 'Uno',
-                  "contactDetails": {
-                    "telephoneNumber": 'string', "email": 'user@example.com'
-                  },
-                  "searchResultsComparisonPostcode": 'SW1A 1AA',
-                  "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' }
-                },
-                "distance": 0.1
-              },
-              {
-                "assessor": {
-                  "firstName": 'Doux',
-                  "lastName": 'Twose',
-                  "contactDetails": {
-                    "telephoneNumber": 'string', "email": 'user@example.com'
-                  },
-                  "searchResultsComparisonPostcode": 'SW1A 1AA',
-                  "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' }
-                },
-                "distance": 0.26780459
-              },
-              {
-                "assessor": {
-                  "firstName": 'Tri',
-                  "lastName": 'Triple',
-                  "contactDetails": {
-                    "telephoneNumber": 'string', "email": 'user@example.com'
-                  },
-                  "searchResultsComparisonPostcode": 'SW1A 1AA',
-                  "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' }
-                },
-                "distance": 0.3
-              }
-            ],
-            "searchPostcode": 'SW1A 2AA'
-          }.to_json
-        )
-      end
+      before { FindAssessorStub.search('SW1A+2AA') }
 
       it 'checks the number of assessors returned from the api' do
         expect(response.count).to eq(3)
@@ -79,16 +30,7 @@ describe 'Acceptance::Postcodes' do
     end
 
     context 'where no assessors are near' do
-      before do
-        stub_request(
-          :get,
-          'http://test-api.gov.uk/api/assessors/search/BF1+3AA'
-        )
-          .to_return(
-          status: 200,
-          body: { "results": [], "searchPostcode": 'BF1 3AA' }.to_json
-        )
-      end
+      before { FindAssessorsNoNearAssessorsStub.search }
 
       it 'returns empty results' do
         expect(find_assessor.execute('BF1+3AA')).to eq([])
@@ -96,23 +38,7 @@ describe 'Acceptance::Postcodes' do
     end
 
     context 'where the postcode doesnt exist' do
-      before do
-        stub_request(
-          :get,
-          'http://test-api.gov.uk/api/assessors/search/B11+4AA'
-        )
-          .to_return(
-          status: 200,
-          body: {
-            "errors": [
-              {
-                "code": 'NOT_FOUND',
-                "message": 'The requested postcode is not registered'
-              }
-            ]
-          }.to_json
-        )
-      end
+      before { FindPostcodeUnregisteredPostcodeStub.search('B11+4AA') }
 
       it 'raises postcode not registered exception' do
         expect {
@@ -122,23 +48,7 @@ describe 'Acceptance::Postcodes' do
     end
 
     context 'where the requested postcode is malformed' do
-      before do
-        stub_request(
-          :get,
-          'http://test-api.gov.uk/api/assessors/search/C11+3FF'
-        )
-          .to_return(
-          status: 200,
-          body: {
-            "errors": [
-              {
-                "code": 'INVALID_REQUEST',
-                "title": 'The requested postcode is not valid'
-              }
-            ]
-          }.to_json
-        )
-      end
+      before { FindAssessorInvalidPostcodeStub.search('C11+3FF') }
 
       it 'raises postcode not valid exception' do
         expect {
@@ -148,24 +58,7 @@ describe 'Acceptance::Postcodes' do
     end
 
     context 'where there is no scheme' do
-      before do
-        stub_request(
-          :get,
-          'http://test-api.gov.uk/api/assessors/search/F11+3FF'
-        )
-          .to_return(
-          status: 200,
-          body: {
-            "errors": [
-              {
-                "code": 'SCHEME_NOT_FOUND',
-                "message":
-                  'There is no scheme for one of the requested assessor'
-              }
-            ]
-          }.to_json
-        )
-      end
+      before { FindAssessorNoSchemeStub.search('F11+3FF') }
 
       it 'raises scheme not found exception' do
         expect {

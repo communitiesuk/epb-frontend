@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
 class FindPostcodeUnregisteredPostcodeStub
-  def self.search
+  def self.search(postcode)
     WebMock.stub_request(
       :get,
-      'http://test-api.gov.uk/api/assessors/search/AF1+3AA'
+      "http://test-api.gov.uk/api/assessors/search/#{postcode}"
     )
       .to_return(
       status: 200,

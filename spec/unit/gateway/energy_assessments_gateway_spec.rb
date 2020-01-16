@@ -17,10 +17,15 @@ describe Gateway::EnergyAssessmentsGateway do
   end
 
   context 'when an assessment does exist' do
-    before { FetchAssessmentStub.fetch }
+    before { FetchAssessmentStub.fetch('122-456') }
     it 'returns assessments' do
       result = gateway.fetch_assessment('122-456')
-      expect(result).to eq({})
+      expect(result).to eq(
+        {
+          addressSummary: '2 Marsham Street, London, SW1B 2BB',
+          assessmentId: '123-456'
+        }
+      )
     end
   end
 end

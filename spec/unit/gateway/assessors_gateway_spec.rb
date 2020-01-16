@@ -52,7 +52,7 @@ describe Gateway::AssessorsGateway do
   context 'when the postcode doesnt exist' do
     let(:response) { gateway.search('AF1+3AA') }
 
-    before { FindPostcodeUnregisteredPostcodeStub.search }
+    before { FindPostcodeUnregisteredPostcodeStub.search('AF1+3AA') }
 
     it 'returns not found error' do
       expect(response).to eq(
@@ -69,7 +69,7 @@ describe Gateway::AssessorsGateway do
   context 'when the postcode is not valid' do
     let(:response) { gateway.search('1+3AA') }
 
-    before { FindAssessorInvalidPostcodeStub.search }
+    before { FindAssessorInvalidPostcodeStub.search('1+3AA') }
 
     it 'returns invalid request error' do
       expect(response).to eq(
@@ -86,7 +86,7 @@ describe Gateway::AssessorsGateway do
   context 'when there is no scheme' do
     let(:response) { gateway.search('1+3AA') }
 
-    before { FindAssessorNoSchemeStub.search }
+    before { FindAssessorNoSchemeStub.search('1+3AA') }
 
     it 'returns scheme not found error' do
       expect(response).to eq(
