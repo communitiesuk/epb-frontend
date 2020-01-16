@@ -1,5 +1,5 @@
-const { openBrowser, goto, write, into, click, closeBrowser, textBox, text} = require('taiko');
-const { spawn } = require('child_process');
+const {openBrowser, goto, write, into, click, closeBrowser, textBox, text, intercept} = require('taiko');
+const {spawn} = require('child_process');
 
 describe('Finding an assessor by postcode', () => {
   let rackup_pid;
@@ -10,7 +10,7 @@ describe('Finding an assessor by postcode', () => {
 
   beforeAll(async () => {
     rackup_pid = await new Promise((resolve, reject) => {
-      let rackup = spawn('make', ['run']);
+      let rackup = spawn('make', ['run', 'ARGS=config_test.ru']);
 
       rackup.stderr.on('data', line => {
         rackup_stdout += line.toString();
@@ -27,7 +27,8 @@ describe('Finding an assessor by postcode', () => {
       });
     });
 
-    await openBrowser({ args: [
+    await openBrowser({
+      args: [
         '--disable-gpu',
         '--disable-dev-shm-usage',
         '--disable-setuid-sandbox',
