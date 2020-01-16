@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 module UseCase
   class FindAssessor
-    class PostcodeNotRegistered < Exception; end
-    class PostcodeNotValid < Exception; end
-    class SchemeNotFound < Exception; end
+    class PostcodeNotRegistered < RuntimeError; end
+    class PostcodeNotValid < RuntimeError; end
+    class SchemeNotFound < RuntimeError; end
 
     def initialize(assessors_gateway)
       @assessors_gateway = assessors_gateway

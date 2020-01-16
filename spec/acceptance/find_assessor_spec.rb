@@ -82,50 +82,50 @@ describe 'find assessor' do
             'http://test-api.gov.uk/api/assessors/search/SW1A%202AA'
           )
             .to_return(
-            status: 200,
-            body: {
-              "results": [
-                {
-                  "assessor": {
-                    "firstName": 'Juan',
-                    "lastName": 'Uno',
-                    "contactDetails": {
-                      "telephoneNumber": 'string', "email": 'user@example.com'
+              status: 200,
+              body: {
+                "results": [
+                  {
+                    "assessor": {
+                      "firstName": 'Juan',
+                      "lastName": 'Uno',
+                      "contactDetails": {
+                        "telephoneNumber": 'string', "email": 'user@example.com'
+                      },
+                      "searchResultsComparisonPostcode": 'SW1A 1AA',
+                      "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' }
                     },
-                    "searchResultsComparisonPostcode": 'SW1A 1AA',
-                    "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' }
+                    "distance": 0.1
                   },
-                  "distance": 0.1
-                },
-                {
-                  "assessor": {
-                    "firstName": 'Doux',
-                    "lastName": 'Twose',
-                    "contactDetails": {
-                      "telephoneNumber": '07921 021 368',
-                      "email": 'user@example.com'
+                  {
+                    "assessor": {
+                      "firstName": 'Doux',
+                      "lastName": 'Twose',
+                      "contactDetails": {
+                        "telephoneNumber": '07921 021 368',
+                        "email": 'user@example.com'
+                      },
+                      "searchResultsComparisonPostcode": 'SW1A 1AA',
+                      "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' }
                     },
-                    "searchResultsComparisonPostcode": 'SW1A 1AA',
-                    "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' }
+                    "distance": 0.26780459
                   },
-                  "distance": 0.26780459
-                },
-                {
-                  "assessor": {
-                    "firstName": 'Tri',
-                    "lastName": 'Triple',
-                    "contactDetails": {
-                      "telephoneNumber": 'string', "email": 'user@example.com'
+                  {
+                    "assessor": {
+                      "firstName": 'Tri',
+                      "lastName": 'Triple',
+                      "contactDetails": {
+                        "telephoneNumber": 'string', "email": 'user@example.com'
+                      },
+                      "searchResultsComparisonPostcode": 'SW1A 1AA',
+                      "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' }
                     },
-                    "searchResultsComparisonPostcode": 'SW1A 1AA',
-                    "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' }
-                  },
-                  "distance": 1.36
-                }
-              ],
-              "searchPostcode": 'SW1A 2AA'
-            }.to_json
-          )
+                    "distance": 1.36
+                  }
+                ],
+                "searchPostcode": 'SW1A 2AA'
+              }.to_json
+            )
         end
 
         let(:response) { get '/find-an-assessor/search?postcode=SW1A+2AA' }
@@ -171,9 +171,9 @@ describe 'find assessor' do
             'http://test-api.gov.uk/api/assessors/search/E1%204FF'
           )
             .to_return(
-            status: 200,
-            body: { "results": [], "searchPostcode": 'E1+4FF' }.to_json
-          )
+              status: 200,
+              body: { "results": [], "searchPostcode": 'E1+4FF' }.to_json
+            )
         end
 
         let(:response) { get '/find-an-assessor/search?postcode=E1+4FF' }
@@ -202,16 +202,16 @@ describe 'find assessor' do
             'http://test-api.gov.uk/api/assessors/search/B11%204FF'
           )
             .to_return(
-            status: 200,
-            body: {
-              "errors": [
-                {
-                  "code": 'NOT_FOUND',
-                  "message": 'The requested postcode is not registered'
-                }
-              ]
-            }.to_json
-          )
+              status: 200,
+              body: {
+                "errors": [
+                  {
+                    "code": 'NOT_FOUND',
+                    "message": 'The requested postcode is not registered'
+                  }
+                ]
+              }.to_json
+            )
         end
 
         let(:response) { get '/find-an-assessor/search?postcode=B11+4FF' }
@@ -228,16 +228,16 @@ describe 'find assessor' do
             'http://test-api.gov.uk/api/assessors/search/C11%204FF'
           )
             .to_return(
-            status: 200,
-            body: {
-              "errors": [
-                {
-                  "code": 'INVALID_REQUEST',
-                  "title": 'The requested postcode is not valid'
-                }
-              ]
-            }.to_json
-          )
+              status: 200,
+              body: {
+                "errors": [
+                  {
+                    "code": 'INVALID_REQUEST',
+                    "title": 'The requested postcode is not valid'
+                  }
+                ]
+              }.to_json
+            )
         end
 
         let(:response) { get '/find-an-assessor/search?postcode=C11+4FF' }
@@ -254,17 +254,17 @@ describe 'find assessor' do
             'http://test-api.gov.uk/api/assessors/search/D11%204FF'
           )
             .to_return(
-            status: 200,
-            body: {
-              "errors": [
-                {
-                  "code": 'SCHEME_NOT_FOUND',
-                  "message":
-                    'There is no scheme for one of the requested assessor'
-                }
-              ]
-            }.to_json
-          )
+              status: 200,
+              body: {
+                "errors": [
+                  {
+                    "code": 'SCHEME_NOT_FOUND',
+                    "message":
+                      'There is no scheme for one of the requested assessor'
+                  }
+                ]
+              }.to_json
+            )
         end
 
         let(:response) { get '/find-an-assessor/search?postcode=D11+4FF' }

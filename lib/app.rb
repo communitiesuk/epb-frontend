@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'i18n'
 require 'i18n/backend/fallbacks'
 require 'sinatra/base'
@@ -82,6 +84,7 @@ class FrontendService < Sinatra::Base
     200
     erb :domestic_energy_performance_certificate,
         layout: :layout, locals: { assessment: assessment }
+
   rescue Exception => e
     case e
     when UseCase::FetchAssessment::AssessmentNotFound

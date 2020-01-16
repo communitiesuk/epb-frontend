@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require './lib/use_case/fetch_assessment'
 describe UseCase::FetchAssessment do
   class GatewayStub

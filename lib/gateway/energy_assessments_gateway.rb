@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Gateway
   class EnergyAssessmentsGateway
     def initialize(api_client)

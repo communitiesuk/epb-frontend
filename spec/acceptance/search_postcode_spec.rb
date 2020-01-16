@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 describe 'find assessor by postcode' do
   include RSpecUnitMixin
 
@@ -15,49 +17,49 @@ describe 'find assessor by postcode' do
           'http://test-api.gov.uk/api/assessors/search/SW1A+2AA'
         )
           .to_return(
-          status: 200,
-          body: {
-            "results": [
-              {
-                "assessor": {
-                  "firstName": 'Juan',
-                  "lastName": 'Uno',
-                  "contactDetails": {
-                    "telephoneNumber": 'string', "email": 'user@example.com'
+            status: 200,
+            body: {
+              "results": [
+                {
+                  "assessor": {
+                    "firstName": 'Juan',
+                    "lastName": 'Uno',
+                    "contactDetails": {
+                      "telephoneNumber": 'string', "email": 'user@example.com'
+                    },
+                    "searchResultsComparisonPostcode": 'SW1A 1AA',
+                    "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' }
                   },
-                  "searchResultsComparisonPostcode": 'SW1A 1AA',
-                  "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' }
+                  "distance": 0.1
                 },
-                "distance": 0.1
-              },
-              {
-                "assessor": {
-                  "firstName": 'Doux',
-                  "lastName": 'Twose',
-                  "contactDetails": {
-                    "telephoneNumber": 'string', "email": 'user@example.com'
+                {
+                  "assessor": {
+                    "firstName": 'Doux',
+                    "lastName": 'Twose',
+                    "contactDetails": {
+                      "telephoneNumber": 'string', "email": 'user@example.com'
+                    },
+                    "searchResultsComparisonPostcode": 'SW1A 1AA',
+                    "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' }
                   },
-                  "searchResultsComparisonPostcode": 'SW1A 1AA',
-                  "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' }
+                  "distance": 0.26780459
                 },
-                "distance": 0.26780459
-              },
-              {
-                "assessor": {
-                  "firstName": 'Tri',
-                  "lastName": 'Triple',
-                  "contactDetails": {
-                    "telephoneNumber": 'string', "email": 'user@example.com'
+                {
+                  "assessor": {
+                    "firstName": 'Tri',
+                    "lastName": 'Triple',
+                    "contactDetails": {
+                      "telephoneNumber": 'string', "email": 'user@example.com'
+                    },
+                    "searchResultsComparisonPostcode": 'SW1A 1AA',
+                    "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' }
                   },
-                  "searchResultsComparisonPostcode": 'SW1A 1AA',
-                  "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' }
-                },
-                "distance": 0.3
-              }
-            ],
-            "searchPostcode": 'SW1A 2AA'
-          }.to_json
-        )
+                  "distance": 0.3
+                }
+              ],
+              "searchPostcode": 'SW1A 2AA'
+            }.to_json
+          )
       end
 
       it 'checks the number of assessors returned from the api' do
@@ -83,9 +85,9 @@ describe 'find assessor by postcode' do
           'http://test-api.gov.uk/api/assessors/search/BF1+3AA'
         )
           .to_return(
-          status: 200,
-          body: { "results": [], "searchPostcode": 'BF1 3AA' }.to_json
-        )
+            status: 200,
+            body: { "results": [], "searchPostcode": 'BF1 3AA' }.to_json
+          )
       end
 
       it 'returns empty results' do
@@ -100,22 +102,22 @@ describe 'find assessor by postcode' do
           'http://test-api.gov.uk/api/assessors/search/B11+4AA'
         )
           .to_return(
-          status: 200,
-          body: {
-            "errors": [
-              {
-                "code": 'NOT_FOUND',
-                "message": 'The requested postcode is not registered'
-              }
-            ]
-          }.to_json
-        )
+            status: 200,
+            body: {
+              "errors": [
+                {
+                  "code": 'NOT_FOUND',
+                  "message": 'The requested postcode is not registered'
+                }
+              ]
+            }.to_json
+          )
       end
 
       it 'raises postcode not registered exception' do
-        expect {
+        expect do
           find_assessor.execute('B11+4AA')
-        }.to raise_exception UseCase::FindAssessor::PostcodeNotRegistered
+        end.to raise_exception UseCase::FindAssessor::PostcodeNotRegistered
       end
     end
 
@@ -126,22 +128,22 @@ describe 'find assessor by postcode' do
           'http://test-api.gov.uk/api/assessors/search/C11+3FF'
         )
           .to_return(
-          status: 200,
-          body: {
-            "errors": [
-              {
-                "code": 'INVALID_REQUEST',
-                "title": 'The requested postcode is not valid'
-              }
-            ]
-          }.to_json
-        )
+            status: 200,
+            body: {
+              "errors": [
+                {
+                  "code": 'INVALID_REQUEST',
+                  "title": 'The requested postcode is not valid'
+                }
+              ]
+            }.to_json
+          )
       end
 
       it 'raises postcode not valid exception' do
-        expect {
+        expect do
           find_assessor.execute('C11+3FF')
-        }.to raise_exception UseCase::FindAssessor::PostcodeNotValid
+        end.to raise_exception UseCase::FindAssessor::PostcodeNotValid
       end
     end
 
@@ -152,23 +154,23 @@ describe 'find assessor by postcode' do
           'http://test-api.gov.uk/api/assessors/search/F11+3FF'
         )
           .to_return(
-          status: 200,
-          body: {
-            "errors": [
-              {
-                "code": 'SCHEME_NOT_FOUND',
-                "message":
-                  'There is no scheme for one of the requested assessor'
-              }
-            ]
-          }.to_json
-        )
+            status: 200,
+            body: {
+              "errors": [
+                {
+                  "code": 'SCHEME_NOT_FOUND',
+                  "message":
+                    'There is no scheme for one of the requested assessor'
+                }
+              ]
+            }.to_json
+          )
       end
 
       it 'raises scheme not found exception' do
-        expect {
+        expect do
           find_assessor.execute('F11+3FF')
-        }.to raise_exception UseCase::FindAssessor::SchemeNotFound
+        end.to raise_exception UseCase::FindAssessor::SchemeNotFound
       end
     end
   end

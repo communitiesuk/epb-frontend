@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require './lib/gateway/energy_assessments_gateway'
 
 describe Gateway::EnergyAssessmentsGateway do

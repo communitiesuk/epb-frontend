@@ -6,8 +6,7 @@ describe 'view certificate' do
       stub_request(
         :get,
         'http://test-api.gov.uk/api/assessments/domestic-energy-performance/123-456'
-      )
-        .to_return(
+      ).to_return(
         status: 200,
         body: {
           addressSummary: '2 Marsham Street, London, SW1B 2BB',
@@ -39,9 +38,11 @@ describe 'view certificate' do
       stub_request(
         :get,
         'http://test-api.gov.uk/api/assessments/domestic-energy-performance/123-456'
-      )
-        .to_return(
-        status: 404, body: { 'error': 'cant find assessment' }.to_json
+      ).to_return(
+        status: 404,
+        body: {
+          'error': 'cant find assessment'
+        }.to_json
       )
     end
 

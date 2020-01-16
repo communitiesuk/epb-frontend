@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Gateway
   class AssessorsGateway
     def initialize(api_client)

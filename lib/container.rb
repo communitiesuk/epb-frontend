@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require './lib/gateway/energy_assessments_gateway'
 require './lib/use_case/fetch_assessment'
 

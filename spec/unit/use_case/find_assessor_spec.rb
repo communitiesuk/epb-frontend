@@ -2,7 +2,7 @@
 
 describe UseCase::FindAssessor do
   class AssessorsGatewayStub
-    def search(postcode)
+    def search(_postcode)
       {
         "results": [
           {
@@ -39,13 +39,13 @@ describe UseCase::FindAssessor do
   end
 
   class NoAssessorsGatewayStub
-    def search(postcode)
+    def search(_postcode)
       { "results": [] }
     end
   end
 
   class AssessorsGatewayWithoutValidPostcode
-    def search(postcode)
+    def search(_postcode)
       {
         "errors": [
           {
@@ -58,7 +58,7 @@ describe UseCase::FindAssessor do
   end
 
   class AssessorsGatewayWithoutScheme
-    def search(postcode)
+    def search(_postcode)
       {
         "errors": [
           {
@@ -71,7 +71,7 @@ describe UseCase::FindAssessor do
   end
 
   class AssessorsGatewayWithoutExistingPostcode
-    def search(postcode)
+    def search(_postcode)
       {
         "errors": [
           {
@@ -87,27 +87,27 @@ describe UseCase::FindAssessor do
     find_assessors_without_existing_postcode =
       described_class.new(AssessorsGatewayWithoutExistingPostcode.new)
 
-    expect {
+    expect do
       find_assessors_without_existing_postcode.execute('E10 3AD')
-    }.to raise_exception UseCase::FindAssessor::PostcodeNotRegistered
+    end.to raise_exception UseCase::FindAssessor::PostcodeNotRegistered
   end
 
   it 'returns an error when there is no scheme' do
     find_assessor_without_scheme =
       described_class.new(AssessorsGatewayWithoutScheme.new)
 
-    expect {
+    expect do
       find_assessor_without_scheme.execute('E11 0GL')
-    }.to raise_exception UseCase::FindAssessor::SchemeNotFound
+    end.to raise_exception UseCase::FindAssessor::SchemeNotFound
   end
 
   it 'returns an error when the postcode is not valid' do
     find_assessor_without_valid_postcode =
       described_class.new(AssessorsGatewayWithoutValidPostcode.new)
 
-    expect {
+    expect do
       find_assessor_without_valid_postcode.execute('E19 0GL')
-    }.to raise_exception UseCase::FindAssessor::PostcodeNotValid
+    end.to raise_exception UseCase::FindAssessor::PostcodeNotValid
   end
 
   context 'when there are no assessors matched by the postcode' do
@@ -120,7 +120,7 @@ describe UseCase::FindAssessor do
   end
 
   context 'when there are assessors matched by the postcode' do
-    let (:valid_assessors) do
+    let(:valid_assessors) do
       [
         {
           "fullName": 'Gregg Sellen',
