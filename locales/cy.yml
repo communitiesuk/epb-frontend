@@ -95,8 +95,13 @@ cy:
     question: 'Welsh: Enter a postcode'
     hint: 'Welsh: For example SW1A 2AA'
     postcode_error: 'Welsh: Enter a real postcode'
+    postcode_not_valid: 'Welsh: Enter a postcode that is not malformed'
+    postcode_not_registered: 'Welsh: Enter a postcode that exists'
     button_text: 'Welsh: Find'
     find_postcode: 'Welsh: Find a postcode on Royal Mail’s postcode finder'
+    scheme_not_found:
+      heading: 'Welsh: Accreditation scheme not found'
+      body: 'Welsh: There is no scheme for one of the requested assessor'
 
   find_assessor_results:
     head:
