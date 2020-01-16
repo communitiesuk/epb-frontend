@@ -48,15 +48,19 @@ class FrontendService < Sinatra::Base
     if params['postcode']
       if valid_postcode.match(params['postcode'])
         @page_title = t('find_assessor_results.head.title')
-        @erb_template = :find_assessor_by_postcode_results
         begin
           @results = response.execute(params['postcode'])
+          @erb_template = :find_assessor_by_postcode_results
         rescue UseCase::FindAssessor::PostcodeNotRegistered
-          not_found
+          status 404
+          @errors[:postcode] =
+              t('find_assessor_by_postcode.postcode_not_registered')
         rescue UseCase::FindAssessor::PostcodeNotValid
-          error(400)
+          status 400
+          @errors[:postcode] = t('find_assessor_by_postcode.postcode_not_valid')
         rescue UseCase::FindAssessor::SchemeNotFound
-          error(500)
+          status 500
+          @erb_template = :error_page_500
         end
       else
         status 400
@@ -96,6 +100,6 @@ class FrontendService < Sinatra::Base
   # 404 Error!
   not_found do
     status 404
-    erb :error_page_404
+    erb :error_page_404 unless @errors
   end
 end

@@ -221,6 +221,17 @@ describe 'Acceptance::Assessor' do
         it 'returns status 404' do
           expect(response.status).to eq(404)
         end
+
+        it 'displays the find an assessor page heading' do
+          expect(response.body).to include('Find an energy assessor')
+        end
+
+        it 'displays an error message' do
+          expect(response.body).to include(
+                                       '<span id="postcode-error" class="govuk-error-message">'
+                                   )
+          expect(response.body).to include('Enter a postcode that exists')
+        end
       end
 
       context 'where the requested postcode is malformed' do
@@ -246,6 +257,19 @@ describe 'Acceptance::Assessor' do
 
         it 'returns status 400' do
           expect(response.status).to eq(400)
+        end
+
+        it 'displays the find an assessor page heading' do
+          expect(response.body).to include('Find an energy assessor')
+        end
+
+        it 'displays an error message' do
+          expect(response.body).to include(
+                                       '<span id="postcode-error" class="govuk-error-message">'
+                                   )
+          expect(response.body).to include(
+                                       'Enter a postcode that is not malformed'
+                                   )
         end
       end
 
@@ -273,6 +297,16 @@ describe 'Acceptance::Assessor' do
 
         it 'returns status 500' do
           expect(response.status).to eq(500)
+        end
+
+        it 'displays the 500 error page heading' do
+          expect(response.body).to include('Accreditation scheme not found')
+        end
+
+        it 'displays error page body' do
+          expect(response.body).to include(
+                                       'There is no scheme for one of the requested assessor'
+                                   )
         end
       end
     end
