@@ -35,7 +35,7 @@ class FindAssessorStub
               "firstName": 'Doux',
               "lastName": 'Twose',
               "contactDetails": {
-                "telephoneNumber": 'string', "email": 'user@example.com'
+                "telephoneNumber": '07921 021 368', "email": 'user@example.com'
               },
               "searchResultsComparisonPostcode": 'SW1A 1AA',
               "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' }
@@ -52,7 +52,7 @@ class FindAssessorStub
               "searchResultsComparisonPostcode": 'SW1A 1AA',
               "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' }
             },
-            "distance": 0.3
+            "distance": 1.36
           }
         ],
         "searchPostcode": 'SW1A 2AA'
