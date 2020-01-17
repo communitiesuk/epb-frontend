@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class FindAssessorsNoNearAssessorsStub
   def self.search(postcode)
     WebMock.stub_request(

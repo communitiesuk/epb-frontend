@@ -21,10 +21,8 @@ describe Gateway::EnergyAssessmentsGateway do
     it 'returns assessments' do
       result = gateway.fetch_assessment('122-456')
       expect(result).to eq(
-        {
-          addressSummary: '2 Marsham Street, London, SW1B 2BB',
-          assessmentId: '123-456'
-        }
+        addressSummary: '2 Marsham Street, London, SW1B 2BB',
+        assessmentId: '123-456'
       )
     end
   end
