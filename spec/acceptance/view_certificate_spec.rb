@@ -35,6 +35,10 @@ describe 'Acceptance::Certificate' do
     it 'shows the type of assessment' do
       expect(response.body).to include('RdSAP')
     end
+
+    it 'shows the total floor area' do
+      expect(response.body).to include('150')
+    end
   end
 
   context 'when the assessment doesnt exist' do
