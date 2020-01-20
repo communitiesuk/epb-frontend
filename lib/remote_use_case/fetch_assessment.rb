@@ -1,19 +1,21 @@
 # frozen_string_literal: true
 
-module Gateway
-  class EnergyAssessmentsGateway
+module RemoteUseCase
+  class FetchAssessment
+    class AssessmentNotFound < RuntimeError; end
+
     def initialize(api_client)
       @internal_api_client = api_client
     end
 
-    def fetch_assessment(assessment_id)
+    def execute(assessment_id)
       route =
         URI.encode(
           "/api/assessments/domestic-energy-performance/#{assessment_id}"
         )
       response = @internal_api_client.get(route)
       if response.status == 404
-        nil
+        raise RemoteUseCase::FetchAssessment::AssessmentNotFound
       else
         assessment_details = JSON.parse(response.body, symbolize_names: true)
 
@@ -32,6 +34,8 @@ module Gateway
           total_floor_area: assessment_details[:totalFloorArea],
           type_of_assessment: assessment_details[:typeOfAssessment]
         }
+
+        raise AssessmentNotFound unless result
 
         result
       end

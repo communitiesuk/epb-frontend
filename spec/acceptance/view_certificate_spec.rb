@@ -46,7 +46,7 @@ describe 'Acceptance::Certificate' do
   end
 
   context 'when the assessment doesnt exist' do
-    before { FetchAssessmentNoAssessment.fetch }
+    before { FetchAssessmentNoAssessmentStub.fetch }
 
     let(:response) { get '/energy-performance-certificate/123-456' }
 

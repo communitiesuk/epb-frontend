@@ -90,7 +90,7 @@ class FrontendService < Sinatra::Base
         layout: :layout, locals: { assessment: assessment }
   rescue Exception => e
     case e
-    when UseCase::FetchAssessment::AssessmentNotFound
+    when RemoteUseCase::FetchAssessment::AssessmentNotFound
       404
     else
       500

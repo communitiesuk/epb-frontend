@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-describe Gateway::EnergyAssessmentsGateway do
+describe RemoteUseCase::FetchAssessment do
   include RSpecUnitMixin
 
   let(:gateway) do
@@ -8,18 +8,19 @@ describe Gateway::EnergyAssessmentsGateway do
   end
 
   context 'when an assessment doesnt exist' do
-    before { FetchAssessmentNoAssessment.fetch }
+    before { FetchAssessmentNoAssessmentStub.fetch }
 
-    it 'returns nil' do
-      result = gateway.fetch_assessment('123-456')
-      expect(result).to be_nil
+    it 'raises an AssessmentNotFound error' do
+      expect { gateway.execute('123-456') }.to raise_error(
+        RemoteUseCase::FetchAssessment::AssessmentNotFound
+      )
     end
   end
 
   context 'when an assessment does exist' do
     before { FetchAssessmentStub.fetch('122-456') }
     it 'returns assessments' do
-      result = gateway.fetch_assessment('122-456')
+      result = gateway.execute('122-456')
       expect(result).to eq(
         {
           address_summary: '2 Marsham Street, London, SW1B 2BB',

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class FetchAssessmentNoAssessment
+class FetchAssessmentNoAssessmentStub
   def self.fetch
     WebMock.stub_request(
       :get,

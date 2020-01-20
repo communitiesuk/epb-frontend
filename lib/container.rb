@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
-require './lib/gateway/energy_assessments_gateway'
-require './lib/use_case/fetch_assessment'
+require_relative 'remote_use_case/fetch_assessment'
 
 class Container
   def initialize
@@ -14,10 +13,8 @@ class Container
 
     assessors_gateway = Gateway::AssessorsGateway.new(internal_api_client)
     find_assessor_use_case = UseCase::FindAssessor.new(assessors_gateway)
-    energy_assessments_gateway =
-      Gateway::EnergyAssessmentsGateway.new(internal_api_client)
     fetch_assessment_use_case =
-      UseCase::FetchAssessment.new(energy_assessments_gateway)
+      RemoteUseCase::FetchAssessment.new(internal_api_client)
 
     @objects = {
       internal_api_client: internal_api_client,
