@@ -17,13 +17,19 @@ describe Gateway::AssessorsGateway do
       expect(response[:results].count).to eq(3)
     end
 
+    it 'checks the shape of the object passed in the results object' do
+      expect(response[:results].first.keys).to contain_exactly(
+        :assessor,
+        :distance
+      )
+    end
+
     it 'checks the shape of the object passed in the assessor object' do
       expect(assessor.keys).to contain_exactly(
         :firstName,
         :lastName,
         :contactDetails,
         :searchResultsComparisonPostcode,
-        :distance,
         :registeredBy
       )
     end

@@ -21,8 +21,8 @@
       </details>
 
       <ul class="govuk-list">
-          <% results.each do |assessors_details| %>
-          <% assessor = assessors_details[:assessor] %>
+          <% results.each do |result| %>
+          <% assessor = result[:assessor] %>
             <li>
               <div>
                 <h2 class="govuk-heading-m"><%= "#{assessor[:firstName]} #{assessor[:lastName]}" %></h2>
@@ -31,10 +31,10 @@
                     <div class="govuk-summary-list__row">
                       <dt class="govuk-summary-list__key"><%= t('find_assessor_results.distance.heading') %></dt>
                       <dd class="govuk-summary-list__value">
-                        <% if assessor[:distance]<1 %>
+                        <% if result[:distance]<1 %>
                           <%= t('find_assessor_results.distance.default_miles_away_text') %>
                         <% else %>
-                        <%= assessor[:distance].round(1) %> <%= t('find_assessor_results.distance.miles_away_text') %>
+                        <%= result[:distance].round(1) %> <%= t('find_assessor_results.distance.miles_away_text') %>
                         <% end %>
                       </dd>
                     </div>

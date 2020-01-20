@@ -14,26 +14,32 @@ describe 'Acceptance::Postcodes' do
 
       before { FindAssessorStub.search('SW1A+2AA') }
 
-      it 'checks the number of assessors returned from the api' do
+      it 'returns the number of assessors returned from the api' do
         expect(response.count).to eq(3)
+      end
+
+      it 'returns response keys for results object' do
+        expect(response.first.keys).to contain_exactly(
+                                           :assessor,
+                                           :distance,
+                                       )
       end
 
       it 'returns response keys for assessor object' do
         expect(assessor.keys).to contain_exactly(
-                                           :firstName,
-                                           :lastName,
-                                           :contactDetails,
-                                           :searchResultsComparisonPostcode,
-                                           :distance,
-                                           :registeredBy
-        )
+                                     :firstName,
+                                     :lastName,
+                                     :contactDetails,
+                                     :searchResultsComparisonPostcode,
+                                     :registeredBy
+                                 )
       end
 
       it 'returns response keys for contactDetails object' do
         expect(assessor[:contactDetails].keys).to contain_exactly(
-                                                            :email,
-                                                            :telephoneNumber
-                                                        )
+                                                      :email,
+                                                      :telephoneNumber
+                                                  )
       end
 
       it 'returns response keys for registeredBy object' do
