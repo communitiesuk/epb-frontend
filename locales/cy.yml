@@ -123,3 +123,7 @@ cy:
     top_heading: 'Tystysgrif Perfformiad Ynni'
     labels:
       certificate_number: 'Welsh: Certificate number'
+      date_of_assessment: 'Welsh: Date of assessment'
+      date_of_certificate: 'Welsh: Date of certificate'
+      type_of_assessment: 'Welsh: Type of assessment'
+      total_floor_area: 'Welsh: Total floor area'
