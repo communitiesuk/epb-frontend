@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
+require_relative 'gateway/assessors_gateway'
 require_relative 'remote_use_case/fetch_assessment'
+require_relative 'use_case/find_assessor'
 
 class Container
   def initialize

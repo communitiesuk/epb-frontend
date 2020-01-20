@@ -6,8 +6,6 @@ require 'sinatra/base'
 require 'sinatra/url_for'
 require_relative 'container'
 require_relative 'helpers'
-require './lib/gateway/assessors_gateway'
-require './lib/use_case/find_assessor'
 
 class FrontendService < Sinatra::Base
   helpers Sinatra::FrontendService::Helpers
