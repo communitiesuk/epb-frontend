@@ -12,7 +12,12 @@ class FetchAssessmentStub
       status: 200,
       body: {
         addressSummary: '2 Marsham Street, London, SW1B 2BB',
-        assessmentId: '123-456'
+        assessmentId: '123-456',
+        dateRegistered: '2020-01-05',
+        "dateOfAssessment": '2020-01-02',
+        "dwellingType": 'Top floor flat',
+        "typeOfAssessment": 'RdSAP',
+        "totalFloorArea": 150
       }.to_json
     )
   end
