@@ -15,7 +15,25 @@ module Gateway
       if response.status == 404
         nil
       else
-        JSON.parse(response.body, symbolize_names: true)
+        assessment_details = JSON.parse(response.body, symbolize_names: true)
+
+        result = {
+          address_summary: assessment_details[:addressSummary],
+          date_of_assessment:
+            Date.parse(assessment_details[:dateOfAssessment]).strftime(
+              '%d %B %Y'
+            ),
+          date_registered:
+            Date.parse(assessment_details[:dateRegistered]).strftime(
+              '%d %B %Y'
+            ),
+          assessment_id: assessment_details[:assessmentId],
+          dwelling_type: assessment_details[:dwellingType],
+          total_floor_area: assessment_details[:totalFloorArea],
+          type_of_assessment: assessment_details[:typeOfAssessment]
+        }
+
+        result
       end
     end
   end
