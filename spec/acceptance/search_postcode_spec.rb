@@ -19,31 +19,31 @@ describe 'Acceptance::Postcodes' do
       end
 
       it 'returns response keys for results object' do
-        expect(response.first.keys).to contain_exactly(
-                                           :assessor,
-                                           :distance,
-                                       )
+        expect(response.first.keys).to contain_exactly(:assessor, :distance)
       end
 
       it 'returns response keys for assessor object' do
         expect(assessor.keys).to contain_exactly(
-                                     :firstName,
-                                     :lastName,
-                                     :contactDetails,
-                                     :searchResultsComparisonPostcode,
-                                     :registeredBy
-                                 )
+          :firstName,
+          :lastName,
+          :contactDetails,
+          :searchResultsComparisonPostcode,
+          :registeredBy
+        )
       end
 
       it 'returns response keys for contactDetails object' do
         expect(assessor[:contactDetails].keys).to contain_exactly(
-                                                      :email,
-                                                      :telephoneNumber
-                                                  )
+          :email,
+          :telephoneNumber
+        )
       end
 
       it 'returns response keys for registeredBy object' do
-        expect(assessor[:registeredBy].keys).to contain_exactly(:name, :schemeId)
+        expect(assessor[:registeredBy].keys).to contain_exactly(
+          :name,
+          :schemeId
+        )
       end
     end
 

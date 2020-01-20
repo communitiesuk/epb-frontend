@@ -14,7 +14,7 @@ class AssessorsGatewayStub
             "searchResultsComparisonPostcode": 'SW1A 1AA',
             "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' }
           },
-          "distance": 0.1,
+          "distance": 0.1
         },
         {
           "assessor": {
@@ -26,7 +26,7 @@ class AssessorsGatewayStub
             "searchResultsComparisonPostcode": 'SW1A 1AA',
             "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' }
           },
-          "distance": 0.3,
+          "distance": 0.3
         }
       ],
       "timestamp": 1_234_567,
