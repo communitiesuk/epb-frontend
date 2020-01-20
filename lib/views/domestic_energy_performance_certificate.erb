@@ -4,7 +4,7 @@
       <%= t('domestic_epc.top_heading') %>
     </h1>
     <h2 class="govuk-heading-l">
-      <%= assessment[:addressSummary] %>
+      <%= assessment[:address_summary] %>
     </h2>
   </div>
 
@@ -14,8 +14,15 @@
         <%= t('domestic_epc.labels.certificate_number') %>
       </dt>
       <dd class="govuk-summary-list__value">
-        <%= assessment[:assessmentId] %>
+        <%= assessment[:assessment_id] %>
       </dd>
+      <dt class="govuk-summary-list__key">
+        <%= t('domestic_epc.labels.date_of_certificate') %>
+      </dt>
+      <dd class="govuk-summary-list__value">
+        <%= assessment[:date_registered] %>
+      </dd>
+
     </div>
   </dl>
 </div>

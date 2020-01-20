@@ -21,8 +21,15 @@ describe Gateway::EnergyAssessmentsGateway do
     it 'returns assessments' do
       result = gateway.fetch_assessment('122-456')
       expect(result).to eq(
-        addressSummary: '2 Marsham Street, London, SW1B 2BB',
-        assessmentId: '123-456'
+        {
+          address_summary: '2 Marsham Street, London, SW1B 2BB',
+          assessment_id: '123-456',
+          date_of_assessment: '02 January 2020',
+          date_registered: '05 January 2020',
+          dwelling_type: 'Top floor flat',
+          total_floor_area: 150,
+          type_of_assessment: 'RdSAP'
+        }
       )
     end
   end

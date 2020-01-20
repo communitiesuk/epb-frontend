@@ -23,7 +23,12 @@ describe 'Acceptance::Certificate' do
     it 'shows the certificate number' do
       expect(response.body).to include('123-456')
     end
+
+    it 'shows the date of assessment' do
+      expect(response.body).to include('05 January 2020')
+    end
   end
+
   context 'when the assessment doesnt exist' do
     before { FetchAssessmentNoAssessment.fetch }
 
