@@ -10,6 +10,7 @@ describe 'Acceptance::Postcodes' do
   context 'given valid postcode' do
     context 'where assessors are near' do
       let(:response) { find_assessor.execute('SW1A+2AA') }
+      let(:assessor) { response.first[:assessor] }
 
       before { FindAssessorStub.search('SW1A+2AA') }
 
@@ -17,15 +18,26 @@ describe 'Acceptance::Postcodes' do
         expect(response.count).to eq(3)
       end
 
-      it 'checks the response keys' do
-        expect(response.first.keys).to contain_exactly(
-          :fullName,
-          :distance,
-          :accreditationScheme,
-          :schemeAssessorId,
-          :telephoneNumber,
-          :email
+      it 'returns response keys for assessor object' do
+        expect(assessor.keys).to contain_exactly(
+                                           :firstName,
+                                           :lastName,
+                                           :contactDetails,
+                                           :searchResultsComparisonPostcode,
+                                           :distance,
+                                           :registeredBy
         )
+      end
+
+      it 'returns response keys for contactDetails object' do
+        expect(assessor[:contactDetails].keys).to contain_exactly(
+                                                            :email,
+                                                            :telephoneNumber
+                                                        )
+      end
+
+      it 'returns response keys for registeredBy object' do
+        expect(assessor[:registeredBy].keys).to contain_exactly(:name, :schemeId)
       end
     end
 

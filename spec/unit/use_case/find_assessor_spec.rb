@@ -41,20 +41,28 @@ describe UseCase::FindAssessor do
     let(:valid_assessors) do
       [
         {
-          "fullName": 'Gregg Sellen',
-          "distance": 0.1,
-          "accreditationScheme": 'EPBs 4 U',
-          "schemeAssessorId": '432',
-          "telephoneNumber": '0792 102 1368',
-          "email": 'epbassessor@epb.com'
+          "assessor": {
+            "firstName": 'Gregg',
+            "lastName": 'Sellen',
+            "contactDetails": {
+              "telephoneNumber": '0792 102 1368', "email": 'epbassessor@epb.com'
+            },
+            "searchResultsComparisonPostcode": 'SW1A 1AA',
+            "distance": 0.1,
+            "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' }
+          }
         },
         {
-          "fullName": 'Juliet Montague',
-          "distance": 0.3,
-          "accreditationScheme": 'EPBs 4 U',
-          "schemeAssessorId": '432',
-          "telephoneNumber": '0792 102 1368',
-          "email": 'epbassessor@epb.com'
+          "assessor": {
+            "firstName": 'Juliet',
+            "lastName": 'Montague',
+            "contactDetails": {
+              "telephoneNumber": '0792 102 1368', "email": 'epbassessor@epb.com'
+            },
+            "searchResultsComparisonPostcode": 'SW1A 1AA',
+            "distance": 0.3,
+            "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' }
+          }
         }
       ]
     end
