@@ -39,6 +39,10 @@ describe 'Acceptance::Certificate' do
     it 'shows the total floor area' do
       expect(response.body).to include('150')
     end
+
+    it 'shows the type of dwelling' do
+      expect(response.body).to include('Top floor flat')
+    end
   end
 
   context 'when the assessment doesnt exist' do
