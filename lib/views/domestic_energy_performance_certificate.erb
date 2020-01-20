@@ -18,10 +18,10 @@
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          <%= t('domestic_epc.labels.date_of_certificate') %>
+          <%= t('domestic_epc.labels.type_of_assessment') %>
         </dt>
         <dd class="govuk-summary-list__value">
-          <%= assessment[:date_registered] %>
+          <%= assessment[:type_of_assessment] %>
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -34,10 +34,10 @@
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          <%= t('domestic_epc.labels.type_of_assessment') %>
+          <%= t('domestic_epc.labels.date_of_certificate') %>
         </dt>
         <dd class="govuk-summary-list__value">
-          <%= assessment[:type_of_assessment] %>
+          <%= assessment[:date_registered] %>
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -45,7 +45,7 @@
           <%= t('domestic_epc.labels.total_floor_area') %>
         </dt>
         <dd class="govuk-summary-list__value">
-          <%= assessment[:total_floor_area] %>
+          <%= assessment[:total_floor_area] %> m<sup>2</sup>
         </dd>
       </div>
       <div class="govuk-summary-list__row">
