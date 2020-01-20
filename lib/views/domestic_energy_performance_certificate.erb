@@ -6,24 +6,32 @@
     <h2 class="govuk-heading-l">
       <%= assessment[:address_summary] %>
     </h2>
-  </div>
 
-  <dl class="govuk-summary-list">
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
-        <%= t('domestic_epc.labels.certificate_number') %>
-      </dt>
-      <dd class="govuk-summary-list__value">
-        <%= assessment[:assessment_id] %>
-      </dd>
-    </div>
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
-        <%= t('domestic_epc.labels.date_of_certificate') %>
-      </dt>
-      <dd class="govuk-summary-list__value">
-        <%= assessment[:date_registered] %>
-      </dd>
-    </div>
-  </dl>
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          <%= t('domestic_epc.labels.certificate_number') %>
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <%= assessment[:assessment_id] %>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          <%= t('domestic_epc.labels.date_of_certificate') %>
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <%= assessment[:date_registered] %>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          <%= t('domestic_epc.labels.date_of_assessment') %>
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <%= assessment[:date_of_assessment] %>
+        </dd>
+      </div>
+    </dl>
+  </div>
 </div>

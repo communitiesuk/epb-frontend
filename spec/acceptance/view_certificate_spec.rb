@@ -27,6 +27,10 @@ describe 'Acceptance::Certificate' do
     it 'shows the date of assessment' do
       expect(response.body).to include('05 January 2020')
     end
+
+    it 'shows the registered date of the certificate' do
+      expect(response.body).to include('02 January 2020')
+    end
   end
 
   context 'when the assessment doesnt exist' do
