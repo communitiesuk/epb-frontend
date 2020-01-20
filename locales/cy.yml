@@ -120,10 +120,11 @@ cy:
     assessor_id_text: 'Welsh: Assessor ID'
 
   domestic_epc:
-    top_heading: 'Tystysgrif Perfformiad Ynni'
+    top_heading: 'Tystysgrif Perfformiad Ynni (EPC)'
     labels:
-      certificate_number: 'Welsh: Certificate number'
-      date_of_assessment: 'Welsh: Date of assessment'
-      date_of_certificate: 'Welsh: Date of certificate'
-      type_of_assessment: 'Welsh: Type of assessment'
-      total_floor_area: 'Welsh: Total floor area'
+      certificate_number: 'Cyfeirnod'
+      date_of_assessment: 'Dyddiad yr asesiad'
+      date_of_certificate: 'Dyddiad y dystysgrif:'
+      type_of_assessment: 'Math o asesiad'
+      total_floor_area: 'Cyfanswm yr arwynebedd llawr'
+      dwelling_type: 'Math o annedd'

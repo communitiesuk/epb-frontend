@@ -122,8 +122,9 @@ en:
   domestic_epc:
     top_heading: 'Energy performance certificate'
     labels:
-      certificate_number: 'Certificate number'
+      certificate_number: 'Reference number'
       date_of_assessment: 'Date of assessment'
       date_of_certificate: 'Date of certificate'
       type_of_assessment: 'Type of assessment'
       total_floor_area: 'Total floor area'
+      dwelling_type: 'Dwelling type'
