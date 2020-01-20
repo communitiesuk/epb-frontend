@@ -16,7 +16,12 @@ module Sinatra
       end
 
       def set_locale
-        I18n.locale = params['lang'] if I18n.locale_available?(params['lang'])
+        I18n.locale =
+          if I18n.locale_available?(params['lang'])
+            params['lang']
+          else
+            I18n.default_locale
+          end
       end
 
       def t(*args)
