@@ -26,9 +26,9 @@ class FindAssessorStub
                 "telephoneNumber": 'string', "email": 'user@example.com'
               },
               "searchResultsComparisonPostcode": 'SW1A 1AA',
+              "distance": 0.1,
               "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' }
-            },
-            "distance": 0.1
+            }
           },
           {
             "assessor": {
@@ -38,9 +38,9 @@ class FindAssessorStub
                 "telephoneNumber": '07921 021 368', "email": 'user@example.com'
               },
               "searchResultsComparisonPostcode": 'SW1A 1AA',
+              "distance": 0.26780459,
               "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' }
-            },
-            "distance": 0.26780459
+            }
           },
           {
             "assessor": {
@@ -50,9 +50,9 @@ class FindAssessorStub
                 "telephoneNumber": 'string', "email": 'user@example.com'
               },
               "searchResultsComparisonPostcode": 'SW1A 1AA',
+              "distance": 1.36,
               "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' }
-            },
-            "distance": 1.36
+            }
           }
         ],
         "searchPostcode": 'SW1A 2AA'

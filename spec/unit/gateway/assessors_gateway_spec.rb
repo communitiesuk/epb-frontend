@@ -23,6 +23,7 @@ describe Gateway::AssessorsGateway do
         :lastName,
         :contactDetails,
         :searchResultsComparisonPostcode,
+        :distance,
         :registeredBy
       )
     end
