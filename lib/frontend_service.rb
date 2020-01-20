@@ -77,25 +77,24 @@ class FrontendService < Sinatra::Base
   end
 
   get '/healthcheck' do
-    200
+    status 200
   end
 
   get '/energy-performance-certificate/:assessment_id' do
     use_case = @container.get_object(:fetch_assessment_use_case)
     assessment = use_case.execute(params[:assessment_id])
-    200
+    status 200
     erb :domestic_energy_performance_certificate,
         layout: :layout, locals: { assessment: assessment }
-  rescue Exception => e
+  rescue StandardError => e
     case e
     when RemoteUseCase::FetchAssessment::AssessmentNotFound
-      404
+      status 404
     else
-      500
+      status 500
     end
   end
 
-  # 404 Error!
   not_found do
     status 404
     erb :error_page_404 unless @errors
