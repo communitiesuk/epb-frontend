@@ -99,6 +99,9 @@ en:
     postcode_not_registered: 'Enter a postcode that exists'
     button_text: 'Find'
     find_postcode: 'Find a postcode on Royal Mail’s postcode finder'
+    no_network:
+      heading: 'Network connection failed'
+      body: 'There is an internal network error'
     scheme_not_found:
       heading: 'Accreditation scheme not found'
       body: 'There is no scheme for one of the requested assessor'
