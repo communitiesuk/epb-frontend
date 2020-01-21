@@ -10,9 +10,10 @@ module RemoteUseCase
 
     def execute(assessment_id)
       route =
-        URI.encode(
-          "/api/assessments/domestic-energy-performance/#{assessment_id}"
-        )
+        "/api/assessments/domestic-energy-performance/#{
+          CGI.escape(assessment_id)
+        }"
+
       response = @internal_api_client.get(route)
       if response.status == 404
         raise RemoteUseCase::FetchAssessment::AssessmentNotFound
