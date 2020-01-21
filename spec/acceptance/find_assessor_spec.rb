@@ -201,6 +201,24 @@ describe 'Acceptance::Assessor' do
           )
         end
       end
+
+      context 'when there is no connection' do
+        before { FindAssessorNoNetworkStub.search('D11 4FF') }
+
+        let(:response) { get '/find-an-assessor/search?postcode=D11+4FF' }
+
+        it 'returns status 500' do
+          expect(response.status).to eq(500)
+        end
+
+        it 'displays the 500 error page heading' do
+          expect(response.body).to include('Network connection failed')
+        end
+
+        it 'displays error page body' do
+          expect(response.body).to include('There is an internal network error')
+        end
+      end
     end
   end
 end
