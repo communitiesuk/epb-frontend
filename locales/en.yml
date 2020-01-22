@@ -92,6 +92,7 @@ en:
     head:
       title: 'Energy performance of buildings register - Find an energy assessor'
     top_heading: 'Find an energy assessor'
+    top_body: 'Find energy assessors in your area'
     question: 'Enter a postcode'
     hint: 'For example SW1A 2AA'
     postcode_error: 'Enter a real postcode'

@@ -3,6 +3,9 @@
     <h1 class="govuk-heading-xl">
       <%= t('find_assessor_by_postcode.top_heading') %>
     </h1>
+    <p class="govuk-body">
+      <%= t('find_assessor_by_postcode.top_body') %>.
+    </p>
     <form method="GET" action="<%=localised_url('/find-an-assessor/search')%>" >
       <% if I18n.locale != I18n.available_locales[0] %>
         <input type="hidden" name="lang" value="<%= I18n.locale.to_s %>">
