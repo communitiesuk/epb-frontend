@@ -53,7 +53,7 @@ en:
     top_heading: 'Contact an energy assessor accreditation scheme'
     description: 'The following schemes license energy assessors to assess properties and create energy certificates'
     contact: 'You should contact a scheme if you need to contact someone about an assessor'
-    schemes:
+    list:
       heading: 'Energy assessment accreditation schemes'
       cta: 'Go to website'
       commercial: 'Commercial <br />properties only'

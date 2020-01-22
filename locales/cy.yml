@@ -53,7 +53,7 @@ cy:
     top_heading: 'Welsh: Contact an energy assessor accreditation scheme'
     description: 'Welsh: The following schemes license energy assessors to assess properties and create energy certificates'
     contact: 'Welsh: You should contact a scheme if you need to contact someone about an assessor'
-    schemes:
+    list:
       heading: 'Welsh: Energy assessment accreditation schemes'
       cta: 'Welsh: Go to website'
       commercial: 'Welsh: Commercial <br />properties only'
