@@ -92,6 +92,18 @@ describe 'Acceptance::Assessor' do
           )
         end
 
+        it 'has a postcode input field' do
+          expect(response.body).to include(
+            '<input id="postcode" name="postcode"'
+          )
+        end
+
+        it 'has a Find button' do
+          expect(response.body).to include(
+            '<button class="govuk-button" data-module="govuk-button">Find</button>'
+          )
+        end
+
         it 'shows the name of an entry' do
           expect(response.body).to include('Juan Uno')
         end
