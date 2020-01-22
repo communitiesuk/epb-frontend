@@ -51,14 +51,8 @@ cy:
     head:
       title: 'Welsh: Energy performance of buildings register - Contact an energy assessor accreditation scheme'
     top_heading: 'Welsh: Contact an energy assessor accreditation scheme'
-    description: 'Welsh: The following schemes license energy assessors to assess residential properties and create energy certificates.'
-    when:
-      heading: 'Welsh: You should contact a scheme if:'
-      cannot_find:
-        description: 'Welsh: you have not found an assessor using our %{link}'
-        link: 'Welsh: find an assessor service'
-      problem: 'Welsh: there was a problem with an assessor you booked'
-      no_postcode: 'Welsh: you do not know the postcode of the property'
+    description: 'Welsh: The following schemes license energy assessors to assess properties and create energy certificates'
+    contact: 'Welsh: You should contact a scheme if you need to contact someone about an assessor'
     schemes:
       heading: 'Welsh: Energy assessment accreditation schemes'
       cta: 'Welsh: Go to website'

@@ -51,14 +51,8 @@ en:
     head:
       title: 'Energy performance of buildings register - Contact an energy assessor accreditation scheme'
     top_heading: 'Contact an energy assessor accreditation scheme'
-    description: 'The following schemes license energy assessors to assess residential properties and create energy certificates.'
-    when:
-      heading: 'You should contact a scheme if:'
-      cannot_find:
-        description: 'you have not found an assessor using our %{link}'
-        link: 'find an assessor service'
-      problem: 'there was a problem with an assessor you booked'
-      no_postcode: 'you do not know the postcode of the property'
+    description: 'The following schemes license energy assessors to assess properties and create energy certificates'
+    contact: 'You should contact a scheme if you need to contact someone about an assessor'
     schemes:
       heading: 'Energy assessment accreditation schemes'
       cta: 'Go to website'

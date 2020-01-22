@@ -4,18 +4,13 @@
       <%= t('schemes.top_heading') %>
     </h1>
     <p>
-      <%= t('schemes.description') %>
+      <%= t('schemes.description') %>.
     </p>
-    <div class="app-prose-scope">
-      <h2 class="govuk-heading-m"><%= t('schemes.when.heading') %></h2>
-      <ul class="govuk-list govuk-!-margin-bottom-9 govuk-list--bullet">
-        <li>
-         <%= t('schemes.when.cannot_find.description', :link => '<a href="' + localised_url('/') + '">' + t('schemes.when.cannot_find.link') + '</a>' ) %>
-        </li>
-        <li><%= t('schemes.when.problem') %></li>
-        <li><%= t('schemes.when.no_postcode') %></li>
-      </ul>
-    </div>
+
+    <p>
+      <%= t('schemes.contact') %>.
+    </p>
+
     <h2 class="govuk-heading-l"><%= t('schemes.schemes.heading') %></h2>
   </div>
   <div class="govuk-grid-column-full">
@@ -73,7 +68,7 @@
         </p>
       </div>
       <div class="govuk-grid-column-one-third govuk-!-margin-bottom-8">
-        <h2 class="govuk-heading-l"><%= t('schemes.schemes.stroma.name') %><span class="govuk-caption-xl"><%= t('schemes.schemes.commercial') %></span></h2>
+        <h2 class="govuk-heading-l"><%= t('schemes.schemes.stroma.name') %></h2>
         <p class="govuk-body">
           <a href="tel:<%= t('schemes.schemes.stroma.phone') %>"><%= t('schemes.schemes.stroma.phone') %></a>
         </p>
