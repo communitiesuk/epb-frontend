@@ -27,6 +27,10 @@
       </li>
     </ul>
 
+    <div class="govuk-inset-text">
+      <%= t('index.before_you_start.switch_language.description', :link => '<a href="' + t('index.before_you_start.switch_language.url') + '">' + t('index.before_you_start.switch_language.link') + '</a>' ) %>
+    </div>
+
     <a
       href="<%= localised_url('/find-an-assessor/search') %>"
       role="button"
@@ -52,10 +56,6 @@
 
     <p class="govuk-body">
       <%= t('index.before_you_start.phone_text', :link => '<a href="tel:' + t('index.before_you_start.phone_number') + '">' + t('index.before_you_start.phone_number') + '</a>' ) %>
-    </p>
-
-    <p class="govuk-body">
-      <%= t('index.before_you_start.switch_language.description', :link => '<a href="' + t('index.before_you_start.switch_language.url') + '">' + t('index.before_you_start.switch_language.link') + '</a>' ) %>
     </p>
 
     <p class="govuk-body">

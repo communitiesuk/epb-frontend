@@ -40,7 +40,7 @@ cy:
       phone_text: 'Welsh: The service is also available by calling %{link}.'
       phone_number: 'Welsh: 0233 788 1234'
       switch_language:
-        description: 'Welsh: The online service is also available in %{link}.'
+        description: 'Welsh: This service is also available in %{link}.'
         url: '/?lang=en'
         link: 'Welsh: English (English)'
       commercial:
