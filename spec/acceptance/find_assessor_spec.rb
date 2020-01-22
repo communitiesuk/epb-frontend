@@ -88,7 +88,7 @@ describe 'Acceptance::Assessor' do
 
         it 'displays the find an assessor page heading' do
           expect(response.body).to include(
-            'Results for energy assessors near you'
+            'Find an energy assessor'
           )
         end
 
@@ -139,7 +139,7 @@ describe 'Acceptance::Assessor' do
 
         it 'displays the find an assessor page heading' do
           expect(response.body).to include(
-            'Results for energy assessors near you'
+            'Find an energy assessor'
           )
         end
 

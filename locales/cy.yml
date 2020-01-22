@@ -109,10 +109,9 @@ cy:
   find_assessor_results:
     head:
       title: 'Welsh: Energy performance of buildings register - Results for energy assessors near you'
-    top_heading: 'Welsh: Results for energy assessors near you'
     description: 'Welsh: Contact an assessor listed below to book an energy assessment.'
     no_assessors: 'Welsh: There are no assessors near you at this point.'
-    accreditation_summary_title: 'Welsh: What is an accreditation scheme'
+    accreditation_summary_title: 'Welsh: Who accredits assessors'
     accreditation_summary_text: 'Welsh: Accreditation schemes check that all the assessors listed below are qualified to carry out energy assessments on residential properties, and to issue Energy Performance Certificates.'
     distance:
       heading: 'Welsh: Distance'
