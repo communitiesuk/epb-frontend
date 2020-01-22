@@ -99,7 +99,6 @@ cy:
     postcode_not_valid: 'Welsh: Enter a postcode that is not malformed'
     postcode_not_registered: 'Welsh: Enter a postcode that exists'
     button_text: 'Welsh: Find'
-    find_postcode: 'Welsh: Find a postcode on Royal Mail’s postcode finder'
     no_network:
       heading: 'Welsh: Network connection failed'
       body: 'Welsh: There is an internal network error'
