@@ -10,29 +10,29 @@
       <% if I18n.locale != I18n.available_locales[0] %>
         <input type="hidden" name="lang" value="<%= I18n.locale.to_s %>">
       <% end %>
-      <fieldset class="govuk-fieldset">
-      <div class="govuk-form-group<% if errors[:postcode] %> govuk-form-group--error<% end %>">
-        <label class="govuk-label" for="postcode">
-          <%= t('find_assessor_by_postcode.question') %>
-        </label>
-        <span id="postcode-hint" class="govuk-hint">
-          <%= t('find_assessor_by_postcode.hint') %>
-        </span>
-        <% if errors[:postcode] %>
-        <span id="postcode-error" class="govuk-error-message">
-          <span class="govuk-visually-hidden">Error:</span><%= errors[:postcode] %>
-        </span>
-        <% end %>
-        <input id="postcode" name="postcode" type="text"
-               class="govuk-input<% if errors[:postcode] %> govuk-input--error<% end %>"
-               aria-describedby="postcode-hint<% if errors[:postcode] %> postcode-error<% end %>"
-               autocomplete="postal-code"
-               spellcheck="false"
-               <% if params['postcode'] %>value="<%= params['postcode'] %>"<% end %>
-        >
+      <fieldset class="govuk-fieldset fieldset-background">
+        <div class="govuk-form-group<% if errors[:postcode] %> govuk-form-group--error<% end %>">
+          <label class="govuk-label" for="postcode">
+            <%= t('find_assessor_by_postcode.question') %>
+          </label>
+          <span id="postcode-hint" class="govuk-hint">
+            <%= t('find_assessor_by_postcode.hint') %>
+          </span>
+          <% if errors[:postcode] %>
+          <span id="postcode-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span><%= errors[:postcode] %>
+          </span>
+          <% end %>
+          <input id="postcode" name="postcode" type="text"
+                 class="govuk-input<% if errors[:postcode] %> govuk-input--error<% end %>"
+                 aria-describedby="postcode-hint<% if errors[:postcode] %> postcode-error<% end %>"
+                 autocomplete="postal-code"
+                 spellcheck="false"
+                 <% if params['postcode'] %>value="<%= params['postcode'] %>"<% end %>
+          >
       </div>
 
-      <button class="govuk-button" data-module="govuk-button"><%= t('find_assessor_by_postcode.button_text') %></button>
+        <button class="govuk-button" data-module="govuk-button"><%= t('find_assessor_by_postcode.button_text') %></button>
       </fieldset>
     </form>
   </div>
