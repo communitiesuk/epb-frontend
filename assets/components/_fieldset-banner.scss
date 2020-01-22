@@ -1,0 +1,6 @@
+.fieldset-background {
+  @include govuk-text-colour;
+
+  background-color: govuk-colour("light-grey");
+  padding: govuk-spacing(6);
+}
