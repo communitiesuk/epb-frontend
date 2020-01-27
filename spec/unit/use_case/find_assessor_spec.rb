@@ -10,15 +10,6 @@ describe UseCase::FindAssessor do
     }.to raise_exception UseCase::FindAssessor::PostcodeNotRegistered
   end
 
-  it 'returns an error when there is no scheme' do
-    find_assessor_without_scheme =
-      described_class.new(AssessorsGatewayNoSchemeStub.new)
-
-    expect {
-      find_assessor_without_scheme.execute('E11 0GL')
-    }.to raise_exception UseCase::FindAssessor::SchemeNotFound
-  end
-
   it 'returns an error when the postcode is not valid' do
     find_assessor_without_valid_postcode =
       described_class.new(AssessorsGatewayInvalidPostcodesStub.new)

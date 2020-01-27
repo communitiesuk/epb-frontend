@@ -74,15 +74,5 @@ describe 'Acceptance::Postcodes' do
         }.to raise_exception UseCase::FindAssessor::PostcodeNotValid
       end
     end
-
-    context 'where there is no scheme' do
-      before { FindAssessorNoSchemeStub.search('F11+3FF') }
-
-      it 'raises scheme not found exception' do
-        expect {
-          find_assessor.execute('F11+3FF')
-        }.to raise_exception UseCase::FindAssessor::SchemeNotFound
-      end
-    end
   end
 end

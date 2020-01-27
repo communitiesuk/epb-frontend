@@ -56,9 +56,6 @@ class FrontendService < Sinatra::Base
         rescue UseCase::FindAssessor::PostcodeNotValid
           status 400
           @errors[:postcode] = t('find_assessor_by_postcode.postcode_not_valid')
-        rescue UseCase::FindAssessor::SchemeNotFound
-          status 500
-          @erb_template = :error_page_scheme_not_found
         rescue Auth::Errors::NetworkConnectionFailed
           status 500
           @erb_template = :error_page_500
