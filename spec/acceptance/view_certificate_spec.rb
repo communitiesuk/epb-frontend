@@ -43,6 +43,10 @@ describe 'Acceptance::Certificate' do
     it 'shows the type of dwelling' do
       expect(response.body).to include('Top floor flat')
     end
+
+    it 'shows the SVG with energy ratings' do
+      expect(response.body).to include('<svg')
+    end
   end
 
   context 'when the assessment doesnt exist' do
