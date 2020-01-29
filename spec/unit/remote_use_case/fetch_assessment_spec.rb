@@ -28,7 +28,11 @@ describe RemoteUseCase::FetchAssessment do
         date_registered: '05 January 2020',
         dwelling_type: 'Top floor flat',
         total_floor_area: 150,
-        type_of_assessment: 'RdSAP'
+        type_of_assessment: 'RdSAP',
+        current_energy_efficiency_rating: 95,
+        current_energy_efficiency_band: 'a',
+        potential_energy_efficiency_rating: 95,
+        potential_energy_efficiency_band: 'b'
       )
     end
   end
