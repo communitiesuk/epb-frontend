@@ -1,0 +1,113 @@
+<svg width="600" height="400" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg" style="max-width: 100%;" aria-label="Your energy rating is <%= current_energy_efficiency_band %>(<%= current_energy_efficiency_rating %>) and your potential is <%= potential_energy_efficiency_band %>(<%= potential_energy_efficiency_rating %>)">
+  <%
+
+    bands = {
+      'a': {
+        'range': '92+',
+        'position': 0,
+        'color': '#008054'
+      },
+      'b': {
+        'range': '81-91',
+        'position': 1,
+        'color': '#19b459'
+      },
+      'c': {
+        'range': '69-80',
+        'position': 2,
+        'color': '#8dce46'
+      },
+      'd': {
+        'range': '55-68',
+        'position': 3,
+        'color': '#ffd500'
+      },
+      'e': {
+        'range': '39-54',
+        'position': 4,
+        'color': '#fcaa65'
+      },
+      'f': {
+        'range': '21-38',
+        'position': 5,
+        color: '#ef8023'
+      },
+      'g': {
+        'range': '1-20',
+        'position': 6,
+        'color': '#e9153b'
+      }
+    }
+
+  %>
+
+  <style>
+    .letter {
+      font-size: 40px;
+      font-family: sans-serif;
+      fill: #fff;
+    }
+
+    .small-letter {
+      font-size: 30px;
+      font-family: sans-serif;
+      fill: #fff;
+    }
+
+    .small {
+      font-size: 20px;
+      font-family: sans-serif;
+      fill: #000;
+      line-height: 50px;
+      margin-top: 100px;
+    }
+
+    .small tspan:first-child, .small tspan:last-child {
+      fill: #fff;
+    }
+
+    <% bands.each do |key, settings| %>
+      .band-<%= key %>{
+        fill: <%= settings[:color] %>
+      }
+    <% end %>
+    
+  </style>
+
+  <% bands.each do |key, settings| %>
+    <rect width="<%= 100+settings[:position]*50 %>" height="50" x="0" y="<%= 25+settings[:position]*50 %>" class="band-<%= key %>">
+    </rect>
+  <% end %>
+
+  <text x="0" y="0" class="letter">
+    <% bands.each do |key, settings| %>
+      <tspan x="<%= 50+(50*settings[:position])+12 %>" y="<%= 75+(50*settings[:position])-11 %>"><%= key.upcase %></tspan>
+    <% end %>
+  </text>
+
+  <text x="0" y="0" class="small">
+    <% bands.each do |key, settings| %>
+      <tspan x="10" y="<%= 50+(50*settings[:position])+5 %>">(<%= settings[:range] %>)</tspan>
+    <% end %>
+  </text>
+
+  <text x="400" y="20" class="small">
+    Current
+  </text>
+
+  <text x="500" y="20" class="small">
+    Potential
+  </text>
+
+  <svg x="400" y="<%= 25+bands[current_energy_efficiency_band.to_sym][:position]*50 %>" width="100" height="50">
+    <rect width="75" height="50" class="band-<%= current_energy_efficiency_band %>" x="25"></rect>
+    <polygon points="0,25 25,50 25,0 0,25" class="band-<%= current_energy_efficiency_band %>"></polygon>
+    <text x="25" y="35" class="small-letter"><%= current_energy_efficiency_rating %></text>
+  </svg>
+
+  <svg x="500" y="<%= 25+bands[potential_energy_efficiency_band.to_sym][:position]*50 %>" width="100" height="50">
+    <rect width="75" height="50" class="band-<%= potential_energy_efficiency_band %>" x="25"></rect>
+    <polygon points="0,25 25,50 25,0 0,25" class="band-<%= potential_energy_efficiency_band %>"></polygon>
+    <text x="25" y="35" class="small-letter"><%= potential_energy_efficiency_rating %></text>
+  </svg>
+</svg>
