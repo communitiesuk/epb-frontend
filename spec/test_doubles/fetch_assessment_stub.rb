@@ -17,7 +17,11 @@ class FetchAssessmentStub
         "dateOfAssessment": '2020-01-02',
         "dwellingType": 'Top floor flat',
         "typeOfAssessment": 'RdSAP',
-        "totalFloorArea": 150
+        "totalFloorArea": 150,
+        currentEnergyEfficiencyRating: 95,
+        currentEnergyEfficiencyBand: 'a',
+        potentialEnergyEfficiencyRating: 95,
+        potentialEnergyEfficiencyBand: 'b',
       }.to_json
     )
   end
