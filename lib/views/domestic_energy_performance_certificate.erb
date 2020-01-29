@@ -7,6 +7,12 @@
       <%= t('domestic_epc.top_heading') %>
     </h1>
 
+    <%= erb :energy_rating, locals: {
+      current_energy_efficiency_rating: assessment[:current_energy_efficiency_rating],
+      potential_energy_efficiency_rating: assessment[:potential_energy_efficiency_rating],
+      current_energy_efficiency_band: assessment[:current_energy_efficiency_band],
+      potential_energy_efficiency_band: assessment[:potential_energy_efficiency_band] } %>
+
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
