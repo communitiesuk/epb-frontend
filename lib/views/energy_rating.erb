@@ -1,4 +1,4 @@
-<svg width="600" height="400" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg" style="max-width: 100%;" aria-labelledby="svg-title" role="img">
+<svg width="615" height="400" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg" style="max-width: 100%;" aria-labelledby="svg-title" role="img">
   <title id="svg-title">Your energy rating is <%= current_energy_efficiency_band %>(<%= current_energy_efficiency_rating %>) and your potential is <%= potential_energy_efficiency_band %>(<%= potential_energy_efficiency_rating %>)</title>
   <%
 
@@ -7,6 +7,7 @@
         'range': '92+',
         'position': 0,
         'color': '#008054'
+
       },
       'b': {
         'range': '81-91',
@@ -78,13 +79,13 @@
   </style>
 
   <% bands.each do |key, settings| %>
-    <rect width="<%= 100+settings[:position]*50 %>" height="50" x="0" y="<%= 25+settings[:position]*50 %>" class="band-<%= key %>">
+    <rect width="<%= 150+settings[:position]*40 %>" height="50" x="0" y="<%= 25+settings[:position]*50%>" class="band-<%= key %>">
     </rect>
   <% end %>
 
   <text x="0" y="0" class="letter">
     <% bands.each do |key, settings| %>
-      <tspan x="<%= 50+(50*settings[:position])+12 %>" y="<%= 75+(50*settings[:position])-11 %>"><%= key.upcase %></tspan>
+      <tspan x="<%= 95+(40*settings[:position])+12 %>" y="<%= 75+(50*settings[:position])-11 %>"><%= key.upcase %></tspan>
     <% end %>
   </text>
 
@@ -98,21 +99,21 @@
     Energy Rating
   </text>
 
-  <text x="410" y="20" class="small">
+  <text x="415" y="20" class="small">
     Current
   </text>
 
-  <text x="510" y="20" class="small">
+  <text x="515" y="20" class="small">
     Potential
   </text>
 
-  <svg x="410" y="<%= 25+bands[current_energy_efficiency_band.to_sym][:position]*50 %>" width="90" height="50">
+  <svg x="415" y="<%= 25+bands[current_energy_efficiency_band.to_sym][:position]*50 %>" width="90" height="50">
     <rect width="75" height="50" class="band-<%= current_energy_efficiency_band %>" x="25"></rect>
     <polygon points="0,25 25,50 25,0 0,25" class="band-<%= current_energy_efficiency_band %>"></polygon>
     <text x="40" y="35" class="small-letter"><%= current_energy_efficiency_rating %></text>
   </svg>
 
-  <svg x="510" y="<%= 25+bands[potential_energy_efficiency_band.to_sym][:position]*50 %>" width="90" height="50">
+  <svg x="515" y="<%= 25+bands[potential_energy_efficiency_band.to_sym][:position]*50 %>" width="90" height="50">
     <rect width="75" height="50" class="band-<%= potential_energy_efficiency_band %>" x="25"></rect>
     <polygon points="0,25 25,50 25,0 0,25" class="band-<%= potential_energy_efficiency_band %>"></polygon>
     <text x="40" y="35" class="small-letter"><%= potential_energy_efficiency_rating %></text>
