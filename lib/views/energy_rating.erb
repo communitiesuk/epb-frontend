@@ -47,12 +47,15 @@
       font-size: 40px;
       font-family: sans-serif;
       fill: #fff;
+      font-weight: bold;
     }
 
     .small-letter {
       font-size: 30px;
       font-family: sans-serif;
       fill: #fff;
+      font-weight: bold;
+      text-align: center;
     }
 
     .small {
@@ -72,7 +75,6 @@
         fill: <%= settings[:color] %>
       }
     <% end %>
-    
   </style>
 
   <% bands.each do |key, settings| %>
@@ -92,23 +94,27 @@
     <% end %>
   </text>
 
-  <text x="400" y="20" class="small">
+  <text x="8" y="20" class="small">
+    Energy Rating
+  </text>
+
+  <text x="410" y="20" class="small">
     Current
   </text>
 
-  <text x="500" y="20" class="small">
+  <text x="510" y="20" class="small">
     Potential
   </text>
 
-  <svg x="400" y="<%= 25+bands[current_energy_efficiency_band.to_sym][:position]*50 %>" width="100" height="50">
+  <svg x="410" y="<%= 25+bands[current_energy_efficiency_band.to_sym][:position]*50 %>" width="90" height="50">
     <rect width="75" height="50" class="band-<%= current_energy_efficiency_band %>" x="25"></rect>
     <polygon points="0,25 25,50 25,0 0,25" class="band-<%= current_energy_efficiency_band %>"></polygon>
-    <text x="25" y="35" class="small-letter"><%= current_energy_efficiency_rating %></text>
+    <text x="40" y="35" class="small-letter"><%= current_energy_efficiency_rating %></text>
   </svg>
 
-  <svg x="500" y="<%= 25+bands[potential_energy_efficiency_band.to_sym][:position]*50 %>" width="100" height="50">
+  <svg x="510" y="<%= 25+bands[potential_energy_efficiency_band.to_sym][:position]*50 %>" width="90" height="50">
     <rect width="75" height="50" class="band-<%= potential_energy_efficiency_band %>" x="25"></rect>
     <polygon points="0,25 25,50 25,0 0,25" class="band-<%= potential_energy_efficiency_band %>"></polygon>
-    <text x="25" y="35" class="small-letter"><%= potential_energy_efficiency_rating %></text>
+    <text x="40" y="35" class="small-letter"><%= potential_energy_efficiency_rating %></text>
   </svg>
 </svg>
