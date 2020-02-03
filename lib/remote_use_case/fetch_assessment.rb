@@ -34,10 +34,14 @@ module RemoteUseCase
           dwelling_type: assessment_details[:dwellingType],
           total_floor_area: assessment_details[:totalFloorArea],
           type_of_assessment: assessment_details[:typeOfAssessment],
-          current_energy_efficiency_rating: assessment_details[:currentEnergyEfficiencyRating],
-          current_energy_efficiency_band: assessment_details[:currentEnergyEfficiencyBand],
-          potential_energy_efficiency_rating: assessment_details[:potentialEnergyEfficiencyRating],
-          potential_energy_efficiency_band: assessment_details[:potentialEnergyEfficiencyBand]
+          current_energy_efficiency_rating:
+            assessment_details[:currentEnergyEfficiencyRating],
+          current_energy_efficiency_band:
+            assessment_details[:currentEnergyEfficiencyBand],
+          potential_energy_efficiency_rating:
+            assessment_details[:potentialEnergyEfficiencyRating],
+          potential_energy_efficiency_band:
+            assessment_details[:potentialEnergyEfficiencyBand]
         }
 
         raise AssessmentNotFound unless result

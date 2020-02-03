@@ -87,9 +87,7 @@ describe 'Acceptance::Assessor' do
         end
 
         it 'displays the find an assessor page heading' do
-          expect(response.body).to include(
-            'Find an energy assessor'
-          )
+          expect(response.body).to include('Find an energy assessor')
         end
 
         it 'has a postcode input field' do
@@ -138,9 +136,7 @@ describe 'Acceptance::Assessor' do
         end
 
         it 'displays the find an assessor page heading' do
-          expect(response.body).to include(
-            'Find an energy assessor'
-          )
+          expect(response.body).to include('Find an energy assessor')
         end
 
         it 'explains that no assessors are nearby' do

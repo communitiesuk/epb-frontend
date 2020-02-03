@@ -21,7 +21,7 @@ class FetchAssessmentStub
         currentEnergyEfficiencyRating: 95,
         currentEnergyEfficiencyBand: 'a',
         potentialEnergyEfficiencyRating: 95,
-        potentialEnergyEfficiencyBand: 'b',
+        potentialEnergyEfficiencyBand: 'b'
       }.to_json
     )
   end
