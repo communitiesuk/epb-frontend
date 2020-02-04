@@ -117,13 +117,6 @@ describe 'Acceptance::Assessor' do
         it 'shows a phone number of an entry' do
           expect(response.body).to include('07921 021 368')
         end
-
-        it 'shows the correct distance' do
-          expect(response.body).to include(
-            '1.4' + ' ' +
-              I18n.t('find_assessor_results.distance.miles_away_text')
-          )
-        end
       end
 
       context 'where no assessors are near' do
