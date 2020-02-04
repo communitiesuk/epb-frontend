@@ -106,7 +106,7 @@ en:
     accreditation_summary_text: 'Accreditation schemes make sure that assessors are qualified to:'
     accreditation_summary_assess: 'assess the energy performance of residential properties'
     accreditation_summary_create: 'create EPCs'
-    results: '10 results, sorted by distance from '
+    results: ' results, sorted by distance from '
     distance:
       heading: 'Distance'
       default_miles_away_text: 'Less than 1 mile away'
