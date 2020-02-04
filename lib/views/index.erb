@@ -9,23 +9,10 @@
     <p class="govuk-body">
       <%= t('index.introduction.how_it_works') %>
     </p>
-    <p class="govuk-body">
-      <%= t('index.scotland.description', :link => '<a href="https://www.gov.scot/publications/energy-performance-certificates-introduction/">' + t('index.scotland.link') + '</a>') %>
-    </p>
 
-    <h2 class="govuk-heading-s">
-      <%= t('index.negative_epc.heading') %>
-    </h2>
-    <ul class="govuk-list govuk-list--bullet">
-      <li>
-        <%= t('index.negative_epc.property_type') %></li>
-      <li>
-        <%= t('index.negative_epc.temporary') %>
-      </li>
-      <li>
-        <%= t('index.negative_epc.demolished') %>
-      </li>
-    </ul>
+    <p class="govuk-body">
+      <%= t('index.negative_epc.no_epc_need') %>
+    </p>
 
     <div class="govuk-inset-text">
       <%= t('index.before_you_start.switch_language.description', :link => '<a href="' + t('index.before_you_start.switch_language.url') + '">' + t('index.before_you_start.switch_language.link') + '</a>' ) %>
@@ -60,6 +47,10 @@
 
     <p class="govuk-body">
       <%= t('index.before_you_start.commercial.description', :link => '<a href="' + localised_url('/schemes') + '">' + t('index.before_you_start.commercial.link') + '</a>' ) %>
+    </p>
+
+    <p class="govuk-body">
+      <%= t('index.scotland.description', :link => '<a href="https://www.gov.scot/publications/energy-performance-certificates-introduction/">' + t('index.scotland.link') + '</a>') %>
     </p>
   </div>
 </div>

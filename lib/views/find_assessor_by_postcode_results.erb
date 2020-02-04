@@ -26,7 +26,7 @@
                  aria-describedby="postcode-hint<% if errors[:postcode] %> postcode-error<% end %>"
                  autocomplete="postal-code"
                  spellcheck="false"
-                 <% if params['postcode'] %>value="<%= params['postcode'] %>"<% end %>
+                 <% if params['postcode'] %>value="<%= params['postcode'].upcase %>"<% end %>
           >
         </div>
 
@@ -47,27 +47,25 @@
         </summary>
         <div class="govuk-details__text">
           <%= t('find_assessor_results.accreditation_summary_text') %>
+          <ul>
+            <li><%= t('find_assessor_results.accreditation_summary_assess') %></li>
+            <li><%= t('find_assessor_results.accreditation_summary_create') %></li>
+          </ul>
         </div>
       </details>
+
+      <h2 class="govuk-heading-m"><%= t('find_assessor_results.results')%> <%= "#{params['postcode'].upcase}" %>:</h2>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
 
       <ul class="govuk-list">
           <% results.each do |result| %>
           <% assessor = result[:assessor] %>
             <li>
               <div>
-                <h2 class="govuk-heading-m"><%= "#{assessor[:firstName]} #{assessor[:lastName]}" %></h2>
+                <h2 class="govuk-heading-m"><%= "#{assessor[:firstName]} #{assessor[:lastName]} (#{t('find_assessor_results.assessor_id_text')}: #{assessor[:registeredBy][:schemeId]})" %></h2>
                 <div>
                   <dl class="govuk-summary-list govuk-summary-list--no-border">
-                    <div class="govuk-summary-list__row">
-                      <dt class="govuk-summary-list__key"><%= t('find_assessor_results.distance.heading') %></dt>
-                      <dd class="govuk-summary-list__value">
-                        <% if result[:distance]<1 %>
-                          <%= t('find_assessor_results.distance.default_miles_away_text') %>
-                        <% else %>
-                        <%= result[:distance].round(1) %> <%= t('find_assessor_results.distance.miles_away_text') %>
-                        <% end %>
-                      </dd>
-                    </div>
                     <div class="govuk-summary-list__row">
                       <dt class="govuk-summary-list__key"><%= t('find_assessor_results.contact_details_text') %></dt>
                       <dd class="govuk-summary-list__value">
@@ -82,10 +80,6 @@
                     <div class="govuk-summary-list__row">
                       <dt class="govuk-summary-list__key"><%= t('find_assessor_results.accredited_by_text') %></dt>
                       <dd class="govuk-summary-list__value"><%= assessor[:registeredBy][:name] %></dd>
-                    </div>
-                    <div class="govuk-summary-list__row">
-                      <dt class="govuk-summary-list__key"><%= t('find_assessor_results.assessor_id_text') %></dt>
-                      <dd class="govuk-summary-list__value"><%= assessor[:registeredBy][:schemeId] %></dd>
                     </div>
                   </dl>
                 </div>

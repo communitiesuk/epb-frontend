@@ -22,29 +22,26 @@ en:
   index:
     head:
       title: 'Energy performance of buildings register - Find an energy assessor for a residential property'
-    top_heading: 'Find an energy assessor for a residential property'
+    top_heading: 'Get a new Energy Performance Certificate (EPC)'
     introduction:
-      what_you_need: 'You need a valid Energy Performance Certificate (EPC) before you sell or let a residential property.'
-      how_it_works: 'Use this service to find a qualified assessor to measure the energy efficiency of your property, or the property of someone you represent. The assessor will create an EPC.'
+      what_you_need: 'You need an EPC when you build, sell or let a residential property. An EPC is valid for 10 years.'
+      how_it_works: 'To get a new EPC you need to book an assessor. They will measure the energy efficiency of your property and create an EPC. The cost of the assessment will depend on the size of your property.'
     scotland:
       description: 'If your property is in Scotland, you should use the %{link}'
       link: 'Scottish government’s EPC service.'
     negative_epc:
-      heading: 'You do not need an EPC if the:'
-      property_type: 'property is not residential'
-      temporary: 'property is temporarily residential, with a planned residential use of 2 years or less'
-      demolished: 'property’s new owner intends to demolish it and never use it as a residential property'
+      no_epc_need: '<a href="https://www.gov.uk/buy-sell-your-home/energy-performance-certificates#buildings-that-dont-need-an-epc">Check which properties do not need an EPC.</a>'
     cta: 'Start now'
     before_you_start:
       heading: 'Before you start'
-      phone_text: 'The service is also available by calling %{link}.'
+      phone_text: 'If you need support finding an assessor, call our helpdesk on %{link}.'
       phone_number: '0233 788 1234'
       switch_language:
-        description: 'This service is also available in %{link}.'
+        description: 'This page is also available in %{link}.'
         url: '/?lang=cy'
         link: 'Welsh (Cymraeg)'
       commercial:
-        description: 'If your property is for commercial use, you need to use a %{link}.'
+        description: 'If your property is for commercial use, find an assessor using a %{link}.'
         link: 'commercial energy assessment service'
 
   schemes:
@@ -85,8 +82,8 @@ en:
   find_assessor_by_postcode:
     head:
       title: 'Energy performance of buildings register - Find an energy assessor'
-    top_heading: 'Find an energy assessor'
-    top_body: 'Find energy assessors in your area'
+    top_heading: 'Get a new Energy Performance Certificate (EPC)'
+    top_body: 'Find qualified energy assessors near your property'
     question: 'Enter a postcode'
     hint: 'For example SW1A 2AA'
     postcode_error: 'Enter a real postcode'
@@ -105,15 +102,18 @@ en:
       title: 'Energy performance of buildings register - Results for energy assessors near you'
     description: 'Contact an assessor listed below to book an energy assessment.'
     no_assessors: 'There are no assessors near you at this point.'
-    accreditation_summary_title: 'Who accredits assessors'
-    accreditation_summary_text: 'Accreditation schemes check that all the assessors listed below are qualified to carry out energy assessments on residential properties, and to issue Energy Performance Certificates.'
+    accreditation_summary_title: 'About accreditation schemes'
+    accreditation_summary_text: 'Accreditation schemes make sure that assessors are qualified to:'
+    accreditation_summary_assess: 'assess the energy performance of residential properties'
+    accreditation_summary_create: 'create Energy Performance Certificates (EPCs)'
+    results: '10 results, sorted by distance from '
     distance:
       heading: 'Distance'
       default_miles_away_text: 'Less than 1 mile away'
       miles_away_text: 'miles away'
     contact_details_text: 'Contact details'
-    accredited_by_text: 'Accredited by'
-    assessor_id_text: 'Assessor ID'
+    accredited_by_text: 'Accreditation scheme'
+    assessor_id_text: 'assessor ID'
 
   domestic_epc:
     top_heading: 'Energy performance certificate'
