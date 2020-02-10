@@ -2,7 +2,11 @@
 
 require 'net/http'
 require 'webmock'
-require './lib/frontend_service'
+require 'zeitwerk'
+
+loader = Zeitwerk::Loader.new
+loader.push_dir("#{__dir__}/lib/")
+loader.setup
 
 Dir['spec/test_doubles/*.rb'].each do |file|
   require_relative file
