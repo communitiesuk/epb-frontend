@@ -1,5 +1,7 @@
-# frozen_string_literal: true
+require 'zeitwerk'
 
-require File.expand_path('lib/frontend_service', File.dirname(__FILE__))
+loader = Zeitwerk::Loader.new
+loader.push_dir("#{__dir__}/lib/")
+loader.setup
 
 run FrontendService.new
