@@ -33,8 +33,8 @@ class FrontendService < Sinatra::Base
   end
 
   get '/find-an-assessor' do
-    @page_title = t('index.head.title')
-    erb :index, layout: :layout
+    @page_title = t('find_an_assessor.head.title')
+    erb :find_assessor, layout: :layout
   end
 
   get '/find-an-assessor/search' do
