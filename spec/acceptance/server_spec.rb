@@ -11,13 +11,13 @@ describe 'Acceptance::Server' do
     end
     it 'includes the index page title' do
       expect(response.body).to include(
-                                 '<title>Energy performance of buildings register - Select your service</title>'
-                               )
+        '<title>Energy performance of buildings register - Select your service</title>'
+      )
     end
     it 'displays the index page heading' do
       expect(response.body).to include(
-                                 'Services related to Energy Performance Certificate (EPC)'
-                               )
+        'Services related to Energy Performance Certificate (EPC)'
+      )
     end
   end
 
@@ -29,14 +29,14 @@ describe 'Acceptance::Server' do
     end
     it 'includes the find-an-assessor page title' do
       expect(response.body).to include(
-                                 '<title>Energy performance of buildings register - Find an energy ' \
+        '<title>Energy performance of buildings register - Find an energy ' \
           'assessor for a residential property</title>'
-                               )
+      )
     end
     it 'displays the find-an-assessor page heading' do
       expect(response.body).to include(
-                                 'Find an energy assessor for a residential property'
-                               )
+        'Find an energy assessor for a residential property'
+      )
     end
   end
 
