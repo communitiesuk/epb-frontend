@@ -1,8 +1,10 @@
 # frozen_string_literal: true
 
 require_relative 'gateway/assessors_gateway'
+require_relative 'gateway/certificates_gateway'
 require_relative 'remote_use_case/fetch_assessment'
 require_relative 'use_case/find_assessor'
+require_relative 'use_case/find_certificate'
 
 class Container
   def initialize
@@ -14,14 +16,17 @@ class Container
                            OAuth2::Client
 
     assessors_gateway = Gateway::AssessorsGateway.new(internal_api_client)
+    certificates_gateway = Gateway::CertificatesGateway.new(internal_api_client)
     find_assessor_use_case = UseCase::FindAssessor.new(assessors_gateway)
+    find_certificate_use_case = UseCase::FindCertificate.new(certificates_gateway)
     fetch_assessment_use_case =
       RemoteUseCase::FetchAssessment.new(internal_api_client)
 
     @objects = {
       internal_api_client: internal_api_client,
       find_assessor_use_case: find_assessor_use_case,
-      fetch_assessment_use_case: fetch_assessment_use_case
+      fetch_assessment_use_case: fetch_assessment_use_case,
+      find_certificate_use_case: find_certificate_use_case
     }
   end
 
