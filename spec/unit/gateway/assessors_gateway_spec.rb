@@ -59,7 +59,7 @@ describe Gateway::AssessorsGateway do
   context 'when the postcode doesnt exist' do
     let(:response) { gateway.search('AF1+3AA') }
 
-    before { FindPostcodeUnregisteredPostcodeStub.search('AF1+3AA') }
+    before { FindAssessorUnregisteredPostcodeStub.search('AF1+3AA') }
 
     it 'returns not found error' do
       expect(response).to eq(

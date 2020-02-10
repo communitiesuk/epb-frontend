@@ -56,7 +56,7 @@ describe 'Acceptance::Postcodes' do
     end
 
     context 'where the postcode doesnt exist' do
-      before { FindPostcodeUnregisteredPostcodeStub.search('B11+4AA') }
+      before { FindAssessorUnregisteredPostcodeStub.search('B11+4AA') }
 
       it 'raises postcode not registered exception' do
         expect {

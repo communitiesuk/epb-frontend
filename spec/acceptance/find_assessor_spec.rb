@@ -132,7 +132,7 @@ describe 'Acceptance::Assessor' do
       end
 
       context 'where the postcode doesnt exist' do
-        before { FindPostcodeUnregisteredPostcodeStub.search('B11 4FF') }
+        before { FindAssessorUnregisteredPostcodeStub.search('B11 4FF') }
 
         let(:response) { get '/find-an-assessor/search?postcode=B11+4FF' }
 
