@@ -19,6 +19,21 @@ en:
         license: 'All content is available under the <a class="govuk-footer__link" href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated'
         copyright: '<a class="govuk-footer__link govuk-footer__copyright-logo" href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/">&copy; Crown copyright</a>'
 
+  index:
+    head:
+      title: 'Energy performance of buildings register - Select your service'
+    top_heading: 'Services related to Energy Performance Certificate (EPC)'
+    introduction: 'Use this service to find assessors and certificates'
+    find_an_assessor:
+      body: 'Find a qualified assessor through the %{link} service'
+      url: '/find-an-assessor'
+      cta: 'Find an assessor'
+    find_a_certificate:
+      body: 'Find an existing certificate for a property through the %{link} service'
+      url: '#'
+      cta: 'Find a certificate'
+    caution: 'This page is intended for Private Beta use, and will not be a part of the public service'
+
   find_an_assessor:
     head:
       title: 'Energy performance of buildings register - Find an energy assessor for a residential property'

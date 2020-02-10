@@ -3,22 +3,40 @@
 describe 'Acceptance::Server' do
   include RSpecFrontendServiceMixin
 
-  describe '.get /find-an-assessor' do
-    let(:response) { get '/find-an-assessor' }
+  describe '.get /index' do
+    let(:response) { get '/' }
 
     it 'returns status 200' do
       expect(response.status).to eq(200)
     end
     it 'includes the index page title' do
       expect(response.body).to include(
-        '<title>Energy performance of buildings register - Find an energy ' \
-          'assessor for a residential property</title>'
-      )
+                                 '<title>Energy performance of buildings register - Select your service</title>'
+                               )
     end
     it 'displays the index page heading' do
       expect(response.body).to include(
-        'Find an energy assessor for a residential property'
-      )
+                                 'Services related to Energy Performance Certificate (EPC)'
+                               )
+    end
+  end
+
+  describe '.get /find-an-assessor' do
+    let(:response) { get '/find-an-assessor' }
+
+    it 'returns status 200' do
+      expect(response.status).to eq(200)
+    end
+    it 'includes the find-an-assessor page title' do
+      expect(response.body).to include(
+                                 '<title>Energy performance of buildings register - Find an energy ' \
+          'assessor for a residential property</title>'
+                               )
+    end
+    it 'displays the find-an-assessor page heading' do
+      expect(response.body).to include(
+                                 'Find an energy assessor for a residential property'
+                               )
     end
   end
 

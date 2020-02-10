@@ -18,9 +18,9 @@ describe 'Integration::Rackup' do
 
   let(:request) { Net::HTTP.new('127.0.0.1', 9_393) }
 
-  describe 'GET /find-an-assessor' do
+  describe 'GET /' do
     it 'renders the home page' do
-      req = Net::HTTP::Get.new('/find-an-assessor')
+      req = Net::HTTP::Get.new('/')
       response = request.request(req)
       expect(response.code).to eq('200')
       expect(response.body).to include('Energy performance of buildings')

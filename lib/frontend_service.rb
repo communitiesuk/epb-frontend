@@ -29,7 +29,8 @@ class FrontendService < Sinatra::Base
   before { set_locale }
 
   get '/' do
-
+    @page_title = t('index.head.title')
+    erb :index, layout: :layout
   end
 
   get '/find-an-assessor' do
