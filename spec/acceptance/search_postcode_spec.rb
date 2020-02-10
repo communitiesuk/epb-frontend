@@ -48,7 +48,7 @@ describe 'Acceptance::Postcodes' do
     end
 
     context 'where no assessors are near' do
-      before { FindAssessorsNoNearAssessorsStub.search('BF1+3AA') }
+      before { FindAssessorNoNearAssessorsStub.search('BF1+3AA') }
 
       it 'returns empty results' do
         expect(find_assessor.execute('BF1+3AA')).to eq([])
