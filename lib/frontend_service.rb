@@ -81,6 +81,47 @@ class FrontendService < Sinatra::Base
     status 200
   end
 
+  get '/find-a-certificate' do
+    @page_title = t('find_a_certificate.head.title')
+    erb :find_certificate, layout: :layout
+  end
+
+  get '/find-a-certificate/search' do
+    @errors = {}
+    @erb_template = :find_certificate_by_postcode
+
+    response = @container.get_object(:find_certificate_use_case)
+
+    if params['postcode']
+      if valid_postcode.match(params['postcode'])
+        @page_title = t('find_certificate_results.head.title')
+        begin
+          @results = response.execute(params['postcode'])
+
+          @erb_template = :find_certificate_by_postcode_results
+        rescue UseCase::FindCertificate::PostcodeNotRegistered
+          status 404
+          @errors[:postcode] =
+            t('find_certificate_by_postcode.postcode_not_registered')
+        rescue UseCase::FindCertificate::PostcodeNotValid
+          status 400
+          @errors[:postcode] =
+            t('find_certificate_by_postcode.postcode_not_valid')
+        rescue Auth::Errors::NetworkConnectionFailed
+          status 500
+          @erb_template = :error_page_500
+        end
+      else
+        status 400
+        @errors[:postcode] = t('find_certificate_by_postcode.postcode_error')
+      end
+    end
+
+    @page_title = t('find_certificate_by_postcode.head.title')
+    erb @erb_template,
+        layout: :layout, locals: { errors: @errors, results: @results }
+  end
+
   get '/energy-performance-certificate/:assessment_id' do
     use_case = @container.get_object(:fetch_assessment_use_case)
     assessment = use_case.execute(params[:assessment_id])
