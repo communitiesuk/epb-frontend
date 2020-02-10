@@ -30,7 +30,7 @@ cy:
       cta: 'Welsh: Find an assessor'
     find_a_certificate:
       body: 'Welsh: Find an existing certificate for a property through the %{link} service'
-      url: '#'
+      url: '/find-a-certificate'
       cta: 'Welsh: Find a certificate'
     caution: 'Welsh: This page is intended for Private Beta use, and will not be a part of the public service'
 

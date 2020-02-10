@@ -30,7 +30,7 @@ en:
       cta: 'Find an assessor'
     find_a_certificate:
       body: 'Find an existing certificate for a property through the %{link} service'
-      url: '#'
+      url: '/find-a-certificate'
       cta: 'Find a certificate'
     caution: 'This page is intended for Private Beta use, and will not be a part of the public service'
 
@@ -129,6 +129,30 @@ en:
     contact_details_text: 'Contact details'
     accredited_by_text: 'Accreditation scheme'
     assessor_id_text: 'assessor ID'
+
+  find_a_certificate:
+    head:
+      title: 'Energy performance of buildings register - Find an energy assessor for a residential property'
+
+  find_certificate_by_postcode:
+    head:
+      title: 'Energy performance of buildings register - Find an energy performance certificate'
+    top_heading: 'Find a Energy Performance Certificate (EPC)'
+    top_body: 'Find energy performance certificates at a postcode'
+    question: 'Enter a postcode'
+    hint: 'For example SW1A 2AA'
+    postcode_error: 'Enter a real postcode'
+    postcode_not_valid: 'Enter a postcode that is not malformed'
+    postcode_not_registered: 'Enter a postcode that exists'
+    button_text: 'Find'
+    no_network:
+      heading: 'Network connection failed'
+      body: 'There is an internal network error'
+
+  find_certificate_results:
+    head:
+      title: 'Energy performance of buildings register - Results for energy performance certificates at your postcode'
+    no_certificates: 'There are no certificates at this postcode.'
 
   domestic_epc:
     top_heading: 'Energy performance certificate'
