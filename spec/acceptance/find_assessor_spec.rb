@@ -3,14 +3,6 @@
 describe 'Acceptance::Assessor' do
   include RSpecFrontendServiceMixin
 
-  describe '.get /find-an-assessor' do
-    let(:response) { get '/find-an-assessor' }
-
-    it 'does not redirect to /find-an-assessor/search' do
-      #expect(response).to redirect_to '/find-an-assessor/search'
-    end
-  end
-
   describe '.get /find-an-assessor/search' do
     context 'when search page rendered' do
       let(:response) { get '/find-an-assessor/search' }
@@ -120,7 +112,7 @@ describe 'Acceptance::Assessor' do
       end
 
       context 'where no assessors are near' do
-        before { FindAssessorsNoNearAssessorsStub.search('E1 4FF') }
+        before { FindAssessorNoNearAssessorsStub.search('E1 4FF') }
 
         let(:response) { get '/find-an-assessor/search?postcode=E1+4FF' }
 
