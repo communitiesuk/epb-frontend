@@ -3,8 +3,8 @@
 describe 'Acceptance::Server' do
   include RSpecFrontendServiceMixin
 
-  describe '.get /' do
-    let(:response) { get '/' }
+  describe '.get /find-an-assessor' do
+    let(:response) { get '/find-an-assessor' }
 
     it 'returns status 200' do
       expect(response.status).to eq(200)

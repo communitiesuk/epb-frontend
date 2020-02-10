@@ -19,7 +19,7 @@ cy:
         license: 'Welsh: All content is available under the <a class="govuk-footer__link" href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated'
         copyright: 'Welsh: <a class="govuk-footer__link govuk-footer__copyright-logo" href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/">&copy; Crown copyright</a>'
 
-  index:
+  find_an_assessor:
     head:
       title: 'Welsh: Energy performance of buildings register - Find an energy assessor for a residential property'
     top_heading: 'Welsh: Find an energy assessor for a residential property'
@@ -41,7 +41,7 @@ cy:
       phone_number: 'Welsh: 0233 788 1234'
       switch_language:
         description: 'Welsh: This service is also available in %{link}.'
-        url: '/?lang=en'
+        url: '/find-an-assessor?lang=en'
         link: 'Welsh: English (English)'
       commercial:
         description: 'Welsh: If your property is for commercial use, you need to use a %{link}.'

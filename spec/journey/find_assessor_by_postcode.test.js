@@ -39,14 +39,14 @@ describe('Journey::Assessor', () => {
   });
 
   it('finds an assessor by postcode', async () => {
-    await goto("localhost:9292");
+    await goto("localhost:9292/find-an-assessor");
     await click("Start now");
     await write('SW1A 2AA', into(textBox('postcode')));
     await click('Find');
   }, 30000);
 
   it('finds an assessor by postcode in Welsh', async () => {
-    await goto("localhost:9292");
+    await goto("localhost:9292/find-an-assessor");
     await click('Welsh (Cymraeg)')
     await click('Welsh: Start now');
     await write('SW1A 2AA', into(textBox('postcode')));
@@ -54,7 +54,7 @@ describe('Journey::Assessor', () => {
   }, 30000);
 
   it('displays an error message when entering an empty postcode', async () => {
-    await goto("localhost:9292");
+    await goto("localhost:9292/find-an-assessor");
     await click("Start now");
     await write('', into(textBox('postcode')));
     await click('Find');
@@ -62,7 +62,7 @@ describe('Journey::Assessor', () => {
   }, 30000);
 
   it('displays an error message when entering an invalid postcode', async () => {
-    await goto("localhost:9292");
+    await goto("localhost:9292/find-an-assessor");
     await click("Start now");
     await write('NOT A POSTCODE', into(textBox('postcode')));
     await click('Find');
@@ -70,7 +70,7 @@ describe('Journey::Assessor', () => {
   }, 30000);
 
   it('displays the find an assessor page heading when entering a valid postcode ', async () => {
-    await goto("localhost:9292");
+    await goto("localhost:9292/find-an-assessor");
     await click("Start now");
     await write('SW1A 2AA', into(textBox('postcode')));
     await click('Find');
