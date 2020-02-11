@@ -1,4 +1,4 @@
-en:
+cy:
   layout:
     head:
       title: 'Welsh: Energy performance of buildings register'
@@ -26,11 +26,11 @@ en:
     introduction: 'Welsh: Use this service to find assessors and certificates'
     find_an_assessor:
       body: 'Welsh: Find a qualified assessor through the %{link} service'
-      url: 'Welsh: /find-an-assessor'
+      url: '/find-an-assessor'
       cta: 'Welsh: Find an assessor'
     find_a_certificate:
       body: 'Welsh: Find an existing certificate for a property through the %{link} service'
-      url: 'Welsh: /find-a-certificate'
+      url: '/find-a-certificate'
       cta: 'Welsh: Find a certificate'
     caution: 'Welsh: This page is intended for Private Beta use, and will not be a part of the public service'
 
@@ -53,7 +53,7 @@ en:
       phone_number: 'Welsh: 0233 788 1234'
       switch_language:
         description: 'Welsh: This page is also available in %{link}.'
-        url: 'Welsh: /find-an-assessor?lang=en'
+        url: '/find-an-assessor?lang=en'
         link: 'Welsh: Welsh (Cymraeg)'
       commercial:
         description: 'Welsh: If your property is for commercial use, find an assessor using a %{link}.'
@@ -72,27 +72,27 @@ en:
       cibse:
         name: 'Welsh: CIBSE'
         phone: 'Welsh: 020 8772 3649'
-        url: 'Welsh: https://www.cibsecertification.co.uk'
+        url: 'https://www.cibsecertification.co.uk'
       ecmk:
         name: 'Welsh: ECMK'
         phone: 'Welsh: 0333 123 1418'
-        url: 'Welsh: https://www.ecmk.co.uk'
+        url: 'https://www.ecmk.co.uk'
       elmhurstenergy:
         name: 'Welsh: Elmhurst Energy'
         phone: 'Welsh: 01455 883 250'
-        url: 'Welsh: https://www.elmhurstenergy.co.uk'
+        url: 'https://www.elmhurstenergy.co.uk'
       sterling:
         name: 'Welsh: Sterling'
         phone: 'Welsh: 0161 727 4303'
-        url: 'Welsh: http://www.sterlingaccreditation.com'
+        url: 'http://www.sterlingaccreditation.com'
       stroma:
         name: 'Welsh: Stroma'
         phone: 'Welsh: 0845 621 11 11'
-        url: 'Welsh: https://www.stroma.com/certification'
+        url: 'https://www.stroma.com/certification'
       quidos:
         name: 'Welsh: Quidos'
         phone: 'Welsh: 01225 667 570'
-        url: 'Welsh: https://quidos.co.uk'
+        url: 'https://quidos.co.uk'
 
   find_assessor_by_postcode:
     head:
@@ -150,7 +150,7 @@ en:
     switch_language:
       description: 'Welsh: This page is also available in %{link}.'
       link: 'Welsh: Welsh (Cymraeg)'
-      url: 'Welsh: /find-a-certificate?lang=en'
+      url: '/find-a-certificate?lang=en'
     cta: 'Welsh: Start now'
     before_you_start:
       title: 'Welsh: Before you start'
