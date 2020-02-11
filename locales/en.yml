@@ -165,10 +165,8 @@ en:
   find_certificate_by_postcode:
     head:
       title: 'Energy performance of buildings register - Find an energy performance certificate'
-    top_heading: 'Find a Energy Performance Certificate (EPC)'
-    top_body: 'Find energy performance certificates at a postcode'
-    question: 'Enter a postcode'
-    hint: 'For example SW1A 2AA'
+    top_heading: 'Find a Energy Performance Certificate for a residential property'
+    question: 'Enter a postcode OR a street name and town OR an EPC reference number below'
     postcode_error: 'Enter a real postcode'
     postcode_not_valid: 'Enter a postcode that is not malformed'
     postcode_not_registered: 'Enter a postcode that exists'
