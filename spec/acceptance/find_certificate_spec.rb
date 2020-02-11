@@ -139,29 +139,6 @@ describe 'Acceptance::Certificate' do
         end
       end
 
-      context 'where the postcode doesnt exist' do
-        before { FindCertificateUnregisteredPostcodeStub.search('B11 4FF') }
-
-        let(:response) { get '/find-a-certificate/search?postcode=B11+4FF' }
-
-        it 'returns status 404' do
-          expect(response.status).to eq(404)
-        end
-
-        it 'displays the find a certificate page heading' do
-          expect(response.body).to include(
-            'Find an energy performance certificate'
-          )
-        end
-
-        it 'displays an error message' do
-          expect(response.body).to include(
-            '<span id="postcode-error" class="govuk-error-message">'
-          )
-          expect(response.body).to include('Enter a postcode that exists')
-        end
-      end
-
       context 'where the requested postcode is malformed' do
         before { FindCertificateInvalidPostcodeStub.search('C11 4FF') }
 

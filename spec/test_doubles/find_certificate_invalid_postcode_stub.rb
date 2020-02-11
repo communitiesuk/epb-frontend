@@ -4,7 +4,9 @@ class FindCertificateInvalidPostcodeStub
   def self.search(postcode)
     WebMock.stub_request(
       :get,
-      "http://test-api.gov.uk/api/assessments/domestic-energy-performance/search/#{postcode}"
+      "http://test-api.gov.uk/api/assessments/domestic-energy-performance/search/#{
+        postcode
+      }"
     )
       .to_return(
       status: 200,
