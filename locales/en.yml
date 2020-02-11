@@ -105,9 +105,6 @@ en:
     postcode_not_valid: 'Enter a postcode that is not malformed'
     postcode_not_registered: 'Enter a postcode that exists'
     button_text: 'Find'
-    no_network:
-      heading: 'Network connection failed'
-      body: 'There is an internal network error'
     scheme_not_found:
       heading: 'Accreditation scheme not found'
       body: 'There is no scheme for one of the requested assessor'
@@ -157,7 +154,7 @@ en:
     cta: 'Start now'
     before_you_start:
       title: 'Before you start'
-      call_center: 'The service is also avaialbe by calling 0233 788 1234'
+      call_center: 'The service is also available by calling 0233 788 1234.'
       commercial:
         text: 'If your property is for commercial use, you need to use a %{link}.'
         cta: 'commercial energy assessment service'
@@ -184,8 +181,6 @@ en:
       address: 'Address'
       rating: 'EPC Rating'
       expiry: 'EPC Expiry Rating'
-
-
     no_certificates: 'There are no certificates at this postcode.'
 
   domestic_epc:
@@ -197,3 +192,12 @@ en:
       type_of_assessment: 'Type of assessment'
       total_floor_area: 'Total floor area'
       dwelling_type: 'Dwelling type'
+
+  error:
+    500:
+      heading: 'Network connection failed'
+      body: 'There is an internal network error'
+    404:
+      heading: 'Page not found'
+      intro: 'If you typed the web address, check it is correct.'
+      body: 'If you pasted the web address, check you copied the entire address.'
