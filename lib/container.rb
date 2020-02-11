@@ -12,7 +12,8 @@ class Container
     assessors_gateway = Gateway::AssessorsGateway.new(internal_api_client)
     certificates_gateway = Gateway::CertificatesGateway.new(internal_api_client)
     find_assessor_use_case = UseCase::FindAssessor.new(assessors_gateway)
-    find_certificate_use_case = UseCase::FindCertificate.new(certificates_gateway)
+    find_certificate_use_case =
+      UseCase::FindCertificate.new(certificates_gateway)
     fetch_assessment_use_case =
       RemoteUseCase::FetchAssessment.new(internal_api_client)
 
