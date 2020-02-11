@@ -15,6 +15,8 @@ end
 WebMock.enable!
 
 OauthStub.token
+FindAssessorStub.search('SW1A 2AA')
+FindCertificateStub.search('SW1A 2AA')
 
 ENV['EPB_AUTH_CLIENT_ID'] = 'test.id'
 ENV['EPB_AUTH_CLIENT_SECRET'] = 'test.client.secret'
