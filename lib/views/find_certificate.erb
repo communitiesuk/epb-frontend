@@ -4,8 +4,36 @@
       <%= t('find_a_certificate.top_heading') %>
     </h1>
     <p class="govuk-body">
-      <%= t('find_a_certificate.introduction.what_you_need') %>
+      <%= t('find_a_certificate.top_body') %>
     </p>
+
+    <p class="govuk-body">
+      <%= t('find_a_certificate.service.introduction') %>
+    </p>
+
+    <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-0">
+      <li><%= t('find_a_certificate.service.list.check') %></li>
+      <li><%= t('find_a_certificate.service.list.review') %></li>
+      <li><%= t('find_a_certificate.service.list.access') %></li>
+    </ul>
+
+    <p class="govuk-body">
+      <%= t('find_a_certificate.scotland.text', :link => '<a href="https://www.gov.scot/publications/energy-performance-certificates-introduction/">' + t('find_a_certificate.scotland.cta') + '</a>') %>
+    </p>
+
+    <p class="govuk-body">
+      <%= t('find_a_certificate.not.introduction') %>
+    </p>
+
+    <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-0">
+      <li><%= t('find_a_certificate.not.list.not_residential') %></li>
+      <li><%= t('find_a_certificate.not.list.temporary') %></li>
+      <li><%= t('find_a_certificate.not.list.demolish') %></li>
+    </ul>
+
+    <div class="govuk-inset-text">
+      <%= t('find_a_certificate.switch_language.description', :link => '<a href="' + t('find_an_assessor.before_you_start.switch_language.url') + '">' + t('find_an_assessor.before_you_start.switch_language.link') + '</a>' ) %>
+    </div>
 
     <a
       href="<%= localised_url('/find-a-certificate/search') %>"
@@ -25,5 +53,17 @@
         <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
       </svg>
     </a>
+
+    <h2 class="govuk-heading-m">
+      <%= t('find_a_certificate.before_you_start.title') %>
+    </h2>
+
+    <p class="govuk-body">
+      <%= t('find_a_certificate.before_you_start.call_center') %>
+    </p>
+
+    <p class="govuk-body">
+      <%= t('find_a_certificate.before_you_start.commercial.text', :link => '<a href="' + localised_url('/schemes') + '">' + t('find_a_certificate.before_you_start.commercial.cta') + '</a>') %>
+    </p>
   </div>
 </div>
