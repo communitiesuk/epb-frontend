@@ -100,6 +100,10 @@ describe 'Acceptance::Certificate' do
           expect(response.body).to include('123-987')
         end
 
+        it 'shows the id of an entry' do
+          expect(response.body).to include('>B<')
+        end
+
         it 'shows a clickable entry' do
           expect(response.body).to include('<a href="/energy-performance-certificate/123-987"')
         end
