@@ -175,7 +175,7 @@ en:
   find_certificate_results:
     head:
       title: 'Energy performance of buildings register - Results for energy performance certificates at your postcode'
-    top_heading: 'Find an Enefgy Performance Certificate for a residential property'
+    top_heading: 'Find an Energy Performance Certificate for a residential property'
     list: '1-%{length} of %{length} results matching %{postcode}'
     table:
       address: 'Address'
