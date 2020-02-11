@@ -92,28 +92,20 @@ describe 'Acceptance::Certificate' do
           )
         end
 
-        it 'has a postcode input field' do
-          expect(response.body).to include(
-            '<input id="postcode" name="postcode"'
-          )
-        end
-
-        it 'has a Find button' do
-          expect(response.body).to include(
-            '<button class="govuk-button" data-module="govuk-button">Find</button>'
-          )
-        end
-
         it 'shows the address of an entry' do
-          expect(response.body).to include('')
+          expect(response.body).to include('2 Marsham Street, London, SW1B 2BB')
         end
 
         it 'shows the id of an entry' do
-          expect(response.body).to include('')
+          expect(response.body).to include('123-987')
         end
 
         it 'shows a clickable entry' do
-          expect(response.body).to include('')
+          expect(response.body).to include('<a href="/energy-performance-certificate/123-987"')
+        end
+
+        it 'shows the expiry date of an entry' do
+          expect(response.body).to include('2022-01-01')
         end
       end
 
