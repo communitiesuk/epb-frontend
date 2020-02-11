@@ -1,4 +1,4 @@
-cy:
+en:
   layout:
     head:
       title: 'Welsh: Energy performance of buildings register'
@@ -26,40 +26,37 @@ cy:
     introduction: 'Welsh: Use this service to find assessors and certificates'
     find_an_assessor:
       body: 'Welsh: Find a qualified assessor through the %{link} service'
-      url: '/find-an-assessor'
+      url: 'Welsh: /find-an-assessor'
       cta: 'Welsh: Find an assessor'
     find_a_certificate:
       body: 'Welsh: Find an existing certificate for a property through the %{link} service'
-      url: '/find-a-certificate'
+      url: 'Welsh: /find-a-certificate'
       cta: 'Welsh: Find a certificate'
     caution: 'Welsh: This page is intended for Private Beta use, and will not be a part of the public service'
 
   find_an_assessor:
     head:
       title: 'Welsh: Energy performance of buildings register - Find an energy assessor for a residential property'
-    top_heading: 'Welsh: Find an energy assessor for a residential property'
+    top_heading: 'Welsh: Get a new Energy Performance Certificate (EPC)'
     introduction:
-      what_you_need: 'Welsh: You need a valid Energy Performance Certificate (EPC) before you sell or let a residential property.'
-      how_it_works: 'Welsh: Use this service to find a qualified assessor to measure the energy efficiency of your property, or the property of someone you represent. The assessor will create an EPC.'
+      what_you_need: 'Welsh: You need an EPC when you build, sell or let a residential property. An EPC is valid for 10 years.'
+      how_it_works: 'Welsh: To get a new EPC you need to book an assessor. They will measure the energy efficiency of your property and create an EPC. The cost of the assessment will depend on the size of your property.'
     scotland:
       description: 'Welsh: If your property is in Scotland, you should use the %{link}'
       link: 'Welsh: Scottish government’s EPC service.'
     negative_epc:
-      heading: 'Welsh: You do not need an EPC if the:'
-      property_type: 'Welsh: property is not residential'
-      temporary: 'Welsh: property is temporarily residential, with a planned residential use of 2 years or less'
-      demolished: 'Welsh: property’s new owner intends to demolish it and never use it as a residential property'
+      no_epc_need: 'Welsh: <a href="https://www.gov.uk/buy-sell-your-home/energy-performance-certificates#buildings-that-dont-need-an-epc">Check which properties do not need an EPC.</a>'
     cta: 'Welsh: Start now'
     before_you_start:
       heading: 'Welsh: Before you start'
-      phone_text: 'Welsh: The service is also available by calling %{link}.'
+      phone_text: 'Welsh: If you need support finding an assessor, call our helpdesk on %{link}.'
       phone_number: 'Welsh: 0233 788 1234'
       switch_language:
-        description: 'Welsh: This service is also available in %{link}.'
-        url: '/find-an-assessor?lang=en'
-        link: 'Welsh: English (English)'
+        description: 'Welsh: This page is also available in %{link}.'
+        url: 'Welsh: /find-an-assessor?lang=en'
+        link: 'Welsh: Welsh (Cymraeg)'
       commercial:
-        description: 'Welsh: If your property is for commercial use, you need to use a %{link}.'
+        description: 'Welsh: If your property is for commercial use, find an assessor using a %{link}.'
         link: 'Welsh: commercial energy assessment service'
 
   schemes:
@@ -75,15 +72,15 @@ cy:
       cibse:
         name: 'Welsh: CIBSE'
         phone: 'Welsh: 020 8772 3649'
-        url: 'https://www.cibsecertification.co.uk'
+        url: 'Welsh: https://www.cibsecertification.co.uk'
       ecmk:
         name: 'Welsh: ECMK'
         phone: 'Welsh: 0333 123 1418'
-        url: 'https://www.ecmk.co.uk'
+        url: 'Welsh: https://www.ecmk.co.uk'
       elmhurstenergy:
         name: 'Welsh: Elmhurst Energy'
         phone: 'Welsh: 01455 883 250'
-        url: 'https://www.elmhurstenergy.co.uk'
+        url: 'Welsh: https://www.elmhurstenergy.co.uk'
       sterling:
         name: 'Welsh: Sterling'
         phone: 'Welsh: 0161 727 4303'
@@ -91,26 +88,23 @@ cy:
       stroma:
         name: 'Welsh: Stroma'
         phone: 'Welsh: 0845 621 11 11'
-        url: 'https://www.stroma.com/certification'
+        url: 'Welsh: https://www.stroma.com/certification'
       quidos:
         name: 'Welsh: Quidos'
         phone: 'Welsh: 01225 667 570'
-        url: 'https://quidos.co.uk'
+        url: 'Welsh: https://quidos.co.uk'
 
   find_assessor_by_postcode:
     head:
       title: 'Welsh: Energy performance of buildings register - Find an energy assessor'
-    top_heading: 'Welsh: Find an energy assessor'
-    top_body: 'Welsh: Find energy assessors in your area'
+    top_heading: 'Welsh: Get a new Energy Performance Certificate (EPC)'
+    top_body: 'Welsh: Find qualified energy assessors near your property'
     question: 'Welsh: Enter a postcode'
     hint: 'Welsh: For example SW1A 2AA'
     postcode_error: 'Welsh: Enter a real postcode'
     postcode_not_valid: 'Welsh: Enter a postcode that is not malformed'
     postcode_not_registered: 'Welsh: Enter a postcode that exists'
     button_text: 'Welsh: Find'
-    no_network:
-      heading: 'Welsh: Network connection failed'
-      body: 'Welsh: There is an internal network error'
     scheme_not_found:
       heading: 'Welsh: Accreditation scheme not found'
       body: 'Welsh: There is no scheme for one of the requested assessor'
@@ -120,22 +114,90 @@ cy:
       title: 'Welsh: Energy performance of buildings register - Results for energy assessors near you'
     description: 'Welsh: Contact an assessor listed below to book an energy assessment.'
     no_assessors: 'Welsh: There are no assessors near you at this point.'
-    accreditation_summary_title: 'Welsh: Who accredits assessors'
-    accreditation_summary_text: 'Welsh: Accreditation schemes check that all the assessors listed below are qualified to carry out energy assessments on residential properties, and to issue Energy Performance Certificates.'
+    accreditation_summary_title: 'Welsh: About accreditation schemes'
+    accreditation_summary_text: 'Welsh: Accreditation schemes make sure that assessors are qualified to:'
+    accreditation_summary_assess: 'Welsh: assess the energy performance of residential properties'
+    accreditation_summary_create: 'Welsh: create EPCs'
+    results: 'Welsh:  results, sorted by distance from '
     distance:
       heading: 'Welsh: Distance'
       default_miles_away_text: 'Welsh: Less than 1 mile away'
       miles_away_text: 'Welsh: miles away'
     contact_details_text: 'Welsh: Contact details'
-    accredited_by_text: 'Welsh: Accredited by'
-    assessor_id_text: 'Welsh: Assessor ID'
+    accredited_by_text: 'Welsh: Accreditation scheme'
+    assessor_id_text: 'Welsh: assessor ID'
+
+  find_a_certificate:
+    head:
+      title: 'Welsh: Energy performance of buildings register - Find an energy assessor for a residential property'
+    top_heading: 'Welsh: Find an Energy Performance Certificate for a residential property'
+    top_body: 'Welsh: You need a valid Energy Performance Certificate (EPC) before you sell or let a residential property.'
+    service:
+      introduction: 'Welsh: Use this service to:'
+      list:
+        check: 'Welsh: check if your property has a valid EPC'
+        review: 'Welsh: review the energy efficiency rating of your property'
+        access: 'Welsh: access advice and information about how to improve the energy efficiency of your property'
+    scotland:
+      text: 'Welsh: If your property is in Scotland, you should use the %{link}.'
+      cta: "Welsh: Scottish government's EPC service"
+    not:
+      introduction: 'Welsh: You do not need an EPC if the:'
+      list:
+        not_residential: 'Welsh: property is not residential'
+        temporary: 'Welsh: property is temporarily residential, with a planned residential use of 2 years or less'
+        demolish: "Welsh: property's new owner intends to demolish it and never use it as a residential property"
+    switch_language:
+      description: 'Welsh: This page is also available in %{link}.'
+      link: 'Welsh: Welsh (Cymraeg)'
+      url: 'Welsh: /find-a-certificate?lang=en'
+    cta: 'Welsh: Start now'
+    before_you_start:
+      title: 'Welsh: Before you start'
+      call_center: 'Welsh: The service is also available by calling 0233 788 1234.'
+      commercial:
+        text: 'Welsh: If your property is for commercial use, you need to use a %{link}.'
+        cta: 'Welsh: commercial energy assessment service'
+
+  find_certificate_by_postcode:
+    head:
+      title: 'Welsh: Energy performance of buildings register - Find an energy performance certificate'
+    top_heading: 'Welsh: Find a Energy Performance Certificate for a residential property'
+    question: 'Welsh: Enter a postcode OR a street name and town OR an EPC reference number below'
+    postcode_error: 'Welsh: Enter a real postcode'
+    postcode_not_valid: 'Welsh: Enter a postcode that is not malformed'
+    postcode_not_registered: 'Welsh: Enter a postcode that exists'
+    button_text: 'Welsh: Find'
+    no_network:
+      heading: 'Welsh: Network connection failed'
+      body: 'Welsh: There is an internal network error'
+
+  find_certificate_results:
+    head:
+      title: 'Welsh: Energy performance of buildings register - Results for energy performance certificates at your postcode'
+    top_heading: 'Welsh: Find an Energy Performance Certificate for a residential property'
+    list: 'Welsh: 1-%{length} of %{length} results matching %{postcode}'
+    table:
+      address: 'Welsh: Address'
+      rating: 'Welsh: EPC Rating'
+      expiry: 'Welsh: EPC Expiry Rating'
+    no_certificates: 'Welsh: There are no certificates at this postcode.'
 
   domestic_epc:
-    top_heading: 'Tystysgrif Perfformiad Ynni (EPC)'
+    top_heading: 'Welsh: Energy performance certificate'
     labels:
-      certificate_number: 'Cyfeirnod'
-      date_of_assessment: 'Dyddiad yr asesiad'
-      date_of_certificate: 'Dyddiad y dystysgrif:'
-      type_of_assessment: 'Math o asesiad'
-      total_floor_area: 'Cyfanswm yr arwynebedd llawr'
-      dwelling_type: 'Math o annedd'
+      certificate_number: 'Welsh: Reference number'
+      date_of_assessment: 'Welsh: Date of assessment'
+      date_of_certificate: 'Welsh: Date of certificate'
+      type_of_assessment: 'Welsh: Type of assessment'
+      total_floor_area: 'Welsh: Total floor area'
+      dwelling_type: 'Welsh: Dwelling type'
+
+  error:
+    500:
+      heading: 'Welsh: Network connection failed'
+      body: 'Welsh: There is an internal network error'
+    404:
+      heading: 'Welsh: Page not found'
+      intro: 'Welsh: If you typed the web address, check it is correct.'
+      body: 'Welsh: If you pasted the web address, check you copied the entire address.'
