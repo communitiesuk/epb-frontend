@@ -180,7 +180,7 @@ en:
     table:
       address: 'Address'
       rating: 'EPC Rating'
-      expiry: 'EPC Expiry Rating'
+      expiry: 'EPC Expiry Date'
     no_certificates: 'There are no certificates at this postcode.'
 
   domestic_epc:
