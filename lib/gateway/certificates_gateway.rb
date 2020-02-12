@@ -6,10 +6,10 @@ module Gateway
       @internal_api_client = api_client
     end
 
-    def search(postcode)
+    def search(query)
       route =
         URI.encode(
-          "/api/assessments/domestic-energy-performance/search/#{postcode}"
+          "/api/assessments/domestic-energy-performance/search/#{query}"
         )
       response = @internal_api_client.get(route)
       JSON.parse(response.body, symbolize_names: true)
