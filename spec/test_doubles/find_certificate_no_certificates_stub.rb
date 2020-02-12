@@ -9,7 +9,7 @@ class FindCertificateNoCertificatesStub
       }"
     )
       .to_return(
-      status: 200, body: { "results": [], "searchPostcode": 'BF1 3AA' }.to_json
+      status: 200, body: { "results": [], "searchPostcode": postcode }.to_json
     )
   end
 end
