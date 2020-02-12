@@ -194,6 +194,7 @@ cy:
       dwelling_type: 'Welsh: Dwelling type'
 
   error:
+    error: 'Error: '
     500:
       heading: 'Welsh: Network connection failed'
       body: 'Welsh: There is an internal network error'

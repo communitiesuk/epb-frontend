@@ -194,6 +194,7 @@ en:
       dwelling_type: 'Dwelling type'
 
   error:
+    error: 'Error: '
     500:
       heading: 'Network connection failed'
       body: 'There is an internal network error'
