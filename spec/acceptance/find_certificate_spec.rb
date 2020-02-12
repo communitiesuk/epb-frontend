@@ -100,7 +100,7 @@ describe 'Acceptance::Certificate' do
           expect(response.body).to include('123-987')
         end
 
-        it 'shows the id of an entry' do
+        it 'shows the rating of an entry' do
           expect(response.body).to include('>B<')
         end
 
@@ -131,31 +131,6 @@ describe 'Acceptance::Certificate' do
         it 'explains that no certificates are present' do
           expect(response.body).to include(
             I18n.t('find_certificate_results.no_certificates')
-          )
-        end
-      end
-
-      context 'where the requested postcode is malformed' do
-        before { FindCertificateInvalidPostcodeStub.search('C11 4FF') }
-
-        let(:response) { get '/find-a-certificate/search?postcode=C11+4FF' }
-
-        it 'returns status 400' do
-          expect(response.status).to eq(400)
-        end
-
-        it 'displays the find a certificate page heading' do
-          expect(response.body).to include(
-            'Find an energy performance certificate'
-          )
-        end
-
-        it 'displays an error message' do
-          expect(response.body).to include(
-            '<span id="postcode-error" class="govuk-error-message">'
-          )
-          expect(response.body).to include(
-            'Enter a postcode that is not malformed'
           )
         end
       end
