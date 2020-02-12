@@ -165,7 +165,7 @@ en:
     top_heading: 'Find a Energy Performance Certificate for a residential property'
     question: 'Enter a postcode OR a street name and town OR an EPC reference number below'
     postcode_error: 'Enter a real postcode'
-    postcode_not_valid: 'Enter a postcode that is not malformed'
+    query_not_valid: 'Enter a search term'
     postcode_not_registered: 'Enter a postcode that exists'
     button_text: 'Find'
     no_network:

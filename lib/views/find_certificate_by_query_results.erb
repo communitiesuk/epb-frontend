@@ -5,7 +5,7 @@
     </h1>
 
     <% if results.size > 0 %>
-      <h2 class="govuk-heading-m"><%= t('find_certificate_results.list', :length => results.length, :postcode => params['postcode'].upcase ) %></h2>
+      <h2 class="govuk-heading-m"><%= t('find_certificate_results.list', :length => results.length, :postcode => params['query'] ) %></h2>
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
       <table class="govuk-table">

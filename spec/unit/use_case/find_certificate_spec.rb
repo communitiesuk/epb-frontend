@@ -1,15 +1,6 @@
 # frozen_string_literal: true
 
 describe UseCase::FindCertificate do
-  it 'returns an error when the postcode is not valid' do
-    find_certificate_without_valid_postcode =
-      described_class.new(CertificatesGatewayInvalidPostcodesStub.new)
-
-    expect {
-      find_certificate_without_valid_postcode.execute('E19 0GL')
-    }.to raise_exception UseCase::FindCertificate::PostcodeNotValid
-  end
-
   context 'when there are no certificates at the postcode' do
     let(:certificates_gateway) { CertificatesGatewayEmptyStub.new }
     let(:find_certificate) { described_class.new(certificates_gateway) }

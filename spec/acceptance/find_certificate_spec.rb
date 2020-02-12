@@ -17,8 +17,8 @@ describe 'Acceptance::Certificate' do
         )
       end
 
-      it 'has a postcode input field' do
-        expect(response.body).to include('<input id="postcode" name="postcode"')
+      it 'has an input field' do
+        expect(response.body).to include('<input id="query" name="query"')
       end
 
       it 'has a Find button' do
@@ -32,8 +32,8 @@ describe 'Acceptance::Certificate' do
       end
     end
 
-    context 'when entering an empty postcode' do
-      let(:response) { get '/find-a-certificate/search?postcode=' }
+    context 'when entering an empty query' do
+      let(:response) { get '/find-a-certificate/search?query=' }
 
       it 'returns status 400' do
         expect(response.status).to eq(400)
@@ -47,40 +47,17 @@ describe 'Acceptance::Certificate' do
 
       it 'displays an error message' do
         expect(response.body).to include(
-          '<span id="postcode-error" class="govuk-error-message">'
+          '<span id="query-error" class="govuk-error-message">'
         )
-        expect(response.body).to include('Enter a real postcode')
+        expect(response.body).to include('Enter a search term')
       end
     end
 
-    context 'when entering an invalid postcode' do
-      let(:response) do
-        get '/find-a-certificate/search?postcode=NOT+A+POSTCODE'
-      end
-
-      it 'returns status 400' do
-        expect(response.status).to eq(400)
-      end
-
-      it 'displays the find a certificate page heading' do
-        expect(response.body).to include(
-          'Find an energy performance certificate'
-        )
-      end
-
-      it 'displays an error message' do
-        expect(response.body).to include(
-          '<span id="postcode-error" class="govuk-error-message">'
-        )
-        expect(response.body).to include('Enter a real postcode')
-      end
-    end
-
-    context 'when entering a valid postcode' do
+    context 'when entering an valid query' do
       context 'shows page' do
         before { FindCertificateStub.search('SW1A 2AA') }
 
-        let(:response) { get '/find-a-certificate/search?postcode=SW1A+2AA' }
+        let(:response) { get '/find-a-certificate/search?query=SW1A+2AA' }
 
         it 'returns status 200' do
           expect(response.status).to eq(200)
@@ -96,7 +73,7 @@ describe 'Acceptance::Certificate' do
           expect(response.body).to include('2 Marsham Street, London, SW1B 2BB')
         end
 
-        it 'shows the id of an entry' do
+        it 'shows the report reference number of an entry' do
           expect(response.body).to include('123-987')
         end
 
@@ -116,7 +93,7 @@ describe 'Acceptance::Certificate' do
       context 'where no certificates are present' do
         before { FindCertificateNoCertificatesStub.search('E1 4FF') }
 
-        let(:response) { get '/find-a-certificate/search?postcode=E1+4FF' }
+        let(:response) { get '/find-a-certificate/search?query=E1+4FF' }
 
         it 'returns status 200' do
           expect(response.status).to eq(200)
@@ -138,7 +115,7 @@ describe 'Acceptance::Certificate' do
       context 'when there is no connection' do
         before { FindCertificateNoNetworkStub.search('D11 4FF') }
 
-        let(:response) { get '/find-a-certificate/search?postcode=D11+4FF' }
+        let(:response) { get '/find-a-certificate/search?query=D11+4FF' }
 
         it 'returns status 500' do
           expect(response.status).to eq(500)
