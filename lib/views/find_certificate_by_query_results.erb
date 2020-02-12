@@ -20,8 +20,8 @@
           <% results.each do |result| %>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header"><a href="/energy-performance-certificate/<%= result[:assessmentId] %>"><%= result[:addressSummary] %></a></th>
-              <td class="govuk-table__cell"><a href="/"><%= result[:currentEnergyEfficiencyBand].upcase %></a></td>
-              <td class="govuk-table__cell"><a href="/"><%= result[:dateOfExpiry] %></a></td>
+              <td class="govuk-table__cell"><%= result[:currentEnergyEfficiencyBand].upcase %></td>
+              <td class="govuk-table__cell"><%= result[:dateOfExpiry] %></td>
             </tr>
           <% end %>
         </tbody>
