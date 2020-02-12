@@ -86,7 +86,7 @@ describe 'Acceptance::Certificate' do
         end
 
         it 'shows the expiry date of an entry' do
-          expect(response.body).to include('2022-01-01')
+          expect(response.body).to include('01/01/2022')
         end
       end
 
