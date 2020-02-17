@@ -13,7 +13,7 @@ describe 'Acceptance::Certificate' do
     end
 
     it 'shows the EPC title' do
-      expect(response.body).to include('Energy performance certificate')
+      expect(response.body).to include('Energy Performance Certificate')
     end
 
     it 'shows the address summary' do
