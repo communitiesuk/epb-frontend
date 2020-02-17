@@ -7,6 +7,49 @@
       <%= t('domestic_epc.top_heading') %>
     </h1>
 
+    <div class="govuk-grid-row govuk-!-margin-bottom-8">
+      <div class="govuk-grid-column-one-half govuk-!-margin-left-4";>
+        <div class="epc-box epc-box-two-third-width govuk-!-padding-left-1 govuk-!-padding-top-6"  style="height: 170px;">
+          68 Primrose Hill<br />
+          The delight town<br />
+          County<br />
+        </div>
+        <div class="epc-box epc-box-one-third-width epc-box-single-line-height">
+          Energy Rating
+        </div>
+        <div class="epc-box epc-box-one-third-width" style="line-height: 112px;">
+          <div class="epc-band-rating">A</div>
+        </div>
+        <div class="epc-box epc-box-single-line-height">
+          <div class="epc-date-of-expiry">Valid until 05/01/2022 </div>
+        </div>
+        <div class="epc-box epc-box-single-line-height">
+          Certificate Number
+        </div>
+        <div class="epc-box epc-box-single-line-height">
+          1234-6789-1234-14244
+        </div>
+      </div>
+    </div>
+
+    <div class="govuk-!-margin-bottom-8">
+      <h1 class="govuk-heading-l">
+        Why does this certificate exists?
+      </h1>
+
+      <p class="govuk-body">
+        Helping the occupant save money on their energy bills
+      </p>
+
+      <p class="govuk-body">
+        Reducing illness caused by energy inefficient dwellings
+      </p>
+
+      <p class="govuk-body">
+        Helping the UK tackle climate change
+      </p>
+    </div>
+
     <%= erb :energy_rating, locals: {
       current_energy_efficiency_rating: assessment[:current_energy_efficiency_rating],
       potential_energy_efficiency_rating: assessment[:potential_energy_efficiency_rating],
