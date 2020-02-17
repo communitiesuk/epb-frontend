@@ -1,0 +1,28 @@
+.epc-box {
+  box-sizing: border-box;
+  float: left;
+  border: 2px solid #000;
+  width: 100%;
+  text-align: center;
+}
+
+.epc-box-one-third-width {
+  width: 30%;
+}
+
+.epc-box-two-third-width {
+  width: 70%;
+  text-align: left;
+}
+
+.epc-box-single-line-height {
+  line-height: 50px;
+}
+
+.epc-band-rating {
+  font-size: 100px;
+}
+
+.epc-date-of-expiry {
+  font-size: 25px;
+}
