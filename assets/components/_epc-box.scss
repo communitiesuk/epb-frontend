@@ -26,3 +26,17 @@
 .epc-date-of-expiry {
   font-size: 25px;
 }
+
+.epc-box-go-right {
+  float: right;
+}
+
+.epc-box-clear {
+  clear: both;
+}
+
+@media print {
+  .epc-no-print, footer, .app-cookie-banner, .govuk-back-link {
+    display: none;
+  }
+}
