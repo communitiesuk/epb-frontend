@@ -7,293 +7,61 @@
       <%= t('domestic_epc.top_heading') %>
     </h1>
 
-    <div class="govuk-grid-row govuk-!-margin-bottom-8">
-      <div class="govuk-grid-column-one-half govuk-!-margin-left-4 govuk-body">
-        <div class="epc-box epc-box-two-third-width govuk-!-padding-left-1 govuk-!-padding-top-6"  style="height: 170px;">
-          68 Primrose Hill<br />
-          The delight town<br />
-          County<br />
-        </div>
-        <div class="epc-box epc-box-one-third-width epc-box-single-line-height">
-          Energy Rating
-        </div>
-        <div class="epc-box epc-box-one-third-width" style="line-height: 112px;">
-          <div class="epc-band-rating"><%=assessment[:current_energy_efficiency_band].upcase%></div>
-        </div>
-        <div class="epc-box epc-box-single-line-height">
-          <div class="epc-date-of-expiry">Valid until <%=Date.parse(assessment[:date_of_expiry]).strftime('%d/%m/%Y')%></div>
-        </div>
-        <div class="epc-box epc-box-single-line-height">
-          Certificate Number
-        </div>
-        <div class="epc-box epc-box-single-line-height">
-          1234-6789-1234-14244
-        </div>
+    <%= erb :energy_rating, locals: {
+      current_energy_efficiency_rating: assessment[:current_energy_efficiency_rating],
+      potential_energy_efficiency_rating: assessment[:potential_energy_efficiency_rating],
+      current_energy_efficiency_band: assessment[:current_energy_efficiency_band],
+      potential_energy_efficiency_band: assessment[:potential_energy_efficiency_band] } %>
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          <%= t('domestic_epc.labels.certificate_number') %>
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <%= assessment[:assessment_id] %>
+        </dd>
       </div>
-    </div>
-
-    <div class="govuk-!-margin-bottom-8">
-      <h2 class="govuk-heading-l">
-        Why does this certificate exist?
-      </h2>
-
-      <p class="govuk-body">
-        Helping the occupant save money on their energy bills
-      </p>
-
-      <p class="govuk-body">
-        Reducing illness caused by energy inefficient dwellings
-      </p>
-
-      <p class="govuk-body">
-        Helping the UK tackle climate change
-      </p>
-    </div>
-
-    <div class="govuk-!-margin-bottom-8 epc-no-print">
-      <h2>Renting this property</h2>
-      <%
-        if assessment[:current_energy_efficiency_band]>'e'
-          %>
-            <h3>You cannot let this property</h3>
-            <p class="govuk-body">
-              Your property has an EPC rating of F or G, you must take appropriate steps to comply
-              with the requirements of the MEES Regulations. We explain how to to this below.
-            </p>
-            <div class="epc-box epc-box-one-third-width epc-box-single-line-height epc-box-go-right">
-              Energy Rating
-            </div>
-            <div class="epc-box epc-box-one-third-width epc-box-clear epc-box-go-right" style="line-height: 112px;">
-              <div class="epc-band-rating"><%=assessment[:current_energy_efficiency_band]%></div>
-            </div>
-            <div class="epc-box-clear"></div>
-          <%
-        end
-      %>
-
-      <p class="govuk-body">
-        The Regulations mean that, since 1 April 2018, private landlords may not let domestic properties
-        on new tendancies to new or existing tenants of the Energy Efficiency Certificate (EPC) rating is F or G
-        (unless an exemption applies).
-      </p>
-      <p class="govuk-body">
-        From 1 April 2020 the prohibition on letting F and G properties will extend to all relevant properties, even
-        when there has been no change in tenancy.
-      </p>
-      <p class="govuk-body">
-        Regulations available at <a href="https://www.gov.uk/guidance/domestic-private-rented-property-minimum-energy-efficiency-standard-landlord-guidance">https://www.gov.uk/guidance/domestic-private-rented-property-minimum-energy-efficiency-standard-landlord-guidance</a>
-      </p>
-    </div>
-
-    <div class="govuk-!-margin-bottom-8">
-      <h2>Energy performance for this property</h2>
-
-      <%= erb :energy_rating, locals: {
-        current_energy_efficiency_rating: assessment[:current_energy_efficiency_rating],
-        potential_energy_efficiency_rating: assessment[:potential_energy_efficiency_rating],
-        current_energy_efficiency_band: assessment[:current_energy_efficiency_band],
-        potential_energy_efficiency_band: assessment[:potential_energy_efficiency_band] } %>
-
-      <h3>How to read this chart</h3>
-      <ul>
-        <li>The graph shows the current energy efficiency of your home</li>
-        <li>The higher the rating the lower your fuel bills are likely to be</li>
-        <li>The potential rating shows the effect of undertaking the recommendations on page 3</li>
-        <li>The average energy efficiency rating for a dwelling in England and Wales is band D (rating 60)</li>
-        <li>The EPC rating shown here is based on standard assumptions about occupancy and energy use and may not reflect how energy is consumed by individual occupants.</li>
-      </ul>
-    </div>
-
-    <div class="govuk-!-margin-bottom-8 epc-page-break">
-      <h2>Recommendations</h2>
-      <div class="epc-box epc-box-one-third-width epc-box-single-line-height epc-box-go-right">
-        Potential Energy Rating
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          <%= t('domestic_epc.labels.type_of_assessment') %>
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <%= assessment[:type_of_assessment] %>
+        </dd>
       </div>
-      <div class="epc-box epc-box-one-third-width epc-box-clear epc-box-go-right" style="line-height: 112px;">
-        <div class="epc-band-rating"><%=assessment[:potential_energy_efficiency_band]%></div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          <%= t('domestic_epc.labels.date_of_assessment') %>
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <%= assessment[:date_of_assessment] %>
+        </dd>
       </div>
-
-      <div class="epc-box-clear"></div>
-
-      <h3>Internal or external wall insulation</h3>
-      <p class="govuk-body">
-        Solid walls have no gap, so they cannot be fill with cavity wall insulation.
-      </p>
-      <h4>Internal insulation</h4>
-      <p class="govuk-body">
-        Internal wall insulation is done by fitting rigid insulation boards to the wall, or by building a stud wall filled in with insulation material such as mineral wool fibre.
-      </p>
-      <h4>External insulation</h4>
-      <p class="govuk-body">
-        External wall insulation involves fixing a layer of insulation material to the wall, then covering it with a special type of render (plasterwork) or cladding. The finish can be smooth, textured, painted, tiled, panelled, pebble-dashed, or finished with brick slips.
-        <a href="https://energysavingtrust.org.uk/home-insulation/solid-wall">Read more</a>
-      </p>
-
-      <div class="govuk-body">
-        <div style="width: 50%; float: left;">
-          <p>
-            Typical installation cost
-            <br />
-            <strong>£9,000</strong>
-          </p>
-        </div>
-        <div style="width: 50%; float: right;">
-          <p>
-            Typical yearly saving
-            <br />
-            <strong>£639</strong>
-          </p>
-        </div>
-        <h4>Paying for this</h4>
-        <p>
-          You might be able to reduce these costs buy carrying out the work at the same time as other home improvements or by not tackling the whole house at once.
-        </p>
-        <h4>Outbound advice links</h4>
-        <p>
-          <a href="#">link 1</a>
-          <br />
-          <a href="#">link 2</a>
-        </p>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          <%= t('domestic_epc.labels.date_of_certificate') %>
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <%= assessment[:date_registered] %>
+        </dd>
       </div>
-    </div>
-
-
-
-    <div class="govuk-body epc-page-break">
-
-      <h2>How this certificate was produced</h2>
-
-      <h3>Assessor and accreditation scheme details</h3>
-      <dl class="govuk-summary-list">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Assessor's accreditation number
-          </dt>
-          <dd class="govuk-summary-list__value">
-            STRO001884
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Accreditation scheme
-          </dt>
-          <dd class="govuk-summary-list__value">
-            STROMA
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Assessor's name
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Andrew Stonemason
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Phone number
-          </dt>
-          <dd class="govuk-summary-list__value">
-            07921021369
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            E-mail address
-          </dt>
-          <dd class="govuk-summary-list__value">
-            <a href="mailto:hello@communities.gov.uk">andrew@epc-rocks.co.uk</a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Related party disclosure
-          </dt>
-          <dd class="govuk-summary-list__value">
-            No related party
-          </dd>
-        </div>
-      </dl>
-
-      <h3>Dwelling details</h3>
-      <dl class="govuk-summary-list">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            <%= t('domestic_epc.labels.certificate_number') %>
-          </dt>
-          <dd class="govuk-summary-list__value">
-            <%= assessment[:assessment_id] %>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            <%= t('domestic_epc.labels.type_of_assessment') %>
-          </dt>
-          <dd class="govuk-summary-list__value">
-            <%= assessment[:type_of_assessment] %>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            <%= t('domestic_epc.labels.date_of_assessment') %>
-          </dt>
-          <dd class="govuk-summary-list__value">
-            <%= assessment[:date_of_assessment] %>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            <%= t('domestic_epc.labels.date_of_certificate') %>
-          </dt>
-          <dd class="govuk-summary-list__value">
-            <%= assessment[:date_registered] %>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            <%= t('domestic_epc.labels.total_floor_area') %>
-          </dt>
-          <dd class="govuk-summary-list__value">
-            <%= assessment[:total_floor_area] %> m<sup>2</sup>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            <%= t('domestic_epc.labels.dwelling_type') %>
-          </dt>
-          <dd class="govuk-summary-list__value">
-            <%= assessment[:dwelling_type] %>
-          </dd>
-        </div>
-      </dl>
-    </div>
-
-    <h2>Previous versions of this certificate</h2>
-    <table class="govuk-table">
-      <thead class="govuk-table__head">
-      <tr class="govuk-table__row">
-        <th scope="col" class="govuk-table__header">Reference number</th>
-        <th scope="col" class="govuk-table__header">EPC Rating</th>
-        <th scope="col" class="govuk-table__header">EPC Expiry Date</th>
-      </tr>
-      </thead>
-      <tbody class="govuk-table__body">
-
-      <tr class="govuk-table__row">
-        <th scope="row" class="govuk-table__header"><a href="/energy-performance-certificate/123-456">123-456</a></th>
-        <td class="govuk-table__cell">B</td>
-        <td class="govuk-table__cell">01/01/2021</td>
-      </tr>
-
-      <tr class="govuk-table__row">
-        <th scope="row" class="govuk-table__header"><a href="/energy-performance-certificate/223-456">223-456</a></th>
-        <td class="govuk-table__cell">B</td>
-        <td class="govuk-table__cell">01/01/2022</td>
-      </tr>
-      </tbody>
-    </table>
-
-    <h2>Issues with this certificate</h2>
-    <p>Link to someone who can fix it to be added.</p>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          <%= t('domestic_epc.labels.total_floor_area') %>
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <%= assessment[:total_floor_area] %> m<sup>2</sup>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          <%= t('domestic_epc.labels.dwelling_type') %>
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <%= assessment[:dwelling_type] %>
+        </dd>
+      </div>
+    </dl>
   </div>
 </div>
