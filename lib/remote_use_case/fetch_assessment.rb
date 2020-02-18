@@ -41,7 +41,13 @@ module RemoteUseCase
           potential_energy_efficiency_rating:
             assessment_details[:potentialEnergyEfficiencyRating],
           potential_energy_efficiency_band:
-            assessment_details[:potentialEnergyEfficiencyBand]
+            assessment_details[:potentialEnergyEfficiencyBand],
+          date_of_expiry:
+            Date.parse(assessment_details[:dateOfExpiry]).strftime(
+              '%d %B %Y'
+            ),
+          postcode:
+            assessment_details[:postcode]
         }
 
         raise AssessmentNotFound unless result
