@@ -4,6 +4,7 @@
   border: 2px solid #000;
   width: 100%;
   text-align: center;
+  margin-bottom: 0!important;
 }
 
 .epc-box-one-third-width {
@@ -15,8 +16,14 @@
   text-align: left;
 }
 
-.epc-box-single-line-height {
-  line-height: 50px;
+.epc-box-single-line {
+  line-height: 14px;
+  padding-top: 18px;
+  height: 50px;
+}
+
+.epc-box-double-line {
+  line-height: 116px;
 }
 
 .epc-band-rating {
@@ -35,12 +42,24 @@
   clear: both;
 }
 
+.epc-box-clear-right {
+  clear: right;
+}
+
+.epc-box-tidy-left {
+  margin-left: 40px;
+}
+
+epc-box-match-heading {
+  margin-top: 5px;
+}
+
 @media print {
   .epc-no-print, footer, .app-cookie-banner, .govuk-back-link {
     display: none;
   }
 
-  h1, h2, h3, h4 {
+  .epc-page-break {
     display: block;
     clear: both;
     page-break-after: always;
