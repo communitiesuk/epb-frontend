@@ -19,7 +19,7 @@ end
 WebMock.enable!
 
 OauthStub.token
-FindAssessorByPostcodeStub.search('SW1A 2AA')
+FindAssessorByPostcodeStub.search_by_postcode('SW1A 2AA')
 FindCertificateStub.search('SW1A 2AA')
 FetchAssessmentStub.fetch('123-456')
 FetchAssessmentStub.fetch('223-456')
