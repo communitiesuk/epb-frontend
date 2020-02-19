@@ -18,21 +18,23 @@ describe RemoteUseCase::FetchAssessment do
   end
 
   context 'when an assessment does exist' do
-    before { FetchAssessmentStub.fetch('122-456') }
+    before { FetchAssessmentStub.fetch('223-456') }
     it 'returns assessments' do
-      result = fetch_assessment.execute('122-456')
+      result = fetch_assessment.execute('223-456')
       expect(result).to eq(
         address_summary: '2 Marsham Street, London, SW1B 2BB',
-        assessment_id: '123-456',
+        assessment_id: '223-456',
         date_of_assessment: '02 January 2020',
         date_registered: '05 January 2020',
+        date_of_expiry: '05 January 2030',
         dwelling_type: 'Top floor flat',
         total_floor_area: 150,
         type_of_assessment: 'RdSAP',
-        current_energy_efficiency_rating: 95,
-        current_energy_efficiency_band: 'a',
-        potential_energy_efficiency_rating: 95,
-        potential_energy_efficiency_band: 'b'
+        current_energy_efficiency_rating: 25,
+        current_energy_efficiency_band: 'f',
+        potential_energy_efficiency_rating: 99,
+        potential_energy_efficiency_band: 'a',
+        postcode: 'SW1B 2BB'
       )
     end
   end
