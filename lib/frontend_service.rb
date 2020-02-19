@@ -42,7 +42,7 @@ class FrontendService < Sinatra::Base
     @errors = {}
     @erb_template = :find_assessor_by_postcode
 
-    response = @container.get_object(:find_assessor_use_case)
+    response = @container.get_object(:find_assessor_by_postcode_use_case)
 
     if params['postcode']
       if valid_postcode.match(params['postcode'])
@@ -50,11 +50,11 @@ class FrontendService < Sinatra::Base
         begin
           @results = response.execute(params['postcode'])
           @erb_template = :find_assessor_by_postcode_results
-        rescue UseCase::FindAssessor::PostcodeNotRegistered
+        rescue UseCase::FindAssessorByPostcode::PostcodeNotRegistered
           status 404
           @errors[:postcode] =
             t('find_assessor_by_postcode.postcode_not_registered')
-        rescue UseCase::FindAssessor::PostcodeNotValid
+        rescue UseCase::FindAssessorByPostcode::PostcodeNotValid
           status 400
           @errors[:postcode] = t('find_assessor_by_postcode.postcode_not_valid')
         rescue Auth::Errors::NetworkConnectionFailed

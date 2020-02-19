@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module UseCase
-  class FindAssessor
+  class FindAssessorByPostcode
     class PostcodeNotRegistered < RuntimeError; end
     class PostcodeNotValid < RuntimeError; end
     class AuthTokenMissing < RuntimeError; end

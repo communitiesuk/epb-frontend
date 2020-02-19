@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-describe UseCase::FindAssessor do
+describe UseCase::FindAssessorByPostcode do
   it 'returns an error when the postcode doesnt exist' do
     find_assessors_without_existing_postcode =
       described_class.new(AssessorsGatewayUnregisteredPostcodeStub.new)
 
     expect {
       find_assessors_without_existing_postcode.execute('E10 3AD')
-    }.to raise_exception UseCase::FindAssessor::PostcodeNotRegistered
+    }.to raise_exception UseCase::FindAssessorByPostcode::PostcodeNotRegistered
   end
 
   it 'returns an error when the postcode is not valid' do
@@ -16,7 +16,7 @@ describe UseCase::FindAssessor do
 
     expect {
       find_assessor_without_valid_postcode.execute('E19 0GL')
-    }.to raise_exception UseCase::FindAssessor::PostcodeNotValid
+    }.to raise_exception UseCase::FindAssessorByPostcode::PostcodeNotValid
   end
 
   context 'when there are no assessors matched by the postcode' do

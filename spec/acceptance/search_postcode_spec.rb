@@ -5,7 +5,7 @@ describe 'Acceptance::Postcodes' do
 
   let(:internal_api_client) { container.get_object(:internal_api_client) }
   let(:assessors_gateway) { Gateway::AssessorsGateway.new(internal_api_client) }
-  let(:find_assessor) { UseCase::FindAssessor.new(assessors_gateway) }
+  let(:find_assessor) { UseCase::FindAssessorByPostcode.new(assessors_gateway) }
 
   context 'given valid postcode' do
     context 'where assessors are near' do
@@ -61,7 +61,7 @@ describe 'Acceptance::Postcodes' do
       it 'raises postcode not registered exception' do
         expect {
           find_assessor.execute('B11+4AA')
-        }.to raise_exception UseCase::FindAssessor::PostcodeNotRegistered
+        }.to raise_exception UseCase::FindAssessorByPostcode::PostcodeNotRegistered
       end
     end
 
@@ -71,7 +71,7 @@ describe 'Acceptance::Postcodes' do
       it 'raises postcode not valid exception' do
         expect {
           find_assessor.execute('C11+3FF')
-        }.to raise_exception UseCase::FindAssessor::PostcodeNotValid
+        }.to raise_exception UseCase::FindAssessorByPostcode::PostcodeNotValid
       end
     end
   end
