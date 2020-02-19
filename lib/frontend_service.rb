@@ -38,7 +38,7 @@ class FrontendService < Sinatra::Base
     erb :find_assessor, layout: :layout
   end
 
-  get '/find-an-assessor/search' do
+  get '/find-an-assessor/search-by-postcode' do
     @errors = {}
     @erb_template = :find_assessor_by_postcode
 

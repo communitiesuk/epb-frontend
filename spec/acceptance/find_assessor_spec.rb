@@ -5,7 +5,7 @@ describe 'Acceptance::Assessor' do
 
   describe '.get /find-an-assessor/search' do
     context 'when search page rendered' do
-      let(:response) { get '/find-an-assessor/search' }
+      let(:response) { get '/find-an-assessor/search-by-postcode' }
 
       it 'returns status 200' do
         expect(response.status).to eq(200)
@@ -31,7 +31,7 @@ describe 'Acceptance::Assessor' do
     end
 
     context 'when entering an empty postcode' do
-      let(:response) { get '/find-an-assessor/search?postcode=' }
+      let(:response) { get '/find-an-assessor/search-by-postcode?postcode=' }
 
       it 'returns status 400' do
         expect(response.status).to eq(400)
@@ -50,7 +50,7 @@ describe 'Acceptance::Assessor' do
     end
 
     context 'when entering an invalid postcode' do
-      let(:response) { get '/find-an-assessor/search?postcode=NOT+A+POSTCODE' }
+      let(:response) { get '/find-an-assessor/search-by-postcode?postcode=NOT+A+POSTCODE' }
 
       it 'returns status 400' do
         expect(response.status).to eq(400)
@@ -72,7 +72,7 @@ describe 'Acceptance::Assessor' do
       context 'shows page' do
         before { FindAssessorByPostcodeStub.search('SW1A 2AA') }
 
-        let(:response) { get '/find-an-assessor/search?postcode=SW1A+2AA' }
+        let(:response) { get '/find-an-assessor/search-by-postcode?postcode=SW1A+2AA' }
 
         it 'returns status 200' do
           expect(response.status).to eq(200)
@@ -114,7 +114,7 @@ describe 'Acceptance::Assessor' do
       context 'where no assessors are near' do
         before { FindAssessorByPostcodeNoNearAssessorsStub.search('E1 4FF') }
 
-        let(:response) { get '/find-an-assessor/search?postcode=E1+4FF' }
+        let(:response) { get '/find-an-assessor/search-by-postcode?postcode=E1+4FF' }
 
         it 'returns status 200' do
           expect(response.status).to eq(200)
@@ -134,7 +134,7 @@ describe 'Acceptance::Assessor' do
       context 'where the postcode doesnt exist' do
         before { FindAssessorByPostcodeUnregisteredPostcodeStub.search('B11 4FF') }
 
-        let(:response) { get '/find-an-assessor/search?postcode=B11+4FF' }
+        let(:response) { get '/find-an-assessor/search-by-postcode?postcode=B11+4FF' }
 
         it 'returns status 404' do
           expect(response.status).to eq(404)
@@ -155,7 +155,7 @@ describe 'Acceptance::Assessor' do
       context 'where the requested postcode is malformed' do
         before { FindAssessorByPostcodeInvalidPostcodeStub.search('C11 4FF') }
 
-        let(:response) { get '/find-an-assessor/search?postcode=C11+4FF' }
+        let(:response) { get '/find-an-assessor/search-by-postcode?postcode=C11+4FF' }
 
         it 'returns status 400' do
           expect(response.status).to eq(400)
@@ -178,7 +178,7 @@ describe 'Acceptance::Assessor' do
       context 'when there is no connection' do
         before { FindAssessorByPostcodeNoNetworkStub.search('D11 4FF') }
 
-        let(:response) { get '/find-an-assessor/search?postcode=D11+4FF' }
+        let(:response) { get '/find-an-assessor/search-by-postcode?postcode=D11+4FF' }
 
         it 'returns status 500' do
           expect(response.status).to eq(500)
