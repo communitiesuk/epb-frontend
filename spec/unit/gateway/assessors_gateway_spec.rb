@@ -7,103 +7,149 @@ describe Gateway::AssessorsGateway do
     described_class.new(container.get_object(:internal_api_client))
   end
 
-  context 'when an assessor exist' do
-    let(:response) { gateway.search_by_postcode('SW1A+2AA') }
+  context 'when searching by postcode' do
+    context 'when an assessor exist' do
+      let(:response) { gateway.search_by_postcode('SW1A+2AA') }
 
-    let(:assessor) { response[:results].first[:assessor] }
-    before { FindAssessorByPostcodeStub.search_by_postcode('SW1A+2AA') }
+      let(:assessor) { response[:results].first[:assessor] }
+      before { FindAssessorByPostcodeStub.search_by_postcode('SW1A+2AA') }
 
-    it 'checks the number of assessors returned from the api' do
-      expect(response[:results].count).to eq(3)
+      it 'checks the number of assessors returned from the api' do
+        expect(response[:results].count).to eq(3)
+      end
+
+      it 'checks the shape of the object passed in the results object' do
+        expect(response[:results].first.keys).to contain_exactly(
+          :assessor,
+          :distance
+        )
+      end
+
+      it 'checks the shape of the object passed in the assessor object' do
+        expect(assessor.keys).to contain_exactly(
+          :firstName,
+          :lastName,
+          :contactDetails,
+          :searchResultsComparisonPostcode,
+          :registeredBy
+        )
+      end
+
+      it 'checks the shape of the object passed in the contact details object' do
+        expect(assessor[:contactDetails].keys).to contain_exactly(
+          :email,
+          :telephoneNumber
+        )
+      end
+
+      it 'checks the shape of the object passed in the registeredBy object' do
+        expect(assessor[:registeredBy].keys).to contain_exactly(:name, :schemeId)
+      end
     end
 
-    it 'checks the shape of the object passed in the results object' do
-      expect(response[:results].first.keys).to contain_exactly(
-        :assessor,
-        :distance
-      )
+    context 'when an assessor doesnt exist' do
+      let(:response) { gateway.search_by_postcode('BF1+3AA') }
+
+      before { FindAssessorByPostcodeNoAssessorsStub.search_by_postcode }
+
+      it 'returns empty results' do
+        expect(response).to eq(results: [], searchPostcode: 'BF1 3AA')
+      end
     end
 
-    it 'checks the shape of the object passed in the assessor object' do
-      expect(assessor.keys).to contain_exactly(
-        :firstName,
-        :lastName,
-        :contactDetails,
-        :searchResultsComparisonPostcode,
-        :registeredBy
-      )
+    context 'when the postcode doesnt exist' do
+      let(:response) { gateway.search_by_postcode('AF1+3AA') }
+
+      before { FindAssessorByPostcodeUnregisteredPostcodeStub.search_by_postcode('AF1+3AA') }
+
+      it 'returns not found error' do
+        expect(response).to eq(
+          "errors": [
+            {
+              "code": 'NOT_FOUND',
+              "message": 'The requested postcode is not registered'
+            }
+          ]
+        )
+      end
     end
 
-    it 'checks the shape of the object passed in the contact details object' do
-      expect(assessor[:contactDetails].keys).to contain_exactly(
-        :email,
-        :telephoneNumber
-      )
+    context 'when the postcode is not valid' do
+      let(:response) { gateway.search_by_postcode('1+3AA') }
+
+      before { FindAssessorByPostcodeInvalidPostcodeStub.search_by_postcode('1+3AA') }
+
+      it 'returns invalid request error' do
+        expect(response).to eq(
+          "errors": [
+            {
+              "code": 'INVALID_REQUEST',
+              "title": 'The requested postcode is not valid'
+            }
+          ]
+        )
+      end
     end
 
-    it 'checks the shape of the object passed in the registeredBy object' do
-      expect(assessor[:registeredBy].keys).to contain_exactly(:name, :schemeId)
+    context 'when there is no scheme' do
+      let(:response) { gateway.search_by_postcode('1+3AA') }
+
+      before { FindAssessorByPostcodeNoSchemeStub.search_by_postcode('1+3AA') }
+
+      it 'returns scheme not found error' do
+        expect(response).to eq(
+          "errors": [
+            {
+              "code": 'SCHEME_NOT_FOUND',
+              "message": 'There is no scheme for one of the requested assessor'
+            }
+          ]
+        )
+      end
     end
   end
 
-  context 'when an assessor doesnt exist' do
-    let(:response) { gateway.search_by_postcode('BF1+3AA') }
+  context 'when searching by name' do
+    context 'when an assessor exist' do
+      let(:response) { gateway.search_by_name('Some Name') }
 
-    before { FindAssessorByPostcodeNoAssessorsStub.search_by_postcode }
+      let(:assessor) { response[:results].first }
+      before { FindAssessorByNameStub.search_by_name('Some Name') }
 
-    it 'returns empty results' do
-      expect(response).to eq(results: [], searchPostcode: 'BF1 3AA')
+      it 'checks the number of assessors returned from the api' do
+        expect(response[:results].count).to eq(3)
+      end
+
+      it 'checks the shape of the object passed in the assessor object' do
+        expect(assessor.keys).to contain_exactly(
+                                   :firstName,
+                                   :lastName,
+                                   :contactDetails,
+                                   :searchResultsComparisonPostcode,
+                                   :registeredBy
+                                 )
+      end
+
+      it 'checks the shape of the object passed in the contact details object' do
+        expect(assessor[:contactDetails].keys).to contain_exactly(
+                                                    :email,
+                                                    :telephoneNumber
+                                                  )
+      end
+
+      it 'checks the shape of the object passed in the registeredBy object' do
+        expect(assessor[:registeredBy].keys).to contain_exactly(:name, :schemeId)
+      end
     end
-  end
 
-  context 'when the postcode doesnt exist' do
-    let(:response) { gateway.search_by_postcode('AF1+3AA') }
+    context 'when an assessor doesnt exist' do
+      let(:response) { gateway.search_by_name('Some Nonexistent-name') }
 
-    before { FindAssessorByPostcodeUnregisteredPostcodeStub.search_by_postcode('AF1+3AA') }
+      before { FindAssessorByNameNoAssessorsStub.search_by_name('Some Nonexistent-name') }
 
-    it 'returns not found error' do
-      expect(response).to eq(
-        "errors": [
-          {
-            "code": 'NOT_FOUND',
-            "message": 'The requested postcode is not registered'
-          }
-        ]
-      )
-    end
-  end
-
-  context 'when the postcode is not valid' do
-    let(:response) { gateway.search_by_postcode('1+3AA') }
-
-    before { FindAssessorByPostcodeInvalidPostcodeStub.search_by_postcode('1+3AA') }
-
-    it 'returns invalid request error' do
-      expect(response).to eq(
-        "errors": [
-          {
-            "code": 'INVALID_REQUEST',
-            "title": 'The requested postcode is not valid'
-          }
-        ]
-      )
-    end
-  end
-
-  context 'when there is no scheme' do
-    let(:response) { gateway.search_by_postcode('1+3AA') }
-
-    before { FindAssessorByPostcodeNoSchemeStub.search_by_postcode('1+3AA') }
-
-    it 'returns scheme not found error' do
-      expect(response).to eq(
-        "errors": [
-          {
-            "code": 'SCHEME_NOT_FOUND',
-            "message": 'There is no scheme for one of the requested assessor'
-          }
-        ]
-      )
+      it 'returns empty results' do
+        expect(response).to eq(results: [], searchName: 'Some Nonexistent-name')
+      end
     end
   end
 end

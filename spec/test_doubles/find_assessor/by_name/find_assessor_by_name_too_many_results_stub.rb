@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class FindAssessorByNameTooManyResults
-  def self.search(name)
+  def self.search_by_name(name)
     WebMock.stub_request(
       :get,
       "http://test-api.gov.uk/api/assessors?name=#{name}"
