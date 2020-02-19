@@ -43,7 +43,10 @@ describe Gateway::AssessorsGateway do
       end
 
       it 'checks the shape of the object passed in the registeredBy object' do
-        expect(assessor[:registeredBy].keys).to contain_exactly(:name, :schemeId)
+        expect(assessor[:registeredBy].keys).to contain_exactly(
+          :name,
+          :schemeId
+        )
       end
     end
 
@@ -60,7 +63,11 @@ describe Gateway::AssessorsGateway do
     context 'when the postcode doesnt exist' do
       let(:response) { gateway.search_by_postcode('AF1+3AA') }
 
-      before { FindAssessorByPostcodeUnregisteredPostcodeStub.search_by_postcode('AF1+3AA') }
+      before do
+        FindAssessorByPostcodeUnregisteredPostcodeStub.search_by_postcode(
+          'AF1+3AA'
+        )
+      end
 
       it 'returns not found error' do
         expect(response).to eq(
@@ -77,7 +84,9 @@ describe Gateway::AssessorsGateway do
     context 'when the postcode is not valid' do
       let(:response) { gateway.search_by_postcode('1+3AA') }
 
-      before { FindAssessorByPostcodeInvalidPostcodeStub.search_by_postcode('1+3AA') }
+      before do
+        FindAssessorByPostcodeInvalidPostcodeStub.search_by_postcode('1+3AA')
+      end
 
       it 'returns invalid request error' do
         expect(response).to eq(
@@ -122,30 +131,37 @@ describe Gateway::AssessorsGateway do
 
       it 'checks the shape of the object passed in the assessor object' do
         expect(assessor.keys).to contain_exactly(
-                                   :firstName,
-                                   :lastName,
-                                   :contactDetails,
-                                   :searchResultsComparisonPostcode,
-                                   :registeredBy
-                                 )
+          :firstName,
+          :lastName,
+          :contactDetails,
+          :searchResultsComparisonPostcode,
+          :registeredBy
+        )
       end
 
       it 'checks the shape of the object passed in the contact details object' do
         expect(assessor[:contactDetails].keys).to contain_exactly(
-                                                    :email,
-                                                    :telephoneNumber
-                                                  )
+          :email,
+          :telephoneNumber
+        )
       end
 
       it 'checks the shape of the object passed in the registeredBy object' do
-        expect(assessor[:registeredBy].keys).to contain_exactly(:name, :schemeId)
+        expect(assessor[:registeredBy].keys).to contain_exactly(
+          :name,
+          :schemeId
+        )
       end
     end
 
     context 'when an assessor doesnt exist' do
       let(:response) { gateway.search_by_name('Some Nonexistent-name') }
 
-      before { FindAssessorByNameNoAssessorsStub.search_by_name('Some Nonexistent-name') }
+      before do
+        FindAssessorByNameNoAssessorsStub.search_by_name(
+          'Some Nonexistent-name'
+        )
+      end
 
       it 'returns empty results' do
         expect(response).to eq(results: [], searchName: 'Some Nonexistent-name')

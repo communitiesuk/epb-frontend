@@ -82,7 +82,9 @@ describe 'Acceptance::Certificate' do
         end
 
         it 'shows a clickable entry' do
-          expect(response.body).to include('<a href="/energy-performance-certificate/123-987"')
+          expect(response.body).to include(
+            '<a href="/energy-performance-certificate/123-987"'
+          )
         end
 
         it 'shows the expiry date of an entry' do

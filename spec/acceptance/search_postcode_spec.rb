@@ -48,7 +48,9 @@ describe 'Acceptance::Postcodes' do
     end
 
     context 'where no assessors are near' do
-      before { FindAssessorByPostcodeNoNearAssessorsStub.search_by_postcode('BF1+3AA') }
+      before do
+        FindAssessorByPostcodeNoNearAssessorsStub.search_by_postcode('BF1+3AA')
+      end
 
       it 'returns empty results' do
         expect(find_assessor.execute('BF1+3AA')).to eq([])
@@ -56,7 +58,11 @@ describe 'Acceptance::Postcodes' do
     end
 
     context 'where the postcode doesnt exist' do
-      before { FindAssessorByPostcodeUnregisteredPostcodeStub.search_by_postcode('B11+4AA') }
+      before do
+        FindAssessorByPostcodeUnregisteredPostcodeStub.search_by_postcode(
+          'B11+4AA'
+        )
+      end
 
       it 'raises postcode not registered exception' do
         expect {
@@ -66,7 +72,9 @@ describe 'Acceptance::Postcodes' do
     end
 
     context 'where the requested postcode is malformed' do
-      before { FindAssessorByPostcodeInvalidPostcodeStub.search_by_postcode('C11+3FF') }
+      before do
+        FindAssessorByPostcodeInvalidPostcodeStub.search_by_postcode('C11+3FF')
+      end
 
       it 'raises postcode not valid exception' do
         expect {

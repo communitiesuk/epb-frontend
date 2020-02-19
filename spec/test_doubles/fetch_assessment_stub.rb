@@ -42,9 +42,6 @@ class FetchAssessmentStub
         assessment_id
       }"
     )
-      .to_return(
-      status: 200,
-      body: body.to_json
-    )
+      .to_return(status: 200, body: body.to_json)
   end
 end

@@ -97,7 +97,7 @@ class FrontendService < Sinatra::Base
       begin
         @erb_template = :find_certificate_by_query_results
 
-        if params['query']==''
+        if params['query'] == ''
           @erb_template = :find_certificate_by_query
 
           raise UseCase::FindCertificate::QueryNotValid
@@ -106,8 +106,7 @@ class FrontendService < Sinatra::Base
         @results = response.execute(params['query'])
       rescue UseCase::FindCertificate::QueryNotValid
         status 400
-        @errors[:query] =
-          t('find_certificate_by_postcode.query_not_valid')
+        @errors[:query] = t('find_certificate_by_postcode.query_not_valid')
       rescue Auth::Errors::NetworkConnectionFailed
         status 500
         @erb_template = :error_page_500
