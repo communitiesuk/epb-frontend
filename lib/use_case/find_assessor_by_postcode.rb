@@ -11,7 +11,7 @@ module UseCase
     end
 
     def execute(postcode)
-      gateway_response = @assessors_gateway.search(postcode)
+      gateway_response = @assessors_gateway.search_by_postcode(postcode)
 
       if gateway_response.include?(:errors)
         gateway_response[:errors].each do |error|

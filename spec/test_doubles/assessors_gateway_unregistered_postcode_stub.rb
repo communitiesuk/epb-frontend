@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class AssessorsGatewayUnregisteredPostcodeStub
-  def search(*)
+  def search_by_postcode(*)
     {
       "errors": [
         {
