@@ -12,10 +12,14 @@ Dir['spec/test_doubles/*.rb'].each do |file|
   require_relative file
 end
 
+Dir['spec/test_doubles/find_assessor/by_postcode/*.rb'].each do |file|
+  require_relative file
+end
+
 WebMock.enable!
 
 OauthStub.token
-FindAssessorStub.search('SW1A 2AA')
+FindAssessorByPostcodeStub.search('SW1A 2AA')
 FindCertificateStub.search('SW1A 2AA')
 FetchAssessmentStub.fetch('123-456')
 FetchAssessmentStub.fetch('223-456')
