@@ -4,7 +4,7 @@ class FindAssessorNoNetworkStub
   def self.search(postcode)
     WebMock.stub_request(
       :get,
-      "http://test-api.gov.uk/api/assessors/search/#{postcode}"
+      "http://test-api.gov.uk/api/assessors?postcode=#{postcode}"
     )
       .to_raise(Auth::Errors::NetworkConnectionFailed)
   end

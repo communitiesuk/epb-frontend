@@ -4,7 +4,7 @@ class FindAssessorNoAssessorsStub
   def self.search
     WebMock.stub_request(
       :get,
-      'http://test-api.gov.uk/api/assessors/search/BF1+3AA'
+      'http://test-api.gov.uk/api/assessors?postcode=BF1+3AA'
     )
       .to_return(
       status: 200, body: { "results": [], "searchPostcode": 'BF1 3AA' }.to_json

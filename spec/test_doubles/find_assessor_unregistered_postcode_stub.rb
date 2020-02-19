@@ -4,7 +4,7 @@ class FindAssessorUnregisteredPostcodeStub
   def self.search(postcode)
     WebMock.stub_request(
       :get,
-      "http://test-api.gov.uk/api/assessors/search/#{postcode}"
+      "http://test-api.gov.uk/api/assessors?postcode=#{postcode}"
     )
       .to_return(
       status: 200,
