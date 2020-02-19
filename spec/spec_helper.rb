@@ -10,6 +10,8 @@ require 'zeitwerk'
 loader = Zeitwerk::Loader.new
 loader.push_dir("#{__dir__}/../lib/")
 loader.push_dir("#{__dir__}/../spec/test_doubles/")
+loader.push_dir("#{__dir__}/../spec/test_doubles/find_assessor/by_name")
+loader.push_dir("#{__dir__}/../spec/test_doubles/find_assessor/by_postcode")
 loader.setup
 
 AUTH_URL = 'http://test-auth-server.gov.uk'
