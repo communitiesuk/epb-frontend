@@ -70,7 +70,7 @@ describe 'Acceptance::Assessor' do
 
     context 'when entering a valid postcode' do
       context 'shows page' do
-        before { FindAssessorStub.search('SW1A 2AA') }
+        before { FindAssessorByPostcodeStub.search('SW1A 2AA') }
 
         let(:response) { get '/find-an-assessor/search?postcode=SW1A+2AA' }
 
@@ -112,7 +112,7 @@ describe 'Acceptance::Assessor' do
       end
 
       context 'where no assessors are near' do
-        before { FindAssessorNoNearAssessorsStub.search('E1 4FF') }
+        before { FindAssessorByPostcodeNoNearAssessorsStub.search('E1 4FF') }
 
         let(:response) { get '/find-an-assessor/search?postcode=E1+4FF' }
 
@@ -132,7 +132,7 @@ describe 'Acceptance::Assessor' do
       end
 
       context 'where the postcode doesnt exist' do
-        before { FindAssessorUnregisteredPostcodeStub.search('B11 4FF') }
+        before { FindAssessorByPostcodeUnregisteredPostcodeStub.search('B11 4FF') }
 
         let(:response) { get '/find-an-assessor/search?postcode=B11+4FF' }
 
@@ -153,7 +153,7 @@ describe 'Acceptance::Assessor' do
       end
 
       context 'where the requested postcode is malformed' do
-        before { FindAssessorInvalidPostcodeStub.search('C11 4FF') }
+        before { FindAssessorByPostcodeInvalidPostcodeStub.search('C11 4FF') }
 
         let(:response) { get '/find-an-assessor/search?postcode=C11+4FF' }
 
@@ -176,7 +176,7 @@ describe 'Acceptance::Assessor' do
       end
 
       context 'when there is no connection' do
-        before { FindAssessorNoNetworkStub.search('D11 4FF') }
+        before { FindAssessorByPostcodeNoNetworkStub.search('D11 4FF') }
 
         let(:response) { get '/find-an-assessor/search?postcode=D11+4FF' }
 

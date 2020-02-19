@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class FindAssessorNoAssessorsStub
+class FindAssessorByPostcodeNoAssessorsStub
   def self.search
     WebMock.stub_request(
       :get,

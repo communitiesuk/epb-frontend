@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class FindAssessorUnregisteredPostcodeStub
+class FindAssessorByPostcodeInvalidPostcodeStub
   def self.search(postcode)
     WebMock.stub_request(
       :get,
@@ -11,8 +11,8 @@ class FindAssessorUnregisteredPostcodeStub
       body: {
         "errors": [
           {
-            "code": 'NOT_FOUND',
-            "message": 'The requested postcode is not registered'
+            "code": 'INVALID_REQUEST',
+            "title": 'The requested postcode is not valid'
           }
         ]
       }.to_json

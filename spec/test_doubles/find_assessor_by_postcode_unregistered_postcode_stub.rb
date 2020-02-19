@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class FindAssessorNoSchemeStub
+class FindAssessorByPostcodeUnregisteredPostcodeStub
   def self.search(postcode)
     WebMock.stub_request(
       :get,
@@ -11,8 +11,8 @@ class FindAssessorNoSchemeStub
       body: {
         "errors": [
           {
-            "code": 'SCHEME_NOT_FOUND',
-            "message": 'There is no scheme for one of the requested assessor'
+            "code": 'NOT_FOUND',
+            "message": 'The requested postcode is not registered'
           }
         ]
       }.to_json
