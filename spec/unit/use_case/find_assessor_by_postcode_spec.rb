@@ -16,7 +16,7 @@ describe UseCase::FindAssessorByPostcode do
 
     expect {
       find_assessor_without_valid_postcode.execute('E19 0GL')
-    }.to raise_exception UseCase::FindAssessorByPostcode::PostcodeNotValid
+    }.to raise_exception described_class::PostcodeNotValid
   end
 
   context 'when there are no assessors matched by the postcode' do

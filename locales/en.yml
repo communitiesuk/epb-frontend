@@ -109,7 +109,7 @@ en:
       heading: 'Accreditation scheme not found'
       body: 'There is no scheme for one of the requested assessor'
 
-  find_assessor_results:
+  find_assessor_by_postcode_results:
     head:
       title: 'Energy performance of buildings register - Results for energy assessors near you'
     description: 'Contact an assessor listed below to book an energy assessment.'
@@ -123,6 +123,31 @@ en:
       heading: 'Distance'
       default_miles_away_text: 'Less than 1 mile away'
       miles_away_text: 'miles away'
+    contact_details_text: 'Contact details'
+    accredited_by_text: 'Accreditation scheme'
+    assessor_id_text: 'assessor ID'
+
+  find_assessor_by_name:
+    head:
+      title: 'Energy performance of buildings register - Find an energy assessor'
+    top_heading: 'Get a new Energy Performance Certificate (EPC)'
+    top_body: 'Find qualified energy assessors'
+    question: 'Enter a full name'
+    hint: 'For example SW1A 2AA'
+    name_error: 'Enter a name'
+    button_text: 'Search'
+    too_many_results: 'There are too many results for that name. Please narrow your search term.'
+
+  find_assessor_by_name_results:
+    head:
+      title: 'Energy performance of buildings register - Results for energy assessors'
+    description: 'See what assessors are accredited by the name you searched for.'
+    no_assessors: 'There are no assessors with this name.'
+    accreditation_summary_title: 'About accreditation schemes'
+    accreditation_summary_text: 'Accreditation schemes make sure that assessors are qualified to:'
+    accreditation_summary_assess: 'assess the energy performance of residential properties'
+    accreditation_summary_create: 'create EPCs'
+    results: ' results, found by the name '
     contact_details_text: 'Contact details'
     accredited_by_text: 'Accreditation scheme'
     assessor_id_text: 'assessor ID'

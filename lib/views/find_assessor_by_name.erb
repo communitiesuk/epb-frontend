@@ -1,0 +1,38 @@
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      <%= t('find_assessor_by_name.top_heading') %>
+    </h1>
+    <p class="govuk-body">
+      <%= t('find_assessor_by_name.top_body') %>.
+    </p>
+    <form method="GET" action="<%=localised_url('/find-an-assessor/search-by-name')%>" >
+      <% if I18n.locale != I18n.available_locales[0] %>
+        <input type="hidden" name="lang" value="<%= I18n.locale.to_s %>">
+      <% end %>
+      <fieldset class="govuk-fieldset fieldset-background">
+        <div class="govuk-form-group<% if errors[:name] %> govuk-form-group--error<% end %>">
+          <label class="govuk-label" for="name">
+            <%= t('find_assessor_by_name.question') %>
+          </label>
+          <span id="name-hint" class="govuk-hint">
+            <%= t('find_assessor_by_name.hint') %>
+          </span>
+          <% if errors[:name] %>
+          <span id="name-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden"><%= t('error.error') %></span><%= errors[:name] %>
+          </span>
+          <% end %>
+          <input id="name" name="name" type="text"
+                 class="govuk-input<% if errors[:name] %> govuk-input--error<% end %>"
+                 aria-describedby="name-hint<% if errors[:name] %> name-error<% end %>"
+                 spellcheck="false"
+                 <% if params['name'] %>value="<%= params['name'] %>"<% end %>
+          >
+      </div>
+
+        <button class="govuk-button" data-module="govuk-button"><%= t('find_assessor_by_name.button_text') %></button>
+      </fieldset>
+    </form>
+  </div>
+</div>

@@ -72,6 +72,41 @@ class FrontendService < Sinatra::Base
         layout: :layout, locals: { errors: @errors, results: @results }
   end
 
+  get '/find-an-assessor/search-by-name' do
+    @errors = {}
+    @erb_template = :find_assessor_by_name
+
+    response = @container.get_object(:find_assessor_by_name_use_case)
+
+    if params['name']
+      @page_title = t('find_assessor_results.head.title')
+      begin
+        @erb_template = :find_assessor_by_name_results
+
+        if params['name'] == ''
+          @erb_template = :find_assessor_by_name
+
+          raise UseCase::FindAssessorByName::InvalidName
+        end
+
+        @results = response.execute(params['name'])
+      rescue UseCase::FindAssessorByName::TooManyResults
+        @errors[:name] = t('find_assessor_by_name.too_many_results')
+        @erb_template = :find_assessor_by_name
+      rescue UseCase::FindAssessorByName::InvalidName
+        status 400
+        @errors[:name] = t('find_assessor_by_name.name_error')
+      rescue Auth::Errors::NetworkConnectionFailed
+        status 500
+        @erb_template = :error_page_500
+      end
+    end
+
+    @page_title = t('find_assessor_by_name.head.title')
+    erb @erb_template,
+        layout: :layout, locals: { errors: @errors, results: @results }
+  end
+
   get '/schemes' do
     @page_title = t('schemes.head.title')
     erb :schemes, layout: :layout

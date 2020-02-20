@@ -3,7 +3,7 @@
 describe 'Acceptance::Assessor' do
   include RSpecFrontendServiceMixin
 
-  describe '.get /find-an-assessor/search' do
+  describe '.get /find-an-assessor/search-by-postcode' do
     context 'when search page rendered' do
       let(:response) { get '/find-an-assessor/search-by-postcode' }
 
@@ -134,7 +134,7 @@ describe 'Acceptance::Assessor' do
 
         it 'explains that no assessors are nearby' do
           expect(response.body).to include(
-            I18n.t('find_assessor_results.no_assessors')
+            I18n.t('find_assessor_by_postcode_results.no_assessors')
           )
         end
       end
@@ -202,6 +202,169 @@ describe 'Acceptance::Assessor' do
 
         let(:response) do
           get '/find-an-assessor/search-by-postcode?postcode=D11+4FF'
+        end
+
+        it 'returns status 500' do
+          expect(response.status).to eq(500)
+        end
+
+        it 'displays the 500 error page heading' do
+          expect(response.body).to include('Network connection failed')
+        end
+
+        it 'displays error page body' do
+          expect(response.body).to include('There is an internal network error')
+        end
+      end
+    end
+  end
+
+  describe '.get /find-an-assessor/search-by-name' do
+    context 'when search page rendered' do
+      let(:response) { get '/find-an-assessor/search-by-name' }
+
+      it 'returns status 200' do
+        expect(response.status).to eq(200)
+      end
+
+      it 'displays the find an assessor page heading' do
+        expect(response.body).to include('Find an energy assessor')
+      end
+
+      it 'has a postcode input field' do
+        expect(response.body).to include('<input id="name" name="name"')
+      end
+
+      it 'has a Find button' do
+        expect(response.body).to include(
+          '<button class="govuk-button" data-module="govuk-button">Search</button>'
+        )
+      end
+
+      it 'does not display an error message' do
+        expect(response.body).not_to include('govuk-error-message')
+      end
+    end
+
+    context 'when entering an empty name' do
+      let(:response) { get '/find-an-assessor/search-by-name?name=' }
+
+      it 'returns status 400' do
+        expect(response.status).to eq(400)
+      end
+
+      it 'displays the find an assessor page heading' do
+        expect(response.body).to include('Find an energy assessor')
+      end
+
+      it 'displays an error message' do
+        expect(response.body).to include(
+          '<span id="name-error" class="govuk-error-message">'
+        )
+        expect(response.body).to include('Enter a name')
+      end
+    end
+
+    context 'when entering a name' do
+      context 'shows page' do
+        before { FindAssessorByNameStub.search_by_name('Ronald McDonald') }
+
+        let(:response) do
+          get '/find-an-assessor/search-by-name?name=Ronald%20McDonald'
+        end
+
+        it 'returns status 200' do
+          expect(response.status).to eq(200)
+        end
+
+        it 'displays the find an assessor page heading' do
+          expect(response.body).to include('Find an energy assessor')
+        end
+
+        it 'has a name input field' do
+          expect(response.body).to include('<input id="name" name="name"')
+        end
+
+        it 'has a Search button' do
+          expect(response.body).to include(
+            '<button class="govuk-button" data-module="govuk-button">Search</button>'
+          )
+        end
+
+        it 'shows the name of an entry' do
+          expect(response.body).to include('Juan Uno')
+        end
+
+        it 'shows the email of an entry' do
+          expect(response.body).to include('user@example.com')
+        end
+
+        it 'shows a clickable email' do
+          expect(response.body).to include('mailto:user@example.com')
+        end
+
+        it 'shows a phone number of an entry' do
+          expect(response.body).to include('07921 021 368')
+        end
+      end
+
+      context 'where no assessors have that name' do
+        before do
+          FindAssessorByNameNoAssessorsStub.search_by_name('Nonexistent Person')
+        end
+
+        let(:response) do
+          get '/find-an-assessor/search-by-name?name=Nonexistent%20Person'
+        end
+
+        it 'returns status 200' do
+          expect(response.status).to eq(200)
+        end
+
+        it 'displays the find an assessor page heading' do
+          expect(response.body).to include('Find an energy assessor')
+        end
+
+        it 'explains that no assessors by that name' do
+          expect(response.body).to include(
+            I18n.t('find_assessor_by_name_results.no_assessors')
+          )
+        end
+      end
+
+      context 'when there are too many assessors by that name' do
+        before do
+          FindAssessorByNameTooManyResultsStub.search_by_name(
+            'Supercommon Name'
+          )
+        end
+
+        let(:response) do
+          get '/find-an-assessor/search-by-name?name=Supercommon%20Name'
+        end
+
+        it 'returns status 200' do
+          expect(response.status).to eq(200)
+        end
+
+        it 'displays error explaining the situation' do
+          expect(response.body).to include(
+            'There are too many results for that name. Please narrow your search term.'
+          )
+        end
+
+        it 'has a name input field' do
+          expect(response.body).to include('<input id="name" name="name"')
+        end
+      end
+
+      context 'when there is no connection' do
+        before do
+          FindAssessorByNameNoNetworkStub.search_by_name('Breaking Person')
+        end
+
+        let(:response) do
+          get '/find-an-assessor/search-by-name?name=Breaking%20Person'
         end
 
         it 'returns status 500' do

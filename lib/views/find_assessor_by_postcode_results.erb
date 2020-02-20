@@ -37,26 +37,26 @@
     <% if results.size > 0 %>
     <div class="govuk-grid-row">
       <p class="govuk-body">
-        <%= t('find_assessor_results.description') %>
+        <%= t('find_assessor_by_postcode_results.description') %>
       </p>
     </div>
 
       <details class="govuk-details" data-module="govuk-details">
         <summary class="govuk-details__summary">
           <span class="govuk-details__summary-text">
-            <%= t('find_assessor_results.accreditation_summary_title') %>
+            <%= t('find_assessor_by_postcode_results.accreditation_summary_title') %>
           </span>
         </summary>
         <div class="govuk-details__text">
-          <%= t('find_assessor_results.accreditation_summary_text') %>
+          <%= t('find_assessor_by_postcode_results.accreditation_summary_text') %>
           <ul>
-            <li><%= t('find_assessor_results.accreditation_summary_assess') %></li>
-            <li><%= t('find_assessor_results.accreditation_summary_create') %></li>
+            <li><%= t('find_assessor_by_postcode_results.accreditation_summary_assess') %></li>
+            <li><%= t('find_assessor_by_postcode_results.accreditation_summary_create') %></li>
           </ul>
         </div>
       </details>
 
-      <h2 class="govuk-heading-m"><%= "#{results.length} #{t('find_assessor_results.results')} #{params['postcode'].upcase}" %>:</h2>
+      <h2 class="govuk-heading-m"><%= "#{results.length} #{t('find_assessor_by_postcode_results.results')} #{params['postcode'].upcase}" %>:</h2>
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
 
@@ -65,11 +65,11 @@
           <% assessor = result[:assessor] %>
             <li>
               <div>
-                <h2 class="govuk-heading-m"><%= "#{assessor[:firstName]} #{assessor[:lastName]} (#{t('find_assessor_results.assessor_id_text')}: #{assessor[:registeredBy][:schemeId]})" %></h2>
+                <h2 class="govuk-heading-m"><%= "#{assessor[:firstName]} #{assessor[:lastName]} (#{t('find_assessor_by_postcode_results.assessor_id_text')}: #{assessor[:registeredBy][:schemeId]})" %></h2>
                 <div>
                   <dl class="govuk-summary-list govuk-summary-list--no-border">
                     <div class="govuk-summary-list__row">
-                      <dt class="govuk-summary-list__key"><%= t('find_assessor_results.contact_details_text') %></dt>
+                      <dt class="govuk-summary-list__key"><%= t('find_assessor_by_postcode_results.contact_details_text') %></dt>
                       <dd class="govuk-summary-list__value">
                         <p>
                           <a href="tel:<%= assessor[:contactDetails][:telephoneNumber] %>"><%= assessor[:contactDetails][:telephoneNumber] %></a>
@@ -80,7 +80,7 @@
                       </dd>
                     </div>
                     <div class="govuk-summary-list__row">
-                      <dt class="govuk-summary-list__key"><%= t('find_assessor_results.accredited_by_text') %></dt>
+                      <dt class="govuk-summary-list__key"><%= t('find_assessor_by_postcode_results.accredited_by_text') %></dt>
                       <dd class="govuk-summary-list__value"><%= assessor[:registeredBy][:name] %></dd>
                     </div>
                   </dl>
@@ -92,7 +92,7 @@
       </ul>
     <% else %>
       <p class="govuk-body">
-        <%= t('find_assessor_results.no_assessors') %>
+        <%= t('find_assessor_by_postcode_results.no_assessors') %>
       </p>
     <% end %>
   </div>
