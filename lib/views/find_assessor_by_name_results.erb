@@ -26,7 +26,7 @@
                  aria-describedby="name-hint<% if errors[:name] %> name-error<% end %>"
                  autocomplete="postal-code"
                  spellcheck="false"
-                 <% if params['name'] %>value="<%= params['name'].upcase %>"<% end %>
+                 <% if params['name'] %>value="<%= params['name'] %>"<% end %>
           >
         </div>
 
@@ -56,7 +56,7 @@
         </div>
       </details>
 
-      <h2 class="govuk-heading-m"><%= "#{results.length} #{t('find_assessor_by_name_results.results')} #{params['name'].upcase}" %>:</h2>
+      <h2 class="govuk-heading-m"><%= "#{results.length} #{t('find_assessor_by_name_results.results')} #{params['name']}" %>:</h2>
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
 

@@ -98,7 +98,10 @@ en:
     head:
       title: 'Energy performance of buildings register - Find an energy assessor'
     top_heading: 'Get a new Energy Performance Certificate (EPC)'
-    top_body: 'Find qualified energy assessors near your property'
+    top_body: 'Find qualified energy assessors near your property.'
+    assessor_by_name:
+      body: 'If you know the name of an assessor and would like to check the validity of them, use the %{link} service. You can also use this service if you need to contact the assessor about an issue.'
+      cta: 'Find assessor by name'
     question: 'Enter a postcode'
     hint: 'For example SW1A 2AA'
     postcode_error: 'Enter a real postcode'
