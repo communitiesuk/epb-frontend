@@ -15,6 +15,7 @@ module Gateway
     def search_by_name(name)
       route = URI.encode("/api/assessors?name=#{name}")
       response = @internal_api_client.get(route)
+
       JSON.parse(response.body, symbolize_names: true)
     end
   end

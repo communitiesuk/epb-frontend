@@ -11,17 +11,17 @@ module UseCase
     end
 
     def execute(postcode)
-      gateway_response = @assessors_gateway.search_by_postcode(postcode)
+      response = @assessors_gateway.search_by_postcode(postcode)
 
-      if gateway_response.include?(:errors)
-        gateway_response[:errors].each do |error|
+      if response.include?(:errors)
+        response[:errors].each do |error|
           raise PostcodeNotRegistered if error[:code] == 'NOT_FOUND'
           raise PostcodeNotValid if error[:code] == 'INVALID_REQUEST'
           raise AuthTokenMissing if error[:code] == 'Auth::Errors::TokenMissing'
         end
       end
 
-      gateway_response[:results]
+      response[:results]
     end
   end
 end
