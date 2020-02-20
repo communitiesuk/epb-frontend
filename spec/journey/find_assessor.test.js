@@ -77,6 +77,32 @@ describe('Journey::Assessor', () => {
     await text('Results for energy assessors near you').exists()
   }, 30000);
 
+  it('displays an error message when entering an empty name', async () => {
+    await goto("localhost:9292/find-an-assessor");
+    await click("Start now");
+    await click('Find assessor by name');
+    await click('Search');
+    await text('Enter a name').exists()
+  }, 30000);
+
+  it('displays an error message when entering a name that is too common', async () => {
+    await goto("localhost:9292/find-an-assessor");
+    await click("Start now");
+    await click('Find assessor by name');
+    await write('Megacommon Name', into(textBox('name')));
+    await click('Search');
+    await text('There are too many results for that name. Please narrow your search term.').exists()
+  }, 30000);
+
+  it('displays an assessor when searched for one that does exist', async () => {
+    await goto("localhost:9292/find-an-assessor");
+    await click("Start now");
+    await click('Find assessor by name');
+    await write('Supercommon Name', into(textBox('name')));
+    await click('Search');
+    await text('3 results, found by the name Supercommon Name').exists()
+  }, 30000);
+
   afterAll(async () => {
     await closeBrowser();
     process.kill(rackup_pid, "SIGTERM")

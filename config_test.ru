@@ -8,11 +8,7 @@ loader = Zeitwerk::Loader.new
 loader.push_dir("#{__dir__}/lib/")
 loader.setup
 
-Dir['spec/test_doubles/*.rb'].each do |file|
-  require_relative file
-end
-
-Dir['spec/test_doubles/find_assessor/by_postcode/*.rb'].each do |file|
+Dir['spec/test_doubles/**/*.rb'].each do |file|
   require_relative file
 end
 
@@ -20,6 +16,8 @@ WebMock.enable!
 
 OauthStub.token
 FindAssessorByPostcodeStub.search_by_postcode('SW1A 2AA')
+FindAssessorByNameStub.search_by_name('Supercommon Name')
+FindAssessorByNameTooManyResultsStub.search_by_name('Megacommon Name')
 FindCertificateStub.search('SW1A 2AA')
 FetchAssessmentStub.fetch('123-456')
 FetchAssessmentStub.fetch('223-456')
