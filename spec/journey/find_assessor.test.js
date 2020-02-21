@@ -47,7 +47,7 @@ describe('Journey::Assessor', () => {
 
   it('finds an assessor by postcode in Welsh', async () => {
     await goto("localhost:9292/find-an-assessor");
-    await click('Welsh (Cymraeg)')
+    await click('Gymraeg')
     await click('Welsh: Start now');
     await write('SW1A 2AA', into(textBox('postcode')));
     await click('Welsh: Find');

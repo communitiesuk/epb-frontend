@@ -52,9 +52,9 @@ cy:
       phone_text: 'Welsh: If you need support finding an assessor, call our helpdesk on %{link}.'
       phone_number: 'Welsh: 0233 788 1234'
       switch_language:
-        description: 'Welsh: This page is also available in %{link}.'
-        url: '/find-an-assessor?lang=cy'
-        link: 'Welsh: Welsh (Cymraeg)'
+        description: 'This page is also available in %{link}.'
+        url: '/find-an-assessor'
+        link: 'English'
       commercial:
         description: 'Welsh: If your property is for commercial use, find an assessor using a %{link}.'
         link: 'Welsh: commercial energy assessment service'
@@ -158,34 +158,23 @@ cy:
   find_a_certificate:
     head:
       title: 'Welsh: Energy performance of buildings register - Find an energy assessor for a residential property'
-    top_heading: 'Welsh: Find an Energy Performance Certificate for a residential property'
-    top_body: 'Welsh: You need a valid Energy Performance Certificate (EPC) before you sell or let a residential property.'
+    top_heading: 'Welsh: Find an Energy Performance Certificate for a building'
+    top_body: 'Welsh: Energy Performance Certificates (EPCs) are a legal requirement for residential, commercial and public buildings. <a class="govuk-link" href="#">Click here for more information about the differences between the certificates and other energy documents related to buildings</a>.'
     service:
       introduction: 'Welsh: Use this service to:'
       list:
-        check: 'Welsh: check if your property has a valid EPC'
-        review: 'Welsh: review the energy efficiency rating of your property'
-        access: 'Welsh: access advice and information about how to improve the energy efficiency of your property'
+        find: 'Welsh: find a building’s energy certificates and other energy related documents'
     scotland:
       text: 'Welsh: If your property is in Scotland, you should use the %{link}.'
-      cta: "Scottish government's EPC service"
-    not:
-      introduction: 'Welsh: You do not need an EPC if the:'
-      list:
-        not_residential: 'Welsh: property is not residential'
-        temporary: 'Welsh: property is temporarily residential, with a planned residential use of 2 years or less'
-        demolish: "property's new owner intends to demolish it and never use it as a residential property"
+      cta: "Welsh: Scottish government's EPC service"
     switch_language:
-      description: 'Welsh: This page is also available in %{link}.'
-      link: 'Welsh: Welsh (Cymraeg)'
-      url: '/find-a-certificate?lang=cy'
+      description: 'This page is also available in %{link}.'
+      link: 'English'
+      url: '/find-a-certificate'
     cta: 'Welsh: Start now'
     before_you_start:
       title: 'Welsh: Before you start'
       call_center: 'Welsh: The service is also available by calling 0233 788 1234.'
-      commercial:
-        text: 'Welsh: If your property is for commercial use, you need to use a %{link}.'
-        cta: 'Welsh: commercial energy assessment service'
 
   find_certificate_by_postcode:
     head:
@@ -203,7 +192,7 @@ cy:
   find_certificate_results:
     head:
       title: 'Welsh: Energy performance of buildings register - Results for energy performance certificates at your postcode'
-    top_heading: 'Welsh: Find an Energy Performance Certificate for a residential property'
+    top_heading: 'Welsh: Find an Energy Performance Certificate for a building'
     list: 'Welsh: 1-%{length} of %{length} results matching %{postcode}'
     table:
       address: 'Welsh: Address'

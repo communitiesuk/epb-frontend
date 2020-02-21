@@ -47,7 +47,7 @@ describe('Journey::Certificate', () => {
 
   it('finds a certificate by postcode in Welsh', async () => {
     await goto("localhost:9393/find-a-certificate");
-    await click('Welsh (Cymraeg)')
+    await click('Gymraeg')
     await click('Welsh: Start now');
     await write('SW1A 2AA', into(textBox('postcode')));
     await click('Welsh: Find');
