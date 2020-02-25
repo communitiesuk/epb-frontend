@@ -68,7 +68,7 @@
 
       <ul class="govuk-list">
           <% results.each do |result| %>
-          <%= erb :find_assessor_list_assessor, locals: {
+          <%== erb :find_assessor_list_assessor, locals: {
             assessor: result[:assessor] } %>
           <% end %>
       </ul>

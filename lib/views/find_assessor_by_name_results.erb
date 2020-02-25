@@ -67,10 +67,10 @@
     <% if results[:results].size > 0 %>
       <ul class="govuk-list">
         <% results[:results].each do |result| %>
-          <%= erb :find_assessor_list_assessor, locals: {
+          <%== erb :find_assessor_list_assessor, locals: {
               assessor: result } %>
-        <% end %>
       </ul>
+    <% end %>
     <% else %>
       <p class="govuk-body">
         <%= t('find_assessor_by_name_results.no_assessors') %>
