@@ -77,6 +77,25 @@ describe('Journey::Certificate', () => {
     await text('of 3 results matching').exists()
   }, 30000);
 
+
+  it('displays an error message when entering an empty reference number', async () => {
+    await goto("localhost:9393/find-a-certificate");
+    await click("Start now");
+    await click('Find certificate by reference number');
+    await write('', into(textBox('reference_number')));
+    await click('Find');
+    await text('Enter a search term').exists()
+  }, 30000);
+
+  it('displays the find a certificate page heading when entering a valid certificate reference number ', async () => {
+    await goto("localhost:9393/find-a-certificate");
+    await click("Start now");
+    await click('Find certificate by reference number');
+    await write('1234-5678-9101-1121', into(textBox('reference_number')));
+    await click('Find');
+    await text('of 1 results matching').exists()
+  }, 30000);
+
   afterAll(async () => {
     await closeBrowser();
     process.kill(rackup_pid, "SIGTERM")
