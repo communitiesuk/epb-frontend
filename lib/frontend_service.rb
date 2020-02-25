@@ -126,15 +126,10 @@ class FrontendService < Sinatra::Base
       begin
         @erb_template = :find_certificate_by_postcode_results
 
-        if params['postcode'] == ''
-          @erb_template = :find_certificate_by_postcode
-
-          raise UseCase::FindCertificateByPostcode::PostcodeNotValid
-        end
-
         @results = response.execute(params['postcode'])
       rescue UseCase::FindCertificateByPostcode::PostcodeNotValid
         status 400
+        @erb_template = :find_certificate_by_postcode
         @errors[:postcode] = t('find_certificate_by_postcode.postcode_not_valid')
       rescue Auth::Errors::NetworkConnectionFailed
         status 500
@@ -158,15 +153,10 @@ class FrontendService < Sinatra::Base
       begin
         @erb_template = :find_certificate_by_reference_number_results
 
-        if params['reference_number'] == ''
-          @erb_template = :find_certificate_by_reference_number
-
-          raise UseCase::FindCertificateByReferenceNumber::ReferenceNumberNotValid
-        end
-
         @results = response.execute(params['reference_number'])
       rescue UseCase::FindCertificateByReferenceNumber::ReferenceNumberNotValid
         status 400
+        @erb_template = :find_certificate_by_reference_number
         @errors[:reference_number] = t('find_certificate_by_reference_number.reference_number_not_valid')
       rescue Auth::Errors::NetworkConnectionFailed
         status 500

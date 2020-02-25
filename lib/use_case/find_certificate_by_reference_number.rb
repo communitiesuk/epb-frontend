@@ -10,6 +10,8 @@ module UseCase
     end
 
     def execute(query)
+      raise ReferenceNumberNotValid if query == ''
+
       gateway_response = @certificates_gateway.search(query)
 
       if gateway_response.include?(:errors)
