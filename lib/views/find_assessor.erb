@@ -16,7 +16,7 @@
       <div class="govuk-details__text">
         <%= t('find_an_assessor.buildings_not_epc.intro') %>
         <ul class="govuk-list govuk-list--bullet">
-          <li><%= t('find_an_assessor.buildings_not_epc.list').gsub('|', '</li><li>') %></li>
+          <li><%== t('find_an_assessor.buildings_not_epc.list').gsub('|', '</li><li>') %></li>
         </ul>
       </div>
     </details>
@@ -61,19 +61,19 @@
     </h2>
 
     <div class="govuk-inset-text">
-      <%= t('find_an_assessor.before_you_start.switch_language.description', :link => '<a href="' + t('find_an_assessor.before_you_start.switch_language.url') + '">' + t('find_an_assessor.before_you_start.switch_language.link') + '</a>' ) %>
+      <%== t('find_an_assessor.before_you_start.switch_language.description', :link => '<a href="' + t('find_an_assessor.before_you_start.switch_language.url') + '">' + t('find_an_assessor.before_you_start.switch_language.link') + '</a>' ) %>
     </div>
 
     <p class="govuk-body">
-      <%= t('find_an_assessor.before_you_start.phone_text', :link => '<a href="tel:' + t('find_an_assessor.before_you_start.phone_number') + '">' + t('find_an_assessor.before_you_start.phone_number') + '</a>' ) %>
+      <%== t('find_an_assessor.before_you_start.phone_text', :link => '<a href="tel:' + t('find_an_assessor.before_you_start.phone_number') + '">' + t('find_an_assessor.before_you_start.phone_number') + '</a>' ) %>
     </p>
 
     <p class="govuk-body">
-      <%= t('find_an_assessor.before_you_start.scotland.description', :link => '<a href="https://www.gov.scot/publications/energy-performance-certificates-introduction/">' + t('find_an_assessor.before_you_start.scotland.link') + '</a>') %>
+      <%== t('find_an_assessor.before_you_start.scotland.description', :link => '<a href="https://www.gov.scot/publications/energy-performance-certificates-introduction/">' + t('find_an_assessor.before_you_start.scotland.link') + '</a>') %>
     </p>
 
     <p class="govuk-body">
-      <%= t('find_an_assessor.before_you_start.commercial.description', :link => '<a href="' + localised_url('/schemes') + '">' + t('find_an_assessor.before_you_start.commercial.link') + '</a>' ) %>
+      <%== t('find_an_assessor.before_you_start.commercial.description', :link => '<a href="' + localised_url('/schemes') + '">' + t('find_an_assessor.before_you_start.commercial.link') + '</a>' ) %>
     </p>
   </div>
 </div>
