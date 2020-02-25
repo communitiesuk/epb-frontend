@@ -95,7 +95,7 @@ PLATFORMS
 
 DEPENDENCIES
   epb_auth_tools!
-  erubis (~> 2.7)
+  erubis (~> 2.7)!
   i18n!
   prettier (~> 0.16.0)!
   rack-contrib!
