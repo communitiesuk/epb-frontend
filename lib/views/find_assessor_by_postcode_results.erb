@@ -4,7 +4,7 @@
       <%= t('find_assessor_by_postcode.top_heading') %>
     </h1>
 
-    <form method="GET" action="<%=localised_url('/find-an-assessor/search')%>" >
+    <form method="GET" action="<%=localised_url('/find-an-assessor/search-by-postcode')%>" >
       <% if I18n.locale != I18n.available_locales[0] %>
         <input type="hidden" name="lang" value="<%= I18n.locale.to_s %>">
       <% end %>
