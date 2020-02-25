@@ -287,8 +287,8 @@ describe 'Acceptance::Assessor' do
 
         it 'has a Search button' do
           expect(response.body).to include(
-                                     '<button class="govuk-button" data-module="govuk-button">Search</button>'
-                                   )
+            '<button class="govuk-button" data-module="govuk-button">Search</button>'
+          )
         end
 
         it 'shows the name of an entry' do
@@ -313,7 +313,9 @@ describe 'Acceptance::Assessor' do
       end
 
       context 'which has similar matches' do
-        before { FindAssessorByNameStub.search_by_name('Ronald McDonald', true) }
+        before do
+          FindAssessorByNameStub.search_by_name('Ronald McDonald', true)
+        end
 
         let(:response) do
           get '/find-an-assessor/search-by-name?name=R%20McDonald'

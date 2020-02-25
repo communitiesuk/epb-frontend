@@ -164,7 +164,9 @@ describe Gateway::AssessorsGateway do
       end
 
       it 'returns empty results' do
-        expect(response).to eq(results: [], searchName: 'Some Nonexistent-name', looseMatch: false)
+        expect(response).to eq(
+          results: [], searchName: 'Some Nonexistent-name', looseMatch: false
+        )
       end
     end
   end

@@ -6,7 +6,7 @@ describe UseCase::FindCertificateByPostcode do
     let(:find_certificate) { described_class.new(certificates_gateway) }
 
     it 'returns empty array' do
-      expect(find_certificate.execute('SW1A+2AA')).to eq([])
+      expect(find_certificate.execute('SW1A 2AA')).to eq([])
     end
   end
 
@@ -65,7 +65,7 @@ describe UseCase::FindCertificateByPostcode do
     let(:find_certificate) { described_class.new(certificates_gateway) }
 
     it 'returns list of certificates' do
-      expect(find_certificate.execute('SW1A+2AB')).to eq(valid_certificates)
+      expect(find_certificate.execute('SW1A 2AB')).to eq(valid_certificates)
     end
   end
 end

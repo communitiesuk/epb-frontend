@@ -27,8 +27,10 @@ class Container
       find_assessor_by_postcode_use_case: find_assessor_by_postcode_use_case,
       find_assessor_by_name_use_case: find_assessor_by_name_use_case,
       fetch_assessment_use_case: fetch_assessment_use_case,
-      find_certificate_by_postcode_use_case: find_certificate_by_postcode_use_case,
-      find_certificate_by_reference_number_use_case: find_certificate_by_reference_number_use_case
+      find_certificate_by_postcode_use_case:
+        find_certificate_by_postcode_use_case,
+      find_certificate_by_reference_number_use_case:
+        find_certificate_by_reference_number_use_case
     }
   end
 
