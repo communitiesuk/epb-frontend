@@ -11,7 +11,7 @@ module UseCase
     end
 
     def execute(query)
-      raise PostcodeNotValid if query == ''
+      raise PostcodeNotValid unless Regexp.new('^[A-Z]{1,2}\d[A-Z\d]?\s?\d[A-Z]{2}$', Regexp::IGNORECASE).match(query)
 
       gateway_response = @certificates_gateway.search(query)
 
