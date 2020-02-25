@@ -18,18 +18,17 @@
           <label class="govuk-label" for="reference_number">
             <%= t('find_certificate_by_reference_number.question') %>
           </label>
-          <span id="refernece-number-hint" class="govuk-hint">
+          <span id="reference-number-hint" class="govuk-hint">
             <%= t('find_certificate_by_reference_number.hint') %>
           </span>
           <% if errors[:reference_number] %>
-          <span id="reference-number-error" class="govuk-error-message">
-            <span class="govuk-visually-hidden"><%= t('error.error') %></span><%= errors[:reference_number] %>
-          </span>
+            <span id="reference-number-error" class="govuk-error-message">
+              <span class="govuk-visually-hidden"><%= t('error.error') %></span><%= errors[:reference_number] %>
+            </span>
           <% end %>
           <input id="reference_number" name="reference_number" type="text"
                  class="govuk-input<% if errors[:reference_number] %> govuk-input--error<% end %>"
                  aria-describedby="reference-number-hint<% if errors[:reference_number] %> reference_number-error<% end %>"
-                 autocomplete="postal-code"
                  spellcheck="false"
                  <% if params['reference_number'] %>value="<%= params['reference_number'] %>"<% end %>
           >
