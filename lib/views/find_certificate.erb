@@ -12,16 +12,22 @@
     </p>
 
     <ul class="govuk-list govuk-list--bullet">
-      <li><%= t('find_a_certificate.service.list.find') %></li>
+      <li><%= t('find_a_certificate.service.list').gsub('|', '</li><li>') %></li>
     </ul>
 
-    <p class="govuk-body">
-      <%= t('find_a_certificate.scotland.text', :link => '<a href="https://www.gov.scot/publications/energy-performance-certificates-introduction/">' + t('find_a_certificate.scotland.cta') + '</a>') %>
-    </p>
-
-    <div class="govuk-inset-text">
-      <%= t('find_a_certificate.switch_language.description', :link => '<a href="' + t('find_a_certificate.switch_language.url') + '">' + t('find_a_certificate.switch_language.link') + '</a>' ) %>
-    </div>
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          <%= t('find_an_assessor.buildings_not_epc.cta') %>
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <%= t('find_an_assessor.buildings_not_epc.intro') %>
+        <ul class="govuk-list govuk-list--bullet">
+          <li><%= t('find_an_assessor.buildings_not_epc.list').gsub('|', '</li><li>') %></li>
+        </ul>
+      </div>
+    </details>
 
     <a
       href="<%= localised_url('/find-a-certificate/search') %>"
@@ -46,9 +52,20 @@
       <%= t('find_a_certificate.before_you_start.title') %>
     </h2>
 
+    <div class="govuk-inset-text">
+      <%= t('find_a_certificate.before_you_start.switch_language.description', :link => '<a href="' + t('find_a_certificate.before_you_start.switch_language.url') + '">' + t('find_a_certificate.before_you_start.switch_language.link') + '</a>' ) %>
+    </div>
+
     <p class="govuk-body">
       <%= t('find_a_certificate.before_you_start.call_center') %>
     </p>
 
+    <p class="govuk-body">
+      <%= t('find_a_certificate.before_you_start.scotland.text', :link => '<a href="https://www.gov.scot/publications/energy-performance-certificates-introduction/">' + t('find_a_certificate.before_you_start.scotland.cta') + '</a>') %>
+    </p>
+
+    <p class="govuk-body">
+      <%= t('find_a_certificate.before_you_start.commercial.text', :link => '<a href="' + t('find_a_certificate.before_you_start.commercial.url') + '">' + t('find_a_certificate.before_you_start.commercial.cta') + '</a>') %>
+    </p>
   </div>
 </div>

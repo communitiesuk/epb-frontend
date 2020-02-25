@@ -58,7 +58,7 @@ describe('Journey::Certificate', () => {
     await click("Start now");
     await write('', into(textBox('postcode')));
     await click('Find');
-    await text('Enter a real postcode').exists()
+    await text('Enter a search term').exists()
   }, 30000);
 
   it('displays an error message when entering an invalid postcode', async () => {

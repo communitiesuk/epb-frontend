@@ -21,7 +21,7 @@ class FindCertificateStub
       body: {
         "results": [
           {
-            assessmentId: '123-456',
+            assessmentId: '1234-5678-9101-1121',
             dateOfAssessment: '2011-01-01',
             dateRegistered: '2011-01-02',
             dwellingType: 'Top floor flat',
@@ -33,10 +33,10 @@ class FindCertificateStub
             potentialEnergyEfficiencyRating: 'a',
             potentialEnergyEfficiencyBand: 95,
             postcode: 'SW1B 2BB',
-            dateOfExpiry: '2021-01-01'
+            dateOfExpiry: '2019-01-01'
           },
           {
-            assessmentId: '123-987',
+            assessmentId: '1234-5678-9101-1122',
             dateOfAssessment: '2011-01-01',
             dateRegistered: '2011-01-02',
             dwellingType: 'Top floor flat',
@@ -51,7 +51,7 @@ class FindCertificateStub
             dateOfExpiry: '2022-01-01'
           },
           {
-            assessmentId: '123-456',
+            assessmentId: '1234-5678-9101-1123',
             dateOfAssessment: '2011-01-01',
             dateRegistered: '2011-01-02',
             dwellingType: 'Top floor flat',

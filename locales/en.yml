@@ -167,33 +167,36 @@ en:
   find_a_certificate:
     head:
       title: 'Energy performance of buildings register - Find an energy assessor for a residential property'
-    top_heading: 'Find an Energy Performance Certificate for a building'
-    top_body: 'Energy Performance Certificates (EPCs) are a legal requirement for residential, commercial and public buildings. <a class="govuk-link" href="#">Click here for more information about the differences between the certificates and other energy documents related to buildings</a>.'
+    top_heading: 'Find an Energy Performance Certificate for a domestic property'
+    top_body: 'You need a valid Energy Performance Certificate (EPC) before you sell or let a domestic property.'
     service:
       introduction: 'Use this service to:'
-      list:
-        find: 'find a building’s energy certificates and other energy related documents'
-    scotland:
-      text: 'If your property is in Scotland, you should use the %{link}.'
-      cta: "Scottish government's EPC service"
-    switch_language:
-      description: 'Mae’r dudalen yma ar gael yn %{link}.'
-      link: 'Gymraeg'
-      url: '/find-a-certificate?lang=cy'
+      list: 'check if a property in England, Wales and Northern Ireland has a valid EPC|review the energy efficiency rating of a property|access advice and information about how to improve the energy efficiency of a property'
     cta: 'Start now'
     before_you_start:
       title: 'Before you start'
+      switch_language:
+        description: 'Mae’r dudalen yma ar gael yn %{link}.'
+        link: 'Gymraeg'
+        url: '/find-a-certificate?lang=cy'
+      scotland:
+        text: 'If your property is in Scotland, you should use the %{link}.'
+        cta: "Scottish government's EPC service"
+      commercial:
+        text: 'If the property is for commercial or public use, use our %{link}.'
+        url: 'https://www.ndepcregister.com'
+        cta: 'find a non-domestic EPC'
       call_center: 'The service is also available by calling 0233 788 1234.'
 
   find_certificate_by_postcode:
     head:
       title: 'Energy performance of buildings register - Find an energy performance certificate'
-    top_heading: 'Find a Energy Performance Certificate for a residential property'
-    question: 'Enter a postcode OR a street name and town OR an EPC reference number below'
-    postcode_error: 'Enter a real postcode'
+    top_heading: 'Search for an EPC'
+    question: 'Enter a postcode OR an EPC reference number below'
     query_not_valid: 'Enter a search term'
     postcode_not_registered: 'Enter a postcode that exists'
     button_text: 'Find'
+    hint: 'For example SW1A 2AA or 1234-5678-9101-1121'
     no_network:
       heading: 'Network connection failed'
       body: 'There is an internal network error'

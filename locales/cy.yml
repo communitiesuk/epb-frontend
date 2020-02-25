@@ -37,28 +37,32 @@ cy:
   find_an_assessor:
     head:
       title: 'Welsh: Energy performance of buildings register - Find an energy assessor for a residential property'
-    top_heading: 'Welsh: Get a new Energy Performance Certificate (EPC)'
+    top_heading: 'Welsh: Getting a new Energy Performance Certificate (EPC)'
     introduction:
-      what_you_need: 'Welsh: You need an EPC when you build, sell or let a residential property. An EPC is valid for 10 years.'
-      how_it_works: 'Welsh: To get a new EPC you need to book an assessor. They will measure the energy efficiency of your property and create an EPC. The cost of the assessment will depend on the size of your property.'
-    scotland:
-      description: 'Welsh: If your property is in Scotland, you should use the %{link}'
-      link: 'Welsh: Scottish government’s EPC service.'
-    negative_epc:
-      no_epc_need: 'Welsh: <a href="https://www.gov.uk/buy-sell-your-home/energy-performance-certificates#buildings-that-dont-need-an-epc">Check which properties do not need an EPC.</a>'
+      what_you_need: 'Welsh: You need an EPC when you build, sell or let a domestic property.'
+      assessor: 'Welsh: To get a new EPC, you need to book an assessor. They will assess the energy efficiency of the property and create an EPC.'
+      cost: 'Welsh: The cost of an assessment varies by assessor and the size of the property.'
+      valid: 'Welsh: An EPC is valid for 10 years.'
+      england_wales_northern_ireland: 'Welsh: Use this service to find an accredited assessor in England, Wales and Northern Ireland.'
+    buildings_not_epc:
+      cta: 'Welsh: Buildings that don’t need an EPC'
+      intro: 'Welsh: These include:'
+      list: 'Welsh: places of worship|temporary buildings that will be used for less than 2 years|stand-alone buildings with total useful floor space of less than 50 square metres|industrial sites, workshops and non-residential agricultural buildings that don’t use a lot of energy|some buildings that are due to be demolished|holiday accommodation that’s rented out for less than 4 months a year or is let under a licence to occupy|listed buildings - you should get advice from your local authority conservation officer if the work would alter the building’s character|residential buildings intended to be used less than 4 months a year'
     cta: 'Welsh: Start now'
     before_you_start:
-      heading: 'Welsh: Before you start'
-      phone_text: 'Welsh: If you need support finding an assessor, call our helpdesk on %{link}.'
-      phone_number: 'Welsh: 0233 788 1234'
+      heading: 'Welsh: Other ways to find an assessor'
       switch_language:
-        description: 'This page is also available in %{link}.'
-        url: '/find-an-assessor'
-        link: 'English'
+        description: 'Welsh: Mae’r dudalen yma ar gael yn %{link}.'
+        link: 'Welsh: Gymraeg'
+        url: '/find-an-assessor?lang=en'
+      phone_text: 'Welsh: If you need additional support to find an assessor, call our helpdesk on %{link}.'
+      phone_number: 'Welsh: 0233 788 1234'
+      scotland:
+        description: 'Welsh: If the property is in Scotland, you should use the %{link}'
+        link: 'Welsh: Scottish government’s EPC service.'
       commercial:
-        description: 'Welsh: If your property is for commercial use, find an assessor using a %{link}.'
-        link: 'Welsh: commercial energy assessment service'
-
+        description: 'Welsh: If the property is for commercial or public use, find an assessor by %{link}.'
+        link: 'Welsh: using the find a non domestic assessor service'
   schemes:
     head:
       title: 'Welsh: Energy performance of buildings register - Contact an energy assessor accreditation scheme'
@@ -97,16 +101,17 @@ cy:
   find_assessor_by_postcode:
     head:
       title: 'Welsh: Energy performance of buildings register - Find an energy assessor'
-    top_heading: 'Welsh: Get a new Energy Performance Certificate (EPC)'
-    top_body: 'Welsh: Find qualified energy assessors near your property.'
+    top_heading: 'Welsh: Find an assessor to get a new EPC'
+    top_body: 'Welsh: Search for accredited assessors near the property.'
     assessor_by_name:
-      body: 'Welsh: If you know the name of an assessor and would like to check the validity of them, use the %{link} service. You can also use this service if you need to contact the assessor about an issue.'
+      title: 'Welsh: Search by name'
+      body: 'Welsh: If you know the name of an assessor and want to check their details, use the %{link} service.'
       cta: 'Welsh: Find assessor by name'
-    question: 'Welsh: Enter a postcode'
+    question: 'Welsh: Enter the postcode of the property.'
     hint: 'Welsh: For example SW1A 2AA'
     postcode_error: 'Welsh: Enter a real postcode'
     postcode_not_valid: 'Welsh: Enter a postcode that is not malformed'
-    postcode_not_registered: 'Welsh: Enter a postcode that exists'
+    postcode_not_registered: 'Welsh: <h3 class="govuk-heading-m">We could not find this postcode</h3><p class="govuk-body">Check it and enter the postcode again.</p>'
     button_text: 'Welsh: Find'
     scheme_not_found:
       heading: 'Welsh: Accreditation scheme not found'
@@ -115,28 +120,32 @@ cy:
   find_assessor_by_postcode_results:
     head:
       title: 'Welsh: Energy performance of buildings register - Results for energy assessors near you'
+    top_heading: 'Welsh: Contact an assessor to book an EPC assessment'
     description: 'Welsh: Contact an assessor listed below to book an energy assessment.'
     no_assessors: 'Welsh: There are no assessors near you at this point.'
     accreditation_summary_title: 'Welsh: About accreditation schemes'
     accreditation_summary_text: 'Welsh: Accreditation schemes make sure that assessors are qualified to:'
     accreditation_summary_assess: 'Welsh: assess the energy performance of residential properties'
     accreditation_summary_create: 'Welsh: create EPCs'
-    results: 'Welsh:  results, sorted by distance from '
+    results: 'Welsh: %{quantity} assessors, sorted by distance from %{postcode}'
     distance:
       heading: 'Welsh: Distance'
       default_miles_away_text: 'Welsh: Less than 1 mile away'
       miles_away_text: 'Welsh: miles away'
-    contact_details_text: 'Welsh: Contact details'
-    accredited_by_text: 'Welsh: Accreditation scheme'
+    contact_details:
+      email: 'Welsh: Email'
+      telephone: 'Welsh: Telephone'
+    accredited_id: 'Welsh: Assessor ID'
+    accredited_scheme: 'Welsh: Accreditation scheme'
     assessor_id_text: 'Welsh: assessor ID'
 
   find_assessor_by_name:
     head:
       title: 'Welsh: Energy performance of buildings register - Find an energy assessor'
-    top_heading: 'Welsh: Get a new Energy Performance Certificate (EPC)'
+    top_heading: 'Welsh: Look up an energy assessor by name'
     top_body: 'Welsh: Find qualified energy assessors'
     question: 'Welsh: Enter a full name'
-    hint: 'Welsh: For example SW1A 2AA'
+    hint: 'Welsh: For example Matt Anderson'
     name_error: 'Welsh: Enter a name'
     button_text: 'Welsh: Search'
     too_many_results: 'Welsh: There are too many results for that name. Please narrow your search term.'
@@ -158,33 +167,36 @@ cy:
   find_a_certificate:
     head:
       title: 'Welsh: Energy performance of buildings register - Find an energy assessor for a residential property'
-    top_heading: 'Welsh: Find an Energy Performance Certificate for a building'
-    top_body: 'Welsh: Energy Performance Certificates (EPCs) are a legal requirement for residential, commercial and public buildings. <a class="govuk-link" href="#">Click here for more information about the differences between the certificates and other energy documents related to buildings</a>.'
+    top_heading: 'Welsh: Find an Energy Performance Certificate for a domestic property'
+    top_body: 'Welsh: You need a valid Energy Performance Certificate (EPC) before you sell or let a domestic property.'
     service:
       introduction: 'Welsh: Use this service to:'
-      list:
-        find: 'Welsh: find a building’s energy certificates and other energy related documents'
-    scotland:
-      text: 'Welsh: If your property is in Scotland, you should use the %{link}.'
-      cta: "Welsh: Scottish government's EPC service"
-    switch_language:
-      description: 'This page is also available in %{link}.'
-      link: 'English'
-      url: '/find-a-certificate'
+      list: 'Welsh: check if a property in England, Wales and Northern Ireland has a valid EPC|review the energy efficiency rating of a property|access advice and information about how to improve the energy efficiency of a property'
     cta: 'Welsh: Start now'
     before_you_start:
       title: 'Welsh: Before you start'
+      switch_language:
+        description: 'Welsh: Mae’r dudalen yma ar gael yn %{link}.'
+        link: 'Welsh: Gymraeg'
+        url: '/find-a-certificate?lang=en'
+      scotland:
+        text: 'Welsh: If your property is in Scotland, you should use the %{link}.'
+        cta: "Scottish government's EPC service"
+      commercial:
+        text: 'Welsh: If the property is for commercial or public use, use our %{link}.'
+        url: 'https://www.ndepcregister.com'
+        cta: 'Welsh: find a non-domestic EPC'
       call_center: 'Welsh: The service is also available by calling 0233 788 1234.'
 
   find_certificate_by_postcode:
     head:
       title: 'Welsh: Energy performance of buildings register - Find an energy performance certificate'
-    top_heading: 'Welsh: Find a Energy Performance Certificate for a residential property'
-    question: 'Welsh: Enter a postcode OR a street name and town OR an EPC reference number below'
-    postcode_error: 'Welsh: Enter a real postcode'
+    top_heading: 'Welsh: Search for an EPC'
+    question: 'Welsh: Enter a postcode OR an EPC reference number below'
     query_not_valid: 'Welsh: Enter a search term'
     postcode_not_registered: 'Welsh: Enter a postcode that exists'
     button_text: 'Welsh: Find'
+    hint: 'Welsh: For example SW1A 2AA or 1234-5678-9101-1121'
     no_network:
       heading: 'Welsh: Network connection failed'
       body: 'Welsh: There is an internal network error'
