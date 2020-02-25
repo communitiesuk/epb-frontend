@@ -266,7 +266,7 @@ describe 'Acceptance::Assessor' do
     end
 
     context 'when entering a name' do
-      context 'shows page' do
+      context 'which has exact matches' do
         before { FindAssessorByNameStub.search_by_name('Ronald McDonald') }
 
         let(:response) do
@@ -287,8 +287,8 @@ describe 'Acceptance::Assessor' do
 
         it 'has a Search button' do
           expect(response.body).to include(
-            '<button class="govuk-button" data-module="govuk-button">Search</button>'
-          )
+                                     '<button class="govuk-button" data-module="govuk-button">Search</button>'
+                                   )
         end
 
         it 'shows the name of an entry' do
@@ -305,6 +305,22 @@ describe 'Acceptance::Assessor' do
 
         it 'shows a phone number of an entry' do
           expect(response.body).to include('07921 021 368')
+        end
+
+        it 'does not show that they are loose matches' do
+          expect(response.body).to_not include('similar to')
+        end
+      end
+
+      context 'which has similar matches' do
+        before { FindAssessorByNameStub.search_by_name('Ronald McDonald', true) }
+
+        let(:response) do
+          get '/find-an-assessor/search-by-name?name=R%20McDonald'
+        end
+
+        it 'does show that they are loose matches' do
+          expect(response.body).to include('similar to')
         end
       end
 

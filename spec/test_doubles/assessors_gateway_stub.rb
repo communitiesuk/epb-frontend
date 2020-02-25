@@ -63,7 +63,8 @@ class AssessorsGatewayStub
         }
       ],
       "timestamp": 1_234_567,
-      "searchName": name
+      "searchName": name,
+      "looseMatch": false
     }
   end
 end

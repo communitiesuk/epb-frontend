@@ -46,7 +46,7 @@ class FrontendService < Sinatra::Base
 
     if params['postcode']
       if valid_postcode.match(params['postcode'])
-        @page_title = t('find_assessor_results.head.title')
+        @page_title = t('find_assessor_by_postcode_results.head.title')
         begin
           @results = response.execute(params['postcode'])
           @erb_template = :find_assessor_by_postcode_results
@@ -79,19 +79,13 @@ class FrontendService < Sinatra::Base
     response = @container.get_object(:find_assessor_by_name_use_case)
 
     if params['name']
-      @page_title = t('find_assessor_results.head.title')
+      @page_title = t('find_assessor_by_name_results.head.title')
       begin
         @erb_template = :find_assessor_by_name_results
-
-        if params['name'] == ''
-          @erb_template = :find_assessor_by_name
-
-          raise UseCase::FindAssessorByName::InvalidName
-        end
-
-        @results = response.execute(params['name'])
+        response = response.execute(params['name'])
       rescue UseCase::FindAssessorByName::InvalidName
         status 400
+        @erb_template = :find_assessor_by_name
         @errors[:name] = t('find_assessor_by_name.name_error')
       rescue Auth::Errors::NetworkConnectionFailed
         status 500
@@ -100,8 +94,9 @@ class FrontendService < Sinatra::Base
     end
 
     @page_title = t('find_assessor_by_name.head.title')
+
     erb @erb_template,
-        layout: :layout, locals: { errors: @errors, results: @results }
+        layout: :layout, locals: { errors: @errors, results: response }
   end
 
   get '/schemes' do

@@ -6,7 +6,7 @@ describe UseCase::FindAssessorByName do
     let(:find_assessor) { described_class.new(assessors_gateway) }
 
     it 'returns empty array' do
-      expect(find_assessor.execute('Uncommon Name')).to eq([])
+      expect(find_assessor.execute('Uncommon Name')[:results]).to eq([])
     end
   end
 
@@ -44,7 +44,7 @@ describe UseCase::FindAssessorByName do
     let(:find_assessor) { described_class.new(assessors_gateway) }
 
     it 'returns list of assessors' do
-      expect(find_assessor.execute('Somewhatcommon Name')).to eq(
+      expect(find_assessor.execute('Somewhatcommon Name')[:results]).to eq(
         valid_assessors
       )
     end

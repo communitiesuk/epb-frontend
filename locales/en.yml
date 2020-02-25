@@ -159,7 +159,9 @@ en:
     accreditation_summary_text: 'Accreditation schemes make sure that assessors are qualified to:'
     accreditation_summary_assess: 'assess the energy performance of residential properties'
     accreditation_summary_create: 'create EPCs'
-    results: ' results, found by the name '
+    results:
+      results: '%{quantity} results, found by the name %{name}'
+      results_like: '%{quantity} results, similar to the name %{name}'
     contact_details_text: 'Contact details'
     accredited_by_text: 'Accreditation scheme'
     assessor_id_text: 'assessor ID'

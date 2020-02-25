@@ -9,11 +9,13 @@ module UseCase
     end
 
     def execute(name)
+      raise InvalidName if name == ''
+
       response = @assessors_gateway.search_by_name(name)
 
       response[:errors].each { |error| } if response.include?(:errors)
 
-      response[:results]
+      response
     end
   end
 end

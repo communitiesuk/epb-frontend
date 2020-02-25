@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class FindAssessorByNameStub
-  def self.search_by_name(name)
+  def self.search_by_name(name, loose_match = false)
     WebMock.stub_request(
       :get,
       "http://test-api.gov.uk/api/assessors?name=#{name}"
@@ -46,7 +46,8 @@ class FindAssessorByNameStub
             "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' }
           }
         ],
-        "searchName": name
+        "searchName": name,
+        "looseMatch": loose_match
       }.to_json
     )
   end
