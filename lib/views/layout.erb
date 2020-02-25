@@ -72,25 +72,6 @@
     </p>
   </div>
 
-<% if request.path == '/' %>
-  <div class="govuk-breadcrumbs">
-    <ol class="govuk-breadcrumbs__list">
-      <li class="govuk-breadcrumbs__list-item">
-        <a class="govuk-breadcrumbs__link" href="https://www.gov.uk/"><%=t('layout.body.breadcrumb.home')%></a>
-      </li>
-      <li class="govuk-breadcrumbs__list-item" aria-current="page">
-        <%=t('layout.body.breadcrumb.epbr')%>
-      </li>
-    </ol>
-  </div>
-<%else%>
-  <a
-    href="<%= localised_url('/')%>"
-    class="govuk-back-link">
-      <%=t('layout.body.breadcrumb.back')%>
-  </a>
-<%end%>
-
   <main class="govuk-main-wrapper" id="main-content" role="main">
     <%= yield %>
   </main>
