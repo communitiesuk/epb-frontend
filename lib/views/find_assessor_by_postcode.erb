@@ -6,9 +6,6 @@
     <p class="govuk-body">
       <%= t('find_assessor_by_postcode.top_body') %>
     </p>
-    <p class="govuk-body">
-      <%= t('find_assessor_by_postcode.assessor_by_name.body', :link=>'<a href="'+localised_url('/find-an-assessor/search-by-name')+'">'+t('find_assessor_by_postcode.assessor_by_name.cta')+'</a>') %>
-    </p>
     <form method="GET" action="<%=localised_url('/find-an-assessor/search-by-postcode')%>" >
       <% if I18n.locale != I18n.available_locales[0] %>
         <input type="hidden" name="lang" value="<%= I18n.locale.to_s %>">
@@ -38,5 +35,8 @@
         <button class="govuk-button" data-module="govuk-button"><%= t('find_assessor_by_postcode.button_text') %></button>
       </fieldset>
     </form>
+    <p class="govuk-body">
+      <%= t('find_assessor_by_postcode.assessor_by_name.body', :link=>'<a href="'+localised_url('/find-an-assessor/search-by-name')+'">'+t('find_assessor_by_postcode.assessor_by_name.cta')+'</a>') %>
+    </p>
   </div>
 </div>
