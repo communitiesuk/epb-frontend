@@ -127,7 +127,9 @@ cy:
     accreditation_summary_text: 'Welsh: Accreditation schemes make sure that assessors are qualified to:'
     accreditation_summary_assess: 'Welsh: assess the energy performance of residential properties'
     accreditation_summary_create: 'Welsh: create EPCs'
-    results: 'Welsh: %{quantity} assessors, sorted by distance from %{postcode}'
+    results:
+      results: '%{quantity} results, found by the name %{name}'
+      results_like: '%{quantity} results, similar to the name %{name}'
     distance:
       heading: 'Welsh: Distance'
       default_miles_away_text: 'Welsh: Less than 1 mile away'
