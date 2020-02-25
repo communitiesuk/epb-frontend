@@ -61,38 +61,15 @@
       </div>
     </details>
 
-    <h2 class="govuk-heading-m"><%= t((results[:looseMatch] ? 'find_assessor_by_name_results.results.results_like' : 'find_assessor_by_name_results.results.results'), :quantity=>results.length, :name=>params['name']) %></h2>
+    <h2 class="govuk-heading-m"><%= t((results[:looseMatch] ? 'find_assessor_by_name_results.results.results_like' : 'find_assessor_by_name_results.results.results'), :quantity=>results[:results].length, :name=>params['name']) %></h2>
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
     <% if results[:results].size > 0 %>
       <ul class="govuk-list">
-          <% results[:results].each do |result| %>
-            <li>
-              <div>
-                <h2 class="govuk-heading-m"><%= "#{result[:firstName]} #{result[:lastName]} (#{t('find_assessor_by_name_results.assessor_id_text')}: #{result[:registeredBy][:schemeId]})" %></h2>
-                <div>
-                  <dl class="govuk-summary-list govuk-summary-list--no-border">
-                    <div class="govuk-summary-list__row">
-                      <dt class="govuk-summary-list__key"><%= t('find_assessor_by_name_results.contact_details_text') %></dt>
-                      <dd class="govuk-summary-list__value">
-                        <p>
-                          <a href="tel:<%= result[:contactDetails][:telephoneNumber] %>"><%= result[:contactDetails][:telephoneNumber] %></a>
-                        </p>
-                        <p>
-                          <a href="mailto:<%= result[:contactDetails][:email] %>"><%= result[:contactDetails][:email] %></a>
-                        </p>
-                      </dd>
-                    </div>
-                    <div class="govuk-summary-list__row">
-                      <dt class="govuk-summary-list__key"><%= t('find_assessor_by_name_results.accredited_by_text') %></dt>
-                      <dd class="govuk-summary-list__value"><%= result[:registeredBy][:name] %></dd>
-                    </div>
-                  </dl>
-                </div>
-              </div>
-              <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-            </li>
-          <% end %>
+        <% results[:results].each do |result| %>
+          <%= erb :find_assessor_list_assessor, locals: {
+              assessor: result } %>
+        <% end %>
       </ul>
     <% else %>
       <p class="govuk-body">
