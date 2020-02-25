@@ -21,7 +21,7 @@ describe UseCase::FindAssessorByName do
     }.to raise_exception described_class::TooManyResults
   end
 
-  context 'when there are assessors matched by the postcode' do
+  context 'when there are assessors matched by the name' do
     let(:valid_assessors) do
       [
         {

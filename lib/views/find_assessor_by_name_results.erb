@@ -34,32 +34,31 @@
       </fieldset>
     </form>
 
-    <% if results.size > 0 %>
     <div class="govuk-grid-row">
       <p class="govuk-body">
         <%= t('find_assessor_by_name_results.description') %>
       </p>
     </div>
 
-      <details class="govuk-details" data-module="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            <%= t('find_assessor_by_name_results.accreditation_summary_title') %>
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          <%= t('find_assessor_by_name_results.accreditation_summary_text') %>
-          <ul>
-            <li><%= t('find_assessor_by_name_results.accreditation_summary_assess') %></li>
-            <li><%= t('find_assessor_by_name_results.accreditation_summary_create') %></li>
-          </ul>
-        </div>
-      </details>
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          <%= t('find_assessor_by_name_results.accreditation_summary_title') %>
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <%= t('find_assessor_by_name_results.accreditation_summary_text') %>
+        <ul>
+          <li><%= t('find_assessor_by_name_results.accreditation_summary_assess') %></li>
+          <li><%= t('find_assessor_by_name_results.accreditation_summary_create') %></li>
+        </ul>
+      </div>
+    </details>
 
-      <h2 class="govuk-heading-m"><%= "#{results.length} #{t('find_assessor_by_name_results.results')} #{params['name']}" %>:</h2>
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    <h2 class="govuk-heading-m"><%= "#{results.length} #{t('find_assessor_by_name_results.results')} #{params['name']}" %>:</h2>
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
-
+    <% if results.size > 0 %>
       <ul class="govuk-list">
           <% results.each do |result| %>
             <li>

@@ -327,7 +327,7 @@ describe 'Acceptance::Assessor' do
 
         it 'explains that no assessors by that name' do
           expect(response.body).to include(
-            I18n.t('find_assessor_by_name_results.no_assessors')
+            'There are no assessors with this name.'
           )
         end
       end
@@ -349,7 +349,7 @@ describe 'Acceptance::Assessor' do
 
         it 'displays error explaining the situation' do
           expect(response.body).to include(
-            'There are too many results for that name. Please narrow your search term.'
+            'There are too many results for that name.'
           )
         end
 
