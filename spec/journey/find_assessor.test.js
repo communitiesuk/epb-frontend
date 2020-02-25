@@ -85,15 +85,6 @@ describe('Journey::Assessor', () => {
     await text('Enter a name').exists()
   }, 30000);
 
-  it('displays an error message when entering a name that is too common', async () => {
-    await goto("localhost:9292/find-an-assessor");
-    await click("Start now");
-    await click('Find assessor by name');
-    await write('Megacommon Name', into(textBox('name')));
-    await click('Search');
-    await text('There are too many results for that name. Please narrow your search term.').exists()
-  }, 30000);
-
   it('displays an assessor when searched for one that does exist', async () => {
     await goto("localhost:9292/find-an-assessor");
     await click("Start now");
