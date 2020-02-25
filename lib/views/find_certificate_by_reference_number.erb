@@ -1,0 +1,42 @@
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <a
+      href="<%= localised_url('/find-a-certificate')%>"
+      class="govuk-back-link">
+      <%=t('layout.body.breadcrumb.back')%>
+    </a>
+
+    <h1 class="govuk-heading-xl">
+      <%= t('find_certificate_by_reference_number.top_heading') %>
+    </h1>
+    <form method="GET" action="<%=localised_url('/find-a-certificate/search')%>" >
+      <% if I18n.locale != I18n.available_locales[0] %>
+        <input type="hidden" name="lang" value="<%= I18n.locale.to_s %>">
+      <% end %>
+      <fieldset class="govuk-fieldset fieldset-background">
+        <div class="govuk-form-group<% if errors[:reference_number] %> govuk-form-group--error<% end %>">
+          <label class="govuk-label" for="reference_number">
+            <%= t('find_certificate_by_reference_number.question') %>
+          </label>
+          <span id="refernece-number-hint" class="govuk-hint">
+            <%= t('find_certificate_by_reference_number.hint') %>
+          </span>
+          <% if errors[:reference_number] %>
+          <span id="reference-number-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden"><%= t('error.error') %></span><%= errors[:reference_number] %>
+          </span>
+          <% end %>
+          <input id="reference_number" name="reference_number" type="text"
+                 class="govuk-input<% if errors[:reference_number] %> govuk-input--error<% end %>"
+                 aria-describedby="reference-number-hint<% if errors[:reference_number] %> reference_number-error<% end %>"
+                 autocomplete="postal-code"
+                 spellcheck="false"
+                 <% if params['reference_number'] %>value="<%= params['reference_number'] %>"<% end %>
+          >
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button"><%= t('find_certificate_by_reference_number.button_text') %></button>
+      </fieldset>
+    </form>
+  </div>
+</div>

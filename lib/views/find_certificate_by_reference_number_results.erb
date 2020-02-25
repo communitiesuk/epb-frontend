@@ -1,0 +1,41 @@
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <a
+      href="<%= localised_url('/find-a-certificate')%>"
+      class="govuk-back-link">
+      <%=t('layout.body.breadcrumb.back')%>
+    </a>
+
+    <h1 class="govuk-heading-xl">
+      <%= t('find_certificate_results.top_heading') %>
+    </h1>
+
+    <% if results.size > 0 %>
+      <h2 class="govuk-heading-m"><%= t('find_certificate_results.list', :length => results.length, :postcode => params['query'] ) %></h2>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header"><%= t('find_certificate_results.table.address') %></th>
+            <th scope="col" class="govuk-table__header"><%= t('find_certificate_results.table.rating') %></th>
+            <th scope="col" class="govuk-table__header"><%= t('find_certificate_results.table.expiry') %></th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <% results.each do |result| %>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header"><a href="/energy-performance-certificate/<%= result[:assessmentId] %>"><%= result[:addressSummary] %></a></th>
+              <td class="govuk-table__cell"><%= result[:currentEnergyEfficiencyBand].upcase %></td>
+              <td class="govuk-table__cell<%= (Date.parse(result[:dateOfExpiry]) < Date.today ? ' govuk-!-font-weight-bold" style="color: #d4351c;' : "") %>"><%= Date.parse(result[:dateOfExpiry]).strftime('%d/%m/%Y') %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% else %>
+      <p class="govuk-body">
+        <%= t('find_certificate_results.no_certificates') %>
+      </p>
+    <% end %>
+  </div>
+</div>
