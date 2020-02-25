@@ -97,7 +97,7 @@ en:
   find_assessor_by_postcode:
     head:
       title: 'Energy performance of buildings register - Find an energy assessor'
-    top_heading: 'Get a new Energy Performance Certificate (EPC)'
+    top_heading: 'Find an energy assessor by postcode'
     top_body: 'Find qualified energy assessors near your property.'
     assessor_by_name:
       body: 'If you know the name of an assessor and would like to check the validity of them, use the %{link} service. You can also use this service if you need to contact the assessor about an issue.'
@@ -133,10 +133,10 @@ en:
   find_assessor_by_name:
     head:
       title: 'Energy performance of buildings register - Find an energy assessor'
-    top_heading: 'Get a new Energy Performance Certificate (EPC)'
+    top_heading: 'Look up an energy assessor by name'
     top_body: 'Find qualified energy assessors'
     question: 'Enter a full name'
-    hint: 'For example SW1A 2AA'
+    hint: 'For example Matt Anderson'
     name_error: 'Enter a name'
     button_text: 'Search'
     too_many_results: 'There are too many results for that name. Please narrow your search term.'
