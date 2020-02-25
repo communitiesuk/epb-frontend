@@ -6,17 +6,36 @@
     <p class="govuk-body">
       <%= t('find_an_assessor.introduction.what_you_need') %>
     </p>
+
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          <%= t('find_an_assessor.buildings_not_epc.cta') %>
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <%= t('find_an_assessor.buildings_not_epc.intro') %>
+        <ul class="govuk-list govuk-list--bullet">
+          <li><%= t('find_an_assessor.buildings_not_epc.list').gsub('|', '</li><li>') %></li>
+        </ul>
+      </div>
+    </details>
+
     <p class="govuk-body">
-      <%= t('find_an_assessor.introduction.how_it_works') %>
+      <%= t('find_an_assessor.introduction.assessor') %>
     </p>
 
     <p class="govuk-body">
-      <%= t('find_an_assessor.negative_epc.no_epc_need') %>
+      <%= t('find_an_assessor.introduction.cost') %>
     </p>
 
-    <div class="govuk-inset-text">
-      <%= t('find_an_assessor.before_you_start.switch_language.description', :link => '<a href="' + t('find_an_assessor.before_you_start.switch_language.url') + '">' + t('find_an_assessor.before_you_start.switch_language.link') + '</a>' ) %>
-    </div>
+    <p class="govuk-body">
+      <%= t('find_an_assessor.introduction.valid') %>
+    </p>
+
+    <p class="govuk-body">
+      <%= t('find_an_assessor.introduction.england_wales_northern_ireland') %>
+    </p>
 
     <a
       href="<%= localised_url('/find-an-assessor/search-by-postcode') %>"
@@ -41,16 +60,20 @@
       <%= t('find_an_assessor.before_you_start.heading') %>
     </h2>
 
+    <div class="govuk-inset-text">
+      <%= t('find_an_assessor.before_you_start.switch_language.description', :link => '<a href="' + t('find_an_assessor.before_you_start.switch_language.url') + '">' + t('find_an_assessor.before_you_start.switch_language.link') + '</a>' ) %>
+    </div>
+
     <p class="govuk-body">
       <%= t('find_an_assessor.before_you_start.phone_text', :link => '<a href="tel:' + t('find_an_assessor.before_you_start.phone_number') + '">' + t('find_an_assessor.before_you_start.phone_number') + '</a>' ) %>
     </p>
 
     <p class="govuk-body">
-      <%= t('find_an_assessor.before_you_start.commercial.description', :link => '<a href="' + localised_url('/schemes') + '">' + t('find_an_assessor.before_you_start.commercial.link') + '</a>' ) %>
+      <%= t('find_an_assessor.before_you_start.scotland.description', :link => '<a href="https://www.gov.scot/publications/energy-performance-certificates-introduction/">' + t('find_an_assessor.before_you_start.scotland.link') + '</a>') %>
     </p>
 
     <p class="govuk-body">
-      <%= t('find_an_assessor.scotland.description', :link => '<a href="https://www.gov.scot/publications/energy-performance-certificates-introduction/">' + t('find_an_assessor.scotland.link') + '</a>') %>
+      <%= t('find_an_assessor.before_you_start.commercial.description', :link => '<a href="' + localised_url('/schemes') + '">' + t('find_an_assessor.before_you_start.commercial.link') + '</a>' ) %>
     </p>
   </div>
 </div>

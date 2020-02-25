@@ -37,28 +37,32 @@ en:
   find_an_assessor:
     head:
       title: 'Energy performance of buildings register - Find an energy assessor for a residential property'
-    top_heading: 'Get a new Energy Performance Certificate (EPC)'
+    top_heading: 'Getting a new Energy Performance Certificate (EPC)'
     introduction:
-      what_you_need: 'You need an EPC when you build, sell or let a residential property. An EPC is valid for 10 years.'
-      how_it_works: 'To get a new EPC you need to book an assessor. They will measure the energy efficiency of your property and create an EPC. The cost of the assessment will depend on the size of your property.'
-    scotland:
-      description: 'If your property is in Scotland, you should use the %{link}'
-      link: 'Scottish government’s EPC service.'
-    negative_epc:
-      no_epc_need: '<a href="https://www.gov.uk/buy-sell-your-home/energy-performance-certificates#buildings-that-dont-need-an-epc">Check which properties do not need an EPC.</a>'
+      what_you_need: 'You need an EPC when you build, sell or let a domestic property.'
+      assessor: 'To get a new EPC, you need to book an assessor. They will assess the energy efficiency of the property and create an EPC.'
+      cost: 'The cost of an assessment varies by assessor and the size of the property.'
+      valid: 'An EPC is valid for 10 years.'
+      england_wales_northern_ireland: 'Use this service to find an accredited assessor in England, Wales and Northern Ireland.'
+    buildings_not_epc:
+      cta: 'Buildings that don’t need an EPC'
+      intro: 'These include:'
+      list: 'places of worship|temporary buildings that will be used for less than 2 years|stand-alone buildings with total useful floor space of less than 50 square metres|industrial sites, workshops and non-residential agricultural buildings that don’t use a lot of energy|some buildings that are due to be demolished|holiday accommodation that’s rented out for less than 4 months a year or is let under a licence to occupy|listed buildings - you should get advice from your local authority conservation officer if the work would alter the building’s character|residential buildings intended to be used less than 4 months a year'
     cta: 'Start now'
     before_you_start:
-      heading: 'Before you start'
-      phone_text: 'If you need support finding an assessor, call our helpdesk on %{link}.'
-      phone_number: '0233 788 1234'
+      heading: 'Other ways to find an assessor'
       switch_language:
         description: 'Mae’r dudalen yma ar gael yn %{link}.'
         link: 'Gymraeg'
         url: '/find-an-assessor?lang=cy'
+      phone_text: 'If you need additional support to find an assessor, call our helpdesk on %{link}.'
+      phone_number: '0233 788 1234'
+      scotland:
+        description: 'If the property is in Scotland, you should use the %{link}'
+        link: 'Scottish government’s EPC service.'
       commercial:
-        description: 'If your property is for commercial use, find an assessor using a %{link}.'
-        link: 'commercial energy assessment service'
-
+        description: 'If the property is for commercial or public use, find an assessor by %{link}.'
+        link: 'using the find a non domestic assessor service'
   schemes:
     head:
       title: 'Energy performance of buildings register - Contact an energy assessor accreditation scheme'
@@ -97,16 +101,17 @@ en:
   find_assessor_by_postcode:
     head:
       title: 'Energy performance of buildings register - Find an energy assessor'
-    top_heading: 'Find an energy assessor by postcode'
-    top_body: 'Find qualified energy assessors near your property.'
+    top_heading: 'Find an assessor to get a new EPC'
+    top_body: 'Search for accredited assessors near the property.'
     assessor_by_name:
-      body: 'If you know the name of an assessor and would like to check the validity of them, use the %{link} service. You can also use this service if you need to contact the assessor about an issue.'
+      title: 'Search by name'
+      body: 'If you know the name of an assessor and want to check their details, use the %{link} service.'
       cta: 'Find assessor by name'
-    question: 'Enter a postcode'
+    question: 'Enter the postcode of the property.'
     hint: 'For example SW1A 2AA'
     postcode_error: 'Enter a real postcode'
     postcode_not_valid: 'Enter a postcode that is not malformed'
-    postcode_not_registered: 'Enter a postcode that exists'
+    postcode_not_registered: '<h3 class="govuk-heading-m">We could not find this postcode</h3><p class="govuk-body">Check it and enter the postcode again.</p>'
     button_text: 'Find'
     scheme_not_found:
       heading: 'Accreditation scheme not found'
@@ -115,19 +120,23 @@ en:
   find_assessor_by_postcode_results:
     head:
       title: 'Energy performance of buildings register - Results for energy assessors near you'
+    top_heading: 'Contact an assessor to book an EPC assessment'
     description: 'Contact an assessor listed below to book an energy assessment.'
     no_assessors: 'There are no assessors near you at this point.'
     accreditation_summary_title: 'About accreditation schemes'
     accreditation_summary_text: 'Accreditation schemes make sure that assessors are qualified to:'
     accreditation_summary_assess: 'assess the energy performance of residential properties'
     accreditation_summary_create: 'create EPCs'
-    results: ' results, sorted by distance from '
+    results: '%{quantity} assessors, sorted by distance from %{postcode}'
     distance:
       heading: 'Distance'
       default_miles_away_text: 'Less than 1 mile away'
       miles_away_text: 'miles away'
-    contact_details_text: 'Contact details'
-    accredited_by_text: 'Accreditation scheme'
+    contact_details:
+      email: 'Email'
+      telephone: 'Telephone'
+    accredited_id: 'Assessor ID'
+    accredited_scheme: 'Accreditation scheme'
     assessor_id_text: 'assessor ID'
 
   find_assessor_by_name:

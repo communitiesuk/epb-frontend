@@ -162,7 +162,7 @@ describe 'Acceptance::Assessor' do
           expect(response.body).to include(
             '<span id="postcode-error" class="govuk-error-message">'
           )
-          expect(response.body).to include('Enter a postcode that exists')
+          expect(response.body).to include('We could not find this postcode')
         end
       end
 
