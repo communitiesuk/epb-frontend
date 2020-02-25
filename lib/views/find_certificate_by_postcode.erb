@@ -14,24 +14,24 @@
         <input type="hidden" name="lang" value="<%= I18n.locale.to_s %>">
       <% end %>
       <fieldset class="govuk-fieldset fieldset-background">
-        <div class="govuk-form-group<% if errors[:query] %> govuk-form-group--error<% end %>">
-          <label class="govuk-label" for="query">
+        <div class="govuk-form-group<% if errors[:postcode] %> govuk-form-group--error<% end %>">
+          <label class="govuk-label" for="postcode">
             <%= t('find_certificate_by_postcode.question') %>
           </label>
           <span id="postcode-hint" class="govuk-hint">
             <%= t('find_certificate_by_postcode.hint') %>
           </span>
-          <% if errors[:query] %>
-          <span id="query-error" class="govuk-error-message">
-            <span class="govuk-visually-hidden"><%= t('error.error') %></span><%= errors[:query] %>
+          <% if errors[:postcode] %>
+          <span id="postcode-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden"><%= t('error.error') %></span><%= errors[:postcode] %>
           </span>
           <% end %>
-          <input id="query" name="query" type="text"
-                 class="govuk-input<% if errors[:query] %> govuk-input--error<% end %>"
-                 aria-describedby="query-hint<% if errors[:query] %> query-error<% end %>"
+          <input id="postcode" name="postcode" type="text"
+                 class="govuk-input<% if errors[:postcode] %> govuk-input--error<% end %>"
+                 aria-describedby="postcode-hint<% if errors[:postcode] %> postcode-error<% end %>"
                  autocomplete="postal-code"
                  spellcheck="false"
-                 <% if params['query'] %>value="<%= params['query'] %>"<% end %>
+                 <% if params['postcode'] %>value="<%= params['postcode'] %>"<% end %>
           >
         </div>
 

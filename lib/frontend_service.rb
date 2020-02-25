@@ -115,27 +115,27 @@ class FrontendService < Sinatra::Base
     erb :find_certificate, layout: :layout
   end
 
-  get '/find-a-certificate/search' do
+  get '/find-a-certificate/search-by-postcode' do
     @errors = {}
-    @erb_template = :find_certificate_by_query
+    @erb_template = :find_certificate_by_postcode
 
-    response = @container.get_object(:find_certificate_use_case)
+    response = @container.get_object(:find_certificate_by_postcode_use_case)
 
-    if params['query']
+    if params['postcode']
       @page_title = t('find_certificate_results.head.title')
       begin
-        @erb_template = :find_certificate_by_query_results
+        @erb_template = :find_certificate_by_postcode_results
 
-        if params['query'] == ''
-          @erb_template = :find_certificate_by_query
+        if params['postcode'] == ''
+          @erb_template = :find_certificate_by_postcode
 
-          raise UseCase::FindCertificate::QueryNotValid
+          raise UseCase::FindCertificateByPostcode::PostcodeNotValid
         end
 
-        @results = response.execute(params['query'])
-      rescue UseCase::FindCertificate::QueryNotValid
+        @results = response.execute(params['postcode'])
+      rescue UseCase::FindCertificateByPostcode::PostcodeNotValid
         status 400
-        @errors[:query] = t('find_certificate_by_postcode.query_not_valid')
+        @errors[:postcode] = t('find_certificate_by_postcode.postcode_not_valid')
       rescue Auth::Errors::NetworkConnectionFailed
         status 500
         @erb_template = :error_page_500

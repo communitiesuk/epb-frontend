@@ -193,17 +193,17 @@ en:
   find_certificate_by_postcode:
     head:
       title: 'Energy performance of buildings register - Find an energy performance certificate'
-    top_heading: 'Search for an EPC'
-    question: 'Enter a postcode OR an EPC reference number below'
-    query_not_valid: 'Enter a search term'
+    top_heading: 'Search for an EPC by postcode'
+    question: 'Enter a postcode'
+    postcode_not_valid: 'Enter a search term'
     postcode_not_registered: 'Enter a postcode that exists'
     button_text: 'Find'
-    hint: 'For example SW1A 2AA or 1234-5678-9101-1121'
+    hint: 'For example SW1A 2AA'
     no_network:
       heading: 'Network connection failed'
       body: 'There is an internal network error'
 
-  find_certificate_results:
+  find_certificate_by_postcode_results:
     head:
       title: 'Energy performance of buildings register - Results for energy performance certificates at your postcode'
     top_heading: 'Find an Energy Performance Certificate for a building'
@@ -212,7 +212,18 @@ en:
       address: 'Address'
       rating: 'EPC Rating'
       expiry: 'EPC Expiry Date'
-    no_certificates: 'There are no certificates matching that postcode or EPC Reference Number.'
+    no_certificates: 'There are no certificates matching that postcode.'
+
+  find_certificate_by_reference_number_results:
+    head:
+      title: 'Energy performance of buildings register - Results for energy performance certificates by reference number'
+    top_heading: 'Find an Energy Performance Certificate for a building'
+    list: '1-%{length} of %{length} results matching %{reference_number}'
+    table:
+      address: 'Address'
+      rating: 'EPC Rating'
+      expiry: 'EPC Expiry Date'
+    no_certificates: 'There are no certificates matching that EPC Reference Number.'
 
   domestic_epc:
     top_heading: 'Energy Performance Certificate'

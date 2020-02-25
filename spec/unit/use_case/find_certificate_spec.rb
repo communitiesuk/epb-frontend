@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-describe UseCase::FindCertificate do
+describe UseCase::FindCertificateByPostcode do
   context 'when there are no certificates at the postcode' do
     let(:certificates_gateway) { CertificatesGatewayEmptyStub.new }
     let(:find_certificate) { described_class.new(certificates_gateway) }

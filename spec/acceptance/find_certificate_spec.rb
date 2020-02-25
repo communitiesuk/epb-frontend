@@ -3,9 +3,9 @@
 describe 'Acceptance::Certificate' do
   include RSpecFrontendServiceMixin
 
-  describe '.get /find-a-certificate/search' do
+  describe '.get /find-a-certificate/search-by-postcode' do
     context 'when search page rendered' do
-      let(:response) { get '/find-a-certificate/search' }
+      let(:response) { get '/find-a-certificate/search-by-postcode' }
 
       it 'returns status 200' do
         expect(response.status).to eq(200)
@@ -18,7 +18,7 @@ describe 'Acceptance::Certificate' do
       end
 
       it 'has an input field' do
-        expect(response.body).to include('<input id="query" name="query"')
+        expect(response.body).to include('<input id="postcode" name="postcode"')
       end
 
       it 'has a Find button' do
@@ -32,8 +32,8 @@ describe 'Acceptance::Certificate' do
       end
     end
 
-    context 'when entering an empty query' do
-      let(:response) { get '/find-a-certificate/search?query=' }
+    context 'when entering an empty postcode' do
+      let(:response) { get '/find-a-certificate/search-by-postcode?postcode=' }
 
       it 'returns status 400' do
         expect(response.status).to eq(400)
@@ -47,17 +47,17 @@ describe 'Acceptance::Certificate' do
 
       it 'displays an error message' do
         expect(response.body).to include(
-          '<span id="query-error" class="govuk-error-message">'
+          '<span id="postcode-error" class="govuk-error-message">'
         )
         expect(response.body).to include('Enter a search term')
       end
     end
 
-    context 'when entering an valid query' do
+    context 'when entering an valid postcode' do
       context 'shows page' do
         before { FindCertificateStub.search('SW1A 2AA') }
 
-        let(:response) { get '/find-a-certificate/search?query=SW1A+2AA' }
+        let(:response) { get '/find-a-certificate/search-by-postcode?postcode=SW1A+2AA' }
 
         it 'returns status 200' do
           expect(response.status).to eq(200)
@@ -95,7 +95,7 @@ describe 'Acceptance::Certificate' do
       context 'where no certificates are present' do
         before { FindCertificateNoCertificatesStub.search('E1 4FF') }
 
-        let(:response) { get '/find-a-certificate/search?query=E1+4FF' }
+        let(:response) { get '/find-a-certificate/search-by-postcode?postcode=E1+4FF' }
 
         it 'returns status 200' do
           expect(response.status).to eq(200)
@@ -109,7 +109,7 @@ describe 'Acceptance::Certificate' do
 
         it 'explains that no certificates are present' do
           expect(response.body).to include(
-            I18n.t('find_certificate_results.no_certificates')
+            I18n.t('find_certificate_by_postcode_results.no_certificates')
           )
         end
       end
@@ -117,7 +117,7 @@ describe 'Acceptance::Certificate' do
       context 'when there is no connection' do
         before { FindCertificateNoNetworkStub.search('D11 4FF') }
 
-        let(:response) { get '/find-a-certificate/search?query=D11+4FF' }
+        let(:response) { get '/find-a-certificate/search-by-postcode?postcode=D11+4FF' }
 
         it 'returns status 500' do
           expect(response.status).to eq(500)

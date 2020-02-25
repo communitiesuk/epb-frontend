@@ -7,19 +7,19 @@
     </a>
 
     <h1 class="govuk-heading-xl">
-      <%= t('find_certificate_results.top_heading') %>
+      <%= t('find_certificate_by_postcode_results.top_heading') %>
     </h1>
 
     <% if results.size > 0 %>
-      <h2 class="govuk-heading-m"><%= t('find_certificate_results.list', :length => results.length, :postcode => params['query'] ) %></h2>
+      <h2 class="govuk-heading-m"><%= t('find_certificate_by_postcode_results.list', :length => results.length, :postcode => params['postcode'] ) %></h2>
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
       <table class="govuk-table">
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
-            <th scope="col" class="govuk-table__header"><%= t('find_certificate_results.table.address') %></th>
-            <th scope="col" class="govuk-table__header"><%= t('find_certificate_results.table.rating') %></th>
-            <th scope="col" class="govuk-table__header"><%= t('find_certificate_results.table.expiry') %></th>
+            <th scope="col" class="govuk-table__header"><%= t('find_certificate_by_postcode_results.table.address') %></th>
+            <th scope="col" class="govuk-table__header"><%= t('find_certificate_by_postcode_results.table.rating') %></th>
+            <th scope="col" class="govuk-table__header"><%= t('find_certificate_by_postcode_results.table.expiry') %></th>
           </tr>
         </thead>
         <tbody class="govuk-table__body">
@@ -34,7 +34,7 @@
       </table>
     <% else %>
       <p class="govuk-body">
-        <%= t('find_certificate_results.no_certificates') %>
+        <%= t('find_certificate_by_postcode_results.no_certificates') %>
       </p>
     <% end %>
   </div>
