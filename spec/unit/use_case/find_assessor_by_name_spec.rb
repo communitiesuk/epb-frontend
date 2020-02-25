@@ -10,17 +10,6 @@ describe UseCase::FindAssessorByName do
     end
   end
 
-  it 'returns an error when there are too many results' do
-    FindAssessorByNameTooManyResultsStub.search_by_name('Supercommon Name')
-
-    find_assessor_by_name_with_too_many_results =
-      described_class.new(AssessorsGatewayTooManyResultsStub.new)
-
-    expect {
-      find_assessor_by_name_with_too_many_results.execute('Supercommon Name')
-    }.to raise_exception described_class::TooManyResults
-  end
-
   context 'when there are assessors matched by the name' do
     let(:valid_assessors) do
       [

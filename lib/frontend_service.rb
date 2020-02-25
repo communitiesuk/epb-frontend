@@ -90,9 +90,6 @@ class FrontendService < Sinatra::Base
         end
 
         @results = response.execute(params['name'])
-      rescue UseCase::FindAssessorByName::TooManyResults
-        @errors[:name] = t('find_assessor_by_name.too_many_results')
-        @erb_template = :find_assessor_by_name
       rescue UseCase::FindAssessorByName::InvalidName
         status 400
         @errors[:name] = t('find_assessor_by_name.name_error')

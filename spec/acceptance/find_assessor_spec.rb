@@ -332,32 +332,6 @@ describe 'Acceptance::Assessor' do
         end
       end
 
-      context 'when there are too many assessors by that name' do
-        before do
-          FindAssessorByNameTooManyResultsStub.search_by_name(
-            'Supercommon Name'
-          )
-        end
-
-        let(:response) do
-          get '/find-an-assessor/search-by-name?name=Supercommon%20Name'
-        end
-
-        it 'returns status 200' do
-          expect(response.status).to eq(200)
-        end
-
-        it 'displays error explaining the situation' do
-          expect(response.body).to include(
-            'There are too many results for that name.'
-          )
-        end
-
-        it 'has a name input field' do
-          expect(response.body).to include('<input id="name" name="name"')
-        end
-      end
-
       context 'when there is no connection' do
         before do
           FindAssessorByNameNoNetworkStub.search_by_name('Breaking Person')
