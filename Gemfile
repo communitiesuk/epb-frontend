@@ -25,3 +25,5 @@ source 'https://rubygems.org' do
       git: 'https://github.com/emk/sinatra-url-for.git', branch: 'master'
   gem 'zeitwerk', '~> 2.2.2'
 end
+
+gem "erubis", "~> 2.7"

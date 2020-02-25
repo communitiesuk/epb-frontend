@@ -25,6 +25,7 @@ GEM
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
     diff-lcs (1.3)
+    erubis (2.7.0)
     faraday (1.0.0)
       multipart-post (>= 1.2, < 3)
     ffi (1.12.2)
@@ -94,6 +95,7 @@ PLATFORMS
 
 DEPENDENCIES
   epb_auth_tools!
+  erubis (~> 2.7)
   i18n!
   prettier (~> 0.16.0)!
   rack-contrib!

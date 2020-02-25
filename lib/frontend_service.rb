@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require 'erubis'
 require 'i18n'
 require 'i18n/backend/fallbacks'
 require 'sinatra/base'
@@ -11,6 +12,7 @@ class FrontendService < Sinatra::Base
   helpers Sinatra::FrontendService::Helpers
   helpers Sinatra::UrlForHelper
 
+  set :erb, escape_html: true
   set :public_folder, (proc { File.join(root, '/../public') })
 
   configure :development do
