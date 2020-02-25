@@ -17,6 +17,8 @@ class Container
       UseCase::FindAssessorByName.new(assessors_gateway)
     find_certificate_by_postcode_use_case =
       UseCase::FindCertificateByPostcode.new(certificates_gateway)
+    find_certificate_by_reference_number_use_case =
+      UseCase::FindCertificateByReferenceNumber.new(certificates_gateway)
     fetch_assessment_use_case =
       RemoteUseCase::FetchAssessment.new(internal_api_client)
 
@@ -25,7 +27,8 @@ class Container
       find_assessor_by_postcode_use_case: find_assessor_by_postcode_use_case,
       find_assessor_by_name_use_case: find_assessor_by_name_use_case,
       fetch_assessment_use_case: fetch_assessment_use_case,
-      find_certificate_by_postcode_use_case: find_certificate_by_postcode_use_case
+      find_certificate_by_postcode_use_case: find_certificate_by_postcode_use_case,
+      find_certificate_by_reference_number_use_case: find_certificate_by_reference_number_use_case
     }
   end
 

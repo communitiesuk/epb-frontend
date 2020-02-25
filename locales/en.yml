@@ -214,6 +214,19 @@ en:
       expiry: 'EPC Expiry Date'
     no_certificates: 'There are no certificates matching that postcode.'
 
+  find_certificate_by_reference_number:
+    head:
+      title: 'Energy performance of buildings register - Find an energy performance certificate'
+    top_heading: 'Search for an EPC by reference number'
+    question: 'Enter a reference number'
+    reference_number_not_valid: 'Enter a search term'
+    reference_number_not_registered: 'Enter a reference number that exists'
+    button_text: 'Find'
+    hint: 'For example 1234-5678-9101-1121'
+    no_network:
+      heading: 'Network connection failed'
+      body: 'There is an internal network error'
+
   find_certificate_by_reference_number_results:
     head:
       title: 'Energy performance of buildings register - Results for energy performance certificates by reference number'
