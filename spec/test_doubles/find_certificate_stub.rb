@@ -1,73 +1,113 @@
 # frozen_string_literal: true
 
 class FindCertificateStub
-  def self.search(postcode)
-    WebMock.stub_request(
-      :get,
-      "http://test-api.gov.uk/api/assessments/domestic-energy-performance/search/#{
-        postcode
-      }"
-    )
-      .with(
-      headers: {
-        Accept: '*/*',
-        'Accept-Encoding' => 'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-        Authorization: 'Bearer abc',
-        'User-Agent' => 'Faraday v1.0.0'
-      }
-    )
-      .to_return(
-      status: 200,
-      body: {
-        "results": [
-          {
-            assessmentId: '1234-5678-9101-1121',
-            dateOfAssessment: '2011-01-01',
-            dateRegistered: '2011-01-02',
-            dwellingType: 'Top floor flat',
-            typeOfAssessment: 'RdSAP',
-            totalFloorArea: 50,
-            addressSummary: '2 Marsham Street, London, SW1B 2BB',
-            currentEnergyEfficiencyRating: 90,
-            currentEnergyEfficiencyBand: 'b',
-            potentialEnergyEfficiencyRating: 'a',
-            potentialEnergyEfficiencyBand: 95,
-            postcode: 'SW1B 2BB',
-            dateOfExpiry: '2019-01-01'
-          },
-          {
-            assessmentId: '1234-5678-9101-1122',
-            dateOfAssessment: '2011-01-01',
-            dateRegistered: '2011-01-02',
-            dwellingType: 'Top floor flat',
-            typeOfAssessment: 'RdSAP',
-            totalFloorArea: 50,
-            addressSummary: '1 Marsham Street, London, SW1B 2BB',
-            currentEnergyEfficiencyRating: 90,
-            currentEnergyEfficiencyBand: 'b',
-            potentialEnergyEfficiencyRating: 'a',
-            potentialEnergyEfficiencyBand: 95,
-            postcode: 'SW1B 2BB',
-            dateOfExpiry: '2022-01-01'
-          },
-          {
-            assessmentId: '1234-5678-9101-1123',
-            dateOfAssessment: '2011-01-01',
-            dateRegistered: '2011-01-02',
-            dwellingType: 'Top floor flat',
-            typeOfAssessment: 'RdSAP',
-            totalFloorArea: 50,
-            addressSummary: '3 Marsham Street, London, SW1B 2BB',
-            currentEnergyEfficiencyRating: 90,
-            currentEnergyEfficiencyBand: 'b',
-            potentialEnergyEfficiencyRating: 'a',
-            potentialEnergyEfficiencyBand: 95,
-            postcode: 'SW1B 2BB',
-            dateOfExpiry: '2023-01-01'
+  def self.search(postcode = false, reference_number = false)
+    if postcode
+      WebMock.stub_request(
+        :get,
+        "http://test-api.gov.uk/api/assessments/domestic-energy-performance/search/#{
+          postcode
+        }"
+      )
+        .with(
+        headers: {
+          Accept: '*/*',
+          'Accept-Encoding' => 'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+          Authorization: 'Bearer abc',
+          'User-Agent' => 'Faraday v1.0.0'
+        }
+      )
+        .to_return(
+        status: 200,
+        body: {
+          "results": [
+            {
+              assessmentId: '1234-5678-9101-1121',
+              dateOfAssessment: '2011-01-01',
+              dateRegistered: '2011-01-02',
+              dwellingType: 'Top floor flat',
+              typeOfAssessment: 'RdSAP',
+              totalFloorArea: 50,
+              addressSummary: '2 Marsham Street, London, SW1B 2BB',
+              currentEnergyEfficiencyRating: 90,
+              currentEnergyEfficiencyBand: 'b',
+              potentialEnergyEfficiencyRating: 'a',
+              potentialEnergyEfficiencyBand: 95,
+              postcode: 'SW1B 2BB',
+              dateOfExpiry: '2019-01-01'
+            },
+            {
+              assessmentId: '1234-5678-9101-1122',
+              dateOfAssessment: '2011-01-01',
+              dateRegistered: '2011-01-02',
+              dwellingType: 'Top floor flat',
+              typeOfAssessment: 'RdSAP',
+              totalFloorArea: 50,
+              addressSummary: '1 Marsham Street, London, SW1B 2BB',
+              currentEnergyEfficiencyRating: 90,
+              currentEnergyEfficiencyBand: 'b',
+              potentialEnergyEfficiencyRating: 'a',
+              potentialEnergyEfficiencyBand: 95,
+              postcode: 'SW1B 2BB',
+              dateOfExpiry: '2022-01-01'
+            },
+            {
+              assessmentId: '1234-5678-9101-1123',
+              dateOfAssessment: '2011-01-01',
+              dateRegistered: '2011-01-02',
+              dwellingType: 'Top floor flat',
+              typeOfAssessment: 'RdSAP',
+              totalFloorArea: 50,
+              addressSummary: '3 Marsham Street, London, SW1B 2BB',
+              currentEnergyEfficiencyRating: 90,
+              currentEnergyEfficiencyBand: 'b',
+              potentialEnergyEfficiencyRating: 'a',
+              potentialEnergyEfficiencyBand: 95,
+              postcode: 'SW1B 2BB',
+              dateOfExpiry: '2023-01-01'
+            }
+          ],
+          "searchPostcode": postcode
+        }.to_json
+      )
+    elsif reference_number
+      WebMock.stub_request(
+        :get,
+        "http://test-api.gov.uk/api/assessments/domestic-energy-performance/search/#{
+        reference_number
+        }"
+      )
+        .with(
+          headers: {
+            Accept: '*/*',
+            'Accept-Encoding' => 'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+            Authorization: 'Bearer abc',
+            'User-Agent' => 'Faraday v1.0.0'
           }
-        ],
-        "searchPostcode": postcode
-      }.to_json
-    )
+        )
+        .to_return(
+          status: 200,
+          body: {
+            "results": [
+              {
+                assessmentId: reference_number,
+                dateOfAssessment: '2011-01-01',
+                dateRegistered: '2011-01-02',
+                dwellingType: 'Top floor flat',
+                typeOfAssessment: 'RdSAP',
+                totalFloorArea: 50,
+                addressSummary: '2 Marsham Street, London, SW1B 2BB',
+                currentEnergyEfficiencyRating: 90,
+                currentEnergyEfficiencyBand: 'b',
+                potentialEnergyEfficiencyRating: 'a',
+                potentialEnergyEfficiencyBand: 95,
+                postcode: 'SW1B 2BB',
+                dateOfExpiry: '2019-01-01'
+              }
+            ],
+            "searchReferenceNumber": reference_number
+          }.to_json
+        )
+    end
   end
 end
