@@ -199,6 +199,10 @@ en:
     postcode_not_registered: 'Enter a postcode that exists'
     button_text: 'Find'
     hint: 'For example SW1A 2AA'
+    certificate_by_reference_number:
+      title: 'Search by Certificate Reference Number'
+      body: 'If you know the reference number a certificate and want to validate that, use the %{link} service.'
+      cta: 'Find certificate by reference number'
     no_network:
       heading: 'Network connection failed'
       body: 'There is an internal network error'
