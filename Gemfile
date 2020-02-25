@@ -16,6 +16,7 @@ source 'https://rubygems.org' do
 
   gem 'epb_auth_tools',
       git: 'https://github.com/communitiesuk/epb-auth-tools', branch: 'master'
+  gem 'erubis', '~> 2.7'
   gem 'i18n'
   gem 'rack-contrib'
   gem 'rake'
@@ -25,5 +26,3 @@ source 'https://rubygems.org' do
       git: 'https://github.com/emk/sinatra-url-for.git', branch: 'master'
   gem 'zeitwerk', '~> 2.2.2'
 end
-
-gem "erubis", "~> 2.7"
