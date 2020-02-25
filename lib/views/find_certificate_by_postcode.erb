@@ -9,7 +9,7 @@
     <h1 class="govuk-heading-xl">
       <%= t('find_certificate_by_postcode.top_heading') %>
     </h1>
-    <form method="GET" action="<%=localised_url('/find-a-certificate/search')%>" >
+    <form method="GET" action="<%=localised_url('/find-a-certificate/search-by-postcode')%>" >
       <% if I18n.locale != I18n.available_locales[0] %>
         <input type="hidden" name="lang" value="<%= I18n.locale.to_s %>">
       <% end %>
