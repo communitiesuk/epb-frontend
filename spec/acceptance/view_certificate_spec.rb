@@ -45,7 +45,7 @@ describe 'Acceptance::Certificate' do
     end
 
     it 'shows the SVG with energy ratings' do
-      expect(response.body).to include('<svg ')
+      expect(response.body).to include('<svg width="615" height="400"')
     end
   end
 
