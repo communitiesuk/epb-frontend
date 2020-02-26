@@ -31,7 +31,8 @@ describe Gateway::AssessorsGateway do
           :lastName,
           :contactDetails,
           :searchResultsComparisonPostcode,
-          :registeredBy
+          :registeredBy,
+          :schemeAssessorId
         )
       end
 
@@ -135,7 +136,8 @@ describe Gateway::AssessorsGateway do
           :lastName,
           :contactDetails,
           :searchResultsComparisonPostcode,
-          :registeredBy
+          :registeredBy,
+          :schemeAssessorId
         )
       end
 

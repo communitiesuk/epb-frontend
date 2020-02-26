@@ -25,7 +25,8 @@ class FindAssessorByNameStub
               "telephoneNumber": 'string', "email": 'user@example.com'
             },
             "searchResultsComparisonPostcode": 'SW1A 1AA',
-            "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' }
+            "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' },
+            "schemeAssessorId": "STROMA9999990"
           },
           {
             "firstName": 'Doux',
@@ -34,7 +35,8 @@ class FindAssessorByNameStub
               "telephoneNumber": '07921 021 368', "email": 'user@example.com'
             },
             "searchResultsComparisonPostcode": 'SW1A 1AA',
-            "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' }
+            "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' },
+            "schemeAssessorId": "12349876"
           },
           {
             "firstName": 'Tri',
@@ -43,7 +45,8 @@ class FindAssessorByNameStub
               "telephoneNumber": 'string', "email": 'user@example.com'
             },
             "searchResultsComparisonPostcode": 'SW1A 1AA',
-            "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' }
+            "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' },
+            "schemeAssessorId": "12349876"
           }
         ],
         "searchName": name,
