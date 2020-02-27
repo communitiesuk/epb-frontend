@@ -226,7 +226,7 @@ cy:
     reference_number_not_valid: 'Welsh: Enter a search term'
     reference_number_not_registered: 'Welsh: Enter a reference number that exists'
     button_text: 'Welsh: Find'
-    hint: 'Welsh: For example 1234-5678-9101-1121'
+    hint: 'Welsh: For example 1234-5678-9101-1121-3141'
     no_network:
       heading: 'Welsh: Network connection failed'
       body: 'Welsh: There is an internal network error'
