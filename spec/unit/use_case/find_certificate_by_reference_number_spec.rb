@@ -6,7 +6,9 @@ describe UseCase::FindCertificateByReferenceNumber do
     let(:find_certificate) { described_class.new(certificates_gateway) }
 
     it 'returns empty array' do
-      expect{find_certificate.execute('1234-5678-9101-1121')}.to raise_error(described_class::CertificateNotFound)
+      expect { find_certificate.execute('1234-5678-9101-1121') }.to raise_error(
+        described_class::CertificateNotFound
+      )
     end
   end
 
