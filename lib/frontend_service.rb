@@ -119,14 +119,15 @@ class FrontendService < Sinatra::Base
     @errors = {}
     @erb_template = :find_certificate_by_postcode
 
-    response = @container.get_object(:find_certificate_by_postcode_use_case)
-
     if params['postcode']
       @page_title = t('find_certificate_by_postcode_results.head.title')
       begin
         @erb_template = :find_certificate_by_postcode_results
 
-        @results = response.execute(params['postcode'])
+        @results =
+          @container.get_object(:find_certificate_by_postcode_use_case).execute(
+            params['postcode']
+          )
       rescue UseCase::FindCertificateByPostcode::PostcodeNotValid
         status 400
         @erb_template = :find_certificate_by_postcode
@@ -147,20 +148,25 @@ class FrontendService < Sinatra::Base
     @errors = {}
     @erb_template = :find_certificate_by_reference_number
 
-    response =
-      @container.get_object(:find_certificate_by_reference_number_use_case)
-
     if params['reference_number']
       @page_title = t('find_certificate_by_reference_number_results.head.title')
       begin
         @erb_template = :find_certificate_by_reference_number_results
 
-        @results = response.execute(params['reference_number'])
+        @results =
+          @container.get_object(:find_certificate_by_reference_number_use_case)
+            .execute(params['reference_number'])
       rescue UseCase::FindCertificateByReferenceNumber::ReferenceNumberNotValid
         status 400
         @erb_template = :find_certificate_by_reference_number
         @errors[:reference_number] =
           t('find_certificate_by_reference_number.reference_number_not_valid')
+      rescue UseCase::FindCertificateByReferenceNumber::CertificateNotFound
+        @erb_template = :find_certificate_by_reference_number
+        @errors[:reference_number] =
+          t(
+            'find_certificate_by_reference_number.reference_number_not_registered'
+          )
       rescue Auth::Errors::NetworkConnectionFailed
         status 500
         @erb_template = :error_page_500

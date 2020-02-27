@@ -27,7 +27,7 @@ class FindAssessorByPostcodeStub
               },
               "searchResultsComparisonPostcode": 'SW1A 1AA',
               "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' },
-              "schemeAssessorId": "STROMA9999990"
+              "schemeAssessorId": 'STROMA9999990'
             },
             "distance": 0.1
           },
@@ -40,7 +40,7 @@ class FindAssessorByPostcodeStub
               },
               "searchResultsComparisonPostcode": 'SW1A 1AA',
               "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' },
-              "schemeAssessorId": "12349876"
+              "schemeAssessorId": '12349876'
             },
             "distance": 0.26780459
           },
@@ -53,7 +53,7 @@ class FindAssessorByPostcodeStub
               },
               "searchResultsComparisonPostcode": 'SW1A 1AA',
               "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' },
-              "schemeAssessorId": "12349876"
+              "schemeAssessorId": '12349876'
             },
             "distance": 1.36
           }

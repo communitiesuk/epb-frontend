@@ -26,7 +26,7 @@ class FindAssessorByNameStub
             },
             "searchResultsComparisonPostcode": 'SW1A 1AA',
             "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' },
-            "schemeAssessorId": "STROMA9999990"
+            "schemeAssessorId": 'STROMA9999990'
           },
           {
             "firstName": 'Doux',
@@ -36,7 +36,7 @@ class FindAssessorByNameStub
             },
             "searchResultsComparisonPostcode": 'SW1A 1AA',
             "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' },
-            "schemeAssessorId": "12349876"
+            "schemeAssessorId": '12349876'
           },
           {
             "firstName": 'Tri',
@@ -46,7 +46,7 @@ class FindAssessorByNameStub
             },
             "searchResultsComparisonPostcode": 'SW1A 1AA',
             "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' },
-            "schemeAssessorId": "12349876"
+            "schemeAssessorId": '12349876'
           }
         ],
         "searchName": name,

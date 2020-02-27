@@ -190,7 +190,7 @@ describe 'Acceptance::Certificate' do
         expect(response.body).to include(
           '<span id="reference-number-error" class="govuk-error-message">'
         )
-        expect(response.body).to include('Enter a search term')
+        expect(response.body).to include('Enter a valid reference number')
       end
     end
 
@@ -256,9 +256,7 @@ describe 'Acceptance::Certificate' do
 
         it 'explains that no certificates are present' do
           expect(response.body).to include(
-            I18n.t(
-              'find_certificate_by_reference_number_results.no_certificates'
-            )
+            'A certificate was not found with this reference number'
           )
         end
       end

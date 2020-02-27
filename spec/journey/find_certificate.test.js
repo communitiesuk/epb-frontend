@@ -84,7 +84,7 @@ describe('Journey::Certificate', () => {
     await click('certificate by reference');
     await write('', into(textBox({id: 'reference_number'})));
     await click('Find');
-    await text('Enter a search term').exists()
+    await text('Enter a valid reference number').exists()
   }, 30000);
 
   it('displays the find a certificate page heading when entering a valid certificate reference number ', async () => {
