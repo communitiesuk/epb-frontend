@@ -178,6 +178,45 @@ class FrontendService < Sinatra::Base
         layout: :layout, locals: { errors: @errors, results: @results }
   end
 
+  get '/find-a-certificate/search-by-street-name-and-town' do
+    @errors = {}
+    @erb_template = :find_certificate_by_street_name_and_town
+
+    if params.key?('town') || params.key?('street_name')
+      @page_title = t('find_certificate_by_street_name_and_town_results.head.title')
+      begin
+        @erb_template = :find_certificate_by_street_name_and_town_results
+
+        @results =
+          @container.get_object(:find_certificate_by_street_name_and_town_use_case)
+            .execute(params['street_name'], params['town'])
+      rescue UseCase::FindCertificateByStreetNameAndTown::StreetNameMissing
+        status 400
+        @erb_template = :find_certificate_by_street_name_and_town
+        @errors[:street_name] =
+          t('find_certificate_by_street_name_and_town.street_name_missing')
+      rescue UseCase::FindCertificateByStreetNameAndTown::TownMissing
+        status 400
+        @erb_template = :find_certificate_by_street_name_and_town
+        @errors[:town] =
+          t('find_certificate_by_street_name_and_town.town_missing')
+      rescue UseCase::FindCertificateByStreetNameAndTown::CertificateNotFound
+        @erb_template = :find_certificate_by_street_name_and_town
+        @errors[:generic] =
+          t(
+            'find_certificate_by_street_name_and_town.no_such_address'
+          )
+      rescue Auth::Errors::NetworkConnectionFailed
+        status 500
+        @erb_template = :error_page_500
+      end
+    end
+
+    @page_title = t('find_certificate_by_street_name_and_town.head.title')
+    erb @erb_template,
+        layout: :layout, locals: { errors: @errors, results: @results }
+  end
+
   get '/energy-performance-certificate/:assessment_id' do
     use_case = @container.get_object(:fetch_assessment_use_case)
     assessment = use_case.execute(params[:assessment_id])

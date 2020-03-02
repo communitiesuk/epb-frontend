@@ -21,6 +21,8 @@ class Container
       UseCase::FindCertificateById.new(certificates_gateway)
     fetch_assessment_use_case =
       RemoteUseCase::FetchAssessment.new(internal_api_client)
+    find_certificate_by_street_name_and_town_use_case =
+      UseCase::FindCertificateByStreetNameAndTown.new(certificates_gateway)
 
     @objects = {
       internal_api_client: internal_api_client,
@@ -30,7 +32,9 @@ class Container
       find_certificate_by_postcode_use_case:
         find_certificate_by_postcode_use_case,
       find_certificate_by_id_use_case:
-        find_certificate_by_id_use_case
+        find_certificate_by_id_use_case,
+      find_certificate_by_street_name_and_town_use_case:
+        find_certificate_by_street_name_and_town_use_case
     }
   end
 

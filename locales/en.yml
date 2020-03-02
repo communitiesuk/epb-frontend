@@ -241,6 +241,33 @@ en:
       expiry: 'EPC Expiry Date'
     no_certificates: 'There are no certificates matching that EPC Reference Number.'
 
+  find_certificate_by_street_name_and_town:
+    head:
+      title: 'Energy performance of buildings register - Find an energy performance certificate'
+    top_heading: 'Search for an EPC by reference number'
+    no_such_address: 'A certificate was not found at this address'
+    button_text: 'Find'
+    street_name_question: 'Enter a street'
+    street_name_hint: 'For example 14 Primrose Street'
+    town_question: 'Enter a town'
+    town_hint: 'For example Bournemouth'
+    street_name_missing: 'Enter a street name'
+    town_missing: 'Enter a town'
+    no_network:
+      heading: 'Network connection failed'
+      body: 'There is an internal network error'
+
+  find_certificate_by_street_name_and_town_results:
+    head:
+      title: 'Energy performance of buildings register - Results for energy performance certificates by reference number'
+    top_heading: 'Find an Energy Performance Certificate for a building'
+    list: '1-%{length} of %{length} results matching %{query}'
+    table:
+      address: 'Address'
+      rating: 'EPC Rating'
+      expiry: 'EPC Expiry Date'
+    no_certificates: 'There are no certificates matching that EPC Reference Number.'
+
   domestic_epc:
     top_heading: 'Energy Performance Certificate'
     labels:
