@@ -15,7 +15,8 @@ module UseCase
       raise StreetNameMissing if street_name.nil? || street_name == ''
       raise TownMissing if town.nil? || town == ''
 
-      gateway_response = @certificates_gateway.search_by_street_name_and_town(street_name, town)
+      gateway_response =
+        @certificates_gateway.search_by_street_name_and_town(street_name, town)
 
       if gateway_response.include?(:errors)
         gateway_response[:errors].each do |error|

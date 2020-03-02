@@ -62,10 +62,14 @@ describe UseCase::FindCertificateByPostcode do
     end
 
     let(:certificates_gateway) { CertificatesGatewayStub.new }
-    let(:find_certificate_by_postcode) { described_class.new(certificates_gateway) }
+    let(:find_certificate_by_postcode) do
+      described_class.new(certificates_gateway)
+    end
 
     it 'returns list of certificates' do
-      expect(find_certificate_by_postcode.execute('SW1A 2AB')).to eq(valid_certificates)
+      expect(find_certificate_by_postcode.execute('SW1A 2AB')).to eq(
+        valid_certificates
+      )
     end
   end
 end

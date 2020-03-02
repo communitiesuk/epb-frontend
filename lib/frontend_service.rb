@@ -154,8 +154,9 @@ class FrontendService < Sinatra::Base
         @erb_template = :find_certificate_by_reference_number_results
 
         @results =
-          @container.get_object(:find_certificate_by_id_use_case)
-            .execute(params['reference_number'])
+          @container.get_object(:find_certificate_by_id_use_case).execute(
+            params['reference_number']
+          )
       rescue UseCase::FindCertificateById::ReferenceNumberNotValid
         status 400
         @erb_template = :find_certificate_by_reference_number
@@ -183,12 +184,15 @@ class FrontendService < Sinatra::Base
     @erb_template = :find_certificate_by_street_name_and_town
 
     if params.key?('town') || params.key?('street_name')
-      @page_title = t('find_certificate_by_street_name_and_town_results.head.title')
+      @page_title =
+        t('find_certificate_by_street_name_and_town_results.head.title')
       begin
         @erb_template = :find_certificate_by_street_name_and_town_results
 
         @results =
-          @container.get_object(:find_certificate_by_street_name_and_town_use_case)
+          @container.get_object(
+            :find_certificate_by_street_name_and_town_use_case
+          )
             .execute(params['street_name'], params['town'])
       rescue UseCase::FindCertificateByStreetNameAndTown::StreetNameMissing
         status 400
@@ -203,9 +207,7 @@ class FrontendService < Sinatra::Base
       rescue UseCase::FindCertificateByStreetNameAndTown::CertificateNotFound
         @erb_template = :find_certificate_by_street_name_and_town
         @errors[:generic] =
-          t(
-            'find_certificate_by_street_name_and_town.no_such_address'
-          )
+          t('find_certificate_by_street_name_and_town.no_such_address')
       rescue Auth::Errors::NetworkConnectionFailed
         status 500
         @erb_template = :error_page_500

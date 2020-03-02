@@ -95,7 +95,9 @@ describe 'Acceptance::Certificate' do
       end
 
       context 'where no certificates are present' do
-        before { FindCertificateNoCertificatesStub.search_by_postcode('E1 4FF') }
+        before do
+          FindCertificateNoCertificatesStub.search_by_postcode('E1 4FF')
+        end
 
         let(:response) do
           get '/find-a-certificate/search-by-postcode?postcode=E1+4FF'
@@ -120,7 +122,6 @@ describe 'Acceptance::Certificate' do
 
       context 'when there is no connection' do
         before { FindCertificateNoNetworkStub.search_by_postcode('D11 4FF') }
-
 
         let(:response) do
           get '/find-a-certificate/search-by-postcode?postcode=D11+4FF'
@@ -303,7 +304,9 @@ describe 'Acceptance::Certificate' do
       end
 
       context 'when there is no connection' do
-        before { FindCertificateNoNetworkStub.search_by_id('1234-5678-9101-1122') }
+        before do
+          FindCertificateNoNetworkStub.search_by_id('1234-5678-9101-1122')
+        end
 
         let(:response) do
           get '/find-a-certificate/search-by-reference-number?reference_number=1234-5678-9101-1122'
@@ -326,7 +329,9 @@ describe 'Acceptance::Certificate' do
 
   describe '.get /find-a-certificate/search-by-street-name-and-town' do
     context 'when search page rendered' do
-      let(:response) { get '/find-a-certificate/search-by-street-name-and-town' }
+      let(:response) do
+        get '/find-a-certificate/search-by-street-name-and-town'
+      end
 
       it 'returns status 200' do
         expect(response.status).to eq(200)
@@ -334,20 +339,18 @@ describe 'Acceptance::Certificate' do
 
       it 'displays the find a certificate page heading' do
         expect(response.body).to include(
-                                   'Find an energy performance certificate'
-                                 )
+          'Find an energy performance certificate'
+        )
       end
 
       it 'has an input field' do
-        expect(response.body).to include(
-                                   '<input id="town" name="town"'
-                                 )
+        expect(response.body).to include('<input id="town" name="town"')
       end
 
       it 'has a Find button' do
         expect(response.body).to include(
-                                   '<button class="govuk-button" data-module="govuk-button">Find</button>'
-                                 )
+          '<button class="govuk-button" data-module="govuk-button">Find</button>'
+        )
       end
 
       it 'does not display an error message' do
@@ -366,14 +369,14 @@ describe 'Acceptance::Certificate' do
 
       it 'displays the find a certificate page heading' do
         expect(response.body).to include(
-                                   'Find an energy performance certificate'
-                                 )
+          'Find an energy performance certificate'
+        )
       end
 
       it 'displays an error message' do
         expect(response.body).to include(
-                                   '<span id="street-name-error" class="govuk-error-message">'
-                                 )
+          '<span id="street-name-error" class="govuk-error-message">'
+        )
         expect(response.body).to include('Enter a street name')
       end
     end
@@ -389,21 +392,26 @@ describe 'Acceptance::Certificate' do
 
       it 'displays the find a certificate page heading' do
         expect(response.body).to include(
-                                   'Find an energy performance certificate'
-                                 )
+          'Find an energy performance certificate'
+        )
       end
 
       it 'displays an error message' do
         expect(response.body).to include(
-                                   '<span id="town-error" class="govuk-error-message">'
-                                 )
+          '<span id="town-error" class="govuk-error-message">'
+        )
         expect(response.body).to include('Enter a town')
       end
     end
 
     context 'when entering a street name and town' do
       context 'shows page' do
-        before { FindCertificateStub.search_by_street_name_and_town('1 Makeup Street', 'Beauty Town') }
+        before do
+          FindCertificateStub.search_by_street_name_and_town(
+            '1 Makeup Street',
+            'Beauty Town'
+          )
+        end
 
         let(:response) do
           get '/find-a-certificate/search-by-street-name-and-town?street_name=1%20Makeup%20Street&town=Beauty%20Town'
@@ -415,8 +423,8 @@ describe 'Acceptance::Certificate' do
 
         it 'displays the find a certificate page heading' do
           expect(response.body).to include(
-                                     'Find an energy performance certificate'
-                                   )
+            'Find an energy performance certificate'
+          )
         end
 
         it 'shows the address of an entry' do
@@ -433,8 +441,8 @@ describe 'Acceptance::Certificate' do
 
         it 'shows a clickable entry' do
           expect(response.body).to include(
-                                     '<a href="/energy-performance-certificate/1234-5678-9101-1121-3141"'
-                                   )
+            '<a href="/energy-performance-certificate/1234-5678-9101-1121-3141"'
+          )
         end
 
         it 'shows the expiry date of an entry' do
@@ -444,7 +452,10 @@ describe 'Acceptance::Certificate' do
 
       context 'where no certificates are present' do
         before do
-          FindCertificateNoCertificatesStub.search_by_street_name_and_town('3 Alien Street', 'Mars')
+          FindCertificateNoCertificatesStub.search_by_street_name_and_town(
+            '3 Alien Street',
+            'Mars'
+          )
         end
 
         let(:response) do
@@ -457,19 +468,24 @@ describe 'Acceptance::Certificate' do
 
         it 'displays the find a certificate page heading' do
           expect(response.body).to include(
-                                     'Find an energy performance certificate'
-                                   )
+            'Find an energy performance certificate'
+          )
         end
 
         it 'explains that no certificates are present' do
           expect(response.body).to include(
-                                     'A certificate was not found at this address'
-                                   )
+            'A certificate was not found at this address'
+          )
         end
       end
 
       context 'when there is no connection' do
-        before { FindCertificateNoNetworkStub.search_by_street_name_and_town('Doesnt Matter', 'Nothing') }
+        before do
+          FindCertificateNoNetworkStub.search_by_street_name_and_town(
+            'Doesnt Matter',
+            'Nothing'
+          )
+        end
 
         let(:response) do
           get '/find-a-certificate/search-by-street-name-and-town?street_name=Doesnt%20Matter&town=Nothing'

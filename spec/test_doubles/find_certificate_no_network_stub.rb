@@ -5,7 +5,7 @@ class FindCertificateNoNetworkStub
     WebMock.stub_request(
       :get,
       "http://test-api.gov.uk/api/assessments/domestic-energy-performance/search?postcode=#{
-      postcode
+        postcode
       }"
     )
       .to_raise(Auth::Errors::NetworkConnectionFailed)
@@ -15,7 +15,7 @@ class FindCertificateNoNetworkStub
     WebMock.stub_request(
       :get,
       "http://test-api.gov.uk/api/assessments/domestic-energy-performance/search?assessment_id=#{
-      certificate_id
+        certificate_id
       }"
     )
       .to_raise(Auth::Errors::NetworkConnectionFailed)
@@ -25,10 +25,8 @@ class FindCertificateNoNetworkStub
     WebMock.stub_request(
       :get,
       "http://test-api.gov.uk/api/assessments/domestic-energy-performance/search?street_name=#{
-      street_name
-      }&town=#{
-      town
-      }"
+        street_name
+      }&town=#{town}"
     )
       .to_raise(Auth::Errors::NetworkConnectionFailed)
   end

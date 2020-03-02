@@ -31,8 +31,7 @@ class Container
       fetch_assessment_use_case: fetch_assessment_use_case,
       find_certificate_by_postcode_use_case:
         find_certificate_by_postcode_use_case,
-      find_certificate_by_id_use_case:
-        find_certificate_by_id_use_case,
+      find_certificate_by_id_use_case: find_certificate_by_id_use_case,
       find_certificate_by_street_name_and_town_use_case:
         find_certificate_by_street_name_and_town_use_case
     }
