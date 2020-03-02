@@ -19,7 +19,7 @@ module UseCase
         raise PostcodeNotValid
       end
 
-      gateway_response = @certificates_gateway.search(query)
+      gateway_response = @certificates_gateway.search_by_postcode(query)
 
       if gateway_response.include?(:errors)
         gateway_response[:errors].each do |error|

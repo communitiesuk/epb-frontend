@@ -1,15 +1,14 @@
 # frozen_string_literal: true
 
 class FindCertificateStub
-  def self.search(postcode = false, reference_number = false)
-    if postcode
-      WebMock.stub_request(
-        :get,
-        "http://test-api.gov.uk/api/assessments/domestic-energy-performance/search/#{
-          postcode
-        }"
-      )
-        .with(
+  def self.search_by_postcode(postcode)
+    WebMock.stub_request(
+      :get,
+      "http://test-api.gov.uk/api/assessments/domestic-energy-performance/search?postcode=#{
+      postcode
+      }"
+    )
+      .with(
         headers: {
           Accept: '*/*',
           'Accept-Encoding' => 'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
@@ -17,7 +16,7 @@ class FindCertificateStub
           'User-Agent' => 'Faraday v1.0.0'
         }
       )
-        .to_return(
+      .to_return(
         status: 200,
         body: {
           "results": [
@@ -70,14 +69,16 @@ class FindCertificateStub
           "searchPostcode": postcode
         }.to_json
       )
-    elsif reference_number
-      WebMock.stub_request(
-        :get,
-        "http://test-api.gov.uk/api/assessments/domestic-energy-performance/search/#{
-          reference_number
-        }"
-      )
-        .with(
+  end
+
+  def self.search_by_id(certificate_id)
+    WebMock.stub_request(
+      :get,
+      "http://test-api.gov.uk/api/assessments/domestic-energy-performance/search?assessment_id=#{
+        certificate_id
+      }"
+    )
+      .with(
         headers: {
           Accept: '*/*',
           'Accept-Encoding' => 'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
@@ -85,12 +86,12 @@ class FindCertificateStub
           'User-Agent' => 'Faraday v1.0.0'
         }
       )
-        .to_return(
+      .to_return(
         status: 200,
         body: {
           "results": [
             {
-              assessmentId: reference_number,
+              assessmentId: certificate_id,
               dateOfAssessment: '2011-01-01',
               dateRegistered: '2011-01-02',
               dwellingType: 'Top floor flat',
@@ -105,9 +106,8 @@ class FindCertificateStub
               dateOfExpiry: '2019-01-01'
             }
           ],
-          "searchReferenceNumber": reference_number
+          "searchReferenceNumber": certificate_id
         }.to_json
       )
-    end
   end
 end

@@ -154,14 +154,14 @@ class FrontendService < Sinatra::Base
         @erb_template = :find_certificate_by_reference_number_results
 
         @results =
-          @container.get_object(:find_certificate_by_reference_number_use_case)
+          @container.get_object(:find_certificate_by_id_use_case)
             .execute(params['reference_number'])
-      rescue UseCase::FindCertificateByReferenceNumber::ReferenceNumberNotValid
+      rescue UseCase::FindCertificateById::ReferenceNumberNotValid
         status 400
         @erb_template = :find_certificate_by_reference_number
         @errors[:reference_number] =
           t('find_certificate_by_reference_number.reference_number_not_valid')
-      rescue UseCase::FindCertificateByReferenceNumber::CertificateNotFound
+      rescue UseCase::FindCertificateById::CertificateNotFound
         @erb_template = :find_certificate_by_reference_number
         @errors[:reference_number] =
           t(

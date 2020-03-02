@@ -55,7 +55,7 @@ describe 'Acceptance::Certificate' do
 
     context 'when entering an valid postcode' do
       context 'shows page' do
-        before { FindCertificateStub.search('SW1A 2AA') }
+        before { FindCertificateStub.search_by_postcode('SW1A 2AA') }
 
         let(:response) do
           get '/find-a-certificate/search-by-postcode?postcode=SW1A+2AA'
@@ -95,7 +95,7 @@ describe 'Acceptance::Certificate' do
       end
 
       context 'where no certificates are present' do
-        before { FindCertificateNoCertificatesStub.search('E1 4FF') }
+        before { FindCertificateNoCertificatesStub.search_by_postcode('E1 4FF') }
 
         let(:response) do
           get '/find-a-certificate/search-by-postcode?postcode=E1+4FF'
@@ -119,7 +119,8 @@ describe 'Acceptance::Certificate' do
       end
 
       context 'when there is no connection' do
-        before { FindCertificateNoNetworkStub.search('D11 4FF') }
+        before { FindCertificateNoNetworkStub.search_by_postcode('D11 4FF') }
+
 
         let(:response) do
           get '/find-a-certificate/search-by-postcode?postcode=D11+4FF'
@@ -196,7 +197,7 @@ describe 'Acceptance::Certificate' do
 
     context 'when entering a valid reference number' do
       context 'shows page' do
-        before { FindCertificateStub.search(false, '1234-5678-9101-1121-3141') }
+        before { FindCertificateStub.search_by_id('1234-5678-9101-1121-3141') }
 
         let(:response) do
           get '/find-a-certificate/search-by-reference-number?reference_number=1234-5678-9101-1121-3141'
@@ -208,8 +209,8 @@ describe 'Acceptance::Certificate' do
 
         it 'displays the find a certificate page heading' do
           expect(response.body).to include(
-                                     'Find an energy performance certificate'
-                                   )
+            'Find an energy performance certificate'
+          )
         end
 
         it 'shows the address of an entry' do
@@ -226,17 +227,17 @@ describe 'Acceptance::Certificate' do
 
         it 'shows a clickable entry' do
           expect(response.body).to include(
-                                     '<a href="/energy-performance-certificate/1234-5678-9101-1121-3141"'
-                                   )
+            '<a href="/energy-performance-certificate/1234-5678-9101-1121-3141"'
+          )
         end
 
         it 'shows the expiry date of an entry' do
           expect(response.body).to include('01/01/2019')
         end
-        end
+      end
 
       context 'shows page' do
-        before { FindCertificateStub.search(false, '1234-5678-9101-1121-3141') }
+        before { FindCertificateStub.search_by_id('1234-5678-9101-1121-3141') }
 
         let(:response) do
           get '/find-a-certificate/search-by-reference-number?reference_number=12345678910111213141'
@@ -248,8 +249,8 @@ describe 'Acceptance::Certificate' do
 
         it 'displays the find a certificate page heading' do
           expect(response.body).to include(
-                                     'Find an energy performance certificate'
-                                   )
+            'Find an energy performance certificate'
+          )
         end
 
         it 'shows the address of an entry' do
@@ -266,8 +267,8 @@ describe 'Acceptance::Certificate' do
 
         it 'shows a clickable entry' do
           expect(response.body).to include(
-                                     '<a href="/energy-performance-certificate/1234-5678-9101-1121-3141"'
-                                   )
+            '<a href="/energy-performance-certificate/1234-5678-9101-1121-3141"'
+          )
         end
 
         it 'shows the expiry date of an entry' do
@@ -277,7 +278,7 @@ describe 'Acceptance::Certificate' do
 
       context 'where no certificates are present' do
         before do
-          FindCertificateNoCertificatesStub.search('1234-5678-9101-1120')
+          FindCertificateNoCertificatesStub.search_by_id('1234-5678-9101-1120')
         end
 
         let(:response) do
@@ -290,19 +291,19 @@ describe 'Acceptance::Certificate' do
 
         it 'displays the find a certificate page heading' do
           expect(response.body).to include(
-                                     'Find an energy performance certificate'
-                                   )
+            'Find an energy performance certificate'
+          )
         end
 
         it 'explains that no certificates are present' do
           expect(response.body).to include(
-                                     'A certificate was not found with this reference number'
-                                   )
+            'A certificate was not found with this reference number'
+          )
         end
       end
 
       context 'when there is no connection' do
-        before { FindCertificateNoNetworkStub.search('1234-5678-9101-1122') }
+        before { FindCertificateNoNetworkStub.search_by_id('1234-5678-9101-1122') }
 
         let(:response) do
           get '/find-a-certificate/search-by-reference-number?reference_number=1234-5678-9101-1122'

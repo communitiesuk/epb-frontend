@@ -6,11 +6,14 @@ module Gateway
       @internal_api_client = api_client
     end
 
-    def search(query)
-      route =
-        URI.encode(
-          "/api/assessments/domestic-energy-performance/search/#{query}"
-        )
+    def search_by_postcode(postcode)
+      route = "/api/assessments/domestic-energy-performance/search?postcode=#{postcode}"
+      response = @internal_api_client.get(route)
+      JSON.parse(response.body, symbolize_names: true)
+    end
+
+    def search_by_id(certificate_id)
+      route = "/api/assessments/domestic-energy-performance/search?assessment_id=#{certificate_id}"
       response = @internal_api_client.get(route)
       JSON.parse(response.body, symbolize_names: true)
     end
