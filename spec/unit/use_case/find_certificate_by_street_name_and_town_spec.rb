@@ -1,14 +1,35 @@
 # frozen_string_literal: true
 
 describe UseCase::FindCertificateByStreetNameAndTown do
+  context 'when there missing parameters' do
+    let(:certificates_gateway) { CertificatesGatewayEmptyStub.new }
+    let(:find_certificate) { described_class.new(certificates_gateway) }
+
+    it 'raises an error when both are missing' do
+      expect { find_certificate.execute('', '') }.to raise_error(
+        described_class::AllParamsMissing
+      )
+    end
+    it 'raises an error when street name is missing' do
+      expect { find_certificate.execute('', 'Nowhere Special') }.to raise_error(
+        described_class::StreetNameMissing
+      )
+    end
+    it 'raises an error when town is missing' do
+      expect { find_certificate.execute('Somewhere Empty', '') }.to raise_error(
+        described_class::TownMissing
+      )
+    end
+  end
+
   context 'when there are no certificates by that street name and town' do
     let(:certificates_gateway) { CertificatesGatewayEmptyStub.new }
     let(:find_certificate) { described_class.new(certificates_gateway) }
 
     it 'returns empty array' do
-      expect { find_certificate.execute('Somewhere Empty', 'Nowhere Special') }.to raise_error(
-        described_class::CertificateNotFound
-      )
+      expect {
+        find_certificate.execute('Somewhere Empty', 'Nowhere Special')
+      }.to raise_error(described_class::CertificateNotFound)
     end
   end
 

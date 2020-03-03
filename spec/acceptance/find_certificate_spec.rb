@@ -404,6 +404,33 @@ describe 'Acceptance::Certificate' do
       end
     end
 
+    context 'when both town and street name are missing' do
+      let(:response) do
+        get '/find-a-certificate/search-by-street-name-and-town?street_name=&town='
+      end
+
+      it 'returns status 400' do
+        expect(response.status).to eq(400)
+      end
+
+      it 'displays the find a certificate page heading' do
+        expect(response.body).to include(
+          'Find an energy performance certificate'
+        )
+      end
+
+      it 'displays an error message' do
+        expect(response.body).to include(
+          '<span id="town-error" class="govuk-error-message">'
+        )
+        expect(response.body).to include('Enter a town')
+        expect(response.body).to include(
+          '<span id="street-name-error" class="govuk-error-message">'
+        )
+        expect(response.body).to include('Enter a street name')
+      end
+    end
+
     context 'when entering a street name and town' do
       context 'shows page' do
         before do

@@ -115,6 +115,15 @@ describe('Journey::Certificate', () => {
     await text('Enter a town').exists()
   }, 30000);
 
+  it('displays an error message when entering an empty town and street name', async () => {
+    await goto("localhost:9393/find-a-certificate");
+    await click("Start now");
+    await click('Find certificate by street name');
+    await click('Find');
+    await text('Enter a town').exists();
+    await text('Enter a street name').exists()
+  }, 30000);
+
   it('displays the find a certificate page heading when entering a valid ', async () => {
     await goto("localhost:9393/find-a-certificate");
     await click("Start now");

@@ -194,6 +194,13 @@ class FrontendService < Sinatra::Base
             :find_certificate_by_street_name_and_town_use_case
           )
             .execute(params['street_name'], params['town'])
+      rescue UseCase::FindCertificateByStreetNameAndTown::AllParamsMissing
+        status 400
+        @erb_template = :find_certificate_by_street_name_and_town
+        @errors[:street_name] =
+          t('find_certificate_by_street_name_and_town.street_name_missing')
+        @errors[:town] =
+          t('find_certificate_by_street_name_and_town.town_missing')
       rescue UseCase::FindCertificateByStreetNameAndTown::StreetNameMissing
         status 400
         @erb_template = :find_certificate_by_street_name_and_town

@@ -2,6 +2,7 @@
 
 module UseCase
   class FindCertificateByStreetNameAndTown
+    class AllParamsMissing < RuntimeError; end
     class StreetNameMissing < RuntimeError; end
     class TownMissing < RuntimeError; end
     class AuthTokenMissing < RuntimeError; end
@@ -12,8 +13,9 @@ module UseCase
     end
 
     def execute(street_name, town)
-      raise StreetNameMissing if street_name.nil? || street_name == ''
-      raise TownMissing if town.nil? || town == ''
+      raise AllParamsMissing if  truly_empty(street_name) && truly_empty(town)
+      raise StreetNameMissing if truly_empty(street_name)
+      raise TownMissing if truly_empty(town)
 
       gateway_response =
         @certificates_gateway.search_by_street_name_and_town(street_name, town)
@@ -27,6 +29,12 @@ module UseCase
       raise CertificateNotFound if gateway_response[:results].size == 0
 
       gateway_response[:results]
+    end
+
+    private
+
+    def truly_empty(query)
+      query.nil? || query == ''
     end
   end
 end
