@@ -21,6 +21,7 @@ FindAssessorByNameStub.search_by_name('Somewhatcommon Name', true)
 FindCertificateStub.search_by_postcode('SW1A 2AA')
 FindCertificateStub.search_by_id('1234-5678-9101-1121')
 FindCertificateStub.search_by_street_name_and_town('1 Makeup Street', 'Beauty Town')
+FindCertificateNoCertificatesStub.search_by_street_name_and_town('Madeup Street', 'Madeup Town')
 FetchAssessmentStub.fetch('1234-5678-9101-1121')
 
 ENV['EPB_AUTH_CLIENT_ID'] = 'test.id'

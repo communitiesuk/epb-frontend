@@ -57,7 +57,7 @@ describe('Journey::Certificate', () => {
     await click("Start now");
     await write('', into(textBox('postcode')));
     await click('Find');
-    await text('Enter a real postcode').exists()
+    await text('Enter a real postcode').exists();
   }, 30000);
 
   it('displays an error message when entering an invalid postcode', async () => {
@@ -65,7 +65,7 @@ describe('Journey::Certificate', () => {
     await click("Start now");
     await write('NOT A POSTCODE', into(textBox('postcode')));
     await click('Find');
-    await text('Enter a real postcode').exists()
+    await text('Enter a real postcode').exists();
   }, 30000);
 
 
@@ -74,7 +74,7 @@ describe('Journey::Certificate', () => {
     await click("Start now");
     await write('SW1A 2AA', into(textBox('postcode')));
     await click('Find');
-    await text('of 1 results matching').exists()
+    await text('of 1 results matching').exists();
   }, 30000);
 
 
@@ -84,7 +84,7 @@ describe('Journey::Certificate', () => {
     await click('certificate by reference');
     await write('', into(textBox({id: 'reference_number'})));
     await click('Find');
-    await text('Enter a valid reference number').exists()
+    await text('Enter a valid reference number').exists();
   }, 30000);
 
   it('displays the find a certificate page heading when entering a valid certificate reference number ', async () => {
@@ -103,7 +103,7 @@ describe('Journey::Certificate', () => {
     await click('Find certificate by street name');
     await write('Beauty Town', into(textBox({id: 'town'})));
     await click('Find');
-    await text('Enter a street name').exists()
+    await text('Enter a street name').exists();
   }, 30000);
 
   it('displays an error message when entering an empty town', async () => {
@@ -112,7 +112,7 @@ describe('Journey::Certificate', () => {
     await click('Find certificate by street name');
     await write('1 Makeup Street', into(textBox({id: 'street_name'})));
     await click('Find');
-    await text('Enter a town').exists()
+    await text('Enter a town').exists();
   }, 30000);
 
   it('displays an error message when entering an empty town and street name', async () => {
@@ -121,17 +121,29 @@ describe('Journey::Certificate', () => {
     await click('Find certificate by street name');
     await click('Find');
     await text('Enter a town').exists();
-    await text('Enter a street name').exists()
+    await text('Enter a street name').exists();
   }, 30000);
 
-  it('displays the find a certificate page heading when entering a valid ', async () => {
+  it('displays the find a certificate page heading when entering a valid query', async () => {
     await goto("localhost:9393/find-a-certificate");
     await click("Start now");
     await click('Find certificate by street name');
     await write('1 Makeup Street', into(textBox({id: 'street_name'})));
     await write('Beauty Town', into(textBox({id: 'town'})));
     await click('Find');
-    await text('of 3 results matching').exists()
+    await text('of 3 results matching').exists();
+  }, 30000);
+
+  it('displays the error message when searching for a certificate that doesnt exist', async () => {
+    await goto("localhost:9393/find-a-certificate");
+    await click("Start now");
+    await click('Find certificate by street name');
+    await write('Madeup Street', into(textBox({id: 'street_name'})));
+    await write('Madeup Town', into(textBox({id: 'town'})));
+    await click('Find');
+    await text('A certificate was not found at this address.').exists();
+    await click('Find an assessor');
+    await text('Getting a new Energy Performance Certificate (EPC)').exists();
   }, 30000);
 
   afterAll(async () => {
