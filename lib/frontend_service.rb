@@ -214,7 +214,15 @@ class FrontendService < Sinatra::Base
       rescue UseCase::FindCertificateByStreetNameAndTown::CertificateNotFound
         @erb_template = :find_certificate_by_street_name_and_town
         @errors[:generic] =
-          t('find_certificate_by_street_name_and_town.no_such_address')
+          t(
+            'find_certificate_by_street_name_and_town.no_such_address.body',
+            link:
+              '<a href="' + localised_url('/find-an-assessor') + '">' +
+                t(
+                  'find_certificate_by_street_name_and_town.no_such_address.cta'
+                ) +
+                '</a>'
+          )
       rescue Auth::Errors::NetworkConnectionFailed
         status 500
         @erb_template = :error_page_500

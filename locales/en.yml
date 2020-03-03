@@ -254,7 +254,9 @@ en:
     head:
       title: 'Energy performance of buildings register - Find an energy performance certificate'
     top_heading: 'Search for an EPC by street name and town'
-    no_such_address: 'A certificate was not found at this address'
+    no_such_address:
+      body: 'A certificate was not found at this address. If you need to get an EPC for your property, please use the %{link} service'
+      cta: 'Find an assessor'
     button_text: 'Find'
     street_name_question: 'Enter a street'
     street_name_hint: 'For example 14 Primrose Street'

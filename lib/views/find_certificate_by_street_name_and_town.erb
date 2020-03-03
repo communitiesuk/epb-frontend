@@ -42,9 +42,9 @@
           <span id="town-hint" class="govuk-hint">
             <%= t('find_certificate_by_street_name_and_town.town_hint') %>
           </span>
-          <% if errors[:town] || errors[:generic] %>
+          <% if errors[:town] %>
           <span id="town-error" class="govuk-error-message">
-            <span class="govuk-visually-hidden"><%= t('error.error') %></span><%== errors[:town] || errors[:generic] %>
+            <span class="govuk-visually-hidden"><%= t('error.error') %></span><%== errors[:town] %>
           </span>
           <% end %>
           <input id="town" name="town" type="text"
@@ -57,6 +57,12 @@
 
         <button class="govuk-button" data-module="govuk-button"><%= t('find_certificate_by_street_name_and_town.button_text') %></button>
       </fieldset>
+
+      <% if errors[:generic] %>
+          <span class="govuk-error-message">
+            <span class="govuk-visually-hidden"><%= t('error.error') %></span><%== errors[:generic] %>
+          </span>
+      <% end %>
     </form>
   </div>
 </div>
