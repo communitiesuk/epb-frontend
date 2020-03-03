@@ -59,11 +59,11 @@
       </fieldset>
 
       <% if errors[:generic] %>
-          <span class="govuk-error-message">
+          <span class="govuk-error-message govuk-!-margin-top-9">
             <span class="govuk-visually-hidden"><%= t('error.error') %></span><%== t(errors[:generic][:error]) %>
           </span>
           <p class="govuk-body">
-            <%== t(errors[:generic][:body], '<a href="' + localised_url(errors[:generic][:url]) + '">' +
+            <%== t(errors[:generic][:body], :link => '<a href="' + localised_url(errors[:generic][:url]) + '">' +
             t(errors[:generic][:cta]) +
             '</a>') %>
           </p>
