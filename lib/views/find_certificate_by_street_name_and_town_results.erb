@@ -16,24 +16,8 @@
       <h2 class="govuk-heading-m"><%= t('find_certificate_by_street_name_and_town_results.list', :length => results.length, :query => params['street_name'] + ', ' + params['town'] ) %></h2>
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
-      <table class="govuk-table">
-        <thead class="govuk-table__head">
-          <tr class="govuk-table__row">
-            <th scope="col" class="govuk-table__header"><%= t('find_certificate_by_street_name_and_town_results.table.address') %></th>
-            <th scope="col" class="govuk-table__header"><%= t('find_certificate_by_street_name_and_town_results.table.rating') %></th>
-            <th scope="col" class="govuk-table__header"><%= t('find_certificate_by_street_name_and_town_results.table.expiry') %></th>
-          </tr>
-        </thead>
-        <tbody class="govuk-table__body">
-          <% results.each do |result| %>
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header"><a href="/energy-performance-certificate/<%= result[:assessmentId] %>"><%= result[:addressSummary] %></a></th>
-              <td class="govuk-table__cell"><%= result[:currentEnergyEfficiencyBand].upcase %></td>
-              <td class="govuk-table__cell<%== (Date.parse(result[:dateOfExpiry]) < Date.today ? ' govuk-!-font-weight-bold" style="color: #d4351c;' : "") %>"><%= Date.parse(result[:dateOfExpiry]).strftime('%d/%m/%Y') %></td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
+      <%== erb :find_certificate_list_certificate, locals: {
+        certificate: results } %>
     <% else %>
       <p class="govuk-body">
         <%= t('find_certificate_by_street_name_and_town_results.no_certificates') %>
