@@ -199,10 +199,10 @@ en:
     button_text: 'Find'
     hint: 'For example SW1A 2AA'
     certificate_by_reference_number:
-      body: 'If you know the reference number a certificate and want to validate that, use the %{link} service.'
+      body: 'Use %{link} if you know your certificate number and want to validate it.'
       cta: 'Find certificate by reference number'
     certificate_by_street_name_and_town:
-      body: "If you don't know the postcode, use the %{link} service."
+      body: "Use  %{link} if you don't know your postcode."
       cta: 'Find certificate by street name and town'
     no_network:
       heading: 'Network connection failed'
