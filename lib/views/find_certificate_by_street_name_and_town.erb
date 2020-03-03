@@ -60,8 +60,13 @@
 
       <% if errors[:generic] %>
           <span class="govuk-error-message">
-            <span class="govuk-visually-hidden"><%= t('error.error') %></span><%== errors[:generic] %>
+            <span class="govuk-visually-hidden"><%= t('error.error') %></span><%== t(errors[:generic][:error]) %>
           </span>
+          <p class="govuk-body">
+            <%== t(errors[:generic][:body], '<a href="' + localised_url(errors[:generic][:url]) + '">' +
+            t(errors[:generic][:cta]) +
+            '</a>') %>
+          </p>
       <% end %>
     </form>
   </div>
