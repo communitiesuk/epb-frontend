@@ -13,7 +13,7 @@ module UseCase
     end
 
     def execute(street_name, town)
-      raise AllParamsMissing if  truly_empty(street_name) && truly_empty(town)
+      raise AllParamsMissing if truly_empty(street_name) && truly_empty(town)
       raise StreetNameMissing if truly_empty(street_name)
       raise TownMissing if truly_empty(town)
 
