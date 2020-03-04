@@ -3,7 +3,7 @@
 describe UseCase::FindAssessorByPostcode do
   it 'returns an error when the postcode doesnt exist' do
     find_assessors_without_existing_postcode =
-      described_class.new(AssessorsGatewayUnregisteredPostcodeStub.new)
+      described_class.new(AssessorsGateway::UnregisteredPostcodeStub.new)
 
     expect {
       find_assessors_without_existing_postcode.execute('E10 3AD')
@@ -12,7 +12,7 @@ describe UseCase::FindAssessorByPostcode do
 
   it 'returns an error when the postcode is not valid' do
     find_assessor_without_valid_postcode =
-      described_class.new(AssessorsGatewayInvalidPostcodesStub.new)
+      described_class.new(AssessorsGateway::InvalidPostcodesStub.new)
 
     expect {
       find_assessor_without_valid_postcode.execute('E19 0GL')
@@ -20,7 +20,7 @@ describe UseCase::FindAssessorByPostcode do
   end
 
   context 'when there are no assessors matched by the postcode' do
-    let(:assessors_gateway) { AssessorsGatewayEmptyStub.new }
+    let(:assessors_gateway) { AssessorsGateway::EmptyStub.new }
     let(:find_assessor) { described_class.new(assessors_gateway) }
 
     it 'returns empty array' do
@@ -58,7 +58,7 @@ describe UseCase::FindAssessorByPostcode do
       ]
     end
 
-    let(:assessors_gateway) { AssessorsGatewayStub.new }
+    let(:assessors_gateway) { AssessorsGateway::Stub.new }
     let(:find_assessor) { described_class.new(assessors_gateway) }
 
     it 'returns list of assessors' do

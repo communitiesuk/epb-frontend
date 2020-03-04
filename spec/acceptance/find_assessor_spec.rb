@@ -72,7 +72,7 @@ describe 'Acceptance::Assessor' do
 
     context 'when entering a valid postcode' do
       context 'shows page' do
-        before { FindAssessorByPostcodeStub.search_by_postcode('SW1A 2AA') }
+        before { FindAssessor::ByPostcode::Stub.search_by_postcode('SW1A 2AA') }
 
         let(:response) do
           get '/find-an-assessor/search-by-postcode?postcode=SW1A+2AA'
@@ -121,7 +121,7 @@ describe 'Acceptance::Assessor' do
 
       context 'where no assessors are near' do
         before do
-          FindAssessorByPostcodeNoNearAssessorsStub.search_by_postcode('E1 4FF')
+          FindAssessor::ByPostcode::NoNearAssessorsStub.search_by_postcode('E1 4FF')
         end
 
         let(:response) do
@@ -145,7 +145,7 @@ describe 'Acceptance::Assessor' do
 
       context 'where the postcode doesnt exist' do
         before do
-          FindAssessorByPostcodeUnregisteredPostcodeStub.search_by_postcode(
+          FindAssessor::ByPostcode::UnregisteredPostcodeStub.search_by_postcode(
             'B11 4FF'
           )
         end
@@ -172,7 +172,7 @@ describe 'Acceptance::Assessor' do
 
       context 'where the requested postcode is malformed' do
         before do
-          FindAssessorByPostcodeInvalidPostcodeStub.search_by_postcode(
+          FindAssessor::ByPostcode::InvalidPostcodeStub.search_by_postcode(
             'C11 4FF'
           )
         end
@@ -201,7 +201,7 @@ describe 'Acceptance::Assessor' do
 
       context 'when there is no connection' do
         before do
-          FindAssessorByPostcodeNoNetworkStub.search_by_postcode('D11 4FF')
+          FindAssessor::ByPostcode::NoNetworkStub.search_by_postcode('D11 4FF')
         end
 
         let(:response) do
@@ -271,7 +271,7 @@ describe 'Acceptance::Assessor' do
 
     context 'when entering a name' do
       context 'which has exact matches' do
-        before { FindAssessorByNameStub.search_by_name('Ronald McDonald') }
+        before { FindAssessor::ByName::Stub.search_by_name('Ronald McDonald') }
 
         let(:response) do
           get '/find-an-assessor/search-by-name?name=Ronald%20McDonald'
@@ -322,7 +322,7 @@ describe 'Acceptance::Assessor' do
 
       context 'which has similar matches' do
         before do
-          FindAssessorByNameStub.search_by_name('Ronald McDonald', true)
+          FindAssessor::ByName::Stub.search_by_name('Ronald McDonald', true)
         end
 
         let(:response) do
@@ -336,7 +336,7 @@ describe 'Acceptance::Assessor' do
 
       context 'where no assessors have that name' do
         before do
-          FindAssessorByNameNoAssessorsStub.search_by_name('Nonexistent Person')
+          FindAssessor::ByName::NoAssessorsStub.search_by_name('Nonexistent Person')
         end
 
         let(:response) do
@@ -360,7 +360,7 @@ describe 'Acceptance::Assessor' do
 
       context 'when there is no connection' do
         before do
-          FindAssessorByNameNoNetworkStub.search_by_name('Breaking Person')
+          FindAssessor::ByName::NoNetworkStub.search_by_name('Breaking Person')
         end
 
         let(:response) do

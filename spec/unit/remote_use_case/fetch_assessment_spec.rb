@@ -8,7 +8,7 @@ describe RemoteUseCase::FetchAssessment do
   end
 
   context 'when an assessment doesnt exist' do
-    before { FetchAssessmentNoAssessmentStub.fetch }
+    before { FetchAssessment::NoAssessmentStub.fetch }
 
     it 'raises an AssessmentNotFound error' do
       expect { fetch_assessment.execute('123-456') }.to raise_error(
@@ -18,7 +18,7 @@ describe RemoteUseCase::FetchAssessment do
   end
 
   context 'when an assessment does exist' do
-    before { FetchAssessmentStub.fetch('223-456') }
+    before { FetchAssessment::Stub.fetch('223-456') }
     it 'returns assessments' do
       result = fetch_assessment.execute('223-456')
       expect(result).to eq(

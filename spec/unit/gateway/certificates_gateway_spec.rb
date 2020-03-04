@@ -11,7 +11,7 @@ describe Gateway::CertificatesGateway do
     let(:response) { gateway.search_by_postcode('SW1A+2AA') }
 
     let(:certificate) { response[:results].first }
-    before { FindCertificateStub.search_by_postcode('SW1A+2AA') }
+    before { FindCertificate::Stub.search_by_postcode('SW1A+2AA') }
 
     it 'checks the number of certificates returned from the api' do
       expect(response[:results].count).to eq(3)
@@ -39,7 +39,7 @@ describe Gateway::CertificatesGateway do
   context 'when a certificate doesnt exist' do
     let(:response) { gateway.search_by_postcode('BF1 3AA') }
 
-    before { FindCertificateNoCertificatesStub.search_by_postcode }
+    before { FindCertificate::NoCertificatesStub.search_by_postcode }
 
     it 'returns empty results' do
       expect(response).to eq(results: [], searchPostcode: 'BF1 3AA')
@@ -49,7 +49,7 @@ describe Gateway::CertificatesGateway do
   context 'when the postcode is not valid' do
     let(:response) { gateway.search_by_postcode('1+3AA') }
 
-    before { FindCertificateInvalidPostcodeStub.search_by_postcode('1+3AA') }
+    before { FindCertificate::InvalidPostcodeStub.search_by_postcode('1+3AA') }
 
     it 'returns invalid request error' do
       expect(response).to eq(

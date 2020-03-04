@@ -1,28 +1,25 @@
 # frozen_string_literal: true
 
 require 'net/http'
-require 'webmock'
 require 'zeitwerk'
+require 'webmock'
 
 loader = Zeitwerk::Loader.new
 loader.push_dir("#{__dir__}/lib/")
+loader.push_dir("#{__dir__}/spec/test_doubles/")
 loader.setup
-
-Dir['spec/test_doubles/**/*.rb'].each do |file|
-  require_relative file
-end
 
 WebMock.enable!
 
 OauthStub.token
-FindAssessorByPostcodeStub.search_by_postcode('SW1A 2AA')
-FindAssessorByNameStub.search_by_name('Supercommon Name')
-FindAssessorByNameStub.search_by_name('Somewhatcommon Name', true)
-FindCertificateStub.search_by_postcode('SW1A 2AA')
-FindCertificateStub.search_by_id('1234-5678-9101-1121')
-FindCertificateStub.search_by_street_name_and_town('1 Makeup Street', 'Beauty Town')
-FindCertificateNoCertificatesStub.search_by_street_name_and_town('Madeup Street', 'Madeup Town')
-FetchAssessmentStub.fetch('1234-5678-9101-1121')
+FindAssessor::ByPostcode::Stub.search_by_postcode('SW1A 2AA')
+FindAssessor::ByName::Stub.search_by_name('Supercommon Name')
+FindAssessor::ByName::Stub.search_by_name('Somewhatcommon Name', true)
+FindCertificate::Stub.search_by_postcode('SW1A 2AA')
+FindCertificate::Stub.search_by_id('1234-5678-9101-1121')
+FindCertificate::Stub.search_by_street_name_and_town('1 Makeup Street', 'Beauty Town')
+FindCertificate::NoCertificatesStub.search_by_street_name_and_town('Madeup Street', 'Madeup Town')
+FetchAssessment::Stub.fetch('1234-5678-9101-1121')
 
 ENV['EPB_AUTH_CLIENT_ID'] = 'test.id'
 ENV['EPB_AUTH_CLIENT_SECRET'] = 'test.client.secret'

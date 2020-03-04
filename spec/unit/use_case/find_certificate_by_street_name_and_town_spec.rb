@@ -2,7 +2,7 @@
 
 describe UseCase::FindCertificateByStreetNameAndTown do
   context 'when there missing parameters' do
-    let(:certificates_gateway) { CertificatesGatewayEmptyStub.new }
+    let(:certificates_gateway) { CertificatesGateway::EmptyStub.new }
     let(:find_certificate) { described_class.new(certificates_gateway) }
 
     it 'raises an error when both are missing' do
@@ -23,7 +23,7 @@ describe UseCase::FindCertificateByStreetNameAndTown do
   end
 
   context 'when there are no certificates by that street name and town' do
-    let(:certificates_gateway) { CertificatesGatewayEmptyStub.new }
+    let(:certificates_gateway) { CertificatesGateway::EmptyStub.new }
     let(:find_certificate) { described_class.new(certificates_gateway) }
 
     it 'returns empty array' do
@@ -90,7 +90,7 @@ describe UseCase::FindCertificateByStreetNameAndTown do
       ]
     end
 
-    let(:certificates_gateway) { CertificatesGatewayStub.new }
+    let(:certificates_gateway) { CertificatesGateway::Stub.new }
     let(:find_certificate) { described_class.new(certificates_gateway) }
 
     it 'returns list of certificates' do

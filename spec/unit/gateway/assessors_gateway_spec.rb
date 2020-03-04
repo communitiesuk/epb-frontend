@@ -12,7 +12,7 @@ describe Gateway::AssessorsGateway do
       let(:response) { gateway.search_by_postcode('SW1A+2AA') }
 
       let(:assessor) { response[:results].first[:assessor] }
-      before { FindAssessorByPostcodeStub.search_by_postcode('SW1A+2AA') }
+      before { FindAssessor::ByPostcode::Stub.search_by_postcode('SW1A+2AA') }
 
       it 'checks the number of assessors returned from the api' do
         expect(response[:results].count).to eq(3)
@@ -54,7 +54,7 @@ describe Gateway::AssessorsGateway do
     context 'when an assessor doesnt exist' do
       let(:response) { gateway.search_by_postcode('BF1+3AA') }
 
-      before { FindAssessorByPostcodeNoAssessorsStub.search_by_postcode }
+      before { FindAssessor::ByPostcode::NoAssessorsStub.search_by_postcode }
 
       it 'returns empty results' do
         expect(response).to eq(results: [], searchPostcode: 'BF1 3AA')
@@ -65,7 +65,7 @@ describe Gateway::AssessorsGateway do
       let(:response) { gateway.search_by_postcode('AF1+3AA') }
 
       before do
-        FindAssessorByPostcodeUnregisteredPostcodeStub.search_by_postcode(
+        FindAssessor::ByPostcode::UnregisteredPostcodeStub.search_by_postcode(
           'AF1+3AA'
         )
       end
@@ -86,7 +86,7 @@ describe Gateway::AssessorsGateway do
       let(:response) { gateway.search_by_postcode('1+3AA') }
 
       before do
-        FindAssessorByPostcodeInvalidPostcodeStub.search_by_postcode('1+3AA')
+        FindAssessor::ByPostcode::InvalidPostcodeStub.search_by_postcode('1+3AA')
       end
 
       it 'returns invalid request error' do
@@ -104,7 +104,7 @@ describe Gateway::AssessorsGateway do
     context 'when there is no scheme' do
       let(:response) { gateway.search_by_postcode('1+3AA') }
 
-      before { FindAssessorByPostcodeNoSchemeStub.search_by_postcode('1+3AA') }
+      before { FindAssessor::ByPostcode::NoSchemeStub.search_by_postcode('1+3AA') }
 
       it 'returns scheme not found error' do
         expect(response).to eq(
@@ -124,7 +124,7 @@ describe Gateway::AssessorsGateway do
       let(:response) { gateway.search_by_name('Some Name') }
 
       let(:assessor) { response[:results].first }
-      before { FindAssessorByNameStub.search_by_name('Some Name') }
+      before { FindAssessor::ByName::Stub.search_by_name('Some Name') }
 
       it 'checks the number of assessors returned from the api' do
         expect(response[:results].count).to eq(3)
@@ -160,7 +160,7 @@ describe Gateway::AssessorsGateway do
       let(:response) { gateway.search_by_name('Some Nonexistent-name') }
 
       before do
-        FindAssessorByNameNoAssessorsStub.search_by_name(
+        FindAssessor::ByName::NoAssessorsStub.search_by_name(
           'Some Nonexistent-name'
         )
       end

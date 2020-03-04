@@ -12,7 +12,7 @@ describe 'Acceptance::Postcodes' do
       let(:response) { find_assessor.execute('SW1A+2AA') }
       let(:assessor) { response.first[:assessor] }
 
-      before { FindAssessorByPostcodeStub.search_by_postcode('SW1A+2AA') }
+      before { FindAssessor::ByPostcode::Stub.search_by_postcode('SW1A+2AA') }
 
       it 'returns the number of assessors returned from the api' do
         expect(response.count).to eq(3)
@@ -50,7 +50,7 @@ describe 'Acceptance::Postcodes' do
 
     context 'where no assessors are near' do
       before do
-        FindAssessorByPostcodeNoNearAssessorsStub.search_by_postcode('BF1+3AA')
+        FindAssessor::ByPostcode::NoNearAssessorsStub.search_by_postcode('BF1+3AA')
       end
 
       it 'returns empty results' do
@@ -60,7 +60,7 @@ describe 'Acceptance::Postcodes' do
 
     context 'where the postcode doesnt exist' do
       before do
-        FindAssessorByPostcodeUnregisteredPostcodeStub.search_by_postcode(
+        FindAssessor::ByPostcode::UnregisteredPostcodeStub.search_by_postcode(
           'B11+4AA'
         )
       end
@@ -74,7 +74,7 @@ describe 'Acceptance::Postcodes' do
 
     context 'where the requested postcode is malformed' do
       before do
-        FindAssessorByPostcodeInvalidPostcodeStub.search_by_postcode('C11+3FF')
+        FindAssessor::ByPostcode::InvalidPostcodeStub.search_by_postcode('C11+3FF')
       end
 
       it 'raises postcode not valid exception' do

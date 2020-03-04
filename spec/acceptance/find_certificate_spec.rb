@@ -55,7 +55,7 @@ describe 'Acceptance::Certificate' do
 
     context 'when entering an valid postcode' do
       context 'shows page' do
-        before { FindCertificateStub.search_by_postcode('SW1A 2AA') }
+        before { FindCertificate::Stub.search_by_postcode('SW1A 2AA') }
 
         let(:response) do
           get '/find-a-certificate/search-by-postcode?postcode=SW1A+2AA'
@@ -96,7 +96,7 @@ describe 'Acceptance::Certificate' do
 
       context 'where no certificates are present' do
         before do
-          FindCertificateNoCertificatesStub.search_by_postcode('E1 4FF')
+          FindCertificate::NoCertificatesStub.search_by_postcode('E1 4FF')
         end
 
         let(:response) do
@@ -121,7 +121,7 @@ describe 'Acceptance::Certificate' do
       end
 
       context 'when there is no connection' do
-        before { FindCertificateNoNetworkStub.search_by_postcode('D11 4FF') }
+        before { FindCertificate::NoNetworkStub.search_by_postcode('D11 4FF') }
 
         let(:response) do
           get '/find-a-certificate/search-by-postcode?postcode=D11+4FF'
@@ -198,7 +198,7 @@ describe 'Acceptance::Certificate' do
 
     context 'when entering a valid reference number' do
       context 'shows page' do
-        before { FindCertificateStub.search_by_id('1234-5678-9101-1121-3141') }
+        before { FindCertificate::Stub.search_by_id('1234-5678-9101-1121-3141') }
 
         let(:response) do
           get '/find-a-certificate/search-by-reference-number?reference_number=1234-5678-9101-1121-3141'
@@ -238,7 +238,7 @@ describe 'Acceptance::Certificate' do
       end
 
       context 'shows page' do
-        before { FindCertificateStub.search_by_id('1234-5678-9101-1121-3141') }
+        before { FindCertificate::Stub.search_by_id('1234-5678-9101-1121-3141') }
 
         let(:response) do
           get '/find-a-certificate/search-by-reference-number?reference_number=12345678910111213141'
@@ -279,7 +279,7 @@ describe 'Acceptance::Certificate' do
 
       context 'where no certificates are present' do
         before do
-          FindCertificateNoCertificatesStub.search_by_id('1234-5678-9101-1120')
+          FindCertificate::NoCertificatesStub.search_by_id('1234-5678-9101-1120')
         end
 
         let(:response) do
@@ -305,7 +305,7 @@ describe 'Acceptance::Certificate' do
 
       context 'when there is no connection' do
         before do
-          FindCertificateNoNetworkStub.search_by_id('1234-5678-9101-1122')
+          FindCertificate::NoNetworkStub.search_by_id('1234-5678-9101-1122')
         end
 
         let(:response) do
@@ -434,7 +434,7 @@ describe 'Acceptance::Certificate' do
     context 'when entering a street name and town' do
       context 'shows page' do
         before do
-          FindCertificateStub.search_by_street_name_and_town(
+          FindCertificate::Stub.search_by_street_name_and_town(
             '1 Makeup Street',
             'Beauty Town'
           )
@@ -479,7 +479,7 @@ describe 'Acceptance::Certificate' do
 
       context 'where no certificates are present' do
         before do
-          FindCertificateNoCertificatesStub.search_by_street_name_and_town(
+          FindCertificate::NoCertificatesStub.search_by_street_name_and_town(
             '3 Alien Street',
             'Mars'
           )
@@ -508,7 +508,7 @@ describe 'Acceptance::Certificate' do
 
       context 'when there is no connection' do
         before do
-          FindCertificateNoNetworkStub.search_by_street_name_and_town(
+          FindCertificate::NoNetworkStub.search_by_street_name_and_town(
             'Doesnt Matter',
             'Nothing'
           )

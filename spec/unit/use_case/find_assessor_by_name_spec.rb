@@ -2,7 +2,7 @@
 
 describe UseCase::FindAssessorByName do
   context 'when there are no assessors for that name' do
-    let(:assessors_gateway) { AssessorsGatewayEmptyStub.new }
+    let(:assessors_gateway) { AssessorsGateway::EmptyStub.new }
     let(:find_assessor) { described_class.new(assessors_gateway) }
 
     it 'returns empty array' do
@@ -40,7 +40,7 @@ describe UseCase::FindAssessorByName do
       ]
     end
 
-    let(:assessors_gateway) { AssessorsGatewayStub.new }
+    let(:assessors_gateway) { AssessorsGateway::Stub.new }
     let(:find_assessor) { described_class.new(assessors_gateway) }
 
     it 'returns list of assessors' do

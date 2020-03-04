@@ -2,7 +2,7 @@
 
 describe UseCase::FindCertificateByPostcode do
   context 'when there are no certificates at the postcode' do
-    let(:certificates_gateway) { CertificatesGatewayEmptyStub.new }
+    let(:certificates_gateway) { CertificatesGateway::EmptyStub.new }
     let(:find_certificate) { described_class.new(certificates_gateway) }
 
     it 'returns empty array' do
@@ -61,7 +61,7 @@ describe UseCase::FindCertificateByPostcode do
       ]
     end
 
-    let(:certificates_gateway) { CertificatesGatewayStub.new }
+    let(:certificates_gateway) { CertificatesGateway::Stub.new }
     let(:find_certificate_by_postcode) do
       described_class.new(certificates_gateway)
     end
