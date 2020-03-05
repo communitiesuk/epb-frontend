@@ -50,7 +50,9 @@ describe 'Acceptance::Postcodes' do
 
     context 'where no assessors are near' do
       before do
-        FindAssessor::ByPostcode::NoNearAssessorsStub.search_by_postcode('BF1+3AA')
+        FindAssessor::ByPostcode::NoNearAssessorsStub.search_by_postcode(
+          'BF1+3AA'
+        )
       end
 
       it 'returns empty results' do
@@ -68,19 +70,21 @@ describe 'Acceptance::Postcodes' do
       it 'raises postcode not registered exception' do
         expect {
           find_assessor.execute('B11+4AA')
-        }.to raise_exception UseCase::FindAssessorByPostcode::PostcodeNotRegistered
+        }.to raise_exception Errors::PostcodeNotRegistered
       end
     end
 
     context 'where the requested postcode is malformed' do
       before do
-        FindAssessor::ByPostcode::InvalidPostcodeStub.search_by_postcode('C11+3FF')
+        FindAssessor::ByPostcode::InvalidPostcodeStub.search_by_postcode(
+          'C11+3FF'
+        )
       end
 
       it 'raises postcode not valid exception' do
         expect {
           find_assessor.execute('C11+3FF')
-        }.to raise_exception UseCase::FindAssessorByPostcode::PostcodeNotValid
+        }.to raise_exception Errors::PostcodeNotValid
       end
     end
   end

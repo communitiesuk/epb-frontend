@@ -52,11 +52,11 @@ class FrontendService < Sinatra::Base
         begin
           @results = response.execute(params['postcode'])
           @erb_template = :find_assessor_by_postcode_results
-        rescue UseCase::FindAssessorByPostcode::PostcodeNotRegistered
+        rescue Errors::PostcodeNotRegistered
           status 404
           @errors[:postcode] =
             t('find_assessor_by_postcode.postcode_not_registered')
-        rescue UseCase::FindAssessorByPostcode::PostcodeNotValid
+        rescue Errors::PostcodeNotValid
           status 400
           @errors[:postcode] = t('find_assessor_by_postcode.postcode_not_valid')
         rescue Auth::Errors::NetworkConnectionFailed
@@ -85,7 +85,7 @@ class FrontendService < Sinatra::Base
       begin
         @erb_template = :find_assessor_by_name_results
         response = response.execute(params['name'])
-      rescue UseCase::FindAssessorByName::InvalidName
+      rescue Errors::InvalidName
         status 400
         @erb_template = :find_assessor_by_name
         @errors[:name] = t('find_assessor_by_name.name_error')
@@ -128,7 +128,7 @@ class FrontendService < Sinatra::Base
           @container.get_object(:find_certificate_by_postcode_use_case).execute(
             params['postcode']
           )
-      rescue UseCase::FindCertificateByPostcode::PostcodeNotValid
+      rescue Errors::PostcodeNotValid
         status 400
         @erb_template = :find_certificate_by_postcode
         @errors[:postcode] =
@@ -157,12 +157,12 @@ class FrontendService < Sinatra::Base
           @container.get_object(:find_certificate_by_id_use_case).execute(
             params['reference_number']
           )
-      rescue UseCase::FindCertificateById::ReferenceNumberNotValid
+      rescue Errors::ReferenceNumberNotValid
         status 400
         @erb_template = :find_certificate_by_reference_number
         @errors[:reference_number] =
           t('find_certificate_by_reference_number.reference_number_not_valid')
-      rescue UseCase::FindCertificateById::CertificateNotFound
+      rescue Errors::CertificateNotFound
         @erb_template = :find_certificate_by_reference_number
         @errors[:reference_number] =
           t(
@@ -194,27 +194,28 @@ class FrontendService < Sinatra::Base
             :find_certificate_by_street_name_and_town_use_case
           )
             .execute(params['street_name'], params['town'])
-      rescue UseCase::FindCertificateByStreetNameAndTown::AllParamsMissing
+      rescue Errors::AllParamsMissing
         status 400
         @erb_template = :find_certificate_by_street_name_and_town
         @errors[:street_name] =
           t('find_certificate_by_street_name_and_town.street_name_missing')
         @errors[:town] =
           t('find_certificate_by_street_name_and_town.town_missing')
-      rescue UseCase::FindCertificateByStreetNameAndTown::StreetNameMissing
+      rescue Errors::StreetNameMissing
         status 400
         @erb_template = :find_certificate_by_street_name_and_town
         @errors[:street_name] =
           t('find_certificate_by_street_name_and_town.street_name_missing')
-      rescue UseCase::FindCertificateByStreetNameAndTown::TownMissing
+      rescue Errors::TownMissing
         status 400
         @erb_template = :find_certificate_by_street_name_and_town
         @errors[:town] =
           t('find_certificate_by_street_name_and_town.town_missing')
-      rescue UseCase::FindCertificateByStreetNameAndTown::CertificateNotFound
+      rescue Errors::CertificateNotFound
         @erb_template = :find_certificate_by_street_name_and_town
         @errors[:generic] = {
-          error: 'find_certificate_by_street_name_and_town.no_such_address.error',
+          error:
+            'find_certificate_by_street_name_and_town.no_such_address.error',
           body: 'find_certificate_by_street_name_and_town.no_such_address.body',
           cta: 'find_certificate_by_street_name_and_town.no_such_address.cta',
           url: '/find-an-assessor'

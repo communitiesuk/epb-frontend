@@ -2,18 +2,16 @@
 
 module UseCase
   class FindAssessorByPostcode < UseCase::Base
-    class PostcodeNotRegistered < RuntimeError; end
-    class PostcodeNotValid < RuntimeError; end
-    class AuthTokenMissing < RuntimeError; end
-
     def execute(postcode)
       response = @gateway.search_by_postcode(postcode)
 
       if response.include?(:errors)
         response[:errors].each do |error|
-          raise PostcodeNotRegistered if error[:code] == 'NOT_FOUND'
-          raise PostcodeNotValid if error[:code] == 'INVALID_REQUEST'
-          raise AuthTokenMissing if error[:code] == 'Auth::Errors::TokenMissing'
+          raise Errors::PostcodeNotRegistered if error[:code] == 'NOT_FOUND'
+          raise Errors::PostcodeNotValid if error[:code] == 'INVALID_REQUEST'
+          if error[:code] == 'Auth::Errors::TokenMissing'
+            raise Errors::AuthTokenMissing
+          end
         end
       end
 

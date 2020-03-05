@@ -2,12 +2,8 @@
 
 module UseCase
   class FindCertificateById < UseCase::Base
-    class ReferenceNumberNotValid < RuntimeError; end
-    class AuthTokenMissing < RuntimeError; end
-    class CertificateNotFound < RuntimeError; end
-
     def execute(reference_id)
-      raise ReferenceNumberNotValid if reference_id == ''
+      raise Errors::ReferenceNumberNotValid if reference_id == ''
 
       if reference_id.length == 20 && reference_id.scan(/\D/).empty?
         reference_id = reference_id.scan(/.{4}|.+/).join('-')
@@ -17,12 +13,16 @@ module UseCase
 
       if gateway_response.include?(:errors)
         gateway_response[:errors].each do |error|
-          raise ReferenceNumberNotValid if error[:code] == 'INVALID_REQUEST'
-          raise AuthTokenMissing if error[:code] == 'Auth::Errors::TokenMissing'
+          if error[:code] == 'INVALID_REQUEST'
+            raise Errors::ReferenceNumberNotValid
+          end
+          if error[:code] == 'Auth::Errors::TokenMissing'
+            raise Errors::AuthTokenMissing
+          end
         end
       end
 
-      raise CertificateNotFound if gateway_response[:results].size == 0
+      raise Errors::CertificateNotFound if gateway_response[:results].size == 0
 
       gateway_response[:results]
     end

@@ -7,7 +7,7 @@ describe UseCase::FindCertificateById do
 
     it 'returns empty array' do
       expect { find_certificate.execute('1234-5678-9101-1121') }.to raise_error(
-        described_class::CertificateNotFound
+        Errors::CertificateNotFound
       )
     end
   end

@@ -2,15 +2,18 @@
 
 module UseCase
   class FindAssessorByName < UseCase::Base
-    class InvalidName < StandardError; end
-
     def execute(name)
-      raise InvalidName if name == ''
+      raise Errors::InvalidName if name == ''
 
       response = @gateway.search_by_name(name)
 
-      response[:errors].each { |error| } if response.include?(:errors)
-
+      if response.include?(:errors)
+        response[:errors].each do |error|
+          if error[:code] == 'Auth::Errors::TokenMissing'
+            raise Errors::AuthTokenMissing
+          end
+        end
+      end
       response
     end
   end
