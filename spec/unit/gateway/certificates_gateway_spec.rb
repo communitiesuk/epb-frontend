@@ -45,21 +45,4 @@ describe Gateway::CertificatesGateway do
       expect(response).to eq(results: [], searchPostcode: 'BF1 3AA')
     end
   end
-
-  context 'when the postcode is not valid' do
-    let(:response) { gateway.search_by_postcode('1+3AA') }
-
-    before { FindCertificate::InvalidPostcodeStub.search_by_postcode('1+3AA') }
-
-    it 'returns invalid request error' do
-      expect(response).to eq(
-        "errors": [
-          {
-            "code": 'INVALID_REQUEST',
-            "title": 'The requested postcode is not valid'
-          }
-        ]
-      )
-    end
-  end
 end
