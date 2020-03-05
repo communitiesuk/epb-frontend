@@ -37,6 +37,10 @@
       <%= t('find_an_assessor.introduction.england_wales_northern_ireland') %>
     </p>
 
+    <div class="govuk-inset-text">
+      <%== t('find_an_assessor.before_you_start.switch_language.description', :link => '<a href="' + t('find_an_assessor.before_you_start.switch_language.url') + '">' + t('find_an_assessor.before_you_start.switch_language.link') + '</a>' ) %>
+    </div>
+
     <a
       href="<%= localised_url('/find-an-assessor/search-by-postcode') %>"
       role="button"
@@ -59,10 +63,6 @@
     <h2 class="govuk-heading-m">
       <%= t('find_an_assessor.before_you_start.heading') %>
     </h2>
-
-    <div class="govuk-inset-text">
-      <%== t('find_an_assessor.before_you_start.switch_language.description', :link => '<a href="' + t('find_an_assessor.before_you_start.switch_language.url') + '">' + t('find_an_assessor.before_you_start.switch_language.link') + '</a>' ) %>
-    </div>
 
     <p class="govuk-body">
       <%== t('find_an_assessor.before_you_start.phone_text', :link => '<a href="tel:' + t('find_an_assessor.before_you_start.phone_number') + '">' + t('find_an_assessor.before_you_start.phone_number') + '</a>' ) %>

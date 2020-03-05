@@ -29,6 +29,10 @@
       </div>
     </details>
 
+    <div class="govuk-inset-text">
+      <%== t('find_a_certificate.before_you_start.switch_language.description', :link => '<a href="' + t('find_a_certificate.before_you_start.switch_language.url') + '">' + t('find_a_certificate.before_you_start.switch_language.link') + '</a>' ) %>
+    </div>
+
     <a
       href="<%= localised_url('/find-a-certificate/search-by-postcode') %>"
       role="button"
@@ -51,10 +55,6 @@
     <h2 class="govuk-heading-m">
       <%= t('find_a_certificate.before_you_start.title') %>
     </h2>
-
-    <div class="govuk-inset-text">
-      <%== t('find_a_certificate.before_you_start.switch_language.description', :link => '<a href="' + t('find_a_certificate.before_you_start.switch_language.url') + '">' + t('find_a_certificate.before_you_start.switch_language.link') + '</a>' ) %>
-    </div>
 
     <p class="govuk-body">
       <%= t('find_a_certificate.before_you_start.call_center') %>

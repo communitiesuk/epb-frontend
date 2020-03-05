@@ -52,8 +52,8 @@ en:
     before_you_start:
       heading: 'Other ways to find an assessor'
       switch_language:
-        description: 'Mae’r dudalen yma ar gael yn %{link}.'
-        link: 'Gymraeg'
+        description: 'This service is also available in %{link}.'
+        link: 'Welsh (Cymraeg)'
         url: '/find-an-assessor?lang=cy'
       phone_text: 'If you need additional support to find an assessor, call our helpdesk on %{link}.'
       phone_number: '0233 788 1234'
@@ -178,8 +178,8 @@ en:
     before_you_start:
       title: 'Before you start'
       switch_language:
-        description: 'Mae’r dudalen yma ar gael yn %{link}.'
-        link: 'Gymraeg'
+        description: 'This service is also available in %{link}.'
+        link: 'Welsh (Cymraeg)'
         url: '/find-a-certificate?lang=cy'
       scotland:
         text: 'If your property is in Scotland, you should use the %{link}.'
