@@ -7,13 +7,8 @@ module UseCase
 
       response = @gateway.search_by_name(name)
 
-      if response.include?(:errors)
-        response[:errors].each do |error|
-          if error[:code] == 'Auth::Errors::TokenMissing'
-            raise Errors::AuthTokenMissing
-          end
-        end
-      end
+      raise_errors_if_exists(response)
+
       response
     end
   end

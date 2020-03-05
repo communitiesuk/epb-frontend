@@ -13,13 +13,7 @@ module UseCase
 
       gateway_response = @gateway.search_by_postcode(query)
 
-      if gateway_response.include?(:errors)
-        gateway_response[:errors].each do |error|
-          if error[:code] == 'Auth::Errors::TokenMissing'
-            raise Errors::AuthTokenMissing
-          end
-        end
-      end
+      raise_errors_if_exists(gateway_response)
 
       gateway_response[:results]
     end

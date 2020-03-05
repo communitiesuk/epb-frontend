@@ -11,15 +11,8 @@ module UseCase
 
       gateway_response = @gateway.search_by_id(reference_id)
 
-      if gateway_response.include?(:errors)
-        gateway_response[:errors].each do |error|
-          if error[:code] == 'INVALID_REQUEST'
-            raise Errors::ReferenceNumberNotValid
-          end
-          if error[:code] == 'Auth::Errors::TokenMissing'
-            raise Errors::AuthTokenMissing
-          end
-        end
+      raise_errors_if_exists(gateway_response) do |error_code|
+        raise Errors::ReferenceNumberNotValid if error_code == 'INVALID_REQUEST'
       end
 
       raise Errors::CertificateNotFound if gateway_response[:results].size == 0

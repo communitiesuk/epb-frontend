@@ -5,14 +5,9 @@ module UseCase
     def execute(postcode)
       response = @gateway.search_by_postcode(postcode)
 
-      if response.include?(:errors)
-        response[:errors].each do |error|
-          raise Errors::PostcodeNotRegistered if error[:code] == 'NOT_FOUND'
-          raise Errors::PostcodeNotValid if error[:code] == 'INVALID_REQUEST'
-          if error[:code] == 'Auth::Errors::TokenMissing'
-            raise Errors::AuthTokenMissing
-          end
-        end
+      raise_errors_if_exists(response) do |error_code|
+        raise Errors::PostcodeNotRegistered if error_code == 'NOT_FOUND'
+        raise Errors::PostcodeNotValid if error_code == 'INVALID_REQUEST'
       end
 
       response[:results]
