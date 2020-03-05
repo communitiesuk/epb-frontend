@@ -86,7 +86,9 @@ describe Gateway::AssessorsGateway do
       let(:response) { gateway.search_by_postcode('1+3AA') }
 
       before do
-        FindAssessor::ByPostcode::InvalidPostcodeStub.search_by_postcode('1+3AA')
+        FindAssessor::ByPostcode::InvalidPostcodeStub.search_by_postcode(
+          '1+3AA'
+        )
       end
 
       it 'returns invalid request error' do
@@ -104,7 +106,9 @@ describe Gateway::AssessorsGateway do
     context 'when there is no scheme' do
       let(:response) { gateway.search_by_postcode('1+3AA') }
 
-      before { FindAssessor::ByPostcode::NoSchemeStub.search_by_postcode('1+3AA') }
+      before do
+        FindAssessor::ByPostcode::NoSchemeStub.search_by_postcode('1+3AA')
+      end
 
       it 'returns scheme not found error' do
         expect(response).to eq(

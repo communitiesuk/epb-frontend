@@ -198,7 +198,9 @@ describe 'Acceptance::Certificate' do
 
     context 'when entering a valid reference number' do
       context 'shows page' do
-        before { FindCertificate::Stub.search_by_id('1234-5678-9101-1121-3141') }
+        before do
+          FindCertificate::Stub.search_by_id('1234-5678-9101-1121-3141')
+        end
 
         let(:response) do
           get '/find-a-certificate/search-by-reference-number?reference_number=1234-5678-9101-1121-3141'
@@ -238,7 +240,9 @@ describe 'Acceptance::Certificate' do
       end
 
       context 'shows page' do
-        before { FindCertificate::Stub.search_by_id('1234-5678-9101-1121-3141') }
+        before do
+          FindCertificate::Stub.search_by_id('1234-5678-9101-1121-3141')
+        end
 
         let(:response) do
           get '/find-a-certificate/search-by-reference-number?reference_number=12345678910111213141'
@@ -279,7 +283,9 @@ describe 'Acceptance::Certificate' do
 
       context 'where no certificates are present' do
         before do
-          FindCertificate::NoCertificatesStub.search_by_id('1234-5678-9101-1120')
+          FindCertificate::NoCertificatesStub.search_by_id(
+            '1234-5678-9101-1120'
+          )
         end
 
         let(:response) do

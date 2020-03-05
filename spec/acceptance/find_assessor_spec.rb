@@ -121,7 +121,9 @@ describe 'Acceptance::Assessor' do
 
       context 'where no assessors are near' do
         before do
-          FindAssessor::ByPostcode::NoNearAssessorsStub.search_by_postcode('E1 4FF')
+          FindAssessor::ByPostcode::NoNearAssessorsStub.search_by_postcode(
+            'E1 4FF'
+          )
         end
 
         let(:response) do
@@ -336,7 +338,9 @@ describe 'Acceptance::Assessor' do
 
       context 'where no assessors have that name' do
         before do
-          FindAssessor::ByName::NoAssessorsStub.search_by_name('Nonexistent Person')
+          FindAssessor::ByName::NoAssessorsStub.search_by_name(
+            'Nonexistent Person'
+          )
         end
 
         let(:response) do

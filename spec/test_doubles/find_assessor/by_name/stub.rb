@@ -34,7 +34,8 @@ module FindAssessor
                 "firstName": 'Doux',
                 "lastName": 'Twose',
                 "contactDetails": {
-                  "telephoneNumber": '07921 021 368', "email": 'user@example.com'
+                  "telephoneNumber": '07921 021 368',
+                  "email": 'user@example.com'
                 },
                 "searchResultsComparisonPostcode": 'SW1A 1AA',
                 "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' },

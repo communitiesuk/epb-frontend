@@ -14,7 +14,8 @@ module FindAssessor
             "errors": [
               {
                 "code": 'SCHEME_NOT_FOUND',
-                "message": 'There is no scheme for one of the requested assessor'
+                "message":
+                  'There is no scheme for one of the requested assessor'
               }
             ]
           }.to_json

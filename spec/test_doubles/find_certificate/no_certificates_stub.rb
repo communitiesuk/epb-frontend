@@ -23,7 +23,9 @@ module FindCertificate
       )
         .to_return(
         status: 200,
-        body: { "results": [], "searchReferenceNumber": reference_number }.to_json
+        body: {
+          "results": [], "searchReferenceNumber": reference_number
+        }.to_json
       )
     end
 
