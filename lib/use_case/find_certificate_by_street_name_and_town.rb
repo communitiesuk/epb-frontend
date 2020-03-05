@@ -1,16 +1,12 @@
 # frozen_string_literal: true
 
 module UseCase
-  class FindCertificateByStreetNameAndTown
+  class FindCertificateByStreetNameAndTown < UseCase::Base
     class AllParamsMissing < RuntimeError; end
     class StreetNameMissing < RuntimeError; end
     class TownMissing < RuntimeError; end
     class AuthTokenMissing < RuntimeError; end
     class CertificateNotFound < RuntimeError; end
-
-    def initialize(assessors_gateway)
-      @certificates_gateway = assessors_gateway
-    end
 
     def execute(street_name, town)
       raise AllParamsMissing if truly_empty(street_name) && truly_empty(town)
@@ -18,7 +14,7 @@ module UseCase
       raise TownMissing if truly_empty(town)
 
       gateway_response =
-        @certificates_gateway.search_by_street_name_and_town(street_name, town)
+        @gateway.search_by_street_name_and_town(street_name, town)
 
       if gateway_response.include?(:errors)
         gateway_response[:errors].each do |error|

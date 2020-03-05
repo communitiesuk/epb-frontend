@@ -1,14 +1,10 @@
 # frozen_string_literal: true
 
 module UseCase
-  class FindCertificateById
+  class FindCertificateById < UseCase::Base
     class ReferenceNumberNotValid < RuntimeError; end
     class AuthTokenMissing < RuntimeError; end
     class CertificateNotFound < RuntimeError; end
-
-    def initialize(assessors_gateway)
-      @certificates_gateway = assessors_gateway
-    end
 
     def execute(reference_id)
       raise ReferenceNumberNotValid if reference_id == ''
@@ -17,7 +13,7 @@ module UseCase
         reference_id = reference_id.scan(/.{4}|.+/).join('-')
       end
 
-      gateway_response = @certificates_gateway.search_by_id(reference_id)
+      gateway_response = @gateway.search_by_id(reference_id)
 
       if gateway_response.include?(:errors)
         gateway_response[:errors].each do |error|

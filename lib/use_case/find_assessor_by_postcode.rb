@@ -1,17 +1,13 @@
 # frozen_string_literal: true
 
 module UseCase
-  class FindAssessorByPostcode
+  class FindAssessorByPostcode < UseCase::Base
     class PostcodeNotRegistered < RuntimeError; end
     class PostcodeNotValid < RuntimeError; end
     class AuthTokenMissing < RuntimeError; end
 
-    def initialize(assessors_gateway)
-      @assessors_gateway = assessors_gateway
-    end
-
     def execute(postcode)
-      response = @assessors_gateway.search_by_postcode(postcode)
+      response = @gateway.search_by_postcode(postcode)
 
       if response.include?(:errors)
         response[:errors].each do |error|

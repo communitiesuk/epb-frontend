@@ -1,14 +1,10 @@
 # frozen_string_literal: true
 
 module UseCase
-  class FindCertificateByPostcode
+  class FindCertificateByPostcode < UseCase::Base
     class PostcodeNotRegistered < RuntimeError; end
     class PostcodeNotValid < RuntimeError; end
     class AuthTokenMissing < RuntimeError; end
-
-    def initialize(assessors_gateway)
-      @certificates_gateway = assessors_gateway
-    end
 
     def execute(query)
       unless Regexp.new(
@@ -19,7 +15,7 @@ module UseCase
         raise PostcodeNotValid
       end
 
-      gateway_response = @certificates_gateway.search_by_postcode(query)
+      gateway_response = @gateway.search_by_postcode(query)
 
       if gateway_response.include?(:errors)
         gateway_response[:errors].each do |error|
