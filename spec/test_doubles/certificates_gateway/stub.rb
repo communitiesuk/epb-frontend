@@ -136,5 +136,28 @@ module CertificatesGateway
         "searchPostcode": 'SW1 5RW'
       }
     end
+
+    def fetch(assessment_id)
+      {
+        addressSummary: '2 Marsham Street, London, SW1B 2BB',
+        assessmentId: assessment_id,
+        dateOfAssessment: '02 January 2020',
+        dateRegistered: '05 January 2020',
+        dateOfExpiry: '05 January 2030',
+        dwellingType: 'Top floor flat',
+        typeOfAssessment: 'RdSAP',
+        totalFloorArea: 150,
+        currentEnergyEfficiencyRating: 90,
+        currentEnergyEfficiencyBand: 'b',
+        potentialEnergyEfficiencyRating: 99,
+        potentialEnergyEfficiencyBand: 'a',
+        postcode: 'SW1B 2BB',
+        addressLine1: 'Flat 33',
+        addressLine2: '2 Marsham Street',
+        addressLine3: '',
+        addressLine4: '',
+        town: 'London'
+      }
+    end
   end
 end

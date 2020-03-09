@@ -4,7 +4,7 @@ describe 'Acceptance::Certificate' do
   include RSpecFrontendServiceMixin
 
   context 'when the assessment exists' do
-    before { FetchAssessment::Stub.fetch('123-456') }
+    before { FetchCertificate::Stub.fetch('123-456') }
 
     let(:response) { get '/energy-performance-certificate/123-456' }
 
@@ -50,7 +50,7 @@ describe 'Acceptance::Certificate' do
   end
 
   context 'when the assessment doesnt exist' do
-    before { FetchAssessment::NoAssessmentStub.fetch }
+    before { FetchCertificate::NoAssessmentStub.fetch('123-456') }
 
     let(:response) { get '/energy-performance-certificate/123-456' }
 

@@ -232,14 +232,15 @@ class FrontendService < Sinatra::Base
   end
 
   get '/energy-performance-certificate/:assessment_id' do
-    use_case = @container.get_object(:fetch_assessment_use_case)
+    use_case = @container.get_object(:fetch_certificate_use_case)
     assessment = use_case.execute(params[:assessment_id])
+
     status 200
     erb :domestic_energy_performance_certificate,
         layout: :layout, locals: { assessment: assessment }
   rescue StandardError => e
     case e
-    when RemoteUseCase::FetchAssessment::AssessmentNotFound
+    when Errors::AssessmentNotFound
       status 404
     else
       status 500

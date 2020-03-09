@@ -1,4 +1,5 @@
 module Errors
+  class AssessmentNotFound < RuntimeError; end
   class AuthTokenMissing < RuntimeError; end
   class CertificateNotFound < RuntimeError; end
   class InvalidName < StandardError; end
