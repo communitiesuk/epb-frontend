@@ -69,5 +69,37 @@
         </dd>
       </div>
     </dl>
+
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-body epc-page-break epc-blue-bottom">
+        <h2 class="govuk-heading-l">How this certificate was produced</h2>
+        <p class="govuk-body">This document has been produced following an energy assessment undertaken by a qualified Energy Assessor, accredited by <%= assessment[:assessor][:registeredBy][:name] %>.</p>
+
+        <h3 class="govuk-heading-m">Assessor and accreditation scheme details</h3>
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row" id="accreditation_id">
+            <dt class="govuk-summary-list__key govuk-!-width-one-half">Assessor's accreditation number</dt>
+            <dd class="govuk-summary-list__value"><%= assessment[:assessor][:schemeAssessorId] %></dd>
+          </div>
+          <div class="govuk-summary-list__row" id="Accreditation_scheme">
+            <dt class="govuk-summary-list__key govuk-!-width-one-half">Accreditation scheme</dt>
+            <dd class="govuk-summary-list__value"><%= assessment[:assessor][:registeredBy][:name] %></dd>
+          </div>
+          <div class="govuk-summary-list__row" id="name">
+            <dt class="govuk-summary-list__key govuk-!-width-one-half">Assessor's name</dt>
+            <dd class="govuk-summary-list__value"><%= assessment[:assessor][:firstName] %> <%= assessment[:assessor][:lastName] %></dd>
+          </div>
+          <div class="govuk-summary-list__row" id="phone">
+            <dt class="govuk-summary-list__key govuk-!-width-one-half">Phone number</dt>
+            <dd class="govuk-summary-list__value"><%= assessment[:assessor][:contactDetails][:telephoneNumber] %></dd>
+          </div>
+          <div class="govuk-summary-list__row" id="email">
+            <dt class="govuk-summary-list__key govuk-!-width-one-half">E-mail address</dt>
+            <dd class="govuk-summary-list__value"><a href="mailto:"><%= assessment[:assessor][:contactDetails][:email] %></a></dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+
   </div>
 </div>

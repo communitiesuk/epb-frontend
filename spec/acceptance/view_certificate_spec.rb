@@ -47,6 +47,26 @@ describe 'Acceptance::Certificate' do
     it 'shows the SVG with energy ratings' do
       expect(response.body).to include('<svg width="615" height="400"')
     end
+
+    it 'shows the assessors full name' do
+      expect(response.body).to include('Test Boi')
+    end
+
+    it 'shows the assessors accreditation scheme' do
+      expect(response.body).to include('Quidos')
+    end
+
+    it 'shows the assessors accreditation number' do
+      expect(response.body).to include('TESTASSESSOR')
+    end
+
+    it 'shows the assessors telephone number' do
+      expect(response.body).to include('12345678901')
+    end
+
+    it 'shows the assessors email address' do
+      expect(response.body).to include('test.boi@quidos.com')
+    end
   end
 
   context 'when the assessment doesnt exist' do
