@@ -1,57 +1,9 @@
-.epc-box {
-  box-sizing: border-box;
-  float: left;
-  border: 2px solid #000;
-  width: 100%;
-  text-align: center;
-  margin-bottom: 0!important;
+.govuk-summary-list__row .govuk-summary-list__key {
+  font-weight: normal;
 }
 
-.epc-box-one-third-width {
-  width: 30%;
-}
-
-.epc-box-two-third-width {
-  width: 70%;
-  text-align: left;
-}
-
-.epc-box-single-line {
-  line-height: 14px;
-  padding-top: 18px;
-  height: 50px;
-}
-
-.epc-box-double-line {
-  line-height: 116px;
-}
-
-.epc-band-rating {
-  font-size: 100px;
-}
-
-.epc-date-of-expiry {
-  font-size: 25px;
-}
-
-.epc-box-go-right {
-  float: right;
-}
-
-.epc-box-clear {
-  clear: both;
-}
-
-.epc-box-clear-right {
-  clear: right;
-}
-
-.epc-box-tidy-left {
-  margin-left: 40px;
-}
-
-.epc-box-match-heading {
-  margin-top: 5px;
+.govuk-summary-list__row .govuk-summary-list__value {
+  font-weight: bold;
 }
 
 @media print {
