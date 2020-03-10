@@ -1,109 +1,110 @@
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
-    <a
-      href="<%= localised_url('/find-a-certificate')%>"
-      class="govuk-back-link">
-      <%=t('layout.body.breadcrumb.back')%>
-    </a>
+  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-body epc-blue-bottom">
+      <a
+        href="<%= localised_url('/find-a-certificate')%>"
+        class="govuk-back-link">
+        <%=t('layout.body.breadcrumb.back')%>
+      </a>
 
-    <span class="govuk-caption-xl">
-      <%= assessment[:addressSummary] %>
-    </span>
-    <h1 class="govuk-heading-xl">
-      <%= t('domestic_epc.top_heading') %>
-    </h1>
+      <span class="govuk-caption-xl">
+        <%= assessment[:addressSummary] %>
+      </span>
+      <h1 class="govuk-heading-xl">
+        <%= t('domestic_epc.top_heading') %>
+      </h1>
 
-    <%== erb :energy_rating, locals: {
-      current_energy_efficiency_rating: assessment[:currentEnergyEfficiencyRating],
-      potential_energy_efficiency_rating: assessment[:potentialEnergyEfficiencyRating],
-      current_energy_efficiency_band: assessment[:currentEnergyEfficiencyBand],
-      potential_energy_efficiency_band: assessment[:potentialEnergyEfficiencyBand] } %>
+      <%== erb :energy_rating, locals: {
+        current_energy_efficiency_rating: assessment[:currentEnergyEfficiencyRating],
+        potential_energy_efficiency_rating: assessment[:potentialEnergyEfficiencyRating],
+        current_energy_efficiency_band: assessment[:currentEnergyEfficiencyBand],
+        potential_energy_efficiency_band: assessment[:potentialEnergyEfficiencyBand] } %>
 
-    <dl class="govuk-summary-list">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          <%= t('domestic_epc.labels.certificate_number') %>
-        </dt>
-        <dd class="govuk-summary-list__value">
-          <%= assessment[:assessmentId] %>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          <%= t('domestic_epc.labels.type_of_assessment') %>
-        </dt>
-        <dd class="govuk-summary-list__value">
-          <%= assessment[:typeOfAssessment] %>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          <%= t('domestic_epc.labels.date_of_assessment') %>
-        </dt>
-        <dd class="govuk-summary-list__value">
-          <%= assessment[:dateOfAssessment] %>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          <%= t('domestic_epc.labels.date_of_certificate') %>
-        </dt>
-        <dd class="govuk-summary-list__value">
-          <%= assessment[:dateRegistered] %>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          <%= t('domestic_epc.labels.total_floor_area') %>
-        </dt>
-        <dd class="govuk-summary-list__value">
-          <%= assessment[:totalFloorArea] %> m<sup>2</sup>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          <%= t('domestic_epc.labels.dwelling_type') %>
-        </dt>
-        <dd class="govuk-summary-list__value">
-          <%= assessment[:dwellingType] %>
-        </dd>
-      </div>
-    </dl>
-
-    <div class="govuk-grid-column-two-thirds">
-      <div class="govuk-body epc-page-break epc-blue-bottom">
-        <h2 class="govuk-heading-l">How this certificate was produced</h2>
-        <p class="govuk-body">This document has been produced following an energy assessment undertaken by a qualified Energy Assessor, accredited by <%= assessment[:assessor][:registeredBy][:name] %>.</p>
-
-        <h3 class="govuk-heading-m">Assessor and accreditation scheme details</h3>
-        <dl class="govuk-summary-list">
-          <div class="govuk-summary-list__row" id="accreditation_id">
-            <dt class="govuk-summary-list__key govuk-!-width-one-half">Assessor's accreditation number</dt>
-            <dd class="govuk-summary-list__value"><%= assessment[:assessor][:schemeAssessorId] %></dd>
-          </div>
-          <div class="govuk-summary-list__row" id="Accreditation_scheme">
-            <dt class="govuk-summary-list__key govuk-!-width-one-half">Accreditation scheme</dt>
-            <dd class="govuk-summary-list__value"><%= assessment[:assessor][:registeredBy][:name] %></dd>
-          </div>
-          <div class="govuk-summary-list__row" id="name">
-            <dt class="govuk-summary-list__key govuk-!-width-one-half">Assessor's name</dt>
-            <dd class="govuk-summary-list__value"><%= assessment[:assessor][:firstName] %> <%= assessment[:assessor][:lastName] %></dd>
-          </div>
-          <% unless assessment[:assessor][:contactDetails][:telephoneNumber].empty? %>
-          <div class="govuk-summary-list__row" id="phone">
-            <dt class="govuk-summary-list__key govuk-!-width-one-half">Phone number</dt>
-            <dd class="govuk-summary-list__value"><%= assessment[:assessor][:contactDetails][:telephoneNumber] %></dd>
-          </div>
-          <% end %>
-          <% unless assessment[:assessor][:contactDetails][:email].empty? %>
-          <div class="govuk-summary-list__row" id="email">
-            <dt class="govuk-summary-list__key govuk-!-width-one-half">E-mail address</dt>
-            <dd class="govuk-summary-list__value"><a href="mailto:"><%= assessment[:assessor][:contactDetails][:email] %></a></dd>
-          </div>
-          <% end %>
-        </dl>
-      </div>
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            <%= t('domestic_epc.labels.certificate_number') %>
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <%= assessment[:assessmentId] %>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            <%= t('domestic_epc.labels.type_of_assessment') %>
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <%= assessment[:typeOfAssessment] %>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            <%= t('domestic_epc.labels.date_of_assessment') %>
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <%= assessment[:dateOfAssessment] %>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            <%= t('domestic_epc.labels.date_of_certificate') %>
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <%= assessment[:dateRegistered] %>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            <%= t('domestic_epc.labels.total_floor_area') %>
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <%= assessment[:totalFloorArea] %> m<sup>2</sup>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            <%= t('domestic_epc.labels.dwelling_type') %>
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <%= assessment[:dwellingType] %>
+          </dd>
+        </div>
+      </dl>
     </div>
+  </div>
 
+  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-body epc-blue-bottom">
+      <h2 class="govuk-heading-l">How this certificate was produced</h2>
+      <p class="govuk-body">This document has been produced following an energy assessment undertaken by a qualified Energy Assessor, accredited by <%= assessment[:assessor][:registeredBy][:name] %>.</p>
+
+      <h3 class="govuk-heading-m">Assessor and accreditation scheme details</h3>
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row" id="accreditation_id">
+          <dt class="govuk-summary-list__key govuk-!-width-one-half">Assessor's accreditation number</dt>
+          <dd class="govuk-summary-list__value"><%= assessment[:assessor][:schemeAssessorId] %></dd>
+        </div>
+        <div class="govuk-summary-list__row" id="Accreditation_scheme">
+          <dt class="govuk-summary-list__key govuk-!-width-one-half">Accreditation scheme</dt>
+          <dd class="govuk-summary-list__value"><%= assessment[:assessor][:registeredBy][:name] %></dd>
+        </div>
+        <div class="govuk-summary-list__row" id="name">
+          <dt class="govuk-summary-list__key govuk-!-width-one-half">Assessor's name</dt>
+          <dd class="govuk-summary-list__value"><%= assessment[:assessor][:firstName] %> <%= assessment[:assessor][:lastName] %></dd>
+        </div>
+        <% unless assessment[:assessor][:contactDetails][:telephoneNumber].empty? %>
+        <div class="govuk-summary-list__row" id="phone">
+          <dt class="govuk-summary-list__key govuk-!-width-one-half">Phone number</dt>
+          <dd class="govuk-summary-list__value"><%= assessment[:assessor][:contactDetails][:telephoneNumber] %></dd>
+        </div>
+        <% end %>
+        <% unless assessment[:assessor][:contactDetails][:email].empty? %>
+        <div class="govuk-summary-list__row" id="email">
+          <dt class="govuk-summary-list__key govuk-!-width-one-half">E-mail address</dt>
+          <dd class="govuk-summary-list__value"><a href="mailto:"><%= assessment[:assessor][:contactDetails][:email] %></a></dd>
+        </div>
+        <% end %>
+      </dl>
+    </div>
   </div>
 </div>
