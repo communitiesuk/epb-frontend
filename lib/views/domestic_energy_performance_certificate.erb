@@ -92,13 +92,13 @@
           <dt class="govuk-summary-list__key govuk-!-width-one-half">Assessor's name</dt>
           <dd class="govuk-summary-list__value"><%= assessment[:assessor][:firstName] %> <%= assessment[:assessor][:lastName] %></dd>
         </div>
-        <% unless assessment[:assessor][:contactDetails][:telephoneNumber].empty? %>
+        <% if assessment[:assessor][:contactDetails].key?(:telephoneNumber) && !assessment[:assessor][:contactDetails][:telephoneNumber].empty? %>
         <div class="govuk-summary-list__row" id="phone">
           <dt class="govuk-summary-list__key govuk-!-width-one-half">Phone number</dt>
           <dd class="govuk-summary-list__value"><%= assessment[:assessor][:contactDetails][:telephoneNumber] %></dd>
         </div>
         <% end %>
-        <% unless assessment[:assessor][:contactDetails][:email].empty? %>
+        <% if assessment[:assessor][:contactDetails].key?(:email) && !assessment[:assessor][:contactDetails][:email].empty? %>
         <div class="govuk-summary-list__row" id="email">
           <dt class="govuk-summary-list__key govuk-!-width-one-half">E-mail address</dt>
           <dd class="govuk-summary-list__value"><a href="mailto:"><%= assessment[:assessor][:contactDetails][:email] %></a></dd>
