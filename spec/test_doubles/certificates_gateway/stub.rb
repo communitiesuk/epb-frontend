@@ -142,20 +142,14 @@ module CertificatesGateway
         assessor: {
           firstName: 'Test',
           lastName: 'Boi',
-          registeredBy: {
-            name: 'Quidos',
-            schemeId: 1
-          },
+          registeredBy: { name: 'Quidos', schemeId: 1 },
           schemeAssessorId: 'TESTASSESSOR',
           dateOfBirth: '2019-12-04',
           contactDetails: {
-            telephoneNumber: '12345678901',
-            email: 'test.boi@quidos.com'
+            telephoneNumber: '12345678901', email: 'test.boi@quidos.com'
           },
           searchResultsComparisonPostcode: 'SW1A 2AA',
-          qualifications: {
-            domesticRdSap: 'ACTIVE'
-          }
+          qualifications: { domesticRdSap: 'ACTIVE' }
         },
         addressSummary: '2 Marsham Street, London, SW1B 2BB',
         assessmentId: assessment_id,
