@@ -153,10 +153,8 @@ en:
       title: 'Energy performance of buildings register - Results for energy assessors'
     description: 'See what assessors are accredited by the name you searched for.'
     no_assessors: 'There are no assessors with this name.'
-    accreditation_summary_title: 'About accreditation schemes'
-    accreditation_summary_text: 'Accreditation schemes make sure that assessors are qualified to:'
-    accreditation_summary_assess: 'assess the energy performance of residential properties'
-    accreditation_summary_create: 'create EPCs'
+    accreditation_summary_title: 'Accreditation schemes and complaints'
+    accreditation_summary_text: 'Accreditation schemes are appointed by the government to ensure that assessors are qualified to carry out energy assessments and to create EPCs.<br /><br />If you’re unhappy about an energy assessment or EPC, you can complain to the assessor directly. If you’re still unhappy, you should contact your assessor’s accreditation scheme.'
     results:
       results: '%{quantity} results, found by the name %{name}'
       results_like: '%{quantity} results, similar to the name %{name}'
