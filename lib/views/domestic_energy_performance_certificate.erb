@@ -22,50 +22,50 @@
 
       <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
+          <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
             <%= t('domestic_epc.labels.certificate_number') %>
           </dt>
-          <dd class="govuk-summary-list__value">
+          <dd class="govuk-summary-list__value govuk-!-font-weight-bold">
             <%= assessment[:assessmentId] %>
           </dd>
         </div>
         <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
+          <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
             <%= t('domestic_epc.labels.type_of_assessment') %>
           </dt>
-          <dd class="govuk-summary-list__value">
+          <dd class="govuk-summary-list__value govuk-!-font-weight-bold">
             <%= assessment[:typeOfAssessment] %>
           </dd>
         </div>
         <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
+          <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
             <%= t('domestic_epc.labels.date_of_assessment') %>
           </dt>
-          <dd class="govuk-summary-list__value">
+          <dd class="govuk-summary-list__value govuk-!-font-weight-bold">
             <%= assessment[:dateOfAssessment] %>
           </dd>
         </div>
         <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
+          <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
             <%= t('domestic_epc.labels.date_of_certificate') %>
           </dt>
-          <dd class="govuk-summary-list__value">
+          <dd class="govuk-summary-list__value govuk-!-font-weight-bold">
             <%= assessment[:dateRegistered] %>
           </dd>
         </div>
         <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
+          <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
             <%= t('domestic_epc.labels.total_floor_area') %>
           </dt>
-          <dd class="govuk-summary-list__value">
+          <dd class="govuk-summary-list__value govuk-!-font-weight-bold">
             <%= assessment[:totalFloorArea] %> m<sup>2</sup>
           </dd>
         </div>
         <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
+          <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
             <%= t('domestic_epc.labels.dwelling_type') %>
           </dt>
-          <dd class="govuk-summary-list__value">
+          <dd class="govuk-summary-list__value govuk-!-font-weight-bold">
             <%= assessment[:dwellingType] %>
           </dd>
         </div>
@@ -81,27 +81,27 @@
       <h3 class="govuk-heading-m">Assessor and accreditation scheme details</h3>
       <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row" id="accreditation_id">
-          <dt class="govuk-summary-list__key govuk-!-width-one-half">Assessor's accreditation number</dt>
-          <dd class="govuk-summary-list__value"><%= assessment[:assessor][:schemeAssessorId] %></dd>
+          <dt class="govuk-summary-list__key govuk-!-width-one-half govuk-!-font-weight-regular">Assessor's accreditation number</dt>
+          <dd class="govuk-summary-list__value govuk-!-font-weight-bold"><%= assessment[:assessor][:schemeAssessorId] %></dd>
         </div>
         <div class="govuk-summary-list__row" id="Accreditation_scheme">
-          <dt class="govuk-summary-list__key govuk-!-width-one-half">Accreditation scheme</dt>
-          <dd class="govuk-summary-list__value"><%= assessment[:assessor][:registeredBy][:name] %></dd>
+          <dt class="govuk-summary-list__key govuk-!-width-one-half govuk-!-font-weight-regular">Accreditation scheme</dt>
+          <dd class="govuk-summary-list__value govuk-!-font-weight-bold"><%= assessment[:assessor][:registeredBy][:name] %></dd>
         </div>
         <div class="govuk-summary-list__row" id="name">
-          <dt class="govuk-summary-list__key govuk-!-width-one-half">Assessor's name</dt>
-          <dd class="govuk-summary-list__value"><%= assessment[:assessor][:firstName] %> <%= assessment[:assessor][:lastName] %></dd>
+          <dt class="govuk-summary-list__key govuk-!-width-one-half govuk-!-font-weight-regular">Assessor's name</dt>
+          <dd class="govuk-summary-list__value govuk-!-font-weight-bold"><%= assessment[:assessor][:firstName] %> <%= assessment[:assessor][:lastName] %></dd>
         </div>
         <% if assessment[:assessor][:contactDetails].key?(:telephoneNumber) && !assessment[:assessor][:contactDetails][:telephoneNumber].empty? %>
         <div class="govuk-summary-list__row" id="phone">
-          <dt class="govuk-summary-list__key govuk-!-width-one-half">Phone number</dt>
-          <dd class="govuk-summary-list__value"><%= assessment[:assessor][:contactDetails][:telephoneNumber] %></dd>
+          <dt class="govuk-summary-list__key govuk-!-width-one-half govuk-!-font-weight-regular">Phone number</dt>
+          <dd class="govuk-summary-list__value govuk-!-font-weight-bold"><%= assessment[:assessor][:contactDetails][:telephoneNumber] %></dd>
         </div>
         <% end %>
         <% if assessment[:assessor][:contactDetails].key?(:email) && !assessment[:assessor][:contactDetails][:email].empty? %>
         <div class="govuk-summary-list__row" id="email">
-          <dt class="govuk-summary-list__key govuk-!-width-one-half">E-mail address</dt>
-          <dd class="govuk-summary-list__value"><a href="mailto:"><%= assessment[:assessor][:contactDetails][:email] %></a></dd>
+          <dt class="govuk-summary-list__key govuk-!-width-one-half govuk-!-font-weight-regular">E-mail address</dt>
+          <dd class="govuk-summary-list__value govuk-!-font-weight-bold"><a href="mailto:"><%= assessment[:assessor][:contactDetails][:email] %></a></dd>
         </div>
         <% end %>
       </dl>

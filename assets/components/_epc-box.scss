@@ -5,14 +5,6 @@
   overflow: hidden;
 }
 
-.govuk-summary-list__row .govuk-summary-list__key {
-  font-weight: normal;
-}
-
-.govuk-summary-list__row .govuk-summary-list__value {
-  font-weight: bold;
-}
-
 @media print {
   .epc-no-print, footer, .app-cookie-banner, .govuk-back-link {
     display: none;
