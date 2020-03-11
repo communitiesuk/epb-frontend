@@ -123,10 +123,8 @@ en:
     top_heading: 'Contact an assessor to book an EPC assessment'
     description: 'Contact an assessor listed below to book an energy assessment.'
     no_assessors: 'There are no assessors near you at this point.'
-    accreditation_summary_title: 'About accreditation schemes'
-    accreditation_summary_text: 'Accreditation schemes make sure that assessors are qualified to:'
-    accreditation_summary_assess: 'assess the energy performance of residential properties'
-    accreditation_summary_create: 'create EPCs'
+    accreditation_summary_title: 'Accreditation schemes and complaints'
+    accreditation_summary_text: 'Accreditation schemes are appointed by the government to ensure that assessors are qualified to carry out energy assessments and to create EPCs.<br /><br />If you’re unhappy about an energy assessment or EPC, you can complain to the assessor directly. If you’re still unhappy, you should contact your assessor’s accreditation scheme.'
     results: '%{quantity} assessors, sorted by distance from %{postcode}'
     distance:
       heading: 'Distance'
