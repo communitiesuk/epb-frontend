@@ -293,7 +293,7 @@ describe 'Acceptance::Assessor' do
 
         it 'has a Search button' do
           expect(response.body).to include(
-            '<button class="govuk-button" data-module="govuk-button">Search</button>'
+            '<button class="epc-search-button" data-module="govuk-button" aria-label="Search"></button>'
           )
         end
 
