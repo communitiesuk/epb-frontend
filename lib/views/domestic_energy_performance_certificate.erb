@@ -7,12 +7,35 @@
         <%=t('layout.body.breadcrumb.back')%>
       </a>
 
-      <span class="govuk-caption-xl">
-        <%= assessment[:addressSummary] %>
-      </span>
       <h1 class="govuk-heading-xl">
         <%= t('domestic_epc.top_heading') %>
       </h1>
+
+      <div class="epc-box">
+        <div class="epc-rating-box">
+          <p class="epc-rating-title govuk-body">
+            <%= t('domestic_epc.box.energy_rating_title') %>
+          </p>
+          <p class="epc-rating-result govuk-body">
+            <%= assessment[:currentEnergyEfficiencyBand].upcase %>
+          </p>
+        </div>
+        <p class="epc-address govuk-body">
+          <%== [assessment[:addressLine1], assessment[:addressLine2], assessment[:addressLine3], assessment[:addressLine4]].reject(&:empty?).join('<br />') %><br>
+          <%= assessment[:town] %><br />
+          <%= assessment[:postcode] %>
+        </p>
+        <p class="govuk-body epc-extra-box">
+          <% puts('Oh!') %>
+          <%= t('domestic_epc.box.date_of_expiry', :date_of_expiry => Date.parse(assessment[:dateOfExpiry]).strftime('%d %m %Y')) %>
+        </p>
+        <p class="govuk-body epc-extra-box">
+          <label><%= t('domestic_epc.box.certificate_id') %></label>
+          <b><%= assessment[:assessmentId] %></b>
+        </p>
+      </div>
+
+      <br /><br /><br />
 
       <%== erb :energy_rating, locals: {
         current_energy_efficiency_rating: assessment[:currentEnergyEfficiencyRating],

@@ -17,7 +17,9 @@ describe 'Acceptance::Certificate' do
     end
 
     it 'shows the address summary' do
-      expect(response.body).to include('2 Marsham Street, London, SW1B 2BB')
+      expect(response.body).to include('2 Marsham Street')
+      expect(response.body).to include('London')
+      expect(response.body).to include('SW1B 2BB')
     end
 
     it 'shows the certificate number' do
@@ -30,6 +32,10 @@ describe 'Acceptance::Certificate' do
 
     it 'shows the registered date of the certificate' do
       expect(response.body).to include('02 January 2020')
+    end
+
+    it 'shows the date of expiry' do
+      expect(response.body).to include('05 01 2030')
     end
 
     it 'shows the type of assessment' do

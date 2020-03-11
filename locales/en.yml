@@ -285,6 +285,10 @@ en:
       type_of_assessment: 'Type of assessment'
       total_floor_area: 'Total floor area'
       dwelling_type: 'Dwelling type'
+    box:
+      date_of_expiry: 'Valid until %{date_of_expiry}'
+      certificate_id: 'Certificate Number'
+      energy_rating_title: 'Energy Rating'
 
   error:
     error: 'Error: '

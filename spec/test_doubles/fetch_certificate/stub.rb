@@ -16,7 +16,7 @@ module FetchCertificate
           searchResultsComparisonPostcode: 'SW1A 2AA',
           qualifications: { domesticRdSap: 'ACTIVE' }
         },
-        addressSummary: '2 Marsham Street, London, SW1B 2BB',
+        addressSummary: 'Flat 33, 2 Marsham Street, London, SW1B 2BB',
         assessmentId: assessment_id,
         dateRegistered: '2020-01-05',
         dateOfExpiry: '2030-01-05',

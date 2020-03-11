@@ -5,6 +5,90 @@
   overflow: hidden;
 }
 
+.epc-box {
+  color: #fff;
+  background: #00703c;
+  padding: 0px;
+  overflow: hidden;
+}
+
+.epc-box .epc-address {
+  padding-left: 30px;
+  padding-top: 30px;
+}
+
+.epc-box p.govuk-body, .epc-rating-box p.govuk-body {
+  color: #fff;
+}
+
+.epc-rating-box {
+  width: 150px;
+  background: #00703c;
+  text-align: center;
+  float: right;
+  border: 2px solid #fff;
+  margin: 10px;
+}
+
+.epc-rating-box.do-wide {
+  width: 45%;
+}
+
+.epc-rating-title {
+  line-height: 30px;
+  font-size: 20px;
+}
+
+.epc-rating-result {
+  line-height: 100px;
+  font-size: 100px;
+  font-weight: bold;
+}
+
+.epc-rating-result span {
+  display: block;
+  line-height: 40px;
+  padding-top: 10px;
+  font-size: 40px;
+}
+
+.epc-rating-result span span {
+  padding-top: 0;
+  color: rgba(255, 255, 255, 1);
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, .1);
+  font-size: 20px;
+}
+
+p.epc-extra-box {
+  border-top: 2px solid #fff;
+  clear: both;
+  line-height: 90px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-weight: bold;
+  float: left;
+  width: 50%;
+}
+
+p.epc-extra-box + p.epc-extra-box {
+  border-left: 2px solid #fff;
+  box-sizing: border-box;
+  float: right;
+  clear: none;
+  line-height: 60px;
+}
+
+p.epc-extra-box label {
+  display: block;
+  font-weight: normal;
+}
+
+p.epc-extra-box b {
+  display: block;
+  margin-top: -30px;
+}
+
 .epc-search-fieldset {
   margin: 0;
   padding: 0;
