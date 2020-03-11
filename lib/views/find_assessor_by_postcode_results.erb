@@ -14,38 +14,24 @@
       <% if I18n.locale != I18n.available_locales[0] %>
         <input type="hidden" name="lang" value="<%= I18n.locale.to_s %>">
       <% end %>
-      <fieldset class="govuk-fieldset fieldset-background">
-        <div class="govuk-form-group<% if errors[:postcode] %> govuk-form-group--error<% end %>">
-          <label class="govuk-label" for="postcode">
-            <%= t('find_assessor_by_postcode.question') %>
-          </label>
-          <span id="postcode-hint" class="govuk-hint">
-            <%= t('find_assessor_by_postcode.hint') %>
-          </span>
-          <% if errors[:postcode] %>
-          <span id="postcode-error" class="govuk-error-message">
-            <span class="govuk-visually-hidden">Error:</span><%== errors[:postcode] %>
-          </span>
-          <% end %>
+      <fieldset class="epc-search-fieldset">
+        <div class="epc-search-bar-holder">
           <input id="postcode" name="postcode" type="text"
-                 class="govuk-input<% if errors[:postcode] %> govuk-input--error<% end %>"
-                 aria-describedby="postcode-hint<% if errors[:postcode] %> postcode-error<% end %>"
+                 class="govuk-input epc-search-bar"
+                 aria-describedby="postcode-hint"
                  autocomplete="postal-code"
                  spellcheck="false"
-                 <% if params['postcode'] %>value="<%= params['postcode'].upcase %>"<% end %>
-          >
+                 value="<%= params['postcode'].upcase %>"
+          />
         </div>
-
-        <button class="govuk-button" data-module="govuk-button"><%= t('find_assessor_by_postcode.button_text') %></button>
+        <button class="epc-search-button" data-module="govuk-button" aria-label="<%= t('find_assessor_by_postcode.button_text') %>"></button>
       </fieldset>
     </form>
 
     <% if results.size > 0 %>
-      <div class="govuk-grid-row">
-        <p class="govuk-body">
-          <%= t('find_assessor_by_postcode_results.description') %>
-        </p>
-      </div>
+      <p class="govuk-body">
+        <%= t('find_assessor_by_postcode_results.description') %>
+      </p>
 
       <details class="govuk-details" data-module="govuk-details">
         <summary class="govuk-details__summary">
