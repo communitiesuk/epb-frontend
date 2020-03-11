@@ -6,9 +6,7 @@
         <div class="govuk-summary-list__row govuk-!-padding-bottom-0 govuk-!-margin-bottom-0">
           <dt class="govuk-summary-list__key govuk-!-padding-bottom-0 govuk-!-margin-bottom-0"><%= t('find_assessor_by_postcode_results.contact_details.telephone') %></dt>
           <dd class="govuk-summary-list__value govuk-!-padding-bottom-0 govuk-!-margin-bottom-0">
-            <p>
-              <a href="tel:<%= assessor[:contactDetails][:telephoneNumber] %>"><%= assessor[:contactDetails][:telephoneNumber] %></a>
-            </p>
+              <%= assessor[:contactDetails][:telephoneNumber] %>
           </dd>
         </div>
         <div class="govuk-summary-list__row">
