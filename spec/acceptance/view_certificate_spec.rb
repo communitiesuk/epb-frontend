@@ -75,7 +75,9 @@ describe 'Acceptance::Certificate' do
     end
 
     it 'does not shows the warning to landlords that it cannot be rented out' do
-      expect(response.body).to_not include('You may not be able to let this property')
+      expect(response.body).to_not include(
+                                     'You may not be able to let this property'
+                                   )
     end
 
     context 'and rating is poor (f)' do
@@ -83,7 +85,9 @@ describe 'Acceptance::Certificate' do
 
       let(:response) { get '/energy-performance-certificate/123-654' }
       it 'shows a warning text' do
-        expect(response.body).to include('You may not be able to let this property')
+        expect(response.body).to include(
+          'You may not be able to let this property'
+        )
       end
     end
   end

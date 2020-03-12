@@ -39,32 +39,36 @@
 
   <div class="govuk-grid-column-two-thirds">
     <div class="govuk-body epc-blue-bottom">
-      <h2 class="govuk-heading-l">Renting this property</h2>
-
-      <% if assessment[:currentEnergyEfficiencyBand] > 'e' %>
-        <div class="govuk-warning-text">
-          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-          <div class="govuk-warning-text__text">
-            <span class="govuk-warning-text__assistive">Warning</span>
-            <div class="epc-rating-box">
-              <p class="epc-rating-title govuk-body">
-                <%= t('domestic_epc.landlord_warning.energy_rating_title') %>
-              </p>
-              <p class="epc-rating-result govuk-body">
-                <%= assessment[:currentEnergyEfficiencyBand].upcase %>
-              </p>
+      <h2 class="govuk-heading-l"><%= t('domestic_epc.landlord_warning.title') %></h2>
+      <%
+        minimum_energy_rating_for_rentals = 'e'
+        if assessment[:currentEnergyEfficiencyBand] > minimum_energy_rating_for_rentals
+          %>
+            <div class="govuk-warning-text">
+              <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+              <div class="govuk-warning-text__text">
+                <span class="govuk-warning-text__assistive"><%= t('domestic_epc.landlord_warning.hidden_text') %></span>
+                <div class="epc-rating-box">
+                  <p class="epc-rating-title govuk-body">
+                    <%= t('domestic_epc.landlord_warning.energy_rating_title') %>
+                  </p>
+                  <p class="epc-rating-result govuk-body">
+                    <%= assessment[:currentEnergyEfficiencyBand].upcase %>
+                  </p>
+                </div>
+                <h2 class="govuk-error-summary__title" id="error-summary-title">
+                  <%= t('domestic_epc.landlord_warning.subtitle') %>
+                </h2>
+                <div class="govuk-error-summary__body">
+                  <p class="govuk-body">
+                    <%= t('domestic_epc.landlord_warning.body.text', :link => '<a href="' + t('domestic_epc.landlord_warning.body.url') + '">' + t('domestic_epc.landlord_warning.body.cta') + '</a>') %>
+                  </p>
+                </div>
+              </div>
             </div>
-            <h2 class="govuk-error-summary__title" id="error-summary-title">
-              <%= t('domestic_epc.landlord_warning.title') %>
-            </h2>
-            <div class="govuk-error-summary__body">
-              <p class="govuk-body">
-                <%= t('domestic_epc.landlord_warning.body.text', :link => '<a href="' + t('domestic_epc.landlord_warning.body.url') + '">' + t('domestic_epc.landlord_warning.body.cta') + '</a>') %>
-              </p>
-            </div>
-          </div>
-        </div>
-      <% end %>
+          <%
+        end
+      %>
 
       <div class="epc-box-clear"></div>
 
