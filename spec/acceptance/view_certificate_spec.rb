@@ -76,7 +76,7 @@ describe 'Acceptance::Certificate' do
 
     it 'does not shows the warning to landlords that it cannot be rented out' do
       expect(response.body).to_not include(
-                                     'You may not be able to let this property'
+                                     'The owner of this property may not be able to let it'
                                    )
     end
 
