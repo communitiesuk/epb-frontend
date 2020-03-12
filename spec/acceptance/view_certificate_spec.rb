@@ -86,7 +86,7 @@ describe 'Acceptance::Certificate' do
       let(:response) { get '/energy-performance-certificate/123-654' }
       it 'shows a warning text' do
         expect(response.body).to include(
-          'You may not be able to let this property'
+          'The owner of this property may not be able to let it'
         )
       end
     end
