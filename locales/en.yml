@@ -298,6 +298,13 @@ en:
         text: 'Your property has an EPC rating of F or G, you must take appropriate steps to comply with the requirements of the current regulations (%{link}). We explain how to do this below.'
         cta: 'MEES'
         url: '#'
+    rental_info:
+      body: 'The Regulations mean that, since 1 April 2018, private landlords may not let domestic properties on new tendencies to new or existing tenants of the Energy Efficiency Certificate (EPC) rating is F or G (unless an exemption applies).'
+      regulation: 'From 1 April 2020 the prohibition on letting F and G properties will extend to all relevant properties, even when there has been no change in tenancy.'
+      link:
+        text: 'Regulations available at %{link}'
+        cta: 'https://www.gov.uk/guidance/domestic-private-rented-property-minimum-energy-efficiency-standard-landlord-guidance'
+        url: 'https://www.gov.uk/guidance/domestic-private-rented-property-minimum-energy-efficiency-standard-landlord-guidance'
   error:
     error: 'Error: '
     500:

@@ -72,16 +72,13 @@
       <div class="epc-box-clear"></div>
 
       <p class="govuk-body">
-        The Regulations mean that, since 1 April 2018, private landlords may not let domestic properties
-        on new tendencies to new or existing tenants of the Energy Efficiency Certificate (EPC) rating is F or G
-        (unless an exemption applies).
+        <%= t('domestic_epc.rental_info.body') %>
       </p>
       <p class="govuk-body">
-        From 1 April 2020 the prohibition on letting F and G properties will extend to all relevant properties, even
-        when there has been no change in tenancy.
+        <%= t('domestic_epc.rental_info.regulation') %>
       </p>
       <p class="govuk-body">
-        Regulations available at <a href="https://www.gov.uk/guidance/domestic-private-rented-property-minimum-energy-efficiency-standard-landlord-guidance">https://www.gov.uk/guidance/domestic-private-rented-property-minimum-energy-efficiency-standard-landlord-guidance</a>
+        <%== t('domestic_epc.rental_info.link.text', :link => '<a href="' + t('domestic_epc.rental_info.link.url') + '">' + t('domestic_epc.rental_info.link.cta') + '</a>') %>
       </p>
     </div>
   </div>
