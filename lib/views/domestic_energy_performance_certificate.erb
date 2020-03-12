@@ -34,9 +34,58 @@
           <b><%= assessment[:assessmentId] %></b>
         </p>
       </div>
+    </div>
+  </div>
 
-      <br /><br /><br />
+  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-body epc-blue-bottom">
+      <h2 class="govuk-heading-l">Renting this property</h2>
 
+      <% if assessment[:currentEnergyEfficiencyBand] > 'e' %>
+        <div class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <div class="govuk-warning-text__text">
+            <span class="govuk-warning-text__assistive">Warning</span>
+            <div class="epc-rating-box">
+              <p class="epc-rating-title govuk-body">
+                Energy Rating
+              </p>
+              <p class="epc-rating-result govuk-body">
+                F
+              </p>
+            </div>
+            <h2 class="govuk-error-summary__title" id="error-summary-title">
+              You may not be able to let this property
+            </h2>
+            <div class="govuk-error-summary__body">
+              <p class="govuk-body">
+                Your property has an EPC rating of F or G, you must take appropriate steps to comply
+                with the requirements of the current regulations (<a href="#">MEES</a>). We explain how to do this below.
+              </p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+
+      <div class="epc-box-clear"></div>
+
+      <p class="govuk-body">
+        The Regulations mean that, since 1 April 2018, private landlords may not let domestic properties
+        on new tendencies to new or existing tenants of the Energy Efficiency Certificate (EPC) rating is F or G
+        (unless an exemption applies).
+      </p>
+      <p class="govuk-body">
+        From 1 April 2020 the prohibition on letting F and G properties will extend to all relevant properties, even
+        when there has been no change in tenancy.
+      </p>
+      <p class="govuk-body">
+        Regulations available at <a href="https://www.gov.uk/guidance/domestic-private-rented-property-minimum-energy-efficiency-standard-landlord-guidance">https://www.gov.uk/guidance/domestic-private-rented-property-minimum-energy-efficiency-standard-landlord-guidance</a>
+      </p>
+    </div>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-body epc-blue-bottom">
       <%== erb :energy_rating, locals: {
         current_energy_efficiency_rating: assessment[:currentEnergyEfficiencyRating],
         potential_energy_efficiency_rating: assessment[:potentialEnergyEfficiencyRating],

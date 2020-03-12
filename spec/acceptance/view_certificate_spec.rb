@@ -73,6 +73,19 @@ describe 'Acceptance::Certificate' do
     it 'shows the assessors email address' do
       expect(response.body).to include('test.boi@quidos.com')
     end
+
+    it 'does not shows the warning to landlords that it cannot be rented out' do
+      expect(response.body).to_not include('You may not be able to let this property')
+    end
+
+    context 'and rating is poor (f)' do
+      before { FetchCertificate::Stub.fetch('123-654', '25', 'f') }
+
+      let(:response) { get '/energy-performance-certificate/123-654' }
+      it 'shows a warning text' do
+        expect(response.body).to include('You may not be able to let this property')
+      end
+    end
   end
 
   context 'when the assessment doesnt exist' do

@@ -2,7 +2,7 @@
 
 module FetchCertificate
   class Stub
-    def self.fetch(assessment_id)
+    def self.fetch(assessment_id, current_rating = 90, current_band = 'b')
       body = {
         assessor: {
           firstName: 'Test',
@@ -24,8 +24,8 @@ module FetchCertificate
         dwellingType: 'Top floor flat',
         typeOfAssessment: 'RdSAP',
         totalFloorArea: 150,
-        currentEnergyEfficiencyRating: 90,
-        currentEnergyEfficiencyBand: 'b',
+        currentEnergyEfficiencyRating: current_rating,
+        currentEnergyEfficiencyBand: current_band,
         potentialEnergyEfficiencyRating: 99,
         potentialEnergyEfficiencyBand: 'a',
         postcode: 'SW1B 2BB',
