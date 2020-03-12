@@ -289,7 +289,13 @@ en:
       date_of_expiry: 'Valid until %{date_of_expiry}'
       certificate_id: 'Certificate Number'
       energy_rating_title: 'Energy Rating'
-
+    landlord_warning:
+      title: 'You may not be able to let this property'
+      energy_rating_title: 'Energy Rating'
+      body:
+        text: 'Your property has an EPC rating of F or G, you must take appropriate steps to comply with the requirements of the current regulations (%{link}). We explain how to do this below.'
+        cta: 'MEES'
+        url: '#'
   error:
     error: 'Error: '
     500:

@@ -48,19 +48,18 @@
             <span class="govuk-warning-text__assistive">Warning</span>
             <div class="epc-rating-box">
               <p class="epc-rating-title govuk-body">
-                Energy Rating
+                <%= t('domestic_epc.landlord_warning.energy_rating_title') %>
               </p>
               <p class="epc-rating-result govuk-body">
-                F
+                <%= assessment[:currentEnergyEfficiencyBand].upcase %>
               </p>
             </div>
             <h2 class="govuk-error-summary__title" id="error-summary-title">
-              You may not be able to let this property
+              <%= t('domestic_epc.landlord_warning.title') %>
             </h2>
             <div class="govuk-error-summary__body">
               <p class="govuk-body">
-                Your property has an EPC rating of F or G, you must take appropriate steps to comply
-                with the requirements of the current regulations (<a href="#">MEES</a>). We explain how to do this below.
+                <%= t('domestic_epc.landlord_warning.body.text', :link => '<a href="' + t('domestic_epc.landlord_warning.body.url') + '">' + t('domestic_epc.landlord_warning.body.cta') + '</a>') %>
               </p>
             </div>
           </div>
