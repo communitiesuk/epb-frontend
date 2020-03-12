@@ -47,7 +47,7 @@ describe('Journey::Assessor', () => {
 
   it('finds an assessor by postcode in Welsh', async () => {
     await goto("localhost:9292/find-an-assessor");
-    await click('Welsh (Cymraeg)')
+    await click('Welsh (Cymraeg)');
     await click('Welsh: Start now');
     await write('SW1A 2AA', into(textBox('postcode')));
     await click('Welsh: Find');
@@ -58,7 +58,9 @@ describe('Journey::Assessor', () => {
     await click("Start now");
     await write('', into(textBox('postcode')));
     await click('Find');
-    await text('Enter a real postcode').exists()
+    let result = await text('Enter a real postcode').exists();
+
+    expect(result).toBeTruthy();
   }, 30000);
 
   it('displays an error message when entering an invalid postcode', async () => {
@@ -66,7 +68,9 @@ describe('Journey::Assessor', () => {
     await click("Start now");
     await write('NOT A POSTCODE', into(textBox('postcode')));
     await click('Find');
-    await text('Enter a real postcode').exists()
+    let result = await text('Enter a real postcode').exists();
+
+    expect(result).toBeTruthy();
   }, 30000);
 
   it('displays the find an assessor page heading when entering a valid postcode ', async () => {
@@ -74,7 +78,9 @@ describe('Journey::Assessor', () => {
     await click("Start now");
     await write('SW1A 2AA', into(textBox('postcode')));
     await click('Find');
-    await text('Results for energy assessors near you').exists()
+    let result = await text('3 assessors, sorted by distance from SW1A 2AA').exists();
+
+    expect(result).toBeTruthy();
   }, 30000);
 
   it('displays an error message when entering an empty name', async () => {
@@ -82,7 +88,9 @@ describe('Journey::Assessor', () => {
     await click("Start now");
     await click('Find assessor by name');
     await click('Search');
-    await text('Enter a name').exists()
+    let result = await text('Enter a name').exists();
+
+    expect(result).toBeTruthy();
   }, 30000);
 
   it('displays an assessor when searched for one that does exist', async () => {
@@ -91,7 +99,9 @@ describe('Journey::Assessor', () => {
     await click('Find assessor by name');
     await write('Supercommon Name', into(textBox('name')));
     await click('Search');
-    await text('3 results, found by the name Supercommon Name').exists()
+    let result = await text('3 results, found by the name Supercommon Name').exists();
+
+    expect(result).toBeTruthy();
   }, 30000);
 
   afterAll(async () => {
