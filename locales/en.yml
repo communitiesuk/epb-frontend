@@ -292,10 +292,10 @@ en:
     landlord_warning:
       title: 'Renting this property'
       hidden_text: 'Warning'
-      subtitle: 'You may not be able to let this property'
+      subtitle: 'The owner of this property may not be able to let it'
       energy_rating_title: 'Energy Rating'
       body:
-        text: 'Your property has an EPC rating of F or G, you must take appropriate steps to comply with the requirements of the current regulations (%{link}). We explain how to do this below.'
+        text: 'This property has an EPC rating of F or G, the property owner must take appropriate steps to comply with the requirements of the current regulations (%{link}). We explain how to do this below.'
         cta: 'MEES'
         url: '#'
     rental_info:
