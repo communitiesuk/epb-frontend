@@ -27,7 +27,6 @@ describe('Journey::Certificate', () => {
     });
 
     await openBrowser({
-      headless: false,
       args: [
         '--disable-gpu',
         '--disable-dev-shm-usage',
