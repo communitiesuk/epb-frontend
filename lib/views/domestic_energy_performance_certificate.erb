@@ -144,6 +144,86 @@
     </div>
   </div>
 
+
+      <div class="govuk-grid-column-two-thirds">
+        <div class="epc-blue-bottom">
+          <h3 class="govuk-heading-l"><%= t('domestic_epc.heat_demand.title') %></h3>
+          <p class="govuk-body"><%= t('domestic_epc.heat_demand.energy_costs') %></p>
+
+          <div class="epc-rating-box do-wide" style="float: left;">
+            <p class="epc-rating-title govuk-body">
+              <%= t('domestic_epc.heat_demand.space_heating') %>
+            </p>
+            <p class="epc-rating-result govuk-body">
+              <span>
+                <%= assessment[:heatDemand][:currentSpaceHeatingDemand] %>
+                <span><%= t('domestic_epc.heat_demand.kwh_per_year') %></span>
+              </span>
+            </p>
+          </div>
+
+          <div class="epc-rating-box do-wide">
+            <p class="epc-rating-title govuk-body">
+              <%= t('domestic_epc.heat_demand.water_heating') %>
+            </p>
+            <p class="epc-rating-result govuk-body">
+              <span>
+                <%= assessment[:heatDemand][:currentWaterHeatingDemand] %>
+                <span><%= t('domestic_epc.heat_demand.kwh_per_year') %></span>
+              </span>
+            </p>
+          </div>
+
+          <p class="govuk-body"><%= t('domestic_epc.heat_demand.table_description') %></p>
+
+
+          <table class="govuk-table">
+            <caption class="govuk-table__caption"><%= t('domestic_epc.heat_demand.potential_saving') %></caption>
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header"><%= t('domestic_epc.heat_demand.type_of_insulation') %></th>
+                <th scope="col" class="govuk-table__header"><%= t('domestic_epc.heat_demand.amount_saved') %></th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header"><%= t('domestic_epc.heat_demand.loft_insulation') %></th>
+                <td class="govuk-table__cell">
+                  <% if assessment[:heatDemand][:impactOfLoftInsulation] %>
+                    <%= assessment[:heatDemand][:impactOfLoftInsulation] %>
+                  <% else %>
+                    <%= t('domestic_epc.heat_demand.not_applicable') %>
+                  <% end %>
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header"><%= t('domestic_epc.heat_demand.cavity_insulation') %></th>
+                <td class="govuk-table__cell">
+                  <% if assessment[:heatDemand][:impactOfCavityInsulation] %>
+                    <%= assessment[:heatDemand][:impactOfCavityInsulation] %>
+                  <% else %>
+                    <%= t('domestic_epc.heat_demand.not_applicable') %>
+                  <% end %>
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header"><%= t('domestic_epc.heat_demand.solid_wall_insulation') %></th>
+                <td class="govuk-table__cell">
+                  <% if assessment[:heatDemand][:impactOfSolidWallInsulation] %>
+                    <%= assessment[:heatDemand][:impactOfSolidWallInsulation] %>
+                  <% else %>
+                    <%= t('domestic_epc.heat_demand.not_applicable') %>
+                  <% end %>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p class="govuk-body govuk-!-margin-top-2" style="clear: both;"><%= t('domestic_epc.heat_demand.renewable_heat_insentive') %><a href=<%= t('domestic_epc.heat_demand.rhi_url') %>><%= t('domestic_epc.heat_demand.rhi_url_text') %></a>.</p>
+        </div>
+      </div>
+
+
   <div class="govuk-grid-column-two-thirds">
     <div class="govuk-body epc-blue-bottom">
       <h2 class="govuk-heading-l">How this certificate was produced</h2>

@@ -26,7 +26,14 @@ describe UseCase::FindCertificateByPostcode do
           potentialEnergyEfficiencyRating: 'a',
           potentialEnergyEfficiencyBand: 95,
           postcode: 'SW1B 2BB',
-          dateOfExpiry: '2021-01-01'
+          dateOfExpiry: '2021-01-01',
+          heatDemand: {
+            currentSpaceHeatingDemand: 222,
+            currentWaterHeatingDemand: 321,
+            impactOfLoftInsulation: 79,
+            impactOfCavityInsulation: 67,
+            impactOfSolidWallInsulation: 69
+          }
         },
         {
           assessmentId: '123-987',
@@ -41,7 +48,14 @@ describe UseCase::FindCertificateByPostcode do
           potentialEnergyEfficiencyRating: 'a',
           potentialEnergyEfficiencyBand: 95,
           postcode: 'SW1B 2BB',
-          dateOfExpiry: '2022-01-01'
+          dateOfExpiry: '2022-01-01',
+          heatDemand: {
+            currentSpaceHeatingDemand: 222,
+            currentWaterHeatingDemand: 321,
+            impactOfLoftInsulation: 79,
+            impactOfCavityInsulation: 67,
+            impactOfSolidWallInsulation: 69
+          }
         },
         {
           assessmentId: '123-456',
@@ -56,7 +70,14 @@ describe UseCase::FindCertificateByPostcode do
           potentialEnergyEfficiencyRating: 'a',
           potentialEnergyEfficiencyBand: 95,
           postcode: 'SW1B 2BB',
-          dateOfExpiry: '2023-01-01'
+          dateOfExpiry: '2023-01-01',
+          heatDemand: {
+            currentSpaceHeatingDemand: 222,
+            currentWaterHeatingDemand: 321,
+            impactOfLoftInsulation: 79,
+            impactOfCavityInsulation: 67,
+            impactOfSolidWallInsulation: 69
+          }
         }
       ]
     end

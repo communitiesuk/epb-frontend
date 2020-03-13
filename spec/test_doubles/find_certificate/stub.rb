@@ -34,7 +34,14 @@ module FindCertificate
               potentialEnergyEfficiencyRating: 'a',
               potentialEnergyEfficiencyBand: 95,
               postcode: 'SW1B 2BB',
-              dateOfExpiry: '2019-01-01'
+              dateOfExpiry: '2019-01-01',
+              heatDemand: {
+                currentSpaceHeatingDemand: 222,
+                currentWaterHeatingDemand: 321,
+                impactOfLoftInsulation: 79,
+                impactOfCavityInsulation: 67,
+                impactOfSolidWallInsulation: 69
+              }
             },
             {
               assessmentId: '1234-5678-9101-1122',
@@ -49,7 +56,14 @@ module FindCertificate
               potentialEnergyEfficiencyRating: 'a',
               potentialEnergyEfficiencyBand: 95,
               postcode: 'SW1B 2BB',
-              dateOfExpiry: '2022-01-01'
+              dateOfExpiry: '2022-01-01',
+              heatDemand: {
+                currentSpaceHeatingDemand: 222,
+                currentWaterHeatingDemand: 321,
+                impactOfLoftInsulation: 79,
+                impactOfCavityInsulation: 67,
+                impactOfSolidWallInsulation: 69
+              }
             },
             {
               assessmentId: '1234-5678-9101-1123',
@@ -64,7 +78,14 @@ module FindCertificate
               potentialEnergyEfficiencyRating: 'a',
               potentialEnergyEfficiencyBand: 95,
               postcode: 'SW1B 2BB',
-              dateOfExpiry: '2023-01-01'
+              dateOfExpiry: '2023-01-01',
+              heatDemand: {
+                currentSpaceHeatingDemand: 222,
+                currentWaterHeatingDemand: 321,
+                impactOfLoftInsulation: 79,
+                impactOfCavityInsulation: 67,
+                impactOfSolidWallInsulation: 69
+              }
             }
           ],
           "searchPostcode": postcode
@@ -104,7 +125,14 @@ module FindCertificate
               potentialEnergyEfficiencyRating: 'a',
               potentialEnergyEfficiencyBand: 95,
               postcode: 'SW1B 2BB',
-              dateOfExpiry: '2019-01-01'
+              dateOfExpiry: '2019-01-01',
+              heatDemand: {
+                currentSpaceHeatingDemand: 222,
+                currentWaterHeatingDemand: 321,
+                impactOfLoftInsulation: 79,
+                impactOfCavityInsulation: 67,
+                impactOfSolidWallInsulation: 69
+              }
             }
           ],
           "searchReferenceNumber": certificate_id
@@ -146,7 +174,14 @@ module FindCertificate
               postcode: 'SW1B 2BB',
               dateOfExpiry: '2019-01-01',
               addressLine1: street_name,
-              town: town
+              town: town,
+              heatDemand: {
+                currentSpaceHeatingDemand: 222,
+                currentWaterHeatingDemand: 321,
+                impactOfLoftInsulation: 79,
+                impactOfCavityInsulation: 67,
+                impactOfSolidWallInsulation: 69
+              }
             },
             {
               assessmentId: '1234-5678-9101-1122',
@@ -163,7 +198,14 @@ module FindCertificate
               postcode: 'SW1B 2BB',
               dateOfExpiry: '2022-01-01',
               addressLine1: street_name,
-              town: town
+              town: town,
+              heatDemand: {
+                currentSpaceHeatingDemand: 222,
+                currentWaterHeatingDemand: 321,
+                impactOfLoftInsulation: 79,
+                impactOfCavityInsulation: 67,
+                impactOfSolidWallInsulation: 69
+              }
             },
             {
               assessmentId: '1234-5678-9101-1123',
@@ -180,7 +222,14 @@ module FindCertificate
               postcode: 'SW1B 2BB',
               dateOfExpiry: '2023-01-01',
               addressLine1: street_name,
-              town: town
+              town: town,
+              heatDemand: {
+                currentSpaceHeatingDemand: 222,
+                currentWaterHeatingDemand: 321,
+                impactOfLoftInsulation: 79,
+                impactOfCavityInsulation: 67,
+                impactOfSolidWallInsulation: 69
+              }
             }
           ],
           "searchReferenceNumber": [street_name, town]

@@ -28,7 +28,14 @@ describe UseCase::FindCertificateById do
           potentialEnergyEfficiencyRating: 'a',
           potentialEnergyEfficiencyBand: 95,
           postcode: 'SW1B 2BB',
-          dateOfExpiry: '2023-01-01'
+          dateOfExpiry: '2023-01-01',
+          heatDemand: {
+            currentSpaceHeatingDemand: 222,
+            currentWaterHeatingDemand: 321,
+            impactOfLoftInsulation: 79,
+            impactOfCavityInsulation: 67,
+            impactOfSolidWallInsulation: 69
+          }
         }
       ]
     end

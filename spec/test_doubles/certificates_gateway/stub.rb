@@ -18,7 +18,14 @@ module CertificatesGateway
             potentialEnergyEfficiencyRating: 'a',
             potentialEnergyEfficiencyBand: 95,
             postcode: 'SW1B 2BB',
-            dateOfExpiry: '2021-01-01'
+            dateOfExpiry: '2021-01-01',
+            heatDemand: {
+              currentSpaceHeatingDemand: 222,
+              currentWaterHeatingDemand: 321,
+              impactOfLoftInsulation: 79,
+              impactOfCavityInsulation: 67,
+              impactOfSolidWallInsulation: 69
+            }
           },
           {
             assessmentId: '123-987',
@@ -33,7 +40,14 @@ module CertificatesGateway
             potentialEnergyEfficiencyRating: 'a',
             potentialEnergyEfficiencyBand: 95,
             postcode: 'SW1B 2BB',
-            dateOfExpiry: '2022-01-01'
+            dateOfExpiry: '2022-01-01',
+            heatDemand: {
+              currentSpaceHeatingDemand: 222,
+              currentWaterHeatingDemand: 321,
+              impactOfLoftInsulation: 79,
+              impactOfCavityInsulation: 67,
+              impactOfSolidWallInsulation: 69
+            }
           },
           {
             assessmentId: '123-456',
@@ -48,7 +62,14 @@ module CertificatesGateway
             potentialEnergyEfficiencyRating: 'a',
             potentialEnergyEfficiencyBand: 95,
             postcode: 'SW1B 2BB',
-            dateOfExpiry: '2023-01-01'
+            dateOfExpiry: '2023-01-01',
+            heatDemand: {
+              currentSpaceHeatingDemand: 222,
+              currentWaterHeatingDemand: 321,
+              impactOfLoftInsulation: 79,
+              impactOfCavityInsulation: 67,
+              impactOfSolidWallInsulation: 69
+            }
           }
         ],
         "searchPostcode": 'SW1 5RW'
@@ -71,7 +92,14 @@ module CertificatesGateway
             potentialEnergyEfficiencyRating: 'a',
             potentialEnergyEfficiencyBand: 95,
             postcode: 'SW1B 2BB',
-            dateOfExpiry: '2023-01-01'
+            dateOfExpiry: '2023-01-01',
+            heatDemand: {
+              currentSpaceHeatingDemand: 222,
+              currentWaterHeatingDemand: 321,
+              impactOfLoftInsulation: 79,
+              impactOfCavityInsulation: 67,
+              impactOfSolidWallInsulation: 69
+            }
           }
         ],
         "searchPostcode": 'SW1 5RW'
@@ -96,7 +124,14 @@ module CertificatesGateway
             postcode: 'SW1B 2BB',
             dateOfExpiry: '2021-01-01',
             addressLine1: street_name,
-            town: town
+            town: town,
+            heatDemand: {
+              currentSpaceHeatingDemand: 222,
+              currentWaterHeatingDemand: 321,
+              impactOfLoftInsulation: 79,
+              impactOfCavityInsulation: 67,
+              impactOfSolidWallInsulation: 69
+            }
           },
           {
             assessmentId: '1234-5678-9101-1122',
@@ -113,7 +148,14 @@ module CertificatesGateway
             postcode: 'SW1B 2BB',
             dateOfExpiry: '2022-01-01',
             addressLine1: street_name,
-            town: town
+            town: town,
+            heatDemand: {
+              currentSpaceHeatingDemand: 222,
+              currentWaterHeatingDemand: 321,
+              impactOfLoftInsulation: 79,
+              impactOfCavityInsulation: 67,
+              impactOfSolidWallInsulation: 69
+            }
           },
           {
             assessmentId: '1234-5678-9101-1123',
@@ -130,7 +172,14 @@ module CertificatesGateway
             postcode: 'SW1B 2BB',
             dateOfExpiry: '2023-01-01',
             addressLine1: street_name,
-            town: town
+            town: town,
+            heatDemand: {
+              currentSpaceHeatingDemand: 222,
+              currentWaterHeatingDemand: 321,
+              impactOfLoftInsulation: 79,
+              impactOfCavityInsulation: 67,
+              impactOfSolidWallInsulation: 69
+            }
           }
         ],
         "searchPostcode": 'SW1 5RW'
@@ -168,7 +217,14 @@ module CertificatesGateway
         addressLine2: '2 Marsham Street',
         addressLine3: '',
         addressLine4: '',
-        town: 'London'
+        town: 'London',
+        heatDemand: {
+          currentSpaceHeatingDemand: 222,
+          currentWaterHeatingDemand: 321,
+          impactOfLoftInsulation: 79,
+          impactOfCavityInsulation: 67,
+          impactOfSolidWallInsulation: 69
+        }
       }
     end
   end

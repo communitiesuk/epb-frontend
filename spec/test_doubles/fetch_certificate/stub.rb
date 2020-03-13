@@ -33,7 +33,14 @@ module FetchCertificate
         addressLine2: '2 Marsham Street',
         addressLine3: '',
         addressLine4: '',
-        town: 'London'
+        town: 'London',
+        heatDemand: {
+          currentSpaceHeatingDemand: 222,
+          currentWaterHeatingDemand: 321,
+          impactOfLoftInsulation: 79,
+          impactOfCavityInsulation: 67,
+          impactOfSolidWallInsulation: 69
+        }
       }
 
       WebMock.stub_request(

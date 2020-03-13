@@ -51,7 +51,14 @@ describe UseCase::FindCertificateByStreetNameAndTown do
           postcode: 'SW1B 2BB',
           dateOfExpiry: '2021-01-01',
           addressLine1: 'Marsham Street',
-          town: 'London'
+          town: 'London',
+          heatDemand: {
+            currentSpaceHeatingDemand: 222,
+            currentWaterHeatingDemand: 321,
+            impactOfLoftInsulation: 79,
+            impactOfCavityInsulation: 67,
+            impactOfSolidWallInsulation: 69
+          }
         },
         {
           assessmentId: '1234-5678-9101-1122',
@@ -68,7 +75,14 @@ describe UseCase::FindCertificateByStreetNameAndTown do
           postcode: 'SW1B 2BB',
           dateOfExpiry: '2022-01-01',
           addressLine1: 'Marsham Street',
-          town: 'London'
+          town: 'London',
+          heatDemand: {
+            currentSpaceHeatingDemand: 222,
+            currentWaterHeatingDemand: 321,
+            impactOfLoftInsulation: 79,
+            impactOfCavityInsulation: 67,
+            impactOfSolidWallInsulation: 69
+          }
         },
         {
           assessmentId: '1234-5678-9101-1123',
@@ -85,7 +99,14 @@ describe UseCase::FindCertificateByStreetNameAndTown do
           postcode: 'SW1B 2BB',
           dateOfExpiry: '2023-01-01',
           addressLine1: 'Marsham Street',
-          town: 'London'
+          town: 'London',
+          heatDemand: {
+            currentSpaceHeatingDemand: 222,
+            currentWaterHeatingDemand: 321,
+            impactOfLoftInsulation: 79,
+            impactOfCavityInsulation: 67,
+            impactOfSolidWallInsulation: 69
+          }
         }
       ]
     end

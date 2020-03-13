@@ -251,6 +251,22 @@ cy:
       type_of_assessment: 'Welsh: Type of assessment'
       total_floor_area: 'Welsh: Total floor area'
       dwelling_type: 'Welsh: Dwelling type'
+    heat_demand:
+      title: 'Property heat demand'
+      energy_costs: 'The majority of energy costs cover heating the space and water used in a home. The figures below show the current estemated energy use for heating in this property.'
+      space_heating: 'Space heating'
+      kwh_per_year: 'kWh per year'
+      water_heating: 'Water heating'
+      table_description: 'The table below shows the amount of energy that could be saved in this property by installing insulation, based on typical energy use.'
+      potential_saving: 'Potential space heating energy saving'
+      type_of_insulation: 'Type of insulation'
+      amount_saved: 'Amount of energy saved (kWh per year)'
+      loft_insulation: 'Loft insulation'
+      cavity_insulation: 'Cavity wall insulation'
+      solid_wall_insulation: 'Solid wall insulation'
+      renewable_heat_insentive: 'If you replace your existing heating system with one that generates heat using renewable energy sources, you could receive Renewable Heat Incentive (RHI) payments, subject to meeting minimum energy efficiency requirements. The amount of payments you are eligable for will be based on the current estemated energy use required for space and water heating in your property. More infomation is avliable on the '
+      rhi_url: 'https://www.gov.uk/domestic-renewable-heat-incentive'
+      rhi_url_text: 'RHI information page'
 
   error:
     error: 'Welsh: Error: '
