@@ -1,8 +1,24 @@
 .epc-blue-bottom {
-  border-bottom: 4px solid #1d70b8;
+  border-bottom: 3px solid #1d70b8;
   margin-bottom: 25px!important;
   padding-bottom: 40px;
   overflow: hidden;
+}
+
+.epc-light-top {
+  background: none;
+  height: 0;
+  border: none;
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+}
+
+.epc-blue-top {
+  background: none;
+  height: 0;
+  border: none;
+  border-top: 3px solid #1d70b8;
+  padding-top: 10px;
 }
 
 .epc-box {

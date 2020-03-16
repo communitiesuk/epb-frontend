@@ -1,6 +1,6 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <div class="govuk-body epc-blue-bottom">
+    <div class="govuk-body">
       <a
         href="<%= localised_url('/find-a-certificate')%>"
         class="govuk-back-link">
@@ -10,7 +10,12 @@
       <h1 class="govuk-heading-xl">
         <%= t('domestic_epc.top_heading') %>
       </h1>
+    </div>
+  </div>
 
+  <div class="govuk-grid-column-two-thirds">
+    <hr class="epc-light-top" />
+    <div class="govuk-body epc-blue-bottom">
       <div class="epc-box">
         <div class="epc-rating-box">
           <p class="epc-rating-title govuk-body">
@@ -36,6 +41,15 @@
     </div>
   </div>
 
+  <div class="govuk-grid-column-one-third">
+    <div class="govuk-!-margin-bottom-9 related-links">
+      <hr class="epc-blue-top" />
+      <h3 class="govuk-heading-m">Related content</h3>
+      <p class="govuk-body"><a target="_blank" rel="noopener noreferrer" class="govuk-link" href="https://www.simpleenergyadvice.org.uk">Simple Energy Advice</a></p>
+      <p class="govuk-body"><a target="_blank" rel="noopener noreferrer" class="govuk-link" href="https://www.gov.uk/improve-energy-efficiency">Improving Energy Efficiency</a></p>
+      <p class="govuk-body"><a target="_blank" rel="noopener noreferrer" class="govuk-link" href="https://energysavingtrust.org.uk">Energy Saving Trust</a></p>
+    </div>
+  </div>
   <div class="govuk-grid-column-two-thirds">
     <div class="govuk-body epc-blue-bottom">
       <h2 class="govuk-heading-l"><%= t('domestic_epc.landlord_warning.title') %></h2>
