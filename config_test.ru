@@ -13,7 +13,7 @@ WebMock.enable!
 
 OauthStub.token
 FindAssessor::ByPostcode::Stub.search_by_postcode('SW1A 2AA', 'nonDomesticSp3')
-FindAssessor::ByPostcode::Stub.search_by_postcode('SW1A 2AA', )
+FindAssessor::ByPostcode::Stub.search_by_postcode('SW1A 2AA')
 FindAssessor::ByName::Stub.search_by_name('Supercommon Name')
 FindAssessor::ByName::Stub.search_by_name('Somewhatcommon Name', true)
 FindCertificate::Stub.search_by_postcode('SW1A 2AA')

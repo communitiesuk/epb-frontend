@@ -141,7 +141,8 @@ describe 'Acceptance::NonDomesticAssessor' do
       context 'where no assessors are near' do
         before do
           FindAssessor::ByPostcode::NoNearAssessorsStub.search_by_postcode(
-            'E1 4AA', 'nonDomesticSp3'
+            'E1 4AA',
+            'nonDomesticSp3'
           )
         end
 
@@ -167,7 +168,8 @@ describe 'Acceptance::NonDomesticAssessor' do
       context 'where the postcode doesnt exist' do
         before do
           FindAssessor::ByPostcode::UnregisteredPostcodeStub.search_by_postcode(
-            'B11 4FF', 'nonDomesticSp3'
+            'B11 4FF',
+            'nonDomesticSp3'
           )
         end
 
@@ -194,7 +196,8 @@ describe 'Acceptance::NonDomesticAssessor' do
       context 'where the requested postcode is malformed' do
         before do
           FindAssessor::ByPostcode::InvalidPostcodeStub.search_by_postcode(
-            'C11 4FF', 'nonDomesticSp3'
+            'C11 4FF',
+            'nonDomesticSp3'
           )
         end
 
@@ -207,7 +210,9 @@ describe 'Acceptance::NonDomesticAssessor' do
         end
 
         it 'displays find a non-domestic assessor page heading' do
-          expect(response.body).to include('Find a non-domestic energy assessor')
+          expect(response.body).to include(
+            'Find a non-domestic energy assessor'
+          )
         end
 
         it 'displays an error message' do
@@ -222,7 +227,10 @@ describe 'Acceptance::NonDomesticAssessor' do
 
       context 'when there is no connection' do
         before do
-          FindAssessor::ByPostcode::NoNetworkStub.search_by_postcode('D11 4FF', 'nonDomesticSp3')
+          FindAssessor::ByPostcode::NoNetworkStub.search_by_postcode(
+            'D11 4FF',
+            'nonDomesticSp3'
+          )
         end
 
         let(:response) do
