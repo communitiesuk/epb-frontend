@@ -80,6 +80,14 @@ describe 'Acceptance::Certificate' do
                                    )
     end
 
+    it 'does not shows the heat demand data' do
+      expect(response.body).to include('222')
+      expect(response.body).to include('321')
+      expect(response.body).to include('79')
+      expect(response.body).to include('67')
+      expect(response.body).to include('69')
+    end
+
     context 'and rating is poor (f)' do
       before { FetchCertificate::Stub.fetch('123-654', '25', 'f') }
 
