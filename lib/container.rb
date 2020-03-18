@@ -13,6 +13,8 @@ class Container
     certificates_gateway = Gateway::CertificatesGateway.new(internal_api_client)
     find_assessor_by_postcode_use_case =
       UseCase::FindAssessorByPostcode.new(assessors_gateway)
+    find_non_domestic_assessor_by_postcode_use_case =
+      UseCase::FindNonDomesticAssessorByPostcode.new(assessors_gateway)
     find_assessor_by_name_use_case =
       UseCase::FindAssessorByName.new(assessors_gateway)
     find_certificate_by_postcode_use_case =
@@ -27,6 +29,8 @@ class Container
     @objects = {
       internal_api_client: internal_api_client,
       find_assessor_by_postcode_use_case: find_assessor_by_postcode_use_case,
+      find_non_domestic_assessor_by_postcode_use_case:
+        find_non_domestic_assessor_by_postcode_use_case,
       find_assessor_by_name_use_case: find_assessor_by_name_use_case,
       fetch_certificate_use_case: fetch_certificate_use_case,
       find_certificate_by_postcode_use_case:
