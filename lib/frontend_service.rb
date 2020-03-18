@@ -144,6 +144,42 @@ class FrontendService < Sinatra::Base
         layout: :layout, locals: { errors: @errors, results: @results }
   end
 
+  get '/find-a-non-domestic-assessor/search-by-postcode' do
+    @errors = {}
+    @erb_template = :find_non_domestic_assessor_by_postcode
+
+    response =
+      @container.get_object(:find_non_domestic_assessor_by_postcode_use_case)
+
+    if params['postcode']
+      if valid_postcode.match(params['postcode'])
+        @page_title = t('find_assessor_by_postcode_results.head.title')
+        begin
+          @results = response.execute(params['postcode'])
+
+          @erb_template = :find_non_domestic_assessor_by_postcode_results
+        rescue Errors::PostcodeNotRegistered
+          status 404
+          @errors[:postcode] =
+            t('find_assessor_by_postcode.postcode_not_registered')
+        rescue Errors::PostcodeNotValid
+          status 400
+          @errors[:postcode] = t('find_assessor_by_postcode.postcode_not_valid')
+        rescue Auth::Errors::NetworkConnectionFailed
+          status 500
+          @erb_template = :error_page_500
+        end
+      else
+        status 400
+        @errors[:postcode] = t('find_assessor_by_postcode.postcode_error')
+      end
+    end
+
+    @page_title = t('find_non_domestic_assessor_by_postcode.head.title')
+    erb @erb_template,
+        layout: :layout, locals: { errors: @errors, results: @results }
+  end
+
   get '/find-a-certificate/search-by-reference-number' do
     @errors = {}
     @erb_template = :find_certificate_by_reference_number
