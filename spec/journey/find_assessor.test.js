@@ -125,7 +125,7 @@ describe('Journey::Assessor', () => {
 
     it('displays an error message when entering an invalid postcode', async () => {
       await goto("localhost:9292/find-an-assessor");
-      await click("Start now");
+      await click("find a non domestic assessor service");
       await write('NOT A POSTCODE', into(textBox('postcode')));
       await click('Find');
       let result = await text('Enter a real postcode').exists();
