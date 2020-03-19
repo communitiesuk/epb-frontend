@@ -6,6 +6,12 @@ module FindAssessor
       def self.search_by_postcode(
         postcode, qualification_type = 'domesticRdSap'
       )
+        if qualification_type == 'nonDomesticSp3'
+          qualification_status = { 'nonDomesticSp3': 'ACTIVE' }
+        else
+          qualification_status = { 'domesticRdSap': 'ACTIVE' }
+        end
+
         WebMock.stub_request(
           :get,
           "http://test-api.gov.uk/api/assessors?postcode=#{
@@ -31,6 +37,7 @@ module FindAssessor
                   "contactDetails": {
                     "telephoneNumber": 'string', "email": 'user@example.com'
                   },
+                  "qualifications": qualification_status,
                   "searchResultsComparisonPostcode": 'SW1A 1AA',
                   "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' },
                   "schemeAssessorId": 'STROMA9999990'
@@ -45,6 +52,7 @@ module FindAssessor
                     "telephoneNumber": '07921 021 368',
                     "email": 'user@example.com'
                   },
+                  "qualifications": qualification_status,
                   "searchResultsComparisonPostcode": 'SW1A 1AA',
                   "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' },
                   "schemeAssessorId": '12349876'
@@ -58,6 +66,7 @@ module FindAssessor
                   "contactDetails": {
                     "telephoneNumber": 'string', "email": 'user@example.com'
                   },
+                  "qualifications": qualification_status,
                   "searchResultsComparisonPostcode": 'SW1A 1AA',
                   "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' },
                   "schemeAssessorId": '12349876'

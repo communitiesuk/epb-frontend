@@ -29,7 +29,8 @@ describe 'Acceptance::Postcodes' do
           :contactDetails,
           :searchResultsComparisonPostcode,
           :registeredBy,
-          :schemeAssessorId
+          :schemeAssessorId,
+          :qualifications
         )
       end
 

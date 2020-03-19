@@ -32,7 +32,8 @@ describe Gateway::AssessorsGateway do
           :contactDetails,
           :searchResultsComparisonPostcode,
           :registeredBy,
-          :schemeAssessorId
+          :schemeAssessorId,
+          :qualifications
         )
       end
 

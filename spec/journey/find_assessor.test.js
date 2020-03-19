@@ -104,6 +104,46 @@ describe('Journey::Assessor', () => {
     expect(result).toBeTruthy();
   }, 30000);
 
+
+  describe('given finding a non-domestic assessor by postcode ', () => {
+    it('finds a non-domestic assessor by postcode', async () => {
+      await goto("localhost:9292/find-an-assessor");
+      await click("find a non domestic assessor service");
+      await write('SW1A 2AA', into(textBox('postcode')));
+      await click('Find');
+    }, 30000);
+
+    it('displays an error message when entering an empty postcode', async () => {
+      await goto("localhost:9292/find-an-assessor");
+      await click("find a non domestic assessor service");
+      await write('', into(textBox('postcode')));
+      await click('Find');
+      let result = await text('Enter a real postcode').exists();
+
+      expect(result).toBeTruthy();
+    }, 30000);
+
+    it('displays an error message when entering an invalid postcode', async () => {
+      await goto("localhost:9292/find-an-assessor");
+      await click("find a non domestic assessor service");
+      await write('NOT A POSTCODE', into(textBox('postcode')));
+      await click('Find');
+      let result = await text('Enter a real postcode').exists();
+
+      expect(result).toBeTruthy();
+    }, 30000);
+
+    it('displays the find a non domestic assessor page heading when entering a valid postcode ', async () => {
+      await goto("localhost:9292/find-an-assessor");
+      await click("find a non domestic assessor service");
+      await write('SW1A 2AA', into(textBox('postcode')));
+      await click('Find');
+      let result = await text('3 assessors, sorted by distance from SW1A 2AA').exists();
+
+      expect(result).toBeTruthy();
+    }, 30000);
+  });
+
   afterAll(async () => {
     await closeBrowser();
     process.kill(rackup_pid, "SIGTERM")
