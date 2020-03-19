@@ -124,14 +124,6 @@ en:
 
 
   find_non_domestic_assessor_by_postcode_results:
-    contact_details:
-      title: 'Contact'
-      email: 'Email'
-      telephone: 'Telephone'
-    accreditation:
-      title: 'Accreditation'
-      accredited_id: 'Assessor ID'
-      accredited_scheme: 'Accreditation scheme'
     qualification:
       title: 'Qualification'
       nonDomesticSp3: 'Air Conditioning Simple Packaged (Level 3)'

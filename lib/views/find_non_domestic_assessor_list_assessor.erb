@@ -5,8 +5,8 @@
     <div>
       <dl class="govuk-summary-list govuk-summary-list--no-border">
         <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key"><%= t('find_non_domestic_assessor_by_postcode_results.qualification.title') %></dt>
-          <dd class="govuk-summary-list__value">
+          <dt class="govuk-summary-list__key govuk-!-font-weight-regular"><%= t('find_non_domestic_assessor_by_postcode_results.qualification.title') %></dt>
+          <dd class="govuk-summary-list__value govuk-!-font-weight-bold">
             <%
               qualifications = []
               assessor[:qualifications].each do |qualification, qualification_status|
@@ -19,19 +19,25 @@
             <%= qualifications.join(", ") %>
           </dd>
         </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key"><%= t('find_non_domestic_assessor_by_postcode_results.accreditation.title') %></dt>
-          <dd class="govuk-summary-list__value">
-            <%=  t('find_non_domestic_assessor_by_postcode_results.accreditation.accredited_id') %>  <%= assessor[:schemeAssessorId] %> </br>
-            <%=  t('find_non_domestic_assessor_by_postcode_results.accreditation.accredited_scheme') %>  <%= assessor[:registeredBy][:name] %>
+        <div class="govuk-summary-list__row govuk-!-padding-bottom-0 govuk-!-margin-bottom-0">
+          <dt class="govuk-summary-list__key govuk-!-padding-bottom-0 govuk-!-margin-bottom-0 govuk-!-font-weight-regular"><%= t('find_assessor_by_postcode_results.contact_details.telephone') %></dt>
+          <dd class="govuk-summary-list__value govuk-!-padding-bottom-0 govuk-!-margin-bottom-0 govuk-!-font-weight-bold">
+            <%= assessor[:contactDetails][:telephoneNumber] %>
           </dd>
         </div>
-        <div class="govuk-summary-list__row govuk-!-padding-bottom-0 govuk-!-margin-bottom-0">
-          <dt class="govuk-summary-list__key govuk-!-padding-bottom-0 govuk-!-margin-bottom-0"><%= t('find_non_domestic_assessor_by_postcode_results.contact_details.title') %></dt>
-          <dd class="govuk-summary-list__value govuk-!-padding-bottom-0 govuk-!-margin-bottom-0">
-            <%= t('find_non_domestic_assessor_by_postcode_results.contact_details.email') %>  <a href="mailto:<%= assessor[:contactDetails][:email] %>"><%= assessor[:contactDetails][:email] %></a></br>
-            <%= t('find_non_domestic_assessor_by_postcode_results.contact_details.telephone') %>  <%= assessor[:contactDetails][:telephoneNumber] %>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-font-weight-regular"><%= t('find_assessor_by_postcode_results.contact_details.email') %></dt>
+          <dd class="govuk-summary-list__value govuk-!-font-weight-bold">
+            <a href="mailto:<%= assessor[:contactDetails][:email] %>"><%= assessor[:contactDetails][:email] %></a>
           </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-font-weight-regular"><%= t('find_assessor_by_postcode_results.accredited_id') %></dt>
+          <dd class="govuk-summary-list__value govuk-!-font-weight-bold"><%= assessor[:schemeAssessorId] %></dd>
+        </div>
+        <div class="govuk-summary-list__row govuk-!-padding-bottom-0 govuk-!-margin-bottom-0">
+          <dt class="govuk-summary-list__key govuk-!-padding-bottom-0 govuk-!-margin-bottom-0 govuk-!-font-weight-regular"><%= t('find_assessor_by_postcode_results.accredited_scheme') %></dt>
+          <dd class="govuk-summary-list__value govuk-!-padding-bottom-0 govuk-!-margin-bottom-0 govuk-!-font-weight-bold"><%= assessor[:registeredBy][:name] %></dd>
         </div>
       </dl>
     </div>
