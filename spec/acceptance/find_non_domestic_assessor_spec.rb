@@ -13,7 +13,7 @@ describe 'Acceptance::NonDomesticAssessor' do
 
       it 'displays the find a non-domestic assessor page heading' do
         expect(response.body).to include(
-          'Find a non-domestic energy to get a new EPC'
+          'Find a non-domestic assessor to get a new EPC'
         )
       end
 
@@ -43,7 +43,7 @@ describe 'Acceptance::NonDomesticAssessor' do
 
       it 'displays the find a non-domestic assessor page heading' do
         expect(response.body).to include(
-          'Find a non-domestic energy to get a new EPC'
+          'Find a non-domestic assessor to get a new EPC'
         )
       end
 
@@ -66,7 +66,7 @@ describe 'Acceptance::NonDomesticAssessor' do
 
       it 'displays the find an assessor page heading' do
         expect(response.body).to include(
-          'Find a non-domestic energy to get a new EPC'
+          'Find a non-domestic assessor to get a new EPC'
         )
       end
 
