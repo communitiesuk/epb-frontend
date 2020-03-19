@@ -34,11 +34,6 @@ en:
       cta: 'Find a certificate'
     caution: 'This page is intended for Private Beta use, and will not be a part of the public service'
 
-  find_non_domestic_assessor_by_postcode:
-    head:
-      title: 'Energy performance of buildings register - Find a non-domestic energy assessor'
-    top_heading: 'Find a non-domestic assessor to get a new EPC'
-
   find_an_assessor:
     head:
       title: 'Energy performance of buildings register - Find an energy assessor for a residential property'
@@ -122,8 +117,14 @@ en:
       heading: 'Accreditation scheme not found'
       body: 'There is no scheme for one of the requested assessor'
 
+  find_non_domestic_assessor_by_postcode:
+    head:
+      title: 'Energy performance of buildings register - Find a non-domestic energy assessor'
+    top_heading: 'Find a non-domestic assessor to get a new EPC'
 
   find_non_domestic_assessor_by_postcode_results:
+    top_heading: 'Contact a non-domestic assessor to book an EPC assessment'
+    description: 'Contact a non-domestic assessor listed below to book an energy assessment.'
     qualification:
       title: 'Qualification'
       nonDomesticSp3: 'Air Conditioning Simple Packaged (Level 3)'
