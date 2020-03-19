@@ -11,20 +11,20 @@ describe UseCase::FindNonDomesticAssessorByPostcode do
   end
 
   it 'returns an error when the postcode is not valid' do
-    find_non_domestic_assessors_without_existing_postcode =
+    find_non_domestic_assessors_without_valid_postcode =
       described_class.new(AssessorsGateway::InvalidPostcodesStub.new)
 
     expect {
-      find_non_domestic_assessors_without_existing_postcode.execute('E19 0GL')
+      find_non_domestic_assessors_without_valid_postcode.execute('E19 0GL')
     }.to raise_exception Errors::PostcodeNotValid
   end
 
   context 'when there are no assessors matched by the postcode' do
     let(:assessors_gateway) { AssessorsGateway::EmptyStub.new }
-    let(:find_assessor) { described_class.new(assessors_gateway) }
+    let(:find_non_domestic_assessor) { described_class.new(assessors_gateway) }
 
     it 'returns empty array' do
-      expect(find_assessor.execute('SW1A+2AA')).to eq([])
+      expect(find_non_domestic_assessor.execute('SW1A+2AA')).to eq([])
     end
   end
 
@@ -61,10 +61,10 @@ describe UseCase::FindNonDomesticAssessorByPostcode do
     end
 
     let(:assessors_gateway) { AssessorsGateway::NonDomesticStub.new }
-    let(:find_assessor) { described_class.new(assessors_gateway) }
+    let(:find_non_domestic_assessor) { described_class.new(assessors_gateway) }
 
-    it 'returns list of assessors' do
-      expect(find_assessor.execute('SW1A+2AB')).to eq(valid_assessors)
+    it 'returns list of non domestic assessors' do
+      expect(find_non_domestic_assessor.execute('SW1A+2AB')).to eq(valid_assessors)
     end
   end
 end
