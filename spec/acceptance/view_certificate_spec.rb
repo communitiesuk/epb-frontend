@@ -80,11 +80,23 @@ describe 'Acceptance::Certificate' do
                                    )
     end
 
-    it 'does not shows the heat demand data' do
+    it 'shows the current space heat demand' do
       expect(response.body).to include('222')
+    end
+
+    it 'shows the current water heat demand' do
       expect(response.body).to include('321')
+    end
+
+    it 'shows possible energy saving with loft insulation' do
       expect(response.body).to include('79')
+    end
+
+    it 'shows possible energy saving with cavity insulation' do
       expect(response.body).to include('67')
+    end
+
+    it 'shows possible energy saving with solid wall insulation' do
       expect(response.body).to include('69')
     end
 
