@@ -3,7 +3,7 @@
 require 'rspec'
 require 'rack/test'
 require 'webmock/rspec'
-require 'epb_auth_tools'
+require 'epb-auth-tools'
 
 require 'zeitwerk'
 

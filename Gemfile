@@ -14,8 +14,7 @@ source 'https://rubygems.org' do
     gem 'webmock', '~> 3.7'
   end
 
-  gem 'epb_auth_tools',
-      git: 'https://github.com/communitiesuk/epb-auth-tools', branch: 'master'
+  gem 'epb-auth-tools', '~> 1.0', '>= 1.0.2'
   gem 'erubis', '~> 2.7'
   gem 'i18n'
   gem 'rack-contrib'
