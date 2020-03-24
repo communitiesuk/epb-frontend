@@ -8,7 +8,7 @@ module Gateway
 
     def search_by_postcode(postcode)
       route =
-        "/api/assessments/domestic-energy-performance/search?postcode=#{
+        "/api/assessments/domestic-epc/search?postcode=#{
           postcode
         }"
       response = @internal_api_client.get(route)
@@ -17,7 +17,7 @@ module Gateway
 
     def search_by_id(certificate_id)
       route =
-        "/api/assessments/domestic-energy-performance/search?assessment_id=#{
+        "/api/assessments/domestic-epc/search?assessment_id=#{
           certificate_id
         }"
       response = @internal_api_client.get(route)
@@ -26,7 +26,7 @@ module Gateway
 
     def search_by_street_name_and_town(street_name, town)
       route =
-        "/api/assessments/domestic-energy-performance/search?street_name=#{
+        "/api/assessments/domestic-epc/search?street_name=#{
           street_name
         }&town=#{town}"
       response = @internal_api_client.get(route)
@@ -35,7 +35,7 @@ module Gateway
 
     def fetch(assessment_id)
       route =
-        "/api/assessments/domestic-energy-performance/#{
+        "/api/assessments/domestic-epc/#{
           CGI.escape(assessment_id)
         }"
 

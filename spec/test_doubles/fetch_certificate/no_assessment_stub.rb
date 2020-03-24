@@ -3,7 +3,7 @@ module FetchCertificate
     def self.fetch(assessment_id)
       WebMock.stub_request(
         :get,
-        "http://test-api.gov.uk/api/assessments/domestic-energy-performance/#{
+        "http://test-api.gov.uk/api/assessments/domestic-epc/#{
           assessment_id
         }"
       )
