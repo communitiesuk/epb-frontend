@@ -11,7 +11,8 @@ module FindAssessor
           .to_return(
           status: 200,
           body: {
-            "results": [], "searchName": name, "looseMatch": false
+            "data": { "assessors": [] },
+            "meta": { "searchName": name, "looseMatch": false }
           }.to_json
         )
       end

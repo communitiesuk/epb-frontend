@@ -20,78 +20,80 @@ module FindCertificate
         .to_return(
         status: 200,
         body: {
-          "results": [
-            {
-              assessmentId: '1234-5678-9101-1121',
-              dateOfAssessment: '2011-01-01',
-              dateRegistered: '2011-01-02',
-              dwellingType: 'Top floor flat',
-              typeOfAssessment: 'RdSAP',
-              totalFloorArea: 50,
-              addressSummary: '2 Marsham Street, London, SW1B 2BB',
-              currentEnergyEfficiencyRating: 90,
-              currentEnergyEfficiencyBand: 'b',
-              potentialEnergyEfficiencyRating: 'a',
-              potentialEnergyEfficiencyBand: 95,
-              postcode: 'SW1B 2BB',
-              dateOfExpiry: '2019-01-01',
-              heatDemand: {
-                currentSpaceHeatingDemand: 222,
-                currentWaterHeatingDemand: 321,
-                impactOfLoftInsulation: 79,
-                impactOfCavityInsulation: 67,
-                impactOfSolidWallInsulation: 69
+          "data": {
+            "assessments": [
+              {
+                assessmentId: '1234-5678-9101-1121',
+                dateOfAssessment: '2011-01-01',
+                dateRegistered: '2011-01-02',
+                dwellingType: 'Top floor flat',
+                typeOfAssessment: 'RdSAP',
+                totalFloorArea: 50,
+                addressSummary: '2 Marsham Street, London, SW1B 2BB',
+                currentEnergyEfficiencyRating: 90,
+                currentEnergyEfficiencyBand: 'b',
+                potentialEnergyEfficiencyRating: 'a',
+                potentialEnergyEfficiencyBand: 95,
+                postcode: 'SW1B 2BB',
+                dateOfExpiry: '2019-01-01',
+                heatDemand: {
+                  currentSpaceHeatingDemand: 222,
+                  currentWaterHeatingDemand: 321,
+                  impactOfLoftInsulation: 79,
+                  impactOfCavityInsulation: 67,
+                  impactOfSolidWallInsulation: 69
+                },
+                recommendedImprovements: [{ sequence: 2 }, { sequence: 3 }]
               },
-              recommendedImprovements: [{ sequence: 2 }, { sequence: 3 }]
-            },
-            {
-              assessmentId: '1234-5678-9101-1122',
-              dateOfAssessment: '2011-01-01',
-              dateRegistered: '2011-01-02',
-              dwellingType: 'Top floor flat',
-              typeOfAssessment: 'RdSAP',
-              totalFloorArea: 50,
-              addressSummary: '1 Marsham Street, London, SW1B 2BB',
-              currentEnergyEfficiencyRating: 90,
-              currentEnergyEfficiencyBand: 'b',
-              potentialEnergyEfficiencyRating: 'a',
-              potentialEnergyEfficiencyBand: 95,
-              postcode: 'SW1B 2BB',
-              dateOfExpiry: '2022-01-01',
-              heatDemand: {
-                currentSpaceHeatingDemand: 222,
-                currentWaterHeatingDemand: 321,
-                impactOfLoftInsulation: 79,
-                impactOfCavityInsulation: 67,
-                impactOfSolidWallInsulation: 69
+              {
+                assessmentId: '1234-5678-9101-1122',
+                dateOfAssessment: '2011-01-01',
+                dateRegistered: '2011-01-02',
+                dwellingType: 'Top floor flat',
+                typeOfAssessment: 'RdSAP',
+                totalFloorArea: 50,
+                addressSummary: '1 Marsham Street, London, SW1B 2BB',
+                currentEnergyEfficiencyRating: 90,
+                currentEnergyEfficiencyBand: 'b',
+                potentialEnergyEfficiencyRating: 'a',
+                potentialEnergyEfficiencyBand: 95,
+                postcode: 'SW1B 2BB',
+                dateOfExpiry: '2022-01-01',
+                heatDemand: {
+                  currentSpaceHeatingDemand: 222,
+                  currentWaterHeatingDemand: 321,
+                  impactOfLoftInsulation: 79,
+                  impactOfCavityInsulation: 67,
+                  impactOfSolidWallInsulation: 69
+                },
+                recommendedImprovements: [{ sequence: 0 }, { sequence: 1 }]
               },
-              recommendedImprovements: [{ sequence: 0 }, { sequence: 1 }]
-            },
-            {
-              assessmentId: '1234-5678-9101-1123',
-              dateOfAssessment: '2011-01-01',
-              dateRegistered: '2011-01-02',
-              dwellingType: 'Top floor flat',
-              typeOfAssessment: 'RdSAP',
-              totalFloorArea: 50,
-              addressSummary: '3 Marsham Street, London, SW1B 2BB',
-              currentEnergyEfficiencyRating: 90,
-              currentEnergyEfficiencyBand: 'b',
-              potentialEnergyEfficiencyRating: 'a',
-              potentialEnergyEfficiencyBand: 95,
-              postcode: 'SW1B 2BB',
-              dateOfExpiry: '2023-01-01',
-              heatDemand: {
-                currentSpaceHeatingDemand: 222,
-                currentWaterHeatingDemand: 321,
-                impactOfLoftInsulation: 79,
-                impactOfCavityInsulation: 67,
-                impactOfSolidWallInsulation: 69
-              },
-              recommendedImprovements: []
-            }
-          ],
-          "searchPostcode": postcode
+              {
+                assessmentId: '1234-5678-9101-1123',
+                dateOfAssessment: '2011-01-01',
+                dateRegistered: '2011-01-02',
+                dwellingType: 'Top floor flat',
+                typeOfAssessment: 'RdSAP',
+                totalFloorArea: 50,
+                addressSummary: '3 Marsham Street, London, SW1B 2BB',
+                currentEnergyEfficiencyRating: 90,
+                currentEnergyEfficiencyBand: 'b',
+                potentialEnergyEfficiencyRating: 'a',
+                potentialEnergyEfficiencyBand: 95,
+                postcode: 'SW1B 2BB',
+                dateOfExpiry: '2023-01-01',
+                heatDemand: {
+                  currentSpaceHeatingDemand: 222,
+                  currentWaterHeatingDemand: 321,
+                  impactOfLoftInsulation: 79,
+                  impactOfCavityInsulation: 67,
+                  impactOfSolidWallInsulation: 69
+                },
+                recommendedImprovements: []
+              }
+            ]
+          },
+          "meta": { "searchPostcode": postcode }
         }.to_json
       )
     end
@@ -114,31 +116,33 @@ module FindCertificate
         .to_return(
         status: 200,
         body: {
-          "results": [
-            {
-              assessmentId: certificate_id,
-              dateOfAssessment: '2011-01-01',
-              dateRegistered: '2011-01-02',
-              dwellingType: 'Top floor flat',
-              typeOfAssessment: 'RdSAP',
-              totalFloorArea: 50,
-              addressSummary: '2 Marsham Street, London, SW1B 2BB',
-              currentEnergyEfficiencyRating: 90,
-              currentEnergyEfficiencyBand: 'b',
-              potentialEnergyEfficiencyRating: 'a',
-              potentialEnergyEfficiencyBand: 95,
-              postcode: 'SW1B 2BB',
-              dateOfExpiry: '2019-01-01',
-              heatDemand: {
-                currentSpaceHeatingDemand: 222,
-                currentWaterHeatingDemand: 321,
-                impactOfLoftInsulation: 79,
-                impactOfCavityInsulation: 67,
-                impactOfSolidWallInsulation: 69
+          "data": {
+            "assessments": [
+              {
+                assessmentId: certificate_id,
+                dateOfAssessment: '2011-01-01',
+                dateRegistered: '2011-01-02',
+                dwellingType: 'Top floor flat',
+                typeOfAssessment: 'RdSAP',
+                totalFloorArea: 50,
+                addressSummary: '2 Marsham Street, London, SW1B 2BB',
+                currentEnergyEfficiencyRating: 90,
+                currentEnergyEfficiencyBand: 'b',
+                potentialEnergyEfficiencyRating: 'a',
+                potentialEnergyEfficiencyBand: 95,
+                postcode: 'SW1B 2BB',
+                dateOfExpiry: '2019-01-01',
+                heatDemand: {
+                  currentSpaceHeatingDemand: 222,
+                  currentWaterHeatingDemand: 321,
+                  impactOfLoftInsulation: 79,
+                  impactOfCavityInsulation: 67,
+                  impactOfSolidWallInsulation: 69
+                }
               }
-            }
-          ],
-          "searchReferenceNumber": certificate_id
+            ]
+          },
+          "meta": { "searchReferenceNumber": certificate_id }
         }.to_json
       )
     end
@@ -161,81 +165,83 @@ module FindCertificate
         .to_return(
         status: 200,
         body: {
-          "results": [
-            {
-              assessmentId: '1234-5678-9101-1121-3141',
-              dateOfAssessment: '2011-01-01',
-              dateRegistered: '2011-01-02',
-              dwellingType: 'Top floor flat',
-              typeOfAssessment: 'RdSAP',
-              totalFloorArea: 50,
-              addressSummary: '2 Marsham Street, London, SW1B 2BB',
-              currentEnergyEfficiencyRating: 90,
-              currentEnergyEfficiencyBand: 'b',
-              potentialEnergyEfficiencyRating: 'a',
-              potentialEnergyEfficiencyBand: 95,
-              postcode: 'SW1B 2BB',
-              dateOfExpiry: '2019-01-01',
-              addressLine1: street_name,
-              town: town,
-              heatDemand: {
-                currentSpaceHeatingDemand: 222,
-                currentWaterHeatingDemand: 321,
-                impactOfLoftInsulation: 79,
-                impactOfCavityInsulation: 67,
-                impactOfSolidWallInsulation: 69
+          "data": {
+            "assessments": [
+              {
+                assessmentId: '1234-5678-9101-1121-3141',
+                dateOfAssessment: '2011-01-01',
+                dateRegistered: '2011-01-02',
+                dwellingType: 'Top floor flat',
+                typeOfAssessment: 'RdSAP',
+                totalFloorArea: 50,
+                addressSummary: '2 Marsham Street, London, SW1B 2BB',
+                currentEnergyEfficiencyRating: 90,
+                currentEnergyEfficiencyBand: 'b',
+                potentialEnergyEfficiencyRating: 'a',
+                potentialEnergyEfficiencyBand: 95,
+                postcode: 'SW1B 2BB',
+                dateOfExpiry: '2019-01-01',
+                addressLine1: street_name,
+                town: town,
+                heatDemand: {
+                  currentSpaceHeatingDemand: 222,
+                  currentWaterHeatingDemand: 321,
+                  impactOfLoftInsulation: 79,
+                  impactOfCavityInsulation: 67,
+                  impactOfSolidWallInsulation: 69
+                }
+              },
+              {
+                assessmentId: '1234-5678-9101-1122',
+                dateOfAssessment: '2011-01-01',
+                dateRegistered: '2011-01-02',
+                dwellingType: 'Top floor flat',
+                typeOfAssessment: 'RdSAP',
+                totalFloorArea: 50,
+                addressSummary: '1 Marsham Street, London, SW1B 2BB',
+                currentEnergyEfficiencyRating: 90,
+                currentEnergyEfficiencyBand: 'b',
+                potentialEnergyEfficiencyRating: 'a',
+                potentialEnergyEfficiencyBand: 95,
+                postcode: 'SW1B 2BB',
+                dateOfExpiry: '2022-01-01',
+                addressLine1: street_name,
+                town: town,
+                heatDemand: {
+                  currentSpaceHeatingDemand: 222,
+                  currentWaterHeatingDemand: 321,
+                  impactOfLoftInsulation: 79,
+                  impactOfCavityInsulation: 67,
+                  impactOfSolidWallInsulation: 69
+                }
+              },
+              {
+                assessmentId: '1234-5678-9101-1123',
+                dateOfAssessment: '2011-01-01',
+                dateRegistered: '2011-01-02',
+                dwellingType: 'Top floor flat',
+                typeOfAssessment: 'RdSAP',
+                totalFloorArea: 50,
+                addressSummary: '3 Marsham Street, London, SW1B 2BB',
+                currentEnergyEfficiencyRating: 90,
+                currentEnergyEfficiencyBand: 'b',
+                potentialEnergyEfficiencyRating: 'a',
+                potentialEnergyEfficiencyBand: 95,
+                postcode: 'SW1B 2BB',
+                dateOfExpiry: '2023-01-01',
+                addressLine1: street_name,
+                town: town,
+                heatDemand: {
+                  currentSpaceHeatingDemand: 222,
+                  currentWaterHeatingDemand: 321,
+                  impactOfLoftInsulation: 79,
+                  impactOfCavityInsulation: 67,
+                  impactOfSolidWallInsulation: 69
+                }
               }
-            },
-            {
-              assessmentId: '1234-5678-9101-1122',
-              dateOfAssessment: '2011-01-01',
-              dateRegistered: '2011-01-02',
-              dwellingType: 'Top floor flat',
-              typeOfAssessment: 'RdSAP',
-              totalFloorArea: 50,
-              addressSummary: '1 Marsham Street, London, SW1B 2BB',
-              currentEnergyEfficiencyRating: 90,
-              currentEnergyEfficiencyBand: 'b',
-              potentialEnergyEfficiencyRating: 'a',
-              potentialEnergyEfficiencyBand: 95,
-              postcode: 'SW1B 2BB',
-              dateOfExpiry: '2022-01-01',
-              addressLine1: street_name,
-              town: town,
-              heatDemand: {
-                currentSpaceHeatingDemand: 222,
-                currentWaterHeatingDemand: 321,
-                impactOfLoftInsulation: 79,
-                impactOfCavityInsulation: 67,
-                impactOfSolidWallInsulation: 69
-              }
-            },
-            {
-              assessmentId: '1234-5678-9101-1123',
-              dateOfAssessment: '2011-01-01',
-              dateRegistered: '2011-01-02',
-              dwellingType: 'Top floor flat',
-              typeOfAssessment: 'RdSAP',
-              totalFloorArea: 50,
-              addressSummary: '3 Marsham Street, London, SW1B 2BB',
-              currentEnergyEfficiencyRating: 90,
-              currentEnergyEfficiencyBand: 'b',
-              potentialEnergyEfficiencyRating: 'a',
-              potentialEnergyEfficiencyBand: 95,
-              postcode: 'SW1B 2BB',
-              dateOfExpiry: '2023-01-01',
-              addressLine1: street_name,
-              town: town,
-              heatDemand: {
-                currentSpaceHeatingDemand: 222,
-                currentWaterHeatingDemand: 321,
-                impactOfLoftInsulation: 79,
-                impactOfCavityInsulation: 67,
-                impactOfSolidWallInsulation: 69
-              }
-            }
-          ],
-          "searchReferenceNumber": [street_name, town]
+            ]
+          },
+          "meta": { "searchReferenceNumber": [street_name, town] }
         }.to_json
       )
     end

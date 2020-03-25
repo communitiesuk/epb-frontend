@@ -24,7 +24,9 @@ describe UseCase::FindNonDomesticAssessorByPostcode do
     let(:find_non_domestic_assessor) { described_class.new(assessors_gateway) }
 
     it 'returns empty array' do
-      expect(find_non_domestic_assessor.execute('SW1A+2AA')).to eq([])
+      expect(
+        find_non_domestic_assessor.execute('SW1A+2AA')[:data][:assessors]
+      ).to eq([])
     end
   end
 
@@ -32,29 +34,25 @@ describe UseCase::FindNonDomesticAssessorByPostcode do
     let(:valid_assessors) do
       [
         {
-          "assessor": {
-            "firstName": 'Gregg',
-            "lastName": 'Sellen',
-            "contactDetails": {
-              "telephoneNumber": '0792 102 1368', "email": 'epbassessor@epb.com'
-            },
-            "qualifications": { "nonDomesticSp3": 'ACTIVE' },
-            "searchResultsComparisonPostcode": 'SW1A 1AA',
-            "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' }
+          "firstName": 'Gregg',
+          "lastName": 'Sellen',
+          "contactDetails": {
+            "telephoneNumber": '0792 102 1368', "email": 'epbassessor@epb.com'
           },
+          "qualifications": { "nonDomesticSp3": 'ACTIVE' },
+          "searchResultsComparisonPostcode": 'SW1A 1AA',
+          "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' },
           "distance": 0.1
         },
         {
-          "assessor": {
-            "firstName": 'Juliet',
-            "lastName": 'Montague',
-            "contactDetails": {
-              "telephoneNumber": '0792 102 1368', "email": 'epbassessor@epb.com'
-            },
-            "qualifications": { "nonDomesticSp3": 'ACTIVE' },
-            "searchResultsComparisonPostcode": 'SW1A 1AA',
-            "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' }
+          "firstName": 'Juliet',
+          "lastName": 'Montague',
+          "contactDetails": {
+            "telephoneNumber": '0792 102 1368', "email": 'epbassessor@epb.com'
           },
+          "qualifications": { "nonDomesticSp3": 'ACTIVE' },
+          "searchResultsComparisonPostcode": 'SW1A 1AA',
+          "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' },
           "distance": 0.3
         }
       ]
@@ -64,9 +62,9 @@ describe UseCase::FindNonDomesticAssessorByPostcode do
     let(:find_non_domestic_assessor) { described_class.new(assessors_gateway) }
 
     it 'returns list of non domestic assessors' do
-      expect(find_non_domestic_assessor.execute('SW1A+2AB')).to eq(
-        valid_assessors
-      )
+      expect(
+        find_non_domestic_assessor.execute('SW1A+2AB')[:data][:assessors]
+      ).to eq(valid_assessors)
     end
   end
 end

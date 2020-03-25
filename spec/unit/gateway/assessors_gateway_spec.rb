@@ -11,18 +11,15 @@ describe Gateway::AssessorsGateway do
     context 'when an assessor exist' do
       let(:response) { gateway.search_by_postcode('SW1A+2AA') }
 
-      let(:assessor) { response[:results].first[:assessor] }
+      let(:assessor) { response[:data][:assessors].first }
       before { FindAssessor::ByPostcode::Stub.search_by_postcode('SW1A+2AA') }
 
       it 'checks the number of assessors returned from the api' do
-        expect(response[:results].count).to eq(3)
+        expect(response[:data][:assessors].count).to eq(3)
       end
 
       it 'checks the shape of the object passed in the results object' do
-        expect(response[:results].first.keys).to contain_exactly(
-          :assessor,
-          :distance
-        )
+        expect(response[:data].keys).to contain_exactly(:assessors)
       end
 
       it 'checks the shape of the object passed in the assessor object' do
@@ -33,7 +30,8 @@ describe Gateway::AssessorsGateway do
           :searchResultsComparisonPostcode,
           :registeredBy,
           :schemeAssessorId,
-          :qualifications
+          :qualifications,
+          :distanceFromPostcodeInMiles
         )
       end
 
@@ -58,7 +56,7 @@ describe Gateway::AssessorsGateway do
       before { FindAssessor::ByPostcode::NoAssessorsStub.search_by_postcode }
 
       it 'returns empty results' do
-        expect(response).to eq(results: [], searchPostcode: 'BF1 3AA')
+        expect(response).to eq({data: {assessors: []}, meta: {searchPostcode: 'BF1 3AA'}})
       end
     end
 
@@ -128,11 +126,11 @@ describe Gateway::AssessorsGateway do
     context 'when an assessor exist' do
       let(:response) { gateway.search_by_name('Some Name') }
 
-      let(:assessor) { response[:results].first }
+      let(:assessor) { response[:data][:assessors].first }
       before { FindAssessor::ByName::Stub.search_by_name('Some Name') }
 
       it 'checks the number of assessors returned from the api' do
-        expect(response[:results].count).to eq(3)
+        expect(response[:data][:assessors].count).to eq(3)
       end
 
       it 'checks the shape of the object passed in the assessor object' do
@@ -172,7 +170,7 @@ describe Gateway::AssessorsGateway do
 
       it 'returns empty results' do
         expect(response).to eq(
-          results: [], searchName: 'Some Nonexistent-name', looseMatch: false
+          data: {assessors: []}, meta: {searchName: 'Some Nonexistent-name', looseMatch: false}
         )
       end
     end

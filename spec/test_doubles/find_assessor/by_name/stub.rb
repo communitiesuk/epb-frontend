@@ -19,41 +19,42 @@ module FindAssessor
           .to_return(
           status: 200,
           body: {
-            "results": [
-              {
-                "firstName": 'Juan',
-                "lastName": 'Uno',
-                "contactDetails": {
-                  "telephoneNumber": 'string', "email": 'user@example.com'
+            "data": {
+              "assessors": [
+                {
+                  "firstName": 'Juan',
+                  "lastName": 'Uno',
+                  "contactDetails": {
+                    "telephoneNumber": 'string', "email": 'user@example.com'
+                  },
+                  "searchResultsComparisonPostcode": 'SW1A 1AA',
+                  "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' },
+                  "schemeAssessorId": 'STROMA9999990'
                 },
-                "searchResultsComparisonPostcode": 'SW1A 1AA',
-                "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' },
-                "schemeAssessorId": 'STROMA9999990'
-              },
-              {
-                "firstName": 'Doux',
-                "lastName": 'Twose',
-                "contactDetails": {
-                  "telephoneNumber": '07921 021 368',
-                  "email": 'user@example.com'
+                {
+                  "firstName": 'Doux',
+                  "lastName": 'Twose',
+                  "contactDetails": {
+                    "telephoneNumber": '07921 021 368',
+                    "email": 'user@example.com'
+                  },
+                  "searchResultsComparisonPostcode": 'SW1A 1AA',
+                  "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' },
+                  "schemeAssessorId": '12349876'
                 },
-                "searchResultsComparisonPostcode": 'SW1A 1AA',
-                "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' },
-                "schemeAssessorId": '12349876'
-              },
-              {
-                "firstName": 'Tri',
-                "lastName": 'Triple',
-                "contactDetails": {
-                  "telephoneNumber": 'string', "email": 'user@example.com'
-                },
-                "searchResultsComparisonPostcode": 'SW1A 1AA',
-                "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' },
-                "schemeAssessorId": '12349876'
-              }
-            ],
-            "searchName": name,
-            "looseMatch": loose_match
+                {
+                  "firstName": 'Tri',
+                  "lastName": 'Triple',
+                  "contactDetails": {
+                    "telephoneNumber": 'string', "email": 'user@example.com'
+                  },
+                  "searchResultsComparisonPostcode": 'SW1A 1AA',
+                  "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' },
+                  "schemeAssessorId": '12349876'
+                }
+              ]
+            },
+            "meta": { "searchName": name, "looseMatch": loose_match }
           }.to_json
         )
       end

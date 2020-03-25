@@ -51,7 +51,7 @@
       <ul class="govuk-list">
           <% results.each do |result| %>
           <%== erb :find_assessor_list_assessor, locals: {
-            assessor: result[:assessor] } %>
+            assessor: result } %>
           <% end %>
       </ul>
     <% else %>

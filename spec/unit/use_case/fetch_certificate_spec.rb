@@ -19,7 +19,7 @@ describe UseCase::FetchCertificate do
     let(:fetch_certificate) { described_class.new(certificates_gateway) }
 
     it 'returns assessments' do
-      result = fetch_certificate.execute('223-456')
+      result = fetch_certificate.execute('223-456')[:data]
       expect(result).to eq(
         assessor: {
           firstName: 'Test',

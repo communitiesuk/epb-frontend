@@ -3,11 +3,11 @@
 module AssessorsGateway
   class EmptyStub
     def search_by_postcode(*)
-      { "results": [] }
+      { data: { assessors: [] } }
     end
 
     def search_by_name(*)
-      { "results": [] }
+      { data: { assessors: [] } }
     end
   end
 end

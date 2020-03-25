@@ -10,7 +10,7 @@ module UseCase
         raise Errors::PostcodeNotValid if error_code == 'INVALID_REQUEST'
       end
 
-      response[:results]
+      response
     end
   end
 end

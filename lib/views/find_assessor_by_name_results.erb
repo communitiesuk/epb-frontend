@@ -43,12 +43,12 @@
       </div>
     </details>
 
-    <h2 class="govuk-heading-m"><%= t((results[:looseMatch] ? 'find_assessor_by_name_results.results.results_like' : 'find_assessor_by_name_results.results.results'), :quantity=>results[:results].length, :name=>params['name']) %></h2>
+    <h2 class="govuk-heading-m"><%= t((meta[:looseMatch] ? 'find_assessor_by_name_results.results.results_like' : 'find_assessor_by_name_results.results.results'), :quantity=>results.length, :name=>params['name']) %></h2>
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
-    <% if results[:results].size > 0 %>
+    <% if results.size > 0 %>
       <ul class="govuk-list">
-        <% results[:results].each do |result| %>
+        <% results.each do |result| %>
           <%== erb :find_assessor_list_assessor, locals: {
               assessor: result } %>
         <% end %>

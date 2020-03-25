@@ -15,7 +15,7 @@ module UseCase
 
       raise_errors_if_exists(gateway_response)
 
-      gateway_response[:results]
+      gateway_response
     end
   end
 end

@@ -10,16 +10,16 @@ describe 'Acceptance::Postcodes' do
   context 'given valid postcode' do
     context 'where assessors are near' do
       let(:response) { find_assessor.execute('SW1A+2AA') }
-      let(:assessor) { response.first[:assessor] }
+      let(:assessor) { response[:data][:assessors].first }
 
       before { FindAssessor::ByPostcode::Stub.search_by_postcode('SW1A+2AA') }
 
       it 'returns the number of assessors returned from the api' do
-        expect(response.count).to eq(3)
+        expect(response[:data][:assessors].count).to eq(3)
       end
 
       it 'returns response keys for results object' do
-        expect(response.first.keys).to contain_exactly(:assessor, :distance)
+        expect(response.keys).to contain_exactly(:data, :meta)
       end
 
       it 'returns response keys for assessor object' do
@@ -30,7 +30,8 @@ describe 'Acceptance::Postcodes' do
           :searchResultsComparisonPostcode,
           :registeredBy,
           :schemeAssessorId,
-          :qualifications
+          :qualifications,
+          :distanceFromPostcodeInMiles
         )
       end
 
@@ -57,7 +58,7 @@ describe 'Acceptance::Postcodes' do
       end
 
       it 'returns empty results' do
-        expect(find_assessor.execute('BF1+3AA')).to eq([])
+        expect(find_assessor.execute('BF1+3AA')[:data][:assessors]).to eq([])
       end
     end
 

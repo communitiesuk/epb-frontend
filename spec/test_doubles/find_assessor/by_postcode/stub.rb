@@ -29,9 +29,9 @@ module FindAssessor
           .to_return(
           status: 200,
           body: {
-            "results": [
-              {
-                "assessor": {
+            "data": {
+              "assessors": [
+                {
                   "firstName": 'Juan',
                   "lastName": 'Uno',
                   "contactDetails": {
@@ -40,12 +40,10 @@ module FindAssessor
                   "qualifications": qualification_status,
                   "searchResultsComparisonPostcode": 'SW1A 1AA',
                   "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' },
-                  "schemeAssessorId": 'STROMA9999990'
+                  "schemeAssessorId": 'STROMA9999990',
+                  "distanceFromPostcodeInMiles": 0.1
                 },
-                "distance": 0.1
-              },
-              {
-                "assessor": {
+                {
                   "firstName": 'Doux',
                   "lastName": 'Twose',
                   "contactDetails": {
@@ -55,12 +53,10 @@ module FindAssessor
                   "qualifications": qualification_status,
                   "searchResultsComparisonPostcode": 'SW1A 1AA',
                   "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' },
-                  "schemeAssessorId": '12349876'
+                  "schemeAssessorId": '12349876',
+                  "distanceFromPostcodeInMiles": 0.26780459
                 },
-                "distance": 0.26780459
-              },
-              {
-                "assessor": {
+                {
                   "firstName": 'Tri',
                   "lastName": 'Triple',
                   "contactDetails": {
@@ -69,12 +65,12 @@ module FindAssessor
                   "qualifications": qualification_status,
                   "searchResultsComparisonPostcode": 'SW1A 1AA',
                   "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' },
-                  "schemeAssessorId": '12349876'
-                },
-                "distance": 1.36
-              }
-            ],
-            "searchPostcode": 'SW1A 2AA'
+                  "schemeAssessorId": '12349876',
+                  "distanceFromPostcodeInMiles": 1.36
+                }
+              ]
+            },
+            "meta": { "searchPostcode": 'SW1A 2AA' }
           }.to_json
         )
       end

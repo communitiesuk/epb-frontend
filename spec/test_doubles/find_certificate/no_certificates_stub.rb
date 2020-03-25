@@ -10,7 +10,10 @@ module FindCertificate
         }"
       )
         .to_return(
-        status: 200, body: { "results": [], "searchPostcode": postcode }.to_json
+        status: 200,
+        body: {
+          "data": { "assessments": [] }, "meta": { "searchPostcode": postcode }
+        }.to_json
       )
     end
 
@@ -24,7 +27,8 @@ module FindCertificate
         .to_return(
         status: 200,
         body: {
-          "results": [], "searchReferenceNumber": reference_number
+          "data": { "assessments": [] },
+          "meta": { "searchReferenceNumber": reference_number }
         }.to_json
       )
     end
@@ -39,7 +43,8 @@ module FindCertificate
         .to_return(
         status: 200,
         body: {
-          "results": [], "searchReferenceNumber": [street_name, town]
+          "data": { "assessments": [] },
+          "meta": { "searchReferenceNumber": [street_name, town] }
         }.to_json
       )
     end

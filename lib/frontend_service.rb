@@ -42,7 +42,8 @@ class FrontendService < Sinatra::Base
 
   get '/find-an-assessor/search-by-postcode' do
     @errors = {}
-    @erb_template = :find_assessor_by_postcode
+    locals = {}
+    erb_template = :find_assessor_by_postcode
 
     response = @container.get_object(:find_assessor_by_postcode_use_case)
 
@@ -50,8 +51,9 @@ class FrontendService < Sinatra::Base
       if valid_postcode.match(params['postcode'])
         @page_title = t('find_assessor_by_postcode_results.head.title')
         begin
-          @results = response.execute(params['postcode'])
-          @erb_template = :find_assessor_by_postcode_results
+          locals[:results] =
+            response.execute(params['postcode'])[:data][:assessors]
+          erb_template = :find_assessor_by_postcode_results
         rescue Errors::PostcodeNotRegistered
           status 404
           @errors[:postcode] =
@@ -61,7 +63,7 @@ class FrontendService < Sinatra::Base
           @errors[:postcode] = t('find_assessor_by_postcode.postcode_not_valid')
         rescue Auth::Errors::NetworkConnectionFailed
           status 500
-          @erb_template = :error_page_500
+          erb_template = :error_page_500
         end
       else
         status 400
@@ -70,35 +72,38 @@ class FrontendService < Sinatra::Base
     end
 
     @page_title = t('find_assessor_by_postcode.head.title')
-    erb @erb_template,
-        layout: :layout, locals: { errors: @errors, results: @results }
+
+    show(erb_template, locals)
   end
 
   get '/find-an-assessor/search-by-name' do
     @errors = {}
-    @erb_template = :find_assessor_by_name
+    locals = {}
+    erb_template = :find_assessor_by_name
 
     response = @container.get_object(:find_assessor_by_name_use_case)
 
     if params['name']
       @page_title = t('find_assessor_by_name_results.head.title')
       begin
-        @erb_template = :find_assessor_by_name_results
+        erb_template = :find_assessor_by_name_results
         response = response.execute(params['name'])
+
+        locals[:results] = response[:data][:assessors]
+        locals[:meta] = response[:meta]
       rescue Errors::InvalidName
         status 400
-        @erb_template = :find_assessor_by_name
+        erb_template = :find_assessor_by_name
         @errors[:name] = t('find_assessor_by_name.name_error')
       rescue Auth::Errors::NetworkConnectionFailed
         status 500
-        @erb_template = :error_page_500
+        erb_template = :error_page_500
       end
     end
 
     @page_title = t('find_assessor_by_name.head.title')
 
-    erb @erb_template,
-        layout: :layout, locals: { errors: @errors, results: response }
+    show(erb_template, locals)
   end
 
   get '/schemes' do
@@ -117,36 +122,41 @@ class FrontendService < Sinatra::Base
 
   get '/find-a-certificate/search-by-postcode' do
     @errors = {}
-    @erb_template = :find_certificate_by_postcode
+    locals = {}
+    erb_template = :find_certificate_by_postcode
 
     if params['postcode']
       @page_title = t('find_certificate_by_postcode_results.head.title')
       begin
-        @erb_template = :find_certificate_by_postcode_results
+        erb_template = :find_certificate_by_postcode_results
 
-        @results =
+        locals[:results] =
           @container.get_object(:find_certificate_by_postcode_use_case).execute(
             params['postcode']
-          )
+          )[
+            :data
+          ][
+            :assessments
+          ]
       rescue Errors::PostcodeNotValid
         status 400
-        @erb_template = :find_certificate_by_postcode
+        erb_template = :find_certificate_by_postcode
         @errors[:postcode] =
           t('find_certificate_by_postcode.postcode_not_valid')
       rescue Auth::Errors::NetworkConnectionFailed
         status 500
-        @erb_template = :error_page_500
+        erb_template = :error_page_500
       end
     end
 
     @page_title = t('find_certificate_by_postcode.head.title')
-    erb @erb_template,
-        layout: :layout, locals: { errors: @errors, results: @results }
+    show(erb_template, locals)
   end
 
   get '/find-a-non-domestic-assessor/search-by-postcode' do
     @errors = {}
-    @erb_template = :find_non_domestic_assessor_by_postcode
+    locals = {}
+    erb_template = :find_non_domestic_assessor_by_postcode
 
     response =
       @container.get_object(:find_non_domestic_assessor_by_postcode_use_case)
@@ -155,9 +165,9 @@ class FrontendService < Sinatra::Base
       if valid_postcode.match(params['postcode'])
         @page_title = t('find_assessor_by_postcode_results.head.title')
         begin
-          @results = response.execute(params['postcode'])
+          locals[:results] = response.execute(params['postcode'])[:data][:assessors]
 
-          @erb_template = :find_non_domestic_assessor_by_postcode_results
+          erb_template = :find_non_domestic_assessor_by_postcode_results
         rescue Errors::PostcodeNotRegistered
           status 404
           @errors[:postcode] =
@@ -167,7 +177,7 @@ class FrontendService < Sinatra::Base
           @errors[:postcode] = t('find_assessor_by_postcode.postcode_not_valid')
         rescue Auth::Errors::NetworkConnectionFailed
           status 500
-          @erb_template = :error_page_500
+          erb_template = :error_page_500
         end
       else
         status 400
@@ -176,79 +186,87 @@ class FrontendService < Sinatra::Base
     end
 
     @page_title = t('find_non_domestic_assessor_by_postcode.head.title')
-    erb @erb_template,
-        layout: :layout, locals: { errors: @errors, results: @results }
+    show(erb_template, locals)
   end
 
   get '/find-a-certificate/search-by-reference-number' do
     @errors = {}
-    @erb_template = :find_certificate_by_reference_number
+    locals = {}
+    erb_template = :find_certificate_by_reference_number
 
     if params['reference_number']
       @page_title = t('find_certificate_by_reference_number_results.head.title')
       begin
-        @erb_template = :find_certificate_by_reference_number_results
+        erb_template = :find_certificate_by_reference_number_results
 
-        @results =
+        locals[:results] =
           @container.get_object(:find_certificate_by_id_use_case).execute(
             params['reference_number']
-          )
+          )[
+            :data
+          ][
+            :assessments
+          ]
       rescue Errors::ReferenceNumberNotValid
         status 400
-        @erb_template = :find_certificate_by_reference_number
+        erb_template = :find_certificate_by_reference_number
         @errors[:reference_number] =
           t('find_certificate_by_reference_number.reference_number_not_valid')
       rescue Errors::CertificateNotFound
-        @erb_template = :find_certificate_by_reference_number
+        erb_template = :find_certificate_by_reference_number
         @errors[:reference_number] =
           t(
             'find_certificate_by_reference_number.reference_number_not_registered'
           )
       rescue Auth::Errors::NetworkConnectionFailed
         status 500
-        @erb_template = :error_page_500
+        erb_template = :error_page_500
       end
     end
 
     @page_title = t('find_certificate_by_reference_number.head.title')
-    erb @erb_template,
-        layout: :layout, locals: { errors: @errors, results: @results }
+    show(erb_template, locals)
   end
 
   get '/find-a-certificate/search-by-street-name-and-town' do
     @errors = {}
-    @erb_template = :find_certificate_by_street_name_and_town
+    locals = {}
+    erb_template = :find_certificate_by_street_name_and_town
 
     if params.key?('town') || params.key?('street_name')
       @page_title =
         t('find_certificate_by_street_name_and_town_results.head.title')
       begin
-        @erb_template = :find_certificate_by_street_name_and_town_results
+        erb_template = :find_certificate_by_street_name_and_town_results
 
-        @results =
+        locals[:results] =
           @container.get_object(
             :find_certificate_by_street_name_and_town_use_case
           )
-            .execute(params['street_name'], params['town'])
+            .execute(params['street_name'], params['town'])[
+            :data
+          ][
+            :assessments
+          ]
       rescue Errors::AllParamsMissing
         status 400
-        @erb_template = :find_certificate_by_street_name_and_town
+        erb_template = :find_certificate_by_street_name_and_town
         @errors[:street_name] =
           t('find_certificate_by_street_name_and_town.street_name_missing')
         @errors[:town] =
           t('find_certificate_by_street_name_and_town.town_missing')
       rescue Errors::StreetNameMissing
         status 400
-        @erb_template = :find_certificate_by_street_name_and_town
+        erb_template = :find_certificate_by_street_name_and_town
         @errors[:street_name] =
           t('find_certificate_by_street_name_and_town.street_name_missing')
       rescue Errors::TownMissing
         status 400
-        @erb_template = :find_certificate_by_street_name_and_town
+        erb_template = :find_certificate_by_street_name_and_town
         @errors[:town] =
           t('find_certificate_by_street_name_and_town.town_missing')
       rescue Errors::CertificateNotFound
-        @erb_template = :find_certificate_by_street_name_and_town
+        erb_template = :find_certificate_by_street_name_and_town
         @errors[:generic] = {
           error:
             'find_certificate_by_street_name_and_town.no_such_address.error',
@@ -258,13 +276,12 @@ class FrontendService < Sinatra::Base
         }
       rescue Auth::Errors::NetworkConnectionFailed
         status 500
-        @erb_template = :error_page_500
+        erb_template = :error_page_500
       end
     end
 
     @page_title = t('find_certificate_by_street_name_and_town.head.title')
-    erb @erb_template,
-        layout: :layout, locals: { errors: @errors, results: @results }
+    show(erb_template, locals)
   end
 
   get '/energy-performance-certificate/:assessment_id' do
@@ -272,8 +289,10 @@ class FrontendService < Sinatra::Base
     assessment = use_case.execute(params[:assessment_id])
 
     status 200
-    erb :domestic_energy_performance_certificate,
-        layout: :layout, locals: { assessment: assessment }
+    show(
+      :domestic_energy_performance_certificate,
+      { assessment: assessment[:data] }
+    )
   rescue StandardError => e
     case e
     when Errors::AssessmentNotFound
@@ -281,6 +300,11 @@ class FrontendService < Sinatra::Base
     else
       status 500
     end
+  end
+
+  def show(template, locals)
+    locals[:errors] = @errors
+    erb template, layout: :layout, locals: locals
   end
 
   not_found do

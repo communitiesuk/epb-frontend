@@ -115,9 +115,11 @@ describe UseCase::FindCertificateByStreetNameAndTown do
     let(:find_certificate) { described_class.new(certificates_gateway) }
 
     it 'returns list of certificates' do
-      expect(find_certificate.execute('Marsham Street', 'London')).to eq(
-        valid_certificates
-      )
+      expect(
+        find_certificate.execute('Marsham Street', 'London')[:data][
+          :assessments
+        ]
+      ).to eq(valid_certificates)
     end
   end
 end

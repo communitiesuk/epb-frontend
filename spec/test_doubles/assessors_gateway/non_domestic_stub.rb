@@ -2,9 +2,9 @@ module AssessorsGateway
   class NonDomesticStub
     def search_by_postcode(*)
       {
-        "results": [
-          {
-            "assessor": {
+        data: {
+          assessors: [
+            {
               "firstName": 'Gregg',
               "lastName": 'Sellen',
               "contactDetails": {
@@ -13,12 +13,10 @@ module AssessorsGateway
               },
               "qualifications": { "nonDomesticSp3": 'ACTIVE' },
               "searchResultsComparisonPostcode": 'SW1A 1AA',
-              "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' }
+              "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' },
+              "distance": 0.1
             },
-            "distance": 0.1
-          },
-          {
-            "assessor": {
+            {
               "firstName": 'Juliet',
               "lastName": 'Montague',
               "contactDetails": {
@@ -27,13 +25,12 @@ module AssessorsGateway
               },
               "qualifications": { "nonDomesticSp3": 'ACTIVE' },
               "searchResultsComparisonPostcode": 'SW1A 1AA',
-              "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' }
-            },
-            "distance": 0.3
-          }
-        ],
-        "timestamp": 1_234_567,
-        "searchPostcode": 'SW1 5RW'
+              "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' },
+              "distance": 0.3
+            }
+          ]
+        },
+        meta: { "timestamp": 1_234_567, "searchPostcode": 'SW1 5RW' }
       }
     end
   end

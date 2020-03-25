@@ -10,11 +10,11 @@ describe Gateway::CertificatesGateway do
   context 'when a certificate exist' do
     let(:response) { gateway.search_by_postcode('SW1A+2AA') }
 
-    let(:certificate) { response[:results].first }
+    let(:certificate) { response[:data][:assessments].first }
     before { FindCertificate::Stub.search_by_postcode('SW1A+2AA') }
 
     it 'checks the number of certificates returned from the api' do
-      expect(response[:results].count).to eq(3)
+      expect(response[:data][:assessments].count).to eq(3)
     end
 
     it 'checks the shape of the object passed in the certificate object' do
@@ -44,7 +44,7 @@ describe Gateway::CertificatesGateway do
     before { FindCertificate::NoCertificatesStub.search_by_postcode }
 
     it 'returns empty results' do
-      expect(response).to eq(results: [], searchPostcode: 'BF1 3AA')
+      expect(response).to eq(data: {assessments: []}, meta: {searchPostcode: 'BF1 3AA'})
     end
   end
 
@@ -55,7 +55,7 @@ describe Gateway::CertificatesGateway do
     it 'returns assessments' do
       result = gateway.fetch(assessment_id)
 
-      expect(result).to eq(
+      expect(result[:data]).to eq(
         assessor: {
           firstName: 'Test',
           lastName: 'Boi',

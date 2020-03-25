@@ -36,12 +36,18 @@ module Gateway
       assessment_details = JSON.parse(response.body, symbolize_names: true)
 
       if response.status == 200
-        assessment_details[:dateOfExpiry] =
-          Date.parse(assessment_details[:dateOfExpiry]).strftime('%d %B %Y')
-        assessment_details[:dateOfAssessment] =
-          Date.parse(assessment_details[:dateOfAssessment]).strftime('%d %B %Y')
-        assessment_details[:dateRegistered] =
-          Date.parse(assessment_details[:dateRegistered]).strftime('%d %B %Y')
+        assessment_details[:data][:dateOfExpiry] =
+          Date.parse(assessment_details[:data][:dateOfExpiry]).strftime(
+            '%d %B %Y'
+          )
+        assessment_details[:data][:dateOfAssessment] =
+          Date.parse(assessment_details[:data][:dateOfAssessment]).strftime(
+            '%d %B %Y'
+          )
+        assessment_details[:data][:dateRegistered] =
+          Date.parse(assessment_details[:data][:dateRegistered]).strftime(
+            '%d %B %Y'
+          )
       end
 
       assessment_details

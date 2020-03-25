@@ -3,15 +3,15 @@
 module CertificatesGateway
   class EmptyStub
     def search_by_postcode(*)
-      { "results": [] }
+      { data: { assessments: [] } }
     end
 
     def search_by_id(*)
-      { "results": [] }
+      { data: { assessments: [] } }
     end
 
     def search_by_street_name_and_town(*)
-      { "results": [] }
+      { data: { assessments: [] } }
     end
   end
 end
