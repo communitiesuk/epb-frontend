@@ -32,7 +32,8 @@ describe Gateway::CertificatesGateway do
         :potentialEnergyEfficiencyBand,
         :postcode,
         :dateOfExpiry,
-        :heatDemand
+        :heatDemand,
+        :recommendedImprovements
       )
     end
   end
@@ -91,7 +92,8 @@ describe Gateway::CertificatesGateway do
           impactOfLoftInsulation: 79,
           impactOfCavityInsulation: 67,
           impactOfSolidWallInsulation: 69
-        }
+        },
+        recommendedImprovements: []
       )
     end
   end

@@ -41,7 +41,8 @@ module FindCertificate
                 impactOfLoftInsulation: 79,
                 impactOfCavityInsulation: 67,
                 impactOfSolidWallInsulation: 69
-              }
+              },
+              recommendedImprovements: [{ sequence: 2 }, { sequence: 3 }]
             },
             {
               assessmentId: '1234-5678-9101-1122',
@@ -63,7 +64,8 @@ module FindCertificate
                 impactOfLoftInsulation: 79,
                 impactOfCavityInsulation: 67,
                 impactOfSolidWallInsulation: 69
-              }
+              },
+              recommendedImprovements: [{ sequence: 0 }, { sequence: 1 }]
             },
             {
               assessmentId: '1234-5678-9101-1123',
@@ -85,7 +87,8 @@ module FindCertificate
                 impactOfLoftInsulation: 79,
                 impactOfCavityInsulation: 67,
                 impactOfSolidWallInsulation: 69
-              }
+              },
+              recommendedImprovements: []
             }
           ],
           "searchPostcode": postcode
