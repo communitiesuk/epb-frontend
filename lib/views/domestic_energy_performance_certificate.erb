@@ -157,6 +157,35 @@
       </dl>
     </div>
   </div>
+  <div class="govuk-grid-column-two-thirds">
+    <div class="epc-blue-bottom">
+    <div class="govuk-grid-column-two-thirds">
+      <h3 class="govuk-heading-l"><%= t('domestic_epc.recommendations.title') %></h3>
+      <%
+        if assessment[:recommendedImprovements].empty?
+      %>
+        <p class="govuk-body"><%= t('domestic_epc.recommendations.no_recommendations_summary') %></p>
+      <%
+        else
+      %>
+        <p class="govuk-body"><%= t('domestic_epc.recommendations.summary.make_changes_text') %></p>
+        <p class="govuk-body"><%= t('domestic_epc.recommendations.summary.improve_rating_text', :potential_energy_efficiency_band => assessment[:potentialEnergyEfficiencyBand].upcase) %></p>
+      <%
+        end
+      %>
+
+    </div>
+    <div class="epc-rating-box">
+      <p class="epc-rating-title govuk-body">
+        <%= t('domestic_epc.recommendations.box.energy_rating_title') %>
+      </p>
+      <p class="epc-rating-result govuk-body">
+        <%= assessment[:potentialEnergyEfficiencyBand].upcase %>
+      </p>
+    </div>
+  </div>
+
+  </div>
 
 
       <div class="govuk-grid-column-two-thirds">

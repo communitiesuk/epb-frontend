@@ -2,7 +2,18 @@
 
 module FetchCertificate
   class Stub
-    def self.fetch(assessment_id, current_rating = 90, current_band = 'b')
+    def self.fetch(
+      assessment_id,
+      current_rating = 90,
+      current_band = 'b',
+      recommended_improvements = false
+    )
+      if recommended_improvements
+        recommendedImprovements = [{ sequence: 0 }, { sequence: 1 }]
+      else
+        recommendedImprovements = []
+      end
+
       body = {
         assessor: {
           firstName: 'Test',
@@ -40,14 +51,13 @@ module FetchCertificate
           impactOfLoftInsulation: 79,
           impactOfCavityInsulation: 67,
           impactOfSolidWallInsulation: 69
-        }
+        },
+        recommendedImprovements: recommendedImprovements
       }
 
       WebMock.stub_request(
         :get,
-        "http://test-api.gov.uk/api/assessments/domestic-epc/#{
-          assessment_id
-        }"
+        "http://test-api.gov.uk/api/assessments/domestic-epc/#{assessment_id}"
       )
         .to_return(status: 200, body: body.to_json)
     end

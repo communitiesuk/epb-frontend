@@ -110,6 +110,29 @@ describe 'Acceptance::Certificate' do
         )
       end
     end
+
+    context 'when there were no recommendations made' do
+      it "shows there aren't any recommendations for this property text" do
+        expect(response.body).to include(
+          "There aren't any recommendations for this property."
+        )
+      end
+    end
+  end
+
+  context 'when the assessment exists with recommendations' do
+    before { FetchCertificate::Stub.fetch('122-456', 90, 'b', true) }
+
+    let(:response) { get '/energy-performance-certificate/122-456' }
+
+    it 'returns status 200' do
+      expect(response.status).to eq(200)
+    end
+    it 'shows making any of the recommended changes will improve your property’s energy efficiency text' do
+      expect(response.body).to include(
+        'Making any of the recommended changes will improve your property’s energy efficiency.'
+      )
+    end
   end
 
   context 'when the assessment doesnt exist' do
