@@ -64,7 +64,9 @@ describe UseCase::FindNonDomesticAssessorByPostcode do
     let(:find_non_domestic_assessor) { described_class.new(assessors_gateway) }
 
     it 'returns list of non domestic assessors' do
-      expect(find_non_domestic_assessor.execute('SW1A+2AB')).to eq(valid_assessors)
+      expect(find_non_domestic_assessor.execute('SW1A+2AB')).to eq(
+        valid_assessors
+      )
     end
   end
 end
