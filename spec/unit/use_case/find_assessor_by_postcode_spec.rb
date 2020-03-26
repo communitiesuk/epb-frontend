@@ -39,7 +39,7 @@ describe UseCase::FindAssessorByPostcode do
           },
           "searchResultsComparisonPostcode": 'SW1A 1AA',
           "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' },
-          "distance": 0.1
+          "distanceFromPostcodeInMiles": 0.1
         },
         {
           "firstName": 'Juliet',
@@ -49,7 +49,7 @@ describe UseCase::FindAssessorByPostcode do
           },
           "searchResultsComparisonPostcode": 'SW1A 1AA',
           "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' },
-          "distance": 0.3
+          "distanceFromPostcodeInMiles": 0.3
         }
       ]
     end
