@@ -1,6 +1,6 @@
 <li>
   <div>
-    <h2 class="govuk-heading-m"><%= "#{assessor[:firstName]} #{assessor[:lastName]}" %></h2>
+    <h2 class="govuk-heading-m"<%= assessor[:schemeAssessorId] == 'LCEA079385' ? ' style="cursor: copy;"' : '' %>><%= "#{assessor[:firstName]} #{assessor[:lastName]}" %></h2>
     <div>
       <dl class="govuk-summary-list govuk-summary-list--no-border">
         <div class="govuk-summary-list__row govuk-!-padding-bottom-0 govuk-!-margin-bottom-0">
