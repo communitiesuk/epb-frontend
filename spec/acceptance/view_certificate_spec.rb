@@ -133,6 +133,18 @@ describe 'Acceptance::Certificate' do
         'Making any of the recommended changes will improve your property’s energy efficiency.'
       )
     end
+
+    it 'shows recommendation type' do
+      expect(response.body).to include('Internal or external wall insulation')
+    end
+
+    it 'shows typical saving cost' do
+      expect(response.body).to include('£900')
+    end
+
+    it 'shows typical installation cost' do
+      expect(response.body).to include('£500 - £1000')
+    end
   end
 
   context 'when the assessment doesnt exist' do

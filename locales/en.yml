@@ -339,11 +339,14 @@ en:
     recommendations:
       title: 'Recommendations'
       summary:
+        recommendation_text: 'The assessor has made these recommendations for your property.'
         make_changes_text: 'Making any of the recommended changes will improve your property’s energy efficiency.'
         improve_rating_text: 'If you make all of the changes recommended below, this will improve your property’s energy rating to %{potential_energy_efficiency_band}.'
       no_recommendations_summary: "There aren't any recommendations for this property."
       box:
         energy_rating_title: 'Potential Energy Rating'
+      installation_cost: 'Typical installation cost'
+      yearly_saving: 'Typical yearly saving'
 
   error:
     error: 'Error: '

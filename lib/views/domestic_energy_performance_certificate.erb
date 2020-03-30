@@ -2,9 +2,9 @@
   <div class="govuk-grid-column-two-thirds">
     <div class="govuk-body">
       <a
-        href="<%= localised_url('/find-a-certificate')%>"
+        href="<%= localised_url('/find-a-certificate') %>"
         class="govuk-back-link">
-        <%=t('layout.body.breadcrumb.back')%>
+        <%= t('layout.body.breadcrumb.back') %>
       </a>
 
       <h1 class="govuk-heading-xl">
@@ -14,7 +14,7 @@
   </div>
 
   <div class="govuk-grid-column-two-thirds">
-    <hr class="epc-light-top" />
+    <hr class="epc-light-top"/>
     <div class="govuk-body epc-blue-bottom">
       <div class="epc-box">
         <div class="epc-rating-box">
@@ -26,8 +26,9 @@
           </p>
         </div>
         <p class="epc-address govuk-body">
-          <%== [assessment[:addressLine1], assessment[:addressLine2], assessment[:addressLine3], assessment[:addressLine4]].reject(&:empty?).join('<br />') %><br>
-          <%= assessment[:town] %><br />
+          <%== [assessment[:addressLine1], assessment[:addressLine2], assessment[:addressLine3], assessment[:addressLine4]].reject(&:empty?).join('<br />') %>
+          <br>
+          <%= assessment[:town] %><br/>
           <%= assessment[:postcode] %>
         </p>
         <p class="govuk-body epc-extra-box">
@@ -43,11 +44,17 @@
 
   <div class="govuk-grid-column-one-third">
     <div class="govuk-!-margin-bottom-9 related-links">
-      <hr class="epc-blue-top" />
+      <hr class="epc-blue-top"/>
       <h3 class="govuk-heading-m">Related content</h3>
-      <p class="govuk-body"><a target="_blank" rel="noopener noreferrer" class="govuk-link" href="https://www.simpleenergyadvice.org.uk">Simple Energy Advice</a></p>
-      <p class="govuk-body"><a target="_blank" rel="noopener noreferrer" class="govuk-link" href="https://www.gov.uk/improve-energy-efficiency">Improving Energy Efficiency</a></p>
-      <p class="govuk-body"><a target="_blank" rel="noopener noreferrer" class="govuk-link" href="https://energysavingtrust.org.uk">Energy Saving Trust</a></p>
+      <p class="govuk-body">
+        <a target="_blank" rel="noopener noreferrer" class="govuk-link" href="https://www.simpleenergyadvice.org.uk">Simple
+          Energy Advice</a></p>
+      <p class="govuk-body">
+        <a target="_blank" rel="noopener noreferrer" class="govuk-link" href="https://www.gov.uk/improve-energy-efficiency">Improving
+          Energy Efficiency</a></p>
+      <p class="govuk-body">
+        <a target="_blank" rel="noopener noreferrer" class="govuk-link" href="https://energysavingtrust.org.uk">Energy
+          Saving Trust</a></p>
     </div>
   </div>
   <div class="govuk-grid-column-two-thirds">
@@ -56,30 +63,30 @@
       <%
         minimum_energy_rating_for_rentals = 'e'
         if assessment[:currentEnergyEfficiencyBand] > minimum_energy_rating_for_rentals
-          %>
-            <div class="govuk-warning-text">
-              <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-              <div class="govuk-warning-text__text">
-                <span class="govuk-warning-text__assistive"><%= t('domestic_epc.landlord_warning.hidden_text') %></span>
-                <div class="epc-rating-box">
-                  <p class="epc-rating-title govuk-body">
-                    <%= t('domestic_epc.landlord_warning.energy_rating_title') %>
-                  </p>
-                  <p class="epc-rating-result govuk-body">
-                    <%= assessment[:currentEnergyEfficiencyBand].upcase %>
-                  </p>
-                </div>
-                <h2 class="govuk-error-summary__title" id="error-summary-title">
-                  <%= t('domestic_epc.landlord_warning.subtitle') %>
-                </h2>
-                <div class="govuk-error-summary__body">
-                  <p class="govuk-body">
-                    <%== t('domestic_epc.landlord_warning.body.text', :link => '<a href="' + t('domestic_epc.landlord_warning.body.url') + '">' + t('domestic_epc.landlord_warning.body.cta') + '</a>') %>
-                  </p>
-                </div>
-              </div>
+      %>
+        <div class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <div class="govuk-warning-text__text">
+            <span class="govuk-warning-text__assistive"><%= t('domestic_epc.landlord_warning.hidden_text') %></span>
+            <div class="epc-rating-box">
+              <p class="epc-rating-title govuk-body">
+                <%= t('domestic_epc.landlord_warning.energy_rating_title') %>
+              </p>
+              <p class="epc-rating-result govuk-body">
+                <%= assessment[:currentEnergyEfficiencyBand].upcase %>
+              </p>
             </div>
-          <%
+            <h2 class="govuk-error-summary__title" id="error-summary-title">
+              <%= t('domestic_epc.landlord_warning.subtitle') %>
+            </h2>
+            <div class="govuk-error-summary__body">
+              <p class="govuk-body">
+                <%== t('domestic_epc.landlord_warning.body.text', :link => '<a href="' + t('domestic_epc.landlord_warning.body.url') + '">' + t('domestic_epc.landlord_warning.body.cta') + '</a>') %>
+              </p>
+            </div>
+          </div>
+        </div>
+      <%
         end
       %>
 
@@ -103,7 +110,7 @@
         current_energy_efficiency_rating: assessment[:currentEnergyEfficiencyRating],
         potential_energy_efficiency_rating: assessment[:potentialEnergyEfficiencyRating],
         current_energy_efficiency_band: assessment[:currentEnergyEfficiencyBand],
-        potential_energy_efficiency_band: assessment[:potentialEnergyEfficiencyBand] } %>
+        potential_energy_efficiency_band: assessment[:potentialEnergyEfficiencyBand]} %>
 
       <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
@@ -157,36 +164,59 @@
       </dl>
     </div>
   </div>
+
+  <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-l">Recommendations</h2>
+    <div class=<%=assessment[:recommendedImprovements].empty? ? 'epc-blue-bottom' : ''%>>
+      <div class="epc-rating-box">
+        <p class="epc-rating-title govuk-body">
+          <%= t('domestic_epc.recommendations.box.energy_rating_title') %>
+        </p>
+        <p class="epc-rating-result govuk-body">
+          <%= assessment[:potentialEnergyEfficiencyBand].upcase %>
+        </p>
+      </div>
+    <%
+      if assessment[:recommendedImprovements].empty?
+    %>
+      <p class="govuk-body "><%= t('domestic_epc.recommendations.no_recommendations_summary') %></p>
+    <%
+      else
+    %>
+      <p class="govuk-body"><%= t('domestic_epc.recommendations.summary.make_changes_text') %></p>
+      <p class="govuk-body"><%= t('domestic_epc.recommendations.summary.improve_rating_text', :potential_energy_efficiency_band => assessment[:potentialEnergyEfficiencyBand].upcase) %></p>
+    <% end %>
+    </div>
+  </div>
+
+  <%
+    unless assessment[:recommendedImprovements].empty?
+  %>
   <div class="govuk-grid-column-two-thirds">
     <div class="epc-blue-bottom">
-    <div class="govuk-grid-column-two-thirds" style="padding: 0";>
-      <h3 class="govuk-heading-l"><%= t('domestic_epc.recommendations.title') %></h3>
       <%
-        if assessment[:recommendedImprovements].empty?
-      %>
-        <p class="govuk-body"><%= t('domestic_epc.recommendations.no_recommendations_summary') %></p>
-      <%
-        else
-      %>
-        <p class="govuk-body"><%= t('domestic_epc.recommendations.summary.make_changes_text') %></p>
-        <p class="govuk-body"><%= t('domestic_epc.recommendations.summary.improve_rating_text', :potential_energy_efficiency_band => assessment[:potentialEnergyEfficiencyBand].upcase) %></p>
-      <%
-        end
-      %>
-
-    </div>
-    <div class="epc-rating-box">
-      <p class="epc-rating-title govuk-body">
-        <%= t('domestic_epc.recommendations.box.energy_rating_title') %>
-      </p>
-      <p class="epc-rating-result govuk-body">
-        <%= assessment[:potentialEnergyEfficiencyBand].upcase %>
-      </p>
+        sorted_sequence = assessment[:recommendedImprovements].sort { |x, y| x[:sequence] <=> y[:sequence] }
+        sorted_sequence.each_with_index do |recommendation, index| %>
+        <hr class="epc-light-top"/>
+        <h3 class="govuk-heading-m">Recommendation <%= index + 1 %>: <%= recommendation[:improvementType] %> </h3>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-half">
+            <div class="govuk-body" style="margin-bottom: 0px;"><%= t('domestic_epc.recommendations.installation_cost') %></div>
+            <p class="govuk-body govuk-!-font-weight-bold"><%= recommendation[:indicativeCost] %></p>
+          </div>
+          <div class="govuk-grid-column-one-half">
+            <div class="govuk-body" style="margin-bottom: 0px;"><%= t('domestic_epc.recommendations.yearly_saving') %></div>
+            <p class="govuk-body govuk-!-font-weight-bold">
+              <%= sprintf("£%.f", recommendation[:typicalSaving]).gsub(/(\d)(?=(\d{3})+(?!\d))/, "\\1,") %></p>
+          </div>
+        </div>
+      <% end %>
+      <hr class="epc-light-top"/>
     </div>
   </div>
-
-  </div>
-
+  <%
+    end
+  %>
 
       <div class="govuk-grid-column-two-thirds">
         <div class="epc-blue-bottom">
@@ -223,82 +253,92 @@
           <table class="govuk-table">
             <caption class="govuk-table__caption"><%= t('domestic_epc.heat_demand.potential_saving') %></caption>
             <thead class="govuk-table__head">
-              <tr class="govuk-table__row">
-                <th scope="col" class="govuk-table__header"><%= t('domestic_epc.heat_demand.type_of_insulation') %></th>
-                <th scope="col" class="govuk-table__header"><%= t('domestic_epc.heat_demand.amount_saved') %></th>
-              </tr>
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header"><%= t('domestic_epc.heat_demand.type_of_insulation') %></th>
+              <th scope="col" class="govuk-table__header"><%= t('domestic_epc.heat_demand.amount_saved') %></th>
+            </tr>
             </thead>
             <tbody class="govuk-table__body">
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header"><%= t('domestic_epc.heat_demand.loft_insulation') %></th>
-                <td class="govuk-table__cell">
-                  <% if assessment[:heatDemand][:impactOfLoftInsulation] %>
-                    <%= assessment[:heatDemand][:impactOfLoftInsulation] %>
-                  <% else %>
-                    <%= t('domestic_epc.heat_demand.not_applicable') %>
-                  <% end %>
-                </td>
-              </tr>
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header"><%= t('domestic_epc.heat_demand.cavity_insulation') %></th>
-                <td class="govuk-table__cell">
-                  <% if assessment[:heatDemand][:impactOfCavityInsulation] %>
-                    <%= assessment[:heatDemand][:impactOfCavityInsulation] %>
-                  <% else %>
-                    <%= t('domestic_epc.heat_demand.not_applicable') %>
-                  <% end %>
-                </td>
-              </tr>
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header"><%= t('domestic_epc.heat_demand.solid_wall_insulation') %></th>
-                <td class="govuk-table__cell">
-                  <% if assessment[:heatDemand][:impactOfSolidWallInsulation] %>
-                    <%= assessment[:heatDemand][:impactOfSolidWallInsulation] %>
-                  <% else %>
-                    <%= t('domestic_epc.heat_demand.not_applicable') %>
-                  <% end %>
-                </td>
-              </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header"><%= t('domestic_epc.heat_demand.loft_insulation') %></th>
+              <td class="govuk-table__cell">
+                <% if assessment[:heatDemand][:impactOfLoftInsulation] %>
+                  <%= assessment[:heatDemand][:impactOfLoftInsulation] %>
+                <% else %>
+                  <%= t('domestic_epc.heat_demand.not_applicable') %>
+                <% end %>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header"><%= t('domestic_epc.heat_demand.cavity_insulation') %></th>
+              <td class="govuk-table__cell">
+                <% if assessment[:heatDemand][:impactOfCavityInsulation] %>
+                  <%= assessment[:heatDemand][:impactOfCavityInsulation] %>
+                <% else %>
+                  <%= t('domestic_epc.heat_demand.not_applicable') %>
+                <% end %>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header"><%= t('domestic_epc.heat_demand.solid_wall_insulation') %></th>
+              <td class="govuk-table__cell">
+                <% if assessment[:heatDemand][:impactOfSolidWallInsulation] %>
+                  <%= assessment[:heatDemand][:impactOfSolidWallInsulation] %>
+                <% else %>
+                  <%= t('domestic_epc.heat_demand.not_applicable') %>
+                <% end %>
+              </td>
+            </tr>
             </tbody>
           </table>
 
-          <p class="govuk-body govuk-!-margin-top-2" style="clear: both;"><%= t('domestic_epc.heat_demand.renewable_heat_insentive') %><a href=<%= t('domestic_epc.heat_demand.rhi_url') %>><%= t('domestic_epc.heat_demand.rhi_url_text') %></a>.</p>
+          <p class="govuk-body govuk-!-margin-top-2" style="clear: both;"><%= t('domestic_epc.heat_demand.renewable_heat_insentive') %>
+            <a href=<%= t('domestic_epc.heat_demand.rhi_url') %>><%= t('domestic_epc.heat_demand.rhi_url_text') %></a>.
+          </p>
         </div>
       </div>
 
 
-  <div class="govuk-grid-column-two-thirds">
-    <div class="govuk-body epc-blue-bottom">
-      <h2 class="govuk-heading-l">How this certificate was produced</h2>
-      <p class="govuk-body">This document has been produced following an energy assessment undertaken by a qualified Energy Assessor, accredited by <%= assessment[:assessor][:registeredBy][:name] %>.</p>
+      <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-body epc-blue-bottom">
+          <h2 class="govuk-heading-l">How this certificate was produced</h2>
+          <p class="govuk-body">This document has been produced following an energy assessment undertaken by a qualified
+            Energy Assessor, accredited by <%= assessment[:assessor][:registeredBy][:name] %>.</p>
 
-      <h3 class="govuk-heading-m">Assessor and accreditation scheme details</h3>
-      <dl class="govuk-summary-list">
-        <div class="govuk-summary-list__row" id="accreditation_id">
-          <dt class="govuk-summary-list__key govuk-!-width-one-half govuk-!-font-weight-regular">Assessor's accreditation number</dt>
-          <dd class="govuk-summary-list__value govuk-!-font-weight-bold"><%= assessment[:assessor][:schemeAssessorId] %></dd>
+          <h3 class="govuk-heading-m">Assessor and accreditation scheme details</h3>
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row" id="accreditation_id">
+              <dt class="govuk-summary-list__key govuk-!-width-one-half govuk-!-font-weight-regular">Assessor's
+                accreditation number
+              </dt>
+              <dd class="govuk-summary-list__value govuk-!-font-weight-bold"><%= assessment[:assessor][:schemeAssessorId] %></dd>
+            </div>
+            <div class="govuk-summary-list__row" id="Accreditation_scheme">
+              <dt class="govuk-summary-list__key govuk-!-width-one-half govuk-!-font-weight-regular">Accreditation
+                scheme
+              </dt>
+              <dd class="govuk-summary-list__value govuk-!-font-weight-bold"><%= assessment[:assessor][:registeredBy][:name] %></dd>
+            </div>
+            <div class="govuk-summary-list__row" id="name">
+              <dt class="govuk-summary-list__key govuk-!-width-one-half govuk-!-font-weight-regular">Assessor's name
+              </dt>
+              <dd class="govuk-summary-list__value govuk-!-font-weight-bold"><%= assessment[:assessor][:firstName] %> <%= assessment[:assessor][:lastName] %></dd>
+            </div>
+            <% if assessment[:assessor][:contactDetails].key?(:telephoneNumber) && !assessment[:assessor][:contactDetails][:telephoneNumber].empty? %>
+              <div class="govuk-summary-list__row" id="phone">
+                <dt class="govuk-summary-list__key govuk-!-width-one-half govuk-!-font-weight-regular">Phone number</dt>
+                <dd class="govuk-summary-list__value govuk-!-font-weight-bold"><%= assessment[:assessor][:contactDetails][:telephoneNumber] %></dd>
+              </div>
+            <% end %>
+            <% if assessment[:assessor][:contactDetails].key?(:email) && !assessment[:assessor][:contactDetails][:email].empty? %>
+              <div class="govuk-summary-list__row" id="email">
+                <dt class="govuk-summary-list__key govuk-!-width-one-half govuk-!-font-weight-regular">E-mail address
+                </dt>
+                <dd class="govuk-summary-list__value govuk-!-font-weight-bold">
+                  <a href="mailto:"><%= assessment[:assessor][:contactDetails][:email] %></a></dd>
+              </div>
+            <% end %>
+          </dl>
         </div>
-        <div class="govuk-summary-list__row" id="Accreditation_scheme">
-          <dt class="govuk-summary-list__key govuk-!-width-one-half govuk-!-font-weight-regular">Accreditation scheme</dt>
-          <dd class="govuk-summary-list__value govuk-!-font-weight-bold"><%= assessment[:assessor][:registeredBy][:name] %></dd>
-        </div>
-        <div class="govuk-summary-list__row" id="name">
-          <dt class="govuk-summary-list__key govuk-!-width-one-half govuk-!-font-weight-regular">Assessor's name</dt>
-          <dd class="govuk-summary-list__value govuk-!-font-weight-bold"><%= assessment[:assessor][:firstName] %> <%= assessment[:assessor][:lastName] %></dd>
-        </div>
-        <% if assessment[:assessor][:contactDetails].key?(:telephoneNumber) && !assessment[:assessor][:contactDetails][:telephoneNumber].empty? %>
-        <div class="govuk-summary-list__row" id="phone">
-          <dt class="govuk-summary-list__key govuk-!-width-one-half govuk-!-font-weight-regular">Phone number</dt>
-          <dd class="govuk-summary-list__value govuk-!-font-weight-bold"><%= assessment[:assessor][:contactDetails][:telephoneNumber] %></dd>
-        </div>
-        <% end %>
-        <% if assessment[:assessor][:contactDetails].key?(:email) && !assessment[:assessor][:contactDetails][:email].empty? %>
-        <div class="govuk-summary-list__row" id="email">
-          <dt class="govuk-summary-list__key govuk-!-width-one-half govuk-!-font-weight-regular">E-mail address</dt>
-          <dd class="govuk-summary-list__value govuk-!-font-weight-bold"><a href="mailto:"><%= assessment[:assessor][:contactDetails][:email] %></a></dd>
-        </div>
-        <% end %>
-      </dl>
-    </div>
-  </div>
-</div>
+      </div>
+      </div>

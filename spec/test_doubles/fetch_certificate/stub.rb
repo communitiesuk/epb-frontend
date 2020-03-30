@@ -9,7 +9,26 @@ module FetchCertificate
       recommended_improvements = false
     )
       if recommended_improvements
-        recommendedImprovements = [{ sequence: 0 }, { sequence: 1 }]
+        recommendedImprovements = [
+          {
+            sequence: 3,
+            indicativeCost: '£200 - £500',
+            typicalSaving: 100.00,
+            improvementType: 'Low energy lighting for all fixed outlets'
+          },
+          {
+            sequence: 1,
+            indicativeCost: '£500 - £1000',
+            typicalSaving: 900.00,
+            improvementType: 'Internal or external wall insulation'
+          },
+          {
+            sequence: 2,
+            indicativeCost: '£300 - £400',
+            typicalSaving: 9000.00,
+            improvementType: 'High heat retention storage heaters'
+          }
+        ]
       else
         recommendedImprovements = []
       end
