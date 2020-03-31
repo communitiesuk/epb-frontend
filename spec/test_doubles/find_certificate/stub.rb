@@ -43,7 +43,7 @@ module FindCertificate
                   impactOfCavityInsulation: 67,
                   impactOfSolidWallInsulation: 69
                 },
-                recommendedImprovements: [{ sequence: 2 }, { sequence: 3 }]
+                recommendedImprovements: []
               },
               {
                 assessmentId: '1234-5678-9101-1122',

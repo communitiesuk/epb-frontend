@@ -112,9 +112,9 @@ describe 'Acceptance::Certificate' do
     end
 
     context 'when there were no recommendations made' do
-      it "shows there aren't any recommendations for this property text" do
+      it 'shows there aren’t any recommendations for this property text' do
         expect(response.body).to include(
-          "There aren't any recommendations for this property."
+          'There aren’t any recommendations for this property.'
         )
       end
     end
@@ -132,6 +132,24 @@ describe 'Acceptance::Certificate' do
       expect(response.body).to include(
         'Making any of the recommended changes will improve your property’s energy efficiency.'
       )
+    end
+
+    it 'doesnt show there aren’t any recommendations for this property text' do
+      expect(response.body).not_to include(
+                                     'There aren’t any recommendations for this property.'
+                                   )
+    end
+
+    it 'shows recommendation type' do
+      expect(response.body).to include('Internal or external wall insulation')
+    end
+
+    it 'shows typical saving cost' do
+      expect(response.body).to include('£900')
+    end
+
+    it 'shows typical installation cost' do
+      expect(response.body).to include('£500 - £1000')
     end
   end
 

@@ -157,36 +157,58 @@
       </dl>
     </div>
   </div>
+
   <div class="govuk-grid-column-two-thirds">
-    <div class="epc-blue-bottom">
-    <div class="govuk-grid-column-two-thirds" style="padding: 0";>
-      <h3 class="govuk-heading-l"><%= t('domestic_epc.recommendations.title') %></h3>
+    <h2 class="govuk-heading-l"><%= t('domestic_epc.recommendations.heading') %></h2>
+    <div class=<%=assessment[:recommendedImprovements].empty? ? 'epc-blue-bottom' : ''%>>
+      <div class="epc-rating-box">
+        <p class="epc-rating-title govuk-body">
+          <%= t('domestic_epc.recommendations.box.energy_rating_title') %>
+        </p>
+        <p class="epc-rating-result govuk-body">
+          <%= assessment[:potentialEnergyEfficiencyBand].upcase %>
+        </p>
+      </div>
       <%
         if assessment[:recommendedImprovements].empty?
       %>
-        <p class="govuk-body"><%= t('domestic_epc.recommendations.no_recommendations_summary') %></p>
+        <p class="govuk-body "><%= t('domestic_epc.recommendations.summary.no_recommendations_summary') %></p>
       <%
         else
       %>
         <p class="govuk-body"><%= t('domestic_epc.recommendations.summary.make_changes_text') %></p>
         <p class="govuk-body"><%= t('domestic_epc.recommendations.summary.improve_rating_text', :potential_energy_efficiency_band => assessment[:potentialEnergyEfficiencyBand].upcase) %></p>
-      <%
-        end
-      %>
-
-    </div>
-    <div class="epc-rating-box">
-      <p class="epc-rating-title govuk-body">
-        <%= t('domestic_epc.recommendations.box.energy_rating_title') %>
-      </p>
-      <p class="epc-rating-result govuk-body">
-        <%= assessment[:potentialEnergyEfficiencyBand].upcase %>
-      </p>
+      <% end %>
     </div>
   </div>
-
-  </div>
-
+  <%
+    unless assessment[:recommendedImprovements].empty?
+  %>
+    <div class="govuk-grid-column-two-thirds">
+      <div class="epc-blue-bottom">
+        <%
+          sorted_sequence = assessment[:recommendedImprovements].sort { |x, y| x[:sequence] <=> y[:sequence] }
+          sorted_sequence.each_with_index do |recommendation, index| %>
+          <hr class="epc-light-top"/>
+          <h3 class="govuk-heading-m"><%= t('domestic_epc.recommendations.list.title')%> <%= index + 1 %>: <%= recommendation[:improvementType] %> </h3>
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-half">
+              <div class="govuk-body" style="margin-bottom: 0px;"><%= t('domestic_epc.recommendations.list.installation_cost') %></div>
+              <p class="govuk-body govuk-!-font-weight-bold"><%= recommendation[:indicativeCost] %></p>
+            </div>
+            <div class="govuk-grid-column-one-half">
+              <div class="govuk-body" style="margin-bottom: 0px;"><%= t('domestic_epc.recommendations.list.yearly_saving') %></div>
+              <p class="govuk-body govuk-!-font-weight-bold">
+                <%= sprintf("£%.f", recommendation[:typicalSaving]).gsub(/(\d)(?=(\d{3})+(?!\d))/, "\\1,") %></p>
+            </div>
+          </div>
+        <% end %>
+        <hr class="epc-light-top"/>
+      </div>
+    </div>
+  <%
+    end
+  %>
 
       <div class="govuk-grid-column-two-thirds">
         <div class="epc-blue-bottom">
