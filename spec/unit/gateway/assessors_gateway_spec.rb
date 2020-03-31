@@ -56,7 +56,9 @@ describe Gateway::AssessorsGateway do
       before { FindAssessor::ByPostcode::NoAssessorsStub.search_by_postcode }
 
       it 'returns empty results' do
-        expect(response).to eq({data: {assessors: []}, meta: {searchPostcode: 'BF1 3AA'}})
+        expect(response).to eq(
+          { data: { assessors: [] }, meta: { searchPostcode: 'BF1 3AA' } }
+        )
       end
     end
 
@@ -170,7 +172,8 @@ describe Gateway::AssessorsGateway do
 
       it 'returns empty results' do
         expect(response).to eq(
-          data: {assessors: []}, meta: {searchName: 'Some Nonexistent-name', looseMatch: false}
+          data: { assessors: [] },
+          meta: { searchName: 'Some Nonexistent-name', looseMatch: false }
         )
       end
     end

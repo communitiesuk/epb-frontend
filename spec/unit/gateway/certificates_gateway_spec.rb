@@ -44,7 +44,9 @@ describe Gateway::CertificatesGateway do
     before { FindCertificate::NoCertificatesStub.search_by_postcode }
 
     it 'returns empty results' do
-      expect(response).to eq(data: {assessments: []}, meta: {searchPostcode: 'BF1 3AA'})
+      expect(response).to eq(
+        data: { assessments: [] }, meta: { searchPostcode: 'BF1 3AA' }
+      )
     end
   end
 

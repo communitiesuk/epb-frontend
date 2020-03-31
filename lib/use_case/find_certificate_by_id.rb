@@ -15,7 +15,9 @@ module UseCase
         raise Errors::ReferenceNumberNotValid if error_code == 'INVALID_REQUEST'
       end
 
-      raise Errors::CertificateNotFound if gateway_response[:data][:assessments].size == 0
+      if gateway_response[:data][:assessments].size == 0
+        raise Errors::CertificateNotFound
+      end
 
       gateway_response
     end

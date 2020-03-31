@@ -6,7 +6,9 @@ describe UseCase::FindCertificateByPostcode do
     let(:find_certificate) { described_class.new(certificates_gateway) }
 
     it 'returns empty array' do
-      expect(find_certificate.execute('SW1A 2AA')[:data][:assessments]).to eq([])
+      expect(find_certificate.execute('SW1A 2AA')[:data][:assessments]).to eq(
+        []
+      )
     end
   end
 

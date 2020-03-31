@@ -128,6 +128,7 @@ en:
     qualification:
       title: 'Qualification'
       nonDomesticSp3: 'Air Conditioning Simple Packaged (Level 3)'
+      nonDomesticCc4: 'Air Conditioning Complexed Central (Level 4)'
 
 
   find_assessor_by_postcode_results:

@@ -165,7 +165,8 @@ class FrontendService < Sinatra::Base
       if valid_postcode.match(params['postcode'])
         @page_title = t('find_assessor_by_postcode_results.head.title')
         begin
-          locals[:results] = response.execute(params['postcode'])[:data][:assessors]
+          locals[:results] =
+            response.execute(params['postcode'])[:data][:assessors]
 
           erb_template = :find_non_domestic_assessor_by_postcode_results
         rescue Errors::PostcodeNotRegistered

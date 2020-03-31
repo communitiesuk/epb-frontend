@@ -83,7 +83,7 @@ describe 'Acceptance::NonDomesticAssessor' do
         before do
           FindAssessor::ByPostcode::Stub.search_by_postcode(
             'SW1A 2AA',
-            'nonDomesticSp3'
+            'nonDomesticSp3,nonDomesticCc4'
           )
         end
 
@@ -135,6 +135,9 @@ describe 'Acceptance::NonDomesticAssessor' do
           expect(response.body).to include(
             'Air Conditioning Simple Packaged (Level 3)'
           )
+          expect(response.body).to include(
+            'Air Conditioning Complexed Central (Level 4)'
+          )
         end
       end
 
@@ -142,7 +145,7 @@ describe 'Acceptance::NonDomesticAssessor' do
         before do
           FindAssessor::ByPostcode::NoNearAssessorsStub.search_by_postcode(
             'E1 4AA',
-            'nonDomesticSp3'
+            'nonDomesticSp3,nonDomesticCc4'
           )
         end
 
@@ -169,7 +172,7 @@ describe 'Acceptance::NonDomesticAssessor' do
         before do
           FindAssessor::ByPostcode::UnregisteredPostcodeStub.search_by_postcode(
             'B11 4FF',
-            'nonDomesticSp3'
+            'nonDomesticSp3,nonDomesticCc4'
           )
         end
 
@@ -197,7 +200,7 @@ describe 'Acceptance::NonDomesticAssessor' do
         before do
           FindAssessor::ByPostcode::InvalidPostcodeStub.search_by_postcode(
             'C11 4FF',
-            'nonDomesticSp3'
+            'nonDomesticSp3,nonDomesticCc4'
           )
         end
 
@@ -229,7 +232,7 @@ describe 'Acceptance::NonDomesticAssessor' do
         before do
           FindAssessor::ByPostcode::NoNetworkStub.search_by_postcode(
             'D11 4FF',
-            'nonDomesticSp3'
+            'nonDomesticSp3,nonDomesticCc4'
           )
         end
 
