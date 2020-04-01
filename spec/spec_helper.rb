@@ -4,7 +4,7 @@ require 'rspec'
 require 'rack/test'
 require 'webmock/rspec'
 require 'epb-auth-tools'
-
+require 'helpers'
 require 'zeitwerk'
 
 loader = Zeitwerk::Loader.new

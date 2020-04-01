@@ -9,6 +9,15 @@ module Sinatra
         Regexp.new('^[A-Z]{1,2}\d[A-Z\d]?\s?\d[A-Z]{2}$', Regexp::IGNORECASE)
       end
 
+      def number_to_currency(number)
+        raise ArgumentError unless number.is_a? Numeric
+        if number > number.to_i || number < number.to_i
+          sprintf('£%.2f', number).gsub(/(\d)(?=(\d{3})+(?!\d))/, "\\1,")
+        else
+          sprintf('£%.f', number).gsub(/(\d)(?=(\d{3})+(?!\d))/, "\\1,")
+        end
+      end
+
       def setup_locales
         I18n.load_path = Dir[File.join(settings.root, '/../locales', '*.yml')]
         I18n.enforce_available_locales = true

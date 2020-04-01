@@ -198,7 +198,7 @@
             <div class="govuk-grid-column-one-half">
               <div class="govuk-body" style="margin-bottom: 0px;"><%= t('domestic_epc.recommendations.list.yearly_saving') %></div>
               <p class="govuk-body govuk-!-font-weight-bold">
-                <%= sprintf("£%.f", recommendation[:typicalSaving]).gsub(/(\d)(?=(\d{3})+(?!\d))/, "\\1,") %></p>
+                <%= number_to_currency(recommendation[:typicalSaving])%></p>
             </div>
           </div>
         <% end %>
