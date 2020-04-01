@@ -10,8 +10,9 @@ module Sinatra
       end
 
       def number_to_currency(number)
-        raise ArgumentError unless number.is_a? Numeric
-        if number > number.to_i || number < number.to_i
+        raise ArgumentError if number.to_f == 0
+
+        if number.to_f > number.to_i || number.to_f < number.to_i
           sprintf('£%.2f', number).gsub(/(\d)(?=(\d{3})+(?!\d))/, "\\1,")
         else
           sprintf('£%.f', number).gsub(/(\d)(?=(\d{3})+(?!\d))/, "\\1,")
