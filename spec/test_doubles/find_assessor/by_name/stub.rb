@@ -13,7 +13,7 @@ module FindAssessor
             Accept: '*/*',
             'Accept-Encoding' => 'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
             Authorization: 'Bearer abc',
-            'User-Agent' => 'Faraday v1.0.0'
+            'User-Agent' => 'Faraday v1.0.1'
           }
         )
           .to_return(

@@ -3,7 +3,8 @@
 module UseCase
   class FindNonDomesticAssessorByPostcode < UseCase::Base
     def execute(postcode)
-      response = @gateway.search_by_postcode(postcode, 'nonDomesticSp3,nonDomesticCc4')
+      response =
+        @gateway.search_by_postcode(postcode, 'nonDomesticSp3,nonDomesticCc4')
 
       raise_errors_if_exists(response) do |error_code|
         raise Errors::PostcodeNotRegistered if error_code == 'NOT_FOUND'
