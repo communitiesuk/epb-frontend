@@ -140,16 +140,18 @@ describe 'Acceptance::Certificate' do
                                    )
     end
 
-    it 'shows recommendation type' do
-      expect(response.body).to include('Internal or external wall insulation')
+    it 'shows recommendation title' do
+      expect(response.body).to include(
+        'Recommendation 2: High heat retention storage heaters'
+      )
     end
 
     it 'shows typical saving cost' do
-      expect(response.body).to include('£900')
+      expect(response.body).to include('£9,000')
     end
 
     it 'shows typical installation cost' do
-      expect(response.body).to include('£500 - £1000')
+      expect(response.body).to include('£300 - £400')
     end
   end
 

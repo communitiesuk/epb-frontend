@@ -349,6 +349,16 @@ en:
         title: 'Recommendation'
         installation_cost: 'Typical installation cost'
         yearly_saving: 'Typical yearly saving'
+  improvement_code:
+    epc-r1:
+      title: 'Internal or external wall insulation'
+      description: 'Solid walls have no gap, so they cannot be filled with cavity wall insulation.'
+    epc-r2:
+      title: 'Low energy lighting for all fixed outlets'
+      description: 'Low energy lighting for all fixed outlets.'
+    epc-r3:
+      title: 'High heat retention storage heaters'
+      description: 'High heat retention storage heaters.'
 
   error:
     error: 'Error: '
