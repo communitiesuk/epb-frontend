@@ -9,6 +9,13 @@ module UseCase
         raise Errors::AssessmentNotFound if error_code == 'NOT_FOUND'
       end
 
+      if response[:data][:recommendedImprovements]
+        response[:data][:recommendedImprovements] =
+          response[:data][:recommendedImprovements].sort do |x, y|
+            x[:sequence] <=> y[:sequence]
+          end
+      end
+
       response
     end
   end

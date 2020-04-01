@@ -2,6 +2,9 @@
 
 module CertificatesGateway
   class Stub
+    def initialize(recommended_improvements = false)
+      @recommended_improvements = recommended_improvements
+    end
     def search_by_postcode(*)
       {
         data: {
@@ -193,6 +196,46 @@ module CertificatesGateway
     end
 
     def fetch(assessment_id)
+      if @recommended_improvements
+        recommendedImprovements = [
+          {
+            sequence: 3,
+            indicativeCost: '£200 - £500',
+            typicalSaving: 100.00,
+            improvementCode: 'EPC-R1',
+            improvementCategory: 'string',
+            improvementType: 'string',
+            energyPerformanceRating: 'C',
+            environmentalImpactRating: 'string',
+            greenDealCategoryCode: 'string'
+          },
+          {
+            sequence: 1,
+            indicativeCost: '£500 - £1000',
+            typicalSaving: 900.00,
+            improvementCode: 'EPC-R2',
+            improvementCategory: 'string',
+            improvementType: 'string',
+            energyPerformanceRating: 'C',
+            environmentalImpactRating: 'string',
+            greenDealCategoryCode: 'string'
+          },
+          {
+            sequence: 2,
+            indicativeCost: '£300 - £400',
+            typicalSaving: 9000.00,
+            improvementCode: 'EPC-R3',
+            improvementCategory: 'string',
+            improvementType: 'string',
+            energyPerformanceRating: 'C',
+            environmentalImpactRating: 'string',
+            greenDealCategoryCode: 'string'
+          }
+        ]
+      else
+        recommendedImprovements = []
+      end
+
       {
         data: {
           assessor: {
@@ -231,7 +274,8 @@ module CertificatesGateway
             impactOfLoftInsulation: 79,
             impactOfCavityInsulation: 67,
             impactOfSolidWallInsulation: 69
-          }
+          },
+          recommendedImprovements: recommendedImprovements
         }
       }
     end
