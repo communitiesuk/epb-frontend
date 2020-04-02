@@ -142,7 +142,7 @@ describe 'Acceptance::Certificate' do
 
     it 'shows recommendation title' do
       expect(response.body).to include(
-        'Recommendation 2: High heat retention storage heaters'
+        'Recommendation 2: Add additional 80 mm jacket to hot water cylinder'
       )
     end
 
