@@ -36,7 +36,7 @@ module FetchCertificate
             sequence: 2,
             indicativeCost: '£300 - £400',
             typicalSaving: 9000.00,
-            improvementCode: 'EPC-R3',
+            improvementCode: 'EPC-R8',
             improvementCategory: 'string',
             improvementType: 'string',
             energyPerformanceRating: 'C',

@@ -142,8 +142,14 @@ describe 'Acceptance::Certificate' do
 
     it 'shows recommendation title' do
       expect(response.body).to include(
-        'Recommendation 2: Add additional 80 mm jacket to hot water cylinder'
+        'Recommendation 2: Double glazing'
       )
+    end
+
+    it 'shows recommendation description' do
+      expect(response.body).to include(
+                                   'Replace single glazed windows with low-E double glazing.'
+                               )
     end
 
     it 'shows typical saving cost' do
