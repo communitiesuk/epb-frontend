@@ -351,19 +351,19 @@ en:
         yearly_saving: 'Typical yearly saving'
   improvement_code:
     epc-r1:
-      title: 'Insulate hot water cylinder with 80 mm jacket'
+      title: 'Hot water cylinder insulation'
       description: 'Insulate hot water cylinder with 80 mm jacket.'
     epc-r2:
-      title: 'Increase hot water cylinder insulation'
+      title: 'Hot water cylinder insulation'
       description: 'Increase hot water cylinder insulation.'
     epc-r3:
-      title: 'Add additional 80 mm jacket to hot water cylinder'
+      title: 'Hot water cylinder insulation'
       description: 'Add additional 80 mm jacket to hot water cylinder.'
     epc-r4:
-      title: 'Hot water cylinder thermostat'
+      title: 'Cylinder thermostat'
       description: 'Hot water cylinder thermostat.'
     epc-r5:
-      title: 'Increase loft insulation to 270 mm'
+      title: 'Loft insulation'
       description: 'Increase loft insulation to 270 mm.'
     epc-r6:
       title: 'Cavity wall insulation'
@@ -372,23 +372,23 @@ en:
       title: 'Internal or external wall insulation'
       description: 'Internal or external wall insulation.'
     epc-r8:
-      title: 'Replace single glazed windows with low-E double glazing'
-      description: 'Double glazing.'
+      title: 'Double glazing'
+      description: 'Replace single glazed windows with low-E double glazing.'
     epc-r9:
-      title: 'Secondary glazing to single glazed windows'
+      title: 'Secondary glazing'
       description: 'Secondary glazing to single glazed windows.'
     epc-r10:
       title: 'Draught proofing'
       description: 'Draught proofing.'
     epc-r11:
-      title: 'Heating controls (programmer, room thermostat and TRVs)'
+      title: 'Heating controls'
       description: 'Heating controls (programmer, thermostat, TRVs).'
     epc-r12:
-      title: 'Heating controls (room thermostat and TRVs)'
+      title: 'Heating controls'
       description: 'Heating controls (room thermostat and TRVs).'
     epc-r13:
-      title: 'Heating controls (thermostatic radiator valves)'
-      description: 'Heating controls (TRVs).'
+      title: 'Heating controls'
+      description: 'Heating controls (thermostatic radiator valves).'
 
   error:
     error: 'Error: '
