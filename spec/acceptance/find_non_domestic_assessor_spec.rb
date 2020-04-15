@@ -83,7 +83,7 @@ describe 'Acceptance::NonDomesticAssessor' do
         before do
           FindAssessor::ByPostcode::Stub.search_by_postcode(
             'SW1A 2AA',
-            'domesticRdSap,nonDomesticSp3,nonDomesticCc4,nonDomesticDec,nonDomesticNos3'
+            'nonDomesticSp3,nonDomesticCc4,nonDomesticDec,nonDomesticNos3'
           )
         end
 
@@ -152,7 +152,7 @@ describe 'Acceptance::NonDomesticAssessor' do
         before do
           FindAssessor::ByPostcode::NoNearAssessorsStub.search_by_postcode(
             'E1 4AA',
-            'domesticRdSap,nonDomesticSp3,nonDomesticCc4,nonDomesticDec,nonDomesticNos3'
+            'nonDomesticSp3,nonDomesticCc4,nonDomesticDec,nonDomesticNos3'
           )
         end
 
@@ -179,7 +179,7 @@ describe 'Acceptance::NonDomesticAssessor' do
         before do
           FindAssessor::ByPostcode::UnregisteredPostcodeStub.search_by_postcode(
             'B11 4FF',
-            'domesticRdSap,nonDomesticSp3,nonDomesticCc4,nonDomesticDec,nonDomesticNos3'
+            'nonDomesticSp3,nonDomesticCc4,nonDomesticDec,nonDomesticNos3'
           )
         end
 
@@ -207,7 +207,7 @@ describe 'Acceptance::NonDomesticAssessor' do
         before do
           FindAssessor::ByPostcode::InvalidPostcodeStub.search_by_postcode(
             'C11 4FF',
-            'domesticRdSap,nonDomesticSp3,nonDomesticCc4,nonDomesticDec,nonDomesticNos3'
+            'nonDomesticSp3,nonDomesticCc4,nonDomesticDec,nonDomesticNos3'
           )
         end
 
