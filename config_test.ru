@@ -12,14 +12,23 @@ loader.setup
 WebMock.enable!
 
 OauthStub.token
-FindAssessor::ByPostcode::Stub.search_by_postcode('SW1A 2AA', 'nonDomesticSp3,nonDomesticCc4,nonDomesticDec')
+FindAssessor::ByPostcode::Stub.search_by_postcode(
+  'SW1A 2AA',
+  'nonDomesticSp3,nonDomesticCc4,nonDomesticDec'
+)
 FindAssessor::ByPostcode::Stub.search_by_postcode('SW1A 2AA')
 FindAssessor::ByName::Stub.search_by_name('Supercommon Name')
 FindAssessor::ByName::Stub.search_by_name('Somewhatcommon Name', true)
 FindCertificate::Stub.search_by_postcode('SW1A 2AA')
 FindCertificate::Stub.search_by_id('1234-5678-9101-1121')
-FindCertificate::Stub.search_by_street_name_and_town('1 Makeup Street', 'Beauty Town')
-FindCertificate::NoCertificatesStub.search_by_street_name_and_town('Madeup Street', 'Madeup Town')
+FindCertificate::Stub.search_by_street_name_and_town(
+  '1 Makeup Street',
+  'Beauty Town'
+)
+FindCertificate::NoCertificatesStub.search_by_street_name_and_town(
+  'Madeup Street',
+  'Madeup Town'
+)
 FetchCertificate::Stub.fetch('1234-5678-9101-1121')
 FetchCertificate::Stub.fetch('1234-5678-9101-1122', '25', 'f', true)
 
