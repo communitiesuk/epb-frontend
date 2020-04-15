@@ -83,7 +83,7 @@ describe 'Acceptance::NonDomesticAssessor' do
         before do
           FindAssessor::ByPostcode::Stub.search_by_postcode(
             'SW1A 2AA',
-            'nonDomesticSp3,nonDomesticCc4,nonDomesticDec,nonDomesticNos3'
+            'domesticRdSap,nonDomesticSp3,nonDomesticCc4,nonDomesticDec,nonDomesticNos3'
           )
         end
 
@@ -133,10 +133,17 @@ describe 'Acceptance::NonDomesticAssessor' do
 
         it 'shows qualifications of an entry' do
           expect(response.body).to include(
+            'Reduced Data Standard Assessment Procedure (RdSAP)'
+          )
+          expect(response.body).to include(
             'Air Conditioning Simple Packaged (Level 3)'
           )
           expect(response.body).to include(
             'Air Conditioning Complexed Central (Level 4)'
+          )
+          expect(response.body).to include('Display Energy Certificate (DEC)')
+          expect(response.body).to include(
+            'Non-Domestic Energy Assessor (Level 3)'
           )
         end
       end
@@ -145,7 +152,7 @@ describe 'Acceptance::NonDomesticAssessor' do
         before do
           FindAssessor::ByPostcode::NoNearAssessorsStub.search_by_postcode(
             'E1 4AA',
-            'nonDomesticSp3,nonDomesticCc4,nonDomesticDec,nonDomesticNos3'
+            'domesticRdSap,nonDomesticSp3,nonDomesticCc4,nonDomesticDec,nonDomesticNos3'
           )
         end
 
@@ -172,7 +179,7 @@ describe 'Acceptance::NonDomesticAssessor' do
         before do
           FindAssessor::ByPostcode::UnregisteredPostcodeStub.search_by_postcode(
             'B11 4FF',
-            'nonDomesticSp3,nonDomesticCc4,nonDomesticDec,nonDomesticNos3'
+            'domesticRdSap,nonDomesticSp3,nonDomesticCc4,nonDomesticDec,nonDomesticNos3'
           )
         end
 
@@ -200,7 +207,7 @@ describe 'Acceptance::NonDomesticAssessor' do
         before do
           FindAssessor::ByPostcode::InvalidPostcodeStub.search_by_postcode(
             'C11 4FF',
-            'nonDomesticSp3,nonDomesticCc4,nonDomesticDec,nonDomesticNos3'
+            'domesticRdSap,nonDomesticSp3,nonDomesticCc4,nonDomesticDec,nonDomesticNos3'
           )
         end
 

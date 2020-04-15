@@ -127,6 +127,7 @@ en:
     description: 'Contact a non-domestic assessor listed below to book an energy assessment.'
     qualification:
       title: 'Qualification'
+      domesticRdSap: 'Reduced Data Standard Assessment Procedure (RdSAP)'
       nonDomesticSp3: 'Air Conditioning Simple Packaged (Level 3)'
       nonDomesticCc4: 'Air Conditioning Complexed Central (Level 4)'
       nonDomesticDec: 'Display Energy Certificate (DEC)'

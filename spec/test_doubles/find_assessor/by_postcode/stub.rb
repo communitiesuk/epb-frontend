@@ -7,8 +7,9 @@ module FindAssessor
         postcode, qualification_type = 'domesticRdSap'
       )
         if qualification_type ==
-             'nonDomesticSp3,nonDomesticCc4,nonDomesticDec,nonDomesticNos3'
+             'domesticRdSap,nonDomesticSp3,nonDomesticCc4,nonDomesticDec,nonDomesticNos3'
           qualification_status = {
+            'domesticRdSap': 'ACTIVE',
             'nonDomesticSp3': 'ACTIVE',
             'nonDomesticCc4': 'ACTIVE',
             'nonDomesticDec': 'ACTIVE',
