@@ -129,6 +129,7 @@ en:
       title: 'Qualification'
       nonDomesticSp3: 'Air Conditioning Simple Packaged (Level 3)'
       nonDomesticCc4: 'Air Conditioning Complexed Central (Level 4)'
+      nonDomesticDec: 'Display Energy Certificate (DEC)'
 
 
   find_assessor_by_postcode_results:

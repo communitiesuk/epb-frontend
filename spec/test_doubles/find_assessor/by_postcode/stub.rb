@@ -6,9 +6,11 @@ module FindAssessor
       def self.search_by_postcode(
         postcode, qualification_type = 'domesticRdSap'
       )
-        if qualification_type == 'nonDomesticSp3,nonDomesticCc4'
+        if qualification_type == 'nonDomesticSp3,nonDomesticCc4,nonDomesticDec'
           qualification_status = {
-            'nonDomesticSp3': 'ACTIVE', 'nonDomesticCc4': 'ACTIVE'
+            'nonDomesticSp3': 'ACTIVE',
+            'nonDomesticCc4': 'ACTIVE',
+            'nonDomesticDec': 'ACTIVE'
           }
         else
           qualification_status = { 'domesticRdSap': 'ACTIVE' }
