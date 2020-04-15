@@ -14,7 +14,7 @@ WebMock.enable!
 OauthStub.token
 FindAssessor::ByPostcode::Stub.search_by_postcode(
   'SW1A 2AA',
-  'nonDomesticSp3,nonDomesticCc4,nonDomesticDec'
+  'nonDomesticSp3,nonDomesticCc4,nonDomesticDec,nonDomesticNos3'
 )
 FindAssessor::ByPostcode::Stub.search_by_postcode('SW1A 2AA')
 FindAssessor::ByName::Stub.search_by_name('Supercommon Name')

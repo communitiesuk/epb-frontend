@@ -130,7 +130,7 @@ en:
       nonDomesticSp3: 'Air Conditioning Simple Packaged (Level 3)'
       nonDomesticCc4: 'Air Conditioning Complexed Central (Level 4)'
       nonDomesticDec: 'Display Energy Certificate (DEC)'
-
+      nonDomesticNos3: 'Non-Domestic Energy Assessor (Level 3)'
 
   find_assessor_by_postcode_results:
     head:
@@ -350,6 +350,7 @@ en:
         title: 'Recommendation'
         installation_cost: 'Typical installation cost'
         yearly_saving: 'Typical yearly saving'
+
   improvement_code:
     1:
       title: Hot water cylinder insulation
