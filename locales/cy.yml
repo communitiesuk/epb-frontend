@@ -268,6 +268,220 @@ cy:
       rhi_url: 'https://www.gov.uk/domestic-renewable-heat-incentive'
       rhi_url_text: 'RHI information page'
 
+  improvement_code:
+    1:
+      title: Inswleiddiad silindr dŵr poeth
+      description: Inswleiddiad silindr dŵr poeth
+
+    2:
+      title: Inswleiddiad silindr dŵr poeth
+      description: Cynyddu inswleiddiad dŵr poeth
+
+    3:
+      title: Inswleiddiad silindr dŵr poeth
+      description: Inswleiddiad silindr dŵr poeth
+
+    4:
+      title: Thermostat silindr
+      description: Thermostat silindr dŵr poeth
+
+    5:
+      title: Inswleiddiad croglofft
+      description: Cynyddu inswleiddiad croglofft i 270 mm
+
+    6:
+      title: Inswleiddio waliau ceudod
+      description: Inswleiddio waliau ceudod
+
+    7:
+      title: Inswleiddio waliau mewnol neu allanol
+      description: Inswleiddio waliau mewnol neu allanol
+
+    8:
+      title: Ffenestri dwbl
+      description: Gosod ffenestri dwbl isel eu hallyrredd (low-E) yn lle ffenestri sengl
+
+    9:
+      title: Gwydriad eilaidd
+      description: Gwydriad eilaidd i ffenestri gwydr sengl
+
+    10:
+      title: Atal drafftiau
+      description: Atal drafftiau
+
+    11:
+      title: Rheolyddion gwres (rhaglennydd, thermostat ystafell a TRVs)
+      description: Uwchraddio rheolyddion gwres
+
+    12:
+      title: Uwchraddio rheolyddion gwres
+      description: Rheolyddion gwres (thermostat ystafell a falfiau rheiddiadur thermostatig)
+
+    13:
+      title: Rheolyddion gwresogi (falfiau rheiddiadur thermostatig)
+      description: Uwchraddio rheolyddion gwres
+
+    14:
+      title: Rheolyddion gwres (thermostat ystafell)
+      description: Uwchraddio rheolyddion gwres
+
+    15:
+      title: Rheolyddion gwresogi (rhaglennydd a falfiau rheiddiadur thermostatig)
+      description: Uwchraddio rheolyddion gwres
+
+    16:
+      title: Rheolyddion gwresogi (rheolydd amser a pharth gwres)
+      description: Uwchraddio rheolyddion gwres
+
+    17:
+      title: Rheolyddion gwresogi (rhaglennydd a thermostat ystafell)
+      description: Uwchraddio rheolyddion gwresogi
+
+    18:
+      title: Rheolyddion gwresogi (thermostat ystafell)
+      description: Uwchraddio rheolyddion gwresogi
+
+    19:
+      title: Gwresogi dŵr solar
+      description: Gwresogi dŵr solar
+
+    20:
+      title: Cyfnewid y bwyler am fwyler cyddwyso newydd
+      description: Bwyler cyddwyso newydd
+
+    22:
+      title: Cyfnewid bwyler am fwyler biomas
+      description: Bwyler biomas
+
+    23:
+      title: Ffwrn biomas gyda bwyler
+      description: Ffwrn biomas gyda bwyler
+
+    26:
+      title: Cyfnewid uned aer poeth
+      description: Cyfnewid uned aer poeth
+
+    27:
+      title: Newid system wresogi i fwyler cyddwyso nwy
+      description: Bwyler cyddwyso nwy
+
+    28:
+      title: Bwyler cyddwyso olew gyda rheiddiaduron
+      description: Bwyler cyddwyso olew
+
+    29:
+      title: Bwyler cyddwyso nwy
+      description: Bwyler cyddwyso nwy
+
+    34:
+      title: Paneli solar ffotofoltäig, 2.5 kWp
+      description: Paneli solar ffotofoltäig
+
+    35:
+      title: Goleuo ynni isel
+      description: Goleuo ynni isel
+
+    36:
+      title: Gosod uned wresogi gyddwyso
+      description: Gosod uned wresogi gyddwyso
+
+    37:
+      title: Gosod bwyler cyddwyso (ar wahân i’r popty estynedig)
+      description: Gosod bwyler cyddwyso
+
+    38:
+      title: Gosod bwyler cyddwyso (ar wahân i’r cwcer estynedig)
+      description: Gosod bwyler cyddwyso
+
+    39:
+      title: Stôf biomas gyda bwyler
+      description: Stôf biomas gyda bwyler
+
+    40:
+      title: Newid gwresogyddion ystafell i fwyler cyddwyso
+      description: Bwyler cyddwyso
+
+    42:
+      title: Uned wresogi gyddwyso prif gyflenwad nwy
+      description: Uned wresogi gyddwyso prif gyflenwad nwy
+
+    44:
+      title: Tyrbin gwynt
+      description: Tyrbin gwynt
+
+    45:
+      title: To fflat neu oleddf inswleiddio nenfwd
+      description: To fflat neu oleddf inswleiddio nenfwd
+
+    46:
+      title: Insiwleiddio ystafell-yn-y-to
+      description: Insiwleiddio ystafell-yn-y-to
+
+    48:
+      title: Drysau allanol perfformiad uchel
+      description: Drysau allanol perfformiad uchel
+
+    49:
+      title: System adfer gwres ar gyfer cawodydd cymysgu
+      description: System adfer gwres ar gyfer cawodydd cymysgu
+
+    50:
+      title: Dyfais adfer gwres nwyon ffliw ar y cyd â boeler
+      description: Adfer gwres nwyon ffliw
+
+    51:
+      title: Pwmp gwres o’r aer neu’r ddaear
+      description: ..
+
+    52:
+      title: Pwmp gwres o’r aer neu’r ddaear gyda gwresogi tanlawr
+      description: ..
+
+    53:
+      title: CHP meicro
+      description: ..
+
+    54:
+      title: Boeler biomàs (Cyfarpar wedi’i Eithrio os mewn Ardal Reoli Mwg)
+      description: ..
+
+    55:
+      title: Insiwleiddio waliau ceudod ac allanol
+      description: ..
+
+    56:
+      title: Unedau gwydr newydd
+      description: Unedau gwydr newydd
+
+    57:
+      title: Inswleiddiad llawr (llawr crog)
+      description: Inswleiddiad llawr (llawr crog)
+
+    58:
+      title: Inswleiddiad llawr (llawr solet)
+      description: Inswleiddiad llawr (llawr solet)
+
+    59:
+      title: Gwresogyddion storio sy’n cadw llawer o wres
+      description: Gwresogyddion storio sy’n cadw llawer o wres
+
+    60:
+      title: Gwresogyddion storio sy’n cadw llawer o wres
+      description: Gwresogyddion storio sy’n cadw llawer o wres
+
+    61:
+      title: Gwresogyddion storio sy’n cadw llawer o wres
+      description: Gwresogyddion storio sy’n cadw llawer o wres
+
+    62:
+      title: Gwresogyddion storio sy’n cadw llawer o wres
+      description: Gwresogyddion storio sy’n cadw llawer o wres
+
+    63:
+      title: Insiwleiddio muriau cyd
+      description: Insiwleiddio muriau cyd
+
+
   error:
     error: 'Welsh: Error: '
     500:
