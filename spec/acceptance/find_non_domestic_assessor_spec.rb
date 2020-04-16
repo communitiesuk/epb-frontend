@@ -83,7 +83,7 @@ describe 'Acceptance::NonDomesticAssessor' do
         before do
           FindAssessor::ByPostcode::Stub.search_by_postcode(
             'SW1A 2AA',
-            'nonDomesticSp3,nonDomesticCc4,nonDomesticDec,nonDomesticNos3,nonDomesticNos4'
+            'nonDomesticSp3,nonDomesticCc4,nonDomesticDec,nonDomesticNos3,nonDomesticNos4,nonDomesticNos5'
           )
         end
 
@@ -148,6 +148,9 @@ describe 'Acceptance::NonDomesticAssessor' do
           expect(response.body).to include(
             'Non-Domestic Energy Assessor (Level 4)'
           )
+          expect(response.body).to include(
+            'Non-Domestic Energy Assessor (Level 5)'
+          )
         end
       end
 
@@ -155,7 +158,7 @@ describe 'Acceptance::NonDomesticAssessor' do
         before do
           FindAssessor::ByPostcode::NoNearAssessorsStub.search_by_postcode(
             'E1 4AA',
-            'nonDomesticSp3,nonDomesticCc4,nonDomesticDec,nonDomesticNos3,nonDomesticNos4'
+            'nonDomesticSp3,nonDomesticCc4,nonDomesticDec,nonDomesticNos3,nonDomesticNos4,nonDomesticNos5'
           )
         end
 
@@ -182,7 +185,7 @@ describe 'Acceptance::NonDomesticAssessor' do
         before do
           FindAssessor::ByPostcode::UnregisteredPostcodeStub.search_by_postcode(
             'B11 4FF',
-            'nonDomesticSp3,nonDomesticCc4,nonDomesticDec,nonDomesticNos3,nonDomesticNos4'
+            'nonDomesticSp3,nonDomesticCc4,nonDomesticDec,nonDomesticNos3,nonDomesticNos4,nonDomesticNos5'
           )
         end
 
@@ -210,7 +213,7 @@ describe 'Acceptance::NonDomesticAssessor' do
         before do
           FindAssessor::ByPostcode::InvalidPostcodeStub.search_by_postcode(
             'C11 4FF',
-            'nonDomesticSp3,nonDomesticCc4,nonDomesticDec,nonDomesticNos3,nonDomesticNos4'
+            'nonDomesticSp3,nonDomesticCc4,nonDomesticDec,nonDomesticNos3,nonDomesticNos4,nonDomesticNos5'
           )
         end
 
