@@ -295,63 +295,102 @@ en:
 
   domestic_epc:
     top_heading: 'Energy Performance Certificate'
-    labels:
-      certificate_number: 'Reference number'
-      date_of_assessment: 'Date of assessment'
-      date_of_certificate: 'Date of certificate'
-      type_of_assessment: 'Type of assessment'
-      total_floor_area: 'Total floor area'
-      dwelling_type: 'Dwelling type'
     box:
       date_of_expiry: 'Valid until %{date_of_expiry}'
       certificate_id: 'Certificate Number'
       energy_rating_title: 'Energy Rating'
-    landlord_warning:
-      title: 'Renting this property'
-      hidden_text: 'Warning'
-      subtitle: 'The owner of this property may not be able to let it'
-      energy_rating_title: 'Energy Rating'
-      body:
-        text: 'This property has an EPC rating of F or G, the property owner must take appropriate steps to comply with the requirements of the current regulations (%{link}). We explain how to do this below.'
-        cta: 'MEES'
-        url: '#'
-    rental_info:
-      body: 'The Regulations mean that, since 1 April 2018, private landlords may not let domestic properties on new tendencies to new or existing tenants of the Energy Efficiency Certificate (EPC) rating is F or G (unless an exemption applies).'
-      regulation: 'From 1 April 2020 the prohibition on letting F and G properties will extend to all relevant properties, even when there has been no change in tenancy.'
-      link:
-        text: 'Regulations available at %{link}'
-        cta: 'https://www.gov.uk/guidance/domestic-private-rented-property-minimum-energy-efficiency-standard-landlord-guidance'
-        url: 'https://www.gov.uk/guidance/domestic-private-rented-property-minimum-energy-efficiency-standard-landlord-guidance'
-    heat_demand:
-      title: 'Property heat demand'
-      energy_costs: 'The majority of energy costs cover heating the space and water used in a home. The figures below show the current estemated energy use for heating in this property.'
-      space_heating: 'Space heating'
-      kwh_per_year: 'kWh per year'
-      water_heating: 'Water heating'
-      table_description: 'The table below shows the amount of energy that could be saved in this property by installing insulation, based on typical energy use.'
-      potential_saving: 'Potential space heating energy saving'
-      type_of_insulation: 'Type of insulation'
-      amount_saved: 'Amount of energy saved (kWh per year)'
-      loft_insulation: 'Loft insulation'
-      cavity_insulation: 'Cavity wall insulation'
-      solid_wall_insulation: 'Solid wall insulation'
-      renewable_heat_insentive: 'If you replace your existing heating system with one that generates heat using renewable energy sources, you could receive Renewable Heat Incentive (RHI) payments, subject to meeting minimum energy efficiency requirements. The amount of payments you are eligable for will be based on the current estemated energy use required for space and water heating in your property. More infomation is avliable on the '
-      rhi_url: 'https://www.gov.uk/domestic-renewable-heat-incentive'
-      rhi_url_text: 'RHI information page'
-      not_applicable: 'Not applicable'
-
-    recommendations:
-      heading: 'How to improve this property’s energy performance'
+    sidebar:
+      title: 'Contents'
+      sections:
+        renting: 'Rules on letting this property'
+        epc: 'Energy performance rating for this property'
+        summary: "Breakdown of property's energy performance"
+        energy: 'Environmental impact of this property'
+        recommendations: 'How to improve this property’s energy performance'
+        heat-demand: 'Estimated energy use and potential savings'
+        information: 'Contacting the assessor and accreditation scheme'
+        previous: 'Other certificates for this property'
+    sections:
+      renting:
+        title: 'Rules on letting this property'
+        landlord_warning:
+          hidden_text: 'Warning'
+          subtitle: 'You may not be able to let this property'
+          energy_rating_title: 'Energy Rating'
+          body:
+            text: 'Your property has an energy rating of F. You must take appropriate steps to comply with the requirements of the current regulations (%{mees_link}). The %{recommendations_link} of the EPC sets out changes you can make to improve the property’s rating.'
+            mees_cta: 'MEES'
+            mees_url: '#'
+            recommendations_cta: 'Recommendations section'
+            recommendations_url: '#recommendations'
+        rental_info:
+          body: 'The Regulations mean that, since 1 April 2018, private landlords may not let domestic properties on new tendencies to new or existing tenants of the Energy Efficiency Certificate (EPC) rating is F or G (unless an exemption applies).<br /><br />From 1 April 2020 the prohibition on letting F and G properties will extend to all relevant properties, even when there has been no change in tenancy.<br /><br />Regulations available at %{link}.'
+          cta: 'https://www.gov.uk/guidance/domestic-private-rented-property-minimum-energy-efficiency-standard-landlord-guidance'
+          url: 'https://www.gov.uk/guidance/domestic-private-rented-property-minimum-energy-efficiency-standard-landlord-guidance'
+      epc:
+        title: 'Energy performance rating for this property'
+        intro:
+          text: 'Your energy rating is F and has the potential to be D by following the recommendations set out on %{link}.'
+          cta: 'how to improve this property’s energy performance section'
+          url: '#recommendations'
+        aria-label: 'Your energy rating is %{current_energy_efficiency_band}(%{current_energy_efficiency_rating}) and your potential is %{potential_energy_efficiency_band}(%{potential_energy_efficiency_rating})'
+        body: 'The graph shows the current energy efficiency of your home and the higher the rating the lower your fuel bills are likely to be. The average energy efficiency rating for a property in England and Wales is band D (rating 60). The EPC rating shown above is based on standard assumptions about occupancy and energy use and may not reflect how energy is consumed by individual occupants.'
       summary:
-        make_changes_text: 'Making any of the recommended changes will improve your property’s energy efficiency.'
-        improve_rating_text: 'If you make all of the changes recommended below, this will improve your property’s energy rating to %{potential_energy_efficiency_band}.'
-        no_recommendations_summary: 'There aren’t any recommendations for this property.'
-      box:
-        energy_rating_title: 'Potential Energy Rating'
-      list:
-        title: 'Recommendation'
-        installation_cost: 'Typical installation cost'
-        yearly_saving: 'Typical yearly saving'
+        title: "Breakdown of property's energy performance"
+        intro: "The energy performance of each feature of this property that was assessed is summarised below. This does not take into consideration the physical condition of any part of your property."
+        list:
+          total_floor_area: 'Total floor area'
+          dwelling_type: 'Property type'
+      recommendations:
+        title: 'How to improve this property’s energy performance'
+        summary:
+          make_changes_text: 'Making any of the recommended changes will improve your property’s energy efficiency.'
+          improve_rating_text: 'If you make all of the changes recommended below, this will improve your property’s energy rating to %{potential_energy_efficiency_band}.'
+          no_recommendations_summary: 'There are no recommendations for this property.'
+        box:
+          energy_rating_title: 'Potential Energy Rating'
+        list:
+          title: 'Recommendation'
+          installation_cost: 'Typical installation cost'
+          yearly_saving: 'Typical yearly saving'
+      heat-demand:
+        title: 'Property heat demand'
+        energy_costs: 'The majority of energy costs cover heating the space and water used in a home. The figures below show the current estemated energy use for heating in this property.'
+        space_heating: 'Space heating'
+        kwh_per_year: 'kWh per year'
+        water_heating: 'Water heating'
+        table_description: 'The table below shows the amount of energy that could be saved in this property by installing insulation, based on typical energy use.'
+        potential_saving: 'Potential space heating energy saving'
+        type_of_insulation: 'Type of insulation'
+        amount_saved: 'Amount of energy saved (kWh per year)'
+        loft_insulation: 'Loft insulation'
+        cavity_insulation: 'Cavity wall insulation'
+        solid_wall_insulation: 'Solid wall insulation'
+        renewable_heat_incentive:
+          body: 'If you replace your existing heating system with one that generates heat using renewable energy sources, you could receive Renewable Heat Incentive (RHI) payments, subject to meeting minimum energy efficiency requirements. The amount of payments you are eligable for will be based on the current estemated energy use required for space and water heating in your property. More infomation is avliable on the '
+          url: 'https://www.gov.uk/domestic-renewable-heat-incentive'
+          cta: 'RHI information page'
+        not_applicable: 'Not applicable'
+      information:
+        title: 'Contacting the assessor and accreditation scheme'
+        intro: 'This EPC was created by a qualified energy assessor.<br /><br />If you are unhappy about the energy assessment or certificate, you can complain to the assessor directly.<br /><br />If you are still unhappy after contacting the assessor, you should contact the assessor’s accreditation scheme.<br /><br />Accreditation schemes are appointed by the government to ensure that assessors are qualified to carry out EPC assessments.'
+        assessor:
+          title: 'Assessor contact details'
+          list:
+            telephone: 'Telephone'
+            email: 'E-mail address'
+            name: "Assessor's name"
+        scheme:
+          title: 'Accreditation scheme contact details'
+          list:
+            name: 'Accreditation scheme'
+            scheme_assessor_id: "Assessor's accreditation number"
+        certificate:
+          title: 'Assessment details'
+          list:
+            date_of_assessment: 'Date of assessment'
+            date_of_certificate: 'Date of certificate'
+            type_of_assessment: 'Type of assessment'
 
   improvement_code:
     1:

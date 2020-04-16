@@ -1,5 +1,5 @@
-<svg width="615" height="400" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg" style="max-width: 100%;" aria-labelledby="svg-title" role="img">
-  <title id="svg-title">Your energy rating is <%= current_energy_efficiency_band %>(<%= current_energy_efficiency_rating %>) and your potential is <%= potential_energy_efficiency_band %>(<%= potential_energy_efficiency_rating %>)</title>
+<svg width="615" height="376" viewBox="0 0 615 376" xmlns="http://www.w3.org/2000/svg" style="max-width: 100%;" aria-labelledby="svg-title" role="img">
+  <title id="svg-title"><%= title %></title>
   <%
 
     bands = {
@@ -78,6 +78,16 @@
     <% end %>
   </style>
 
+  <line x1="410" y1="0" x2="410" y2="376" style="stroke:#b1b4b6;stroke-width:1"></line>
+  <line x1="510" y1="0" x2="510" y2="376" style="stroke:#b1b4b6;stroke-width:1"></line>
+  <line x1="0" y1="25" x2="615" y2="25" style="stroke:#b1b4b6;stroke-width:1"></line>
+  <line x1="0" y1="0" x2="615" y2="0" style="stroke:#b1b4b6;stroke-width:1"></line>
+
+  <line x1="0" y1="0" x2="615" y2="0" style="stroke:#b1b4b6;stroke-width:1"></line>
+  <line x1="0" y1="0" x2="0" y2="376" style="stroke:#b1b4b6;stroke-width:1"></line>
+  <line x1="615" y1="376" x2="615" y2="0" style="stroke:#b1b4b6;stroke-width:1"></line>
+  <line x1="615" y1="376" x2="0" y2="376" style="stroke:#b1b4b6;stroke-width:1"></line>
+
   <% bands.each do |key, settings| %>
     <rect width="<%= 150+settings[:position]*40 %>" height="50" x="0" y="<%= 25+settings[:position]*50%>" class="band-<%= key %>">
     </rect>
@@ -95,15 +105,15 @@
     <% end %>
   </text>
 
-  <text x="8" y="20" class="small">
+  <text x="8" y="15" class="small" dominant-baseline="middle">
     Energy Rating
   </text>
 
-  <text x="415" y="20" class="small">
+  <text x="460" y="15" class="small" text-anchor="middle" dominant-baseline="middle">
     Current
   </text>
 
-  <text x="515" y="20" class="small">
+  <text x="565" y="15" class="small" text-anchor="middle" dominant-baseline="middle">
     Potential
   </text>
 

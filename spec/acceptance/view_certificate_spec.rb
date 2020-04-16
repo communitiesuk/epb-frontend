@@ -51,7 +51,7 @@ describe 'Acceptance::Certificate' do
     end
 
     it 'shows the SVG with energy ratings' do
-      expect(response.body).to include('<svg width="615" height="400"')
+      expect(response.body).to include('<svg width="615" height="376"')
     end
 
     it 'shows the assessors full name' do
@@ -106,7 +106,7 @@ describe 'Acceptance::Certificate' do
       let(:response) { get '/energy-performance-certificate/123-654' }
       it 'shows a warning text' do
         expect(response.body).to include(
-          'The owner of this property may not be able to let it'
+          'You may not be able to let this property'
         )
       end
     end
@@ -114,7 +114,7 @@ describe 'Acceptance::Certificate' do
     context 'when there were no recommendations made' do
       it 'shows there aren’t any recommendations for this property text' do
         expect(response.body).to include(
-          'There aren’t any recommendations for this property.'
+          'There are no recommendations for this property.'
         )
       end
     end
