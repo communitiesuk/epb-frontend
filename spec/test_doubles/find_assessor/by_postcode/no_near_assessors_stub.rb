@@ -4,7 +4,7 @@ module FindAssessor
   module ByPostcode
     class NoNearAssessorsStub
       def self.search_by_postcode(
-        postcode, qualification_type = 'domesticRdSap'
+        postcode, qualification_type = 'domesticSap,domesticRdSap'
       )
         WebMock.stub_request(
           :get,

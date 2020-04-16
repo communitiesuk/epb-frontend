@@ -6,7 +6,7 @@ module Gateway
       @internal_api_client = api_client
     end
 
-    def search_by_postcode(postcode, qualification_type = 'domesticRdSap')
+    def search_by_postcode(postcode, qualification_type = 'domesticSap,domesticRdSap')
       route =
         URI.encode(
           "/api/assessors?postcode=#{postcode}&qualification=#{

@@ -133,6 +133,9 @@ describe 'Acceptance::NonDomesticAssessor' do
 
         it 'shows qualifications of an entry' do
           expect(response.body).to include(
+            'Standard Assessment Procedure (SAP)'
+          )
+          expect(response.body).to include(
             'Reduced Data Standard Assessment Procedure (RdSAP)'
           )
           expect(response.body).to include(

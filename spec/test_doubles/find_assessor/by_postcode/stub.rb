@@ -4,11 +4,12 @@ module FindAssessor
   module ByPostcode
     class Stub
       def self.search_by_postcode(
-        postcode, qualification_type = 'domesticRdSap'
+        postcode, qualification_type = 'domesticSap,domesticRdSap'
       )
         if qualification_type ==
              'nonDomesticSp3,nonDomesticCc4,nonDomesticDec,nonDomesticNos3,nonDomesticNos4,nonDomesticNos5'
           qualification_status = {
+            'domesticSap': 'ACTIVE',
             'domesticRdSap': 'ACTIVE',
             'nonDomesticSp3': 'ACTIVE',
             'nonDomesticCc4': 'ACTIVE',
@@ -18,7 +19,10 @@ module FindAssessor
             'nonDomesticNos5': 'ACTIVE'
           }
         else
-          qualification_status = { 'domesticRdSap': 'ACTIVE' }
+          qualification_status = {
+            'domesticSap': 'ACTIVE',
+            'domesticRdSap': 'ACTIVE'
+          }
         end
 
         WebMock.stub_request(
