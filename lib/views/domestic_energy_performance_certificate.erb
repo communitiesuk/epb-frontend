@@ -107,14 +107,14 @@
     <div class="govuk-body epc-blue-bottom">
       <a name="epc"></a>
       <h2 class="govuk-heading-l"><%= t('domestic_epc.sections.epc.title') %></h2>
-      <p class="govuk-body"><%== t('domestic_epc.sections.epc.intro.text', :link => '<a href="' + t('domestic_epc.sections.epc.intro.url') + '">' + t('domestic_epc.sections.epc.intro.cta') + '</a>') %></p>
+      <p class="govuk-body govuk-!-margin-bottom-3"><%== t('domestic_epc.sections.epc.intro.text', :link => '<a href="' + t('domestic_epc.sections.epc.intro.url') + '">' + t('domestic_epc.sections.epc.intro.cta') + '</a>') %></p>
       <%== erb :energy_rating, locals: {
         current_energy_efficiency_rating: assessment[:currentEnergyEfficiencyRating],
         potential_energy_efficiency_rating: assessment[:potentialEnergyEfficiencyRating],
         current_energy_efficiency_band: assessment[:currentEnergyEfficiencyBand],
         potential_energy_efficiency_band: assessment[:potentialEnergyEfficiencyBand],
         title: t('domestic_epc.sections.epc.aria-label', :current_energy_efficiency_band => assessment[:currentEnergyEfficiencyBand].upcase, :current_energy_efficiency_rating => assessment[:currentEnergyEfficiencyRating], :potential_energy_efficiency_band => assessment[:potentialEnergyEfficiencyBand].upcase, :potential_energy_efficiency_rating => assessment[:potentialEnergyEfficiencyRating] )} %>
-      <p class="govuk-body"><%= t('domestic_epc.sections.epc.body') %></p>
+      <p class="govuk-body govuk-!-margin-top-6"><%= t('domestic_epc.sections.epc.body') %></p>
     </div>
   </div>
 
@@ -306,7 +306,7 @@
         <% end %>
       </dl>
 
-      <h3 class="govuk-heading-m"><%= t('domestic_epc.sections.information.scheme.title') %></h3>
+      <h3 class="govuk-heading-m govuk-!-margin-top-9"><%= t('domestic_epc.sections.information.scheme.title') %></h3>
       <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row" id="Accreditation_scheme">
           <dt class="govuk-summary-list__key govuk-!-width-one-half govuk-!-font-weight-regular"><%= t('domestic_epc.sections.information.scheme.list.name') %></dt>
@@ -318,7 +318,7 @@
         </div>
       </dl>
 
-      <h3 class="govuk-heading-m"><%= t('domestic_epc.sections.information.certificate.title') %></h3>
+      <h3 class="govuk-heading-m govuk-!-margin-top-9"-><%= t('domestic_epc.sections.information.certificate.title') %></h3>
       <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
