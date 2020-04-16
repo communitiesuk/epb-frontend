@@ -20,8 +20,7 @@ module FindAssessor
           }
         else
           qualification_status = {
-            'domesticSap': 'ACTIVE',
-            'domesticRdSap': 'ACTIVE'
+            'domesticSap': 'ACTIVE', 'domesticRdSap': 'ACTIVE'
           }
         end
 
