@@ -132,6 +132,7 @@ en:
       nonDomesticCc4: 'Air Conditioning Complexed Central (Level 4)'
       nonDomesticDec: 'Display Energy Certificate (DEC)'
       nonDomesticNos3: 'Non-Domestic Energy Assessor (Level 3)'
+      nonDomesticNos4: 'Non-Domestic Energy Assessor (Level 4)'
 
   find_assessor_by_postcode_results:
     head:

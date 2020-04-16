@@ -6,7 +6,7 @@ module UseCase
       response =
         @gateway.search_by_postcode(
           postcode,
-          'nonDomesticSp3,nonDomesticCc4,nonDomesticDec,nonDomesticNos3'
+          'nonDomesticSp3,nonDomesticCc4,nonDomesticDec,nonDomesticNos3,nonDomesticNos4'
         )
 
       raise_errors_if_exists(response) do |error_code|
