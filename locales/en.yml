@@ -324,8 +324,8 @@ en:
             recommendations_cta: 'Recommendations section'
             recommendations_url: '#recommendations'
         rental_info:
-          body: 'The Regulations mean that, since 1 April 2018, private landlords may not let domestic properties on new tendencies to new or existing tenants of the Energy Efficiency Certificate (EPC) rating is F or G (unless an exemption applies).<br /><br />From 1 April 2020 the prohibition on letting F and G properties will extend to all relevant properties, even when there has been no change in tenancy.<br /><br />Regulations available at %{link}.'
-          cta: 'https://www.gov.uk/guidance/domestic-private-rented-property-minimum-energy-efficiency-standard-landlord-guidance'
+          body: 'From 1 April 2020, properties can only be let if they have an energy rating of A to E. If the property is rated F or G, it cannot be let, unless an exemption has been registered. You can read %{link}.'
+          cta: 'guidance for landlords on the regulations and exemptions'
           url: 'https://www.gov.uk/guidance/domestic-private-rented-property-minimum-energy-efficiency-standard-landlord-guidance'
       epc:
         title: 'Energy performance rating for this property'
@@ -354,8 +354,8 @@ en:
           installation_cost: 'Typical installation cost'
           yearly_saving: 'Typical yearly saving'
       heat-demand:
-        title: 'Property heat demand'
-        energy_costs: 'The majority of energy costs cover heating the space and water used in a home. The figures below show the current estemated energy use for heating in this property.'
+        title: 'Estimated energy use and potential savings'
+        energy_costs: 'Heating a property usually makes up the majority of energy costs. Where applicable, this table shows the energy that could be saved in this property by insulating the loft and walls, based on typical energy use.'
         space_heating: 'Space heating'
         kwh_per_year: 'kWh per year'
         water_heating: 'Water heating'
@@ -367,9 +367,9 @@ en:
         cavity_insulation: 'Cavity wall insulation'
         solid_wall_insulation: 'Solid wall insulation'
         renewable_heat_incentive:
-          body: 'If you replace your existing heating system with one that generates heat using renewable energy sources, you could receive Renewable Heat Incentive (RHI) payments, subject to meeting minimum energy efficiency requirements. The amount of payments you are eligable for will be based on the current estemated energy use required for space and water heating in your property. More infomation is avliable on the '
+          body: 'You might be able to receive [%{link}]. This will help to reduce carbon emissions by replacing your existing heating system with one that generates renewable heat. The estimated energy required for space and water heating will form the basis of the payments.'
           url: 'https://www.gov.uk/domestic-renewable-heat-incentive'
-          cta: 'RHI information page'
+          cta: 'Renewable Heat Incentive (RHI) payments'
         not_applicable: 'Not applicable'
       information:
         title: 'Contacting the assessor and accreditation scheme'

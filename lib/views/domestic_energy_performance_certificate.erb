@@ -107,7 +107,7 @@
     <div class="govuk-body epc-blue-bottom">
       <a name="epc"></a>
       <h2 class="govuk-heading-l"><%= t('domestic_epc.sections.epc.title') %></h2>
-      <p class="govuk-body govuk-!-margin-bottom-3"><%== t('domestic_epc.sections.epc.intro.text', :link => '<a href="' + t('domestic_epc.sections.epc.intro.url') + '">' + t('domestic_epc.sections.epc.intro.cta') + '</a>') %></p>
+      <p class="govuk-body govuk-!-margin-bottom-6"><%== t('domestic_epc.sections.epc.intro.text', :link => '<a href="' + t('domestic_epc.sections.epc.intro.url') + '">' + t('domestic_epc.sections.epc.intro.cta') + '</a>') %></p>
       <%== erb :energy_rating, locals: {
         current_energy_efficiency_rating: assessment[:currentEnergyEfficiencyRating],
         potential_energy_efficiency_rating: assessment[:potentialEnergyEfficiencyRating],
