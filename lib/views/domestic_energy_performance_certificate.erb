@@ -70,14 +70,6 @@
               <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
               <div class="govuk-warning-text__text">
                 <span class="govuk-warning-text__assistive"><%= t('domestic_epc.sections.renting.landlord_warning.hidden_text') %></span>
-                <div class="epc-rating-box">
-                  <p class="epc-rating-title govuk-body">
-                    <%= t('domestic_epc.sections.renting.landlord_warning.energy_rating_title') %>
-                  </p>
-                  <p class="epc-rating-result govuk-body">
-                    <%= assessment[:currentEnergyEfficiencyBand].upcase %>
-                  </p>
-                </div>
                 <h2 class="govuk-error-summary__title" id="error-summary-title">
                   <%= t('domestic_epc.sections.renting.landlord_warning.subtitle') %>
                 </h2>
