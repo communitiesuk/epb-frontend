@@ -320,7 +320,7 @@ en:
           subtitle: 'You may not be able to let this property'
           energy_rating_title: 'Energy Rating'
           body:
-            text: 'Your property has an energy rating of F. You must take appropriate steps to comply with the requirements of the current regulations (%{mees_link}). The %{recommendations_link} of the EPC sets out changes you can make to improve the property’s rating.'
+            text: 'Your property has an energy rating of %{current_energy_efficiency_band}. You must take appropriate steps to comply with the requirements of the current regulations (%{mees_link}). The %{recommendations_link} of the EPC sets out changes you can make to improve the property’s rating.'
             mees_cta: 'MEES'
             mees_url: '#'
             recommendations_cta: 'Recommendations section'
@@ -332,7 +332,7 @@ en:
       epc:
         title: 'Energy performance rating for this property'
         intro:
-          text: 'Your energy rating is F and has the potential to be D by following the recommendations set out on %{link}.'
+          text: 'Your energy rating is %{current_energy_efficiency_band} and has the potential to be %{potential_energy_efficiency_band} by following the recommendations set out on %{link}.'
           cta: 'how to improve this property’s energy performance section'
           url: '#recommendations'
         aria-label: 'Your energy rating is %{current_energy_efficiency_band}(%{current_energy_efficiency_rating}) and your potential is %{potential_energy_efficiency_band}(%{potential_energy_efficiency_rating})'

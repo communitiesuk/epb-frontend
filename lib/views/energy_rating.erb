@@ -120,12 +120,12 @@
   <svg x="415" y="<%= 25+bands[current_energy_efficiency_band.to_sym][:position]*50 %>" width="90" height="50">
     <rect width="75" height="50" class="band-<%= current_energy_efficiency_band %>" x="25"></rect>
     <polygon points="0,25 25,50 25,0 0,25" class="band-<%= current_energy_efficiency_band %>"></polygon>
-    <text x="40" y="35" class="small-letter"><%= current_energy_efficiency_band %></text>
+    <text x="40" y="35" class="small-letter"><%= current_energy_efficiency_band.upcase %></text>
   </svg>
 
   <svg x="515" y="<%= 25+bands[potential_energy_efficiency_band.to_sym][:position]*50 %>" width="90" height="50">
     <rect width="75" height="50" class="band-<%= potential_energy_efficiency_band %>" x="25"></rect>
     <polygon points="0,25 25,50 25,0 0,25" class="band-<%= potential_energy_efficiency_band %>"></polygon>
-    <text x="40" y="35" class="small-letter"><%= potential_energy_efficiency_band %></text>
+    <text x="40" y="35" class="small-letter"><%= potential_energy_efficiency_band.upcase %></text>
   </svg>
 </svg>
