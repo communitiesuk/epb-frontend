@@ -44,7 +44,7 @@ deploy-app: ## Deploys the app to PaaS
 
 .PHONY: test
 test:
-	@bundle exec rake spec
+	@bundle exec rspec --tag ~journey
 
 .PHONY: run
 run:
@@ -56,4 +56,4 @@ format:
 
 .PHONY: journey
 journey:
-	@yarn test
+	@bundle exec rspec --tag journey
