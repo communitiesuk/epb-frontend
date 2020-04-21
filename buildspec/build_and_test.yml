@@ -28,3 +28,4 @@ phases:
     commands:
       - make frontend-build
       - make test
+      - make journey
