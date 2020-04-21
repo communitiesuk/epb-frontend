@@ -6,9 +6,6 @@
     "type": "git",
     "url": "git+https://github.com/communitiesuk/epb-frontend.git"
   },
-  "scripts": {
-    "test": "jest"
-  },
   "author": "",
   "license": "ISC",
   "bugs": {
@@ -16,8 +13,6 @@
   },
   "homepage": "https://github.com/communitiesuk/epb-frontend#readme",
   "dependencies": {
-    "govuk-frontend": "^3.3.0",
-    "jest": "^24.9.0",
-    "taiko": "^1.0.2"
+    "govuk-frontend": "^3.3.0"
   }
 }
