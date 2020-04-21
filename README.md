@@ -14,9 +14,10 @@ Follow the steps below to get started.
 
 ## Run tests
 
-### Prerequisite for Taiko journey tests
+### Prerequisite for Capybara journey tests
 
-* Yarn (should be installed globally using `npm i -g yarn`)
+* Chrome
+* ChromeDriver
 
 ### Test suites
 
