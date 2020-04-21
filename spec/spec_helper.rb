@@ -6,6 +6,7 @@ require 'webmock/rspec'
 require 'epb-auth-tools'
 require 'helpers'
 require 'zeitwerk'
+require 'capybara/rspec'
 
 loader = Zeitwerk::Loader.new
 loader.push_dir("#{__dir__}/../lib/")
@@ -48,6 +49,7 @@ RSpec.configure do |config|
   WebMock.disable_net_connect!(allow_localhost: true)
 
   config.before(:each) { OauthStub.token }
+
 end
 
 RSpec::Matchers.define(:redirect_to) do |path|
@@ -56,3 +58,7 @@ RSpec::Matchers.define(:redirect_to) do |path|
     response.status.to_s[0] == '3' && uri.path == path
   end
 end
+
+Capybara.default_driver = :selenium_chrome_headless
+Capybara.javascript_driver = :selenium_chrome_headless
+Capybara.app_host = 'http://localhost:9393'

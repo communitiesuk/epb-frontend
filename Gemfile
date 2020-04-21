@@ -9,8 +9,12 @@ source 'https://rubygems.org' do
   end
 
   group :test do
+    gem 'capybara', '~> 3.32.1'
+    gem 'capybara-selenium', '~> 0.0.6'
     gem 'rack-test', '~> 0.8.3'
     gem 'rspec', '~>3.0'
+    gem 'selenium-webdriver', '~> 3.142.7'
+    gem 'webdrivers', '~> 4.3.0'
     gem 'webmock', '~> 3.7'
   end
 
