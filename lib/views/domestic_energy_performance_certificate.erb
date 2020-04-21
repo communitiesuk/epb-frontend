@@ -181,7 +181,16 @@
                 <div class="govuk-grid-column-one-half">
                   <div class="govuk-body" style="margin-bottom: 0px;"><%= t('domestic_epc.sections.recommendations.list.yearly_saving') %></div>
                   <p class="govuk-body govuk-!-font-weight-bold">
-                    <%= number_to_currency(recommendation[:typicalSaving])%></p>
+                    <%
+                      typical_saving = number_to_currency(recommendation[:typicalSaving])
+
+                      if typical_saving
+                        %><%= typical_saving %><%
+                      else
+                        %><%=t('domestic_epc.sections.recommendations.list.na') %><%
+                      end
+
+                    %></p>
                 </div>
               </div>
             <% end %>

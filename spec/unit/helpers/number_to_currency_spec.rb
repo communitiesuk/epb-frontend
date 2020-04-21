@@ -29,13 +29,5 @@ describe Sinatra::FrontendService::Helpers do
         expect(HelpersStub.new.number_to_currency('123.90')).to eq('£123.90')
       end
     end
-
-    context 'given invalid number' do
-      it 'raises argument error' do
-        expect { HelpersStub.new.number_to_currency('string') }.to raise_error(
-          ArgumentError
-        )
-      end
-    end
   end
 end

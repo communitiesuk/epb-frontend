@@ -355,6 +355,7 @@ en:
           title: 'Recommendation'
           installation_cost: 'Typical installation cost'
           yearly_saving: 'Typical yearly saving'
+          na: 'Not applicable'
       heat-demand:
         title: 'Estimated energy use and potential savings'
         energy_costs: 'Heating a property usually makes up the majority of energy costs. Where applicable, this table shows the energy that could be saved in this property by insulating the loft and walls, based on typical energy use.'
