@@ -17,7 +17,7 @@ Follow the steps below to get started.
 ### Prerequisite for Capybara journey tests
 
 * Chrome
-* ChromeDriver
+* [ChromeDriver](https://chromedriver.chromium.org/downloads) - download the same ChromeDriver version as your version of Chrome.
 
 ### Test suites
 
