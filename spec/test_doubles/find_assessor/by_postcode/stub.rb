@@ -124,7 +124,7 @@ module FindAssessor
                     },
                     "qualifications": qualification_status,
                     "searchResultsComparisonPostcode": 'SW1A 1AA',
-                    "registeredBy": { "schemeId": '1222', "name": 'Elmhurst' },
+                    "registeredBy": { "schemeId": '1222', "name": 'Elmhurst Energy' },
                     "schemeAssessorId": 'Elmhurst12349876',
                     "distanceFromPostcodeInMiles": 1.36
                 }

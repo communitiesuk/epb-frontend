@@ -27,7 +27,7 @@
             <div class="govuk-details__text">
               <p class="govuk-body"><%== t('find_assessor_by_postcode_results.accreditation_summary_text') %></p>
 
-              <% if t('schemes.list.'+ assessor[:registeredBy][:name].downcase).include?('missing')%>
+              <% if t('schemes.list.'+ assessor[:registeredBy][:name].split.first.downcase).include?('missing')%>
                 <p class="govuk-body">
                   <%= "#{assessor[:registeredBy][:name]} #{t('schemes.unaccredited')}" %>
                 </p>
@@ -36,10 +36,10 @@
                   <%== t('find_assessor_by_postcode_results.contact_details.text') %> <%= assessor[:registeredBy][:name] %>:
                 </p>
                 <p class="govuk-body">
-                  <%== t('find_assessor_by_postcode_results.contact_details.email') %>:  <a href="mailto:<%= t('schemes.list.'+ assessor[:registeredBy][:name].downcase + '.email' ) %>"><%= t('schemes.list.'+ assessor[:registeredBy][:name].gsub(" ", "").downcase + '.email' ) %></a>
+                  <%== t('find_assessor_by_postcode_results.contact_details.email') %>:  <a href="mailto:<%= t('schemes.list.'+ assessor[:registeredBy][:name].split.first.downcase + '.email' ) %>"><%= t('schemes.list.'+ assessor[:registeredBy][:name].split.first.downcase + '.email' ) %></a>
                 </p>
                 <p class="govuk-body">
-                  <%== t('find_assessor_by_postcode_results.contact_details.telephone') %>: <%= t('schemes.list.'+ assessor[:registeredBy][:name].downcase + '.phone' ) %>
+                  <%== t('find_assessor_by_postcode_results.contact_details.telephone') %>: <%= t('schemes.list.'+ assessor[:registeredBy][:name].split.first.downcase + '.phone' ) %>
                 </p>
               <% end %>
             </div>
