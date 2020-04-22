@@ -345,11 +345,11 @@ describe 'Acceptance::Assessor' do
         end
 
         it 'shows the name of an entry' do
-          expect(response.body).to include('Juan Uno')
+          expect(response.body).to include('Supercommon Name')
         end
 
         it 'shows the assessor ID of an entry' do
-          expect(response.body).to include('STROMA9999990')
+          expect(response.body).to include('Stroma9999990')
         end
 
         it 'shows the email of an entry' do
