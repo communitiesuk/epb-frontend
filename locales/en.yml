@@ -69,6 +69,7 @@ en:
     top_heading: 'Contact an energy assessor accreditation scheme'
     description: 'The following schemes license energy assessors to assess properties and create energy certificates'
     contact: 'You should contact a scheme if you need to contact someone about an assessor'
+    unaccredited: 'is no longer accredited.'
     list:
       heading: 'Energy assessment accreditation schemes'
       cta: 'Go to website'
@@ -76,26 +77,32 @@ en:
       cibse:
         name: 'CIBSE'
         phone: '020 8772 3649'
+        email: 'epc@cibsecertification.org'
         url: 'https://www.cibsecertification.co.uk'
       ecmk:
         name: 'ECMK'
         phone: '0333 123 1418'
+        email: 'info@ecmk.co.uk'
         url: 'https://www.ecmk.co.uk'
-      elmhurstenergy:
+      elmhurst:
         name: 'Elmhurst Energy'
         phone: '01455 883 250'
+        email: 'enquiries@elmhurstenergy.co.uk'
         url: 'https://www.elmhurstenergy.co.uk'
       sterling:
         name: 'Sterling'
         phone: '0161 727 4303'
+        email: 'info@sterlingaccreditaiton.com'
         url: 'http://www.sterlingaccreditation.com'
       stroma:
         name: 'Stroma'
         phone: '0845 621 11 11'
+        email: 'certification@stroma.com'
         url: 'https://www.stroma.com/certification'
       quidos:
         name: 'Quidos'
         phone: '01225 667 570'
+        email: 'info@quidos.co.uk'
         url: 'https://quidos.co.uk'
 
   find_assessor_by_postcode:
@@ -142,14 +149,15 @@ en:
     top_heading: 'Contact an assessor to book an EPC assessment'
     description: 'Contact an assessor listed below to book an energy assessment.'
     no_assessors: 'There are no assessors near you at this point.'
-    accreditation_summary_title: 'Accreditation schemes and complaints'
-    accreditation_summary_text: 'Accreditation schemes are appointed by the government to ensure that assessors are qualified to carry out energy assessments and to create EPCs.<br /><br />If you’re unhappy about an energy assessment or EPC, you can complain to the assessor directly. If you’re still unhappy, you should contact your assessor’s accreditation scheme.'
+    accreditation_summary_title: 'More information'
+    accreditation_summary_text: 'Accreditation schemes are appointed by the government to ensure that assessors are qualified to carry out EPC assessments.<br /><br />If you are unhappy about an EPC assessment, you can complain to the assessor directly. If you are still unhappy, you should contact your assessor’s accreditation scheme.'
     results: '%{quantity} assessors, sorted by distance from %{postcode}'
     distance:
       heading: 'Distance'
       default_miles_away_text: 'Less than 1 mile away'
       miles_away_text: 'miles away'
     contact_details:
+      text: 'Contact details for'
       email: 'Email'
       telephone: 'Telephone'
     accredited_id: 'Assessor ID'
