@@ -292,7 +292,7 @@ class FrontendService < Sinatra::Base
     status 200
     show(
       :domestic_energy_performance_certificate,
-      { assessment: assessment[:data] }
+      assessment: assessment[:data]
     )
   rescue StandardError => e
     case e

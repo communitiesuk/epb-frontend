@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Errors
   class AssessmentNotFound < RuntimeError; end
   class AuthTokenMissing < RuntimeError; end

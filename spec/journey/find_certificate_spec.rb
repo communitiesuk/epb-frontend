@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 describe 'Journey::FindCertificate', type: :feature, journey: true do
   before(:all) do
     process =

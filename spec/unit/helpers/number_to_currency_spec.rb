@@ -15,11 +15,11 @@ describe Sinatra::FrontendService::Helpers do
     end
 
     it 'returns five digit formatted currency' do
-      expect(HelpersStub.new.number_to_currency(25000.90)).to eq('£25,000.90')
+      expect(HelpersStub.new.number_to_currency(25_000.90)).to eq('£25,000.90')
     end
 
     it 'returns seven digit formatted currency' do
-      expect(HelpersStub.new.number_to_currency(1250600.99)).to eq(
+      expect(HelpersStub.new.number_to_currency(1_250_600.99)).to eq(
         '£1,250,600.99'
       )
     end

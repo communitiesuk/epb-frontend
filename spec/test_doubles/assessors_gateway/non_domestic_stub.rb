@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module AssessorsGateway
   class NonDomesticStub
     def search_by_postcode(*)

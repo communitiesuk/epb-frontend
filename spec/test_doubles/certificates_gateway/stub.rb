@@ -5,6 +5,7 @@ module CertificatesGateway
     def initialize(recommended_improvements = false)
       @recommended_improvements = recommended_improvements
     end
+
     def search_by_postcode(*)
       {
         data: {
@@ -275,45 +276,46 @@ module CertificatesGateway
     end
 
     def fetch(assessment_id)
-      if @recommended_improvements
-        recommendedImprovements = [
-          {
-            sequence: 3,
-            indicativeCost: '£200 - £500',
-            typicalSaving: 100.00,
-            improvementCode: '1',
-            improvementCategory: 'string',
-            improvementType: 'string',
-            energyPerformanceRating: 'C',
-            environmentalImpactRating: 'string',
-            greenDealCategoryCode: 'string'
-          },
-          {
-            sequence: 1,
-            indicativeCost: '£500 - £1000',
-            typicalSaving: 900.00,
-            improvementCode: '2',
-            improvementCategory: 'string',
-            improvementType: 'string',
-            energyPerformanceRating: 'C',
-            environmentalImpactRating: 'string',
-            greenDealCategoryCode: 'string'
-          },
-          {
-            sequence: 2,
-            indicativeCost: '£300 - £400',
-            typicalSaving: 9000.00,
-            improvementCode: '3',
-            improvementCategory: 'string',
-            improvementType: 'string',
-            energyPerformanceRating: 'C',
-            environmentalImpactRating: 'string',
-            greenDealCategoryCode: 'string'
-          }
-        ]
-      else
-        recommendedImprovements = []
-      end
+      recommendedImprovements =
+        if @recommended_improvements
+          [
+            {
+              sequence: 3,
+              indicativeCost: '£200 - £500',
+              typicalSaving: 100.00,
+              improvementCode: '1',
+              improvementCategory: 'string',
+              improvementType: 'string',
+              energyPerformanceRating: 'C',
+              environmentalImpactRating: 'string',
+              greenDealCategoryCode: 'string'
+            },
+            {
+              sequence: 1,
+              indicativeCost: '£500 - £1000',
+              typicalSaving: 900.00,
+              improvementCode: '2',
+              improvementCategory: 'string',
+              improvementType: 'string',
+              energyPerformanceRating: 'C',
+              environmentalImpactRating: 'string',
+              greenDealCategoryCode: 'string'
+            },
+            {
+              sequence: 2,
+              indicativeCost: '£300 - £400',
+              typicalSaving: 9000.00,
+              improvementCode: '3',
+              improvementCategory: 'string',
+              improvementType: 'string',
+              energyPerformanceRating: 'C',
+              environmentalImpactRating: 'string',
+              greenDealCategoryCode: 'string'
+            }
+          ]
+        else
+          []
+        end
 
       {
         data: {

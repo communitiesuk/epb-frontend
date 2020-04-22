@@ -14,7 +14,7 @@ module UseCase
 
       raise_errors_if_exists(gateway_response)
 
-      if gateway_response[:data][:assessments].size == 0
+      if gateway_response[:data][:assessments].empty?
         raise Errors::CertificateNotFound
       end
 

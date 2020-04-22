@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module FetchCertificate
   class NoAssessmentStub
     def self.fetch(assessment_id)

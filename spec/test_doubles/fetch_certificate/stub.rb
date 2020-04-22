@@ -86,45 +86,46 @@ module FetchCertificate
           "meta": {}
         }
       else
-        if recommended_improvements
-          recommendedImprovements = [
-            {
-              sequence: 3,
-              indicativeCost: '£200 - £500',
-              typicalSaving: 100.00,
-              improvementCode: '1',
-              improvementCategory: 'string',
-              improvementType: 'string',
-              energyPerformanceRating: 'C',
-              environmentalImpactRating: 'string',
-              greenDealCategoryCode: 'string'
-            },
-            {
-              sequence: 1,
-              indicativeCost: '£500 - £1000',
-              typicalSaving: 900.00,
-              improvementCode: '2',
-              improvementCategory: 'string',
-              improvementType: 'string',
-              energyPerformanceRating: 'C',
-              environmentalImpactRating: 'string',
-              greenDealCategoryCode: 'string'
-            },
-            {
-              sequence: 2,
-              indicativeCost: '£300 - £400',
-              typicalSaving: 9000.00,
-              improvementCode: '8',
-              improvementCategory: 'string',
-              improvementType: 'string',
-              energyPerformanceRating: 'C',
-              environmentalImpactRating: 'string',
-              greenDealCategoryCode: 'string'
-            }
-          ]
-        else
-          recommendedImprovements = []
-        end
+        recommendedImprovements =
+          if recommended_improvements
+            [
+              {
+                sequence: 3,
+                indicativeCost: '£200 - £500',
+                typicalSaving: 100.00,
+                improvementCode: '1',
+                improvementCategory: 'string',
+                improvementType: 'string',
+                energyPerformanceRating: 'C',
+                environmentalImpactRating: 'string',
+                greenDealCategoryCode: 'string'
+              },
+              {
+                sequence: 1,
+                indicativeCost: '£500 - £1000',
+                typicalSaving: 900.00,
+                improvementCode: '2',
+                improvementCategory: 'string',
+                improvementType: 'string',
+                energyPerformanceRating: 'C',
+                environmentalImpactRating: 'string',
+                greenDealCategoryCode: 'string'
+              },
+              {
+                sequence: 2,
+                indicativeCost: '£300 - £400',
+                typicalSaving: 9000.00,
+                improvementCode: '8',
+                improvementCategory: 'string',
+                improvementType: 'string',
+                energyPerformanceRating: 'C',
+                environmentalImpactRating: 'string',
+                greenDealCategoryCode: 'string'
+              }
+            ]
+          else
+            []
+          end
 
         body = {
           data: {
