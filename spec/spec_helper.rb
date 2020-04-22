@@ -49,7 +49,6 @@ RSpec.configure do |config|
   WebMock.disable_net_connect!(allow_localhost: true)
 
   config.before(:each) { OauthStub.token }
-
 end
 
 RSpec::Matchers.define(:redirect_to) do |path|

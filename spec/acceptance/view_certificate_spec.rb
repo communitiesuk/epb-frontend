@@ -164,7 +164,9 @@ describe 'Acceptance::Certificate' do
   context 'when viewing a lodged certificate as returned from the API' do
     before { FetchCertificate::Stub.fetch('1111-1111-1111-1111-1112') }
 
-    let(:response) { get '/energy-performance-certificate/1111-1111-1111-1111-1112' }
+    let(:response) do
+      get '/energy-performance-certificate/1111-1111-1111-1111-1112'
+    end
 
     context 'with an invalid typical saving' do
       it 'displays N/A on the page' do
@@ -184,8 +186,8 @@ describe 'Acceptance::Certificate' do
 
     it 'shows the error page' do
       expect(response.body).to include(
-                                 '<h1 class="govuk-heading-xl">Page not found</h1>'
-                               )
+        '<h1 class="govuk-heading-xl">Page not found</h1>'
+      )
     end
   end
 end

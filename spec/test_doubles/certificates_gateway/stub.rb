@@ -85,22 +85,22 @@ module CertificatesGateway
       if assessment_id == ''
         {
           "data": {
-            "dateOfAssessment": "2006-05-04",
-            "dateRegistered": "2006-05-04",
-            "dwellingType": "Dwelling-Type0",
-            "typeOfAssessment": "RdSAP",
+            "dateOfAssessment": '2006-05-04',
+            "dateRegistered": '2006-05-04',
+            "dwellingType": 'Dwelling-Type0',
+            "typeOfAssessment": 'RdSAP',
             "totalFloorArea": 0.0,
-            "assessmentId": "1111-1111-1111-1111-1112",
-            "addressSummary": "1 Some Street, Post-Town1, A0 0AA",
+            "assessmentId": '1111-1111-1111-1111-1112',
+            "addressSummary": '1 Some Street, Post-Town1, A0 0AA',
             "currentEnergyEfficiencyRating": 50,
             "potentialEnergyEfficiencyRating": 50,
-            "postcode": "A0 0AA",
-            "dateOfExpiry": "2016-05-04",
-            "addressLine1": "1 Some Street",
-            "addressLine2": "",
-            "addressLine3": "",
-            "addressLine4": "",
-            "town": "Post-Town1",
+            "postcode": 'A0 0AA',
+            "dateOfExpiry": '2016-05-04',
+            "addressLine1": '1 Some Street',
+            "addressLine2": '',
+            "addressLine3": '',
+            "addressLine4": '',
+            "town": 'Post-Town1',
             "heatDemand": {
               "currentSpaceHeatingDemand": 30.0,
               "currentWaterHeatingDemand": 60.0,
@@ -108,55 +108,52 @@ module CertificatesGateway
               "impactOfCavityInsulation": -12,
               "impactOfSolidWallInsulation": -16
             },
-            "currentEnergyEfficiencyBand": "e",
-            "potentialEnergyEfficiencyBand": "e",
+            "currentEnergyEfficiencyBand": 'e',
+            "potentialEnergyEfficiencyBand": 'e',
             "recommendedImprovements": [
               {
                 "sequence": 0,
-                "improvementCode": "5",
-                "indicativeCost": "5",
-                "typicalSaving": "0.0",
-                "improvementCategory": "6",
-                "improvementType": "Z3",
+                "improvementCode": '5',
+                "indicativeCost": '5',
+                "typicalSaving": '0.0',
+                "improvementCategory": '6',
+                "improvementType": 'Z3',
                 "energyPerformanceRatingImprovement": 50,
                 "environmentalImpactRatingImprovement": 50,
-                "greenDealCategoryCode": "1"
+                "greenDealCategoryCode": '1'
               },
               {
                 "sequence": 1,
-                "improvementCode": "1",
-                "indicativeCost": "2",
-                "typicalSaving": "0.1",
-                "improvementCategory": "2",
-                "improvementType": "Z2",
+                "improvementCode": '1',
+                "indicativeCost": '2',
+                "typicalSaving": '0.1',
+                "improvementCategory": '2',
+                "improvementType": 'Z2',
                 "energyPerformanceRatingImprovement": 60,
                 "environmentalImpactRatingImprovement": 64,
-                "greenDealCategoryCode": "3"
+                "greenDealCategoryCode": '3'
               }
             ],
             "assessor": {
-              "firstName": "Kevin",
-              "lastName": "Keenoy",
-              "registeredBy": {
-                "name": "Quidos",
-                "schemeId": 6
-              },
-              "schemeAssessorId": "3",
-              "dateOfBirth": "1994-01-01",
+              "firstName": 'Kevin',
+              "lastName": 'Keenoy',
+              "registeredBy": { "name": 'Quidos', "schemeId": 6 },
+              "schemeAssessorId": '3',
+              "dateOfBirth": '1994-01-01',
               "contactDetails": {
-                "email": "kevin.keenoy@epb-assessors.com",
-                "telephoneNumber": "04150859"
+                "email": 'kevin.keenoy@epb-assessors.com',
+                "telephoneNumber": '04150859'
               },
-              "searchResultsComparisonPostcode": "TQ11 0EG",
+              "searchResultsComparisonPostcode": 'TQ11 0EG',
               "qualifications": {
-                "domesticSap": "INACTIVE",
-                "domesticRdSap": "ACTIVE",
-                "nonDomesticSp3": "ACTIVE",
-                "nonDomesticCc4": "ACTIVE",
-                "nonDomesticDec": "INACTIVE",
-                "nonDomesticNos3": "ACTIVE",
-                "nonDomesticNos4": "ACTIVE",
-                "nonDomesticNos5": "INACTIVE"
+                "domesticSap": 'INACTIVE',
+                "domesticRdSap": 'ACTIVE',
+                "nonDomesticSp3": 'ACTIVE',
+                "nonDomesticCc4": 'ACTIVE',
+                "nonDomesticDec": 'INACTIVE',
+                "nonDomesticNos3": 'ACTIVE',
+                "nonDomesticNos4": 'ACTIVE',
+                "nonDomesticNos5": 'INACTIVE'
               }
             }
           },

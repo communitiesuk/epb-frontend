@@ -2,7 +2,16 @@ describe 'Journey::FindCertificate', type: :feature, journey: true do
   before(:all) do
     process =
       IO.popen(
-        ['rackup', 'config_test.ru', '-q', '-o', '127.0.0.1', '-p', '9393', err: %i[child out]]
+        [
+          'rackup',
+          'config_test.ru',
+          '-q',
+          '-o',
+          '127.0.0.1',
+          '-p',
+          '9393',
+          err: %i[child out]
+        ]
       )
     @process_id = process.pid
 
@@ -21,7 +30,7 @@ describe 'Journey::FindCertificate', type: :feature, journey: true do
   end
 
   it 'finds a certificate by postcode in Welsh' do
-    visit "/find-a-certificate"
+    visit '/find-a-certificate'
     click_on 'Welsh (Cymraeg)'
     click_on 'Welsh: Start now'
     fill_in 'postcode', with: 'SW1A 2AA'
@@ -30,34 +39,32 @@ describe 'Journey::FindCertificate', type: :feature, journey: true do
   end
 
   it 'displays an error message when entering an empty postcode' do
-    visit "/find-a-certificate"
-    click_on "Start now"
+    visit '/find-a-certificate'
+    click_on 'Start now'
     fill_in 'postcode', with: ''
     click_on('Find')
     expect(page).to have_content 'Enter a real postcode'
   end
 
   it 'displays an error message when entering an invalid postcode' do
-    visit "/find-a-certificate"
-    click_on "Start now"
+    visit '/find-a-certificate'
+    click_on 'Start now'
     fill_in 'postcode', with: 'NOT A POSTCODE'
     click_on 'Find'
     expect(page).to have_content 'Enter a real postcode'
   end
 
-
   it 'displays the find a certificate page heading when entering a valid postcode' do
-    visit "/find-a-certificate"
-    click_on "Start now"
+    visit '/find-a-certificate'
+    click_on 'Start now'
     fill_in 'postcode', with: 'SW1A 2AA'
     click_on 'Find'
     expect(page).to have_content 'of 3 results matching'
   end
 
-
   it 'displays an error message when entering an empty reference number' do
-    visit "/find-a-certificate"
-    click_on "Start now"
+    visit '/find-a-certificate'
+    click_on 'Start now'
     click_on 'certificate by reference'
     fill_in 'reference_number', with: ''
     click_on 'Find'
@@ -65,18 +72,17 @@ describe 'Journey::FindCertificate', type: :feature, journey: true do
   end
 
   it 'displays the find a certificate page heading when entering a valid certificate reference number' do
-    visit "/find-a-certificate"
-    click_on "Start now"
+    visit '/find-a-certificate'
+    click_on 'Start now'
     click_on 'certificate by reference'
     fill_in 'reference_number', with: '1234-5678-9101-1121'
     click_on 'Find'
     expect(page).to have_content 'of 1 results matching'
   end
 
-
   it 'displays an error message when entering an empty street name' do
-    visit "/find-a-certificate"
-    click_on "Start now"
+    visit '/find-a-certificate'
+    click_on 'Start now'
     click_on 'Find certificate by street name'
     fill_in 'town', with: 'Beauty Town'
     click_on 'Find'
@@ -84,8 +90,8 @@ describe 'Journey::FindCertificate', type: :feature, journey: true do
   end
 
   it 'displays an error message when entering an empty town' do
-    visit "/find-a-certificate"
-    click_on "Start now"
+    visit '/find-a-certificate'
+    click_on 'Start now'
     click_on 'Find certificate by street name'
     fill_in 'street_name', with: '1 Makeup Street'
     click_on 'Find'
@@ -93,8 +99,8 @@ describe 'Journey::FindCertificate', type: :feature, journey: true do
   end
 
   it 'displays an error message when entering an empty town and street name' do
-    visit "/find-a-certificate"
-    click_on "Start now"
+    visit '/find-a-certificate'
+    click_on 'Start now'
     click_on 'Find certificate by street name'
     click_on 'Find'
     expect(page).to have_content 'Enter a town'
@@ -102,8 +108,8 @@ describe 'Journey::FindCertificate', type: :feature, journey: true do
   end
 
   it 'displays the find a certificate page heading when entering a valid query' do
-    visit "/find-a-certificate"
-    click_on "Start now"
+    visit '/find-a-certificate'
+    click_on 'Start now'
     click_on 'Find certificate by street name'
     fill_in 'street_name', with: '1 Makeup Street'
     fill_in 'town', with: 'Beauty Town'
@@ -112,8 +118,8 @@ describe 'Journey::FindCertificate', type: :feature, journey: true do
   end
 
   it 'displays the error message when searching for a certificate that doesnt exist' do
-    visit "/find-a-certificate"
-    click_on "Start now"
+    visit '/find-a-certificate'
+    click_on 'Start now'
     click_on 'Find certificate by street name'
     fill_in 'street_name', with: 'Madeup Street'
     fill_in 'town', with: 'Madeup Town'
@@ -121,6 +127,8 @@ describe 'Journey::FindCertificate', type: :feature, journey: true do
     expect(page).to have_content 'A certificate was not found at this address.'
     click_on 'Find an assessor'
 
-    expect(page).to have_content 'Getting a new Energy Performance Certificate (EPC)'
+    expect(
+      page
+    ).to have_content 'Getting a new Energy Performance Certificate (EPC)'
   end
 end
