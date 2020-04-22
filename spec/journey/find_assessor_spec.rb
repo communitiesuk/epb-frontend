@@ -73,6 +73,15 @@ describe 'Journey::FindAssessor', type: :feature, journey: true do
     expect(page).to have_content '020 8772 3649'
   end
 
+  it 'displays no longer accredited text for unaccredited scheme when entering a valid postcode' do
+    visit "/find-an-assessor"
+    click_on "Start now"
+    fill_in 'postcode', with: 'SW1A 2AA'
+    click_on 'Find'
+    find_all('span', text: 'More information')[4].click
+    expect(page).to have_content 'EPB 4 U is no longer accredited.'
+  end
+
   it 'displays an error message when entering an empty name' do
     visit '/find-an-assessor'
     click_on 'Start now'
@@ -88,6 +97,19 @@ describe 'Journey::FindAssessor', type: :feature, journey: true do
     fill_in 'name', with: 'Supercommon Name'
     click_on 'Search'
     expect(page).to have_content '7 results, found by the name Supercommon Name'
+  end
+
+
+  it 'displays Accreditation scheme contact details for an assessor when searched for one that does exist' do
+    visit '/find-an-assessor'
+    click_on 'Start now'
+    click_on 'Find assessor by name'
+    fill_in 'name', with: 'Supercommon Name'
+    click_on 'Search'
+    find_all('span', text: 'More information')[2].click
+    expect(page).to have_content 'Contact details for ECMK:'
+    expect(page).to have_content 'info@ecmk.co.uk'
+    expect(page).to have_content '0333 123 1418'
   end
 
   describe 'given finding a non-domestic assessor by postcode' do
