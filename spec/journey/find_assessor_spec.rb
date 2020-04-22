@@ -62,6 +62,17 @@ describe 'Journey::FindAssessor', type: :feature, journey: true do
     expect(page).to have_content '7 assessors, sorted by distance from SW1A 2AA'
   end
 
+  it 'displays Accreditation scheme contact details for first assessor when entering a valid postcode' do
+    visit "/find-an-assessor"
+    click_on "Start now"
+    fill_in 'postcode', with: 'SW1A 2AA'
+    click_on 'Find'
+    find('span', text: 'More information', match: :first).click
+    expect(page).to have_content 'Contact details for CIBSE:'
+    expect(page).to have_content 'epc@cibsecertification.org'
+    expect(page).to have_content '020 8772 3649'
+  end
+
   it 'displays an error message when entering an empty name' do
     visit '/find-an-assessor'
     click_on 'Start now'
