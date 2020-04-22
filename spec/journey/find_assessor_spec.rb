@@ -59,7 +59,7 @@ describe 'Journey::FindAssessor', type: :feature, journey: true do
     click_on 'Start now'
     fill_in 'postcode', with: 'SW1A 2AA'
     click_on 'Find'
-    expect(page).to have_content '3 assessors, sorted by distance from SW1A 2AA'
+    expect(page).to have_content '7 assessors, sorted by distance from SW1A 2AA'
   end
 
   it 'displays an error message when entering an empty name' do
@@ -76,7 +76,7 @@ describe 'Journey::FindAssessor', type: :feature, journey: true do
     click_on 'Find assessor by name'
     fill_in 'name', with: 'Supercommon Name'
     click_on 'Search'
-    expect(page).to have_content '3 results, found by the name Supercommon Name'
+    expect(page).to have_content '7 results, found by the name Supercommon Name'
   end
 
   describe 'given finding a non-domestic assessor by postcode' do
@@ -108,9 +108,7 @@ describe 'Journey::FindAssessor', type: :feature, journey: true do
       click_on 'find a non domestic assessor service'
       fill_in 'postcode', with: 'SW1A 2AA'
       click_on 'Find'
-      expect(
-        page
-      ).to have_content '3 assessors, sorted by distance from SW1A 2AA'
+      expect(page).to have_content '7 assessors, sorted by distance from SW1A 2AA'
     end
   end
 end
