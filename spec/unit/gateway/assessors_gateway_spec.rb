@@ -15,7 +15,7 @@ describe Gateway::AssessorsGateway do
       before { FindAssessor::ByPostcode::Stub.search_by_postcode('SW1A+2AA') }
 
       it 'checks the number of assessors returned from the api' do
-        expect(response[:data][:assessors].count).to eq(3)
+        expect(response[:data][:assessors].count).to eq(7)
       end
 
       it 'checks the shape of the object passed in the results object' do

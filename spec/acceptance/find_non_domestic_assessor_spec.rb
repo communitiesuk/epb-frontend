@@ -112,7 +112,7 @@ describe 'Acceptance::NonDomesticAssessor' do
         end
 
         it 'shows the assessor ID of an entry' do
-          expect(response.body).to include('STROMA9999990')
+          expect(response.body).to include('CIBSE9999990')
         end
 
         it 'shows the name of an entry' do

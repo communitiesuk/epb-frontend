@@ -15,7 +15,7 @@ describe 'Acceptance::Postcodes' do
       before { FindAssessor::ByPostcode::Stub.search_by_postcode('SW1A+2AA') }
 
       it 'returns the number of assessors returned from the api' do
-        expect(response[:data][:assessors].count).to eq(3)
+        expect(response[:data][:assessors].count).to eq(7)
       end
 
       it 'returns response keys for results object' do
