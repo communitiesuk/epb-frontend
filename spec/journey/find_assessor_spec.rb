@@ -54,32 +54,36 @@ describe 'Journey::FindAssessor', type: :feature, journey: true do
     expect(page).to have_content 'Enter a real postcode'
   end
 
-  it 'displays the find an assessor page heading when entering a valid postcode ' do
-    visit '/find-an-assessor'
-    click_on 'Start now'
-    fill_in 'postcode', with: 'SW1A 2AA'
-    click_on 'Find'
-    expect(page).to have_content '7 assessors, sorted by distance from SW1A 2AA'
-  end
+  context 'when entering a valid postcode' do
+    it 'displays the find an assessor page heading' do
+      visit '/find-an-assessor'
+      click_on 'Start now'
+      fill_in 'postcode', with: 'SW1A 2AA'
+      click_on 'Find'
+      expect(
+        page
+      ).to have_content '7 assessors, sorted by distance from SW1A 2AA'
+    end
 
-  it 'displays Accreditation scheme contact details for first assessor when entering a valid postcode' do
-    visit "/find-an-assessor"
-    click_on "Start now"
-    fill_in 'postcode', with: 'SW1A 2AA'
-    click_on 'Find'
-    find('span', text: 'More information', match: :first).click
-    expect(page).to have_content 'Contact details for CIBSE:'
-    expect(page).to have_content 'epc@cibsecertification.org'
-    expect(page).to have_content '020 8772 3649'
-  end
+    it 'displays accreditation scheme contact details for the first assessor' do
+      visit '/find-an-assessor'
+      click_on 'Start now'
+      fill_in 'postcode', with: 'SW1A 2AA'
+      click_on 'Find'
+      find('span', text: 'More information', match: :first).click
+      expect(page).to have_content 'Contact details for CIBSE:'
+      expect(page).to have_content 'epc@cibsecertification.org'
+      expect(page).to have_content '020 8772 3649'
+    end
 
-  it 'displays no longer accredited text for unaccredited scheme when entering a valid postcode' do
-    visit "/find-an-assessor"
-    click_on "Start now"
-    fill_in 'postcode', with: 'SW1A 2AA'
-    click_on 'Find'
-    find_all('span', text: 'More information')[4].click
-    expect(page).to have_content 'EPB 4 U is no longer accredited.'
+    it 'displays no longer accredited text for unaccredited scheme' do
+      visit '/find-an-assessor'
+      click_on 'Start now'
+      fill_in 'postcode', with: 'SW1A 2AA'
+      click_on 'Find'
+      find_all('span', text: 'More information')[4].click
+      expect(page).to have_content 'EPB 4 U is no longer accredited.'
+    end
   end
 
   it 'displays an error message when entering an empty name' do
@@ -99,8 +103,7 @@ describe 'Journey::FindAssessor', type: :feature, journey: true do
     expect(page).to have_content '7 results, found by the name Supercommon Name'
   end
 
-
-  it 'displays Accreditation scheme contact details for an assessor when searched for one that does exist' do
+  it 'displays accreditation scheme contact details for an existing assessor by name' do
     visit '/find-an-assessor'
     click_on 'Start now'
     click_on 'Find assessor by name'
@@ -112,8 +115,8 @@ describe 'Journey::FindAssessor', type: :feature, journey: true do
     expect(page).to have_content '0333 123 1418'
   end
 
-  describe 'given finding a non-domestic assessor by postcode' do
-    it 'finds a non-domestic assessor by postcode' do
+  context 'when finding a non-domestic assessor by postcode' do
+    it 'finds a non-domestic assessor' do
       visit '/find-an-assessor'
       click_on 'find a non domestic assessor service'
       fill_in 'postcode', with: 'SW1A 2AA'
@@ -141,7 +144,9 @@ describe 'Journey::FindAssessor', type: :feature, journey: true do
       click_on 'find a non domestic assessor service'
       fill_in 'postcode', with: 'SW1A 2AA'
       click_on 'Find'
-      expect(page).to have_content '7 assessors, sorted by distance from SW1A 2AA'
+      expect(
+        page
+      ).to have_content '7 assessors, sorted by distance from SW1A 2AA'
     end
   end
 end
