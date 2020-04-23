@@ -152,7 +152,9 @@ describe 'Acceptance::Assessor' do
           end
 
           it 'shows Elmhurst contact details' do
-            expect(response.body).to include('Contact details for Elmhurst Energy:')
+            expect(response.body).to include(
+              'Contact details for Elmhurst Energy:'
+            )
             expect(response.body).to include('enquiries@elmhurstenergy.co.uk')
             expect(response.body).to include('01455 883 250')
           end
@@ -163,7 +165,6 @@ describe 'Acceptance::Assessor' do
             expect(response.body).to include('0333 123 1418')
           end
         end
-
       end
 
       context 'where no assessors are near' do

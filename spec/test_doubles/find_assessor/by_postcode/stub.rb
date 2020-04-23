@@ -56,40 +56,40 @@ module FindAssessor
                   "distanceFromPostcodeInMiles": 0.1
                 },
                 {
-                    "firstName": 'Juan',
-                    "lastName": 'Uno',
-                    "contactDetails": {
-                        "telephoneNumber": 'string', "email": 'user@example.com'
-                    },
-                    "qualifications": qualification_status,
-                    "searchResultsComparisonPostcode": 'SW1A 1AA',
-                    "registeredBy": { "schemeId": '444', "name": 'Stroma' },
-                    "schemeAssessorId": 'Stroma9999990',
-                    "distanceFromPostcodeInMiles": 0.1
+                  "firstName": 'Juan',
+                  "lastName": 'Uno',
+                  "contactDetails": {
+                    "telephoneNumber": 'string', "email": 'user@example.com'
+                  },
+                  "qualifications": qualification_status,
+                  "searchResultsComparisonPostcode": 'SW1A 1AA',
+                  "registeredBy": { "schemeId": '444', "name": 'Stroma' },
+                  "schemeAssessorId": 'Stroma9999990',
+                  "distanceFromPostcodeInMiles": 0.1
                 },
                 {
-                    "firstName": 'Kale',
-                    "lastName": 'Uno',
-                    "contactDetails": {
-                        "telephoneNumber": 'string', "email": 'user@example.com'
-                    },
-                    "qualifications": qualification_status,
-                    "searchResultsComparisonPostcode": 'SW1A 1AA',
-                    "registeredBy": { "schemeId": '472', "name": 'ECMK' },
-                    "schemeAssessorId": 'ECMK9999990',
-                    "distanceFromPostcodeInMiles": 0.1
+                  "firstName": 'Kale',
+                  "lastName": 'Uno',
+                  "contactDetails": {
+                    "telephoneNumber": 'string', "email": 'user@example.com'
+                  },
+                  "qualifications": qualification_status,
+                  "searchResultsComparisonPostcode": 'SW1A 1AA',
+                  "registeredBy": { "schemeId": '472', "name": 'ECMK' },
+                  "schemeAssessorId": 'ECMK9999990',
+                  "distanceFromPostcodeInMiles": 0.1
                 },
                 {
-                    "firstName": 'John',
-                    "lastName": 'James',
-                    "contactDetails": {
-                        "telephoneNumber": 'string', "email": 'john@example.com'
-                    },
-                    "qualifications": qualification_status,
-                    "searchResultsComparisonPostcode": 'SW1A 1AA',
-                    "registeredBy": { "schemeId": '332', "name": 'Sterling' },
-                    "schemeAssessorId": 'Sterling999990',
-                    "distanceFromPostcodeInMiles": 0.1
+                  "firstName": 'John',
+                  "lastName": 'James',
+                  "contactDetails": {
+                    "telephoneNumber": 'string', "email": 'john@example.com'
+                  },
+                  "qualifications": qualification_status,
+                  "searchResultsComparisonPostcode": 'SW1A 1AA',
+                  "registeredBy": { "schemeId": '332', "name": 'Sterling' },
+                  "schemeAssessorId": 'Sterling999990',
+                  "distanceFromPostcodeInMiles": 0.1
                 },
                 {
                   "firstName": 'Doux',
@@ -117,16 +117,18 @@ module FindAssessor
                   "distanceFromPostcodeInMiles": 1.36
                 },
                 {
-                    "firstName": 'Mark',
-                    "lastName": 'Tri',
-                    "contactDetails": {
-                        "telephoneNumber": 'string', "email": 'mark@example.com'
-                    },
-                    "qualifications": qualification_status,
-                    "searchResultsComparisonPostcode": 'SW1A 1AA',
-                    "registeredBy": { "schemeId": '1222', "name": 'Elmhurst Energy' },
-                    "schemeAssessorId": 'Elmhurst12349876',
-                    "distanceFromPostcodeInMiles": 1.36
+                  "firstName": 'Mark',
+                  "lastName": 'Tri',
+                  "contactDetails": {
+                    "telephoneNumber": 'string', "email": 'mark@example.com'
+                  },
+                  "qualifications": qualification_status,
+                  "searchResultsComparisonPostcode": 'SW1A 1AA',
+                  "registeredBy": {
+                    "schemeId": '1222', "name": 'Elmhurst Energy'
+                  },
+                  "schemeAssessorId": 'Elmhurst12349876',
+                  "distanceFromPostcodeInMiles": 1.36
                 }
               ]
             },
