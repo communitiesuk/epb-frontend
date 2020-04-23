@@ -33,7 +33,7 @@
                 </p>
               <% else %>
                 <p class="govuk-body">
-                  <%== t('find_assessor_by_postcode_results.contact_details.text') %> <%= assessor[:registeredBy][:name] %>:
+                  <%== t('find_assessor_by_postcode_results.contact_details.text') %> <%= t('schemes.list.'+ assessor[:registeredBy][:name].split.first.downcase + '.name' ) %>:
                 </p>
                 <p class="govuk-body">
                   <%== t('find_assessor_by_postcode_results.contact_details.email') %>:  <a href="mailto:<%= t('schemes.list.'+ assessor[:registeredBy][:name].split.first.downcase + '.email' ) %>"><%= t('schemes.list.'+ assessor[:registeredBy][:name].split.first.downcase + '.email' ) %></a>
