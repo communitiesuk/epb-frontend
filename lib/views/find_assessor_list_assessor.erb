@@ -33,13 +33,13 @@
                 </p>
               <% else %>
                 <p class="govuk-body">
-                  <%== t('find_assessor_by_postcode_results.contact_details.text') %> <%= t('schemes.list.'+ assessor[:registeredBy][:name].split.first.downcase + '.name' ) %>:
+                  <%== t('find_assessor_by_postcode_results.contact_details.text') %> <%= scheme_details(assessor, 'name') %>:
                 </p>
                 <p class="govuk-body">
-                  <%== t('find_assessor_by_postcode_results.contact_details.email') %>:  <a href="mailto:<%= t('schemes.list.'+ assessor[:registeredBy][:name].split.first.downcase + '.email' ) %>"><%= t('schemes.list.'+ assessor[:registeredBy][:name].split.first.downcase + '.email' ) %></a>
+                  <%== t('find_assessor_by_postcode_results.contact_details.email') %>:  <a href="mailto:<%= scheme_details(assessor, 'email') %>"><%= scheme_details(assessor, 'email') %></a>
                 </p>
                 <p class="govuk-body">
-                  <%== t('find_assessor_by_postcode_results.contact_details.telephone') %>: <%= t('schemes.list.'+ assessor[:registeredBy][:name].split.first.downcase + '.phone' ) %>
+                  <%== t('find_assessor_by_postcode_results.contact_details.telephone') %>: <%= scheme_details(assessor, 'phone') %>
                 </p>
               <% end %>
             </div>

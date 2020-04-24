@@ -36,6 +36,14 @@ module Sinatra
         I18n.t(*args)
       end
 
+      def scheme_details(assessor, property)
+        t(
+          'schemes.list.' +
+            assessor[:registeredBy][:name].split.first.downcase +
+            ".#{property}"
+        )
+      end
+
       def localised_url(url)
         if I18n.locale != I18n.available_locales[0]
           url = url_for(url, lang: I18n.locale.to_s)
