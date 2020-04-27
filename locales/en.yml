@@ -70,6 +70,10 @@ en:
     description: 'The following schemes license energy assessors to assess properties and create energy certificates'
     contact: 'You should contact a scheme if you need to contact someone about an assessor'
     unaccredited: 'is no longer accredited.'
+    contact_details:
+      text: 'Contact details for %{scheme_name}:'
+      email: 'Email:'
+      telephone: 'Telephone:'
     list:
       heading: 'Energy assessment accreditation schemes'
       cta: 'Go to website'
@@ -157,7 +161,6 @@ en:
       default_miles_away_text: 'Less than 1 mile away'
       miles_away_text: 'miles away'
     contact_details:
-      text: 'Contact details for'
       email: 'Email'
       telephone: 'Telephone'
     accredited_id: 'Assessor ID'
