@@ -354,6 +354,17 @@ en:
         list:
           total_floor_area: 'Total floor area'
           dwelling_type: 'Property type'
+      environmental-impact:
+        title: "Environmental impact of this property"
+        summary: "One of the biggest contributors to climate change is carbon dioxide (%{carbon}). The energy used for heating, lighting and power in our homes produces over a quarter of the UK's %{carbon} emissions."
+        making_changes: "By making the recommended changes, you will reduce this property’s carbon emissions by 1.0 tonnes per year and help to protect the environment."
+        environmental_impact_rating: "Environmental impact ratings are based on assumptions about average occupancy and energy use. They may not reflect how energy is consumed by the people living at the property."
+        average_household:
+          text: "Average household produces"
+          carbon: "6"
+        property_produces: "This property produces"
+        potential: "This property's potential production"
+        tonnes_of_carbon_emission: "tonnes of %{carbon}"
       recommendations:
         title: 'How to improve this property’s energy performance'
         summary:

@@ -1,0 +1,47 @@
+.average {
+  background-color: #f3f2f1;
+  width: 90%;
+  height: 300px;
+  position: relative;
+  text-align: center;
+}
+
+.current {
+  margin-top: 50px;
+  height: 250px;
+  width: 90%;
+  bottom: 0px;
+  background-color: #ffdd00;
+  position: relative;
+  text-align: center;
+}
+
+.potential {
+  background-color: #00703c;
+  margin-top: 150px;
+  height: 150px;
+  width: 90%;
+  bottom: 0px;
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.potential .text {
+  position: absolute;
+  z-index: 999;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  top: -40%;
+  color: #0b0c0c;
+}
+
+.text-bottom {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  text-align: center;
+  padding-bottom: 20px;
+}

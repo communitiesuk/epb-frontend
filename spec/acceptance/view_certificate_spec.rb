@@ -100,7 +100,24 @@ describe 'Acceptance::Certificate' do
       expect(response.body).to include('69')
     end
 
-    context 'and rating is poor (f)' do
+    context 'when viewing environmental impact section' do
+      it 'shows the summary text' do
+        expect(response.body).to include(
+          "The energy used for heating, lighting and power in our homes produces over a quarter of the UK's CO<sub>2</sub> emissions."
+        )
+      end
+
+      it 'shows the carbon emissions of the property' do
+        expect(response.body).to include('Average household produces')
+        expect(response.body).to include('6')
+        expect(response.body).to include('This property produces')
+        expect(response.body).to include('2.4')
+        expect(response.body).to include("This property's potential production")
+        expect(response.body).to include('1.4')
+      end
+    end
+
+    context 'with a poor (f) rating' do
       before { FetchCertificate::Stub.fetch('123-654', '25', 'f') }
 
       let(:response) { get '/energy-performance-certificate/123-654' }
