@@ -107,6 +107,18 @@ describe 'Acceptance::Certificate' do
         )
       end
 
+      it 'shows the making changes text with the correct reduction value' do
+        expect(response.body).to include(
+          'By making the recommended changes, you will reduce this property’s carbon emissions by 1.0 tonnes per year'
+        )
+      end
+
+      it 'shows the environmental impact rating text' do
+        expect(response.body).to include(
+          'Environmental impact ratings are based on assumptions about average occupancy and energy use.'
+        )
+      end
+
       it 'shows the carbon emissions of the property' do
         expect(response.body).to include('Average household produces')
         expect(response.body).to include('6')
@@ -114,6 +126,20 @@ describe 'Acceptance::Certificate' do
         expect(response.body).to include('2.4')
         expect(response.body).to include("This property's potential production")
         expect(response.body).to include('1.4')
+      end
+
+      context 'with different carbon emissions' do
+        before do
+          FetchCertificate::Stub.fetch('123-654', '25', 'f', false, 7.8, 6.5)
+        end
+
+        let(:response) { get '/energy-performance-certificate/123-654' }
+
+        it 'shows the making changes text with the correct reduction value' do
+          expect(response.body).to include(
+            'By making the recommended changes, you will reduce this property’s carbon emissions by 1.3 tonnes per year'
+          )
+        end
       end
     end
 

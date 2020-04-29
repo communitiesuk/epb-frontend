@@ -129,7 +129,6 @@
       </dl>
     </div>
   </div>
-
   <div class="govuk-grid-column-two-thirds">
     <div class="govuk-body epc-blue-bottom">
       <a name="summary"></a>
@@ -162,11 +161,14 @@
         </div>
       </div>
       <hr class="epc-light-top" />
-      <p class="govuk-body"><%== t('domestic_epc.sections.environmental-impact.making_changes') %></p>
+      <p class="govuk-body">
+        <%== t('domestic_epc.sections.environmental-impact.making_changes',
+               reduction: (assessment[:currentCarbonEmission] - assessment[:potentialCarbonEmission]).round(2))
+        %>
+      </p>
       <p class="govuk-body"><%== t('domestic_epc.sections.environmental-impact.environmental_impact_rating') %></p>
     </div>
   </div>
-
   <div class="govuk-grid-column-two-thirds">
     <a name="recommendations"></a>
     <h2 class="govuk-heading-l"><%= t('domestic_epc.sections.recommendations.title') %></h2>

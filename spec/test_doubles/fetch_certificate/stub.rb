@@ -6,7 +6,9 @@ module FetchCertificate
       assessment_id,
       current_rating = 90,
       current_band = 'b',
-      recommended_improvements = false
+      recommended_improvements = false,
+      current_carbon_emission = 2.4,
+      potential_carbon_emission = 1.4
     )
       if assessment_id == '1111-1111-1111-1111-1112'
         body = {
@@ -153,8 +155,8 @@ module FetchCertificate
             totalFloorArea: 150,
             currentEnergyEfficiencyRating: current_rating,
             currentEnergyEfficiencyBand: current_band,
-            currentCarbonEmission: 2.4,
-            potentialCarbonEmission: 1.4,
+            currentCarbonEmission: current_carbon_emission,
+            potentialCarbonEmission: potential_carbon_emission,
             potentialEnergyEfficiencyRating: 99,
             potentialEnergyEfficiencyBand: 'a',
             postcode: 'SW1B 2BB',
