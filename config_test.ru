@@ -30,7 +30,7 @@ FindCertificate::NoCertificatesStub.search_by_street_name_and_town(
   'Madeup Town'
 )
 FetchCertificate::Stub.fetch('1234-5678-9101-1121')
-FetchCertificate::Stub.fetch('1234-5678-9101-1122', '25', 'f', true)
+FetchCertificate::Stub.fetch('1234-5678-9101-1122', '25', 'f', true, 7.8254, 6.5123)
 
 ENV['EPB_AUTH_CLIENT_ID'] = 'test.id'
 ENV['EPB_AUTH_CLIENT_SECRET'] = 'test.client.secret'

@@ -130,15 +130,20 @@ describe 'Acceptance::Certificate' do
 
       context 'with different carbon emissions' do
         before do
-          FetchCertificate::Stub.fetch('123-654', '25', 'f', false, 7.8, 6.5)
+          FetchCertificate::Stub.fetch('123-654', '25', 'f', false, 7.8453, 6.5123)
         end
 
         let(:response) { get '/energy-performance-certificate/123-654' }
 
         it 'shows the making changes text with the correct reduction value' do
           expect(response.body).to include(
-            'By making the recommended changes, you will reduce this property’s carbon emissions by 1.3 tonnes per year'
+            'By making the recommended changes, you will reduce this property’s carbon emissions by 1.33 tonnes per year'
           )
+        end
+
+        it 'shows the correct carbon emission values' do
+          expect(response.body).to include('7.8')
+          expect(response.body).to include('6.5')
         end
       end
     end

@@ -146,7 +146,7 @@
         <div class="govuk-grid-column-one-third">
           <div class="current">
             <p class="govuk-body govuk-!-padding-top-3"><%= t('domestic_epc.sections.environmental-impact.property_produces') %></p>
-            <p class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-80"><%= assessment[:currentCarbonEmission] %></p>
+            <p class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-80"><%= assessment[:currentCarbonEmission].round(1) %></p>
             <div class="text-bottom"><%== t('domestic_epc.sections.environmental-impact.tonnes_of_carbon_emission', carbon: 'CO<sub>2</sub>') %></div>
           </div>
         </div>
@@ -154,7 +154,7 @@
           <div class="potential">
             <div class="text"><%= t('domestic_epc.sections.environmental-impact.potential') %></div>
             <p class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-80 govuk-!-padding-top-3">
-              <span style="color: white;"><%= assessment[:potentialCarbonEmission] %></span>
+              <span style="color: white;"><%= assessment[:potentialCarbonEmission].round(1) %></span>
             </p>
             <div class="text-bottom"><%== t('domestic_epc.sections.environmental-impact.tonnes_of_carbon_emission', carbon: 'CO<sub>2</sub>') %></div>
           </div>
