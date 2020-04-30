@@ -130,7 +130,14 @@ describe 'Acceptance::Certificate' do
 
       context 'with different carbon emissions' do
         before do
-          FetchCertificate::Stub.fetch('123-654', '25', 'f', false, 7.8453, 6.5123)
+          FetchCertificate::Stub.fetch(
+            '123-654',
+            '25',
+            'f',
+            false,
+            7.8453,
+            6.5123
+          )
         end
 
         let(:response) { get '/energy-performance-certificate/123-654' }
