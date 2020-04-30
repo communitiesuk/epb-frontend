@@ -56,7 +56,7 @@
   </div>
   <div class="govuk-grid-column-two-thirds">
     <div class="govuk-body epc-blue-bottom">
-      <a name="renting"></a>
+      <a id="renting"></a>
       <h2 class="govuk-heading-l"><%= t('domestic_epc.sections.renting.title') %></h2>
       <%
         minimum_energy_rating_for_rentals = 'e'
@@ -92,7 +92,7 @@
   </div>
   <div class="govuk-grid-column-two-thirds">
     <div class="govuk-body epc-blue-bottom">
-      <a name="epc"></a>
+      <a id="epc"></a>
       <h2 class="govuk-heading-l"><%= t('domestic_epc.sections.epc.title') %></h2>
       <p class="govuk-body govuk-!-margin-bottom-6"><%== t('domestic_epc.sections.epc.intro.text', :current_energy_efficiency_band => assessment[:currentEnergyEfficiencyBand].upcase, :potential_energy_efficiency_band => assessment[:potentialEnergyEfficiencyBand].upcase, :link => '<a href="' + t('domestic_epc.sections.epc.intro.url') + '">' + t('domestic_epc.sections.epc.intro.cta') + '</a>') %></p>
       <%== erb :energy_rating, locals: {
@@ -106,7 +106,7 @@
   </div>
   <div class="govuk-grid-column-two-thirds">
     <div class="govuk-body epc-blue-bottom">
-      <a name="summary"></a>
+      <a id="summary"></a>
       <h2 class="govuk-heading-l"><%= t('domestic_epc.sections.summary.title') %></h2>
       <p class="govuk-body"><%= t('domestic_epc.sections.summary.intro') %></p>
       <dl class="govuk-summary-list">
@@ -131,7 +131,7 @@
   </div>
   <div class="govuk-grid-column-two-thirds">
     <div class="govuk-body epc-blue-bottom">
-      <a name="summary"></a>
+      <a id="summary"></a>
       <h2 class="govuk-heading-l"><%= t('domestic_epc.sections.environmental-impact.title') %></h2>
       <p class="govuk-body"><%== t('domestic_epc.sections.environmental-impact.summary', carbon: 'CO<sub>2</sub>') %></p>
       <div class="govuk-grid-row">
@@ -160,7 +160,7 @@
           </div>
         </div>
       </div>
-      <hr class="epc-light-top" />
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
       <p class="govuk-body">
         <%== t('domestic_epc.sections.environmental-impact.making_changes',
                reduction: (assessment[:currentCarbonEmission] - assessment[:potentialCarbonEmission]).round(2))
@@ -170,7 +170,7 @@
     </div>
   </div>
   <div class="govuk-grid-column-two-thirds">
-    <a name="recommendations"></a>
+    <a id="recommendations"></a>
     <h2 class="govuk-heading-l"><%= t('domestic_epc.sections.recommendations.title') %></h2>
     <div class=<%=assessment[:recommendedImprovements].empty? ? 'epc-blue-bottom' : ''%>>
       <div class="epc-rating-box">
@@ -233,7 +233,7 @@
   %>
 <div class="govuk-grid-column-two-thirds">
   <div class="epc-blue-bottom">
-    <a name="heat-demand"></a>
+    <a id="heat-demand"></a>
     <h2 class="govuk-heading-l"><%= t('domestic_epc.sections.heat-demand.title') %></h2>
     <p class="govuk-body"><%= t('domestic_epc.sections.heat-demand.energy_costs') %></p>
     <div class="epc-rating-box do-wide" style="float: left;">
@@ -305,7 +305,7 @@
 </div>
 <div class="govuk-grid-column-two-thirds">
   <div class="govuk-body epc-blue-bottom">
-    <a name="information"></a>
+    <a id="information"></a>
     <h2 class="govuk-heading-l"><%= t('domestic_epc.sections.information.title') %></h2>
     <p class="govuk-body"><%== t('domestic_epc.sections.information.intro') %></p>
     <h3 class="govuk-heading-m"><%= t('domestic_epc.sections.information.assessor.title') %></h3>
