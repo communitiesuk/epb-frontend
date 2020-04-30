@@ -207,12 +207,25 @@ describe 'Acceptance::Certificate' do
       )
     end
 
-    it 'shows typical saving cost' do
+    it 'shows typicalSaving cost' do
       expect(response.body).to include('£9,000')
     end
 
-    it 'shows typical installation cost' do
+    it 'shows typical indicativeCost' do
       expect(response.body).to include('£300 - £400')
+    end
+
+    context 'when the indicativeCost is empty' do
+      before do
+        FetchCertificate::Stub.fetch('1111-1111-1111-1111-1112', 90, 'b', true)
+      end
+      let(:response) do
+        get '/energy-performance-certificate/1111-1111-1111-1111-1112'
+      end
+
+      it 'will show information unavailable instead' do
+        expect(response.body).to include('Information unavailable')
+      end
     end
   end
 

@@ -207,7 +207,9 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-one-half">
         <div class="govuk-body" style="margin-bottom: 0px;"><%= t('domestic_epc.sections.recommendations.list.installation_cost') %></div>
-        <p class="govuk-body govuk-!-font-weight-bold"><%= recommendation[:indicativeCost] %></p>
+        <% if recommendation[:indicativeCost].empty? ? indicative_cost_result = 'Information unavailable' : indicative_cost_result = recommendation[:indicativeCost] %>
+          <p class="govuk-body govuk-!-font-weight-bold"><%= indicative_cost_result %></p>
+        <% end %>
       </div>
       <div class="govuk-grid-column-one-half">
         <div class="govuk-body" style="margin-bottom: 0px;"><%= t('domestic_epc.sections.recommendations.list.yearly_saving') %></div>

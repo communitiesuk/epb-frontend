@@ -44,7 +44,7 @@ module FetchCertificate
               {
                 "sequence": 0,
                 "improvementCode": '5',
-                "indicativeCost": '5',
+                "indicativeCost": '',
                 "typicalSaving": '0.0',
                 "improvementCategory": '6',
                 "improvementType": 'Z3',
@@ -55,7 +55,7 @@ module FetchCertificate
               {
                 "sequence": 1,
                 "improvementCode": '1',
-                "indicativeCost": '2',
+                "indicativeCost": '',
                 "typicalSaving": '0.1',
                 "improvementCategory": '2',
                 "improvementType": 'Z2',
