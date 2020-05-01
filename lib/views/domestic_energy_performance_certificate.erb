@@ -129,46 +129,35 @@
       </dl>
     </div>
   </div>
+
   <div class="govuk-grid-column-two-thirds">
-    <div class="govuk-body epc-blue-bottom">
-      <a id="summary"></a>
+    <div class="govuk-body epc-page-break epc-blue-bottom">
+      <a name="energy"></a>
       <h2 class="govuk-heading-l"><%= t('domestic_epc.sections.environmental-impact.title') %></h2>
+
       <p class="govuk-body"><%== t('domestic_epc.sections.environmental-impact.summary', carbon: 'CO<sub>2</sub>') %></p>
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-one-third">
-          <div class="average">
-            <p class="govuk-body govuk-!-padding-top-3"><%= t('domestic_epc.sections.environmental-impact.average_household.text') %></p>
-            <br>
-            <p class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-80"><%= t('domestic_epc.sections.environmental-impact.average_household.carbon') %></p>
-            <div class="text-bottom"><%== t('domestic_epc.sections.environmental-impact.tonnes_of_carbon_emission', carbon: 'CO<sub>2</sub>') %></div>
-          </div>
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row" id="type">
+          <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= t('domestic_epc.sections.environmental-impact.average_household.text') %></dt>
+          <dd class="govuk-summary-list__value"><%= t('domestic_epc.sections.environmental-impact.average_household.carbon') %><%== t('domestic_epc.sections.environmental-impact.tonnes_of_carbon_emission', carbon: 'CO<sub>2</sub>') %></dd>
         </div>
-        <div class="govuk-grid-column-one-third">
-          <div class="current">
-            <p class="govuk-body govuk-!-padding-top-3"><%= t('domestic_epc.sections.environmental-impact.property_produces') %></p>
-            <p class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-80"><%= assessment[:currentCarbonEmission].round(1) %></p>
-            <div class="text-bottom"><%== t('domestic_epc.sections.environmental-impact.tonnes_of_carbon_emission', carbon: 'CO<sub>2</sub>') %></div>
-          </div>
+        <div class="govuk-summary-list__row" id="type">
+          <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= t('domestic_epc.sections.environmental-impact.property_produces') %></dt>
+          <dd class="govuk-summary-list__value"><%= assessment[:currentCarbonEmission].round(1) %><%== t('domestic_epc.sections.environmental-impact.tonnes_of_carbon_emission', carbon: 'CO<sub>2</sub>') %></dd>
         </div>
-        <div class="govuk-grid-column-one-third">
-          <div class="potential">
-            <div class="text"><%= t('domestic_epc.sections.environmental-impact.potential') %></div>
-            <p class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-80 govuk-!-padding-top-3">
-              <span style="color: white;"><%= assessment[:potentialCarbonEmission].round(1) %></span>
-            </p>
-            <div class="text-bottom"><%== t('domestic_epc.sections.environmental-impact.tonnes_of_carbon_emission', carbon: 'CO<sub>2</sub>') %></div>
-          </div>
+        <div class="govuk-summary-list__row" id="type">
+          <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= t('domestic_epc.sections.environmental-impact.potential') %></dt>
+          <dd class="govuk-summary-list__value"><%= assessment[:potentialCarbonEmission].round(1) %><%== t('domestic_epc.sections.environmental-impact.tonnes_of_carbon_emission', carbon: 'CO<sub>2</sub>') %></dd>
         </div>
-      </div>
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-      <p class="govuk-body">
-        <%== t('domestic_epc.sections.environmental-impact.making_changes',
-               reduction: (assessment[:currentCarbonEmission] - assessment[:potentialCarbonEmission]).round(2))
-        %>
-      </p>
+      </dl>
+
+      <p class="govuk-body"><%== t('domestic_epc.sections.environmental-impact.making_changes',
+                                   reduction: (assessment[:currentCarbonEmission] - assessment[:potentialCarbonEmission]).round(2)) %></p>
       <p class="govuk-body"><%== t('domestic_epc.sections.environmental-impact.environmental_impact_rating') %></p>
     </div>
   </div>
+  
   <div class="govuk-grid-column-two-thirds">
     <a id="recommendations"></a>
     <h2 class="govuk-heading-l"><%= t('domestic_epc.sections.recommendations.title') %></h2>
