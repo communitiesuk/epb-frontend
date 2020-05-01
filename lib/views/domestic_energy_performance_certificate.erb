@@ -198,7 +198,7 @@
     unless assessment[:recommendedImprovements].empty?
       %>
         <div class="govuk-grid-column-two-thirds">
-          <div class="epc-blue-bottom">
+          <div class="govuk-body">
             <%
               assessment[:recommendedImprovements].each_with_index do |recommendation, index| %>
               <hr class="epc-light-top"/>
@@ -233,6 +233,16 @@
 <%
     end
   %>
+
+  <div class="govuk-grid-column-two-thirds">
+    <div class="epc-blue-bottom">
+      <h3 class="govuk-heading-m">Paying for energy improvements</h3>
+      <p class="govuk-body">
+        <a href="https://www.gov.uk/improve-energy-efficiency">Find energy grants and ways to save energy in your home</a>.
+      </p>
+    </div>
+  </div>
+
 <div class="govuk-grid-column-two-thirds">
   <div class="epc-blue-bottom">
     <a id="heat-demand"></a>
