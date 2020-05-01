@@ -1,30 +1,67 @@
 # Energy Performance of Buildings Register
-Frontend for the Energy Performance of Buildings Register: <https://mhclg-epb-frontend-ui-production.london.cloudapps.digital>
 
-## Install
+Frontend for the Energy Performance of Buildings Register:
+<https://mhclg-epb-frontend-ui-production.london.cloudapps.digital>
 
-Follow the steps below to get started.
+## Getting Started
 
-1. make sure you have Node Package Manager (NPM) and bundler installed
-2. clone the repository - `$ git clone git@github.com:communitiesuk/epb-frontend.git`
-3. change into the cloned repository - `$ cd epb-frontend`
-4. install the node modules/packages - `$ npm install`
-5. install the ruby modules/packages - `$ bundle install`
-6. build the frontend assets - `$ make frontend-build`
+Make sure you have the following installed:
 
-## Run tests
+* [Ruby](https://www.ruby-lang.org)
+  * [Bundler](https://bundler.io) to install dependencies found in `Gemfile`
+* [Node Package Manager (NPM)](https://www.npmjs.com)
+* [Yarn - Package Manager](https://yarnpkg.com)
+* [Git](https://git-scm.com) (_optional_)
 
-### Prerequisite for Capybara journey tests
+### Install
 
-* Chrome
-* [ChromeDriver](https://chromedriver.chromium.org/downloads) - download the same ChromeDriver version as your version of Chrome.
+This short guide will use `Git`.
+
+1. Clone the repository: `$ git clone git@github.com:communitiesuk/epb-frontend.git`
+2. Change into the cloned repository: `$ cd epb-frontend`
+3. Install the Node modules/packages: `$ yarn install`
+4. Install the Ruby gems: `$ bundle install`
+5. Build the frontend assets: `$ make frontend-build`
+
+## Test
+
+### Prerequisites
+
+To run the Capybara user-journey tests, the following must be downloaded and
+installed.
+
+* [Chrome](https://www.google.com/chrome)
+* [ChromeDriver](https://chromedriver.chromium.org/downloads)
+  * download the same ChromeDriver version as your version of Chrome.
+  
+Depending on how ChromeDriver was installed, it may need to be added to the
+`PATH` environment variable. Instructions below are for MacOS users.
+
+1. Create local `bin` directory: `$ mkdir ~/bin`
+2. Move the downloaded ChromeDriver to the `bin` directory:
+`$ mv ~/Downloads/chromedriver ~/bin`
+3. Make the ChromeDriver executable: `cd ~/bin && chmod +x chromedriver`
+4. Add the `bin` directory to the `PATH` environment variable in your shell
+profile:
+
+```bash
+# ~/.bash_profile, ~/.zprofile, etc
+
+...
+export PATH="$PATH:$HOME/bin" # Add this line at the end of the file
+```
+
+Run `$ source ~/.bash_profile`, or `.zprofile`. Alternatively, restart the
+terminal.
 
 ### Test suites
 
-* RSPEC tests: `make test`
-* Journey tests: `make journey`
+To run the respective test suites:
 
-## Start
+* RSpec tests: `$ make test`
+* User-journey tests: `$ make journey`
+
+## Usage
 
 ### Environment configuration
 
@@ -41,33 +78,32 @@ EPB_API_URL=<url-of-epb-api>
 
 ### Running the frontend
 
-Change directory into the root of the cloned folder:
+1. Change directory into the root of the cloned folder: `$ cd epb-frontend`
+2. Start the web server(s) using the following command: `$ make run` or
+`$ make run ARGS=config_test.ru`
 
-`$ cd epb-frontend`
-
-Start the web server using the following command:
-
-`$ make run`
-
-Open `http://localhost:9292` in your favourite browser.
+Open <http://localhost:9292> in your favourite browser.
 
 ## Deploy
-To deploy to GOV.UK PaaS you will need to be logged in to your CloudFoundry account, and set the correct space as target, e.g.:
+
+To deploy to GOV.UK PaaS you will need to be logged in to your CloudFoundry
+account, and set the correct space as target, e.g.:
+
 ```bash
 cf target -o mhclg-energy-performance -s integration
 ```
 
-Set the variables `APPLICATION_NAME` and `STAGE` to relevant values, e.g.
+Set the variables `APPLICATION_NAME` and `STAGE` to relevant values, e.g.:
+
 ```bash
 export APPLICATION_NAME=epb-frontend-ui
 export STAGE=integration
 ```
-(The `STAGE` should generally match the name of the current CloudFoundry space.)
 
-Then run
-```bash
-make deploy-app
-```
+_Note_: The `STAGE` should generally match the name of the current CloudFoundry
+space.
+
+Run the following command to deploy the application: `$ make deploy-app`
 
 This will:
 * Check that your current target space is active
