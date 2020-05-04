@@ -9,10 +9,10 @@ describe "Acceptance::Postcodes" do
 
   context "given valid postcode" do
     context "where assessors are near" do
-      let(:response) { find_assessor.execute("SW1A+2AA") }
+      let(:response) { find_assessor.execute("SW1A 2AA") }
       let(:assessor) { response[:data][:assessors].first }
 
-      before { FindAssessor::ByPostcode::Stub.search_by_postcode("SW1A+2AA") }
+      before { FindAssessor::ByPostcode::Stub.search_by_postcode("SW1A 2AA") }
 
       it "returns the number of assessors returned from the api" do
         expect(response[:data][:assessors].count).to eq(7)
@@ -53,25 +53,25 @@ describe "Acceptance::Postcodes" do
     context "where no assessors are near" do
       before do
         FindAssessor::ByPostcode::NoNearAssessorsStub.search_by_postcode(
-          "BF1+3AA",
+          "BF1 3AA",
         )
       end
 
       it "returns empty results" do
-        expect(find_assessor.execute("BF1+3AA")[:data][:assessors]).to eq([])
+        expect(find_assessor.execute("BF1 3AA")[:data][:assessors]).to eq([])
       end
     end
 
     context "where the postcode doesnt exist" do
       before do
         FindAssessor::ByPostcode::UnregisteredPostcodeStub.search_by_postcode(
-          "B11+4AA",
+          "B11 4AA",
         )
       end
 
       it "raises postcode not registered exception" do
         expect {
-          find_assessor.execute("B11+4AA")
+          find_assessor.execute("B11 4AA")
         }.to raise_exception Errors::PostcodeNotRegistered
       end
     end
@@ -79,13 +79,13 @@ describe "Acceptance::Postcodes" do
     context "where the requested postcode is malformed" do
       before do
         FindAssessor::ByPostcode::InvalidPostcodeStub.search_by_postcode(
-          "C11+3FF",
+          "C11 3FF",
         )
       end
 
       it "raises postcode not valid exception" do
         expect {
-          find_assessor.execute("C11+3FF")
+          find_assessor.execute("C11 3FF")
         }.to raise_exception Errors::PostcodeNotValid
       end
     end
