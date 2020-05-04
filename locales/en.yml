@@ -378,6 +378,10 @@ en:
           installation_cost: 'Typical installation cost'
           yearly_saving: 'Typical yearly saving'
           na: 'Not applicable'
+        paying_for_energy_improvements:
+          title: 'Paying for energy improvements'
+          text: 'Find energy grants and ways to save energy in your home.'
+          link: 'https://www.gov.uk/improve-energy-efficiency'
       heat-demand:
         title: 'Estimated energy use and potential savings'
         energy_costs: 'Heating a property usually makes up the majority of energy costs. Where applicable, this table shows the energy that could be saved in this property by insulating the loft and walls, based on typical energy use.'

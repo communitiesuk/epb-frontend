@@ -227,16 +227,18 @@
 <%
     end
   %>
-
-  <div class="govuk-grid-column-two-thirds">
-    <div class="epc-blue-bottom">
-      <h3 class="govuk-heading-m">Paying for energy improvements</h3>
-      <p class="govuk-body">
-        <a href="https://www.gov.uk/improve-energy-efficiency">Find energy grants and ways to save energy in your home</a>.
-      </p>
-    </div>
+<div class="govuk-grid-column-two-thirds">
+  <div class="epc-blue-bottom">
+    <h3 class="govuk-heading-m">
+      <%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.title') %>
+    </h3>
+    <p class="govuk-body">
+      <a href="<%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.link') %>">
+        <%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.text') %>
+      </a>
+    </p>
   </div>
-
+</div>
 <div class="govuk-grid-column-two-thirds">
   <div class="epc-blue-bottom">
     <a id="heat-demand"></a>
