@@ -52,7 +52,7 @@ run:
 
 .PHONY: format
 format:
-	@bundle exec rbprettier --write '**/*.rb' *.rb *.ru Gemfile
+	@bundle exec rubocop -a || true
 
 .PHONY: journey
 journey:
