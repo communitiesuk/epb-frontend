@@ -21,10 +21,10 @@ module UseCase
       gateway_response
     end
 
-    private
+  private
 
     def truly_empty(query)
-      query.nil? || query == ''
+      query.nil? || query == ""
     end
   end
 end

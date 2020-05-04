@@ -7,30 +7,30 @@ module AssessorsGateway
         data: {
           assessors: [
             {
-              "firstName": 'Gregg',
-              "lastName": 'Sellen',
+              "firstName": "Gregg",
+              "lastName": "Sellen",
               "contactDetails": {
-                "telephoneNumber": '0792 102 1368',
-                "email": 'epbassessor@epb.com'
+                "telephoneNumber": "0792 102 1368",
+                "email": "epbassessor@epb.com",
               },
-              "searchResultsComparisonPostcode": 'SW1A 1AA',
-              "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' },
-              "distanceFromPostcodeInMiles": 0.1
+              "searchResultsComparisonPostcode": "SW1A 1AA",
+              "registeredBy": { "schemeId": "432", "name": "EPBs 4 U" },
+              "distanceFromPostcodeInMiles": 0.1,
             },
             {
-              "firstName": 'Juliet',
-              "lastName": 'Montague',
+              "firstName": "Juliet",
+              "lastName": "Montague",
               "contactDetails": {
-                "telephoneNumber": '0792 102 1368',
-                "email": 'epbassessor@epb.com'
+                "telephoneNumber": "0792 102 1368",
+                "email": "epbassessor@epb.com",
               },
-              "searchResultsComparisonPostcode": 'SW1A 1AA',
-              "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' },
-              "distanceFromPostcodeInMiles": 0.3
-            }
-          ]
+              "searchResultsComparisonPostcode": "SW1A 1AA",
+              "registeredBy": { "schemeId": "432", "name": "EPBs 4 U" },
+              "distanceFromPostcodeInMiles": 0.3,
+            },
+          ],
         },
-        meta: { "timestamp": 1_234_567, "searchPostcode": 'SW1 5RW' }
+        meta: { "timestamp": 1_234_567, "searchPostcode": "SW1 5RW" },
       }
     end
 
@@ -39,32 +39,32 @@ module AssessorsGateway
         data: {
           assessors: [
             {
-              "firstName": 'Somewhatcommon',
-              "lastName": 'Name',
+              "firstName": "Somewhatcommon",
+              "lastName": "Name",
               "contactDetails": {
-                "telephoneNumber": '0792 102 1368',
-                "email": 'epbassessor@epb.com'
+                "telephoneNumber": "0792 102 1368",
+                "email": "epbassessor@epb.com",
               },
-              "searchResultsComparisonPostcode": 'SW1A 1AA',
-              "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' },
-              "distanceFromPostcodeInMiles": 0.1
+              "searchResultsComparisonPostcode": "SW1A 1AA",
+              "registeredBy": { "schemeId": "432", "name": "EPBs 4 U" },
+              "distanceFromPostcodeInMiles": 0.1,
             },
             {
-              "firstName": 'Somewhatcommon',
-              "lastName": 'Name',
+              "firstName": "Somewhatcommon",
+              "lastName": "Name",
               "contactDetails": {
-                "telephoneNumber": '0792 102 1368',
-                "email": 'epbassessor@epb.com'
+                "telephoneNumber": "0792 102 1368",
+                "email": "epbassessor@epb.com",
               },
-              "searchResultsComparisonPostcode": 'SW1A 1AA',
-              "registeredBy": { "schemeId": '432', "name": 'EPBs 4 U' },
-              "distanceFromPostcodeInMiles": 0.3
-            }
-          ]
+              "searchResultsComparisonPostcode": "SW1A 1AA",
+              "registeredBy": { "schemeId": "432", "name": "EPBs 4 U" },
+              "distanceFromPostcodeInMiles": 0.3,
+            },
+          ],
         },
         meta: {
           "timestamp": 1_234_567, "searchName": name, "looseMatch": false
-        }
+        },
       }
     end
   end

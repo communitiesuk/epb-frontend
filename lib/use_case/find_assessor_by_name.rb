@@ -3,7 +3,7 @@
 module UseCase
   class FindAssessorByName < UseCase::Base
     def execute(name)
-      raise Errors::InvalidName if name == ''
+      raise Errors::InvalidName if name == ""
 
       response = @gateway.search_by_name(name)
 

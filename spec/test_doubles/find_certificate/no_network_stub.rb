@@ -7,7 +7,7 @@ module FindCertificate
         :get,
         "http://test-api.gov.uk/api/assessments/domestic-epc/search?postcode=#{
           postcode
-        }"
+        }",
       )
         .to_raise(Auth::Errors::NetworkConnectionFailed)
     end
@@ -17,7 +17,7 @@ module FindCertificate
         :get,
         "http://test-api.gov.uk/api/assessments/domestic-epc/search?assessment_id=#{
           certificate_id
-        }"
+        }",
       )
         .to_raise(Auth::Errors::NetworkConnectionFailed)
     end
@@ -27,7 +27,7 @@ module FindCertificate
         :get,
         "http://test-api.gov.uk/api/assessments/domestic-epc/search?street_name=#{
           street_name
-        }&town=#{town}"
+        }&town=#{town}",
       )
         .to_raise(Auth::Errors::NetworkConnectionFailed)
     end

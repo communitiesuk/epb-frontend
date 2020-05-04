@@ -6,10 +6,10 @@ module AssessorsGateway
       {
         "errors": [
           {
-            "code": 'NOT_FOUND',
-            "message": 'The requested postcode is not registered'
-          }
-        ]
+            "code": "NOT_FOUND",
+            "message": "The requested postcode is not registered",
+          },
+        ],
       }
     end
   end

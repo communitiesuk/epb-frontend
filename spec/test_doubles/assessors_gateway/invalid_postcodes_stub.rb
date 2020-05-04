@@ -6,10 +6,10 @@ module AssessorsGateway
       {
         "errors": [
           {
-            "code": 'INVALID_REQUEST',
-            "title": 'The requested postcode is not valid'
-          }
-        ]
+            "code": "INVALID_REQUEST",
+            "title": "The requested postcode is not valid",
+          },
+        ],
       }
     end
   end

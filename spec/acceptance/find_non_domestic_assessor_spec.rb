@@ -1,271 +1,271 @@
 # frozen_string_literal: true
 
-describe 'Acceptance::NonDomesticAssessor' do
+describe "Acceptance::NonDomesticAssessor" do
   include RSpecFrontendServiceMixin
 
-  describe '.get /find-a-non-domestic-assessor/search-by-postcode' do
-    context 'when search page rendered' do
-      let(:response) { get '/find-a-non-domestic-assessor/search-by-postcode' }
+  describe ".get /find-a-non-domestic-assessor/search-by-postcode" do
+    context "when search page rendered" do
+      let(:response) { get "/find-a-non-domestic-assessor/search-by-postcode" }
 
-      it 'returns status 200' do
+      it "returns status 200" do
         expect(response.status).to eq(200)
       end
 
-      it 'displays the find a non-domestic assessor page heading' do
+      it "displays the find a non-domestic assessor page heading" do
         expect(response.body).to include(
-          'Find a non-domestic assessor to get a new EPC'
+          "Find a non-domestic assessor to get a new EPC",
         )
       end
 
-      it 'has a postcode input field' do
+      it "has a postcode input field" do
         expect(response.body).to include('<input id="postcode" name="postcode"')
       end
 
-      it 'has a Find button' do
+      it "has a Find button" do
         expect(response.body).to include(
-          '<button class="govuk-button" data-module="govuk-button">Find</button>'
+          '<button class="govuk-button" data-module="govuk-button">Find</button>',
         )
       end
 
-      it 'does not display an error message' do
-        expect(response.body).not_to include('govuk-error-message')
+      it "does not display an error message" do
+        expect(response.body).not_to include("govuk-error-message")
       end
     end
 
-    context 'when entering an empty postcode' do
+    context "when entering an empty postcode" do
       let(:response) do
-        get '/find-a-non-domestic-assessor/search-by-postcode?postcode='
+        get "/find-a-non-domestic-assessor/search-by-postcode?postcode="
       end
 
-      it 'returns status 400' do
+      it "returns status 400" do
         expect(response.status).to eq(400)
       end
 
-      it 'displays the find a non-domestic assessor page heading' do
+      it "displays the find a non-domestic assessor page heading" do
         expect(response.body).to include(
-          'Find a non-domestic assessor to get a new EPC'
+          "Find a non-domestic assessor to get a new EPC",
         )
       end
 
-      it 'displays an error message' do
+      it "displays an error message" do
         expect(response.body).to include(
-          '<span id="postcode-error" class="govuk-error-message">'
+          '<span id="postcode-error" class="govuk-error-message">',
         )
-        expect(response.body).to include('Enter a real postcode')
+        expect(response.body).to include("Enter a real postcode")
       end
     end
 
-    context 'when entering an invalid postcode' do
+    context "when entering an invalid postcode" do
       let(:response) do
-        get '/find-a-non-domestic-assessor/search-by-postcode?postcode=NOT+A+POSTCODE'
+        get "/find-a-non-domestic-assessor/search-by-postcode?postcode=NOT+A+POSTCODE"
       end
 
-      it 'returns status 400' do
+      it "returns status 400" do
         expect(response.status).to eq(400)
       end
 
-      it 'displays the find an assessor page heading' do
+      it "displays the find an assessor page heading" do
         expect(response.body).to include(
-          'Find a non-domestic assessor to get a new EPC'
+          "Find a non-domestic assessor to get a new EPC",
         )
       end
 
-      it 'displays an error message' do
+      it "displays an error message" do
         expect(response.body).to include(
-          '<span id="postcode-error" class="govuk-error-message">'
+          '<span id="postcode-error" class="govuk-error-message">',
         )
-        expect(response.body).to include('Enter a real postcode')
+        expect(response.body).to include("Enter a real postcode")
       end
     end
 
-    context 'when entering a valid postcode' do
-      context 'shows page' do
+    context "when entering a valid postcode" do
+      context "shows page" do
         before do
           FindAssessor::ByPostcode::Stub.search_by_postcode(
-            'SW1A 2AA',
-            'nonDomesticSp3,nonDomesticCc4,nonDomesticDec,nonDomesticNos3,nonDomesticNos4,nonDomesticNos5'
+            "SW1A 2AA",
+            "nonDomesticSp3,nonDomesticCc4,nonDomesticDec,nonDomesticNos3,nonDomesticNos4,nonDomesticNos5",
           )
         end
 
         let(:response) do
-          get '/find-a-non-domestic-assessor/search-by-postcode?postcode=SW1A+2AA'
+          get "/find-a-non-domestic-assessor/search-by-postcode?postcode=SW1A+2AA"
         end
 
-        it 'returns status 200' do
+        it "returns status 200" do
           expect(response.status).to eq(200)
         end
 
-        it 'displays the find a non-domestic assessor page heading' do
-          expect(response.body).to include('Find a non-domestic energy')
+        it "displays the find a non-domestic assessor page heading" do
+          expect(response.body).to include("Find a non-domestic energy")
         end
 
-        it 'has a postcode input field' do
+        it "has a postcode input field" do
           expect(response.body).to include(
-            '<input id="postcode" name="postcode"'
+            '<input id="postcode" name="postcode"',
           )
         end
 
-        it 'has a search icon button' do
+        it "has a search icon button" do
           expect(response.body).to include(
-            '<button class="epc-search-button" data-module="govuk-button" aria-label="Find"></button>'
+            '<button class="epc-search-button" data-module="govuk-button" aria-label="Find"></button>',
           )
         end
 
-        it 'shows the assessor ID of an entry' do
-          expect(response.body).to include('CIBSE9999990')
+        it "shows the assessor ID of an entry" do
+          expect(response.body).to include("CIBSE9999990")
         end
 
-        it 'shows the name of an entry' do
-          expect(response.body).to include('Juan Uno')
+        it "shows the name of an entry" do
+          expect(response.body).to include("Juan Uno")
         end
 
-        it 'shows the email of an entry' do
-          expect(response.body).to include('user@example.com')
+        it "shows the email of an entry" do
+          expect(response.body).to include("user@example.com")
         end
 
-        it 'shows a clickable email' do
-          expect(response.body).to include('mailto:user@example.com')
+        it "shows a clickable email" do
+          expect(response.body).to include("mailto:user@example.com")
         end
 
-        it 'shows a phone number of an entry' do
-          expect(response.body).to include('07921 021 368')
+        it "shows a phone number of an entry" do
+          expect(response.body).to include("07921 021 368")
         end
 
-        it 'shows qualifications of an entry' do
+        it "shows qualifications of an entry" do
           expect(response.body).to include(
-            'Standard Assessment Procedure (SAP)'
+            "Standard Assessment Procedure (SAP)",
           )
           expect(response.body).to include(
-            'Reduced Data Standard Assessment Procedure (RdSAP)'
+            "Reduced Data Standard Assessment Procedure (RdSAP)",
           )
           expect(response.body).to include(
-            'Air Conditioning Simple Packaged (Level 3)'
+            "Air Conditioning Simple Packaged (Level 3)",
           )
           expect(response.body).to include(
-            'Air Conditioning Complexed Central (Level 4)'
+            "Air Conditioning Complexed Central (Level 4)",
           )
-          expect(response.body).to include('Display Energy Certificate (DEC)')
+          expect(response.body).to include("Display Energy Certificate (DEC)")
           expect(response.body).to include(
-            'Non-Domestic Energy Assessor (Level 3)'
-          )
-          expect(response.body).to include(
-            'Non-Domestic Energy Assessor (Level 4)'
+            "Non-Domestic Energy Assessor (Level 3)",
           )
           expect(response.body).to include(
-            'Non-Domestic Energy Assessor (Level 5)'
+            "Non-Domestic Energy Assessor (Level 4)",
+          )
+          expect(response.body).to include(
+            "Non-Domestic Energy Assessor (Level 5)",
           )
         end
       end
 
-      context 'where no assessors are near' do
+      context "where no assessors are near" do
         before do
           FindAssessor::ByPostcode::NoNearAssessorsStub.search_by_postcode(
-            'E1 4AA',
-            'nonDomesticSp3,nonDomesticCc4,nonDomesticDec,nonDomesticNos3,nonDomesticNos4,nonDomesticNos5'
+            "E1 4AA",
+            "nonDomesticSp3,nonDomesticCc4,nonDomesticDec,nonDomesticNos3,nonDomesticNos4,nonDomesticNos5",
           )
         end
 
         let(:response) do
-          get '/find-a-non-domestic-assessor/search-by-postcode?postcode=E1+4AA'
+          get "/find-a-non-domestic-assessor/search-by-postcode?postcode=E1+4AA"
         end
 
-        it 'returns status 200' do
+        it "returns status 200" do
           expect(response.status).to eq(200)
         end
 
-        it 'displays the find a non-domestic assessor page heading' do
-          expect(response.body).to include('Find a non-domestic energy')
+        it "displays the find a non-domestic assessor page heading" do
+          expect(response.body).to include("Find a non-domestic energy")
         end
 
-        it 'explains that no assessors are nearby' do
+        it "explains that no assessors are nearby" do
           expect(response.body).to include(
-            I18n.t('find_assessor_by_postcode_results.no_assessors')
+            I18n.t("find_assessor_by_postcode_results.no_assessors"),
           )
         end
       end
 
-      context 'where the postcode doesnt exist' do
+      context "where the postcode doesnt exist" do
         before do
           FindAssessor::ByPostcode::UnregisteredPostcodeStub.search_by_postcode(
-            'B11 4FF',
-            'nonDomesticSp3,nonDomesticCc4,nonDomesticDec,nonDomesticNos3,nonDomesticNos4,nonDomesticNos5'
+            "B11 4FF",
+            "nonDomesticSp3,nonDomesticCc4,nonDomesticDec,nonDomesticNos3,nonDomesticNos4,nonDomesticNos5",
           )
         end
 
         let(:response) do
-          get '/find-a-non-domestic-assessor/search-by-postcode?postcode=B11+4FF'
+          get "/find-a-non-domestic-assessor/search-by-postcode?postcode=B11+4FF"
         end
 
-        it 'returns status 404' do
+        it "returns status 404" do
           expect(response.status).to eq(404)
         end
 
-        it 'displays the find a non-domestic assessor page heading' do
-          expect(response.body).to include('Find a non-domestic energy')
+        it "displays the find a non-domestic assessor page heading" do
+          expect(response.body).to include("Find a non-domestic energy")
         end
 
-        it 'displays an error message' do
+        it "displays an error message" do
           expect(response.body).to include(
-            '<span id="postcode-error" class="govuk-error-message">'
+            '<span id="postcode-error" class="govuk-error-message">',
           )
-          expect(response.body).to include('We could not find this postcode')
+          expect(response.body).to include("We could not find this postcode")
         end
       end
 
-      context 'where the requested postcode is malformed' do
+      context "where the requested postcode is malformed" do
         before do
           FindAssessor::ByPostcode::InvalidPostcodeStub.search_by_postcode(
-            'C11 4FF',
-            'nonDomesticSp3,nonDomesticCc4,nonDomesticDec,nonDomesticNos3,nonDomesticNos4,nonDomesticNos5'
+            "C11 4FF",
+            "nonDomesticSp3,nonDomesticCc4,nonDomesticDec,nonDomesticNos3,nonDomesticNos4,nonDomesticNos5",
           )
         end
 
         let(:response) do
-          get '/find-a-non-domestic-assessor/search-by-postcode?postcode=C11+4FF'
+          get "/find-a-non-domestic-assessor/search-by-postcode?postcode=C11+4FF"
         end
 
-        it 'returns status 400' do
+        it "returns status 400" do
           expect(response.status).to eq(400)
         end
 
-        it 'displays find a non-domestic assessor page heading' do
+        it "displays find a non-domestic assessor page heading" do
           expect(response.body).to include(
-            'Find a non-domestic energy assessor'
+            "Find a non-domestic energy assessor",
           )
         end
 
-        it 'displays an error message' do
+        it "displays an error message" do
           expect(response.body).to include(
-            '<span id="postcode-error" class="govuk-error-message">'
+            '<span id="postcode-error" class="govuk-error-message">',
           )
           expect(response.body).to include(
-            'Enter a postcode that is not malformed'
+            "Enter a postcode that is not malformed",
           )
         end
       end
 
-      context 'when there is no connection' do
+      context "when there is no connection" do
         before do
           FindAssessor::ByPostcode::NoNetworkStub.search_by_postcode(
-            'D11 4FF',
-            'nonDomesticSp3,nonDomesticCc4'
+            "D11 4FF",
+            "nonDomesticSp3,nonDomesticCc4",
           )
         end
 
         let(:response) do
-          get '/find-a-non-domestic-assessor/search-by-postcode?postcode=D11+4FF'
+          get "/find-a-non-domestic-assessor/search-by-postcode?postcode=D11+4FF"
         end
 
-        it 'returns status 500' do
+        it "returns status 500" do
           expect(response.status).to eq(500)
         end
 
-        it 'displays the 500 error page heading' do
-          expect(response.body).to include('Network connection failed')
+        it "displays the 500 error page heading" do
+          expect(response.body).to include("Network connection failed")
         end
 
-        it 'displays error page body' do
-          expect(response.body).to include('There is an internal network error')
+        it "displays error page body" do
+          expect(response.body).to include("There is an internal network error")
         end
       end
     end

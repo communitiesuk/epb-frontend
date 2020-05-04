@@ -1,434 +1,434 @@
 # frozen_string_literal: true
 
-describe 'Acceptance::Assessor' do
+describe "Acceptance::Assessor" do
   include RSpecFrontendServiceMixin
 
-  describe '.get /find-an-assessor/search-by-postcode' do
-    context 'when search page rendered' do
-      let(:response) { get '/find-an-assessor/search-by-postcode' }
+  describe ".get /find-an-assessor/search-by-postcode" do
+    context "when search page rendered" do
+      let(:response) { get "/find-an-assessor/search-by-postcode" }
 
-      it 'returns status 200' do
+      it "returns status 200" do
         expect(response.status).to eq(200)
       end
 
-      it 'displays the find an assessor page heading' do
-        expect(response.body).to include('Find an energy assessor')
+      it "displays the find an assessor page heading" do
+        expect(response.body).to include("Find an energy assessor")
       end
 
-      it 'has a postcode input field' do
+      it "has a postcode input field" do
         expect(response.body).to include('<input id="postcode" name="postcode"')
       end
 
-      it 'has a Find button' do
+      it "has a Find button" do
         expect(response.body).to include(
-          '<button class="govuk-button" data-module="govuk-button">Find</button>'
+          '<button class="govuk-button" data-module="govuk-button">Find</button>',
         )
       end
 
-      it 'does not display an error message' do
-        expect(response.body).not_to include('govuk-error-message')
+      it "does not display an error message" do
+        expect(response.body).not_to include("govuk-error-message")
       end
     end
 
-    context 'when entering an empty postcode' do
-      let(:response) { get '/find-an-assessor/search-by-postcode?postcode=' }
+    context "when entering an empty postcode" do
+      let(:response) { get "/find-an-assessor/search-by-postcode?postcode=" }
 
-      it 'returns status 400' do
+      it "returns status 400" do
         expect(response.status).to eq(400)
       end
 
-      it 'displays the find an assessor page heading' do
-        expect(response.body).to include('Find an energy assessor')
+      it "displays the find an assessor page heading" do
+        expect(response.body).to include("Find an energy assessor")
       end
 
-      it 'displays an error message' do
+      it "displays an error message" do
         expect(response.body).to include(
-          '<span id="postcode-error" class="govuk-error-message">'
+          '<span id="postcode-error" class="govuk-error-message">',
         )
-        expect(response.body).to include('Enter a real postcode')
+        expect(response.body).to include("Enter a real postcode")
       end
     end
 
-    context 'when entering an invalid postcode' do
+    context "when entering an invalid postcode" do
       let(:response) do
-        get '/find-an-assessor/search-by-postcode?postcode=NOT+A+POSTCODE'
+        get "/find-an-assessor/search-by-postcode?postcode=NOT+A+POSTCODE"
       end
 
-      it 'returns status 400' do
+      it "returns status 400" do
         expect(response.status).to eq(400)
       end
 
-      it 'displays the find an assessor page heading' do
-        expect(response.body).to include('Find an energy assessor')
+      it "displays the find an assessor page heading" do
+        expect(response.body).to include("Find an energy assessor")
       end
 
-      it 'displays an error message' do
+      it "displays an error message" do
         expect(response.body).to include(
-          '<span id="postcode-error" class="govuk-error-message">'
+          '<span id="postcode-error" class="govuk-error-message">',
         )
-        expect(response.body).to include('Enter a real postcode')
+        expect(response.body).to include("Enter a real postcode")
       end
     end
 
-    context 'when entering a valid postcode' do
-      context 'shows page' do
-        before { FindAssessor::ByPostcode::Stub.search_by_postcode('SW1A 2AA') }
+    context "when entering a valid postcode" do
+      context "shows page" do
+        before { FindAssessor::ByPostcode::Stub.search_by_postcode("SW1A 2AA") }
 
         let(:response) do
-          get '/find-an-assessor/search-by-postcode?postcode=SW1A+2AA'
+          get "/find-an-assessor/search-by-postcode?postcode=SW1A+2AA"
         end
 
-        it 'returns status 200' do
+        it "returns status 200" do
           expect(response.status).to eq(200)
         end
 
-        it 'displays the find an assessor page heading' do
-          expect(response.body).to include('Find an energy assessor')
+        it "displays the find an assessor page heading" do
+          expect(response.body).to include("Find an energy assessor")
         end
 
-        it 'has a postcode input field' do
+        it "has a postcode input field" do
           expect(response.body).to include(
-            '<input id="postcode" name="postcode"'
+            '<input id="postcode" name="postcode"',
           )
         end
 
-        it 'has a search icon button' do
+        it "has a search icon button" do
           expect(response.body).to include(
-            '<button class="epc-search-button" data-module="govuk-button" aria-label="Find"></button>'
+            '<button class="epc-search-button" data-module="govuk-button" aria-label="Find"></button>',
           )
         end
 
-        it 'shows the assessor ID of an entry' do
-          expect(response.body).to include('CIBSE9999990')
+        it "shows the assessor ID of an entry" do
+          expect(response.body).to include("CIBSE9999990")
         end
 
-        it 'shows the name of an entry' do
-          expect(response.body).to include('Juan Uno')
+        it "shows the name of an entry" do
+          expect(response.body).to include("Juan Uno")
         end
 
-        it 'shows the email of an entry' do
-          expect(response.body).to include('user@example.com')
+        it "shows the email of an entry" do
+          expect(response.body).to include("user@example.com")
         end
 
-        it 'shows a clickable email' do
-          expect(response.body).to include('mailto:user@example.com')
+        it "shows a clickable email" do
+          expect(response.body).to include("mailto:user@example.com")
         end
 
-        it 'shows a phone number of an entry' do
-          expect(response.body).to include('07921 021 368')
+        it "shows a phone number of an entry" do
+          expect(response.body).to include("07921 021 368")
         end
 
-        context 'when contacting schemes' do
-          it 'has a more information link under scheme name' do
-            expect(response.body).to include('More information')
+        context "when contacting schemes" do
+          it "has a more information link under scheme name" do
+            expect(response.body).to include("More information")
           end
 
-          it 'shows CIBSE contact details' do
-            expect(response.body).to include('Contact details for CIBSE:')
-            expect(response.body).to include('epc@cibsecertification.org')
-            expect(response.body).to include('020 8772 3649')
+          it "shows CIBSE contact details" do
+            expect(response.body).to include("Contact details for CIBSE:")
+            expect(response.body).to include("epc@cibsecertification.org")
+            expect(response.body).to include("020 8772 3649")
           end
 
-          it 'shows Quidos contact details' do
-            expect(response.body).to include('Contact details for Quidos:')
-            expect(response.body).to include('info@quidos.co.uk')
-            expect(response.body).to include('01225 667 570')
+          it "shows Quidos contact details" do
+            expect(response.body).to include("Contact details for Quidos:")
+            expect(response.body).to include("info@quidos.co.uk")
+            expect(response.body).to include("01225 667 570")
           end
 
-          it 'shows unaccredited EPB 4 U scheme' do
-            expect(response.body).to include('EPB 4 U is no longer accredited.')
+          it "shows unaccredited EPB 4 U scheme" do
+            expect(response.body).to include("EPB 4 U is no longer accredited.")
           end
 
-          it 'shows Stroma contact details' do
-            expect(response.body).to include('Contact details for Stroma:')
-            expect(response.body).to include('certification@stroma.com')
-            expect(response.body).to include('0845 621 11 11')
+          it "shows Stroma contact details" do
+            expect(response.body).to include("Contact details for Stroma:")
+            expect(response.body).to include("certification@stroma.com")
+            expect(response.body).to include("0845 621 11 11")
           end
 
-          it 'shows Sterling contact details' do
-            expect(response.body).to include('Contact details for Sterling:')
-            expect(response.body).to include('info@sterlingaccreditaiton.com')
-            expect(response.body).to include('0161 727 4303')
+          it "shows Sterling contact details" do
+            expect(response.body).to include("Contact details for Sterling:")
+            expect(response.body).to include("info@sterlingaccreditaiton.com")
+            expect(response.body).to include("0161 727 4303")
           end
 
-          it 'shows Elmhurst contact details' do
+          it "shows Elmhurst contact details" do
             expect(response.body).to include(
-              'Contact details for Elmhurst Energy:'
+              "Contact details for Elmhurst Energy:",
             )
-            expect(response.body).to include('enquiries@elmhurstenergy.co.uk')
-            expect(response.body).to include('01455 883 250')
+            expect(response.body).to include("enquiries@elmhurstenergy.co.uk")
+            expect(response.body).to include("01455 883 250")
           end
 
-          it 'shows ECMK contact details' do
-            expect(response.body).to include('Contact details for Sterling:')
-            expect(response.body).to include('info@ecmk.co.uk')
-            expect(response.body).to include('0333 123 1418')
+          it "shows ECMK contact details" do
+            expect(response.body).to include("Contact details for Sterling:")
+            expect(response.body).to include("info@ecmk.co.uk")
+            expect(response.body).to include("0333 123 1418")
           end
         end
       end
 
-      context 'where no assessors are near' do
+      context "where no assessors are near" do
         before do
           FindAssessor::ByPostcode::NoNearAssessorsStub.search_by_postcode(
-            'E1 4FF'
+            "E1 4FF",
           )
         end
 
         let(:response) do
-          get '/find-an-assessor/search-by-postcode?postcode=E1+4FF'
+          get "/find-an-assessor/search-by-postcode?postcode=E1+4FF"
         end
 
-        it 'returns status 200' do
+        it "returns status 200" do
           expect(response.status).to eq(200)
         end
 
-        it 'displays the find an assessor page heading' do
-          expect(response.body).to include('Find an energy assessor')
+        it "displays the find an assessor page heading" do
+          expect(response.body).to include("Find an energy assessor")
         end
 
-        it 'explains that no assessors are nearby' do
+        it "explains that no assessors are nearby" do
           expect(response.body).to include(
-            I18n.t('find_assessor_by_postcode_results.no_assessors')
+            I18n.t("find_assessor_by_postcode_results.no_assessors"),
           )
         end
       end
 
-      context 'where the postcode doesnt exist' do
+      context "where the postcode doesnt exist" do
         before do
           FindAssessor::ByPostcode::UnregisteredPostcodeStub.search_by_postcode(
-            'B11 4FF'
+            "B11 4FF",
           )
         end
 
         let(:response) do
-          get '/find-an-assessor/search-by-postcode?postcode=B11+4FF'
+          get "/find-an-assessor/search-by-postcode?postcode=B11+4FF"
         end
 
-        it 'returns status 404' do
+        it "returns status 404" do
           expect(response.status).to eq(404)
         end
 
-        it 'displays the find an assessor page heading' do
-          expect(response.body).to include('Find an energy assessor')
+        it "displays the find an assessor page heading" do
+          expect(response.body).to include("Find an energy assessor")
         end
 
-        it 'displays an error message' do
+        it "displays an error message" do
           expect(response.body).to include(
-            '<span id="postcode-error" class="govuk-error-message">'
+            '<span id="postcode-error" class="govuk-error-message">',
           )
-          expect(response.body).to include('We could not find this postcode')
+          expect(response.body).to include("We could not find this postcode")
         end
       end
 
-      context 'where the requested postcode is malformed' do
+      context "where the requested postcode is malformed" do
         before do
           FindAssessor::ByPostcode::InvalidPostcodeStub.search_by_postcode(
-            'C11 4FF'
+            "C11 4FF",
           )
         end
 
         let(:response) do
-          get '/find-an-assessor/search-by-postcode?postcode=C11+4FF'
+          get "/find-an-assessor/search-by-postcode?postcode=C11+4FF"
         end
 
-        it 'returns status 400' do
+        it "returns status 400" do
           expect(response.status).to eq(400)
         end
 
-        it 'displays the find an assessor page heading' do
-          expect(response.body).to include('Find an energy assessor')
+        it "displays the find an assessor page heading" do
+          expect(response.body).to include("Find an energy assessor")
         end
 
-        it 'displays an error message' do
+        it "displays an error message" do
           expect(response.body).to include(
-            '<span id="postcode-error" class="govuk-error-message">'
+            '<span id="postcode-error" class="govuk-error-message">',
           )
           expect(response.body).to include(
-            'Enter a postcode that is not malformed'
+            "Enter a postcode that is not malformed",
           )
         end
       end
 
-      context 'when there is no connection' do
+      context "when there is no connection" do
         before do
-          FindAssessor::ByPostcode::NoNetworkStub.search_by_postcode('D11 4FF')
+          FindAssessor::ByPostcode::NoNetworkStub.search_by_postcode("D11 4FF")
         end
 
         let(:response) do
-          get '/find-an-assessor/search-by-postcode?postcode=D11+4FF'
+          get "/find-an-assessor/search-by-postcode?postcode=D11+4FF"
         end
 
-        it 'returns status 500' do
+        it "returns status 500" do
           expect(response.status).to eq(500)
         end
 
-        it 'displays the 500 error page heading' do
-          expect(response.body).to include('Network connection failed')
+        it "displays the 500 error page heading" do
+          expect(response.body).to include("Network connection failed")
         end
 
-        it 'displays error page body' do
-          expect(response.body).to include('There is an internal network error')
+        it "displays error page body" do
+          expect(response.body).to include("There is an internal network error")
         end
       end
     end
   end
 
-  describe '.get /find-an-assessor/search-by-name' do
-    context 'when search page rendered' do
-      let(:response) { get '/find-an-assessor/search-by-name' }
+  describe ".get /find-an-assessor/search-by-name" do
+    context "when search page rendered" do
+      let(:response) { get "/find-an-assessor/search-by-name" }
 
-      it 'returns status 200' do
+      it "returns status 200" do
         expect(response.status).to eq(200)
       end
 
-      it 'displays the find an assessor page heading' do
-        expect(response.body).to include('Find an energy assessor')
+      it "displays the find an assessor page heading" do
+        expect(response.body).to include("Find an energy assessor")
       end
 
-      it 'has a postcode input field' do
+      it "has a postcode input field" do
         expect(response.body).to include('<input id="name" name="name"')
       end
 
-      it 'has a Find button' do
+      it "has a Find button" do
         expect(response.body).to include(
-          '<button class="govuk-button" data-module="govuk-button">Search</button>'
+          '<button class="govuk-button" data-module="govuk-button">Search</button>',
         )
       end
 
-      it 'does not display an error message' do
-        expect(response.body).not_to include('govuk-error-message')
+      it "does not display an error message" do
+        expect(response.body).not_to include("govuk-error-message")
       end
     end
 
-    context 'when entering an empty name' do
-      let(:response) { get '/find-an-assessor/search-by-name?name=' }
+    context "when entering an empty name" do
+      let(:response) { get "/find-an-assessor/search-by-name?name=" }
 
-      it 'returns status 400' do
+      it "returns status 400" do
         expect(response.status).to eq(400)
       end
 
-      it 'displays the find an assessor page heading' do
-        expect(response.body).to include('Find an energy assessor')
+      it "displays the find an assessor page heading" do
+        expect(response.body).to include("Find an energy assessor")
       end
 
-      it 'displays an error message' do
+      it "displays an error message" do
         expect(response.body).to include(
-          '<span id="name-error" class="govuk-error-message">'
+          '<span id="name-error" class="govuk-error-message">',
         )
-        expect(response.body).to include('Enter a name')
+        expect(response.body).to include("Enter a name")
       end
     end
 
-    context 'when entering a name' do
-      context 'which has exact matches' do
-        before { FindAssessor::ByName::Stub.search_by_name('Ronald McDonald') }
+    context "when entering a name" do
+      context "which has exact matches" do
+        before { FindAssessor::ByName::Stub.search_by_name("Ronald McDonald") }
 
         let(:response) do
-          get '/find-an-assessor/search-by-name?name=Ronald%20McDonald'
+          get "/find-an-assessor/search-by-name?name=Ronald%20McDonald"
         end
 
-        it 'returns status 200' do
+        it "returns status 200" do
           expect(response.status).to eq(200)
         end
 
-        it 'displays the find an assessor page heading' do
-          expect(response.body).to include('Find an energy assessor')
+        it "displays the find an assessor page heading" do
+          expect(response.body).to include("Find an energy assessor")
         end
 
-        it 'has a name input field' do
+        it "has a name input field" do
           expect(response.body).to include('<input id="name" name="name"')
         end
 
-        it 'has a Search button' do
+        it "has a Search button" do
           expect(response.body).to include(
-            '<button class="epc-search-button" data-module="govuk-button" aria-label="Search"></button>'
+            '<button class="epc-search-button" data-module="govuk-button" aria-label="Search"></button>',
           )
         end
 
-        it 'shows the name of an entry' do
-          expect(response.body).to include('Supercommon Name')
+        it "shows the name of an entry" do
+          expect(response.body).to include("Supercommon Name")
         end
 
-        it 'shows the assessor ID of an entry' do
-          expect(response.body).to include('Stroma9999990')
+        it "shows the assessor ID of an entry" do
+          expect(response.body).to include("Stroma9999990")
         end
 
-        it 'shows the email of an entry' do
-          expect(response.body).to include('user@example.com')
+        it "shows the email of an entry" do
+          expect(response.body).to include("user@example.com")
         end
 
-        it 'shows a clickable email' do
-          expect(response.body).to include('mailto:user@example.com')
+        it "shows a clickable email" do
+          expect(response.body).to include("mailto:user@example.com")
         end
 
-        it 'shows a phone number of an entry' do
-          expect(response.body).to include('07921 021 368')
+        it "shows a phone number of an entry" do
+          expect(response.body).to include("07921 021 368")
         end
 
-        it 'does not show that they are loose matches' do
-          expect(response.body).to_not include('similar to')
+        it "does not show that they are loose matches" do
+          expect(response.body).to_not include("similar to")
         end
       end
 
-      context 'which has similar matches' do
+      context "which has similar matches" do
         before do
-          FindAssessor::ByName::Stub.search_by_name('Ronald McDonald', true)
+          FindAssessor::ByName::Stub.search_by_name("Ronald McDonald", true)
         end
 
         let(:response) do
-          get '/find-an-assessor/search-by-name?name=R%20McDonald'
+          get "/find-an-assessor/search-by-name?name=R%20McDonald"
         end
 
-        it 'does show that they are loose matches' do
-          expect(response.body).to include('similar to')
+        it "does show that they are loose matches" do
+          expect(response.body).to include("similar to")
         end
       end
 
-      context 'where no assessors have that name' do
+      context "where no assessors have that name" do
         before do
           FindAssessor::ByName::NoAssessorsStub.search_by_name(
-            'Nonexistent Person'
+            "Nonexistent Person",
           )
         end
 
         let(:response) do
-          get '/find-an-assessor/search-by-name?name=Nonexistent%20Person'
+          get "/find-an-assessor/search-by-name?name=Nonexistent%20Person"
         end
 
-        it 'returns status 200' do
+        it "returns status 200" do
           expect(response.status).to eq(200)
         end
 
-        it 'displays the find an assessor page heading' do
-          expect(response.body).to include('Find an energy assessor')
+        it "displays the find an assessor page heading" do
+          expect(response.body).to include("Find an energy assessor")
         end
 
-        it 'explains that no assessors by that name' do
+        it "explains that no assessors by that name" do
           expect(response.body).to include(
-            'There are no assessors with this name.'
+            "There are no assessors with this name.",
           )
         end
       end
 
-      context 'when there is no connection' do
+      context "when there is no connection" do
         before do
-          FindAssessor::ByName::NoNetworkStub.search_by_name('Breaking Person')
+          FindAssessor::ByName::NoNetworkStub.search_by_name("Breaking Person")
         end
 
         let(:response) do
-          get '/find-an-assessor/search-by-name?name=Breaking%20Person'
+          get "/find-an-assessor/search-by-name?name=Breaking%20Person"
         end
 
-        it 'returns status 500' do
+        it "returns status 500" do
           expect(response.status).to eq(500)
         end
 
-        it 'displays the 500 error page heading' do
-          expect(response.body).to include('Network connection failed')
+        it "displays the 500 error page heading" do
+          expect(response.body).to include("Network connection failed")
         end
 
-        it 'displays error page body' do
-          expect(response.body).to include('There is an internal network error')
+        it "displays error page body" do
+          expect(response.body).to include("There is an internal network error")
         end
       end
     end

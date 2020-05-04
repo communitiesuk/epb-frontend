@@ -7,13 +7,13 @@ module Gateway
     end
 
     def search_by_postcode(
-      postcode, qualification_type = 'domesticSap,domesticRdSap'
+      postcode, qualification_type = "domesticSap,domesticRdSap"
     )
       route =
         URI.encode(
           "/api/assessors?postcode=#{postcode}&qualification=#{
             qualification_type
-          }"
+          }",
         )
       response = @internal_api_client.get(route)
       JSON.parse(response.body, symbolize_names: true)

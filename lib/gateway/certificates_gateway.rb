@@ -38,15 +38,15 @@ module Gateway
       if response.status == 200
         assessment_details[:data][:dateOfExpiry] =
           Date.parse(assessment_details[:data][:dateOfExpiry]).strftime(
-            '%d %B %Y'
+            "%d %B %Y",
           )
         assessment_details[:data][:dateOfAssessment] =
           Date.parse(assessment_details[:data][:dateOfAssessment]).strftime(
-            '%d %B %Y'
+            "%d %B %Y",
           )
         assessment_details[:data][:dateRegistered] =
           Date.parse(assessment_details[:data][:dateRegistered]).strftime(
-            '%d %B %Y'
+            "%d %B %Y",
           )
       end
 

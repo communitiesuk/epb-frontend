@@ -5,28 +5,28 @@ describe Sinatra::FrontendService::Helpers do
     include Sinatra::FrontendService::Helpers
   end
 
-  context 'given valid number' do
-    it 'returns single digit formatted currency' do
-      expect(HelpersStub.new.number_to_currency(0.50)).to eq('£0.50')
+  context "given valid number" do
+    it "returns single digit formatted currency" do
+      expect(HelpersStub.new.number_to_currency(0.50)).to eq("£0.50")
     end
 
-    it 'returns four digit formatted currency' do
-      expect(HelpersStub.new.number_to_currency(7334.00)).to eq('£7,334')
+    it "returns four digit formatted currency" do
+      expect(HelpersStub.new.number_to_currency(7334.00)).to eq("£7,334")
     end
 
-    it 'returns five digit formatted currency' do
-      expect(HelpersStub.new.number_to_currency(25_000.90)).to eq('£25,000.90')
+    it "returns five digit formatted currency" do
+      expect(HelpersStub.new.number_to_currency(25_000.90)).to eq("£25,000.90")
     end
 
-    it 'returns seven digit formatted currency' do
+    it "returns seven digit formatted currency" do
       expect(HelpersStub.new.number_to_currency(1_250_600.99)).to eq(
-        '£1,250,600.99'
+        "£1,250,600.99",
       )
     end
 
-    context 'given valid number in string format' do
-      it 'returns formatted currency' do
-        expect(HelpersStub.new.number_to_currency('123.90')).to eq('£123.90')
+    context "given valid number in string format" do
+      it "returns formatted currency" do
+        expect(HelpersStub.new.number_to_currency("123.90")).to eq("£123.90")
       end
     end
   end

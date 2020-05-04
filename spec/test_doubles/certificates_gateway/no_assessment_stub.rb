@@ -3,7 +3,7 @@
 module CertificatesGateway
   class NoAssessmentStub
     def fetch(*)
-      { "errors": [{ "code": 'NOT_FOUND', "title": 'Assessment not found' }] }
+      { "errors": [{ "code": "NOT_FOUND", "title": "Assessment not found" }] }
     end
   end
 end

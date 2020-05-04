@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'epb-auth-tools'
+require "epb-auth-tools"
 
 module Sinatra
   module FrontendService
@@ -11,22 +11,22 @@ module Sinatra
 
       def number_to_currency(number)
         if number.to_f > number.to_i || number.to_f < number.to_i
-          format('£%.2f', number).gsub(/(\d)(?=(\d{3})+(?!\d))/, '\\1,')
+          format("£%.2f", number).gsub(/(\d)(?=(\d{3})+(?!\d))/, '\\1,')
         elsif number.to_f != 0
-          format('£%.f', number).gsub(/(\d)(?=(\d{3})+(?!\d))/, '\\1,')
+          format("£%.f", number).gsub(/(\d)(?=(\d{3})+(?!\d))/, '\\1,')
         end
       end
 
       def setup_locales
-        I18n.load_path = Dir[File.join(settings.root, '/../locales', '*.yml')]
+        I18n.load_path = Dir[File.join(settings.root, "/../locales", "*.yml")]
         I18n.enforce_available_locales = true
         I18n.available_locales = %w[en cy]
       end
 
       def set_locale
         I18n.locale =
-          if I18n.locale_available?(params['lang'])
-            params['lang']
+          if I18n.locale_available?(params["lang"])
+            params["lang"]
           else
             I18n.default_locale
           end
@@ -38,9 +38,9 @@ module Sinatra
 
       def scheme_details(assessor, property)
         t(
-          'schemes.list.' +
+          "schemes.list." +
             assessor[:registeredBy][:name].split.first.downcase +
-            ".#{property}"
+            ".#{property}",
         )
       end
 

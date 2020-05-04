@@ -10,7 +10,7 @@ module UseCase
       return unless response.include?(:errors)
 
       response[:errors].each do |error|
-        if error[:code] == 'Auth::Errors::TokenMissing'
+        if error[:code] == "Auth::Errors::TokenMissing"
           raise Errors::AuthTokenMissing
         end
 

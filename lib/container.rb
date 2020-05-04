@@ -3,10 +3,10 @@
 class Container
   def initialize
     internal_api_client =
-      Auth::HttpClient.new ENV['EPB_AUTH_CLIENT_ID'],
-                           ENV['EPB_AUTH_CLIENT_SECRET'],
-                           ENV['EPB_AUTH_SERVER'],
-                           ENV['EPB_API_URL'],
+      Auth::HttpClient.new ENV["EPB_AUTH_CLIENT_ID"],
+                           ENV["EPB_AUTH_CLIENT_SECRET"],
+                           ENV["EPB_AUTH_SERVER"],
+                           ENV["EPB_API_URL"],
                            OAuth2::Client
 
     assessors_gateway = Gateway::AssessorsGateway.new(internal_api_client)
@@ -37,7 +37,7 @@ class Container
         find_certificate_by_postcode_use_case,
       find_certificate_by_id_use_case: find_certificate_by_id_use_case,
       find_certificate_by_street_name_and_town_use_case:
-        find_certificate_by_street_name_and_town_use_case
+        find_certificate_by_street_name_and_town_use_case,
     }
   end
 

@@ -6,7 +6,7 @@ module UseCase
       response = @gateway.fetch(assessment_id)
 
       raise_errors_if_exists(response) do |error_code|
-        raise Errors::AssessmentNotFound if error_code == 'NOT_FOUND'
+        raise Errors::AssessmentNotFound if error_code == "NOT_FOUND"
       end
 
       if response[:data][:recommendedImprovements]

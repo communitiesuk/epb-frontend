@@ -1,24 +1,24 @@
 # frozen_string_literal: true
 
-require 'rspec'
-require 'rack/test'
-require 'webmock/rspec'
-require 'epb-auth-tools'
-require 'helpers'
-require 'zeitwerk'
-require 'capybara/rspec'
+require "rspec"
+require "rack/test"
+require "webmock/rspec"
+require "epb-auth-tools"
+require "helpers"
+require "zeitwerk"
+require "capybara/rspec"
 
 loader = Zeitwerk::Loader.new
 loader.push_dir("#{__dir__}/../lib/")
 loader.push_dir("#{__dir__}/../spec/test_doubles/")
 loader.setup
 
-AUTH_URL = 'http://test-auth-server.gov.uk'
+AUTH_URL = "http://test-auth-server.gov.uk"
 
-ENV['EPB_AUTH_CLIENT_ID'] = 'test.id'
-ENV['EPB_AUTH_CLIENT_SECRET'] = 'test.client.secret'
-ENV['EPB_AUTH_SERVER'] = AUTH_URL
-ENV['EPB_API_URL'] = 'http://test-api.gov.uk'
+ENV["EPB_AUTH_CLIENT_ID"] = "test.id"
+ENV["EPB_AUTH_CLIENT_SECRET"] = "test.client.secret"
+ENV["EPB_AUTH_SERVER"] = AUTH_URL
+ENV["EPB_API_URL"] = "http://test-api.gov.uk"
 
 module RSpecUnitMixin
   def container
@@ -53,11 +53,11 @@ end
 
 RSpec::Matchers.define(:redirect_to) do |path|
   match do |response|
-    uri = URI.parse(response.headers['Location'])
-    response.status.to_s[0] == '3' && uri.path == path
+    uri = URI.parse(response.headers["Location"])
+    response.status.to_s[0] == "3" && uri.path == path
   end
 end
 
 Capybara.default_driver = :selenium_chrome_headless
 Capybara.javascript_driver = :selenium_chrome_headless
-Capybara.app_host = 'http://localhost:9393'
+Capybara.app_host = "http://localhost:9393"
