@@ -43,7 +43,9 @@ module FetchCertificate
             "recommendedImprovements": [
               {
                 "sequence": 0,
-                "improvementCode": '5',
+                "improvementCode": '',
+                "improvementTitle": 'Fix the boiler',
+                "improvementDescription": 'An informative description of how to fix the boiler',
                 "indicativeCost": '',
                 "typicalSaving": '0.0',
                 "improvementCategory": '6',
@@ -55,6 +57,8 @@ module FetchCertificate
               {
                 "sequence": 1,
                 "improvementCode": '1',
+                "improvementTitle": '',
+                "improvementDescription": '',
                 "indicativeCost": '',
                 "typicalSaving": '0.1',
                 "improvementCategory": '2',

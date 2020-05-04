@@ -227,6 +227,20 @@ describe 'Acceptance::Certificate' do
         expect(response.body).to include('Information unavailable')
       end
     end
+
+    context 'when the improvementCode is not present' do
+      before do
+        FetchCertificate::Stub.fetch('1111-1111-1111-1111-1112', 90, 'b', true)
+      end
+      let(:response) do
+        get '/energy-performance-certificate/1111-1111-1111-1111-1112'
+      end
+
+      it 'displays the improvementTitle and improvementDescription instead' do
+        expect(response.body).to include('Fix the boiler')
+        expect(response.body).to include('An informative description of how to fix the boiler')
+      end
+    end
   end
 
   context 'when viewing a lodged certificate as returned from the API' do

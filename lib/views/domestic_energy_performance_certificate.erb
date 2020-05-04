@@ -191,8 +191,13 @@
             <%
               assessment[:recommendedImprovements].each_with_index do |recommendation, index| %>
               <hr class="epc-light-top"/>
-    <h3 class="govuk-heading-m"><%= t('domestic_epc.sections.recommendations.list.title')%> <%= index + 1 %>: <%= t('improvement_code.' + recommendation[:improvementCode].downcase + '.title')%> </h3>
-    <p class="govuk-body"><%= t('improvement_code.' + recommendation[:improvementCode].downcase + '.description')%> </p>
+    <% if recommendation[:improvementCode].empty? %>
+      <h3 class="govuk-heading-m"><%= recommendation[:improvementTitle] %></h3>
+      <p class="govuk-body"><%= recommendation[:improvementDescription] %></p>
+    <% else %>
+      <h3 class="govuk-heading-m"><%= t('domestic_epc.sections.recommendations.list.title')%> <%= index + 1 %>: <%= t('improvement_code.' + recommendation[:improvementCode].downcase + '.title')%> </h3>
+      <p class="govuk-body"><%= t('improvement_code.' + recommendation[:improvementCode].downcase + '.description')%> </p>
+    <% end %>
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-one-half">
         <div class="govuk-body" style="margin-bottom: 0px;"><%= t('domestic_epc.sections.recommendations.list.installation_cost') %></div>
