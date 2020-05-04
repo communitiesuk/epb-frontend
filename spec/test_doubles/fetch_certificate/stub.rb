@@ -95,7 +95,7 @@ module FetchCertificate
           "meta": {},
         }
       else
-        recommendedImprovements =
+        recommended_improvements =
           if recommended_improvements
             [
               {
@@ -177,7 +177,7 @@ module FetchCertificate
               impactOfCavityInsulation: 67,
               impactOfSolidWallInsulation: 69,
             },
-            recommendedImprovements: recommendedImprovements,
+            recommendedImprovements: recommended_improvements,
           },
         }
       end

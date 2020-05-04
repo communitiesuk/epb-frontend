@@ -276,7 +276,7 @@ module CertificatesGateway
     end
 
     def fetch(assessment_id)
-      recommendedImprovements =
+      recommended_improvements =
         if @recommended_improvements
           [
             {
@@ -356,7 +356,7 @@ module CertificatesGateway
             impactOfCavityInsulation: 67,
             impactOfSolidWallInsulation: 69,
           },
-          recommendedImprovements: recommendedImprovements,
+          recommendedImprovements: recommended_improvements,
         },
       }
     end

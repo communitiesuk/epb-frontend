@@ -16,6 +16,7 @@ module Gateway
           }",
         )
       response = @internal_api_client.get(route)
+
       JSON.parse(response.body, symbolize_names: true)
     end
 

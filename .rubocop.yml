@@ -1,3 +1,6 @@
 inherit_gem:
   rubocop-govuk:
     - config/default.yml
+
+Metrics/BlockLength:
+  ExcludedMethods: ['get']
