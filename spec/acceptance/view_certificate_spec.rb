@@ -100,6 +100,20 @@ describe 'Acceptance::Certificate' do
       expect(response.body).to include('69')
     end
 
+    context 'when viewing Find ways to pay for recommendations section' do
+      it 'shows the heading' do
+        expect(response.body).to include('Paying for energy improvements')
+      end
+
+      it 'shows the text' do
+        expect(response.body).to include('Find energy grants and ways to save energy in your home.')
+      end
+
+      it 'shows the link' do
+        expect(response.body).to include('https://www.gov.uk/improve-energy-efficiency')
+      end
+    end
+
     context 'when viewing environmental impact section' do
       it 'shows the summary text' do
         expect(response.body).to include(
