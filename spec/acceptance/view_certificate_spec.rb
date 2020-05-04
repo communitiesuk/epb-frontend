@@ -238,7 +238,9 @@ describe 'Acceptance::Certificate' do
 
       it 'displays the improvementTitle and improvementDescription instead' do
         expect(response.body).to include('Fix the boiler')
-        expect(response.body).to include('An informative description of how to fix the boiler')
+        expect(response.body).to include(
+          'An informative description of how to fix the boiler'
+        )
       end
     end
   end

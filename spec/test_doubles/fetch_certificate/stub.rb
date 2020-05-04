@@ -45,7 +45,8 @@ module FetchCertificate
                 "sequence": 0,
                 "improvementCode": '',
                 "improvementTitle": 'Fix the boiler',
-                "improvementDescription": 'An informative description of how to fix the boiler',
+                "improvementDescription":
+                  'An informative description of how to fix the boiler',
                 "indicativeCost": '',
                 "typicalSaving": '0.0',
                 "improvementCategory": '6',
