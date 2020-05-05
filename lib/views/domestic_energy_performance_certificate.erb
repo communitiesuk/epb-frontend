@@ -175,7 +175,7 @@
       <div class="govuk-body">
         <% assessment[:recommendedImprovements].each_with_index do |recommendation, index| %>
           <hr class="epc-light-top"/>
-          <% if recommendation[:improvementCode].nil? || recommendation[:improvementCode].empty?%>
+          <% if recommendation[:improvementCode].nil? || recommendation[:improvementCode].empty? %>
             <h3 class="govuk-heading-m"><%= recommendation[:improvementTitle] %></h3>
             <p class="govuk-body"><%= recommendation[:improvementDescription] %></p>
           <% else %>
