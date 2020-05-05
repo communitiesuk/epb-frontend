@@ -163,7 +163,7 @@ DEPENDENCIES
   rack-test (~> 0.8.3)!
   rake!
   rspec (~> 3.0)!
-  rubocop-govuk (~> 3.7)
+  rubocop-govuk (~> 3.7)!
   sassc (~> 2.2)!
   selenium-webdriver (~> 3.142.7)!
   sinatra (~> 2.0, >= 2.0.7)!
