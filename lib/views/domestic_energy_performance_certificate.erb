@@ -108,7 +108,7 @@
           <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
             <%= t('domestic_epc.sections.summary.list.total_floor_area') %>
           </dt>
-          <dd class="govuk-summary-list__value govuk-!-font-weight-bold" name="total-floor-area"><%= assessment[:totalFloorArea] %> m<sup>2</sup></dd>
+          <dd class="govuk-summary-list__value govuk-!-font-weight-bold" id="total-floor-area"><%= assessment[:totalFloorArea] %> m<sup>2</sup></dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
@@ -129,15 +129,15 @@
       <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row" id="type">
           <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= t('domestic_epc.sections.environmental-impact.average_household.text') %></dt>
-          <dd class="govuk-summary-list__value" name="average-household-produces"><%= t('domestic_epc.sections.environmental-impact.average_household.carbon') %><%== t('domestic_epc.sections.environmental-impact.tonnes_of_carbon_emission', carbon: 'CO<sub>2</sub>') %></dd>
+          <dd class="govuk-summary-list__value" id="average-household-produces"><%= t('domestic_epc.sections.environmental-impact.average_household.carbon') %><%== t('domestic_epc.sections.environmental-impact.tonnes_of_carbon_emission', carbon: 'CO<sub>2</sub>') %></dd>
         </div>
         <div class="govuk-summary-list__row" id="type">
           <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= t('domestic_epc.sections.environmental-impact.property_produces') %></dt>
-          <dd class="govuk-summary-list__value" name="property-produces"><%= assessment[:currentCarbonEmission].round(1) %><%== t('domestic_epc.sections.environmental-impact.tonnes_of_carbon_emission', carbon: 'CO<sub>2</sub>') %></dd>
+          <dd class="govuk-summary-list__value" id="property-produces"><%= assessment[:currentCarbonEmission].round(1) %><%== t('domestic_epc.sections.environmental-impact.tonnes_of_carbon_emission', carbon: 'CO<sub>2</sub>') %></dd>
         </div>
         <div class="govuk-summary-list__row" id="type">
           <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= t('domestic_epc.sections.environmental-impact.potential') %></dt>
-          <dd class="govuk-summary-list__value" name="potential-production"><%= assessment[:potentialCarbonEmission].round(1) %><%== t('domestic_epc.sections.environmental-impact.tonnes_of_carbon_emission', carbon: 'CO<sub>2</sub>') %></dd>
+          <dd class="govuk-summary-list__value" id="potential-production"><%= assessment[:potentialCarbonEmission].round(1) %><%== t('domestic_epc.sections.environmental-impact.tonnes_of_carbon_emission', carbon: 'CO<sub>2</sub>') %></dd>
         </div>
       </dl>
       <p class="govuk-body">
@@ -188,12 +188,12 @@
             <div class="govuk-grid-column-one-half">
               <div class="govuk-body" style="margin-bottom: 0px;"><%= t('domestic_epc.sections.recommendations.list.installation_cost') %></div>
               <% if recommendation[:indicativeCost].nil? || recommendation[:indicativeCost].empty? ? (indicative_cost_result = 'Information unavailable') : (indicative_cost_result = recommendation[:indicativeCost]) %>
-                <p class="govuk-body govuk-!-font-weight-bold" name="indicative_cost"><%= indicative_cost_result %></p>
+                <p class="govuk-body govuk-!-font-weight-bold" id="indicative_cost"><%= indicative_cost_result %></p>
               <% end %>
             </div>
             <div class="govuk-grid-column-one-half">
               <div class="govuk-body" style="margin-bottom: 0px;"><%= t('domestic_epc.sections.recommendations.list.yearly_saving') %></div>
-              <p class="govuk-body govuk-!-font-weight-bold" name="typical-saving-cost"><%
+              <p class="govuk-body govuk-!-font-weight-bold" id="typical-saving-cost"><%
 
                 typical_saving = number_to_currency(recommendation[:typicalSaving])
 
@@ -234,7 +234,7 @@
           <%= t('domestic_epc.sections.heat-demand.space_heating') %>
         </p>
         <p class="epc-rating-result govuk-body">
-          <span name="space-heat-demand"><%=
+          <span id="space-heat-demand"><%=
              assessment[:heatDemand][:currentSpaceHeatingDemand]
           %><span><%= t('domestic_epc.sections.heat-demand.kwh_per_year') %></span></span>
         </p>
@@ -244,7 +244,7 @@
           <%= t('domestic_epc.sections.heat-demand.water_heating') %>
         </p>
         <p class="epc-rating-result govuk-body">
-          <span name="water-heating-demand"><%=
+          <span id="water-heating-demand"><%=
             assessment[:heatDemand][:currentWaterHeatingDemand]
           %><span><%= t('domestic_epc.sections.heat-demand.kwh_per_year') %></span></span>
         </p>
@@ -261,7 +261,7 @@
         <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header"><%= t('domestic_epc.sections.heat-demand.loft_insulation') %></th>
-          <td class="govuk-table__cell" name="loft-insulation"><%
+          <td class="govuk-table__cell" id="loft-insulation"><%
             if assessment[:heatDemand][:impactOfLoftInsulation]
               %><%= assessment[:heatDemand][:impactOfLoftInsulation] %><%
             else
@@ -271,7 +271,7 @@
         </tr>
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header"><%= t('domestic_epc.sections.heat-demand.cavity_insulation') %></th>
-          <td class="govuk-table__cell" name="cavity-insulation"><%
+          <td class="govuk-table__cell" id="cavity-insulation"><%
             if assessment[:heatDemand][:impactOfCavityInsulation]
               %><%= assessment[:heatDemand][:impactOfCavityInsulation] %><%
             else
@@ -281,7 +281,7 @@
         </tr>
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header"><%= t('domestic_epc.sections.heat-demand.solid_wall_insulation') %></th>
-          <td class="govuk-table__cell" name="solid-wall-insulation"><%
+          <td class="govuk-table__cell" id="solid-wall-insulation"><%
              if assessment[:heatDemand][:impactOfSolidWallInsulation]
                %><%= assessment[:heatDemand][:impactOfSolidWallInsulation] %><%
              else
