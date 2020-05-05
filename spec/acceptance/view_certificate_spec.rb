@@ -42,9 +42,9 @@ describe "Acceptance::Certificate" do
       expect(response.body).to include("RdSAP")
     end
 
-    it 'shows the total floor area' do
+    it "shows the total floor area" do
       expect(response.body).to include(
-        '<dd class="govuk-summary-list__value govuk-!-font-weight-bold" name="total-floor-area">150 m<sup>2</sup></dd>'
+        '<dd class="govuk-summary-list__value govuk-!-font-weight-bold" name="total-floor-area">150 m<sup>2</sup></dd>',
       )
     end
 
@@ -82,33 +82,33 @@ describe "Acceptance::Certificate" do
       )
     end
 
-    it 'shows the current space heat demand' do
+    it "shows the current space heat demand" do
       expect(response.body).to include(
-        '<span name="space-heat-demand">222<span>kWh per year</span></span>'
+        '<span name="space-heat-demand">222<span>kWh per year</span></span>',
       )
     end
 
-    it 'shows the current water heat demand' do
+    it "shows the current water heat demand" do
       expect(response.body).to include(
-        '<span name="water-heating-demand">321<span>kWh per year</span></span>'
+        '<span name="water-heating-demand">321<span>kWh per year</span></span>',
       )
     end
 
-    it 'shows possible energy saving with loft insulation' do
+    it "shows possible energy saving with loft insulation" do
       expect(response.body).to include(
-        '<td class="govuk-table__cell" name="loft-insulation">79</td>'
+        '<td class="govuk-table__cell" name="loft-insulation">79</td>',
       )
     end
 
-    it 'shows possible energy saving with cavity insulation' do
+    it "shows possible energy saving with cavity insulation" do
       expect(response.body).to include(
-        '<td class="govuk-table__cell" name="cavity-insulation">67</td>'
+        '<td class="govuk-table__cell" name="cavity-insulation">67</td>',
       )
     end
 
-    it 'shows possible energy saving with solid wall insulation' do
+    it "shows possible energy saving with solid wall insulation" do
       expect(response.body).to include(
-        '<td class="govuk-table__cell" name="solid-wall-insulation">69</td>'
+        '<td class="govuk-table__cell" name="solid-wall-insulation">69</td>',
       )
     end
 
@@ -145,18 +145,18 @@ describe "Acceptance::Certificate" do
         )
       end
 
-      it 'shows the carbon emissions of the property' do
-        expect(response.body).to include('Average household produces')
+      it "shows the carbon emissions of the property" do
+        expect(response.body).to include("Average household produces")
         expect(response.body).to include(
-          '<dd class="govuk-summary-list__value" name="average-household-produces">6 tonnes of CO<sub>2</sub></dd>'
+          '<dd class="govuk-summary-list__value" name="average-household-produces">6 tonnes of CO<sub>2</sub></dd>',
         )
-        expect(response.body).to include('This property produces')
+        expect(response.body).to include("This property produces")
         expect(response.body).to include(
-          '<dd class="govuk-summary-list__value" name="property-produces">2.4 tonnes of CO<sub>2</sub></dd>'
+          '<dd class="govuk-summary-list__value" name="property-produces">2.4 tonnes of CO<sub>2</sub></dd>',
         )
         expect(response.body).to include("This property's potential production")
         expect(response.body).to include(
-          '<dd class="govuk-summary-list__value" name="potential-production">1.4 tonnes of CO<sub>2</sub></dd>'
+          '<dd class="govuk-summary-list__value" name="potential-production">1.4 tonnes of CO<sub>2</sub></dd>',
         )
       end
 
@@ -182,10 +182,10 @@ describe "Acceptance::Certificate" do
 
         it "shows the correct carbon emission values" do
           expect(response.body).to include(
-            '<dd class="govuk-summary-list__value" name="property-produces">7.8 tonnes of CO<sub>2</sub></dd>'
+            '<dd class="govuk-summary-list__value" name="property-produces">7.8 tonnes of CO<sub>2</sub></dd>',
           )
           expect(response.body).to include(
-            '<dd class="govuk-summary-list__value" name="potential-production">6.5 tonnes of CO<sub>2</sub></dd>'
+            '<dd class="govuk-summary-list__value" name="potential-production">6.5 tonnes of CO<sub>2</sub></dd>',
           )
         end
       end
@@ -243,15 +243,15 @@ describe "Acceptance::Certificate" do
       )
     end
 
-    it 'shows typicalSaving cost' do
+    it "shows typicalSaving cost" do
       expect(response.body).to include(
-        '<p class="govuk-body govuk-!-font-weight-bold" name="typical-saving-cost">£9,000</p>'
+        '<p class="govuk-body govuk-!-font-weight-bold" name="typical-saving-cost">£9,000</p>',
       )
     end
 
-    it 'shows typical indicativeCost' do
+    it "shows typical indicativeCost" do
       expect(response.body).to include(
-        '<p class="govuk-body govuk-!-font-weight-bold" name="indicative_cost">£300 - £400</p>'
+        '<p class="govuk-body govuk-!-font-weight-bold" name="indicative_cost">£300 - £400</p>',
       )
     end
 
@@ -293,9 +293,9 @@ describe "Acceptance::Certificate" do
     end
 
     context "with an invalid typical saving" do
-      it 'displays N/A on the page' do
+      it "displays N/A on the page" do
         expect(response.body).to include(
-          '<p class="govuk-body govuk-!-font-weight-bold" name="typical-saving-cost">Not applicable</p>'
+          '<p class="govuk-body govuk-!-font-weight-bold" name="typical-saving-cost">Not applicable</p>',
         )
       end
     end
