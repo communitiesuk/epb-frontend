@@ -61,11 +61,19 @@ describe "Acceptance::Certificate" do
     end
 
     it "shows the assessors accreditation scheme" do
-      expect(response.body).to include("Quidos")
+      expect(response.body).to include("Elmhurst Energy")
     end
 
     it "shows the assessors accreditation number" do
       expect(response.body).to include("TESTASSESSOR")
+    end
+
+    it "shows the accreditation scheme telephone number" do
+      expect(response.body).to include("01455 883 250")
+    end
+
+    it "shows the accreditation scheme email" do
+      expect(response.body).to include("enquiries@elmhurstenergy.co.uk")
     end
 
     it "shows the assessors telephone number" do

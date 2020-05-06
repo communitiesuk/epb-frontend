@@ -63,7 +63,7 @@ describe Gateway::CertificatesGateway do
         assessor: {
           firstName: "Test",
           lastName: "Boi",
-          registeredBy: { name: "Quidos", schemeId: 1 },
+          registeredBy: { name: "Elmhurst Energy", schemeId: 1 },
           schemeAssessorId: "TESTASSESSOR",
           dateOfBirth: "2019-12-04",
           contactDetails: {
