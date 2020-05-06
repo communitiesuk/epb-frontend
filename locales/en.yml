@@ -634,6 +634,22 @@ en:
       title: Party wall insulation
       description: Party wall insulation
 
+  disclosure_code:
+    1:
+      relation: 'No related party'
+    2:
+      relation: 'Relative of homeowner or of occupier of the property'
+    3:
+      relation: 'Residing at the property'
+    4:
+      relation: 'Financial interest in the property'
+    5:
+      relation: 'Owner or Director of the organisation dealing with the property transaction'
+    6:
+      relation: 'Employed by the professional dealing with the property transaction'
+    7:
+      relation: 'Relative of the professional dealing with the property transaction'
+
   error:
     error: 'Error: '
     500:

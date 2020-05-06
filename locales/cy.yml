@@ -481,6 +481,21 @@ cy:
       title: Insiwleiddio muriau cyd
       description: Insiwleiddio muriau cyd
 
+  disclosure_code:
+    1:
+      relation: 'Dim parti perthnasol'
+    2:
+      relation: 'Perthynas i berchennog y cartref neu ddeiliad yr eiddo'
+    3:
+      relation: 'Yn byw yn yr eiddo'
+    4:
+      relation: 'Buddiant ariannol yn yr eiddo'
+    5:
+      relation: 'Perchennog neu Gyfarwyddwr y corff sy’n delio â’r trafodyn eiddo'
+    6:
+      relation: 'Wedi’i gyflogi gan y person proffesiynol sy’n delio â’r trafodyn eiddo'
+    7:
+      relation: 'Perthynas i’r person proffesiynol sy’n delio â’r trafodyn eiddo'
 
   error:
     error: 'Welsh: Error: '
