@@ -37,6 +37,9 @@ FetchCertificate::Stub.fetch(
   true,
   7.8254,
   6.5123,
+  nil,
+  nil,
+  nil,
 )
 
 ENV["EPB_AUTH_CLIENT_ID"] = "test.id"

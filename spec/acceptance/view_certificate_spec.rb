@@ -82,34 +82,69 @@ describe "Acceptance::Certificate" do
       )
     end
 
-    it "shows the current space heat demand" do
-      expect(response.body).to include(
-        '<span id="space-heat-demand">222<span>kWh per year</span></span>',
-      )
-    end
+    context "when viewing the heat demand section" do
+      context "when there are no impacts" do
+        before {
+          FetchCertificate::Stub.fetch(
+            "123-123",
+            "25",
+            "f",
+            false,
+            7.8453,
+            6.5123,
+            nil,
+            nil,
+            nil,
+          )
+        }
 
-    it "shows the current water heat demand" do
-      expect(response.body).to include(
-        '<span id="water-heating-demand">321<span>kWh per year</span></span>',
-      )
-    end
+        let(:response) { get "/energy-performance-certificate/123-123" }
 
-    it "shows possible energy saving with loft insulation" do
-      expect(response.body).to include(
-        '<td class="govuk-table__cell" id="loft-insulation">79</td>',
-      )
-    end
+        it "does not show the potential space heating energy savings table" do
+          expect(response.body).not_to include(
+            '<p class="govuk-body">The table below shows the amount of energy that could be saved in this property by installing insulation, based on typical energy use.</p>',
+          )
+          expect(response.body).not_to include(
+            '<th scope="row" class="govuk-table__header">Loft insulation</th>',
+          )
+          expect(response.body).not_to include(
+            '<th scope="row" class="govuk-table__header">Cavity wall insulation</th>',
+          )
+          expect(response.body).not_to include(
+            '<th scope="row" class="govuk-table__header">Solid wall insulation</th>',
+          )
+        end
+      end
 
-    it "shows possible energy saving with cavity insulation" do
-      expect(response.body).to include(
-        '<td class="govuk-table__cell" id="cavity-insulation">67</td>',
-      )
-    end
+      it "shows the current space heat demand" do
+        expect(response.body).to include(
+          '<span id="space-heat-demand">222<span>kWh per year</span></span>',
+        )
+      end
 
-    it "shows possible energy saving with solid wall insulation" do
-      expect(response.body).to include(
-        '<td class="govuk-table__cell" id="solid-wall-insulation">69</td>',
-      )
+      it "shows the current water heat demand" do
+        expect(response.body).to include(
+          '<span id="water-heating-demand">321<span>kWh per year</span></span>',
+        )
+      end
+
+      it "shows possible energy saving with loft insulation" do
+        expect(response.body).to include(
+          '<td class="govuk-table__cell" id="loft-insulation">79</td>',
+        )
+      end
+
+      it "shows possible energy saving with cavity insulation" do
+        expect(response.body).to include(
+          '<td class="govuk-table__cell" id="cavity-insulation">67</td>',
+        )
+      end
+
+      it "shows possible energy saving with solid wall insulation" do
+        expect(response.body).to include(
+          '<td class="govuk-table__cell" id="solid-wall-insulation">69</td>',
+        )
+      end
     end
 
     context "when viewing Find ways to pay for recommendations section" do

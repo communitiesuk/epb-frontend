@@ -8,7 +8,10 @@ module FetchCertificate
       current_band = "b",
       recommended_improvements = false,
       current_carbon_emission = 2.4,
-      potential_carbon_emission = 1.4
+      potential_carbon_emission = 1.4,
+      impact_of_loft_insulation = 79,
+      impact_of_cavity_insulation = 67,
+      impact_of_solid_wall_insulation = 69
     )
       if assessment_id == "1111-1111-1111-1111-1112"
         body = {
@@ -173,9 +176,9 @@ module FetchCertificate
             heatDemand: {
               currentSpaceHeatingDemand: 222,
               currentWaterHeatingDemand: 321,
-              impactOfLoftInsulation: 79,
-              impactOfCavityInsulation: 67,
-              impactOfSolidWallInsulation: 69,
+              impactOfLoftInsulation: impact_of_loft_insulation,
+              impactOfCavityInsulation: impact_of_cavity_insulation,
+              impactOfSolidWallInsulation: impact_of_solid_wall_insulation,
             },
             recommendedImprovements: recommended_improvements,
           },
