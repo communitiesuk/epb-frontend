@@ -76,6 +76,10 @@ describe "Acceptance::Certificate" do
       expect(response.body).to include("enquiries@elmhurstenergy.co.uk")
     end
 
+    it "shows the assessors related party disclosure" do
+      expect(response.body).to include("No related party")
+    end
+
     it "shows the assessors telephone number" do
       expect(response.body).to include("12345678901")
     end
@@ -88,6 +92,18 @@ describe "Acceptance::Certificate" do
       expect(response.body).to_not include(
         "The owner of this property may not be able to let it",
       )
+    end
+
+    context "with different carbon emissions" do
+      before do
+        FetchCertificate::Stub.fetch("1111-1111-1111-1111-1112")
+      end
+
+      let(:response) { get "/energy-performance-certificate/1111-1111-1111-1111-1112" }
+
+      it "shows relate party disclosure text not disclosure code translation" do
+        expect(response.body).to include("Financial interest in the property")
+      end
     end
 
     context "when viewing the heat demand section" do

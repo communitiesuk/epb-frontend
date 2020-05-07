@@ -43,6 +43,8 @@ module FetchCertificate
             },
             "currentEnergyEfficiencyBand": "e",
             "potentialEnergyEfficiencyBand": "e",
+            "relatedPartyDisclosureText": "Financial interest in the property",
+            "relatedPartyDisclosureNumber": nil,
             "recommendedImprovements": [
               {
                 "sequence": 0,
@@ -93,8 +95,6 @@ module FetchCertificate
                 "nonDomesticNos4": "ACTIVE",
                 "nonDomesticNos5": "INACTIVE",
               },
-              "relatedPartyDisclosureText": 'Financial interest in the property',
-              "relatedPartyDisclosureNumber": nil,
             },
           },
           "meta": {},

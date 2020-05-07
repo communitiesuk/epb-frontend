@@ -345,6 +345,20 @@
       <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key govuk-!-width-one-half govuk-!-font-weight-regular">
+            <%= t('domestic_epc.sections.information.certificate.list.disclosure') %>
+          </dt>
+          <% if assessment[:relatedPartyDisclosureNumber] %>
+            <dd class="govuk-summary-list__value govuk-!-font-weight-bold">
+              <%= t("disclosure_code.#{assessment[:relatedPartyDisclosureNumber]}.relation") %>
+            </dd>
+          <%else%>
+            <dd class="govuk-summary-list__value govuk-!-font-weight-bold">
+              <%= assessment[:relatedPartyDisclosureText] %>
+            </dd>
+          <% end %>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-half govuk-!-font-weight-regular">
             <%= t('domestic_epc.sections.information.certificate.list.date_of_assessment') %>
           </dt>
           <dd class="govuk-summary-list__value govuk-!-font-weight-bold">
