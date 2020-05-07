@@ -29,6 +29,8 @@ describe UseCase::FindCertificateById do
           potentialEnergyEfficiencyBand: 95,
           postcode: "SW1B 2BB",
           dateOfExpiry: "2023-01-01",
+          relatedPartyDisclosureText: nil,
+          relatedPartyDisclosureNumber: 2,
           heatDemand: {
             currentSpaceHeatingDemand: 222,
             currentWaterHeatingDemand: 321,

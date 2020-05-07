@@ -51,6 +51,8 @@ describe UseCase::FetchCertificate do
         addressLine3: "",
         addressLine4: "",
         town: "London",
+        relatedPartyDisclosureText: nil,
+        relatedPartyDisclosureNumber: 1,
         heatDemand: {
           currentSpaceHeatingDemand: 222,
           currentWaterHeatingDemand: 321,
@@ -100,6 +102,8 @@ describe UseCase::FetchCertificate do
         addressLine3: "",
         addressLine4: "",
         town: "London",
+        relatedPartyDisclosureText: nil,
+        relatedPartyDisclosureNumber: 1,
         heatDemand: {
           currentSpaceHeatingDemand: 222,
           currentWaterHeatingDemand: 321,

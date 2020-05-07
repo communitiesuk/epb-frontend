@@ -24,6 +24,8 @@ module CertificatesGateway
               potentialEnergyEfficiencyBand: 95,
               postcode: "SW1B 2BB",
               dateOfExpiry: "2021-01-01",
+              relatedPartyDisclosureText: 'Financial interest in the property',
+              relatedPartyDisclosureNumber: nil,
               heatDemand: {
                 currentSpaceHeatingDemand: 222,
                 currentWaterHeatingDemand: 321,
@@ -46,6 +48,8 @@ module CertificatesGateway
               potentialEnergyEfficiencyBand: 95,
               postcode: "SW1B 2BB",
               dateOfExpiry: "2022-01-01",
+              relatedPartyDisclosureText: nil,
+              relatedPartyDisclosureNumber: 4,
               heatDemand: {
                 currentSpaceHeatingDemand: 222,
                 currentWaterHeatingDemand: 321,
@@ -68,6 +72,8 @@ module CertificatesGateway
               potentialEnergyEfficiencyBand: 95,
               postcode: "SW1B 2BB",
               dateOfExpiry: "2023-01-01",
+              relatedPartyDisclosureText: 'Financial interest in the property',
+              relatedPartyDisclosureNumber: nil,
               heatDemand: {
                 currentSpaceHeatingDemand: 222,
                 currentWaterHeatingDemand: 321,
@@ -102,6 +108,8 @@ module CertificatesGateway
             "addressLine3": "",
             "addressLine4": "",
             "town": "Post-Town1",
+            "relatedPartyDisclosureText": 'Financial interest in the property',
+            "relatedPartyDisclosureNumber": nil,
             "heatDemand": {
               "currentSpaceHeatingDemand": 30.0,
               "currentWaterHeatingDemand": 60.0,
@@ -178,6 +186,8 @@ module CertificatesGateway
                 potentialEnergyEfficiencyBand: 95,
                 postcode: "SW1B 2BB",
                 dateOfExpiry: "2023-01-01",
+                relatedPartyDisclosureText: nil,
+                relatedPartyDisclosureNumber: 2,
                 heatDemand: {
                   currentSpaceHeatingDemand: 222,
                   currentWaterHeatingDemand: 321,
@@ -213,6 +223,8 @@ module CertificatesGateway
               dateOfExpiry: "2021-01-01",
               addressLine1: street_name,
               town: town,
+              relatedPartyDisclosureText: 'Financial interest in the property',
+              relatedPartyDisclosureNumber: nil,
               heatDemand: {
                 currentSpaceHeatingDemand: 222,
                 currentWaterHeatingDemand: 321,
@@ -237,6 +249,8 @@ module CertificatesGateway
               dateOfExpiry: "2022-01-01",
               addressLine1: street_name,
               town: town,
+              relatedPartyDisclosureText: 'No related party',
+              relatedPartyDisclosureNumber: nil,
               heatDemand: {
                 currentSpaceHeatingDemand: 222,
                 currentWaterHeatingDemand: 321,
@@ -261,6 +275,8 @@ module CertificatesGateway
               dateOfExpiry: "2023-01-01",
               addressLine1: street_name,
               town: town,
+              relatedPartyDisclosureText: nil,
+              relatedPartyDisclosureNumber: 1,
               heatDemand: {
                 currentSpaceHeatingDemand: 222,
                 currentWaterHeatingDemand: 321,
@@ -357,6 +373,8 @@ module CertificatesGateway
             impactOfSolidWallInsulation: 69,
           },
           recommendedImprovements: recommended_improvements,
+          relatedPartyDisclosureText: nil,
+          relatedPartyDisclosureNumber: 1,
         },
       }
     end

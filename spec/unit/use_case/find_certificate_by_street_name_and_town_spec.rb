@@ -52,6 +52,8 @@ describe UseCase::FindCertificateByStreetNameAndTown do
           dateOfExpiry: "2021-01-01",
           addressLine1: "Marsham Street",
           town: "London",
+          relatedPartyDisclosureText: 'Financial interest in the property',
+          relatedPartyDisclosureNumber: nil,
           heatDemand: {
             currentSpaceHeatingDemand: 222,
             currentWaterHeatingDemand: 321,
@@ -76,6 +78,8 @@ describe UseCase::FindCertificateByStreetNameAndTown do
           dateOfExpiry: "2022-01-01",
           addressLine1: "Marsham Street",
           town: "London",
+          relatedPartyDisclosureText: 'No related party',
+          relatedPartyDisclosureNumber: nil,
           heatDemand: {
             currentSpaceHeatingDemand: 222,
             currentWaterHeatingDemand: 321,
@@ -100,6 +104,8 @@ describe UseCase::FindCertificateByStreetNameAndTown do
           dateOfExpiry: "2023-01-01",
           addressLine1: "Marsham Street",
           town: "London",
+          relatedPartyDisclosureText: nil,
+          relatedPartyDisclosureNumber: 1,
           heatDemand: {
             currentSpaceHeatingDemand: 222,
             currentWaterHeatingDemand: 321,

@@ -100,6 +100,8 @@ describe Gateway::CertificatesGateway do
           impactOfSolidWallInsulation: 69,
         },
         recommendedImprovements: [],
+        relatedPartyDisclosureText: nil,
+        relatedPartyDisclosureNumber: 1,
       )
     end
   end

@@ -29,6 +29,8 @@ describe UseCase::FindCertificateByPostcode do
           potentialEnergyEfficiencyBand: 95,
           postcode: "SW1B 2BB",
           dateOfExpiry: "2021-01-01",
+          relatedPartyDisclosureText: 'Financial interest in the property',
+          relatedPartyDisclosureNumber: nil,
           heatDemand: {
             currentSpaceHeatingDemand: 222,
             currentWaterHeatingDemand: 321,
@@ -51,6 +53,8 @@ describe UseCase::FindCertificateByPostcode do
           potentialEnergyEfficiencyBand: 95,
           postcode: "SW1B 2BB",
           dateOfExpiry: "2022-01-01",
+          relatedPartyDisclosureText: nil,
+          relatedPartyDisclosureNumber: 4,
           heatDemand: {
             currentSpaceHeatingDemand: 222,
             currentWaterHeatingDemand: 321,
@@ -73,6 +77,8 @@ describe UseCase::FindCertificateByPostcode do
           potentialEnergyEfficiencyBand: 95,
           postcode: "SW1B 2BB",
           dateOfExpiry: "2023-01-01",
+          relatedPartyDisclosureText: 'Financial interest in the property',
+          relatedPartyDisclosureNumber: nil,
           heatDemand: {
             currentSpaceHeatingDemand: 222,
             currentWaterHeatingDemand: 321,

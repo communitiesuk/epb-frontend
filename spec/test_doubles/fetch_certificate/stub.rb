@@ -93,6 +93,8 @@ module FetchCertificate
                 "nonDomesticNos4": "ACTIVE",
                 "nonDomesticNos5": "INACTIVE",
               },
+              "relatedPartyDisclosureText": 'Financial interest in the property',
+              "relatedPartyDisclosureNumber": nil,
             },
           },
           "meta": {},
@@ -181,6 +183,8 @@ module FetchCertificate
               impactOfSolidWallInsulation: impact_of_solid_wall_insulation,
             },
             recommendedImprovements: recommended_improvements,
+            relatedPartyDisclosureText: nil,
+            relatedPartyDisclosureNumber: 1,
           },
         }
       end
