@@ -347,7 +347,7 @@
           <dt class="govuk-summary-list__key govuk-!-width-one-half govuk-!-font-weight-regular">
             <%= t('domestic_epc.sections.information.certificate.list.disclosure') %>
           </dt>
-          <% if assessment[:relatedPartyDisclosureNumber] %>
+          <% if assessment[:relatedPartyDisclosureNumber].between?(1, 7)  %>
             <dd class="govuk-summary-list__value govuk-!-font-weight-bold">
               <%= t("disclosure_code.#{assessment[:relatedPartyDisclosureNumber]}.relation") %>
             </dd>
