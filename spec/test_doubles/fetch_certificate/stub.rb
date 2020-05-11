@@ -11,7 +11,9 @@ module FetchCertificate
       potential_carbon_emission = 1.4,
       impact_of_loft_insulation = 79,
       impact_of_cavity_insulation = 67,
-      impact_of_solid_wall_insulation = 69
+      impact_of_solid_wall_insulation = 69,
+      related_party_disclosure_text = nil,
+      related_party_disclosure_number = 1
     )
       if assessment_id == "1111-1111-1111-1111-1112"
         body = {
@@ -183,8 +185,8 @@ module FetchCertificate
               impactOfSolidWallInsulation: impact_of_solid_wall_insulation,
             },
             recommendedImprovements: recommended_improvements,
-            relatedPartyDisclosureText: nil,
-            relatedPartyDisclosureNumber: 1,
+            relatedPartyDisclosureText: related_party_disclosure_text,
+            relatedPartyDisclosureNumber: related_party_disclosure_number,
           },
         }
       end

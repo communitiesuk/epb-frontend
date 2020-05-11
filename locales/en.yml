@@ -422,6 +422,7 @@ en:
             date_of_certificate: 'Date of certificate'
             type_of_assessment: 'Type of assessment'
             no_disclosure: 'No related party disclosure provided'
+            disclosure_number_not_vaild: 'The disclosure code provided is not valid'
 
   improvement_code:
     1:

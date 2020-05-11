@@ -106,6 +106,54 @@ describe "Acceptance::Certificate" do
       end
     end
 
+    context "When a relate party disclosure code is not valid" do
+      before do
+        FetchCertificate::Stub.fetch(
+         "123-123",
+         "25",
+         "f",
+         false,
+         7.8453,
+         6.5123,
+         nil,
+         nil,
+         nil,
+         nil,
+         12,
+         )
+      end
+
+      let(:response) { get "/energy-performance-certificate/123-123" }
+
+      it "shows relate party disclosure code is not valid" do
+        expect(response.body).to include("The disclosure code provided is not valid")
+      end
+    end
+
+    context "When a relate party disclosure code and text are nil" do
+      before do
+        FetchCertificate::Stub.fetch(
+            "123-123",
+            "25",
+            "f",
+            false,
+            7.8453,
+            6.5123,
+            nil,
+            nil,
+            nil,
+            nil,
+            nil,
+            )
+      end
+
+      let(:response) { get "/energy-performance-certificate/123-123" }
+
+      it "shows relate party disclosure text and code not present" do
+        expect(response.body).to include("No related party disclosure provided")
+      end
+    end
+
     context "when viewing the heat demand section" do
       context "when there are no impacts" do
         before {
