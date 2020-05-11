@@ -76,7 +76,7 @@ describe "Acceptance::Certificate" do
       expect(response.body).to include("enquiries@elmhurstenergy.co.uk")
     end
 
-    it "shows the assessors related party disclosure" do
+    it "shows the assessors related party disclosure using code" do
       expect(response.body).to include("No related party")
     end
 
@@ -94,14 +94,14 @@ describe "Acceptance::Certificate" do
       )
     end
 
-    context "When a relate party disclosure code is not included" do
+    context "When a related party disclosure code is not included" do
       before do
         FetchCertificate::Stub.fetch("1111-1111-1111-1111-1112")
       end
 
       let(:response) { get "/energy-performance-certificate/1111-1111-1111-1111-1112" }
 
-      it "shows relate party disclosure text not disclosure code translation" do
+      it "shows related party disclosure text, not disclosure code translation" do
         expect(response.body).to include("Financial interest in the property")
       end
     end
@@ -125,12 +125,12 @@ describe "Acceptance::Certificate" do
 
       let(:response) { get "/energy-performance-certificate/123-123" }
 
-      it "shows relate party disclosure code is not valid" do
+      it "shows related party disclosure code is not valid" do
         expect(response.body).to include("The disclosure code provided is not valid")
       end
     end
 
-    context "When a relate party disclosure code and text are nil" do
+    context "When a related party disclosure code and text are nil" do
       before do
         FetchCertificate::Stub.fetch(
             "123-123",
@@ -149,7 +149,7 @@ describe "Acceptance::Certificate" do
 
       let(:response) { get "/energy-performance-certificate/123-123" }
 
-      it "shows relate party disclosure text and code not present" do
+      it "shows related party disclosure text and code not present" do
         expect(response.body).to include("No related party disclosure provided")
       end
     end
