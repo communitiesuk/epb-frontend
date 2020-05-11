@@ -94,7 +94,7 @@ describe "Acceptance::Certificate" do
       )
     end
 
-    context "with different carbon emissions" do
+    context "When a relate party disclosure code is not included" do
       before do
         FetchCertificate::Stub.fetch("1111-1111-1111-1111-1112")
       end
