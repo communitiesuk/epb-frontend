@@ -103,22 +103,34 @@
       <a id="summary"></a>
       <h2 class="govuk-heading-l"><%= t('domestic_epc.sections.summary.title') %></h2>
       <p class="govuk-body"><%= t('domestic_epc.sections.summary.intro') %></p>
-      <dl class="govuk-summary-list">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
-            <%= t('domestic_epc.sections.summary.list.total_floor_area') %>
-          </dt>
-          <dd class="govuk-summary-list__value govuk-!-font-weight-bold" id="total-floor-area"><%= assessment[:totalFloorArea] %> m<sup>2</sup></dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
-            <%= t('domestic_epc.sections.summary.list.dwelling_type') %>
-          </dt>
-          <dd class="govuk-summary-list__value govuk-!-font-weight-bold">
-            <%= assessment[:dwellingType] %>
-          </dd>
-        </div>
-      </dl>
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Feature</th>
+          <th scope="col" class="govuk-table__header">Description</th>
+          <th scope="col" class="govuk-table__header">Energy performance</th>
+        </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><%= t('domestic_epc.sections.summary.list.total_floor_area') %></td>
+            <td class="govuk-table__cell"><%= assessment[:totalFloorArea] %> m<sup>2</sup></td>
+            <td class="govuk-table__header"></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><%= t('domestic_epc.sections.summary.list.dwelling_type') %></td>
+            <td class="govuk-table__cell"><%= assessment[:dwellingType] %></td>
+            <td class="govuk-table__header"></td>
+          </tr>
+          <% assessment[:propertySummary].each do |property_item| %>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><%= property_item[:name] %></td>
+              <td class="govuk-table__cell"><%= property_item[:description] %></td>
+              <td class="govuk-table__header"><%= property_item[:energyEfficencyRating] %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
     </div>
   </div>
   <div class="govuk-grid-column-two-thirds">

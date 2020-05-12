@@ -44,7 +44,7 @@ describe "Acceptance::Certificate" do
 
     it "shows the total floor area" do
       expect(response.body).to include(
-        '<dd class="govuk-summary-list__value govuk-!-font-weight-bold" id="total-floor-area">150 m<sup>2</sup></dd>',
+        '<td class="govuk-table__cell">150 m<sup>2</sup></td>',
       )
     end
 
@@ -109,18 +109,18 @@ describe "Acceptance::Certificate" do
     context "When a relate party disclosure code is not valid" do
       before do
         FetchCertificate::Stub.fetch(
-         "123-123",
-         "25",
-         "f",
-         false,
-         7.8453,
-         6.5123,
-         nil,
-         nil,
-         nil,
-         nil,
-         12,
-         )
+          "123-123",
+          "25",
+          "f",
+          false,
+          7.8453,
+          6.5123,
+          nil,
+          nil,
+          nil,
+          nil,
+          12,
+        )
       end
 
       let(:response) { get "/energy-performance-certificate/123-123" }
@@ -133,18 +133,18 @@ describe "Acceptance::Certificate" do
     context "When a related party disclosure code and text are nil" do
       before do
         FetchCertificate::Stub.fetch(
-            "123-123",
-            "25",
-            "f",
-            false,
-            7.8453,
-            6.5123,
-            nil,
-            nil,
-            nil,
-            nil,
-            nil,
-            )
+          "123-123",
+          "25",
+          "f",
+          false,
+          7.8453,
+          6.5123,
+          nil,
+          nil,
+          nil,
+          nil,
+          nil,
+        )
       end
 
       let(:response) { get "/energy-performance-certificate/123-123" }
@@ -314,6 +314,12 @@ describe "Acceptance::Certificate" do
         expect(response.body).to include(
           "There are no recommendations for this property.",
         )
+      end
+    end
+
+    context "when there is a property_summary key" do
+      it "will list all of the property_summary elements" do
+        expect(response.body).to include('<td class="govuk-table__cell">Walls</td>')
       end
     end
   end

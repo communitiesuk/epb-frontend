@@ -13,8 +13,11 @@ module FetchCertificate
       impact_of_cavity_insulation = 67,
       impact_of_solid_wall_insulation = 69,
       related_party_disclosure_text = nil,
-      related_party_disclosure_number = 1
+      related_party_disclosure_number = 1,
+      property_summary = nil
     )
+      property_summary ||= generate_property_summary
+
       if assessment_id == "1111-1111-1111-1111-1112"
         body = {
           "data": {
@@ -47,6 +50,7 @@ module FetchCertificate
             "potentialEnergyEfficiencyBand": "e",
             "relatedPartyDisclosureText": "Financial interest in the property",
             "relatedPartyDisclosureNumber": nil,
+            "propertySummary": [],
             "recommendedImprovements": [
               {
                 "sequence": 0,
@@ -187,6 +191,7 @@ module FetchCertificate
             recommendedImprovements: recommended_improvements,
             relatedPartyDisclosureText: related_party_disclosure_text,
             relatedPartyDisclosureNumber: related_party_disclosure_number,
+            propertySummary: property_summary,
           },
         }
       end
@@ -196,6 +201,10 @@ module FetchCertificate
         "http://test-api.gov.uk/api/assessments/domestic-epc/#{assessment_id}",
       )
         .to_return(status: 200, body: body.to_json)
+    end
+
+    def self.generate_property_summary
+      [{ name: "Walls" }]
     end
   end
 end
