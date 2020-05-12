@@ -350,15 +350,7 @@
             <%= t('domestic_epc.sections.information.certificate.list.disclosure') %>
           </dt>
           <dd class="govuk-summary-list__value govuk-!-font-weight-bold">
-          <% if assessment[:relatedPartyDisclosureNumber] && assessment[:relatedPartyDisclosureNumber].between?(1, 7) %>
-              <%= t("disclosure_code.#{assessment[:relatedPartyDisclosureNumber]}.relation") %>
-          <% elsif assessment[:relatedPartyDisclosureNumber] && !assessment[:relatedPartyDisclosureNumber].between?(1, 7) %>
-              <%= t('domestic_epc.sections.information.certificate.list.disclosure_number_not_vaild') %>
-          <% elsif assessment[:relatedPartyDisclosureNumber] == nil && assessment[:relatedPartyDisclosureText] == nil %>
-              <%= t('domestic_epc.sections.information.certificate.list.no_disclosure') %>
-          <% else %>
-              <%= assessment[:relatedPartyDisclosureText] %>
-          <% end %>
+            <%= party_disclosure(assessment[:relatedPartyDisclosureNumber], assessment[:relatedPartyDisclosureText]) %>
           </dd>
         </div>
         <div class="govuk-summary-list__row">

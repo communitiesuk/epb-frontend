@@ -44,6 +44,22 @@ module Sinatra
         )
       end
 
+      def party_disclosure(code, string)
+        text = t("disclosure_code.#{code}.relation")
+        if text.include?("missing")
+          text = string
+          if text == nil
+            text = if code
+                     t("domestic_epc.sections.information.certificate.list.disclosure_number_not_valid")
+                   else
+                     t("domestic_epc.sections.information.certificate.list.no_disclosure")
+                   end
+          end
+        end
+
+        text
+      end
+
       def localised_url(url)
         if I18n.locale != I18n.available_locales[0]
           url = url_for(url, lang: I18n.locale.to_s)
