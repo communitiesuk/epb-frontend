@@ -317,19 +317,27 @@ describe "Acceptance::Certificate" do
       end
     end
 
-    context "when there is a property_summary key" do
-      it "will list all of the property_summary elements" do
-        expect(response.body).to include('<td class="govuk-table__cell">Walls</td>')
+    context "When viewing the Breakdown of propertys energy performance section" do
+      it "will show the section title" do
+        expect(response.body).to include(`Breakdown of property's energy performance`)
       end
-    end
 
-    context "when the property_summary key is empty" do
-      before { FetchCertificate::Stub.fetch("1111-1111-1111-1111-1112") }
+      context "when there is a property_summary key" do
+        it "will list all of the property_summary elements" do
+          expect(response.body).to include('<td class="govuk-table__cell">Walls</td>')
+          expect(response.body).to include('<td class="govuk-table__cell">Poor</td>')
+        end
+      end
 
-      let(:response) { get "/energy-performance-certificate/1111-1111-1111-1111-1112" }
+      context "when the property_summary key is empty" do
+        before { FetchCertificate::Stub.fetch("1111-1111-1111-1111-1112") }
 
-      it "will not show the the proerty summary eleements" do
-        expect(response.body).not_to include('<td class="govuk-table__cell">Walls</td>')
+        let(:response) { get "/energy-performance-certificate/1111-1111-1111-1111-1112" }
+
+        it "will not show the the proerty summary eleements" do
+          expect(response.body).not_to include('<td class="govuk-table__cell">Walls</td>')
+          expect(response.body).not_to include('<td class="govuk-table__cell">Poor</td>')
+        end
       end
     end
   end

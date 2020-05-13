@@ -102,7 +102,7 @@ describe Gateway::CertificatesGateway do
         recommendedImprovements: [],
         relatedPartyDisclosureText: nil,
         relatedPartyDisclosureNumber: 1,
-        propertySummary: [{ name: "Walls" }],
+        propertySummary: [{ name: "Walls", description: "Many walls", energyEfficiencyRating: "2" }],
       )
     end
   end

@@ -351,6 +351,9 @@ en:
       summary:
         title: "Breakdown of property's energy performance"
         intro: "The energy performance of each feature of this property that was assessed is summarised below. This does not take into consideration the physical condition of any part of your property."
+        table_header_feature: "Feature"
+        table_header_description: "Description"
+        table_header_energy_performance: "Energy performance"
         list:
           total_floor_area: 'Total floor area'
           dwelling_type: 'Property type'
@@ -423,6 +426,20 @@ en:
             type_of_assessment: 'Type of assessment'
             no_disclosure: 'No related party disclosure provided'
             disclosure_number_not_valid: 'The disclosure code provided is not valid'
+
+  energy_performance_rating:
+    0:
+      energy_performance: ""
+    1:
+      energy_performance: Very poor
+    2:
+      energy_performance: Poor
+    3:
+      energy_performance: Average
+    4:
+      energy_performance: Good
+    5:
+      energy_performance: Very good
 
   improvement_code:
     1:
