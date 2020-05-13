@@ -24,7 +24,7 @@ module CertificatesGateway
               potentialEnergyEfficiencyBand: 95,
               postcode: "SW1B 2BB",
               dateOfExpiry: "2021-01-01",
-              relatedPartyDisclosureText: 'Financial interest in the property',
+              relatedPartyDisclosureText: "Financial interest in the property",
               relatedPartyDisclosureNumber: nil,
               heatDemand: {
                 currentSpaceHeatingDemand: 222,
@@ -72,7 +72,7 @@ module CertificatesGateway
               potentialEnergyEfficiencyBand: 95,
               postcode: "SW1B 2BB",
               dateOfExpiry: "2023-01-01",
-              relatedPartyDisclosureText: 'Financial interest in the property',
+              relatedPartyDisclosureText: "Financial interest in the property",
               relatedPartyDisclosureNumber: nil,
               heatDemand: {
                 currentSpaceHeatingDemand: 222,
@@ -108,7 +108,7 @@ module CertificatesGateway
             "addressLine3": "",
             "addressLine4": "",
             "town": "Post-Town1",
-            "relatedPartyDisclosureText": 'Financial interest in the property',
+            "relatedPartyDisclosureText": "Financial interest in the property",
             "relatedPartyDisclosureNumber": nil,
             "heatDemand": {
               "currentSpaceHeatingDemand": 30.0,
@@ -223,7 +223,7 @@ module CertificatesGateway
               dateOfExpiry: "2021-01-01",
               addressLine1: street_name,
               town: town,
-              relatedPartyDisclosureText: 'Financial interest in the property',
+              relatedPartyDisclosureText: "Financial interest in the property",
               relatedPartyDisclosureNumber: nil,
               heatDemand: {
                 currentSpaceHeatingDemand: 222,
@@ -249,7 +249,7 @@ module CertificatesGateway
               dateOfExpiry: "2022-01-01",
               addressLine1: street_name,
               town: town,
-              relatedPartyDisclosureText: 'No related party',
+              relatedPartyDisclosureText: "No related party",
               relatedPartyDisclosureNumber: nil,
               heatDemand: {
                 currentSpaceHeatingDemand: 222,
