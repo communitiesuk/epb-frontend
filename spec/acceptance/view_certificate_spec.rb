@@ -322,6 +322,16 @@ describe "Acceptance::Certificate" do
         expect(response.body).to include('<td class="govuk-table__cell">Walls</td>')
       end
     end
+
+    context "when there is a property_summary key" do
+      before { FetchCertificate::Stub.fetch("1111-1111-1111-1111-1112") }
+
+      let(:response) { get "/energy-performance-certificate/1111-1111-1111-1111-1112" }
+
+      it "will not show the property_summary if its empty" do
+        expect(response.body).not_to include('<td class="govuk-table__cell">Walls</td>')
+      end
+    end
   end
 
   context "when the assessment exists with recommendations" do
