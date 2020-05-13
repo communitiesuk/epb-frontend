@@ -122,12 +122,14 @@
             <td class="govuk-table__cell"><%= assessment[:dwellingType] %></td>
             <td class="govuk-table__header"></td>
           </tr>
-          <% assessment[:propertySummary].each do |property_item| %>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell"><%= property_item[:name] %></td>
-              <td class="govuk-table__cell"><%= property_item[:description] %></td>
-              <td class="govuk-table__header"><%= property_item[:energyEfficiencyRating] %></td>
-            </tr>
+          <% if assessment[:propertySummary] %>
+            <% assessment[:propertySummary].each do |property_item| %>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><%= property_item[:name] %></td>
+                <td class="govuk-table__cell"><%= property_item[:description] %></td>
+                <td class="govuk-table__header"><%= property_item[:energyEfficiencyRating] %></td>
+              </tr>
+            <% end %>
           <% end %>
         </tbody>
       </table>
