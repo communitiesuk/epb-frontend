@@ -268,6 +268,20 @@ cy:
       rhi_url: 'https://www.gov.uk/domestic-renewable-heat-incentive'
       rhi_url_text: 'RHI information page'
 
+  energy_performance_rating:
+    '0':
+      energy_performance: ''
+    1:
+      energy_performance: Gwael iawn
+    2:
+      energy_performance: Gwael
+    3:
+      energy_performance: Cyfartaledd
+    4:
+      energy_performance: Da
+    5:
+      energy_performance: Da iawn
+
   improvement_code:
     1:
       title: Inswleiddiad silindr dŵr poeth

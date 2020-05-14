@@ -428,8 +428,8 @@ en:
             disclosure_number_not_valid: 'The disclosure code provided is not valid'
 
   energy_performance_rating:
-    0:
-      energy_performance: ""
+    '0':
+      energy_performance: ''
     1:
       energy_performance: Very poor
     2:
