@@ -244,6 +244,30 @@ cy:
 
   domestic_epc:
     top_heading: 'Welsh: Energy Performance Certificate'
+    sections:
+      summary:
+        title: "Welsh: Breakdown of property's energy performance"
+        intro: "Welsh: The table below shows the energy performance for features of this property. Only features relevant to this property are shown. The assessment does not consider the condition of a feature and how well it is working."
+        assessment_rating_explaination: 'Welsh: Each feature is assessed as one of the following:'
+        assessment_ratings:
+          very_poor: 'Welsh: very poor (least efficient)'
+          poor: 'Welsh: poor'
+          average: 'Welsh: average'
+          good: 'Welsh: good'
+          very_good: 'Welsh: very good (most efficient)'
+        not_inspected: "Welsh: When the description says 'assumed', it means that the insulation could not be inspected and an assumption has been made based on the age and type of your property."
+        table_headers:
+          feature: "Welsh: Feature"
+          description: "Welsh: Description"
+          energy_performance: "Welsh: Energy performance"
+        primary_energy_use: 'Welsh: Primary Energy use'
+        primary_energy_use_description: 'Welsh: The primary energy use for this property per year is 989 kilowatt hours (kWh) per square metre'
+        primary_energy_use_dropdown:
+          what_is_primary_energy_use_title: 'Welsh: What is Primary Energy use?'
+          what_is_primary_energy_use_details: 'Welsh: Primary energy use is a measure of the energy required for lighting, heating and hot water in a property. The calculation includes:'
+          efficiency_of_heating: 'Welsh: the efficiency of the property’s heating system'
+          efficiency_of_electricity: 'Welsh: power station efficiency for electricity'
+          fuel_for_property: 'Welsh: the energy used to produce the fuel and deliver it to the property'
     labels:
       certificate_number: 'Welsh: Reference number'
       date_of_assessment: 'Welsh: Date of assessment'
