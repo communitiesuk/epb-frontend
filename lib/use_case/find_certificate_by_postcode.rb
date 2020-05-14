@@ -6,7 +6,8 @@ module UseCase
       unless Regexp.new(
         '^[A-Z]{1,2}\d[A-Z\d]?\s?\d[A-Z]{2}$',
         Regexp::IGNORECASE,
-      ).match(query)
+      )
+               .match(query)
         raise Errors::PostcodeNotValid
       end
 

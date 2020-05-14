@@ -95,11 +95,11 @@ describe "Acceptance::Certificate" do
     end
 
     context "When a related party disclosure code is not included" do
-      before do
-        FetchCertificate::Stub.fetch("1111-1111-1111-1111-1112")
-      end
+      before { FetchCertificate::Stub.fetch("1111-1111-1111-1111-1112") }
 
-      let(:response) { get "/energy-performance-certificate/1111-1111-1111-1111-1112" }
+      let(:response) do
+        get "/energy-performance-certificate/1111-1111-1111-1111-1112"
+      end
 
       it "shows related party disclosure text, not disclosure code translation" do
         expect(response.body).to include("Financial interest in the property")
@@ -126,7 +126,9 @@ describe "Acceptance::Certificate" do
       let(:response) { get "/energy-performance-certificate/123-123" }
 
       it "shows related party disclosure code is not valid" do
-        expect(response.body).to include("The disclosure code provided is not valid")
+        expect(response.body).to include(
+          "The disclosure code provided is not valid",
+        )
       end
     end
 
@@ -156,7 +158,7 @@ describe "Acceptance::Certificate" do
 
     context "when viewing the heat demand section" do
       context "when there are no impacts" do
-        before {
+        before do
           FetchCertificate::Stub.fetch(
             "123-123",
             "25",
@@ -168,7 +170,7 @@ describe "Acceptance::Certificate" do
             nil,
             nil,
           )
-        }
+        end
 
         let(:response) { get "/energy-performance-certificate/123-123" }
 
@@ -225,11 +227,15 @@ describe "Acceptance::Certificate" do
       end
 
       it "shows the text" do
-        expect(response.body).to include("Find energy grants and ways to save energy in your home.")
+        expect(response.body).to include(
+          "Find energy grants and ways to save energy in your home.",
+        )
       end
 
       it "shows the link" do
-        expect(response.body).to include("https://www.gov.uk/improve-energy-efficiency")
+        expect(response.body).to include(
+          "https://www.gov.uk/improve-energy-efficiency",
+        )
       end
     end
 
@@ -319,24 +325,36 @@ describe "Acceptance::Certificate" do
 
     context "When viewing the Breakdown of propertys energy performance section" do
       it "will show the section title" do
-        expect(response.body).to include(`Breakdown of property's energy performance`)
+        expect(response.body).to include(
+          `Breakdown of property's energy performance`,
+        )
       end
 
       context "when there is a property_summary key" do
         it "will list all of the property_summary elements" do
-          expect(response.body).to include('<td class="govuk-table__cell">Walls</td>')
-          expect(response.body).to include('<td class="govuk-table__cell govuk-!-font-weight-bold">Poor</td>')
+          expect(response.body).to include(
+            '<td class="govuk-table__cell">Walls</td>',
+          )
+          expect(response.body).to include(
+            '<td class="govuk-table__cell govuk-!-font-weight-bold">Poor</td>',
+          )
         end
       end
 
       context "when the property_summary key is empty" do
         before { FetchCertificate::Stub.fetch("1111-1111-1111-1111-1112") }
 
-        let(:response) { get "/energy-performance-certificate/1111-1111-1111-1111-1112" }
+        let(:response) do
+          get "/energy-performance-certificate/1111-1111-1111-1111-1112"
+        end
 
         it "will not show the the proerty summary eleements" do
-          expect(response.body).not_to include('<td class="govuk-table__cell">Walls</td>')
-          expect(response.body).not_to include('<td class="govuk-table__cell govuk-!-font-weight-bold">Poor</td>')
+          expect(response.body).not_to include(
+            '<td class="govuk-table__cell">Walls</td>',
+          )
+          expect(response.body).not_to include(
+            '<td class="govuk-table__cell govuk-!-font-weight-bold">Poor</td>',
+          )
         end
       end
     end

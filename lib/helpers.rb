@@ -49,11 +49,16 @@ module Sinatra
         if text.include?("missing")
           text = string
           if text == nil
-            text = if code
-                     t("domestic_epc.sections.information.certificate.list.disclosure_number_not_valid")
-                   else
-                     t("domestic_epc.sections.information.certificate.list.no_disclosure")
-                   end
+            text =
+              if code
+                t(
+                  "domestic_epc.sections.information.certificate.list.disclosure_number_not_valid",
+                )
+              else
+                t(
+                  "domestic_epc.sections.information.certificate.list.no_disclosure",
+                )
+              end
           end
         end
 

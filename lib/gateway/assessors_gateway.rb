@@ -10,7 +10,9 @@ module Gateway
       postcode, qualification_type = "domesticSap,domesticRdSap"
     )
       route =
-        "/api/assessors?postcode=#{CGI.escape(postcode)}&qualification=#{CGI.escape(qualification_type)}"
+        "/api/assessors?postcode=#{CGI.escape(postcode)}&qualification=#{
+          CGI.escape(qualification_type)
+        }"
       response = @internal_api_client.get(route)
 
       JSON.parse(response.body, symbolize_names: true)
