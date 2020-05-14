@@ -125,9 +125,9 @@
           <% if assessment[:propertySummary] %>
             <% assessment[:propertySummary].each do |property_item| %>
               <tr class="govuk-table__row">
-                <td class="govuk-table__cell"><%= property_item[:name] %></td>
-                <td class="govuk-table__cell"><%= property_item[:description] %></td>
-                <td class="govuk-table__cell govuk-!-font-weight-bold"><%= t('energy_performance_rating.' + property_item[:energyEfficiencyRating] + '.energy_performance')%></td>
+                <td class="govuk-table__cell" id="property_item_name"><%= property_item[:name] %></td>
+                <td class="govuk-table__cell" id="property_item_description"><%= property_item[:description] %></td>
+                <td class="govuk-table__cell govuk-!-font-weight-bold" id="property_item_energy_performance_rating"><%= t('energy_performance_rating.' + property_item[:energyEfficiencyRating] + '.energy_performance')%></td>
               </tr>
             <% end %>
           <% end %>
