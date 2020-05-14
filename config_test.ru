@@ -40,7 +40,10 @@ FetchCertificate::Stub.fetch(
   nil,
   nil,
   nil,
-  [{ name: "Walls", description: "Its a wall", energyEfficiencyRating: "2" }],
+  [
+    { name: "Walls", description: "Its a wall", energyEfficiencyRating: 2 },
+    { name: "secondary_heating", description: "Heating the house", energyEfficiencyRating: 5 }
+  ],
 )
 
 ENV["EPB_AUTH_CLIENT_ID"] = "test.id"

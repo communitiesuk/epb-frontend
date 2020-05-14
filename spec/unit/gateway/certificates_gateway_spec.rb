@@ -103,9 +103,8 @@ describe Gateway::CertificatesGateway do
         relatedPartyDisclosureText: nil,
         relatedPartyDisclosureNumber: 1,
         propertySummary: [
-          {
-            name: "Walls", description: "Many walls", energyEfficiencyRating: 2
-          },
+          { name: "Walls", description: "Many walls", energyEfficiencyRating: 2 },
+          { name: "secondary_heating", description: "Heating the house", energyEfficiencyRating: 5 },
         ],
       )
     end
