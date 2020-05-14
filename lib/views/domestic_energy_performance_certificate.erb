@@ -122,7 +122,7 @@
             <td class="govuk-table__cell"><%= assessment[:dwellingType] %></td>
             <td class="govuk-table__header"></td>
           </tr>
-          <% if assessment[:propertySummary] %>
+          <% if assessment[:propertySummary].is_a? Array %>
             <% assessment[:propertySummary].each do |property_item| %>
               <tr class="govuk-table__row">
                 <td class="govuk-table__cell"><%= property_item[:name] %></td>
