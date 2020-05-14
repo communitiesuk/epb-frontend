@@ -106,9 +106,9 @@
       <table class="govuk-table">
         <thead class="govuk-table__head">
         <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header"><%= t('domestic_epc.sections.summary.table_header_feature') %></th>
-          <th scope="col" class="govuk-table__header"><%= t('domestic_epc.sections.summary.table_header_description') %></th>
-          <th scope="col" class="govuk-table__header"><%= t('domestic_epc.sections.summary.table_header_energy_performance') %></th>
+          <th scope="col" class="govuk-table__header"><%= t('domestic_epc.sections.summary.table_headers.feature') %></th>
+          <th scope="col" class="govuk-table__header"><%= t('domestic_epc.sections.summary.table_headers.description') %></th>
+          <th scope="col" class="govuk-table__header"><%= t('domestic_epc.sections.summary.table_headers.energy_performance') %></th>
         </tr>
         </thead>
         <tbody class="govuk-table__body">
@@ -124,11 +124,11 @@
           </tr>
           <p class="govuk-body"><%= t('domestic_epc.sections.summary.assessment_rating_explaination') %></p>
            <ul class="govuk-list govuk-list--bullet">
-            <li><%== t('domestic_epc.sections.summary.very_poor') %></li>
-            <li><%== t('domestic_epc.sections.summary.poor') %></li>
-            <li><%== t('domestic_epc.sections.summary.average') %></li>
-            <li><%== t('domestic_epc.sections.summary.good') %></li>
-            <li><%== t('domestic_epc.sections.summary.very_good') %></li>
+            <li><%== t('domestic_epc.sections.summary.assessment_ratings.very_poor') %></li>
+            <li><%== t('domestic_epc.sections.summary.assessment_ratings.poor') %></li>
+            <li><%== t('domestic_epc.sections.summary.assessment_ratings.average') %></li>
+            <li><%== t('domestic_epc.sections.summary.assessment_ratings.good') %></li>
+            <li><%== t('domestic_epc.sections.summary.assessment_ratings.very_good') %></li>
           </ul>
           <p class="govuk-body"><%= t('domestic_epc.sections.summary.not_inspected') %></p>
           <% if assessment[:propertySummary].is_a? Array %>
@@ -147,15 +147,15 @@
       <details class="govuk-details" data-module="govuk-details">
           <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text">
-              <%= t('domestic_epc.sections.summary.what_is_primary_energy_use') %>
+              <%= t('domestic_epc.sections.summary.primary_energy_use_dropdown.what_is_primary_energy_use_title') %>
             </span>
           </summary>
           <div class="govuk-details__text">
-              <%= t('domestic_epc.sections.summary.what_is_primary_energy_use_details') %>
+              <%= t('domestic_epc.sections.summary.primary_energy_use_dropdown.what_is_primary_energy_use_details') %>
             <ul class="govuk-list govuk-list--bullet govuk-!-margin-left-6">
-              <li><%= t('domestic_epc.sections.summary.efficiency_of_heating') %></li>
-              <li><%= t('domestic_epc.sections.summary.efficiency_of_electricity') %></li>
-              <li><%= t('domestic_epc.sections.summary.fuel_for_property') %></li>
+              <li><%= t('domestic_epc.sections.summary.primary_energy_use_dropdown.efficiency_of_heating') %></li>
+              <li><%= t('domestic_epc.sections.summary.primary_energy_use_dropdown.efficiency_of_electricity') %></li>
+              <li><%= t('domestic_epc.sections.summary.primary_energy_use_dropdown.fuel_for_property') %></li>
             </ul>
           </div>
         </details>
