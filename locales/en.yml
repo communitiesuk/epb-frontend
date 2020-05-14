@@ -350,10 +350,24 @@ en:
         body: 'The graph shows the current energy efficiency of your home and the higher the rating the lower your fuel bills are likely to be. The average energy efficiency rating for a property in England and Wales is band D (rating 60). The EPC rating shown above is based on standard assumptions about occupancy and energy use and may not reflect how energy is consumed by individual occupants.'
       summary:
         title: "Breakdown of property's energy performance"
-        intro: "The energy performance of each feature of this property that was assessed is summarised below. This does not take into consideration the physical condition of any part of your property."
+        intro: "The table below shows the energy performance for features of this property. Only features relevant to this property are shown. The assessment does not consider the condition of a feature and how well it is working."
+        assessment_rating_explaination: 'Each feature is assessed as one of the following:'
+        very_poor: 'very poor (least efficient)'
+        poor: 'poor'
+        average: 'average'
+        good: 'good'
+        very_good: 'very good (most efficient)'
+        not_inspected: "When the description says 'assumed', it means that the insulation could not be inspected and an assumption has been made based on the age and type of your property."
         table_header_feature: "Feature"
         table_header_description: "Description"
         table_header_energy_performance: "Energy performance"
+        primary_energy_use: 'Primary Energy use'
+        primary_energy_use_description: 'The primary energy use for this property per year is 989 kilowatt hours (kWh) per square metre'
+        what_is_primary_energy_use: 'What is Primary Energy use?'
+        what_is_primary_energy_use_details: 'Primary energy use is a measure of the energy required for lighting, heating and hot water in a property. The calculation includes:'
+        efficiency_of_heating: 'the efficiency of the property’s heating system'
+        efficiency_of_electricity: 'power station efficiency for electricity'
+        fuel_for_property: 'the energy used to produce the fuel and deliver it to the property'
         list:
           total_floor_area: 'Total floor area'
           dwelling_type: 'Property type'
