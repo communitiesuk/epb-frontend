@@ -46,6 +46,7 @@ module FindCertificate
                     impactOfSolidWallInsulation: 69,
                   },
                   recommendedImprovements: [],
+                  propertySummary: [],
                 },
                 {
                   assessmentId: "1234-5678-9101-1122",
@@ -69,6 +70,7 @@ module FindCertificate
                     impactOfSolidWallInsulation: 69,
                   },
                   recommendedImprovements: [{ sequence: 0 }, { sequence: 1 }],
+                  propertySummary: [],
                 },
                 {
                   assessmentId: "1234-5678-9101-1123",
@@ -92,6 +94,7 @@ module FindCertificate
                     impactOfSolidWallInsulation: 69,
                   },
                   recommendedImprovements: [],
+                  propertySummary: [],
                 },
               ],
             },

@@ -9,8 +9,8 @@ describe Gateway::CertificatesGateway do
 
   context "when a certificate exist" do
     let(:response) { gateway.search_by_postcode("SW1A 2AA") }
-
     let(:certificate) { response[:data][:assessments].first }
+
     before { FindCertificate::Stub.search_by_postcode("SW1A 2AA") }
 
     it "checks the number of certificates returned from the api" do
@@ -36,6 +36,7 @@ describe Gateway::CertificatesGateway do
         :dateOfExpiry,
         :heatDemand,
         :recommendedImprovements,
+        :propertySummary,
       )
     end
   end
