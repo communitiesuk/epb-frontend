@@ -42,7 +42,11 @@ FetchCertificate::Stub.fetch(
   nil,
   [
     { name: "Walls", description: "Its a wall", energyEfficiencyRating: 2 },
-    { name: "secondary_heating", description: "Heating the house", energyEfficiencyRating: 5 }
+    {
+      name: "secondary_heating",
+      description: "Heating the house",
+      energyEfficiencyRating: 5,
+    },
   ],
 )
 

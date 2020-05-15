@@ -55,6 +55,7 @@ describe Gateway::CertificatesGateway do
 
   context "when an assessment does exist" do
     let(:assessment_id) { "223-456" }
+
     before { FetchCertificate::Stub.fetch(assessment_id) }
 
     it "returns assessments" do
@@ -104,8 +105,14 @@ describe Gateway::CertificatesGateway do
         relatedPartyDisclosureText: nil,
         relatedPartyDisclosureNumber: 1,
         propertySummary: [
-          { name: "Walls", description: "Many walls", energyEfficiencyRating: 2 },
-          { name: "secondary_heating", description: "Heating the house", energyEfficiencyRating: 5 },
+          {
+            name: "Walls", description: "Many walls", energyEfficiencyRating: 2
+          },
+          {
+            name: "secondary_heating",
+            description: "Heating the house",
+            energyEfficiencyRating: 5,
+          },
         ],
       )
     end
