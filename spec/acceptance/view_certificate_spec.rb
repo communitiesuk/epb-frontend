@@ -324,9 +324,27 @@ describe "Acceptance::Certificate" do
     end
 
     context "when viewing the breakdown of property's energy performance section" do
-      it "will show the section title" do
+      it "shows the section title" do
         expect(response.body).to include(
           "Breakdown of property's energy performance",
+        )
+      end
+
+      it "shows the section texts" do
+        expect(response.body).to include(
+          '<p class="govuk-body">The table below shows the energy performance for features of this property. Only features relevant to this property are shown. The assessment does not consider the condition of a feature and how well it is working.</p>',
+        )
+      end
+
+      it "shows the primary energy use section" do
+        expect(response.body).to include(
+          '<h2 class="govuk-heading-m">Primary Energy use</h2>',
+        )
+        expect(response.body).to include(
+          '<p class="govuk-body">The primary energy use for this property per year is 989 kilowatt hours (kWh) per square metre</p>',
+        )
+        expect(response.body).to include(
+          '<span class="govuk-details__summary-text">What is Primary Energy use?</span>',
         )
       end
 
