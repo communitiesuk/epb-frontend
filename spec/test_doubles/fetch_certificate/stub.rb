@@ -211,6 +211,11 @@ module FetchCertificate
           description: "Heating the house",
           energyEfficiencyRating: 5,
         },
+        {
+          name: "MainHeating",
+          description: "Room heaters, electric",
+          energyEfficiencyRating: 3,
+        },
       ]
     end
   end

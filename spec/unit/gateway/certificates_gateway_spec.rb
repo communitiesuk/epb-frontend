@@ -113,6 +113,11 @@ describe Gateway::CertificatesGateway do
             description: "Heating the house",
             energyEfficiencyRating: 5,
           },
+          {
+            name: "MainHeating",
+            description: "Room heaters, electric",
+            energyEfficiencyRating: 3,
+          },
         ],
       )
     end
