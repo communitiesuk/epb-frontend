@@ -687,6 +687,18 @@ en:
     7:
       relation: 'Relative of the professional dealing with the property transaction'
 
+  property_summary:
+    type:
+      wall: 'Wall'
+      floor: 'Floor'
+      hot_water: 'Hot Water'
+      roof: 'Roof'
+      window: 'Window'
+      main_heating_control: 'Main Heating Control'
+      main_heating: 'Main Heating'
+      lighting: 'Lighting'
+      secondary_heating: 'Secondary Heating'
+
   error:
     error: 'Error: '
     500:

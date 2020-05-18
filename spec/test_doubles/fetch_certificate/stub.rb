@@ -205,14 +205,14 @@ module FetchCertificate
 
     def self.generate_property_summary
       [
-        { name: "Walls", description: "Many walls", energyEfficiencyRating: 2 },
+        { name: "wall", description: "Many walls", energyEfficiencyRating: 2 },
         {
           name: "secondary_heating",
           description: "Heating the house",
           energyEfficiencyRating: 5,
         },
         {
-          name: "MainHeating",
+          name: "main_heating",
           description: "Room heaters, electric",
           energyEfficiencyRating: 3,
         },

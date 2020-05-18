@@ -351,13 +351,13 @@ describe "Acceptance::Certificate" do
       context "when there is a property summary key" do
         it "shows all of the property summary elements" do
           expect(response.body).to include(
-            '<td class="govuk-table__cell">Secondary heating</td>',
+            '<td class="govuk-table__cell">Secondary Heating</td>',
           )
           expect(response.body).to include(
             '<td class="govuk-table__cell govuk-!-font-weight-bold">Very good</td>',
           )
           expect(response.body).to include(
-            '<td class="govuk-table__cell">Main heating</td>',
+            '<td class="govuk-table__cell">Main Heating</td>',
           )
           expect(response.body).to include(
             '<td class="govuk-table__cell govuk-!-font-weight-bold">Average</td>',

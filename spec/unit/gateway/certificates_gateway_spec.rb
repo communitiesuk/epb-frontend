@@ -106,7 +106,7 @@ describe Gateway::CertificatesGateway do
         relatedPartyDisclosureNumber: 1,
         propertySummary: [
           {
-            name: "Walls", description: "Many walls", energyEfficiencyRating: 2
+            name: "wall", description: "Many walls", energyEfficiencyRating: 2
           },
           {
             name: "secondary_heating",
@@ -114,7 +114,7 @@ describe Gateway::CertificatesGateway do
             energyEfficiencyRating: 5,
           },
           {
-            name: "MainHeating",
+            name: "main_heating",
             description: "Room heaters, electric",
             energyEfficiencyRating: 3,
           },
