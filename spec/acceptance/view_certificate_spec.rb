@@ -326,7 +326,7 @@ describe "Acceptance::Certificate" do
     context "when viewing the breakdown of property's energy performance section" do
       it "shows the section title" do
         expect(response.body).to include(
-          "Breakdown of property's energy performance",
+          '<h2 class="govuk-heading-l">Breakdown of property\'s energy performance</h2>',
         )
       end
 
