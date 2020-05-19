@@ -14,7 +14,8 @@ module FetchCertificate
       impact_of_solid_wall_insulation = 69,
       related_party_disclosure_text = nil,
       related_party_disclosure_number = 1,
-      property_summary = nil
+      property_summary = nil,
+      typeOfAssessment = "RdSAP"
     )
       property_summary ||= generate_property_summary
 

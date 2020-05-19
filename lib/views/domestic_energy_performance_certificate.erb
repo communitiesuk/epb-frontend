@@ -412,7 +412,19 @@
             <%= t('domestic_epc.sections.information.certificate.list.type_of_assessment') %>
           </dt>
           <dd class="govuk-summary-list__value govuk-!-font-weight-bold">
-            <%= assessment[:typeOfAssessment] %>
+
+            <details class="govuk-details" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    <%= assessment[:typeOfAssessment] %>
+                  </span>
+              </summary>
+              <div class="govuk-details__text">
+                <%= t("domestic_epc.sections.information.certificate.list.#{assessment[:typeOfAssessment].downcase}_description_first_part") %>
+                <br /><br />
+                <%= t("domestic_epc.sections.information.certificate.list.#{assessment[:typeOfAssessment].downcase}_description_second_part") %>
+              </div>
+            </details>
           </dd>
         </div>
       </dl>

@@ -42,6 +42,10 @@ describe "Acceptance::Certificate" do
       expect(response.body).to include("RdSAP")
     end
 
+    it "shows the type of assessment description" do
+      expect(response.body).to include("RdSAP (Reduced data Standard Assessment Procedure) is a method used to assess and compare the energy and environmental performance of properties in the UK")
+    end
+
     it "shows the total floor area" do
       expect(response.body).to include(
         '<td class="govuk-table__cell">150 m<sup>2</sup></td>',
@@ -221,7 +225,7 @@ describe "Acceptance::Certificate" do
       end
     end
 
-    context "when viewing Find ways to pay for recommendations section" do
+    context "when viewing find ways to pay for recommendations section" do
       it "shows the heading" do
         expect(response.body).to include("Paying for energy improvements")
       end
@@ -457,6 +461,34 @@ describe "Acceptance::Certificate" do
       end
     end
   end
+
+  context "when the assessment type is SAP" do
+    before do
+      FetchCertificate::Stub.fetch(
+          "123-456",
+          90,
+          "b",
+          true,
+           2.4,
+          1.4,
+          79,
+          67,
+          69,
+          nil,
+          1,
+          nil,
+          "SAP",
+      )
+    end
+    let(:response) do
+      get "/energy-performance-certificate/1111-1111-1111-1111-1112"
+    end
+
+    it "displays the SAP type description" do
+      expect(response.body).to include("SAP (Standard Assessment Procedure) is a method used to assess and compare the energy and environmental performance of properties in the UK.")
+    end
+  end
+
 
   context "when viewing a lodged certificate as returned from the API" do
     before { FetchCertificate::Stub.fetch("1111-1111-1111-1111-1112") }
