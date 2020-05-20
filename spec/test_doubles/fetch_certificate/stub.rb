@@ -15,7 +15,7 @@ module FetchCertificate
       related_party_disclosure_text = nil,
       related_party_disclosure_number = 1,
       property_summary = nil,
-      typeOfAssessment = "RdSAP"
+      type_of_assessment = "RdSAP"
     )
       property_summary ||= generate_property_summary
 
@@ -168,7 +168,7 @@ module FetchCertificate
             dateOfExpiry: "2030-01-05",
             dateOfAssessment: "2020-01-02",
             dwellingType: "Top floor flat",
-            typeOfAssessment: "RdSAP",
+            typeOfAssessment: type_of_assessment,
             totalFloorArea: 150,
             currentEnergyEfficiencyRating: current_rating,
             currentEnergyEfficiencyBand: current_band,

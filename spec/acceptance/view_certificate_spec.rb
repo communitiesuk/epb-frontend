@@ -465,30 +465,27 @@ describe "Acceptance::Certificate" do
   context "when the assessment type is SAP" do
     before do
       FetchCertificate::Stub.fetch(
-          "123-456",
-          90,
-          "b",
-          true,
-           2.4,
-          1.4,
-          79,
-          67,
-          69,
-          nil,
-          1,
-          nil,
-          "SAP",
+        "123-456",
+        90,
+        "b",
+        true,
+        2.4,
+        1.4,
+        79,
+        67,
+        69,
+        nil,
+        1,
+        nil,
+        "SAP",
       )
     end
-    let(:response) do
-      get "/energy-performance-certificate/1111-1111-1111-1111-1112"
-    end
+    let(:response) { get "/energy-performance-certificate/123-456" }
 
     it "displays the SAP type description" do
       expect(response.body).to include("SAP (Standard Assessment Procedure) is a method used to assess and compare the energy and environmental performance of properties in the UK.")
     end
   end
-
 
   context "when viewing a lodged certificate as returned from the API" do
     before { FetchCertificate::Stub.fetch("1111-1111-1111-1111-1112") }

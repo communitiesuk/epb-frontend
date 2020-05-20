@@ -11,9 +11,9 @@ module Sinatra
 
       def number_to_currency(number)
         if number.to_f > number.to_i || number.to_f < number.to_i
-          format("£%.2f", number).gsub(/(\d)(?=(\d{3})+(?!\d))/, '\\1,')
+          sprintf("£%.2f", number).gsub(/(\d)(?=(\d{3})+(?!\d))/, '\\1,')
         elsif number.to_f != 0
-          format("£%.f", number).gsub(/(\d)(?=(\d{3})+(?!\d))/, '\\1,')
+          sprintf("£%.f", number).gsub(/(\d)(?=(\d{3})+(?!\d))/, '\\1,')
         end
       end
 
@@ -48,7 +48,7 @@ module Sinatra
         text = t("disclosure_code.#{code}.relation")
         if text.include?("missing")
           text = string
-          if text == nil
+          if text.nil?
             text =
               if code
                 t(
