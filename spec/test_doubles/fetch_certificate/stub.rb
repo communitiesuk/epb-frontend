@@ -117,8 +117,8 @@ module FetchCertificate
                 improvementCode: "1",
                 improvementCategory: "string",
                 improvementType: "string",
-                energyPerformanceRating: "C",
-                environmentalImpactRating: "string",
+                energyPerformanceRatingImprovement: 96,
+                environmentalImpactRatingImprovement: "string",
                 greenDealCategoryCode: "string",
               },
               {
@@ -128,8 +128,8 @@ module FetchCertificate
                 improvementCode: "2",
                 improvementCategory: "string",
                 improvementType: "string",
-                energyPerformanceRating: "C",
-                environmentalImpactRating: "string",
+                energyPerformanceRatingImprovement: 60,
+                environmentalImpactRatingImprovement: "string",
                 greenDealCategoryCode: "string",
               },
               {
@@ -139,8 +139,8 @@ module FetchCertificate
                 improvementCode: "8",
                 improvementCategory: "string",
                 improvementType: "string",
-                energyPerformanceRating: "C",
-                environmentalImpactRating: "string",
+                energyPerformanceRatingImprovement: 76,
+                environmentalImpactRatingImprovement: "string",
                 greenDealCategoryCode: "string",
               },
             ]

@@ -72,6 +72,36 @@ module Sinatra
 
         url
       end
+
+      def get_energy_rating_band(number)
+        case number
+        when 1..20
+          "g"
+        when 21..38
+          "f"
+        when 39..54
+          "e"
+        when 55..68
+          "d"
+        when 69..80
+          "c"
+        when 81..91
+          "b"
+        when 92..100
+          "a"
+        end
+      end
+
+      def potential_rating_text(number)
+        case number
+        when 1
+          t('domestic_epc.sections.recommendations.list.potential_rating_1')
+        when 2
+          t('domestic_epc.sections.recommendations.list.potential_rating_2')
+        when 3..10
+          "#{t('domestic_epc.sections.recommendations.list.potential_rating_3')} #{number}"
+        end
+      end
     end
   end
 end

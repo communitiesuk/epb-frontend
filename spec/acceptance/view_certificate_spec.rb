@@ -432,6 +432,18 @@ describe "Acceptance::Certificate" do
       )
     end
 
+    it "shows typical potential rating" do
+      expect(response.body).to include(
+         '<text x="30" y="30">76 | C </text>',
+       )
+    end
+
+    it "shows typical potential rating in the correct color" do
+      expect(response.body).to include(
+       '<rect width="75" height="50" class=band-c x="25"></rect>',
+      )
+    end
+
     context "when the indicativeCost is empty" do
       before do
         FetchCertificate::Stub.fetch("1111-1111-1111-1111-1112", 90, "b", true)
