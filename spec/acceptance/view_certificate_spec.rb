@@ -39,7 +39,7 @@ describe "Acceptance::Certificate" do
     end
 
     it "shows the type of assessment" do
-      expect(response.body).to include("RdSAP")
+      expect(response.body).to include('<span class="govuk-details__summary-text">RdSAP</span>')
     end
 
     it "shows the type of assessment description" do

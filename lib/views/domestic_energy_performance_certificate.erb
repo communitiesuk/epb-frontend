@@ -88,7 +88,9 @@
     <div class="govuk-body epc-blue-bottom">
       <a id="epc"></a>
       <h2 class="govuk-heading-l"><%= t('domestic_epc.sections.epc.title') %></h2>
-      <p class="govuk-body govuk-!-margin-bottom-6"><%== t('domestic_epc.sections.epc.intro.text', :current_energy_efficiency_band => assessment[:currentEnergyEfficiencyBand].upcase, :potential_energy_efficiency_band => assessment[:potentialEnergyEfficiencyBand].upcase, :link => '<a href="' + t('domestic_epc.sections.epc.intro.url') + '">' + t('domestic_epc.sections.epc.intro.cta') + '</a>') %></p>
+      <p class="govuk-body govuk-!-margin-bottom-6">
+        <%== t('domestic_epc.sections.epc.intro.text', :current_energy_efficiency_band => assessment[:currentEnergyEfficiencyBand].upcase, :potential_energy_efficiency_band => assessment[:potentialEnergyEfficiencyBand].upcase, :link => '<a href="' + t('domestic_epc.sections.epc.intro.url') + '">' + t('domestic_epc.sections.epc.intro.cta') + '</a>') %>
+      </p>
       <%== erb :energy_rating, locals: {
         current_energy_efficiency_rating: assessment[:currentEnergyEfficiencyRating],
         potential_energy_efficiency_rating: assessment[:potentialEnergyEfficiencyRating],
@@ -414,9 +416,7 @@
           <dd class="govuk-summary-list__value govuk-!-font-weight-bold">
             <details class="govuk-details" data-module="govuk-details">
               <summary class="govuk-details__summary">
-                  <span class="govuk-details__summary-text">
-                    <%= assessment[:typeOfAssessment] %>
-                  </span>
+                  <span class="govuk-details__summary-text"><%= assessment[:typeOfAssessment] %></span>
               </summary>
               <div class="govuk-details__text" id="description">
                 <%= t("domestic_epc.sections.information.certificate.list.#{assessment[:typeOfAssessment].downcase}_description_first_part") %>
