@@ -434,13 +434,13 @@ describe "Acceptance::Certificate" do
 
     it "shows typical potential rating" do
       expect(response.body).to include(
-         '<text x="30" y="30">76 | C </text>',
-       )
+        '<text x="30" y="30">76 | C </text>',
+      )
     end
 
     it "shows typical potential rating in the correct color" do
       expect(response.body).to include(
-       '<rect width="75" height="50" class=band-c x="25"></rect>',
+        '<rect width="75" height="50" class=band-c x="25"></rect>',
       )
     end
 

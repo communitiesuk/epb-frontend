@@ -95,9 +95,9 @@ module Sinatra
       def potential_rating_text(number)
         case number
         when 1
-          t('domestic_epc.sections.recommendations.list.potential_rating_1')
+          t("domestic_epc.sections.recommendations.list.potential_rating_1")
         when 2
-          t('domestic_epc.sections.recommendations.list.potential_rating_2')
+          t("domestic_epc.sections.recommendations.list.potential_rating_2")
         when 3..10
           "#{t('domestic_epc.sections.recommendations.list.potential_rating_3')} #{number}"
         end
