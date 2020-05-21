@@ -15,7 +15,8 @@ module FetchCertificate
       related_party_disclosure_text = nil,
       related_party_disclosure_number = 1,
       property_summary = nil,
-      type_of_assessment = "RdSAP"
+      type_of_assessment = "RdSAP",
+      energy_performance_rating_improvement = 76
     )
       property_summary ||= generate_property_summary
 
@@ -63,7 +64,7 @@ module FetchCertificate
                 "typicalSaving": "0.0",
                 "improvementCategory": "6",
                 "improvementType": "Z3",
-                "energyPerformanceRatingImprovement": 50,
+                "energyPerformanceRatingImprovement": energy_performance_rating_improvement,
                 "environmentalImpactRatingImprovement": 50,
                 "greenDealCategoryCode": "1",
               },

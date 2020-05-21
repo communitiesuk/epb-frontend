@@ -457,6 +457,34 @@ describe "Acceptance::Certificate" do
       end
     end
 
+    context "when the potential rating improvement  is empty" do
+      before do
+        FetchCertificate::Stub.fetch(
+         "1111-1111-1111-1111-1112",
+         "25",
+         "f",
+         false,
+         7.8453,
+         6.5123,
+         nil,
+         nil,
+         nil,
+         nil,
+         12,
+         nil,
+         nil,
+         nil
+         )
+      end
+      let(:response) do
+        get "/energy-performance-certificate/1111-1111-1111-1111-1112"
+      end
+
+      it "will show information unavailable instead" do
+        expect(response.body).to include('<p class="govuk-body govuk-!-font-weight-bold" id="typical-saving-cost">Not applicable</p>')
+      end
+    end
+
     context "when the improvementCode is not present" do
       before do
         FetchCertificate::Stub.fetch("1111-1111-1111-1111-1112", 90, "b", true)

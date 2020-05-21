@@ -248,13 +248,17 @@
               <tr class="govuk-table__row">
                   <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><%= potential_rating_text(index + 1) %></th>
                 <td class="govuk-table__cell govuk-!-font-weight-bold">
-                  <svg x="415" y="275" width="90" height="50">
-                    <%= energyPerformanceRatingImprovement = recommendation[:energyPerformanceRatingImprovement]%>
-                    <%=  band = "band-#{get_energy_rating_band(energyPerformanceRatingImprovement)}" %>
-                    <rect width="75" height="50" class=<%= band %> x="25"></rect>
-                    <polygon points="0,25 25,50 25,0 0,25" class=<%= band %>></polygon>
-                    <text x="30" y="30"><%= energyPerformanceRatingImprovement %> | <%= get_energy_rating_band(energyPerformanceRatingImprovement).upcase %> </text>
-                  </svg>
+                  <% energyPerformanceRatingImprovement = recommendation[:energyPerformanceRatingImprovement]
+                    if energyPerformanceRatingImprovement %>
+                    <svg x="415" y="275" width="90" height="50">
+                      <%=  band = "band-#{get_energy_rating_band(energyPerformanceRatingImprovement)}" %>
+                      <rect width="75" height="50" class=<%= band %> x="25"></rect>
+                      <polygon points="0,25 25,50 25,0 0,25" class=<%= band %>></polygon>
+                      <text x="30" y="30"><%= energyPerformanceRatingImprovement %> | <%= get_energy_rating_band(energyPerformanceRatingImprovement).upcase %> </text>
+                    </svg>
+                  <% else  %>
+                    <p class="govuk-body govuk-!-font-weight-bold" id="typical-saving-cost"><%= t('domestic_epc.sections.recommendations.list.na') %></p>
+                  <% end %>
                 </td>
               </tr>
               </tbody>
