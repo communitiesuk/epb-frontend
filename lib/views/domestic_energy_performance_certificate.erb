@@ -232,8 +232,8 @@
   <% unless assessment[:recommendedImprovements].empty? %>
     <div class="govuk-grid-column-two-thirds">
       <div class="govuk-body">
+        <hr class="epc-light-top"/>
         <% assessment[:recommendedImprovements].each_with_index do |recommendation, index| %>
-          <hr class="epc-light-top"/>
           <% if recommendation[:improvementCode].nil? || recommendation[:improvementCode].empty? %>
             <h3 class="govuk-heading-m"><%= recommendation[:improvementTitle] %></h3>
             <p class="govuk-body"><%= recommendation[:improvementDescription] %></p>
@@ -266,7 +266,7 @@
                 </td>
               </tr>
               <tr class="govuk-table__row">
-                  <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><%= potential_rating_text(index + 1) %></th>
+                  <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><%== potential_rating_text(index + 1) %></th>
                 <td class="govuk-table__cell govuk-!-font-weight-bold">
                   <% energyPerformanceRatingImprovement = recommendation[:energyPerformanceRatingImprovement]
                     if energyPerformanceRatingImprovement %>
@@ -284,7 +284,6 @@
               </tbody>
             </table>
         <% end %>
-        <hr class="epc-light-top"/>
       </div>
     </div>
   <% end %>
