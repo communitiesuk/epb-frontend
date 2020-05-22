@@ -341,13 +341,17 @@ en:
           cta: 'guidance for landlords on the regulations and exemptions'
           url: 'https://www.gov.uk/guidance/domestic-private-rented-property-minimum-energy-efficiency-standard-landlord-guidance'
       epc:
-        title: 'Energy performance rating for this property'
+        title: 'Energy efficiency rating for this property'
         intro:
-          text: 'Your energy rating is %{current_energy_efficiency_band} and has the potential to be %{potential_energy_efficiency_band} by following the recommendations set out on %{link}.'
-          cta: 'how to improve this property’s energy performance section'
+          text: 'Your property’s current energy rating is  %{current_energy_efficiency_band} (%{current_energy_efficiency_rating}). It has the potential to be %{potential_energy_efficiency_band} (%{potential_energy_efficiency_rating}).'
+          cta: 'See how to improve this property’s energy performance.'
           url: '#recommendations'
         aria-label: 'Your energy rating is %{current_energy_efficiency_band}(%{current_energy_efficiency_rating}) and your potential is %{potential_energy_efficiency_band}(%{potential_energy_efficiency_rating})'
-        body: 'The graph shows the current energy efficiency of your home and the higher the rating the lower your fuel bills are likely to be. The average energy efficiency rating for a property in England and Wales is band D (rating 60). The EPC rating shown above is based on standard assumptions about occupancy and energy use and may not reflect how energy is consumed by individual occupants.'
+        body1: 'The graph shows this property’s current and potential energy efficiency.'
+        body2: 'Properties are given a score and a rating from A (most efficient) to G (least efficient)'
+        body3: 'The higher the score, the lower your fuel bills are likely to be.'
+        body4: 'The average energy rating for a property in England and Wales is D (60)'
+        body5: 'Energy ratings are based on average energy use. They may not reflect how energy is used by the people living at the property'
       summary:
         title: "Breakdown of property's energy performance"
         intro: "The table below shows the energy performance for features of this property. Only features relevant to this property are shown. The assessment does not consider the condition of a feature and how well it is working."

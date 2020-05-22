@@ -7,7 +7,6 @@
         'range': '92+',
         'position': 0,
         'color': '#008054'
-
       },
       'b': {
         'range': '81-91',
@@ -41,20 +40,59 @@
       }
     }
 
+    score_bands = {
+      'a-score': {
+        'position': 0,
+        'color': '#67A687'
+      },
+      'b-score': {
+        'position': 1,
+        'color': '#72CA8B'
+      },
+      'c-score': {
+        'position': 2,
+        'color': '#b4df86'
+      },
+      'd-score': {
+        'position': 3,
+        'color': '#ffe666'
+      },
+      'e-score': {
+        'position': 4,
+        'color': '#fdc79b'
+      },
+      'f-score': {
+        'position': 5,
+        'color': '#f4ac71'
+      },
+      'g-score': {
+        'position': 6,
+        'color': '#f2738a'
+      }
+    }
+
   %>
 
   <style>
     .letter {
       font-size: 40px;
       font-family: sans-serif;
-      fill: #fff;
+      fill: 	#0b0c0c;
       font-weight: bold;
     }
 
-    .small-letter {
-      font-size: 30px;
+    .current-potential-number {
+      font-size: 27px;
       font-family: sans-serif;
-      fill: #fff;
+      fill: #000;
+      line-height: 50px;
+      margin-top: 100px;
+    }
+
+    .small-letter {
+      font-size: 24px;
+      font-family: sans-serif;
+      fill: 	#0b0c0c;
       font-weight: bold;
       text-align: center;
     }
@@ -62,13 +100,14 @@
     .small {
       font-size: 20px;
       font-family: sans-serif;
-      fill: #000;
+      fill: 	#0b0c0c;
       line-height: 50px;
       margin-top: 100px;
+      font-weight: bold;
     }
 
     .small tspan:first-child, .small tspan:last-child {
-      fill: #fff;
+      fill: #0b0c0c;
     }
 
     <% bands.each do |key, settings| %>
@@ -76,8 +115,14 @@
         fill: <%= settings[:color] %>
       }
     <% end %>
+    <% score_bands.each do |key, settings| %>
+    .band-<%= key %>{
+      fill: <%= settings[:color] %>
+    }
+    <% end %>
   </style>
 
+  <line x1="72" y1="0" x2="72" y2="376" style="stroke:#b1b4b6;stroke-width:1"></line>
   <line x1="410" y1="0" x2="410" y2="376" style="stroke:#b1b4b6;stroke-width:1"></line>
   <line x1="510" y1="0" x2="510" y2="376" style="stroke:#b1b4b6;stroke-width:1"></line>
   <line x1="0" y1="25" x2="615" y2="25" style="stroke:#b1b4b6;stroke-width:1"></line>
@@ -89,7 +134,12 @@
   <line x1="615" y1="376" x2="0" y2="376" style="stroke:#b1b4b6;stroke-width:1"></line>
 
   <% bands.each do |key, settings| %>
-    <rect width="<%= 150+settings[:position]*40 %>" height="50" x="0" y="<%= 25+settings[:position]*50%>" class="band-<%= key %>">
+    <rect width="<%= 150+settings[:position]*40-72 %>" height="50" x="72" y="<%= 25+settings[:position]*50%>" class="band-<%= key %>">
+    </rect>
+  <% end %>
+
+  <% score_bands.each do |key, settings| %>
+    <rect width="72" height="50" x="0" y="<%= 25+settings[:position]*50%>" class="band-<%= key %>">
     </rect>
   <% end %>
 
@@ -99,13 +149,17 @@
     <% end %>
   </text>
 
-  <!--<text x="0" y="0" class="small">
+  <text x="0" y="0" class="small">
     <% bands.each do |key, settings| %>
-      <tspan x="10" y="<%= 50+(50*settings[:position])+5 %>">(<%= settings[:range] %>)</tspan>
+      <tspan x="8" y="<%= 50+(50*settings[:position])+5 %>"><%= settings[:range] %></tspan>
     <% end %>
-  </text>-->
+  </text>
 
   <text x="8" y="15" class="small" dominant-baseline="middle">
+    Score
+  </text>
+
+  <text x="85" y="15" class="small" dominant-baseline="middle">
     Energy Rating
   </text>
 
@@ -120,12 +174,14 @@
   <svg x="415" y="<%= 25+bands[current_energy_efficiency_band.to_sym][:position]*50 %>" width="90" height="50">
     <rect width="75" height="50" class="band-<%= current_energy_efficiency_band %>" x="25"></rect>
     <polygon points="0,25 25,50 25,0 0,25" class="band-<%= current_energy_efficiency_band %>"></polygon>
-    <text x="40" y="35" class="small-letter"><%= current_energy_efficiency_band.upcase %></text>
+    <text x="18" y="32" class="current-potential-number"><%= current_energy_efficiency_rating %> |</text>
+    <text x="67" y="32" class="small-letter"><%= current_energy_efficiency_band.upcase %></text>
   </svg>
 
   <svg x="515" y="<%= 25+bands[potential_energy_efficiency_band.to_sym][:position]*50 %>" width="90" height="50">
     <rect width="75" height="50" class="band-<%= potential_energy_efficiency_band %>" x="25"></rect>
     <polygon points="0,25 25,50 25,0 0,25" class="band-<%= potential_energy_efficiency_band %>"></polygon>
-    <text x="40" y="35" class="small-letter"><%= potential_energy_efficiency_band.upcase %></text>
+    <text x="18" y="32" class="current-potential-number"><%= potential_energy_efficiency_rating %> |</text>
+    <text x="67" y="32" class="small-letter"><%= potential_energy_efficiency_band.upcase %></text>
   </svg>
 </svg>
