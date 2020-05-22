@@ -389,7 +389,11 @@ en:
         title: 'How to improve this property’s energy performance'
         summary:
           make_changes_text: 'Making any of the recommended changes will improve your property’s energy efficiency.'
-          improve_rating_text: 'If you make all of the changes recommended below, this will improve your property’s energy rating to %{potential_energy_efficiency_band}.'
+          improve_rating_text: 'If you make all of the recommended changes, this will improve the property’s energy rating from %{current_energy_efficiency_band} (%{current_energy_efficiency_rating}) to %{potential_energy_efficiency_band} (%{potential_energy_efficiency_rating}).'
+          what_is_energy_rating: 'What is an energy rating?'
+          energy_rating_description1: 'An energy rating shows a property’s energy efficiency.'
+          energy_rating_description2: 'Properties are given a score and a rating from A (most efficient) to G (least efficient).'
+          energy_rating_description3: 'The higher the score, the lower your fuel bills are likely to be.'
           no_recommendations_summary: 'There are no recommendations for this property.'
         box:
           energy_rating_title: 'Potential Energy Rating'

@@ -203,8 +203,20 @@
       <% else %>
         <p class="govuk-body"><%= t('domestic_epc.sections.recommendations.summary.make_changes_text') %></p>
         <p class="govuk-body">
-          <%= t('domestic_epc.sections.recommendations.summary.improve_rating_text', :potential_energy_efficiency_band => assessment[:potentialEnergyEfficiencyBand].upcase) %>
+          <%= t('domestic_epc.sections.recommendations.summary.improve_rating_text', :current_energy_efficiency_band => assessment[:currentEnergyEfficiencyBand].upcase, :current_energy_efficiency_rating => assessment[:currentEnergyEfficiencyRating], :potential_energy_efficiency_band => assessment[:potentialEnergyEfficiencyBand].upcase, :potential_energy_efficiency_rating => assessment[:potentialEnergyEfficiencyRating] ) %>
         </p>
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text"><%= t('domestic_epc.sections.recommendations.summary.what_is_energy_rating') %></span>
+          </summary>
+          <div class="govuk-details__text">
+            <%= t('domestic_epc.sections.recommendations.summary.energy_rating_description1') %>
+            <br /><br />
+            <%= t('domestic_epc.sections.recommendations.summary.energy_rating_description2') %>
+            <br /><br />
+            <%= t('domestic_epc.sections.recommendations.summary.energy_rating_description3') %>
+          </div>
+        </details>
       <% end %>
     </div>
   </div>
