@@ -350,8 +350,8 @@ en:
         body1: 'The graph shows this property’s current and potential energy efficiency.'
         body2: 'Properties are given a score and a rating from A (most efficient) to G (least efficient)'
         body3: 'The higher the score, the lower your fuel bills are likely to be.'
-        body4: 'The average energy rating for a property in England and Wales is D (60)'
-        body5: 'Energy ratings are based on average energy use. They may not reflect how energy is used by the people living at the property'
+        body4: 'The average energy rating for a property in England and Wales is D (60).'
+        body5: 'Energy ratings are based on average energy use. They may not reflect how energy is used by the people living at the property.'
       summary:
         title: "Breakdown of property's energy performance"
         intro: "The table below shows the energy performance for features of this property. Only features relevant to this property are shown. The assessment does not consider the condition of a feature and how well it is working."
