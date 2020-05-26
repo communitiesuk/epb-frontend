@@ -60,6 +60,10 @@ describe "Acceptance::Certificate" do
       expect(response.body).to include('<svg width="615" height="376"')
     end
 
+    it "shows the SVG with energy rating band numbers" do
+      expect(response.body).to include('<tspan x="8" y="55">92+</tspan>')
+    end
+
     it "shows the assessors full name" do
       expect(response.body).to include("Test Boi")
     end
