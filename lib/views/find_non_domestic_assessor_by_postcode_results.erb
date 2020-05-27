@@ -29,24 +29,8 @@
     </form>
 
     <% if results.size > 0 %>
-      <p class="govuk-body">
-        <%= t('find_non_domestic_assessor_by_postcode_results.description') %>
-      </p>
-
-      <details class="govuk-details" data-module="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            <%= t('find_assessor_by_postcode_results.accreditation_summary_title') %>
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          <%== t('find_assessor_by_postcode_results.accreditation_summary_text') %>
-        </div>
-      </details>
-
       <h2 class="govuk-heading-m"><%= t('find_assessor_by_postcode_results.results', :quantity=>results.length, :postcode=>params['postcode'].upcase) %></h2>
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
 
       <ul class="govuk-list">
           <% results.each do |result| %>
