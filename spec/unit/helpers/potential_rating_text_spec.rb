@@ -7,15 +7,21 @@ describe Sinatra::FrontendService::Helpers do
 
   context "given a recommended improvment number" do
     it "number 1" do
-      expect(HelpersStub.new.potential_rating_text(1)).to eq("Potential rating after carrying out<br> recommendation 1")
+      expect(HelpersStub.new.potential_rating_text(1)).to eq(
+        "Potential rating after carrying out<br> recommendation 1",
+      )
     end
 
     it "number 2" do
-      expect(HelpersStub.new.potential_rating_text(2)).to eq("Potential rating after carrying out<br> recommendations 1 and 2")
+      expect(HelpersStub.new.potential_rating_text(2)).to eq(
+        "Potential rating after carrying out<br> recommendations 1 and 2",
+      )
     end
 
     it "number 3 to 9" do
-      expect(HelpersStub.new.potential_rating_text(3)).to eq("Potential rating after carrying out<br> recommendations 1 to 3")
+      expect(HelpersStub.new.potential_rating_text(3)).to eq(
+        "Potential rating after carrying out<br> recommendations 1 to 3",
+      )
     end
   end
 end

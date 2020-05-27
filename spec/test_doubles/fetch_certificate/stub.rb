@@ -64,7 +64,8 @@ module FetchCertificate
                 "typicalSaving": "0.0",
                 "improvementCategory": "6",
                 "improvementType": "Z3",
-                "energyPerformanceRatingImprovement": energy_performance_rating_improvement,
+                "energyPerformanceRatingImprovement":
+                  energy_performance_rating_improvement,
                 "environmentalImpactRatingImprovement": 50,
                 "greenDealCategoryCode": "1",
               },

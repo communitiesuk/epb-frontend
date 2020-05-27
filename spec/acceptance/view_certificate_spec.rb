@@ -39,11 +39,15 @@ describe "Acceptance::Certificate" do
     end
 
     it "shows the type of assessment" do
-      expect(response.body).to include('<span class="govuk-details__summary-text">RdSAP</span>')
+      expect(response.body).to include(
+        '<span class="govuk-details__summary-text">RdSAP</span>',
+      )
     end
 
     it "shows the type of assessment description" do
-      expect(response.body).to include("RdSAP (Reduced data Standard Assessment Procedure) is a method used to assess and compare the energy and environmental performance of properties in the UK")
+      expect(response.body).to include(
+        "RdSAP (Reduced data Standard Assessment Procedure) is a method used to assess and compare the energy and environmental performance of properties in the UK",
+      )
     end
 
     it "shows the total floor area" do
@@ -437,9 +441,7 @@ describe "Acceptance::Certificate" do
     end
 
     it "shows typical potential rating" do
-      expect(response.body).to include(
-        '<text x="30" y="30">76 | C </text>',
-      )
+      expect(response.body).to include('<text x="30" y="30">76 | C </text>')
     end
 
     it "shows typical potential rating in the correct color" do
@@ -464,28 +466,30 @@ describe "Acceptance::Certificate" do
     context "when the potential rating improvement  is empty" do
       before do
         FetchCertificate::Stub.fetch(
-         "1111-1111-1111-1111-1112",
-         "25",
-         "f",
-         false,
-         7.8453,
-         6.5123,
-         nil,
-         nil,
-         nil,
-         nil,
-         12,
-         nil,
-         nil,
-         nil
-         )
+          "1111-1111-1111-1111-1112",
+          "25",
+          "f",
+          false,
+          7.8453,
+          6.5123,
+          nil,
+          nil,
+          nil,
+          nil,
+          12,
+          nil,
+          nil,
+          nil,
+        )
       end
       let(:response) do
         get "/energy-performance-certificate/1111-1111-1111-1111-1112"
       end
 
       it "will show information unavailable instead" do
-        expect(response.body).to include('<p class="govuk-body govuk-!-font-weight-bold" id="typical-saving-cost">Not applicable</p>')
+        expect(response.body).to include(
+          '<p class="govuk-body govuk-!-font-weight-bold" id="typical-saving-cost">Not applicable</p>',
+        )
       end
     end
 
@@ -527,7 +531,9 @@ describe "Acceptance::Certificate" do
     let(:response) { get "/energy-performance-certificate/123-456" }
 
     it "displays the SAP type description" do
-      expect(response.body).to include("SAP (Standard Assessment Procedure) is a method used to assess and compare the energy and environmental performance of properties in the UK.")
+      expect(response.body).to include(
+        "SAP (Standard Assessment Procedure) is a method used to assess and compare the energy and environmental performance of properties in the UK.",
+      )
     end
   end
 
