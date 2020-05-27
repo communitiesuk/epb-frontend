@@ -148,5 +148,25 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
         page,
       ).to have_content "7 assessors, sorted by distance from SW1A 2AA"
     end
+
+    it "displays accreditation scheme contact details for the first assessor" do
+      visit "/find-an-assessor"
+      click_on "find a non domestic assessor service"
+      fill_in "postcode", with: "SW1A 2AA"
+      click_on "Find"
+      find_all("span", text: "More information")[1].click
+      expect(page).to have_content "Contact details for Stroma:"
+      expect(page).to have_content "Email: certification@stroma.com"
+      expect(page).to have_content "Telephone: 0845 621 11 11"
+    end
+
+    it "displays no longer accredited text for unaccredited scheme" do
+      visit "/find-an-assessor"
+      click_on "find a non domestic assessor service"
+      fill_in "postcode", with: "SW1A 2AA"
+      click_on "Find"
+      find_all("span", text: "More information")[4].click
+      expect(page).to have_content "EPB 4 U is no longer accredited."
+    end
   end
 end
