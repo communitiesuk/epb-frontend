@@ -118,14 +118,14 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
   context "when finding a non-domestic assessor by postcode" do
     it "finds a non-domestic assessor" do
       visit "/find-an-assessor"
-      click_on "find a non domestic assessor service"
+      click_on "find a non domestic assessor"
       fill_in "postcode", with: "SW1A 2AA"
       click_on "Find"
     end
 
     it "displays an error message when entering an empty postcode" do
       visit "/find-an-assessor"
-      click_on "find a non domestic assessor service"
+      click_on "find a non domestic assessor"
       fill_in "postcode", with: ""
       click_on "Find"
       expect(page).to have_content "Enter a real postcode"
@@ -133,7 +133,7 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
 
     it "displays an error message when entering an invalid postcode" do
       visit "/find-an-assessor"
-      click_on "find a non domestic assessor service"
+      click_on "find a non domestic assessor"
       fill_in "postcode", with: "NOT A POSTCODE"
       click_on "Find"
       expect(page).to have_content "Enter a real postcode"
@@ -141,7 +141,7 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
 
     it "displays the find a non domestic assessor page heading when entering a valid postcode " do
       visit "/find-an-assessor"
-      click_on "find a non domestic assessor service"
+      click_on "find a non domestic assessor"
       fill_in "postcode", with: "SW1A 2AA"
       click_on "Find"
       expect(
@@ -151,7 +151,7 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
 
     it "displays accreditation scheme contact details for the first assessor" do
       visit "/find-an-assessor"
-      click_on "find a non domestic assessor service"
+      click_on "find a non domestic assessor"
       fill_in "postcode", with: "SW1A 2AA"
       click_on "Find"
       find_all("span", text: "More information")[1].click
@@ -162,7 +162,7 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
 
     it "displays no longer accredited text for unaccredited scheme" do
       visit "/find-an-assessor"
-      click_on "find a non domestic assessor service"
+      click_on "find a non domestic assessor"
       fill_in "postcode", with: "SW1A 2AA"
       click_on "Find"
       find_all("span", text: "More information")[4].click
