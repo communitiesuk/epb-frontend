@@ -62,7 +62,7 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
       click_on "Find"
       expect(
         page,
-      ).to have_content "7 assessors in order of from SW1A 2AA"
+      ).to have_content "7 assessors in order of distance from SW1A 2AA"
     end
 
     it "displays accreditation scheme contact details for the first assessor" do
