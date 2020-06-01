@@ -114,13 +114,12 @@ en:
   find_assessor_by_postcode:
     head:
       title: 'Energy performance of buildings register - Find an energy assessor'
-    top_heading: 'Find an assessor to get a new EPC'
-    top_body: 'Search for accredited assessors near the property.'
+    top_heading: 'Find an assessor by postcode'
     assessor_by_name:
       title: 'Search by name'
-      body: 'If you know the name of an assessor and want to check their details, use the %{link} service.'
-      cta: 'Find assessor by name'
-    question: 'Enter the postcode of the property.'
+      body: 'If you know the name of an assessor and want to check their details, you can %{link}.'
+      cta: 'find an assessor by name'
+    question: 'Enter the postcode of the property'
     hint: 'For example SW1A 2AA'
     postcode_error: 'Enter a real postcode'
     postcode_not_valid: 'Enter a postcode that is not malformed'

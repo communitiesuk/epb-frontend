@@ -89,7 +89,7 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
   it "displays an error message when entering an empty name" do
     visit "/find-an-assessor"
     click_on "Start now"
-    click_on "Find assessor by name"
+    click_on "find an assessor by name"
     click_on "Search"
     expect(page).to have_content "Enter a name"
   end
@@ -97,7 +97,7 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
   it "displays an assessor when searched for one that does exist" do
     visit "/find-an-assessor"
     click_on "Start now"
-    click_on "Find assessor by name"
+    click_on "find an assessor by name"
     fill_in "name", with: "Supercommon Name"
     click_on "Search"
     expect(page).to have_content "7 results, found by the name Supercommon Name"
@@ -106,7 +106,7 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
   it "displays accreditation scheme contact details for an existing assessor by name" do
     visit "/find-an-assessor"
     click_on "Start now"
-    click_on "Find assessor by name"
+    click_on "find an assessor by name"
     fill_in "name", with: "Supercommon Name"
     click_on "Search"
     find_all("span", text: "More information")[2].click
