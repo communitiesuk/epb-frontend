@@ -37,32 +37,34 @@ en:
   find_an_assessor:
     head:
       title: 'Energy performance of buildings register - Find an energy assessor for a residential property'
-    top_heading: 'Getting a new Energy Performance Certificate (EPC)'
+    top_heading: 'Getting a new Energy Performance Certificate (EPC) for a domestic property'
     introduction:
       what_you_need: 'You need an EPC when you build, sell or let a domestic property.'
-      assessor: 'To get a new EPC, you need to book an assessor. They will assess the energy efficiency of the property and create an EPC.'
+      assessor: 'To get a new EPC, you need to book an assessor. They will assess the energy performance of the property and create an EPC. An EPC is valid for 10 years'
       cost: 'The cost of an assessment varies by assessor and the size of the property.'
-      valid: 'An EPC is valid for 10 years.'
       england_wales_northern_ireland: 'Use this service to find an accredited assessor in England, Wales and Northern Ireland.'
     buildings_not_epc:
       cta: 'Buildings that don’t need an EPC'
-      intro: 'These include:'
+      intro: 'Properties do not need an EPC if they are:'
       list: 'places of worship|temporary buildings that will be used for less than 2 years|stand-alone buildings with total useful floor space of less than 50 square metres|industrial sites, workshops and non-residential agricultural buildings that don’t use a lot of energy|some buildings that are due to be demolished|holiday accommodation that’s rented out for less than 4 months a year or is let under a licence to occupy|listed buildings - you should get advice from your local authority conservation officer if the work would alter the building’s character|residential buildings intended to be used less than 4 months a year'
     cta: 'Start now'
     before_you_start:
-      heading: 'Other ways to find an assessor'
+      heading: 'Before you start'
       switch_language:
-        description: 'This service is also available in %{link}.'
+        description: 'This online service is also available in %{link}.'
         link: 'Welsh (Cymraeg)'
         url: '/find-an-assessor?lang=cy'
-      phone_text: 'If you need additional support to find an assessor, call our helpdesk on %{link}.'
+      phone_text: 'If you need additional support to find an assessor, call our helpdesk on %{link} (Monday to Friday, 9am - 5pm).'
       phone_number: '0233 788 1234'
       scotland:
-        description: 'If the property is in Scotland, you should use the %{link}'
+        description: 'If the property is in Scotland, use the %{link}'
         link: 'Scottish government’s EPC service.'
       commercial:
-        description: 'If the property is for commercial or public use, find an assessor by using the %{link}.'
-        link: 'find a non domestic assessor service'
+        description: 'For commercial or public buildings, use the %{link} service.'
+        link: 'find a non domestic assessor'
+      existing_epc:
+        description: 'To check if a property has an existing EPC, use the %{link} service.'
+        link: 'find an EPC for a domestic property'
   schemes:
     head:
       title: 'Energy performance of buildings register - Contact an energy assessor accreditation scheme'
