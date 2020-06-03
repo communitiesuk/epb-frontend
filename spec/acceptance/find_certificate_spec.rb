@@ -387,6 +387,16 @@ describe "Acceptance::Certificate" do
       end
     end
 
+    context "when the street name is whitespace" do
+      let(:response) do
+        get "/find-a-certificate/search-by-street-name-and-town?street_name=+&town=london"
+      end
+
+      it "returns status 400" do
+        expect(response.status).to eq(400)
+      end
+    end
+
     context "when missing a town" do
       let(:response) do
         get "/find-a-certificate/search-by-street-name-and-town?street_name=18%20Palmers%20Road&town="

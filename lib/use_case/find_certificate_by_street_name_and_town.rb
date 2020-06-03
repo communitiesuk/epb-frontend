@@ -24,7 +24,7 @@ module UseCase
   private
 
     def truly_empty(query)
-      query.nil? || query == ""
+      query.nil? || query == "" || query.strip.empty?
     end
   end
 end
