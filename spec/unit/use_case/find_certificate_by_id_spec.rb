@@ -22,7 +22,6 @@ describe UseCase::FindCertificateById do
           dwellingType: "Top floor flat",
           typeOfAssessment: "RdSAP",
           totalFloorArea: 50,
-          addressSummary: "3 Marsham Street, London, SW1B 2BB",
           currentEnergyEfficiencyRating: 90,
           currentEnergyEfficiencyBand: "b",
           potentialEnergyEfficiencyRating: "a",

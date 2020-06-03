@@ -471,7 +471,9 @@ describe "Acceptance::Certificate" do
         end
 
         it "shows the address of an entry" do
-          expect(response.body).to include("2 Marsham Street, London, SW1B 2BB")
+          expect(response.body).to include(
+            "1 Makeup Street, Beauty Town, SW1B 2BB",
+          )
         end
 
         it "shows the report reference number of an entry" do
