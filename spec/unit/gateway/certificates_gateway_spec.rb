@@ -129,14 +129,8 @@ describe Gateway::CertificatesGateway do
             "telephone": "0800 0000000",
             "email": "lender@example.com",
           },
-          "interest": {
-            "rate": 12.3,
-            "fixed": true,
-          },
-          "chargeUplift": {
-            "amount": 1.25,
-            "date": "2025-03-29",
-          },
+          "interest": { "rate": 12.3, "fixed": true },
+          "chargeUplift": { "amount": 1.25, "date": "2025-03-29" },
           "ccaRegulated": true,
           "structureChanged": false,
           "measuresRemoved": false,

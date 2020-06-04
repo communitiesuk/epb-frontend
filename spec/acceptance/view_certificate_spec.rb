@@ -405,21 +405,19 @@ describe "Acceptance::Certificate" do
               '<td class="govuk-table__cell">Current charge</td>',
             )
           end
-          it "shows the estimated_saving" do
-            expect(response.body).to include(
-              '<td class="govuk-table__cell">Estimated saving</td>',
-            )
-          end
+
           it "shows the payment_period_start" do
             expect(response.body).to include(
               '<td class="govuk-table__cell">Payment period start</td>',
             )
           end
+
           it "shows the payment_period_end" do
             expect(response.body).to include(
               '<td class="govuk-table__cell">Payment period end</td>',
             )
           end
+
           it "shows the interest_rate_payable" do
             expect(response.body).to include(
               '<td class="govuk-table__cell">Interest rate payable</td>',
@@ -429,46 +427,74 @@ describe "Acceptance::Certificate" do
 
         context "shows the improvment products" do
           it "shows the product and paid off date" do
-            expect(response.body).to include('<td class="govuk-table__cell">WarmHome lagging stuff (TM)</td>')
-            expect(response.body).to include('<td class="govuk-table__cell">2025-03-29</td>')
+            expect(response.body).to include(
+              '<td class="govuk-table__cell">WarmHome lagging stuff (TM)</td>',
+            )
+            expect(response.body).to include(
+              '<td class="govuk-table__cell">2025-03-29</td>',
+            )
           end
         end
 
         it "shows the current charge" do
-          expect(response.body).to include('<td class="govuk-table__cell">£124.19 per year</td>')
+          expect(response.body).to include(
+            '<td class="govuk-table__cell">£124.19 per year</td>',
+          )
         end
 
         it "shows the start date" do
-          expect(response.body).to include('<td class="govuk-table__cell">2020-01-30</td>')
+          expect(response.body).to include(
+            '<td class="govuk-table__cell">2020-01-30</td>',
+          )
         end
 
         it "shows the end date" do
-          expect(response.body).to include('<td class="govuk-table__cell">2030-02-28</td>')
+          expect(response.body).to include(
+            '<td class="govuk-table__cell">2030-02-28</td>',
+          )
         end
 
         it "shows interest rate payable" do
-          expect(response.body).to include('<td class="govuk-table__cell">fixed at 12.3% APR</td>')
+          expect(response.body).to include(
+            '<td class="govuk-table__cell">fixed at 12.3% APR</td>',
+          )
         end
 
         context "shows the plan and provider information" do
           it "shows the plan number" do
-            expect(response.body).to include('<td class="govuk-table__cell">Plan number:</td>')
-            expect(response.body).to include('<td class="govuk-table__cell">ABC123456DEF</td>')
+            expect(response.body).to include(
+              '<td class="govuk-table__cell">Plan number:</td>',
+            )
+            expect(response.body).to include(
+              '<td class="govuk-table__cell">ABC123456DEF</td>',
+            )
           end
 
           it "shows the providers name" do
-            expect(response.body).to include('<td class="govuk-table__cell">Provider:</td>')
-            expect(response.body).to include('<td class="govuk-table__cell">The Bank</td>')
+            expect(response.body).to include(
+              '<td class="govuk-table__cell">Provider:</td>',
+            )
+            expect(response.body).to include(
+              '<td class="govuk-table__cell">The Bank</td>',
+            )
           end
 
           it "shows the providers telephone number" do
-            expect(response.body).to include('<td class="govuk-table__cell">Telephone:</td>')
-            expect(response.body).to include('<td class="govuk-table__cell">0800 0000000</td>')
+            expect(response.body).to include(
+              '<td class="govuk-table__cell">Telephone:</td>',
+            )
+            expect(response.body).to include(
+              '<td class="govuk-table__cell">0800 0000000</td>',
+            )
           end
 
           it "shows the providers email" do
-            expect(response.body).to include('<td class="govuk-table__cell">Email:</td>')
-            expect(response.body).to include('<td class="govuk-table__cell">lender@example.com</td>')
+            expect(response.body).to include(
+              '<td class="govuk-table__cell">Email:</td>',
+            )
+            expect(response.body).to include(
+              '<td class="govuk-table__cell">lender@example.com</td>',
+            )
           end
         end
       end
