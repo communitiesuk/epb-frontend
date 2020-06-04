@@ -481,7 +481,7 @@ en:
           improvements_made: 'the improvements made by the plan'
           typical_energy_use: 'typical energy use for this type of property, using current energy prices'
         improvements_header: 'Improvements'
-        paid_off_header: 'Paid Off'
+        paid_off_header: 'Paid off'
         plan_and_provider_details: 'Plan and provider details'
         plan_number: 'Plan number:'
         provider_name: 'Provider:'
