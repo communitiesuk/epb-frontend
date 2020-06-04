@@ -387,13 +387,21 @@ describe "Acceptance::Certificate" do
       end
     end
 
-    context "when the street name is whitespace" do
+    context "when the street name is a whitespace" do
       let(:response) do
         get "/find-a-certificate/search-by-street-name-and-town?street_name=+&town=london"
       end
 
       it "returns status 400" do
         expect(response.status).to eq(400)
+      end
+
+      it "displays the correct error message" do
+        expect(response.body).to include(
+          '<span id="street-name-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error: </span>Enter a street name
+          </span>',
+        )
       end
     end
 
