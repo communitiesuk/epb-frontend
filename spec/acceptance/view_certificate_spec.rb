@@ -393,6 +393,82 @@ describe "Acceptance::Certificate" do
           )
         end
       end
+
+      context "When a certificate has a Green Deal Plan" do
+        it "shows the title of the section" do
+          expect(response.body).to include("Green Deal Plan")
+        end
+
+        context "shows the Cost of the plan breakdown data" do
+          it "shows the current_charge" do
+            expect(response.body).to include(
+              '<td class="govuk-table__cell">Current charge</td>',
+            )
+          end
+          it "shows the estimated_saving" do
+            expect(response.body).to include(
+              '<td class="govuk-table__cell">Estimated saving</td>',
+            )
+          end
+          it "shows the payment_period_start" do
+            expect(response.body).to include(
+              '<td class="govuk-table__cell">Payment period start</td>',
+            )
+          end
+          it "shows the payment_period_end" do
+            expect(response.body).to include(
+              '<td class="govuk-table__cell">Payment period end</td>',
+            )
+          end
+          it "shows the interest_rate_payable" do
+            expect(response.body).to include(
+              '<td class="govuk-table__cell">Interest rate payable</td>',
+            )
+          end
+        end
+
+        context "shows the plan and provider information" do
+          it "shows the plan number" do
+            expect(response.body).to include('<td class="govuk-table__cell">Plan number:</td>')
+            expect(response.body).to include('<td class="govuk-table__cell">ABC123456DEF</td>')
+          end
+
+          it "shows the providers name" do
+            expect(response.body).to include('<td class="govuk-table__cell">Provider:</td>')
+            expect(response.body).to include('<td class="govuk-table__cell">The Bank</td>')
+          end
+
+          it "shows the providers telephone number" do
+            expect(response.body).to include('<td class="govuk-table__cell">Telephone:</td>')
+            expect(response.body).to include('<td class="govuk-table__cell">0800 0000000</td>')
+          end
+
+          it "shows the providers email" do
+            expect(response.body).to include('<td class="govuk-table__cell">Email:</td>')
+            expect(response.body).to include('<td class="govuk-table__cell">lender@example.com</td>')
+          end
+        end
+      end
+
+      context "When a certificate does NOT have a Green Deal Plan" do
+        before { FetchCertificate::Stub.fetch("1111-1111-1111-1111-1112") }
+
+        let(:response) do
+          get "/energy-performance-certificate/1111-1111-1111-1111-1112"
+        end
+
+        it "will NOT show the Green Deal Plan section" do
+          expect(response.body).to_not include(
+            '<h2 class="govuk-heading-l">Green Deal Plan</h2>',
+          )
+        end
+
+        it "will NOT show the Green Deal Plan section tab" do
+          expect(response.body).to_not include(
+            '<a href="#renting">Green Deal Plan</a>',
+          )
+        end
+      end
     end
   end
 

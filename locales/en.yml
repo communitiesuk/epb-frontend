@@ -321,6 +321,7 @@ en:
         recommendations: 'How to improve this property’s energy performance'
         heat-demand: 'Estimated energy use and potential savings'
         information: 'Contacting the assessor and accreditation scheme'
+        green_deal: 'Green Deal Plan'
         previous: 'Other certificates for this property'
     sections:
       renting:
@@ -458,6 +459,35 @@ en:
             rdsap_description_second_part: 'This type of assessment can be carried out on properties built before 1 April 2008 in England and Wales, and 30 September 2008 in Northern Ireland. It can also be used for newer properties, as long as they have a previous SAP assessment, which uses detailed information about the property’s construction to calculate energy performance.'
             no_disclosure: 'No related party disclosure provided'
             disclosure_number_not_valid: 'The disclosure code provided is not valid'
+      green_deal:
+        title: 'Green Deal Plan'
+        info: 'Energy efficiency improvements were made to this property by a %{link}.'
+        url: 'https://www.gov.uk/green-deal-energy-saving-measures/moving-into-a-property-with-a-green-deal'
+        copy_of_plan: 'Before buying or renting this property, you should ask the property’s owner for a copy of the plan. You can also get a copy of the plan from the plan’s provider with the owner’s consent.'
+        cost_of_plan: 'Cost of the plan'
+        plan_charges:
+          title: 'Plan charges:'
+          point_one: 'are payable as part of the electricity bill'
+          point_two: 'reduce as each improvement is paid off'
+        current_charge: 'Current charge'
+        estimated_saving: 'Estimated saving'
+        payment_period_start: 'Payment period start'
+        payment_period_end: 'Payment period end'
+        interest_rate_payable: 'Interest rate payable'
+        charge_overtime: 'This is the current charge, but the charge can change over time depending on the details of the plan. The plan can be paid off early, although extra costs may apply.'
+        estimated_savings:
+          title: 'The estimated saving is based on:'
+          assessment: 'the original Green Deal assessment'
+          improvements_made: 'the improvements made by the plan'
+          typical_energy_use: 'typical energy use for this type of property, using current energy prices'
+        improvements_header: 'Improvements'
+        paid_off_header: 'Paid Off'
+        plan_and_provider_details: 'Plan and provider details'
+        plan_number: 'Plan number:'
+        provider_name: 'Provider:'
+        provider_telephone: 'Telephone:'
+        provider_email: 'Email:'
+
 
   energy_performance_rating:
     '0':

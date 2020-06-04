@@ -16,9 +16,11 @@ module FetchCertificate
       related_party_disclosure_number = 1,
       property_summary = nil,
       type_of_assessment = "RdSAP",
-      energy_performance_rating_improvement = 76
+      energy_performance_rating_improvement = 76,
+      green_deal_plan = nil
     )
       property_summary ||= generate_property_summary
+      green_deal_plan ||= generate_green_deal_plan
 
       if assessment_id == "1111-1111-1111-1111-1112"
         body = {
@@ -193,6 +195,7 @@ module FetchCertificate
             relatedPartyDisclosureText: related_party_disclosure_text,
             relatedPartyDisclosureNumber: related_party_disclosure_number,
             propertySummary: property_summary,
+            greenDealPlan: green_deal_plan,
           },
         }
       end
@@ -202,6 +205,54 @@ module FetchCertificate
         "http://test-api.gov.uk/api/assessments/domestic-epc/#{assessment_id}",
       )
         .to_return(status: 200, body: body.to_json)
+    end
+
+    def self.generate_green_deal_plan
+      {
+        greenDealPlanId: "ABC123456DEF",
+        startDate: "2020-01-30",
+        endDate: "2030-02-28",
+        providerDetails: {
+          name: "The Bank",
+          telephone: "0800 0000000",
+          email: "lender@example.com",
+        },
+        interest: {
+          rate: 12.3,
+          fixed: true,
+        },
+        chargeUplift: {
+          amount: 1.25,
+          date: "2025-03-29",
+        },
+        ccaRegulated: true,
+        structureChanged: false,
+        measuresRemoved: false,
+        measures: [
+          {
+            sequence: 0,
+            measureType: "Loft insulation",
+            product: "WarmHome lagging stuff (TM)",
+            repaidDate: "2025-03-29",
+          },
+        ],
+        charges: [
+          {
+            sequence: 0,
+            startDate: "2020-03-29",
+            endDate: "2030-03-29",
+            dailyCharge: "0.34",
+          },
+        ],
+        savings: [
+          {
+            sequence: 0,
+            fuelCode: "LPG",
+            fuelSaving: 0,
+            standingChargeFraction: -0.3,
+          },
+        ],
+      }
     end
 
     def self.generate_property_summary
