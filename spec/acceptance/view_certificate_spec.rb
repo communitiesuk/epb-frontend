@@ -427,6 +427,29 @@ describe "Acceptance::Certificate" do
           end
         end
 
+        context "shows the improvment products" do
+          it "shows the product and paid off date" do
+            expect(response.body).to include('<td class="govuk-table__cell">WarmHome lagging stuff (TM)</td>')
+            expect(response.body).to include('<td class="govuk-table__cell">2025-03-29</td>')
+          end
+        end
+
+        it "shows the current charge" do
+          expect(response.body).to include('<td class="govuk-table__cell">£124.19 per year</td>')
+        end
+
+        it "shows the start date" do
+          expect(response.body).to include('<td class="govuk-table__cell">2020-01-30</td>')
+        end
+
+        it "shows the end date" do
+          expect(response.body).to include('<td class="govuk-table__cell">2030-02-28</td>')
+        end
+
+        it "shows interest rate payable" do
+          expect(response.body).to include('<td class="govuk-table__cell">fixed at 12.3% APR</td>')
+        end
+
         context "shows the plan and provider information" do
           it "shows the plan number" do
             expect(response.body).to include('<td class="govuk-table__cell">Plan number:</td>')
