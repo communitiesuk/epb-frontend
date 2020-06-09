@@ -35,7 +35,7 @@ module Gateway
     end
 
     def fetch(assessment_id)
-      route = "/api/assessments/domestic-epc/#{CGI.escape(assessment_id)}"
+      route = "/api/assessments/#{CGI.escape(assessment_id)}"
       response = @internal_api_client.get(route)
 
       assessment_details = JSON.parse(response.body, symbolize_names: true)
