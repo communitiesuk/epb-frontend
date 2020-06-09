@@ -5,7 +5,7 @@ module FindCertificate
     def self.search_by_postcode(postcode = "BF1 3AA")
       WebMock.stub_request(
         :get,
-        "http://test-api.gov.uk/api/assessments/domestic-epc/search?postcode=#{
+        "http://test-api.gov.uk/api/assessments/search?postcode=#{
           postcode
         }",
       )
@@ -20,7 +20,7 @@ module FindCertificate
     def self.search_by_id(reference_number)
       WebMock.stub_request(
         :get,
-        "http://test-api.gov.uk/api/assessments/domestic-epc/search?assessment_id=#{
+        "http://test-api.gov.uk/api/assessments/search?assessment_id=#{
           reference_number
         }",
       )
@@ -36,7 +36,7 @@ module FindCertificate
     def self.search_by_street_name_and_town(street_name, town)
       WebMock.stub_request(
         :get,
-        "http://test-api.gov.uk/api/assessments/domestic-epc/search?street_name=#{
+        "http://test-api.gov.uk/api/assessments/search?street_name=#{
           street_name
         }&town=#{town}",
       )
