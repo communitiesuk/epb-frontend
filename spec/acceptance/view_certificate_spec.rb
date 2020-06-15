@@ -431,7 +431,7 @@ describe "Acceptance::Certificate" do
               '<td class="govuk-table__cell">WarmHome lagging stuff (TM)</td>',
             )
             expect(response.body).to include(
-              '<td class="govuk-table__cell">2025-03-29</td>',
+              '<td class="govuk-table__cell">29 March 2025</td>',
             )
           end
         end

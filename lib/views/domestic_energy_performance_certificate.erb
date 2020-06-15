@@ -532,7 +532,7 @@
         <% assessment[:greenDealPlan][:measures].each do |green_deal_product| %>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell"><%= green_deal_product[:product] %></td>
-            <td class="govuk-table__cell"><%= green_deal_product[:repaidDate] %></td>
+            <td class="govuk-table__cell"><%= green_deal_product[:repaidDate].empty? ? "" : Date.parse(green_deal_product[:repaidDate]).strftime("%d %B %Y") %></td>
             <td class="govuk-table__header"></td>
           </tr>
         </tbody>
