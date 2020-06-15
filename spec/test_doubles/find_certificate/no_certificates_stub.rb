@@ -5,9 +5,7 @@ module FindCertificate
     def self.search_by_postcode(postcode = "BF1 3AA")
       WebMock.stub_request(
         :get,
-        "http://test-api.gov.uk/api/assessments/search?postcode=#{
-          postcode
-        }",
+        "http://test-api.gov.uk/api/assessments/search?postcode=#{postcode}",
       )
         .to_return(
           status: 200,
