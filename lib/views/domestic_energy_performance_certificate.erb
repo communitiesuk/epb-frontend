@@ -491,12 +491,7 @@
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
             <td class="govuk-table__cell"><%= t('domestic_epc.sections.green_deal.current_charge') %></td>
-            <% all_charges = [] %>
-            <% assessment[:greenDealPlan][:charges].each do |charge| %>
-              <% all_charges.append(charge[:dailyCharge].to_f) %>
-            <% end %>
-            <% charges = all_charges.inject(0, &:+)*365.25 %>
-            <td class="govuk-table__cell">£<%= charges.round(2) %> per year</td>
+            <td class="govuk-table__cell">£<%= calculate_yearly_charges(assessment) %> per year</td>
             <td class="govuk-table__header"></td>
           </tr>
           <tr class="govuk-table__row">

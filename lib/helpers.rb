@@ -65,6 +65,15 @@ module Sinatra
         text
       end
 
+      def calculate_yearly_charges(assessment)
+        all_charges = []
+        assessment[:greenDealPlan][:charges].each do |charge|
+          all_charges.append(charge[:dailyCharge].to_f)
+        end
+        charges = all_charges.inject(0, &:+) * 365.25
+        charges.round(2)
+      end
+
       def localised_url(url)
         if I18n.locale != I18n.available_locales[0]
           url = url_for(url, lang: I18n.locale.to_s)
