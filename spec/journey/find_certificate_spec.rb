@@ -64,15 +64,6 @@ describe "Journey::FindCertificate", type: :feature, journey: true do
     expect(page).to have_content "of 3 results matching"
   end
 
-  it "displays an error message when entering an empty reference number" do
-    visit "/find-a-certificate"
-    click_on "Start now"
-    click_on "certificate by reference"
-    fill_in "reference_number", with: ""
-    click_on "Find"
-    expect(page).to have_content "Enter a valid reference number"
-  end
-
   it "displays an error message when entering an empty street name" do
     visit "/find-a-certificate"
     click_on "Start now"
