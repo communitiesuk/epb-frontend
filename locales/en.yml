@@ -197,8 +197,9 @@ en:
     top_heading: 'Find an Energy Performance Certificate for a domestic property'
     top_body: 'You need a valid Energy Performance Certificate (EPC) before you sell or let a domestic property.'
     service:
-      introduction: 'Use this service to:'
-      list: 'check if a property in England, Wales and Northern Ireland has a valid EPC|review the energy efficiency rating of a property|access advice and information about how to improve the energy efficiency of a property'
+      introduction: 'Use this service to find an EPC for a domestic property (house or flat) in England, Wales or Northern Ireland.'
+      what_is_in_epc: 'An EPC lists the energy rating of a property. It also has advice on improving the energy performance of a property.'
+      need_epc: 'You need an EPC when you build, sell or let a domestic property. It is valid for 10 years.'
     cta: 'Start now'
     before_you_start:
       title: 'Before you start'
@@ -207,13 +208,17 @@ en:
         link: 'Welsh (Cymraeg)'
         url: '/find-a-certificate?lang=cy'
       scotland:
-        text: 'If your property is in Scotland, you should use the %{link}.'
+        text: 'For properties in Scotland, use the %{link}.'
         cta: "Scottish government's EPC service"
+      property_guidance:
+        description: 'To check if your property requires an EPC, read the %{link}.'
+        link: 'guidance on properties that do not need an EPC'
+        url:  'https://mhclg-epb-prototypes.london.cloudapps.digital/domestic'
       commercial:
-        text: 'If the property is for commercial or public use, use our %{link}.'
+        text: 'For commercial or public buildings, use the %{link} service.'
         url: 'https://www.ndepcregister.com'
         cta: 'find a non-domestic EPC'
-      call_center: 'The service is also available by calling 0233 788 1234.'
+      call_center: 'If you need additional support to find an EPC, call our helpdesk on 0233 788 1234 (Monday to Friday, 9am - 5pm).'
 
   find_certificate_by_postcode:
     head:

@@ -10,24 +10,12 @@
     <p class="govuk-body">
       <%= t('find_a_certificate.service.introduction') %>
     </p>
-
-    <ul class="govuk-list govuk-list--bullet">
-      <li><%== t('find_a_certificate.service.list').gsub('|', '</li><li>') %></li>
-    </ul>
-
-    <details class="govuk-details" data-module="govuk-details">
-      <summary class="govuk-details__summary">
-        <span class="govuk-details__summary-text">
-          <%= t('find_an_assessor.buildings_not_epc.cta') %>
-        </span>
-      </summary>
-      <div class="govuk-details__text">
-        <%= t('find_an_assessor.buildings_not_epc.intro') %>
-        <ul class="govuk-list govuk-list--bullet">
-          <li><%== t('find_an_assessor.buildings_not_epc.list').gsub('|', '</li><li>') %></li>
-        </ul>
-      </div>
-    </details>
+    <p class="govuk-body">
+      <%= t('find_a_certificate.service.what_is_in_epc') %>
+    </p>
+    <p class="govuk-body">
+      <%= t('find_a_certificate.service.need_epc') %>
+    </p>
 
     <div class="govuk-inset-text">
       <%== t('find_a_certificate.before_you_start.switch_language.description', :link => '<a href="' + t('find_a_certificate.before_you_start.switch_language.url') + '">' + t('find_a_certificate.before_you_start.switch_language.link') + '</a>' ) %>
@@ -60,8 +48,13 @@
       <%= t('find_a_certificate.before_you_start.call_center') %>
     </p>
 
+
     <p class="govuk-body">
       <%== t('find_a_certificate.before_you_start.scotland.text', :link => '<a href="https://www.gov.scot/publications/energy-performance-certificates-introduction/">' + t('find_a_certificate.before_you_start.scotland.cta') + '</a>') %>
+    </p>
+
+    <p class="govuk-body">
+      <%== t('find_a_certificate.before_you_start.property_guidance.description', :link => '<a href="' + t('find_a_certificate.before_you_start.property_guidance.url') + '">' + t('find_a_certificate.before_you_start.property_guidance.link') + '</a>') %>
     </p>
 
     <p class="govuk-body">
