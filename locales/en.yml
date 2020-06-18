@@ -224,14 +224,12 @@ en:
     head:
       title: 'Energy performance of buildings register - Find an energy performance certificate'
     top_heading: 'Search for an EPC by postcode'
-    question: 'Enter a postcode'
+    question: 'Enter the postcode'
     postcode_not_valid: 'Enter a real postcode'
     button_text: 'Find'
     hint: 'For example SW1A 2AA'
-    certificate_by_reference_number:
-      body: 'Use %{link} if you know your certificate number and want to validate it.'
-      cta: 'Find certificate by reference number'
     certificate_by_street_name_and_town:
+      heading: 'Search by street and town'
       body: "Use  %{link} if you don't know your postcode."
       cta: 'Find certificate by street name and town'
     no_network:
