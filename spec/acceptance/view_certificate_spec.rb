@@ -52,7 +52,7 @@ describe "Acceptance::Certificate" do
 
     it "shows the total floor area" do
       expect(response.body).to include(
-        '<td class="govuk-table__cell">150 m<sup>2</sup></td>',
+        '150',
       )
     end
 
@@ -254,13 +254,13 @@ describe "Acceptance::Certificate" do
     context "when viewing environmental impact section" do
       it "shows the summary text" do
         expect(response.body).to include(
-          "The energy used for heating, lighting and power in our homes produces over a quarter of the UK's CO<sub>2</sub> emissions.",
+          "The energy used for heating, lighting and power in our homes produces over a quarter of the UK's CO2 emissions.",
         )
       end
 
       it "shows the making changes text with the correct reduction value" do
         expect(response.body).to include(
-          "By making the recommended changes, you will reduce this property’s carbon emissions by 1.0 tonnes per year",
+          "By making the recommended changes, you will reduce this property’s CO2 emissions by 1.0 tonnes per year",
         )
       end
 
@@ -301,7 +301,7 @@ describe "Acceptance::Certificate" do
 
         it "shows the making changes text with the correct reduction value" do
           expect(response.body).to include(
-            "By making the recommended changes, you will reduce this property’s carbon emissions by 1.33 tonnes per year",
+            "By making the recommended changes, you will reduce this property’s CO2 emissions by 1.33 tonnes per year",
           )
         end
 
@@ -344,19 +344,19 @@ describe "Acceptance::Certificate" do
 
       it "shows the section texts" do
         expect(response.body).to include(
-          '<p class="govuk-body">The table below shows the energy performance for features of this property. Only features relevant to this property are shown. The assessment does not consider the condition of a feature and how well it is working.</p>',
+          '<p class="govuk-body">The table shows the energy performance for features of this property. The assessment does not consider the condition of a feature and how well it is working.</p>',
         )
       end
 
       it "shows the primary energy use section" do
         expect(response.body).to include(
-          '<h2 class="govuk-heading-m">Primary Energy use</h2>',
+          '<h2 class="govuk-heading-m">Primary energy use</h2>',
         )
         expect(response.body).to include(
           '<p class="govuk-body">The primary energy use for this property per year is 989 kilowatt hours (kWh) per square metre</p>',
         )
         expect(response.body).to include(
-          '<span class="govuk-details__summary-text">What is Primary Energy use?</span>',
+          '<span class="govuk-details__summary-text">What is primary energy use?</span>',
         )
       end
 

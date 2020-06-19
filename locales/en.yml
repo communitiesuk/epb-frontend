@@ -314,8 +314,10 @@ en:
       date_of_expiry: 'Valid until %{date_of_expiry}'
       certificate_id: 'Certificate Number'
       energy_rating_title: 'Energy Rating'
+      print_certificate: 'Print this certificate'
+      print_certificate_noscript : 'To print this certificate, press cmd/ctrl+p on your keyboard'
     sidebar:
-      title: 'Contents'
+      title: 'Certificate contents'
       sections:
         renting: 'Rules on letting this property'
         epc: 'Energy performance rating for this property'
@@ -334,30 +336,31 @@ en:
           subtitle: 'You may not be able to let this property'
           energy_rating_title: 'Energy Rating'
           body:
-            text: 'Your property has an energy rating of %{current_energy_efficiency_band}. You must take appropriate steps to comply with the requirements of the current regulations (%{mees_link}). The %{recommendations_link} of the EPC sets out changes you can make to improve the property’s rating.'
-            mees_cta: 'MEES'
-            mees_url: '#'
+            text: 'Your property has an energy rating of %{current_energy_efficiency_band}. It cannot be let, unless an exemption has been registered.'
+            text_2: 'Properties can be rented if they have an energy rating of A to E.'
+            recommendations_text: 'The %{recommendations_link} of the EPC sets out changes you can make to improve the property’s rating.'
             recommendations_cta: 'Recommendations section'
             recommendations_url: '#recommendations'
         rental_info:
-          body: 'From 1 April 2020, properties can only be let if they have an energy rating of A to E. If the property is rated F or G, it cannot be let, unless an exemption has been registered. You can read %{link}.'
+          body_1: 'Properties can be rented if they have an energy rating of A to E.'
+          body_2: 'If the property is rated F or G, it cannot be let, unless an exemption has been registered.'
+          guidance_text: ' You can read %{link}.'
           cta: 'guidance for landlords on the regulations and exemptions'
           url: 'https://www.gov.uk/guidance/domestic-private-rented-property-minimum-energy-efficiency-standard-landlord-guidance'
       epc:
         title: 'Energy efficiency rating for this property'
         intro:
-          text: 'Your property’s current energy rating is  %{current_energy_efficiency_band} (%{current_energy_efficiency_rating}). It has the potential to be %{potential_energy_efficiency_band} (%{potential_energy_efficiency_rating}).'
+          text: 'Your property’s current energy rating is  %{current_energy_efficiency_band}. It has the potential to be %{potential_energy_efficiency_band}.'
           cta: 'See how to improve this property’s energy performance.'
           url: '#recommendations'
         aria-label: 'Your energy rating is %{current_energy_efficiency_band}(%{current_energy_efficiency_rating}) and your potential is %{potential_energy_efficiency_band}(%{potential_energy_efficiency_rating})'
         body1: 'The graph shows this property’s current and potential energy efficiency.'
-        body2: 'Properties are given a score and a rating from A (most efficient) to G (least efficient)'
-        body3: 'The higher the score, the lower your fuel bills are likely to be.'
-        body4: 'The average energy rating for a property in England and Wales is D (60).'
-        body5: 'Energy ratings are based on average energy use. They may not reflect how energy is used by the people living at the property.'
+        body2: 'Properties are given a rating from A (most efficient) to G (least efficient).'
+        body3: 'Properties are also given a score. The higher this number, the cheaper your fuel bills are likely to be.'
+        body4: 'The average energy rating and score for a property in England and Wales are D (60).'
       summary:
         title: "Breakdown of property's energy performance"
-        intro: "The table below shows the energy performance for features of this property. Only features relevant to this property are shown. The assessment does not consider the condition of a feature and how well it is working."
+        intro: "The table shows the energy performance for features of this property. The assessment does not consider the condition of a feature and how well it is working."
         assessment_rating_explaination: 'Each feature is assessed as one of the following:'
         assessment_ratings:
           very_poor: 'very poor (least efficient)'
@@ -365,26 +368,27 @@ en:
           average: 'average'
           good: 'good'
           very_good: 'very good (most efficient)'
-        not_inspected: "When the description says 'assumed', it means that the insulation could not be inspected and an assumption has been made based on the age and type of your property."
+        not_inspected: "When the description says 'assumed', it means that the feature could not be inspected and an assumption has been made based on the age and type of your property."
         table_headers:
           feature: "Feature"
           description: "Description"
           energy_performance: "Energy performance"
-        primary_energy_use: 'Primary Energy use'
+        primary_energy_use: 'Primary energy use'
         primary_energy_use_description: 'The primary energy use for this property per year is 989 kilowatt hours (kWh) per square metre'
         primary_energy_use_dropdown:
-          what_is_primary_energy_use_title: 'What is Primary Energy use?'
+          what_is_primary_energy_use_title: 'What is primary energy use?'
           what_is_primary_energy_use_details: 'Primary energy use is a measure of the energy required for lighting, heating and hot water in a property. The calculation includes:'
           efficiency_of_heating: 'the efficiency of the property’s heating system'
           efficiency_of_electricity: 'power station efficiency for electricity'
           fuel_for_property: 'the energy used to produce the fuel and deliver it to the property'
         list:
           total_floor_area: 'Total floor area'
+          meters_squared: 'meters squared'
           dwelling_type: 'Property type'
       environmental-impact:
         title: "Environmental impact of this property"
-        summary: "One of the biggest contributors to climate change is carbon dioxide (%{carbon}). The energy used for heating, lighting and power in our homes produces over a quarter of the UK's %{carbon} emissions."
-        making_changes: "By making the recommended changes, you will reduce this property’s carbon emissions by %{reduction} tonnes per year and help to protect the environment."
+        summary: "One of the biggest contributors to climate change is carbon dioxide (CO2). The energy used for heating, lighting and power in our homes produces over a quarter of the UK's CO2 emissions."
+        making_changes: "By making the recommended changes, you will reduce this property’s CO2 emissions by %{reduction} tonnes per year. This will help to protect the environment."
         environmental_impact_rating: "Environmental impact ratings are based on assumptions about average occupancy and energy use. They may not reflect how energy is consumed by the people living at the property."
         average_household:
           text: "Average household produces:"
@@ -396,11 +400,11 @@ en:
         title: 'How to improve this property’s energy performance'
         summary:
           make_changes_text: 'Making any of the recommended changes will improve your property’s energy efficiency.'
-          improve_rating_text: 'If you make all of the recommended changes, this will improve the property’s energy rating from %{current_energy_efficiency_band} (%{current_energy_efficiency_rating}) to %{potential_energy_efficiency_band} (%{potential_energy_efficiency_rating}).'
+          improve_rating_text: 'If you make all of the recommended changes, this will improve the property’s energy rating and score from %{current_energy_efficiency_band} (%{current_energy_efficiency_rating}) to %{potential_energy_efficiency_band} (%{potential_energy_efficiency_rating}).'
           what_is_energy_rating: 'What is an energy rating?'
           energy_rating_description1: 'An energy rating shows a property’s energy efficiency.'
-          energy_rating_description2: 'Properties are given a score and a rating from A (most efficient) to G (least efficient).'
-          energy_rating_description3: 'The higher the score, the lower your fuel bills are likely to be.'
+          energy_rating_description2: 'Properties are given a rating from A (most efficient) to G (least efficient).'
+          energy_rating_description3: 'Properties are also given a score. The higher this number, the cheaper your fuel bills are likely to be.'
           no_recommendations_summary: 'There are no recommendations for this property.'
         box:
           energy_rating_title: 'Potential Energy Rating'

@@ -37,6 +37,13 @@
         </p>
       </div>
     </div>
+    <div>
+      <a onclick="window.print();return false;" class="govuk-link govuk-!-margin-bottom-5" id="link" href="#" style="display: none;"><%= t('domestic_epc.box.print_certificate') %></a>
+      <noscript><p class="govuk-body"><%= t('domestic_epc.box.print_certificate_noscript') %></p></noscript>
+      <script>document.getElementById('link').style.display = 'block';</script>
+
+      <hr class="epc-light-top">
+    </div>
   </div>
   <div class="govuk-grid-column-one-third">
     <div class="related-links">
@@ -72,17 +79,22 @@
             </h2>
             <div class="govuk-error-summary__body">
               <p class="govuk-body">
-                <%== t('domestic_epc.sections.renting.landlord_warning.body.text', :current_energy_efficiency_band => assessment[:currentEnergyEfficiencyBand].upcase, :mees_link => '<a href="' + t('domestic_epc.sections.renting.landlord_warning.body.mees_url') + '">' + t('domestic_epc.sections.renting.landlord_warning.body.mees_cta') + '</a>', :recommendations_link => '<a href="' + t('domestic_epc.sections.renting.landlord_warning.body.recommendations_url') + '">' + t('domestic_epc.sections.renting.landlord_warning.body.recommendations_cta') + '</a>') %>
+                <%== t('domestic_epc.sections.renting.landlord_warning.body.text', :current_energy_efficiency_band => assessment[:currentEnergyEfficiencyBand].upcase) %>
+                <%== t('domestic_epc.sections.renting.rental_info.guidance_text', :link => '<a href="' + t('domestic_epc.sections.renting.rental_info.url') + '">' + t('domestic_epc.sections.renting.rental_info.cta') + '</a>') %>
               </p>
               <p class="govuk-body">
-                <%== t('domestic_epc.sections.renting.rental_info.body', :link => '<a href="' + t('domestic_epc.sections.renting.rental_info.url') + '">' + t('domestic_epc.sections.renting.rental_info.cta') + '</a>') %>
+                <%== t('domestic_epc.sections.renting.landlord_warning.body.text_2') %>
+                <%== t('domestic_epc.sections.renting.landlord_warning.body.recommendations_text', :recommendations_link => '<a href="' + t('domestic_epc.sections.renting.landlord_warning.body.recommendations_url') + '">' + t('domestic_epc.sections.renting.landlord_warning.body.recommendations_cta') + '</a>') %>
               </p>
             </div>
           </div>
         </div>
       <% else %>
         <p class="govuk-body">
-          <%== t('domestic_epc.sections.renting.rental_info.body', :link => '<a href="' + t('domestic_epc.sections.renting.rental_info.url') + '">' + t('domestic_epc.sections.renting.rental_info.cta') + '</a>') %>
+          <%== t('domestic_epc.sections.renting.rental_info.body_1') %>
+        </p>
+        <p class="govuk-body">
+          <%== t('domestic_epc.sections.renting.rental_info.body_2') + t('domestic_epc.sections.renting.rental_info.guidance_text', :link => '<a href="' + t('domestic_epc.sections.renting.rental_info.url') + '">' + t('domestic_epc.sections.renting.rental_info.cta') + '</a>' ) %>
         </p>
       <% end %>
     </div>
@@ -92,7 +104,7 @@
       <a id="epc"></a>
       <h2 class="govuk-heading-l"><%= t('domestic_epc.sections.epc.title') %></h2>
       <p class="govuk-body govuk-!-margin-bottom-6">
-        <%== t('domestic_epc.sections.epc.intro.text', :current_energy_efficiency_band => assessment[:currentEnergyEfficiencyBand].upcase, :current_energy_efficiency_rating => assessment[:currentEnergyEfficiencyRating], :potential_energy_efficiency_band => assessment[:potentialEnergyEfficiencyBand].upcase, :potential_energy_efficiency_rating => assessment[:potentialEnergyEfficiencyRating]) %>
+        <%== t('domestic_epc.sections.epc.intro.text', :current_energy_efficiency_band => assessment[:currentEnergyEfficiencyBand].upcase, :potential_energy_efficiency_band => assessment[:potentialEnergyEfficiencyBand].upcase) %>
       </p>
       <p class="govuk-body govuk-!-margin-bottom-6">
         <a href=" <%= t('domestic_epc.sections.epc.intro.url') %>"><%= t('domestic_epc.sections.epc.intro.cta') %></a>
@@ -108,7 +120,6 @@
       <p class="govuk-body govuk-!-margin-top-6"><%= t('domestic_epc.sections.epc.body2') %></p>
       <p class="govuk-body govuk-!-margin-top-6"><%= t('domestic_epc.sections.epc.body3') %></p>
       <p class="govuk-body govuk-!-margin-top-6"><%= t('domestic_epc.sections.epc.body4') %></p>
-      <p class="govuk-body govuk-!-margin-top-6"><%= t('domestic_epc.sections.epc.body5') %></p>
     </div>
   </div>
   <div class="govuk-grid-column-two-thirds">
@@ -127,7 +138,10 @@
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
             <td class="govuk-table__cell"><%= t('domestic_epc.sections.summary.list.total_floor_area') %></td>
-            <td class="govuk-table__cell"><%= assessment[:totalFloorArea] %> m<sup>2</sup></td>
+            <td class="govuk-table__cell">
+              <%= assessment[:totalFloorArea] %>
+              <%= t('domestic_epc.sections.summary.list.meters_squared') %>
+            </td>
             <td class="govuk-table__header"></td>
           </tr>
           <tr class="govuk-table__row">
@@ -137,11 +151,11 @@
           </tr>
           <p class="govuk-body"><%= t('domestic_epc.sections.summary.assessment_rating_explaination') %></p>
            <ul class="govuk-list govuk-list--bullet govuk-!-margin-left-6">
-            <li><%== t('domestic_epc.sections.summary.assessment_ratings.very_poor') %></li>
-            <li><%== t('domestic_epc.sections.summary.assessment_ratings.poor') %></li>
-            <li><%== t('domestic_epc.sections.summary.assessment_ratings.average') %></li>
-            <li><%== t('domestic_epc.sections.summary.assessment_ratings.good') %></li>
-            <li><%== t('domestic_epc.sections.summary.assessment_ratings.very_good') %></li>
+             <li><%== t('domestic_epc.sections.summary.assessment_ratings.very_good') %></li>
+             <li><%== t('domestic_epc.sections.summary.assessment_ratings.good') %></li>
+             <li><%== t('domestic_epc.sections.summary.assessment_ratings.average') %></li>
+             <li><%== t('domestic_epc.sections.summary.assessment_ratings.poor') %></li>
+             <li><%== t('domestic_epc.sections.summary.assessment_ratings.very_poor') %></li>
           </ul>
           <p class="govuk-body"><%= t('domestic_epc.sections.summary.not_inspected') %></p>
           <% if assessment[:propertySummary].is_a? Array %>
@@ -176,7 +190,7 @@
     <div class="govuk-body epc-page-break epc-blue-bottom">
       <a id="energy"></a>
       <h2 class="govuk-heading-l"><%= t('domestic_epc.sections.environmental-impact.title') %></h2>
-      <p class="govuk-body"><%== t('domestic_epc.sections.environmental-impact.summary', carbon: 'CO<sub>2</sub>') %></p>
+      <p class="govuk-body"><%== t('domestic_epc.sections.environmental-impact.summary') %></p>
       <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row" id="type">
           <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= t('domestic_epc.sections.environmental-impact.average_household.text') %></dt>
