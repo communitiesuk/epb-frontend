@@ -281,18 +281,18 @@ en:
   find_certificate_by_street_name_and_town:
     head:
       title: 'Energy performance of buildings register - Find an energy performance certificate'
-    top_heading: 'Search for an EPC by street name and town'
+    top_heading: 'Find an EPC by street and town'
     no_such_address:
       error: 'A certificate was not found at this address.'
       body: 'If you need to get an EPC for your property, please use the %{link} service'
       cta: 'Find an assessor'
     button_text: 'Find'
-    street_name_question: 'Enter a street'
+    street_name_question: 'Enter the street'
     street_name_hint: 'For example 14 Primrose Street'
-    town_question: 'Enter a town'
+    town_question: 'Enter the town'
     town_hint: 'For example Bournemouth'
-    street_name_missing: 'Enter a street name'
-    town_missing: 'Enter a town'
+    street_name_missing: 'Enter the street name'
+    town_missing: 'Enter the town'
     no_network:
       heading: 'Network connection failed'
       body: 'There is an internal network error'

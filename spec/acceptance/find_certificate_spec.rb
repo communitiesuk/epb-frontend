@@ -364,7 +364,7 @@ describe "Acceptance::Certificate" do
       end
     end
 
-    context "when missing a street name" do
+    context "when missing the street name" do
       let(:response) do
         get "/find-a-certificate/search-by-street-name-and-town?street_name=&town=Brighton"
       end
@@ -383,7 +383,7 @@ describe "Acceptance::Certificate" do
         expect(response.body).to include(
           '<span id="street-name-error" class="govuk-error-message">',
         )
-        expect(response.body).to include("Enter a street name")
+        expect(response.body).to include("Enter the street name")
       end
     end
 
@@ -399,13 +399,13 @@ describe "Acceptance::Certificate" do
       it "displays the correct error message" do
         expect(response.body).to include(
           '<span id="street-name-error" class="govuk-error-message">
-            <span class="govuk-visually-hidden">Error: </span>Enter a street name
+            <span class="govuk-visually-hidden">Error: </span>Enter the street name
           </span>',
         )
       end
     end
 
-    context "when missing a town" do
+    context "when missing the town" do
       let(:response) do
         get "/find-a-certificate/search-by-street-name-and-town?street_name=18%20Palmers%20Road&town="
       end
@@ -424,7 +424,7 @@ describe "Acceptance::Certificate" do
         expect(response.body).to include(
           '<span id="town-error" class="govuk-error-message">',
         )
-        expect(response.body).to include("Enter a town")
+        expect(response.body).to include("Enter the town")
       end
     end
 
@@ -447,15 +447,15 @@ describe "Acceptance::Certificate" do
         expect(response.body).to include(
           '<span id="town-error" class="govuk-error-message">',
         )
-        expect(response.body).to include("Enter a town")
+        expect(response.body).to include("Enter the town")
         expect(response.body).to include(
           '<span id="street-name-error" class="govuk-error-message">',
         )
-        expect(response.body).to include("Enter a street name")
+        expect(response.body).to include("Enter the street name")
       end
     end
 
-    context "when entering a street name and town" do
+    context "when entering the street name and town" do
       context "shows page" do
         before do
           FindCertificate::Stub.search_by_street_name_and_town(
