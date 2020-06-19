@@ -250,8 +250,8 @@ en:
     list: '1-%{length} of %{length} results matching %{postcode}'
     table:
       address: 'Address'
-      rating: 'EPC Rating'
-      expiry: 'EPC Expiry Date'
+      rating: 'Energy rating'
+      expiry: 'Expiry date'
     no_certificates: 'There are no certificates matching that postcode.'
 
   find_certificate_by_reference_number:
@@ -274,8 +274,8 @@ en:
     list: '1-%{length} of %{length} results matching %{reference_number}'
     table:
       address: 'Address'
-      rating: 'EPC Rating'
-      expiry: 'EPC Expiry Date'
+      rating: 'Energy rating'
+      expiry: 'Expiry date'
     no_certificates: 'There are no certificates matching that EPC Reference Number.'
 
   find_certificate_by_street_name_and_town:
@@ -304,8 +304,8 @@ en:
     list: '1-%{length} of %{length} results matching %{query}'
     table:
       address: 'Address'
-      rating: 'EPC Rating'
-      expiry: 'EPC Expiry Date'
+      rating: 'Energy rating'
+      expiry: 'Expiry date'
     no_certificates: 'There are no certificates matching that EPC Reference Number.'
 
   domestic_epc:
