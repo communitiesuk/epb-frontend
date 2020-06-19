@@ -239,8 +239,8 @@ en:
   find_certificate_results:
     table:
       address: 'Address'
-      rating: 'EPC Rating'
-      expiry: 'EPC Expiry Date'
+      rating: 'Energy rating'
+      expiry: 'Expiry date'
     expired: '(expired)'
 
   find_certificate_by_postcode_results:
