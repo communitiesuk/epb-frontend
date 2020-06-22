@@ -51,9 +51,7 @@ describe "Acceptance::Certificate" do
     end
 
     it "shows the total floor area" do
-      expect(response.body).to include(
-        '150',
-      )
+      expect(response.body).to include("150")
     end
 
     it "shows the type of dwelling" do
@@ -203,32 +201,28 @@ describe "Acceptance::Certificate" do
       end
 
       it "shows the current space heat demand" do
-        expect(response.body).to include(
-          '<span id="space-heat-demand">222<span>kWh per year</span></span>',
-        )
+        expect(response.body).to include("222 kWh per year")
       end
 
       it "shows the current water heat demand" do
-        expect(response.body).to include(
-          '<span id="water-heating-demand">321<span>kWh per year</span></span>',
-        )
+        expect(response.body).to include("321 kWh per year")
       end
 
       it "shows possible energy saving with loft insulation" do
         expect(response.body).to include(
-          '<td class="govuk-table__cell" id="loft-insulation">79</td>',
+          '<td class="govuk-table__cell" id="loft-insulation">79 kWh per year</td>',
         )
       end
 
       it "shows possible energy saving with cavity insulation" do
         expect(response.body).to include(
-          '<td class="govuk-table__cell" id="cavity-insulation">67</td>',
+          '<td class="govuk-table__cell" id="cavity-insulation">67 kWh per year</td>',
         )
       end
 
       it "shows possible energy saving with solid wall insulation" do
         expect(response.body).to include(
-          '<td class="govuk-table__cell" id="solid-wall-insulation">69</td>',
+          '<td class="govuk-table__cell" id="solid-wall-insulation">69 kWh per year</td>',
         )
       end
     end
