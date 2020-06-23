@@ -235,7 +235,7 @@ en:
     certificate_by_reference_number:
       heading: 'Search by reference number'
       body: 'Use %{link} if you know your certificate number and want to validate it.'
-      cta: 'Find certificate by reference number'
+      cta: 'find certificate by reference number'
     no_network:
       heading: 'Network connection failed'
       body: 'There is an internal network error'
