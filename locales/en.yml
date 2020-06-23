@@ -232,6 +232,10 @@ en:
       heading: 'Search by street and town'
       body: "If you do not know the property's postcode, %{link}."
       cta: 'find an EPC using the street name and town'
+    certificate_by_reference_number:
+      heading: 'Search by reference number'
+      body: 'Use %{link} if you know your certificate number and want to validate it.'
+      cta: 'Find certificate by reference number'
     no_network:
       heading: 'Network connection failed'
       body: 'There is an internal network error'
