@@ -67,7 +67,7 @@ describe "Journey::FindCertificate", type: :feature, journey: true do
   it "displays an error message when entering an empty street name" do
     visit "/find-a-certificate"
     click_on "Start now"
-    click_on "Find certificate by street name"
+    click_on "find an EPC using the street name and town"
     fill_in "town", with: "Beauty Town"
     click_on "Find"
     expect(page).to have_content "Enter the street name"
@@ -76,7 +76,7 @@ describe "Journey::FindCertificate", type: :feature, journey: true do
   it "displays an error message when entering an empty town" do
     visit "/find-a-certificate"
     click_on "Start now"
-    click_on "Find certificate by street name"
+    click_on "find an EPC using the street name and town"
     fill_in "street_name", with: "1 Makeup Street"
     click_on "Find"
     expect(page).to have_content "Enter the town"
@@ -85,7 +85,7 @@ describe "Journey::FindCertificate", type: :feature, journey: true do
   it "displays an error message when entering an empty town and street name" do
     visit "/find-a-certificate"
     click_on "Start now"
-    click_on "Find certificate by street name"
+    click_on "find an EPC using the street name and town"
     click_on "Find"
     expect(page).to have_content "Enter the town"
     expect(page).to have_content "Enter the street name"
@@ -94,7 +94,7 @@ describe "Journey::FindCertificate", type: :feature, journey: true do
   it "displays the find a certificate page heading when entering a valid query" do
     visit "/find-a-certificate"
     click_on "Start now"
-    click_on "Find certificate by street name"
+    click_on "find an EPC using the street name and town"
     fill_in "street_name", with: "1 Makeup Street"
     fill_in "town", with: "Beauty Town"
     click_on "Find"
@@ -104,7 +104,7 @@ describe "Journey::FindCertificate", type: :feature, journey: true do
   it "displays the error message when searching for a certificate that doesnt exist" do
     visit "/find-a-certificate"
     click_on "Start now"
-    click_on "Find certificate by street name"
+    click_on "find an EPC using the street name and town"
     fill_in "street_name", with: "Madeup Street"
     fill_in "town", with: "Madeup Town"
     click_on "Find"
