@@ -9,4 +9,16 @@
       <h1 class="govuk-heading-xl"><%= t('non_domestic_epc.top_heading') %></h1>
     </div>
   </div>
+  <div class="govuk-grid-column-two-thirds">
+    <hr class="epc-light-top" />
+    <div class="govuk-body epc-blue-bottom">
+      <div class="epc-box">
+        <p class="epc-address govuk-body"><%== [assessment[:addressLine1],
+                                                assessment[:addressLine2],
+                                                assessment[:addressLine3],
+                                                assessment[:addressLine4]].reject!(&:empty?).join('<br>') %>
+<br><%= assessment[:town] %><br><%= assessment[:postcode] %></p>
+      </div>
+    </div>
+  </div>
 </div>
