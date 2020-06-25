@@ -13,6 +13,10 @@
     <hr class="epc-light-top" />
     <div class="govuk-body epc-blue-bottom">
       <div class="epc-box">
+        <div class="epc-rating-box">
+          <p class="epc-rating-title govuk-body"><%= t('domestic_epc.box.energy_rating_title') %></p>
+          <p class="epc-rating-result govuk-body"><%= assessment[:currentEnergyEfficiencyBand].upcase %></p>
+        </div>
         <p class="epc-address govuk-body"><%== [assessment[:addressLine1],
                                                 assessment[:addressLine2],
                                                 assessment[:addressLine3],
