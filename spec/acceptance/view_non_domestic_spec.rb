@@ -39,5 +39,13 @@ describe "Acceptance::Certificate" do
         '<p class="govuk-body epc-extra-box">Valid until 5 January 2030</p>',
       )
     end
+
+    it "shows the certificate number label" do
+      expect(response.body).to include("<label>Certificate Number</label>")
+    end
+
+    it "shows the certificate number" do
+      expect(response.body).to include("<b>123-456</b>")
+    end
   end
 end
