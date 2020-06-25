@@ -33,5 +33,11 @@ describe "Acceptance::Certificate" do
         '<p class="epc-rating-result govuk-body">B</p>',
       )
     end
+
+    it "shows the date of expiry" do
+      expect(response.body).to include(
+        '<p class="govuk-body epc-extra-box">Valid until 5 January 2030</p>',
+      )
+    end
   end
 end

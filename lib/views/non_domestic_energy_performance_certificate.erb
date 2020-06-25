@@ -21,6 +21,7 @@
                                                 assessment[:addressLine2],
                                                 assessment[:addressLine3],
                                                 assessment[:addressLine4]].reject!(&:empty?).join('<br>') %><br><%= assessment[:town] %><br><%= assessment[:postcode] %></p>
+        <p class="govuk-body epc-extra-box"><%= t('domestic_epc.box.date_of_expiry', :date_of_expiry => Date.parse(assessment[:dateOfExpiry]).strftime('%-d %B %Y')) %></p>
       </div>
     </div>
   </div>
