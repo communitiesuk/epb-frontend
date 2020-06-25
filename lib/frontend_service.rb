@@ -290,10 +290,17 @@ class FrontendService < Sinatra::Base
     assessment = use_case.execute(params[:assessment_id])
 
     status 200
-    show(
-      :domestic_energy_performance_certificate,
-      assessment: assessment[:data],
-    )
+    if assessment[:data][:typeOfAssessment] == "CEPC"
+      show(
+        :non_domestic_energy_performance_certificate,
+        assessment: assessment[:data],
+      )
+    else
+      show(
+        :domestic_energy_performance_certificate,
+        assessment: assessment[:data],
+      )
+    end
   rescue StandardError => e
     case e
     when Errors::AssessmentNotFound

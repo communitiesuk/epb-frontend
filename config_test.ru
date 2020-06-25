@@ -56,6 +56,7 @@ FetchCertificate::Stub.fetch(
     },
   ],
 )
+FetchCertificate::NonDomesticStub.fetch assessment_id: "1234-5678-9101-1123"
 
 ENV["EPB_AUTH_CLIENT_ID"] = "test.id"
 ENV["EPB_AUTH_CLIENT_SECRET"] = "test.client.secret"

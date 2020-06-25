@@ -487,7 +487,7 @@ describe "Acceptance::Certificate" do
               '<td class="govuk-table__cell">Email:</td>',
             )
             expect(response.body).to include(
-              '<a href="mailto:lender@example.com">'
+              '<a href="mailto:lender@example.com">',
             )
           end
         end
