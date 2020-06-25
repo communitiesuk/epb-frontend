@@ -1,4 +1,6 @@
-describe "Acceptance::Certificate" do
+# frozen_string_literal: true
+
+describe "Acceptance::NonDomesticEnergyPerformanceCertificate" do
   include RSpecFrontendServiceMixin
 
   context "when the assessment exists" do
