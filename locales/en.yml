@@ -312,6 +312,9 @@ en:
       expiry: 'Expiry date'
     no_certificates: 'There are no certificates matching that EPC Reference Number.'
 
+  non_domestic_epc:
+    top_heading: 'Non-domestic Energy Performance Certificate'
+
   domestic_epc:
     top_heading: 'Energy Performance Certificate'
     box:

@@ -9,5 +9,11 @@ describe "Acceptance::Certificate" do
     it "returns status 200" do
       expect(response.status).to eq(200)
     end
+
+    it "shows the EPC title" do
+      expect(response.body).to include(
+        '<h1 class="govuk-heading-xl">Non-domestic Energy Performance Certificate</h1>',
+      )
+    end
   end
 end
