@@ -81,7 +81,11 @@
       </tr>
       <tr class="govuk-table__row">
         <td class="govuk-table__cell"><%= t('domestic_epc.sections.green_deal.provider_email') %></td>
-        <td class="govuk-table__cell"><%= assessment[:greenDealPlan][:providerDetails][:email] %></td>
+        <td class="govuk-table__cell">
+          <a href="mailto:<%= assessment[:greenDealPlan][:providerDetails][:email] %>">
+            <%= assessment[:greenDealPlan][:providerDetails][:email] %>
+          </a>
+        </td>
         <td class="govuk-table__header"></td>
       </tr>
     </tbody>
