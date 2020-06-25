@@ -28,9 +28,7 @@
           <%= assessment[:town] %><br />
           <%= assessment[:postcode] %>
         </p>
-        <p class="govuk-body epc-extra-box">
-          <%= t('domestic_epc.box.date_of_expiry', :date_of_expiry => Date.parse(assessment[:dateOfExpiry]).strftime('%d %m %Y')) %>
-        </p>
+        <p class="govuk-body epc-extra-box"><%= t('domestic_epc.box.date_of_expiry', :date_of_expiry => Date.parse(assessment[:dateOfExpiry]).strftime('%-d %B %Y')) %></p>
         <p class="govuk-body epc-extra-box">
           <label><%= t('domestic_epc.box.certificate_id') %></label>
           <b><%= assessment[:assessmentId] %></b>

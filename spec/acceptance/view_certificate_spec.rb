@@ -35,7 +35,7 @@ describe "Acceptance::Certificate" do
     end
 
     it "shows the date of expiry" do
-      expect(response.body).to include("05 01 2030")
+      expect(response.body).to include("5 January 2030")
     end
 
     it "shows the type of assessment" do
