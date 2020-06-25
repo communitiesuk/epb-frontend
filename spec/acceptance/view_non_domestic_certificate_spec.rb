@@ -3,6 +3,22 @@
 describe "Acceptance::NonDomesticEnergyPerformanceCertificate" do
   include RSpecFrontendServiceMixin
 
+  context "when the assessment does not exist" do
+    before { FetchCertificate::NoAssessmentStub.fetch("123-456") }
+
+    let(:response) { get "/energy-performance-certificate/123-456" }
+
+    it "returns status 404" do
+      expect(response.status).to eq 404
+    end
+
+    it "shows the error page" do
+      expect(response.body).to include(
+        '<h1 class="govuk-heading-xl">Page not found</h1>',
+      )
+    end
+  end
+
   context "when the assessment exists" do
     before { FetchCertificate::NonDomesticStub.fetch assessment_id: "123-456" }
 
