@@ -16,8 +16,7 @@
         <p class="epc-address govuk-body"><%== [assessment[:addressLine1],
                                                 assessment[:addressLine2],
                                                 assessment[:addressLine3],
-                                                assessment[:addressLine4]].reject!(&:empty?).join('<br>') %>
-<br><%= assessment[:town] %><br><%= assessment[:postcode] %></p>
+                                                assessment[:addressLine4]].reject!(&:empty?).join('<br>') %><br><%= assessment[:town] %><br><%= assessment[:postcode] %></p>
       </div>
     </div>
   </div>

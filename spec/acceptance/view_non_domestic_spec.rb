@@ -18,8 +18,7 @@ describe "Acceptance::Certificate" do
 
     it "shows the address summary" do
       expect(response.body).to include(
-        '<p class="epc-address govuk-body">Flat 33<br>2 Marsham Street
-<br>London<br>SW1B 2BB</p>',
+        '<p class="epc-address govuk-body">Flat 33<br>2 Marsham Street<br>London<br>SW1B 2BB</p>',
       )
     end
   end
