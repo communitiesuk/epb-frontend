@@ -41,7 +41,7 @@ GEM
     erubis (2.7.0)
     faraday (1.0.1)
       multipart-post (>= 1.2, < 3)
-    ffi (1.12.2)
+    ffi (1.13.1)
     hashdiff (1.0.1)
     i18n (1.8.3)
       concurrent-ruby (~> 1.0)
@@ -115,7 +115,7 @@ GEM
     ruby2_keywords (0.0.2)
     rubyzip (2.3.0)
     safe_yaml (1.0.5)
-    sassc (2.3.0)
+    sassc (2.4.0)
       ffi (~> 1.9)
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
@@ -164,7 +164,7 @@ DEPENDENCIES
   rake!
   rspec (~> 3.0)!
   rubocop-govuk (~> 3.7)!
-  sassc (~> 2.2)!
+  sassc (~> 2.4)!
   selenium-webdriver (~> 3.142.7)!
   sinatra (~> 2.0, >= 2.0.7)!
   sinatra-contrib!

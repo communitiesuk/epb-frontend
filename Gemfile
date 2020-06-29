@@ -24,7 +24,7 @@ source "https://rubygems.org" do
   gem "rack-contrib"
   gem "rake"
   gem "rubocop-govuk", "~> 3.7"
-  gem "sassc", "~> 2.2"
+  gem "sassc", "~> 2.4"
   gem "sinatra", "~> 2.0", ">= 2.0.7"
   gem "sinatra-url-for",
       git: "https://github.com/emk/sinatra-url-for.git",
