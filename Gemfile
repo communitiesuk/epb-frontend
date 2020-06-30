@@ -9,7 +9,7 @@ source "https://rubygems.org" do
   end
 
   group :test do
-    gem "capybara", "~> 3.32.1"
+    gem "capybara", "~> 3.33.0"
     gem "capybara-selenium", "~> 0.0.6"
     gem "rack-test", "~> 0.8.3"
     gem "rspec", "~>3.0"
