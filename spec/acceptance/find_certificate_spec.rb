@@ -76,7 +76,7 @@ describe "Acceptance::Certificate" do
         end
 
         it "shows the report reference number of an entry" do
-          expect(response.body).to include("1234-5678-9101-1121")
+          expect(response.body).to include("4567-6789-4567-6789-4567")
         end
 
         it "shows the rating of an entry" do
@@ -85,7 +85,7 @@ describe "Acceptance::Certificate" do
 
         it "shows a clickable entry" do
           expect(response.body).to include(
-            '<a href="/energy-performance-certificate/1234-5678-9101-1121"',
+            '<a href="/energy-performance-certificate/4567-6789-4567-6789-4567"',
           )
         end
 
@@ -263,7 +263,7 @@ describe "Acceptance::Certificate" do
         end
 
         it "shows the report reference number of an entry" do
-          expect(response.body).to include("1234-5678-9101-1121")
+          expect(response.body).to include("1234-5678-9101-1121-3141")
         end
 
         it "shows the rating of an entry" do
@@ -311,11 +311,11 @@ describe "Acceptance::Certificate" do
 
       context "when there is no connection" do
         before do
-          FindCertificate::NoNetworkStub.search_by_id("1234-5678-9101-1122")
+          FindCertificate::NoNetworkStub.search_by_id("1234-5678-9101-1122-1234")
         end
 
         let(:response) do
-          get "/find-a-certificate/search-by-reference-number?reference_number=1234-5678-9101-1122"
+          get "/find-a-certificate/search-by-reference-number?reference_number=1234-5678-9101-1122-1234"
         end
 
         it "returns status 500" do

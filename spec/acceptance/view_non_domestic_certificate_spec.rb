@@ -3,10 +3,10 @@
 describe "Acceptance::NonDomesticEnergyPerformanceCertificate" do
   include RSpecFrontendServiceMixin
 
-  let(:response) { get "/energy-performance-certificate/123-456" }
+  let(:response) { get "/energy-performance-certificate/1234-5678-1234-5678-1234" }
 
   context "when the assessment does not exist" do
-    before { FetchCertificate::NoAssessmentStub.fetch("123-456") }
+    before { FetchCertificate::NoAssessmentStub.fetch("1234-5678-1234-5678-1234") }
 
     it "returns status 404" do
       expect(response.status).to eq 404
@@ -20,7 +20,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate" do
   end
 
   context "when the assessment exists" do
-    before { FetchCertificate::NonDomesticStub.fetch assessment_id: "123-456" }
+    before { FetchCertificate::NonDomesticStub.fetch assessment_id: "1234-5678-1234-5678-1234" }
 
     it "returns status 200" do
       expect(response.status).to eq 200
@@ -61,7 +61,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate" do
     end
 
     it "shows the certificate number" do
-      expect(response.body).to include("<b>123-456</b>")
+      expect(response.body).to include("<b>1234-5678-1234-5678-1234</b>")
     end
   end
 end

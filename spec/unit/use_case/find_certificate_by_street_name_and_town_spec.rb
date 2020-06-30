@@ -37,7 +37,7 @@ describe UseCase::FindCertificateByStreetNameAndTown do
     let(:valid_certificates) do
       [
         {
-          assessmentId: "1234-5678-9101-1121",
+          assessmentId: "4567-6789-4567-6789-4567",
           dateOfAssessment: "2011-01-01",
           dateRegistered: "2011-01-02",
           dwellingType: "Top floor flat",
@@ -62,7 +62,7 @@ describe UseCase::FindCertificateByStreetNameAndTown do
           },
         },
         {
-          assessmentId: "1234-5678-9101-1122",
+          assessmentId: "1234-5678-9101-1122-1234",
           dateOfAssessment: "2011-01-01",
           dateRegistered: "2011-01-02",
           dwellingType: "Top floor flat",
@@ -87,7 +87,7 @@ describe UseCase::FindCertificateByStreetNameAndTown do
           },
         },
         {
-          assessmentId: "1234-5678-9101-1123",
+          assessmentId: "1234-5678-9101-1123-1234",
           dateOfAssessment: "2011-01-01",
           dateRegistered: "2011-01-02",
           dwellingType: "Top floor flat",

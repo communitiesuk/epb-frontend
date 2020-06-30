@@ -68,7 +68,7 @@ describe "Journey::FindCertificate", type: :feature, journey: true do
     visit "/find-a-certificate"
     click_on "Start now"
     click_on "certificate by reference"
-    fill_in "reference_number", with: "1234-5678-9101-1121"
+    fill_in "reference_number", with: "4567-6789-4567-6789-4567"
     click_on "Find"
     expect(page).to have_content "of 1 results matching"
   end

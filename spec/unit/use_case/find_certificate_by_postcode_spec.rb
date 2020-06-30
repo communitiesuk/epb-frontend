@@ -16,7 +16,7 @@ describe UseCase::FindCertificateByPostcode do
     let(:valid_certificates) do
       [
         {
-          assessmentId: "123-456",
+          assessmentId: "1234-5678-1234-5678-1234",
           dateOfAssessment: "2011-01-01",
           dateRegistered: "2011-01-02",
           dwellingType: "Top floor flat",
@@ -39,7 +39,7 @@ describe UseCase::FindCertificateByPostcode do
           },
         },
         {
-          assessmentId: "123-987",
+          assessmentId: "3345-6789-2345-6789-2345",
           dateOfAssessment: "2011-01-01",
           dateRegistered: "2011-01-02",
           dwellingType: "Top floor flat",
@@ -62,7 +62,7 @@ describe UseCase::FindCertificateByPostcode do
           },
         },
         {
-          assessmentId: "123-456",
+          assessmentId: "1234-5678-1234-5678-1234",
           dateOfAssessment: "2011-01-01",
           dateRegistered: "2011-01-02",
           dwellingType: "Top floor flat",

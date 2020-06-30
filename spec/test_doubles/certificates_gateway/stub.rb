@@ -11,7 +11,7 @@ module CertificatesGateway
         data: {
           assessments: [
             {
-              assessmentId: "123-456",
+              assessmentId: "1234-5678-1234-5678-1234",
               dateOfAssessment: "2011-01-01",
               dateRegistered: "2011-01-02",
               dwellingType: "Top floor flat",
@@ -34,7 +34,7 @@ module CertificatesGateway
               },
             },
             {
-              assessmentId: "123-987",
+              assessmentId: "3345-6789-2345-6789-2345",
               dateOfAssessment: "2011-01-01",
               dateRegistered: "2011-01-02",
               dwellingType: "Top floor flat",
@@ -57,7 +57,7 @@ module CertificatesGateway
               },
             },
             {
-              assessmentId: "123-456",
+              assessmentId: "1234-5678-1234-5678-1234",
               dateOfAssessment: "2011-01-01",
               dateRegistered: "2011-01-02",
               dwellingType: "Top floor flat",
@@ -169,7 +169,7 @@ module CertificatesGateway
           data: {
             assessments: [
               {
-                assessmentId: "123-456",
+                assessmentId: "1234-5678-1234-5678-1234",
                 dateOfAssessment: "2011-01-01",
                 dateRegistered: "2011-01-02",
                 dwellingType: "Top floor flat",
@@ -203,7 +203,7 @@ module CertificatesGateway
         data: {
           assessments: [
             {
-              assessmentId: "1234-5678-9101-1121",
+              assessmentId: "4567-6789-4567-6789-4567",
               dateOfAssessment: "2011-01-01",
               dateRegistered: "2011-01-02",
               dwellingType: "Top floor flat",
@@ -228,7 +228,7 @@ module CertificatesGateway
               },
             },
             {
-              assessmentId: "1234-5678-9101-1122",
+              assessmentId: "1234-5678-9101-1122-1234",
               dateOfAssessment: "2011-01-01",
               dateRegistered: "2011-01-02",
               dwellingType: "Top floor flat",
@@ -253,7 +253,7 @@ module CertificatesGateway
               },
             },
             {
-              assessmentId: "1234-5678-9101-1123",
+              assessmentId: "1234-5678-9101-1123-1234",
               dateOfAssessment: "2011-01-01",
               dateRegistered: "2011-01-02",
               dwellingType: "Top floor flat",

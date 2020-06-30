@@ -8,7 +8,7 @@ describe UseCase::FetchCertificate do
     let(:fetch_certificate) { described_class.new(certificates_gateway) }
 
     it "raises an AssessmentNotFound error" do
-      expect { fetch_certificate.execute("123-456") }.to raise_error(
+      expect { fetch_certificate.execute("1234-5678-1234-5678-1234") }.to raise_error(
         Errors::AssessmentNotFound,
       )
     end
@@ -19,7 +19,7 @@ describe UseCase::FetchCertificate do
     let(:fetch_certificate) { described_class.new(certificates_gateway) }
 
     it "returns assessments" do
-      result = fetch_certificate.execute("223-456")[:data]
+      result = fetch_certificate.execute("2345-6789-2345-6789-2345")[:data]
       expect(result).to eq(
         assessor: {
           firstName: "Test",
@@ -33,7 +33,7 @@ describe UseCase::FetchCertificate do
           searchResultsComparisonPostcode: "SW1A 2AA",
           qualifications: { domesticRdSap: "ACTIVE" },
         },
-        assessmentId: "223-456",
+        assessmentId: "2345-6789-2345-6789-2345",
         dateOfAssessment: "02 January 2020",
         dateRegistered: "05 January 2020",
         dateOfExpiry: "05 January 2030",
@@ -69,7 +69,7 @@ describe UseCase::FetchCertificate do
     let(:fetch_certificate) { described_class.new(certificates_gateway) }
 
     it "returns assessments with sorted recommendations " do
-      result = fetch_certificate.execute("223-455")[:data]
+      result = fetch_certificate.execute("6789-4567-6789-4567-2233")[:data]
       expect(result).to eq(
         assessor: {
           firstName: "Test",
@@ -83,7 +83,7 @@ describe UseCase::FetchCertificate do
           searchResultsComparisonPostcode: "SW1A 2AA",
           qualifications: { domesticRdSap: "ACTIVE" },
         },
-        assessmentId: "223-455",
+        assessmentId: "6789-4567-6789-4567-2233",
         dateOfAssessment: "02 January 2020",
         dateRegistered: "05 January 2020",
         dateOfExpiry: "05 January 2030",

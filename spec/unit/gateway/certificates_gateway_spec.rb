@@ -56,7 +56,7 @@ describe Gateway::CertificatesGateway do
   end
 
   context "when an assessment does exist" do
-    let(:assessment_id) { "223-456" }
+    let(:assessment_id) { "2345-6789-2345-6789-2345" }
 
     before { FetchCertificate::Stub.fetch(assessment_id) }
 
@@ -164,9 +164,9 @@ describe Gateway::CertificatesGateway do
   end
 
   context "when an assessment doesnt exist" do
-    let(:response) { gateway.fetch("123-456") }
+    let(:response) { gateway.fetch("1234-5678-1234-5678-1234") }
 
-    before { FetchCertificate::NoAssessmentStub.fetch("123-456") }
+    before { FetchCertificate::NoAssessmentStub.fetch("1234-5678-1234-5678-1234") }
 
     it "returns not found error" do
       expect(response).to eq(

@@ -20,7 +20,7 @@ FindAssessor::ByPostcode::Stub.search_by_postcode("SW1A 2AA")
 FindAssessor::ByName::Stub.search_by_name("Supercommon Name")
 FindAssessor::ByName::Stub.search_by_name("Somewhatcommon Name", true)
 FindCertificate::Stub.search_by_postcode("SW1A 2AA")
-FindCertificate::Stub.search_by_id("1234-5678-9101-1121")
+FindCertificate::Stub.search_by_id("4567-6789-4567-6789-4567")
 FindCertificate::Stub.search_by_street_name_and_town(
   "1 Makeup Street",
   "Beauty Town",
@@ -29,9 +29,9 @@ FindCertificate::NoCertificatesStub.search_by_street_name_and_town(
   "Madeup Street",
   "Madeup Town",
 )
-FetchCertificate::Stub.fetch("1234-5678-9101-1121")
+FetchCertificate::Stub.fetch("4567-6789-4567-6789-4567")
 FetchCertificate::Stub.fetch(
-  "1234-5678-9101-1122",
+  "1234-5678-9101-1122-1234",
   "25",
   "f",
   true,
@@ -56,7 +56,7 @@ FetchCertificate::Stub.fetch(
     },
   ],
 )
-FetchCertificate::NonDomesticStub.fetch assessment_id: "1234-5678-9101-1123"
+FetchCertificate::NonDomesticStub.fetch assessment_id: "1234-5678-9101-1123-1234"
 
 ENV["EPB_AUTH_CLIENT_ID"] = "test.id"
 ENV["EPB_AUTH_CLIENT_SECRET"] = "test.client.secret"

@@ -4,9 +4,9 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate" do
   include RSpecFrontendServiceMixin
 
   context "when the assessment exists" do
-    before { FetchCertificate::Stub.fetch("123-456") }
+    before { FetchCertificate::Stub.fetch("1234-5678-1234-5678-1234") }
 
-    let(:response) { get "/energy-performance-certificate/123-456" }
+    let(:response) { get "/energy-performance-certificate/1234-5678-1234-5678-1234" }
 
     it "returns status 200" do
       expect(response.status).to eq(200)
@@ -23,7 +23,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate" do
     end
 
     it "shows the certificate number" do
-      expect(response.body).to include("123-456")
+      expect(response.body).to include("1234-5678-1234-5678-1234")
     end
 
     it "shows the date of assessment" do
@@ -632,7 +632,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate" do
   context "when the assessment type is SAP" do
     before do
       FetchCertificate::Stub.fetch(
-        "123-456",
+        "1234-5678-1234-5678-1234",
         90,
         "b",
         true,
@@ -647,7 +647,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate" do
         "SAP",
       )
     end
-    let(:response) { get "/energy-performance-certificate/123-456" }
+    let(:response) { get "/energy-performance-certificate/1234-5678-1234-5678-1234" }
 
     it "displays the SAP type description" do
       expect(response.body).to include(
@@ -673,9 +673,9 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate" do
   end
 
   context "when the assessment doesnt exist" do
-    before { FetchCertificate::NoAssessmentStub.fetch("123-456") }
+    before { FetchCertificate::NoAssessmentStub.fetch("1234-5678-1234-5678-1234") }
 
-    let(:response) { get "/energy-performance-certificate/123-456" }
+    let(:response) { get "/energy-performance-certificate/1234-5678-1234-5678-1234" }
 
     it "returns status 404" do
       expect(response.status).to eq(404)
