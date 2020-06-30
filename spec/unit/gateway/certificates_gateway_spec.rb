@@ -89,6 +89,8 @@ describe Gateway::CertificatesGateway do
         currentEnergyEfficiencyBand: "b",
         potentialEnergyEfficiencyRating: 99,
         potentialEnergyEfficiencyBand: "a",
+        potentialSavingForThreeYears: 174.83,
+        estimatedCostForThreeYears: 689.83,
         postcode: "SW1B 2BB",
         addressLine1: "Flat 33",
         addressLine2: "2 Marsham Street",
@@ -166,7 +168,9 @@ describe Gateway::CertificatesGateway do
   context "when an assessment doesnt exist" do
     let(:response) { gateway.fetch("1234-5678-1234-5678-1234") }
 
-    before { FetchCertificate::NoAssessmentStub.fetch("1234-5678-1234-5678-1234") }
+    before do
+      FetchCertificate::NoAssessmentStub.fetch("1234-5678-1234-5678-1234")
+    end
 
     it "returns not found error" do
       expect(response).to eq(

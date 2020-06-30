@@ -6,7 +6,9 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate" do
   context "when the assessment exists" do
     before { FetchCertificate::Stub.fetch("1234-5678-1234-5678-1234") }
 
-    let(:response) { get "/energy-performance-certificate/1234-5678-1234-5678-1234" }
+    let(:response) do
+      get "/energy-performance-certificate/1234-5678-1234-5678-1234"
+    end
 
     it "returns status 200" do
       expect(response.status).to eq(200)
@@ -64,6 +66,18 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate" do
 
     it "shows the SVG with energy rating band numbers" do
       expect(response.body).to include('<tspan x="8" y="55">92+</tspan>')
+    end
+
+    it "shows the estimated energy cost for 3 years" do
+      expect(response.body).to include(
+        '<td class="govuk-table__cell" id="estimated-cost">£689.83</td>',
+      )
+    end
+
+    it "shows the potential energy cost saving for 3 years" do
+      expect(response.body).to include(
+        '<td class="govuk-table__cell" id="potential-saving">£174.83</td>',
+      )
     end
 
     it "shows the assessors full name" do
@@ -647,7 +661,9 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate" do
         "SAP",
       )
     end
-    let(:response) { get "/energy-performance-certificate/1234-5678-1234-5678-1234" }
+    let(:response) do
+      get "/energy-performance-certificate/1234-5678-1234-5678-1234"
+    end
 
     it "displays the SAP type description" do
       expect(response.body).to include(
@@ -673,9 +689,13 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate" do
   end
 
   context "when the assessment doesnt exist" do
-    before { FetchCertificate::NoAssessmentStub.fetch("1234-5678-1234-5678-1234") }
+    before do
+      FetchCertificate::NoAssessmentStub.fetch("1234-5678-1234-5678-1234")
+    end
 
-    let(:response) { get "/energy-performance-certificate/1234-5678-1234-5678-1234" }
+    let(:response) do
+      get "/energy-performance-certificate/1234-5678-1234-5678-1234"
+    end
 
     it "returns status 404" do
       expect(response.status).to eq(404)
