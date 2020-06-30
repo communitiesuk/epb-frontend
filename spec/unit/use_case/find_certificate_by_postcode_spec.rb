@@ -17,8 +17,8 @@ describe UseCase::FindCertificateByPostcode do
       [
         {
           assessmentId: "1234-5678-1234-5678-1234",
-          dateOfAssessment: "2011-01-01",
-          dateRegistered: "2011-01-02",
+          dateOfAssessment: "2020-01-01",
+          dateRegistered: "2020-01-02",
           dwellingType: "Top floor flat",
           typeOfAssessment: "RdSAP",
           totalFloorArea: 50,
@@ -27,7 +27,7 @@ describe UseCase::FindCertificateByPostcode do
           potentialEnergyEfficiencyRating: "a",
           potentialEnergyEfficiencyBand: 95,
           postcode: "SW1B 2BB",
-          dateOfExpiry: "2021-01-01",
+          dateOfExpiry: "2030-01-01",
           relatedPartyDisclosureText: "Financial interest in the property",
           relatedPartyDisclosureNumber: nil,
           heatDemand: {
@@ -40,8 +40,8 @@ describe UseCase::FindCertificateByPostcode do
         },
         {
           assessmentId: "3345-6789-2345-6789-2345",
-          dateOfAssessment: "2011-01-01",
-          dateRegistered: "2011-01-02",
+          dateOfAssessment: "2020-01-01",
+          dateRegistered: "2020-01-02",
           dwellingType: "Top floor flat",
           typeOfAssessment: "RdSAP",
           totalFloorArea: 50,
@@ -50,7 +50,7 @@ describe UseCase::FindCertificateByPostcode do
           potentialEnergyEfficiencyRating: "a",
           potentialEnergyEfficiencyBand: 95,
           postcode: "SW1B 2BB",
-          dateOfExpiry: "2022-01-01",
+          dateOfExpiry: "2030-01-01",
           relatedPartyDisclosureText: nil,
           relatedPartyDisclosureNumber: 4,
           heatDemand: {
@@ -63,8 +63,8 @@ describe UseCase::FindCertificateByPostcode do
         },
         {
           assessmentId: "1234-5678-1234-5678-1234",
-          dateOfAssessment: "2011-01-01",
-          dateRegistered: "2011-01-02",
+          dateOfAssessment: "2020-01-01",
+          dateRegistered: "2020-01-02",
           dwellingType: "Top floor flat",
           typeOfAssessment: "RdSAP",
           totalFloorArea: 50,
@@ -73,7 +73,7 @@ describe UseCase::FindCertificateByPostcode do
           potentialEnergyEfficiencyRating: "a",
           potentialEnergyEfficiencyBand: 95,
           postcode: "SW1B 2BB",
-          dateOfExpiry: "2023-01-01",
+          dateOfExpiry: "2032-01-01",
           relatedPartyDisclosureText: "Financial interest in the property",
           relatedPartyDisclosureNumber: nil,
           heatDemand: {

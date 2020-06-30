@@ -12,8 +12,8 @@ module CertificatesGateway
           assessments: [
             {
               assessmentId: "1234-5678-1234-5678-1234",
-              dateOfAssessment: "2011-01-01",
-              dateRegistered: "2011-01-02",
+              dateOfAssessment: "2020-01-01",
+              dateRegistered: "2020-01-02",
               dwellingType: "Top floor flat",
               typeOfAssessment: "RdSAP",
               totalFloorArea: 50,
@@ -22,7 +22,7 @@ module CertificatesGateway
               potentialEnergyEfficiencyRating: "a",
               potentialEnergyEfficiencyBand: 95,
               postcode: "SW1B 2BB",
-              dateOfExpiry: "2021-01-01",
+              dateOfExpiry: "2030-01-01",
               relatedPartyDisclosureText: "Financial interest in the property",
               relatedPartyDisclosureNumber: nil,
               heatDemand: {
@@ -35,8 +35,8 @@ module CertificatesGateway
             },
             {
               assessmentId: "3345-6789-2345-6789-2345",
-              dateOfAssessment: "2011-01-01",
-              dateRegistered: "2011-01-02",
+              dateOfAssessment: "2020-01-01",
+              dateRegistered: "2020-01-02",
               dwellingType: "Top floor flat",
               typeOfAssessment: "RdSAP",
               totalFloorArea: 50,
@@ -45,7 +45,7 @@ module CertificatesGateway
               potentialEnergyEfficiencyRating: "a",
               potentialEnergyEfficiencyBand: 95,
               postcode: "SW1B 2BB",
-              dateOfExpiry: "2022-01-01",
+              dateOfExpiry: "2030-01-01",
               relatedPartyDisclosureText: nil,
               relatedPartyDisclosureNumber: 4,
               heatDemand: {
@@ -58,8 +58,8 @@ module CertificatesGateway
             },
             {
               assessmentId: "1234-5678-1234-5678-1234",
-              dateOfAssessment: "2011-01-01",
-              dateRegistered: "2011-01-02",
+              dateOfAssessment: "2020-01-01",
+              dateRegistered: "2020-01-02",
               dwellingType: "Top floor flat",
               typeOfAssessment: "RdSAP",
               totalFloorArea: 50,
@@ -68,7 +68,7 @@ module CertificatesGateway
               potentialEnergyEfficiencyRating: "a",
               potentialEnergyEfficiencyBand: 95,
               postcode: "SW1B 2BB",
-              dateOfExpiry: "2023-01-01",
+              dateOfExpiry: "2032-01-01",
               relatedPartyDisclosureText: "Financial interest in the property",
               relatedPartyDisclosureNumber: nil,
               heatDemand: {
@@ -89,8 +89,8 @@ module CertificatesGateway
       if assessment_id == ""
         {
           "data": {
-            "dateOfAssessment": "2006-05-04",
-            "dateRegistered": "2006-05-04",
+            "dateOfAssessment": "2020-05-04",
+            "dateRegistered": "2020-05-04",
             "dwellingType": "Dwelling-Type0",
             "typeOfAssessment": "RdSAP",
             "totalFloorArea": 0.0,
@@ -98,7 +98,7 @@ module CertificatesGateway
             "currentEnergyEfficiencyRating": 50,
             "potentialEnergyEfficiencyRating": 50,
             "postcode": "A0 0AA",
-            "dateOfExpiry": "2016-05-04",
+            "dateOfExpiry": "2030-05-04",
             "addressLine1": "1 Some Street",
             "addressLine2": "",
             "addressLine3": "",
@@ -170,8 +170,8 @@ module CertificatesGateway
             assessments: [
               {
                 assessmentId: "1234-5678-1234-5678-1234",
-                dateOfAssessment: "2011-01-01",
-                dateRegistered: "2011-01-02",
+                dateOfAssessment: "2020-01-01",
+                dateRegistered: "2020-01-02",
                 dwellingType: "Top floor flat",
                 typeOfAssessment: "RdSAP",
                 totalFloorArea: 50,
@@ -180,7 +180,7 @@ module CertificatesGateway
                 potentialEnergyEfficiencyRating: "a",
                 potentialEnergyEfficiencyBand: 95,
                 postcode: "SW1B 2BB",
-                dateOfExpiry: "2023-01-01",
+                dateOfExpiry: "2032-01-01",
                 relatedPartyDisclosureText: nil,
                 relatedPartyDisclosureNumber: 2,
                 heatDemand: {
@@ -204,8 +204,8 @@ module CertificatesGateway
           assessments: [
             {
               assessmentId: "4567-6789-4567-6789-4567",
-              dateOfAssessment: "2011-01-01",
-              dateRegistered: "2011-01-02",
+              dateOfAssessment: "2020-01-01",
+              dateRegistered: "2020-01-02",
               dwellingType: "Top floor flat",
               typeOfAssessment: "RdSAP",
               totalFloorArea: 50,
@@ -214,7 +214,7 @@ module CertificatesGateway
               potentialEnergyEfficiencyRating: "a",
               potentialEnergyEfficiencyBand: 95,
               postcode: "SW1B 2BB",
-              dateOfExpiry: "2021-01-01",
+              dateOfExpiry: "2030-01-01",
               addressLine1: street_name,
               town: town,
               relatedPartyDisclosureText: "Financial interest in the property",
@@ -229,8 +229,8 @@ module CertificatesGateway
             },
             {
               assessmentId: "1234-5678-9101-1122-1234",
-              dateOfAssessment: "2011-01-01",
-              dateRegistered: "2011-01-02",
+              dateOfAssessment: "2020-01-01",
+              dateRegistered: "2020-01-02",
               dwellingType: "Top floor flat",
               typeOfAssessment: "RdSAP",
               totalFloorArea: 50,
@@ -239,7 +239,7 @@ module CertificatesGateway
               potentialEnergyEfficiencyRating: "a",
               potentialEnergyEfficiencyBand: 95,
               postcode: "SW1B 2BB",
-              dateOfExpiry: "2022-01-01",
+              dateOfExpiry: "2030-01-01",
               addressLine1: street_name,
               town: town,
               relatedPartyDisclosureText: "No related party",
@@ -254,8 +254,8 @@ module CertificatesGateway
             },
             {
               assessmentId: "1234-5678-9101-1123-1234",
-              dateOfAssessment: "2011-01-01",
-              dateRegistered: "2011-01-02",
+              dateOfAssessment: "2020-01-01",
+              dateRegistered: "2020-01-02",
               dwellingType: "Top floor flat",
               typeOfAssessment: "RdSAP",
               totalFloorArea: 50,
@@ -264,7 +264,7 @@ module CertificatesGateway
               potentialEnergyEfficiencyRating: "a",
               potentialEnergyEfficiencyBand: 95,
               postcode: "SW1B 2BB",
-              dateOfExpiry: "2023-01-01",
+              dateOfExpiry: "2032-01-01",
               addressLine1: street_name,
               town: town,
               relatedPartyDisclosureText: nil,

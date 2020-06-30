@@ -25,8 +25,8 @@ module FetchCertificate
       if assessment_id == "1111-1111-1111-1111-1112"
         body = {
           "data": {
-            "dateOfAssessment": "2006-05-04",
-            "dateRegistered": "2006-05-04",
+            "dateOfAssessment": "2020-05-04",
+            "dateRegistered": "2020-05-04",
             "dwellingType": "Dwelling-Type0",
             "typeOfAssessment": "RdSAP",
             "totalFloorArea": 0.0,
@@ -36,7 +36,7 @@ module FetchCertificate
             "currentCarbonEmission": 4.4,
             "potentialCarbonEmission": 3.4,
             "postcode": "A0 0AA",
-            "dateOfExpiry": "2016-05-04",
+            "dateOfExpiry": "2030-05-04",
             "addressLine1": "1 Some Street",
             "addressLine2": "",
             "addressLine3": "",

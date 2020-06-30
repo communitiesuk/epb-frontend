@@ -22,8 +22,8 @@ module FindCertificate
               "assessments": [
                 {
                   assessmentId: "4567-6789-4567-6789-4567",
-                  dateOfAssessment: "2011-01-01",
-                  dateRegistered: "2011-01-02",
+                  dateOfAssessment: "2020-01-01",
+                  dateRegistered: "2020-01-02",
                   dwellingType: "Top floor flat",
                   typeOfAssessment: "RdSAP",
                   totalFloorArea: 50,
@@ -88,8 +88,8 @@ module FindCertificate
                 },
                 {
                   assessmentId: "1234-5678-9101-1122-1234",
-                  dateOfAssessment: "2011-01-01",
-                  dateRegistered: "2011-01-02",
+                  dateOfAssessment: "2020-01-01",
+                  dateRegistered: "2020-01-02",
                   dwellingType: "Top floor flat",
                   typeOfAssessment: "RdSAP",
                   totalFloorArea: 50,
@@ -98,7 +98,7 @@ module FindCertificate
                   potentialEnergyEfficiencyRating: "a",
                   potentialEnergyEfficiencyBand: 95,
                   postcode: "SW1B 2BB",
-                  dateOfExpiry: "2022-01-01",
+                  dateOfExpiry: "2030-01-01",
                   heatDemand: {
                     currentSpaceHeatingDemand: 222,
                     currentWaterHeatingDemand: 321,
@@ -111,8 +111,8 @@ module FindCertificate
                 },
                 {
                   assessmentId: "1234-5678-9101-1123-1234",
-                  dateOfAssessment: "2011-01-01",
-                  dateRegistered: "2011-01-02",
+                  dateOfAssessment: "2020-01-01",
+                  dateRegistered: "2020-01-02",
                   dwellingType: "Top floor flat",
                   typeOfAssessment: "RdSAP",
                   totalFloorArea: 50,
@@ -121,7 +121,7 @@ module FindCertificate
                   potentialEnergyEfficiencyRating: "a",
                   potentialEnergyEfficiencyBand: 95,
                   postcode: "SW1B 2BB",
-                  dateOfExpiry: "2023-01-01",
+                  dateOfExpiry: "2032-01-01",
                   heatDemand: {
                     currentSpaceHeatingDemand: 222,
                     currentWaterHeatingDemand: 321,
@@ -161,8 +161,8 @@ module FindCertificate
               "assessments": [
                 {
                   assessmentId: certificate_id,
-                  dateOfAssessment: "2011-01-01",
-                  dateRegistered: "2011-01-02",
+                  dateOfAssessment: "2020-01-01",
+                  dateRegistered: "2020-01-02",
                   dwellingType: "Top floor flat",
                   typeOfAssessment: "RdSAP",
                   totalFloorArea: 50,
@@ -213,8 +213,8 @@ module FindCertificate
               "assessments": [
                 {
                   assessmentId: "1234-5678-9101-1121-3141",
-                  dateOfAssessment: "2011-01-01",
-                  dateRegistered: "2011-01-02",
+                  dateOfAssessment: "2020-01-01",
+                  dateRegistered: "2020-01-02",
                   dwellingType: "Top floor flat",
                   typeOfAssessment: "RdSAP",
                   totalFloorArea: 50,
@@ -238,8 +238,8 @@ module FindCertificate
                 },
                 {
                   assessmentId: "1234-5678-9101-1122-1234",
-                  dateOfAssessment: "2011-01-01",
-                  dateRegistered: "2011-01-02",
+                  dateOfAssessment: "2020-01-01",
+                  dateRegistered: "2020-01-02",
                   dwellingType: "Top floor flat",
                   typeOfAssessment: "RdSAP",
                   totalFloorArea: 50,
@@ -250,7 +250,7 @@ module FindCertificate
                   potentialEnergyEfficiencyRating: "a",
                   potentialEnergyEfficiencyBand: 95,
                   postcode: "SW1B 2BB",
-                  dateOfExpiry: "2022-01-01",
+                  dateOfExpiry: "2030-01-01",
                   addressLine1: street_name,
                   town: town,
                   heatDemand: {
@@ -263,8 +263,8 @@ module FindCertificate
                 },
                 {
                   assessmentId: "1234-5678-9101-1123-1234",
-                  dateOfAssessment: "2011-01-01",
-                  dateRegistered: "2011-01-02",
+                  dateOfAssessment: "2020-01-01",
+                  dateRegistered: "2020-01-02",
                   dwellingType: "Top floor flat",
                   typeOfAssessment: "RdSAP",
                   totalFloorArea: 50,
@@ -275,7 +275,7 @@ module FindCertificate
                   potentialEnergyEfficiencyRating: "a",
                   potentialEnergyEfficiencyBand: 95,
                   postcode: "SW1B 2BB",
-                  dateOfExpiry: "2023-01-01",
+                  dateOfExpiry: "2032-01-01",
                   addressLine1: street_name,
                   town: town,
                   heatDemand: {
