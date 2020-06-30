@@ -23,7 +23,7 @@ source "https://rubygems.org" do
   gem "i18n"
   gem "rack-contrib"
   gem "rake"
-  gem "rubocop-govuk", "~> 3.7"
+  gem "rubocop-govuk", "~> 3.16"
   gem "sassc", "~> 2.4"
   gem "sinatra", "~> 2.0", ">= 2.0.7"
   gem "sinatra-url-for",
