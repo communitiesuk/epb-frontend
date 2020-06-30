@@ -29,5 +29,5 @@ source "https://rubygems.org" do
   gem "sinatra-url-for",
       git: "https://github.com/emk/sinatra-url-for.git",
       branch: "master"
-  gem "zeitwerk", "~> 2.2.2"
+  gem "zeitwerk", "~> 2.3.1"
 end
