@@ -8,9 +8,9 @@ describe UseCase::FetchCertificate do
     let(:fetch_certificate) { described_class.new(certificates_gateway) }
 
     it "raises an AssessmentNotFound error" do
-      expect { fetch_certificate.execute("1234-5678-1234-5678-1234") }.to raise_error(
-        Errors::AssessmentNotFound,
-      )
+      expect {
+        fetch_certificate.execute("1234-5678-1234-5678-1234")
+      }.to raise_error(Errors::AssessmentNotFound)
     end
   end
 

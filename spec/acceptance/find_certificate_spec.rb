@@ -311,7 +311,9 @@ describe "Acceptance::Certificate" do
 
       context "when there is no connection" do
         before do
-          FindCertificate::NoNetworkStub.search_by_id("1234-5678-9101-1122-1234")
+          FindCertificate::NoNetworkStub.search_by_id(
+            "1234-5678-9101-1122-1234",
+          )
         end
 
         let(:response) do
