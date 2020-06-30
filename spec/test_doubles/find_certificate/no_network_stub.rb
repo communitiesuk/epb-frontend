@@ -6,8 +6,7 @@ module FindCertificate
       WebMock.stub_request(
         :get,
         "http://test-api.gov.uk/api/assessments/search?postcode=#{postcode}",
-      )
-        .to_raise(Auth::Errors::NetworkConnectionFailed)
+      ).to_raise(Auth::Errors::NetworkConnectionFailed)
     end
 
     def self.search_by_id(certificate_id)
@@ -16,8 +15,7 @@ module FindCertificate
         "http://test-api.gov.uk/api/assessments/search?assessment_id=#{
           certificate_id
         }",
-      )
-        .to_raise(Auth::Errors::NetworkConnectionFailed)
+      ).to_raise(Auth::Errors::NetworkConnectionFailed)
     end
 
     def self.search_by_street_name_and_town(street_name, town)
@@ -26,8 +24,7 @@ module FindCertificate
         "http://test-api.gov.uk/api/assessments/search?street_name=#{
           street_name
         }&town=#{town}",
-      )
-        .to_raise(Auth::Errors::NetworkConnectionFailed)
+      ).to_raise(Auth::Errors::NetworkConnectionFailed)
     end
   end
 end

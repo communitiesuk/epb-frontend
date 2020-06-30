@@ -15,8 +15,7 @@ class OauthStub
           "Content-Type" => "application/x-www-form-urlencoded",
           "User-Agent" => "Faraday v1.0.1",
         },
-      )
-      .to_return(
+      ).to_return(
         status: 200,
         body: {
           access_token: "abc", expires_in: 3_600, token_type: "bearer"

@@ -243,8 +243,7 @@ class FrontendService < Sinatra::Base
         locals[:results] =
           @container.get_object(
             :find_certificate_by_street_name_and_town_use_case,
-          )
-            .execute(params["street_name"], params["town"])[
+          ).execute(params["street_name"], params["town"])[
             :data
           ][
             :assessments

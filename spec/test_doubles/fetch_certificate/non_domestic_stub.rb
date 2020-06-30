@@ -29,8 +29,7 @@ module FetchCertificate
       WebMock.stub_request(
         :get,
         "http://test-api.gov.uk/api/assessments/#{assessment_id}",
-      )
-        .to_return(status: 200, body: body.to_json)
+      ).to_return(status: 200, body: body.to_json)
     end
   end
 end

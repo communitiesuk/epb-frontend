@@ -7,8 +7,7 @@ module FindAssessor
         WebMock.stub_request(
           :get,
           "http://test-api.gov.uk/api/assessors?name=#{name}",
-        )
-          .to_raise(Auth::Errors::NetworkConnectionFailed)
+        ).to_raise(Auth::Errors::NetworkConnectionFailed)
       end
     end
   end

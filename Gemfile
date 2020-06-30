@@ -27,7 +27,6 @@ source "https://rubygems.org" do
   gem "sassc", "~> 2.4"
   gem "sinatra", "~> 2.0", ">= 2.0.7"
   gem "sinatra-url-for",
-      git: "https://github.com/emk/sinatra-url-for.git",
-      branch: "master"
+      git: "https://github.com/emk/sinatra-url-for.git", branch: "master"
   gem "zeitwerk", "~> 2.3.1"
 end

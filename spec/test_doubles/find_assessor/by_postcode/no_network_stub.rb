@@ -11,8 +11,7 @@ module FindAssessor
           "http://test-api.gov.uk/api/assessors?postcode=#{
             postcode
           }&qualification=#{qualification_type}",
-        )
-          .to_raise(Auth::Errors::NetworkConnectionFailed)
+        ).to_raise(Auth::Errors::NetworkConnectionFailed)
       end
     end
   end
