@@ -312,7 +312,7 @@ en:
       expiry: 'Expiry date'
     no_certificates: 'There are no certificates matching that EPC Reference Number.'
 
-  find_non_dom_certification:
+  find_non_dom_certificate:
     top_heading: 'Find an energy certificate or report for a non-domestic property'
     service:
       introduction: 'Use this service to find energy certificates and reports for non-domestic properties in England, Wales and Northern Ireland.'
