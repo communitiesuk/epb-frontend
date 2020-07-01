@@ -216,7 +216,7 @@ en:
         url:  'https://mhclg-epb-prototypes.london.cloudapps.digital/domestic'
       commercial:
         text: 'For commercial or public buildings, use the %{link} service.'
-        url: 'https://www.ndepcregister.com'
+        url: '/find-a-non-domestic-certificate'
         cta: 'find a non-domestic EPC'
       call_center: 'If you need additional support to find an EPC, call our helpdesk on 0233 788 1234 (Monday to Friday, 9am - 5pm).'
 

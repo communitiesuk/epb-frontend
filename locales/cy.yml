@@ -186,7 +186,7 @@ cy:
         cta: "Scottish government's EPC service"
       commercial:
         text: 'Welsh: If the property is for commercial or public use, use our %{link}.'
-        url: 'https://www.ndepcregister.com'
+        url: '/find-a-non-domestic-certificate'
         cta: 'Welsh: find a non-domestic EPC'
       call_center: 'Welsh: The service is also available by calling 0233 788 1234.'
 
