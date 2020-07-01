@@ -312,6 +312,33 @@ en:
       expiry: 'Expiry date'
     no_certificates: 'There are no certificates matching that EPC Reference Number.'
 
+  find_non_dom_certification:
+    top_heading: 'Find an energy certificate or report for a non-domestic property'
+    service:
+      introduction: 'Use this service to find energy certificates and reports for non-domestic properties in England, Wales and Northern Ireland.'
+      what_is_non_dom: 'Non-domestic properties are commercial and public properties.'
+      what_non_dom_info_is_available:  'For non-domestic properties, you can view their:'
+      epc_rr: 'Energy Performance Certificate (EPC) and Recommendation Report (EPC-RR)'
+      dec_rr: 'Display Energy Certificate (DEC) and Recommendation Report (DEC-RR)'
+      ac: 'Air Conditioning Inspection Report (AC-REPORT) and Certificate (AC-CERT)'
+    switch_language:
+      description: 'This service is also available in %{link}.'
+      link: 'Welsh (Cymraeg)'
+      url: '/find-a-non-domestic-certificate?lang=cy'
+    cta: 'Start now'
+    before_you_start:
+      heading: 'Before you start'
+      additional_support: 'If you need additional support to find an energy certificate or report, call our helpdesk on 0233 788 1234 (Monday to Friday, 9am - 5pm).'
+      scotland:
+        description: 'For non-domestic properties in Scotland, use the %{link}'
+        link: 'Scottish government''s EPC and DEC service.'
+
+    check_if_epc_needed:
+      intro: 'To check if your property needs a certificate or report, read:'
+      epc: 'the EPC exemptions for business properties'
+      dec: 'which properties need a DEC'
+      ac: 'when air conditioning system inspections are required'
+
   non_domestic_epc:
     top_heading: 'Non-domestic Energy Performance Certificate'
 
