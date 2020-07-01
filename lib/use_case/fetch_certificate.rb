@@ -7,6 +7,7 @@ module UseCase
 
       raise_errors_if_exists(response) do |error_code|
         raise Errors::AssessmentNotFound if error_code == "NOT_FOUND"
+        raise Errors::AssessmentNotFound if error_code == "GONE"
       end
 
       if response[:data][:recommendedImprovements]
