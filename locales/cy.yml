@@ -97,6 +97,32 @@ cy:
         name: 'Welsh: Quidos'
         phone: 'Welsh: 01225 667 570'
         url: 'https://quidos.co.uk'
+  find_non_dom_certificate:
+    top_heading: 'Welsh: Find an energy certificate or report for a non-domestic property'
+    service:
+      introduction: 'Welsh: Use this service to find energy certificates and reports for non-domestic properties in England, Wales and Northern Ireland.'
+      what_is_non_dom: 'Welsh: Non-domestic properties are commercial and public properties.'
+      what_non_dom_info_is_available:  'Welsh: For non-domestic properties, you can view their:'
+      epc_rr: 'Welsh: Energy Performance Certificate (EPC) and Recommendation Report (EPC-RR)'
+      dec_rr: 'Welsh: Display Energy Certificate (DEC) and Recommendation Report (DEC-RR)'
+      ac: 'Welsh: Air Conditioning Inspection Report (AC-REPORT) and Certificate (AC-CERT)'
+    switch_language:
+      description: 'Welsh: This service is also available in %{link}.'
+      link: 'Welsh (Cymraeg)'
+      url: '/find-a-non-domestic-certificate?lang=en'
+    cta: 'Welsh: Start now'
+    before_you_start:
+      heading: 'Welsh: Before you start'
+      additional_support: 'Welsh: If you need additional support to find an energy certificate or report, call our helpdesk on 0233 788 1234 (Monday to Friday, 9am - 5pm).'
+      scotland:
+        description: 'Welsh: For non-domestic properties in Scotland, use the %{link}'
+        link: 'Welsh: Scottish government''s EPC and DEC service.'
+
+    check_if_epc_needed:
+      intro: 'Welsh: To check if your property needs a certificate or report, read:'
+      epc: 'Welsh: the EPC exemptions for business properties'
+      dec: 'Welsh: which properties need a DEC'
+      ac: 'Welsh: when air conditioning system inspections are required'
 
   find_assessor_by_postcode:
     head:
