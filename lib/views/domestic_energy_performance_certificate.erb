@@ -58,6 +58,9 @@
         <% if assessment.has_key?(:greenDealPlan) %>
           <p class="govuk-body"><a href="#green_deal"><%= t('domestic_epc.sidebar.sections.green_deal') %></a></p>
         <% end %>
+        <% unless assessment[:relatedAssessments] == [] %>
+          <p class="govuk-body"><a href="#related_asssesments"><%= t('domestic_epc.sidebar.sections.related_asssesments') %></a></p>
+        <% end %>
         <!-- <p class="govuk-body"><a href="#previous"><%= t('domestic_epc.sidebar.sections.previous') %></a></p> -->
       </div>
     </div>
@@ -498,8 +501,11 @@
       </dl>
     </div>
   </div>
-
   <% if assessment.has_key?(:greenDealPlan) %>
     <%== erb :green_deal_plan, locals: { assessment: assessment } %>
+  <% end %>
+
+  <% unless assessment[:relatedAssessments] == [] %>
+    <%== erb :related_assessments, locals: { assessment: assessment } %>
   <% end %>
 </div>

@@ -1,0 +1,31 @@
+<div class="govuk-grid-column-two-thirds">
+  <a id="related_asssesments"></a>
+  <h2 class="govuk-heading-l"><%= t('domestic_epc.sections.related_assessments.title') %></h2>
+
+  <table class="govuk-table">
+    <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header"><%= t('domestic_epc.sections.related_assessments.reference_number') %></th>
+      <th scope="col" class="govuk-table__header"><%= t('domestic_epc.sections.related_assessments.assessment_type') %></th>
+      <th scope="col" class="govuk-table__header"><%= t('domestic_epc.sections.related_assessments.expiry_date') %></th>
+    </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+    <% assessment[:relatedAssessments].each do |related_assessment| %>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">
+          <a href="/energy-performance-certificate/<%= related_assessment[:assessmentId]%>"><%=related_assessment[:assessmentId]%></a>
+        </td>
+        <td class="govuk-table__cell"><%= related_assessment[:assessmentType] %></td>
+        <% if related_assessment[:assessmentStatus] == "EXPIRED" %>
+          <td class="govuk-table__cell" style="color: #d4351c"><b><%= Date.parse(related_assessment[:assessmentExpiryDate]).strftime('%d %B %Y')%> (Expired)</b></td>
+        <% else %>
+          <td class="govuk-table__cell"><b><%= Date.parse(related_assessment[:assessmentExpiryDate]).strftime('%d %B %Y')%></b></td>
+        <% end %>
+        <td class="govuk-table__header"></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+

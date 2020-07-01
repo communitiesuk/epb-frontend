@@ -161,6 +161,20 @@ describe Gateway::CertificatesGateway do
             },
           ],
         },
+        relatedAssessments: [
+          {
+            assessmentExpiryDate: "2006-05-04",
+            assessmentId: "0000-0000-0000-0000-0001",
+            assessmentStatus: "EXPIRED",
+            assessmentType: "CEPC",
+          },
+          {
+            assessmentExpiryDate: "2002-07-01",
+            assessmentId: "0000-0000-0000-0000-0002",
+            assessmentStatus: "EXPIRED",
+            assessmentType: "CEPC-RR",
+          },
+        ],
       )
     end
   end

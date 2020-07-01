@@ -527,6 +527,33 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate" do
         end
       end
     end
+
+    context "when viewing the related certificates section",
+            type: :feature, journey: true do
+      it "shows the section title" do
+        expect(response.body).to include(
+          '<h2 class="govuk-heading-l">Other certificates for this property</h2>',
+        )
+      end
+
+      it "shows a link to the reference number of a related certificate" do
+        expect(response.body).to include(
+          '<a href="/energy-performance-certificate/0000-0000-0000-0000-0001"> 0000-0000-0000-0000-0001 </a>',
+        )
+      end
+
+      it "shows the report type of a previous certificate" do
+        expect(response.body).to include(
+          '<td class="govuk-table__cell">CEPC</td>',
+        )
+      end
+
+      it "shows the expiry date of a previous certificate in red with Expired next to it" do
+        expect(response.body).to include(
+          '<td class="govuk-table__cell" style="color: #d4351c"><b>01 July 2002 (Expired)</b></td>',
+        )
+      end
+    end
   end
 
   context "when the assessment exists with recommendations" do

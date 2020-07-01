@@ -56,6 +56,7 @@ module FetchCertificate
             "relatedPartyDisclosureText": "Financial interest in the property",
             "relatedPartyDisclosureNumber": nil,
             "propertySummary": [],
+            "relatedAssessments": [],
             "recommendedImprovements": [
               {
                 "sequence": 0,
@@ -200,6 +201,20 @@ module FetchCertificate
             relatedPartyDisclosureNumber: related_party_disclosure_number,
             propertySummary: property_summary,
             greenDealPlan: green_deal_plan,
+            relatedAssessments: [
+              {
+                assessmentExpiryDate: "2006-05-04",
+                assessmentId: "0000-0000-0000-0000-0001",
+                assessmentStatus: "EXPIRED",
+                assessmentType: "CEPC",
+              },
+              {
+                assessmentExpiryDate: "2002-07-01",
+                assessmentId: "0000-0000-0000-0000-0002",
+                assessmentStatus: "EXPIRED",
+                assessmentType: "CEPC-RR",
+              },
+            ],
           },
         }
       end

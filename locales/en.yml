@@ -360,7 +360,8 @@ en:
         recommendations: 'How to improve this property’s energy performance'
         heat-demand: 'Estimated energy use and potential savings'
         information: 'Contacting the assessor and accreditation scheme'
-        green_deal: 'Green Deal Plan'
+        green_deal: 'Green deal plan'
+        related_asssesments: 'Related asssesments'
         previous: 'Other certificates for this property'
     sections:
       renting:
@@ -542,7 +543,11 @@ en:
         provider_name: 'Provider:'
         provider_telephone: 'Telephone:'
         provider_email: 'Email:'
-
+      related_assessments:
+        title: 'Other certificates for this property'
+        reference_number: 'Reference number'
+        assessment_type: 'Report type'
+        expiry_date: 'Expiry date'
 
   energy_performance_rating:
     '0':
