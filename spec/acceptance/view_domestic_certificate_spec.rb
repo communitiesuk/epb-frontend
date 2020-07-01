@@ -528,8 +528,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate" do
       end
     end
 
-    context "when viewing the related certificates section",
-            type: :feature, journey: true do
+    context "when viewing the related certificates section" do
       it "shows the section title" do
         expect(response.body).to include(
           '<h2 class="govuk-heading-l">Other certificates for this property</h2>',
@@ -538,7 +537,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate" do
 
       it "shows a link to the reference number of a related certificate" do
         expect(response.body).to include(
-          '<a href="/energy-performance-certificate/0000-0000-0000-0000-0001"> 0000-0000-0000-0000-0001 </a>',
+          '<a href="/energy-performance-certificate/0000-0000-0000-0000-0001">0000-0000-0000-0000-0001</a>',
         )
       end
 
