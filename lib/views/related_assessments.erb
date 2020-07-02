@@ -14,7 +14,7 @@
     <% assessment[:relatedAssessments].each do |related_assessment| %>
       <tr class="govuk-table__row">
         <td class="govuk-table__cell">
-          <a href="/energy-performance-certificate/<%=related_assessment[:assessmentId]%>"><%=related_assessment[:assessmentId]%></a>
+          <a href="<%=localised_url('/energy-performance-certificate/' + related_assessment[:assessmentId])%>"><%=related_assessment[:assessmentId]%></a>
         </td>
         <td class="govuk-table__cell"><%= related_assessment[:assessmentType] %></td>
         <% if related_assessment[:assessmentStatus] == "EXPIRED" %>
