@@ -75,14 +75,8 @@ module Sinatra
 
       def localised_url(url)
         if I18n.locale != I18n.available_locales[0]
-          uri = URI url
-
-          query = URI.decode_www_form uri.query
-          query.merge lang: I18n.locale.to_s
-
-          uri.query = URI.encode_www_form query
-
-          url = uri.to_s
+          url += (url.include?("?") ? "&" : "?")
+          url += "lang=#{I18n.locale}"
         end
 
         url
