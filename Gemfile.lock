@@ -1,11 +1,3 @@
-GIT
-  remote: https://github.com/emk/sinatra-url-for.git
-  revision: a19bac86311029a2bb6c7df940cc905686adc9cd
-  branch: master
-  specs:
-    sinatra-url-for (0.2.1)
-      sinatra (>= 0.9.1.1)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -172,7 +164,6 @@ DEPENDENCIES
   selenium-webdriver (~> 3.142.7)!
   sinatra (~> 2.0, >= 2.0.7)!
   sinatra-contrib!
-  sinatra-url-for!
   webdrivers (~> 4.4.1)!
   webmock (~> 3.7)!
   zeitwerk (~> 2.3.1)!
