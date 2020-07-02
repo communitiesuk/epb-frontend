@@ -42,8 +42,8 @@ module FetchCertificate
             "addressLine3": "",
             "addressLine4": "",
             "town": "Post-Town1",
-            estimatedCostForThreeYears: 689.83,
-            potentialSavingForThreeYears: 174.83,
+            estimatedCostForThreeYears: "689.83",
+            potentialSavingForThreeYears: "174.83",
             "heatDemand": {
               "currentSpaceHeatingDemand": 30.0,
               "currentWaterHeatingDemand": 60.0,
@@ -187,8 +187,8 @@ module FetchCertificate
             addressLine3: "",
             addressLine4: "",
             town: "London",
-            estimatedCostForThreeYears: 689.83,
-            potentialSavingForThreeYears: 174.83,
+            estimatedCostForThreeYears: "689.83",
+            potentialSavingForThreeYears: "174.00",
             heatDemand: {
               currentSpaceHeatingDemand: 222,
               currentWaterHeatingDemand: 321,

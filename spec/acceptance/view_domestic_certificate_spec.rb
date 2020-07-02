@@ -76,7 +76,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate" do
 
     it "shows the potential energy cost saving for 3 years" do
       expect(response.body).to include(
-        '<td class="govuk-table__cell" id="potential-saving">£174.83</td>',
+        '<td class="govuk-table__cell" id="potential-saving">£174</td>',
       )
     end
 
