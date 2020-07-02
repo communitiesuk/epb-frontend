@@ -29,6 +29,6 @@ describe "Journey::NavigateToRelatedCertificate", type: :feature, journey: true 
     visit "/energy-performance-certificate/4567-6789-4567-6789-4567"
     click_on "0000-0000-0000-0000-0001"
 
-    expect(page).to have_content "Certificate Number\n0000-0000-0000-0000-0001"
+    expect(find(".epc-box")).to have_content "0000-0000-0000-0000-0001"
   end
 end
