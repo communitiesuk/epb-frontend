@@ -465,8 +465,8 @@ en:
           link: 'https://www.gov.uk/improve-energy-efficiency'
       heat-demand:
         title: 'Estimated energy use and potential savings'
-        estimated_cost: 'Estimated energy cost for this property over 3 years'
-        three_year_saving: 'Over 3 years you could save'
+        estimated_cost: 'Estimated energy cost for this property over a year'
+        three_year_saving: 'Over a year you could save'
         costs_and_savings: 'The estimated cost and savings show how much the average household would spend in this property for heating, lighting and hot water. It is not based on how energy is used by the people living at the property.'
         based_on: 'The estimated saving is based on making all of the recommendations in %{link}.'
         based_on_cta: 'how to improve this property’s energy performance'
