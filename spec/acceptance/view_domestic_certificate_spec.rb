@@ -549,7 +549,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate" do
 
       it "shows the expiry date of a previous certificate in red with Expired next to it" do
         expect(response.body).to include(
-          '<td class="govuk-table__cell" style="color: #d4351c"><b>01 July 2002 (Expired)</b></td>',
+          '<td class="govuk-table__cell"><b class="expired-text">01 July 2002 (Expired)</b></td>',
         )
       end
     end

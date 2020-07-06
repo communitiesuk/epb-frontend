@@ -13,7 +13,7 @@
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header"><a href="/energy-performance-certificate/<%= result[:assessmentId] %>"><%= [result[:addressLine1], result[:addressLine2], result[:town], result[:postcode]].reject { |a| a.to_s.empty? }.join(", ") %></a></th>
           <td class="govuk-table__cell"><%= result[:currentEnergyEfficiencyBand].upcase %></td>
-          <td class="govuk-table__cell<%== ( expire ? ' govuk-!-font-weight-bold" style="color: #d4351c;' : "") %>"><%= Date.parse(result[:dateOfExpiry]).strftime('%d/%m/%Y') %> <%= expire ? t('find_certificate_results.expired') : '' %></td>
+          <td class="govuk-table__cell<%== ( expire ? ' govuk-!-font-weight-bold expired-text"' : "") %>"><%= Date.parse(result[:dateOfExpiry]).strftime('%d/%m/%Y') %> <%= expire ? t('find_certificate_results.expired') : '' %></td>
         </tr>
     <% end %>
   </tbody>

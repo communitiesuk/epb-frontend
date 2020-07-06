@@ -18,7 +18,7 @@
         </td>
         <td class="govuk-table__cell"><%= related_assessment[:assessmentType] %></td>
         <% if related_assessment[:assessmentStatus] == "EXPIRED" %>
-          <td class="govuk-table__cell" style="color: #d4351c"><b><%= Date.parse(related_assessment[:assessmentExpiryDate]).strftime('%d %B %Y')%> (Expired)</b></td>
+          <td class="govuk-table__cell"><b class="expired-text"><%= Date.parse(related_assessment[:assessmentExpiryDate]).strftime('%d %B %Y')%> (Expired)</b></td>
         <% else %>
           <td class="govuk-table__cell"><b><%= Date.parse(related_assessment[:assessmentExpiryDate]).strftime('%d %B %Y')%></b></td>
         <% end %>
