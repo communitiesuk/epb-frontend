@@ -25,7 +25,7 @@
       </tr>
       <tr class="govuk-table__row">
         <td class="govuk-table__cell"><%= t('domestic_epc.sections.green_deal.payment_period_end') %></td>
-        <td class="govuk-table__cell"><%= assessment[:greenDealPlan][:endDate] %></td>
+        <td class="govuk-table__cell"><%= Date.parse(assessment[:greenDealPlan][:endDate]).strftime("%d %B %Y") %></td>
         <td class="govuk-table__header"></td>
       </tr>
       <tr class="govuk-table__row">
