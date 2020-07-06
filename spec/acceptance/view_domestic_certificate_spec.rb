@@ -452,7 +452,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate" do
 
         it "shows the start date" do
           expect(response.body).to include(
-            '<td class="govuk-table__cell">2020-01-30</td>',
+            '<td class="govuk-table__cell">30 January 2020</td>',
           )
         end
 
