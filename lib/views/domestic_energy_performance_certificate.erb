@@ -323,7 +323,7 @@
     <div class="epc-blue-bottom">
       <a id="heat-demand"></a>
       <h2 class="govuk-heading-l"><%= t('domestic_epc.sections.heat-demand.title') %></h2>
-      <% if assessment[:estimatedEnergyCost] && assessment[:potentialEnergySaving] %>
+      <% unless assessment[:estimatedEnergyCost].nil? && assessment[:potentialEnergySaving].nil? %>
       <table class="govuk-table">
         <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
