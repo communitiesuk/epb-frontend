@@ -327,11 +327,11 @@
         <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header"><%= t('domestic_epc.sections.heat-demand.estimated_cost') %></th>
-            <td class="govuk-table__cell" id="estimated-cost">£<%== assessment[:estimatedCostForThreeYears].chomp(".00") %></td>
+            <td class="govuk-table__cell" id="estimated-cost">£<%== assessment[:estimatedEnergyCost].chomp(".00") %></td>
         </tr>
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header"><%= t('domestic_epc.sections.heat-demand.three_year_saving') %></th>
-          <td class="govuk-table__cell" id="potential-saving">£<%= assessment[:potentialSavingForThreeYears].chomp(".00") %></td>
+          <td class="govuk-table__cell" id="potential-saving">£<%= assessment[:potentialEnergySaving].chomp(".00") %></td>
         </tr>
         </tbody>
       </table>
