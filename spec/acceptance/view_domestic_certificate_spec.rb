@@ -68,13 +68,13 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate" do
       expect(response.body).to include('<tspan x="8" y="55">92+</tspan>')
     end
 
-    it "shows the estimated energy cost for 3 years" do
+    it "shows the estimated energy cost for a year" do
       expect(response.body).to include(
         '<td class="govuk-table__cell" id="estimated-cost">£689.83</td>',
       )
     end
 
-    it "shows the potential energy cost saving for 3 years" do
+    it "shows the potential energy cost saving for a year" do
       expect(response.body).to include(
         '<td class="govuk-table__cell" id="potential-saving">£174</td>',
       )
@@ -750,6 +750,26 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate" do
     it "shows the error page" do
       expect(response.body).to include(
         '<h1 class="govuk-heading-xl">Page not found</h1>',
+      )
+    end
+  end
+
+  context "when the estimated or potentail energy cost is missing" do
+    before { FetchCertificate::Stub.fetch("1111-1111-1111-1111-1112") }
+
+    let(:response) do
+      get "/energy-performance-certificate/1111-1111-1111-1111-1112"
+    end
+
+    it "does not show the estimated energy cost for a year" do
+      expect(response.body).to_not include(
+        '<td class="govuk-table__cell" id="estimated-cost"></td>',
+      )
+    end
+
+    it "does not show the potential energy cost saving for a year" do
+      expect(response.body).to_not include(
+        '<td class="govuk-table__cell" id="potential-saving"></td>',
       )
     end
   end

@@ -17,7 +17,9 @@ module FetchCertificate
       property_summary = nil,
       type_of_assessment = "RdSAP",
       energy_performance_rating_improvement = 76,
-      green_deal_plan = nil
+      green_deal_plan = nil,
+      estimatedEnergyCost = nil,
+      potentialEnergySaving = nil
     )
       property_summary ||= generate_property_summary
       green_deal_plan ||= generate_green_deal_plan
@@ -42,8 +44,8 @@ module FetchCertificate
             "addressLine3": "",
             "addressLine4": "",
             "town": "Post-Town1",
-            estimatedEnergyCost: "689.83",
-            potentialEnergySaving: "174.83",
+            estimatedEnergyCost: estimatedEnergyCost,
+            potentialEnergySaving: potentialEnergySaving,
             "heatDemand": {
               "currentSpaceHeatingDemand": 30.0,
               "currentWaterHeatingDemand": 60.0,

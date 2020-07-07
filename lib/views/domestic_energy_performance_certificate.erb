@@ -323,6 +323,7 @@
     <div class="epc-blue-bottom">
       <a id="heat-demand"></a>
       <h2 class="govuk-heading-l"><%= t('domestic_epc.sections.heat-demand.title') %></h2>
+      <% if assessment[:estimatedEnergyCost] && assessment[:potentialEnergySaving] %>
       <table class="govuk-table">
         <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
@@ -338,6 +339,7 @@
       <p class="govuk-body"><%= t('domestic_epc.sections.heat-demand.costs_and_savings') %></p>
       <p class="govuk-body"><%== t('domestic_epc.sections.heat-demand.based_on', :link => '<a href="' + t('domestic_epc.sections.heat-demand.based_on_url') + '">' + t('domestic_epc.sections.heat-demand.based_on_cta') + '</a>') %></p>
       <p class="govuk-body"><%== t('domestic_epc.sections.heat-demand.more_advice', :link => '<a href="' + t('domestic_epc.sections.heat-demand.more_advice_url') + '">' + t('domestic_epc.sections.heat-demand.more_advice_cta') + '</a>') %></p>
+      <% end  %>
       <h3 class="govuk-heading-m"><%= t('domestic_epc.sections.heat-demand.heating_in_property') %></h3>
       <p class="govuk-body"><%= t('domestic_epc.sections.heat-demand.energy_costs') %></p>
       <p class="govuk-body"><%= t('domestic_epc.sections.heat-demand.energy_use_table_description') %></p>

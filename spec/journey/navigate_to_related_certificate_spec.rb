@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
-describe "Journey::NavigateToRelatedCertificate", type: :feature, journey: true do
+describe "Journey::NavigateToRelatedCertificate",
+         type: :feature, journey: true do
   before(:all) do
     process =
       IO.popen(
