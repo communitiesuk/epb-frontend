@@ -446,7 +446,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate" do
 
         it "shows the current charge" do
           expect(response.body).to include(
-            '<td class="govuk-table__cell">£124.19 per year</td>',
+            '<td class="govuk-table__cell">£124.18 per year</td>',
           )
         end
 

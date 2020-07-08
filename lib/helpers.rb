@@ -70,7 +70,8 @@ module Sinatra
           all_charges.append(charge[:dailyCharge].to_f)
         end
         charges = all_charges.inject(0, &:+) * 365.25
-        charges.round(2)
+        rounded_charges = "%.2f" % charges
+        rounded_charges.chomp(".00")
       end
 
       def localised_url(url)
