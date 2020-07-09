@@ -552,6 +552,20 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate" do
           '<td class="govuk-table__cell"><b class="expired-text">01 July 2002 (Expired)</b></td>',
         )
       end
+
+      context "when there are no related certificates" do
+        before { FetchCertificate::Stub.fetch "1111-1111-1111-1111-1112" }
+
+        let(:response) do
+          get "/energy-performance-certificate/1111-1111-1111-1111-1112"
+        end
+
+        it "does not show the section title" do
+          expect(response.body).not_to include(
+            '<h2 class="govuk-heading-l">Other certificates for this property</h2>',
+          )
+        end
+      end
     end
   end
 
