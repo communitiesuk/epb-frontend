@@ -18,4 +18,16 @@ describe "Acceptance::Non Domestic Certificate" do
       end
     end
   end
+
+  describe ".get /find-a-non-domestic-certificate/search-by-postcode" do
+    context "when search page rendered" do
+      let(:response) do
+        get "/find-a-non-domestic-certificate/search-by-postcode"
+      end
+
+      it "returns status 200" do
+        expect(response.status).to eq(200)
+      end
+    end
+  end
 end
