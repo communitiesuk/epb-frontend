@@ -49,5 +49,28 @@ describe "Acceptance::Non Domestic Certificate" do
         expect(response.body).not_to include("govuk-error-message")
       end
     end
+
+    context "when entering an empty postcode" do
+      let(:response) do
+        get "/find-a-non-domestic-certificate/search-by-postcode?postcode="
+      end
+
+      it "returns status 400" do
+        expect(response.status).to eq(400)
+      end
+
+      it "displays the find a certificate page heading" do
+        expect(response.body).to include(
+          "Find an energy performance certificate",
+        )
+      end
+
+      it "displays an error message" do
+        expect(response.body).to include(
+          '<span id="postcode-error" class="govuk-error-message">',
+        )
+        expect(response.body).to include("Enter a real postcode")
+      end
+    end
   end
 end

@@ -49,6 +49,28 @@ class FrontendService < Sinatra::Base
     locals = {}
     erb_template = :find_non_dom_certificate_by_postcode
 
+    if params["postcode"]
+      @page_title = t("find_non_dom_certificate_by_postcode_results.head.title")
+      begin
+        locals[:results] =
+          @container.get_object(:find_certificate_by_postcode_use_case).execute(
+            params["postcode"],
+          )[
+            :data
+          ][
+            :assessments
+          ]
+      rescue Errors::PostcodeNotValid
+        status 400
+        @errors[:postcode] =
+          t("find_non_dom_certificate_by_postcode.postcode_not_valid")
+      rescue Auth::Errors::NetworkConnectionFailed
+        status 500
+        erb_template = :error_page_500
+      end
+    end
+
+    @page_title = t("find_certificate_by_postcode.head.title")
     show(erb_template, locals)
   end
 
