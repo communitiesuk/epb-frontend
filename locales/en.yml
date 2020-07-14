@@ -247,6 +247,13 @@ en:
       expiry: 'Expiry date'
     expired: '(expired)'
 
+  find_non_dom_certificate_results:
+    table:
+      address: 'Address'
+      type: 'Certificate and report type'
+      expiry: 'Expiry date'
+    expired: '(expired)'
+
   find_certificate_by_postcode_results:
     head:
       title: 'Energy performance of buildings register - Results for energy performance certificates at your postcode'
