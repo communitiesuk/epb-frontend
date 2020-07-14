@@ -1,0 +1,43 @@
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <a
+      href="<%= localised_url('/find-a-non-domestic-certificate')%>"
+      class="govuk-back-link">
+      <%=t('layout.body.breadcrumb.back')%>
+    </a>
+
+    <h1 class="govuk-heading-xl">
+      <%= t('find_non_dom_certificate_by_postcode.top_heading') %>
+    </h1>
+
+    <form method="GET" action="<%=localised_url('/find-a-non-domestic-certificate/search-by-postcode')%>" >
+      <% if I18n.locale != I18n.available_locales[0] %>
+        <input type="hidden" name="lang" value="<%= I18n.locale.to_s %>">
+      <% end %>
+      <fieldset class="govuk-fieldset fieldset-background">
+        <div class="govuk-form-group<% if errors[:postcode] %> govuk-form-group--error<% end %>">
+          <label class="govuk-label" for="postcode">
+            <%= t('find_certificate_by_postcode.question') %>
+          </label>
+          <span id="postcode-hint" class="govuk-hint">
+            <%= t('find_certificate_by_postcode.hint') %>
+          </span>
+          <% if errors[:postcode] %>
+          <span id="postcode-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden"><%= t('error.error') %></span><%== errors[:postcode] %>
+          </span>
+          <% end %>
+          <input id="postcode" name="postcode" type="text"
+                 class="govuk-input<% if errors[:postcode] %> govuk-input--error<% end %>"
+                 aria-describedby="postcode-hint<% if errors[:postcode] %> postcode-error<% end %>"
+                 autocomplete="postal-code"
+                 spellcheck="false"
+                 <% if params['postcode'] %>value="<%= params['postcode'] %>"<% end %>
+          >
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button"><%= t('find_certificate_by_postcode.button_text') %></button>
+      </fieldset>
+    </form>
+  </div>
+</div>
