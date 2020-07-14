@@ -45,6 +45,7 @@ class FrontendService < Sinatra::Base
   end
 
   get "/find-a-non-domestic-certificate/search-by-postcode" do
+    erb :find_non_certificate_by_postcode, layout: :layout
   end
 
   get "/find-an-assessor/search-by-postcode" do

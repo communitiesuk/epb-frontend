@@ -28,6 +28,12 @@ describe "Acceptance::Non Domestic Certificate" do
       it "returns status 200" do
         expect(response.status).to eq(200)
       end
+
+      it "displays the find a non-domestic certificate page heading" do
+        expect(response.body).to include(
+          "Find energy certificates and reports by postcode",
+        )
+      end
     end
   end
 end
