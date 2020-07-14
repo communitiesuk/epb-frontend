@@ -44,6 +44,10 @@ describe "Acceptance::Non Domestic Certificate" do
           '<button class="govuk-button" data-module="govuk-button">Find</button>',
         )
       end
+
+      it "does not display an error message" do
+        expect(response.body).not_to include("govuk-error-message")
+      end
     end
   end
 end
