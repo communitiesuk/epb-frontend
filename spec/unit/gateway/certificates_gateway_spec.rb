@@ -8,7 +8,7 @@ describe Gateway::CertificatesGateway do
   end
 
   context "when a certificate exist" do
-    let(:response) { gateway.search_by_postcode("SW1A 2AA") }
+    let(:response) { gateway.search_by_postcode("SW1A 2AA", %w[RdSAP SAP]) }
     let(:certificate) { response[:data][:assessments].first }
 
     before { FindCertificate::Stub.search_by_postcode("SW1A 2AA") }
@@ -44,7 +44,7 @@ describe Gateway::CertificatesGateway do
   end
 
   context "when a certificate doesnt exist" do
-    let(:response) { gateway.search_by_postcode("BF1 3AA") }
+    let(:response) { gateway.search_by_postcode("BF1 3AA", %w[RdSAP SAP]) }
 
     before { FindCertificate::NoCertificatesStub.search_by_postcode }
 

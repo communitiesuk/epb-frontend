@@ -2,7 +2,7 @@
 
 module UseCase
   class FindCertificateByPostcode < UseCase::Base
-    def execute(query)
+    def execute(query, types = %w[RdSAP SAP])
       unless Regexp.new(
         '^[A-Z]{1,2}\d[A-Z\d]?\s?\d[A-Z]{2}$',
         Regexp::IGNORECASE,
@@ -10,7 +10,7 @@ module UseCase
         raise Errors::PostcodeNotValid
       end
 
-      gateway_response = @gateway.search_by_postcode(query)
+      gateway_response = @gateway.search_by_postcode(query, types)
 
       raise_errors_if_exists(gateway_response)
 
