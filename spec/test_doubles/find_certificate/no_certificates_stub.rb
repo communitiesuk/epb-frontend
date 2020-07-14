@@ -2,13 +2,17 @@
 
 module FindCertificate
   class NoCertificatesStub
-    def self.search_by_postcode(postcode = "BF1 3AA")
-      WebMock.stub_request(
-        :get,
-        "http://test-api.gov.uk/api/assessments/search?postcode=#{
-          postcode
-        }&assessment_type[]=SAP&assessment_type[]=RdSAP",
-      ).to_return(
+    def self.search_by_postcode(postcode = "BF1 3AA", type = "RdSAP")
+      uri = "http://test-api.gov.uk/api/assessments/search?postcode=#{postcode}"
+
+      uri +=
+        if type == "CEPC"
+          "&assessment_type[]=CEPC"
+        else
+          "&assessment_type[]=SAP&assessment_type[]=RdSAP"
+        end
+
+      WebMock.stub_request(:get, uri).to_return(
         status: 200,
         body: {
           "data": { "assessments": [] }, "meta": { "searchPostcode": postcode }

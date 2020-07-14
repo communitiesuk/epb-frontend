@@ -2,13 +2,17 @@
 
 module FindCertificate
   class Stub
-    def self.search_by_postcode(postcode)
-      WebMock.stub_request(
-        :get,
-        "http://test-api.gov.uk/api/assessments/search?postcode=#{
-          postcode
-        }&assessment_type[]=SAP&assessment_type[]=RdSAP",
-      ).with(
+    def self.search_by_postcode(postcode, type = "RdSAP")
+      uri = "http://test-api.gov.uk/api/assessments/search?postcode=#{postcode}"
+
+      uri +=
+        if type == "CEPC"
+          "&assessment_type[]=CEPC"
+        else
+          "&assessment_type[]=SAP&assessment_type[]=RdSAP"
+        end
+
+      WebMock.stub_request(:get, uri).with(
         headers: {
           Accept: "*/*",
           "Accept-Encoding" => "gzip;q=1.0,deflate;q=0.6,identity;q=0.3",
@@ -25,7 +29,7 @@ module FindCertificate
                 dateOfAssessment: "2020-01-01",
                 dateRegistered: "2020-01-02",
                 dwellingType: "Top floor flat",
-                typeOfAssessment: "RdSAP",
+                typeOfAssessment: type,
                 totalFloorArea: 50,
                 currentCarbonEmission: 2.4,
                 potentialCarbonEmission: 1.4,
@@ -91,7 +95,7 @@ module FindCertificate
                 dateOfAssessment: "2020-01-01",
                 dateRegistered: "2020-01-02",
                 dwellingType: "Top floor flat",
-                typeOfAssessment: "RdSAP",
+                typeOfAssessment: type,
                 totalFloorArea: 50,
                 currentEnergyEfficiencyRating: 90,
                 currentEnergyEfficiencyBand: "b",
@@ -114,7 +118,7 @@ module FindCertificate
                 dateOfAssessment: "2020-01-01",
                 dateRegistered: "2020-01-02",
                 dwellingType: "Top floor flat",
-                typeOfAssessment: "RdSAP",
+                typeOfAssessment: type,
                 totalFloorArea: 50,
                 currentEnergyEfficiencyRating: 90,
                 currentEnergyEfficiencyBand: "b",

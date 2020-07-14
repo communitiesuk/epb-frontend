@@ -72,5 +72,98 @@ describe "Acceptance::Non Domestic Certificate" do
         expect(response.body).to include("Enter a real postcode")
       end
     end
+
+    context "when entering a valid postcode" do
+      context "shows page" do
+        before { FindCertificate::Stub.search_by_postcode("SW1A 2AA", "CEPC") }
+
+        let(:response) do
+          get "/find-a-non-domestic-certificate/search-by-postcode?postcode=SW1A+2AA"
+        end
+
+        it "returns status 200" do
+          expect(response.status).to eq(200)
+        end
+
+        it "displays the find a non-domestic certificate results page heading" do
+          expect(response.body).to include(
+            "View energy certificates and reports for non-domestic properties",
+          )
+        end
+
+        it "shows the address of an entry" do
+          expect(response.body).to include("2 Marsham Street, London, SW1B 2BB")
+        end
+
+        it "shows the report reference number of an entry" do
+          expect(response.body).to include("4567-6789-4567-6789-4567")
+        end
+
+        it "shows the report type of an entry" do
+          expect(response.body).to include(">CEPC<")
+        end
+
+        it "shows a clickable entry" do
+          expect(response.body).to include(
+            '<a href="/energy-performance-certificate/4567-6789-4567-6789-4567"',
+          )
+        end
+
+        it "shows the expiry date of an entry" do
+          expect(response.body).to include("01/01/2030")
+        end
+      end
+
+      context "where no certificates are present" do
+        before do
+          FindCertificate::NoCertificatesStub.search_by_postcode(
+            "E1 4FF",
+            "CEPC",
+          )
+        end
+
+        let(:response) do
+          get "/find-a-non-domestic-certificate/search-by-postcode?postcode=E1+4FF"
+        end
+
+        it "returns status 200" do
+          expect(response.status).to eq(200)
+        end
+
+        it "displays the find a certificate page heading" do
+          expect(response.body).to include(
+            "View energy certificates and reports for non-domestic properties",
+          )
+        end
+
+        it "explains that no certificates are present" do
+          expect(response.body).to include(
+            I18n.t(
+              "find_non_dom_certificate_by_postcode_results.no_certificates",
+            ),
+          )
+        end
+      end
+
+      context "when there is no connection" do
+        before { FindCertificate::NoNetworkStub.search_by_postcode("D11 4FF") }
+
+        let(:response) do
+          get "/find-a-non-domestic-certificate/search-by-postcode?postcode=D11+4FF"
+        end
+
+        it "returns status 500" do
+          expect(response.status).to eq(500)
+        end
+
+        it "displays the 500 error page heading" do
+          expect(response.body).to include("Network connection failed")
+        end
+
+        it "displays error page body" do
+          expect(response.body).to include("There is an internal network error")
+        end
+      end
+    end
   end
 end
