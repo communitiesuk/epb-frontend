@@ -7,7 +7,10 @@ module Gateway
     end
 
     def search_by_postcode(postcode)
-      route = "/api/assessments/search?postcode=#{CGI.escape(postcode)}"
+      route =
+        "/api/assessments/search?postcode=#{
+          CGI.escape(postcode)
+        }&assessment_type[]=SAP&assessment_type[]=RdSAP"
       response = @internal_api_client.get(route)
 
       JSON.parse(response.body, symbolize_names: true)
