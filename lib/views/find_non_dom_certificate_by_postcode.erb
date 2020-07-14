@@ -17,10 +17,10 @@
       <fieldset class="govuk-fieldset fieldset-background">
         <div class="govuk-form-group<% if errors[:postcode] %> govuk-form-group--error<% end %>">
           <label class="govuk-label" for="postcode">
-            <%= t('find_certificate_by_postcode.question') %>
+            <%= t('find_non_dom_certificate_by_postcode.question') %>
           </label>
           <span id="postcode-hint" class="govuk-hint">
-            <%= t('find_certificate_by_postcode.hint') %>
+            <%= t('find_non_dom_certificate_by_postcode.hint') %>
           </span>
           <% if errors[:postcode] %>
           <span id="postcode-error" class="govuk-error-message">
@@ -36,7 +36,7 @@
           >
         </div>
 
-        <button class="govuk-button" data-module="govuk-button"><%= t('find_certificate_by_postcode.button_text') %></button>
+        <button class="govuk-button" data-module="govuk-button"><%= t('find_non_dom_certificate_by_postcode.button_text') %></button>
       </fieldset>
     </form>
   </div>
