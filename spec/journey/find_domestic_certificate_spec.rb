@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-describe "Journey::FindCertificate", type: :feature, journey: true do
+describe "Journey::FindDomesticCertificate", type: :feature, journey: true do
   before(:all) do
     process =
       IO.popen(
