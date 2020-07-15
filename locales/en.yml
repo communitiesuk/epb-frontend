@@ -352,7 +352,7 @@ en:
   find_non_dom_certificate_by_postcode:
     head:
       title: 'Energy performance of buildings register - Find energy certificates and reports by postcode'
-    top_heading: 'Find energy certificates and reports by postcode'
+    top_heading: 'Search for energy certificates and reports by postcode'
     question: 'Enter a postcode'
     postcode_not_valid: 'Enter a real postcode'
     button_text: 'Find'
