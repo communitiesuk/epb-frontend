@@ -20,6 +20,7 @@ FindAssessor::ByPostcode::Stub.search_by_postcode("SW1A 2AA")
 FindAssessor::ByName::Stub.search_by_name("Supercommon Name")
 FindAssessor::ByName::Stub.search_by_name("Somewhatcommon Name", true)
 FindCertificate::Stub.search_by_postcode("SW1A 2AA")
+FindCertificate::Stub.search_by_postcode("SW1A 2AA", "CEPC")
 FindCertificate::Stub.search_by_id("4567-6789-4567-6789-4567")
 FindCertificate::Stub.search_by_street_name_and_town(
   "1 Makeup Street",
