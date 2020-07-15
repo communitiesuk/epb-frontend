@@ -26,120 +26,100 @@ cy:
     introduction: 'Welsh: Use this service to find assessors and certificates'
     find_an_assessor:
       body: 'Welsh: Find a qualified assessor through the %{link} service'
-      url: '/find-an-assessor'
+      url: 'Welsh: /find-an-assessor'
       cta: 'Welsh: Find an assessor'
     find_a_certificate:
       body: 'Welsh: Find an existing certificate for a property through the %{link} service'
-      url: '/find-a-certificate'
+      url: 'Welsh: /find-a-certificate'
       cta: 'Welsh: Find a certificate'
     caution: 'Welsh: This page is intended for Private Beta use, and will not be a part of the public service'
 
   find_an_assessor:
     head:
       title: 'Welsh: Energy performance of buildings register - Find an energy assessor for a residential property'
-    top_heading: 'Welsh: Getting a new Energy Performance Certificate (EPC)'
+    top_heading: 'Welsh: Getting a new Energy Performance Certificate (EPC) for a domestic property'
     introduction:
       what_you_need: 'Welsh: You need an EPC when you build, sell or let a domestic property.'
-      assessor: 'Welsh: To get a new EPC, you need to book an assessor. They will assess the energy efficiency of the property and create an EPC.'
+      assessor: 'Welsh: To get a new EPC, you need to book an assessor. They will assess the energy performance of the property and create an EPC. An EPC is valid for 10 years'
       cost: 'Welsh: The cost of an assessment varies by assessor and the size of the property.'
-      valid: 'Welsh: An EPC is valid for 10 years.'
       england_wales_northern_ireland: 'Welsh: Use this service to find an accredited assessor in England, Wales and Northern Ireland.'
     buildings_not_epc:
       cta: 'Welsh: Buildings that don’t need an EPC'
-      intro: 'Welsh: These include:'
+      intro: 'Welsh: Properties do not need an EPC if they are:'
       list: 'Welsh: places of worship|temporary buildings that will be used for less than 2 years|stand-alone buildings with total useful floor space of less than 50 square metres|industrial sites, workshops and non-residential agricultural buildings that don’t use a lot of energy|some buildings that are due to be demolished|holiday accommodation that’s rented out for less than 4 months a year or is let under a licence to occupy|listed buildings - you should get advice from your local authority conservation officer if the work would alter the building’s character|residential buildings intended to be used less than 4 months a year'
     cta: 'Welsh: Start now'
     before_you_start:
-      heading: 'Welsh: Other ways to find an assessor'
+      heading: 'Welsh: Before you start'
       switch_language:
-        description: 'Welsh: Mae’r dudalen yma ar gael yn %{link}.'
-        link: 'Welsh: Gymraeg'
-        url: '/find-an-assessor?lang=en'
-      phone_text: 'Welsh: If you need additional support to find an assessor, call our helpdesk on %{link}.'
-      phone_number: 'Welsh: 0233 788 1234'
+        description: 'Welsh: This service is also available in %{link}.'
+        link: 'Welsh: Welsh (Cymraeg)'
+        url: 'Welsh: /find-an-assessor?lang=en'
+      phone_text: 'Welsh: If you need additional support to find an assessor, call our helpdesk on %{link} (Monday to Friday, 9am - 5pm).'
+      phone_number: '0233 788 1234'
       scotland:
-        description: 'Welsh: If the property is in Scotland, you should use the %{link}'
+        description: 'Welsh: If the property is in Scotland, use the %{link}'
         link: 'Welsh: Scottish government’s EPC service.'
       commercial:
-        description: 'Welsh: If the property is for commercial or public use, find an assessor by %{link}.'
-        link: 'Welsh: using the find a non domestic assessor service'
+        description: 'Welsh: For commercial or public buildings, use the %{link} service.'
+        link: 'Welsh: find a non domestic assessor'
+      existing_epc:
+        description: 'Welsh: To check if a property has an existing EPC, use the %{link} service.'
+        link: 'Welsh: find an EPC for a domestic property'
   schemes:
     head:
       title: 'Welsh: Energy performance of buildings register - Contact an energy assessor accreditation scheme'
     top_heading: 'Welsh: Contact an energy assessor accreditation scheme'
     description: 'Welsh: The following schemes license energy assessors to assess properties and create energy certificates'
     contact: 'Welsh: You should contact a scheme if you need to contact someone about an assessor'
+    unaccredited: 'Welsh: is no longer accredited.'
+    contact_details:
+      text: 'Welsh: Contact details for %{scheme_name}:'
+      email: 'Welsh: Email:'
+      telephone: 'Welsh: Telephone:'
     list:
       heading: 'Welsh: Energy assessment accreditation schemes'
       cta: 'Welsh: Go to website'
       commercial: 'Welsh: Commercial <br />properties only'
       cibse:
-        name: 'Welsh: CIBSE'
-        phone: 'Welsh: 020 8772 3649'
+        name: 'CIBSE'
+        phone: '020 8772 3649'
+        email: 'epc@cibsecertification.org'
         url: 'https://www.cibsecertification.co.uk'
       ecmk:
-        name: 'Welsh: ECMK'
-        phone: 'Welsh: 0333 123 1418'
+        name: 'ECMK'
+        phone: '0333 123 1418'
+        email: 'info@ecmk.co.uk'
         url: 'https://www.ecmk.co.uk'
-      elmhurstenergy:
-        name: 'Welsh: Elmhurst Energy'
-        phone: 'Welsh: 01455 883 250'
+      elmhurst:
+        name: 'Elmhurst Energy'
+        phone: '01455 883 250'
+        email: 'enquiries@elmhurstenergy.co.uk'
         url: 'https://www.elmhurstenergy.co.uk'
       sterling:
-        name: 'Welsh: Sterling'
-        phone: 'Welsh: 0161 727 4303'
+        name: 'Sterling'
+        phone: '0161 727 4303'
+        email: 'info@sterlingaccreditaiton.com'
         url: 'http://www.sterlingaccreditation.com'
       stroma:
-        name: 'Welsh: Stroma'
-        phone: 'Welsh: 0845 621 11 11'
+        name: 'Stroma'
+        phone: '0845 621 11 11'
+        email: 'certification@stroma.com'
         url: 'https://www.stroma.com/certification'
       quidos:
-        name: 'Welsh: Quidos'
-        phone: 'Welsh: 01225 667 570'
+        name: 'Quidos'
+        phone: '01225 667 570'
+        email: 'info@quidos.co.uk'
         url: 'https://quidos.co.uk'
-  find_non_dom_certificate:
-    top_heading: 'Welsh: Find an energy certificate or report for a non-domestic property'
-    service:
-      introduction: 'Welsh: Use this service to find energy certificates and reports for non-domestic properties in England, Wales and Northern Ireland.'
-      what_is_non_dom: 'Welsh: Non-domestic properties are commercial and public properties.'
-      what_non_dom_info_is_available:  'Welsh: For non-domestic properties, you can view their:'
-      epc_rr: 'Welsh: Energy Performance Certificate (EPC) and Recommendation Report (EPC-RR)'
-      dec_rr: 'Welsh: Display Energy Certificate (DEC) and Recommendation Report (DEC-RR)'
-      ac: 'Welsh: Air Conditioning Inspection Report (AC-REPORT) and Certificate (AC-CERT)'
-    switch_language:
-      description: 'Welsh: This service is also available in %{link}.'
-      link: 'Welsh (Cymraeg)'
-      url: '/find-a-non-domestic-certificate?lang=en'
-    cta: 'Welsh: Start now'
-    before_you_start:
-      heading: 'Welsh: Before you start'
-      additional_support: 'Welsh: If you need additional support to find an energy certificate or report, call our helpdesk on 0233 788 1234 (Monday to Friday, 9am - 5pm).'
-      scotland:
-        description: 'Welsh: For non-domestic properties in Scotland, use the %{link}'
-        link: 'Welsh: Scottish government''s EPC and DEC service.'
-
-    check_if_epc_needed:
-      intro: 'Welsh: To check if your property needs a certificate or report, read:'
-      epc: 'Welsh: the EPC exemptions for business properties'
-      dec: 'Welsh: which properties need a DEC'
-      ac: 'Welsh: when air conditioning system inspections are required'
-
-    related_content:
-      heading: 'Related content'
-      find_an_assessor_link: 'Getting a new energy certificate or report for a non-domestic property'
-      find_a_certificate_link: 'Find an EPC for a domestic property'
-
 
   find_assessor_by_postcode:
     head:
       title: 'Welsh: Energy performance of buildings register - Find an energy assessor'
-    top_heading: 'Welsh: Find an assessor to get a new EPC'
-    top_body: 'Welsh: Search for accredited assessors near the property.'
+    top_heading: 'Welsh: Find an assessor by postcode'
     assessor_by_name:
       title: 'Welsh: Search by name'
-      body: 'Welsh: If you know the name of an assessor and want to check their details, use the %{link} service.'
-      cta: 'Welsh: Find assessor by name'
-    question: 'Welsh: Enter the postcode of the property.'
+      body: 'Welsh: If you know the name of an assessor and want to check their details, you can %{link}.'
+      cta: 'Welsh: find an assessor by name'
+    question: 'Welsh: Enter the postcode of the property'
     hint: 'Welsh: For example SW1A 2AA'
     postcode_error: 'Welsh: Enter a real postcode'
     postcode_not_valid: 'Welsh: Enter a postcode that is not malformed'
@@ -149,17 +129,33 @@ cy:
       heading: 'Welsh: Accreditation scheme not found'
       body: 'Welsh: There is no scheme for one of the requested assessor'
 
+  find_non_domestic_assessor_by_postcode:
+    head:
+      title: 'Welsh: Energy performance of buildings register - Find a non-domestic energy assessor'
+    top_heading: 'Welsh: Find a non-domestic assessor to get a new EPC'
+
+  find_non_domestic_assessor_by_postcode_results:
+    top_heading: 'Welsh: Contact a non-domestic assessor to book an EPC assessment'
+    qualification:
+      title: 'Welsh: Qualification'
+      domesticSap: 'Welsh: Standard Assessment Procedure (SAP)'
+      domesticRdSap: 'Welsh: Reduced Data Standard Assessment Procedure (RdSAP)'
+      nonDomesticSp3: 'Welsh: Air Conditioning Simple Packaged (Level 3)'
+      nonDomesticCc4: 'Welsh: Air Conditioning Complexed Central (Level 4)'
+      nonDomesticDec: 'Welsh: Display Energy Certificate (DEC)'
+      nonDomesticNos3: 'Welsh: Non-Domestic Energy Assessor (Level 3)'
+      nonDomesticNos4: 'Welsh: Non-Domestic Energy Assessor (Level 4)'
+      nonDomesticNos5: 'Welsh: Non-Domestic Energy Assessor (Level 5)'
+
   find_assessor_by_postcode_results:
     head:
       title: 'Welsh: Energy performance of buildings register - Results for energy assessors near you'
     top_heading: 'Welsh: Contact an assessor to book an EPC assessment'
     description: 'Welsh: Contact an assessor listed below to book an energy assessment.'
     no_assessors: 'Welsh: There are no assessors near you at this point.'
-    accreditation_summary_title: 'Welsh: About accreditation schemes'
-    accreditation_summary_text: 'Welsh: Accreditation schemes make sure that assessors are qualified to:'
-    accreditation_summary_assess: 'Welsh: assess the energy performance of residential properties'
-    accreditation_summary_create: 'Welsh: create EPCs'
-    results: 'Welsh: %{quantity} assessors, sorted by distance from %{postcode}'
+    accreditation_summary_title: 'Welsh: More information'
+    accreditation_summary_text: 'Welsh: Accreditation schemes are appointed by the government to ensure that assessors are qualified to carry out EPC assessments.<br /><br />If you are unhappy about an EPC assessment, you can complain to the assessor directly. If you are still unhappy, you should contact your assessor’s accreditation scheme.'
+    results: 'Welsh: %{quantity} assessors in order of distance from %{postcode}'
     distance:
       heading: 'Welsh: Distance'
       default_miles_away_text: 'Welsh: Less than 1 mile away'
@@ -174,9 +170,8 @@ cy:
   find_assessor_by_name:
     head:
       title: 'Welsh: Energy performance of buildings register - Find an energy assessor'
-    top_heading: 'Welsh: Look up an energy assessor by name'
-    top_body: 'Welsh: Find qualified energy assessors'
-    question: 'Welsh: Enter a full name'
+    top_heading: 'Welsh: Find an assessor by name'
+    question: "Enter the assessor's full name"
     hint: 'Welsh: For example Matt Anderson'
     name_error: 'Welsh: Enter a name'
     button_text: 'Welsh: Search'
@@ -187,10 +182,8 @@ cy:
       title: 'Welsh: Energy performance of buildings register - Results for energy assessors'
     description: 'Welsh: See what assessors are accredited by the name you searched for.'
     no_assessors: 'Welsh: There are no assessors with this name.'
-    accreditation_summary_title: 'Welsh: About accreditation schemes'
-    accreditation_summary_text: 'Welsh: Accreditation schemes make sure that assessors are qualified to:'
-    accreditation_summary_assess: 'Welsh: assess the energy performance of residential properties'
-    accreditation_summary_create: 'Welsh: create EPCs'
+    accreditation_summary_title: 'Welsh: Accreditation schemes and complaints'
+    accreditation_summary_text: 'Welsh: Accreditation schemes are appointed by the government to ensure that assessors are qualified to carry out energy assessments and to create EPCs.<br /><br />If you’re unhappy about an energy assessment or EPC, you can complain to the assessor directly. If you’re still unhappy, you should contact your assessor’s accreditation scheme.'
     results:
       results: 'Welsh: %{quantity} results, found by the name %{name}'
       results_like: 'Welsh: %{quantity} results, similar to the name %{name}'
@@ -202,42 +195,64 @@ cy:
     head:
       title: 'Welsh: Energy performance of buildings register - Find an energy assessor for a residential property'
     top_heading: 'Welsh: Find an Energy Performance Certificate for a domestic property'
-    top_body: 'Welsh: You need a valid Energy Performance Certificate (EPC) before you sell or let a domestic property.'
     service:
-      introduction: 'Welsh: Use this service to:'
-      list: 'Welsh: check if a property in England, Wales and Northern Ireland has a valid EPC|review the energy efficiency rating of a property|access advice and information about how to improve the energy efficiency of a property'
+      introduction: 'Welsh: Use this service to find an EPC for a domestic property (house or flat) in England, Wales or Northern Ireland.'
+      what_is_in_epc: 'Welsh: An EPC lists the energy rating of a property.'
+      advice_on_improving: 'Welsh: It also has advice on improving the energy performance of a property.'
+      need_epc: 'Welsh: You need an EPC when you build, sell or let a domestic property. It is valid for 10 years.'
     cta: 'Welsh: Start now'
     before_you_start:
       title: 'Welsh: Before you start'
       switch_language:
-        description: 'Welsh: Mae’r dudalen yma ar gael yn %{link}.'
-        link: 'Welsh: Gymraeg'
-        url: '/find-a-certificate?lang=en'
+        description: 'Welsh: This service is also available in %{link}.'
+        link: 'Welsh: Welsh (Cymraeg)'
+        url: 'Welsh: /find-a-certificate?lang=en'
       scotland:
-        text: 'Welsh: If your property is in Scotland, you should use the %{link}.'
+        text: 'Welsh: For properties in Scotland, use the %{link}.'
         cta: "Scottish government's EPC service"
+      property_guidance:
+        description: 'Welsh: To check if your property requires an EPC, read the %{link}.'
+        link: 'Welsh: guidance on properties that do not need an EPC'
+        url:  'https://mhclg-epb-prototypes.london.cloudapps.digital/domestic'
       commercial:
-        text: 'Welsh: If the property is for commercial or public use, use our %{link}.'
-        url: '/find-a-non-domestic-certificate'
+        text: 'Welsh: For commercial or public buildings, use the %{link} service.'
+        url: 'Welsh: /find-a-non-domestic-certificate'
         cta: 'Welsh: find a non-domestic EPC'
-      call_center: 'Welsh: The service is also available by calling 0233 788 1234.'
+      call_center: 'Welsh: If you need additional support to find an EPC, call our helpdesk on 0233 788 1234 (Monday to Friday, 9am - 5pm).'
 
   find_certificate_by_postcode:
     head:
       title: 'Welsh: Energy performance of buildings register - Find an energy performance certificate'
     top_heading: 'Welsh: Search for an EPC by postcode'
-    question: 'Welsh: Enter a postcode'
-    postcode_not_valid: 'Welsh: Enter a search term'
-    postcode_not_registered: 'Welsh: Enter a postcode that exists'
+    question: 'Welsh: Enter the postcode'
+    postcode_not_valid: 'Welsh: Enter a real postcode'
     button_text: 'Welsh: Find'
     hint: 'Welsh: For example SW1A 2AA'
+    certificate_by_street_name_and_town:
+      heading: 'Welsh: Search by street and town'
+      body: "If you do not know the property's postcode, %{link}."
+      cta: 'Welsh: find an EPC using the street name and town'
     certificate_by_reference_number:
-      title: 'Welsh: Search by Certificate Reference Number'
-      body: 'Welsh: If you know the reference number a certificate and want to validate that, use the %{link} service.'
-      cta: 'Welsh: Find certificate by reference number'
+      heading: 'Welsh: Search by reference number'
+      body: 'Welsh: Use %{link} if you know your certificate number and want to validate it.'
+      cta: 'Welsh: find certificate by reference number'
     no_network:
       heading: 'Welsh: Network connection failed'
       body: 'Welsh: There is an internal network error'
+
+  find_certificate_results:
+    table:
+      address: 'Welsh: Address'
+      rating: 'Welsh: Energy rating'
+      expiry: 'Welsh: Expiry date'
+    expired: 'Welsh: (expired)'
+
+  find_non_dom_certificate_results:
+    table:
+      address: 'Welsh: Address'
+      type: 'Welsh: Certificate and report type'
+      expiry: 'Welsh: Expiry date'
+    expired: 'Welsh: (expired)'
 
   find_certificate_by_postcode_results:
     head:
@@ -246,8 +261,8 @@ cy:
     list: 'Welsh: 1-%{length} of %{length} results matching %{postcode}'
     table:
       address: 'Welsh: Address'
-      rating: 'Welsh: EPC Rating'
-      expiry: 'Welsh: EPC Expiry Date'
+      rating: 'Welsh: Energy rating'
+      expiry: 'Welsh: Expiry date'
     no_certificates: 'Welsh: There are no certificates matching that postcode.'
 
   find_certificate_by_reference_number:
@@ -255,8 +270,8 @@ cy:
       title: 'Welsh: Energy performance of buildings register - Find an energy performance certificate'
     top_heading: 'Welsh: Search for an EPC by reference number'
     question: 'Welsh: Enter a reference number'
-    reference_number_not_valid: 'Welsh: Enter a search term'
-    reference_number_not_registered: 'Welsh: Enter a reference number that exists'
+    reference_number_not_registered: 'Welsh: A certificate was not found with this reference number'
+    reference_number_not_valid: 'Welsh: Enter a valid reference number'
     button_text: 'Welsh: Find'
     hint: 'Welsh: For example 1234-5678-9101-1121-3141'
     no_network:
@@ -270,16 +285,146 @@ cy:
     list: 'Welsh: 1-%{length} of %{length} results matching %{reference_number}'
     table:
       address: 'Welsh: Address'
-      rating: 'Welsh: EPC Rating'
-      expiry: 'Welsh: EPC Expiry Date'
+      rating: 'Welsh: Energy rating'
+      expiry: 'Welsh: Expiry date'
     no_certificates: 'Welsh: There are no certificates matching that EPC Reference Number.'
+
+  find_certificate_by_street_name_and_town:
+    head:
+      title: 'Welsh: Energy performance of buildings register - Find an energy performance certificate'
+    top_heading: 'Welsh: Find an EPC by street and town'
+    no_such_address:
+      error: 'Welsh: A certificate was not found at this address.'
+      body: 'Welsh: If you need to get an EPC for your property, please use the %{link} service'
+      cta: 'Welsh: Find an assessor'
+    button_text: 'Welsh: Find'
+    street_name_question: 'Welsh: Enter the street'
+    street_name_hint: 'Welsh: For example 14 Primrose Street'
+    town_question: 'Welsh: Enter the town'
+    town_hint: 'Welsh: For example Bournemouth'
+    street_name_missing: 'Welsh: Enter the street name'
+    town_missing: 'Welsh: Enter the town'
+    no_network:
+      heading: 'Welsh: Network connection failed'
+      body: 'Welsh: There is an internal network error'
+
+  find_certificate_by_street_name_and_town_results:
+    head:
+      title: 'Welsh: Energy performance of buildings register - Results for energy performance certificates by reference number'
+    top_heading: 'Welsh: Find an Energy Performance Certificate for a building'
+    list: 'Welsh: 1-%{length} of %{length} results matching %{query}'
+    table:
+      address: 'Welsh: Address'
+      rating: 'Welsh: Energy rating'
+      expiry: 'Welsh: Expiry date'
+    no_certificates: 'Welsh: There are no certificates matching that EPC Reference Number.'
+
+  find_non_dom_certificate:
+    top_heading: 'Welsh: Find an energy certificate or report for a non-domestic property'
+    service:
+      introduction: 'Welsh: Use this service to find energy certificates and reports for non-domestic properties in England, Wales and Northern Ireland.'
+      what_is_non_dom: 'Welsh: Non-domestic properties are commercial and public properties.'
+      what_non_dom_info_is_available:  'For non-domestic properties, you can view their:'
+      epc_rr: 'Welsh: Energy Performance Certificate (EPC) and Recommendation Report (EPC-RR)'
+      dec_rr: 'Welsh: Display Energy Certificate (DEC) and Recommendation Report (DEC-RR)'
+      ac: 'Welsh: Air Conditioning Inspection Report (AC-REPORT) and Certificate (AC-CERT)'
+    switch_language:
+      description: 'Welsh: This service is also available in %{link}.'
+      link: 'Welsh: Welsh (Cymraeg)'
+      url: 'Welsh: /find-a-non-domestic-certificate?lang=en'
+    cta: 'Welsh: Start now'
+    before_you_start:
+      heading: 'Welsh: Before you start'
+      additional_support: 'Welsh: If you need additional support to find an energy certificate or report, call our helpdesk on 0233 788 1234 (Monday to Friday, 9am - 5pm).'
+      scotland:
+        description: 'Welsh: For non-domestic properties in Scotland, use the %{link}'
+        link: 'Welsh: Scottish government''s EPC and DEC service.'
+    check_if_epc_needed:
+      intro: 'Welsh: To check if your property needs a certificate or report, read:'
+      epc: 'Welsh: the EPC exemptions for business properties'
+      dec: 'Welsh: which properties need a DEC'
+      ac: 'Welsh: when air conditioning system inspections are required'
+    related_content:
+      heading: 'Welsh: Related content'
+      find_an_assessor_link: 'Welsh: Getting a new energy certificate or report for a non-domestic property'
+      find_a_certificate_link: 'Welsh: Find an EPC for a domestic property'
+
+  find_non_dom_certificate_by_postcode:
+    head:
+      title: 'Welsh: Energy performance of buildings register - Find energy certificates and reports by postcode'
+    top_heading: 'Welsh: Find energy certificates and reports by postcode'
+    question: 'Welsh: Enter a postcode'
+    postcode_not_valid: 'Welsh: Enter a real postcode'
+    button_text: 'Welsh: Find'
+    hint: 'Welsh: For example SW1A 2AA'
+    no_network:
+      heading: 'Welsh: Network connection failed'
+      body: 'Welsh: There is an internal network error'
+
+  find_non_dom_certificate_by_postcode_results:
+    head:
+      title: 'Welsh: Energy performance of buildings register - Results for energy performance certificates and reports at your postcode'
+    top_heading: 'Welsh: View energy certificates and reports for non-domestic properties'
+    no_certificates: 'Welsh: There are no certificates or reports matching that postcode.'
+    list: 'Welsh: %{length} certificates and reports for %{postcode}'
+
+  non_domestic_epc:
+    top_heading: 'Welsh: Non-domestic Energy Performance Certificate'
 
   domestic_epc:
     top_heading: 'Welsh: Energy Performance Certificate'
+    box:
+      date_of_expiry: 'Welsh: Valid until %{date_of_expiry}'
+      certificate_id: 'Welsh: Certificate Number'
+      energy_rating_title: 'Welsh: Energy Rating'
+      print_certificate: 'Welsh: Print this certificate'
+      print_certificate_noscript : 'Welsh: To print this certificate, press cmd/ctrl+p on your keyboard'
+    sidebar:
+      title: 'Welsh: Certificate contents'
+      sections:
+        renting: 'Welsh: Rules on letting this property'
+        epc: 'Welsh: Energy performance rating for this property'
+        summary: "Breakdown of property's energy performance"
+        energy: 'Welsh: Environmental impact of this property'
+        recommendations: 'Welsh: How to improve this property’s energy performance'
+        heat-demand: 'Welsh: Estimated energy use and potential savings'
+        information: 'Welsh: Contacting the assessor and accreditation scheme'
+        green_deal: 'Welsh: Green deal plan'
+        related_asssesments: 'Welsh: Related asssesments'
+        previous: 'Welsh: Other certificates for this property'
     sections:
+      renting:
+        title: 'Welsh: Rules on letting this property'
+        landlord_warning:
+          hidden_text: 'Welsh: Warning'
+          subtitle: 'Welsh: You may not be able to let this property'
+          energy_rating_title: 'Welsh: Energy Rating'
+          body:
+            text: 'Welsh: Your property has an energy rating of %{current_energy_efficiency_band}. It cannot be let, unless an exemption has been registered.'
+            text_2: 'Welsh: Properties can be rented if they have an energy rating of A to E.'
+            recommendations_text: 'Welsh: The %{recommendations_link} of the EPC sets out changes you can make to improve the property’s rating.'
+            recommendations_cta: 'Welsh: recommendations section'
+            recommendations_url: 'Welsh: #recommendations'
+        rental_info:
+          body_1: 'Welsh: Properties can be rented if they have an energy rating of A to E.'
+          body_2: 'Welsh: If the property is rated F or G, it cannot be let, unless an exemption has been registered.'
+          guidance_text: 'Welsh:  You can read %{link}.'
+          cta: 'Welsh: guidance for landlords on the regulations and exemptions'
+          url: 'https://www.gov.uk/guidance/domestic-private-rented-property-minimum-energy-efficiency-standard-landlord-guidance'
+      epc:
+        title: 'Welsh: Energy efficiency rating for this property'
+        intro:
+          text: 'Welsh: Your property’s current energy rating is  %{current_energy_efficiency_band}. It has the potential to be %{potential_energy_efficiency_band}.'
+          cta: 'Welsh: See how to improve this property’s energy performance.'
+          url: 'Welsh: #recommendations'
+        aria-label: 'Welsh: Your energy rating is %{current_energy_efficiency_band}(%{current_energy_efficiency_rating}) and your potential is %{potential_energy_efficiency_band}(%{potential_energy_efficiency_rating})'
+        body1: 'Welsh: The graph shows this property’s current and potential energy efficiency.'
+        body2: 'Welsh: Properties are given a rating from A (most efficient) to G (least efficient).'
+        body3: 'Welsh: Properties are also given a score. The higher this number, the cheaper your fuel bills are likely to be.'
+        body4: 'Welsh: The average energy rating and score for a property in England and Wales are D (60).'
       summary:
-        title: "Welsh: Breakdown of property's energy performance"
-        intro: "Welsh: The table below shows the energy performance for features of this property. Only features relevant to this property are shown. The assessment does not consider the condition of a feature and how well it is working."
+        title: "Breakdown of property's energy performance"
+        intro: "The table shows the energy performance for features of this property. The assessment does not consider the condition of a feature and how well it is working."
         assessment_rating_explaination: 'Welsh: Each feature is assessed as one of the following:'
         assessment_ratings:
           very_poor: 'Welsh: very poor (least efficient)'
@@ -287,285 +432,406 @@ cy:
           average: 'Welsh: average'
           good: 'Welsh: good'
           very_good: 'Welsh: very good (most efficient)'
-        not_inspected: "Welsh: When the description says 'assumed', it means that the insulation could not be inspected and an assumption has been made based on the age and type of your property."
+        not_inspected: "When the description says 'assumed', it means that the feature could not be inspected and an assumption has been made based on the age and type of your property."
         table_headers:
-          feature: "Welsh: Feature"
-          description: "Welsh: Description"
-          energy_performance: "Welsh: Energy performance"
-        primary_energy_use: 'Welsh: Primary Energy use'
+          feature: "Feature"
+          description: "Description"
+          energy_performance: "Energy performance"
+        primary_energy_use: 'Welsh: Primary energy use'
         primary_energy_use_description: 'Welsh: The primary energy use for this property per year is 989 kilowatt hours (kWh) per square metre'
         primary_energy_use_dropdown:
-          what_is_primary_energy_use_title: 'Welsh: What is Primary Energy use?'
+          what_is_primary_energy_use_title: 'Welsh: What is primary energy use?'
           what_is_primary_energy_use_details: 'Welsh: Primary energy use is a measure of the energy required for lighting, heating and hot water in a property. The calculation includes:'
           efficiency_of_heating: 'Welsh: the efficiency of the property’s heating system'
           efficiency_of_electricity: 'Welsh: power station efficiency for electricity'
           fuel_for_property: 'Welsh: the energy used to produce the fuel and deliver it to the property'
-    labels:
-      certificate_number: 'Welsh: Reference number'
-      date_of_assessment: 'Welsh: Date of assessment'
-      date_of_certificate: 'Welsh: Date of certificate'
-      type_of_assessment: 'Welsh: Type of assessment'
-      total_floor_area: 'Welsh: Total floor area'
-      dwelling_type: 'Welsh: Dwelling type'
-    heat_demand:
-      title: 'Property heat demand'
-      energy_costs: 'The majority of energy costs cover heating the space and water used in a home. The figures below show the current estemated energy use for heating in this property.'
-      space_heating: 'Space heating'
-      kwh_per_year: 'kWh per year'
-      water_heating: 'Water heating'
-      table_description: 'The table below shows the amount of energy that could be saved in this property by installing insulation, based on typical energy use.'
-      potential_saving: 'Potential space heating energy saving'
-      type_of_insulation: 'Type of insulation'
-      amount_saved: 'Amount of energy saved (kWh per year)'
-      loft_insulation: 'Loft insulation'
-      cavity_insulation: 'Cavity wall insulation'
-      solid_wall_insulation: 'Solid wall insulation'
-      renewable_heat_insentive: 'If you replace your existing heating system with one that generates heat using renewable energy sources, you could receive Renewable Heat Incentive (RHI) payments, subject to meeting minimum energy efficiency requirements. The amount of payments you are eligable for will be based on the current estemated energy use required for space and water heating in your property. More infomation is avliable on the '
-      rhi_url: 'https://www.gov.uk/domestic-renewable-heat-incentive'
-      rhi_url_text: 'RHI information page'
+        list:
+          total_floor_area: 'Welsh: Total floor area'
+          meters_squared: 'Welsh: meters squared'
+          dwelling_type: 'Welsh: Property type'
+      environmental-impact:
+        title: "Environmental impact of this property"
+        summary: "One of the biggest contributors to climate change is carbon dioxide (CO2). The energy used for heating, lighting and power in our homes produces over a quarter of the UK's CO2 emissions."
+        making_changes: "By making the %{link}, you will reduce this property’s CO2 emissions by %{reduction} tonnes per year. This will help to protect the environment."
+        making_changes_cta: 'Welsh: recommended changes'
+        making_changes_url: 'Welsh: #recommendations'
+        environmental_impact_rating: "Environmental impact ratings are based on assumptions about average occupancy and energy use. They may not reflect how energy is consumed by the people living at the property."
+        average_household:
+          text: "Average household produces:"
+          carbon: "6"
+        property_produces: "This property produces:"
+        potential: "This property's potential production:"
+        tonnes_of_carbon_emission: " tonnes of %{carbon}"
+      recommendations:
+        title: 'Welsh: How to improve this property’s energy performance'
+        summary:
+          make_changes_text: 'Welsh: Making any of the recommended changes will improve your property’s energy efficiency.'
+          improve_rating_text: 'Welsh: If you make all of the recommended changes, this will improve the property’s energy rating and score from %{current_energy_efficiency_band} (%{current_energy_efficiency_rating}) to %{potential_energy_efficiency_band} (%{potential_energy_efficiency_rating}).'
+          what_is_energy_rating: 'Welsh: What is an energy rating?'
+          energy_rating_description1: 'Welsh: An energy rating shows a property’s energy efficiency.'
+          energy_rating_description2: 'Welsh: Properties are given a rating from A (most efficient) to G (least efficient).'
+          energy_rating_description3: 'Welsh: Properties are also given a score. The higher this number, the cheaper your fuel bills are likely to be.'
+          no_recommendations_summary: 'Welsh: There are no recommendations for this property.'
+        box:
+          energy_rating_title: 'Welsh: Potential Energy Rating'
+        list:
+          title: 'Welsh: Recommendation'
+          installation_cost: 'Welsh: Typical installation cost'
+          yearly_saving: 'Welsh: Typical yearly saving'
+          na: 'Welsh: Not applicable'
+          costs_savings: 'Welsh:  costs and savings'
+          potential_rating_1: 'Welsh: Potential rating after carrying out<br> recommendation 1'
+          potential_rating_2: 'Welsh: Potential rating after carrying out<br> recommendations 1 and 2'
+          potential_rating_3: 'Welsh: Potential rating after carrying out<br> recommendations 1 to'
+        paying_for_energy_improvements:
+          title: 'Welsh: Paying for energy improvements'
+          text: 'Welsh: Find energy grants and ways to save energy in your home.'
+          link: 'https://www.gov.uk/improve-energy-efficiency'
+      heat-demand:
+        title: 'Welsh: Estimated energy use and potential savings'
+        estimated_cost: 'Welsh: Estimated energy cost for this property over a year'
+        three_year_saving: 'Welsh: Over a year you could save'
+        costs_and_savings: 'Welsh: The estimated cost and savings show how much the average household would spend in this property for heating, lighting and hot water. It is not based on how energy is used by the people living at the property.'
+        based_on: 'Welsh: The estimated saving is based on making all of the recommendations in %{link}.'
+        based_on_cta: 'Welsh: how to improve this property’s energy performance'
+        based_on_url: 'Welsh: #recommendations'
+        more_advice: 'Welsh: For more advice on how to reduce your energy bills visit %{link}.'
+        more_advice_cta: 'Welsh: Simple Energy Advice'
+        more_advice_url: 'https://www.simpleenergyadvice.org.uk/'
+        heating_in_property: 'Welsh: Heating use in this property'
+        energy_costs: 'Welsh: Heating a property usually makes up the majority of energy costs.'
+        energy_use_table_description: 'Welsh: The first table shows the estimated energy used to heat this property’s rooms (space) and water.'
+        space_heating: 'Welsh: Space heating'
+        kwh_per_year: 'Welsh: kWh per year'
+        water_heating: 'Welsh: Water heating'
+        estimated_use: 'Welsh: Estimated energy use'
+        savings_table_description: 'Welsh: The second table shows the energy that could be saved by installing insulation.'
+        potential_saving: 'Welsh: Potential energy savings by installing insulation'
+        type_of_insulation: 'Welsh: Type of insulation'
+        amount_saved: 'Welsh: Amount of energy saved'
+        loft_insulation: 'Welsh: Loft insulation'
+        cavity_insulation: 'Welsh: Cavity wall insulation'
+        solid_wall_insulation: 'Welsh: Solid wall insulation'
+        renewable_heat_incentive:
+          body: 'Welsh: You might be able to receive %{link}. This will help to reduce carbon emissions by replacing your existing heating system with one that generates renewable heat. The estimated energy required for space and water heating will form the basis of the payments.'
+          url: 'https://www.gov.uk/domestic-renewable-heat-incentive'
+          cta: 'Welsh: Renewable Heat Incentive payments'
+        not_applicable: 'Welsh: Not applicable'
+      information:
+        title: 'Welsh: Contacting the assessor and accreditation scheme'
+        intro: 'Welsh: This EPC was created by a qualified energy assessor.<br /><br />If you are unhappy about your property’s energy assessment or certificate, you can complain to the assessor directly.<br /><br />If you are still unhappy after contacting the assessor, you should contact the assessor’s accreditation scheme.<br /><br />Accreditation schemes are appointed by the government to ensure that assessors are qualified to carry out EPC assessments.'
+        assessor:
+          title: 'Welsh: Assessor contact details'
+          list:
+            telephone: 'Welsh: Telephone'
+            email: 'Welsh: E-mail address'
+            name: "Assessor's name"
+        scheme:
+          title: 'Welsh: Accreditation scheme contact details'
+          list:
+            name: 'Welsh: Accreditation scheme'
+            scheme_assessor_id: "Assessor's accreditation number"
+        certificate:
+          title: 'Welsh: Assessment details'
+          list:
+            disclosure: 'Welsh: Related party disclosure'
+            date_of_assessment: 'Welsh: Date of assessment'
+            date_of_certificate: 'Welsh: Date of certificate'
+            type_of_assessment: 'Welsh: Type of assessment'
+            sap_description_first_part: 'Welsh: SAP (Standard Assessment Procedure) is a method used to assess and compare the energy and environmental performance of properties in the UK. It uses detailed information about the property’s construction to calculate energy performance.'
+            sap_description_second_part: 'Welsh: This type of assessment must be carried out on all new properties built after 1 April 2008 in England and Wales, and 30 September 2008 in Northern Ireland.'
+            rdsap_description_first_part: 'Welsh: RdSAP (Reduced data Standard Assessment Procedure) is a method used to assess and compare the energy and environmental performance of properties in the UK. It uses a site visit and survey of the property to calculate energy performance.'
+            rdsap_description_second_part: 'Welsh: This type of assessment can be carried out on properties built before 1 April 2008 in England and Wales, and 30 September 2008 in Northern Ireland. It can also be used for newer properties, as long as they have a previous SAP assessment, which uses detailed information about the property’s construction to calculate energy performance.'
+            no_disclosure: 'Welsh: No related party disclosure provided'
+            disclosure_number_not_valid: 'Welsh: The disclosure code provided is not valid'
+      green_deal:
+        title: 'Welsh: Green Deal Plan'
+        info: 'Welsh: Energy efficiency improvements were made to this property by a %{link}.'
+        url: 'https://www.gov.uk/green-deal-energy-saving-measures/moving-into-a-property-with-a-green-deal'
+        copy_of_plan: 'Welsh: Before buying or renting this property, you should ask the property’s owner for a copy of the plan. You can also get a copy of the plan from the plan’s provider with the owner’s consent.'
+        cost_of_plan: 'Welsh: Cost of the plan'
+        plan_charges:
+          title: 'Welsh: Plan charges:'
+          point_one: 'Welsh: are payable as part of the electricity bill'
+          point_two: 'Welsh: reduce as each improvement is paid off'
+        current_charge: 'Welsh: Current charge'
+        estimated_saving: 'Welsh: Estimated saving'
+        payment_period_start: 'Welsh: Payment period start'
+        payment_period_end: 'Welsh: Payment period end'
+        interest_rate_payable: 'Welsh: Interest rate payable'
+        charge_overtime: 'Welsh: This is the current charge, but the charge can change over time depending on the details of the plan. The plan can be paid off early, although extra costs may apply.'
+        estimated_savings:
+          title: 'Welsh: The estimated saving is based on:'
+          assessment: 'Welsh: the original Green Deal assessment'
+          improvements_made: 'Welsh: the improvements made by the plan'
+          typical_energy_use: 'Welsh: typical energy use for this type of property, using current energy prices'
+        improvements_header: 'Welsh: Improvements'
+        paid_off_header: 'Welsh: Paid off'
+        plan_and_provider_details: 'Welsh: Plan and provider details'
+        plan_number: 'Welsh: Plan number:'
+        provider_name: 'Welsh: Provider:'
+        provider_telephone: 'Welsh: Telephone:'
+        provider_email: 'Welsh: Email:'
+      related_assessments:
+        title: 'Welsh: Other certificates for this property'
+        reference_number: 'Welsh: Reference number'
+        assessment_type: 'Welsh: Report type'
+        expiry_date: 'Welsh: Expiry date'
 
   energy_performance_rating:
     '0':
-      energy_performance: ''
+      energy_performance: 'Welsh: '
     1:
-      energy_performance: Gwael iawn
+      energy_performance: Very poor
     2:
-      energy_performance: Gwael
+      energy_performance: Poor
     3:
-      energy_performance: Cyfartaledd
+      energy_performance: Average
     4:
-      energy_performance: Da
+      energy_performance: Good
     5:
-      energy_performance: Da iawn
+      energy_performance: Very good
 
   improvement_code:
     1:
-      title: Inswleiddiad silindr dŵr poeth
-      description: Inswleiddiad silindr dŵr poeth
+      title: Hot water cylinder insulation
+      description: Insulate hot water cylinder with 80 mm jacket
 
     2:
-      title: Inswleiddiad silindr dŵr poeth
-      description: Cynyddu inswleiddiad dŵr poeth
+      title: Hot water cylinder insulation
+      description: Increase hot water cylinder insulation
 
     3:
-      title: Inswleiddiad silindr dŵr poeth
-      description: Inswleiddiad silindr dŵr poeth
+      title: Hot water cylinder insulation
+      description: Add additional 80 mm jacket to hot water cylinder
 
     4:
-      title: Thermostat silindr
-      description: Thermostat silindr dŵr poeth
+      title: Hot water cylinder thermostat
+      description: Hot water cylinder thermostat
 
     5:
-      title: Inswleiddiad croglofft
-      description: Cynyddu inswleiddiad croglofft i 270 mm
+      title: Increase loft insulation to 270 mm
+      description: Increase loft insulation to 270 mm
 
     6:
-      title: Inswleiddio waliau ceudod
-      description: Inswleiddio waliau ceudod
+      title: Cavity wall insulation
+      description: Cavity wall insulation
 
     7:
-      title: Inswleiddio waliau mewnol neu allanol
-      description: Inswleiddio waliau mewnol neu allanol
+      title: Internal or external wall insulation
+      description: Internal or external wall insulation
 
     8:
-      title: Ffenestri dwbl
-      description: Gosod ffenestri dwbl isel eu hallyrredd (low-E) yn lle ffenestri sengl
+      title: Double glazed windows
+      description: Replace single glazed windows with low-E double glazed windows
 
     9:
-      title: Gwydriad eilaidd
-      description: Gwydriad eilaidd i ffenestri gwydr sengl
+      title: Secondary glazing
+      description: Secondary glazing to single glazed windows
 
     10:
-      title: Atal drafftiau
-      description: Atal drafftiau
+      title: Draught proofing
+      description: Draught proofing
 
     11:
-      title: Rheolyddion gwres (rhaglennydd, thermostat ystafell a TRVs)
-      description: Uwchraddio rheolyddion gwres
+      title: Heating controls (programmer, room thermostat and TRVs)
+      description: Heating controls (programmer, thermostat, TRVs)
 
     12:
-      title: Uwchraddio rheolyddion gwres
-      description: Rheolyddion gwres (thermostat ystafell a falfiau rheiddiadur thermostatig)
+      title: Heating controls (room thermostat and TRVs)
+      description: Heating controls (room thermostat and TRVs)
 
     13:
-      title: Rheolyddion gwresogi (falfiau rheiddiadur thermostatig)
-      description: Uwchraddio rheolyddion gwres
+      title: Heating controls (thermostatic radiator valves)
+      description: Heating controls (TRVs)
 
     14:
-      title: Rheolyddion gwres (thermostat ystafell)
-      description: Uwchraddio rheolyddion gwres
+      title: Heating controls (room thermostat)
+      description: Heating controls (room thermostat)
 
     15:
-      title: Rheolyddion gwresogi (rhaglennydd a falfiau rheiddiadur thermostatig)
-      description: Uwchraddio rheolyddion gwres
+      title: Heating controls (programmer and TRVs)
+      description: Heating controls (programmer and TRVs)
 
     16:
-      title: Rheolyddion gwresogi (rheolydd amser a pharth gwres)
-      description: Uwchraddio rheolyddion gwres
+      title: Heating controls (time and temperature zone control)
+      description: Heating controls (zone control)
 
     17:
-      title: Rheolyddion gwresogi (rhaglennydd a thermostat ystafell)
-      description: Uwchraddio rheolyddion gwresogi
+      title: Heating controls (programmer and room thermostat)
+      description: Heating controls (programmer and thermostat)
 
     18:
-      title: Rheolyddion gwresogi (thermostat ystafell)
-      description: Uwchraddio rheolyddion gwresogi
+      title: Heating controls (room thermostat)
+      description: Heating controls (room thermostat)
 
     19:
-      title: Gwresogi dŵr solar
-      description: Gwresogi dŵr solar
+      title: Solar water heating
+      description: Solar water heating
 
     20:
-      title: Cyfnewid y bwyler am fwyler cyddwyso newydd
-      description: Bwyler cyddwyso newydd
+      title: Replace boiler with new condensing boiler
+      description: Condensing boiler
 
     22:
-      title: Cyfnewid bwyler am fwyler biomas
-      description: Bwyler biomas
+      title: Replace boiler with biomass boiler
+      description: Biomass boiler
 
     23:
-      title: Ffwrn biomas gyda bwyler
-      description: Ffwrn biomas gyda bwyler
+      title: Biomass stove with boiler
+      description: Biomass stove with boiler
 
     26:
-      title: Cyfnewid uned aer poeth
-      description: Cyfnewid uned aer poeth
+      title: Replacement warm air unit
+      description: Replacement warm air unit
 
     27:
-      title: Newid system wresogi i fwyler cyddwyso nwy
-      description: Bwyler cyddwyso nwy
+      title: Change heating to gas condensing boiler
+      description: Gas condensing boiler
 
     28:
-      title: Bwyler cyddwyso olew gyda rheiddiaduron
-      description: Bwyler cyddwyso olew
+      title: Condensing oil boiler with radiators
+      description: Condensing oil boiler
 
     29:
-      title: Bwyler cyddwyso nwy
-      description: Bwyler cyddwyso nwy
+      title: Gas condensing boiler
+      description: Gas condensing boiler
 
     34:
-      title: Paneli solar ffotofoltäig, 2.5 kWp
-      description: Paneli solar ffotofoltäig
+      title: Solar photovoltaic panels, 2.5 kWp
+      description: Solar photovoltaic panels
 
     35:
-      title: Goleuo ynni isel
-      description: Goleuo ynni isel
+      title: Low energy lighting
+      description: Low energy lighting
 
     36:
-      title: Gosod uned wresogi gyddwyso
-      description: Gosod uned wresogi gyddwyso
+      title: Condensing heating unit
+      description: Condensing heating unit
 
     37:
-      title: Gosod bwyler cyddwyso (ar wahân i’r popty estynedig)
-      description: Gosod bwyler cyddwyso
+      title: Condensing boiler (separate from the range cooker)
+      description: Condensing boiler
 
     38:
-      title: Gosod bwyler cyddwyso (ar wahân i’r cwcer estynedig)
-      description: Gosod bwyler cyddwyso
+      title: Condensing boiler (separate from the range cooker)
+      description: Condensing boiler
 
     39:
-      title: Stôf biomas gyda bwyler
-      description: Stôf biomas gyda bwyler
+      title: Biomass stove with boiler
+      description: Biomass stove with boiler
 
     40:
-      title: Newid gwresogyddion ystafell i fwyler cyddwyso
-      description: Bwyler cyddwyso
+      title: Change room heaters to condensing boiler
+      description: Condensing boiler
 
     42:
-      title: Uned wresogi gyddwyso prif gyflenwad nwy
-      description: Uned wresogi gyddwyso prif gyflenwad nwy
+      title: Mains gas condensing heating unit
+      description: Mains gas condensing heating unit
 
     44:
-      title: Tyrbin gwynt
-      description: Tyrbin gwynt
+      title: Wind turbine
+      description: Wind turbine
 
     45:
-      title: To fflat neu oleddf inswleiddio nenfwd
-      description: To fflat neu oleddf inswleiddio nenfwd
+      title: Flat roof or sloping ceiling insulation
+      description: Flat roof or sloping ceiling insulation
 
     46:
-      title: Insiwleiddio ystafell-yn-y-to
-      description: Insiwleiddio ystafell-yn-y-to
+      title: Room-in-roof insulation
+      description: Room-in-roof insulation
 
     48:
-      title: Drysau allanol perfformiad uchel
-      description: Drysau allanol perfformiad uchel
+      title: High performance external doors
+      description: High performance external doors
 
     49:
-      title: System adfer gwres ar gyfer cawodydd cymysgu
-      description: System adfer gwres ar gyfer cawodydd cymysgu
+      title: Heat recovery system for mixer showers
+      description: Heat recovery system for mixer showers
 
     50:
-      title: Dyfais adfer gwres nwyon ffliw ar y cyd â boeler
-      description: Adfer gwres nwyon ffliw
+      title: Flue gas heat recovery device in conjunction with boiler
+      description: Flue gas heat recovery
 
     51:
-      title: Pwmp gwres o’r aer neu’r ddaear
+      title: Air or ground source heat pump
       description: ..
 
     52:
-      title: Pwmp gwres o’r aer neu’r ddaear gyda gwresogi tanlawr
+      title: Air or ground source heat pump with underfloor heating
       description: ..
 
     53:
-      title: CHP meicro
+      title: Micro CHP
       description: ..
 
     54:
-      title: Boeler biomàs (Cyfarpar wedi’i Eithrio os mewn Ardal Reoli Mwg)
+      title: Biomass boiler (Exempted Appliance if in Smoke Control Area)
       description: ..
 
     55:
-      title: Insiwleiddio waliau ceudod ac allanol
+      title: External and cavity wall insulation
       description: ..
 
     56:
-      title: Unedau gwydr newydd
-      description: Unedau gwydr newydd
+      title: Replacement glazing units
+      description: Replacement glazing units
 
     57:
-      title: Inswleiddiad llawr (llawr crog)
-      description: Inswleiddiad llawr (llawr crog)
+      title: Floor insulation (suspended floor)
+      description: Floor insulation (suspended floor)
 
     58:
-      title: Inswleiddiad llawr (llawr solet)
-      description: Inswleiddiad llawr (llawr solet)
+      title: Floor insulation (solid floor)
+      description: Floor insulation (solid floor)
 
     59:
-      title: Gwresogyddion storio sy’n cadw llawer o wres
-      description: Gwresogyddion storio sy’n cadw llawer o wres
+      title: High heat retention storage heaters
+      description: High heat retention storage heaters
 
     60:
-      title: Gwresogyddion storio sy’n cadw llawer o wres
-      description: Gwresogyddion storio sy’n cadw llawer o wres
+      title: High heat retention storage heaters
+      description: High heat retention storage heaters
 
     61:
-      title: Gwresogyddion storio sy’n cadw llawer o wres
-      description: Gwresogyddion storio sy’n cadw llawer o wres
+      title: High heat retention storage heaters
+      description: High heat retention storage heaters
 
     62:
-      title: Gwresogyddion storio sy’n cadw llawer o wres
-      description: Gwresogyddion storio sy’n cadw llawer o wres
+      title: High heat retention storage heaters
+      description: High heat retention storage heaters
 
     63:
-      title: Insiwleiddio muriau cyd
-      description: Insiwleiddio muriau cyd
+      title: Party wall insulation
+      description: Party wall insulation
 
   disclosure_code:
     1:
-      relation: 'Dim parti perthnasol'
+      relation: 'Welsh: No related party'
     2:
-      relation: 'Perthynas i berchennog y cartref neu ddeiliad yr eiddo'
+      relation: 'Welsh: Relative of homeowner or of occupier of the property'
     3:
-      relation: 'Yn byw yn yr eiddo'
+      relation: 'Welsh: Residing at the property'
     4:
-      relation: 'Buddiant ariannol yn yr eiddo'
+      relation: 'Welsh: Financial interest in the property'
     5:
-      relation: 'Perchennog neu Gyfarwyddwr y corff sy’n delio â’r trafodyn eiddo'
+      relation: 'Welsh: Owner or Director of the organisation dealing with the property transaction'
     6:
-      relation: 'Wedi’i gyflogi gan y person proffesiynol sy’n delio â’r trafodyn eiddo'
+      relation: 'Welsh: Employed by the professional dealing with the property transaction'
     7:
-      relation: 'Perthynas i’r person proffesiynol sy’n delio â’r trafodyn eiddo'
+      relation: 'Welsh: Relative of the professional dealing with the property transaction'
+
+  property_summary:
+    type:
+      wall: 'Welsh: Wall'
+      floor: 'Welsh: Floor'
+      hot_water: 'Welsh: Hot Water'
+      roof: 'Welsh: Roof'
+      window: 'Welsh: Window'
+      main_heating_controls: 'Welsh: Main Heating Control'
+      main_heating: 'Welsh: Main Heating'
+      lighting: 'Welsh: Lighting'
+      secondary_heating: 'Welsh: Secondary Heating'
 
   error:
     error: 'Welsh: Error: '
