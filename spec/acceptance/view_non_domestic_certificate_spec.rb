@@ -57,6 +57,14 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate" do
       )
     end
 
+    it "shows the SVG with energy ratings" do
+      expect(response.body).to include('<svg width="615" height="500"')
+    end
+
+    it "shows the SVG with energy rating band numbers" do
+      expect(response.body).to include('<tspan x="8" y="55">0-25</tspan>')
+    end
+
     it "shows the date of expiry" do
       expect(response.body).to include(
         '<p class="govuk-body epc-extra-box">Valid until 5 January 2030</p>',

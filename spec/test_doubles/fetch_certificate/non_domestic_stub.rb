@@ -6,6 +6,8 @@ module FetchCertificate
       assessment_id:,
       current_rating: 35,
       current_band: "b",
+      potential_energy_efficiency_rating: 23,
+      potential_energy_efficiency_band: "a",
       type_of_assessment: "CEPC"
     )
       body = {
@@ -17,6 +19,8 @@ module FetchCertificate
           typeOfAssessment: type_of_assessment,
           currentEnergyEfficiencyRating: current_rating,
           currentEnergyEfficiencyBand: current_band,
+          potentialEnergyEfficiencyRating: potential_energy_efficiency_rating,
+          potentialEnergyEfficiencyBand: potential_energy_efficiency_band,
           postcode: "SW1B 2BB",
           addressLine1: "Flat 33",
           addressLine2: "2 Marsham Street",
