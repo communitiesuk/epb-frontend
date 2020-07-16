@@ -162,7 +162,7 @@
   </text>
 
   <text x="0" y="0" class="small">
-    <% bands.each do |key, settings| %>
+    <% bands.each_value do |settings| %>
       <tspan x="8" y="<%= 50+(50*settings[:position])+5 %>"><%= settings[:range] %></tspan>
     <% end %>
   </text>
