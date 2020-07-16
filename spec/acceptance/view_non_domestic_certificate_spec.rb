@@ -69,6 +69,12 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate" do
       )
     end
 
+    it "shows the net zero carbon emissions text" do
+      expect(response.body).to include(
+        '<text x="420" y="65" class="small">Net zero CO₂</text>',
+      )
+    end
+
     it "shows the SVG with energy ratings" do
       expect(response.body).to include('<svg width="615" height="426"')
     end
