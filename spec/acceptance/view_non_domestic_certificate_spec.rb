@@ -72,6 +72,12 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate" do
     end
 
     context "when viewing the Energy efficiency rating for this building section" do
+      it "shows the section heading" do
+        expect(response.body).to include(
+          '<h2 class="govuk-heading-l">Energy efficiency rating for this building</h2>',
+        )
+      end
+
       it "shows the current energy rating text" do
         expect(response.body).to include(
           '<p class="govuk-body">This building’s current energy rating is B.</p>',
