@@ -58,11 +58,11 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate" do
     end
 
     it "shows the SVG with energy ratings" do
-      expect(response.body).to include('<svg width="615" height="500"')
+      expect(response.body).to include('<svg width="615" height="426"')
     end
 
     it "shows the SVG with energy rating band numbers" do
-      expect(response.body).to include('<tspan x="8" y="55">0-25</tspan>')
+      expect(response.body).to include('<tspan x="8" y="105">0-25</tspan>')
     end
 
     it "shows the date of expiry" do
