@@ -375,6 +375,8 @@ en:
       current_rating_text: 'This building’s current energy rating is %{current_energy_efficiency_band}.'
       rating_desc: 'Buildings are given a rating from A+ (most efficient) to G (least efficient).'
       score_desc: 'Buildings are also given a score. The larger the number, the more expensive your fuel bills are likely to be.'
+      svg:
+        aria-label: "This building’s energy rating is %{current_energy_efficiency_band} (%{current_energy_efficiency_rating})"
 
   domestic_epc:
     top_heading: 'Energy Performance Certificate'

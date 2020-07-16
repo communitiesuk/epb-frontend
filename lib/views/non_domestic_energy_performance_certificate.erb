@@ -33,10 +33,8 @@
       <p class="govuk-body"><%== t('non_domestic_epc.energy_rating_section.current_rating_text', :current_energy_efficiency_band => assessment[:currentEnergyEfficiencyBand].upcase) %></p>
       <%== erb :non_domestic_energy_rating, locals: {
         current_energy_efficiency_rating: assessment[:currentEnergyEfficiencyRating],
-        potential_energy_efficiency_rating: assessment[:potentialEnergyEfficiencyRating],
         current_energy_efficiency_band: assessment[:currentEnergyEfficiencyBand],
-        potential_energy_efficiency_band: assessment[:potentialEnergyEfficiencyBand],
-        title: t('domestic_epc.sections.epc.aria-label', :current_energy_efficiency_band => assessment[:currentEnergyEfficiencyBand].upcase, :current_energy_efficiency_rating => assessment[:currentEnergyEfficiencyRating], :potential_energy_efficiency_band => assessment[:potentialEnergyEfficiencyBand].upcase, :potential_energy_efficiency_rating => assessment[:potentialEnergyEfficiencyRating] )} %>
+        title: t('non_domestic_epc.energy_rating_section.svg.aria-label', :current_energy_efficiency_band => assessment[:currentEnergyEfficiencyBand].upcase, :current_energy_efficiency_rating => assessment[:currentEnergyEfficiencyRating])} %>
       <p class="govuk-body govuk-!-margin-top-3"><%= t('non_domestic_epc.energy_rating_section.rating_desc') %></p>
       <p class="govuk-body"><%= t('non_domestic_epc.energy_rating_section.score_desc') %></p>
     </div>

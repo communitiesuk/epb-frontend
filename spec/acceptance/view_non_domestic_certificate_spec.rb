@@ -63,6 +63,12 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate" do
       )
     end
 
+    it "shows the SVG title" do
+      expect(response.body).to include(
+        '<title id="svg-title">This building’s energy rating is B (35)</title>',
+      )
+    end
+
     it "shows the SVG with energy ratings" do
       expect(response.body).to include('<svg width="615" height="426"')
     end
