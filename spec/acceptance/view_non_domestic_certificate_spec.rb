@@ -57,44 +57,6 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate" do
       )
     end
 
-    it "shows the current energy rating text" do
-      expect(response.body).to include(
-        '<p class="govuk-body">This building’s current energy rating is B.</p>',
-      )
-    end
-
-    it "shows the SVG title" do
-      expect(response.body).to include(
-        '<title id="svg-title">This building’s energy rating is B (35)</title>',
-      )
-    end
-
-    it "shows the net zero carbon emissions text" do
-      expect(response.body).to include(
-        '<text x="420" y="65" class="small">Net zero CO₂</text>',
-      )
-    end
-
-    it "shows the SVG with energy ratings" do
-      expect(response.body).to include('<svg width="615" height="426"')
-    end
-
-    it "shows the SVG with energy rating band numbers" do
-      expect(response.body).to include('<tspan x="8" y="105">0-25</tspan>')
-    end
-
-    it "shows the energy rating description" do
-      expect(response.body).to include(
-        '<p class="govuk-body govuk-!-margin-top-3">Buildings are given a rating from A+ (most efficient) to G (least efficient).</p>',
-      )
-    end
-
-    it "shows the energy rating score description" do
-      expect(response.body).to include(
-        '<p class="govuk-body">Buildings are also given a score. The larger the number, the more expensive your fuel bills are likely to be.</p>',
-      )
-    end
-
     it "shows the date of expiry" do
       expect(response.body).to include(
         '<p class="govuk-body epc-extra-box">Valid until 5 January 2030</p>',
@@ -107,6 +69,46 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate" do
 
     it "shows the certificate number" do
       expect(response.body).to include("<b>1234-5678-1234-5678-1234</b>")
+    end
+
+    context "when viewing the Energy efficiency rating for this building section" do
+      it "shows the current energy rating text" do
+        expect(response.body).to include(
+          '<p class="govuk-body">This building’s current energy rating is B.</p>',
+        )
+      end
+
+      it "shows the SVG title" do
+        expect(response.body).to include(
+          '<title id="svg-title">This building’s energy rating is B (35)</title>',
+        )
+      end
+
+      it "shows the net zero carbon emissions text" do
+        expect(response.body).to include(
+          '<text x="420" y="65" class="small">Net zero CO₂</text>',
+        )
+      end
+
+      it "shows the SVG with energy ratings" do
+        expect(response.body).to include('<svg width="615" height="426"')
+      end
+
+      it "shows the SVG with energy rating band numbers" do
+        expect(response.body).to include('<tspan x="8" y="105">0-25</tspan>')
+      end
+
+      it "shows the energy rating description" do
+        expect(response.body).to include(
+          '<p class="govuk-body govuk-!-margin-top-3">Buildings are given a rating from A+ (most efficient) to G (least efficient).</p>',
+        )
+      end
+
+      it "shows the energy rating score description" do
+        expect(response.body).to include(
+          '<p class="govuk-body">Buildings are also given a score. The larger the number, the more expensive your fuel bills are likely to be.</p>',
+        )
+      end
     end
   end
 end
