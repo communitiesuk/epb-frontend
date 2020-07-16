@@ -73,6 +73,10 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate" do
       expect(response.body).to include('<p class="govuk-body govuk-!-margin-top-3">Buildings are given a rating from A+ (most efficient) to G (least efficient).</p>')
     end
 
+    it "shows the energy rating score description" do
+      expect(response.body).to include('<p class="govuk-body">Buildings are also given a score. The larger the number, the more expensive your fuel bills are likely to be.</p>')
+    end
+
     it "shows the date of expiry" do
       expect(response.body).to include(
         '<p class="govuk-body epc-extra-box">Valid until 5 January 2030</p>',
