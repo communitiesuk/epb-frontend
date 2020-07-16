@@ -146,8 +146,13 @@
   <text x="420" y="65" class="small">Net zero CO₂</text>
 
   <% score_bands.each_with_index do |(key, settings), index| %>
-    <rect width="<%= 175 + index * 30 %>" height="50" x="4" y="<%= 25 + settings[:position] * 50 %>" class="band-<%= key %>">
+    <% if index == 0 %>
+      <rect width="<%= 175 + index * 30 %>" height="50" x="4" y="<%= 25 + settings[:position] * 50 %>" class="band-<%= key %>">
+      </rect>
+    <% else %>
+    <rect width="<%= 175 + index * 30 %>" height="50" x="0" y="<%= 25 + settings[:position] * 50 %>" class="band-<%= key %>">
     </rect>
+    <% end %>
   <% end %>
 
   <text x="0" y="0" class="letter">
