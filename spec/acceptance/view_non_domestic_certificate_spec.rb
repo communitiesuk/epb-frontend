@@ -39,36 +39,38 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate" do
       )
     end
 
-    it "shows the address summary" do
-      expect(response.body).to include(
-        '<p class="epc-address govuk-body">Flat 33<br>2 Marsham Street<br>London<br>SW1B 2BB</p>',
-      )
-    end
+    context "when viewing the non-domestic EPC box section" do
+      it "shows the address summary" do
+        expect(response.body).to include(
+          '<p class="epc-address govuk-body">Flat 33<br>2 Marsham Street<br>London<br>SW1B 2BB</p>',
+        )
+      end
 
-    it "shows the energy rating title" do
-      expect(response.body).to include(
-        '<p class="epc-rating-title govuk-body">Energy Rating</p>',
-      )
-    end
+      it "shows the energy rating title" do
+        expect(response.body).to include(
+          '<p class="epc-rating-title govuk-body">Energy Rating</p>',
+        )
+      end
 
-    it "shows the current energy energy efficiency band" do
-      expect(response.body).to include(
-        '<p class="epc-rating-result govuk-body">B</p>',
-      )
-    end
+      it "shows the current energy energy efficiency band" do
+        expect(response.body).to include(
+          '<p class="epc-rating-result govuk-body">B</p>',
+        )
+      end
 
-    it "shows the date of expiry" do
-      expect(response.body).to include(
-        '<p class="govuk-body epc-extra-box">Valid until 5 January 2030</p>',
-      )
-    end
+      it "shows the date of expiry" do
+        expect(response.body).to include(
+          '<p class="govuk-body epc-extra-box">Valid until 5 January 2030</p>',
+        )
+      end
 
-    it "shows the certificate number label" do
-      expect(response.body).to include("<label>Certificate Number</label>")
-    end
+      it "shows the certificate number label" do
+        expect(response.body).to include("<label>Certificate Number</label>")
+      end
 
-    it "shows the certificate number" do
-      expect(response.body).to include("<b>1234-5678-1234-5678-1234</b>")
+      it "shows the certificate number" do
+        expect(response.body).to include("<b>1234-5678-1234-5678-1234</b>")
+      end
     end
 
     context "when viewing the Energy efficiency rating for this building section" do
