@@ -58,7 +58,9 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate" do
     end
 
     it "shows the current energy rating text" do
-      expect(response.body).to include('<p class="govuk-body">This building’s current energy rating is B.</p>')
+      expect(response.body).to include(
+        '<p class="govuk-body">This building’s current energy rating is B.</p>',
+      )
     end
 
     it "shows the SVG with energy ratings" do
@@ -70,11 +72,15 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate" do
     end
 
     it "shows the energy rating description" do
-      expect(response.body).to include('<p class="govuk-body govuk-!-margin-top-3">Buildings are given a rating from A+ (most efficient) to G (least efficient).</p>')
+      expect(response.body).to include(
+        '<p class="govuk-body govuk-!-margin-top-3">Buildings are given a rating from A+ (most efficient) to G (least efficient).</p>',
+      )
     end
 
     it "shows the energy rating score description" do
-      expect(response.body).to include('<p class="govuk-body">Buildings are also given a score. The larger the number, the more expensive your fuel bills are likely to be.</p>')
+      expect(response.body).to include(
+        '<p class="govuk-body">Buildings are also given a score. The larger the number, the more expensive your fuel bills are likely to be.</p>',
+      )
     end
 
     it "shows the date of expiry" do
