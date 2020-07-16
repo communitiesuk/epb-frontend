@@ -69,6 +69,10 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate" do
       expect(response.body).to include('<tspan x="8" y="105">0-25</tspan>')
     end
 
+    it "shows the energy rating description" do
+      expect(response.body).to include('<p class="govuk-body govuk-!-margin-top-3">Buildings are given a rating from A+ (most efficient) to G (least efficient).</p>')
+    end
+
     it "shows the date of expiry" do
       expect(response.body).to include(
         '<p class="govuk-body epc-extra-box">Valid until 5 January 2030</p>',
