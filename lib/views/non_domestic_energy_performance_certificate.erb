@@ -36,7 +36,8 @@
           <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
           <strong class="govuk-warning-text__text"><span class="govuk-warning-text__assistive"><%= t('non_domestic_epc.sections.renting.warning.assistive_text') %></span><%= t('non_domestic_epc.sections.renting.warning.text') %></strong>
         </div>
-      <% else %>
+        <p class="govuk-body"><%== t('non_domestic_epc.sections.renting.warning.body', current_energy_efficiency_band: assessment[:currentEnergyEfficiencyBand].upcase) %></p>
+    <% else %>
         <p class="govuk-body"><%== t('non_domestic_epc.sections.renting.rental_info.body_1') %></p>
         <p class="govuk-body"><%== t('non_domestic_epc.sections.renting.rental_info.body_2') %></p>
         <p class="govuk-body"><%== t('non_domestic_epc.sections.renting.rental_info.summary') %></p>

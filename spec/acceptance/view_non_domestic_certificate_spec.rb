@@ -111,6 +111,12 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate" do
             '<strong class="govuk-warning-text__text"><span class="govuk-warning-text__assistive">Warning</span>You may not be able to let this property.</strong>',
           )
         end
+
+        it "shows the letting info text" do
+          expect(response.body).to include(
+            '<p class="govuk-body">This property has an energy rating of G. The landlord cannot grant a tenancy to new or existing tenants, unless an exemption has been registered.</p>',
+          )
+        end
       end
     end
 
