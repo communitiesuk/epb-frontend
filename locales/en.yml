@@ -384,6 +384,9 @@ en:
           body_1: 'Properties can be let if they have an energy rating of A+ to E.'
           body_2: 'If a property has an energy rating of F or G, the landlord cannot grant a tenancy to new or existing tenants, unless an exemption has been registered.'
           summary: 'From 1 April 2023, landlords will not be allowed to continue letting a non-domestic property on an existing lease if that property has an energy rating of F or G.'
+          guidance_text: 'You can read %{link}.'
+          cta: 'guidance for landlords on the regulations and exemptions'
+          url: 'https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/824018/Non-Dom_Private_Rented_Property_Minimum_Standard_-_Landlord_Guidance.pdf'
 
   domestic_epc:
     top_heading: 'Energy Performance Certificate'

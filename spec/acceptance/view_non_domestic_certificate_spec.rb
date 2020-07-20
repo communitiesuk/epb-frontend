@@ -93,6 +93,12 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate" do
           "From 1 April 2023, landlords will not be allowed to continue letting a non-domestic property on an existing lease if that property has an energy rating of F or G.",
         )
       end
+
+      it "shows the guidance for landlords link" do
+        expect(response.body).to include(
+          '<p class="govuk-body">You can read <a href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/824018/Non-Dom_Private_Rented_Property_Minimum_Standard_-_Landlord_Guidance.pdf">guidance for landlords on the regulations and exemptions</a>.</p>',
+        )
+      end
     end
 
     context "when viewing the Energy efficiency rating for this building section" do
