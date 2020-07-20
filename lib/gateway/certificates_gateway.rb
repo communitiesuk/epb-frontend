@@ -24,11 +24,13 @@ module Gateway
       JSON.parse(response.body, symbolize_names: true)
     end
 
-    def search_by_street_name_and_town(street_name, town)
+    def search_by_street_name_and_town(street_name, town, assessment_types)
       route =
         "/api/assessments/search?street_name=#{CGI.escape(street_name)}&town=#{
           CGI.escape(town)
-        }&assessment_type[]=RdSAP&assessment_type[]=SAP"
+        }"
+      assessment_types.each { |type| route += "&assessment_type[]=" + type }
+
       response = @internal_api_client.get(route)
 
       JSON.parse(response.body, symbolize_names: true)
