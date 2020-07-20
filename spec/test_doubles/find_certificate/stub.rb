@@ -194,7 +194,10 @@ module FindCertificate
     end
 
     def self.search_by_street_name_and_town(
-      street_name, town, assessment_types = %w[RdSAP SAP], returnedType = "RdSAP"
+      street_name,
+      town,
+      assessment_types = %w[RdSAP SAP],
+      returnedType = "RdSAP"
     )
       route =
         "http://test-api.gov.uk/api/assessments/search?street_name=#{

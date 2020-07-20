@@ -133,7 +133,7 @@ describe "Acceptance::Non Domestic Certificate" do
               "1 Makeup Street",
               "Beauty Town",
               %w[DEC DEC-AR CEPC CEPC-RR ACIR ACIC],
-              "CEPC"
+              "CEPC",
             )
           end
 
