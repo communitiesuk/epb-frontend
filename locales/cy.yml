@@ -308,6 +308,25 @@ cy:
       heading: 'Welsh: Network connection failed'
       body: 'Welsh: There is an internal network error'
 
+  find_non_dom_certificate_by_street_name_and_town:
+    head:
+      title: 'Energy performance of buildings register - Find a non domestic certificate'
+    top_heading: 'Find energy certificates and reports by street and town'
+    no_such_address:
+      error: 'A certificate was not found at this address.'
+      body: 'If you need to get an EPC for your property, please use the %{link} service'
+      cta: 'Find an assessor for a non-domestic property'
+    button_text: 'Find'
+    street_name_question: 'Enter a property number and street'
+    street_name_hint: 'For example 14 Primrose Street'
+    town_question: 'Enter a town'
+    town_hint: 'For example Bournemouth'
+    street_name_missing: 'Enter the property number and street'
+    town_missing: 'Enter the town'
+    no_network:
+      heading: 'Network connection failed'
+      body: 'There is an internal network error'
+
   find_certificate_by_street_name_and_town_results:
     head:
       title: 'Welsh: Energy performance of buildings register - Results for energy performance certificates by reference number'
@@ -318,6 +337,17 @@ cy:
       rating: 'Welsh: Energy rating'
       expiry: 'Welsh: Expiry date'
     no_certificates: 'Welsh: There are no certificates matching that EPC Reference Number.'
+
+  find_non_dom_certificate_by_street_name_and_town_results:
+    head:
+      title: 'Energy performance of buildings register - Results for non domestic certificates'
+    top_heading: 'Find an energy certificate or report for a building'
+    list: '1-%{length} of %{length} results matching %{query}'
+    table:
+      address: 'Address'
+      rating: 'Energy rating'
+      expiry: 'Expiry date'
+    no_certificates: 'There are no certificates matching that address.'
 
   find_non_dom_certificate:
     top_heading: 'Welsh: Find an energy certificate or report for a non-domestic property'

@@ -228,6 +228,66 @@ class FrontendService < Sinatra::Base
     show(erb_template, locals)
   end
 
+  get "/find-a-non-domestic-certificate/search-by-street-name-and-town" do
+    @errors = {}
+    locals = {}
+    erb_template = :find_non_dom_certificate_by_street_name_and_town
+
+    if params.key?("town") || params.key?("street_name")
+      @page_title =
+        t("find_non_dom_certificate_by_street_name_and_town_results.head.title")
+      begin
+        erb_template = :find_non_dom_certificate_by_street_name_and_town_results
+
+        locals[:results] =
+          @container.get_object(
+            :find_certificate_by_street_name_and_town_use_case,
+          ).execute(params["street_name"], params["town"])[
+            :data
+          ][
+            :assessments
+          ]
+      rescue Errors::AllParamsMissing
+        status 400
+        erb_template = :find_non_dom_certificate_by_street_name_and_town
+        @errors[:street_name] =
+          t(
+            "find_non_dom_certificate_by_street_name_and_town.street_name_missing",
+          )
+        @errors[:town] =
+          t("find_non_dom_certificate_by_street_name_and_town.town_missing")
+      rescue Errors::StreetNameMissing
+        status 400
+        erb_template = :find_non_dom_certificate_by_street_name_and_town
+        @errors[:street_name] =
+          t("find_certificate_by_street_name_and_town.street_name_missing")
+      rescue Errors::TownMissing
+        status 400
+        erb_template = :find_non_dom_certificate_by_street_name_and_town
+        @errors[:town] =
+          t("find_certificate_by_street_name_and_town.town_missing")
+      rescue Errors::CertificateNotFound
+        erb_template = :find_non_dom_certificate_by_street_name_and_town
+        @errors[:generic] = {
+          error:
+            "find_non_dom_certificate_by_street_name_and_town.no_such_address.error",
+          body:
+            "find_non_dom_certificate_by_street_name_and_town.no_such_address.body",
+          cta:
+            "find_non_dom_certificate_by_street_name_and_town.no_such_address.cta",
+          url: "/find-an-assessor",
+        }
+      rescue Auth::Errors::NetworkConnectionFailed
+        status 500
+        erb_template = :error_page_500
+      end
+    end
+
+    @page_title =
+      t("find_non_dom_certificate_by_street_name_and_town.head.title")
+    show(erb_template, locals)
+  end
+
   get "/find-a-certificate/search-by-reference-number" do
     @errors = {}
     locals = {}

@@ -1,0 +1,73 @@
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <a
+      href="<%= localised_url('/find-a-certificate/search-by-postcode')%>"
+      class="govuk-back-link">
+      <%=t('layout.body.breadcrumb.back')%>
+    </a>
+
+    <h1 class="govuk-heading-xl">
+      <%= t('find_non_dom_certificate_by_street_name_and_town.top_heading') %>
+    </h1>
+
+    <form method="GET" action="<%=localised_url('/find-a-non-domestic-certificate/search-by-street-name-and-town')%>" >
+      <% if I18n.locale != I18n.available_locales[0] %>
+        <input type="hidden" name="lang" value="<%= I18n.locale.to_s %>">
+      <% end %>
+      <fieldset class="govuk-fieldset fieldset-background">
+        <div class="govuk-form-group<% if errors[:street_name] %> govuk-form-group--error<% end %>">
+          <label class="govuk-label" for="street_name">
+            <%= t('find_non_dom_certificate_by_street_name_and_town.street_name_question') %>
+          </label>
+          <span id="street-name-hint" class="govuk-hint">
+            <%= t('find_non_dom_certificate_by_street_name_and_town.street_name_hint') %>
+          </span>
+          <% if errors[:street_name] %>
+          <span id="street-name-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden"><%= t('error.error') %></span><%== errors[:street_name] %>
+          </span>
+          <% end %>
+          <input id="street_name" name="street_name" type="text"
+                 class="govuk-input<% if errors[:street_name] %> govuk-input--error<% end %>"
+                 aria-describedby="street-name-hint<% if errors[:street_name] %> street-name-error<% end %>"
+                 spellcheck="false"
+                 <% if params['street_name'] %>value="<%= params['street_name'] %>"<% end %>
+          >
+        </div>
+
+        <div class="govuk-form-group<% if errors[:town] %> govuk-form-group--error<% end %>">
+          <label class="govuk-label" for="town">
+            <%= t('find_non_dom_certificate_by_street_name_and_town.town_question') %>
+          </label>
+          <span id="town-hint" class="govuk-hint">
+            <%= t('find_non_dom_certificate_by_street_name_and_town.town_hint') %>
+          </span>
+          <% if errors[:town] %>
+          <span id="town-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden"><%= t('error.error') %></span><%== errors[:town] %>
+          </span>
+          <% end %>
+          <input id="town" name="town" type="text"
+                 class="govuk-input<% if errors[:town] %> govuk-input--error<% end %>"
+                 aria-describedby="town-hint<% if errors[:town] %> town-error<% end %>"
+                 spellcheck="false"
+                 <% if params['town'] %>value="<%= params['town'] %>"<% end %>
+          >
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button"><%= t('find_non_dom_certificate_by_street_name_and_town.button_text') %></button>
+      </fieldset>
+
+      <% if errors[:generic] %>
+          <span class="govuk-error-message govuk-!-margin-top-9">
+            <span class="govuk-visually-hidden"><%= t('error.error') %></span><%== t(errors[:generic][:error]) %>
+          </span>
+        <p class="govuk-body">
+          <%== t(errors[:generic][:body], :link => '<a href="' + localised_url(errors[:generic][:url]) + '">' +
+            t(errors[:generic][:cta]) +
+            '</a>') %>
+        </p>
+      <% end %>
+    </form>
+  </div>
+</div>
