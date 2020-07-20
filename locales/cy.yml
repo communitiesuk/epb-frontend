@@ -404,6 +404,26 @@ cy:
 
   non_domestic_epc:
     top_heading: 'Welsh: Non-domestic Energy Performance Certificate'
+    energy_rating_section:
+      title: 'Welsh: Energy efficiency rating for this building'
+      current_rating_text: 'Welsh: This building’s current energy rating is %{current_energy_efficiency_band}.'
+      rating_desc: 'Welsh: Buildings are given a rating from A+ (most efficient) to G (least efficient).'
+      score_desc: 'Welsh: Buildings are also given a score. The larger the number, the more expensive your fuel bills are likely to be.'
+      svg:
+        aria-label: "Welsh: This building’s energy rating is %{current_energy_efficiency_band} (%{current_energy_efficiency_rating})"
+    sections:
+      renting:
+        title: 'Welsh: Rules on letting this property'
+        rental_info:
+          body_1: 'Welsh: Properties can be let if they have an energy rating of A+ to E.'
+          body_2: 'Welsh: If a property has an energy rating of F or G, the landlord cannot grant a tenancy to new or existing tenants, unless an exemption has been registered.'
+          summary: 'Welsh: From 1 April 2023, landlords will not be allowed to continue letting a non-domestic property on an existing lease if that property has an energy rating of F or G.'
+          guidance_text: 'Welsh: You can read %{link}.'
+          cta: 'Welsh: guidance for landlords on the regulations and exemptions'
+          url: 'https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/824018/Non-Dom_Private_Rented_Property_Minimum_Standard_-_Landlord_Guidance.pdf'
+        warning:
+          assistive_text: 'Welsh: Warning'
+          text: 'Welsh: You may not be able to let this property.'
 
   domestic_epc:
     top_heading: 'Welsh: Energy Performance Certificate'
