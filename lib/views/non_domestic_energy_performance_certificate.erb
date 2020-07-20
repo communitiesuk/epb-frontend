@@ -37,12 +37,12 @@
           <strong class="govuk-warning-text__text"><span class="govuk-warning-text__assistive"><%= t('non_domestic_epc.sections.renting.warning.assistive_text') %></span><%= t('non_domestic_epc.sections.renting.warning.text') %></strong>
         </div>
         <p class="govuk-body"><%== t('non_domestic_epc.sections.renting.warning.body', current_energy_efficiency_band: assessment[:currentEnergyEfficiencyBand].upcase) %></p>
-    <% else %>
+      <% else %>
         <p class="govuk-body"><%== t('non_domestic_epc.sections.renting.rental_info.body_1') %></p>
         <p class="govuk-body"><%== t('non_domestic_epc.sections.renting.rental_info.body_2') %></p>
-        <p class="govuk-body"><%== t('non_domestic_epc.sections.renting.rental_info.summary') %></p>
-        <p class="govuk-body"><%== t('non_domestic_epc.sections.renting.rental_info.guidance_text', :link => '<a href="' + t('non_domestic_epc.sections.renting.rental_info.url') + '">' + t('non_domestic_epc.sections.renting.rental_info.cta') + '</a>' ) %></p>
       <% end %>
+      <p class="govuk-body"><%== t('non_domestic_epc.sections.renting.rental_info.summary') %></p>
+      <p class="govuk-body"><%== t('non_domestic_epc.sections.renting.rental_info.guidance_text', :link => '<a href="' + t('non_domestic_epc.sections.renting.rental_info.url') + '">' + t('non_domestic_epc.sections.renting.rental_info.cta') + '</a>' ) %></p>
     </div>
     <div class="govuk-body epc-blue-bottom">
       <h2 class="govuk-heading-l"><%= t('non_domestic_epc.energy_rating_section.title') %></h2>
