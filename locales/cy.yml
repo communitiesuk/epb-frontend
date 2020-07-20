@@ -425,6 +425,9 @@ cy:
           assistive_text: 'Welsh: Warning'
           text: 'Welsh: You may not be able to let this property.'
           body: "Welsh: This property has an energy rating of %{current_energy_efficiency_band}. The landlord cannot grant a tenancy to new or existing tenants, unless an exemption has been registered."
+        recommendation: 'Welsh: Properties can be let if they have an energy rating of A+ to E. The %{link} sets out changes you can make to improve the property’s rating.'
+        cta: 'Welsh: recommendation report'
+        url: '#'
 
   domestic_epc:
     top_heading: 'Welsh: Energy Performance Certificate'
