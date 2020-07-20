@@ -28,7 +28,7 @@ module Gateway
       route =
         "/api/assessments/search?street_name=#{CGI.escape(street_name)}&town=#{
           CGI.escape(town)
-        }"
+        }&assessment_type[]=RdSAP&assessment_type[]=SAP"
       response = @internal_api_client.get(route)
 
       JSON.parse(response.body, symbolize_names: true)

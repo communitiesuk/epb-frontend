@@ -198,7 +198,7 @@ module FindCertificate
         :get,
         "http://test-api.gov.uk/api/assessments/search?street_name=#{
           street_name
-        }&town=#{town}",
+        }&town=#{town}&assessment_type[]=RdSAP&assessment_type[]=SAP",
       ).with(
         headers: {
           Accept: "*/*",
