@@ -382,6 +382,7 @@ en:
         title: 'Rules on letting this property'
         rental_info:
           body_1: 'Properties can be let if they have an energy rating of A+ to E.'
+          body_2: 'If a property has an energy rating of F or G, the landlord cannot grant a tenancy to new or existing tenants, unless an exemption has been registered.'
 
   domestic_epc:
     top_heading: 'Energy Performance Certificate'

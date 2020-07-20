@@ -80,9 +80,13 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate" do
         )
       end
 
-      it "shows the rental info text" do
+      it "shows the letting info text" do
         expect(response.body).to include(
           "Properties can be let if they have an energy rating of A+ to E.",
+        )
+
+        expect(response.body).to include(
+          "If a property has an energy rating of F or G, the landlord cannot grant a tenancy to new or existing tenants, unless an exemption has been registered.",
         )
       end
     end
