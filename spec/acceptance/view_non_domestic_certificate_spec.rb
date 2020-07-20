@@ -79,6 +79,12 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate" do
           '<h2 class="govuk-heading-l">Rules on letting this property</h2>',
         )
       end
+
+      it "shows the rental info text" do
+        expect(response.body).to include(
+          "Properties can be let if they have an energy rating of A+ to E.",
+        )
+      end
     end
 
     context "when viewing the Energy efficiency rating for this building section" do
