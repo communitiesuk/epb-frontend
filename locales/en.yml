@@ -421,6 +421,9 @@ en:
           guidance_text: 'You can read %{link}.'
           cta: 'guidance for landlords on the regulations and exemptions'
           url: 'https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/824018/Non-Dom_Private_Rented_Property_Minimum_Standard_-_Landlord_Guidance.pdf'
+        warning:
+          assistive_text:  'Warning'
+          text: 'You may not be able to let this property.'
 
   domestic_epc:
     top_heading: 'Energy Performance Certificate'

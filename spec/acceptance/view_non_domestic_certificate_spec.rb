@@ -99,6 +99,19 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate" do
           '<p class="govuk-body">You can read <a href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/824018/Non-Dom_Private_Rented_Property_Minimum_Standard_-_Landlord_Guidance.pdf">guidance for landlords on the regulations and exemptions</a>.</p>',
         )
       end
+
+      context "with an energy rating of F/G" do
+        before do
+          FetchCertificate::NonDomesticStub.fetch assessment_id: "1234-5678-1234-5678-1234",
+                                                  current_band: "g"
+        end
+
+        it "shows the letting info warning text" do
+          expect(response.body).to include(
+            '<strong class="govuk-warning-text__text"><span class="govuk-warning-text__assistive">Warning</span>You may not be able to let this property.</strong>',
+          )
+        end
+      end
     end
 
     context "when viewing the Energy efficiency rating for this building section" do
