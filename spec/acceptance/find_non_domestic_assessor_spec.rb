@@ -79,6 +79,23 @@ describe "Acceptance::NonDomesticAssessor" do
     end
 
     context "when entering a valid postcode" do
+      context "with surrounding whitespaces" do
+        before do
+          FindAssessor::ByPostcode::Stub.search_by_postcode(
+            "SW1A 2AA",
+            "nonDomesticSp3,nonDomesticCc4,nonDomesticDec,nonDomesticNos3,nonDomesticNos4,nonDomesticNos5",
+          )
+        end
+
+        let(:response) do
+          get "/find-a-non-domestic-assessor/search-by-postcode?postcode=++SW1A+2AA++"
+        end
+
+        it "returns status 200" do
+          expect(response.status).to eq 200
+        end
+      end
+
       context "shows page" do
         before do
           FindAssessor::ByPostcode::Stub.search_by_postcode(
