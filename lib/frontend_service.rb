@@ -86,6 +86,8 @@ class FrontendService < Sinatra::Base
     response = @container.get_object(:find_assessor_by_postcode_use_case)
 
     if params["postcode"]
+      params["postcode"].strip!
+
       if valid_postcode.match(params["postcode"])
         @page_title = t("find_assessor_by_postcode_results.head.title")
         begin
