@@ -194,7 +194,7 @@ module FindCertificate
     end
 
     def self.search_by_street_name_and_town(
-      street_name, town, assessment_types = %w[RdSAP SAP]
+      street_name, town, assessment_types = %w[RdSAP SAP], returnedType = "RdSAP"
     )
       route =
         "http://test-api.gov.uk/api/assessments/search?street_name=#{
@@ -219,7 +219,7 @@ module FindCertificate
                 dateOfAssessment: "2020-01-01",
                 dateRegistered: "2020-01-02",
                 dwellingType: "Top floor flat",
-                typeOfAssessment: "RdSAP",
+                typeOfAssessment: returnedType,
                 totalFloorArea: 50,
                 currentCarbonEmission: 4.4,
                 potentialCarbonEmission: 3.4,
@@ -244,7 +244,7 @@ module FindCertificate
                 dateOfAssessment: "2020-01-01",
                 dateRegistered: "2020-01-02",
                 dwellingType: "Top floor flat",
-                typeOfAssessment: "RdSAP",
+                typeOfAssessment: returnedType,
                 totalFloorArea: 50,
                 currentCarbonEmission: 4.4,
                 potentialCarbonEmission: 3.4,
@@ -269,7 +269,7 @@ module FindCertificate
                 dateOfAssessment: "2020-01-01",
                 dateRegistered: "2020-01-02",
                 dwellingType: "Top floor flat",
-                typeOfAssessment: "RdSAP",
+                typeOfAssessment: returnedType,
                 totalFloorArea: 50,
                 currentCarbonEmission: 4.4,
                 potentialCarbonEmission: 3.4,

@@ -3,14 +3,12 @@
     <h1 class="govuk-heading-xl">
       <%= t('find_non_dom_certificate_by_street_name_and_town_results.top_heading') %>
     </h1>
-  </div>
 
-  <div class="govuk-grid-column-full">
     <% if results.size > 0 %>
-      <h2 class="govuk-heading-m"><%= t('find_non_dom_certificate_by_street_name_and_town_results.list', :length => results.length, :query => params['street_name'] + ', ' + params['town'] ) %></h2>
+      <h2 class="govuk-heading-m"><%= t('find_non_dom_certificate_by_street_name_and_town_results.list', :length => results.length, :query => "#{params['street_name']} #{params['town']}" ) %></h2>
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
-      <%== erb :find_certificate_list_certificate, locals: {
+      <%== erb :find_non_dom_certificate_list_certificate, locals: {
         certificate: results } %>
     <% else %>
       <p class="govuk-body">
@@ -18,7 +16,7 @@
       </p>
     <% end %>
     <a
-      href="<%= localised_url('/find-a-certificate/search-by-reference-number')%>"
+      href="<%= localised_url('/find-a-non-domestic-certificate/search-by-postcode')%>"
       class="govuk-back-link">
       <%=t('layout.body.breadcrumb.back')%>
     </a>

@@ -133,6 +133,7 @@ describe "Acceptance::Non Domestic Certificate" do
               "1 Makeup Street",
               "Beauty Town",
               %w[DEC DEC-AR CEPC CEPC-RR ACIR ACIC],
+              "CEPC"
             )
           end
 
@@ -160,8 +161,8 @@ describe "Acceptance::Non Domestic Certificate" do
             expect(response.body).to include("1234-5678-9101-1121-3141")
           end
 
-          it "shows the rating of an entry" do
-            expect(response.body).to include(">B<")
+          it "shows the certificate type" do
+            expect(response.body).to include("CEPC")
           end
 
           it "shows a clickable entry" do

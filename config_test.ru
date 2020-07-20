@@ -26,6 +26,13 @@ FindCertificate::Stub.search_by_street_name_and_town(
   "1 Makeup Street",
   "Beauty Town",
 )
+FindCertificate::Stub.search_by_street_name_and_town(
+    "1 Commercial Street",
+    "Industry Town",
+    %w[DEC DEC-AR CEPC CEPC-RR ACIR ACIC],
+    "CEPC"
+    )
+
 FindCertificate::NoCertificatesStub.search_by_street_name_and_town(
   "Madeup Street",
   "Madeup Town",
