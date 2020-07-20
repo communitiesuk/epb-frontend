@@ -166,6 +166,8 @@ class FrontendService < Sinatra::Base
     erb_template = :find_certificate_by_postcode
 
     if params["postcode"]
+      params["postcode"].strip!
+
       @page_title = t("find_certificate_by_postcode_results.head.title")
       begin
         erb_template = :find_certificate_by_postcode_results

@@ -54,6 +54,18 @@ describe "Acceptance::Certificate" do
     end
 
     context "when entering an valid postcode" do
+      context "with surrounding whitespaces" do
+        before { FindCertificate::Stub.search_by_postcode("SW1A 2AA") }
+
+        let(:response) do
+          get "/find-a-certificate/search-by-postcode?postcode=++SW1A+2AA++"
+        end
+
+        it "returns status 200" do
+          expect(response.status).to eq 200
+        end
+      end
+
       context "shows page" do
         before { FindCertificate::Stub.search_by_postcode("SW1A 2AA") }
 
