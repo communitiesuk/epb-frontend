@@ -414,6 +414,13 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate" do
             )
           end
 
+          it "shows the estimated savings" do
+            expect(response.body).to include <<-HTML
+        <td class="govuk-table__cell">Estimated saving</td>
+        <td class="govuk-table__cell">£1566 per year</td>
+            HTML
+          end
+
           it "shows the payment_period_start" do
             expect(response.body).to include(
               '<td class="govuk-table__cell">Payment period start</td>',
