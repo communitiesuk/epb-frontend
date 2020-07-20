@@ -39,5 +39,12 @@
         <button class="govuk-button" data-module="govuk-button"><%= t('find_non_dom_certificate_by_postcode.button_text') %></button>
       </fieldset>
     </form>
+
+    <h2 class="govuk-heading-m govuk-!-margin-top-8">
+      <%= t('find_non_dom_certificate_by_postcode.certificate_by_street_name_and_town.heading') %>
+    </h2>
+    <p class="govuk-body">
+      <%== t('find_non_dom_certificate_by_postcode.certificate_by_street_name_and_town.body', :link=>'<a href="'+localised_url('/find-a-non-domestic-certificate/search-by-street-name-and-town')+'">'+t('find_certificate_by_postcode.certificate_by_street_name_and_town.cta')+'</a>') %>
+    </p>
   </div>
 </div>

@@ -360,6 +360,10 @@ cy:
     no_network:
       heading: 'Welsh: Network connection failed'
       body: 'Welsh: There is an internal network error'
+    certificate_by_street_name_and_town:
+      heading: 'Welsh: Search by street and town'
+      body: "Welsh: If you do not know the property's postcode, %{link}."
+      cta: 'Welsh: find an EPC using the street name and town'
 
   find_non_dom_certificate_by_postcode_results:
     head:
