@@ -102,7 +102,8 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate" do
 
       context "with an energy rating of F/G" do
         before do
-          FetchCertificate::NonDomesticStub.fetch assessment_id: "1234-5678-1234-5678-1234",
+          FetchCertificate::NonDomesticStub.fetch assessment_id:
+                                                    "1234-5678-1234-5678-1234",
                                                   current_band: "g"
         end
 
