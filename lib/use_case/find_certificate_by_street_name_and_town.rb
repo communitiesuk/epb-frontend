@@ -10,7 +10,11 @@ module UseCase
       raise Errors::TownMissing if truly_empty(town)
 
       gateway_response =
-        @gateway.search_by_street_name_and_town(street_name, town, assessment_types)
+        @gateway.search_by_street_name_and_town(
+          street_name,
+          town,
+          assessment_types,
+        )
 
       raise_errors_if_exists(gateway_response)
 

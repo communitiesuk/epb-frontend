@@ -198,7 +198,7 @@ module CertificatesGateway
       end
     end
 
-    def search_by_street_name_and_town(street_name, town, assessment_types)
+    def search_by_street_name_and_town(street_name, town, _assessment_types)
       {
         data: {
           assessments: [

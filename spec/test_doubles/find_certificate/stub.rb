@@ -193,13 +193,16 @@ module FindCertificate
       )
     end
 
-    def self.search_by_street_name_and_town(street_name, town)
-      WebMock.stub_request(
-        :get,
+    def self.search_by_street_name_and_town(
+      street_name, town, assessment_types = %w[RdSAP SAP]
+    )
+      route =
         "http://test-api.gov.uk/api/assessments/search?street_name=#{
           street_name
-        }&town=#{town}&assessment_type[]=RdSAP&assessment_type[]=SAP",
-      ).with(
+        }&town=#{town}"
+      assessment_types.each { |type| route += "&assessment_type[]=" + type }
+
+      WebMock.stub_request(:get, route).with(
         headers: {
           Accept: "*/*",
           "Accept-Encoding" => "gzip;q=1.0,deflate;q=0.6,identity;q=0.3",

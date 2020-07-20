@@ -11,14 +11,14 @@ describe UseCase::FindCertificateByStreetNameAndTown do
       )
     end
     it "raises an error when street name is missing" do
-      expect { find_certificate.execute("", "Nowhere Special", %w[RdSAP SAP]) }.to raise_error(
-        Errors::StreetNameMissing,
-      )
+      expect {
+        find_certificate.execute("", "Nowhere Special", %w[RdSAP SAP])
+      }.to raise_error(Errors::StreetNameMissing)
     end
     it "raises an error when town is missing" do
-      expect { find_certificate.execute("Somewhere Empty", "", %w[RdSAP SAP]) }.to raise_error(
-        Errors::TownMissing,
-      )
+      expect {
+        find_certificate.execute("Somewhere Empty", "", %w[RdSAP SAP])
+      }.to raise_error(Errors::TownMissing)
     end
   end
 
@@ -28,7 +28,11 @@ describe UseCase::FindCertificateByStreetNameAndTown do
 
     it "returns empty array" do
       expect {
-        find_certificate.execute("Somewhere Empty", "Nowhere Special", %w[RdSAP SAP])
+        find_certificate.execute(
+          "Somewhere Empty",
+          "Nowhere Special",
+          %w[RdSAP SAP],
+        )
       }.to raise_error(Errors::CertificateNotFound)
     end
   end
@@ -119,7 +123,9 @@ describe UseCase::FindCertificateByStreetNameAndTown do
 
     it "returns list of certificates" do
       expect(
-        find_certificate.execute("Marsham Street", "London", %w[RdSAP SAP])[:data][
+        find_certificate.execute("Marsham Street", "London", %w[RdSAP SAP])[
+          :data
+        ][
           :assessments
         ],
       ).to eq(valid_certificates)
