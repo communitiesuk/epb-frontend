@@ -73,6 +73,14 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate" do
       end
     end
 
+    context "when viewing the Rules on letting this property section" do
+      it "shows the section heading" do
+        expect(response.body).to include(
+          '<h2 class="govuk-heading-l">Rules on letting this property</h2>',
+        )
+      end
+    end
+
     context "when viewing the Energy efficiency rating for this building section" do
       it "shows the section heading" do
         expect(response.body).to include(
