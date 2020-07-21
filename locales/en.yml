@@ -538,9 +538,9 @@ en:
           yearly_saving: 'Typical yearly saving'
           na: 'Not applicable'
           costs_savings: ' costs and savings'
-          potential_rating_1: 'Potential rating after carrying out<br> recommendation 1'
-          potential_rating_2: 'Potential rating after carrying out<br> recommendations 1 and 2'
-          potential_rating_3: 'Potential rating after carrying out<br> recommendations 1 to'
+          potential_rating_1: 'Potential rating after carrying out recommendation 1'
+          potential_rating_2: 'Potential rating after carrying out recommendations 1 and 2'
+          potential_rating_3: 'Potential rating after carrying out recommendations 1 to'
         paying_for_energy_improvements:
           title: 'Paying for energy improvements'
           text: 'Find energy grants and ways to save energy in your home.'

@@ -252,56 +252,8 @@
       <div class="govuk-body">
         <hr class="epc-light-top"/>
         <% assessment[:recommendedImprovements].each_with_index do |recommendation, index| %>
-          <% if recommendation[:improvementCode].nil? || recommendation[:improvementCode].empty? %>
-            <h3 class="govuk-heading-m"><%= recommendation[:improvementTitle] %></h3>
-            <p class="govuk-body"><%= recommendation[:improvementDescription] %></p>
-          <% else %>
-            <h3 class="govuk-heading-m"><%= t('domestic_epc.sections.recommendations.list.title')%> <%= index + 1 %>: <%= t('improvement_code.' + recommendation[:improvementCode].downcase + '.title')%> </h3>
-            <p class="govuk-body"><%= t('improvement_code.' + recommendation[:improvementCode].downcase + '.description')%> </p>
-          <% end %>
-            <table class="govuk-table">
-              <caption class="govuk-table__caption"><%= t('domestic_epc.sections.recommendations.list.title')%> <%= index + 1 %> <%= t('domestic_epc.sections.recommendations.list.costs_savings') %></caption>
-              <tbody class="govuk-table__body">
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><%= t('domestic_epc.sections.recommendations.list.installation_cost') %></th>
-                <td class="govuk-table__cell govuk-!-font-weight-bold">
-                  <% if recommendation[:indicativeCost].nil? || recommendation[:indicativeCost].empty? ? (indicative_cost_result = 'Information unavailable') : (indicative_cost_result = recommendation[:indicativeCost]) %>
-                    <p class="govuk-body govuk-!-font-weight-bold" id="indicative_cost"><%= indicative_cost_result %></p>
-                  <% end %>
-                </td>
-              </tr>
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><%= t('domestic_epc.sections.recommendations.list.yearly_saving') %></th>
-                <td class="govuk-table__cell govuk-!-font-weight-bold">
-                  <p class="govuk-body govuk-!-font-weight-bold" id="typical-saving-cost"><%
-                    typical_saving = number_to_currency(recommendation[:typicalSaving])
-                    if typical_saving
-                  %><%= typical_saving %><%
-                    else
-                  %><%= t('domestic_epc.sections.recommendations.list.na') %><%
-                    end
-                  %></p>
-                </td>
-              </tr>
-              <tr class="govuk-table__row">
-                  <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><%== potential_rating_text(index + 1) %></th>
-                <td class="govuk-table__cell govuk-!-font-weight-bold">
-                  <% energyPerformanceRatingImprovement = recommendation[:energyPerformanceRatingImprovement]
-                    if energyPerformanceRatingImprovement %>
-                    <svg x="415" y="275" width="90" height="50">
-                      <%=  band = "band-#{get_energy_rating_band(energyPerformanceRatingImprovement)}" %>
-                      <rect width="75" height="50" class=<%= band %> x="25"></rect>
-                      <polygon points="0,25 25,50 25,0 0,25" class=<%= band %>></polygon>
-                      <text x="30" y="30"><%= energyPerformanceRatingImprovement %> | <%= get_energy_rating_band(energyPerformanceRatingImprovement).upcase %> </text>
-                    </svg>
-                  <% else  %>
-                    <p class="govuk-body govuk-!-font-weight-bold" id="typical-saving-cost"><%= t('domestic_epc.sections.recommendations.list.na') %></p>
-                  <% end %>
-                </td>
-              </tr>
-              </tbody>
-            </table>
-        <% end %>
+          <%== erb :recommended_improvement, locals: { recommendation: recommendation, index: index } %>
+      <% end %>
       </div>
     </div>
   <% end %>
