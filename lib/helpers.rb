@@ -111,7 +111,7 @@ module Sinatra
         when 3..10
           "#{
             t('domestic_epc.sections.recommendations.list.potential_rating_3')
-          } #{number}"
+          }&nbsp;#{number}"
         end
       end
     end

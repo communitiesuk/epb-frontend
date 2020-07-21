@@ -14,13 +14,13 @@ describe Sinatra::FrontendService::Helpers do
 
     it "number 2" do
       expect(HelpersStub.new.potential_rating_text(2)).to eq(
-        "Potential rating after carrying out recommendations 1 and 2",
+        "Potential rating after carrying out recommendations 1&nbsp;and&nbsp;2",
       )
     end
 
     it "number 3 to 9" do
       expect(HelpersStub.new.potential_rating_text(3)).to eq(
-        "Potential rating after carrying out recommendations 1 to 3",
+        "Potential rating after carrying out recommendations 1&nbsp;to&nbsp;3",
       )
     end
   end
