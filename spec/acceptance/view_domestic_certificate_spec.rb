@@ -432,12 +432,8 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate" do
 
         context "shows the improvment products" do
           it "shows the product and paid off date" do
-            expect(response.body).to include(
-              '<td class="govuk-table__cell">WarmHome lagging stuff (TM)</td>',
-            )
-            expect(response.body).to include(
-              '<td class="govuk-table__cell">29 March 2025</td>',
-            )
+            expect(response.body).to include("WarmHome lagging stuff (TM)")
+            expect(response.body).to include("Paid off 29 March 2025")
           end
         end
 

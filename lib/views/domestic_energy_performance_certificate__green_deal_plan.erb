@@ -41,23 +41,15 @@
       <li><%== t('domestic_epc.sections.green_deal.estimated_savings.improvements_made') %></li>
       <li><%== t('domestic_epc.sections.green_deal.estimated_savings.typical_energy_use') %></li>
     </ul>
-    <table class="govuk-table">
-    <thead class="govuk-table__head">
-      <tr class="govuk-table__row">
-        <th scope="col" class="govuk-table__header"><%= t('domestic_epc.sections.green_deal.improvements_header') %></th>
-        <th scope="col" class="govuk-table__header"><%= t('domestic_epc.sections.green_deal.paid_off_header') %></th>
-      </tr>
-    </thead>
-    <tbody class="govuk-table__body">
+
+  <dl class="govuk-summary-list">
     <% assessment[:greenDealPlan][:measures].each do |green_deal_product| %>
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell"><%= green_deal_product[:product] %></td>
-        <td class="govuk-table__cell"><%= green_deal_product[:repaidDate].empty? ? "" : Date.parse(green_deal_product[:repaidDate]).strftime("%d %B %Y") %></td>
-        <td class="govuk-table__header"></td>
-      </tr>
-    </tbody>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= green_deal_product[:product] %></dt>
+        <dd class="govuk-summary-list__value govuk-!-width-one-half"><%= t('domestic_epc.sections.green_deal.paid_off_header') %> <%= green_deal_product[:repaidDate].empty? ? "" : Date.parse(green_deal_product[:repaidDate]).strftime("%d %B %Y") %></dd>
+      </div>
     <% end %>
-  </table>
+  </dl>
 
   <h3 class="govuk-heading-m"><%= t('domestic_epc.sections.green_deal.plan_and_provider_details') %></h3>
 
