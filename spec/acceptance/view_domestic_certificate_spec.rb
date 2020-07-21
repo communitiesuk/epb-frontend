@@ -409,34 +409,24 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate" do
 
         context "shows the Cost of the plan breakdown data" do
           it "shows the current_charge" do
-            expect(response.body).to include(
-              '<td class="govuk-table__cell">Current charge</td>',
-            )
+            expect(response.body).to include("Current charge")
           end
 
           it "shows the estimated savings" do
-            expect(response.body).to include <<-HTML
-        <td class="govuk-table__cell">Estimated saving</td>
-        <td class="govuk-table__cell">£1566 per year</td>
-            HTML
+            expect(response.body).to include("Estimated saving")
+            expect(response.body).to include("£1566 per year")
           end
 
           it "shows the payment_period_start" do
-            expect(response.body).to include(
-              '<td class="govuk-table__cell">Payment period start</td>',
-            )
+            expect(response.body).to include("Payment period start")
           end
 
           it "shows the payment_period_end" do
-            expect(response.body).to include(
-              '<td class="govuk-table__cell">Payment period end</td>',
-            )
+            expect(response.body).to include("Payment period end")
           end
 
           it "shows the interest_rate_payable" do
-            expect(response.body).to include(
-              '<td class="govuk-table__cell">Interest rate payable</td>',
-            )
+            expect(response.body).to include("Interest rate payable")
           end
         end
 
@@ -452,27 +442,19 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate" do
         end
 
         it "shows the current charge" do
-          expect(response.body).to include(
-            '<td class="govuk-table__cell">£124.18 per year</td>',
-          )
+          expect(response.body).to include("£124.18 per year")
         end
 
         it "shows the start date" do
-          expect(response.body).to include(
-            '<td class="govuk-table__cell">30 January 2020</td>',
-          )
+          expect(response.body).to include("30 January 2020")
         end
 
         it "shows the end date" do
-          expect(response.body).to include(
-            '<td class="govuk-table__cell">28 February 2030</td>',
-          )
+          expect(response.body).to include("28 February 2030")
         end
 
         it "shows interest rate payable" do
-          expect(response.body).to include(
-            '<td class="govuk-table__cell">fixed at 12.3% APR</td>',
-          )
+          expect(response.body).to include("fixed at 12.3% APR")
         end
 
         context "shows the plan and provider information" do
