@@ -550,14 +550,12 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate" do
 
       it "shows the report type of a previous certificate" do
         expect(response.body).to include(
-          '<td class="govuk-table__cell">CEPC</td>',
+          "Commercial energy performance certificate",
         )
       end
 
       it "shows the expiry date of a previous certificate in red with Expired next to it" do
-        expect(response.body).to include(
-          '<td class="govuk-table__cell"><b class="expired-text">01 July 2002 (Expired)</b></td>',
-        )
+        expect(response.body).to include("01 July 2002 (Expired)")
       end
 
       context "when there are no related certificates" do
