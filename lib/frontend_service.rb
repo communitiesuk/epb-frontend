@@ -80,6 +80,48 @@ class FrontendService < Sinatra::Base
     show(erb_template, locals)
   end
 
+  get "/find-a-non-domestic-certificate/search-by-reference-number" do
+    @errors = {}
+    locals = {}
+    erb_template = :find_non_dom_certificate_by_reference_number
+
+    if params["reference_number"]
+      @page_title =
+        t("find_non_dom_certificate_by_reference_number_results.head.title")
+      begin
+        erb_template = :find_non_dom_certificate_by_reference_number_results
+
+        locals[:results] =
+          @container.get_object(:find_certificate_by_id_use_case).execute(
+            params["reference_number"],
+          )[
+            :data
+          ][
+            :assessments
+          ]
+      rescue Errors::ReferenceNumberNotValid
+        status 400
+        erb_template = :find_non_dom_certificate_by_reference_number
+        @errors[:reference_number] =
+          t(
+            "find_non_dom_certificate_by_reference_number.reference_number_not_valid",
+          )
+      rescue Errors::CertificateNotFound
+        erb_template = :find_non_dom_certificate_by_reference_number
+        @errors[:reference_number] =
+          t(
+            "find_non_dom_certificate_by_reference_number.reference_number_not_registered",
+          )
+      rescue Auth::Errors::NetworkConnectionFailed
+        status 500
+        erb_template = :error_page_500
+      end
+    end
+
+    @page_title = t("find_non_dom_certificate_by_reference_number.head.title")
+    show(erb_template, locals)
+  end
+
   get "/find-an-assessor/search-by-postcode" do
     @errors = {}
     locals = {}

@@ -287,9 +287,160 @@ describe "Acceptance::Non Domestic Certificate" do
         end
 
         it "displays error page body" do
+          expect(response.body).to include("There is an internal network error")
+        end
+      end
+    end
+  end
+
+  describe ".get /find-a-non-domestic-certificate/search-by-reference-number" do
+    context "when search page rendered" do
+      let(:response) do
+        get "/find-a-non-domestic-certificate/search-by-reference-number"
+      end
+
+      it "returns status 200" do
+        expect(response.status).to eq(200)
+      end
+
+      it "displays the find a non-domestic certificate page heading" do
+        expect(response.body).to include(
+          "Search for energy certificates and reports by reference number",
+        )
+      end
+
+      it "has an input field" do
+        expect(response.body).to include(
+          '<input id="reference_number" name="reference_number"',
+        )
+      end
+
+      it "has a Find button" do
+        expect(response.body).to include(
+          '<button class="govuk-button" data-module="govuk-button">Find</button>',
+        )
+      end
+
+      it "does not display an error message" do
+        expect(response.body).not_to include("govuk-error-message")
+      end
+    end
+
+    context "when entering an empty reference number" do
+      let(:response) do
+        get "/find-a-non-domestic-certificate/search-by-reference-number?reference_number="
+      end
+
+      it "returns status 400" do
+        expect(response.status).to eq(400)
+      end
+
+      it "displays the find a non-domestic certificate page heading" do
+        expect(response.body).to include(
+          "Search for energy certificates and reports by reference number",
+        )
+      end
+
+      it "displays an error message" do
+        expect(response.body).to include(
+          '<span id="reference-number-error" class="govuk-error-message">',
+        )
+        expect(response.body).to include("Enter a valid reference number")
+      end
+    end
+
+    context "when entering a valid reference number" do
+      context "that exists in the register" do
+        before do
+          FindCertificate::Stub.search_by_id("1234-5678-9101-1121-3141", "CEPC")
+        end
+
+        let(:response) do
+          get "/find-a-non-domestic-certificate/search-by-reference-number?reference_number=1234-5678-9101-1121-3141"
+        end
+
+        it "returns status 200" do
+          expect(response.status).to eq(200)
+        end
+
+        it "displays the find a certificate page heading" do
           expect(response.body).to include(
-            "There is an internal network error",
+            "View energy certificates and reports for non-domestic properties",
           )
+        end
+
+        it "shows the address of an entry" do
+          expect(response.body).to include("2 Marsham Street, London, SW1B 2BB")
+        end
+
+        it "shows the report reference number of an entry" do
+          expect(response.body).to include("1234-5678-9101-1121-3141")
+        end
+
+        it "shows the certificate type" do
+          expect(response.body).to include("CEPC")
+        end
+
+        it "shows a clickable entry" do
+          expect(response.body).to include(
+            '<a href="/energy-performance-certificate/1234-5678-9101-1121-3141"',
+          )
+        end
+
+        it "shows the expiry date of an entry" do
+          expect(response.body).to include("01/01/2019")
+        end
+      end
+
+      context "where no certificates are present" do
+        before do
+          FindCertificate::NoCertificatesStub.search_by_id(
+            "1234-5678-9101-1120",
+          )
+        end
+
+        let(:response) do
+          get "/find-a-non-domestic-certificate/search-by-reference-number?reference_number=1234-5678-9101-1120"
+        end
+
+        it "returns status 200" do
+          expect(response.status).to eq(200)
+        end
+
+        it "displays the find a certificate page heading" do
+          expect(response.body).to include(
+            "Search for energy certificates and reports by reference number",
+          )
+        end
+
+        it "explains that no certificates are present" do
+          expect(response.body).to include(
+            "A certificate was not found with this reference number",
+          )
+        end
+      end
+
+      context "when there is no connection" do
+        before do
+          FindCertificate::NoNetworkStub.search_by_id(
+            "1234-5678-9101-1122-1234",
+          )
+        end
+
+        let(:response) do
+          get "/find-a-non-domestic-certificate/search-by-reference-number?reference_number=1234-5678-9101-1122-1234"
+        end
+
+        it "returns status 500" do
+          expect(response.status).to eq(500)
+        end
+
+        it "displays the 500 error page heading" do
+          expect(response.body).to include("Network connection failed")
+        end
+
+        it "displays error page body" do
+          expect(response.body).to include("There is an internal network error")
         end
       end
     end

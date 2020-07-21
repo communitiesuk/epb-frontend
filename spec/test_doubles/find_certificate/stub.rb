@@ -143,7 +143,7 @@ module FindCertificate
       )
     end
 
-    def self.search_by_id(certificate_id)
+    def self.search_by_id(certificate_id, type = "RdSAP")
       WebMock.stub_request(
         :get,
         "http://test-api.gov.uk/api/assessments/search?assessment_id=#{
@@ -166,7 +166,7 @@ module FindCertificate
                 dateOfAssessment: "2020-01-01",
                 dateRegistered: "2020-01-02",
                 dwellingType: "Top floor flat",
-                typeOfAssessment: "RdSAP",
+                typeOfAssessment: type,
                 totalFloorArea: 50,
                 currentCarbonEmission: 4.4,
                 potentialCarbonEmission: 3.4,

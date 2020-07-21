@@ -406,6 +406,26 @@ en:
     no_certificates: 'There are no certificates or reports matching that postcode.'
     list: '%{length} certificates and reports for %{postcode}'
 
+  find_non_dom_certificate_by_reference_number:
+    head:
+      title: 'Energy performance of buildings register - Find an energy performance certificate'
+    top_heading: 'Search for energy certificates and reports by reference number'
+    question: 'Enter a reference number'
+    reference_number_not_registered: 'A certificate was not found with this reference number'
+    reference_number_not_valid: 'Enter a valid reference number'
+    button_text: 'Find'
+    hint: 'For example 1234-5678-9101-1121-3141'
+    no_network:
+      heading: 'Network connection failed'
+      body: 'There is an internal network error'
+
+  find_non_dom_certificate_by_reference_number_results:
+    head:
+      title: 'Energy performance of buildings register - Results for energy performance certificates and reports matching reference number'
+    top_heading: 'View energy certificates and reports for non-domestic properties'
+    no_certificates: 'There are no certificates or reports matching that reference number.'
+    list: '%{length} certificates and reports for %{reference_number}'
+
   non_domestic_epc:
     top_heading: 'Non-domestic Energy Performance Certificate'
     energy_rating_section:
