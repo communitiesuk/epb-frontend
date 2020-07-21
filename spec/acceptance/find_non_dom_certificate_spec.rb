@@ -48,6 +48,12 @@ describe "Acceptance::Non Domestic Certificate" do
       it "does not display an error message" do
         expect(response.body).not_to include("govuk-error-message")
       end
+
+      it "has a link to search by reference number" do
+        expect(
+          response.body,
+        ).to include "find-a-non-domestic-certificate/search-by-reference-number"
+      end
     end
 
     context "when entering an empty postcode" do
