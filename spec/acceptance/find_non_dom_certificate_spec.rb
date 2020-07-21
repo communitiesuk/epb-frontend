@@ -132,114 +132,6 @@ describe "Acceptance::Non Domestic Certificate" do
         end
       end
 
-      context "when entering the street name and town" do
-        context "shows page" do
-          before do
-            FindCertificate::Stub.search_by_street_name_and_town(
-              "1 Makeup Street",
-              "Beauty Town",
-              %w[DEC DEC-AR CEPC CEPC-RR ACIR ACIC],
-              "CEPC",
-            )
-          end
-
-          let(:response) do
-            get "/find-a-non-domestic-certificate/search-by-street-name-and-town?street_name=1%20Makeup%20Street&town=Beauty%20Town"
-          end
-
-          it "returns status 200" do
-            expect(response.status).to eq(200)
-          end
-
-          it "displays the find a certificate page heading" do
-            expect(response.body).to include(
-              "Find an energy certificate or report for a building",
-            )
-          end
-
-          it "shows the address of an entry" do
-            expect(response.body).to include(
-              "1 Makeup Street, Beauty Town, SW1B 2BB",
-            )
-          end
-
-          it "shows the report reference number of an entry" do
-            expect(response.body).to include("1234-5678-9101-1121-3141")
-          end
-
-          it "shows the certificate type" do
-            expect(response.body).to include("CEPC")
-          end
-
-          it "shows a clickable entry" do
-            expect(response.body).to include(
-              '<a href="/energy-performance-certificate/1234-5678-9101-1121-3141"',
-            )
-          end
-
-          it "shows the expiry date of an entry" do
-            expect(response.body).to include("01/01/2019")
-          end
-        end
-
-        context "where no certificates are present" do
-          before do
-            FindCertificate::NoCertificatesStub.search_by_street_name_and_town(
-              "3 Alien Street",
-              "Mars",
-              %w[DEC DEC-AR CEPC CEPC-RR ACIR ACIC],
-            )
-          end
-
-          let(:response) do
-            get "/find-a-non-domestic-certificate/search-by-street-name-and-town?street_name=3%20Alien%20Street&town=Mars"
-          end
-
-          it "returns status 200" do
-            expect(response.status).to eq(200)
-          end
-
-          it "displays the find a certificate page heading" do
-            expect(response.body).to include(
-              "Find energy certificates and reports by street and town",
-            )
-          end
-
-          it "explains that no certificates are present" do
-            expect(response.body).to include(
-              "A certificate was not found at this address",
-            )
-          end
-        end
-
-        context "when there is no connection" do
-          before do
-            FindCertificate::NoNetworkStub.search_by_street_name_and_town(
-              "Doesnt Matter",
-              "Nothing",
-            )
-          end
-
-          let(:response) do
-            get "/find-a-certificate/search-by-street-name-and-town?street_name=Doesnt%20Matter&town=Nothing"
-          end
-
-          it "returns status 500" do
-            expect(response.status).to eq(500)
-          end
-
-          it "displays the 500 error page heading" do
-            expect(response.body).to include("Network connection failed")
-          end
-
-          it "displays error page body" do
-            expect(response.body).to include(
-              "There is an internal network error",
-            )
-          end
-        end
-      end
-
       context "where no certificates are present" do
         before do
           FindCertificate::NoCertificatesStub.search_by_postcode(
@@ -288,6 +180,116 @@ describe "Acceptance::Non Domestic Certificate" do
 
         it "displays error page body" do
           expect(response.body).to include("There is an internal network error")
+        end
+      end
+    end
+  end
+
+  describe ".get /find-a-non-domestic-certificate/search-by-street-and-town" do
+    context "when entering a valid street name and town" do
+      context "shows page" do
+        before do
+          FindCertificate::Stub.search_by_street_name_and_town(
+            "1 Makeup Street",
+            "Beauty Town",
+            %w[DEC DEC-AR CEPC CEPC-RR ACIR ACIC],
+            "CEPC",
+          )
+        end
+
+        let(:response) do
+          get "/find-a-non-domestic-certificate/search-by-street-name-and-town?street_name=1%20Makeup%20Street&town=Beauty%20Town"
+        end
+
+        it "returns status 200" do
+          expect(response.status).to eq(200)
+        end
+
+        it "displays the find a certificate page heading" do
+          expect(response.body).to include(
+            "Find an energy certificate or report for a building",
+          )
+        end
+
+        it "shows the address of an entry" do
+          expect(response.body).to include(
+            "1 Makeup Street, Beauty Town, SW1B 2BB",
+          )
+        end
+
+        it "shows the report reference number of an entry" do
+          expect(response.body).to include("1234-5678-9101-1121-3141")
+        end
+
+        it "shows the certificate type" do
+          expect(response.body).to include("CEPC")
+        end
+
+        it "shows a clickable entry" do
+          expect(response.body).to include(
+            '<a href="/energy-performance-certificate/1234-5678-9101-1121-3141"',
+          )
+        end
+
+        it "shows the expiry date of an entry" do
+          expect(response.body).to include("01/01/2019")
+        end
+      end
+
+      context "where no certificates are present" do
+        before do
+          FindCertificate::NoCertificatesStub.search_by_street_name_and_town(
+            "3 Alien Street",
+            "Mars",
+            %w[DEC DEC-AR CEPC CEPC-RR ACIR ACIC],
+          )
+        end
+
+        let(:response) do
+          get "/find-a-non-domestic-certificate/search-by-street-name-and-town?street_name=3%20Alien%20Street&town=Mars"
+        end
+
+        it "returns status 200" do
+          expect(response.status).to eq(200)
+        end
+
+        it "displays the find a certificate page heading" do
+          expect(response.body).to include(
+            "Find energy certificates and reports by street and town",
+          )
+        end
+
+        it "explains that no certificates are present" do
+          expect(response.body).to include(
+            "A certificate was not found at this address",
+          )
+        end
+      end
+
+      context "when there is no connection" do
+        before do
+          FindCertificate::NoNetworkStub.search_by_street_name_and_town(
+            "Doesnt Matter",
+            "Nothing",
+          )
+        end
+
+        let(:response) do
+          get "/find-a-certificate/search-by-street-name-and-town?street_name=Doesnt%20Matter&town=Nothing"
+        end
+
+        it "returns status 500" do
+          expect(response.status).to eq(500)
+        end
+
+        it "displays the 500 error page heading" do
+          expect(response.body).to include("Network connection failed")
+        end
+
+        it "displays error page body" do
+          expect(response.body).to include(
+            "There is an internal network error",
+          )
         end
       end
     end
