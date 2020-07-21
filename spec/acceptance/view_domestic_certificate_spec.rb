@@ -609,19 +609,15 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate" do
     end
 
     it "shows typicalSaving cost" do
-      expect(response.body).to include(
-        '<p class="govuk-body govuk-!-font-weight-bold" id="typical-saving-cost">£9,000</p>',
-      )
+      expect(response.body).to include("£9,000")
     end
 
     it "shows typical indicativeCost" do
-      expect(response.body).to include(
-        '<p class="govuk-body govuk-!-font-weight-bold" id="indicative_cost">£300 - £400</p>',
-      )
+      expect(response.body).to include("£300 - £400")
     end
 
     it "shows typical potential rating" do
-      expect(response.body).to include('<text x="30" y="30">76 | C </text>')
+      expect(response.body).to include('<text x="30" y="30">76 | C</text>')
     end
 
     it "shows typical potential rating in the correct color" do
@@ -667,9 +663,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate" do
       end
 
       it "will show information unavailable instead" do
-        expect(response.body).to include(
-          '<p class="govuk-body govuk-!-font-weight-bold" id="typical-saving-cost">Not applicable</p>',
-        )
+        expect(response.body).to include("Not applicable")
       end
     end
 
@@ -728,9 +722,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate" do
 
     context "with an invalid typical saving" do
       it "displays N/A on the page" do
-        expect(response.body).to include(
-          '<p class="govuk-body govuk-!-font-weight-bold" id="typical-saving-cost">Not applicable</p>',
-        )
+        expect(response.body).to include("Not applicable")
       end
     end
   end
