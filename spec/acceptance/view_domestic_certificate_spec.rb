@@ -477,36 +477,22 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate" do
 
         context "shows the plan and provider information" do
           it "shows the plan number" do
-            expect(response.body).to include(
-              '<td class="govuk-table__cell">Plan number:</td>',
-            )
-            expect(response.body).to include(
-              '<td class="govuk-table__cell">ABC123456DEF</td>',
-            )
+            expect(response.body).to include("Plan number")
+            expect(response.body).to include("ABC123456DEF")
           end
 
           it "shows the providers name" do
-            expect(response.body).to include(
-              '<td class="govuk-table__cell">Provider:</td>',
-            )
-            expect(response.body).to include(
-              '<td class="govuk-table__cell">The Bank</td>',
-            )
+            expect(response.body).to include("Provider")
+            expect(response.body).to include("The Bank")
           end
 
           it "shows the providers telephone number" do
-            expect(response.body).to include(
-              '<td class="govuk-table__cell">Telephone:</td>',
-            )
-            expect(response.body).to include(
-              '<td class="govuk-table__cell">0800 0000000</td>',
-            )
+            expect(response.body).to include("Telephone")
+            expect(response.body).to include("0800 0000000")
           end
 
           it "shows the providers email" do
-            expect(response.body).to include(
-              '<td class="govuk-table__cell">Email:</td>',
-            )
+            expect(response.body).to include("Email")
             expect(response.body).to include(
               '<a href="mailto:lender@example.com">',
             )
