@@ -374,18 +374,10 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate" do
 
       context "when there is a property summary key" do
         it "shows all of the property summary elements" do
-          expect(response.body).to include(
-            '<td class="govuk-table__cell">Secondary Heating</td>',
-          )
-          expect(response.body).to include(
-            '<td class="govuk-table__cell govuk-!-font-weight-bold">Very good</td>',
-          )
-          expect(response.body).to include(
-            '<td class="govuk-table__cell">Main Heating</td>',
-          )
-          expect(response.body).to include(
-            '<td class="govuk-table__cell govuk-!-font-weight-bold">Average</td>',
-          )
+          expect(response.body).to include("Secondary Heating&colon; Heating the house")
+          expect(response.body).to include("Very good energy performance")
+          expect(response.body).to include("Main Heating&colon; Room heaters, electric")
+          expect(response.body).to include("Average energy performance")
         end
       end
 

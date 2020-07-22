@@ -129,55 +129,9 @@
     </div>
   </div>
   <div class="govuk-grid-column-two-thirds">
-    <div class="govuk-body epc-blue-bottom">
-      <a id="summary"></a>
-      <h2 class="govuk-heading-l"><%= t('domestic_epc.sections.breakdown.title') %></h2>
-      <p class="govuk-body"><%= t('domestic_epc.sections.breakdown.intro') %></p>
-      <table class="govuk-table">
-        <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header"><%= t('domestic_epc.sections.breakdown.table_headers.feature') %></th>
-          <th scope="col" class="govuk-table__header"><%= t('domestic_epc.sections.breakdown.table_headers.description') %></th>
-          <th scope="col" class="govuk-table__header"><%= t('domestic_epc.sections.breakdown.table_headers.energy_performance') %></th>
-        </tr>
-        </thead>
-        <tbody class="govuk-table__body">
-          <p class="govuk-body"><%= t('domestic_epc.sections.breakdown.assessment_rating_explaination') %></p>
-           <ul class="govuk-list govuk-list--bullet govuk-!-margin-left-6">
-             <li><%== t('domestic_epc.sections.breakdown.assessment_ratings.very_good') %></li>
-             <li><%== t('domestic_epc.sections.breakdown.assessment_ratings.good') %></li>
-             <li><%== t('domestic_epc.sections.breakdown.assessment_ratings.average') %></li>
-             <li><%== t('domestic_epc.sections.breakdown.assessment_ratings.poor') %></li>
-             <li><%== t('domestic_epc.sections.breakdown.assessment_ratings.very_poor') %></li>
-          </ul>
-          <p class="govuk-body"><%= t('domestic_epc.sections.breakdown.not_inspected') %></p>
-          <% if assessment[:propertySummary].is_a? Array %>
-            <% assessment[:propertySummary].each do |property_item| %>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell"><%= t("property_summary.type." + property_item[:name]) %></td>
-                <td class="govuk-table__cell"><%= property_item[:description] %></td>
-                <td class="govuk-table__cell govuk-!-font-weight-bold"><%= t('energy_performance_rating.' + property_item[:energyEfficiencyRating].to_s + '.energy_performance')%></td>
-              </tr>
-            <% end %>
-          <% end %>
-        </tbody>
-      </table>
-      <h2 class="govuk-heading-m"><%= t('domestic_epc.sections.breakdown.primary_energy_use') %></h2>
-      <p class="govuk-body"><%= t('domestic_epc.sections.breakdown.primary_energy_use_description') %></p>
-      <details class="govuk-details" data-module="govuk-details">
-          <summary class="govuk-details__summary">
-            <span class="govuk-details__summary-text"><%= t('domestic_epc.sections.breakdown.primary_energy_use_dropdown.what_is_primary_energy_use_title') %></span>
-          </summary>
-          <div class="govuk-details__text">
-              <%= t('domestic_epc.sections.breakdown.primary_energy_use_dropdown.what_is_primary_energy_use_details') %>
-            <ul class="govuk-list govuk-list--bullet govuk-!-margin-left-6">
-              <li><%= t('domestic_epc.sections.breakdown.primary_energy_use_dropdown.efficiency_of_heating') %></li>
-              <li><%= t('domestic_epc.sections.breakdown.primary_energy_use_dropdown.efficiency_of_electricity') %></li>
-              <li><%= t('domestic_epc.sections.breakdown.primary_energy_use_dropdown.fuel_for_property') %></li>
-            </ul>
-          </div>
-        </details>
-    </div>
+    <%== erb :domestic_energy_performance_certificate__energy_performance_breakdown,
+             locals: { assessment: assessment }
+    %>
   </div>
   <div class="govuk-grid-column-two-thirds">
     <div class="govuk-body epc-page-break epc-blue-bottom">
