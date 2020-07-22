@@ -435,7 +435,7 @@ cy:
       date_of_expiry: 'Welsh: Valid until %{date_of_expiry}'
       certificate_id: 'Welsh: Certificate Number'
       energy_rating_title: 'Welsh: Energy Rating'
-      property_info: 'Welsh: This property is a <strong>%{dwelling_type}</strong> and has a total floor area of <strong>%{total_floor_area}</strong> metres squared.'
+      property_info: 'Welsh: This property is a %{dwelling_type} and has a total floor area of %{total_floor_area} square metres.'
       print_certificate: 'Welsh: Print this certificate'
       print_certificate_noscript : 'Welsh: To print this certificate, press cmd/ctrl+p on your keyboard'
     sidebar:
