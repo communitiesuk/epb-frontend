@@ -24,7 +24,7 @@
 .epc-box {
   color: #fff;
   background: #1d70b8;
-  padding: 0px;
+  padding: 0;
   overflow: hidden;
 }
 
@@ -71,7 +71,7 @@
 .epc-rating-result span span {
   padding-top: 0;
   color: rgba(255, 255, 255, 1);
-  text-shadow: 1px 1px 0px rgba(0, 0, 0, .1);
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, .1);
   font-size: 20px;
 }
 
