@@ -53,11 +53,15 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate" do
     end
 
     it "shows the total floor area" do
-      expect(response.body).to include("has a total floor area of <strong>150</strong> metres squared")
+      expect(response.body).to include(
+        "has a total floor area of <strong>150</strong> metres squared",
+      )
     end
 
     it "shows the type of dwelling" do
-      expect(response.body).to include("This property is a <strong>Top floor flat</strong>")
+      expect(response.body).to include(
+        "This property is a <strong>Top floor flat</strong>",
+      )
     end
 
     it "shows the SVG with energy ratings" do
@@ -401,101 +405,83 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate" do
           )
         end
       end
+    end
 
-      context "When a certificate has a Green Deal Plan" do
-        it "shows the title of the section" do
-          expect(response.body).to include("Green Deal Plan")
-        end
-
-        context "shows the Cost of the plan breakdown data" do
-          it "shows the current_charge" do
-            expect(response.body).to include("Current charge")
-          end
-
-          it "shows the estimated savings" do
-            expect(response.body).to include("Estimated saving")
-            expect(response.body).to include("£1566 per year")
-          end
-
-          it "shows the payment_period_start" do
-            expect(response.body).to include("Payment period start")
-          end
-
-          it "shows the payment_period_end" do
-            expect(response.body).to include("Payment period end")
-          end
-
-          it "shows the interest_rate_payable" do
-            expect(response.body).to include("Interest rate payable")
-          end
-        end
-
-        context "shows the improvment products" do
-          it "shows the product and paid off date" do
-            expect(response.body).to include("WarmHome lagging stuff (TM)")
-            expect(response.body).to include("Paid off 29 March 2025")
-          end
-        end
-
-        it "shows the current charge" do
-          expect(response.body).to include("£124.18 per year")
-        end
-
-        it "shows the start date" do
-          expect(response.body).to include("30 January 2020")
-        end
-
-        it "shows the end date" do
-          expect(response.body).to include("28 February 2030")
-        end
-
-        it "shows interest rate payable" do
-          expect(response.body).to include("fixed at 12.3% APR")
-        end
-
-        context "shows the plan and provider information" do
-          it "shows the plan number" do
-            expect(response.body).to include("Plan number")
-            expect(response.body).to include("ABC123456DEF")
-          end
-
-          it "shows the providers name" do
-            expect(response.body).to include("Provider")
-            expect(response.body).to include("The Bank")
-          end
-
-          it "shows the providers telephone number" do
-            expect(response.body).to include("Telephone")
-            expect(response.body).to include("0800 0000000")
-          end
-
-          it "shows the providers email" do
-            expect(response.body).to include("Email")
-            expect(response.body).to include(
-              '<a href="mailto:lender@example.com">',
-            )
-          end
-        end
+    context "when a certificate has a Green Deal Plan" do
+      it "shows the green deal plan title" do
+        expect(response.body).to include(
+          '<h2 class="govuk-heading-l">Green Deal Plan</h2>',
+        )
       end
 
-      context "When a certificate does NOT have a Green Deal Plan" do
-        before { FetchCertificate::Stub.fetch("1111-1111-1111-1111-1112") }
+      it "shows the current charge" do
+        expect(response.body).to include("Current charge")
+        expect(response.body).to include("£124.18 per year")
+      end
 
-        let(:response) do
-          get "/energy-performance-certificate/1111-1111-1111-1111-1112"
-        end
+      it "shows the estimated savings" do
+        expect(response.body).to include("Estimated saving")
+        expect(response.body).to include("£1566 per year")
+      end
 
-        it "will NOT show the Green Deal Plan section" do
-          expect(response.body).to_not include(
-            '<h2 class="govuk-heading-l">Green Deal Plan</h2>',
-          )
-        end
+      it "shows the start of the payment period" do
+        expect(response.body).to include("Payment period start")
+        expect(response.body).to include("30 January 2020")
+      end
 
-        it "will NOT show the Green Deal Plan section tab" do
-          expect(response.body).to_not include(
-            '<a href="#renting">Green Deal Plan</a>',
-          )
-        end
+      it "shows the end of the payment period" do
+        expect(response.body).to include("Payment period end")
+        expect(response.body).to include("28 February 2030")
+      end
+
+      it "shows the interest rate payable" do
+        expect(response.body).to include("Interest rate payable")
+        expect(response.body).to include("fixed at 12.3% APR")
+      end
+
+      it "shows the product and paid off date" do
+        expect(response.body).to include("WarmHome lagging stuff (TM)")
+        expect(response.body).to include("Paid off 29 March 2025")
+      end
+
+      it "shows the plan number" do
+        expect(response.body).to include("Plan number")
+        expect(response.body).to include("ABC123456DEF")
+      end
+
+      it "shows the providers name" do
+        expect(response.body).to include("Provider")
+        expect(response.body).to include("The Bank")
+      end
+
+      it "shows the providers telephone number" do
+        expect(response.body).to include("Telephone")
+        expect(response.body).to include("0800 0000000")
+      end
+
+      it "shows the providers email" do
+        expect(response.body).to include("Email")
+        expect(response.body).to include('<a href="mailto:lender@example.com">')
+      end
+    end
+
+    context "when a certificate does not have a Green Deal Plan" do
+      before { FetchCertificate::Stub.fetch("1111-1111-1111-1111-1112") }
+
+      let(:response) do
+        get "/energy-performance-certificate/1111-1111-1111-1111-1112"
+      end
+
+      it "does not show the Green Deal Plan section" do
+        expect(response.body).to_not include(
+          '<h2 class="govuk-heading-l">Green Deal Plan</h2>',
+        )
+      end
+
+      it "does not show the Green Deal Plan section tab" do
+        expect(response.body).to_not include(
+          '<a href="#renting">Green Deal Plan</a>',
+        )
       end
     end
 
