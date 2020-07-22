@@ -14,16 +14,16 @@
     <div class="govuk-body epc-blue-bottom">
       <div class="epc-box">
         <div class="epc-rating-box">
-          <p class="epc-rating-title govuk-body"><%= t('domestic_epc.box.energy_rating_title') %></p>
+          <p class="epc-rating-title govuk-body"><%= t('domestic_epc.summary.energy_rating_title') %></p>
           <p class="epc-rating-result govuk-body"><%= assessment[:currentEnergyEfficiencyBand].upcase %></p>
         </div>
         <p class="epc-address govuk-body"><%== [assessment[:addressLine1],
                                                 assessment[:addressLine2],
                                                 assessment[:addressLine3],
                                                 assessment[:addressLine4]].reject!(&:empty?).join('<br>') %><br><%= assessment[:town] %><br><%= assessment[:postcode] %></p>
-        <p class="govuk-body epc-extra-box"><%= t('domestic_epc.box.date_of_expiry', :date_of_expiry => Date.parse(assessment[:dateOfExpiry]).strftime('%-d %B %Y')) %></p>
+        <p class="govuk-body epc-extra-box"><%= t('domestic_epc.summary.date_of_expiry', :date_of_expiry => Date.parse(assessment[:dateOfExpiry]).strftime('%-d %B %Y')) %></p>
         <p class="govuk-body epc-extra-box">
-          <label><%= t('domestic_epc.box.certificate_id') %></label>
+          <label><%= t('domestic_epc.summary.certificate_id') %></label>
           <b><%= assessment[:assessmentId] %></b>
         </p>
       </div>

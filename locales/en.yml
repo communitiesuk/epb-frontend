@@ -455,10 +455,11 @@ en:
 
   domestic_epc:
     top_heading: 'Energy Performance Certificate'
-    box:
+    summary:
       date_of_expiry: 'Valid until %{date_of_expiry}'
       certificate_id: 'Certificate Number'
       energy_rating_title: 'Energy Rating'
+      property_info: 'This property is a <strong>%{dwelling_type}</strong> and has a total floor area of <strong>%{total_floor_area}</strong> metres squared.'
       print_certificate: 'Print this certificate'
       print_certificate_noscript : 'To print this certificate, press cmd/ctrl+p on your keyboard'
     sidebar:
@@ -504,7 +505,7 @@ en:
         body2: 'Properties are given a rating from A (most efficient) to G (least efficient).'
         body3: 'Properties are also given a score. The higher this number, the cheaper your fuel bills are likely to be.'
         body4: 'The average energy rating and score for a property in England and Wales are D (60).'
-      summary:
+      breakdown:
         title: "Breakdown of property's energy performance"
         intro: "The table shows the energy performance for features of this property. The assessment does not consider the condition of a feature and how well it is working."
         assessment_rating_explaination: 'Each feature is assessed as one of the following:'

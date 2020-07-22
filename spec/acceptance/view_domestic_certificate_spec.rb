@@ -53,11 +53,11 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate" do
     end
 
     it "shows the total floor area" do
-      expect(response.body).to include("150")
+      expect(response.body).to include("has a total floor area of <strong>150</strong> metres squared")
     end
 
     it "shows the type of dwelling" do
-      expect(response.body).to include("Top floor flat")
+      expect(response.body).to include("This property is a <strong>Top floor flat</strong>")
     end
 
     it "shows the SVG with energy ratings" do
