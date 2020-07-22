@@ -356,7 +356,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate" do
 
       it "shows the section texts" do
         expect(response.body).to include(
-          '<p class="govuk-body">The table shows the energy performance for features of this property. The assessment does not consider the condition of a feature and how well it is working.</p>',
+          '<p class="govuk-body">This section shows the energy performance for features of this property. The assessment does not consider the condition of a feature and how well it is working.</p>',
         )
       end
 

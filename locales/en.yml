@@ -507,7 +507,7 @@ en:
         body4: 'The average energy rating and score for a property in England and Wales are D (60).'
       breakdown:
         title: "Breakdown of property's energy performance"
-        intro: "The table shows the energy performance for features of this property. The assessment does not consider the condition of a feature and how well it is working."
+        intro: "This section shows the energy performance for features of this property. The assessment does not consider the condition of a feature and how well it is working."
         assessment_rating_explaination: 'Each feature is assessed as one of the following:'
         assessment_ratings:
           very_poor: 'very poor (least efficient)'
@@ -516,10 +516,7 @@ en:
           good: 'good'
           very_good: 'very good (most efficient)'
         not_inspected: "When the description says 'assumed', it means that the feature could not be inspected and an assumption has been made based on the age and type of your property."
-        table_headers:
-          feature: "Feature"
-          description: "Description"
-          energy_performance: "energy performance"
+        energy_performance: "energy performance"
         primary_energy_use: 'Primary energy use'
         primary_energy_use_description: 'The primary energy use for this property per year is 989 kilowatt hours (kWh) per square metre'
         primary_energy_use_dropdown:
