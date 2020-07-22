@@ -376,7 +376,7 @@ cy:
       ac: 'Welsh: when air conditioning system inspections are required'
     related_content:
       heading: 'Welsh: Related content'
-      find_an_assessor_link: 'Welsh: Getting a new energy certificate or report for a non-domestic property'
+      find_a_non-domestic_assessor_link: 'Welsh: Getting a new energy certificate or report for a non-domestic property'
       find_a_certificate_link: 'Welsh: Find an EPC for a domestic property'
 
   find_non_dom_certificate_by_postcode:

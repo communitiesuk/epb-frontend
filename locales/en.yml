@@ -376,7 +376,7 @@ en:
       ac: 'when air conditioning system inspections are required'
     related_content:
       heading: 'Related content'
-      find_an_assessor_link: 'Getting a new energy certificate or report for a non-domestic property'
+      find_a_non-domestic_assessor_link: 'Getting a new energy certificate or report for a non-domestic property'
       find_a_certificate_link: 'Find an EPC for a domestic property'
 
   find_non_dom_certificate_by_postcode:
