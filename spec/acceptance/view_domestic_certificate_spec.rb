@@ -72,18 +72,6 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate" do
       expect(response.body).to include('<tspan x="8" y="55">92+</tspan>')
     end
 
-    it "shows the estimated energy cost for a year" do
-      expect(response.body).to include(
-        '<td class="govuk-table__cell" id="estimated-cost">£689.83</td>',
-      )
-    end
-
-    it "shows the potential energy cost saving for a year" do
-      expect(response.body).to include(
-        '<td class="govuk-table__cell" id="potential-saving">£174</td>',
-      )
-    end
-
     it "shows the assessors full name" do
       expect(response.body).to include("Test Boi")
     end
@@ -184,8 +172,8 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate" do
       end
     end
 
-    context "when viewing the heat demand section" do
-      context "when there are no impacts" do
+    describe "viewing the estimated energy use and potential savings section" do
+      context "when there is no information about the impact of insulation" do
         before do
           FetchCertificate::Stub.fetch(
             "123-123",
@@ -203,19 +191,18 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate" do
         let(:response) { get "/energy-performance-certificate/123-123" }
 
         it "does not show the potential space heating energy savings table" do
-          expect(response.body).not_to include(
-            '<p class="govuk-body">The table below shows the amount of energy that could be saved in this property by installing insulation, based on typical energy use.</p>',
-          )
-          expect(response.body).not_to include(
-            '<th scope="row" class="govuk-table__header">Loft insulation</th>',
-          )
-          expect(response.body).not_to include(
-            '<th scope="row" class="govuk-table__header">Cavity wall insulation</th>',
-          )
-          expect(response.body).not_to include(
-            '<th scope="row" class="govuk-table__header">Solid wall insulation</th>',
-          )
+          expect(response.body).not_to include(">Loft insulation</")
+          expect(response.body).not_to include(">Cavity wall insulation</")
+          expect(response.body).not_to include(">Solid wall insulation</")
         end
+      end
+
+      it "shows the estimated energy cost for a year" do
+        expect(response.body).to include('&pound;689.83')
+      end
+
+      it "shows the potential energy cost saving for a year" do
+        expect(response.body).to include('&pound;174')
       end
 
       it "shows the current space heat demand" do
@@ -227,21 +214,18 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate" do
       end
 
       it "shows possible energy saving with loft insulation" do
-        expect(response.body).to include(
-          '<td class="govuk-table__cell" id="loft-insulation">79 kWh per year</td>',
-        )
+        expect(response.body).to include(">Loft insulation</")
+        expect(response.body).to include("79 kWh per year")
       end
 
-      it "shows possible energy saving with cavity insulation" do
-        expect(response.body).to include(
-          '<td class="govuk-table__cell" id="cavity-insulation">67 kWh per year</td>',
-        )
+      it "shows possible energy saving with cavity wall insulation" do
+        expect(response.body).to include(">Cavity wall insulation</")
+        expect(response.body).to include("67 kWh per year")
       end
 
       it "shows possible energy saving with solid wall insulation" do
-        expect(response.body).to include(
-          '<td class="govuk-table__cell" id="solid-wall-insulation">69 kWh per year</td>',
-        )
+        expect(response.body).to include(">Solid wall insulation</")
+        expect(response.body).to include("69 kWh per year")
       end
     end
 
