@@ -538,16 +538,19 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate" do
       )
     end
 
-    it "shows typicalSaving cost" do
-      expect(response.body).to include("£9,000")
-    end
-
     it "shows typical indicativeCost" do
+      expect(response.body).to include(">Typical installation cost</dt>")
       expect(response.body).to include("£300 - £400")
     end
 
+    it "shows typicalSaving cost" do
+      expect(response.body).to include(">Typical yearly saving</dt>")
+      expect(response.body).to include("£9,000")
+    end
+
     it "shows typical potential rating" do
-      expect(response.body).to include('<text x="30" y="30">76 | C</text>')
+      expect(response.body).to include(">Potential rating after carrying out recommendations 1&nbsp;to&nbsp;11</dt>")
+      expect(response.body).to include('<text x="30" y="30">99 | A</text>')
     end
 
     it "shows typical potential rating in the correct color" do

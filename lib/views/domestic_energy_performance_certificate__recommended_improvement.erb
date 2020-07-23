@@ -8,9 +8,9 @@
 
 <dl class="govuk-summary-list">
   <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key govuk-!-width-one-half">
-      <%= t('domestic_epc.sections.recommendations.list.installation_cost') %>
-    </dt>
+    <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
+      t('domestic_epc.sections.recommendations.list.installation_cost')
+    %></dt>
     <dd class="govuk-summary-list__value govuk-!-width-one-half" style="text-align: right">
       <% if recommendation[:indicativeCost].nil? || recommendation[:indicativeCost].empty? ? (indicative_cost_result = 'Information unavailable') : (indicative_cost_result = recommendation[:indicativeCost]) %>
         <%= indicative_cost_result %>
@@ -18,9 +18,9 @@
     </dd>
   </div>
   <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key govuk-!-width-one-half">
-      <%= t('domestic_epc.sections.recommendations.list.yearly_saving') %>
-    </dt>
+    <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
+      t('domestic_epc.sections.recommendations.list.yearly_saving')
+    %></dt>
     <dd class="govuk-summary-list__value govuk-!-width-one-half" style="text-align: right">
       <% typical_saving = number_to_currency(recommendation[:typicalSaving])
         if typical_saving
@@ -32,21 +32,23 @@
     </dd>
   </div>
   <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key govuk-!-width-one-half" style="vertical-align: top">
-      <%== potential_rating_text(index + 1) %>
-    </dt>
-    <dd class="govuk-summary-list__value govuk-!-width-one-half" style="text-align: right">
-      <% energyPerformanceRatingImprovement = recommendation[:energyPerformanceRatingImprovement]
-         if energyPerformanceRatingImprovement %>
-        <svg width="90" height="50" style="vertical-align: middle">
-          <%= band = "band-#{get_energy_rating_band(energyPerformanceRatingImprovement)}" %>
-          <rect width="75" height="50" class=<%= band %> x="25"></rect>
-          <polygon points="0,25 25,50 25,0 0,25" class=<%= band %>></polygon>
-          <text x="30" y="30"><%= energyPerformanceRatingImprovement %> | <%= get_energy_rating_band(energyPerformanceRatingImprovement).upcase %></text>
-        </svg>
-      <% else  %>
-        <%= t('domestic_epc.sections.recommendations.list.na') %>
-      <% end %>
-    </dd>
+    <dt class="govuk-summary-list__key govuk-!-width-one-half" style="vertical-align: top"><%==
+      potential_rating_text(index + 1)
+    %></dt>
+    <dd class="govuk-summary-list__value govuk-!-width-one-half" style="text-align: right"><%
+      energyPerformanceRatingImprovement = recommendation[:energyPerformanceRatingImprovement]
+        if energyPerformanceRatingImprovement
+          %><svg width="90" height="50" style="vertical-align: middle">
+              <%= band = "band-#{get_energy_rating_band(energyPerformanceRatingImprovement)}" %>
+              <rect width="75" height="50" class=<%= band %> x="25"></rect>
+              <polygon points="0,25 25,50 25,0 0,25" class=<%= band %>></polygon>
+              <text x="30" y="30"><%= energyPerformanceRatingImprovement %> | <%= get_energy_rating_band(energyPerformanceRatingImprovement).upcase %></text>
+            </svg><%
+        else
+      %><%=
+        t('domestic_epc.sections.recommendations.list.na')
+      %><%
+        end
+      %></dd>
   </div>
 </dl>

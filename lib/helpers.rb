@@ -108,7 +108,7 @@ module Sinatra
           t("domestic_epc.sections.recommendations.list.potential_rating_1")
         when 2
           t("domestic_epc.sections.recommendations.list.potential_rating_2")
-        when 3..10
+        when 3..nil
           "#{
             t('domestic_epc.sections.recommendations.list.potential_rating_3')
           }&nbsp;#{number}"
