@@ -66,13 +66,14 @@ describe "Journey::FindDomesticCertificate", type: :feature, journey: true do
     expect(page).to have_content "of 3 results matching"
   end
 
-  it "displays the find a certificate page heading when entering a valid certificate reference number" do
+  it "redirects directly to the certificate page when entering a valid certificate reference number" do
     visit "/find-a-certificate"
     click_on "Start now"
     click_on "certificate by reference"
     fill_in "reference_number", with: "4567-6789-4567-6789-4567"
     click_on "Find"
-    expect(page).to have_content "of 1 results matching"
+    expect(page).to have_content "2 Marsham Street"
+    expect(page).to have_content "Valid until 5 January 2030"
   end
 
   it "displays an error message when entering an empty street name" do

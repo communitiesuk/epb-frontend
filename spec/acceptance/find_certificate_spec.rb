@@ -209,7 +209,7 @@ describe "Acceptance::Certificate" do
     end
 
     context "when entering a valid reference number" do
-      context "shows page" do
+      context "redirects to certificate page when the param has hyphens" do
         before do
           FindCertificate::Stub.search_by_id("1234-5678-9101-1121-3141")
         end
@@ -218,40 +218,18 @@ describe "Acceptance::Certificate" do
           get "/find-a-certificate/search-by-reference-number?reference_number=1234-5678-9101-1121-3141"
         end
 
-        it "returns status 200" do
-          expect(response.status).to eq(200)
+        it "returns status 303" do
+          expect(response.status).to eq(303)
         end
 
-        it "displays the find a certificate page heading" do
-          expect(response.body).to include(
-            "Find an energy performance certificate",
+        it "redirects to the URL to view the requested certificate" do
+          expect(response.location).to end_with(
+            "/energy-performance-certificate/1234-5678-9101-1121-3141",
           )
-        end
-
-        it "shows the address of an entry" do
-          expect(response.body).to include("2 Marsham Street, London, SW1B 2BB")
-        end
-
-        it "shows the report reference number of an entry" do
-          expect(response.body).to include("1234-5678-9101-1121-3141")
-        end
-
-        it "shows the rating of an entry" do
-          expect(response.body).to include(">B<")
-        end
-
-        it "shows a clickable entry" do
-          expect(response.body).to include(
-            '<a href="/energy-performance-certificate/1234-5678-9101-1121-3141"',
-          )
-        end
-
-        it "shows the expiry date of an entry" do
-          expect(response.body).to include("01/01/2019")
         end
       end
 
-      context "shows page" do
+      context "redirects to certificate page when the param has no hyphens" do
         before do
           FindCertificate::Stub.search_by_id("1234-5678-9101-1121-3141")
         end
@@ -260,36 +238,14 @@ describe "Acceptance::Certificate" do
           get "/find-a-certificate/search-by-reference-number?reference_number=12345678910111213141"
         end
 
-        it "returns status 200" do
-          expect(response.status).to eq(200)
+        it "returns status 303" do
+          expect(response.status).to eq(303)
         end
 
-        it "displays the find a certificate page heading" do
-          expect(response.body).to include(
-            "Find an energy performance certificate",
+        it "redirects to the URL to view the requested certificate" do
+          expect(response.location).to end_with(
+            "/energy-performance-certificate/1234-5678-9101-1121-3141",
           )
-        end
-
-        it "shows the address of an entry" do
-          expect(response.body).to include("2 Marsham Street, London, SW1B 2BB")
-        end
-
-        it "shows the report reference number of an entry" do
-          expect(response.body).to include("1234-5678-9101-1121-3141")
-        end
-
-        it "shows the rating of an entry" do
-          expect(response.body).to include(">B<")
-        end
-
-        it "shows a clickable entry" do
-          expect(response.body).to include(
-            '<a href="/energy-performance-certificate/1234-5678-9101-1121-3141"',
-          )
-        end
-
-        it "shows the expiry date of an entry" do
-          expect(response.body).to include("01/01/2019")
         end
       end
 

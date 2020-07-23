@@ -91,10 +91,17 @@ class FrontendService < Sinatra::Base
         fetched_assessment_id =
           @container.get_object(:find_certificate_by_id_use_case).execute(
             params["reference_number"],
-          )[:data][:assessments][0][:assessmentId]
+          )[
+            :data
+          ][
+            :assessments
+          ][
+            0
+          ][
+            :assessmentId
+          ]
 
         redirect "/energy-performance-certificate/#{fetched_assessment_id}", 303
-
       rescue Errors::ReferenceNumberNotValid
         status 400
         erb_template = :find_non_dom_certificate_by_reference_number
@@ -344,18 +351,22 @@ class FrontendService < Sinatra::Base
     erb_template = :find_certificate_by_reference_number
 
     if params["reference_number"]
-      @page_title = t("find_certificate_by_reference_number_results.head.title")
       begin
-        erb_template = :find_certificate_by_reference_number_results
-
-        locals[:results] =
+        # If we can find the assessment then we redirect directly to it
+        fetched_assessment_id =
           @container.get_object(:find_certificate_by_id_use_case).execute(
             params["reference_number"],
           )[
             :data
           ][
             :assessments
+          ][
+            0
+          ][
+            :assessmentId
           ]
+
+        redirect "/energy-performance-certificate/#{fetched_assessment_id}", 303
       rescue Errors::ReferenceNumberNotValid
         status 400
         erb_template = :find_certificate_by_reference_number

@@ -364,7 +364,9 @@ describe "Acceptance::Non Domestic Certificate" do
         end
 
         it "redirects to the URL to view the requested certificate" do
-          expect(response.location).to end_with("/energy-performance-certificate/1234-5678-9101-1121-3141")
+          expect(response.location).to end_with(
+            "/energy-performance-certificate/1234-5678-9101-1121-3141",
+          )
         end
       end
 
