@@ -2,25 +2,35 @@
   <a id="heat-demand"></a>
   <h2 class="govuk-heading-l"><%= t('domestic_epc.sections.heat-demand.title') %></h2>
   <% unless assessment[:estimatedEnergyCost].nil? && assessment[:potentialEnergySaving].nil? %>
-    <table class="govuk-table">
-      <tbody class="govuk-table__body">
-      <tr class="govuk-table__row">
-        <th scope="row" class="govuk-table__header"><%= t('domestic_epc.sections.heat-demand.estimated_cost') %></th>
-        <td class="govuk-table__cell" id="estimated-cost">£<%== assessment[:estimatedEnergyCost].chomp(".00") %></td>
-      </tr>
-      <tr class="govuk-table__row">
-        <th scope="row" class="govuk-table__header"><%= t('domestic_epc.sections.heat-demand.three_year_saving') %></th>
-        <td class="govuk-table__cell" id="potential-saving">£<%= assessment[:potentialEnergySaving].chomp(".00") %></td>
-      </tr>
-      </tbody>
-    </table>
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
+          t('domestic_epc.sections.heat-demand.estimated_cost')
+        %></dt>
+        <dd class="govuk-summary-list__value govuk-!-width-one-half" style="text-align: right">&pound;<%=
+          assessment[:estimatedEnergyCost].chomp(".00")
+        %></dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
+          t('domestic_epc.sections.heat-demand.three_year_saving')
+        %></dt>
+        <dd class="govuk-summary-list__value govuk-!-width-one-half" style="text-align: right">&pound;<%=
+          assessment[:potentialEnergySaving].chomp(".00")
+        %></dd>
+      </div>
+    </dl>
+
     <p class="govuk-body"><%= t('domestic_epc.sections.heat-demand.costs_and_savings') %></p>
     <p class="govuk-body"><%== t('domestic_epc.sections.heat-demand.based_on', :link => '<a href="' + t('domestic_epc.sections.heat-demand.based_on_url') + '">' + t('domestic_epc.sections.heat-demand.based_on_cta') + '</a>') %></p>
     <p class="govuk-body"><%== t('domestic_epc.sections.heat-demand.more_advice', :link => '<a href="' + t('domestic_epc.sections.heat-demand.more_advice_url') + '">' + t('domestic_epc.sections.heat-demand.more_advice_cta') + '</a>') %></p>
-  <% end  %>
+  <% end %>
+
   <h3 class="govuk-heading-m"><%= t('domestic_epc.sections.heat-demand.heating_in_property') %></h3>
   <p class="govuk-body"><%= t('domestic_epc.sections.heat-demand.energy_costs') %></p>
   <p class="govuk-body"><%= t('domestic_epc.sections.heat-demand.energy_use_table_description') %></p>
+
   <table class="govuk-table">
     <caption class="govuk-table__caption"><%= t('domestic_epc.sections.heat-demand.estimated_use') %></caption>
     <tbody class="govuk-table__body">
