@@ -271,7 +271,7 @@ en:
     top_heading: 'Search for an EPC by reference number'
     question: 'Enter a reference number'
     reference_number_not_registered: 'A certificate was not found with this reference number'
-    reference_number_not_valid: 'Enter a valid reference number'
+    reference_number_not_valid: 'Enter a 20-digit reference number'
     button_text: 'Find'
     hint: 'For example 1234-5678-9101-1121-3141'
     no_network:
@@ -412,7 +412,7 @@ en:
     top_heading: 'Search for energy certificates and reports by reference number'
     question: 'Enter a reference number'
     reference_number_not_registered: 'A certificate was not found with this reference number'
-    reference_number_not_valid: 'Enter a valid reference number'
+    reference_number_not_valid: 'Enter a 20-digit reference number'
     button_text: 'Find'
     hint: 'For example 1234-5678-9101-1121-3141'
     no_network:

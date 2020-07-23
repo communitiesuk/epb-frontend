@@ -204,7 +204,7 @@ describe "Acceptance::Certificate" do
         expect(response.body).to include(
           '<span id="reference-number-error" class="govuk-error-message">',
         )
-        expect(response.body).to include("Enter a valid reference number")
+        expect(response.body).to include("Enter a 20-digit reference number")
       end
     end
 

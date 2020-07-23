@@ -271,7 +271,7 @@ cy:
     top_heading: 'Welsh: Search for an EPC by reference number'
     question: 'Welsh: Enter a reference number'
     reference_number_not_registered: 'Welsh: A certificate was not found with this reference number'
-    reference_number_not_valid: 'Welsh: Enter a valid reference number'
+    reference_number_not_valid: 'Welsh: Enter a 20-digit reference number'
     button_text: 'Welsh: Find'
     hint: 'Welsh: For example 1234-5678-9101-1121-3141'
     no_network:
