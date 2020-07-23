@@ -59,9 +59,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate" do
     end
 
     it "shows the type of dwelling" do
-      expect(response.body).to include(
-        "This property is a Top floor flat",
-      )
+      expect(response.body).to include("This property is a Top floor flat")
     end
 
     it "shows the SVG with energy ratings" do
@@ -197,12 +195,22 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate" do
         end
       end
 
+      it "shows the section heading" do
+        expect(response.body).to include(
+          ">Estimated energy use and potential savings</h2>",
+        )
+      end
+
       it "shows the estimated energy cost for a year" do
-        expect(response.body).to include('&pound;689.83')
+        expect(response.body).to include(
+          "Estimated energy cost for this property over a year",
+        )
+        expect(response.body).to include("&pound;689.83")
       end
 
       it "shows the potential energy cost saving for a year" do
-        expect(response.body).to include('&pound;174')
+        expect(response.body).to include("Over a year you could save")
+        expect(response.body).to include("&pound;174")
       end
 
       it "shows the current space heat demand" do
@@ -358,9 +366,13 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate" do
 
       context "when there is a property summary key" do
         it "shows all of the property summary elements" do
-          expect(response.body).to include("Secondary Heating&colon; Heating the house")
+          expect(response.body).to include(
+            "Secondary Heating&colon; Heating the house",
+          )
           expect(response.body).to include("Very good energy performance")
-          expect(response.body).to include("Main Heating&colon; Room heaters, electric")
+          expect(response.body).to include(
+            "Main Heating&colon; Room heaters, electric",
+          )
           expect(response.body).to include("Average energy performance")
         end
       end
