@@ -549,7 +549,9 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate" do
     end
 
     it "shows typical potential rating" do
-      expect(response.body).to include(">Potential rating after carrying out recommendations 1&nbsp;to&nbsp;11</dt>")
+      expect(response.body).to include(
+        ">Potential rating after carrying out recommendations 1&nbsp;to&nbsp;11</dt>",
+      )
       expect(response.body).to include('<text x="30" y="30">99 | A</text>')
     end
 
