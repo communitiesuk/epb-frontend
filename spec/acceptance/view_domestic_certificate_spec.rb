@@ -224,18 +224,18 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate" do
       end
 
       it "shows possible energy saving with loft insulation" do
-        expect(response.body).to include(">Loft insulation</")
-        expect(response.body).to include("79 kWh per year")
+        expect(response.body).to include(">Loft insulation</th>")
+        expect(response.body).to include(">79 kWh per year</td>")
       end
 
       it "shows possible energy saving with cavity wall insulation" do
-        expect(response.body).to include(">Cavity wall insulation</")
-        expect(response.body).to include("67 kWh per year")
+        expect(response.body).to include(">Cavity wall insulation</th>")
+        expect(response.body).to include(">67 kWh per year</td>")
       end
 
       it "shows possible energy saving with solid wall insulation" do
-        expect(response.body).to include(">Solid wall insulation</")
-        expect(response.body).to include("69 kWh per year")
+        expect(response.body).to include(">Solid wall insulation</th>")
+        expect(response.body).to include(">69 kWh per year</td>")
       end
     end
 

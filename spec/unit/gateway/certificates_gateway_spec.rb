@@ -100,9 +100,9 @@ describe Gateway::CertificatesGateway do
         heatDemand: {
           currentSpaceHeatingDemand: 222,
           currentWaterHeatingDemand: 321,
-          impactOfLoftInsulation: 79,
-          impactOfCavityInsulation: 67,
-          impactOfSolidWallInsulation: 69,
+          impactOfLoftInsulation: -79,
+          impactOfCavityInsulation: -67,
+          impactOfSolidWallInsulation: -69,
         },
         recommendedImprovements: [],
         relatedPartyDisclosureText: nil,
