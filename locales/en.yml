@@ -913,6 +913,7 @@ en:
   property_summary:
     type:
       wall: 'Wall'
+      walls: 'Walls'
       floor: 'Floor'
       hot_water: 'Hot Water'
       roof: 'Roof'

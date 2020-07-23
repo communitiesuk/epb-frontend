@@ -880,6 +880,7 @@ cy:
   property_summary:
     type:
       wall: 'Welsh: Wall'
+      walls: 'Welsh: Walls'
       floor: 'Welsh: Floor'
       hot_water: 'Welsh: Hot Water'
       roof: 'Welsh: Roof'
