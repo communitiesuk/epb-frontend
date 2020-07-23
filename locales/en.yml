@@ -537,10 +537,10 @@ en:
         making_changes_url: '#recommendations'
         environmental_impact_rating: "Environmental impact ratings are based on assumptions about average occupancy and energy use. They may not reflect how energy is consumed by the people living at the property."
         average_household:
-          text: "Average household produces:"
+          text: "Average household produces"
           carbon: "6"
-        property_produces: "This property produces:"
-        potential: "This property's potential production:"
+        property_produces: "This property produces"
+        potential: "This property's potential production"
         tonnes_of_carbon_emission: " tonnes of %{carbon}"
       recommendations:
         title: 'How to improve this property’s energy performance'

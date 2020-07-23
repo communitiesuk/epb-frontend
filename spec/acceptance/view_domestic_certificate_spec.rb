@@ -277,18 +277,14 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate" do
       end
 
       it "shows the carbon emissions of the property" do
-        expect(response.body).to include("Average household produces")
+        expect(response.body).to include(">Average household produces</")
+        expect(response.body).to include(">6 tonnes of CO2</dd>")
+        expect(response.body).to include(">This property produces</")
+        expect(response.body).to include(">2.4 tonnes of CO2</dd>")
         expect(response.body).to include(
-          '<dd class="govuk-summary-list__value" id="average-household-produces">6 tonnes of CO2</dd>',
+          ">This property's potential production</",
         )
-        expect(response.body).to include("This property produces")
-        expect(response.body).to include(
-          '<dd class="govuk-summary-list__value" id="property-produces">2.4 tonnes of CO2</dd>',
-        )
-        expect(response.body).to include("This property's potential production")
-        expect(response.body).to include(
-          '<dd class="govuk-summary-list__value" id="potential-production">1.4 tonnes of CO2</dd>',
-        )
+        expect(response.body).to include(">1.4 tonnes of CO2</dd>")
       end
 
       context "with different carbon emissions" do
@@ -312,12 +308,8 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate" do
         end
 
         it "shows the correct carbon emission values" do
-          expect(response.body).to include(
-            '<dd class="govuk-summary-list__value" id="property-produces">7.8 tonnes of CO2</dd>',
-          )
-          expect(response.body).to include(
-            '<dd class="govuk-summary-list__value" id="potential-production">6.5 tonnes of CO2</dd>',
-          )
+          expect(response.body).to include(">7.8 tonnes of CO2</dd>")
+          expect(response.body).to include(">6.5 tonnes of CO2</dd>")
         end
       end
     end

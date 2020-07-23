@@ -1,0 +1,23 @@
+<div class="govuk-body epc-page-break epc-blue-bottom">
+  <a id="energy"></a>
+  <h2 class="govuk-heading-l"><%= t('domestic_epc.sections.environmental-impact.title') %></h2>
+  <p class="govuk-body"><%== t('domestic_epc.sections.environmental-impact.summary') %></p>
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row" id="type">
+      <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= t('domestic_epc.sections.environmental-impact.average_household.text') %></dt>
+      <dd class="govuk-summary-list__value" id="average-household-produces" style="text-align: right"><%= t('domestic_epc.sections.environmental-impact.average_household.carbon') %><%== t('domestic_epc.sections.environmental-impact.tonnes_of_carbon_emission', carbon: 'CO2') %></dd>
+    </div>
+    <div class="govuk-summary-list__row" id="type">
+      <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= t('domestic_epc.sections.environmental-impact.property_produces') %></dt>
+      <dd class="govuk-summary-list__value" id="property-produces" style="text-align: right"><%= assessment[:currentCarbonEmission].round(1) %><%== t('domestic_epc.sections.environmental-impact.tonnes_of_carbon_emission', carbon: 'CO2') %></dd>
+    </div>
+    <div class="govuk-summary-list__row" id="type">
+      <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= t('domestic_epc.sections.environmental-impact.potential') %></dt>
+      <dd class="govuk-summary-list__value" id="potential-production" style="text-align: right"><%= assessment[:potentialCarbonEmission].round(1) %><%== t('domestic_epc.sections.environmental-impact.tonnes_of_carbon_emission', carbon: 'CO2') %></dd>
+    </div>
+  </dl>
+  <p class="govuk-body">
+    <%== t('domestic_epc.sections.environmental-impact.making_changes', reduction: (assessment[:currentCarbonEmission] - assessment[:potentialCarbonEmission]).round(2), :link => '<a href="' + t('domestic_epc.sections.environmental-impact.making_changes_url') + '">' + t('domestic_epc.sections.environmental-impact.making_changes_cta') + '</a>') %>
+  </p>
+  <p class="govuk-body"><%== t('domestic_epc.sections.environmental-impact.environmental_impact_rating') %></p>
+</div>
