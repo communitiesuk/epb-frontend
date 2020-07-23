@@ -31,23 +31,26 @@
   <p class="govuk-body"><%= t('domestic_epc.sections.heat-demand.energy_costs') %></p>
   <p class="govuk-body"><%= t('domestic_epc.sections.heat-demand.energy_use_table_description') %></p>
 
-  <table class="govuk-table">
-    <caption class="govuk-table__caption"><%= t('domestic_epc.sections.heat-demand.estimated_use') %></caption>
-    <tbody class="govuk-table__body">
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header"><%= t('domestic_epc.sections.heat-demand.space_heating') %></th>
-      <td class="govuk-table__cell" id="loft-insulation">
-        <%= assessment[:heatDemand][:currentWaterHeatingDemand] %> <%= t('domestic_epc.sections.heat-demand.kwh_per_year') %>
-      </td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header"><%= t('domestic_epc.sections.heat-demand.water_heating') %></th>
-      <td class="govuk-table__cell" id="cavity-insulation">
-        <%= assessment[:heatDemand][:currentSpaceHeatingDemand] %> <%= t('domestic_epc.sections.heat-demand.kwh_per_year') %>
-      </td>
-    </tr>
-    </tbody>
-  </table>
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
+        t('domestic_epc.sections.heat-demand.space_heating')
+      %></dt>
+      <dd class="govuk-summary-list__value govuk-!-width-one-half" style="text-align: right"><%=
+        assessment[:heatDemand][:currentWaterHeatingDemand] %> <%= t('domestic_epc.sections.heat-demand.kwh_per_year')
+      %></dd>
+    </div>
+
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
+        t('domestic_epc.sections.heat-demand.water_heating')
+      %></dt>
+      <dd class="govuk-summary-list__value govuk-!-width-one-half" style="text-align: right"><%=
+        assessment[:heatDemand][:currentSpaceHeatingDemand] %> <%= t('domestic_epc.sections.heat-demand.kwh_per_year')
+      %></dd>
+    </div>
+  </dl>
+
   <% unless assessment[:heatDemand][:impactOfLoftInsulation].nil? && assessment[:heatDemand][:impactOfCavityInsulation].nil? && assessment[:heatDemand][:impactOfSolidWallInsulation].nil? %>
     <p class="govuk-body"><%= t('domestic_epc.sections.heat-demand.savings_table_description') %></p>
     <table class="govuk-table">

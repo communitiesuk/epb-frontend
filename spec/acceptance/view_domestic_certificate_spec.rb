@@ -214,10 +214,12 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate" do
       end
 
       it "shows the current space heat demand" do
+        expect(response.body).to include(">Space heating</")
         expect(response.body).to include("222 kWh per year")
       end
 
       it "shows the current water heat demand" do
+        expect(response.body).to include(">Water heating</")
         expect(response.body).to include("321 kWh per year")
       end
 
