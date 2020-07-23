@@ -359,36 +359,12 @@ describe "Acceptance::Non Domestic Certificate" do
           get "/find-a-non-domestic-certificate/search-by-reference-number?reference_number=1234-5678-9101-1121-3141"
         end
 
-        it "returns status 200" do
-          expect(response.status).to eq(200)
+        it "returns status 303" do
+          expect(response.status).to eq(303)
         end
 
-        it "displays the find a certificate page heading" do
-          expect(response.body).to include(
-            "View energy certificates and reports for non-domestic properties",
-          )
-        end
-
-        it "shows the address of an entry" do
-          expect(response.body).to include("2 Marsham Street, London, SW1B 2BB")
-        end
-
-        it "shows the report reference number of an entry" do
-          expect(response.body).to include("1234-5678-9101-1121-3141")
-        end
-
-        it "shows the certificate type" do
-          expect(response.body).to include("CEPC")
-        end
-
-        it "shows a clickable entry" do
-          expect(response.body).to include(
-            '<a href="/energy-performance-certificate/1234-5678-9101-1121-3141"',
-          )
-        end
-
-        it "shows the expiry date of an entry" do
-          expect(response.body).to include("01/01/2019")
+        it "redirects to the URL to view the requested certificate" do
+          expect(response.location).to end_with("/energy-performance-certificate/1234-5678-9101-1121-3141")
         end
       end
 
