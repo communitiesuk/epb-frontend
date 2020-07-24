@@ -663,7 +663,7 @@ en:
           RdSAP: Energy performance certificate
           SAP: Energy performance certificate
           ACIR: Air conditioning inspection report
-          ACIC: Air conditioning inspection certificate
+          AC-CERT: Air conditioning inspection certificate
           DEC: Display energy certificate
           DEC-RR: Display energy certificate recommendation report
 
