@@ -3,7 +3,9 @@
     <h1 class="govuk-heading-xl">
       <%= t('find_non_dom_certificate_by_street_name_and_town_results.top_heading') %>
     </h1>
+  </div>
 
+  <div class="govuk-grid-column-full">
     <% if results.size > 0 %>
       <h2 class="govuk-heading-m"><%= t('find_non_dom_certificate_by_street_name_and_town_results.list', :length => results.length, :query => "#{params['street_name']} #{params['town']}" ) %></h2>
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
