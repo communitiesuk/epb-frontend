@@ -29,7 +29,7 @@ FindCertificate::Stub.search_by_street_name_and_town(
 FindCertificate::Stub.search_by_street_name_and_town(
   "1 Commercial Street",
   "Industry Town",
-  %w[DEC DEC-RR CEPC CEPC-RR ACIR AC-CERT],
+  %w[DEC DEC-RR CEPC CEPC-RR AC-REPORT AC-CERT],
   "CEPC",
 )
 
