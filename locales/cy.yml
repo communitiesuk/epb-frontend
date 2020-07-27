@@ -433,6 +433,8 @@ cy:
       summary:
         valid_until: 'Welsh: Valid until'
         certificate_id: 'Welsh: Certificate number'
+      contents:
+        title: 'Welsh: Report Contents'
 
   domestic_epc:
     top_heading: 'Welsh: Energy Performance Certificate'

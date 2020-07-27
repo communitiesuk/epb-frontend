@@ -55,5 +55,9 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
       expect(response.body).to include("<label>Certificate number</label>")
       expect(response.body).to include("<b>1234-5678-1234-5678-1234</b>")
     end
+
+    it "shows the report contents title" do
+      expect(response.body).to include(">Report Contents</h3>")
+    end
   end
 end
