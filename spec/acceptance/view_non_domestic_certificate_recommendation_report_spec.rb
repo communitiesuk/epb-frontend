@@ -181,6 +181,10 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
       end
 
       describe "additional recommendations subsection" do
+        it "shows the subsection text" do
+          expect(response.body).to include("This table lists additional recommendations made by the assessor.")
+        end
+
         it "shows the additional recommendations caption" do
           expect(response.body).to include(
             "Additional recommendations",

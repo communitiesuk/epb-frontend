@@ -456,6 +456,7 @@ cy:
           three_to_seven_years_heading: 'Welsh: Changes that pay for themselves within 3 to 7 years'
           more_than_seven_years_heading: 'Welsh: Changes that pay for themselves in more than 7 years'
           additional_heading: 'Welsh: Additional recommendations'
+          additional_text: 'Welsh: This table lists additional recommendations made by the assessor.'
           recommendation_heading: 'Welsh: Recommendation'
           potential_impact_heading: 'Welsh: Potential impact'
 
