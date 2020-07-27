@@ -426,6 +426,12 @@ en:
     no_certificates: 'There are no certificates or reports matching that reference number.'
     list: '%{length} certificates and reports for %{reference_number}'
 
+  component:
+    print:
+      label: 'Print this %{type}'
+      noscript_text: 'To print this %{type}, press CMD/CTRL + P on your keyboard'
+      type: 'report'
+
   non_domestic_epc:
     top_heading: 'Non-domestic Energy Performance Certificate'
     energy_rating_section:

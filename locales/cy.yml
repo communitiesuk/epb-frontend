@@ -402,6 +402,11 @@ cy:
     no_certificates: 'Welsh: There are no certificates or reports matching that postcode.'
     list: 'Welsh: %{length} certificates and reports for %{postcode}'
 
+  component:
+    print:
+      label: 'Welsh: Print this %{type}'
+      noscript_text: 'Welsh: To print this %{type}, press CMD/CTRL + P on your keyboard'
+
   non_domestic_epc:
     top_heading: 'Welsh: Non-domestic Energy Performance Certificate'
     energy_rating_section:
