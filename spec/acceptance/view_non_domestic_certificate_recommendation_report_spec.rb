@@ -32,5 +32,11 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
     it "returns status 200" do
       expect(response.status).to eq 200
     end
+
+    it "shows the non-domestic energy performance certificate title" do
+      expect(response.body).to include(
+        '<h1 class="govuk-heading-xl">Non-domestic Energy Performance Certificate Recommendation Report</h1>',
+      )
+    end
   end
 end
