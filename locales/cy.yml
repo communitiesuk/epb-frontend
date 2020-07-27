@@ -447,7 +447,8 @@ cy:
         cta: 'Welsh: Energy Performance Certificate for this report'
         url: '#'
       recommendations:
-        title: 'Recommendations'
+        title: 'Welsh: Recommendations'
+        text: 'Welsh: The assessment found opportunities to improve the building’s energy efficiency.'
 
   domestic_epc:
     top_heading: 'Welsh: Energy Performance Certificate'

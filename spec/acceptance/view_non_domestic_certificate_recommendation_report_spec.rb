@@ -92,6 +92,12 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
           '<h2 class="govuk-heading-l">Recommendations</h2>',
         )
       end
+
+      it "shows the opportunities text" do
+        expect(response.body).to include(
+          '<p class="govuk-body">The assessment found opportunities to improve the building’s energy efficiency.</p>',
+        )
+      end
     end
   end
 end
