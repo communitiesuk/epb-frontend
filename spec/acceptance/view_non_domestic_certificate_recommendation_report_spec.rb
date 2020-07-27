@@ -110,6 +110,41 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
           '<p class="govuk-body">Each recommendation is marked as low, medium or high for the potential impact the change would have on reducing the building’s carbon emissions.</p>',
         )
       end
+
+      describe "three year changes subsection" do
+        it "shows the three year changes caption" do
+          expect(response.body).to include(
+            "Changes that pay for themselves within 3 years",
+          )
+        end
+
+        it "shows the Recommendation table heading" do
+          expect(response.body).to include(
+            '<th scope="col" class="govuk-table__header govuk-!-width-three-quarters">Recommendation</th>',
+          )
+        end
+
+        it "shows the Potential impact table heading" do
+          expect(response.body).to include(
+            '<th scope="col" class="govuk-table__header govuk-!-width-three-quarters">Potential impact</th>',
+          )
+        end
+
+        it "shows the short payback recommendations" do
+          expect(response.body).to include(
+            '<th scope="row" class="govuk-table__header govuk-!-font-weight-regular">Consider replacing T8 lamps with retrofit T5 conversion kit.</th>',
+          )
+          expect(response.body).to include(
+            '<td class="govuk-table__cell">HIGH</td>',
+          )
+          expect(response.body).to include(
+            '<th scope="row" class="govuk-table__header govuk-!-font-weight-regular">Introduce HF (high frequency) ballasts for fluorescent tubes: Reduced number of fittings required.</th>',
+          )
+          expect(response.body).to include(
+            '<td class="govuk-table__cell">LOW</td>',
+          )
+        end
+      end
     end
   end
 end

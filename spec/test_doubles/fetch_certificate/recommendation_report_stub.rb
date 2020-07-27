@@ -27,6 +27,36 @@ module FetchCertificate
           addressLine3: "",
           addressLine4: "",
           town: "London",
+          "nonDomCepcRr": {
+            "longPaybackRecommendation": [
+              {
+                "recommendation": "SOME RECOMMENDATION",
+                "carbon_impact": "HIGH",
+              },
+            ],
+            "otherPaybackRecommendation": [
+              {
+                "recommendation": "SOME RECOMMENDATION",
+                "carbon_impact": "HIGH",
+              },
+            ],
+            "shortPaybackRecommendation": [
+              {
+                "recommendation": "Consider replacing T8 lamps with retrofit T5 conversion kit.",
+                "carbon_impact": "HIGH",
+              },
+              {
+                "recommendation": "Introduce HF (high frequency) ballasts for fluorescent tubes: Reduced number of fittings required.",
+                "carbon_impact": "LOW",
+              },
+            ],
+            "mediumPaybackRecommendation": [
+              {
+                "recommendation": "SOME RECOMMENDATION",
+                "carbon_impact": "MEDIUM",
+              },
+            ],
+          },
         },
       }
 
