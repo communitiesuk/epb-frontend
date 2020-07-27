@@ -98,6 +98,12 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
           '<p class="govuk-body">The assessment found opportunities to improve the building’s energy efficiency.</p>',
         )
       end
+
+      it "shows the recommended improvements text" do
+        expect(response.body).to include(
+          '<p class="govuk-body">Recommended improvements are grouped by the estimated time it would take for the change to pay for itself. The assessor may also make additional recommendations.</p>',
+        )
+      end
     end
   end
 end
