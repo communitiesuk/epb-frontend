@@ -468,6 +468,9 @@ en:
       rating:
         title: 'Energy rating and EPC'
         current_energy_rating: 'This building’s current energy rating is %{band}.'
+        more_info: 'For more information, see the %{link}.'
+        cta: 'Energy Performance Certificate for this report'
+        url: '#'
 
   domestic_epc:
     top_heading: 'Energy Performance Certificate'

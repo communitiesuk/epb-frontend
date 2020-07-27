@@ -78,6 +78,12 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
           '<p class="govuk-body">This building’s current energy rating is B.</p>',
         )
       end
+
+      it "shows the link to certificate for more information" do
+        expect(response.body).to include(
+          'For more information, see the <a href="#">Energy Performance Certificate for this report</a>',
+        )
+      end
     end
   end
 end
