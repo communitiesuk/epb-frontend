@@ -104,6 +104,12 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
           '<p class="govuk-body">Recommended improvements are grouped by the estimated time it would take for the change to pay for itself. The assessor may also make additional recommendations.</p>',
         )
       end
+
+      it "shows the description text" do
+        expect(response.body).to include(
+          '<p class="govuk-body">Each recommendation is marked as low, medium or high for the potential impact the change would have on reducing the building’s carbon emissions.</p>',
+        )
+      end
     end
   end
 end

@@ -450,6 +450,7 @@ cy:
         title: 'Welsh: Recommendations'
         text: 'Welsh: The assessment found opportunities to improve the building’s energy efficiency.'
         recommended_improvements_text: 'Welsh: Recommended improvements are grouped by the estimated time it would take for the change to pay for itself. The assessor may also make additional recommendations.'
+        description: 'Welsh: Each recommendation is marked as low, medium or high for the potential impact the change would have on reducing the building’s carbon emissions.'
 
   domestic_epc:
     top_heading: 'Welsh: Energy Performance Certificate'
