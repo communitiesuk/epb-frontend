@@ -446,6 +446,8 @@ cy:
         more_info: 'Welsh: For more information, see the %{link}.'
         cta: 'Welsh: Energy Performance Certificate for this report'
         url: '#'
+      recommendations:
+        title: 'Recommendations'
 
   domestic_epc:
     top_heading: 'Welsh: Energy Performance Certificate'

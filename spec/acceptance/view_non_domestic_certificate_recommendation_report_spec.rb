@@ -85,5 +85,13 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
         )
       end
     end
+
+    describe "viewing the Recommendations section" do
+      it "shows the section heading" do
+        expect(response.body).to include(
+          '<h2 class="govuk-heading-l">Recommendations</h2>',
+        )
+      end
+    end
   end
 end
