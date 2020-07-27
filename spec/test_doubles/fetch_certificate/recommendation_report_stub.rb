@@ -30,7 +30,8 @@ module FetchCertificate
           "nonDomCepcRr": {
             "longPaybackRecommendation": [
               {
-                "recommendation": "Consider installing an air source heat pump.",
+                "recommendation":
+                  "Consider installing an air source heat pump.",
                 "carbon_impact": "HIGH",
               },
             ],
@@ -42,17 +43,20 @@ module FetchCertificate
             ],
             "shortPaybackRecommendation": [
               {
-                "recommendation": "Consider replacing T8 lamps with retrofit T5 conversion kit.",
+                "recommendation":
+                  "Consider replacing T8 lamps with retrofit T5 conversion kit.",
                 "carbon_impact": "HIGH",
               },
               {
-                "recommendation": "Introduce HF (high frequency) ballasts for fluorescent tubes: Reduced number of fittings required.",
+                "recommendation":
+                  "Introduce HF (high frequency) ballasts for fluorescent tubes: Reduced number of fittings required.",
                 "carbon_impact": "LOW",
               },
             ],
             "mediumPaybackRecommendation": [
               {
-                "recommendation": "Add optimum start/stop to the heating system.",
+                "recommendation":
+                  "Add optimum start/stop to the heating system.",
                 "carbon_impact": "MEDIUM",
               },
             ],
