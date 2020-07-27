@@ -1,3 +1,21 @@
 <div class="govuk-body epc-blue-bottom">
   <h2 class="govuk-heading-l"><%= t('non_domestic_epc.rr.property_details.title') %></h2>
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= t('non_domestic_epc.rr.property_details.issued_on') %></dt>
+      <dd class="govuk-summary-list__value"><%= assessment[:dateOfAssessment] %></dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= t('non_domestic_epc.rr.property_details.floor_area') %></dt>
+      <dd class="govuk-summary-list__value"><%= assessment[:totalUsefulFloorArea].to_s.chomp('.0') %> <%= t('unit.square_metres') %></dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= t('non_domestic_epc.rr.property_details.environment') %></dt>
+      <dd class="govuk-summary-list__value"><%= assessment[:buildingEnvironment] %></dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= t('non_domestic_epc.rr.property_details.tool') %></dt>
+      <dd class="govuk-summary-list__value"><%= assessment[:calculationTool] %></dd>
+    </div>
+  </dl>
 </div>

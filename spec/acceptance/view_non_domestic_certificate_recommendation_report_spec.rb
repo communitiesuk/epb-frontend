@@ -206,6 +206,26 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
       it "shows the section heading" do
         expect(response.body).to include("Building and report details")
       end
+
+      it "shows the date of assessment" do
+        expect(response.body).to include('<dt class="govuk-summary-list__key govuk-!-width-one-half">Report issued on</dt>')
+        expect(response.body).to include('<dd class="govuk-summary-list__value">02 January 2020</dd>')
+      end
+
+      it "shows the total useful floor area" do
+        expect(response.body).to include('<dt class="govuk-summary-list__key govuk-!-width-one-half">Total useful floor area</dt>')
+        expect(response.body).to include('<dd class="govuk-summary-list__value">935 square metres</dd>')
+      end
+
+      it "shows the building environment" do
+        expect(response.body).to include('<dt class="govuk-summary-list__key govuk-!-width-one-half">Building environment</dt>')
+        expect(response.body).to include('<dd class="govuk-summary-list__value">Heating and Natural Ventilation</dd>')
+      end
+
+      it "shows the calculation tool" do
+        expect(response.body).to include('<dt class="govuk-summary-list__key govuk-!-width-one-half">Calculation tool</dt>')
+        expect(response.body).to include('<dd class="govuk-summary-list__value">CLG, iSBEM, v5.4.b, SBEM, v5.4.b.0</dd>')
+      end
     end
   end
 end

@@ -432,6 +432,9 @@ en:
       noscript_text: 'To print this %{type}, press CMD/CTRL + P on your keyboard'
       type: 'report'
 
+  unit:
+    square_metres: 'square metres'
+
   non_domestic_epc:
     top_heading: 'Non-domestic Energy Performance Certificate'
     energy_rating_section:
@@ -486,6 +489,10 @@ en:
           potential_impact_heading: 'Potential impact'
       property_details:
         title: 'Building and report details'
+        issued_on: 'Report issued on'
+        floor_area: 'Total useful floor area'
+        environment: 'Building environment'
+        tool: 'Calculation tool'
 
   domestic_epc:
     top_heading: 'Energy Performance Certificate'
