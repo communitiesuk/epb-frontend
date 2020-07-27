@@ -38,5 +38,22 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
         '<h1 class="govuk-heading-xl">Non-domestic Energy Performance Certificate Recommendation Report</h1>',
       )
     end
+
+    it "shows the address" do
+      expect(response.body).to include("Flat 33")
+      expect(response.body).to include("2 Marsham Street")
+      expect(response.body).to include("London")
+      expect(response.body).to include("SW1B 2BB")
+    end
+
+    it "shows the date of expiry" do
+      expect(response.body).to include("<label>Valid until</label>")
+      expect(response.body).to include("<b>5 January 2030</b>")
+    end
+
+    it "shows the certificate number" do
+      expect(response.body).to include("<label>Certificate number</label>")
+      expect(response.body).to include("<b>1234-5678-1234-5678-1234</b>")
+    end
   end
 end

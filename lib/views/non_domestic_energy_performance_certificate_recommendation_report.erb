@@ -11,4 +11,11 @@
   <div class="govuk-grid-column-full">
     <h1 class="govuk-heading-xl"><%= t('non_domestic_epc.rr.top_heading') %></h1>
   </div>
+  <div class="govuk-grid-column-two-thirds">
+    <hr class="epc-light-top" />
+      <%== erb :non_domestic_energy_performance_certificate_recommendation_report__summary, locals: {
+            assessment: assessment,
+          }
+      %>
+  </div>
 </div>

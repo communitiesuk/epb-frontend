@@ -1,0 +1,21 @@
+<div class="govuk-body epc-blue-bottom">
+  <div class="epc-box govuk-!-margin-bottom-5">
+    <div class="epc-address govuk-body">
+      <%== [assessment[:addressLine1], assessment[:addressLine2], assessment[:addressLine3], assessment[:addressLine4]].compact.reject(&:empty?).join('<br />') %><br>
+      <%= assessment[:town] %><br />
+      <%= assessment[:postcode] %>
+    </div>
+    <div class="govuk-body epc-extra-box">
+      <label><%=
+        t('non_domestic_epc.rr.summary.valid_until')
+      %></label>
+      <b><%= Date.parse(assessment[:dateOfExpiry]).strftime('%-d %B %Y') %></b>
+    </div>
+    <div class="govuk-body epc-extra-box">
+      <label><%=
+        t('non_domestic_epc.rr.summary.certificate_id')
+      %></label>
+      <b><%= assessment[:assessmentId] %></b>
+    </div>
+  </div>
+</div>
