@@ -69,6 +69,9 @@ FetchCertificate::Stub.fetch(
 FetchCertificate::NonDomesticStub.fetch assessment_id:
                                           "1234-5678-9101-1123-1234"
 
+FetchCertificate::RecommendationReportStub.fetch assessment_id:
+                                          "0000-0000-0000-0000-0007"
+
 ENV["EPB_AUTH_CLIENT_ID"] = "test.id"
 ENV["EPB_AUTH_CLIENT_SECRET"] = "test.client.secret"
 ENV["EPB_AUTH_SERVER"] = "http://test-auth-server.gov.uk"
