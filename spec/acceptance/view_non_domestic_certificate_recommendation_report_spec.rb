@@ -26,7 +26,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
   context "when the assessment exists" do
     before do
       FetchCertificate::RecommendationReportStub.fetch assessment_id:
-                                                "1234-5678-1234-5678-1234"
+                                                         "1234-5678-1234-5678-1234"
     end
 
     it "returns status 200" do
