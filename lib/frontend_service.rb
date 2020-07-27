@@ -453,6 +453,11 @@ class FrontendService < Sinatra::Base
         :non_domestic_energy_performance_certificate,
         assessment: assessment[:data],
       )
+    elsif assessment[:data][:typeOfAssessment] == "CEPC-RR"
+      show(
+        :non_domestic_energy_performance_certificate_recommendation_report,
+        assessment: assessment[:data],
+      )
     else
       show(
         :domestic_energy_performance_certificate,
