@@ -179,6 +179,23 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
           )
         end
       end
+
+      describe "additional recommendations subsection" do
+        it "shows the additional recommendations caption" do
+          expect(response.body).to include(
+            "Additional recommendations",
+          )
+        end
+
+        it "shows the other payback recommendations" do
+          expect(response.body).to include(
+            '<th scope="row" class="govuk-table__header govuk-!-font-weight-regular">Consider installing PV.</th>',
+          )
+          expect(response.body).to include(
+            '<td class="govuk-table__cell">HIGH</td>',
+          )
+        end
+      end
     end
   end
 end

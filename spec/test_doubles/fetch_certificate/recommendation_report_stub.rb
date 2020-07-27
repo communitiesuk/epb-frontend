@@ -36,7 +36,7 @@ module FetchCertificate
             ],
             "otherPaybackRecommendation": [
               {
-                "recommendation": "SOME RECOMMENDATION",
+                "recommendation": "Consider installing PV.",
                 "carbon_impact": "HIGH",
               },
             ],
