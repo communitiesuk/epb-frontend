@@ -201,5 +201,11 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
         end
       end
     end
+
+    describe "viewing the Building and report details section" do
+      it "shows the section heading" do
+        expect(response.body).to include("Building and report details")
+      end
+    end
   end
 end

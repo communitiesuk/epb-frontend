@@ -459,6 +459,8 @@ cy:
           additional_text: 'Welsh: This table lists additional recommendations made by the assessor.'
           recommendation_heading: 'Welsh: Recommendation'
           potential_impact_heading: 'Welsh: Potential impact'
+      property_details:
+        title: 'Welsh: Building and report details'
 
   domestic_epc:
     top_heading: 'Welsh: Energy Performance Certificate'

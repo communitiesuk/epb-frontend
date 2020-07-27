@@ -484,6 +484,8 @@ en:
           additional_text: 'This table lists additional recommendations made by the assessor.'
           recommendation_heading: 'Recommendation'
           potential_impact_heading: 'Potential impact'
+      property_details:
+        title: 'Building and report details'
 
   domestic_epc:
     top_heading: 'Energy Performance Certificate'
