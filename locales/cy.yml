@@ -442,6 +442,7 @@ cy:
         title: 'Welsh: Report Contents'
       rating:
         title: 'Welsh: Energy rating and EPC'
+        current_energy_rating: 'Welsh: This building’s current energy rating is %{band}.'
 
   domestic_epc:
     top_heading: 'Welsh: Energy Performance Certificate'

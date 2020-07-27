@@ -70,6 +70,10 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
       it "shows the section heading" do
         expect(response.body).to include("Energy rating and EPC")
       end
+
+      it "shows the current energy rating text" do
+        expect(response.body).to include('<p class="govuk-body">This building’s current energy rating is B.</p>')
+      end
     end
   end
 end
