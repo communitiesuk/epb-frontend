@@ -111,22 +111,22 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
         )
       end
 
+      it "shows the Recommendation table heading" do
+        expect(response.body).to include(
+          '<th scope="col" class="govuk-table__header govuk-!-width-three-quarters">Recommendation</th>',
+        )
+      end
+
+      it "shows the Potential impact table heading" do
+        expect(response.body).to include(
+          '<th scope="col" class="govuk-table__header govuk-!-width-three-quarters">Potential impact</th>',
+        )
+      end
+
       describe "three year changes subsection" do
         it "shows the three year changes caption" do
           expect(response.body).to include(
             "Changes that pay for themselves within 3 years",
-          )
-        end
-
-        it "shows the Recommendation table heading" do
-          expect(response.body).to include(
-            '<th scope="col" class="govuk-table__header govuk-!-width-three-quarters">Recommendation</th>',
-          )
-        end
-
-        it "shows the Potential impact table heading" do
-          expect(response.body).to include(
-            '<th scope="col" class="govuk-table__header govuk-!-width-three-quarters">Potential impact</th>',
           )
         end
 
@@ -142,6 +142,23 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
           )
           expect(response.body).to include(
             '<td class="govuk-table__cell">LOW</td>',
+          )
+        end
+      end
+
+      describe "three to seven year changes subsection" do
+        it "shows the three to seven year changes caption" do
+          expect(response.body).to include(
+            "Changes that pay for themselves within 3 to 7 years",
+          )
+        end
+
+        it "shows the short payback recommendations" do
+          expect(response.body).to include(
+            '<th scope="row" class="govuk-table__header govuk-!-font-weight-regular">Add optimum start/stop to the heating system.</th>',
+          )
+          expect(response.body).to include(
+            '<td class="govuk-table__cell">MEDIUM</td>',
           )
         end
       end

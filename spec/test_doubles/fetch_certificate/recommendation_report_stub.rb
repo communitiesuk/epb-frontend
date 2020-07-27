@@ -52,7 +52,7 @@ module FetchCertificate
             ],
             "mediumPaybackRecommendation": [
               {
-                "recommendation": "SOME RECOMMENDATION",
+                "recommendation": "Add optimum start/stop to the heating system.",
                 "carbon_impact": "MEDIUM",
               },
             ],

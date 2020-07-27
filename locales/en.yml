@@ -478,6 +478,7 @@ en:
         description: 'Each recommendation is marked as low, medium or high for the potential impact the change would have on reducing the building’s carbon emissions.'
         table:
           three_years_heading: 'Changes that pay for themselves within 3 years'
+          three_to_seven_years_heading: 'Changes that pay for themselves within 3 to 7 years'
           recommendation_heading: 'Recommendation'
           potential_impact_heading: 'Potential impact'
 
