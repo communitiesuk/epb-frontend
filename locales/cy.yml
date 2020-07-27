@@ -440,6 +440,8 @@ cy:
         certificate_id: 'Welsh: Certificate number'
       contents:
         title: 'Welsh: Report Contents'
+      rating:
+        title: 'Welsh: Energy rating and EPC'
 
   domestic_epc:
     top_heading: 'Welsh: Energy Performance Certificate'

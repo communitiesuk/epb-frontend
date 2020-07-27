@@ -22,4 +22,10 @@
     <hr class="epc-blue-top" />
     <%== erb :component__contents, locals: { title: t("non_domestic_epc.rr.contents.title") } %>
   </div>
+  <div class="govuk-grid-column-two-thirds">
+    <%== erb :non_domestic_energy_performance_certificate_recommendation_report__rating, locals: {
+      assessment: assessment,
+    }
+    %>
+  </div>
 </div>

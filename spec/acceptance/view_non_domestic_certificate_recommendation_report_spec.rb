@@ -65,5 +65,11 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
         expect(response.body).to include(">Print this report</a>")
       end
     end
+
+    describe "viewing the Energy rating and EPC section" do
+      it "shows the section heading" do
+        expect(response.body).to include("Energy rating and EPC")
+      end
+    end
   end
 end
