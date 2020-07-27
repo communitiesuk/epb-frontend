@@ -30,7 +30,7 @@ module FetchCertificate
           "nonDomCepcRr": {
             "longPaybackRecommendation": [
               {
-                "recommendation": "SOME RECOMMENDATION",
+                "recommendation": "Consider installing an air source heat pump.",
                 "carbon_impact": "HIGH",
               },
             ],

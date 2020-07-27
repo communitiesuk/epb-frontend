@@ -43,4 +43,21 @@
     <% end %>
     </tbody>
   </table>
+  <table class="govuk-table">
+    <caption class="govuk-table__caption"><%= t('non_domestic_epc.rr.recommendations.table.more_than_seven_years_heading') %></caption>
+    <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header govuk-!-width-three-quarters"><%= t('non_domestic_epc.rr.recommendations.table.recommendation_heading') %></th>
+      <th scope="col" class="govuk-table__header govuk-!-width-three-quarters"><%= t('non_domestic_epc.rr.recommendations.table.potential_impact_heading') %></th>
+    </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+    <% assessment[:nonDomCepcRr][:longPaybackRecommendation].each do |recommendation| %>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><%= recommendation[:recommendation] %></th>
+        <td class="govuk-table__cell"><%= recommendation[:carbon_impact] %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
 </div>

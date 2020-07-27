@@ -153,12 +153,29 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
           )
         end
 
-        it "shows the short payback recommendations" do
+        it "shows the medium payback recommendations" do
           expect(response.body).to include(
             '<th scope="row" class="govuk-table__header govuk-!-font-weight-regular">Add optimum start/stop to the heating system.</th>',
           )
           expect(response.body).to include(
             '<td class="govuk-table__cell">MEDIUM</td>',
+          )
+        end
+      end
+
+      describe "more than seven year changes subsection" do
+        it "shows the more than seven year changes caption" do
+          expect(response.body).to include(
+            "Changes that pay for themselves in more than 7 years",
+          )
+        end
+
+        it "shows the long payback recommendations" do
+          expect(response.body).to include(
+            '<th scope="row" class="govuk-table__header govuk-!-font-weight-regular">Consider installing an air source heat pump.</th>',
+          )
+          expect(response.body).to include(
+            '<td class="govuk-table__cell">HIGH</td>',
           )
         end
       end

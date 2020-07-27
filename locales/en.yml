@@ -479,6 +479,7 @@ en:
         table:
           three_years_heading: 'Changes that pay for themselves within 3 years'
           three_to_seven_years_heading: 'Changes that pay for themselves within 3 to 7 years'
+          more_than_seven_years_heading: 'Changes that pay for themselves in more than 7 years'
           recommendation_heading: 'Recommendation'
           potential_impact_heading: 'Potential impact'
 
