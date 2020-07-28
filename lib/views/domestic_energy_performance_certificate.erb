@@ -227,21 +227,21 @@
       <h3 class="govuk-heading-m govuk-!-margin-top-9"><%= t('domestic_epc.sections.information.scheme.title') %></h3>
       <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row" id="Accreditation_scheme">
-          <dt class="govuk-summary-list__key govuk-!-width-one-half govuk-!-font-weight-regular"><%= t('domestic_epc.sections.information.scheme.list.name') %></dt>
-          <dd class="govuk-summary-list__value govuk-!-font-weight-bold"><%= assessment[:assessor][:registeredBy][:name] %></dd>
+          <dt class="govuk-summary-list__key govuk-!-width-one-half govuk-!-font-weight-bold"><%= t('domestic_epc.sections.information.scheme.list.name') %></dt>
+          <dd class="govuk-summary-list__value govuk-!-font-weight-regular"><%= assessment[:assessor][:registeredBy][:name] %></dd>
         </div>
         <div class="govuk-summary-list__row" id="accreditation_id">
-          <dt class="govuk-summary-list__key govuk-!-width-one-half govuk-!-font-weight-regular"><%= t('domestic_epc.sections.information.scheme.list.scheme_assessor_id') %></dt>
-          <dd class="govuk-summary-list__value govuk-!-font-weight-bold"><%= assessment[:assessor][:schemeAssessorId] %></dd>
+          <dt class="govuk-summary-list__key govuk-!-width-one-half govuk-!-font-weight-bold"><%= t('domestic_epc.sections.information.scheme.list.scheme_assessor_id') %></dt>
+          <dd class="govuk-summary-list__value govuk-!-font-weight-regular"><%= assessment[:assessor][:schemeAssessorId] %></dd>
         </div>
         <% unless scheme_details(assessment[:assessor], 'phone').include?('missing')%>
           <div class="govuk-summary-list__row" id="accreditation_id">
-            <dt class="govuk-summary-list__key govuk-!-width-one-half govuk-!-font-weight-regular"><%= t('domestic_epc.sections.information.assessor.list.telephone') %></dt>
-            <dd class="govuk-summary-list__value govuk-!-font-weight-bold"><%= scheme_details(assessment[:assessor], "phone") %></dd>
+            <dt class="govuk-summary-list__key govuk-!-width-one-half govuk-!-font-weight-bold"><%= t('domestic_epc.sections.information.assessor.list.telephone') %></dt>
+            <dd class="govuk-summary-list__value govuk-!-font-weight-regular"><%= scheme_details(assessment[:assessor], "phone") %></dd>
           </div>
           <div class="govuk-summary-list__row" id="accreditation_id">
-            <dt class="govuk-summary-list__key govuk-!-width-one-half govuk-!-font-weight-regular"><%= t('domestic_epc.sections.information.assessor.list.email') %></dt>
-            <dd class="govuk-summary-list__value govuk-!-font-weight-bold">
+            <dt class="govuk-summary-list__key govuk-!-width-one-half govuk-!-font-weight-bold"><%= t('domestic_epc.sections.information.assessor.list.email') %></dt>
+            <dd class="govuk-summary-list__value govuk-!-font-weight-regular">
               <a href="mailto:<%= scheme_details(assessment[:assessor], 'email') %>">
                 <%= scheme_details(assessment[:assessor], 'email') %>
               </a>
