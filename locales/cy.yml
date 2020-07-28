@@ -473,6 +473,7 @@ cy:
         name: 'Welsh: Assessor’s name'
         employer_name: 'Welsh: Employer’s name'
         employer_address: 'Welsh: Employer’s address'
+        number: 'Welsh: Assessor number'
 
   domestic_epc:
     top_heading: 'Welsh: Energy Performance Certificate'

@@ -275,6 +275,15 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
           '<dd class="govuk-summary-list__value">Lloyds House, 18 Lloyd Street, Manchester, M2 5WA</dd>',
         )
       end
+
+      it "shows the assessor number" do
+        expect(response.body).to include(
+          '<dt class="govuk-summary-list__key govuk-!-width-one-half">Assessor number</dt>',
+        )
+        expect(response.body).to include(
+          '<dd class="govuk-summary-list__value">TEST000000</dd>',
+        )
+      end
     end
   end
 end
