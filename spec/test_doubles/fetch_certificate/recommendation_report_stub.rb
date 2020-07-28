@@ -34,10 +34,7 @@ module FetchCertificate
             "firstName": "John",
             "lastName": "Howard",
             "middleNames": "T",
-            "registeredBy": {
-              "name": "ECMK",
-              "schemeId": 2,
-            },
+            "registeredBy": { "name": "ECMK", "schemeId": 2 },
             "schemeAssessorId": "ECMK201470",
             "searchResultsComparisonPostcode": "LU3 3UD",
             "address": {},
