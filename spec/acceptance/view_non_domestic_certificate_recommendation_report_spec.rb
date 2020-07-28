@@ -68,11 +68,21 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
       end
 
       it "shows the section links" do
-        expect(response.body).to include('<p class="govuk-body"><a href="#rating">Energy rating and EPC</a></p>')
-        expect(response.body).to include('<p class="govuk-body"><a href="#recommendations">Recommendations</a></p>')
-        expect(response.body).to include('<p class="govuk-body"><a href="#property_details">Building and report details</a></p>')
-        expect(response.body).to include('<p class="govuk-body"><a href="#assessor_details">Assessor’s details</a></p>')
-        expect(response.body).to include('<p class="govuk-body"><a href="#other_reports">Other reports for this property</a></p>')
+        expect(response.body).to include(
+          '<p class="govuk-body"><a href="#rating">Energy rating and EPC</a></p>',
+        )
+        expect(response.body).to include(
+          '<p class="govuk-body"><a href="#recommendations">Recommendations</a></p>',
+        )
+        expect(response.body).to include(
+          '<p class="govuk-body"><a href="#property_details">Building and report details</a></p>',
+        )
+        expect(response.body).to include(
+          '<p class="govuk-body"><a href="#assessor_details">Assessor’s details</a></p>',
+        )
+        expect(response.body).to include(
+          '<p class="govuk-body"><a href="#other_reports">Other reports for this property</a></p>',
+        )
       end
 
       it "can navigate to each section" do
@@ -353,7 +363,9 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
         expect(response.body).to include(
           '<dd class="govuk-summary-list__value govuk-!-width-one-half">Commercial energy performance certificate recommendation report<br />',
         )
-        expect(response.body).to include('<b class="expired-text">4 May 2010 (Expired)</b>')
+        expect(response.body).to include(
+          '<b class="expired-text">4 May 2010 (Expired)</b>',
+        )
       end
     end
   end
