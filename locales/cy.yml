@@ -690,6 +690,19 @@ cy:
         assessment_type: 'Welsh: Report type'
         expiry_date: 'Welsh: Expiry date'
 
+  assessment_types:
+    CEPC: 'Welsh: Commercial energy performance certificate'
+    CEPC-RR: 'Welsh: Commercial energy performance certificate recommendation report'
+    RdSAP: 'Welsh: Energy performance certificate'
+    SAP: 'Welsh: Energy performance certificate'
+    AC-REPORT: 'Welsh: Air conditioning inspection report'
+    AC-CERT: 'Welsh: Air conditioning inspection certificate'
+    DEC: 'Welsh: Display energy certificate'
+    DEC-RR: 'Welsh: Display energy certificate recommendation report'
+
+  expired: 'Welsh: Expired'
+  valid_until: 'Welsh: Valid until'
+
   energy_performance_rating:
     '0':
       energy_performance: 'Welsh: '

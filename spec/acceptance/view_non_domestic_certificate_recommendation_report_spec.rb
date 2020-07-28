@@ -317,6 +317,18 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
           '<p class="govuk-body">If you are aware of previous reports for this property and they are not listed here, please contact the Help Desk at 01632 164 6672.</p>',
         )
       end
+
+      it "shows the related assessments" do
+        expect(response.body).to include(
+          '<a href="/energy-performance-certificate/8411-8264-4325-3608-3503">8411-8264-4325-3608-3503</a>',
+        )
+        expect(response.body).to include(
+          '<dd class="govuk-summary-list__value govuk-!-width-one-half">Energy performance certificate<br />',
+        )
+        expect(response.body).to include(
+          "<b>Valid until 4 May 2030</b>",
+        )
+      end
     end
   end
 end

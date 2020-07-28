@@ -3,4 +3,22 @@
   <p class="govuk-body"><%=
     t('non_domestic_epc.rr.other_reports.reminder', contact_centre_number: t('contact.help_desk_number'))
   %></p>
+  <dl class="govuk-summary-list">
+    <% assessment[:relatedAssessments].each do |related_assessment| %>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half">
+          <a href="<%=localised_url('/energy-performance-certificate/' + related_assessment[:assessmentId])%>"><%=related_assessment[:assessmentId]%></a>
+        </dt>
+        <dd class="govuk-summary-list__value govuk-!-width-one-half"><%=
+          t('assessment_types.' + related_assessment[:assessmentType])
+        %><br />
+          <% if related_assessment[:assessmentStatus] == "EXPIRED" %>
+            <b class="expired-text"><%= Date.parse(related_assessment[:assessmentExpiryDate]).strftime('%-d %B %Y')%> (<%= t('expired') %>)</b>
+          <% else %>
+            <b><%= t('valid_until') %> <%= Date.parse(related_assessment[:assessmentExpiryDate]).strftime('%-d %B %Y')%></b>
+          <% end %>
+        </dd>
+      </div>
+    <% end %>
+  </dl>
 </div>

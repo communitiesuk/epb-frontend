@@ -51,6 +51,26 @@ module FetchCertificate
               "companyName": "Viridian Consulting Engineers Ltd",
             },
           },
+          relatedAssessments: [
+            {
+              "assessmentId": "8411-8264-4325-3608-3503",
+              "assessmentStatus": "ENTERED",
+              "assessmentType": "SAP",
+              "assessmentExpiryDate": "2031-05-04",
+            },
+            {
+              "assessmentId": "8411-8264-4322-3608-3503",
+              "assessmentStatus": "ENTERED",
+              "assessmentType": "CEPC",
+              "assessmentExpiryDate": "2030-05-04",
+            },
+            {
+              "assessmentId": "3411-8465-4422-3628-3503",
+              "assessmentStatus": "EXPIRED",
+              "assessmentType": "CEPC-RR",
+              "assessmentExpiryDate": "2010-05-04",
+            },
+          ],
           "nonDomCepcRr": {
             "longPaybackRecommendation": [
               {
