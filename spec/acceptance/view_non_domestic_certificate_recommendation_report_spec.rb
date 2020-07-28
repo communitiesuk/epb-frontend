@@ -266,6 +266,15 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
           '<dd class="govuk-summary-list__value">Viridian Consulting Engineers Ltd</dd>',
         )
       end
+
+      it "shows the address of the employer" do
+        expect(response.body).to include(
+          '<dt class="govuk-summary-list__key govuk-!-width-one-half">Employer’s address</dt>',
+        )
+        expect(response.body).to include(
+          '<dd class="govuk-summary-list__value">Lloyds House, 18 Lloyd Street, Manchester, M2 5WA</dd>',
+        )
+      end
     end
   end
 end

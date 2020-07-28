@@ -17,5 +17,19 @@
         assessment[:assessor][:companyDetails][:companyName]
       %></dd>
     </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
+        t('non_domestic_epc.rr.assessor_details.employer_address')
+      %></dt>
+      <dd class="govuk-summary-list__value"><%=
+        [
+          company[:companyAddressLine1],
+          company[:companyAddressLine2],
+          company[:companyAddressLine3],
+          company[:companyTown],
+          company[:companyPostcode]
+        ].compact.reject(&:empty?).join(', ')
+      %></dd>
+    </div>
   </dl>
 </div>
