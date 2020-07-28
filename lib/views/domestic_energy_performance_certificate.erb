@@ -252,34 +252,34 @@
       <h3 class="govuk-heading-m govuk-!-margin-top-9"><%= t('domestic_epc.sections.information.certificate.title') %></h3>
       <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key govuk-!-width-one-half govuk-!-font-weight-regular">
+          <dt class="govuk-summary-list__key govuk-!-width-one-half govuk-!-font-weight-bold">
             <%= t('domestic_epc.sections.information.certificate.list.disclosure') %>
           </dt>
-          <dd class="govuk-summary-list__value govuk-!-font-weight-bold">
+          <dd class="govuk-summary-list__value govuk-!-font-weight-regular">
             <%= party_disclosure(assessment[:relatedPartyDisclosureNumber], assessment[:relatedPartyDisclosureText]) %>
           </dd>
         </div>
         <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key govuk-!-width-one-half govuk-!-font-weight-regular">
+          <dt class="govuk-summary-list__key govuk-!-width-one-half govuk-!-font-weight-bold">
             <%= t('domestic_epc.sections.information.certificate.list.date_of_assessment') %>
           </dt>
-          <dd class="govuk-summary-list__value govuk-!-font-weight-bold">
+          <dd class="govuk-summary-list__value govuk-!-font-weight-regular">
             <%= assessment[:dateOfAssessment] %>
           </dd>
         </div>
         <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key govuk-!-width-one-half govuk-!-font-weight-regular">
+          <dt class="govuk-summary-list__key govuk-!-width-one-half govuk-!-font-weight-bold">
             <%= t('domestic_epc.sections.information.certificate.list.date_of_certificate') %>
           </dt>
-          <dd class="govuk-summary-list__value govuk-!-font-weight-bold">
+          <dd class="govuk-summary-list__value govuk-!-font-weight-regular">
             <%= assessment[:dateRegistered] %>
           </dd>
         </div>
         <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key govuk-!-width-one-half govuk-!-font-weight-regular">
+          <dt class="govuk-summary-list__key govuk-!-width-one-half govuk-!-font-weight-bold">
             <%= t('domestic_epc.sections.information.certificate.list.type_of_assessment') %>
           </dt>
-          <dd class="govuk-summary-list__value govuk-!-font-weight-bold">
+          <dd class="govuk-summary-list__value govuk-!-font-weight-regular">
             <details class="govuk-details" data-module="govuk-details">
               <summary class="govuk-details__summary">
                   <span class="govuk-details__summary-text"><%= assessment[:typeOfAssessment] %></span>
