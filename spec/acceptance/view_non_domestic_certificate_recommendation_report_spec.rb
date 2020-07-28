@@ -325,9 +325,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
         expect(response.body).to include(
           '<dd class="govuk-summary-list__value govuk-!-width-one-half">Energy performance certificate<br />',
         )
-        expect(response.body).to include(
-          "<b>Valid until 4 May 2030</b>",
-        )
+        expect(response.body).to include("<b>Valid until 4 May 2030</b>")
       end
     end
   end

@@ -144,9 +144,9 @@ describe Gateway::CertificatesGateway do
               "repaidDate": "2025-03-29",
             },
             {
-                sequence: 1,
-                measureType: "Double glazing",
-                product: "Not applicable",
+              sequence: 1,
+              measureType: "Double glazing",
+              product: "Not applicable",
             },
           ],
           "charges": [
@@ -157,10 +157,10 @@ describe Gateway::CertificatesGateway do
               "dailyCharge": "0.33",
             },
             {
-                sequence: 1,
-                startDate: "2020-03-29",
-                endDate: "2030-03-29",
-                dailyCharge: "0.01",
+              sequence: 1,
+              startDate: "2020-03-29",
+              endDate: "2030-03-29",
+              dailyCharge: "0.01",
             },
           ],
           "savings": [
