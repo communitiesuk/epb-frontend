@@ -311,6 +311,12 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
       it "shows the section heading" do
         expect(response.body).to include("Other reports for this property")
       end
+
+      it "shows the non-listed assessments reminder" do
+        expect(response.body).to include(
+          '<p class="govuk-body">If you are aware of previous reports for this property and they are not listed here, please contact the Help Desk at 01632 164 6672.</p>',
+        )
+      end
     end
   end
 end

@@ -34,6 +34,9 @@ en:
       cta: 'Find a certificate'
     caution: 'This page is intended for Private Beta use, and will not be a part of the public service'
 
+  contact:
+    help_desk_number: '01632 164 6672'
+
   find_an_assessor:
     head:
       title: 'Energy performance of buildings register - Find an energy assessor for a residential property'
@@ -505,6 +508,7 @@ en:
         declaration_text: 'The assessor declared they have no personal or business connection with the property’s owner or anyone who may have an interest in the property.'
       other_reports:
         title: 'Other reports for this property'
+        reminder: 'If you are aware of previous reports for this property and they are not listed here, please contact the Help Desk at %{contact_centre_number}.'
 
   domestic_epc:
     top_heading: 'Energy Performance Certificate'
