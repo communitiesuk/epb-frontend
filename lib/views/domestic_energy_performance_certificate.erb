@@ -208,19 +208,19 @@
       <h3 class="govuk-heading-m"><%= t('domestic_epc.sections.information.assessor.title') %></h3>
       <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row" id="name">
-          <dt class="govuk-summary-list__key govuk-!-width-one-half govuk-!-font-weight-regular"><%= t('domestic_epc.sections.information.assessor.list.name') %></dt>
-          <dd class="govuk-summary-list__value govuk-!-font-weight-bold"><%= assessment[:assessor][:firstName] %> <%= assessment[:assessor][:lastName] %></dd>
+          <dt class="govuk-summary-list__key govuk-!-width-one-half govuk-!-font-weight-bold"><%= t('domestic_epc.sections.information.assessor.list.name') %></dt>
+          <dd class="govuk-summary-list__value govuk-!-font-weight-regular"><%= assessment[:assessor][:firstName] %> <%= assessment[:assessor][:lastName] %></dd>
         </div>
         <% if assessment[:assessor][:contactDetails].key?(:telephoneNumber) && !assessment[:assessor][:contactDetails][:telephoneNumber].empty? %>
           <div class="govuk-summary-list__row" id="phone">
-            <dt class="govuk-summary-list__key govuk-!-width-one-half govuk-!-font-weight-regular"><%= t('domestic_epc.sections.information.assessor.list.telephone') %></dt>
-            <dd class="govuk-summary-list__value govuk-!-font-weight-bold"><%= assessment[:assessor][:contactDetails][:telephoneNumber] %></dd>
+            <dt class="govuk-summary-list__key govuk-!-width-one-half govuk-!-font-weight-bold"><%= t('domestic_epc.sections.information.assessor.list.telephone') %></dt>
+            <dd class="govuk-summary-list__value govuk-!-font-weight-regular"><%= assessment[:assessor][:contactDetails][:telephoneNumber] %></dd>
           </div>
         <% end %>
         <% if assessment[:assessor][:contactDetails].key?(:email) && !assessment[:assessor][:contactDetails][:email].empty? %>
           <div class="govuk-summary-list__row" id="email">
-            <dt class="govuk-summary-list__key govuk-!-width-one-half govuk-!-font-weight-regular"><%= t('domestic_epc.sections.information.assessor.list.email') %></dt>
-            <dd class="govuk-summary-list__value govuk-!-font-weight-bold"><a href="mailto:<%= assessment[:assessor][:contactDetails][:email] %>"><%= assessment[:assessor][:contactDetails][:email] %></a></dd>
+            <dt class="govuk-summary-list__key govuk-!-width-one-half govuk-!-font-weight-bold"><%= t('domestic_epc.sections.information.assessor.list.email') %></dt>
+            <dd class="govuk-summary-list__value govuk-!-font-weight-regular"><a href="mailto:<%= assessment[:assessor][:contactDetails][:email] %>"><%= assessment[:assessor][:contactDetails][:email] %></a></dd>
           </div>
         <% end %>
       </dl>
