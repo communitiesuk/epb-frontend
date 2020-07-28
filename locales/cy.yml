@@ -486,7 +486,7 @@ cy:
         reminder: 'Welsh: If you are aware of previous reports for this property and they are not listed here, please contact the Help Desk at %{contact_centre_number}.'
 
   domestic_epc:
-    top_heading: 'Welsh: Energy Performance Certificate'
+    top_heading: 'Welsh: Energy Performance Certificate (EPC)'
     summary:
       date_of_expiry: 'Welsh: Valid until %{date_of_expiry}'
       certificate_id: 'Welsh: Certificate Number'

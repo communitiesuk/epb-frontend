@@ -511,7 +511,7 @@ en:
         reminder: 'If you are aware of previous reports for this property and they are not listed here, please contact the Help Desk at %{contact_centre_number}.'
 
   domestic_epc:
-    top_heading: 'Energy Performance Certificate'
+    top_heading: 'Energy Performance Certificate (EPC)'
     summary:
       date_of_expiry: 'Valid until %{date_of_expiry}'
       certificate_id: 'Certificate Number'
