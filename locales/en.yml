@@ -500,6 +500,9 @@ en:
         employer_address: 'Employer’s address'
         number: 'Assessor number'
         scheme: 'Accreditation scheme'
+        declaration: 'Assessor’s declaration'
+        no_connection_text: 'No connection to the property'
+        declaration_text: 'The assessor declared they have no personal or business connection with the property’s owner or anyone who may have an interest in the property.'
 
   domestic_epc:
     top_heading: 'Energy Performance Certificate'

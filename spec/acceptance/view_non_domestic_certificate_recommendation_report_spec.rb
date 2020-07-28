@@ -293,6 +293,18 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
           '<dd class="govuk-summary-list__value">TEST Ltd</dd>',
         )
       end
+
+      it "shows the declaration" do
+        expect(response.body).to include(
+          '<dt class="govuk-summary-list__key govuk-!-width-one-half">Assessor’s declaration</dt>',
+        )
+        expect(response.body).to include(
+          '<span class="govuk-details__summary-text">No connection to the property</span>',
+        )
+        expect(response.body).to include(
+          '<div class="govuk-details__text">The assessor declared they have no personal or business connection with the property’s owner or anyone who may have an interest in the property.</div>',
+        )
+      end
     end
   end
 end

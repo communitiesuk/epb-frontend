@@ -475,6 +475,9 @@ cy:
         employer_address: 'Welsh: Employer’s address'
         number: 'Welsh: Assessor number'
         scheme: 'Welsh: Accreditation scheme'
+        declaration: 'Welsh: Assessor’s declaration'
+        no_connection_text: 'Welsh: No connection to the property'
+        declaration_text: 'Welsh: The assessor declared they have no personal or business connection with the property’s owner or anyone who may have an interest in the property.'
 
   domestic_epc:
     top_heading: 'Welsh: Energy Performance Certificate'
