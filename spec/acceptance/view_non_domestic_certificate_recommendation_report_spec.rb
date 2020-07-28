@@ -318,7 +318,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
         )
       end
 
-      it "shows the related assessments" do
+      it "shows the first related assessment" do
         expect(response.body).to include(
           '<a href="/energy-performance-certificate/8411-8264-4325-3608-3503">8411-8264-4325-3608-3503</a>',
         )
@@ -326,6 +326,16 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
           '<dd class="govuk-summary-list__value govuk-!-width-one-half">Energy performance certificate<br />',
         )
         expect(response.body).to include("<b>Valid until 4 May 2030</b>")
+      end
+
+      it "shows the third related assessment" do
+        expect(response.body).to include(
+          '<a href="/energy-performance-certificate/3411-8465-4422-3628-3503">3411-8465-4422-3628-3503</a>',
+        )
+        expect(response.body).to include(
+          '<dd class="govuk-summary-list__value govuk-!-width-one-half">Commercial energy performance certificate recommendation report<br />',
+        )
+        expect(response.body).to include('<b class="expired-text">4 May 2010 (Expired)</b>')
       end
     end
   end
