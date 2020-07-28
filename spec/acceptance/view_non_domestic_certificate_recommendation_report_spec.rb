@@ -254,7 +254,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
           '<dt class="govuk-summary-list__key govuk-!-width-one-half">Assessor’s name</dt>',
         )
         expect(response.body).to include(
-          '<dd class="govuk-summary-list__value">John Howard</dd>',
+          '<dd class="govuk-summary-list__value">John T Howard</dd>',
         )
       end
     end

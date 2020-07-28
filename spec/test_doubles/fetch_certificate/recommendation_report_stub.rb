@@ -33,6 +33,7 @@ module FetchCertificate
           "assessor": {
             "firstName": "John",
             "lastName": "Howard",
+            "middleNames": "T",
             "registeredBy": {
               "name": "ECMK",
               "schemeId": 2,
