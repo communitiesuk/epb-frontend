@@ -554,7 +554,7 @@ en:
       epc:
         title: 'Energy efficiency rating for this property'
         intro:
-          text: 'Your property’s current energy rating is  %{current_energy_efficiency_band}. It has the potential to be %{potential_energy_efficiency_band}.'
+          text: 'This property’s current energy rating is  %{current_energy_efficiency_band}. It has the potential to be %{potential_energy_efficiency_band}.'
           cta: 'See how to improve this property’s energy performance.'
           url: '#recommendations'
         aria-label: 'Your energy rating is %{current_energy_efficiency_band}(%{current_energy_efficiency_rating}) and your potential is %{potential_energy_efficiency_band}(%{potential_energy_efficiency_rating})'
