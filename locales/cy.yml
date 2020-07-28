@@ -962,8 +962,8 @@ cy:
   error:
     error: 'Welsh: Error: '
     500:
-      heading: 'Welsh: Network connection failed'
-      body: 'Welsh: There is an internal network error'
+      heading: 'Welsh: Sorry, there is a problem with the service'
+      body: 'Welsh: Try again later.'
     404:
       heading: 'Welsh: Page not found'
       intro: 'Welsh: If you typed the web address, check it is correct.'

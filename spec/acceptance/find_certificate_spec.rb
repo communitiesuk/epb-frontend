@@ -144,11 +144,11 @@ describe "Acceptance::Certificate" do
         end
 
         it "displays the 500 error page heading" do
-          expect(response.body).to include("Network connection failed")
+          expect(response.body).to include("Try again later.")
         end
 
         it "displays error page body" do
-          expect(response.body).to include("There is an internal network error")
+          expect(response.body).to include("Sorry, there is a problem with the service")
         end
       end
     end
@@ -293,11 +293,11 @@ describe "Acceptance::Certificate" do
         end
 
         it "displays the 500 error page heading" do
-          expect(response.body).to include("Network connection failed")
+          expect(response.body).to include("Try again later.")
         end
 
         it "displays error page body" do
-          expect(response.body).to include("There is an internal network error")
+          expect(response.body).to include("Sorry, there is a problem with the service")
         end
       end
     end
@@ -519,11 +519,11 @@ describe "Acceptance::Certificate" do
         end
 
         it "displays the 500 error page heading" do
-          expect(response.body).to include("Network connection failed")
+          expect(response.body).to include("Try again later.")
         end
 
         it "displays error page body" do
-          expect(response.body).to include("There is an internal network error")
+          expect(response.body).to include("Sorry, there is a problem with the service")
         end
       end
     end
