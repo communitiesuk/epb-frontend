@@ -284,6 +284,15 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
           '<dd class="govuk-summary-list__value">TEST000000</dd>',
         )
       end
+
+      it "shows the accreditation scheme" do
+        expect(response.body).to include(
+          '<dt class="govuk-summary-list__key govuk-!-width-one-half">Accreditation scheme</dt>',
+        )
+        expect(response.body).to include(
+          '<dd class="govuk-summary-list__value">TEST Ltd</dd>',
+        )
+      end
     end
   end
 end
