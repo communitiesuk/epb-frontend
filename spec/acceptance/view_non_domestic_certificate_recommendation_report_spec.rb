@@ -57,12 +57,30 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
         expect(response.body).to include("<b>1234-5678-1234-5678-1234</b>")
       end
 
+      it "shows the print this report text" do
+        expect(response.body).to include(">Print this report</a>")
+      end
+    end
+
+    describe "viewing the report contents section" do
       it "shows the report contents title" do
         expect(response.body).to include(">Report Contents</h3>")
       end
 
-      it "shows the print this report text" do
-        expect(response.body).to include(">Print this report</a>")
+      it "shows the section links" do
+        expect(response.body).to include('<p class="govuk-body"><a href="#rating">Energy rating and EPC</a></p>')
+        expect(response.body).to include('<p class="govuk-body"><a href="#recommendations">Recommendations</a></p>')
+        expect(response.body).to include('<p class="govuk-body"><a href="#property_details">Building and report details</a></p>')
+        expect(response.body).to include('<p class="govuk-body"><a href="#assessor_details">Assessor’s details</a></p>')
+        expect(response.body).to include('<p class="govuk-body"><a href="#other_reports">Other reports for this property</a></p>')
+      end
+
+      it "can navigate to each section" do
+        expect(response.body).to include('id="rating"')
+        expect(response.body).to include('id="recommendations"')
+        expect(response.body).to include('id="property_details"')
+        expect(response.body).to include('id="assessor_details"')
+        expect(response.body).to include('id="other_reports"')
       end
     end
 

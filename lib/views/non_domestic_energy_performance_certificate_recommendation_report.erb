@@ -20,7 +20,31 @@
   </div>
   <div class="govuk-grid-column-one-third">
     <hr class="epc-blue-top" />
-    <%== erb :component__contents, locals: { title: t("non_domestic_epc.rr.contents.title") } %>
+    <%== erb :component__contents, locals: {
+      title: t("non_domestic_epc.rr.contents.title"),
+      sections: [
+        {
+          link: '#rating',
+          text: 'non_domestic_epc.rr.rating.title'
+        },
+        {
+          link: '#recommendations',
+          text: 'non_domestic_epc.rr.recommendations.title'
+        },
+        {
+          link: '#property_details',
+          text: 'non_domestic_epc.rr.property_details.title'
+        },
+        {
+          link: '#assessor_details',
+          text: 'non_domestic_epc.rr.assessor_details.title'
+        },
+        {
+          link: '#other_reports',
+          text: 'non_domestic_epc.rr.other_reports.title'
+        }
+      ]
+    } %>
   </div>
   <div class="govuk-grid-column-two-thirds">
     <%== erb :non_domestic_energy_performance_certificate_recommendation_report__rating, locals: {
