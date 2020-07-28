@@ -41,7 +41,18 @@ module FetchCertificate
             "schemeAssessorId": "ECMK201470",
             "searchResultsComparisonPostcode": "LU3 3UD",
             "address": {},
-            "companyDetails": {},
+            "companyDetails": {
+              "companyRegNo": "",
+              "companyAddressLine1": "2 Marsham Street",
+              "companyAddressLine2": "",
+              "companyAddressLine3": "",
+              "companyTown": "London",
+              "companyPostcode": "SW1P 4JA",
+              "companyWebsite": "",
+              "companyTelephoneNumber": "",
+              "companyEmail": "",
+              "companyName": "Viridian Consulting Engineers Ltd",
+            },
           },
           "nonDomCepcRr": {
             "longPaybackRecommendation": [

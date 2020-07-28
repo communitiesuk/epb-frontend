@@ -257,6 +257,15 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
           '<dd class="govuk-summary-list__value">John T Howard</dd>',
         )
       end
+
+      it "shows the name of the employer" do
+        expect(response.body).to include(
+          '<dt class="govuk-summary-list__key govuk-!-width-one-half">Employer’s name</dt>',
+        )
+        expect(response.body).to include(
+          '<dd class="govuk-summary-list__value">Viridian Consulting Engineers Ltd</dd>',
+        )
+      end
     end
   end
 end

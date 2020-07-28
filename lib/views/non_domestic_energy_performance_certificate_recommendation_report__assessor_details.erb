@@ -9,5 +9,13 @@
         [assessment[:assessor][:firstName], assessment[:assessor][:middleNames], assessment[:assessor][:lastName]].compact.join(' ')
       %></dd>
     </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
+        t('non_domestic_epc.rr.assessor_details.employer_name')
+      %></dt>
+      <dd class="govuk-summary-list__value"><%=
+        assessment[:assessor][:companyDetails][:companyName]
+      %></dd>
+    </div>
   </dl>
 </div>
