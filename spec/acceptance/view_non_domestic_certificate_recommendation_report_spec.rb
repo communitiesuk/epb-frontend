@@ -306,5 +306,11 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
         )
       end
     end
+
+    describe "viewing the Other reports for this property section" do
+      it "shows the section heading" do
+        expect(response.body).to include("Other reports for this property")
+      end
+    end
   end
 end
