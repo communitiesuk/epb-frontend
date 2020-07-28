@@ -470,6 +470,7 @@ cy:
         tool: 'Welsh: Calculation tool'
       assessor_details:
         title: 'Welsh: Assessor’s details'
+        name: 'Welsh: Assessor’s name'
 
   domestic_epc:
     top_heading: 'Welsh: Energy Performance Certificate'

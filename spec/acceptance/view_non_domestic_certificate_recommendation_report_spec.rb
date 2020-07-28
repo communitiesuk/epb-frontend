@@ -248,6 +248,15 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
       it "shows the section heading" do
         expect(response.body).to include("Assessor’s details")
       end
+
+      it "shows the name of the assessor" do
+        expect(response.body).to include(
+          '<dt class="govuk-summary-list__key govuk-!-width-one-half">Assessor’s name</dt>',
+        )
+        expect(response.body).to include(
+          '<dd class="govuk-summary-list__value">John Howard</dd>',
+        )
+      end
     end
   end
 end

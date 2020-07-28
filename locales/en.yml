@@ -495,6 +495,7 @@ en:
         tool: 'Calculation tool'
       assessor_details:
         title: 'Assessor’s details'
+        name: 'Assessor’s name'
 
   domestic_epc:
     top_heading: 'Energy Performance Certificate'

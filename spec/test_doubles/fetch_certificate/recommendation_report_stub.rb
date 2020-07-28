@@ -30,6 +30,18 @@ module FetchCertificate
           addressLine3: "",
           addressLine4: "",
           town: "London",
+          "assessor": {
+            "firstName": "John",
+            "lastName": "Howard",
+            "registeredBy": {
+              "name": "ECMK",
+              "schemeId": 2,
+            },
+            "schemeAssessorId": "ECMK201470",
+            "searchResultsComparisonPostcode": "LU3 3UD",
+            "address": {},
+            "companyDetails": {},
+          },
           "nonDomCepcRr": {
             "longPaybackRecommendation": [
               {

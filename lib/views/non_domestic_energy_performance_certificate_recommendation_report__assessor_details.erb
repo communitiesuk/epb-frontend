@@ -1,3 +1,9 @@
 <div class="govuk-body epc-blue-bottom">
   <h2 class="govuk-heading-l"><%= t('non_domestic_epc.rr.assessor_details.title') %></h2>
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= t('non_domestic_epc.rr.assessor_details.name') %></dt>
+      <dd class="govuk-summary-list__value"><%= [assessment[:assessor][:firstName], assessment[:assessor][:lastName]].compact.join(' ') %></dd>
+    </div>
+  </dl>
 </div>
