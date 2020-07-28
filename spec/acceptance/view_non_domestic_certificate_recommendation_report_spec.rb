@@ -243,5 +243,11 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
         )
       end
     end
+
+    describe "viewing the Assessor's details section" do
+      it "shows the section heading" do
+        expect(response.body).to include("Assessor’s details")
+      end
+    end
   end
 end

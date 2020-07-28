@@ -493,6 +493,8 @@ en:
         floor_area: 'Total useful floor area'
         environment: 'Building environment'
         tool: 'Calculation tool'
+      assessor_details:
+        title: 'Assessor’s details'
 
   domestic_epc:
     top_heading: 'Energy Performance Certificate'

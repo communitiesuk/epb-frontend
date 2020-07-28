@@ -468,6 +468,8 @@ cy:
         floor_area: 'Welsh: Total useful floor area'
         environment: 'Welsh: Building environment'
         tool: 'Welsh: Calculation tool'
+      assessor_details:
+        title: 'Welsh: Assessor’s details'
 
   domestic_epc:
     top_heading: 'Welsh: Energy Performance Certificate'
