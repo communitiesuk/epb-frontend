@@ -3,7 +3,7 @@
 module FetchCertificate
   class RecommendationReportStub
     def self.fetch(
-      assessment_id:, type_of_assessment: "CEPC-RR", linked_to_cepc:
+      assessment_id:, type_of_assessment: "CEPC-RR", linked_to_cepc: nil
     )
       body = {
         data: {
