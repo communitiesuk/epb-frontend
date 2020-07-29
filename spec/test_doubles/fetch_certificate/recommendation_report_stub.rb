@@ -3,7 +3,7 @@
 module FetchCertificate
   class RecommendationReportStub
     def self.fetch(
-      assessment_id:, type_of_assessment: "CEPC-RR", linked_to_cepc: false
+      assessment_id:, type_of_assessment: "CEPC-RR", linked_to_cepc:
     )
       body = {
         data: {
@@ -61,8 +61,7 @@ module FetchCertificate
             },
           ],
           nonDomCepcRr: {
-            relatedCepcReportAssessmentID:
-              linked_to_cepc || nil,
+            relatedCepcReportAssessmentID: linked_to_cepc,
             technicalInformation: {
               buildingEnvironment: "Heating and Natural Ventilation",
               totalFloorArea: 935.0,
