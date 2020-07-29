@@ -7,11 +7,11 @@
     </div>
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= t('non_domestic_epc.rr.property_details.floor_area') %></dt>
-      <dd class="govuk-summary-list__value"><%= assessment[:totalUsefulFloorArea].to_s.chomp('.0') %> <%= t('unit.square_metres') %></dd>
+      <dd class="govuk-summary-list__value"><%= assessment[:nonDomCepcRr][:technicalInformation][:totalFloorArea].to_s.chomp('.0') %> <%= t('unit.square_metres') %></dd>
     </div>
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= t('non_domestic_epc.rr.property_details.environment') %></dt>
-      <dd class="govuk-summary-list__value"><%= assessment[:buildingEnvironment] %></dd>
+      <dd class="govuk-summary-list__value"><%= assessment[:nonDomCepcRr][:technicalInformation][:buildingEnvironment] %></dd>
     </div>
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= t('non_domestic_epc.rr.property_details.tool') %></dt>

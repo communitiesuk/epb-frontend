@@ -46,12 +46,13 @@
       ]
     } %>
   </div>
-  <div class="govuk-grid-column-two-thirds">
-    <%== erb :non_domestic_energy_performance_certificate_recommendation_report__rating, locals: {
-      assessment: assessment,
-    }
-    %>
-  </div>
+  <% if assessment[:relatedCepcReport] %>
+    <div class="govuk-grid-column-two-thirds">
+      <%== erb :non_domestic_energy_performance_certificate_recommendation_report__rating,
+               locals: { assessment: assessment[:relatedCepcReport] }
+      %>
+    </div>
+  <% end %>
   <div class="govuk-grid-column-two-thirds">
     <%== erb :non_domestic_energy_performance_certificate_recommendation_report__recommendations, locals: {
       assessment: assessment,

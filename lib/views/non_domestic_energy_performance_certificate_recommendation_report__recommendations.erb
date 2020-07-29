@@ -18,7 +18,7 @@
     </tr>
     </thead>
     <tbody class="govuk-table__body">
-      <% assessment[:nonDomCepcRr][:shortPaybackRecommendation].each do |recommendation| %>
+      <% assessment[:nonDomCepcRr][:recommendations][:shortPaybackRecommendation].each do |recommendation| %>
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><%= recommendation[:recommendation] %></th>
           <td class="govuk-table__cell"><%= recommendation[:carbon_impact] %></td>
@@ -35,7 +35,7 @@
     </tr>
     </thead>
     <tbody class="govuk-table__body">
-    <% assessment[:nonDomCepcRr][:mediumPaybackRecommendation].each do |recommendation| %>
+    <% assessment[:nonDomCepcRr][:recommendations][:mediumPaybackRecommendation].each do |recommendation| %>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><%= recommendation[:recommendation] %></th>
         <td class="govuk-table__cell"><%= recommendation[:carbon_impact] %></td>
@@ -52,7 +52,7 @@
     </tr>
     </thead>
     <tbody class="govuk-table__body">
-    <% assessment[:nonDomCepcRr][:longPaybackRecommendation].each do |recommendation| %>
+    <% assessment[:nonDomCepcRr][:recommendations][:longPaybackRecommendation].each do |recommendation| %>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><%= recommendation[:recommendation] %></th>
         <td class="govuk-table__cell"><%= recommendation[:carbon_impact] %></td>
@@ -70,7 +70,7 @@
     </tr>
     </thead>
     <tbody class="govuk-table__body">
-    <% assessment[:nonDomCepcRr][:otherPaybackRecommendation].each do |recommendation| %>
+    <% assessment[:nonDomCepcRr][:recommendations][:otherPaybackRecommendation].each do |recommendation| %>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><%= recommendation[:recommendation] %></th>
         <td class="govuk-table__cell"><%= recommendation[:carbon_impact] %></td>

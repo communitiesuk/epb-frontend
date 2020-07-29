@@ -25,8 +25,13 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
 
   context "when the assessment exists" do
     before do
+      FetchCertificate::NonDomesticStub.fetch assessment_id:
+                                                "1234-5678-1234-5678-0000"
+
       FetchCertificate::RecommendationReportStub.fetch assessment_id:
-                                                         "1234-5678-1234-5678-1234"
+                                                         "1234-5678-1234-5678-1234",
+                                                       linked_to_cepc:
+                                                         "1234-5678-1234-5678-0000"
     end
 
     it "returns status 200" do
