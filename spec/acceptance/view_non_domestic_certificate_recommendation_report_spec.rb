@@ -374,4 +374,21 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
       end
     end
   end
+
+  context "when the assessment does not have a related EPC" do
+    before do
+      FetchCertificate::RecommendationReportStub.fetch assessment_id:
+                                                           "1234-5678-1234-5678-1234"
+    end
+
+    it "returns status 200" do
+      expect(response.status).to eq 200
+    end
+
+    it "does not show the Energy rating and EPC section heading" do
+      expect(response.body).not_to include(
+                                   '<h2 class="govuk-heading-l">Energy rating and EPC</h2>',
+                                   )
+    end
+  end
 end
