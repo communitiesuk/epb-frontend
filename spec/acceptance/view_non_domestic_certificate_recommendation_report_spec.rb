@@ -415,6 +415,11 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
                                                            "1234-5678-1234-5678-1234"
       end
 
+      it "does not show a link to the Energy rating and EPC section in the contents" do
+        expect(response.body).not_to include(
+                                         '<a href="#rating">Energy rating and EPC</a>',
+                                         )
+      end
       it "does not show the Energy rating and EPC section heading" do
         expect(response.body).not_to include(
           '<h2 class="govuk-heading-l">Energy rating and EPC</h2>',
