@@ -360,14 +360,12 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate" do
 
       context "when there is a property summary key" do
         it "shows all of the property summary elements" do
-          expect(response.body).to include(
-            "Secondary Heating&colon; Heating the house",
-          )
-          expect(response.body).to include("Very good energy performance")
-          expect(response.body).to include(
-            "Main Heating&colon; Room heaters, electric",
-          )
-          expect(response.body).to include("Average energy performance")
+          expect(response.body).to include("Wall")
+          expect(response.body).to include("Many walls")
+          expect(response.body).to include("Poor")
+          expect(response.body).to include("Main Heating")
+          expect(response.body).to include("Room heaters, electric")
+          expect(response.body).to include("Average")
         end
       end
 

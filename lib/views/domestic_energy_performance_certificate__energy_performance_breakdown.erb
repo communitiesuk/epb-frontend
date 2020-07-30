@@ -13,20 +13,24 @@
   </ul>
   <p class="govuk-body"><%= t('domestic_epc.sections.breakdown.not_inspected') %></p>
 
-  <dl class="govuk-summary-list">
-    <% assessment[:propertySummary]&.each do |property_item| %>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
-          t("property_summary.type." + property_item[:name]) %>&colon; <%= property_item[:description]
-        %></dt>
-        <dd class="govuk-summary-list__value govuk-!-width-one-half"><%=
-          t('energy_performance_rating.' + property_item[:energyEfficiencyRating].to_s + '.energy_performance')
-        %> <%=
-          t('domestic_epc.sections.breakdown.energy_performance')
-        %></dd>
-      </div>
+  <table class="govuk-table">
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header">Feature</th>
+        <th scope="col" class="govuk-table__header">Description</th>
+        <th scope="col" class="govuk-table__header">Rating</th>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+      <% assessment[:propertySummary]&.each do |property_item| %>
+        <th class="govuk-table__cell govuk-!-font-weight-regular"><%= t("property_summary.type." + property_item[:name])%></th>
+        <td class="govuk-table__cell"><%=property_item[:description]%></td>
+        <td class="govuk-table__cell"><%=t('energy_performance_rating.' + property_item[:energyEfficiencyRating].to_s + '.energy_performance')%></td>
+      </tr>
+    </tbody>
     <% end %>
-  </dl>
+  </table>
 
   <h2 class="govuk-heading-m"><%= t('domestic_epc.sections.breakdown.primary_energy_use') %></h2>
   <p class="govuk-body"><%= t('domestic_epc.sections.breakdown.primary_energy_use_description') %></p>
