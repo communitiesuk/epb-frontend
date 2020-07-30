@@ -83,6 +83,7 @@ FetchCertificate::RecommendationReportStub.fetch assessment_id:
                                                    "1111-0000-0000-0000-0001",
                                                  linked_to_cepc:
                                                    "1111-0000-0000-0000-0000"
+FetchAssessmentSummary::AssessmentStub.fetch("1234-5678-1234-5678-1234", "b")
 
 ENV["EPB_AUTH_CLIENT_ID"] = "test.id"
 ENV["EPB_AUTH_CLIENT_SECRET"] = "test.client.secret"

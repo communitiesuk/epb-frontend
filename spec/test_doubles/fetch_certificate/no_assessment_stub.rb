@@ -3,6 +3,7 @@
 module FetchCertificate
   class NoAssessmentStub
     def self.fetch(assessment_id)
+      FetchAssessmentSummary::AssessmentSummaryErrorStub.fetch(assessment_id)
       WebMock.stub_request(
         :get,
         "http://test-api.gov.uk/api/assessments/#{assessment_id}",

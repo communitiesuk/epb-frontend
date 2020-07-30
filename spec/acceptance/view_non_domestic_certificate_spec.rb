@@ -9,7 +9,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate" do
 
   context "when the assessment does not exist" do
     before do
-      FetchCertificate::NoAssessmentStub.fetch("1234-5678-1234-5678-1234")
+      FetchAssessmentSummary::NoAssessmentStub.fetch("1234-5678-1234-5678-1234")
     end
 
     it "returns status 404" do
@@ -25,8 +25,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate" do
 
   context "when the assessment exists" do
     before do
-      FetchCertificate::NonDomesticStub.fetch assessment_id:
-                                                "1234-5678-1234-5678-1234"
+      FetchAssessmentSummary::AssessmentStub.fetch("1234-5678-1234-5678-1234", "b")
     end
 
     it "returns status 200" do
@@ -102,9 +101,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate" do
 
       context "with an energy rating of F/G" do
         before do
-          FetchCertificate::NonDomesticStub.fetch assessment_id:
-                                                    "1234-5678-1234-5678-1234",
-                                                  current_band: "g"
+          FetchAssessmentSummary::AssessmentStub.fetch("1234-5678-1234-5678-1234", "g")
         end
 
         it "shows the letting info warning text" do

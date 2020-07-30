@@ -21,6 +21,7 @@ module FetchCertificate
       estimatedEnergyCost = nil,
       potentialEnergySaving = nil
     )
+      FetchAssessmentSummary::AssessmentSummaryErrorStub.fetch(assessment_id)
       property_summary ||= generate_property_summary
       green_deal_plan ||= generate_green_deal_plan
 

@@ -9,6 +9,7 @@ module FetchCertificate
       date_of_expiry: nil,
       related_party_disclosure_text: nil
     )
+      FetchAssessmentSummary::AssessmentSummaryErrorStub.fetch(assessment_id)
       body = {
         data: {
           assessmentId: assessment_id,

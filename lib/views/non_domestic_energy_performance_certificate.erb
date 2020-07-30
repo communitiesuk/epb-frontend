@@ -17,10 +17,10 @@
           <p class="epc-rating-title govuk-body"><%= t('domestic_epc.summary.energy_rating_title') %></p>
           <p class="epc-rating-result govuk-body"><%= assessment[:currentEnergyEfficiencyBand].upcase %></p>
         </div>
-        <p class="epc-address govuk-body"><%== [assessment[:addressLine1],
-                                                assessment[:addressLine2],
-                                                assessment[:addressLine3],
-                                                assessment[:addressLine4]].reject!(&:empty?).join('<br>') %><br><%= assessment[:town] %><br><%= assessment[:postcode] %></p>
+        <p class="epc-address govuk-body"><%== [assessment[:address][:addressLine1],
+                                                assessment[:address][:addressLine2],
+                                                assessment[:address][:addressLine3],
+                                                assessment[:address][:addressLine4]].reject!(&:nil?).join('<br>') %><br><%= assessment[:address][:town] %><br><%= assessment[:address][:postcode] %></p>
         <p class="govuk-body epc-extra-box"><%= t('domestic_epc.summary.date_of_expiry', :date_of_expiry => Date.parse(assessment[:dateOfExpiry]).strftime('%-d %B %Y')) %></p>
         <p class="govuk-body epc-extra-box">
           <label><%= t('domestic_epc.summary.certificate_id') %></label>
@@ -51,9 +51,9 @@
       <h2 class="govuk-heading-l"><%= t('non_domestic_epc.energy_rating_section.title') %></h2>
       <p class="govuk-body"><%== t('non_domestic_epc.energy_rating_section.current_rating_text', :current_energy_efficiency_band => assessment[:currentEnergyEfficiencyBand].upcase) %></p>
       <%== erb :non_domestic_energy_rating, locals: {
-        current_energy_efficiency_rating: assessment[:currentEnergyEfficiencyRating],
+        current_energy_efficiency_rating: assessment[:energyEfficiencyRating],
         current_energy_efficiency_band: assessment[:currentEnergyEfficiencyBand],
-        title: t('non_domestic_epc.energy_rating_section.svg.aria-label', :current_energy_efficiency_band => assessment[:currentEnergyEfficiencyBand].upcase, :current_energy_efficiency_rating => assessment[:currentEnergyEfficiencyRating])} %>
+        title: t('non_domestic_epc.energy_rating_section.svg.aria-label', :current_energy_efficiency_band => assessment[:currentEnergyEfficiencyBand].upcase, :current_energy_efficiency_rating => assessment[:energyEfficiencyRating])} %>
       <p class="govuk-body govuk-!-margin-top-3"><%= t('non_domestic_epc.energy_rating_section.rating_desc') %></p>
       <p class="govuk-body"><%= t('non_domestic_epc.energy_rating_section.score_desc') %></p>
     </div>
