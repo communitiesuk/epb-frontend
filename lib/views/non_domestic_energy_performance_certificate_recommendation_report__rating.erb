@@ -4,6 +4,9 @@
     t('non_domestic_epc.rr.rating.current_energy_rating', band: assessment[:currentEnergyEfficiencyBand].upcase)
   %></p>
   <p class="govuk-body"><%==
-    t('non_domestic_epc.rr.rating.more_info', link: '<a href="' + t('non_domestic_epc.rr.rating.url') + '">' + t('non_domestic_epc.rr.rating.cta') + '</a>')
+    t(
+      'non_domestic_epc.rr.rating.more_info',
+      link: '<a href="' + localised_url("/energy-performance-certificate/#{assessment[:assessmentId]}") + '">' + t('non_domestic_epc.rr.rating.cta') + '</a>'
+    )
   %></p>
 </div>

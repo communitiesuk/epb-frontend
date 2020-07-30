@@ -114,7 +114,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
 
       it "shows the link to certificate for more information" do
         expect(response.body).to include(
-          'For more information, see the <a href="#">Energy Performance Certificate for this report</a>',
+          'For more information, see the <a href="/energy-performance-certificate/1234-5678-1234-5678-0000">Energy Performance Certificate for this report</a>',
         )
       end
     end
