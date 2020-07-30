@@ -76,32 +76,32 @@ module FetchCertificate
                 {
                   recommendation:
                     "Consider installing an air source heat pump.",
-                  carbon_impact: "HIGH",
+                  carbonImpact: "HIGH",
                 },
               ],
               otherPaybackRecommendation: [
                 {
                   recommendation: "Consider installing PV.",
-                  carbon_impact: "HIGH",
+                  carbonImpact: "HIGH",
                 },
               ],
               shortPaybackRecommendation: [
                 {
                   recommendation:
                     "Consider replacing T8 lamps with retrofit T5 conversion kit.",
-                  carbon_impact: "HIGH",
+                  carbonImpact: "HIGH",
                 },
                 {
                   recommendation:
                     "Introduce HF (high frequency) ballasts for fluorescent tubes: Reduced number of fittings required.",
-                  carbon_impact: "LOW",
+                  carbonImpact: "LOW",
                 },
               ],
               mediumPaybackRecommendation: [
                 {
                   recommendation:
                     "Add optimum start/stop to the heating system.",
-                  carbon_impact: "MEDIUM",
+                  carbonImpact: "MEDIUM",
                 },
               ],
             },
