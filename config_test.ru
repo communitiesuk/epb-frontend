@@ -73,7 +73,7 @@ FetchCertificate::RecommendationReportStub.fetch assessment_id:
                                                    "0000-0000-0000-0000-0007"
 
 FetchCertificate::RecommendationReportStub.fetch assessment_id:
-                                                     "0000-0000-0000-0000-0008",
+                                                   "0000-0000-0000-0000-0008",
                                                  date_of_expiry: "2020-06-06"
 
 FetchCertificate::NonDomesticStub.fetch assessment_id:
