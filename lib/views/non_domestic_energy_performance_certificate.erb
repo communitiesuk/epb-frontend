@@ -73,6 +73,10 @@
       emission_rate: assessment[:buildingEmissionRate],
       primary_energy_use: assessment[:primaryEnergyUse]
     }%>
+    <%== erb :non_domestic_energy_performance_certificate__related_report,
+             locals: {
+               related_rrn: assessment[:relatedRrn]
+             }%>
     <%== erb :non_domestic_energy_performance_certificate__contact,
     locals: {
       assessor: assessment[:assessor],

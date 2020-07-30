@@ -523,6 +523,10 @@ cy:
         employer: "Employer"
         employer_address: "Employer address"
         declaration: "Assessor's declaration"
+    related_report:
+      heading: "Recommendation Report"
+      cta: "recommendation report"
+      text: "Guidance on improving the energy performance of this building can be found in the %{link}."
 
   domestic_epc:
     top_heading: 'Welsh: Energy Performance Certificate (EPC)'
