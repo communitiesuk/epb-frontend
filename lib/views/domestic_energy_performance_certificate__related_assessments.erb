@@ -1,22 +1,30 @@
 <div class="govuk-grid-column-one-third"><br></div>
 <div class="govuk-grid-column-two-thirds">
   <a id="related_asssesments"></a>
-  <h2 class="govuk-heading-l"><%= t('domestic_epc.sections.related_assessments.title') %></h2>
-  <dl class="govuk-summary-list">
-    <% assessment[:relatedAssessments].each do |related_assessment| %>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key govuk-!-width-one-half">
-          <a href="<%=localised_url('/energy-performance-certificate/' + related_assessment[:assessmentId])%>"><%=related_assessment[:assessmentId]%></a>
-        </dt>
-        <dd class="govuk-summary-list__value govuk-!-width-one-half">
-          <%= t('domestic_epc.sections.related_assessments.type.' + related_assessment[:assessmentType]) %> <br/>
-          <% if related_assessment[:assessmentStatus] == "EXPIRED" %>
-            <b class="expired-text"><%= Date.parse(related_assessment[:assessmentExpiryDate]).strftime('%d %B %Y')%> (Expired)</b>
-          <% else %>
-            <b>Valid until <%= Date.parse(related_assessment[:assessmentExpiryDate]).strftime('%d %B %Y')%></b>
-          <% end %>
-        </dd>
+  <h2 class="govuk-heading-l"><%= t('domestic_epc.sections.related_assessments.title')%></h2>
+
+  <% assessment[:relatedAssessments].each do |related_assessment| %>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-half">
+        <p class="govuk-!-font-weight-bold"><%= t('domestic_epc.sections.related_assessments.certificate_number_col')%></p>
       </div>
-    <% end %>
-  </dl>
+      <div class="govuk-grid-column-one-half govuk-body">
+        <a href="<%=localised_url('/energy-performance-certificate/' + related_assessment[:assessmentId])%>"><%=related_assessment[:assessmentId]%></a>
+      </div>
+    </div>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-half">
+        <p class="govuk-!-font-weight-bold"><%= t('domestic_epc.sections.related_assessments.valid_until')%></p>
+      </div>
+      <div class="govuk-grid-column-one-half govuk-body">
+        <% if related_assessment[:assessmentStatus] == "EXPIRED" %>
+          <b class="expired-text"><%= Date.parse(related_assessment[:assessmentExpiryDate]).strftime('%d %B %Y')%> (<%= t('domestic_epc.sections.related_assessments.expired')%>)</b>
+        <% else %>
+          <b><%= t('domestic_epc.sections.related_assessments.valid_until')%> <%= Date.parse(related_assessment[:assessmentExpiryDate]).strftime('%d %B %Y')%></b>
+        <% end %>
+      </div>
+    </div>
+    <hr>
+  <% end %>
 </div>

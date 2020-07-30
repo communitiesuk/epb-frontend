@@ -557,19 +557,13 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate" do
     context "when viewing the related certificates section" do
       it "shows the section title" do
         expect(response.body).to include(
-          '<h2 class="govuk-heading-l">Other certificates for this property</h2>',
+          '<h2 class="govuk-heading-l">Other EPCs for this property</h2>',
         )
       end
 
       it "shows a link to the reference number of a related certificate" do
         expect(response.body).to include(
           '<a href="/energy-performance-certificate/0000-0000-0000-0000-0001">0000-0000-0000-0000-0001</a>',
-        )
-      end
-
-      it "shows the report type of a previous certificate" do
-        expect(response.body).to include(
-          "Commercial energy performance certificate",
         )
       end
 

@@ -710,10 +710,14 @@ en:
         provider_telephone: 'Telephone'
         provider_email: 'Email'
       related_assessments:
-        title: 'Other certificates for this property'
+        title: 'Other EPCs for this property'
         reference_number: 'Reference number'
         assessment_type: 'Report type'
         expiry_date: 'Expiry date'
+        certificate_number_col: 'Certificate number'
+        valid_until: 'Valid until'
+        expired: 'Expired'
+        
         type:
           CEPC: Commercial energy performance certificate
           CEPC-RR: Commercial energy performance certificate recommendation report

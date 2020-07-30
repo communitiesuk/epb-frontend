@@ -685,10 +685,13 @@ cy:
         provider_telephone: 'Welsh: Telephone'
         provider_email: 'Welsh: Email'
       related_assessments:
-        title: 'Welsh: Other certificates for this property'
+        title: 'Welsh: Other EPCs for this property'
         reference_number: 'Welsh: Reference number'
         assessment_type: 'Welsh: Report type'
         expiry_date: 'Welsh: Expiry date'
+        certificate_number_col: 'Welsh: Certificate number'
+        valid_until: 'Welsh: Valid until'
+        expired: 'Welsh: Expired'
 
   assessment_types:
     CEPC: 'Welsh: Commercial energy performance certificate'
