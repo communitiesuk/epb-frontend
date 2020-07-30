@@ -73,5 +73,11 @@
       emission_rate: assessment[:buildingEmissionRate],
       primary_energy_use: assessment[:primaryEnergyUse]
     }%>
+    <%== erb :non_domestic_energy_performance_certificate__contact,
+    locals: {
+      assessor_name: assessment[:assessor][:name],
+      assessor_phone: assessment[:assessor][:contactDetails][:telephone],
+      assessor_email: assessment[:assessor][:contactDetails][:email]
+    }%>
   </div>
 </div>

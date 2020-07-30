@@ -200,6 +200,13 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate" do
         expect(response.body).to include("67.09")
         expect(response.body).to include("413.22")
       end
+
+      it "shows the contact section" do
+        expect(response.body).to include("Contacting the assessor and accreditation scheme")
+        expect(response.body).to include("TEST NAME BOI")
+        expect(response.body).to include("012345")
+        expect(response.body).to include("test@testscheme.com")
+      end
     end
   end
 end

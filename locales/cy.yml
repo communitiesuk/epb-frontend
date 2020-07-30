@@ -499,6 +499,17 @@ cy:
       assessment_level: "Welsh: Assessment level"
       emission_rate: "Welsh: Building emission rate (kgCO2/m2 per year)"
       primary_energy_use: "Welsh: Primary energy use (kWh/m2 per year)"
+    contact:
+      heading: "Contacting the assessor and accreditation scheme"
+      p1: "This EPC was created by a qualified energy assessor."
+      p2: "If you are unhappy about your property’s energy assessment or certificate, you can complain to the assessor directly."
+      p3: "If you are still unhappy after contacting the assessor, you should contact the assessor’s accreditation scheme."
+      p4: "Accreditation schemes are appointed by the government to ensure that assessors are qualified to carry out EPC assessments."
+      assessor:
+        heading: "Assessor contact details"
+        name: "Assessor's Name"
+        phone: "Telephone"
+        email: "Email"
 
   domestic_epc:
     top_heading: 'Welsh: Energy Performance Certificate (EPC)'
