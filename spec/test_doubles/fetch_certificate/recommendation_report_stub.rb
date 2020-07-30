@@ -18,7 +18,6 @@ module FetchCertificate
           addressLine3: "",
           addressLine4: "",
           town: "London",
-          calculationTool: "CLG, iSBEM, v5.4.b, SBEM, v5.4.b.0",
           assessor: {
             firstName: "John",
             lastName: "Howard",
@@ -65,6 +64,7 @@ module FetchCertificate
             technicalInformation: {
               buildingEnvironment: "Heating and Natural Ventilation",
               totalFloorArea: 935.0,
+              calculationTool: "CLG, iSBEM, v5.4.b, SBEM, v5.4.b.0",
             },
             recommendations: {
               longPaybackRecommendation: [
