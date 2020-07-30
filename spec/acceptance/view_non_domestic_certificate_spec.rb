@@ -193,6 +193,12 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate" do
 
       it "shows the breakdown of this buildings energy performance section" do
         expect(response.body).to include("Breakdown of this building's energy performance")
+        expect(response.body).to include("Natural Gas")
+        expect(response.body).to include("Air Conditioning")
+        expect(response.body).to include("403")
+        expect(response.body).to include("3")
+        expect(response.body).to include("67.09")
+        expect(response.body).to include("413.22")
       end
     end
   end

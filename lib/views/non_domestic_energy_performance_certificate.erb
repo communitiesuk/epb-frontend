@@ -64,6 +64,14 @@
       new_build_rating: assessment[:newBuildRating],
       new_build_band: assessment[:newBuildBand],
     }%>
-    <%== erb :non_domestic_energy_performance_certificate__energy_performance_breakdown %>
+    <%== erb :non_domestic_energy_performance_certificate__energy_performance_breakdown,
+    locals: {
+      main_heating_fuel: assessment[:technicalInformation][:mainHeatingFuel],
+      building_environment: assessment[:technicalInformation][:buildingEnvironment],
+      floor_area: assessment[:technicalInformation][:floorArea],
+      assessment_level: assessment[:technicalInformation][:buildingLevel],
+      emission_rate: assessment[:buildingEmissionRate],
+      primary_energy_use: assessment[:primaryEnergyUse]
+    }%>
   </div>
 </div>

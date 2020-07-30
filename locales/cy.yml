@@ -493,6 +493,12 @@ cy:
       if_typical_existing_stock: "Welsh: If typical of the existing stock"
     energy_peformance_breakdown:
       heading: "Welsh: Breakdown of this building's energy performance"
+      main_heating_fuel: "Welsh: Main heating fuel"
+      building_environment: "Welsh: Building environment"
+      floor_area: "Welsh: Total useful floor area (m2)"
+      assessment_level: "Welsh: Assessment level"
+      emission_rate: "Welsh: Building emission rate (kgCO2/m2 per year)"
+      primary_energy_use: "Welsh: Primary energy use (kWh/m2 per year)"
 
   domestic_epc:
     top_heading: 'Welsh: Energy Performance Certificate (EPC)'

@@ -518,6 +518,12 @@ en:
       if_typical_existing_stock: "If typical of the existing stock"
     energy_peformance_breakdown:
       heading: "Breakdown of this building's energy performance"
+      main_heating_fuel: "Main heating fuel"
+      building_environment: "Building environment"
+      floor_area: "Total useful floor area (m2)"
+      assessment_level: "Assessment level"
+      emission_rate: "Building emission rate (kgCO2/m2 per year)"
+      primary_energy_use: "Primary energy use (kWh/m2 per year)"
 
   domestic_epc:
     top_heading: 'Energy Performance Certificate (EPC)'
