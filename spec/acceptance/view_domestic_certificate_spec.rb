@@ -29,11 +29,11 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate" do
     end
 
     it "shows the date of assessment" do
-      expect(response.body).to include("05 January 2020")
+      expect(response.body).to include("5 January 2020")
     end
 
     it "shows the registered date of the certificate" do
-      expect(response.body).to include("02 January 2020")
+      expect(response.body).to include("2 January 2020")
     end
 
     it "shows the date of expiry" do

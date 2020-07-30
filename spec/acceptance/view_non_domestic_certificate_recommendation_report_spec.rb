@@ -245,7 +245,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
           '<dt class="govuk-summary-list__key govuk-!-width-one-half">Report issued on</dt>',
         )
         expect(response.body).to include(
-          '<dd class="govuk-summary-list__value">02 January 2020</dd>',
+          '<dd class="govuk-summary-list__value">2 January 2020</dd>',
         )
       end
 
