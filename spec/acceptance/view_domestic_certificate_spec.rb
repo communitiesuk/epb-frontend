@@ -445,6 +445,93 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate" do
         expect(response.body).to include("Email")
         expect(response.body).to include('<a href="mailto:lender@example.com">')
       end
+
+      context "but there are no provider contact details" do
+        before do
+          FetchCertificate::Stub.fetch(
+            "1234-5678-1234-5678-1235",
+            90,
+            "b",
+            false,
+            2.4,
+            1.4,
+            -79,
+            -67,
+            -69,
+            nil,
+            1,
+            nil,
+            "RdSAP",
+            76,
+            {
+              greenDealPlanId: "ABC123456DEF",
+              startDate: "2020-01-30",
+              endDate: "2030-02-28",
+              providerDetails: { name: "The Bank" },
+              interest: { rate: 12.3, fixed: true },
+              chargeUplift: { amount: 1.25, date: "2025-03-29" },
+              ccaRegulated: true,
+              structureChanged: false,
+              measuresRemoved: false,
+              measures: [
+                {
+                  sequence: 0,
+                  measureType: "Loft insulation",
+                  product: "WarmHome lagging stuff (TM)",
+                  repaidDate: "2025-03-29",
+                },
+                {
+                  sequence: 1,
+                  measureType: "Double glazing",
+                  product: "Not applicable",
+                },
+              ],
+              charges: [
+                {
+                  sequence: 0,
+                  startDate: "2020-03-29",
+                  endDate: "2030-03-29",
+                  dailyCharge: "0.33",
+                },
+                {
+                  sequence: 1,
+                  startDate: "2020-03-29",
+                  endDate: "2030-03-29",
+                  dailyCharge: "0.01",
+                },
+              ],
+              savings: [
+                {
+                  fuelCode: "39", fuelSaving: 23_253, standingChargeFraction: 0
+                },
+                {
+                  fuelCode: "40",
+                  fuelSaving: -6331,
+                  standingChargeFraction: -0.9,
+                },
+                {
+                  fuelCode: "41", fuelSaving: -15_561, standingChargeFraction: 0
+                },
+              ],
+              estimatedSavings: 1566,
+            },
+            nil,
+            nil,
+          )
+        end
+
+        let(:response) do
+          get "/energy-performance-certificate/1234-5678-1234-5678-1235"
+        end
+
+        it "does not show the provider email" do
+          expect(response.body).not_to include("Email")
+        end
+
+        it "does not show the provider telephone" do
+          expect(response.body).not_to include("Telephone")
+        end
+      end
     end
 
     context "when a certificate does not have a Green Deal Plan" do

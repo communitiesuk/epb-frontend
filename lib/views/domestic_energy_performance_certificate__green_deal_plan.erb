@@ -63,13 +63,17 @@
         <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= t('domestic_epc.sections.green_deal.provider_name') %></dt>
         <dd class="govuk-summary-list__value govuk-!-width-one-half"><%= assessment[:greenDealPlan][:providerDetails][:name] %></dd>
       </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= t('domestic_epc.sections.green_deal.provider_telephone') %></dt>
-        <dd class="govuk-summary-list__value govuk-!-width-one-half"><%= assessment[:greenDealPlan][:providerDetails][:telephone] %></dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= t('domestic_epc.sections.green_deal.provider_email') %></dt>
-        <dd class="govuk-summary-list__value govuk-!-width-one-half"><a href="mailto:<%= assessment[:greenDealPlan][:providerDetails][:email] %>"><%= assessment[:greenDealPlan][:providerDetails][:email] %></a></dd>
-      </div>
+      <% unless assessment[:greenDealPlan][:providerDetails][:telephone].empty? %>
+        <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=  t('domestic_epc.sections.green_deal.provider_telephone')  %></dt>
+          <dd class="govuk-summary-list__value govuk-!-width-one-half"><%=  assessment[:greenDealPlan][:providerDetails][:telephone]  %></dd>
+        </div>
+      <% end %>
+      <% unless assessment[:greenDealPlan][:providerDetails][:email].empty? %>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= t('domestic_epc.sections.green_deal.provider_email') %></dt>
+          <dd class="govuk-summary-list__value govuk-!-width-one-half"><a href="mailto:<%= assessment[:greenDealPlan][:providerDetails][:email] %>"><%= assessment[:greenDealPlan][:providerDetails][:email] %></a></dd>
+        </div>
+      <% end %>
   </dl>
 </div>
