@@ -42,7 +42,7 @@ module FetchAssessmentSummary
               name: "Joe Bloggs Ltd",
               address: "Lloyds House, 18 Lloyd Street, Manchester, M2 5WA",
             },
-            registeredBy: { name: "test scheme", schemeId: "3" },
+            registeredBy: { name: "quidos", schemeId: "3" },
           },
         },
       }

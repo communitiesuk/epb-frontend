@@ -39,5 +39,43 @@
     </div>
   </dl>
 
+  <h3 class="govuk-heading-m">
+    <%= t('non_domestic_epc.contact.scheme.heading') %>
+  </h3>
+
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key govuk-!-width-one-half" ><%=
+        t('non_domestic_epc.contact.scheme.name')
+      %></dt>
+      <dd class="govuk-summary-list__value govuk-!-width-one-half" style="text-align: right">
+        <%= scheme_details(assessor, 'name') %>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key govuk-!-width-one-half" ><%=
+        t('non_domestic_epc.contact.assessor.id')
+      %></dt>
+      <dd class="govuk-summary-list__value govuk-!-width-one-half" style="text-align: right">
+        <%= assessor[:schemeAssessorId] %>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key govuk-!-width-one-half" ><%=
+        t('non_domestic_epc.contact.scheme.phone')
+      %></dt>
+      <dd class="govuk-summary-list__value govuk-!-width-one-half" style="text-align: right">
+        <%= scheme_details(assessor, 'phone') %>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key govuk-!-width-one-half" ><%=
+        t('non_domestic_epc.contact.scheme.email')
+      %></dt>
+      <dd class="govuk-summary-list__value govuk-!-width-one-half" style="text-align: right">
+        <%= scheme_details(assessor, 'email') %>
+      </dd>
+    </div>
+  </dl>
 
 </div>

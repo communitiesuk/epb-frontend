@@ -510,6 +510,12 @@ cy:
         name: "Assessor's Name"
         phone: "Telephone"
         email: "Email"
+        id: "Assessor's accreditation number"
+      scheme:
+        heading: "Accreditation scheme contact details"
+        name: "Accreditation scheme"
+        phone: "Telephone"
+        email: "Email"
 
   domestic_epc:
     top_heading: 'Welsh: Energy Performance Certificate (EPC)'

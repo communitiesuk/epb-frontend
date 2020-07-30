@@ -206,6 +206,10 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate" do
         expect(response.body).to include("TEST NAME BOI")
         expect(response.body).to include("012345")
         expect(response.body).to include("test@testscheme.com")
+        expect(response.body).to include("Quidos")
+        expect(response.body).to include("SPEC000000")
+        expect(response.body).to include("01225 667 570")
+        expect(response.body).to include("info@quidos.co.uk")
       end
     end
   end
