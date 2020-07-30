@@ -39,6 +39,10 @@
 
     &.epb-box-element-full-height {
       padding: 15px;
+
+      span {
+        display: block;
+      }
     }
 
     .epc-extra-box:nth-child(2n) {

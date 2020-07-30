@@ -1,9 +1,16 @@
 <div class="govuk-body epc-blue-bottom">
   <div class="epc-box-summary govuk-!-margin-bottom-5">
     <div class="epc-box-element epb-box-element-full-height govuk-body">
-      <%== [assessment[:addressLine1], assessment[:addressLine2], assessment[:addressLine3], assessment[:addressLine4]].compact.reject(&:empty?).join('<br />') %><br>
-      <%= assessment[:town] %><br />
-      <%= assessment[:postcode] %>
+      <%==
+        [
+           assessment[:addressLine1],
+           assessment[:addressLine2],
+           assessment[:addressLine3],
+           assessment[:addressLine4],
+           assessment[:town],
+           assessment[:postcode],
+        ].compact.reject(&:empty?).map { |line| "<span>#{line}</span>" }.join("\n")
+      %>
     </div>
     <div class="epc-box-element">
       <div class="govuk-body epc-extra-box">
