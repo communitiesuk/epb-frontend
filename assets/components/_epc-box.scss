@@ -1,3 +1,110 @@
+.epc-box-summary {
+  background: #1d70b8;
+
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-box-pack: start;
+  -moz-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-box-align: start;
+  -moz-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+
+  .epc-box-element:nth-child(2n) {
+    border-left: 2px solid #fff;
+  }
+
+  .epc-box-element {
+    height: 100%;
+
+    &.epb-box-element-full-height {
+      padding: 15px;
+    }
+
+    .epc-extra-box:nth-child(2n) {
+      border-top: 2px solid #fff;
+    }
+
+    .epc-extra-box {
+      padding: 15px;
+
+      text-align: center;
+
+      label {
+        display: block;
+        font-weight: normal;
+      }
+    }
+
+    -webkit-box-ordinal-group: 1;
+    -moz-box-ordinal-group: 1;
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-box-flex: 0;
+    -moz-box-flex: 0;
+    -webkit-flex: 0 1 100%;
+    -ms-flex: 0 1 100%;
+    flex: 0 1 100%;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto;
+  }
+
+  .govuk-body {
+    color: #fff;
+    margin-bottom: 0;
+  }
+}
+
+.epc-rating-box {
+  width: 150px;
+  background: #1d70b8;
+  text-align: center;
+  float: right;
+  border: 2px solid #fff;
+  margin: 10px;
+
+  .epc-rating-title {
+    line-height: 30px;
+    font-size: 20px;
+  }
+
+  .epc-rating-result {
+    line-height: 100px;
+    font-size: 100px;
+    font-weight: bold;
+  }
+
+  .govuk-body {
+    color: #fff;
+  }
+}
+
+
+
+
+
 .epc-box {
   color: #fff;
   background: #1d70b8;
@@ -68,4 +175,9 @@
   }
 }
 
-
+@-moz-document url-prefix() {
+  .epc-box-summary {
+    width: 100%;
+    -moz-box-sizing: border-box;
+  }
+}
