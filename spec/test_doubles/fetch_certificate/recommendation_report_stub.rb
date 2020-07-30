@@ -65,7 +65,7 @@ module FetchCertificate
             },
           ],
           nonDomCepcRr: {
-            relatedCepcReportAssessmentID: linked_to_cepc,
+            relatedCepcReportAssessmentId: linked_to_cepc,
             technicalInformation: {
               buildingEnvironment: "Heating and Natural Ventilation",
               totalFloorArea: 935.0,

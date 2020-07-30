@@ -60,7 +60,7 @@ module Gateway
           assessment_details.dig(
             :data,
             :nonDomCepcRr,
-            :relatedCepcReportAssessmentID,
+            :relatedCepcReportAssessmentId,
           )
 
         if related_cepc_report_id
