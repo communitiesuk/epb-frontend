@@ -513,6 +513,9 @@ en:
         reminder: 'If you are aware of previous reports for this property and they are not listed here, please contact the Help Desk at %{contact_centre_number}.'
     how_this_building_compares:
       heading: "How this building compares to others"
+      explanation: "Buildings similar to this one could have ratings:"
+      if_newly_built: "If newly built"
+      if_typical_existing_stock: "If typical of the existing stock"
 
   domestic_epc:
     top_heading: 'Energy Performance Certificate (EPC)'

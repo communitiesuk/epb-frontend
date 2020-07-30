@@ -28,7 +28,9 @@ module FetchAssessmentSummary
               primaryEnergyUse: "413.22",
               relatedRrn: "4192-1535-8427-8844-6702",
               newBuildRating: "28",
+              newBuildBand: "b",
               existingBuildRating: "81",
+              existingBuildBand: "d",
               energyEfficiencyRating: "35",
               currentEnergyEfficiencyBand: energyEfficiencyBand,
               assessor: {
