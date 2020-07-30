@@ -78,4 +78,64 @@
     </div>
   </dl>
 
+  <h3 class="govuk-heading-m">
+    <%= t('non_domestic_epc.contact.assessment.heading') %>
+  </h3>
+
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key govuk-!-width-one-half" ><%=
+        t('non_domestic_epc.contact.assessment.date_assessed')
+      %></dt>
+      <dd class="govuk-summary-list__value govuk-!-width-one-half" style="text-align: right">
+        <%= Date.parse(assessment_date).strftime('%-d %B %Y') %>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key govuk-!-width-one-half" ><%=
+        t('non_domestic_epc.contact.assessment.date_certificate')
+      %></dt>
+      <dd class="govuk-summary-list__value govuk-!-width-one-half" style="text-align: right">
+        <%= Date.parse(registration_date).strftime('%-d %B %Y') %>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key govuk-!-width-one-half" ><%=
+        t('non_domestic_epc.contact.assessment.employer')
+      %></dt>
+      <dd class="govuk-summary-list__value govuk-!-width-one-half" style="text-align: right">
+        <%= assessor[:companyDetails][:name] %>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key govuk-!-width-one-half" ><%=
+        t('non_domestic_epc.contact.assessment.employer_address')
+      %></dt>
+      <dd class="govuk-summary-list__value govuk-!-width-one-half" style="text-align: right">
+        <%= assessor[:companyDetails][:address] %>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key govuk-!-width-one-half" ><%=
+        t('non_domestic_epc.contact.assessment.declaration')
+      %></dt>
+      <dd class="govuk-summary-list__value govuk-!-width-one-half" style="text-align: right">
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text"><%=
+              related_party_disclosure ?
+                t('non_domestic_epc.rr.assessor_details.has_connection_text') :
+                t('non_domestic_epc.rr.assessor_details.no_connection_text')
+            %></span>
+          </summary>
+          <div class="govuk-details__text"><%=
+            related_party_disclosure ?
+              related_party_disclosure :
+              t('non_domestic_epc.rr.assessor_details.declaration_text')
+          %></div>
+        </details>
+      </dd>
+    </div>
+  </dl>
+
 </div>

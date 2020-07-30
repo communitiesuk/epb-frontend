@@ -516,6 +516,13 @@ cy:
         name: "Accreditation scheme"
         phone: "Telephone"
         email: "Email"
+      assessment:
+        heading: "Assessment details"
+        date_assessed: "Date of assessment"
+        date_certificate: "Date of certificate"
+        employer: "Employer"
+        employer_address: "Employer address"
+        declaration: "Assessor's declaration"
 
   domestic_epc:
     top_heading: 'Welsh: Energy Performance Certificate (EPC)'

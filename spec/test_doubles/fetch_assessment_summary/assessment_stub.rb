@@ -7,6 +7,8 @@ module FetchAssessmentSummary
         data: {
           assessmentId: assessment_id,
           dateOfExpiry: "2030-01-05",
+          dateOfAssessment: "2020-01-04",
+          dateOfRegistration: "2020-01-05",
           reportType: "3",
           typeOfAssessment: "CEPC",
           address: {
@@ -44,6 +46,7 @@ module FetchAssessmentSummary
             },
             registeredBy: { name: "quidos", schemeId: "3" },
           },
+          relatedPartyDisclosure: nil,
         },
       }
 

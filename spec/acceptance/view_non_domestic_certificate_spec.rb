@@ -211,6 +211,15 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate" do
         expect(response.body).to include("01225 667 570")
         expect(response.body).to include("info@quidos.co.uk")
       end
+
+      it "shows the assessment details" do
+        expect(response.body).to include("Assessment details")
+        expect(response.body).to include("4 January 2020")
+        expect(response.body).to include("5 January 2020")
+        expect(response.body).to include("Joe Bloggs Ltd")
+        expect(response.body).to include("Lloyds House, 18 Lloyd Street, Manchester, M2 5WA")
+        expect(response.body).to include("No connection to the property")
+      end
     end
   end
 end

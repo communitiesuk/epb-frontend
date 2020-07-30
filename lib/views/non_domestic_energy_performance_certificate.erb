@@ -75,7 +75,10 @@
     }%>
     <%== erb :non_domestic_energy_performance_certificate__contact,
     locals: {
-      assessor: assessment[:assessor]
+      assessor: assessment[:assessor],
+      assessment_date: assessment[:dateOfAssessment],
+      registration_date: assessment[:dateOfRegistration],
+      related_party_disclosure: assessment[:relatedPartyDisclosure]
     }%>
   </div>
 </div>
