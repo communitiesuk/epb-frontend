@@ -506,6 +506,7 @@ en:
         scheme: 'Accreditation scheme'
         declaration: 'Assessor’s declaration'
         no_connection_text: 'No connection to the property'
+        has_connection_text: 'The assessor has made a declaration'
         declaration_text: 'The assessor declared they have no personal or business connection with the property’s owner or anyone who may have an interest in the property.'
       other_reports:
         title: 'Other reports for this property'

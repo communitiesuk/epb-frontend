@@ -55,11 +55,15 @@
         <details class="govuk-details" data-module="govuk-details">
           <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text"><%=
+              assessment[:relatedPartyDisclosureText] ?
+              t('non_domestic_epc.rr.assessor_details.has_connection_text') :
               t('non_domestic_epc.rr.assessor_details.no_connection_text')
             %></span>
           </summary>
           <div class="govuk-details__text"><%=
-            t('non_domestic_epc.rr.assessor_details.declaration_text')
+            assessment[:relatedPartyDisclosureText] ?
+              assessment[:relatedPartyDisclosureText] :
+              t('non_domestic_epc.rr.assessor_details.declaration_text')
           %></div>
         </details>
       </dd>

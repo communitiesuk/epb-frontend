@@ -31,7 +31,9 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
       FetchCertificate::RecommendationReportStub.fetch assessment_id:
                                                          "1234-5678-1234-5678-1234",
                                                        linked_to_cepc:
-                                                         "1234-5678-1234-5678-0000"
+                                                         "1234-5678-1234-5678-0000",
+                                                       related_party_disclosure_text:
+                                                         "Related to the owner of the property."
     end
 
     it "returns status 200" do
@@ -332,10 +334,10 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
           '<dt class="govuk-summary-list__key govuk-!-width-one-half">Assessor’s declaration</dt>',
         )
         expect(response.body).to include(
-          '<span class="govuk-details__summary-text">No connection to the property</span>',
+          '<span class="govuk-details__summary-text">The assessor has made a declaration</span>',
         )
         expect(response.body).to include(
-          '<div class="govuk-details__text">The assessor declared they have no personal or business connection with the property’s owner or anyone who may have an interest in the property.</div>',
+          '<div class="govuk-details__text">Related to the owner of the property.</div>',
         )
       end
     end
@@ -372,30 +374,51 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
           '<b class="expired-text">4 May 2010 (Expired)</b>',
         )
       end
+    end
 
-      context "when the assessment has expired" do
-        before do
-          FetchCertificate::RecommendationReportStub.fetch assessment_id:
-                                                               "1234-5678-1234-5678-1234",
-                                                           date_of_expiry: "2020-06-06"
-        end
-        it "shows a message indicating when the certificate expired" do
-          expect(response.body).to include(
-                                           'This certificate expired on',
-                                           )
-        end
+    context "when the assessment has expired" do
+      before do
+        FetchCertificate::RecommendationReportStub.fetch assessment_id:
+                                                             "1234-5678-1234-5678-1234",
+                                                         date_of_expiry: "2020-06-06"
       end
-      context "when the assessment does not have a related EPC" do
-        before do
-          FetchCertificate::RecommendationReportStub.fetch assessment_id:
-                                                               "1234-5678-1234-5678-1234"
-        end
+      it "shows a message indicating when the certificate expired" do
+        expect(response.body).to include(
+                                     'This certificate expired on',
+                                     )
+      end
+    end
 
-        it "does not show the Energy rating and EPC section heading" do
-          expect(response.body).not_to include(
-                                           '<h2 class="govuk-heading-l">Energy rating and EPC</h2>',
-                                           )
-        end
+    context "when the assessor has not made a related party declaration" do
+      before do
+        FetchCertificate::RecommendationReportStub.fetch assessment_id:
+                                                             "1234-5678-1234-5678-1234",
+                                                         date_of_expiry: "2020-06-06"
+      end
+
+      it "shows the assessor has not made a declaration" do
+        expect(response.body).to include(
+                                     '<dt class="govuk-summary-list__key govuk-!-width-one-half">Assessor’s declaration</dt>',
+                                     )
+        expect(response.body).to include(
+                                     '<span class="govuk-details__summary-text">No connection to the property</span>',
+                                     )
+        expect(response.body).to include(
+                                     '<div class="govuk-details__text">The assessor declared they have no personal or business connection with the property’s owner or anyone who may have an interest in the property.</div>',
+                                     )
+      end
+    end
+
+    context "when the assessment does not have a related EPC" do
+      before do
+        FetchCertificate::RecommendationReportStub.fetch assessment_id:
+                                                             "1234-5678-1234-5678-1234"
+      end
+
+      it "does not show the Energy rating and EPC section heading" do
+        expect(response.body).not_to include(
+                                         '<h2 class="govuk-heading-l">Energy rating and EPC</h2>',
+                                         )
       end
     end
   end

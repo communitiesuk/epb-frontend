@@ -3,7 +3,11 @@
 module FetchCertificate
   class RecommendationReportStub
     def self.fetch(
-      assessment_id:, type_of_assessment: "CEPC-RR", linked_to_cepc: nil, date_of_expiry: nil
+      assessment_id:,
+      type_of_assessment: "CEPC-RR",
+      linked_to_cepc: nil,
+      date_of_expiry: nil,
+      related_party_disclosure_text: nil
     )
       body = {
         data: {
@@ -18,6 +22,7 @@ module FetchCertificate
           addressLine3: "",
           addressLine4: "",
           town: "London",
+          relatedPartyDisclosureText: related_party_disclosure_text || nil,
           assessor: {
             firstName: "John",
             lastName: "Howard",
