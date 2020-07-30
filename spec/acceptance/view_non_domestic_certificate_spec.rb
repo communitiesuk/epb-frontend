@@ -178,6 +178,10 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate" do
           '<p class="govuk-body">Buildings are also given a score. The larger the number, the more expensive your fuel bills are likely to be.</p>',
         )
       end
+
+      it "shows the how this building compares to others section" do
+        expect(response.body).to include("How this building compares to others")
+      end
     end
   end
 end

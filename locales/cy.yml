@@ -486,6 +486,8 @@ cy:
       other_reports:
         title: 'Welsh: Other reports for this property'
         reminder: 'Welsh: If you are aware of previous reports for this property and they are not listed here, please contact the Help Desk at %{contact_centre_number}.'
+    how_this_building_compares:
+      heading: "How this building compares to others"
 
   domestic_epc:
     top_heading: 'Welsh: Energy Performance Certificate (EPC)'
