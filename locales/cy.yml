@@ -491,6 +491,8 @@ cy:
       explanation: "Welsh: Buildings similar to this one could have ratings:"
       if_newly_built: "Welsh: If newly built"
       if_typical_existing_stock: "Welsh: If typical of the existing stock"
+    energy_peformance_breakdown:
+      heading: "Welsh: Breakdown of this building's energy performance"
 
   domestic_epc:
     top_heading: 'Welsh: Energy Performance Certificate (EPC)'
