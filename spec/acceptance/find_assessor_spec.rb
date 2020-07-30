@@ -279,7 +279,9 @@ describe "Acceptance::Assessor" do
         end
 
         it "displays error page body" do
-          expect(response.body).to include("Sorry, there is a problem with the service")
+          expect(response.body).to include(
+            "Sorry, there is a problem with the service",
+          )
         end
       end
     end
@@ -440,7 +442,9 @@ describe "Acceptance::Assessor" do
         end
 
         it "displays error page body" do
-          expect(response.body).to include("Sorry, there is a problem with the service")
+          expect(response.body).to include(
+            "Sorry, there is a problem with the service",
+          )
         end
       end
     end

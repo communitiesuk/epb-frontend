@@ -148,7 +148,9 @@ describe "Acceptance::Certificate" do
         end
 
         it "displays error page body" do
-          expect(response.body).to include("Sorry, there is a problem with the service")
+          expect(response.body).to include(
+            "Sorry, there is a problem with the service",
+          )
         end
       end
     end
@@ -297,7 +299,9 @@ describe "Acceptance::Certificate" do
         end
 
         it "displays error page body" do
-          expect(response.body).to include("Sorry, there is a problem with the service")
+          expect(response.body).to include(
+            "Sorry, there is a problem with the service",
+          )
         end
       end
     end
@@ -523,7 +527,9 @@ describe "Acceptance::Certificate" do
         end
 
         it "displays error page body" do
-          expect(response.body).to include("Sorry, there is a problem with the service")
+          expect(response.body).to include(
+            "Sorry, there is a problem with the service",
+          )
         end
       end
     end

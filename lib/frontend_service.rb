@@ -71,7 +71,7 @@ class FrontendService < Sinatra::Base
           status 400
           erb_template = :find_non_dom_certificate_by_postcode
           @errors[:postcode] =
-              t("find_non_dom_certificate_by_postcode.postcode_not_valid")
+            t("find_non_dom_certificate_by_postcode.postcode_not_valid")
         else
           return server_error(e)
         end
@@ -110,15 +110,15 @@ class FrontendService < Sinatra::Base
           status 400
           erb_template = :find_non_dom_certificate_by_reference_number
           @errors[:reference_number] =
-              t(
-                  "find_non_dom_certificate_by_reference_number.reference_number_not_valid",
-                  )
+            t(
+              "find_non_dom_certificate_by_reference_number.reference_number_not_valid",
+            )
         when Errors::CertificateNotFound
           erb_template = :find_non_dom_certificate_by_reference_number
           @errors[:reference_number] =
-              t(
-                  "find_non_dom_certificate_by_reference_number.reference_number_not_registered",
-                  )
+            t(
+              "find_non_dom_certificate_by_reference_number.reference_number_not_registered",
+            )
         else
           return server_error(e)
         end
@@ -153,7 +153,8 @@ class FrontendService < Sinatra::Base
               t("find_assessor_by_postcode.postcode_not_registered")
           when Errors::PostcodeNotValid
             status 400
-            @errors[:postcode] = t("find_assessor_by_postcode.postcode_not_valid")
+            @errors[:postcode] =
+              t("find_assessor_by_postcode.postcode_not_valid")
           else
             return server_error(e)
           end
@@ -190,8 +191,8 @@ class FrontendService < Sinatra::Base
           status 400
           erb_template = :find_assessor_by_name
           @errors[:name] = t("find_assessor_by_name.name_error")
-          else
-            return server_error(e)
+        else
+          return server_error(e)
         end
       end
     end
@@ -278,7 +279,8 @@ class FrontendService < Sinatra::Base
               t("find_assessor_by_postcode.postcode_not_registered")
           when Errors::PostcodeNotValid
             status 400
-            @errors[:postcode] = t("find_assessor_by_postcode.postcode_not_valid")
+            @errors[:postcode] =
+              t("find_assessor_by_postcode.postcode_not_valid")
           else
             return server_error(e)
           end
@@ -447,7 +449,8 @@ class FrontendService < Sinatra::Base
           @errors[:generic] = {
             error:
               "find_certificate_by_street_name_and_town.no_such_address.error",
-            body: "find_certificate_by_street_name_and_town.no_such_address.body",
+            body:
+              "find_certificate_by_street_name_and_town.no_such_address.body",
             cta: "find_certificate_by_street_name_and_town.no_such_address.cta",
             url: "/find-an-assessor",
           }
