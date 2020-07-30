@@ -18,7 +18,7 @@
         t('non_domestic_epc.contact.assessor.name')
       %></dt>
       <dd class="govuk-summary-list__value govuk-!-width-one-half" style="text-align: right">
-        <%= assessor_name %>
+        <%= assessor[:name] %>
       </dd>
     </div>
     <div class="govuk-summary-list__row">
@@ -26,7 +26,7 @@
         t('non_domestic_epc.contact.assessor.phone')
       %></dt>
       <dd class="govuk-summary-list__value govuk-!-width-one-half" style="text-align: right">
-        <%= assessor_phone %>
+        <%= assessor[:contactDetails][:telephone] %>
       </dd>
     </div>
     <div class="govuk-summary-list__row">
@@ -34,7 +34,7 @@
         t('non_domestic_epc.contact.assessor.email')
       %></dt>
       <dd class="govuk-summary-list__value govuk-!-width-one-half" style="text-align: right">
-        <%= assessor_email %>
+        <%= assessor[:contactDetails][:email] %>
       </dd>
     </div>
   </dl>
