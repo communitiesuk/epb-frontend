@@ -373,14 +373,22 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
         )
       end
 
+      context "when the assessment has expired" do
+        before do
+          FetchCertificate::RecommendationReportStub.fetch assessment_id:
+                                                               "1234-5678-1234-5678-1234",
+                                                           date_of_expiry: "2020-06-06"
+        end
+        it "shows a message indicating when the certificate expired" do
+          expect(response.body).to include(
+                                           'This certificate expired on',
+                                           )
+        end
+      end
       context "when the assessment does not have a related EPC" do
         before do
           FetchCertificate::RecommendationReportStub.fetch assessment_id:
                                                                "1234-5678-1234-5678-1234"
-        end
-
-        it "returns status 200" do
-          expect(response.status).to eq 200
         end
 
         it "does not show the Energy rating and EPC section heading" do

@@ -3,13 +3,13 @@
 module FetchCertificate
   class RecommendationReportStub
     def self.fetch(
-      assessment_id:, type_of_assessment: "CEPC-RR", linked_to_cepc: nil
+      assessment_id:, type_of_assessment: "CEPC-RR", linked_to_cepc: nil, date_of_expiry: nil
     )
       body = {
         data: {
           assessmentId: assessment_id,
           dateRegistered: "2020-01-05",
-          dateOfExpiry: "2030-01-05",
+          dateOfExpiry: date_of_expiry || "2030-01-05",
           dateOfAssessment: "2020-01-02",
           typeOfAssessment: type_of_assessment,
           postcode: "SW1B 2BB",

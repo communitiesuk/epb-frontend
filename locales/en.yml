@@ -468,6 +468,7 @@ en:
       top_heading: 'Non-domestic Energy Performance Certificate Recommendation Report'
       summary:
         valid_until: 'Valid until'
+        expired: 'This certificate expired on'
         certificate_id: 'Certificate number'
       contents:
         title: 'Report Contents'
@@ -717,7 +718,7 @@ en:
         certificate_number_col: 'Certificate number'
         valid_until: 'Valid until'
         expired: 'Expired'
-        
+
         type:
           CEPC: Commercial energy performance certificate
           CEPC-RR: Commercial energy performance certificate recommendation report
