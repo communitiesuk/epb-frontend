@@ -72,6 +72,14 @@ FetchCertificate::NonDomesticStub.fetch assessment_id:
 FetchCertificate::RecommendationReportStub.fetch assessment_id:
                                                    "0000-0000-0000-0000-0007"
 
+FetchCertificate::NonDomesticStub.fetch assessment_id:
+                                            "1111-0000-0000-0000-0000"
+
+FetchCertificate::RecommendationReportStub.fetch assessment_id:
+                                                     "1111-0000-0000-0000-0001",
+                                                 linked_to_cepc:
+                                                     "1111-0000-0000-0000-0000"
+
 ENV["EPB_AUTH_CLIENT_ID"] = "test.id"
 ENV["EPB_AUTH_CLIENT_SECRET"] = "test.client.secret"
 ENV["EPB_AUTH_SERVER"] = "http://test-auth-server.gov.uk"
