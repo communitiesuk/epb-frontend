@@ -9,12 +9,9 @@ module Gateway
 
       assessment_details = JSON.parse(response.body, symbolize_names: true)
 
-      if response.status == 404
-        raise Errors::AssessmentNotFound
-      end
+      raise Errors::AssessmentNotFound if response.status == 404
 
-      response.status == 200 ?
-          assessment_details : nil
+      response.status == 200 ? assessment_details : nil
     end
   end
 end

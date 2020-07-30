@@ -25,7 +25,10 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate" do
 
   context "when the assessment exists" do
     before do
-      FetchAssessmentSummary::AssessmentStub.fetch("1234-5678-1234-5678-1234", "b")
+      FetchAssessmentSummary::AssessmentStub.fetch(
+        "1234-5678-1234-5678-1234",
+        "b",
+      )
     end
 
     it "returns status 200" do
@@ -101,7 +104,10 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate" do
 
       context "with an energy rating of F/G" do
         before do
-          FetchAssessmentSummary::AssessmentStub.fetch("1234-5678-1234-5678-1234", "g")
+          FetchAssessmentSummary::AssessmentStub.fetch(
+            "1234-5678-1234-5678-1234",
+            "g",
+          )
         end
 
         it "shows the letting info warning text" do

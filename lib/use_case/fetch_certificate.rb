@@ -3,9 +3,9 @@
 module UseCase
   class FetchCertificate < UseCase::Base
     def execute(assessment_id)
-
-      #Attempt to use the assessment summary endpoint first
-      assessment_summmary = Gateway::AssessmentSummaryGateway.new.fetch(assessment_id)
+      # Attempt to use the assessment summary endpoint first
+      assessment_summmary =
+        Gateway::AssessmentSummaryGateway.new.fetch(assessment_id)
 
       if assessment_summmary
         assessment_summmary
@@ -19,14 +19,13 @@ module UseCase
 
         if response[:data][:recommendedImprovements]
           response[:data][:recommendedImprovements] =
-              response[:data][:recommendedImprovements].sort do |x, y|
-                x[:sequence] <=> y[:sequence]
-              end
+            response[:data][:recommendedImprovements].sort do |x, y|
+              x[:sequence] <=> y[:sequence]
+            end
         end
 
         response
       end
-
     end
   end
 end
