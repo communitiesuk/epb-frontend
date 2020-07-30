@@ -1,0 +1,16 @@
+@media print {
+  .epc-no-print, footer, .app-cookie-banner, .govuk-back-link {
+    display: none;
+  }
+
+  .epc-page-break {
+    display: block;
+    clear: both;
+    page-break-after: always;
+  }
+
+  .govuk-grid-column-full, .govuk-width-container {
+    width: auto !important;
+    float: none !important;
+  }
+}
