@@ -192,7 +192,9 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate" do
       end
 
       it "shows the breakdown of this buildings energy performance section" do
-        expect(response.body).to include("Breakdown of this building's energy performance")
+        expect(response.body).to include(
+          "Breakdown of this building's energy performance",
+        )
         expect(response.body).to include("Natural Gas")
         expect(response.body).to include("Air Conditioning")
         expect(response.body).to include("403")
@@ -202,7 +204,9 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate" do
       end
 
       it "shows the contact section" do
-        expect(response.body).to include("Contacting the assessor and accreditation scheme")
+        expect(response.body).to include(
+          "Contacting the assessor and accreditation scheme",
+        )
         expect(response.body).to include("TEST NAME BOI")
         expect(response.body).to include("012345")
         expect(response.body).to include("test@testscheme.com")
@@ -217,13 +221,17 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate" do
         expect(response.body).to include("4 January 2020")
         expect(response.body).to include("5 January 2020")
         expect(response.body).to include("Joe Bloggs Ltd")
-        expect(response.body).to include("Lloyds House, 18 Lloyd Street, Manchester, M2 5WA")
+        expect(response.body).to include(
+          "Lloyds House, 18 Lloyd Street, Manchester, M2 5WA",
+        )
         expect(response.body).to include("No connection to the property")
       end
 
       it "shows the link to the Recommendation Report" do
         expect(response.body).to include("Recommendation Report")
-        expect(response.body).to include("/energy-performance-certificate/4192-1535-8427-8844-6702")
+        expect(response.body).to include(
+          "/energy-performance-certificate/4192-1535-8427-8844-6702",
+        )
       end
     end
 
