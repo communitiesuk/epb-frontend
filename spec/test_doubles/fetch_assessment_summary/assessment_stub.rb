@@ -2,7 +2,7 @@
 
 module FetchAssessmentSummary
   class AssessmentStub
-    def self.fetch(assessment_id, energyEfficiencyBand)
+    def self.fetch(assessment_id, energyEfficiencyBand, related_rrn = "4192-1535-8427-8844-6702")
       body = {
         data: {
           assessmentId: assessment_id,
@@ -27,7 +27,7 @@ module FetchAssessmentSummary
           },
           buildingEmissionRate: "67.09",
           primaryEnergyUse: "413.22",
-          relatedRrn: "4192-1535-8427-8844-6702",
+          relatedRrn: related_rrn,
           newBuildRating: "28",
           newBuildBand: "b",
           existingBuildRating: "81",

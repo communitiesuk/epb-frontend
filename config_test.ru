@@ -69,21 +69,28 @@ FetchCertificate::Stub.fetch(
 FetchCertificate::NonDomesticStub.fetch assessment_id:
                                           "1234-5678-9101-1123-1234"
 
+FetchCertificate::NonDomesticStub.fetch assessment_id:
+                                            "1234-5678-1234-5678-1234"
+FetchAssessmentSummary::AssessmentStub.fetch "1234-5678-1234-5678-1234", "b"
+FetchCertificate::RecommendationReportStub.fetch assessment_id:
+                                                     "4192-1535-8427-8844-6702",
+                                                 linked_to_cepc:
+                                                     "1234-5678-1234-5678-1234"
+
+FetchCertificate::NonDomesticStub.fetch assessment_id:
+                                            "1111-0000-0000-0000-0000"
+FetchAssessmentSummary::AssessmentStub.fetch "1111-0000-0000-0000-0000", "b", "1111-0000-0000-0000-0000"
+FetchCertificate::RecommendationReportStub.fetch assessment_id:
+                                                     "1111-0000-0000-0000-0001",
+                                                 linked_to_cepc:
+                                                     "1111-0000-0000-0000-0000"
+
 FetchCertificate::RecommendationReportStub.fetch assessment_id:
                                                    "0000-0000-0000-0000-0007"
 
 FetchCertificate::RecommendationReportStub.fetch assessment_id:
                                                    "0000-0000-0000-0000-0008",
                                                  date_of_expiry: "2020-06-06"
-
-FetchCertificate::NonDomesticStub.fetch assessment_id:
-                                          "1111-0000-0000-0000-0000"
-
-FetchCertificate::RecommendationReportStub.fetch assessment_id:
-                                                   "1111-0000-0000-0000-0001",
-                                                 linked_to_cepc:
-                                                   "1111-0000-0000-0000-0000"
-FetchAssessmentSummary::AssessmentStub.fetch("1234-5678-1234-5678-1234", "b")
 
 ENV["EPB_AUTH_CLIENT_ID"] = "test.id"
 ENV["EPB_AUTH_CLIENT_SECRET"] = "test.client.secret"
