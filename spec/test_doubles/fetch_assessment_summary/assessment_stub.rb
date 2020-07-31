@@ -51,6 +51,7 @@ module FetchAssessmentSummary
             registeredBy: { name: "quidos", schemeId: "3" },
           },
           relatedPartyDisclosure: nil,
+          propertyType: "B1 Offices and Workshop businesses",
         },
       }
 

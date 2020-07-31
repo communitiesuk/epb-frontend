@@ -423,6 +423,8 @@ cy:
       svg:
         aria-label: "Welsh: This building’s energy rating is %{current_energy_efficiency_band} (%{current_energy_efficiency_rating})"
     sections:
+      summary:
+        property_info: 'Welsh: This property has a type of "%{property_type}" and has a total floor area of %{total_floor_area} square metres.'
       renting:
         title: 'Welsh: Rules on letting this property'
         rental_info:

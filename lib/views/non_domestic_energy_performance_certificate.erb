@@ -12,7 +12,7 @@
   <div class="govuk-grid-column-two-thirds">
     <hr class="epc-light-top" />
     <div class="govuk-body epc-blue-bottom">
-      <div class="epc-box">
+      <div class="epc-box govuk-!-margin-bottom-5">
         <div class="epc-rating-box">
           <p class="epc-rating-title govuk-body"><%= t('domestic_epc.summary.energy_rating_title') %></p>
           <p class="epc-rating-result govuk-body"><%= assessment[:currentEnergyEfficiencyBand].upcase %></p>
@@ -27,6 +27,7 @@
           <b><%= assessment[:assessmentId] %></b>
         </p>
       </div>
+      <p class="govuk-body"><%= t('non_domestic_epc.sections.summary.property_info', property_type: assessment[:propertyType], total_floor_area: assessment[:technicalInformation][:floorArea]) %></p>
     </div>
     <div class="govuk-body epc-blue-bottom">
       <h2 class="govuk-heading-l"><%= t('non_domestic_epc.sections.renting.title') %></h2>

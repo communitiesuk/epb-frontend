@@ -41,7 +41,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate" do
       )
     end
 
-    context "when viewing the non-domestic EPC box section" do
+    describe "viewing the summary section" do
       it "shows the address summary" do
         expect(response.body).to include(
           '<p class="epc-address govuk-body">Flat 33<br>2 Marsham Street<br>London<br>SW1B 2BB</p>',
@@ -72,6 +72,14 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate" do
 
       it "shows the certificate number" do
         expect(response.body).to include("<b>1234-5678-1234-5678-1234</b>")
+      end
+
+      it "shows the property type" do
+        expect(response.body).to include("B1 Offices and Workshop businesses")
+      end
+
+      it "shows the total floor area" do
+        expect(response.body).to include("403 square metres")
       end
     end
 
