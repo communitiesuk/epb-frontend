@@ -81,7 +81,7 @@ FetchCertificate::NonDomesticStub.fetch assessment_id:
                                           "1111-0000-0000-0000-0000"
 FetchAssessmentSummary::AssessmentStub.fetch "1111-0000-0000-0000-0000",
                                              "b",
-                                             "1111-0000-0000-0000-0000"
+                                             "1111-0000-0000-0000-0001"
 FetchCertificate::RecommendationReportStub.fetch assessment_id:
                                                    "1111-0000-0000-0000-0001",
                                                  linked_to_cepc:
