@@ -242,7 +242,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate" do
         )
       end
 
-      it "shows the section heading" do
+      it "shows the other certificates section" do
         expect(response.body).to include("Other certificates for this property")
       end
     end
