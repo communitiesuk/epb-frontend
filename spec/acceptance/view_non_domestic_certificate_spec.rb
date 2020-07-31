@@ -205,8 +205,9 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate" do
 
       it "shows the contact section" do
         expect(response.body).to include(
-          "Contacting the assessor and accreditation scheme",
+          ">Contacting the assessor and accreditation scheme</h2>",
         )
+        expect(response.body).to include(">Assessor contact details</h3>")
         expect(response.body).to include("TEST NAME BOI")
         expect(response.body).to include("012345")
         expect(response.body).to include("test@testscheme.com")
@@ -217,7 +218,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate" do
       end
 
       it "shows the assessment details" do
-        expect(response.body).to include("Assessment details")
+        expect(response.body).to include(">Assessment details</h3>")
         expect(response.body).to include("4 January 2020")
         expect(response.body).to include("5 January 2020")
         expect(response.body).to include("Joe Bloggs Ltd")
