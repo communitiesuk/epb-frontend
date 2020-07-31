@@ -228,7 +228,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate" do
       end
 
       it "shows the link to the Recommendation Report" do
-        expect(response.body).to include("Recommendation Report")
+        expect(response.body).to include(">Recommendation Report</h2>")
         expect(response.body).to include(
           "/energy-performance-certificate/4192-1535-8427-8844-6702",
         )

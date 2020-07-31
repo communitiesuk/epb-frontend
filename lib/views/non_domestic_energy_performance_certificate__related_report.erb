@@ -1,9 +1,9 @@
 <div class="govuk-body epc-blue-bottom">
-  <h2 class="govuk-heading-l">
-    <%= t('non_domestic_epc.related_report.heading') %>
-  </h2>
-  <p>
-    <%== t('non_domestic_epc.related_report.text',
-           :link => "<a href=\"../energy-performance-certificate/#{related_rrn}\">" + t('non_domestic_epc.related_report.cta') + '</a>') %>
-  </p>
+  <h2 class="govuk-heading-l"><%=
+    t('non_domestic_epc.related_report.heading')
+  %></h2>
+  <p><%==
+    t('non_domestic_epc.related_report.text',
+           :link => "<a href=\"../energy-performance-certificate/#{related_rrn}\">" + t('non_domestic_epc.related_report.cta') + '</a>')
+  %></p>
 </div>
