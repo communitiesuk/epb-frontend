@@ -13,8 +13,8 @@
   </div>
   <div class="govuk-grid-column-one-third">
     <div class="related-links">
-      <hr class="epc-blue-top" />
-      <h3 class="govuk-heading-m"><%= t('domestic_epc.sidebar.title') %></h3>
+      <hr class="epc-blue-top"/>
+      <h3 class="govuk-heading-m" id="contents"><%= t('domestic_epc.sidebar.title') %></h3>
       <div class="dashed-p">
         <p class="govuk-body"><a href="#renting"><%= t('domestic_epc.sidebar.sections.renting') %></a></p>
         <p class="govuk-body"><a href="#epc"><%= t('domestic_epc.sidebar.sections.epc') %></a></p>
@@ -308,4 +308,13 @@
   <% unless assessment[:relatedAssessments] == [] || assessment[:relatedAssessments].nil? %>
     <%== erb :domestic_energy_performance_certificate__related_assessments, locals: { assessment: assessment } %>
   <% end %>
+</div>
+
+<div class="sticky">
+  <a class="govuk-link cd-top text-replace js-cd-top back-to-top" href="#contents">
+  <svg class="app-c-back-to-top__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17">
+    <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+  </svg>
+  Contents
+  </a>
 </div>
