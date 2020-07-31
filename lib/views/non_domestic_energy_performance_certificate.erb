@@ -84,5 +84,9 @@
       registration_date: assessment[:dateOfRegistration],
       related_party_disclosure: assessment[:relatedPartyDisclosure]
     }%>
+    <%== erb :non_domestic_energy_performance_certificate__related_assessments,
+    locals: {
+      assessment: assessment,
+    }%>
   </div>
 </div>

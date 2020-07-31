@@ -439,6 +439,8 @@ cy:
         recommendation: 'Welsh: Properties can be let if they have an energy rating of A+ to E. The %{link} sets out changes you can make to improve the property’s rating.'
         cta: 'Welsh: recommendation report'
         url: '#'
+      other_reports:
+        title: 'Other certificates for this property'
     rr:
       top_heading: 'Welsh: Non-domestic Energy Performance Certificate Recommendation Report'
       summary:
