@@ -2,7 +2,7 @@
 
 module FetchAssessmentSummary
   class AssessmentStub
-    def self.fetch(
+    def self.fetch_cepc(
       assessment_id,
       energyEfficiencyBand,
       related_rrn = "4192-1535-8427-8844-6702"

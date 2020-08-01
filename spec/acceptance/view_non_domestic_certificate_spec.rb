@@ -25,7 +25,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate" do
 
   context "when the assessment exists" do
     before do
-      FetchAssessmentSummary::AssessmentStub.fetch(
+      FetchAssessmentSummary::AssessmentStub.fetch_cepc(
         "1234-5678-1234-5678-1234",
         "b",
       )
@@ -112,7 +112,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate" do
 
       context "with an energy rating of F/G" do
         before do
-          FetchAssessmentSummary::AssessmentStub.fetch(
+          FetchAssessmentSummary::AssessmentStub.fetch_cepc(
             "1234-5678-1234-5678-1234",
             "g",
           )
