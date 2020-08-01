@@ -1,12 +1,12 @@
 <div id="rating" class="govuk-body epc-blue-bottom">
   <h2 class="govuk-heading-l"><%= t('non_domestic_epc.rr.rating.title') %></h2>
   <p class="govuk-body"><%=
-    t('non_domestic_epc.rr.rating.current_energy_rating', band: assessment[:currentEnergyEfficiencyBand].upcase)
+    t('non_domestic_epc.rr.rating.current_energy_rating', band: related_band.upcase)
   %></p>
   <p class="govuk-body"><%==
     t(
       'non_domestic_epc.rr.rating.more_info',
-      link: '<a href="' + localised_url("/energy-performance-certificate/#{assessment[:assessmentId]}") + '">' + t('non_domestic_epc.rr.rating.cta') + '</a>'
+      link: '<a href="' + localised_url("/energy-performance-certificate/#{related_cepc}") + '">' + t('non_domestic_epc.rr.rating.cta') + '</a>'
     )
   %></p>
 </div>

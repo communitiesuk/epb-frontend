@@ -18,10 +18,10 @@
     </tr>
     </thead>
     <tbody class="govuk-table__body">
-      <% assessment[:nonDomCepcRr][:recommendations][:shortPaybackRecommendation].each do |recommendation| %>
+      <% assessment[:shortPaybackRecommendations].each do |recommendation| %>
         <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><%= recommendation[:recommendation] %></th>
-          <td class="govuk-table__cell"><%= recommendation[:carbonImpact] %></td>
+          <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><%= recommendation[:text] %></th>
+          <td class="govuk-table__cell"><%= recommendation[:cO2Impact] %></td>
         </tr>
       <% end %>
     </tbody>
@@ -35,10 +35,10 @@
     </tr>
     </thead>
     <tbody class="govuk-table__body">
-    <% assessment[:nonDomCepcRr][:recommendations][:mediumPaybackRecommendation].each do |recommendation| %>
+    <% assessment[:mediumPaybackRecommendations].each do |recommendation| %>
       <tr class="govuk-table__row">
-        <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><%= recommendation[:recommendation] %></th>
-        <td class="govuk-table__cell"><%= recommendation[:carbonImpact] %></td>
+        <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><%= recommendation[:text] %></th>
+        <td class="govuk-table__cell"><%= recommendation[:cO2Impact] %></td>
       </tr>
     <% end %>
     </tbody>
@@ -52,10 +52,10 @@
     </tr>
     </thead>
     <tbody class="govuk-table__body">
-    <% assessment[:nonDomCepcRr][:recommendations][:longPaybackRecommendation].each do |recommendation| %>
+    <% assessment[:longPaybackRecommendations].each do |recommendation| %>
       <tr class="govuk-table__row">
-        <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><%= recommendation[:recommendation] %></th>
-        <td class="govuk-table__cell"><%= recommendation[:carbonImpact] %></td>
+        <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><%= recommendation[:text] %></th>
+        <td class="govuk-table__cell"><%= recommendation[:cO2Impact] %></td>
       </tr>
     <% end %>
     </tbody>
@@ -70,10 +70,10 @@
     </tr>
     </thead>
     <tbody class="govuk-table__body">
-    <% assessment[:nonDomCepcRr][:recommendations][:otherPaybackRecommendation].each do |recommendation| %>
+    <% assessment[:otherRecommendations].each do |recommendation| %>
       <tr class="govuk-table__row">
-        <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><%= recommendation[:recommendation] %></th>
-        <td class="govuk-table__cell"><%= recommendation[:carbonImpact] %></td>
+        <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><%= recommendation[:text] %></th>
+        <td class="govuk-table__cell"><%= recommendation[:cO2Impact] %></td>
       </tr>
     <% end %>
     </tbody>

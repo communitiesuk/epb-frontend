@@ -3,13 +3,13 @@
     <div class="epc-box-element epb-box-element-full-height govuk-body">
       <%==
         [
-           assessment[:addressLine1],
-           assessment[:addressLine2],
-           assessment[:addressLine3],
-           assessment[:addressLine4],
-           assessment[:town],
-           assessment[:postcode],
-        ].compact.reject(&:empty?).map { |line| "<span>#{line}</span>" }.join("\n")
+           assessment[:address][:addressLine1],
+           assessment[:address][:addressLine2],
+           assessment[:address][:addressLine3],
+           assessment[:address][:addressLine4],
+           assessment[:address][:town],
+           assessment[:address][:postcode],
+        ].compact.reject(&:nil?).map { |line| "<span>#{line}</span>" }.join("\n")
       %>
     </div>
     <div class="epc-box-element">

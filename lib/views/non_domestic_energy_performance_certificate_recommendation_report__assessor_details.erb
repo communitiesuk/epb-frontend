@@ -6,30 +6,21 @@
         t('non_domestic_epc.rr.assessor_details.name')
       %></dt>
       <dd class="govuk-summary-list__value"><%=
-        [assessment[:assessor][:firstName], assessment[:assessor][:middleNames], assessment[:assessor][:lastName]].compact.join(' ')
+        assessment[:assessor][:name]
       %></dd>
     </div>
-    <div class="govuk-summary-list__row">
+
+  <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
         t('non_domestic_epc.rr.assessor_details.employer_name')
       %></dt>
-      <dd class="govuk-summary-list__value"><%=
-        assessment[:assessor][:companyDetails][:companyName]
-      %></dd>
+      <dd class="govuk-summary-list__value"></dd>
     </div>
-    <div class="govuk-summary-list__row">
+  <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
         t('non_domestic_epc.rr.assessor_details.employer_address')
       %></dt>
-      <dd class="govuk-summary-list__value"><%=
-        [
-          company[:companyAddressLine1],
-          company[:companyAddressLine2],
-          company[:companyAddressLine3],
-          company[:companyTown],
-          company[:companyPostcode]
-        ].compact.reject(&:empty?).join(', ')
-      %></dd>
+      <dd class="govuk-summary-list__value"></dd>
     </div>
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
@@ -55,14 +46,14 @@
         <details class="govuk-details" data-module="govuk-details">
           <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text"><%=
-              assessment[:relatedPartyDisclosureText] ?
+              assessment[:relatedPartyDisclosure] ?
               t('non_domestic_epc.rr.assessor_details.has_connection_text') :
               t('non_domestic_epc.rr.assessor_details.no_connection_text')
             %></span>
           </summary>
           <div class="govuk-details__text"><%=
-            assessment[:relatedPartyDisclosureText] ?
-              assessment[:relatedPartyDisclosureText] :
+            assessment[:relatedPartyDisclosure] ?
+              assessment[:relatedPartyDisclosure] :
               t('non_domestic_epc.rr.assessor_details.declaration_text')
           %></div>
         </details>

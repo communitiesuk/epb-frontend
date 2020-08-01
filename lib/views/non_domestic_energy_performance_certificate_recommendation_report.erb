@@ -18,7 +18,8 @@
           }
       %>
   </div>
-  <div class="govuk-grid-column-one-third">
+
+<div class="govuk-grid-column-one-third">
     <hr class="epc-blue-top" />
     <% content_sections = [
       {
@@ -38,7 +39,7 @@
         text: 'non_domestic_epc.rr.other_reports.title'
       }
     ]
-    if assessment[:relatedCepcReport]
+    if assessment[:relatedCertificate]
       content_sections.unshift link: '#rating',
                                text: 'non_domestic_epc.rr.rating.title'
     end
@@ -48,32 +49,38 @@
       sections: content_sections
     } %>
   </div>
-  <% if assessment[:relatedCepcReport] %>
+
+<% if assessment[:relatedCertificate] %>
     <div class="govuk-grid-column-two-thirds">
       <%== erb :non_domestic_energy_performance_certificate_recommendation_report__rating,
-               locals: { assessment: assessment[:relatedCepcReport] }
+               locals: { related_cepc: assessment[:relatedCertificate],
+                         related_band: "X"}
       %>
     </div>
   <% end %>
-  <div class="govuk-grid-column-two-thirds">
+
+<div class="govuk-grid-column-two-thirds">
     <%== erb :non_domestic_energy_performance_certificate_recommendation_report__recommendations, locals: {
       assessment: assessment,
     }
     %>
   </div>
-  <div class="govuk-grid-column-two-thirds">
+
+<div class="govuk-grid-column-two-thirds">
     <%== erb :non_domestic_energy_performance_certificate_recommendation_report__property_details, locals: {
       assessment: assessment,
     }
     %>
   </div>
-  <div class="govuk-grid-column-two-thirds">
+
+<div class="govuk-grid-column-two-thirds">
     <%== erb :non_domestic_energy_performance_certificate_recommendation_report__assessor_details, locals: {
-      assessment: assessment, company: assessment[:assessor][:companyDetails]
+      assessment: assessment
     }
     %>
   </div>
-  <div class="govuk-grid-column-two-thirds">
+
+<div class="govuk-grid-column-two-thirds">
     <%== erb :non_domestic_energy_performance_certificate_recommendation_report__related_assessments, locals: {
       assessment: assessment
     }

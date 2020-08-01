@@ -3,19 +3,19 @@
   <dl class="govuk-summary-list">
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= t('non_domestic_epc.rr.property_details.issued_on') %></dt>
-      <dd class="govuk-summary-list__value"><%= assessment[:dateOfAssessment] %></dd>
+      <dd class="govuk-summary-list__value"><%= assessment[:dateOfRegistration] %></dd>
     </div>
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= t('non_domestic_epc.rr.property_details.floor_area') %></dt>
-      <dd class="govuk-summary-list__value"><%= assessment[:nonDomCepcRr][:technicalInformation][:totalFloorArea].to_s.chomp('.0') %> <%= t('unit.square_metres') %></dd>
+      <dd class="govuk-summary-list__value"><%= assessment[:technicalInformation][:floorArea].to_s.chomp('.0') %> <%= t('unit.square_metres') %></dd>
     </div>
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= t('non_domestic_epc.rr.property_details.environment') %></dt>
-      <dd class="govuk-summary-list__value"><%= assessment[:nonDomCepcRr][:technicalInformation][:buildingEnvironment] %></dd>
+      <dd class="govuk-summary-list__value"><%= assessment[:technicalInformation][:buildingEnvironment] %></dd>
     </div>
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= t('non_domestic_epc.rr.property_details.tool') %></dt>
-      <dd class="govuk-summary-list__value"><%= assessment[:nonDomCepcRr][:technicalInformation][:calculationTool] %></dd>
+      <dd class="govuk-summary-list__value"><%= assessment[:technicalInformation][:calculationTool] %></dd>
     </div>
   </dl>
 </div>

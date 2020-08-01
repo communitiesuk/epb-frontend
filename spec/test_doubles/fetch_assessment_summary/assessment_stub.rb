@@ -61,15 +61,18 @@ module FetchAssessmentSummary
       ).to_return(status: 200, body: body.to_json)
     end
 
-    def self.fetch_cepc_rr(assessment_id)
+    def self.fetch_cepc_rr(assessment_id = "0000-0000-0000-0000-0001",
+                           date_of_expiry = "2030-01-01",
+                           linked_to_cepc = "0000-0000-0000-0000-0000",
+                           related_party = nil)
       body = {
         data: {
           typeOfAssessment: "CEPC-RR",
           assessmentId: assessment_id,
           reportType: "4",
-          dateOfExpiry: "2021-05-03",
+          dateOfExpiry: date_of_expiry,
           dateOfRegistration: "2020-05-04",
-          relatedCertificate: "0000-0000-0000-0000-1111",
+          relatedCertificate: linked_to_cepc,
           relatedAssessments: [],
           address: {
             addressId: "UPRN-000000000000",
@@ -83,7 +86,7 @@ module FetchAssessmentSummary
           assessor: {
             schemeAssessorId: "SPEC000000",
             name: "Mrs Report Writer",
-            registeredBy: { name: "test scheme", schemeId: scheme_id },
+            registeredBy: { name: "quidos", schemeId: 3 },
           },
           shortPaybackRecommendations: [
             {
@@ -121,6 +124,7 @@ module FetchAssessmentSummary
             buildingEnvironment: "Natural Ventilation Only",
             calculationTool: "Calculation-Tool0",
           },
+          relatedPartyDisclosure: related_party,
         },
       }
       WebMock.stub_request(
