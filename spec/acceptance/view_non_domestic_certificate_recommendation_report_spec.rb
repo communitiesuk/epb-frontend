@@ -66,6 +66,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
     it "Shows the assessor details" do
       expect(response.body).to include("Mrs Report Writer")
       expect(response.body).to include("SPEC000000")
+      expect(response.body).to include("Quidos")
     end
   end
 end

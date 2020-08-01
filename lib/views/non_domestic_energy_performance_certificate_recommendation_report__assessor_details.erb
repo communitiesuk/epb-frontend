@@ -35,7 +35,7 @@
         t('non_domestic_epc.rr.assessor_details.scheme')
       %></dt>
       <dd class="govuk-summary-list__value"><%=
-        assessment[:assessor][:registeredBy][:name]
+        scheme_details(assessment[:assessor], 'name')
       %></dd>
     </div>
     <div class="govuk-summary-list__row">
