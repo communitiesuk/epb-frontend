@@ -43,5 +43,24 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
     it "Shows the efficiency band from the related cepc" do
       expect(response.body).to include("This building’s current energy rating is D.")
     end
+
+    it "Shows a link to the related CEPC" do
+      expect(response.body).to include("/0000-0000-0000-0000-0000")
+    end
+
+    it "Shows the recommendations" do
+      expect(response.body).to include("Consider replacing T8 lamps with retrofit T5 conversion kit.")
+      expect(response.body).to include("Introduce HF (high frequency) ballasts for fluorescent tubes: Reduced number of fittings required.")
+      expect(response.body).to include("Add optimum start/stop to the heating system.")
+      expect(response.body).to include("Consider installing an air source heat pump.")
+      expect(response.body).to include("Consider installing PV.")
+    end
+
+    it "Shows the building and report details" do
+      expect(response.body).to include("4 May 2020")
+      expect(response.body).to include("10 square metres")
+      expect(response.body).to include("Natural Ventilation Only")
+      expect(response.body).to include("Calculation-Tool0")
+    end
   end
 end
