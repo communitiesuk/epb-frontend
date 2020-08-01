@@ -486,6 +486,7 @@ class FrontendService < Sinatra::Base
       )
     end
   rescue StandardError => e
+    pp e
     case e
     when Errors::AssessmentNotFound
       not_found
