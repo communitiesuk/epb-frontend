@@ -71,7 +71,7 @@ FetchCertificate::NonDomesticStub.fetch assessment_id:
 
 FetchCertificate::NonDomesticStub.fetch assessment_id:
                                           "1234-5678-1234-5678-1234"
-FetchAssessmentSummary::AssessmentStub.fetch "1234-5678-1234-5678-1234", "b"
+FetchAssessmentSummary::AssessmentStub.fetch_cepc "1234-5678-1234-5678-1234", "b"
 FetchCertificate::RecommendationReportStub.fetch assessment_id:
                                                    "4192-1535-8427-8844-6702",
                                                  linked_to_cepc:
@@ -79,7 +79,7 @@ FetchCertificate::RecommendationReportStub.fetch assessment_id:
 
 FetchCertificate::NonDomesticStub.fetch assessment_id:
                                           "1111-0000-0000-0000-0000"
-FetchAssessmentSummary::AssessmentStub.fetch "1111-0000-0000-0000-0000",
+FetchAssessmentSummary::AssessmentStub.fetch_cepc "1111-0000-0000-0000-0000",
                                              "b",
                                              "1111-0000-0000-0000-0001"
 FetchCertificate::RecommendationReportStub.fetch assessment_id:

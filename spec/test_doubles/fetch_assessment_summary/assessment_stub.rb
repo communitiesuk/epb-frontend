@@ -60,5 +60,73 @@ module FetchAssessmentSummary
         "http://test-api.gov.uk/api/assessments/#{assessment_id}/summary",
       ).to_return(status: 200, body: body.to_json)
     end
+
+    def self.fetch_cepc_rr(assessment_id)
+      body = {
+        data: {
+          typeOfAssessment: "CEPC-RR",
+          assessmentId: assessment_id,
+          reportType: "4",
+          dateOfExpiry: "2021-05-03",
+          dateOfRegistration: "2020-05-04",
+          relatedCertificate: "0000-0000-0000-0000-1111",
+          relatedAssessments: [],
+          address: {
+            addressId: "UPRN-000000000000",
+            addressLine1: "1 Lonely Street",
+            addressLine2: nil,
+            addressLine3: nil,
+            addressLine4: nil,
+            town: "Post-Town0",
+            postcode: "A0 0AA",
+          },
+          assessor: {
+            schemeAssessorId: "SPEC000000",
+            name: "Mrs Report Writer",
+            registeredBy: { name: "test scheme", schemeId: scheme_id },
+          },
+          shortPaybackRecommendations: [
+            {
+              code: "1",
+              text:
+                "Consider replacing T8 lamps with retrofit T5 conversion kit.",
+              cO2Impact: "HIGH",
+            },
+            {
+              code: "3",
+              text:
+                "Introduce HF (high frequency) ballasts for fluorescent tubes: Reduced number of fittings required.",
+              cO2Impact: "LOW",
+            },
+          ],
+          mediumPaybackRecommendations: [
+            {
+              code: "2",
+              text: "Add optimum start/stop to the heating system.",
+              cO2Impact: "MEDIUM",
+            },
+          ],
+          longPaybackRecommendations: [
+            {
+              code: "3",
+              text: "Consider installing an air source heat pump.",
+              cO2Impact: "HIGH",
+            },
+          ],
+          otherRecommendations: [
+            { code: "4", text: "Consider installing PV.", cO2Impact: "HIGH" },
+          ],
+          technicalInformation: {
+            floorArea: "10",
+            buildingEnvironment: "Natural Ventilation Only",
+            calculationTool: "Calculation-Tool0",
+          },
+        },
+      }
+      WebMock.stub_request(
+        :get,
+        "http://test-api.gov.uk/api/assessments/#{assessment_id}/summary",
+      ).to_return(status: 200, body: body.to_json)
+    end
   end
 end
