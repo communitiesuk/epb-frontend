@@ -9,7 +9,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
 
   context "when the assessment does not exist" do
     before do
-      FetchCertificate::NoAssessmentStub.fetch("1234-5678-1234-5678-1234")
+      FetchAssessmentSummary::NoAssessmentStub.fetch("1234-5678-1234-5678-1234")
     end
 
     it "returns status 404" do
