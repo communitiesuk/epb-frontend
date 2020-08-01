@@ -25,7 +25,11 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
 
   context "when the assessment exists" do
     before do
-      FetchAssessmentSummary::AssessmentStub.fetch_cepc_rr("1234-5678-1234-5678-1234")
+      FetchAssessmentSummary::AssessmentStub
+          .fetch_cepc_rr("1234-5678-1234-5678-1234",
+                         "2030-01-01",
+                         "0000-0000-0000-0000-0000",
+                         "Connected to owner")
     end
 
     it "Shows the page title" do
@@ -67,6 +71,10 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
       expect(response.body).to include("Mrs Report Writer")
       expect(response.body).to include("SPEC000000")
       expect(response.body).to include("Quidos")
+    end
+
+    it "Shows the related party disclosure" do
+      expect(response.body).to include("Connected to owner")
     end
   end
 end
