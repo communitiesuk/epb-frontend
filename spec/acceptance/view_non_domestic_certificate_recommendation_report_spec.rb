@@ -62,5 +62,10 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
       expect(response.body).to include("Natural Ventilation Only")
       expect(response.body).to include("Calculation-Tool0")
     end
+
+    it "Shows the assessor details" do
+      expect(response.body).to include("Mrs Report Writer")
+      expect(response.body).to include("SPEC000000")
+    end
   end
 end
