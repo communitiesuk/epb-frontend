@@ -25,15 +25,18 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
 
   context "when the assessment exists" do
     before do
-      FetchAssessmentSummary::AssessmentStub
-          .fetch_cepc_rr("1234-5678-1234-5678-1234",
-                         "2030-01-01",
-                         "0000-0000-0000-0000-0000",
-                         "Connected to owner")
+      FetchAssessmentSummary::AssessmentStub.fetch_cepc_rr(
+        "1234-5678-1234-5678-1234",
+        "2030-01-01",
+        "0000-0000-0000-0000-0000",
+        "Connected to owner",
+      )
     end
 
     it "Shows the page title" do
-      expect(response.body).to include("Non-domestic Energy Performance Certificate Recommendation Report")
+      expect(response.body).to include(
+        "Non-domestic Energy Performance Certificate Recommendation Report",
+      )
     end
 
     it "Shows the top summary box" do
@@ -45,7 +48,9 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
     end
 
     it "Shows the efficiency band from the related cepc" do
-      expect(response.body).to include("This building’s current energy rating is D.")
+      expect(response.body).to include(
+        "This building’s current energy rating is D.",
+      )
     end
 
     it "Shows a link to the related CEPC" do
@@ -53,10 +58,18 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
     end
 
     it "Shows the recommendations" do
-      expect(response.body).to include("Consider replacing T8 lamps with retrofit T5 conversion kit.")
-      expect(response.body).to include("Introduce HF (high frequency) ballasts for fluorescent tubes: Reduced number of fittings required.")
-      expect(response.body).to include("Add optimum start/stop to the heating system.")
-      expect(response.body).to include("Consider installing an air source heat pump.")
+      expect(response.body).to include(
+        "Consider replacing T8 lamps with retrofit T5 conversion kit.",
+      )
+      expect(response.body).to include(
+        "Introduce HF (high frequency) ballasts for fluorescent tubes: Reduced number of fittings required.",
+      )
+      expect(response.body).to include(
+        "Add optimum start/stop to the heating system.",
+      )
+      expect(response.body).to include(
+        "Consider installing an air source heat pump.",
+      )
       expect(response.body).to include("Consider installing PV.")
     end
 

@@ -61,10 +61,12 @@ module FetchAssessmentSummary
       ).to_return(status: 200, body: body.to_json)
     end
 
-    def self.fetch_cepc_rr(assessment_id = "0000-0000-0000-0000-0001",
-                           date_of_expiry = "2030-01-01",
-                           linked_to_cepc = "0000-0000-0000-0000-0000",
-                           related_party = nil)
+    def self.fetch_cepc_rr(
+      assessment_id = "0000-0000-0000-0000-0001",
+      date_of_expiry = "2030-01-01",
+      linked_to_cepc = "0000-0000-0000-0000-0000",
+      related_party = nil
+    )
       body = {
         data: {
           typeOfAssessment: "CEPC-RR",
