@@ -39,5 +39,9 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
       expect(response.body).to include("1234-5678-1234-5678-1234")
       expect(response.body).to include("1 January 2030")
     end
+
+    it "Shows the efficiency band from the related cepc" do
+      expect(response.body).to include("This building’s current energy rating is D.")
+    end
   end
 end

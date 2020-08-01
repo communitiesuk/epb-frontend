@@ -125,6 +125,7 @@ module FetchAssessmentSummary
             calculationTool: "Calculation-Tool0",
           },
           relatedPartyDisclosure: related_party,
+          energyBandFromRelatedCertificate: "d",
         },
       }
       WebMock.stub_request(
