@@ -71,6 +71,9 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
         "Consider installing an air source heat pump.",
       )
       expect(response.body).to include("Consider installing PV.")
+      expect(response.body).to include("High")
+      expect(response.body).to include("Medium")
+      expect(response.body).to include("Low")
     end
 
     it "Shows the building and report details" do

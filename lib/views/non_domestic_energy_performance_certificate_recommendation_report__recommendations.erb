@@ -21,7 +21,7 @@
       <% assessment[:shortPaybackRecommendations].each do |recommendation| %>
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><%= recommendation[:text] %></th>
-          <td class="govuk-table__cell"><%= recommendation[:cO2Impact] %></td>
+          <td class="govuk-table__cell"><%= recommendation[:cO2Impact].capitalize %></td>
         </tr>
       <% end %>
     </tbody>
@@ -38,7 +38,7 @@
     <% assessment[:mediumPaybackRecommendations].each do |recommendation| %>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><%= recommendation[:text] %></th>
-        <td class="govuk-table__cell"><%= recommendation[:cO2Impact] %></td>
+        <td class="govuk-table__cell"><%= recommendation[:cO2Impact].capitalize %></td>
       </tr>
     <% end %>
     </tbody>
@@ -55,7 +55,7 @@
     <% assessment[:longPaybackRecommendations].each do |recommendation| %>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><%= recommendation[:text] %></th>
-        <td class="govuk-table__cell"><%= recommendation[:cO2Impact] %></td>
+        <td class="govuk-table__cell"><%= recommendation[:cO2Impact].capitalize %></td>
       </tr>
     <% end %>
     </tbody>
@@ -73,7 +73,7 @@
     <% assessment[:otherRecommendations].each do |recommendation| %>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><%= recommendation[:text] %></th>
-        <td class="govuk-table__cell"><%= recommendation[:cO2Impact] %></td>
+        <td class="govuk-table__cell"><%= recommendation[:cO2Impact].capitalize %></td>
       </tr>
     <% end %>
     </tbody>
