@@ -409,6 +409,12 @@ cy:
     print:
       label: 'Welsh: Print this %{type}'
       noscript_text: 'Welsh: To print this %{type}, press CMD/CTRL + P on your keyboard'
+    epc_summary:
+      title: "Energy Rating"
+      date_of_expiry: "Valid until %{date_of_expiry}"
+      certificate_id: "Certificate Number"
+      property_info:
+          'This property has a type of "%{property_type}" and has a total floor area of %{total_floor_area} square metres.'
 
   unit:
     square_metres: 'Welsh: square metres'

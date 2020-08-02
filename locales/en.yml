@@ -434,6 +434,12 @@ en:
       label: 'Print this %{type}'
       noscript_text: 'To print this %{type}, press CMD/CTRL + P on your keyboard'
       type: 'report'
+    epc_summary:
+      title: "Energy Rating"
+      date_of_expiry: "Valid until %{date_of_expiry}"
+      certificate_id: "Certificate Number"
+      property_info:
+          'This property has a type of "%{property_type}" and has a total floor area of %{total_floor_area} square metres.'
 
   unit:
     square_metres: 'square metres'

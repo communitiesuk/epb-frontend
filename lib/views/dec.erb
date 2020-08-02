@@ -8,5 +8,16 @@
       </a>
       <h1 class="govuk-heading-xl"><%= t('dec.top_heading') %></h1>
     </div>
-    </div>
+  </div>
+  <div class="govuk-grid-column-two-thirds">
+    <%== erb :component__epc_summary, locals: {
+      energy_efficiency_band: assessment[:energyEfficiencyBand],
+      address: assessment[:address],
+      date_of_expiry: assessment[:dateOfExpiry],
+      assessment_id: assessment[:assessmentId],
+      property_type: nil,
+
+    }
+    %>
+  </div>
 </div>
