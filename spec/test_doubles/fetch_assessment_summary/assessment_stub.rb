@@ -65,7 +65,8 @@ module FetchAssessmentSummary
       assessment_id = "0000-0000-0000-0000-0001",
       date_of_expiry = "2030-01-01",
       linked_to_cepc = "0000-0000-0000-0000-0000",
-      related_party = nil
+      related_party = nil,
+      related_energy_band = "d"
     )
       body = {
         data: {
@@ -127,7 +128,7 @@ module FetchAssessmentSummary
             calculationTool: "Calculation-Tool0",
           },
           relatedPartyDisclosure: related_party,
-          energyBandFromRelatedCertificate: "d",
+          energyBandFromRelatedCertificate: related_energy_band,
         },
       }
       WebMock.stub_request(
