@@ -1053,3 +1053,5 @@ en:
       heading: 'Page not found'
       intro: 'If you typed the web address, check it is correct.'
       body: 'If you pasted the web address, check you copied the entire address.'
+  dec:
+    top_heading: "Display Energy Certificate"

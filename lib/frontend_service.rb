@@ -479,6 +479,11 @@ class FrontendService < Sinatra::Base
         :non_domestic_energy_performance_certificate_recommendation_report,
         assessment: assessment[:data],
       )
+    elsif assessment[:data][:typeOfAssessment] == "DEC"
+      show(
+          :dec,
+          assessment: assessment[:data]
+      )
     else
       show(
         :domestic_energy_performance_certificate,
@@ -487,6 +492,9 @@ class FrontendService < Sinatra::Base
     end
   rescue StandardError => e
     pp e
+    if e.methods.include?(:backtrace)
+      pp e.backtrace
+    end
     case e
     when Errors::AssessmentNotFound
       not_found

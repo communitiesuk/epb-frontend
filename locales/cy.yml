@@ -1018,3 +1018,5 @@ cy:
       heading: 'Welsh: Page not found'
       intro: 'Welsh: If you typed the web address, check it is correct.'
       body: 'Welsh: If you pasted the web address, check you copied the entire address.'
+  dec:
+    top_heading: "Display Energy Certificate"
