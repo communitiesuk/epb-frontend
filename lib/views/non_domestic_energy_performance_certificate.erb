@@ -11,24 +11,15 @@
   </div>
   <div class="govuk-grid-column-two-thirds">
     <hr class="epc-light-top" />
-    <div class="govuk-body epc-blue-bottom">
-      <div class="epc-box govuk-!-margin-bottom-5">
-        <div class="epc-rating-box">
-          <p class="epc-rating-title govuk-body"><%= t('domestic_epc.summary.energy_rating_title') %></p>
-          <p class="epc-rating-result govuk-body"><%= assessment[:currentEnergyEfficiencyBand].upcase %></p>
-        </div>
-        <p class="epc-address govuk-body"><%== [assessment[:address][:addressLine1],
-                                                assessment[:address][:addressLine2],
-                                                assessment[:address][:addressLine3],
-                                                assessment[:address][:addressLine4]].reject!(&:nil?).join('<br>') %><br><%= assessment[:address][:town] %><br><%= assessment[:address][:postcode] %></p>
-        <p class="govuk-body epc-extra-box"><%= t('domestic_epc.summary.date_of_expiry', :date_of_expiry => Date.parse(assessment[:dateOfExpiry]).strftime('%-d %B %Y')) %></p>
-        <p class="govuk-body epc-extra-box">
-          <label><%= t('domestic_epc.summary.certificate_id') %></label>
-          <b><%= assessment[:assessmentId] %></b>
-        </p>
-      </div>
-      <p class="govuk-body"><%= t('non_domestic_epc.sections.summary.property_info', property_type: assessment[:propertyType], total_floor_area: assessment[:technicalInformation][:floorArea]) %></p>
-    </div>
+    <%== erb :component__epc_summary, locals: {
+      energy_efficiency_band: assessment[:currentEnergyEfficiencyBand],
+      address: assessment[:address],
+      date_of_expiry: assessment[:dateOfExpiry],
+      assessment_id: assessment[:assessmentId],
+      property_type: assessment[:propertyType],
+      floor_area: assessment[:technicalInformation][:floorArea]
+    }
+    %>
     <div class="govuk-body epc-blue-bottom">
       <h2 class="govuk-heading-l"><%= t('non_domestic_epc.sections.renting.title') %></h2>
       <% minimum_energy_band = 'e' %>

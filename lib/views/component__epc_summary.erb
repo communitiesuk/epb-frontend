@@ -14,7 +14,7 @@
       <b><%= assessment_id %></b>
     </p>
   </div>
-  <% unless property_type.nil? || total_floor_area.nil? %>
+  <% unless property_type.nil? || floor_area.nil? %>
   <p class="govuk-body"><%=  t('component.epc_summary.property_info', property_type: property_type, total_floor_area: floor_area)  %></p>
   <%  end %>
 </div>
