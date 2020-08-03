@@ -6,9 +6,56 @@
         class="govuk-back-link">
         <%=t('layout.body.breadcrumb.back')%>
       </a>
-      <h1 class="govuk-heading-xl"><%= t('non_domestic_epc.top_heading') %></h1>
     </div>
   </div>
+
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl"><%= t('non_domestic_epc.top_heading') %></h1>
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+    <hr class="epc-blue-top" />
+    <% content_sections = [
+      {
+        link: '#renting',
+        text: 'non_domestic_epc.sections.renting.title'
+      },
+      {
+        link: '#energy_rating_section',
+        text: 'non_domestic_epc.energy_rating_section.title'
+      },
+      {
+        link: '#how_this_building_compares',
+        text: 'non_domestic_epc.how_this_building_compares.heading'
+      },
+      {
+        link: '#energy_peformance_breakdown',
+        text: 'non_domestic_epc.energy_peformance_breakdown.heading'
+      },
+      {
+        link: '#related_report',
+        text: 'non_domestic_epc.related_report.heading'
+      },
+      {
+        link: '#contact',
+        text: 'non_domestic_epc.contact.heading'
+      },
+      {
+        link: '#other_reports',
+        text: 'non_domestic_epc.sections.other_reports.title'
+      }
+    ]
+       if assessment[:relatedCepcReport]
+         content_sections.unshift link: '#rating',
+                                  text: 'non_domestic_epc.rr.rating.title'
+       end
+    %>
+    <%== erb :component__contents, locals: {
+      title: t("non_domestic_epc.contents.title"),
+      sections: content_sections
+    } %>
+  </div>
+
   <div class="govuk-grid-column-two-thirds">
     <hr class="epc-light-top" />
     <%== erb :component__epc_summary, locals: {
@@ -21,6 +68,7 @@
     }
     %>
     <div class="govuk-body epc-blue-bottom">
+      <a id="renting"></a>
       <h2 class="govuk-heading-l"><%= t('non_domestic_epc.sections.renting.title') %></h2>
       <% minimum_energy_band = 'e' %>
       <% if assessment[:currentEnergyEfficiencyBand] > minimum_energy_band %>
@@ -40,6 +88,7 @@
       <% end %>
     </div>
     <div class="govuk-body epc-blue-bottom">
+      <a id="energy_rating_section"></a>
       <h2 class="govuk-heading-l"><%= t('non_domestic_epc.energy_rating_section.title') %></h2>
       <p class="govuk-body"><%== t('non_domestic_epc.energy_rating_section.current_rating_text', :current_energy_efficiency_band => assessment[:currentEnergyEfficiencyBand].upcase) %></p>
       <%== erb :non_domestic_energy_rating, locals: {

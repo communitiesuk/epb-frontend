@@ -245,6 +245,46 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate" do
       it "shows the other certificates section" do
         expect(response.body).to include("Other certificates for this property")
       end
+    end 
+
+    describe "viewing the report contents section" do
+      it "shows the report contents title" do
+        expect(response.body).to include(">Certificate Contents</h3>")
+      end
+
+      it "shows the section links" do
+        expect(response.body).to include(
+                                     '<p class="govuk-body"><a href="#renting">Rules on letting this property</a></p>',
+                                     )
+        expect(response.body).to include(
+                                     '<p class="govuk-body"><a href="#energy_rating_section">Energy efficiency rating for this building</a></p>',
+                                     )
+        expect(response.body).to include(
+                                     '<p class="govuk-body"><a href="#how_this_building_compares">How this building compares to others</a></p>',
+                                     )
+        expect(response.body).to include(
+                                     '<p class="govuk-body"><a href="#energy_peformance_breakdown">Breakdown of this building\'s energy performance</a></p>',
+                                     )
+        expect(response.body).to include(
+                                     '<p class="govuk-body"><a href="#related_report">Recommendation Report</a></p>',
+                                     )
+        expect(response.body).to include(
+                                     '<p class="govuk-body"><a href="#contact">Contacting the assessor and accreditation scheme</a></p>',
+                                     )
+        expect(response.body).to include(
+                                     '<p class="govuk-body"><a href="#other_reports">Other certificates for this property</a></p>',
+                                     )
+      end
+
+      it "can navigate to each section" do
+        expect(response.body).to include('id="renting"')
+        expect(response.body).to include('id="energy_rating_section"')
+        expect(response.body).to include('id="how_this_building_compares"')
+        expect(response.body).to include('id="energy_peformance_breakdown"')
+        expect(response.body).to include('id="related_report"')
+        expect(response.body).to include('id="contact"')
+        expect(response.body).to include('id="other_reports"')
+      end
     end
   end
 end

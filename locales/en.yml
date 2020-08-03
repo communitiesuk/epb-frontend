@@ -446,6 +446,8 @@ en:
 
   non_domestic_epc:
     top_heading: 'Non-domestic Energy Performance Certificate'
+    contents:
+      title: 'Certificate Contents'
     energy_rating_section:
       title: 'Energy efficiency rating for this building'
       current_rating_text: 'This building’s current energy rating is %{current_energy_efficiency_band}.'
