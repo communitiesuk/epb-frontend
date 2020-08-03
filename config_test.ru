@@ -64,6 +64,11 @@ FetchCertificate::Stub.fetch(
       description: "Room heaters, electric",
       energyEfficiencyRating: 3,
     },
+    {
+        name: "roof",
+        description: "(another dwelling above)",
+        energyEfficiencyRating: 0,
+    },
   ],
 )
 

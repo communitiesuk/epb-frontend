@@ -367,6 +367,13 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate" do
           expect(response.body).to include("Room heaters, electric")
           expect(response.body).to include("Average")
         end
+
+        describe "with no energy efficiency rating" do
+          it "does not show the element/feature" do
+            expect(response.body).not_to include("Roof")
+            expect(response.body).not_to include("(another dwelling above)")
+          end
+        end
       end
 
       context "when the property summary key is empty" do

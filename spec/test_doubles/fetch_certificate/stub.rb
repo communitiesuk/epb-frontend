@@ -380,6 +380,11 @@ module FetchCertificate
           description: "Room heaters, electric",
           energyEfficiencyRating: 3,
         },
+        {
+          name: "roof",
+          description: "(another dwelling above)",
+          energyEfficiencyRating: 0,
+        },
       ]
     end
   end

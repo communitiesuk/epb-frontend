@@ -121,6 +121,11 @@ describe Gateway::CertificatesGateway do
             description: "Room heaters, electric",
             energyEfficiencyRating: 3,
           },
+          {
+              name: "roof",
+              description: "(another dwelling above)",
+              energyEfficiencyRating: 0,
+          },
         ],
         greenDealPlan: {
           "greenDealPlanId": "ABC123456DEF",
