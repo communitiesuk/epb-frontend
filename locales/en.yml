@@ -439,7 +439,7 @@ en:
       date_of_expiry: "Valid until %{date_of_expiry}"
       certificate_id: "Certificate Number"
       property_info:
-          'This property has a type of "%{property_type}" and has a total floor area of %{total_floor_area} square metres.'
+          'This property is a %{property_type} and has a total floor area of %{total_floor_area} square metres.'
 
   unit:
     square_metres: 'square metres'
@@ -455,7 +455,7 @@ en:
         aria-label: "This building’s energy rating is %{current_energy_efficiency_band} (%{current_energy_efficiency_rating})"
     sections:
       summary:
-        property_info: 'This property has a type of "%{property_type}" and has a total floor area of %{total_floor_area} square metres.'
+        property_info: 'This property is a %{property_type} and has a total floor area of %{total_floor_area} square metres.'
       renting:
         title: 'Rules on letting this property'
         rental_info:

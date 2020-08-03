@@ -414,7 +414,7 @@ cy:
       date_of_expiry: "Valid until %{date_of_expiry}"
       certificate_id: "Certificate Number"
       property_info:
-          'This property has a type of "%{property_type}" and has a total floor area of %{total_floor_area} square metres.'
+        'Welsh: This property is a %{property_type} and has a total floor area of %{total_floor_area} square metres.'
 
   unit:
     square_metres: 'Welsh: square metres'
@@ -430,7 +430,7 @@ cy:
         aria-label: "Welsh: This building’s energy rating is %{current_energy_efficiency_band} (%{current_energy_efficiency_rating})"
     sections:
       summary:
-        property_info: 'Welsh: This property has a type of "%{property_type}" and has a total floor area of %{total_floor_area} square metres.'
+        property_info: 'Welsh: This property is a %{property_type} and has a total floor area of %{total_floor_area} square metres.'
       renting:
         title: 'Welsh: Rules on letting this property'
         rental_info:
