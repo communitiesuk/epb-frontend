@@ -126,9 +126,6 @@
       related_party_disclosure: assessment[:relatedPartyDisclosure]
     }%>
 
-    <div class="govuk-grid-column-one-third"><br></div>
-
-    <div class="govuk-grid-column-two-thirds">
       <a id="other_reports"></a>
       <%== erb :component__related_assessments,
                 locals: {
@@ -140,6 +137,5 @@
                   no_related_assessments: t('non_domestic_epc.sections.other_reports.no_related')
                 }
       %>
-    </div>
   </div>
 </div>
