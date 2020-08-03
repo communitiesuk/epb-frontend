@@ -529,12 +529,16 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate" do
           get "/energy-performance-certificate/1234-5678-1234-5678-1235"
         end
 
+        it "responds successfully" do
+          expect(response.status).to eq 200
+        end
+
         it "does not show the provider email" do
-          expect(response.body).not_to include("Email")
+          expect(response.body).not_to include("<dt class=\"govuk-summary-list__key govuk-!-width-one-half\">Email</dt>")
         end
 
         it "does not show the provider telephone" do
-          expect(response.body).not_to include("Telephone")
+          expect(response.body).not_to include("<dt class=\"govuk-summary-list__key govuk-!-width-one-half\">Telephone</dt>")
         end
       end
     end
