@@ -448,7 +448,10 @@ cy:
         cta: 'Welsh: recommendation report'
         url: '#'
       other_reports:
-        title: 'Other certificates for this property'
+        title: 'Welsh: Other certificates for this property'
+        certificate_reference: 'Welsh: Reference number'
+        valid_until: 'Welsh: Valid until'
+        expired: 'Welsh: Expired'
     rr:
       top_heading: 'Welsh: Non-domestic Energy Performance Certificate Recommendation Report'
       summary:

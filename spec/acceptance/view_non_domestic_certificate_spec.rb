@@ -286,5 +286,26 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate" do
         expect(response.body).to include('id="other_reports"')
       end
     end
+
+    describe "viewing the related assessments section" do
+      it "shows the related assessments section title" do
+        expect(response.body).to include(">Other certificates for this property</h2>")
+      end
+
+      it "shows headings on the list of the related assessments" do
+        expect(response.body).to include(">Reference number</p>")
+        expect(response.body).to include(">Valid until</p>")
+      end
+
+      it "shows the expected valid related assessment" do
+        expect(response.body).to include("/energy-performance-certificate/0000-0000-0000-0000-0001\">0000-0000-0000-0000-0001</a>")
+        expect(response.body).to include(">Valid until 4 May 2026</b>")
+      end
+
+      it "shows the expected expired related assessment" do
+        expect(response.body).to include("/energy-performance-certificate/0000-0000-0000-0000-0002\">0000-0000-0000-0000-0002</a>")
+        expect(response.body).to include(">1 July 2002 (Expired)</b>")
+      end
+    end
   end
 end

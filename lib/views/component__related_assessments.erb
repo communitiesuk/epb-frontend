@@ -1,0 +1,30 @@
+<h2 class="govuk-heading-l"><%= section_title %></h2>
+
+<% if relatedAssessments.nil? || relatedAssessments.empty? %>
+
+<% else %>
+  <% relatedAssessments.each do |related_assessment| %>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-half">
+        <p class="govuk-!-font-weight-bold"><%= heading_certificate_reference %></p>
+      </div>
+      <div class="govuk-grid-column-one-half govuk-body">
+        <a href="<%= localised_url('/energy-performance-certificate/' + related_assessment[:assessmentId]) %>"><%= related_assessment[:assessmentId] %></a>
+      </div>
+    </div>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-half">
+        <p class="govuk-!-font-weight-bold"><%= heading_valid_until %></p>
+      </div>
+      <div class="govuk-grid-column-one-half govuk-body">
+        <% if related_assessment[:assessmentStatus] == "EXPIRED" %>
+          <b class="expired-text"><%= Date.parse(related_assessment[:assessmentExpiryDate]).strftime('%-d %B %Y') %> (<%= expired_text %>)</b>
+        <% else %>
+          <b><%= heading_valid_until %> <%= Date.parse(related_assessment[:assessmentExpiryDate]).strftime('%-d %B %Y') %></b>
+        <% end %>
+      </div>
+    </div>
+    <hr>
+  <% end %>
+<% end %>
