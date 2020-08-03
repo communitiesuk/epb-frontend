@@ -306,6 +306,25 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate" do
         expect(response.body).to include("/energy-performance-certificate/0000-0000-0000-0000-0002\">0000-0000-0000-0000-0002</a>")
         expect(response.body).to include(">1 July 2002 (Expired)</b>")
       end
+
+      context "when there are no related assessments" do
+        before do
+          FetchAssessmentSummary::AssessmentStub.fetch_cepc(
+            "1234-5678-1234-5678-1234",
+            "b",
+            "4192-1535-8427-8844-6702",
+            false
+          )
+        end
+
+        it "shows the related assessments section title" do
+          expect(response.body).to include(">Other certificates for this property</h2>")
+        end
+
+        it "shows the no related assessments content" do
+          expect(response.body).to include(">There are no related certificates for the property.</p>")
+        end
+      end
     end
   end
 end

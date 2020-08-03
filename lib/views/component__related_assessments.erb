@@ -1,7 +1,7 @@
 <h2 class="govuk-heading-l"><%= section_title %></h2>
 
 <% if relatedAssessments.nil? || relatedAssessments.empty? %>
-
+  <p class="govuk-body"><%= no_related_assessments %></p>
 <% else %>
   <% relatedAssessments.each do |related_assessment| %>
     <div class="govuk-grid-row">
