@@ -65,9 +65,9 @@ FetchCertificate::Stub.fetch(
       energyEfficiencyRating: 3,
     },
     {
-        name: "roof",
-        description: "(another dwelling above)",
-        energyEfficiencyRating: 0,
+      name: "roof",
+      description: "(another dwelling above)",
+      energyEfficiencyRating: 0,
     },
   ],
 )

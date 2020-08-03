@@ -9,9 +9,10 @@ describe "Acceptance::DisplayEnergyCertificate" do
 
   context "when a dec exists" do
     before do
-      FetchAssessmentSummary::AssessmentStub
-          .fetch_dec("0000-0000-0000-0000-1111",
-                     "2030-02-21")
+      FetchAssessmentSummary::AssessmentStub.fetch_dec(
+        "0000-0000-0000-0000-1111",
+        "2030-02-21",
+      )
     end
 
     it "Shows the page title" do

@@ -30,7 +30,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
         "2030-01-01",
         "0000-0000-0000-0000-0000",
         "Connected to owner",
-        "d"
+        "d",
       )
     end
 
@@ -98,16 +98,17 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
   context "when there is no information about the related CEPC" do
     before do
       FetchAssessmentSummary::AssessmentStub.fetch_cepc_rr(
-          "1234-5678-1234-5678-9999",
-          "2030-01-01",
-          "0000-0000-0000-0000-0000",
-          "Connected to owner",
-          nil
+        "1234-5678-1234-5678-9999",
+        "2030-01-01",
+        "0000-0000-0000-0000-0000",
+        "Connected to owner",
+        nil,
       )
     end
 
     it "doesnt show the related cepc section" do
-      page_without_cepc = get "/energy-performance-certificate/1234-5678-1234-5678-9999"
+      page_without_cepc =
+        get "/energy-performance-certificate/1234-5678-1234-5678-9999"
       expect(page_without_cepc.body).to_not include("Energy rating and EPC")
     end
   end

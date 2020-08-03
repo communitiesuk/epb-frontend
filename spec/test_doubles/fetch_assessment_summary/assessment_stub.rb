@@ -138,34 +138,31 @@ module FetchAssessmentSummary
     end
 
     def self.fetch_dec(
-        assessment_id = "0000-0000-0000-0000-0001",
-        date_of_expiry = "2030-01-01"
+      assessment_id = "0000-0000-0000-0000-0001", date_of_expiry = "2030-01-01"
     )
       body = {
-          data:         {
-              typeOfAssessment: "DEC",
-              assessmentId: assessment_id,
-              reportType: "1",
-              dateOfExpiry: date_of_expiry,
-              energyEfficiencyBand: "a",
-              energyEfficiencyRating: "1",
-              address: {
-                  addressId: "UPRN-000000000001",
-                  addressLine1: "2 Lonely Street",
-                  addressLine2: nil,
-                  addressLine3: nil,
-                  addressLine4: nil,
-                  town: "Post-Town1",
-                  postcode: "A0 0AA",
-              },
+        data: {
+          typeOfAssessment: "DEC",
+          assessmentId: assessment_id,
+          reportType: "1",
+          dateOfExpiry: date_of_expiry,
+          energyEfficiencyBand: "a",
+          energyEfficiencyRating: "1",
+          address: {
+            addressId: "UPRN-000000000001",
+            addressLine1: "2 Lonely Street",
+            addressLine2: nil,
+            addressLine3: nil,
+            addressLine4: nil,
+            town: "Post-Town1",
+            postcode: "A0 0AA",
           },
-
+        },
       }
       WebMock.stub_request(
-          :get,
-          "http://test-api.gov.uk/api/assessments/#{assessment_id}/summary",
-          ).to_return(status: 200, body: body.to_json)
+        :get,
+        "http://test-api.gov.uk/api/assessments/#{assessment_id}/summary",
+      ).to_return(status: 200, body: body.to_json)
     end
-
   end
 end
