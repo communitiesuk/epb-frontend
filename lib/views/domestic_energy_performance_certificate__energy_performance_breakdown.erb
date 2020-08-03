@@ -24,7 +24,7 @@
     <tbody class="govuk-table__body">
       <tr class="govuk-table__row">
       <% assessment[:propertySummary]&.each do |property_item| %>
-        <% if property_item[:energyEfficiencyRating] > 0 %>
+        <% if property_item[:energyEfficiencyRating].to_i > 0 %>
           <th class="govuk-table__cell govuk-!-font-weight-regular"><%= t("property_summary.type." + property_item[:name])%></th>
           <td class="govuk-table__cell"><%=property_item[:description]%></td>
           <td class="govuk-table__cell"><%=t('energy_performance_rating.' + property_item[:energyEfficiencyRating].to_s + '.energy_performance')%></td>
