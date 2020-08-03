@@ -245,7 +245,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate" do
       it "shows the other certificates section" do
         expect(response.body).to include("Other certificates for this property")
       end
-    end 
+    end
 
     describe "viewing the report contents section" do
       it "shows the report contents title" do
@@ -254,26 +254,26 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate" do
 
       it "shows the section links" do
         expect(response.body).to include(
-                                     '<p class="govuk-body"><a href="#renting">Rules on letting this property</a></p>',
-                                     )
+          '<p class="govuk-body"><a href="#renting">Rules on letting this property</a></p>',
+        )
         expect(response.body).to include(
-                                     '<p class="govuk-body"><a href="#energy_rating_section">Energy efficiency rating for this building</a></p>',
-                                     )
+          '<p class="govuk-body"><a href="#energy_rating_section">Energy efficiency rating for this building</a></p>',
+        )
         expect(response.body).to include(
-                                     '<p class="govuk-body"><a href="#how_this_building_compares">How this building compares to others</a></p>',
-                                     )
+          '<p class="govuk-body"><a href="#how_this_building_compares">How this building compares to others</a></p>',
+        )
         expect(response.body).to include(
-                                     '<p class="govuk-body"><a href="#energy_peformance_breakdown">Breakdown of this building\'s energy performance</a></p>',
-                                     )
+          '<p class="govuk-body"><a href="#energy_peformance_breakdown">Breakdown of this building\'s energy performance</a></p>',
+        )
         expect(response.body).to include(
-                                     '<p class="govuk-body"><a href="#related_report">Recommendation Report</a></p>',
-                                     )
+          '<p class="govuk-body"><a href="#related_report">Recommendation Report</a></p>',
+        )
         expect(response.body).to include(
-                                     '<p class="govuk-body"><a href="#contact">Contacting the assessor and accreditation scheme</a></p>',
-                                     )
+          '<p class="govuk-body"><a href="#contact">Contacting the assessor and accreditation scheme</a></p>',
+        )
         expect(response.body).to include(
-                                     '<p class="govuk-body"><a href="#other_reports">Other certificates for this property</a></p>',
-                                     )
+          '<p class="govuk-body"><a href="#other_reports">Other certificates for this property</a></p>',
+        )
       end
 
       it "can navigate to each section" do
