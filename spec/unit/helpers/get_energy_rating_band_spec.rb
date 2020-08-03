@@ -5,17 +5,17 @@ describe Sinatra::FrontendService::Helpers do
     include Sinatra::FrontendService::Helpers
   end
 
-  context "given a recommended improvment number" do
-    it "number 1" do
-      expect(HelpersStub.new.get_energy_rating_band(100)).to eq("a")
+  context "given an energy efficiency rating value" do
+    it "converts 100 to an A band" do
+      expect(HelpersStub.new.get_energy_rating_band(100)).to eq "a"
     end
 
-    it "number 2" do
-      expect(HelpersStub.new.get_energy_rating_band(72)).to eq("c")
+    it "converts 72 to a C band" do
+      expect(HelpersStub.new.get_energy_rating_band(72)).to eq "c"
     end
 
-    it "number 3 to 9" do
-      expect(HelpersStub.new.get_energy_rating_band(300)).to eq(nil)
+    it "converts 300 to nil" do
+      expect(HelpersStub.new.get_energy_rating_band(300)).to eq nil
     end
   end
 end
