@@ -98,7 +98,10 @@ module FetchAssessmentSummary
           assessmentType: "CEPC-RR",
           assessmentExpiryDate: "2026-05-04",
         },
-      ]
+      ],
+      company_details: {
+        name: "Joe Bloggs Ltd", address: "123 My Street, My City, AB3 4CD"
+      }
     )
       body = {
         data: {
@@ -122,9 +125,7 @@ module FetchAssessmentSummary
             schemeAssessorId: "SPEC000000",
             name: "Mrs Report Writer",
             registeredBy: { name: "quidos", schemeId: 3 },
-            companyDetails: {
-              name: "Joe Bloggs Ltd", address: "123 My Street, My City, AB3 4CD"
-            },
+            companyDetails: company_details,
           },
           shortPaybackRecommendations: [
             {

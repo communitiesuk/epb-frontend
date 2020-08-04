@@ -125,6 +125,22 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
     end
   end
 
+  context "when there are no company details" do
+    before do
+      FetchAssessmentSummary::AssessmentStub.fetch_cepc_rr(
+        assessment_id: "1234-5678-1234-5678-1234",
+        company_details: {
+          name: nil, address: nil
+        },
+      )
+    end
+
+    it "does not show the employer details" do
+      expect(response.body).not_to include("Joe Bloggs Ltd")
+      expect(response.body).not_to include("123 My Street, My City, AB3 4CD")
+    end
+  end
+
   context "when there is no information about the related CEPC" do
     before do
       FetchAssessmentSummary::AssessmentStub.fetch_cepc_rr(
