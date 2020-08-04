@@ -88,6 +88,8 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
       expect(response.body).to include("Mrs Report Writer")
       expect(response.body).to include("SPEC000000")
       expect(response.body).to include("Quidos")
+      expect(response.body).to include("Joe Bloggs Ltd")
+      expect(response.body).to include("123 My Street, My City, AB3 4CD")
     end
 
     it "Shows the related party disclosure" do
