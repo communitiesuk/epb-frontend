@@ -48,7 +48,7 @@
                }
       %>
 
-    <% if assessment[:relatedCertificate] %>
+    <% if assessment[:relatedCertificate] && assessment[:energyBandFromRelatedCertificate] %>
       <%== erb :non_domestic_energy_performance_certificate_recommendation_report__rating,
                locals: {
                  related_cepc: assessment[:relatedCertificate],
