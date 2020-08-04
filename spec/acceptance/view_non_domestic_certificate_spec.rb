@@ -289,7 +289,9 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate" do
 
     describe "viewing the related assessments section" do
       it "shows the related assessments section title" do
-        expect(response.body).to include(">Other certificates for this property</h2>")
+        expect(response.body).to include(
+          ">Other certificates for this property</h2>",
+        )
       end
 
       it "shows headings on the list of the related assessments" do
@@ -298,12 +300,16 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate" do
       end
 
       it "shows the expected valid related assessment" do
-        expect(response.body).to include("/energy-performance-certificate/0000-0000-0000-0000-0001\">0000-0000-0000-0000-0001</a>")
+        expect(response.body).to include(
+          "/energy-performance-certificate/0000-0000-0000-0000-0001\">0000-0000-0000-0000-0001</a>",
+        )
         expect(response.body).to include(">Valid until 4 May 2026</b>")
       end
 
       it "shows the expected expired related assessment" do
-        expect(response.body).to include("/energy-performance-certificate/0000-0000-0000-0000-0002\">0000-0000-0000-0000-0002</a>")
+        expect(response.body).to include(
+          "/energy-performance-certificate/0000-0000-0000-0000-0002\">0000-0000-0000-0000-0002</a>",
+        )
         expect(response.body).to include(">1 July 2002 (Expired)</b>")
       end
 
@@ -313,16 +319,20 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate" do
             "1234-5678-1234-5678-1234",
             "b",
             "4192-1535-8427-8844-6702",
-            false
+            false,
           )
         end
 
         it "shows the related assessments section title" do
-          expect(response.body).to include(">Other certificates for this property</h2>")
+          expect(response.body).to include(
+            ">Other certificates for this property</h2>",
+          )
         end
 
         it "shows the no related assessments content" do
-          expect(response.body).to include(">There are no related certificates for the property.</p>")
+          expect(response.body).to include(
+            ">There are no related certificates for the property.</p>",
+          )
         end
       end
     end
