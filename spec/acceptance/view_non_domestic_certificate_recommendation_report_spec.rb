@@ -109,17 +109,19 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
   context "when there are no related assessments" do
     before do
       FetchAssessmentSummary::AssessmentStub.fetch_cepc_rr(
-          "1234-5678-1234-5678-1234",
-          "2030-01-01",
-          "0000-0000-0000-0000-0000",
-          "Connected to owner",
-          "d",
-          [],
-          )
+        "1234-5678-1234-5678-1234",
+        "2030-01-01",
+        "0000-0000-0000-0000-0000",
+        "Connected to owner",
+        "d",
+        [],
+      )
     end
 
     it "shows the no related reports text" do
-      expect(response.body).to include("There are no related reports for this property.")
+      expect(response.body).to include(
+        "There are no related reports for this property.",
+      )
     end
   end
 
