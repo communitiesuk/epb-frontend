@@ -80,12 +80,12 @@ module FetchAssessmentSummary
     end
 
     def self.fetch_cepc_rr(
-      assessment_id = "0000-0000-0000-0000-0001",
-      date_of_expiry = "2030-01-01",
-      linked_to_cepc = "0000-0000-0000-0000-0000",
-      related_party = nil,
-      related_energy_band = "d",
-      related_assessments = [
+      assessment_id: "0000-0000-0000-0000-0001",
+      date_of_expiry: "2030-01-01",
+      linked_to_cepc: "0000-0000-0000-0000-0000",
+      related_party: nil,
+      related_energy_band: "d",
+      related_assessments: [
         {
           assessmentId: "0000-0000-0000-0000-5555",
           assessmentStatus: "ENTERED",

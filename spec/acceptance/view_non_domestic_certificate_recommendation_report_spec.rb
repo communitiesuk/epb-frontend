@@ -26,11 +26,11 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
   context "when the assessment exists" do
     before do
       FetchAssessmentSummary::AssessmentStub.fetch_cepc_rr(
-        "1234-5678-1234-5678-1234",
-        "2030-01-01",
-        "0000-0000-0000-0000-0000",
-        "Connected to owner",
-        "d",
+        assessment_id: "1234-5678-1234-5678-1234",
+        date_of_expiry: "2030-01-01",
+        linked_to_cepc: "0000-0000-0000-0000-0000",
+        related_party: "Connected to owner",
+        related_energy_band: "d",
       )
     end
 
@@ -109,12 +109,12 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
   context "when there are no related assessments" do
     before do
       FetchAssessmentSummary::AssessmentStub.fetch_cepc_rr(
-        "1234-5678-1234-5678-1234",
-        "2030-01-01",
-        "0000-0000-0000-0000-0000",
-        "Connected to owner",
-        "d",
-        [],
+        assessment_id: "1234-5678-1234-5678-1234",
+        date_of_expiry: "2030-01-01",
+        linked_to_cepc: "0000-0000-0000-0000-0000",
+        related_party: "Connected to owner",
+        related_energy_band: "d",
+        related_assessments: [],
       )
     end
 
@@ -128,11 +128,11 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
   context "when there is no information about the related CEPC" do
     before do
       FetchAssessmentSummary::AssessmentStub.fetch_cepc_rr(
-        "1234-5678-1234-5678-9999",
-        "2030-01-01",
-        "0000-0000-0000-0000-0000",
-        "Connected to owner",
-        nil,
+        assessment_id: "1234-5678-1234-5678-9999",
+        date_of_expiry: "2030-01-01",
+        linked_to_cepc: "0000-0000-0000-0000-0000",
+        related_party: "Connected to owner",
+        related_energy_band: nil,
       )
     end
 
