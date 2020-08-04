@@ -84,7 +84,21 @@ module FetchAssessmentSummary
       date_of_expiry = "2030-01-01",
       linked_to_cepc = "0000-0000-0000-0000-0000",
       related_party = nil,
-      related_energy_band = "d"
+      related_energy_band = "d",
+      related_assessments = [
+        {
+          assessmentId: "0000-0000-0000-0000-5555",
+          assessmentStatus: "ENTERED",
+          assessmentType: "RdSAP",
+          assessmentExpiryDate: "2030-05-04",
+        },
+        {
+          assessmentId: "9457-0000-0000-0000-2000",
+          assessmentStatus: "ENTERED",
+          assessmentType: "CEPC-RR",
+          assessmentExpiryDate: "2026-05-04",
+        },
+      ]
     )
       body = {
         data: {
@@ -94,20 +108,7 @@ module FetchAssessmentSummary
           dateOfExpiry: date_of_expiry,
           dateOfRegistration: "2020-05-04",
           relatedCertificate: linked_to_cepc,
-          relatedAssessments: [
-            {
-              assessmentId: "0000-0000-0000-0000-5555",
-              assessmentStatus: "ENTERED",
-              assessmentType: "RdSAP",
-              assessmentExpiryDate: "2030-05-04",
-            },
-            {
-              assessmentId: "9457-0000-0000-0000-2000",
-              assessmentStatus: "ENTERED",
-              assessmentType: "CEPC-RR",
-              assessmentExpiryDate: "2026-05-04",
-            },
-          ],
+          relatedAssessments: related_assessments,
           address: {
             addressId: "UPRN-000000000000",
             addressLine1: "1 Lonely Street",

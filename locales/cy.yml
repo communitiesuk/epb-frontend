@@ -500,6 +500,7 @@ cy:
       other_reports:
         title: 'Welsh: Other reports for this property'
         reminder: 'Welsh: If you are aware of previous reports for this property and they are not listed here, please contact the Help Desk at %{contact_centre_number}.'
+        no_related_reports: 'Welsh: There are no related reports for this property.'
     how_this_building_compares:
       heading: "Welsh: How this building compares to others"
       explanation: "Welsh: Buildings similar to this one could have ratings:"
