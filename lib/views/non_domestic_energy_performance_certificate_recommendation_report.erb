@@ -1,9 +1,8 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <div class="govuk-body">
-      <a
-        href="<%= localised_url('/find-a-non-domestic-certificate')%>"
-        class="govuk-back-link">
+      <a href="<%= localised_url('/find-a-non-domestic-certificate')%>"
+         class="govuk-back-link">
         <%=t('layout.body.breadcrumb.back')%>
       </a>
     </div>
@@ -11,15 +10,7 @@
   <div class="govuk-grid-column-full">
     <h1 class="govuk-heading-xl"><%= t('non_domestic_epc.rr.top_heading') %></h1>
   </div>
-  <div class="govuk-grid-column-two-thirds">
-    <hr class="epc-light-top" />
-      <%== erb :component__epc_summary_compact, locals: {
-            assessment: assessment,
-          }
-      %>
-  </div>
-
-<div class="govuk-grid-column-one-third">
+  <div class="govuk-grid-column-one-third">
     <hr class="epc-blue-top" />
     <% content_sections = [
       {
@@ -39,51 +30,55 @@
         text: 'non_domestic_epc.rr.other_reports.title'
       }
     ]
-    if assessment[:energyBandFromRelatedCertificate]
-      content_sections.unshift link: '#rating',
-                               text: 'non_domestic_epc.rr.rating.title'
-    end
+       if assessment[:energyBandFromRelatedCertificate]
+         content_sections.unshift link: '#rating',
+                                  text: 'non_domestic_epc.rr.rating.title'
+       end
     %>
     <%== erb :component__contents, locals: {
       title: t("non_domestic_epc.rr.contents.title"),
       sections: content_sections
     } %>
   </div>
-
-<% if assessment[:relatedCertificate] %>
-    <div class="govuk-grid-column-two-thirds">
-      <%== erb :non_domestic_energy_performance_certificate_recommendation_report__rating,
-               locals: { related_cepc: assessment[:relatedCertificate],
-                         related_band: assessment[:energyBandFromRelatedCertificate]}
+  <div class="govuk-grid-column-two-thirds">
+    <hr class="epc-light-top" />
+      <%== erb :component__epc_summary_compact,
+               locals: {
+                 assessment: assessment,
+               }
       %>
-    </div>
-  <% end %>
 
-<div class="govuk-grid-column-two-thirds">
-    <%== erb :non_domestic_energy_performance_certificate_recommendation_report__recommendations, locals: {
-      assessment: assessment,
-    }
+    <% if assessment[:relatedCertificate] %>
+      <%== erb :non_domestic_energy_performance_certificate_recommendation_report__rating,
+               locals: {
+                 related_cepc: assessment[:relatedCertificate],
+                 related_band: assessment[:energyBandFromRelatedCertificate]
+               }
+      %>
+    <% end %>
+
+    <%== erb :non_domestic_energy_performance_certificate_recommendation_report__recommendations,
+             locals: {
+               assessment: assessment,
+             }
     %>
-  </div>
 
-<div class="govuk-grid-column-two-thirds">
-    <%== erb :non_domestic_energy_performance_certificate_recommendation_report__property_details, locals: {
-      assessment: assessment,
-    }
+    <%== erb :non_domestic_energy_performance_certificate_recommendation_report__property_details,
+             locals: {
+               assessment: assessment,
+             }
     %>
-  </div>
 
-<div class="govuk-grid-column-two-thirds">
-    <%== erb :non_domestic_energy_performance_certificate_recommendation_report__assessor_details, locals: {
-      assessment: assessment
-    }
+    <%== erb :non_domestic_energy_performance_certificate_recommendation_report__assessor_details,
+             locals: {
+               assessment: assessment,
+             }
     %>
-  </div>
 
-<div class="govuk-grid-column-two-thirds">
-    <%== erb :non_domestic_energy_performance_certificate_recommendation_report__related_assessments, locals: {
-      assessment: assessment
-    }
+    <%== erb :non_domestic_energy_performance_certificate_recommendation_report__related_assessments,
+             locals: {
+               assessment: assessment,
+             }
     %>
   </div>
 </div>
