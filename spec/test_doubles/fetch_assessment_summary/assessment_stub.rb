@@ -94,7 +94,20 @@ module FetchAssessmentSummary
           dateOfExpiry: date_of_expiry,
           dateOfRegistration: "2020-05-04",
           relatedCertificate: linked_to_cepc,
-          relatedAssessments: [],
+          relatedAssessments: [
+            {
+              assessmentId: "0000-0000-0000-0000-5555",
+              assessmentStatus: "ENTERED",
+              assessmentType: "RdSAP",
+              assessmentExpiryDate: "2030-05-04",
+            },
+            {
+              assessmentId: "9457-0000-0000-0000-2000",
+              assessmentStatus: "ENTERED",
+              assessmentType: "CEPC-RR",
+              assessmentExpiryDate: "2026-05-04",
+            },
+          ],
           address: {
             addressId: "UPRN-000000000000",
             addressLine1: "1 Lonely Street",

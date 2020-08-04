@@ -93,6 +93,15 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
     it "Shows the related party disclosure" do
       expect(response.body).to include("Connected to owner")
     end
+
+    it "shows the Other reports for this property" do
+      expect(response.body).to include("Other reports for this property")
+      expect(response.body).to include(
+        '<p class="govuk-body">If you are aware of previous reports for this property and they are not listed here, please contact the Help Desk at 01632 164 6672.</p>',
+      )
+      expect(response.body).to include("9457-0000-0000-0000-2000")
+      expect(response.body).not_to include("0000-0000-0000-0000-5555")
+    end
   end
 
   context "when there is no information about the related CEPC" do
