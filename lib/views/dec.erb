@@ -9,7 +9,7 @@
       <h1 class="govuk-heading-xl"><%= t('dec.top_heading') %></h1>
     </div>
   </div>
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-two-thirds epc-blue-bottom">
     <%== erb :component__epc_summary, locals: {
       energy_efficiency_band: assessment[:energyEfficiencyBand],
       address: assessment[:address],
@@ -24,7 +24,7 @@
       assessment: assessment,
     } %>
   </div>
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-two-thirds epc-blue-bottom">
     <%== erb :dec__previous_operational_ratings, locals: {
       current: assessment[:currentAssessment],
       year1: assessment[:year1Assessment],
