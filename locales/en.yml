@@ -1083,5 +1083,6 @@ en:
         explanation: "This tells you how efficiently energy has been used in this building over the last three accounting periods."
       co2:
         heading: "Total CO<sub>2</sub> emissions"
+        explanation: "This tells you how much carbon dioxide the building emits. It shows tonnes per year of CO<sub>2</sub>."
   dec_rr:
     top_heading: "Display Energy Certificate Recommendation Report (DEC-RR)"
