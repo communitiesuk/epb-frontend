@@ -1034,3 +1034,4 @@ cy:
     sections:
       rating:
         title: 'Welsh: Energy performance Operational Rating for this building'
+        description: 'Welsh: This tells you how efficiently energy has been used in the building. The numbers do not represent actual units of energy consumed; they represent comparative energy efficiency.'
