@@ -1076,3 +1076,5 @@ en:
         guidance_text: 'You can read %{link}.'
         cta: 'guidance on Display Energy Certificates and advisory reports for public buildings'
         url: 'https://www.gov.uk/government/publications/display-energy-certificates-and-advisory-reports-for-public-buildings'
+  dec_rr:
+    top_heading: "Display Energy Certificate Recommendation Report (DEC-RR)"

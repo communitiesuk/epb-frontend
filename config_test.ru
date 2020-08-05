@@ -83,6 +83,8 @@ FetchAssessmentSummary::AssessmentStub.fetch_cepc "1111-0000-0000-0000-0000",
                                                   "1111-0000-0000-0000-0001"
 FetchAssessmentSummary::AssessmentStub.fetch_dec "0000-0000-0000-0000-1111",
                                                  "2030-01-28"
+FetchAssessmentSummary::AssessmentStub.fetch_dec_rr assessment_id:
+                                                      "1204-5678-1234-5178-0000"
 
 ENV["EPB_AUTH_CLIENT_ID"] = "test.id"
 ENV["EPB_AUTH_CLIENT_SECRET"] = "test.client.secret"

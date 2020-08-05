@@ -481,6 +481,8 @@ class FrontendService < Sinatra::Base
       )
     elsif assessment[:data][:typeOfAssessment] == "DEC"
       show(:dec, assessment: assessment[:data])
+    elsif assessment[:data][:typeOfAssessment] == "DEC-RR"
+      show(:dec_recommendation_report, assessment: assessment[:data])
     else
       show(
         :domestic_energy_performance_certificate,

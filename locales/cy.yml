@@ -1039,3 +1039,5 @@ cy:
         guidance_text: 'Welsh: You can read %{link}.'
         cta: 'Welsh: guidance for public buildings on Display Energy Certificates and advisory reports'
         url: 'https://www.gov.uk/government/publications/display-energy-certificates-and-advisory-reports-for-public-buildings'
+  dec_rr:
+    top_heading: "Welsh: Display Energy Certificate Recommendation Report (DEC-RR)"
