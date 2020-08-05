@@ -24,4 +24,12 @@
       assessment: assessment,
     } %>
   </div>
+  <div class="govuk-grid-column-two-thirds">
+    <%== erb :dec__previous_operational_ratings, locals: {
+      current: assessment[:currentAssessment],
+      year1: assessment[:year1Assessment],
+      year2: assessment[:year2Assessment],
+    }
+    %>
+  </div>
 </div>

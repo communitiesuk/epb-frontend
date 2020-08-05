@@ -46,5 +46,11 @@ describe "Acceptance::DisplayEnergyCertificate" do
         'You can read <a href="https://www.gov.uk/government/publications/display-energy-certificates-and-advisory-reports-for-public-buildings">guidance on Display Energy Certificates and advisory reports for public buildings</a>.',
       )
     end
+
+    it 'shows the previous operational ratings section' do
+      expect(response.body).to include(
+                                   "Previous Operational Ratings"
+                               )
+    end
   end
 end
