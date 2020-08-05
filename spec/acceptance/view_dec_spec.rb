@@ -47,10 +47,8 @@ describe "Acceptance::DisplayEnergyCertificate" do
       )
     end
 
-    it 'shows the previous operational ratings section' do
-      expect(response.body).to include(
-                                   "Previous Operational Ratings"
-                               )
+    it "shows the previous operational ratings section" do
+      expect(response.body).to include("Previous Operational Ratings")
     end
   end
 end
