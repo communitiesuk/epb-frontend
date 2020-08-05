@@ -1072,3 +1072,4 @@ en:
       rating:
         title: 'Energy performance Operational Rating for this building'
         description: 'This tells you how efficiently energy has been used in the building. The numbers do not represent actual units of energy consumed; they represent comparative energy efficiency.'
+        typical_rating: '100 would be typical for this kind of building.'

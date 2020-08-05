@@ -33,6 +33,9 @@ describe "Acceptance::DisplayEnergyCertificate" do
       expect(response.body).to include(
         '<p class="govuk-body">This tells you how efficiently energy has been used in the building. The numbers do not represent actual units of energy consumed; they represent comparative energy efficiency.</p>',
       )
+      expect(response.body).to include(
+        '<p class="govuk-body">100 would be typical for this kind of building.</p>',
+      )
     end
   end
 end
