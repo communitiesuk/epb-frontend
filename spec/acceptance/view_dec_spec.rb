@@ -33,7 +33,7 @@ describe "Acceptance::DisplayEnergyCertificate" do
         ">Energy performance of this building</h2>",
       )
       expect(response.body).to include(
-        '<p class="govuk-body">The building’s energy performance is based on its carbon dioxide (C02) emissions for the last year.</p>',
+        '<p class="govuk-body">The building’s energy performance is based on its carbon dioxide (CO2) emissions for the last year.</p>',
       )
       expect(response.body).to include(
         '<p class="govuk-body">It is given a score and an energy rating on a scale from A (lowest emissions) to G (highest emissions).</p>',
