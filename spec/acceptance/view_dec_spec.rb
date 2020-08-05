@@ -35,8 +35,7 @@ describe "Acceptance::DisplayEnergyCertificate" do
       expect(response.body).to include(
         '<p class="govuk-body">The building’s energy performance is graded on a scale from A (most efficient) to G (least efficient).</p>',
       )
-      expect(response.body).to include(">1 |</text>")
-      expect(response.body).to include(">A</text>")
+      expect(response.body).to include(">1 | A</text>")
       expect(response.body).to include(
         '<p class="govuk-body">You can read <a href="https://www.gov.uk/government/publications/display-energy-certificates-and-advisory-reports-for-public-buildings">guidance on Display Energy Certificates and advisory reports for public buildings</a>.</p>',
       )
