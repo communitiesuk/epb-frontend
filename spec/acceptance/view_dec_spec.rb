@@ -30,7 +30,7 @@ describe "Acceptance::DisplayEnergyCertificate" do
 
     it "shows the rating section" do
       expect(response.body).to include(
-        ">Energy performance Operational Rating for this building</h2>",
+        ">Energy performance of this building</h2>",
       )
       expect(response.body).to include(
         '<p class="govuk-body">This tells you how efficiently energy has been used in the building. The numbers do not represent actual units of energy consumed; they represent comparative energy efficiency.</p>',
