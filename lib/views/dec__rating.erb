@@ -1,7 +1,6 @@
 <div class="govuk-body">
   <h2 class="govuk-heading-l"><%= t('dec.sections.rating.title') %></h2>
   <p class="govuk-body"><%= t('dec.sections.rating.description') %></p>
-  <p class="govuk-body"><%= t('dec.sections.rating.typical_rating') %></p>
 
   <%== erb :dec__svg_rating, locals: {
     title: t('dec.sections.rating.svg_title', energy_efficiency_band: assessment[:energyEfficiencyBand], energy_efficiency_rating: assessment[:energyEfficiencyRating]),
@@ -9,6 +8,5 @@
     energy_efficiency_rating: assessment[:energyEfficiencyRating]
   } %>
 
-  <p class="govuk-body"><%= t('dec.sections.rating.operational_rating_desc') %></p>
   <p class="govuk-body"><%== t('dec.sections.rating.guidance_text', :link => '<a href="' + t('dec.sections.rating.url') + '">' + t('dec.sections.rating.cta') + '</a>') %></p>
 </div>
