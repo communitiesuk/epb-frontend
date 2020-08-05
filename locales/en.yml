@@ -1080,5 +1080,6 @@ en:
         url: 'https://www.gov.uk/government/publications/display-energy-certificates-and-advisory-reports-for-public-buildings'
       previous_operational_ratings:
         heading: "Previous Operational Ratings"
+        explanation: "This tells you how efficiently energy has been used in this building over the last three accounting periods."
   dec_rr:
     top_heading: "Display Energy Certificate Recommendation Report (DEC-RR)"
