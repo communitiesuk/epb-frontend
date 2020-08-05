@@ -75,7 +75,8 @@ FetchCertificate::Stub.fetch(
 FetchAssessmentSummary::AssessmentStub.fetch_cepc "1234-5678-1234-5678-1234",
                                                   "b",
                                                   "1234-5678-1234-5678-0000"
-FetchAssessmentSummary::AssessmentStub.fetch_cepc_rr assessment_id: "1234-5678-1234-5678-0000"
+FetchAssessmentSummary::AssessmentStub.fetch_cepc_rr assessment_id:
+                                                       "1234-5678-1234-5678-0000"
 
 FetchAssessmentSummary::AssessmentStub.fetch_cepc "1111-0000-0000-0000-0000",
                                                   "b",

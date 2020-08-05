@@ -129,9 +129,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
     before do
       FetchAssessmentSummary::AssessmentStub.fetch_cepc_rr(
         assessment_id: "1234-5678-1234-5678-1234",
-        company_details: {
-          name: nil, address: nil
-        },
+        company_details: { name: nil, address: nil },
       )
     end
 
