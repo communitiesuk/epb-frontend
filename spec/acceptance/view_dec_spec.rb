@@ -56,5 +56,9 @@ describe "Acceptance::DisplayEnergyCertificate" do
       expect(response.body).to include("January 2018")
       expect(response.body).to include("40 | B")
     end
+
+    it "shows the total CO2 emissions section" do
+      expect(response.body).to include("Total CO<sub>2</sub> emissions")
+    end
   end
 end

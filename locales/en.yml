@@ -1081,5 +1081,7 @@ en:
       previous_operational_ratings:
         heading: "Previous Operational Ratings"
         explanation: "This tells you how efficiently energy has been used in this building over the last three accounting periods."
+      co2:
+        heading: "Total CO<sub>2</sub> emissions"
   dec_rr:
     top_heading: "Display Energy Certificate Recommendation Report (DEC-RR)"

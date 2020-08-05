@@ -32,4 +32,13 @@
     }
     %>
   </div>
+
+  <div class="govuk-grid-column-two-thirds epc-blue-bottom">
+    <%== erb :dec__co2, locals: {
+      current: assessment[:currentAssessment],
+      year1: assessment[:year1Assessment],
+      year2: assessment[:year2Assessment],
+    }
+    %>
+  </div>
 </div>
