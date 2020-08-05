@@ -4,3 +4,24 @@
 <p>
   <%= t('dec.sections.previous_operational_ratings.explanation') %>
 </p>
+
+<dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <%== erb :dec__previous_operational_ratings__row, locals: {
+      year: current,
+    }
+    %>
+  </div>
+  <div class="govuk-summary-list__row">
+    <%== erb :dec__previous_operational_ratings__row, locals: {
+      year: year1,
+    }
+    %>
+  </div>
+  <div class="govuk-summary-list__row">
+    <%== erb :dec__previous_operational_ratings__row, locals: {
+      year: year2,
+    }
+    %>
+  </div>
+</dl>

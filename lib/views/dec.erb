@@ -11,7 +11,7 @@
   </div>
   <div class="govuk-grid-column-two-thirds epc-blue-bottom">
     <%== erb :component__epc_summary, locals: {
-      energy_efficiency_band: assessment[:energyEfficiencyBand],
+      energy_efficiency_band: assessment[:currentAssessment][:energyEfficiencyBand],
       address: assessment[:address],
       date_of_expiry: assessment[:dateOfExpiry],
       assessment_id: assessment[:assessmentId],

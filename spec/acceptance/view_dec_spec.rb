@@ -49,6 +49,12 @@ describe "Acceptance::DisplayEnergyCertificate" do
 
     it "shows the previous operational ratings section" do
       expect(response.body).to include("Previous Operational Ratings")
+      expect(response.body).to include("January 2020")
+      expect(response.body).to include("1 | A")
+      expect(response.body).to include("January 2019")
+      expect(response.body).to include("24 | A")
+      expect(response.body).to include("January 2018")
+      expect(response.body).to include("40 | B")
     end
   end
 end

@@ -182,8 +182,6 @@ module FetchAssessmentSummary
           assessmentId: assessment_id,
           reportType: "1",
           dateOfExpiry: date_of_expiry,
-          energyEfficiencyBand: "a",
-          energyEfficiencyRating: "1",
           address: {
             addressId: "UPRN-000000000001",
             addressLine1: "2 Lonely Street",
@@ -193,26 +191,29 @@ module FetchAssessmentSummary
             town: "Post-Town1",
             postcode: "A0 0AA",
           },
-          current_assessment: {
+          currentAssessment: {
             date: "2020-01-01",
-            energy_efficiency_rating: "1",
-            heating_co2: "3",
-            electricity_co2: "7",
-            renewables_co2: "0",
+            energyEfficiencyRating: "1",
+            energyEfficiencyBand: "a",
+            heatingCo2: "3",
+            electricityCo2: "7",
+            renewablesCo2: "0",
           },
-          year1_assessment: {
+          year1Assessment: {
             date: "2019-01-01",
-            energy_efficiency_rating: "24",
-            heating_co2: "5",
-            electricity_co2: "10",
-            renewables_co2: "1",
+            energyEfficiencyRating: "24",
+            energyEfficiencyBand: "a",
+            heatingCo2: "5",
+            electricityCo2: "10",
+            renewablesCo2: "1",
           },
-          year2_assessment: {
+          year2Assessment: {
             date: "2018-01-01",
-            energy_efficiency_rating: "40",
-            heating_co2: "10",
-            electricity_co2: "15",
-            renewables_co2: "2",
+            energyEfficiencyRating: "40",
+            energyEfficiencyBand: "b",
+            heatingCo2: "10",
+            electricityCo2: "15",
+            renewablesCo2: "2",
           },
         },
       }
