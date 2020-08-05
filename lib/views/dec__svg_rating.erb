@@ -1,0 +1,171 @@
+<svg width="615" height="376" viewBox="0 0 615 376" xmlns="http://www.w3.org/2000/svg" style="max-width: 100%;" aria-labelledby="svg-title" role="img">
+  <title id="svg-title"><%= title %></title>
+  <%
+
+    bands = {
+      'a': {
+        'range': '0-25',
+        'position': 0,
+        'color': '#008054'
+      },
+      'b': {
+        'range': '26-50',
+        'position': 1,
+        'color': '#19b459'
+      },
+      'c': {
+        'range': '51-75',
+        'position': 2,
+        'color': '#8dce46'
+      },
+      'd': {
+        'range': '76-100',
+        'position': 3,
+        'color': '#ffd500'
+      },
+      'e': {
+        'range': '101-125',
+        'position': 4,
+        'color': '#fcaa65'
+      },
+      'f': {
+        'range': '126-150',
+        'position': 5,
+        color: '#ef8023'
+      },
+      'g': {
+        'range': '150+',
+        'position': 6,
+        'color': '#e9153b'
+      }
+    }
+
+    score_bands = {
+      'a-score': {
+        'position': 0,
+        'color': '#67A687'
+      },
+      'b-score': {
+        'position': 1,
+        'color': '#72CA8B'
+      },
+      'c-score': {
+        'position': 2,
+        'color': '#b4df86'
+      },
+      'd-score': {
+        'position': 3,
+        'color': '#ffe666'
+      },
+      'e-score': {
+        'position': 4,
+        'color': '#fdc79b'
+      },
+      'f-score': {
+        'position': 5,
+        'color': '#f4ac71'
+      },
+      'g-score': {
+        'position': 6,
+        'color': '#f2738a'
+      }
+    }
+
+  %>
+
+  <style>
+    .letter {
+      font-size: 40px;
+      font-family: sans-serif;
+      fill: 	#0b0c0c;
+      font-weight: bold;
+    }
+
+    .current-potential-number {
+      font-size: 27px;
+      font-family: sans-serif;
+      fill: #000;
+      line-height: 50px;
+      margin-top: 100px;
+    }
+
+    .small-letter {
+      font-size: 24px;
+      font-family: sans-serif;
+      fill: 	#0b0c0c;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .small {
+      font-size: 16px;
+      font-family: sans-serif;
+      fill: 	#0b0c0c;
+      line-height: 50px;
+      margin-top: 100px;
+      font-weight: bold;
+    }
+
+    <% bands.each do |key, settings| %>
+    .band-<%= key %>{
+      fill: <%= settings[:color] %>
+    }
+    <% end %>
+    <% score_bands.each do |key, settings| %>
+    .band-<%= key %>{
+      fill: <%= settings[:color] %>
+    }
+    <% end %>
+  </style>
+
+  <line x1="72" y1="0" x2="72" y2="376" style="stroke:#b1b4b6;stroke-width:1"></line>
+  <line x1="410" y1="0" x2="410" y2="376" style="stroke:#b1b4b6;stroke-width:1"></line>
+  <line x1="0" y1="25" x2="560" y2="25" style="stroke:#b1b4b6;stroke-width:1"></line>
+  <line x1="0" y1="0" x2="560" y2="0" style="stroke:#b1b4b6;stroke-width:1"></line>
+
+  <line x1="0" y1="0" x2="560" y2="0" style="stroke:#b1b4b6;stroke-width:1"></line>
+  <line x1="0" y1="0" x2="0" y2="376" style="stroke:#b1b4b6;stroke-width:1"></line>
+  <line x1="560" y1="376" x2="560" y2="0" style="stroke:#b1b4b6;stroke-width:1"></line>
+  <line x1="560" y1="376" x2="0" y2="376" style="stroke:#b1b4b6;stroke-width:1"></line>
+
+  <% bands.each do |key, settings| %>
+    <rect width="<%= 78+settings[:position]*40 %>" height="50" x="72" y="<%= 25+settings[:position]*50%>" class="band-<%= key %>">
+    </rect>
+  <% end %>
+
+  <% score_bands.each do |key, settings| %>
+    <rect width="72" height="50" x="0" y="<%= 25+settings[:position]*50%>" class="band-<%= key %>">
+    </rect>
+  <% end %>
+
+  <text x="0" y="0" class="letter">
+    <% bands.each do |key, settings| %>
+      <tspan x="<%= 95+(40*settings[:position])+12 %>" y="<%= 75+(50*settings[:position])-11 %>"><%= key.upcase %></tspan>
+    <% end %>
+  </text>
+
+  <text x="0" y="0" class="small">
+    <% bands.each do |key, settings| %>
+      <tspan x="8" y="<%= 50+(50*settings[:position])+5 %>"><%= settings[:range] %></tspan>
+    <% end %>
+  </text>
+
+  <text x="8" y="15" class="small" dominant-baseline="middle">
+    Score
+  </text>
+
+  <text x="85" y="15" class="small" dominant-baseline="middle">
+    Energy Rating
+  </text>
+
+  <text x="490" y="15" class="small" text-anchor="middle" dominant-baseline="middle">
+    This building
+  </text>
+
+  <svg x="430" y="<%= 25+bands[energy_efficiency_band.to_sym][:position]*50 %>" width="90" height="50">
+    <rect width="75" height="50" class="band-<%= energy_efficiency_band %>" x="25"></rect>
+    <polygon points="0,25 25,50 25,0 0,25" class="band-<%= energy_efficiency_band %>"></polygon>
+    <text x="18" y="32" class="current-potential-number"><%= energy_efficiency_rating %> |</text>
+    <text x="67" y="32" class="small-letter"><%= energy_efficiency_band.upcase %></text>
+  </svg>
+</svg>

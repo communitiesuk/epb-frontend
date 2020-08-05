@@ -36,6 +36,8 @@ describe "Acceptance::DisplayEnergyCertificate" do
       expect(response.body).to include(
         '<p class="govuk-body">100 would be typical for this kind of building.</p>',
       )
+      expect(response.body).to include(">1 |</text>")
+      expect(response.body).to include(">A</text>")
     end
   end
 end
