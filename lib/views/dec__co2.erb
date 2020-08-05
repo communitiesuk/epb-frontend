@@ -5,3 +5,36 @@
 <p>
   <%== t('dec.sections.co2.explanation') %>
 </p>
+
+<table class="govuk-table">
+  <thead class="govuk-table__head">
+  <tr class="govuk-table__row">
+    <th scope="col" class="govuk-table__header">
+      <%= t('dec.sections.co2.col.date') %>
+    </th>
+    <th scope="col" class="govuk-table__header govuk-table__header--numeric">
+      <%= t('dec.sections.co2.col.electricity') %>
+    </th>
+    <th scope="col" class="govuk-table__header govuk-table__header--numeric">
+      <%= t('dec.sections.co2.col.heating') %>
+    </th>
+    <th scope="col" class="govuk-table__header govuk-table__header--numeric">
+      <%= t('dec.sections.co2.col.renewables') %>
+    </th>
+  </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+  <%== erb :dec__co2__row, locals: {
+    year: current,
+  }
+  %>
+  <%== erb :dec__co2__row, locals: {
+    year: year1,
+  }
+  %>
+  <%== erb :dec__co2__row, locals: {
+    year: year2,
+  }
+  %>
+  </tbody>
+</table>

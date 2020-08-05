@@ -1,0 +1,19 @@
+<tr class="govuk-table__row">
+  <th scope="row" class="govuk-table__header"><%=
+    Date.parse(year[:date]).strftime(
+      "%B %Y",
+      )
+  %></th>
+    <%== erb :dec__co2__row__value, locals: {
+      value: year[:electricityCo2],
+    }
+    %>
+    <%== erb :dec__co2__row__value, locals: {
+      value: year[:heatingCo2],
+    }
+    %>
+    <%== erb :dec__co2__row__value, locals: {
+      value: year[:renewablesCo2],
+    }
+    %>
+</tr>

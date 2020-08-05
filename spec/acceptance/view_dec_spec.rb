@@ -59,6 +59,10 @@ describe "Acceptance::DisplayEnergyCertificate" do
 
     it "shows the total CO2 emissions section" do
       expect(response.body).to include("Total CO<sub>2</sub> emissions")
+      # This test is not good, todo: test with nokogiri or capybara
+      expect(response.body).to include("7")
+      expect(response.body).to include("3")
+      expect(response.body).to include("0")
     end
   end
 end

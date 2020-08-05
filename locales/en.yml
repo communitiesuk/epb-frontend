@@ -1084,5 +1084,11 @@ en:
       co2:
         heading: "Total CO<sub>2</sub> emissions"
         explanation: "This tells you how much carbon dioxide the building emits. It shows tonnes per year of CO<sub>2</sub>."
+        col:
+          date: "Date"
+          electricity: "Electricity"
+          heating: "Heating"
+          renewables: "Renewables"
+        no_value: "Not applicable"
   dec_rr:
     top_heading: "Display Energy Certificate Recommendation Report (DEC-RR)"
