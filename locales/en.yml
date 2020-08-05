@@ -1068,3 +1068,6 @@ en:
       body: 'If you pasted the web address, check you copied the entire address.'
   dec:
     top_heading: "Display Energy Certificate"
+    sections:
+      rating:
+        title: 'Energy performance Operational Rating for this building'
