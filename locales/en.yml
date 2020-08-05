@@ -1075,3 +1075,6 @@ en:
         typical_rating: '100 would be typical for this kind of building.'
         svg_title: 'This building’s energy rating is %{energy_efficiency_band} (%{energy_efficiency_rating})'
         operational_rating_desc: 'The operational rating is based on meter readings of all the energy actually used in the building including for lighting, heating, cooling, ventilation and hot water. It is compared to a benchmark that represents performance indicative of all buildings of this type.'
+        guidance_text: 'You can read %{link}.'
+        cta: 'guidance on Display Energy Certificates and advisory reports for public buildings'
+        url: 'https://www.gov.uk/government/publications/display-energy-certificates-and-advisory-reports-for-public-buildings'
