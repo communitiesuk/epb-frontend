@@ -38,6 +38,9 @@ describe "Acceptance::DisplayEnergyCertificate" do
       )
       expect(response.body).to include(">1 |</text>")
       expect(response.body).to include(">A</text>")
+      expect(response.body).to include(
+        '<p class="govuk-body">The operational rating is based on meter readings of all the energy actually used in the building including for lighting, heating, cooling, ventilation and hot water. It is compared to a benchmark that represents performance indicative of all buildings of this type.</p>',
+      )
     end
   end
 end
