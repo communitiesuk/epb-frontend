@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-describe "Acceptance::DisplayEnergyCertificate" do
+describe "Acceptance::DisplayEnergyCertificate", type: :feature do
   include RSpecFrontendServiceMixin
 
   let(:response) do
@@ -59,10 +59,9 @@ describe "Acceptance::DisplayEnergyCertificate" do
 
     it "shows the total CO2 emissions section" do
       expect(response.body).to include("Total CO<sub>2</sub> emissions")
-      # This test is not good, todo: test with nokogiri or capybara
-      expect(response.body).to include("7")
-      expect(response.body).to include("3")
-      expect(response.body).to include("0")
+      expect(response.body).to have_css "td.govuk-table__cell.govuk-table__cell--numeric", text: "7"
+      expect(response.body).to have_css "td.govuk-table__cell.govuk-table__cell--numeric", text: "3"
+      expect(response.body).to have_css "td.govuk-table__cell.govuk-table__cell--numeric", text: "0"
     end
   end
 end
