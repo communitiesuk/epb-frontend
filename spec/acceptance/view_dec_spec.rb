@@ -58,7 +58,7 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
     end
 
     it "shows the total CO2 emissions section" do
-      expect(response.body).to include("Total CO<sub>2</sub> emissions")
+      expect(response.body).to include("Total CO2 emissions")
       expect(response.body).to have_css "td.govuk-table__cell.govuk-table__cell--numeric", text: "7"
       expect(response.body).to have_css "td.govuk-table__cell.govuk-table__cell--numeric", text: "3"
       expect(response.body).to have_css "td.govuk-table__cell.govuk-table__cell--numeric", text: "0"
