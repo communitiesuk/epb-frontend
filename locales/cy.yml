@@ -1046,7 +1046,7 @@ cy:
         explanation: "This tells you how efficiently energy has been used in this building over the last three accounting periods."
       co2:
         heading: "Total CO2 emissions"
-        explanation: "This tells you how much carbon dioxide the building emits. It shows tonnes per year of CO<sub>2</sub>."
+        explanation: "This tells you how much carbon dioxide the building emits. It shows tonnes per year of CO2."
         col:
           date: "Date"
           electricity: "Electricity"
