@@ -87,5 +87,34 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
         response.body,
       ).to have_css "td.govuk-table__cell.govuk-table__cell--numeric", text: "0"
     end
+
+    it "shows the technical information section" do
+      expect(response.body).to include(
+        '<h2 class="govuk-heading-l">Technical Information</h2>',
+      )
+      expect(response.body).to include(
+        "This tells you technical information about how energy is used in this building. Consumption data based on actual meter readings.",
+      )
+      expect(response.body).to include(">Main heating fuel</dt>")
+      expect(response.body).to include(">Natural Gas</dd>")
+      expect(response.body).to include(">Building environment</dt>")
+      expect(response.body).to include(">Heating and Natural Ventilation</dd>")
+      expect(response.body).to include(">Total useful floor area (m2)</dt>")
+      expect(response.body).to include(">99</dd>")
+      expect(response.body).to include(">Asset Rating</dt>")
+      expect(response.body).to include(">1</dd>")
+      expect(response.body).to include(">Energy use</th>")
+      expect(response.body).to include(">Heating</th>")
+      expect(response.body).to include(">Electricity</th>")
+      expect(response.body).to include(">Annual Energy Use (kWh/m2/year)</th>")
+      expect(response.body).to include(">11</td>")
+      expect(response.body).to include(">12</td>")
+      expect(response.body).to include(">Typical Energy Use (kWh/m2/year)</th>")
+      expect(response.body).to include(">13</td>")
+      expect(response.body).to include(">14</td>")
+      expect(response.body).to include(">Energy from renewables</th>")
+      expect(response.body).to include(">15%</td>")
+      expect(response.body).to include(">16%</td>")
+    end
   end
 end

@@ -1090,5 +1090,19 @@ en:
           heating: "Heating"
           renewables: "Renewables"
         no_value: "Not applicable"
+      technical_information:
+        title: 'Technical Information'
+        description: 'This tells you technical information about how energy is used in this building. Consumption data based on actual meter readings.'
+        heating_fuel: 'Main heating fuel'
+        building_environment: 'Building environment'
+        floor_area: 'Total useful floor area (m2)'
+        asset_rating: 'Asset Rating'
+        energy_use: 'Energy use'
+        heating: 'Heating'
+        electricity: 'Electricity'
+        annual_energy_use: 'Annual Energy Use (kWh/m2/year)'
+        typical_energy_use: 'Typical Energy Use (kWh/m2/year)'
+        energy_from_renewables: 'Energy from renewables'
+
   dec_rr:
     top_heading: "Display Energy Certificate Recommendation Report (DEC-RR)"

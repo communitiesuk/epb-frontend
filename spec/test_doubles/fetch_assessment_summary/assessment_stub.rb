@@ -215,6 +215,18 @@ module FetchAssessmentSummary
             electricityCo2: "15",
             renewablesCo2: "2",
           },
+          technicalInformation: {
+            mainHeatingFuel: "Natural Gas",
+            buildingEnvironment: "Heating and Natural Ventilation",
+            floorArea: "99",
+            assetRating: "1",
+            annualEnergyUseFuelThermal: "11",
+            annualEnergyUseElectrical: "12",
+            typicalThermalUse: "13",
+            typicalElectricalUse: "14",
+            renewablesFuelThermal: "15",
+            renewablesElectrical: "16",
+          },
         },
       }
       WebMock.stub_request(
