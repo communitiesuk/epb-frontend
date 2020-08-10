@@ -5,7 +5,7 @@
     </h1>
 
     <% if results.size > 0 %>
-      <h2 class="govuk-heading-m"><%= t('find_non_dom_certificate_by_postcode_results.list', :length => results.length, :postcode => params['postcode'] ) %></h2>
+      <h2 class="govuk-heading-m"><%= t('find_non_dom_certificate_by_postcode_results.list', :length => results.sum {|_address_id, res| res[:certificates].size}, :postcode => params['postcode'] ) %></h2>
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
       <%== erb :find_non_dom_certificate_list_certificate, locals: {

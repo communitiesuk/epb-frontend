@@ -26,6 +26,7 @@ module FindCertificate
             "assessments": [
               {
                 assessmentId: "4567-6789-4567-6789-4567",
+                addressId: "RRN-1234-5678-9101-1122-1234",
                 dateOfAssessment: "2020-01-01",
                 dateRegistered: "2020-01-02",
                 dwellingType: "Top floor flat",
@@ -92,6 +93,7 @@ module FindCertificate
               },
               {
                 assessmentId: "1234-5678-9101-1122-1234",
+                addressId: "RRN-1234-5678-9101-1122-1234",
                 dateOfAssessment: "2020-01-01",
                 dateRegistered: "2020-01-02",
                 dwellingType: "Top floor flat",

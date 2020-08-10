@@ -20,6 +20,7 @@ describe Gateway::CertificatesGateway do
     it "checks the shape of the object passed in the certificate object" do
       expect(certificate.keys).to contain_exactly(
         :assessmentId,
+        :addressId,
         :dateOfAssessment,
         :dateRegistered,
         :dwellingType,
