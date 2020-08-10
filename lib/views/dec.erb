@@ -24,58 +24,6 @@
       assessment: assessment,
     } %>
   </div>
-    <div class="govuk-grid-column-two-thirds epc-blue-bottom">
-      <a name="technical-info"></a>
-      <h2 class="govuk-heading-l"><%= t('dec.sections.technical_information.title') %></h2>
-      <p class="govuk-body"><%= t('dec.sections.technical_information.description') %></p>
-
-      <dl class="govuk-summary-list">
-        <div class="govuk-summary-list__row" id="heating">
-          <dt class="govuk-summary-list__value govuk-!-width-one-quarter"><%= t('dec.sections.technical_information.heating_fuel') %></dt>
-          <dd class="govuk-summary-list__key"><%= assessment[:technicalInformation][:mainHeatingFuel] %></dd>
-        </div>
-        <div class="govuk-summary-list__row" id="building">
-          <dt class="govuk-summary-list__value govuk-!-width-one-quarter"><%= t('dec.sections.technical_information.building_environment') %></dt>
-          <dd class="govuk-summary-list__key"><%= assessment[:technicalInformation][:buildingEnvironment] %></dd>
-        </div>
-        <div class="govuk-summary-list__row" id="floor">
-          <dt class="govuk-summary-list__value govuk-!-width-one-quarter"><%= t('dec.sections.technical_information.floor_area') %></dt>
-          <dd class="govuk-summary-list__key"><%= assessment[:technicalInformation][:floorArea] %></dd>
-        </div>
-        <div class="govuk-summary-list__row" id="asset">
-          <dt class="govuk-summary-list__value govuk-!-width-one-half"><%= t('dec.sections.technical_information.asset_rating') %></dt>
-          <dd class="govuk-summary-list__key"><%= assessment[:technicalInformation][:assetRating] %></dd>
-        </div>
-      </dl>
-
-      <table class="govuk-table">
-
-        <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header"><%= t('dec.sections.technical_information.energy_use') %></th>
-          <th scope="col" class="govuk-table__header govuk-table__header--numeric"><%= t('dec.sections.technical_information.heating') %></th>
-          <th scope="col" class="govuk-table__header govuk-table__header--numeric"><%= t('dec.sections.technical_information.electricity') %></th>
-        </tr>
-        </thead>
-        <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header"><%= t('dec.sections.technical_information.annual_energy_use') %></th>
-          <td class="govuk-table__cell govuk-table__cell--numeric"><%= assessment[:technicalInformation][:annualEnergyUseFuelThermal] %></td>
-          <td class="govuk-table__cell govuk-table__cell--numeric"><%= assessment[:technicalInformation][:annualEnergyUseElectrical] %></td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header"><%= t('dec.sections.technical_information.typical_energy_use') %></th>
-          <td class="govuk-table__cell govuk-table__cell--numeric"><%= assessment[:technicalInformation][:typicalThermalUse] %></td>
-          <td class="govuk-table__cell govuk-table__cell--numeric"><%= assessment[:technicalInformation][:typicalElectricalUse] %></td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header"><%= t('dec.sections.technical_information.energy_from_renewables') %></th>
-          <td class="govuk-table__cell govuk-table__cell--numeric"><%= assessment[:technicalInformation][:renewablesFuelThermal] %>%</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric"><%= assessment[:technicalInformation][:renewablesElectrical] %>%</td>
-        </tr>
-        </tbody>
-      </table>
-    </div>
 
   <div class="govuk-grid-column-two-thirds epc-blue-bottom">
     <%== erb :dec__previous_operational_ratings, locals: {
@@ -93,5 +41,58 @@
       year2: assessment[:year2Assessment],
     }
     %>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds epc-blue-bottom">
+    <a name="technical-info"></a>
+    <h2 class="govuk-heading-l"><%= t('dec.sections.technical_information.title') %></h2>
+    <p class="govuk-body"><%= t('dec.sections.technical_information.description') %></p>
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row" id="heating">
+        <dt class="govuk-summary-list__value govuk-!-width-one-quarter"><%= t('dec.sections.technical_information.heating_fuel') %></dt>
+        <dd class="govuk-summary-list__key"><%= assessment[:technicalInformation][:mainHeatingFuel] %></dd>
+      </div>
+      <div class="govuk-summary-list__row" id="building">
+        <dt class="govuk-summary-list__value govuk-!-width-one-quarter"><%= t('dec.sections.technical_information.building_environment') %></dt>
+        <dd class="govuk-summary-list__key"><%= assessment[:technicalInformation][:buildingEnvironment] %></dd>
+      </div>
+      <div class="govuk-summary-list__row" id="floor">
+        <dt class="govuk-summary-list__value govuk-!-width-one-quarter"><%= t('dec.sections.technical_information.floor_area') %></dt>
+        <dd class="govuk-summary-list__key"><%= assessment[:technicalInformation][:floorArea] %></dd>
+      </div>
+      <div class="govuk-summary-list__row" id="asset">
+        <dt class="govuk-summary-list__value govuk-!-width-one-half"><%= t('dec.sections.technical_information.asset_rating') %></dt>
+        <dd class="govuk-summary-list__key"><%= assessment[:technicalInformation][:assetRating] %></dd>
+      </div>
+    </dl>
+
+    <table class="govuk-table">
+
+      <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header"><%= t('dec.sections.technical_information.energy_use') %></th>
+        <th scope="col" class="govuk-table__header govuk-table__header--numeric"><%= t('dec.sections.technical_information.heating') %></th>
+        <th scope="col" class="govuk-table__header govuk-table__header--numeric"><%= t('dec.sections.technical_information.electricity') %></th>
+      </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header"><%= t('dec.sections.technical_information.annual_energy_use') %></th>
+        <td class="govuk-table__cell govuk-table__cell--numeric"><%= assessment[:technicalInformation][:annualEnergyUseFuelThermal] %></td>
+        <td class="govuk-table__cell govuk-table__cell--numeric"><%= assessment[:technicalInformation][:annualEnergyUseElectrical] %></td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header"><%= t('dec.sections.technical_information.typical_energy_use') %></th>
+        <td class="govuk-table__cell govuk-table__cell--numeric"><%= assessment[:technicalInformation][:typicalThermalUse] %></td>
+        <td class="govuk-table__cell govuk-table__cell--numeric"><%= assessment[:technicalInformation][:typicalElectricalUse] %></td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header"><%= t('dec.sections.technical_information.energy_from_renewables') %></th>
+        <td class="govuk-table__cell govuk-table__cell--numeric"><%= assessment[:technicalInformation][:renewablesFuelThermal] %>%</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric"><%= assessment[:technicalInformation][:renewablesElectrical] %>%</td>
+      </tr>
+      </tbody>
+    </table>
   </div>
 </div>
