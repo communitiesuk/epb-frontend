@@ -114,6 +114,10 @@ module Sinatra
           }&nbsp;#{number}"
         end
       end
+
+      def count_certificates(certificates)
+        certificates.sum {|_address_id, res| res[:certificates].size}
+      end
     end
   end
 end
