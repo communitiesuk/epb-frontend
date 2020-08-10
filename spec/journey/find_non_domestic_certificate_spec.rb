@@ -38,7 +38,9 @@ describe "Journey::FindNonDomesticCertificate", type: :feature, journey: true do
       click_on "Welsh: Start now"
       fill_in "postcode", with: "SW1A 2AA"
       click_button "Welsh: Find"
-      expect(page).to have_content "Welsh: 3 certificates and reports for SW1A 2AA"
+      expect(
+        page,
+      ).to have_content "Welsh: 3 certificates and reports for SW1A 2AA"
     end
   end
 
