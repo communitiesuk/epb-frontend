@@ -25,7 +25,23 @@ module UseCase
           }
         end
 
-        filtered_certificates[address_id][:certificates].push(certificate)
+        has_newer = false
+        filtered_certificates[address_id][:certificates].each do |other_cert|
+          if other_cert[:typeOfAssessment] == certificate[:typeOfAssessment]
+            if Date.parse(other_cert[:dateOfExpiry]) <
+                Date.parse(certificate[:dateOfExpiry])
+              filtered_certificates[address_id][:certificates].delete(
+                other_cert,
+              )
+            else
+              has_newer = true
+            end
+          end
+        end
+
+        unless has_newer
+          filtered_certificates[address_id][:certificates].push(certificate)
+        end
       end
 
       filtered_certificates

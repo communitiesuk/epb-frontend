@@ -28,7 +28,7 @@ describe "Journey::FindDomesticCertificate", type: :feature, journey: true do
     click_on "Start now"
     fill_in "postcode", with: "SW1A 2AA"
     click_button "Find"
-    expect(page).to have_content "1-3 of 3 results matching SW1A 2AA"
+    expect(page).to have_content "1-2 of 2 results matching SW1A 2AA"
   end
 
   describe "viewing in Welsh" do
@@ -38,7 +38,7 @@ describe "Journey::FindDomesticCertificate", type: :feature, journey: true do
       click_on "Welsh: Start now"
       fill_in "postcode", with: "SW1A 2AA"
       click_button "Welsh: Find"
-      expect(page).to have_content "Welsh: 1-3 of 3 results matching SW1A 2AA"
+      expect(page).to have_content "Welsh: 1-2 of 2 results matching SW1A 2AA"
     end
   end
 
@@ -63,7 +63,7 @@ describe "Journey::FindDomesticCertificate", type: :feature, journey: true do
     click_on "Start now"
     fill_in "postcode", with: "SW1A 2AA"
     click_on "Find"
-    expect(page).to have_content "of 3 results matching"
+    expect(page).to have_content "of 2 results matching"
   end
 
   it "redirects directly to the certificate page when entering a valid certificate reference number" do

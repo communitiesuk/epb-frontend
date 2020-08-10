@@ -28,7 +28,7 @@ describe "Journey::FindNonDomesticCertificate", type: :feature, journey: true do
     click_on "Start now"
     fill_in "postcode", with: "SW1A 2AA"
     click_button "Find"
-    expect(page).to have_content "3 certificates and reports for SW1A 2AA"
+    expect(page).to have_content "2 certificates and reports for SW1A 2AA"
   end
 
   describe "viewing in Welsh" do
@@ -40,7 +40,7 @@ describe "Journey::FindNonDomesticCertificate", type: :feature, journey: true do
       click_button "Welsh: Find"
       expect(
         page,
-      ).to have_content "Welsh: 3 certificates and reports for SW1A 2AA"
+      ).to have_content "Welsh: 2 certificates and reports for SW1A 2AA"
     end
   end
 
@@ -65,6 +65,6 @@ describe "Journey::FindNonDomesticCertificate", type: :feature, journey: true do
     click_on "Start now"
     fill_in "postcode", with: "SW1A 2AA"
     click_on "Find"
-    expect(page).to have_content "3 certificates and reports for"
+    expect(page).to have_content "2 certificates and reports for"
   end
 end

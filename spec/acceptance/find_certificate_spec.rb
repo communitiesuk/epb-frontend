@@ -88,7 +88,7 @@ describe "Acceptance::Certificate" do
         end
 
         it "shows the report reference number of an entry" do
-          expect(response.body).to include("4567-6789-4567-6789-4567")
+          expect(response.body).to include("1234-5678-9101-1122-1234")
         end
 
         it "shows the rating of an entry" do
@@ -97,7 +97,7 @@ describe "Acceptance::Certificate" do
 
         it "shows a clickable entry" do
           expect(response.body).to include(
-            '<a href="/energy-performance-certificate/4567-6789-4567-6789-4567"',
+            '<a href="/energy-performance-certificate/1234-5678-9101-1122-1234"',
           )
         end
 
