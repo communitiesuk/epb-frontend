@@ -7,7 +7,7 @@
     <p class="epc-address govuk-body"><%== [address[:addressLine1],
                                             address[:addressLine2],
                                             address[:addressLine3],
-                                            address[:addressLine4]].reject!(&:nil?).join('<br>') %><br><%= address[:town] %><br><%= address[:postcode] %></p>
+                                            address[:addressLine4]].reject(&:nil?).reject(&:empty?).join('<br>') %><br><%= address[:town] %><br><%= address[:postcode] %></p>
     <p class="govuk-body epc-extra-box"><%= t('component.epc_summary.date_of_expiry', :date_of_expiry => Date.parse(date_of_expiry).strftime('%-d %B %Y')) %></p>
     <p class="govuk-body epc-extra-box">
       <label><%= t('component.epc_summary.certificate_id') %></label>
