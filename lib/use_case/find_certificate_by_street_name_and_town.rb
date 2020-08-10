@@ -22,7 +22,32 @@ module UseCase
         raise Errors::CertificateNotFound
       end
 
-      gateway_response
+      modified_response = {}
+
+      gateway_response[:data][:assessments].each do |certificate|
+        address_id =
+          if certificate[:addressId].nil?
+            ("RRN-" + certificate[:assessmentId]).to_sym
+          else
+            certificate[:addressId].to_sym
+          end
+
+        unless modified_response.key?(address_id)
+          modified_response[address_id] = {
+            addressLine1: certificate[:addressLine1],
+            addressLine2: certificate[:addressLine2],
+            addressLine3: certificate[:addressLine3],
+            addressLine4: certificate[:addressLine4],
+            postcode: certificate[:postcode],
+            town: certificate[:town],
+            certificates: [],
+          }
+        end
+
+        modified_response[address_id][:certificates].push(certificate)
+      end
+
+      { data: { assessments: modified_response } }
     end
 
   private
