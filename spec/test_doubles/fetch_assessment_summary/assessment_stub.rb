@@ -6,7 +6,8 @@ module FetchAssessmentSummary
       assessment_id,
       energyEfficiencyBand,
       related_rrn = "4192-1535-8427-8844-6702",
-      related_assessments = true
+      related_assessments = true,
+      related_party_disclosure = nil
     )
       body = {
         data: {
@@ -51,7 +52,7 @@ module FetchAssessmentSummary
             },
             registeredBy: { name: "quidos", schemeId: "3" },
           },
-          relatedPartyDisclosure: nil,
+          relatedPartyDisclosure: related_party_disclosure,
           propertyType: "B1 Offices and Workshop businesses",
           relatedAssessments:
             if related_assessments

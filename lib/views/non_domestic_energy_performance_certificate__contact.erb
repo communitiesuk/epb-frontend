@@ -129,11 +129,10 @@
                 t('non_domestic_epc.rr.assessor_details.no_connection_text')
             %></span>
           </summary>
-          <div class="govuk-details__text"><%=
-            related_party_disclosure ?
-              related_party_disclosure :
-              t('non_domestic_epc.rr.assessor_details.declaration_text')
-          %></div>
+          <div class="govuk-details__text">
+            <%= related_party_disclosure %>
+            <%= party_disclosure(related_party_disclosure, "", "non_domestic_disclosure_code", "non_domestic_epc") %>
+          </div>
         </details>
       </dd>
     </div>

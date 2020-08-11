@@ -43,19 +43,26 @@ module Sinatra
         )
       end
 
-      def party_disclosure(code, string)
-        text = t("disclosure_code.#{code}.relation")
+      def party_disclosure(
+        code,
+        string,
+        code_prefix = "disclosure_code",
+        certificate_prefix = "domestic_epc"
+      )
+        text = t(code_prefix + ".#{code}.relation")
         if text.include?("missing")
           text = string
           if text.nil?
             text =
               if code
                 t(
-                  "domestic_epc.sections.information.certificate.list.disclosure_number_not_valid",
+                  certificate_prefix +
+                    ".sections.information.certificate.list.disclosure_number_not_valid",
                 )
               else
                 t(
-                  "domestic_epc.sections.information.certificate.list.no_disclosure",
+                  certificate_prefix +
+                    ".sections.information.certificate.list.no_disclosure",
                 )
               end
           end

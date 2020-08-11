@@ -235,6 +235,46 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate" do
         expect(response.body).to include("No connection to the property")
       end
 
+      it "shows the related party disclosure for ENUM 1" do
+        related_party_disclosures = {
+          "1": "Not related to the owner.",
+          "2": "Relative of the owner.",
+          "3":
+            "Relative of the professional dealing with the property transaction.",
+          "4":
+            "Indirect relation to the owner (e.g relative employed/contracted by owner).",
+          "5": "Occupier of the property.",
+          "6":
+            "Owner or Director of the organisation dealing with the property transaction.",
+          "7":
+            "Employed by the organisation dealing with the property transaction.",
+          "8": "Financial interest in the property.",
+          "9": "Employed by the owner.",
+          "10":
+            "Contracted by the owner to provide other Energy Assessment services.",
+          "11":
+            "Contracted by the owner to provide other (non Energy Assessment) services.",
+          "12": "Previous relation to the owner (e.g. employee/contractor).",
+          "13":
+            "The assessor has not indicated whether they have a relation to this property",
+        }
+
+        related_party_disclosures.each do |key, disclosure|
+          FetchAssessmentSummary::AssessmentStub.fetch_cepc(
+            "1234-5678-1234-5678-1234",
+            "b",
+            "4192-1535-8427-8844-6702",
+            true,
+            key,
+          )
+
+          response =
+            get "/energy-performance-certificate/1234-5678-1234-5678-1234"
+
+          expect(response.body).to include(disclosure)
+        end
+      end
+
       it "shows the link to the Recommendation Report" do
         expect(response.body).to include(">Recommendation Report</h2>")
         expect(response.body).to include(

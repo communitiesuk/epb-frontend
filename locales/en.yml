@@ -523,7 +523,10 @@ en:
         declaration: 'Assessor’s declaration'
         no_connection_text: 'No connection to the property'
         has_connection_text: 'The assessor has made a declaration'
-        declaration_text: 'The assessor declared they have no personal or business connection with the property’s owner or anyone who may have an interest in the property.'
+      information:
+        certificate:
+          list:
+            no_disclosure: 'The assessor has not indicated whether they have a relation to this property.'
       other_reports:
         title: 'Other reports for this property'
         reminder: 'If you are aware of previous reports for this property and they are not listed here, please contact the Help Desk at %{contact_centre_number}.'
@@ -1043,6 +1046,34 @@ en:
       relation: 'Employed by the professional dealing with the property transaction'
     7:
       relation: 'Relative of the professional dealing with the property transaction'
+  non_domestic_disclosure_code:
+    1:
+      relation: "Not related to the owner."
+    2:
+      relation: "Relative of the owner."
+    3:
+      relation: "Relative of the professional dealing with the property transaction."
+    4:
+      relation: "Indirect relation to the owner (e.g relative employed/contracted by owner)."
+    5:
+      relation: "Occupier of the property."
+    6:
+      relation: "Owner or Director of the organisation dealing with the property transaction."
+    7:
+      relation: "Employed by the organisation dealing with the property transaction."
+    8:
+      relation: "Financial interest in the property."
+    9:
+      relation: "Employed by the owner."
+    10:
+      relation: "Contracted by the owner to provide other Energy Assessment services."
+    11:
+      relation: "Contracted by the owner to provide other (non Energy Assessment) services."
+    12:
+      relation: "Previous relation to the owner (e.g. employee/contractor)."
+    13:
+      relation: "The assessor has not indicated whether they have a relation to this property"
+
 
   property_summary:
     type:
