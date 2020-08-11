@@ -108,6 +108,38 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
     end
   end
 
+  context "with different related party disclosures" do
+    it "shows the corresponding related party disclosures" do
+      related_party_disclosures = {
+        "1": "The assessor is not related to the owner of the building",
+        "2": "The assessor is a relative of the building owner",
+        "3": "The assessor is a relative of the professional dealing with the property transaction.",
+        "4": "The assessor has an indirect relation to the owner (for example, somebody in the assessor's family might be employed by the building owner).",
+        "5": "The assessor occupies the property.",
+        "6": "The assessor is the owner or director of the organisation dealing with the property transaction.",
+        "7": "The assessor is employed by the organisation dealing with the property transaction.",
+        "8": "The assessor has declared a financial interest in the property.",
+        "9": "The assessor is employed by the building owner.",
+        "10": "The assessor is contracted by the owner to provide other energy assessment services.",
+        "11": "The assessor is contracted by the owner to provide services other than energy assessment.",
+        "12": "The assessor has a previous relation to the owner (for example, they might previously have been an employee or contractor).",
+        "13": "The assessor has not indicated whether they have a relation to this property",
+      }
+
+      related_party_disclosures.each do |key, disclosure|
+        FetchAssessmentSummary::AssessmentStub.fetch_cepc_rr(
+          assessment_id: "1234-5678-1234-5678-1234",
+          related_party: key,
+        )
+
+        response =
+          get "/energy-performance-certificate/1234-5678-1234-5678-1234"
+
+        expect(response.body).to include disclosure
+      end
+    end
+  end
+
   context "when there are no related assessments" do
     before do
       FetchAssessmentSummary::AssessmentStub.fetch_cepc_rr(

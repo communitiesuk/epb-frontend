@@ -52,9 +52,9 @@
       <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
         t('non_domestic_epc.rr.assessor_details.declaration')
       %></dt>
-      <dd class="govuk-summary-list__value">
-        <%= party_disclosure(assessment[:relatedPartyDisclosure].nil? ? "13" : assessment[:relatedPartyDisclosure].nil?, "", "non_domestic_disclosure_code", "non_domestic_epc") %>
-      </dd>
+      <dd class="govuk-summary-list__value"><%=
+        party_disclosure(assessment[:relatedPartyDisclosure].nil? ? "13" : assessment[:relatedPartyDisclosure], "", "non_domestic_disclosure_code", "non_domestic_epc")
+      %></dd>
     </div>
   </dl>
 </div>
