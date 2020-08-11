@@ -124,13 +124,10 @@
         <details class="govuk-details" data-module="govuk-details">
           <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text"><%=
-              related_party_disclosure ?
-                t('non_domestic_epc.rr.assessor_details.has_connection_text') :
-                t('non_domestic_epc.rr.assessor_details.no_connection_text')
+              t('non_domestic_epc.rr.assessor_details.has_connection_text')
             %></span>
           </summary>
           <div class="govuk-details__text">
-            <%= related_party_disclosure %>
             <%= party_disclosure(related_party_disclosure, "", "non_domestic_disclosure_code", "non_domestic_epc") %>
           </div>
         </details>

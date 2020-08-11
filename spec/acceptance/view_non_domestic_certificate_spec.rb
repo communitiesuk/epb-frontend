@@ -232,7 +232,6 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate" do
         expect(response.body).to include(
           "Lloyds House, 18 Lloyd Street, Manchester, M2 5WA",
         )
-        expect(response.body).to include("No connection to the property")
       end
 
       it "shows the related party disclosure for ENUM 1" do
