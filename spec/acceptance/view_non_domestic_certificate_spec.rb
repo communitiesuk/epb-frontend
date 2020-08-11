@@ -234,7 +234,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate" do
         )
       end
 
-      it "shows the related party disclosure for ENUM 1" do
+      it "shows the corresponding related party disclosures" do
         related_party_disclosures = {
           "1": "The assessor is not related to the owner of the building",
           "2": "The assessor is a relative of the building owner",
