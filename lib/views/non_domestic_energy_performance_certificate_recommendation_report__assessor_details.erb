@@ -60,8 +60,6 @@
             %></span>
           </summary>
           <div class="govuk-details__text">
-            <%= assessment[:relatedPartyDisclosure] %>
-            <% pp assessment[:relatedPartyDisclosure] %>
             <%= party_disclosure(assessment[:relatedPartyDisclosure].nil? ? "13" : assessment[:relatedPartyDisclosure], "", "non_domestic_disclosure_code", "non_domestic_epc") %>
           </div>
         </details>
