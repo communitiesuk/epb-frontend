@@ -9,57 +9,63 @@
   <p class="govuk-body"><%=
     t('non_domestic_epc.rr.recommendations.description')
   %></p>
-  <table class="govuk-table">
-    <caption class="govuk-table__caption"><%= t('non_domestic_epc.rr.recommendations.table.three_years_heading') %></caption>
-    <thead class="govuk-table__head">
-    <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header govuk-!-width-three-quarters"><%= t('non_domestic_epc.rr.recommendations.table.recommendation_heading') %></th>
-      <th scope="col" class="govuk-table__header govuk-!-width-three-quarters"><%= t('non_domestic_epc.rr.recommendations.table.potential_impact_heading') %></th>
-    </tr>
-    </thead>
-    <tbody class="govuk-table__body">
-      <% assessment[:shortPaybackRecommendations].each do |recommendation| %>
+  <% if assessment[:shortPaybackRecommendations].size > 0 %>
+    <table class="govuk-table">
+      <caption class="govuk-table__caption"><%= t('non_domestic_epc.rr.recommendations.table.three_years_heading') %></caption>
+      <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header govuk-!-width-three-quarters"><%= t('non_domestic_epc.rr.recommendations.table.recommendation_heading') %></th>
+        <th scope="col" class="govuk-table__header govuk-!-width-three-quarters"><%= t('non_domestic_epc.rr.recommendations.table.potential_impact_heading') %></th>
+      </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <% assessment[:shortPaybackRecommendations].each do |recommendation| %>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><%= recommendation[:text] %></th>
+            <td class="govuk-table__cell"><%= recommendation[:cO2Impact].capitalize %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
+  <% if assessment[:mediumPaybackRecommendations].size > 0 %>
+    <table class="govuk-table">
+      <caption class="govuk-table__caption"><%= t('non_domestic_epc.rr.recommendations.table.three_to_seven_years_heading') %></caption>
+      <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header govuk-!-width-three-quarters"><%= t('non_domestic_epc.rr.recommendations.table.recommendation_heading') %></th>
+        <th scope="col" class="govuk-table__header govuk-!-width-three-quarters"><%= t('non_domestic_epc.rr.recommendations.table.potential_impact_heading') %></th>
+      </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+      <% assessment[:mediumPaybackRecommendations].each do |recommendation| %>
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><%= recommendation[:text] %></th>
           <td class="govuk-table__cell"><%= recommendation[:cO2Impact].capitalize %></td>
         </tr>
       <% end %>
-    </tbody>
-  </table>
-  <table class="govuk-table">
-    <caption class="govuk-table__caption"><%= t('non_domestic_epc.rr.recommendations.table.three_to_seven_years_heading') %></caption>
-    <thead class="govuk-table__head">
-    <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header govuk-!-width-three-quarters"><%= t('non_domestic_epc.rr.recommendations.table.recommendation_heading') %></th>
-      <th scope="col" class="govuk-table__header govuk-!-width-three-quarters"><%= t('non_domestic_epc.rr.recommendations.table.potential_impact_heading') %></th>
-    </tr>
-    </thead>
-    <tbody class="govuk-table__body">
-    <% assessment[:mediumPaybackRecommendations].each do |recommendation| %>
+      </tbody>
+    </table>
+  <% end %>
+  <% if assessment[:longPaybackRecommendations].size > 0 %>
+    <table class="govuk-table">
+      <caption class="govuk-table__caption"><%= t('non_domestic_epc.rr.recommendations.table.more_than_seven_years_heading') %></caption>
+      <thead class="govuk-table__head">
       <tr class="govuk-table__row">
-        <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><%= recommendation[:text] %></th>
-        <td class="govuk-table__cell"><%= recommendation[:cO2Impact].capitalize %></td>
+        <th scope="col" class="govuk-table__header govuk-!-width-three-quarters"><%= t('non_domestic_epc.rr.recommendations.table.recommendation_heading') %></th>
+        <th scope="col" class="govuk-table__header govuk-!-width-three-quarters"><%= t('non_domestic_epc.rr.recommendations.table.potential_impact_heading') %></th>
       </tr>
-    <% end %>
-    </tbody>
-  </table>
-  <table class="govuk-table">
-    <caption class="govuk-table__caption"><%= t('non_domestic_epc.rr.recommendations.table.more_than_seven_years_heading') %></caption>
-    <thead class="govuk-table__head">
-    <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header govuk-!-width-three-quarters"><%= t('non_domestic_epc.rr.recommendations.table.recommendation_heading') %></th>
-      <th scope="col" class="govuk-table__header govuk-!-width-three-quarters"><%= t('non_domestic_epc.rr.recommendations.table.potential_impact_heading') %></th>
-    </tr>
-    </thead>
-    <tbody class="govuk-table__body">
-    <% assessment[:longPaybackRecommendations].each do |recommendation| %>
-      <tr class="govuk-table__row">
-        <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><%= recommendation[:text] %></th>
-        <td class="govuk-table__cell"><%= recommendation[:cO2Impact].capitalize %></td>
-      </tr>
-    <% end %>
-    </tbody>
-  </table>
+      </thead>
+      <tbody class="govuk-table__body">
+      <% assessment[:longPaybackRecommendations].each do |recommendation| %>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><%= recommendation[:text] %></th>
+          <td class="govuk-table__cell"><%= recommendation[:cO2Impact].capitalize %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  <% end %>
   <p class="govuk-body"><%= t('non_domestic_epc.rr.recommendations.table.additional_text') %></p>
   <table class="govuk-table">
     <caption class="govuk-table__caption"><%= t('non_domestic_epc.rr.recommendations.table.additional_heading') %></caption>
