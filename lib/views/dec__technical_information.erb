@@ -3,20 +3,20 @@
 
 <dl class="govuk-summary-list">
   <div class="govuk-summary-list__row" id="heating">
-    <dt class="govuk-summary-list__value govuk-!-width-one-quarter govuk-!-font-weight-bold"><%= t('dec.sections.technical_information.heating_fuel') %></dt>
-    <dd class="govuk-summary-list__key govuk-!-font-weight-regular"><%= assessment[:technicalInformation][:mainHeatingFuel] %></dd>
+    <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= t('dec.sections.technical_information.heating_fuel') %></dt>
+    <dd class="govuk-summary-list__value"><%= assessment[:technicalInformation][:mainHeatingFuel] %></dd>
   </div>
   <div class="govuk-summary-list__row" id="building">
-    <dt class="govuk-summary-list__value govuk-!-width-one-quarter govuk-!-font-weight-bold"><%= t('dec.sections.technical_information.building_environment') %></dt>
-    <dd class="govuk-summary-list__key govuk-!-font-weight-regular"><%= assessment[:technicalInformation][:buildingEnvironment] %></dd>
+    <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= t('dec.sections.technical_information.building_environment') %></dt>
+    <dd class="govuk-summary-list__value"><%= assessment[:technicalInformation][:buildingEnvironment] %></dd>
   </div>
   <div class="govuk-summary-list__row" id="floor">
-    <dt class="govuk-summary-list__value govuk-!-width-one-quarter govuk-!-font-weight-bold"><%= t('dec.sections.technical_information.floor_area') %></dt>
-    <dd class="govuk-summary-list__key govuk-!-font-weight-regular"><%= assessment[:technicalInformation][:floorArea] %></dd>
+    <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= t('dec.sections.technical_information.floor_area') %></dt>
+    <dd class="govuk-summary-list__value"><%= assessment[:technicalInformation][:floorArea] %></dd>
   </div>
   <div class="govuk-summary-list__row" id="asset">
-    <dt class="govuk-summary-list__value govuk-!-width-one-half govuk-!-font-weight-bold"><%= t('dec.sections.technical_information.asset_rating') %></dt>
-    <dd class="govuk-summary-list__key govuk-!-font-weight-regular"><%= assessment[:technicalInformation][:assetRating] %></dd>
+    <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= t('dec.sections.technical_information.asset_rating') %></dt>
+    <dd class="govuk-summary-list__value"><%= assessment[:technicalInformation][:assetRating] %></dd>
   </div>
 </dl>
 
