@@ -189,7 +189,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate" do
 
       it "shows the energy rating score description" do
         expect(response.body).to include(
-          '<p class="govuk-body">Buildings are also given a score. The larger the number, the more expensive your fuel bills are likely to be.</p>',
+          '<p class="govuk-body">Buildings are also given a score. The larger the number, the more CO2 your building is likely to emit.</p>',
         )
       end
 
