@@ -15,26 +15,26 @@
 
   <dl class="govuk-summary-list">
     <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key govuk-!-width-one-half" ><%=
+      <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
         t('non_domestic_epc.contact.assessor.name')
       %></dt>
-      <dd class="govuk-summary-list__value govuk-!-width-one-half" style="text-align: right"><%=
+      <dd class="govuk-summary-list__value govuk-!-width-one-half"><%=
         assessor[:name]
       %></dd>
     </div>
     <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key govuk-!-width-one-half" ><%=
+      <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
         t('non_domestic_epc.contact.assessor.phone')
       %></dt>
-      <dd class="govuk-summary-list__value govuk-!-width-one-half" style="text-align: right"><%=
+      <dd class="govuk-summary-list__value govuk-!-width-one-half"><%=
         assessor[:contactDetails][:telephone]
       %></dd>
     </div>
     <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key govuk-!-width-one-half" ><%=
+      <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
         t('non_domestic_epc.contact.assessor.email')
       %></dt>
-      <dd class="govuk-summary-list__value govuk-!-width-one-half" style="text-align: right"><%=
+      <dd class="govuk-summary-list__value govuk-!-width-one-half"><%=
         assessor[:contactDetails][:email]
       %></dd>
     </div>
@@ -46,34 +46,34 @@
 
   <dl class="govuk-summary-list">
     <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key govuk-!-width-one-half" ><%=
+      <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
         t('non_domestic_epc.contact.scheme.name')
       %></dt>
-      <dd class="govuk-summary-list__value govuk-!-width-one-half" style="text-align: right"><%=
+      <dd class="govuk-summary-list__value govuk-!-width-one-half"><%=
         scheme_details(assessor, 'name')
       %></dd>
     </div>
     <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key govuk-!-width-one-half" ><%=
+      <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
         t('non_domestic_epc.contact.assessor.id')
       %></dt>
-      <dd class="govuk-summary-list__value govuk-!-width-one-half" style="text-align: right"><%=
+      <dd class="govuk-summary-list__value govuk-!-width-one-half"><%=
         assessor[:schemeAssessorId]
       %></dd>
     </div>
     <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key govuk-!-width-one-half" ><%=
+      <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
         t('non_domestic_epc.contact.scheme.phone')
       %></dt>
-      <dd class="govuk-summary-list__value govuk-!-width-one-half" style="text-align: right"><%=
+      <dd class="govuk-summary-list__value govuk-!-width-one-half"><%=
         scheme_details(assessor, 'phone')
       %></dd>
     </div>
     <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key govuk-!-width-one-half" ><%=
+      <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
         t('non_domestic_epc.contact.scheme.email')
       %></dt>
-      <dd class="govuk-summary-list__value govuk-!-width-one-half" style="text-align: right"><%=
+      <dd class="govuk-summary-list__value govuk-!-width-one-half"><%=
         scheme_details(assessor, 'email')
       %></dd>
     </div>
@@ -85,42 +85,42 @@
 
   <dl class="govuk-summary-list">
     <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key govuk-!-width-one-half" ><%=
+      <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
         t('non_domestic_epc.contact.assessment.date_assessed')
       %></dt>
-      <dd class="govuk-summary-list__value govuk-!-width-one-half" style="text-align: right"><%=
+      <dd class="govuk-summary-list__value govuk-!-width-one-half"><%=
         Date.parse(assessment_date).strftime('%-d %B %Y')
       %></dd>
     </div>
     <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key govuk-!-width-one-half" ><%=
+      <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
         t('non_domestic_epc.contact.assessment.date_certificate')
       %></dt>
-      <dd class="govuk-summary-list__value govuk-!-width-one-half" style="text-align: right"><%=
+      <dd class="govuk-summary-list__value govuk-!-width-one-half"><%=
         Date.parse(registration_date).strftime('%-d %B %Y')
       %></dd>
     </div>
     <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key govuk-!-width-one-half" ><%=
+      <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
         t('non_domestic_epc.contact.assessment.employer')
       %></dt>
-      <dd class="govuk-summary-list__value govuk-!-width-one-half" style="text-align: right"><%=
+      <dd class="govuk-summary-list__value govuk-!-width-one-half"><%=
         assessor[:companyDetails][:name]
       %></dd>
     </div>
     <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key govuk-!-width-one-half" ><%=
+      <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
         t('non_domestic_epc.contact.assessment.employer_address')
       %></dt>
-      <dd class="govuk-summary-list__value govuk-!-width-one-half" style="text-align: right"><%=
+      <dd class="govuk-summary-list__value govuk-!-width-one-half"><%=
         assessor[:companyDetails][:address]
       %></dd>
     </div>
     <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key govuk-!-width-one-half" ><%=
+      <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
         t('non_domestic_epc.contact.assessment.declaration')
       %></dt>
-      <dd class="govuk-summary-list__value govuk-!-width-one-half" style="text-align: right">
+      <dd class="govuk-summary-list__value govuk-!-width-one-half">
         <%= party_disclosure(related_party_disclosure.nil? ? "13" : related_party_disclosure, "", "non_domestic_disclosure_code", "non_domestic_epc") %>
       </dd>
     </div>
