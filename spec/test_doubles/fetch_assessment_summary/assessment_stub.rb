@@ -175,7 +175,9 @@ module FetchAssessmentSummary
     end
 
     def self.fetch_dec(
-      assessment_id = "0000-0000-0000-0000-0001", date_of_expiry = "2030-01-01"
+      assessment_id = "0000-0000-0000-0000-0001",
+      date_of_expiry = "2030-01-01",
+      related_assessments = true
     )
       body = {
         data: {
@@ -228,6 +230,23 @@ module FetchAssessmentSummary
             renewablesFuelThermal: "15",
             renewablesElectrical: "16",
           },
+          relatedAssessments:
+            if related_assessments
+              [
+                {
+                  assessmentExpiryDate: "2026-05-04",
+                  assessmentId: "0000-0000-0000-0000-0001",
+                  assessmentStatus: "ENTERED",
+                  assessmentType: "CEPC",
+                },
+                {
+                  assessmentExpiryDate: "2002-07-01",
+                  assessmentId: "0000-0000-0000-0000-0002",
+                  assessmentStatus: "EXPIRED",
+                  assessmentType: "CEPC-RR",
+                },
+              ]
+            end,
         },
       }
       WebMock.stub_request(
