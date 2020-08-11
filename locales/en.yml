@@ -623,7 +623,7 @@ en:
         aria-label: 'Your energy rating is %{current_energy_efficiency_band}(%{current_energy_efficiency_rating}) and your potential is %{potential_energy_efficiency_band}(%{potential_energy_efficiency_rating})'
         body1: 'The graph shows this property’s current and potential energy efficiency.'
         body2: 'Properties are given a rating from A (most efficient) to G (least efficient).'
-        body3: 'Properties are also given a score. The higher this number, the cheaper your fuel bills are likely to be.'
+        body3: 'Properties are also given a score. The higher this number, the more CO2 your building is likely to emit.'
         body4: 'The average energy rating and score for a property in England and Wales are D (60).'
       breakdown:
         title: "Breakdown of property's energy performance"
@@ -670,7 +670,7 @@ en:
           what_is_energy_rating: 'What is an energy rating?'
           energy_rating_description1: 'An energy rating shows a property’s energy efficiency.'
           energy_rating_description2: 'Properties are given a rating from A (most efficient) to G (least efficient).'
-          energy_rating_description3: 'Properties are also given a score. The higher this number, the cheaper your fuel bills are likely to be.'
+          energy_rating_description3: 'Properties are also given a score. The higher this number, the lower your CO2 emissions are likely to be.'
           no_recommendations_summary: 'There are no recommendations for this property.'
         box:
           energy_rating_title: 'Potential Energy Rating'
