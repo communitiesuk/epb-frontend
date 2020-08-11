@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-describe "Acceptance::DomesticEnergyPerformanceCertificate" do
+describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
   include RSpecFrontendServiceMixin
 
   context "when the assessment exists" do
@@ -536,12 +536,6 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate" do
         it "does not show the provider email" do
           expect(response.body).not_to include(
             "<dt class=\"govuk-summary-list__key govuk-!-width-one-half\">Email</dt>",
-          )
-        end
-
-        it "does not show the provider telephone" do
-          expect(response.body).not_to include(
-            "<dt class=\"govuk-summary-list__key govuk-!-width-one-half\">Telephone</dt>",
           )
         end
       end
