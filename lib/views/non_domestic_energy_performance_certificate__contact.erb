@@ -120,9 +120,9 @@
       <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
         t('non_domestic_epc.contact.assessment.declaration')
       %></dt>
-      <dd class="govuk-summary-list__value govuk-!-width-one-half">
-        <%= party_disclosure(related_party_disclosure.nil? ? "13" : related_party_disclosure, "", "non_domestic_disclosure_code", "non_domestic_epc") %>
-      </dd>
+      <dd class="govuk-summary-list__value govuk-!-width-one-half"><%=
+        party_disclosure(related_party_disclosure.nil? ? "13" : related_party_disclosure, "", "non_domestic_disclosure_code", "non_domestic_epc")
+      %></dd>
     </div>
   </dl>
 </div>
