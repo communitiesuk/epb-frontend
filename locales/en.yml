@@ -1048,9 +1048,9 @@ en:
       relation: 'Relative of the professional dealing with the property transaction'
   non_domestic_disclosure_code:
     1:
-      relation: "The assessor is not related to the owner of the building"
+      relation: "The assessor is not related to the owner of the building."
     2:
-      relation: "The assessor is a relative of the building owner"
+      relation: "The assessor is a relative of the building owner."
     3:
       relation: "The assessor is a relative of the professional dealing with the property transaction."
     4:
@@ -1072,7 +1072,7 @@ en:
     12:
       relation: "The assessor has a previous relation to the owner (for example, they might previously have been an employee or contractor)."
     13:
-      relation: "The assessor has not indicated whether they have a relation to this property"
+      relation: "The assessor has not indicated whether they have a relation to this property."
 
 
   property_summary:
