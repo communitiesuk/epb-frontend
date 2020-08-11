@@ -29,7 +29,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
         assessment_id: "1234-5678-1234-5678-1234",
         date_of_expiry: "2030-01-01",
         linked_to_cepc: "0000-0000-0000-0000-0000",
-        related_party: "Connected to owner",
+        related_party: nil,
         related_energy_band: "d",
       )
     end
@@ -93,7 +93,9 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
     end
 
     it "Shows the related party disclosure" do
-      expect(response.body).to include("Connected to owner")
+      expect(response.body).to include(
+        "The assessor has not indicated whether they have a relation to this property",
+      )
     end
 
     it "shows the Other reports for this property" do

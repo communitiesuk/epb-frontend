@@ -56,16 +56,14 @@
         <details class="govuk-details" data-module="govuk-details">
           <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text"><%=
-              assessment[:relatedPartyDisclosure] ?
-              t('non_domestic_epc.rr.assessor_details.has_connection_text') :
-              t('non_domestic_epc.rr.assessor_details.no_connection_text')
+              t('non_domestic_epc.rr.assessor_details.has_connection_text')
             %></span>
           </summary>
-          <div class="govuk-details__text"><%=
-            assessment[:relatedPartyDisclosure] ?
-              assessment[:relatedPartyDisclosure] :
-              t('non_domestic_epc.rr.assessor_details.declaration_text')
-          %></div>
+          <div class="govuk-details__text">
+            <%= assessment[:relatedPartyDisclosure] %>
+            <% pp assessment[:relatedPartyDisclosure] %>
+            <%= party_disclosure(assessment[:relatedPartyDisclosure].nil? ? "13" : assessment[:relatedPartyDisclosure], "", "non_domestic_disclosure_code", "non_domestic_epc") %>
+          </div>
         </details>
       </dd>
     </div>
