@@ -236,24 +236,26 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate" do
 
       it "shows the related party disclosure for ENUM 1" do
         related_party_disclosures = {
-          "1": "Not related to the owner.",
-          "2": "Relative of the owner.",
+          "1": "The assessor is not related to the owner of the building",
+          "2": "The assessor is a relative of the building owner",
           "3":
-            "Relative of the professional dealing with the property transaction.",
+            "The assessor is a relative of the professional dealing with the property transaction.",
           "4":
-            "Indirect relation to the owner (e.g relative employed/contracted by owner).",
-          "5": "Occupier of the property.",
+            "The assessor has an indirect relation to the owner (for example, somebody in the assessor's family might be employed by the building owner).",
+          "5": "The assessor occupies the property.",
           "6":
-            "Owner or Director of the organisation dealing with the property transaction.",
+            "The assessor is the owner or director of the organisation dealing with the property transaction.",
           "7":
-            "Employed by the organisation dealing with the property transaction.",
-          "8": "Financial interest in the property.",
-          "9": "Employed by the owner.",
+            "The assessor is employed by the organisation dealing with the property transaction.",
+          "8":
+            "The assessor has declared a financial interest in the property.",
+          "9": "The assessor is employed by the building owner.",
           "10":
-            "Contracted by the owner to provide other Energy Assessment services.",
+            "The assessor is contracted by the owner to provide other energy assessment services.",
           "11":
-            "Contracted by the owner to provide other (non Energy Assessment) services.",
-          "12": "Previous relation to the owner (e.g. employee/contractor).",
+            "The assessor is contracted by the owner to provide services other than energy assessment.",
+          "12":
+            "The assessor has a previous relation to the owner (for example, they might previously have been an employee or contractor).",
           "13":
             "The assessor has not indicated whether they have a relation to this property",
         }

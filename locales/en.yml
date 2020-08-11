@@ -1048,29 +1048,29 @@ en:
       relation: 'Relative of the professional dealing with the property transaction'
   non_domestic_disclosure_code:
     1:
-      relation: "Not related to the owner."
+      relation: "The assessor is not related to the owner of the building"
     2:
-      relation: "Relative of the owner."
+      relation: "The assessor is a relative of the building owner"
     3:
-      relation: "Relative of the professional dealing with the property transaction."
+      relation: "The assessor is a relative of the professional dealing with the property transaction."
     4:
-      relation: "Indirect relation to the owner (e.g relative employed/contracted by owner)."
+      relation: "The assessor has an indirect relation to the owner (for example, somebody in the assessor's family might be employed by the building owner)."
     5:
-      relation: "Occupier of the property."
+      relation: "The assessor occupies the property."
     6:
-      relation: "Owner or Director of the organisation dealing with the property transaction."
+      relation: "The assessor is the owner or director of the organisation dealing with the property transaction."
     7:
-      relation: "Employed by the organisation dealing with the property transaction."
+      relation: "The assessor is employed by the organisation dealing with the property transaction."
     8:
-      relation: "Financial interest in the property."
+      relation: "The assessor has declared a financial interest in the property."
     9:
-      relation: "Employed by the owner."
+      relation: "The assessor is employed by the building owner."
     10:
-      relation: "Contracted by the owner to provide other Energy Assessment services."
+      relation: "The assessor is contracted by the owner to provide other energy assessment services."
     11:
-      relation: "Contracted by the owner to provide other (non Energy Assessment) services."
+      relation: "The assessor is contracted by the owner to provide services other than energy assessment."
     12:
-      relation: "Previous relation to the owner (e.g. employee/contractor)."
+      relation: "The assessor has a previous relation to the owner (for example, they might previously have been an employee or contractor)."
     13:
       relation: "The assessor has not indicated whether they have a relation to this property"
 
