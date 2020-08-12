@@ -1083,6 +1083,9 @@ cy:
         issue_date: 'Welsh: Issue date'
         nominated_date: 'Welsh: Nominated date'
         valid_until: 'Welsh: Valid until'
+        related_party_disclosure: 'Welsh: Related party disclosure'
+        related_party_disclosure_code:
+          "4": 'Welsh: Contractor to the occupier for non-EPBD services.'
 
   dec_rr:
     top_heading: "Welsh: Display Energy Certificate Recommendation Report (DEC-RR)"

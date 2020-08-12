@@ -1147,6 +1147,9 @@ en:
         issue_date: 'Issue date'
         nominated_date: 'Nominated date'
         valid_until: 'Valid until'
+        related_party_disclosure: 'Related party disclosure'
+        related_party_disclosure_code:
+          "4": 'Contractor to the occupier for non-EPBD services.'
 
   dec_rr:
     top_heading: "Display Energy Certificate Recommendation Report (DEC-RR)"

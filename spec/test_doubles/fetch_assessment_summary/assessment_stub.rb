@@ -233,6 +233,7 @@ module FetchAssessmentSummary
           administrativeInformation: {
             calculationTool: "DCLG, ORCalc, v3.6.3",
             issueDate: "2020-05-14",
+            relatedPartyDisclosure: "4",
           },
           assessor: {
             name: "TEST NAME BOI",
