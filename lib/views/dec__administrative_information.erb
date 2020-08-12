@@ -13,6 +13,7 @@
       assessment[:administrativeInformation][:calculationTool]
     %></dd>
   </div>
+
   <% if assessment[:address][:addressId] %>
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
@@ -23,4 +24,13 @@
       %></dd>
     </div>
   <% end %>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
+      t('dec.sections.administrative_information.assessor_name')
+    %></dt>
+    <dd class="govuk-summary-list__value"><%=
+      assessment[:assessor][:name]
+    %></dd>
+  </div>
 </dl>

@@ -125,6 +125,8 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
         expect(response.body).to have_css "dd", text: "DCLG, ORCalc, v3.6.3"
         expect(response.body).to have_css "dt", text: "Property reference"
         expect(response.body).to have_css "dd", text: "UPRN-000000000001"
+        expect(response.body).to have_css "dt", text: "Assessor name"
+        expect(response.body).to have_css "dd", text: "TEST NAME BOI"
       end
     end
 

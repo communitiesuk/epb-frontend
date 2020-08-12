@@ -233,6 +233,9 @@ module FetchAssessmentSummary
           administrativeInformation: {
             calculationTool: "DCLG, ORCalc, v3.6.3",
           },
+          assessor: {
+            name: "TEST NAME BOI",
+          },
           relatedAssessments:
             if related_assessments
               [
