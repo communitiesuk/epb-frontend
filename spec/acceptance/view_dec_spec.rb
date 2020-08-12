@@ -117,6 +117,12 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
       expect(response.body).to include(">16%</td>")
     end
 
+    describe "viewing the Administrative information section" do
+      it "shows the section heading" do
+        expect(response.body).to have_css "h2", text: "Administrative information"
+      end
+    end
+
     describe "viewing the related assessments section" do
       it "shows the related assessments section title" do
         expect(response.body).to include(

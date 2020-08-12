@@ -51,6 +51,13 @@
   </div>
 
   <div class="govuk-grid-column-two-thirds epc-blue-bottom">
+    <%== erb :dec__administrative_information, locals: {
+      assessment: assessment,
+    }
+    %>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds epc-blue-bottom">
     <%== erb :component__related_assessments,
              locals: {
                relatedAssessments: assessment[:relatedAssessments],

@@ -1070,5 +1070,7 @@ cy:
         annual_energy_use: 'Welsh: Annual Energy Use (kWh/m2/year)'
         typical_energy_use: 'Welsh: Typical Energy Use (kWh/m2/year)'
         energy_from_renewables: 'Welsh: Energy from renewables'
+      administrative_information:
+        title: 'Welsh: Administrative information'
   dec_rr:
     top_heading: "Welsh: Display Energy Certificate Recommendation Report (DEC-RR)"
