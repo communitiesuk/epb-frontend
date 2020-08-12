@@ -1081,6 +1081,7 @@ cy:
         company_name: 'Welsh: Employer/Trading Name'
         company_address: 'Welsh: Employer/Trading Address'
         issue_date: 'Welsh: Issue date'
+        nominated_date: 'Welsh: Nominated date'
 
   dec_rr:
     top_heading: "Welsh: Display Energy Certificate Recommendation Report (DEC-RR)"
