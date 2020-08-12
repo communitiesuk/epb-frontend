@@ -139,6 +139,8 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
         expect(response.body).to have_css "dd", text: "14 May 2020"
         expect(response.body).to have_css "dt", text: "Nominated date"
         expect(response.body).to have_css "dd", text: "1 January 2020"
+        expect(response.body).to have_css "dt", text: "Valid until"
+        expect(response.body).to have_css "dd", text: "21 February 2030"
       end
     end
 

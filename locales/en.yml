@@ -1146,6 +1146,7 @@ en:
         company_address: 'Employer/Trading Address'
         issue_date: 'Issue date'
         nominated_date: 'Nominated date'
+        valid_until: 'Valid until'
 
   dec_rr:
     top_heading: "Display Energy Certificate Recommendation Report (DEC-RR)"
