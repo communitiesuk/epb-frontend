@@ -1074,6 +1074,7 @@ cy:
         title: 'Welsh: Administrative information'
         description: 'Welsh: This is a Display Energy Certificate as defined in the Energy Performance of Buildings Regulations 2012 as amended.'
         assessment_software: 'Welsh: Assessment software'
+        property_reference: 'Welsh: Property reference'
 
   dec_rr:
     top_heading: "Welsh: Display Energy Certificate Recommendation Report (DEC-RR)"

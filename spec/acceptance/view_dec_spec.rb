@@ -123,6 +123,8 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
         expect(response.body).to have_css "p", text: "This is a Display Energy Certificate as defined in the Energy Performance of Buildings Regulations 2012 as amended."
         expect(response.body).to have_css "dt", text: "Assessment software"
         expect(response.body).to have_css "dd", text: "DCLG, ORCalc, v3.6.3"
+        expect(response.body).to have_css "dt", text: "Property reference"
+        expect(response.body).to have_css "dd", text: "UPRN-000000000001"
       end
     end
 
