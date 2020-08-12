@@ -1084,12 +1084,14 @@ cy:
         nominated_date: 'Welsh: Nominated date'
         valid_until: 'Welsh: Valid until'
         related_party_disclosure: 'Welsh: Related party disclosure'
+        related_report:
+          cta: "Welsh: Recommendation Report"
+          text: "Welsh: Recommendations for improving the energy performance of the building are contained in the associated %{link}."
       information:
         certificate:
           list:
             no_disclosure: 'Welsh: No related party disclosure provided.'
             disclosure_number_not_valid: 'Welsh: The disclosure code provided is not valid.'
-
 
   dec_rr:
     top_heading: "Welsh: Display Energy Certificate Recommendation Report (DEC-RR)"

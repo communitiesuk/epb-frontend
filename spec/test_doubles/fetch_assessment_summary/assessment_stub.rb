@@ -235,6 +235,7 @@ module FetchAssessmentSummary
             calculationTool: "DCLG, ORCalc, v3.6.3",
             issueDate: "2020-05-14",
             relatedPartyDisclosure: related_party,
+            relatedRrn: "4192-1535-8427-8844-6702",
           },
           assessor: {
             name: "TEST NAME BOI",

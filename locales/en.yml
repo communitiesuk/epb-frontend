@@ -1164,8 +1164,9 @@ en:
         nominated_date: 'Nominated date'
         valid_until: 'Valid until'
         related_party_disclosure: 'Related party disclosure'
-        related_party_disclosure_code:
-          "4": 'Contractor to the occupier for non-EPBD services.'
+        related_report:
+          cta: "Recommendation Report"
+          text: "Recommendations for improving the energy performance of the building are contained in the associated %{link}."
       information:
         certificate:
           list:

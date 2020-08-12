@@ -108,3 +108,8 @@
     %></dd>
   </div>
 </dl>
+<p><%==
+  t('dec.sections.administrative_information.related_report.text',
+    link: "<a href=\"../energy-performance-certificate/#{assessment[:administrativeInformation][:relatedRrn]}\">" +
+      t('dec.sections.administrative_information.related_report.cta') + '</a>')
+%></p>
