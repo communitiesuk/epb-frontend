@@ -1142,6 +1142,7 @@ en:
         assessor_name: 'Assessor name'
         assessor_number: 'Assessor number'
         scheme_name: 'Accreditation scheme'
+        company_name: 'Employer/Trading Name'
 
   dec_rr:
     top_heading: "Display Energy Certificate Recommendation Report (DEC-RR)"

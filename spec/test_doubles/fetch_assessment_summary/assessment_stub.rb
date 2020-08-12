@@ -237,6 +237,9 @@ module FetchAssessmentSummary
             name: "TEST NAME BOI",
             schemeAssessorId: "SPEC000000",
             registeredBy: { name: "test scheme", schemeId: 1 },
+            companyDetails: {
+              name: "Joe Bloggs Ltd",
+            },
           },
           relatedAssessments:
             if related_assessments

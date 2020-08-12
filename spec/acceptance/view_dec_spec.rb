@@ -131,6 +131,8 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
         expect(response.body).to have_css "dd", text: "SPEC000000"
         expect(response.body).to have_css "dt", text: "Accreditation scheme"
         expect(response.body).to have_css "dd", text: "test scheme"
+        expect(response.body).to have_css "dt", text: "Employer/Trading Name"
+        expect(response.body).to have_css "dd", text: "Joe Bloggs Ltd"
       end
     end
 
