@@ -4,3 +4,13 @@
 <p class="govuk-body"><%=
   t('dec.sections.administrative_information.description')
 %></p>
+<dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
+      t('dec.sections.administrative_information.assessment_software')
+    %></dt>
+    <dd class="govuk-summary-list__value"><%=
+      assessment[:administrativeInformation][:calculationTool]
+    %></dd>
+  </div>
+</dl>

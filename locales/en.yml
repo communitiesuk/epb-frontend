@@ -1137,6 +1137,7 @@ en:
       administrative_information:
         title: 'Administrative information'
         description: 'This is a Display Energy Certificate as defined in the Energy Performance of Buildings Regulations 2012 as amended.'
+        assessment_software: 'Assessment software'
 
   dec_rr:
     top_heading: "Display Energy Certificate Recommendation Report (DEC-RR)"

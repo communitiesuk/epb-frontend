@@ -230,6 +230,9 @@ module FetchAssessmentSummary
             renewablesFuelThermal: "15",
             renewablesElectrical: "16",
           },
+          administrativeInformation: {
+            calculationTool: "DCLG, ORCalc, v3.6.3",
+          },
           relatedAssessments:
             if related_assessments
               [
