@@ -53,7 +53,9 @@
         t('non_domestic_epc.rr.assessor_details.declaration')
       %></dt>
       <dd class="govuk-summary-list__value"><%=
-        party_disclosure(assessment[:relatedPartyDisclosure].nil? ? "13" : assessment[:relatedPartyDisclosure], "", "non_domestic_disclosure_code", "non_domestic_epc")
+        assessment[:relatedPartyDisclosure] ?
+          assessment[:relatedPartyDisclosure] :
+          t('non_domestic_epc.rr.information.certificate.list.no_disclosure')
       %></dd>
     </div>
   </dl>

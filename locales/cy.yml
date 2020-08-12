@@ -497,6 +497,10 @@ cy:
         no_connection_text: 'Welsh: No connection to the property'
         has_connection_text: 'Welsh: The assessor has made a declaration'
         declaration_text: 'Welsh: The assessor declared they have no personal or business connection with the property’s owner or anyone who may have an interest in the property.'
+      information:
+        certificate:
+          list:
+            no_disclosure: 'Welsh: The assessor has not indicated whether they have a relation to this property.'
       other_reports:
         title: 'Welsh: Other reports for this property'
         reminder: 'Welsh: If you are aware of previous reports for this property and they are not listed here, please contact the Help Desk at %{contact_centre_number}.'
