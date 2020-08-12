@@ -125,6 +125,10 @@ module Sinatra
       def count_certificates(certificates)
         certificates.sum { |_address_id, res| res[:certificates].size }
       end
+
+      def date(date)
+        Date.parse(date).strftime "%-d %B %Y"
+      end
     end
   end
 end

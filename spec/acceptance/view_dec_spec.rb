@@ -172,7 +172,6 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
             get "/energy-performance-certificate/0000-0000-0000-0000-1111"
 
           expect(response.body).to have_css "dd", text: disclosure
-
         end
       end
     end

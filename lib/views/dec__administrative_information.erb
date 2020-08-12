@@ -70,9 +70,7 @@
       t('dec.sections.administrative_information.issue_date')
     %></dt>
     <dd class="govuk-summary-list__value"><%=
-      Date.parse(administrative_information[:issueDate]).strftime(
-        "%-d %B %Y",
-        )
+      date(administrative_information[:issueDate])
     %></dd>
   </div>
   <div class="govuk-summary-list__row">
@@ -80,9 +78,7 @@
       t('dec.sections.administrative_information.nominated_date')
     %></dt>
     <dd class="govuk-summary-list__value"><%=
-      Date.parse(assessment[:currentAssessment][:date]).strftime(
-        "%-d %B %Y",
-        )
+      date(assessment[:currentAssessment][:date])
     %></dd>
   </div>
   <div class="govuk-summary-list__row">
@@ -90,9 +86,7 @@
       t('dec.sections.administrative_information.valid_until')
     %></dt>
     <dd class="govuk-summary-list__value"><%=
-      Date.parse(assessment[:dateOfExpiry]).strftime(
-        "%-d %B %Y",
-        )
+      date(assessment[:dateOfExpiry])
     %></dd>
   </div>
   <div class="govuk-summary-list__row">
