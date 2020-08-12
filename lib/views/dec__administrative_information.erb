@@ -100,7 +100,11 @@
       t('dec.sections.administrative_information.related_party_disclosure')
     %></dt>
     <dd class="govuk-summary-list__value"><%=
-      t('dec.sections.administrative_information.related_party_disclosure_code.' + assessment[:administrativeInformation][:relatedPartyDisclosure])
+      party_disclosure(
+        assessment[:administrativeInformation][:relatedPartyDisclosure].nil? ?
+          "8" :
+          assessment[:administrativeInformation][:relatedPartyDisclosure], "", "dec_disclosure_code", "dec"
+      )
     %></dd>
   </div>
 </dl>

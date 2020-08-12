@@ -177,7 +177,8 @@ module FetchAssessmentSummary
     def self.fetch_dec(
       assessment_id = "0000-0000-0000-0000-0001",
       date_of_expiry = "2030-01-01",
-      related_assessments = true
+      related_assessments = true,
+      related_party = nil
     )
       body = {
         data: {
@@ -233,7 +234,7 @@ module FetchAssessmentSummary
           administrativeInformation: {
             calculationTool: "DCLG, ORCalc, v3.6.3",
             issueDate: "2020-05-14",
-            relatedPartyDisclosure: "4",
+            relatedPartyDisclosure: related_party,
           },
           assessor: {
             name: "TEST NAME BOI",

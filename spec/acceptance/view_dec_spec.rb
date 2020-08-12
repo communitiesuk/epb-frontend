@@ -142,7 +142,37 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
         expect(response.body).to have_css "dt", text: "Valid until"
         expect(response.body).to have_css "dd", text: "21 February 2030"
         expect(response.body).to have_css "dt", text: "Related party disclosure"
-        expect(response.body).to have_css "dd", text: "Contractor to the occupier for non-EPBD services."
+        expect(response.body).to have_css "dd", text: "The assessor has not indicated whether they have a relation to this property."
+      end
+    end
+
+    context "with different related party disclosure codes" do
+      it "shows the corresponding related party disclosure text" do
+        related_party_disclosures = {
+          "1": "Not related to the occupier.",
+          "2": "Employed by the occupier.",
+          "3": "Contractor to the occupier for EPBD services only.",
+          "4": "Contractor to the occupier for non-EPBD services.",
+          "5": "Indirect relation to the occupier.",
+          "6": "Financial interest in the occupier and/or property.",
+          "7": "Previous relation to the occupier.",
+          "8": "The assessor has not indicated whether they have a relation to this property.",
+        }
+
+        related_party_disclosures.each do |key, disclosure|
+          FetchAssessmentSummary::AssessmentStub.fetch_dec(
+            "0000-0000-0000-0000-1111",
+            "2030-02-21",
+            true,
+            key,
+          )
+
+          response =
+            get "/energy-performance-certificate/0000-0000-0000-0000-1111"
+
+          expect(response.body).to have_css "dd", text: disclosure
+
+        end
       end
     end
 

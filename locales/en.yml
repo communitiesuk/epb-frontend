@@ -1073,7 +1073,23 @@ en:
       relation: "The assessor has a previous relation to the owner (for example, they might previously have been an employee or contractor)."
     13:
       relation: "The assessor has not indicated whether they have a relation to this property."
-
+  dec_disclosure_code:
+    1:
+      relation: "Not related to the occupier."
+    2:
+      relation: "Employed by the occupier."
+    3:
+      relation: "Contractor to the occupier for EPBD services only."
+    4:
+      relation: "Contractor to the occupier for non-EPBD services."
+    5:
+      relation: "Indirect relation to the occupier."
+    6:
+      relation: "Financial interest in the occupier and/or property."
+    7:
+      relation: "Previous relation to the occupier."
+    8:
+      relation: "The assessor has not indicated whether they have a relation to this property."
 
   property_summary:
     type:
@@ -1150,6 +1166,11 @@ en:
         related_party_disclosure: 'Related party disclosure'
         related_party_disclosure_code:
           "4": 'Contractor to the occupier for non-EPBD services.'
+      information:
+        certificate:
+          list:
+            no_disclosure: 'No related party disclosure provided.'
+            disclosure_number_not_valid: 'The disclosure code provided is not valid.'
 
   dec_rr:
     top_heading: "Display Energy Certificate Recommendation Report (DEC-RR)"
