@@ -10,8 +10,7 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
   context "when a dec exists" do
     before do
       FetchAssessmentSummary::AssessmentStub.fetch_dec(
-        assessment_id: "0000-0000-0000-0000-1111",
-        date_of_expiry: "2030-02-21",
+        assessment_id: "0000-0000-0000-0000-1111", date_of_expiry: "2030-02-21",
       )
     end
 
@@ -119,8 +118,11 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
 
     describe "viewing the Administrative information section" do
       it "shows the section heading" do
-        expect(response.body).to have_css "h2", text: "Administrative information"
-        expect(response.body).to have_css "p", text: "This is a Display Energy Certificate as defined in the Energy Performance of Buildings Regulations 2012 as amended."
+        expect(response.body).to have_css "h2",
+                                          text: "Administrative information"
+        expect(response.body).to have_css "p",
+                                          text:
+                                            "This is a Display Energy Certificate as defined in the Energy Performance of Buildings Regulations 2012 as amended."
         expect(response.body).to have_css "dt", text: "Assessment software"
         expect(response.body).to have_css "dd", text: "DCLG, ORCalc, v3.6.3"
         expect(response.body).to have_css "dt", text: "Property reference"
@@ -134,7 +136,8 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
         expect(response.body).to have_css "dt", text: "Employer/Trading Name"
         expect(response.body).to have_css "dd", text: "Joe Bloggs Ltd"
         expect(response.body).to have_css "dt", text: "Employer/Trading Address"
-        expect(response.body).to have_css "dd", text: "123 My Street, My City, AB3 4CD"
+        expect(response.body).to have_css "dd",
+                                          text: "123 My Street, My City, AB3 4CD"
         expect(response.body).to have_css "dt", text: "Issue date"
         expect(response.body).to have_css "dd", text: "14 May 2020"
         expect(response.body).to have_css "dt", text: "Nominated date"
@@ -142,9 +145,15 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
         expect(response.body).to have_css "dt", text: "Valid until"
         expect(response.body).to have_css "dd", text: "21 February 2030"
         expect(response.body).to have_css "dt", text: "Related party disclosure"
-        expect(response.body).to have_css "dd", text: "The assessor has not indicated whether they have a relation to this property."
-        expect(response.body).to have_css "p", text: "Recommendations for improving the energy performance of the building are contained in the associated Recommendation Report."
-        expect(response.body).to have_link "Recommendation Report", href: "../energy-performance-certificate/4192-1535-8427-8844-6702"
+        expect(response.body).to have_css "dd",
+                                          text:
+                                            "The assessor has not indicated whether they have a relation to this property."
+        expect(response.body).to have_css "p",
+                                          text:
+                                            "Recommendations for improving the energy performance of the building are contained in the associated Recommendation Report."
+        expect(response.body).to have_link "Recommendation Report",
+                                           href:
+                                             "../energy-performance-certificate/4192-1535-8427-8844-6702"
       end
     end
 
@@ -158,7 +167,8 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
           "5": "Indirect relation to the occupier.",
           "6": "Financial interest in the occupier and/or property.",
           "7": "Previous relation to the occupier.",
-          "8": "The assessor has not indicated whether they have a relation to this property.",
+          "8":
+            "The assessor has not indicated whether they have a relation to this property.",
         }
 
         related_party_disclosures.each do |key, disclosure|
