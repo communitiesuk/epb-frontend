@@ -1144,6 +1144,7 @@ en:
         scheme_name: 'Accreditation scheme'
         company_name: 'Employer/Trading Name'
         company_address: 'Employer/Trading Address'
+        issue_date: 'Issue date'
 
   dec_rr:
     top_heading: "Display Energy Certificate Recommendation Report (DEC-RR)"

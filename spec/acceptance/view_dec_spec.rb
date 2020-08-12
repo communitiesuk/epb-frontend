@@ -135,6 +135,8 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
         expect(response.body).to have_css "dd", text: "Joe Bloggs Ltd"
         expect(response.body).to have_css "dt", text: "Employer/Trading Address"
         expect(response.body).to have_css "dd", text: "123 My Street, My City, AB3 4CD"
+        expect(response.body).to have_css "dt", text: "Issue date"
+        expect(response.body).to have_css "dd", text: "14 May 2020"
       end
     end
 

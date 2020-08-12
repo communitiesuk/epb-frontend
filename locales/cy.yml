@@ -1080,6 +1080,7 @@ cy:
         scheme_name: 'Welsh: Accreditation scheme'
         company_name: 'Welsh: Employer/Trading Name'
         company_address: 'Welsh: Employer/Trading Address'
+        issue_date: 'Welsh: Issue date'
 
   dec_rr:
     top_heading: "Welsh: Display Energy Certificate Recommendation Report (DEC-RR)"

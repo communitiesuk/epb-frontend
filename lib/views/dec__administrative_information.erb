@@ -65,4 +65,14 @@
       assessment[:assessor][:companyDetails][:address]
     %></dd>
   </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
+      t('dec.sections.administrative_information.issue_date')
+    %></dt>
+    <dd class="govuk-summary-list__value"><%=
+      Date.parse(assessment[:administrativeInformation][:issueDate]).strftime(
+        "%-d %B %Y",
+        )
+    %></dd>
+  </div>
 </dl>
