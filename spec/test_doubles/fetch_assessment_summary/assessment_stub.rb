@@ -238,7 +238,7 @@ module FetchAssessmentSummary
             schemeAssessorId: "SPEC000000",
             registeredBy: { name: "test scheme", schemeId: 1 },
             companyDetails: {
-              name: "Joe Bloggs Ltd",
+              address: "123 My Street, My City, AB3 4CD", name: "Joe Bloggs Ltd"
             },
           },
           relatedAssessments:
