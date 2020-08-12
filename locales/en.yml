@@ -1141,6 +1141,7 @@ en:
         property_reference: 'Property reference'
         assessor_name: 'Assessor name'
         assessor_number: 'Assessor number'
+        scheme_name: 'Accreditation scheme'
 
   dec_rr:
     top_heading: "Display Energy Certificate Recommendation Report (DEC-RR)"

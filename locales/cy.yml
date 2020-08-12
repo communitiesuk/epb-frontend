@@ -1077,6 +1077,7 @@ cy:
         property_reference: 'Welsh: Property reference'
         assessor_name: 'Welsh: Assessor name'
         assessor_number: 'Welsh: Assessor number'
+        scheme_name: 'Welsh: Accreditation scheme'
 
   dec_rr:
     top_heading: "Welsh: Display Energy Certificate Recommendation Report (DEC-RR)"
