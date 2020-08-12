@@ -1140,6 +1140,7 @@ en:
         assessment_software: 'Assessment software'
         property_reference: 'Property reference'
         assessor_name: 'Assessor name'
+        assessor_number: 'Assessor number'
 
   dec_rr:
     top_heading: "Display Energy Certificate Recommendation Report (DEC-RR)"

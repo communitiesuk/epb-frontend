@@ -235,6 +235,7 @@ module FetchAssessmentSummary
           },
           assessor: {
             name: "TEST NAME BOI",
+            schemeAssessorId: "SPEC000000",
           },
           relatedAssessments:
             if related_assessments

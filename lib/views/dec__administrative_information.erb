@@ -33,4 +33,12 @@
       assessment[:assessor][:name]
     %></dd>
   </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
+      t('dec.sections.administrative_information.assessor_number')
+    %></dt>
+    <dd class="govuk-summary-list__value"><%=
+      assessment[:assessor][:schemeAssessorId]
+    %></dd>
+  </div>
 </dl>
