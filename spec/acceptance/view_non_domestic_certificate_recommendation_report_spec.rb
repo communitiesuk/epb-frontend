@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
-describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationReport" do
+describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationReport",
+         type: :feature do
   include RSpecFrontendServiceMixin
 
   let(:response) do
@@ -116,7 +117,8 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
 
       response = get "/energy-performance-certificate/1234-5678-1234-5678-1234"
 
-      expect(response.body).to include "some text"
+      expect(response.body).to have_css "dd.govuk-summary-list__value",
+                                        text: "some text"
     end
   end
 
