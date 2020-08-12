@@ -10,8 +10,8 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
   context "when a dec exists" do
     before do
       FetchAssessmentSummary::AssessmentStub.fetch_dec(
-        "0000-0000-0000-0000-1111",
-        "2030-02-21",
+        assessment_id: "0000-0000-0000-0000-1111",
+        date_of_expiry: "2030-02-21",
       )
     end
 
@@ -163,10 +163,9 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
 
         related_party_disclosures.each do |key, disclosure|
           FetchAssessmentSummary::AssessmentStub.fetch_dec(
-            "0000-0000-0000-0000-1111",
-            "2030-02-21",
-            true,
-            key,
+            assessment_id: "0000-0000-0000-0000-1111",
+            date_of_expiry: "2030-02-21",
+            related_party: key,
           )
 
           response =
@@ -207,9 +206,8 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
       context "when there are no related assessments" do
         before do
           FetchAssessmentSummary::AssessmentStub.fetch_dec(
-            "0000-0000-0000-0000-1111",
-            "2030-02-21",
-            false,
+            assessment_id: "0000-0000-0000-0000-1111",
+            related_assessments: false,
           )
         end
 
