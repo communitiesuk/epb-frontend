@@ -10,17 +10,17 @@
       t('dec.sections.administrative_information.assessment_software')
     %></dt>
     <dd class="govuk-summary-list__value"><%=
-      assessment[:administrativeInformation][:calculationTool]
+      administrative_information[:calculationTool]
     %></dd>
   </div>
 
-  <% if assessment[:address][:addressId] %>
+  <% if address[:addressId] %>
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
         t('dec.sections.administrative_information.property_reference')
       %></dt>
       <dd class="govuk-summary-list__value"><%=
-        assessment[:address][:addressId]
+        address[:addressId]
       %></dd>
     </div>
   <% end %>
@@ -30,7 +30,7 @@
       t('dec.sections.administrative_information.assessor_name')
     %></dt>
     <dd class="govuk-summary-list__value"><%=
-      assessment[:assessor][:name]
+      assessor[:name]
     %></dd>
   </div>
   <div class="govuk-summary-list__row">
@@ -38,7 +38,7 @@
       t('dec.sections.administrative_information.assessor_number')
     %></dt>
     <dd class="govuk-summary-list__value"><%=
-      assessment[:assessor][:schemeAssessorId]
+      assessor[:schemeAssessorId]
     %></dd>
   </div>
   <div class="govuk-summary-list__row">
@@ -46,7 +46,7 @@
       t('dec.sections.administrative_information.scheme_name')
     %></dt>
     <dd class="govuk-summary-list__value"><%=
-      assessment[:assessor][:registeredBy][:name]
+      assessor[:registeredBy][:name]
     %></dd>
   </div>
   <div class="govuk-summary-list__row">
@@ -54,7 +54,7 @@
       t('dec.sections.administrative_information.company_name')
     %></dt>
     <dd class="govuk-summary-list__value"><%=
-      assessment[:assessor][:companyDetails][:name]
+      assessor[:companyDetails][:name]
     %></dd>
   </div>
   <div class="govuk-summary-list__row">
@@ -62,7 +62,7 @@
       t('dec.sections.administrative_information.company_address')
     %></dt>
     <dd class="govuk-summary-list__value"><%=
-      assessment[:assessor][:companyDetails][:address]
+      assessor[:companyDetails][:address]
     %></dd>
   </div>
   <div class="govuk-summary-list__row">
@@ -70,7 +70,7 @@
       t('dec.sections.administrative_information.issue_date')
     %></dt>
     <dd class="govuk-summary-list__value"><%=
-      Date.parse(assessment[:administrativeInformation][:issueDate]).strftime(
+      Date.parse(administrative_information[:issueDate]).strftime(
         "%-d %B %Y",
         )
     %></dd>
@@ -101,15 +101,15 @@
     %></dt>
     <dd class="govuk-summary-list__value"><%=
       party_disclosure(
-        assessment[:administrativeInformation][:relatedPartyDisclosure].nil? ?
+        administrative_information[:relatedPartyDisclosure].nil? ?
           "8" :
-          assessment[:administrativeInformation][:relatedPartyDisclosure], "", "dec_disclosure_code", "dec"
+          administrative_information[:relatedPartyDisclosure], "", "dec_disclosure_code", "dec"
       )
     %></dd>
   </div>
 </dl>
 <p><%==
   t('dec.sections.administrative_information.related_report.text',
-    link: "<a href=\"../energy-performance-certificate/#{assessment[:administrativeInformation][:relatedRrn]}\">" +
+    link: "<a href=\"../energy-performance-certificate/#{administrative_information[:relatedRrn]}\">" +
       t('dec.sections.administrative_information.related_report.cta') + '</a>')
 %></p>

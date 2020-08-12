@@ -53,6 +53,9 @@
   <div class="govuk-grid-column-two-thirds epc-blue-bottom">
     <%== erb :dec__administrative_information, locals: {
       assessment: assessment,
+      address: assessment[:address],
+      assessor: assessment[:assessor],
+      administrative_information: assessment[:administrativeInformation]
     }
     %>
   </div>
