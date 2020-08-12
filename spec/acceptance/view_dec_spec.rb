@@ -120,6 +120,7 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
     describe "viewing the Administrative information section" do
       it "shows the section heading" do
         expect(response.body).to have_css "h2", text: "Administrative information"
+        expect(response.body).to have_css "p", text: "This is a Display Energy Certificate as defined in the Energy Performance of Buildings Regulations 2012 as amended."
       end
     end
 
