@@ -1140,7 +1140,7 @@ en:
           renewables: "Renewables"
         no_value: "Not applicable"
       technical_information:
-        title: 'Technical Information'
+        title: 'Technical information'
         description: 'This tells you technical information about how energy is used in this building. Consumption data based on actual meter readings.'
         heating_fuel: 'Main heating fuel'
         building_environment: 'Building environment'

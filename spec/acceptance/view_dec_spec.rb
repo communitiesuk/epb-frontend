@@ -26,6 +26,8 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
                                          href: "#previous_operational_ratings"
       expect(response.body).to have_link "Total CO2 emissions",
                                          href: "#co2"
+      expect(response.body).to have_link "Technical information",
+                                         href: "#technical_information"
     end
 
     it "shows the summary box" do
@@ -99,7 +101,7 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
 
     it "shows the technical information section" do
       expect(response.body).to include(
-        '<h2 class="govuk-heading-l">Technical Information</h2>',
+        '<h2 class="govuk-heading-l">Technical information</h2>',
       )
       expect(response.body).to include(
         "This tells you technical information about how energy is used in this building. Consumption data based on actual meter readings.",
