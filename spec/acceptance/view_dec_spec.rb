@@ -24,6 +24,8 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
                                          href: "#rating"
       expect(response.body).to have_link "Previous operational ratings",
                                          href: "#previous_operational_ratings"
+      expect(response.body).to have_link "Total CO2 emissions",
+                                         href: "#co2"
     end
 
     it "shows the summary box" do
