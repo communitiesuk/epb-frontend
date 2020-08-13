@@ -344,7 +344,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate" do
         expect(response.body).to include(
           "/energy-performance-certificate/0000-0000-0000-0000-0001\">0000-0000-0000-0000-0001</a>",
         )
-        expect(response.body).to include(">Valid until 4 May 2026</b>")
+        expect(response.body).to include(">4 May 2026</b>")
       end
 
       it "shows the expected expired related assessment" do
