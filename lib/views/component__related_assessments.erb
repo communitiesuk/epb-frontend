@@ -4,28 +4,28 @@
 <% if relatedAssessments.nil? || relatedAssessments.empty? %>
   <p class="govuk-body"><%= no_related_assessments %></p>
 <% else %>
-  <% relatedAssessments.each do |related_assessment| %>
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-one-half">
-        <p class="govuk-!-font-weight-bold"><%= heading_certificate_reference %></p>
+  <dl class="govuk-summary-list">
+    <% relatedAssessments.each do |related_assessment| %>
+      <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
+          heading_certificate_reference
+        %></dt>
+        <dd class="govuk-summary-list__value govuk-!-width-one-half">
+          <a href="<%= localised_url('/energy-performance-certificate/' + related_assessment[:assessmentId]) %>"><%= related_assessment[:assessmentId] %></a>
+        </dd>
       </div>
-      <div class="govuk-grid-column-one-half govuk-body">
-        <a href="<%= localised_url('/energy-performance-certificate/' + related_assessment[:assessmentId]) %>"><%= related_assessment[:assessmentId] %></a>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
+          heading_valid_until
+        %></dt>
+        <dd class="govuk-summary-list__value govuk-!-width-one-half">
+          <% if related_assessment[:assessmentStatus] == "EXPIRED" %>
+            <b class="expired-text"><%= date(related_assessment[:assessmentExpiryDate]) %> (<%= expired_text %>)</b>
+          <% else %>
+            <b><%= date(related_assessment[:assessmentExpiryDate]) %></b>
+          <% end %>
+        </dd>
       </div>
-    </div>
-
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-one-half">
-        <p class="govuk-!-font-weight-bold"><%= heading_valid_until %></p>
-      </div>
-      <div class="govuk-grid-column-one-half govuk-body">
-        <% if related_assessment[:assessmentStatus] == "EXPIRED" %>
-          <b class="expired-text"><%= date(related_assessment[:assessmentExpiryDate]) %> (<%= expired_text %>)</b>
-        <% else %>
-          <b><%= date(related_assessment[:assessmentExpiryDate]) %></b>
-        <% end %>
-      </div>
-    </div>
-    <hr>
-  <% end %>
+    <% end %>
+  </dl>
 <% end %>

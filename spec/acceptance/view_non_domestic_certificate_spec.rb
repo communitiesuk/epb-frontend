@@ -340,8 +340,8 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate", type: :feature d
       end
 
       it "shows headings on the list of the related assessments" do
-        expect(response.body).to include(">Reference number</p>")
-        expect(response.body).to include(">Valid until</p>")
+        expect(response.body).to have_css "dt", text: "Reference number"
+        expect(response.body).to have_css "dt", text: "Valid until"
       end
 
       it "shows the expected valid related assessment" do
