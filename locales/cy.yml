@@ -415,6 +415,9 @@ cy:
       certificate_id: "Certificate Number"
       property_info:
         'Welsh: This property is a %{property_type} and has a total floor area of %{total_floor_area} square metres.'
+    related:
+      certificates:
+        title: 'Welsh: Other certificates for this property'
 
   unit:
     square_metres: 'Welsh: square metres'

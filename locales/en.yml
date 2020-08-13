@@ -440,6 +440,9 @@ en:
       certificate_id: "Certificate Number"
       property_info:
           'This property is a %{property_type} and has a total floor area of %{total_floor_area} square metres.'
+    related:
+      certificates:
+        title: 'Other certificates for this property'
 
   unit:
     square_metres: 'square metres'
