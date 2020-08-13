@@ -19,9 +19,9 @@
       </div>
       <div class="govuk-grid-column-one-half govuk-body">
         <% if related_assessment[:assessmentStatus] == "EXPIRED" %>
-          <b class="expired-text"><%= Date.parse(related_assessment[:assessmentExpiryDate]).strftime('%d %B %Y')%> (<%= t('domestic_epc.sections.related_assessments.expired')%>)</b>
+          <b class="expired-text"><%= date(related_assessment[:assessmentExpiryDate]) %> (<%= t('domestic_epc.sections.related_assessments.expired')%>)</b>
         <% else %>
-          <b><%= t('domestic_epc.sections.related_assessments.valid_until')%> <%= Date.parse(related_assessment[:assessmentExpiryDate]).strftime('%d %B %Y')%></b>
+          <b><%= t('domestic_epc.sections.related_assessments.valid_until')%> <%= date(related_assessment[:assessmentExpiryDate]) %></b>
         <% end %>
       </div>
     </div>

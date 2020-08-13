@@ -89,7 +89,7 @@
         t('non_domestic_epc.contact.assessment.date_assessed')
       %></dt>
       <dd class="govuk-summary-list__value govuk-!-width-one-half"><%=
-        Date.parse(assessment_date).strftime('%-d %B %Y')
+        date(assessment_date)
       %></dd>
     </div>
     <div class="govuk-summary-list__row">
@@ -97,7 +97,7 @@
         t('non_domestic_epc.contact.assessment.date_certificate')
       %></dt>
       <dd class="govuk-summary-list__value govuk-!-width-one-half"><%=
-        Date.parse(registration_date).strftime('%-d %B %Y')
+        date(registration_date)
       %></dd>
     </div>
     <div class="govuk-summary-list__row">

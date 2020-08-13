@@ -575,7 +575,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       end
 
       it "shows the expiry date of a previous certificate in red with Expired next to it" do
-        expect(response.body).to include("01 July 2002 (Expired)")
+        expect(response.body).to include("1 July 2002 (Expired)")
       end
 
       context "when there are no related certificates" do

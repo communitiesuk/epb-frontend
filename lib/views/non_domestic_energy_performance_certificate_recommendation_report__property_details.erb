@@ -3,7 +3,7 @@
   <dl class="govuk-summary-list">
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= t('non_domestic_epc.rr.property_details.issued_on') %></dt>
-      <dd class="govuk-summary-list__value"><%= Date.parse(assessment[:dateOfRegistration]).strftime('%-d %B %Y') %></dd>
+      <dd class="govuk-summary-list__value"><%= date(assessment[:dateOfRegistration]) %></dd>
     </div>
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= t('non_domestic_epc.rr.property_details.floor_area') %></dt>

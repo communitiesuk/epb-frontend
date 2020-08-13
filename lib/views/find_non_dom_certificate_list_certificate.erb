@@ -19,7 +19,7 @@
           <% results[:certificates].each do |result| %>
             <% expire = Date.parse(result[:dateOfExpiry]) < Date.today %>
             <span class="<%== ( expire ? 'govuk-!-font-weight-bold expired-text' : "") %>">
-              <%= Date.parse(result[:dateOfExpiry]).strftime('%d/%m/%Y') %> <%= expire ? t('find_certificate_results.expired') : '' %>
+              <%= date(result[:dateOfExpiry]) %> <%= expire ? t('find_certificate_results.expired') : '' %>
             </span>
             <br /><br />
           <% end %>

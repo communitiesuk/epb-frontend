@@ -128,7 +128,7 @@ describe "Acceptance::Non Domestic Certificate" do
         end
 
         it "shows the expiry date of an entry" do
-          expect(response.body).to include("01/01/2030")
+          expect(response.body).to include("1 January 2030")
         end
       end
 
@@ -234,7 +234,7 @@ describe "Acceptance::Non Domestic Certificate" do
         end
 
         it "shows the expiry date of an entry" do
-          expect(response.body).to include("01/01/2019")
+          expect(response.body).to include("1 January 2019")
         end
       end
 

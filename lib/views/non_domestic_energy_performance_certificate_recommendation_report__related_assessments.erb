@@ -17,9 +17,9 @@
               t('assessment_types.' + related_assessment[:assessmentType])
             %><br />
               <% if related_assessment[:assessmentStatus] == "EXPIRED" %>
-                <b class="expired-text"><%= Date.parse(related_assessment[:assessmentExpiryDate]).strftime('%-d %B %Y')%> (<%= t('expired') %>)</b>
+                <b class="expired-text"><%= date(related_assessment[:assessmentExpiryDate]) %> (<%= t('expired') %>)</b>
               <% else %>
-                <b><%= t('valid_until') %> <%= Date.parse(related_assessment[:assessmentExpiryDate]).strftime('%-d %B %Y')%></b>
+                <b><%= t('valid_until') %> <%= date(related_assessment[:assessmentExpiryDate]) %></b>
               <% end %>
             </dd>
           </div>
