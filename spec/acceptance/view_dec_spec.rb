@@ -209,6 +209,10 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
         )
       end
 
+      it "shows the description text" do
+        expect(response.body).to have_css "p", text: "If you are aware of previous certificates for this property and they are not listed here, please contact the Help Desk at 01632 164 6672."
+      end
+
       it "shows headings on the list of the related assessments" do
         expect(response.body).to include(">Reference number</p>")
         expect(response.body).to include(">Valid until</p>")

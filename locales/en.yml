@@ -443,6 +443,7 @@ en:
     related:
       certificates:
         title: 'Other certificates for this property'
+        text: 'If you are aware of previous certificates for this property and they are not listed here, please contact the Help Desk at 01632 164 6672.'
 
   unit:
     square_metres: 'square metres'

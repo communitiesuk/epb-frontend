@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-describe "Acceptance::NonDomesticEnergyPerformanceCertificate" do
+describe "Acceptance::NonDomesticEnergyPerformanceCertificate", type: :feature do
   include RSpecFrontendServiceMixin
 
   let(:response) do
@@ -333,6 +333,10 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate" do
         expect(response.body).to include(
           ">Other certificates for this property</h2>",
         )
+      end
+
+      it "shows the description text" do
+        expect(response.body).to have_css "p", text: "If you are aware of previous certificates for this property and they are not listed here, please contact the Help Desk at 01632 164 6672."
       end
 
       it "shows headings on the list of the related assessments" do

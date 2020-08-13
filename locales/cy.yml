@@ -418,6 +418,7 @@ cy:
     related:
       certificates:
         title: 'Welsh: Other certificates for this property'
+        text: 'Welsh: If you are aware of previous certificates for this property and they are not listed here, please contact the Help Desk at 01632 164 6672.'
 
   unit:
     square_metres: 'Welsh: square metres'
