@@ -1036,6 +1036,8 @@ cy:
   dec:
     top_heading: "Welsh: Display Energy Certificate"
     sections:
+      contents:
+        title: 'Welsh: Certificate contents'
       rating:
         title: 'Welsh: Energy performance of this building'
         emissions_text: 'Welsh: The building’s energy performance is based on its carbon dioxide (CO2) emissions for the last year.'

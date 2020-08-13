@@ -18,6 +18,10 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
       expect(response.body).to include("Display Energy Certificate")
     end
 
+    it "shows the contents section" do
+      expect(response.body).to have_css "h2", text: "Certificate contents"
+    end
+
     it "shows the summary box" do
       expect(response.body).to include("0000-0000-0000-0000-1111")
       expect(response.body).to include("Valid until 21 February 2030")
