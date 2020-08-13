@@ -61,25 +61,19 @@
       year2: assessment[:year2Assessment],
     }
     %>
-  </div>
 
-  <div class="govuk-grid-column-two-thirds epc-blue-bottom">
     <%== erb :dec__co2, locals: {
       current: assessment[:currentAssessment],
       year1: assessment[:year1Assessment],
       year2: assessment[:year2Assessment],
     }
     %>
-  </div>
 
-  <div class="govuk-grid-column-two-thirds epc-blue-bottom">
     <%== erb :dec__technical_information, locals: {
       assessment: assessment,
     }
     %>
-  </div>
 
-  <div class="govuk-grid-column-two-thirds epc-blue-bottom">
     <%== erb :dec__administrative_information, locals: {
       assessment: assessment,
       address: assessment[:address],
@@ -87,9 +81,7 @@
       administrative_information: assessment[:administrativeInformation]
     }
     %>
-  </div>
 
-  <div class="govuk-grid-column-two-thirds epc-blue-bottom">
     <%== erb :component__related_assessments,
              locals: {
                relatedAssessments: assessment[:relatedAssessments],
