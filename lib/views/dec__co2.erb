@@ -28,13 +28,18 @@
     year: current,
   }
   %>
+  <% unless year1.values.include?(nil) %>
   <%== erb :dec__co2__row, locals: {
     year: year1,
   }
   %>
+  <% end %>
+
+  <% unless year2.values.include?(nil) %>
   <%== erb :dec__co2__row, locals: {
     year: year2,
   }
   %>
+  <% end %>
   </tbody>
 </table>
