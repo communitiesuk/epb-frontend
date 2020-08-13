@@ -48,9 +48,7 @@
       date_of_expiry: assessment[:dateOfExpiry],
       assessment_id: assessment[:assessmentId],
       property_type: nil,
-
-    }
-    %>
+    } %>
 
     <%== erb :dec__rating, locals: {
       assessment: assessment,
@@ -60,38 +58,32 @@
       current: assessment[:currentAssessment],
       year1: assessment[:year1Assessment],
       year2: assessment[:year2Assessment],
-    }
-    %>
+    } %>
 
     <%== erb :dec__co2, locals: {
       current: assessment[:currentAssessment],
       year1: assessment[:year1Assessment],
       year2: assessment[:year2Assessment],
-    }
-    %>
+    } %>
 
     <%== erb :dec__technical_information, locals: {
       assessment: assessment,
-    }
-    %>
+    } %>
 
     <%== erb :dec__administrative_information, locals: {
       assessment: assessment,
       address: assessment[:address],
       assessor: assessment[:assessor],
       administrative_information: assessment[:administrativeInformation]
-    }
-    %>
+    } %>
 
-    <%== erb :component__related_assessments,
-             locals: {
-               relatedAssessments: assessment[:relatedAssessments],
-               section_title: t('non_domestic_epc.sections.other_reports.title'),
-               heading_certificate_reference: t('non_domestic_epc.sections.other_reports.certificate_reference'),
-               heading_valid_until: t('non_domestic_epc.sections.other_reports.valid_until'),
-               expired_text: t('non_domestic_epc.sections.other_reports.expired'),
-               no_related_assessments: t('non_domestic_epc.sections.other_reports.no_related')
-             }
-    %>
+    <%== erb :component__related_assessments, locals: {
+      relatedAssessments: assessment[:relatedAssessments],
+      section_title: t('non_domestic_epc.sections.other_reports.title'),
+      heading_certificate_reference: t('non_domestic_epc.sections.other_reports.certificate_reference'),
+      heading_valid_until: t('non_domestic_epc.sections.other_reports.valid_until'),
+      expired_text: t('non_domestic_epc.sections.other_reports.expired'),
+      no_related_assessments: t('non_domestic_epc.sections.other_reports.no_related')
+    } %>
   </div>
 </div>
