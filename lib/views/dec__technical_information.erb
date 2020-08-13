@@ -2,10 +2,12 @@
 <p class="govuk-body"><%= t('dec.sections.technical_information.description') %></p>
 
 <dl class="govuk-summary-list">
-  <div class="govuk-summary-list__row" id="heating">
-    <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= t('dec.sections.technical_information.heating_fuel') %></dt>
-    <dd class="govuk-summary-list__value"><%= assessment[:technicalInformation][:mainHeatingFuel] %></dd>
-  </div>
+  <% if assessment[:technicalInformation][:mainHeatingFuel] %>
+    <div class="govuk-summary-list__row" id="heating">
+      <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= t('dec.sections.technical_information.heating_fuel') %></dt>
+      <dd class="govuk-summary-list__value"><%= assessment[:technicalInformation][:mainHeatingFuel] %></dd>
+    </div>
+  <% end %>
   <div class="govuk-summary-list__row" id="building">
     <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= t('dec.sections.technical_information.building_environment') %></dt>
     <dd class="govuk-summary-list__value"><%= assessment[:technicalInformation][:buildingEnvironment] %></dd>
