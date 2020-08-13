@@ -22,6 +22,8 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
       expect(response.body).to have_css "h2", text: "Certificate contents"
       expect(response.body).to have_link "Energy performance of this building",
                                          href: "#rating"
+      expect(response.body).to have_link "Previous operational ratings",
+                                         href: "#previous_operational_ratings"
     end
 
     it "shows the summary box" do
@@ -53,7 +55,7 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
     end
 
     it "shows the previous operational ratings section" do
-      expect(response.body).to include("Previous Operational Ratings")
+      expect(response.body).to include("Previous operational ratings")
       expect(response.body).to include("January 2020")
       expect(response.body).to include("1 | A")
       expect(response.body).to include("January 2019")

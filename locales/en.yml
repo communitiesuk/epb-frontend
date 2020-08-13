@@ -1128,7 +1128,7 @@ en:
         cta: 'guidance on Display Energy Certificates and advisory reports for public buildings'
         url: 'https://www.gov.uk/government/publications/display-energy-certificates-and-advisory-reports-for-public-buildings'
       previous_operational_ratings:
-        heading: "Previous Operational Ratings"
+        title: "Previous operational ratings"
         explanation: "This tells you how efficiently energy has been used in this building over the last three accounting periods."
       co2:
         heading: "Total CO2 emissions"
