@@ -1,5 +1,5 @@
 <div class="govuk-grid-row">
-  <div class="govuk-full-width">
+  <div class="govuk-grid-column-full">
     <div class="govuk-body">
       <a
         href="<%= localised_url('/find-a-non-domestic-certificate')%>"
@@ -39,7 +39,6 @@
       sections: content_sections
     } %>
   </div>
-
   <div class="govuk-grid-column-two-thirds epc-blue-bottom">
     <hr class="epc-light-top" />
     <%== erb :component__epc_summary, locals: {
