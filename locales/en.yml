@@ -1118,6 +1118,7 @@ en:
     sections:
       contents:
         title: 'Certificate contents'
+        rating: 'Energy performance of this building'
       rating:
         title: 'Energy performance of this building'
         emissions_text: 'The building’s energy performance is based on its carbon dioxide (CO2) emissions for the last year.'

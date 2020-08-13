@@ -20,6 +20,8 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
 
     it "shows the contents section" do
       expect(response.body).to have_css "h2", text: "Certificate contents"
+      expect(response.body).to have_link "Energy performance of this building",
+                                         href: "#rating"
     end
 
     it "shows the summary box" do
