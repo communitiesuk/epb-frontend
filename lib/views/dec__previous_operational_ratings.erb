@@ -1,32 +1,34 @@
-<h2 class="govuk-heading-l">
-  <%= t('dec.sections.previous_operational_ratings.heading') %>
-</h2>
-<p>
-  <%= t('dec.sections.previous_operational_ratings.explanation') %>
-</p>
+<div class="epc-blue-bottom">
+  <h2 class="govuk-heading-l">
+    <%= t('dec.sections.previous_operational_ratings.heading') %>
+  </h2>
+  <p>
+    <%= t('dec.sections.previous_operational_ratings.explanation') %>
+  </p>
 
-<dl class="govuk-summary-list">
-  <div class="govuk-summary-list__row">
-    <%== erb :dec__previous_operational_ratings__row, locals: {
-      year: current,
-    }
-    %>
-  </div>
-  <% unless year1.values.include?(nil) %>
-  <div class="govuk-summary-list__row">
-        <%== erb :dec__previous_operational_ratings__row, locals: {
-          year: year1,
-        }
-        %>
-  </div>
-  <% end %>
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <%== erb :dec__previous_operational_ratings__row, locals: {
+        year: current,
+      }
+      %>
+    </div>
+    <% unless year1.values.include?(nil) %>
+    <div class="govuk-summary-list__row">
+          <%== erb :dec__previous_operational_ratings__row, locals: {
+            year: year1,
+          }
+          %>
+    </div>
+    <% end %>
 
-  <% unless year2.values.include?(nil) %>
-  <div class="govuk-summary-list__row">
-    <%== erb :dec__previous_operational_ratings__row, locals: {
-      year: year2,
-    }
-    %>
-  </div>
-  <% end %>
-</dl>
+    <% unless year2.values.include?(nil) %>
+    <div class="govuk-summary-list__row">
+      <%== erb :dec__previous_operational_ratings__row, locals: {
+        year: year2,
+      }
+      %>
+    </div>
+    <% end %>
+  </dl>
+</div>

@@ -1,5 +1,5 @@
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-full-width">
     <div class="govuk-body">
       <a
         href="<%= localised_url('/find-a-non-domestic-certificate')%>"
@@ -9,6 +9,37 @@
       <h1 class="govuk-heading-xl"><%= t('dec.top_heading') %></h1>
     </div>
   </div>
+  <div class="govuk-grid-column-one-third">
+    <hr class="epc-blue-top" />
+    <% content_sections = [
+      {
+        link: '#recommendations',
+        text: 'non_domestic_epc.rr.recommendations.title'
+      },
+      {
+        link: '#property_details',
+        text: 'non_domestic_epc.rr.property_details.title'
+      },
+      {
+        link: '#assessor_details',
+        text: 'non_domestic_epc.rr.assessor_details.title'
+      },
+      {
+        link: '#other_reports',
+        text: 'non_domestic_epc.rr.other_reports.title'
+      }
+    ]
+       if assessment[:energyBandFromRelatedCertificate]
+         content_sections.unshift link: '#rating',
+                                  text: 'non_domestic_epc.rr.rating.title'
+       end
+    %>
+    <%== erb :component__contents, locals: {
+      title: t("non_domestic_epc.rr.contents.title"),
+      sections: content_sections
+    } %>
+  </div>
+
   <div class="govuk-grid-column-two-thirds epc-blue-bottom">
     <%== erb :component__epc_summary, locals: {
       energy_efficiency_band: assessment[:currentAssessment][:energyEfficiencyBand],
@@ -23,9 +54,7 @@
     <%== erb :dec__rating, locals: {
       assessment: assessment,
     } %>
-  </div>
 
-  <div class="govuk-grid-column-two-thirds epc-blue-bottom">
     <%== erb :dec__previous_operational_ratings, locals: {
       current: assessment[:currentAssessment],
       year1: assessment[:year1Assessment],
