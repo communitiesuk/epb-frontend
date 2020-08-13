@@ -59,7 +59,7 @@ class FrontendService < Sinatra::Base
         locals[:results] =
           @container.get_object(:find_certificate_by_postcode_use_case).execute(
             params["postcode"],
-            %w[CEPC DEC],
+            %w[CEPC DEC DEC-RR CEPC-RR],
           )[
             :data
           ][
@@ -312,7 +312,7 @@ class FrontendService < Sinatra::Base
           ).execute(
             params["street_name"],
             params["town"],
-            %w[DEC DEC-RR CEPC CEPC-RR AC-REPORT AC-CERT],
+            %w[DEC DEC-RR CEPC CEPC-RR],
           )[
             :data
           ][
