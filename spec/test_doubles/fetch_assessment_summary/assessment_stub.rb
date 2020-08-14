@@ -248,6 +248,9 @@ module FetchAssessmentSummary
             companyDetails: {
               address: "123 My Street, My City, AB3 4CD", name: "Joe Bloggs Ltd"
             },
+            contactDetails: {
+              email: "test@testscheme.com", telephone: "012345"
+            },
           },
           relatedAssessments:
             if related_assessments

@@ -34,6 +34,20 @@
         assessor[:name]
       %></dd>
     </div>
+
+    <% if assessor[:contactDetails].key?(:telephoneNumber) && !assessor[:contactDetails][:telephoneNumber].empty? %>
+      <div class="govuk-summary-list__row" id="phone">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= t('domestic_epc.sections.information.assessor.list.telephone') %></dt>
+        <dd class="govuk-summary-list__value"><%= assessor[:contactDetails][:telephoneNumber] %></dd>
+      </div>
+    <% end %>
+    <% if assessor[:contactDetails].key?(:email) && !assessor[:contactDetails][:email].empty? %>
+      <div class="govuk-summary-list__row" id="email">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= t('domestic_epc.sections.information.assessor.list.email') %></dt>
+        <dd class="govuk-summary-list__value"><a href="mailto:<%= assessor[:contactDetails][:email] %>"><%= assessor[:contactDetails][:email] %></a></dd>
+      </div>
+    <% end %>
+
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
         t('dec.sections.administrative_information.assessor_number')
