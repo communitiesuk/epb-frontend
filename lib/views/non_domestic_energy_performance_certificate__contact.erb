@@ -22,22 +22,26 @@
         assessor[:name]
       %></dd>
     </div>
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
-        t('non_domestic_epc.contact.assessor.phone')
-      %></dt>
-      <dd class="govuk-summary-list__value govuk-!-width-one-half"><%=
-        assessor[:contactDetails][:telephone]
-      %></dd>
-    </div>
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
-        t('non_domestic_epc.contact.assessor.email')
-      %></dt>
-      <dd class="govuk-summary-list__value govuk-!-width-one-half"><%=
-        assessor[:contactDetails][:email]
-      %></dd>
-    </div>
+    <% if assessor[:contactDetails].key?(:telephone) && !assessor[:contactDetails][:telephone].empty? %>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
+          t('non_domestic_epc.contact.assessor.phone')
+        %></dt>
+        <dd class="govuk-summary-list__value govuk-!-width-one-half"><%=
+          assessor[:contactDetails][:telephone]
+        %></dd>
+      </div>
+    <% end %>
+    <% if assessor[:contactDetails].key?(:email) && !assessor[:contactDetails][:email].empty? %>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
+          t('non_domestic_epc.contact.assessor.email')
+        %></dt>
+        <dd class="govuk-summary-list__value govuk-!-width-one-half"><%=
+          assessor[:contactDetails][:email]
+        %></dd>
+      </div>
+    <% end %>
   </dl>
 
   <h3 class="govuk-heading-m"><%=
