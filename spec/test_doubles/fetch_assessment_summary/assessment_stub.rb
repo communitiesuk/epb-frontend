@@ -127,6 +127,10 @@ module FetchAssessmentSummary
             name: "Mrs Report Writer",
             registeredBy: { name: "quidos", schemeId: 3 },
             companyDetails: company_details,
+            contactDetails: {
+              email: "a@b.c",
+              telephone: "07921921369"
+            },
           },
           shortPaybackRecommendations: [
             {

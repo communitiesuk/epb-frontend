@@ -10,6 +10,27 @@
       %></dd>
     </div>
 
+    <% if assessment[:assessor][:contactDetails].key?(:telephone) && !assessment[:assessor][:contactDetails][:telephone].empty? %>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
+          t('non_domestic_epc.contact.assessor.phone')
+        %></dt>
+        <dd class="govuk-summary-list__value govuk-!-width-one-half"><%=
+          assessment[:assessor][:contactDetails][:telephone]
+        %></dd>
+      </div>
+    <% end %>
+    <% if assessment[:assessor][:contactDetails].key?(:email) && !assessment[:assessor][:contactDetails][:email].empty? %>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
+          t('non_domestic_epc.contact.assessor.email')
+        %></dt>
+        <dd class="govuk-summary-list__value govuk-!-width-one-half"><%=
+          assessment[:assessor][:contactDetails][:email]
+        %></dd>
+      </div>
+    <% end %>
+
     <% if assessment[:assessor][:companyDetails][:name] %>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
