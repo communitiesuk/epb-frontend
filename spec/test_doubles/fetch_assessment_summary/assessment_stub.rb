@@ -294,19 +294,22 @@ module FetchAssessmentSummary
           shortPaybackRecommendations: [
             {
               code: "1",
-              text: "Consider thinking about maybe possibly getting a solar panel but only one.",
+              text:
+                "Consider thinking about maybe possibly getting a solar panel but only one.",
               cO2Impact: "MEDIUM",
             },
             {
               code: "2",
-              text: "Consider introducing variable speed drives (VSD) for fans, pumps and compressors.",
+              text:
+                "Consider introducing variable speed drives (VSD) for fans, pumps and compressors.",
               cO2Impact: "LOW",
             },
           ],
           mediumPaybackRecommendations: [
             {
               code: "3",
-              text: "Engage experts to propose specific measures to reduce hot waterwastage and plan to carry this out.",
+              text:
+                "Engage experts to propose specific measures to reduce hot waterwastage and plan to carry this out.",
               cO2Impact: "LOW",
             },
           ],
