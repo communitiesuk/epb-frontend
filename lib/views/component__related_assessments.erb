@@ -19,13 +19,12 @@
           <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
             heading_valid_until
           %></dt>
-          <dd class="govuk-summary-list__value govuk-!-width-one-half">
-            <% if related_assessment[:assessmentStatus] == "EXPIRED" %>
-              <b class="expired-text"><%= date(related_assessment[:assessmentExpiryDate]) %> (<%= expired_text %>)</b>
-            <% else %>
-              <b><%= date(related_assessment[:assessmentExpiryDate]) %></b>
-            <% end %>
-          </dd>
+          <dd class="govuk-summary-list__value govuk-!-width-one-half"><%
+            if related_assessment[:assessmentStatus] == "EXPIRED" %>
+              <span class="expired-text govuk-!-font-weight-bold"><%= date(related_assessment[:assessmentExpiryDate]) %> (<%= expired_text %>)</span>
+            <% else %><%=
+              date(related_assessment[:assessmentExpiryDate])
+            %><% end %></dd>
         </div>
       <% end %>
     </dl>

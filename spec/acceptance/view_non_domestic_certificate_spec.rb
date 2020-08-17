@@ -348,14 +348,13 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate", type: :feature d
         expect(response.body).to include(
           "/energy-performance-certificate/0000-0000-0000-0000-0001\">0000-0000-0000-0000-0001</a>",
         )
-        expect(response.body).to include(">4 May 2026</b>")
+        expect(response.body).to have_css "dd", text: "4 May 2026"
       end
 
       it "shows the expected expired related assessment" do
-        expect(response.body).to include(
-          "/energy-performance-certificate/0000-0000-0000-0000-0002\">0000-0000-0000-0000-0002</a>",
-        )
-        expect(response.body).to include(">1 July 2002 (Expired)</b>")
+        expect(response.body).to have_link "0000-0000-0000-0000-0002",
+                                           href: "/energy-performance-certificate/0000-0000-0000-0000-0002"
+        expect(response.body).to have_css "dd", text: "1 July 2002 (Expired)"
       end
 
       context "when there are no related assessments" do
