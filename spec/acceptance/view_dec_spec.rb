@@ -24,8 +24,7 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
                                          href: "#rating"
       expect(response.body).to have_link "Previous operational ratings",
                                          href: "#previous_operational_ratings"
-      expect(response.body).to have_link "Total CO2 emissions",
-                                         href: "#co2"
+      expect(response.body).to have_link "Total CO2 emissions", href: "#co2"
       expect(response.body).to have_link "Technical information",
                                          href: "#technical_information"
       expect(response.body).to have_link "Administrative information",
@@ -210,7 +209,9 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
       end
 
       it "shows the description text" do
-        expect(response.body).to have_css "p", text: "If you are aware of previous certificates for this property and they are not listed here, please contact the Help Desk at 01632 164 6672."
+        expect(response.body).to have_css "p",
+                                          text:
+                                            "If you are aware of previous certificates for this property and they are not listed here, please contact the Help Desk at 01632 164 6672."
       end
 
       it "shows headings on the list of the related assessments" do
@@ -220,13 +221,15 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
 
       it "shows the expected valid related assessment" do
         expect(response.body).to have_link "0000-0000-0000-0000-0001",
-                                           href: "/energy-performance-certificate/0000-0000-0000-0000-0001"
+                                           href:
+                                             "/energy-performance-certificate/0000-0000-0000-0000-0001"
         expect(response.body).to have_css "dd", text: "4 May 2026"
       end
 
       it "shows the expected expired related assessment" do
         expect(response.body).to have_link "0000-0000-0000-0000-0002",
-                                           href: "/energy-performance-certificate/0000-0000-0000-0000-0002"
+                                           href:
+                                             "/energy-performance-certificate/0000-0000-0000-0000-0002"
         expect(response.body).to have_css "dd", text: "1 July 2002 (Expired)"
       end
 

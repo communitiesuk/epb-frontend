@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
-describe "Acceptance::NonDomesticEnergyPerformanceCertificate", type: :feature do
+describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
+         type: :feature do
   include RSpecFrontendServiceMixin
 
   let(:response) do
@@ -336,7 +337,9 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate", type: :feature d
       end
 
       it "shows the description text" do
-        expect(response.body).to have_css "p", text: "If you are aware of previous certificates for this property and they are not listed here, please contact the Help Desk at 01632 164 6672."
+        expect(response.body).to have_css "p",
+                                          text:
+                                            "If you are aware of previous certificates for this property and they are not listed here, please contact the Help Desk at 01632 164 6672."
       end
 
       it "shows headings on the list of the related assessments" do
@@ -353,7 +356,8 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate", type: :feature d
 
       it "shows the expected expired related assessment" do
         expect(response.body).to have_link "0000-0000-0000-0000-0002",
-                                           href: "/energy-performance-certificate/0000-0000-0000-0000-0002"
+                                           href:
+                                             "/energy-performance-certificate/0000-0000-0000-0000-0002"
         expect(response.body).to have_css "dd", text: "1 July 2002 (Expired)"
       end
 
