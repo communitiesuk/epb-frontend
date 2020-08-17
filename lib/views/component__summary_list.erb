@@ -7,6 +7,10 @@
         type = value[:type]
         value = value[:value]
       end
+
+      if value.nil? && skip_null
+        next
+      end
     %>
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= translation_prefix ? t(translation_prefix + key.to_s) : key.to_s %></dt>
