@@ -597,7 +597,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       end
 
       context "when there are no related certificates" do
-        before { FetchCertificate::Stub.fetch "1111-1111-1111-1111-1112" }
+        before { FetchAssessmentSummary::AssessmentStub.fetch_rdsap("1111-1111-1111-1111-1112") }
 
         let(:response) do
           get "/energy-performance-certificate/1111-1111-1111-1111-1112"
