@@ -1,0 +1,29 @@
+<dl class="govuk-summary-list">
+  <% list.each do |key, value| %>
+    <%
+      type = "string"
+
+      if value.class == Hash
+        type = value[:type]
+        value = value[:value]
+      end
+    %>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= translation_prefix ? t(translation_prefix + key.to_s) : key.to_s %></dt>
+      <dd class="govuk-summary-list__value">
+        <%
+          case type
+          when "email"
+            %>
+              <a href="mailto:<%= value %>"><%= value %></a>
+            <%
+          else
+            %>
+              <%= value %>
+            <%
+          end
+        %>
+      </dd>
+    </div>
+  <% end %>
+</dl>
