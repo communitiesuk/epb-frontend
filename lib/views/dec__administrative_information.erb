@@ -119,7 +119,7 @@
   </dl>
   <p><%==
     t('dec.sections.administrative_information.related_report.text',
-      link: "<a href=\"../energy-performance-certificate/#{administrative_information[:relatedRrn]}\">" +
+      link: '<a href="' + localised_url('/energy-performance-certificate/' + administrative_information[:relatedRrn]) + '">' +
         t('dec.sections.administrative_information.related_report.cta') + '</a>')
   %></p>
 </div>

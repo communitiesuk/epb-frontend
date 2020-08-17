@@ -168,7 +168,7 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
                                             "Recommendations for improving the energy performance of the building are contained in the associated Recommendation Report."
         expect(response.body).to have_link "Recommendation Report",
                                            href:
-                                             "../energy-performance-certificate/4192-1535-8427-8844-6702"
+                                             "/energy-performance-certificate/4192-1535-8427-8844-6702"
       end
     end
 
