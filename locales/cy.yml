@@ -419,6 +419,19 @@ cy:
       certificates:
         title: 'Welsh: Other certificates for this property'
         text: 'Welsh: If you are aware of previous certificates for this property and they are not listed here, please contact the Help Desk at 01632 164 6672.'
+    recommendations:
+      title: 'Welsh: Recommendations'
+      text: 'Welsh: The assessment found opportunities to improve the building’s energy efficiency.'
+      recommended_improvements_text: 'Welsh: Recommended improvements are grouped by the estimated time it would take for the change to pay for itself. The assessor may also make additional recommendations.'
+      description: 'Welsh: Each recommendation is marked as low, medium or high for the potential impact the change would have on reducing the building’s carbon emissions.'
+      table:
+        three_years_heading: 'Welsh: Changes that pay for themselves within 3 years'
+        three_to_seven_years_heading: 'Welsh: Changes that pay for themselves within 3 to 7 years'
+        more_than_seven_years_heading: 'Welsh: Changes that pay for themselves in more than 7 years'
+        additional_heading: 'Welsh: Additional recommendations'
+        additional_text: 'Welsh: This table lists additional recommendations made by the assessor.'
+        recommendation_heading: 'Welsh: Recommendation'
+        potential_impact_heading: 'Welsh: Potential impact'
 
   unit:
     square_metres: 'Welsh: square metres'
@@ -471,19 +484,6 @@ cy:
         more_info: 'Welsh: For more information, see the %{link}.'
         cta: 'Welsh: Energy Performance Certificate for this report'
         url: '#'
-      recommendations:
-        title: 'Welsh: Recommendations'
-        text: 'Welsh: The assessment found opportunities to improve the building’s energy efficiency.'
-        recommended_improvements_text: 'Welsh: Recommended improvements are grouped by the estimated time it would take for the change to pay for itself. The assessor may also make additional recommendations.'
-        description: 'Welsh: Each recommendation is marked as low, medium or high for the potential impact the change would have on reducing the building’s carbon emissions.'
-        table:
-          three_years_heading: 'Welsh: Changes that pay for themselves within 3 years'
-          three_to_seven_years_heading: 'Welsh: Changes that pay for themselves within 3 to 7 years'
-          more_than_seven_years_heading: 'Welsh: Changes that pay for themselves in more than 7 years'
-          additional_heading: 'Welsh: Additional recommendations'
-          additional_text: 'Welsh: This table lists additional recommendations made by the assessor.'
-          recommendation_heading: 'Welsh: Recommendation'
-          potential_impact_heading: 'Welsh: Potential impact'
       property_details:
         title: 'Welsh: Building and report details'
         issued_on: 'Welsh: Report issued on'

@@ -444,6 +444,19 @@ en:
       certificates:
         title: 'Other certificates for this property'
         text: 'If you are aware of previous certificates for this property and they are not listed here, please contact the Help Desk at 01632 164 6672.'
+    recommendations:
+      title: 'Recommendations'
+      text: 'The assessment found opportunities to improve the building’s energy efficiency.'
+      recommended_improvements_text: 'Recommended improvements are grouped by the estimated time it would take for the change to pay for itself. The assessor may also make additional recommendations.'
+      description: 'Each recommendation is marked as low, medium or high for the potential impact the change would have on reducing the building’s carbon emissions.'
+      table:
+        three_years_heading: 'Changes that pay for themselves within 3 years'
+        three_to_seven_years_heading: 'Changes that pay for themselves within 3 to 7 years'
+        more_than_seven_years_heading: 'Changes that pay for themselves in more than 7 years'
+        additional_heading: 'Additional recommendations'
+        additional_text: 'This table lists additional recommendations made by the assessor.'
+        recommendation_heading: 'Recommendation'
+        potential_impact_heading: 'Potential impact'
 
   unit:
     square_metres: 'square metres'
@@ -498,19 +511,6 @@ en:
         more_info: 'For more information, see the %{link}.'
         cta: 'Energy Performance Certificate for this report'
         url: '#'
-      recommendations:
-        title: 'Recommendations'
-        text: 'The assessment found opportunities to improve the building’s energy efficiency.'
-        recommended_improvements_text: 'Recommended improvements are grouped by the estimated time it would take for the change to pay for itself. The assessor may also make additional recommendations.'
-        description: 'Each recommendation is marked as low, medium or high for the potential impact the change would have on reducing the building’s carbon emissions.'
-        table:
-          three_years_heading: 'Changes that pay for themselves within 3 years'
-          three_to_seven_years_heading: 'Changes that pay for themselves within 3 to 7 years'
-          more_than_seven_years_heading: 'Changes that pay for themselves in more than 7 years'
-          additional_heading: 'Additional recommendations'
-          additional_text: 'This table lists additional recommendations made by the assessor.'
-          recommendation_heading: 'Recommendation'
-          potential_impact_heading: 'Potential impact'
       property_details:
         title: 'Building and report details'
         issued_on: 'Report issued on'
