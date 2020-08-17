@@ -55,19 +55,6 @@ module Gateway
           Date.parse(assessment_details[:data][:dateRegistered]).strftime(
             "%-d %B %Y",
           )
-
-        related_cepc_report_id =
-          assessment_details.dig(
-            :data,
-            :nonDomCepcRr,
-            :relatedCepcReportAssessmentId,
-          )
-
-        if related_cepc_report_id
-          related_cepc_report = fetch(related_cepc_report_id)
-          assessment_details[:data][:relatedCepcReport] =
-            related_cepc_report[:data]
-        end
       end
 
       assessment_details

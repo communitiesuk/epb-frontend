@@ -37,10 +37,10 @@ FindCertificate::NoCertificatesStub.search_by_street_name_and_town(
   "Madeup Street",
   "Madeup Town",
 )
-FetchCertificate::Stub.fetch("4567-6789-4567-6789-4567")
-FetchCertificate::Stub.fetch("0000-0000-0000-0000-0001")
+FetchAssessmentSummary::AssessmentStub.fetch_rdsap("4567-6789-4567-6789-4567")
+FetchAssessmentSummary::AssessmentStub.fetch_rdsap("0000-0000-0000-0000-0001")
 
-FetchCertificate::Stub.fetch(
+FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
   "1234-5678-9101-1122-1234",
   "25",
   "f",

@@ -4,7 +4,11 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
   include RSpecFrontendServiceMixin
 
   context "when the assessment exists" do
-    before { FetchCertificate::Stub.fetch("1234-5678-1234-5678-1234") }
+    before do
+      FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
+        "1234-5678-1234-5678-1234",
+      )
+    end
 
     let(:response) do
       get "/energy-performance-certificate/1234-5678-1234-5678-1234"
@@ -109,7 +113,11 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
     end
 
     context "When a related party disclosure code is not included" do
-      before { FetchCertificate::Stub.fetch("1111-1111-1111-1111-1112") }
+      before do
+        FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
+          "1111-1111-1111-1111-1112",
+        )
+      end
 
       let(:response) do
         get "/energy-performance-certificate/1111-1111-1111-1111-1112"
@@ -122,7 +130,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
 
     context "When a relate party disclosure code is not valid" do
       before do
-        FetchCertificate::Stub.fetch(
+        FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
           "123-123",
           "25",
           "f",
@@ -148,7 +156,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
 
     context "When a related party disclosure code and text are nil" do
       before do
-        FetchCertificate::Stub.fetch(
+        FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
           "123-123",
           "25",
           "f",
@@ -173,7 +181,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
     describe "viewing the estimated energy use and potential savings section" do
       context "when there is no information about the impact of insulation" do
         before do
-          FetchCertificate::Stub.fetch(
+          FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
             "123-123",
             "25",
             "f",
@@ -289,7 +297,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
 
       context "with different carbon emissions" do
         before do
-          FetchCertificate::Stub.fetch(
+          FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
             "123-654",
             "25",
             "f",
@@ -315,7 +323,9 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
     end
 
     context "with a poor (f) rating" do
-      before { FetchCertificate::Stub.fetch("123-654", "25", "f") }
+      before do
+        FetchAssessmentSummary::AssessmentStub.fetch_rdsap("123-654", "25", "f")
+      end
 
       let(:response) { get "/energy-performance-certificate/123-654" }
       it "shows a warning text" do
@@ -377,7 +387,11 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       end
 
       context "when the property summary key is empty" do
-        before { FetchCertificate::Stub.fetch("1111-1111-1111-1111-1112") }
+        before do
+          FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
+            "1111-1111-1111-1111-1112",
+          )
+        end
 
         let(:response) do
           get "/energy-performance-certificate/1111-1111-1111-1111-1112"
@@ -453,7 +467,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
 
       context "but there are no provider contact details" do
         before do
-          FetchCertificate::Stub.fetch(
+          FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
             "1234-5678-1234-5678-1235",
             90,
             "b",
@@ -542,7 +556,11 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
     end
 
     context "when a certificate does not have a Green Deal Plan" do
-      before { FetchCertificate::Stub.fetch("1111-1111-1111-1111-1112") }
+      before do
+        FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
+          "1111-1111-1111-1111-1112",
+        )
+      end
 
       let(:response) do
         get "/energy-performance-certificate/1111-1111-1111-1111-1112"
@@ -595,7 +613,14 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
   end
 
   context "when the assessment exists with recommendations" do
-    before { FetchCertificate::Stub.fetch("122-456", 90, "b", true) }
+    before do
+      FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
+        "122-456",
+        90,
+        "b",
+        true,
+      )
+    end
 
     let(:response) { get "/energy-performance-certificate/122-456" }
 
@@ -651,7 +676,12 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
 
     context "when the indicativeCost is empty" do
       before do
-        FetchCertificate::Stub.fetch("1111-1111-1111-1111-1112", 90, "b", true)
+        FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
+          "1111-1111-1111-1111-1112",
+          90,
+          "b",
+          true,
+        )
       end
       let(:response) do
         get "/energy-performance-certificate/1111-1111-1111-1111-1112"
@@ -664,7 +694,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
 
     context "when the potential rating improvement  is empty" do
       before do
-        FetchCertificate::Stub.fetch(
+        FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
           "1111-1111-1111-1111-1112",
           "25",
           "f",
@@ -692,7 +722,12 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
 
     context "when the improvementCode is not present" do
       before do
-        FetchCertificate::Stub.fetch("1111-1111-1111-1111-1112", 90, "b", true)
+        FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
+          "1111-1111-1111-1111-1112",
+          90,
+          "b",
+          true,
+        )
       end
       let(:response) do
         get "/energy-performance-certificate/1111-1111-1111-1111-1112"
@@ -709,7 +744,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
 
   context "when the assessment type is SAP" do
     before do
-      FetchCertificate::Stub.fetch(
+      FetchAssessmentSummary::AssessmentStub.fetch_sap(
         "1234-5678-1234-5678-1234",
         90,
         "b",
@@ -737,7 +772,11 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
   end
 
   context "when viewing a lodged certificate as returned from the API" do
-    before { FetchCertificate::Stub.fetch("1111-1111-1111-1111-1112") }
+    before do
+      FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
+        "1111-1111-1111-1111-1112",
+      )
+    end
 
     let(:response) do
       get "/energy-performance-certificate/1111-1111-1111-1111-1112"
@@ -752,7 +791,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
 
   context "when the assessment doesnt exist" do
     before do
-      FetchCertificate::NoAssessmentStub.fetch("1234-5678-1234-5678-1234")
+      FetchAssessmentSummary::NoAssessmentStub.fetch("1234-5678-1234-5678-1234")
     end
 
     let(:response) do
@@ -772,7 +811,9 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
 
   context "when the assessment has been cancelled or marked not for issue" do
     before do
-      FetchCertificate::GoneAssessmentStub.fetch("1234-5678-1234-5678-1234")
+      FetchAssessmentSummary::GoneAssessmentStub.fetch(
+        "1234-5678-1234-5678-1234",
+      )
     end
 
     let(:response) do
@@ -791,7 +832,11 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
   end
 
   context "when the estimated or potentail energy cost is missing" do
-    before { FetchCertificate::Stub.fetch("1111-1111-1111-1111-1112") }
+    before do
+      FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
+        "1111-1111-1111-1111-1112",
+      )
+    end
 
     let(:response) do
       get "/energy-performance-certificate/1111-1111-1111-1111-1112"

@@ -7,11 +7,32 @@ module Gateway
       route = "/api/assessments/#{CGI.escape(assessment_id)}/summary"
       response = Container.new.get_object(:internal_api_client).get(route)
 
-      assessment_details = JSON.parse(response.body, symbolize_names: true)
+      assessment_summary = JSON.parse(response.body, symbolize_names: true)
 
-      raise Errors::AssessmentNotFound if response.status == 404
+      if response.status == 200
+        unless assessment_summary.dig(:data, :dateOfExpiry).nil?
+          assessment_summary[:data][:dateOfExpiry] =
+            Date.parse(assessment_summary[:data][:dateOfExpiry]).strftime(
+              "%-d %B %Y",
+            )
+        end
 
-      response.status == 200 ? assessment_details : nil
+        unless assessment_summary.dig(:data, :dateOfAssessment).nil?
+          assessment_summary[:data][:dateOfAssessment] =
+            Date.parse(assessment_summary[:data][:dateOfAssessment]).strftime(
+              "%-d %B %Y",
+            )
+        end
+
+        unless assessment_summary.dig(:data, :dateRegistered).nil?
+          assessment_summary[:data][:dateRegistered] =
+            Date.parse(assessment_summary[:data][:dateRegistered]).strftime(
+              "%-d %B %Y",
+            )
+        end
+      end
+
+      assessment_summary
     end
   end
 end

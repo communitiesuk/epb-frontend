@@ -24,7 +24,11 @@ describe "Journey::NavigateToRelatedCertificate",
 
   after(:all) { Process.kill("KILL", @process_id) }
 
-  before { FetchCertificate::Stub.fetch("0000-0000-0000-0000-0001") }
+  before do
+    FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
+      "0000-0000-0000-0000-0001",
+    )
+  end
 
   it "navigates to a related assessment" do
     visit "/energy-performance-certificate/4567-6789-4567-6789-4567"
