@@ -117,9 +117,13 @@
       %></dd>
     </div>
   </dl>
-  <p><%==
-    t('dec.sections.administrative_information.related_report.text',
-      link: '<a href="' + localised_url('/energy-performance-certificate/' + administrative_information[:relatedRrn]) + '">' +
-        t('dec.sections.administrative_information.related_report.cta') + '</a>')
-  %></p>
+    <% if  administrative_information[:relatedRrn]%>
+      <p>
+        <%==
+        t('dec.sections.administrative_information.related_report.text',
+          link: '<a href="' + localised_url('/energy-performance-certificate/' + administrative_information[:relatedRrn]) + '">' +
+            t('dec.sections.administrative_information.related_report.cta') + '</a>')
+        %>
+      </p>
+    <% end %>
 </div>
