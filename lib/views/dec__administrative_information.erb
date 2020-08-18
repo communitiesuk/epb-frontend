@@ -2,11 +2,11 @@
   <h2 class="govuk-heading-l"><%=
     t('dec.sections.administrative_information.title')
   %></h2>
-  <p class="govuk-body"><%=
+  <p class="govuk-body govuk-!-display-none-print"><%=
     t('dec.sections.administrative_information.description')
   %></p>
   <dl class="govuk-summary-list">
-    <div class="govuk-summary-list__row">
+    <div class="govuk-summary-list__row govuk-!-display-none-print">
       <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
         t('dec.sections.administrative_information.assessment_software')
       %></dt>
@@ -16,7 +16,7 @@
     </div>
 
     <% if address[:addressId] %>
-      <div class="govuk-summary-list__row">
+      <div class="govuk-summary-list__row govuk-!-display-none-print">
         <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
           t('dec.sections.administrative_information.property_reference')
         %></dt>
@@ -36,19 +36,19 @@
     </div>
 
     <% if assessor[:contactDetails].key?(:telephoneNumber) && !assessor[:contactDetails][:telephoneNumber].empty? %>
-      <div class="govuk-summary-list__row" id="phone">
+      <div class="govuk-summary-list__row govuk-!-display-none-print">
         <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= t('domestic_epc.sections.information.assessor.list.telephone') %></dt>
         <dd class="govuk-summary-list__value"><%= assessor[:contactDetails][:telephoneNumber] %></dd>
       </div>
     <% end %>
     <% if assessor[:contactDetails].key?(:email) && !assessor[:contactDetails][:email].empty? %>
-      <div class="govuk-summary-list__row" id="email">
+      <div class="govuk-summary-list__row govuk-!-display-none-print">
         <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= t('domestic_epc.sections.information.assessor.list.email') %></dt>
         <dd class="govuk-summary-list__value"><a href="mailto:<%= assessor[:contactDetails][:email] %>"><%= assessor[:contactDetails][:email] %></a></dd>
       </div>
     <% end %>
 
-    <div class="govuk-summary-list__row">
+    <div class="govuk-summary-list__row govuk-!-display-none-print">
       <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
         t('dec.sections.administrative_information.assessor_number')
       %></dt>
@@ -96,7 +96,7 @@
         date(assessment[:currentAssessment][:date])
       %></dd>
     </div>
-    <div class="govuk-summary-list__row">
+    <div class="govuk-summary-list__row govuk-!-display-none-print">
       <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
         t('dec.sections.administrative_information.valid_until')
       %></dt>
@@ -117,13 +117,13 @@
       %></dd>
     </div>
   </dl>
+  <div class="govuk-!-display-none-print">
     <% if  administrative_information[:relatedRrn]%>
-      <p>
-        <%==
+      <p class="govuk-body"><%==
         t('dec.sections.administrative_information.related_report.text',
           link: '<a href="' + localised_url('/energy-performance-certificate/' + administrative_information[:relatedRrn]) + '">' +
             t('dec.sections.administrative_information.related_report.cta') + '</a>')
-        %>
-      </p>
+      %></p>
     <% end %>
+  </div>
 </div>
