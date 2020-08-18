@@ -40,6 +40,7 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
       expect(response.body).to include("2 Lonely Street")
       expect(response.body).to include("Post-Town1")
       expect(response.body).to include("A0 0AA")
+      expect(response.body).to have_text "Print this certificate"
     end
 
     it "shows the rating section" do

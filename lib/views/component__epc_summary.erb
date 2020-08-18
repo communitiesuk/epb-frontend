@@ -17,4 +17,7 @@
   <% unless property_type.nil? || floor_area.nil? %>
   <p class="govuk-body"><%=  t('component.epc_summary.property_info', property_type: property_type, total_floor_area: floor_area)  %></p>
   <%  end %>
+  <%== erb :component__print, locals: {
+    type: t('component.print.type.certificate')
+  } %>
 </div>

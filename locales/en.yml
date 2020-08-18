@@ -433,7 +433,9 @@ en:
     print:
       label: 'Print this %{type}'
       noscript_text: 'To print this %{type}, press CMD/CTRL + P on your keyboard'
-      type: 'report'
+      type:
+        report: 'report'
+        certificate: 'certificate'
     epc_summary:
       title: "Energy Rating"
       date_of_expiry: "Valid until %{date_of_expiry}"
