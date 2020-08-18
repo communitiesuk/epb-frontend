@@ -6,10 +6,10 @@
         class="govuk-back-link">
         <%=t('layout.body.breadcrumb.back')%>
       </a>
-      <h1 class="govuk-heading-xl"><%= t('dec.top_heading') %></h1>
+      <h1 class="govuk-heading-xl govuk-!-display-none-print"><%= t('dec.top_heading') %></h1>
     </div>
   </div>
-  <div class="govuk-grid-column-one-third no-print">
+  <div class="govuk-grid-column-one-third govuk-!-display-none-print">
     <hr class="epc-blue-top" />
     <%== erb :component__contents, locals: {
       title: t("dec.sections.contents.title"),
