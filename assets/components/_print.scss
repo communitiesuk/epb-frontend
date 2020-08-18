@@ -3,6 +3,10 @@
     display: none;
   }
 
+  h1, .no-print {
+    display: none !important;
+  }
+
   .epc-page-break {
     display: block;
     clear: both;
