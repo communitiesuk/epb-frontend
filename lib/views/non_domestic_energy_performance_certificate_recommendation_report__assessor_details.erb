@@ -1,83 +1,21 @@
 <div id="assessor_details" class="govuk-body epc-blue-bottom">
   <h2 class="govuk-heading-l"><%= t('non_domestic_epc.rr.assessor_details.title') %></h2>
-  <dl class="govuk-summary-list">
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
-        t('non_domestic_epc.rr.assessor_details.name')
-      %></dt>
-      <dd class="govuk-summary-list__value"><%=
-        assessment[:assessor][:name]
-      %></dd>
-    </div>
+  <% assessor_declaration = assessment[:relatedPartyDisclosure] ?
+     assessment[:relatedPartyDisclosure] :
+     t('non_domestic_epc.rr.information.certificate.list.no_disclosure') %>
+  <%== erb :component__summary_list, locals: {
+    list: {
+      "name":  assessment[:assessor][:name],
+      "phone":  assessment[:assessor][:contactDetails][:telephone],
+      "email": { type: "email", value: assessment[:assessor][:contactDetails][:email] },
+      "employer_name":  assessment[:assessor][:companyDetails][:name],
+      "employer_address":  assessment[:assessor][:companyDetails][:address],
+      "number":  assessment[:assessor][:schemeAssessorId],
+      "scheme":  scheme_details(assessment[:assessor], 'name'),
+      "declaration": assessor_declaration
+    },
+    translation_prefix: 'non_domestic_epc.rr.assessor_details.',
+    skip_null: true
+  } %>
 
-    <% if assessment[:assessor][:contactDetails].key?(:telephone) && !assessment[:assessor][:contactDetails][:telephone].empty? %>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
-          t('non_domestic_epc.contact.assessor.phone')
-        %></dt>
-        <dd class="govuk-summary-list__value govuk-!-width-one-half"><%=
-          assessment[:assessor][:contactDetails][:telephone]
-        %></dd>
-      </div>
-    <% end %>
-    <% if assessment[:assessor][:contactDetails].key?(:email) && !assessment[:assessor][:contactDetails][:email].empty? %>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
-          t('non_domestic_epc.contact.assessor.email')
-        %></dt>
-        <dd class="govuk-summary-list__value govuk-!-width-one-half"><%=
-          assessment[:assessor][:contactDetails][:email]
-        %></dd>
-      </div>
-    <% end %>
-
-    <% if assessment[:assessor][:companyDetails][:name] %>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
-          t('non_domestic_epc.rr.assessor_details.employer_name')
-        %></dt>
-        <dd class="govuk-summary-list__value"><%=
-          assessment[:assessor][:companyDetails][:name]
-        %></dd>
-      </div>
-    <% end %>
-
-    <% if assessment[:assessor][:companyDetails][:address] %>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
-          t('non_domestic_epc.rr.assessor_details.employer_address')
-        %></dt>
-        <dd class="govuk-summary-list__value"><%=
-          assessment[:assessor][:companyDetails][:address]
-        %></dd>
-      </div>
-    <% end %>
-
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
-        t('non_domestic_epc.rr.assessor_details.number')
-      %></dt>
-      <dd class="govuk-summary-list__value"><%=
-        assessment[:assessor][:schemeAssessorId]
-      %></dd>
-    </div>
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
-        t('non_domestic_epc.rr.assessor_details.scheme')
-      %></dt>
-      <dd class="govuk-summary-list__value"><%=
-        scheme_details(assessment[:assessor], 'name')
-      %></dd>
-    </div>
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
-        t('non_domestic_epc.rr.assessor_details.declaration')
-      %></dt>
-      <dd class="govuk-summary-list__value"><%=
-        assessment[:relatedPartyDisclosure] ?
-          assessment[:relatedPartyDisclosure] :
-          t('non_domestic_epc.rr.information.certificate.list.no_disclosure')
-      %></dd>
-    </div>
-  </dl>
 </div>
