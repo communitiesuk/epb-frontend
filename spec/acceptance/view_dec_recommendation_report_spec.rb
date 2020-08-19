@@ -78,9 +78,6 @@ describe "Acceptance::DecRecommendationReport", type: :feature do
       expect(response.body).to have_css "th",
                                         text: "Consider replacing or improving glazing."
       expect(response.body).to have_css "td", text: "Low"
-      expect(response.body).to have_css "p",
-                                        text:
-                                          "This table lists additional recommendations made by the assessor."
       expect(response.body).to have_css "caption",
                                         text: "Additional recommendations"
       expect(response.body).to have_css "th", text: "Add a big wind turbine."
