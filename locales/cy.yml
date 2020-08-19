@@ -1073,7 +1073,7 @@ cy:
         description: 'Welsh: This tells you technical information about how energy is used in this building. Consumption data based on actual meter readings.'
         heating_fuel: 'Welsh: Main heating fuel'
         building_environment: 'Welsh: Building environment'
-        floor_area: 'Welsh: Total useful floor area (m2)'
+        floor_area: 'Welsh: Total useful floor area'
         asset_rating: 'Welsh: Asset Rating'
         energy_use: 'Welsh: Energy use'
         heating: 'Welsh: Heating'

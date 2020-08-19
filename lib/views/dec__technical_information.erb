@@ -16,7 +16,7 @@
     </div>
     <div class="govuk-summary-list__row" id="floor">
       <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= t('dec.sections.technical_information.floor_area') %></dt>
-      <dd class="govuk-summary-list__value"><%= assessment[:technicalInformation][:floorArea] %></dd>
+      <dd class="govuk-summary-list__value"><%= assessment[:technicalInformation][:floorArea] %> <%= t('unit.square_metres') %></dd>
     </div>
     <div class="govuk-summary-list__row" id="asset">
       <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= t('dec.sections.technical_information.asset_rating') %></dt>
