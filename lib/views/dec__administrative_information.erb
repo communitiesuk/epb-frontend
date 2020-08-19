@@ -9,23 +9,23 @@
 
     <%== erb :component__summary_list, locals: {
       list: {
-        "assessment_software":  administrative_information[:calculationTool],
-        "property_reference": address[:addressId],
-        "assessor.list.name": { value: assessor[:name], print: true},
-        "assessor.list.telephone": assessor[:contactDetails][:telephoneNumber],
-        "assessor.list.email": {type: "email", value: assessor[:contactDetails][:email]},
-        "assessor.list.number":  assessor[:schemeAssessorId],
-        "scheme_name": { value: assessor[:registeredBy][:name], print: true},
-        "company_name": { value: assessor[:companyDetails][:name], print: true},
-        "company_address": { value: assessor[:companyDetails][:address], print: true},
-        "issue_date": { value: date(administrative_information[:issueDate]), print: true},
-        "nominated_date": { value: date(assessment[:currentAssessment][:date]), print: true},
-        "valid_until": date(assessment[:dateOfExpiry]),
-        "related_party_disclosure": { value:  party_disclosure(
+        "assessment_software": { value: administrative_information[:calculationTool], print: false },
+        "property_reference": { value: address[:addressId], print: false },
+        "assessor.list.name": assessor[:name],
+        "assessor.list.telephone": { value: assessor[:contactDetails][:telephoneNumber], print: false },
+        "assessor.list.email": { type: "email", value: assessor[:contactDetails][:email]  },
+        "assessor.list.number":  { value: assessor[:schemeAssessorId], print: false },
+        "scheme_name": assessor[:registeredBy][:name],
+        "company_name": assessor[:companyDetails][:name],
+        "company_address": assessor[:companyDetails][:address],
+        "issue_date": date(administrative_information[:issueDate]),
+        "nominated_date": date(assessment[:currentAssessment][:date]),
+        "valid_until": { value: date(assessment[:dateOfExpiry]), print: false },
+        "related_party_disclosure": party_disclosure(
           administrative_information[:relatedPartyDisclosure].nil? ?
             "8" :
             administrative_information[:relatedPartyDisclosure], "", "dec_disclosure_code", "dec"
-        ), print: true},
+        ),
       },
       translation_prefix: 'dec.sections.administrative_information.',
       skip_null: true
