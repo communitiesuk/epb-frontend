@@ -7,6 +7,21 @@
     size: A4 portrait;
   }
 
+  * {
+    box-sizing: border-box;
+  }
+
+  .column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+  }
+
+  .row:after {
+    display: table;
+    clear: both;
+  }
+
   .epc-no-print, footer, .app-cookie-banner, .govuk-back-link {
     display: none;
   }
