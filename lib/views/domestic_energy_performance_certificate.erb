@@ -249,49 +249,18 @@
         <% end %>
       </dl>
       <h3 class="govuk-heading-m govuk-!-margin-top-9"><%= t('domestic_epc.sections.information.certificate.title') %></h3>
-      <dl class="govuk-summary-list">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key govuk-!-width-one-half">
-            <%= t('domestic_epc.sections.information.certificate.list.disclosure') %>
-          </dt>
-          <dd class="govuk-summary-list__value">
-            <%= party_disclosure(assessment[:relatedPartyDisclosureNumber], assessment[:relatedPartyDisclosureText]) %>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key govuk-!-width-one-half">
-            <%= t('domestic_epc.sections.information.certificate.list.date_of_assessment') %>
-          </dt>
-          <dd class="govuk-summary-list__value">
-            <%= assessment[:dateOfAssessment] %>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key govuk-!-width-one-half">
-            <%= t('domestic_epc.sections.information.certificate.list.date_of_certificate') %>
-          </dt>
-          <dd class="govuk-summary-list__value">
-            <%= assessment[:dateRegistered] %>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key govuk-!-width-one-half">
-            <%= t('domestic_epc.sections.information.certificate.list.type_of_assessment') %>
-          </dt>
-          <dd class="govuk-summary-list__value">
-            <details class="govuk-details" data-module="govuk-details">
-              <summary class="govuk-details__summary">
-                  <span class="govuk-details__summary-text"><%= assessment[:typeOfAssessment] %></span>
-              </summary>
-              <div class="govuk-details__text" id="description">
-                <%= t("domestic_epc.sections.information.certificate.list.#{assessment[:typeOfAssessment].downcase}_description_first_part") %>
-                <br /><br />
-                <%= t("domestic_epc.sections.information.certificate.list.#{assessment[:typeOfAssessment].downcase}_description_second_part") %>
-              </div>
-            </details>
-          </dd>
-        </div>
-      </dl>
+
+      <%== erb :component__summary_list, locals: {
+        list: {
+          "disclosure": party_disclosure(assessment[:relatedPartyDisclosureNumber], assessment[:relatedPartyDisclosureText]),
+          "date_of_assessment": assessment[:dateOfAssessment],
+          "date_of_certificate": assessment[:dateRegistered],
+          "type_of_assessment": { type: "details", value: assessment[:typeOfAssessment] }
+        },
+        translation_prefix: 'domestic_epc.sections.information.certificate.list.',
+        skip_null: true
+      } %>
+
     </div>
   </div>
   <% if assessment.has_key?(:greenDealPlan) %>

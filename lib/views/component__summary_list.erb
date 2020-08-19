@@ -24,6 +24,19 @@
             %>
               <a href="mailto:<%= value %>"><%= value %></a>
             <%
+          when "details"
+            %>
+              <details class="govuk-details" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text"><%= value %></span>
+                </summary>
+                <div class="govuk-details__text" id="description">
+                  <%= t("domestic_epc.sections.information.certificate.list.#{value.downcase}_description_first_part") %>
+                  <br /><br />
+                  <%= t("domestic_epc.sections.information.certificate.list.#{value.downcase}_description_second_part") %>
+                </div>
+              </details>
+            <%
           else
             %>
               <%= value %>
