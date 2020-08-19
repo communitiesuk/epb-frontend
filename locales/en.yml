@@ -1164,6 +1164,7 @@ en:
         energy_from_renewables: 'Energy from renewables'
       administrative_information:
         title: 'Administrative information'
+        print_title: 'Assessment details'
         description: 'This is a Display Energy Certificate as defined in the Energy Performance of Buildings Regulations 2012 as amended.'
         assessment_software: 'Assessment software'
         property_reference: 'Property reference'
