@@ -3,6 +3,10 @@
 }
 
 @media print {
+  @page {
+    size: A4 portrait;
+  }
+
   .epc-no-print, footer, .app-cookie-banner, .govuk-back-link {
     display: none;
   }
