@@ -2,9 +2,11 @@
   <% list.each do |key, value| %>
     <%
       type = "string"
+      print = false
 
       if value.class == Hash
         type = value[:type]
+        print = value[:print]
         value = value[:value]
       end
 
@@ -12,7 +14,8 @@
         next
       end
     %>
-    <div class="govuk-summary-list__row">
+
+    <div class="govuk-summary-list__row<%= print ? "" : " govuk-!-display-none-print" %>">
       <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= translation_prefix ? t(translation_prefix + key.to_s) : key.to_s %></dt>
       <dd class="govuk-summary-list__value">
         <%
