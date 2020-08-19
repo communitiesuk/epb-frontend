@@ -1020,14 +1020,14 @@ cy:
 
   property_summary:
     type:
-      air_tightness: 'Welsh: Air Tightness'
+      air_tightness: 'Welsh: Air tightness'
       floor: 'Welsh: Floor'
-      hot_water: 'Welsh: Hot Water'
+      hot_water: 'Welsh: Hot water'
       lighting: 'Welsh: Lighting'
-      main_heating: 'Welsh: Main Heating'
-      main_heating_controls: 'Welsh: Main Heating Control'
+      main_heating: 'Welsh: Main heating'
+      main_heating_controls: 'Welsh: Main heating control'
       roof: 'Welsh: Roof'
-      secondary_heating: 'Welsh: Secondary Heating'
+      secondary_heating: 'Welsh: Secondary heating'
       wall: 'Welsh: Wall'
       walls: 'Welsh: Walls'
       window: 'Welsh: Window'

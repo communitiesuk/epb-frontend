@@ -373,7 +373,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
           expect(response.body).to include("Wall")
           expect(response.body).to include("Many walls")
           expect(response.body).to include("Poor")
-          expect(response.body).to include("Main Heating")
+          expect(response.body).to include("Main heating")
           expect(response.body).to include("Room heaters, electric")
           expect(response.body).to include("Average")
         end

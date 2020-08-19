@@ -1099,14 +1099,14 @@ en:
 
   property_summary:
     type:
-      air_tightness: 'Air Tightness'
+      air_tightness: 'Air tightness'
       floor: 'Floor'
-      hot_water: 'Hot Water'
+      hot_water: 'Hot water'
       lighting: 'Lighting'
-      main_heating: 'Main Heating'
-      main_heating_controls: 'Main Heating Control'
+      main_heating: 'Main heating'
+      main_heating_controls: 'Main heating control'
       roof: 'Roof'
-      secondary_heating: 'Secondary Heating'
+      secondary_heating: 'Secondary heating'
       wall: 'Wall'
       walls: 'Walls'
       window: 'Window'
