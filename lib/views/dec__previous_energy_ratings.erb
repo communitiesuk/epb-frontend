@@ -1,21 +1,21 @@
-<div id="previous_operational_ratings" class="epc-blue-bottom">
+<div id="previous_energy_ratings" class="epc-blue-bottom">
   <h2 class="govuk-heading-l"><%=
-    t('dec.sections.previous_operational_ratings.title')
+    t('dec.sections.previous_energy_ratings.title')
   %></h2>
   <p class="govuk-body govuk-!-display-none-print"><%=
-    t('dec.sections.previous_operational_ratings.explanation')
+    t('dec.sections.previous_energy_ratings.explanation')
   %></p>
 
   <dl class="govuk-summary-list">
     <div class="govuk-summary-list__row">
-      <%== erb :dec__previous_operational_ratings__row, locals: {
+      <%== erb :dec__previous_energy_ratings__row, locals: {
         year: current,
       } %>
     </div>
 
     <% unless year1.values.include?(nil) %>
       <div class="govuk-summary-list__row">
-        <%== erb :dec__previous_operational_ratings__row, locals: {
+        <%== erb :dec__previous_energy_ratings__row, locals: {
           year: year1,
         } %>
       </div>
@@ -23,7 +23,7 @@
 
     <% unless year2.values.include?(nil) %>
       <div class="govuk-summary-list__row">
-        <%== erb :dec__previous_operational_ratings__row, locals: {
+        <%== erb :dec__previous_energy_ratings__row, locals: {
           year: year2,
         } %>
       </div>

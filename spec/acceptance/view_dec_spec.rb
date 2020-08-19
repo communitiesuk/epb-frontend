@@ -22,8 +22,8 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
       expect(response.body).to have_css "h2", text: "Certificate contents"
       expect(response.body).to have_link "Energy performance of this building",
                                          href: "#rating"
-      expect(response.body).to have_link "Previous operational ratings",
-                                         href: "#previous_operational_ratings"
+      expect(response.body).to have_link "Previous energy ratings",
+                                         href: "#previous_energy_ratings"
       expect(response.body).to have_link "Total CO2 emissions", href: "#co2"
       expect(response.body).to have_link "Technical information",
                                          href: "#technical_information"
@@ -63,13 +63,13 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
     end
 
     it "shows the previous operational ratings section" do
-      expect(response.body).to include("Previous operational ratings")
-      expect(response.body).to include("January 2020")
-      expect(response.body).to include("1 | A")
-      expect(response.body).to include("January 2019")
-      expect(response.body).to include("24 | A")
-      expect(response.body).to include("January 2018")
-      expect(response.body).to include("40 | B")
+      expect(response.body).to have_css "h2", text: "Previous energy ratings"
+      expect(response.body).to have_css "dt", text: "January 2020"
+      expect(response.body).to have_css "dd", text: "1 | A"
+      expect(response.body).to have_css "dt", text: "January 2019"
+      expect(response.body).to have_css "dd", text: "24 | A"
+      expect(response.body).to have_css "dt", text: "January 2018"
+      expect(response.body).to have_css "dd", text: "40 | B"
     end
 
     it "shows the total CO2 emissions section" do

@@ -19,8 +19,8 @@
           text: 'dec.sections.rating.title'
         },
         {
-          link: '#previous_operational_ratings',
-          text: 'dec.sections.previous_operational_ratings.title'
+          link: '#previous_energy_ratings',
+          text: 'dec.sections.previous_energy_ratings.title'
         },
         {
           link: '#co2',
@@ -55,7 +55,7 @@
       assessment: assessment,
     } %>
 
-    <%== erb :dec__previous_operational_ratings, locals: {
+    <%== erb :dec__previous_energy_ratings, locals: {
       current: assessment[:currentAssessment],
       year1: assessment[:year1Assessment],
       year2: assessment[:year2Assessment],
