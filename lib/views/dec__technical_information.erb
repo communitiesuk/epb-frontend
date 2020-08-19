@@ -1,8 +1,8 @@
 <div id="technical_information" class="epc-blue-bottom">
   <h2 class="govuk-heading-l"><%= t('dec.sections.technical_information.title') %></h2>
-  <p class="govuk-body"><%= t('dec.sections.technical_information.description') %></p>
+  <p class="govuk-body govuk-!-display-none-print"><%= t('dec.sections.technical_information.description') %></p>
 
-  <dl class="govuk-summary-list">
+  <dl class="govuk-summary-list govuk-!-display-none-print">
     <% if assessment[:technicalInformation][:mainHeatingFuel] %>
       <div class="govuk-summary-list__row" id="heating">
         <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= t('dec.sections.technical_information.heating_fuel') %></dt>

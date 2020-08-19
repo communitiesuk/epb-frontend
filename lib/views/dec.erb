@@ -42,7 +42,7 @@
     } %>
   </div>
   <div class="govuk-grid-column-two-thirds">
-    <hr class="epc-light-top" />
+    <hr class="epc-light-top govuk-!-display-none-print" />
     <%== erb :component__epc_summary, locals: {
       energy_efficiency_band: assessment[:currentAssessment][:energyEfficiencyBand],
       address: assessment[:address],

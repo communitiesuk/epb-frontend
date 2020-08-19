@@ -3,6 +3,13 @@
     display: none;
   }
 
+  .epc-blue-bottom {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    overflow: hidden;
+  }
+
   .epc-page-break {
     display: block;
     clear: both;
