@@ -26,11 +26,11 @@ cy:
     introduction: 'Welsh: Use this service to find assessors and certificates'
     find_an_assessor:
       body: 'Welsh: Find a qualified assessor through the %{link} service'
-      url: 'Welsh: /find-an-assessor'
+      url: '/find-an-assessor'
       cta: 'Welsh: Find an assessor'
     find_a_certificate:
       body: 'Welsh: Find an existing certificate for a property through the %{link} service'
-      url: 'Welsh: /find-a-certificate'
+      url: '/find-a-certificate'
       cta: 'Welsh: Find a certificate'
     caution: 'Welsh: This page is intended for Private Beta use, and will not be a part of the public service'
 
@@ -55,8 +55,8 @@ cy:
       heading: 'Welsh: Before you start'
       switch_language:
         description: 'Welsh: This service is also available in %{link}.'
-        link: 'Welsh: Welsh (Cymraeg)'
-        url: 'Welsh: /find-an-assessor?lang=en'
+        link: 'Welsh: English (English)'
+        url: '/find-an-assessor?lang=en'
       phone_text: 'Welsh: If you need additional support to find an assessor, call our helpdesk on %{link} (Monday to Friday, 9am - 5pm).'
       phone_number: '0233 788 1234'
       scotland:
@@ -208,7 +208,7 @@ cy:
       title: 'Welsh: Before you start'
       switch_language:
         description: 'Welsh: This service is also available in %{link}.'
-        link: 'Welsh: Welsh (Cymraeg)'
+        link: 'Welsh: English (English)'
         url: 'Welsh: /find-a-certificate?lang=en'
       scotland:
         text: 'Welsh: For properties in Scotland, use the %{link}.'
@@ -219,7 +219,7 @@ cy:
         url:  'https://mhclg-epb-prototypes.london.cloudapps.digital/domestic'
       commercial:
         text: 'Welsh: For commercial or public buildings, use the %{link} service.'
-        url: 'Welsh: /find-a-non-domestic-certificate'
+        url: '/find-a-non-domestic-certificate'
         cta: 'Welsh: find a non-domestic EPC'
       call_center: 'Welsh: If you need additional support to find an EPC, call our helpdesk on 0233 788 1234 (Monday to Friday, 9am - 5pm).'
 
@@ -364,7 +364,7 @@ cy:
     switch_language:
       description: 'Welsh: This service is also available in %{link}.'
       link: 'Welsh: Welsh (Cymraeg)'
-      url: 'Welsh: /find-a-non-domestic-certificate?lang=en'
+      url: '/find-a-non-domestic-certificate?lang=en'
     cta: 'Welsh: Start now'
     before_you_start:
       heading: 'Welsh: Before you start'
