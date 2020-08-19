@@ -1099,16 +1099,18 @@ en:
 
   property_summary:
     type:
-      wall: 'Wall'
-      walls: 'Walls'
+      air_tightness: 'Air Tightness'
       floor: 'Floor'
       hot_water: 'Hot Water'
-      roof: 'Roof'
-      window: 'Window'
-      main_heating_controls: 'Main Heating Control'
-      main_heating: 'Main Heating'
       lighting: 'Lighting'
+      main_heating: 'Main Heating'
+      main_heating_controls: 'Main Heating Control'
+      roof: 'Roof'
       secondary_heating: 'Secondary Heating'
+      wall: 'Wall'
+      walls: 'Walls'
+      window: 'Window'
+      windows: 'Windows'
 
   error:
     error: 'Error: '
