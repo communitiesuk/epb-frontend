@@ -26,11 +26,11 @@ cy:
     introduction: 'Welsh: Use this service to find assessors and certificates'
     find_an_assessor:
       body: 'Welsh: Find a qualified assessor through the %{link} service'
-      url: 'Welsh: /find-an-assessor'
+      url: '/find-an-assessor'
       cta: 'Welsh: Find an assessor'
     find_a_certificate:
       body: 'Welsh: Find an existing certificate for a property through the %{link} service'
-      url: 'Welsh: /find-a-certificate'
+      url: '/find-a-certificate'
       cta: 'Welsh: Find a certificate'
     caution: 'Welsh: This page is intended for Private Beta use, and will not be a part of the public service'
 
@@ -55,8 +55,8 @@ cy:
       heading: 'Welsh: Before you start'
       switch_language:
         description: 'Welsh: This service is also available in %{link}.'
-        link: 'Welsh: Welsh (Cymraeg)'
-        url: 'Welsh: /find-an-assessor?lang=en'
+        link: 'Welsh: English (English)'
+        url: '/find-an-assessor?lang=en'
       phone_text: 'Welsh: If you need additional support to find an assessor, call our helpdesk on %{link} (Monday to Friday, 9am - 5pm).'
       phone_number: '0233 788 1234'
       scotland:
@@ -208,7 +208,7 @@ cy:
       title: 'Welsh: Before you start'
       switch_language:
         description: 'Welsh: This service is also available in %{link}.'
-        link: 'Welsh: Welsh (Cymraeg)'
+        link: 'Welsh: English (English)'
         url: 'Welsh: /find-a-certificate?lang=en'
       scotland:
         text: 'Welsh: For properties in Scotland, use the %{link}.'
@@ -219,7 +219,7 @@ cy:
         url:  'https://mhclg-epb-prototypes.london.cloudapps.digital/domestic'
       commercial:
         text: 'Welsh: For commercial or public buildings, use the %{link} service.'
-        url: 'Welsh: /find-a-non-domestic-certificate'
+        url: '/find-a-non-domestic-certificate'
         cta: 'Welsh: find a non-domestic EPC'
       call_center: 'Welsh: If you need additional support to find an EPC, call our helpdesk on 0233 788 1234 (Monday to Friday, 9am - 5pm).'
 
@@ -364,7 +364,7 @@ cy:
     switch_language:
       description: 'Welsh: This service is also available in %{link}.'
       link: 'Welsh: Welsh (Cymraeg)'
-      url: 'Welsh: /find-a-non-domestic-certificate?lang=en'
+      url: '/find-a-non-domestic-certificate?lang=en'
     cta: 'Welsh: Start now'
     before_you_start:
       heading: 'Welsh: Before you start'
@@ -1020,16 +1020,18 @@ cy:
 
   property_summary:
     type:
+      air_tightness: 'Welsh: Air tightness'
+      floor: 'Welsh: Floor'
+      hot_water: 'Welsh: Hot water'
+      lighting: 'Welsh: Lighting'
+      main_heating: 'Welsh: Main heating'
+      main_heating_controls: 'Welsh: Main heating control'
+      roof: 'Welsh: Roof'
+      secondary_heating: 'Welsh: Secondary heating'
       wall: 'Welsh: Wall'
       walls: 'Welsh: Walls'
-      floor: 'Welsh: Floor'
-      hot_water: 'Welsh: Hot Water'
-      roof: 'Welsh: Roof'
       window: 'Welsh: Window'
-      main_heating_controls: 'Welsh: Main Heating Control'
-      main_heating: 'Welsh: Main Heating'
-      lighting: 'Welsh: Lighting'
-      secondary_heating: 'Welsh: Secondary Heating'
+      windows: 'Welsh: Windows'
 
   error:
     error: 'Welsh: Error: '
@@ -1054,9 +1056,9 @@ cy:
         guidance_text: 'Welsh: You can read %{link}.'
         cta: 'Welsh: guidance for public buildings on Display Energy Certificates and advisory reports'
         url: 'https://www.gov.uk/government/publications/display-energy-certificates-and-advisory-reports-for-public-buildings'
-      previous_operational_ratings:
-        title: "Previous Operational Ratings"
-        explanation: "This tells you how efficiently energy has been used in this building over the last three accounting periods."
+      previous_energy_ratings:
+        title: "Welsh: Previous energy ratings"
+        explanation: "Welsh: This tells you how efficiently energy has been used in this building over the last three accounting periods."
       co2:
         title: "Total CO2 emissions"
         explanation: "This tells you how much carbon dioxide the building emits. It shows tonnes per year of CO2."
@@ -1068,16 +1070,17 @@ cy:
         no_value: "Not applicable"
       technical_information:
         title: 'Welsh: Technical information'
+        print_title: 'Welsh: This building’s energy use'
         description: 'Welsh: This tells you technical information about how energy is used in this building. Consumption data based on actual meter readings.'
         heating_fuel: 'Welsh: Main heating fuel'
         building_environment: 'Welsh: Building environment'
-        floor_area: 'Welsh: Total useful floor area (m2)'
-        asset_rating: 'Welsh: Asset Rating'
+        floor_area: 'Welsh: Total useful floor area'
+        asset_rating: 'Welsh: Asset rating'
         energy_use: 'Welsh: Energy use'
         heating: 'Welsh: Heating'
         electricity: 'Welsh: Electricity'
-        annual_energy_use: 'Welsh: Annual Energy Use (kWh/m2/year)'
-        typical_energy_use: 'Welsh: Typical Energy Use (kWh/m2/year)'
+        annual_energy_use: 'Welsh: Annual energy use (kWh/m2/year)'
+        typical_energy_use: 'Welsh: Typical energy use (kWh/m2/year)'
         energy_from_renewables: 'Welsh: Energy from renewables'
       administrative_information:
         title: 'Welsh: Administrative information'
@@ -1087,8 +1090,8 @@ cy:
         assessor_name: 'Welsh: Assessor name'
         assessor_number: 'Welsh: Assessor number'
         scheme_name: 'Welsh: Accreditation scheme'
-        company_name: 'Welsh: Employer/Trading Name'
-        company_address: 'Welsh: Employer/Trading Address'
+        company_name: 'Welsh: Employer/Trading name'
+        company_address: 'Welsh: Employer/Trading address'
         issue_date: 'Welsh: Issue date'
         nominated_date: 'Welsh: Nominated date'
         valid_until: 'Welsh: Valid until'

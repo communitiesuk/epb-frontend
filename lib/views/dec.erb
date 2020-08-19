@@ -19,16 +19,16 @@
           text: 'dec.sections.rating.title'
         },
         {
-          link: '#previous_operational_ratings',
-          text: 'dec.sections.previous_operational_ratings.title'
+          link: '#technical_information',
+          text: 'dec.sections.technical_information.title'
+        },
+        {
+          link: '#previous_energy_ratings',
+          text: 'dec.sections.previous_energy_ratings.title'
         },
         {
           link: '#co2',
           text: 'dec.sections.co2.title'
-        },
-        {
-          link: '#technical_information',
-          text: 'dec.sections.technical_information.title'
         },
         {
           link: '#administrative_information',
@@ -42,7 +42,8 @@
     } %>
   </div>
   <div class="govuk-grid-column-two-thirds">
-    <hr class="epc-light-top" />
+    <hr class="epc-light-top govuk-!-display-none-print" />
+
     <%== erb :component__epc_summary, locals: {
       energy_efficiency_band: assessment[:currentAssessment][:energyEfficiencyBand],
       address: assessment[:address],
@@ -51,33 +52,37 @@
       property_type: nil,
     } %>
 
-    <%== erb :dec__rating, locals: {
-      assessment: assessment,
-    } %>
+    <div class="row">
+      <div class="column">
+        <%== erb :dec__rating, locals: {
+          assessment: assessment,
+        } %>
 
-    <%== erb :dec__previous_operational_ratings, locals: {
-      current: assessment[:currentAssessment],
-      year1: assessment[:year1Assessment],
-      year2: assessment[:year2Assessment],
-    } %>
+        <%== erb :dec__technical_information, locals: {
+          assessment: assessment,
+        } %>
+      </div>
+      <div class="column">
+        <%== erb :dec__previous_energy_ratings, locals: {
+          current: assessment[:currentAssessment],
+          year1: assessment[:year1Assessment],
+          year2: assessment[:year2Assessment],
+        } %>
 
-    <%== erb :dec__co2, locals: {
-      current: assessment[:currentAssessment],
-      year1: assessment[:year1Assessment],
-      year2: assessment[:year2Assessment],
-    } %>
+        <%== erb :dec__co2, locals: {
+          current: assessment[:currentAssessment],
+          year1: assessment[:year1Assessment],
+          year2: assessment[:year2Assessment],
+        } %>
 
-    <%== erb :dec__technical_information, locals: {
-      assessment: assessment,
-    } %>
-
-    <%== erb :dec__administrative_information, locals: {
-      assessment: assessment,
-      address: assessment[:address],
-      assessor: assessment[:assessor],
-      administrative_information: assessment[:administrativeInformation]
-    } %>
-
+        <%== erb :dec__administrative_information, locals: {
+          assessment: assessment,
+          address: assessment[:address],
+          assessor: assessment[:assessor],
+          administrative_information: assessment[:administrativeInformation]
+        } %>
+      </div>
+    </div>
     <div id="other_certificates">
       <%== erb :component__related_assessments, locals: {
         relatedAssessments: assessment[:relatedAssessments],

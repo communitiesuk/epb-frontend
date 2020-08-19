@@ -22,8 +22,8 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
       expect(response.body).to have_css "h2", text: "Certificate contents"
       expect(response.body).to have_link "Energy performance of this building",
                                          href: "#rating"
-      expect(response.body).to have_link "Previous operational ratings",
-                                         href: "#previous_operational_ratings"
+      expect(response.body).to have_link "Previous energy ratings",
+                                         href: "#previous_energy_ratings"
       expect(response.body).to have_link "Total CO2 emissions", href: "#co2"
       expect(response.body).to have_link "Technical information",
                                          href: "#technical_information"
@@ -63,13 +63,13 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
     end
 
     it "shows the previous operational ratings section" do
-      expect(response.body).to include("Previous operational ratings")
-      expect(response.body).to include("January 2020")
-      expect(response.body).to include("1 | A")
-      expect(response.body).to include("January 2019")
-      expect(response.body).to include("24 | A")
-      expect(response.body).to include("January 2018")
-      expect(response.body).to include("40 | B")
+      expect(response.body).to have_css "h2", text: "Previous energy ratings"
+      expect(response.body).to have_css "dt", text: "January 2020"
+      expect(response.body).to have_css "dd", text: "1 | A"
+      expect(response.body).to have_css "dt", text: "January 2019"
+      expect(response.body).to have_css "dd", text: "24 | A"
+      expect(response.body).to have_css "dt", text: "January 2018"
+      expect(response.body).to have_css "dd", text: "40 | B"
     end
 
     it "shows the total CO2 emissions section" do
@@ -104,32 +104,33 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
     end
 
     it "shows the technical information section" do
-      expect(response.body).to include(
-        '<h2 class="govuk-heading-l">Technical information</h2>',
-      )
-      expect(response.body).to include(
-        "This tells you technical information about how energy is used in this building. Consumption data based on actual meter readings.",
-      )
-      expect(response.body).to include(">Main heating fuel</dt>")
-      expect(response.body).to include(">Natural Gas</dd>")
-      expect(response.body).to include(">Building environment</dt>")
-      expect(response.body).to include(">Heating and Natural Ventilation</dd>")
-      expect(response.body).to include(">Total useful floor area (m2)</dt>")
-      expect(response.body).to include(">99</dd>")
-      expect(response.body).to include(">Asset Rating</dt>")
-      expect(response.body).to include(">1</dd>")
-      expect(response.body).to include(">Energy use</th>")
-      expect(response.body).to include(">Heating</th>")
-      expect(response.body).to include(">Electricity</th>")
-      expect(response.body).to include(">Annual Energy Use (kWh/m2/year)</th>")
-      expect(response.body).to include(">11</td>")
-      expect(response.body).to include(">12</td>")
-      expect(response.body).to include(">Typical Energy Use (kWh/m2/year)</th>")
-      expect(response.body).to include(">13</td>")
-      expect(response.body).to include(">14</td>")
-      expect(response.body).to include(">Energy from renewables</th>")
-      expect(response.body).to include(">15%</td>")
-      expect(response.body).to include(">16%</td>")
+      expect(response.body).to have_css "h2", text: "Technical information"
+      expect(response.body).to have_css "p",
+                                        text:
+                                          "This tells you technical information about how energy is used in this building. Consumption data based on actual meter readings."
+      expect(response.body).to have_css "dt", text: "Main heating fuel"
+      expect(response.body).to have_css "dd", text: "Natural Gas"
+      expect(response.body).to have_css "dt", text: "Building environment"
+      expect(response.body).to have_css "dd",
+                                        text: "Heating and Natural Ventilation"
+      expect(response.body).to have_css "dt", text: "Total useful floor area"
+      expect(response.body).to have_css "dd", text: "99 square metres"
+      expect(response.body).to have_css "dt", text: "Asset rating"
+      expect(response.body).to have_css "dd", text: "1"
+      expect(response.body).to have_css "th", text: "Energy use"
+      expect(response.body).to have_css "th", text: "Heating"
+      expect(response.body).to have_css "th", text: "Electricity"
+      expect(response.body).to have_css "th",
+                                        text: "Annual energy use (kWh/m2/year)"
+      expect(response.body).to have_css "td", text: "11"
+      expect(response.body).to have_css "td", text: "12"
+      expect(response.body).to have_css "th",
+                                        text: "Typical energy use (kWh/m2/year)"
+      expect(response.body).to have_css "td", text: "13"
+      expect(response.body).to have_css "td", text: "14"
+      expect(response.body).to have_css "th", text: "Energy from renewables"
+      expect(response.body).to have_css "td", text: "15%"
+      expect(response.body).to have_css "td", text: "16%"
     end
 
     describe "viewing the Administrative information section" do
@@ -149,9 +150,9 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
         expect(response.body).to have_css "dd", text: "SPEC000000"
         expect(response.body).to have_css "dt", text: "Accreditation scheme"
         expect(response.body).to have_css "dd", text: "test scheme"
-        expect(response.body).to have_css "dt", text: "Employer/Trading Name"
+        expect(response.body).to have_css "dt", text: "Employer/Trading name"
         expect(response.body).to have_css "dd", text: "Joe Bloggs Ltd"
-        expect(response.body).to have_css "dt", text: "Employer/Trading Address"
+        expect(response.body).to have_css "dt", text: "Employer/Trading address"
         expect(response.body).to have_css "dd",
                                           text: "123 My Street, My City, AB3 4CD"
         expect(response.body).to have_css "dt", text: "Issue date"

@@ -1099,16 +1099,18 @@ en:
 
   property_summary:
     type:
+      air_tightness: 'Air tightness'
+      floor: 'Floor'
+      hot_water: 'Hot water'
+      lighting: 'Lighting'
+      main_heating: 'Main heating'
+      main_heating_controls: 'Main heating control'
+      roof: 'Roof'
+      secondary_heating: 'Secondary heating'
       wall: 'Wall'
       walls: 'Walls'
-      floor: 'Floor'
-      hot_water: 'Hot Water'
-      roof: 'Roof'
       window: 'Window'
-      main_heating_controls: 'Main Heating Control'
-      main_heating: 'Main Heating'
-      lighting: 'Lighting'
-      secondary_heating: 'Secondary Heating'
+      windows: 'Windows'
 
   error:
     error: 'Error: '
@@ -1133,8 +1135,8 @@ en:
         guidance_text: 'You can read %{link}.'
         cta: 'guidance on Display Energy Certificates and advisory reports for public buildings'
         url: 'https://www.gov.uk/government/publications/display-energy-certificates-and-advisory-reports-for-public-buildings'
-      previous_operational_ratings:
-        title: "Previous operational ratings"
+      previous_energy_ratings:
+        title: "Previous energy ratings"
         explanation: "This tells you how efficiently energy has been used in this building over the last three accounting periods."
       co2:
         title: "Total CO2 emissions"
@@ -1147,16 +1149,17 @@ en:
         no_value: "Not applicable"
       technical_information:
         title: 'Technical information'
+        print_title: 'This building’s energy use'
         description: 'This tells you technical information about how energy is used in this building. Consumption data based on actual meter readings.'
         heating_fuel: 'Main heating fuel'
         building_environment: 'Building environment'
-        floor_area: 'Total useful floor area (m2)'
-        asset_rating: 'Asset Rating'
+        floor_area: 'Total useful floor area'
+        asset_rating: 'Asset rating'
         energy_use: 'Energy use'
         heating: 'Heating'
         electricity: 'Electricity'
-        annual_energy_use: 'Annual Energy Use (kWh/m2/year)'
-        typical_energy_use: 'Typical Energy Use (kWh/m2/year)'
+        annual_energy_use: 'Annual energy use (kWh/m2/year)'
+        typical_energy_use: 'Typical energy use (kWh/m2/year)'
         energy_from_renewables: 'Energy from renewables'
       administrative_information:
         title: 'Administrative information'
@@ -1166,8 +1169,8 @@ en:
         assessor_name: 'Assessor name'
         assessor_number: 'Assessor number'
         scheme_name: 'Accreditation scheme'
-        company_name: 'Employer/Trading Name'
-        company_address: 'Employer/Trading Address'
+        company_name: 'Employer/Trading name'
+        company_address: 'Employer/Trading address'
         issue_date: 'Issue date'
         nominated_date: 'Nominated date'
         valid_until: 'Valid until'
