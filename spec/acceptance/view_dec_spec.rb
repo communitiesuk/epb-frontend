@@ -105,11 +105,14 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
 
     it "shows the technical information section" do
       expect(response.body).to have_css "h2", text: "Technical information"
-      expect(response.body).to have_css "p", text: "This tells you technical information about how energy is used in this building. Consumption data based on actual meter readings."
+      expect(response.body).to have_css "p",
+                                        text:
+                                          "This tells you technical information about how energy is used in this building. Consumption data based on actual meter readings."
       expect(response.body).to have_css "dt", text: "Main heating fuel"
       expect(response.body).to have_css "dd", text: "Natural Gas"
       expect(response.body).to have_css "dt", text: "Building environment"
-      expect(response.body).to have_css "dd", text: "Heating and Natural Ventilation"
+      expect(response.body).to have_css "dd",
+                                        text: "Heating and Natural Ventilation"
       expect(response.body).to have_css "dt", text: "Total useful floor area"
       expect(response.body).to have_css "dd", text: "99 square metres"
       expect(response.body).to have_css "dt", text: "Asset rating"
@@ -117,10 +120,12 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
       expect(response.body).to have_css "th", text: "Energy use"
       expect(response.body).to have_css "th", text: "Heating"
       expect(response.body).to have_css "th", text: "Electricity"
-      expect(response.body).to have_css "th", text: "Annual energy use (kWh/m2/year)"
+      expect(response.body).to have_css "th",
+                                        text: "Annual energy use (kWh/m2/year)"
       expect(response.body).to have_css "td", text: "11"
       expect(response.body).to have_css "td", text: "12"
-      expect(response.body).to have_css "th", text: "Typical energy use (kWh/m2/year)"
+      expect(response.body).to have_css "th",
+                                        text: "Typical energy use (kWh/m2/year)"
       expect(response.body).to have_css "td", text: "13"
       expect(response.body).to have_css "td", text: "14"
       expect(response.body).to have_css "th", text: "Energy from renewables"
