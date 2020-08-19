@@ -8,6 +8,8 @@
   }
 
   * {
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;
     box-sizing: border-box;
   }
 
@@ -46,5 +48,10 @@
   .govuk-grid-column-full, .govuk-width-container {
     width: auto !important;
     float: none !important;
+  }
+
+  .dec-print-header {
+    background-color: #0b0c0c;
+    height: 60px;
   }
 }
