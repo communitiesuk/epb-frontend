@@ -1175,6 +1175,12 @@ en:
         related_report:
           cta: "Recommendation Report"
           text: "Recommendations for improving the energy performance of the building are contained in the associated %{link}."
+        assessor:
+          list:
+            name: 'Assessor name'
+            number: 'Assessor number'
+            telephone: 'Telephone'
+            email: 'E-mail address'
       information:
         certificate:
           list:
