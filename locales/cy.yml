@@ -1070,6 +1070,7 @@ cy:
         no_value: "Not applicable"
       technical_information:
         title: 'Welsh: Technical information'
+        print_title: 'Welsh: This building’s energy use'
         description: 'Welsh: This tells you technical information about how energy is used in this building. Consumption data based on actual meter readings.'
         heating_fuel: 'Welsh: Main heating fuel'
         building_environment: 'Welsh: Building environment'
