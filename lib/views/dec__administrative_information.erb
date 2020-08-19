@@ -13,7 +13,7 @@
         "property_reference": { value: address[:addressId], print: false },
         "assessor.list.name": assessor[:name],
         "assessor.list.telephone": { value: assessor[:contactDetails][:telephoneNumber], print: false },
-        "assessor.list.email": { type: "email", value: assessor[:contactDetails][:email]  },
+        "assessor.list.email": { type: "email", value: assessor[:contactDetails][:email], print: false },
         "assessor.list.number":  { value: assessor[:schemeAssessorId], print: false },
         "scheme_name": assessor[:registeredBy][:name],
         "company_name": assessor[:companyDetails][:name],
