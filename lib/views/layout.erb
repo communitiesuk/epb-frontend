@@ -51,11 +51,15 @@
           </span>
       </a>
     </div>
-    <div class="govuk-header__content">
-      <a href="<%= localised_url('/') %>"
-         class="govuk-header__link govuk-header__link--service-name">
-        <%=t('layout.body.service_name')%>
-      </a>
+    <div class="govuk-header__content govuk-!-display-none-print">
+      <a href="<%= localised_url('/') %>" class="govuk-header__link govuk-header__link--service-name"><%=
+          t('layout.body.service_name')
+        %></a>
+    </div>
+    <div class="govuk-header__content dec-print">
+      <div class="govuk-header__link govuk-header__link--service-name"><%=
+        @print_title || t('layout.body.service_name')
+      %></div>
     </div>
   </div>
 </header>
