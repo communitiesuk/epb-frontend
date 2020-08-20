@@ -1194,3 +1194,6 @@ en:
 
   dec_rr:
     top_heading: "Display Energy Certificate Recommendation Report (DEC-RR)"
+    sections:
+      rating:
+        title: 'Energy rating and DEC'

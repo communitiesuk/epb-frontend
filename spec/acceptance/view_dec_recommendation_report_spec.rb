@@ -44,6 +44,10 @@ describe "Acceptance::DecRecommendationReport", type: :feature do
       expect(response.body).to include("1 January 2030")
     end
 
+    it "shows the rating section" do
+      expect(response.body).to have_css "h2", text: "Energy rating and DEC"
+    end
+
     it "shows the Recommendations section" do
       expect(response.body).to have_css "h2", text: "Recommendations"
       expect(response.body).to have_css "p",

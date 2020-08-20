@@ -1115,3 +1115,6 @@ cy:
 
   dec_rr:
     top_heading: "Welsh: Display Energy Certificate Recommendation Report (DEC-RR)"
+    sections:
+      rating:
+        title: 'Welsh: Energy rating and DEC'
