@@ -3,8 +3,9 @@
 }
 
 @media print {
+
   @page {
-    size: A4 portrait;
+    size: auto;  margin: 0mm;
   }
 
   * {
