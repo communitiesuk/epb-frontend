@@ -1119,3 +1119,5 @@ cy:
       rating:
         title: 'Welsh: Energy rating and DEC'
         text: 'Welsh: This building has an energy rating of %{band}.'
+        dec: 'Welsh: See the %{cta}.'
+        cta: 'Welsh: Display Energy Certificate for this building'
