@@ -480,7 +480,7 @@ class FrontendService < Sinatra::Base
         assessment: assessment[:data],
       )
     elsif assessment[:data][:typeOfAssessment] == "DEC"
-      @print_title = t('dec.top_heading')
+      @print_title = t("dec.top_heading")
       show(:dec, assessment: assessment[:data])
     elsif assessment[:data][:typeOfAssessment] == "DEC-RR"
       show(:dec_recommendation_report, assessment: assessment[:data])
