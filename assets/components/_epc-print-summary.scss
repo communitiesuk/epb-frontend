@@ -1,0 +1,32 @@
+.print-summary {
+  height: 97px;
+  padding: 0;
+  margin-top: 6px;
+}
+
+.print-summary-section {
+  display: inline-block;
+  margin: 0;
+  background: #1d70b8;
+  height: 100%;
+}
+.print-summary-address {
+  width: 30%;
+  float: left;
+}
+
+.print-summary-rating {
+  width: 20%;
+  border-color: white;
+  border-left-style: solid;
+  border-right-style: solid;
+  border-top-width: 0;
+  border-bottom-width: 0;
+  border-left-width: 3px;
+  border-right-width: 3px;
+}
+
+.print-summary-details {
+  width: 50%;
+  float: right;
+}
