@@ -1,5 +1,5 @@
 .print-summary {
-  height: 97px;
+  height: 115px;
   padding: 0;
   margin-top: 6px;
 }
@@ -10,13 +10,29 @@
   background: #1d70b8;
   height: 100%;
 }
+
+.print-summary-text {
+  color: white;
+  overflow: auto;
+  font-size: 13px;
+  margin: 0;
+}
+
+.print-summary-rating-band {
+  color: white;
+  font-weight: bold;
+  font-size: 55px;
+  margin: 0;
+}
+
 .print-summary-address {
-  width: 30%;
+  width: 33%;
   float: left;
+  padding: 15px;
 }
 
 .print-summary-rating {
-  width: 20%;
+  width: 17%;
   border-color: white;
   border-left-style: solid;
   border-right-style: solid;
@@ -24,9 +40,42 @@
   border-bottom-width: 0;
   border-left-width: 3px;
   border-right-width: 3px;
+  text-align: center;
+  padding: 15px;
 }
 
 .print-summary-details {
   width: 50%;
   float: right;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.print-summary-details-row {
+  height: 33%;
+  border-color: white;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  padding-top: 9px;
+  padding-bottom: 5px;
+  span {
+    color: white !important;
+    font-size: 13px;
+  }
+  &:first-of-type {
+  }
+  &:last-of-type {
+    border-bottom-width: 0;
+  }
+  .key {
+    float: left;
+    width: 180px;
+  }
+
+  .value {
+    font-weight: bold;
+  }
+
 }

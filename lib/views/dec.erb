@@ -1,6 +1,12 @@
 <%== erb :dec__print_header %>
 
-<%== erb :component__print_summary %>
+<%== erb :component__print_summary, locals: {
+  energy_efficiency_band: assessment[:currentAssessment][:energyEfficiencyBand],
+  address: assessment[:address],
+  date_of_expiry: assessment[:dateOfExpiry],
+  assessment_id: assessment[:assessmentId],
+  floor_area: assessment[:technicalInformation][:floorArea],
+} %>
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
