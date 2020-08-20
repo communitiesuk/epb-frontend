@@ -46,6 +46,7 @@ describe "Acceptance::DecRecommendationReport", type: :feature do
 
     it "shows the rating section" do
       expect(response.body).to have_css "h2", text: "Energy rating and DEC"
+      expect(response.body).to have_css "p", text: "This building has an energy rating of A."
     end
 
     it "shows the Recommendations section" do

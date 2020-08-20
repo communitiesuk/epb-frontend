@@ -1197,3 +1197,4 @@ en:
     sections:
       rating:
         title: 'Energy rating and DEC'
+        text: 'This building has an energy rating of %{band}.'

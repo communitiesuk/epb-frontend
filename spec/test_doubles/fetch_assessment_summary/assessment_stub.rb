@@ -323,6 +323,7 @@ module FetchAssessmentSummary
           otherRecommendations: [
             { code: "5", text: "Add a big wind turbine.", cO2Impact: "HIGH" },
           ],
+          energyBandFromRelatedCertificate: "a",
         },
       }
       WebMock.stub_request(
