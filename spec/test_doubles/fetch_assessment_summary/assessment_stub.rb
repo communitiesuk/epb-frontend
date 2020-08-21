@@ -330,6 +330,7 @@ module FetchAssessmentSummary
             propertyType: "University campus",
             buildingEnvironment: "Heating and natural ventilation",
             renewableSources: "Renewable energy source",
+            discountedEnergy: "Separable energy use",
           }
         },
       }

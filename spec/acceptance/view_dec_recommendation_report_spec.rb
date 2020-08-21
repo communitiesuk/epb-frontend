@@ -106,6 +106,8 @@ describe "Acceptance::DecRecommendationReport", type: :feature do
       expect(response.body).to have_css "dd", text: "Heating and natural ventilation"
       expect(response.body).to have_css "dt", text: "On-site renewable energy sources"
       expect(response.body).to have_css "dd", text: "Renewable energy source"
+      expect(response.body).to have_css "dt", text: "Separable energy uses discounted"
+      expect(response.body).to have_css "dd", text: "Separable energy use"
     end
   end
 end
