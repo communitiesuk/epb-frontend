@@ -108,6 +108,8 @@ describe "Acceptance::DecRecommendationReport", type: :feature do
       expect(response.body).to have_css "dd", text: "Renewable energy source"
       expect(response.body).to have_css "dt", text: "Separable energy uses discounted"
       expect(response.body).to have_css "dd", text: "Separable energy use"
+      expect(response.body).to have_css "dt", text: "Total useful floor area"
+      expect(response.body).to have_css "dd", text: "935 square metres"
     end
   end
 end

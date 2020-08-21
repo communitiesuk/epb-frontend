@@ -331,6 +331,7 @@ module FetchAssessmentSummary
             buildingEnvironment: "Heating and natural ventilation",
             renewableSources: "Renewable energy source",
             discountedEnergy: "Separable energy use",
+            floorArea: "935",
           }
         },
       }

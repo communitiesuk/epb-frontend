@@ -1207,3 +1207,4 @@ en:
         building_environment: 'Building environment'
         renewable: 'On-site renewable energy sources'
         discount: 'Separable energy uses discounted'
+        floor_area: 'Total useful floor area'

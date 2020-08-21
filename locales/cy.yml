@@ -1128,3 +1128,4 @@ cy:
         building_environment: 'Welsh: Building environment'
         renewable: 'Welsh: On-site renewable energy sources'
         discount: 'Welsh: Separable energy uses discounted'
+        floor_area: 'Welsh: Total useful floor area'
