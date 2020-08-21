@@ -1123,3 +1123,4 @@ cy:
         cta: 'Welsh: Display Energy Certificate for this building'
       building:
         title: 'Welsh: Building and report details'
+        occupier: 'Welsh: Building occupier'

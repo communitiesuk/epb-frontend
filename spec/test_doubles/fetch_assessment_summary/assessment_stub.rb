@@ -325,6 +325,9 @@ module FetchAssessmentSummary
           ],
           energyBandFromRelatedCertificate: "a",
           relatedRrn: "0000-0000-0000-0000-1111",
+          technicalInformation: {
+            occupier: "City Council",
+          }
         },
       }
       WebMock.stub_request(

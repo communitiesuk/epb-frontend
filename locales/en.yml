@@ -1202,3 +1202,4 @@ en:
         cta: 'Display Energy Certificate for this building'
       building:
         title: 'Building and report details'
+        occupier: 'Building occupier'
