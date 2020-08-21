@@ -1200,3 +1200,5 @@ en:
         text: 'This building has an energy rating of %{band}.'
         dec: 'See the %{cta}.'
         cta: 'Display Energy Certificate for this building'
+      building:
+        title: 'Building and report details'

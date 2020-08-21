@@ -95,5 +95,9 @@ describe "Acceptance::DecRecommendationReport", type: :feature do
       expect(response.body).to have_css "th", text: "Add a big wind turbine."
       expect(response.body).to have_css "td", text: "High"
     end
+
+    it "shows the Building and report details section" do
+      expect(response.body).to have_css "h2", text: "Building and report details"
+    end
   end
 end

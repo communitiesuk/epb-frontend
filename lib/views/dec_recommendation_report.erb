@@ -12,20 +12,20 @@
   </div>
   <div class="govuk-grid-column-two-thirds">
     <hr class="epc-light-top" />
-    <%== erb :component__epc_summary_compact,
-             locals: {
-               assessment: assessment,
-             }
-    %>
+    <%== erb :component__epc_summary_compact, locals: {
+      assessment: assessment,
+    } %>
 
     <%== erb :dec_recommendation_report__rating, locals: {
       assessment: assessment,
     } %>
 
-    <%== erb :component__non_domestic_recommendations,
-             locals: {
-               assessment: assessment,
-             }
-    %>
+    <%== erb :component__non_domestic_recommendations, locals: {
+      assessment: assessment,
+    } %>
+
+    <%== erb :dec_recommendation_report__building_report_details, locals: {
+      assessment: assessment,
+    } %>
   </div>
 </div>
