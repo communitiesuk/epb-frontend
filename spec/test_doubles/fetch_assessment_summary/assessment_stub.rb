@@ -334,6 +334,7 @@ module FetchAssessmentSummary
             discountedEnergy: "Separable energy use",
             floorArea: "935",
             dateOfIssue: "2010-09-22",
+            calculationTool: "DCLG, ORCalc, v3.6.2",
           }
         },
       }

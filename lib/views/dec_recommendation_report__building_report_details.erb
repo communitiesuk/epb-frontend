@@ -11,6 +11,7 @@
       "floor_area": [assessment[:technicalInformation][:floorArea], t('unit.square_metres')].join(' '),
       "building_reference": assessment[:address][:addressId],
       "issue_date": date(assessment[:technicalInformation][:dateOfIssue]),
+      "calculation_tool": assessment[:technicalInformation][:calculationTool],
     },
     translation_prefix: 'dec_rr.sections.building.',
     skip_null: true

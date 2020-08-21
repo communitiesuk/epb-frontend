@@ -1210,3 +1210,4 @@ en:
         floor_area: 'Total useful floor area'
         building_reference: 'Building reference'
         issue_date: 'Report issued on'
+        calculation_tool: 'Calculation tool'
