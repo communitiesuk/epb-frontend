@@ -1126,3 +1126,4 @@ cy:
         occupier: 'Welsh: Building occupier'
         building_type: 'Welsh: Building type'
         building_environment: 'Welsh: Building environment'
+        renewable: 'Welsh: On-site renewable energy sources'

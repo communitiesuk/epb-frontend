@@ -329,6 +329,7 @@ module FetchAssessmentSummary
             occupier: "City Council",
             propertyType: "University campus",
             buildingEnvironment: "Heating and natural ventilation",
+            renewableSources: "Renewable energy source",
           }
         },
       }
