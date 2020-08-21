@@ -1125,3 +1125,4 @@ cy:
         title: 'Welsh: Building and report details'
         occupier: 'Welsh: Building occupier'
         building_type: 'Welsh: Building type'
+        building_environment: 'Welsh: Building environment'

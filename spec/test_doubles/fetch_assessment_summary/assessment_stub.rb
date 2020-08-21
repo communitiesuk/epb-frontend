@@ -328,6 +328,7 @@ module FetchAssessmentSummary
           technicalInformation: {
             occupier: "City Council",
             propertyType: "University campus",
+            buildingEnvironment: "Heating and natural ventilation",
           }
         },
       }

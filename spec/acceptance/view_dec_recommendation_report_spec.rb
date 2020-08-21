@@ -102,6 +102,8 @@ describe "Acceptance::DecRecommendationReport", type: :feature do
       expect(response.body).to have_css "dd", text: "City Council"
       expect(response.body).to have_css "dt", text: "Building type"
       expect(response.body).to have_css "dd", text: "University campus"
+      expect(response.body).to have_css "dt", text: "Building environment"
+      expect(response.body).to have_css "dd", text: "Heating and natural ventilation"
     end
   end
 end

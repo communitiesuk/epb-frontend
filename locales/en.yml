@@ -1204,3 +1204,4 @@ en:
         title: 'Building and report details'
         occupier: 'Building occupier'
         building_type: 'Building type'
+        building_environment: 'Building environment'
