@@ -116,6 +116,8 @@ describe "Acceptance::DecRecommendationReport", type: :feature do
       expect(response.body).to have_css "dd", text: "22 September 2010"
       expect(response.body).to have_css "dt", text: "Calculation tool"
       expect(response.body).to have_css "dd", text: "DCLG, ORCalc, v3.6.2"
+      expect(response.body).to have_css "dt", text: "Type of inspection"
+      expect(response.body).to have_css "dd", text: "Physical"
     end
   end
 end

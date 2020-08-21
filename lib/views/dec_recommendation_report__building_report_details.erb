@@ -12,6 +12,7 @@
       "building_reference": assessment[:address][:addressId],
       "issue_date": date(assessment[:technicalInformation][:dateOfIssue]),
       "calculation_tool": assessment[:technicalInformation][:calculationTool],
+      "inspection_type": assessment[:technicalInformation][:inspectionType],
     },
     translation_prefix: 'dec_rr.sections.building.',
     skip_null: true
