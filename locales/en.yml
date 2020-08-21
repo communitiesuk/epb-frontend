@@ -1209,3 +1209,4 @@ en:
         discount: 'Separable energy uses discounted'
         floor_area: 'Total useful floor area'
         building_reference: 'Building reference'
+        issue_date: 'Report issued on'

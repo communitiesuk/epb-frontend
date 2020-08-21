@@ -10,6 +10,7 @@
       "discount": assessment[:technicalInformation][:discountedEnergy],
       "floor_area": [assessment[:technicalInformation][:floorArea], t('unit.square_metres')].join(' '),
       "building_reference": assessment[:address][:addressId],
+      "issue_date": date(assessment[:technicalInformation][:dateOfIssue]),
     },
     translation_prefix: 'dec_rr.sections.building.',
     skip_null: true

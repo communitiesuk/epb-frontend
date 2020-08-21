@@ -1130,3 +1130,4 @@ cy:
         discount: 'Welsh: Separable energy uses discounted'
         floor_area: 'Welsh: Total useful floor area'
         building_reference: 'Welsh: Building reference'
+        issue_date: 'Welsh: Report issued on'

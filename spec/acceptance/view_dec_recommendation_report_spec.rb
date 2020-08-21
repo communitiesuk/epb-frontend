@@ -112,6 +112,8 @@ describe "Acceptance::DecRecommendationReport", type: :feature do
       expect(response.body).to have_css "dd", text: "935 square metres"
       expect(response.body).to have_css "dt", text: "Building reference"
       expect(response.body).to have_css "dd", text: "90806560123"
+      expect(response.body).to have_css "dt", text: "Report issued on"
+      expect(response.body).to have_css "dd", text: "22 September 2010"
     end
   end
 end

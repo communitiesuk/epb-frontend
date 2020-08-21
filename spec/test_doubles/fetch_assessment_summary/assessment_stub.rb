@@ -333,6 +333,7 @@ module FetchAssessmentSummary
             renewableSources: "Renewable energy source",
             discountedEnergy: "Separable energy use",
             floorArea: "935",
+            dateOfIssue: "2010-09-22",
           }
         },
       }
