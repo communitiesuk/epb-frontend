@@ -327,6 +327,7 @@ module FetchAssessmentSummary
           relatedRrn: "0000-0000-0000-0000-1111",
           technicalInformation: {
             occupier: "City Council",
+            propertyType: "University campus",
           }
         },
       }

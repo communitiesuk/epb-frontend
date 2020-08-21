@@ -4,6 +4,7 @@
   <%== erb :component__summary_list, locals: {
     list: {
       "occupier": assessment[:technicalInformation][:occupier],
+      "building_type": assessment[:technicalInformation][:propertyType]
     },
     translation_prefix: 'dec_rr.sections.building.',
     skip_null: true
