@@ -110,6 +110,8 @@ describe "Acceptance::DecRecommendationReport", type: :feature do
       expect(response.body).to have_css "dd", text: "Separable energy use"
       expect(response.body).to have_css "dt", text: "Total useful floor area"
       expect(response.body).to have_css "dd", text: "935 square metres"
+      expect(response.body).to have_css "dt", text: "Building reference"
+      expect(response.body).to have_css "dd", text: "90806560123"
     end
   end
 end

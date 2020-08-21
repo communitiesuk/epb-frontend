@@ -1208,3 +1208,4 @@ en:
         renewable: 'On-site renewable energy sources'
         discount: 'Separable energy uses discounted'
         floor_area: 'Total useful floor area'
+        building_reference: 'Building reference'

@@ -9,6 +9,7 @@
       "renewable": assessment[:technicalInformation][:renewableSources],
       "discount": assessment[:technicalInformation][:discountedEnergy],
       "floor_area": [assessment[:technicalInformation][:floorArea], t('unit.square_metres')].join(' '),
+      "building_reference": assessment[:address][:addressId],
     },
     translation_prefix: 'dec_rr.sections.building.',
     skip_null: true

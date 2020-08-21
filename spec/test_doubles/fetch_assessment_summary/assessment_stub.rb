@@ -284,6 +284,7 @@ module FetchAssessmentSummary
           reportType: "2",
           dateOfExpiry: date_of_expiry,
           address: {
+            addressId: "90806560123",
             addressLine1: "1 Lonely Street",
             addressLine2: nil,
             addressLine3: nil,
