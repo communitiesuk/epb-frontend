@@ -129,6 +129,16 @@ module Sinatra
       def date(date)
         Date.parse(date).strftime "%-d %B %Y"
       end
+
+      def site_service_quantity(assessment, service)
+        %w[One Two Three].each do |number|
+          if assessment[:"siteService#{number}"][:description].include? service
+            return assessment[:"siteService#{number}"][:quantity]
+          end
+        end
+
+        nil
+      end
     end
   end
 end

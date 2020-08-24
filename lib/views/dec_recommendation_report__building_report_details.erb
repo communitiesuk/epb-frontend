@@ -8,6 +8,8 @@
       "building_environment": assessment[:technicalInformation][:buildingEnvironment],
       "renewable": assessment[:technicalInformation][:renewableSources],
       "discount": assessment[:technicalInformation][:discountedEnergy],
+      "electricity_used": site_service_quantity(assessment, "Electricity").nil? ? nil : [site_service_quantity(assessment, "Electricity"), t('unit.kilowatt_hour')].join(' '),
+      "gas_used": site_service_quantity(assessment, "Gas").nil? ? nil : [site_service_quantity(assessment, "Gas"), t('unit.kilowatt_hour')].join(' '),
       "floor_area": [assessment[:technicalInformation][:floorArea], t('unit.square_metres')].join(' '),
       "building_reference": assessment[:address][:addressId],
       "issue_date": date(assessment[:technicalInformation][:dateOfIssue]),

@@ -336,7 +336,19 @@ module FetchAssessmentSummary
             dateOfIssue: "2010-09-22",
             calculationTool: "DCLG, ORCalc, v3.6.2",
             inspectionType: "Physical",
-          }
+          },
+          siteServiceOne: {
+            description: "Electricity",
+            quantity: "751445",
+          },
+          siteServiceTwo: {
+            description: "Gas",
+            quantity: "72956",
+          },
+          siteServiceThree: {
+            description: "Not used",
+            quantity: "0",
+          },
         },
       }
       WebMock.stub_request(

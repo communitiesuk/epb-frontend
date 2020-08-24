@@ -437,6 +437,7 @@ cy:
 
   unit:
     square_metres: 'Welsh: square metres'
+    kilowatt_hour: 'Welsh: kW h'
 
   non_domestic_epc:
     top_heading: 'Welsh: Non-domestic Energy Performance Certificate'
@@ -1133,3 +1134,4 @@ cy:
         issue_date: 'Welsh: Report issued on'
         calculation_tool: 'Welsh: Calculation tool'
         inspection_type: 'Welsh: Type of inspection'
+        gas_used: 'Welsh: Gas used'
