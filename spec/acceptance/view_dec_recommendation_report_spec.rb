@@ -132,6 +132,8 @@ describe "Acceptance::DecRecommendationReport", type: :feature do
       expect(response.body).to have_css "h2", text: "Assessor’s details"
       expect(response.body).to have_css "dt", text: "Assessor’s name"
       expect(response.body).to have_css "dd", text: "John Howard"
+      expect(response.body).to have_css "dt", text: "Employer’s name"
+      expect(response.body).to have_css "dd", text: "Joe Bloggs Ltd"
     end
   end
 end

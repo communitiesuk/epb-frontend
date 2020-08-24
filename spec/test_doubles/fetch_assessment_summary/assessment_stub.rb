@@ -294,6 +294,9 @@ module FetchAssessmentSummary
           },
           assessor: {
             name: "John Howard",
+            companyDetails: {
+              name: "Joe Bloggs Ltd",
+            },
           },
           shortPaybackRecommendations: [
             {
