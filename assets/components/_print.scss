@@ -71,4 +71,27 @@
   p.govuk-body {
     font-size: 13px;
   }
+
+  table.govuk-table {
+    margin-bottom: 0;
+  }
+
+  tr.govuk-table__row {
+    &:last-of-type {
+      border-bottom-style: hidden;
+    }
+  }
+
+  .govuk-table__header {
+    font-size: 13px;
+  }
+
+  .govuk-table__cell {
+    font-size: 13px;
+  }
+
+  div.print-background {
+    background-color: #F2EFEF;
+    padding: 15px;
+  }
 }
