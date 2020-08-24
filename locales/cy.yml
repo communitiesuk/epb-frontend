@@ -1139,3 +1139,4 @@ cy:
         title: 'Welsh: Assessor’s details'
         name: 'Welsh: Assessor’s name'
         employer_name: 'Welsh: Employer’s name'
+        employer_address: 'Welsh: Employer’s address'

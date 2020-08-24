@@ -1219,3 +1219,4 @@ en:
         title: 'Assessor’s details'
         name: 'Assessor’s name'
         employer_name: 'Employer’s name'
+        employer_address: 'Employer’s address'

@@ -295,7 +295,7 @@ module FetchAssessmentSummary
           assessor: {
             name: "John Howard",
             companyDetails: {
-              name: "Joe Bloggs Ltd",
+              address: "123 My Street, My City, AB3 4CD", name: "Joe Bloggs Ltd"
             },
           },
           shortPaybackRecommendations: [

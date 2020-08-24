@@ -4,7 +4,8 @@
   <%== erb :component__summary_list, locals: {
     list: {
       "name": assessment[:assessor][:name],
-      "employer_name": assessment[:assessor][:companyDetails][:name]
+      "employer_name": assessment[:assessor][:companyDetails][:name],
+      "employer_address": assessment[:assessor][:companyDetails][:address],
     },
     translation_prefix: 'dec_rr.sections.assessor.',
     skip_null: true
