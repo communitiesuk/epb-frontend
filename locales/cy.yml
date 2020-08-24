@@ -1135,3 +1135,5 @@ cy:
         calculation_tool: 'Welsh: Calculation tool'
         inspection_type: 'Welsh: Type of inspection'
         gas_used: 'Welsh: Gas used'
+      assessor:
+        title: 'Welsh: Assessor’s details'

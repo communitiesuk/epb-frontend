@@ -127,5 +127,9 @@ describe "Acceptance::DecRecommendationReport", type: :feature do
       expect(response.body).to have_css "dt", text: "Type of inspection"
       expect(response.body).to have_css "dd", text: "Physical"
     end
+
+    it "shows the Assessor’s details section" do
+      expect(response.body).to have_css "h2", text: "Assessor’s details"
+    end
   end
 end

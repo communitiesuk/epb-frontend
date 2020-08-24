@@ -1215,3 +1215,5 @@ en:
         inspection_type: 'Type of inspection'
         electricity_used: 'Electricity used'
         gas_used: 'Gas used'
+      assessor:
+        title: 'Assessor’s details'
