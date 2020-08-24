@@ -51,7 +51,7 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
         "The building’s energy performance is based on its carbon dioxide (CO2) emissions for the last year.",
       )
       expect(response.body).to include(
-        "It is given a score and an energy rating on a scale from A (lowest emissions) to G (highest emissions).",
+        "It is given a score and an energy rating on a scale from A&nbsp;(lowest emissions) to G&nbsp;(highest emissions).",
       )
       expect(response.body).to include(
         "Typical energy performance for a public building is 100. This typical score gives an energy rating of D.",
