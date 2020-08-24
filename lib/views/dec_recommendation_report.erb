@@ -16,9 +16,11 @@
       assessment: assessment,
     } %>
 
-    <%== erb :dec_recommendation_report__rating, locals: {
-      assessment: assessment,
-    } %>
+    <% unless assessment[:energyBandFromRelatedCertificate].nil? %>
+      <%== erb :dec_recommendation_report__rating, locals: {
+        assessment: assessment,
+      } %>
+    <% end %>
 
     <%== erb :component__non_domestic_recommendations, locals: {
       assessment: assessment,
