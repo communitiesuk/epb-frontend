@@ -7,6 +7,7 @@
       "employer_name": assessment[:assessor][:companyDetails][:name],
       "employer_address": assessment[:assessor][:companyDetails][:address],
       "number": assessment[:assessor][:schemeAssessorId],
+      "scheme": assessment[:assessor][:registeredBy][:name],
     },
     translation_prefix: 'dec_rr.sections.assessor.',
     skip_null: true
