@@ -149,15 +149,18 @@
 
   <text x="327" y="15" class="small" text-anchor="middle" dominant-baseline="middle">Average</text>
 
-  <line x1="0" y1="235" x2="310" y2="235" stroke-dasharray="3,3" style="stroke:black;stroke-width:2;"></line>
-  <line x1="350" y1="235" x2="386" y2="235" stroke-dasharray="3,3" style="stroke:black;stroke-width:2;"></line>
+  <line x1="0" y1="233" x2="310" y2="235" stroke-dasharray="3,3" style="stroke:black;stroke-width:2;"></line>
+  <line x1="350" y1="233" x2="386" y2="235" stroke-dasharray="3,3" style="stroke:black;stroke-width:2;"></line>
   <text x="0" y="0" class="typical">
-    <tspan x="313" y="240">100</tspan>
+    <tspan x="313" y="238">100</tspan>
   </text>
 
   <svg x="205" y="<%= 30+bands[energy_efficiency_band.to_sym][:position]*50 %>" width="83" height="40">
     <rect width="75" height="40" class="band-<%= energy_efficiency_band %>" x="25"></rect>
     <polygon points="0,20 25,45 25,0 0,20" class="band-<%= energy_efficiency_band %>"></polygon>
-    <text x="60%" y="50%" dominant-baseline="middle" text-anchor="middle"><%= energy_efficiency_rating %> | <%= energy_efficiency_band.upcase %></text>
+    <text x="60%" y="50%" dominant-baseline="middle" text-anchor="middle">
+      <tspan><%= energy_efficiency_rating %> | </tspan>
+      <tspan class="govuk-!-font-weight-bold"><%= energy_efficiency_band.upcase %> </tspan>
+    </text>
   </svg>
 </svg>
