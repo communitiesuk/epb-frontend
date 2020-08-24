@@ -130,6 +130,8 @@ describe "Acceptance::DecRecommendationReport", type: :feature do
 
     it "shows the Assessor’s details section" do
       expect(response.body).to have_css "h2", text: "Assessor’s details"
+      expect(response.body).to have_css "dt", text: "Assessor’s name"
+      expect(response.body).to have_css "dd", text: "John Howard"
     end
   end
 end

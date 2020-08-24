@@ -1137,3 +1137,4 @@ cy:
         gas_used: 'Welsh: Gas used'
       assessor:
         title: 'Welsh: Assessor’s details'
+        name: 'Welsh: Assessor’s name'

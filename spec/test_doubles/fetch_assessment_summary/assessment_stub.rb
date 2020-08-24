@@ -292,6 +292,9 @@ module FetchAssessmentSummary
             town: "Post-Town0",
             postcode: "A0 0AA",
           },
+          assessor: {
+            name: "John Howard",
+          },
           shortPaybackRecommendations: [
             {
               code: "1",

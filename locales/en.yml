@@ -1217,3 +1217,4 @@ en:
         gas_used: 'Gas used'
       assessor:
         title: 'Assessor’s details'
+        name: 'Assessor’s name'
