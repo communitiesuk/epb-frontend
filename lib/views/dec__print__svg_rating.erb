@@ -1,6 +1,6 @@
-<svg width="615"
-     height="386"
-     viewBox="0 0 615 386"
+<svg width="365"
+     height="500"
+     viewBox="0 0 365 500"
      xmlns="http://www.w3.org/2000/svg"
      style="max-width: 100%;"
      aria-labelledby="svg-title"
@@ -89,7 +89,7 @@
     }
 
     .small {
-      font-size: 16px;
+      font-size: 13px;
       font-family: sans-serif;
       fill: 	#0b0c0c;
       line-height: 50px;
@@ -109,8 +109,8 @@
     <% end %>
   </style>
 
-  <line x1="72" y1="0" x2="72" y2="386" style="stroke:#b1b4b6;stroke-width:1"></line>
-  <line x1="410" y1="0" x2="410" y2="386" style="stroke:#b1b4b6;stroke-width:1"></line>
+  <line x1="60" y1="0" x2="60" y2="386" style="stroke:#b1b4b6;stroke-width:1"></line>
+  <line x1="203" y1="0" x2="203" y2="386" style="stroke:#b1b4b6;stroke-width:1"></line>
   <line x1="530" y1="0" x2="530" y2="386" style="stroke:#b1b4b6;stroke-width:1"></line>
   <line x1="0" y1="25" x2="615" y2="25" style="stroke:#b1b4b6;stroke-width:1"></line>
   <line x1="0" y1="0" x2="615" y2="0" style="stroke:#b1b4b6;stroke-width:1"></line>
@@ -120,18 +120,18 @@
   <line x1="615" y1="386" x2="0" y2="386" style="stroke:#b1b4b6;stroke-width:1"></line>
 
   <% bands.each do |key, settings| %>
-    <rect width="<%= 78+settings[:position]*40 %>" height="50" x="72" y="<%= 25+settings[:position]*50%>" class="band-<%= key %>">
+    <rect width="<%= 50+settings[:position]*15 %>" height="50" x="60" y="<%= 25+settings[:position]*50%>" class="band-<%= key %>">
     </rect>
   <% end %>
 
   <% score_bands.each do |key, settings| %>
-    <rect width="72" height="50" x="0" y="<%= 25+settings[:position]*50%>" class="band-<%= key %>">
+    <rect width="60" height="50" x="0" y="<%= 25+settings[:position]*50%>" class="band-<%= key %>">
     </rect>
   <% end %>
 
   <text x="0" y="0" class="letter">
     <% bands.each do |key, settings| %>
-      <tspan x="<%= 95+(40*settings[:position])+12 %>" y="<%= 75+(50*settings[:position])-11 %>"><%= key.upcase %></tspan>
+      <tspan x="<%= 55+(15*settings[:position])+15 %>" y="<%= 75+(50*settings[:position])-11 %>"><%= key.upcase %></tspan>
     <% end %>
   </text>
 
@@ -143,7 +143,7 @@
 
   <text x="8" y="15" class="small" dominant-baseline="middle">Score</text>
 
-  <text x="85" y="15" class="small" dominant-baseline="middle">Energy Rating</text>
+  <text x="73" y="15" class="small" dominant-baseline="middle">Energy Rating</text>
 
   <text x="470" y="15" class="small" text-anchor="middle" dominant-baseline="middle">This building</text>
 
