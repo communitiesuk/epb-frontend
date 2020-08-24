@@ -97,16 +97,20 @@ describe "Acceptance::DecRecommendationReport", type: :feature do
     end
 
     it "shows the Building and report details section" do
-      expect(response.body).to have_css "h2", text: "Building and report details"
+      expect(response.body).to have_css "h2",
+                                        text: "Building and report details"
       expect(response.body).to have_css "dt", text: "Building occupier"
       expect(response.body).to have_css "dd", text: "City Council"
       expect(response.body).to have_css "dt", text: "Building type"
       expect(response.body).to have_css "dd", text: "University campus"
       expect(response.body).to have_css "dt", text: "Building environment"
-      expect(response.body).to have_css "dd", text: "Heating and natural ventilation"
-      expect(response.body).to have_css "dt", text: "On-site renewable energy sources"
+      expect(response.body).to have_css "dd",
+                                        text: "Heating and natural ventilation"
+      expect(response.body).to have_css "dt",
+                                        text: "On-site renewable energy sources"
       expect(response.body).to have_css "dd", text: "Renewable energy source"
-      expect(response.body).to have_css "dt", text: "Separable energy uses discounted"
+      expect(response.body).to have_css "dt",
+                                        text: "Separable energy uses discounted"
       expect(response.body).to have_css "dd", text: "Separable energy use"
       expect(response.body).to have_css "dt", text: "Electricity used"
       expect(response.body).to have_css "dd", text: "751445 kW h"
