@@ -9,6 +9,11 @@
     energy_efficiency_band: assessment[:currentAssessment][:energyEfficiencyBand],
     energy_efficiency_rating: assessment[:currentAssessment][:energyEfficiencyRating]
   } %>
+  <%== erb :dec__print__svg_rating, locals: {
+    title: t('dec.sections.rating.svg_title', energy_efficiency_band: assessment[:energyEfficiencyBand], energy_efficiency_rating: assessment[:energyEfficiencyRating]),
+    energy_efficiency_band: assessment[:currentAssessment][:energyEfficiencyBand],
+    energy_efficiency_rating: assessment[:currentAssessment][:energyEfficiencyRating]
+  } %>
 
   <p class="govuk-body govuk-!-display-none-print"><%== t('dec.sections.rating.guidance_text', :link => '<a href="' + t('dec.sections.rating.url') + '">' + t('dec.sections.rating.cta') + '</a>') %></p>
 </div>

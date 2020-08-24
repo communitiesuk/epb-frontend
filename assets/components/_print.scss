@@ -6,6 +6,7 @@
 
   @page {
     size: A4;  margin: 0mm;
+    background-color: white;
   }
 
   * {
@@ -14,15 +15,22 @@
     box-sizing: border-box;
   }
 
-  .column {
-    float: left;
-    width: 50%;
-    padding: 10px;
+  div.govuk-grid-column-two-thirds {
+    all: initial;
   }
 
-  .row:after {
-    display: table;
-    clear: both;
+  .column-l {
+    width: 48%;
+    padding: 10px;
+    left: 30px;
+    float: left;
+    margin-left: 10px;
+  }
+
+  .column-r {
+    width: 48%;
+    padding: 10px;
+    float: left;
   }
 
   .epc-no-print, footer, .app-cookie-banner, .govuk-back-link {
@@ -54,5 +62,13 @@
   .dec-print-header {
     background-color: #0b0c0c;
     height: 60px;
+  }
+
+  .govuk-heading-l {
+    font-size: 15px;
+  }
+
+  p.govuk-body {
+    font-size: 13px;
   }
 }
