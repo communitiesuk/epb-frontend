@@ -446,6 +446,8 @@ en:
       certificates:
         title: 'Other certificates for this property'
         text: 'If you are aware of previous certificates for this property and they are not listed here, please contact the Help Desk at 01632 164 6672.'
+      reports:
+        title: 'Other reports for this property'
       reference_number: 'Reference number'
       valid_until: 'Valid until'
       expired: 'Expired'
@@ -1226,5 +1228,4 @@ en:
         number: 'Assessor number'
         scheme: 'Accreditation scheme'
       other_reports:
-        title: 'Other reports for this property'
         reminder: 'If you are aware of previous reports for this property and they are not listed here, please contact the Help Desk at %{contact_centre_number}.'
