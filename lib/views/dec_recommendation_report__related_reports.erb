@@ -5,7 +5,7 @@
   %></p>
   <dl class="govuk-summary-list">
     <% assessment[:relatedAssessments].each do |related_assessment| %>
-      <% if related_assessment[:assessmentType] == "DEC-RR" %>
+      <% if related_assessment[:assessmentType] == assessment_type %>
         <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
           <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
             heading_report_reference
