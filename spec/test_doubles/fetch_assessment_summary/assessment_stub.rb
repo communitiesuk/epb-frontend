@@ -275,7 +275,27 @@ module FetchAssessmentSummary
     end
 
     def self.fetch_dec_rr(
-      assessment_id: "0000-0000-0000-0000-0001", date_of_expiry: "2030-01-01"
+      assessment_id: "0000-0000-0000-0000-0001", date_of_expiry: "2030-01-01",
+      related_assessments: [
+        {
+          assessmentId: "0000-0000-0000-0000-5555",
+          assessmentStatus: "ENTERED",
+          assessmentType: "RdSAP",
+          assessmentExpiryDate: "2030-05-04",
+        },
+        {
+          assessmentId: "9457-0000-0000-0000-2000",
+          assessmentStatus: "ENTERED",
+          assessmentType: "DEC-RR",
+          assessmentExpiryDate: "2026-05-04",
+        },
+        {
+          assessmentId: "9457-0000-0000-0000-2001",
+          assessmentStatus: "EXPIRED",
+          assessmentType: "DEC-RR",
+          assessmentExpiryDate: "2019-05-04",
+        },
+      ]
     )
       body = {
         data: {
@@ -300,6 +320,7 @@ module FetchAssessmentSummary
               address: "123 My Street, My City, AB3 4CD", name: "Joe Bloggs Ltd"
             },
           },
+          relatedAssessments: related_assessments,
           shortPaybackRecommendations: [
             {
               code: "1",

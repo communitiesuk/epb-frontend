@@ -422,6 +422,9 @@ cy:
       certificates:
         title: 'Welsh: Other certificates for this property'
         text: 'Welsh: If you are aware of previous certificates for this property and they are not listed here, please contact the Help Desk at 01632 164 6672.'
+      reference_number: 'Welsh: Reference number'
+      valid_until: 'Welsh: Valid until'
+      expired: 'Welsh: Expired'
     recommendations:
       title: 'Welsh: Recommendations'
       text: 'Welsh: The assessment found opportunities to improve the building’s energy efficiency.'
