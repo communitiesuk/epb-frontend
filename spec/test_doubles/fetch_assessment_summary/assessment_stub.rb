@@ -275,7 +275,8 @@ module FetchAssessmentSummary
     end
 
     def self.fetch_dec_rr(
-      assessment_id: "0000-0000-0000-0000-0001", date_of_expiry: "2030-01-01",
+      assessment_id: "0000-0000-0000-0000-0001",
+      date_of_expiry: "2030-01-01",
       related_assessments: [
         {
           assessmentId: "0000-0000-0000-0000-5555",
