@@ -139,6 +139,16 @@ module Sinatra
 
         nil
       end
+
+      def related_assessments(assessment, type)
+        output = assessment[:relatedAssessments].map do |related_assessment|
+          if related_assessment[:assessmentType] == type
+            related_assessment
+          end
+        end
+
+        output.compact
+      end
     end
   end
 end

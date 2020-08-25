@@ -1,7 +1,7 @@
 <div class="epc-blue-bottom">
   <h2 class="govuk-heading-l"><%= section_heading %></h2>
   <p class="govuk-body"><%= reminder %></p>
-  <% if assessment[:relatedAssessments].nil? || assessment[:relatedAssessments].empty? %>
+  <% if related_assessments(assessment, assessment_type).empty? %>
     <p class="govuk-body"><%= no_related_reports %></p>
   <% else %>
     <dl class="govuk-summary-list">

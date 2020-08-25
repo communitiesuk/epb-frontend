@@ -176,4 +176,26 @@ describe "Acceptance::DecRecommendationReport", type: :feature do
                                         text: "There are no related reports for this property."
     end
   end
+
+  context "when there are no related assessments of the same type" do
+    before do
+      FetchAssessmentSummary::AssessmentStub.fetch_dec_rr(
+        assessment_id: "1234-5678-1234-5678-1234",
+        date_of_expiry: "2030-01-01",
+        related_assessments: [
+          {
+            "assessmentId": "9273-1041-0269-0300-1495",
+            "assessmentStatus": "EXPIRED",
+            "assessmentType": "DEC",
+            "assessmentExpiryDate": "2017-09-29",
+          },
+        ],
+      )
+    end
+
+    it "shows the no related reports text" do
+      expect(response.body).to have_css "p",
+                                        text: "There are no related reports for this property."
+    end
+  end
 end
