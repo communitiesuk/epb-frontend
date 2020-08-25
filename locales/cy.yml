@@ -1142,3 +1142,5 @@ cy:
         employer_address: 'Welsh: Employer’s address'
         number: 'Welsh: Assessor number'
         scheme: 'Welsh: Accreditation scheme'
+      other_reports:
+        title: 'Welsh: Other reports for this property'

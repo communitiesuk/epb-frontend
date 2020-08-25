@@ -1222,3 +1222,5 @@ en:
         employer_address: 'Employer’s address'
         number: 'Assessor number'
         scheme: 'Accreditation scheme'
+      other_reports:
+        title: 'Other reports for this property'

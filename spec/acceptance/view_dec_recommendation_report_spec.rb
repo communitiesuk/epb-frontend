@@ -142,5 +142,9 @@ describe "Acceptance::DecRecommendationReport", type: :feature do
       expect(response.body).to have_css "dt", text: "Accreditation scheme"
       expect(response.body).to have_css "dd", text: "test scheme"
     end
+
+    it "shows the Other reports for this property section" do
+      expect(response.body).to have_css "h2", text: "Other reports for this property"
+    end
   end
 end
