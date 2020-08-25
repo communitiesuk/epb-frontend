@@ -36,7 +36,7 @@
 
     <%== erb :component__recommendation_report_related_reports, locals: {
       assessment: assessment,
-      section_heading: t('component.related.reports.title'),
+      section_heading: t('component.related.reports.title', type: assessment[:typeOfAssessment]),
       reminder: t('component.related.reports.text', contact_centre_number: t('contact.help_desk_number')),
       no_related_reports: t('component.related.reports.no_related_reports'),
       assessment_type: "DEC-RR",

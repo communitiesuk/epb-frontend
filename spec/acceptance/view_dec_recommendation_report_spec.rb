@@ -145,7 +145,7 @@ describe "Acceptance::DecRecommendationReport", type: :feature do
 
     it "shows the Other reports for this property section" do
       expect(response.body).to have_css "h2",
-                                        text: "Other reports for this property"
+                                        text: "Other DEC-RRs for this property"
       expect(response.body).to have_css "p",
                                         text:
                                           "If you are aware of previous reports for this property and they are not listed here, please contact the Help Desk at 01632 164 6672."

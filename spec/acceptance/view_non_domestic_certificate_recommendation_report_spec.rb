@@ -100,7 +100,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
     end
 
     it "shows the Other reports for this property" do
-      expect(response.body).to include("Other reports for this property")
+      expect(response.body).to have_css "h2", text: "Other CEPC-RRs for this property"
       expect(response.body).to include(
         '<p class="govuk-body">If you are aware of previous reports for this property and they are not listed here, please contact the Help Desk at 01632 164 6672.</p>',
       )
