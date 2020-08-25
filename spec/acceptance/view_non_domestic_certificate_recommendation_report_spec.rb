@@ -101,11 +101,14 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
 
     it "shows the Other reports for this property" do
       expect(response.body).to have_css "h2", text: "Other CEPC-RRs for this property"
-      expect(response.body).to include(
-        '<p class="govuk-body">If you are aware of previous reports for this property and they are not listed here, please contact the Help Desk at 01632 164 6672.</p>',
-      )
-      expect(response.body).to include("9457-0000-0000-0000-2000")
-      expect(response.body).not_to include("0000-0000-0000-0000-5555")
+      expect(response.body).to have_css "p", text: "If you are aware of previous reports for this property and they are not listed here, please contact the Help Desk at 01632 164 6672."
+      expect(response.body).to have_css "dt", text: "Reference number"
+      expect(response.body).to have_link "9457-0000-0000-0000-2000",
+                                         href: "/energy-performance-certificate/9457-0000-0000-0000-2000"
+      expect(response.body).to have_css "dt", text: "Valid until"
+      expect(response.body).to have_css "dd", text: "4 May 2026"
+      expect(response.body).not_to have_link "0000-0000-0000-0000-5555",
+                                             href: "/energy-performance-certificate/0000-0000-0000-0000-5555"
     end
   end
 
