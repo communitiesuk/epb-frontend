@@ -1,8 +1,6 @@
 <div class="epc-blue-bottom">
   <h2 class="govuk-heading-l"><%= section_heading %></h2>
-  <p class="govuk-body"><%=
-    reminder
-  %></p>
+  <p class="govuk-body"><%= reminder %></p>
   <dl class="govuk-summary-list">
     <% assessment[:relatedAssessments].each do |related_assessment| %>
       <% if related_assessment[:assessmentType] == assessment_type %>
