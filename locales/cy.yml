@@ -1144,3 +1144,4 @@ cy:
         scheme: 'Welsh: Accreditation scheme'
       other_reports:
         title: 'Welsh: Other reports for this property'
+        reminder: 'Welsh: If you are aware of previous reports for this property and they are not listed here, please contact the Help Desk at %{contact_centre_number}.'
