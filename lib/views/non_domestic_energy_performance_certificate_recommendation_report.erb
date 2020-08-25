@@ -75,10 +75,15 @@
              }
     %>
 
-    <%== erb :non_domestic_energy_performance_certificate_recommendation_report__related_assessments,
-             locals: {
-               assessment: assessment,
-             }
-    %>
+    <%== erb :component__recommendation_report_related_reports, locals: {
+      assessment: assessment,
+      section_heading: t('component.related.reports.title'),
+      reminder: t('component.related.reports.text', contact_centre_number: t('contact.help_desk_number')),
+      no_related_reports: t('component.related.reports.no_related_reports'),
+      assessment_type: "CEPC-RR",
+      heading_report_reference: t('component.related.reference_number'),
+      heading_valid_until: t('component.related.valid_until'),
+      expired_text: t('component.related.expired'),
+    } %>
   </div>
 </div>
