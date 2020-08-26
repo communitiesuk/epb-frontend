@@ -72,18 +72,21 @@ FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
   ],
 )
 
-FetchAssessmentSummary::AssessmentStub.fetch_cepc "1234-5678-1234-5678-1234",
-                                                  "b",
-                                                  "1234-5678-1234-5678-0000"
+FetchAssessmentSummary::AssessmentStub.fetch_cepc assessment_id: "1234-5678-1234-5678-1234",
+                                                  energyEfficiencyBand: "b",
+                                                  related_rrn: "1234-5678-1234-5678-0000"
+
 FetchAssessmentSummary::AssessmentStub.fetch_cepc_rr assessment_id:
                                                        "1234-5678-1234-5678-0000"
 
-FetchAssessmentSummary::AssessmentStub.fetch_cepc "1111-0000-0000-0000-0000",
-                                                  "b",
-                                                  "1111-0000-0000-0000-0001"
+FetchAssessmentSummary::AssessmentStub.fetch_cepc assessment_id: "1111-0000-0000-0000-0000",
+                                                  energyEfficiencyBand: "b",
+                                                  related_rrn: "1111-0000-0000-0000-0001"
+
 FetchAssessmentSummary::AssessmentStub.fetch_dec assessment_id:
                                                    "0000-0000-0000-0000-1111",
                                                  date_of_expiry: "2030-01-28"
+
 FetchAssessmentSummary::AssessmentStub.fetch_dec_rr assessment_id:
                                                       "1204-5678-1234-5178-0000"
 
