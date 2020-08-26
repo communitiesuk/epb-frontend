@@ -26,9 +26,7 @@ describe Sinatra::FrontendService::Helpers do
     end
 
     it "does show the related assessment for DEC-RR" do
-      expect(
-        HelpersStub.new.related_assessments(assessment, "DEC-RR"),
-      ).to eq(
+      expect(HelpersStub.new.related_assessments(assessment, "DEC-RR")).to eq(
         [
           {
             "assessmentId": "9273-1041-0269-0300-1496",
@@ -41,9 +39,7 @@ describe Sinatra::FrontendService::Helpers do
     end
 
     it "does show the related assessment for RdSAP" do
-      expect(
-        HelpersStub.new.related_assessments(assessment, "RdSAP"),
-      ).to eq(
+      expect(HelpersStub.new.related_assessments(assessment, "RdSAP")).to eq(
         [
           {
             "assessmentId": "9273-1041-0269-0300-1497",
@@ -56,9 +52,7 @@ describe Sinatra::FrontendService::Helpers do
     end
 
     it "does show an empty array for nonexistant type" do
-      expect(
-        HelpersStub.new.related_assessments(assessment, "CEPC"),
-      ).to eq []
+      expect(HelpersStub.new.related_assessments(assessment, "CEPC")).to eq []
     end
   end
 end

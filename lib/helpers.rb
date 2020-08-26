@@ -141,11 +141,10 @@ module Sinatra
       end
 
       def related_assessments(assessment, type)
-        output = assessment[:relatedAssessments].map do |related_assessment|
-          if related_assessment[:assessmentType] == type
-            related_assessment
+        output =
+          assessment[:relatedAssessments].map do |related_assessment|
+            related_assessment if related_assessment[:assessmentType] == type
           end
-        end
 
         output.compact
       end
