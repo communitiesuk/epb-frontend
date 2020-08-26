@@ -26,10 +26,10 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
 
   context "when the assessment exists" do
     before do
-      FetchAssessmentSummary::AssessmentStub.fetch_cepc(
-        "1234-5678-1234-5678-1234",
-        "b",
-      )
+      FetchAssessmentSummary::AssessmentStub.fetch_cepc assessment_id:
+                                                          "1234-5678-1234-5678-1234",
+                                                        energyEfficiencyBand:
+                                                          "b"
     end
 
     it "returns status 200" do
@@ -113,10 +113,10 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
 
       context "with an energy rating of F/G" do
         before do
-          FetchAssessmentSummary::AssessmentStub.fetch_cepc(
-            "1234-5678-1234-5678-1234",
-            "g",
-          )
+          FetchAssessmentSummary::AssessmentStub.fetch_cepc assessment_id:
+                                                              "1234-5678-1234-5678-1234",
+                                                            energyEfficiencyBand:
+                                                              "g"
         end
 
         it "shows the letting info warning text" do
@@ -262,13 +262,14 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
         }
 
         related_party_disclosures.each do |key, disclosure|
-          FetchAssessmentSummary::AssessmentStub.fetch_cepc(
-            "1234-5678-1234-5678-1234",
-            "b",
-            "4192-1535-8427-8844-6702",
-            true,
-            key,
-          )
+          FetchAssessmentSummary::AssessmentStub.fetch_cepc assessment_id:
+                                                              "1234-5678-1234-5678-1234",
+                                                            energyEfficiencyBand:
+                                                              "b",
+                                                            related_rrn:
+                                                              "4192-1535-8427-8844-6702",
+                                                            related_party_disclosure:
+                                                              key
 
           response =
             get "/energy-performance-certificate/1234-5678-1234-5678-1234"
@@ -329,59 +330,41 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
       end
     end
 
-    describe "viewing the related assessments section" do
+    it "shows the Other CEPCs for this property section" do
+      expect(response.body).to have_css "h2",
+                                        text: "Other CEPCs for this property"
+      expect(response.body).to have_css "p",
+                                        text:
+                                          "If you are aware of previous certificates for this property and they are not listed here, please contact the Help Desk at 01632 164 6672."
+      expect(response.body).to have_css "dt", text: "Reference number"
+      expect(response.body).to have_link "0000-0000-0000-0000-0001",
+                                         href: "/energy-performance-certificate/0000-0000-0000-0000-0001"
+      expect(response.body).to have_css "dt", text: "Valid until"
+      expect(response.body).to have_css "dd", text: "4 May 2026"
+      expect(response.body).not_to have_link "0000-0000-0000-0000-0002",
+                                             href: "/energy-performance-certificate/0000-0000-0000-0000-0002"
+      expect(response.body).not_to have_css "dd", text: "4 May 2019 (Expired)"
+    end
+
+    context "when there are no related assessments" do
+      before do
+        FetchAssessmentSummary::AssessmentStub.fetch_cepc assessment_id:
+                                                            "1234-5678-1234-5678-1234",
+                                                          energyEfficiencyBand:
+                                                            "b",
+                                                          related_rrn:
+                                                            "4192-1535-8427-8844-6702",
+                                                          related_assessments: []
+      end
+
       it "shows the related assessments section title" do
-        expect(response.body).to include(
-          ">Other certificates for this property</h2>",
-        )
+        expect(response.body).to have_css "h2",
+                                          text: "Other CEPCs for this property"
       end
 
-      it "shows the description text" do
+      it "shows the no related assessments content" do
         expect(response.body).to have_css "p",
-                                          text:
-                                            "If you are aware of previous certificates for this property and they are not listed here, please contact the Help Desk at 01632 164 6672."
-      end
-
-      it "shows headings on the list of the related assessments" do
-        expect(response.body).to have_css "dt", text: "Reference number"
-        expect(response.body).to have_css "dt", text: "Valid until"
-      end
-
-      it "shows the expected valid related assessment" do
-        expect(response.body).to include(
-          "/energy-performance-certificate/0000-0000-0000-0000-0001\">0000-0000-0000-0000-0001</a>",
-        )
-        expect(response.body).to have_css "dd", text: "4 May 2026"
-      end
-
-      it "shows the expected expired related assessment" do
-        expect(response.body).to have_link "0000-0000-0000-0000-0002",
-                                           href:
-                                             "/energy-performance-certificate/0000-0000-0000-0000-0002"
-        expect(response.body).to have_css "dd", text: "1 July 2002 (Expired)"
-      end
-
-      context "when there are no related assessments" do
-        before do
-          FetchAssessmentSummary::AssessmentStub.fetch_cepc(
-            "1234-5678-1234-5678-1234",
-            "b",
-            "4192-1535-8427-8844-6702",
-            false,
-          )
-        end
-
-        it "shows the related assessments section title" do
-          expect(response.body).to include(
-            ">Other certificates for this property</h2>",
-          )
-        end
-
-        it "shows the no related assessments content" do
-          expect(response.body).to include(
-            ">There are no related certificates for the property.</p>",
-          )
-        end
+                                          text: "There are no related certificates for this property."
       end
     end
   end

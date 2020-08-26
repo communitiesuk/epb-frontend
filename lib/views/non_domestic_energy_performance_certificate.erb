@@ -58,6 +58,7 @@
 
   <div class="govuk-grid-column-two-thirds">
     <hr class="epc-light-top" />
+
     <%== erb :component__epc_summary, locals: {
       energy_efficiency_band: assessment[:currentEnergyEfficiencyBand],
       address: assessment[:address],
@@ -65,8 +66,8 @@
       assessment_id: assessment[:assessmentId],
       property_type: assessment[:propertyType],
       floor_area: assessment[:technicalInformation][:floorArea]
-    }
-    %>
+    } %>
+
     <div class="govuk-body epc-blue-bottom">
       <a id="renting"></a>
       <h2 class="govuk-heading-l"><%= t('non_domestic_epc.sections.renting.title') %></h2>
@@ -98,45 +99,45 @@
       <p class="govuk-body govuk-!-margin-top-3"><%= t('non_domestic_epc.energy_rating_section.rating_desc') %></p>
       <p class="govuk-body"><%= t('non_domestic_epc.energy_rating_section.score_desc') %></p>
     </div>
+
     <%== erb :non_domestic_energy_performance_certificate__how_building_compares,
     locals: {
       existing_build_rating: assessment[:existingBuildRating],
       existing_build_band: assessment[:existingBuildBand],
       new_build_rating: assessment[:newBuildRating],
       new_build_band: assessment[:newBuildBand],
-    }%>
-    <%== erb :non_domestic_energy_performance_certificate__energy_performance_breakdown,
-    locals: {
+    } %>
+
+    <%== erb :non_domestic_energy_performance_certificate__energy_performance_breakdown, locals: {
       main_heating_fuel: assessment[:technicalInformation][:mainHeatingFuel],
       building_environment: assessment[:technicalInformation][:buildingEnvironment],
       floor_area: assessment[:technicalInformation][:floorArea],
       assessment_level: assessment[:technicalInformation][:buildingLevel],
       emission_rate: assessment[:buildingEmissionRate],
       primary_energy_use: assessment[:primaryEnergyUse]
-    }%>
-    <%== erb :non_domestic_energy_performance_certificate__related_report,
-             locals: {
-               related_rrn: assessment[:relatedRrn]
-             }%>
-    <%== erb :non_domestic_energy_performance_certificate__contact,
-    locals: {
+    } %>
+
+    <%== erb :non_domestic_energy_performance_certificate__related_report, locals: {
+      related_rrn: assessment[:relatedRrn]
+    } %>
+
+    <%== erb :non_domestic_energy_performance_certificate__contact, locals: {
       assessor: assessment[:assessor],
       assessment_date: assessment[:dateOfAssessment],
       registration_date: assessment[:dateOfRegistration],
       related_party_disclosure: assessment[:relatedPartyDisclosure]
-    }%>
+    } %>
 
-      <a id="other_reports"></a>
-      <%== erb :component__related_assessments,
-                locals: {
-                  relatedAssessments: assessment[:relatedAssessments],
-                  section_title: t('non_domestic_epc.sections.other_reports.title'),
-                  description: t('component.related.certificates.text'),
-                  heading_certificate_reference: t('non_domestic_epc.sections.other_reports.certificate_reference'),
-                  heading_valid_until: t('non_domestic_epc.sections.other_reports.valid_until'),
-                  expired_text: t('non_domestic_epc.sections.other_reports.expired'),
-                  no_related_assessments: t('non_domestic_epc.sections.other_reports.no_related')
-                }
-      %>
+    <a id="other_reports"></a>
+    <%== erb :component__recommendation_report_related_reports, locals: {
+      assessment: assessment,
+      section_heading: t('component.related.reports.title', type: assessment[:typeOfAssessment]),
+      reminder: t('component.related.certificates.text', contact_centre_number: t('contact.help_desk_number')),
+      no_related_text: t('component.related.certificates.no_related_certificates'),
+      assessment_type: assessment[:typeOfAssessment],
+      heading_report_reference: t('component.related.reference_number'),
+      heading_valid_until: t('component.related.valid_until'),
+      expired_text: t('component.related.expired'),
+    } %>
   </div>
 </div>

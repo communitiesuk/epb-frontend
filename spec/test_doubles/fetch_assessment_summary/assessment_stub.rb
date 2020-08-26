@@ -3,11 +3,24 @@
 module FetchAssessmentSummary
   class AssessmentStub
     def self.fetch_cepc(
-      assessment_id,
-      energyEfficiencyBand,
-      related_rrn = "4192-1535-8427-8844-6702",
-      related_assessments = true,
-      related_party_disclosure = nil
+      assessment_id:,
+      energyEfficiencyBand:,
+      related_rrn: "4192-1535-8427-8844-6702",
+      related_party_disclosure: nil,
+      related_assessments: [
+        {
+          assessmentExpiryDate: "2026-05-04",
+          assessmentId: "0000-0000-0000-0000-0001",
+          assessmentStatus: "ENTERED",
+          assessmentType: "CEPC",
+        },
+        {
+          assessmentExpiryDate: "2002-07-01",
+          assessmentId: "0000-0000-0000-0000-0002",
+          assessmentStatus: "EXPIRED",
+          assessmentType: "CEPC-RR",
+        },
+      ]
     )
       body = {
         data: {
@@ -54,23 +67,7 @@ module FetchAssessmentSummary
           },
           relatedPartyDisclosure: related_party_disclosure,
           propertyType: "B1 Offices and Workshop businesses",
-          relatedAssessments:
-            if related_assessments
-              [
-                {
-                  assessmentExpiryDate: "2026-05-04",
-                  assessmentId: "0000-0000-0000-0000-0001",
-                  assessmentStatus: "ENTERED",
-                  assessmentType: "CEPC",
-                },
-                {
-                  assessmentExpiryDate: "2002-07-01",
-                  assessmentId: "0000-0000-0000-0000-0002",
-                  assessmentStatus: "EXPIRED",
-                  assessmentType: "CEPC-RR",
-                },
-              ]
-            end,
+          relatedAssessments: related_assessments,
         },
       }
 
