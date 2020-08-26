@@ -62,46 +62,46 @@
       property_type: nil,
     } %>
 
-      <div class="column-l">
-        <%== erb :dec__rating, locals: {
-          assessment: assessment,
-        } %>
+    <div class="column-l">
+      <%== erb :dec__rating, locals: {
+        assessment: assessment,
+      } %>
 
-        <%== erb :dec__technical_information, locals: {
-          assessment: assessment,
-        } %>
-      </div>
-      <div class="column-r">
-        <%== erb :dec__previous_energy_ratings, locals: {
-          current: assessment[:currentAssessment],
-          year1: assessment[:year1Assessment],
-          year2: assessment[:year2Assessment],
-        } %>
+      <%== erb :dec__technical_information, locals: {
+        assessment: assessment,
+      } %>
+    </div>
+    <div class="column-r">
+      <%== erb :dec__previous_energy_ratings, locals: {
+        current: assessment[:currentAssessment],
+        year1: assessment[:year1Assessment],
+        year2: assessment[:year2Assessment],
+      } %>
 
-        <%== erb :dec__co2, locals: {
-          current: assessment[:currentAssessment],
-          year1: assessment[:year1Assessment],
-          year2: assessment[:year2Assessment],
-        } %>
+      <%== erb :dec__co2, locals: {
+        current: assessment[:currentAssessment],
+        year1: assessment[:year1Assessment],
+        year2: assessment[:year2Assessment],
+      } %>
 
-        <%== erb :dec__administrative_information, locals: {
-          assessment: assessment,
-          address: assessment[:address],
-          assessor: assessment[:assessor],
-          administrative_information: assessment[:administrativeInformation]
-        } %>
-      </div>
-      <div id="other_certificates">
-        <%== erb :component__related_assessments, locals: {
-          assessment: assessment,
-          section_heading: t('component.related.title', type: assessment[:typeOfAssessment]),
-          reminder: t('component.related.certificates.text', contact_centre_number: t('contact.help_desk_number')),
-          no_related_text: t('component.related.certificates.no_related_certificates'),
-          assessment_type: "DEC",
-          heading_report_reference: t('component.related.reference_number'),
-          heading_valid_until: t('component.related.valid_until'),
-          expired_text: t('component.related.expired'),
-        } %>
-      </div>
+      <%== erb :dec__administrative_information, locals: {
+        assessment: assessment,
+        address: assessment[:address],
+        assessor: assessment[:assessor],
+        administrative_information: assessment[:administrativeInformation]
+      } %>
+    </div>
+    <div id="other_certificates">
+      <%== erb :component__related_assessments, locals: {
+        assessment: assessment,
+        section_heading: t('component.related.title', type: assessment[:typeOfAssessment]),
+        reminder: t('component.related.certificates.text', contact_centre_number: t('contact.help_desk_number')),
+        no_related_text: t('component.related.certificates.no_related_certificates'),
+        assessment_type: assessment[:typeOfAssessment],
+        heading_report_reference: t('component.related.reference_number'),
+        heading_valid_until: t('component.related.valid_until'),
+        expired_text: t('component.related.expired'),
+      } %>
+    </div>
   </div>
 </div>
