@@ -36,6 +36,15 @@ describe "Acceptance::DecRecommendationReport", type: :feature do
       )
     end
 
+    it "shows the contents section" do
+      expect(response.body).to have_css "h2", text: "Report contents"
+      expect(response.body).to have_link "Energy rating and DEC", href: "#rating"
+      expect(response.body).to have_link "Recommendations", href: "#recommendations"
+      expect(response.body).to have_link "Building and report details", href: "#building"
+      expect(response.body).to have_link "Assessor’s details", href: "#assessor"
+      expect(response.body).to have_link "Other reports for this property", href: "#other_reports"
+    end
+
     it "shows the top summary box" do
       expect(response.body).to include("1 Lonely Street")
       expect(response.body).to include("Post-Town0")

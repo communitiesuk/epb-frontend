@@ -10,6 +10,34 @@
   <div class="govuk-grid-column-full">
     <h1 class="govuk-heading-xl"><%= t('dec_rr.top_heading') %></h1>
   </div>
+  <div class="govuk-grid-column-one-third govuk-!-display-none-print">
+    <hr class="epc-blue-top" />
+    <%== erb :component__contents, locals: {
+      title: t("dec_rr.sections.contents.title"),
+      sections: [
+        {
+          link: '#rating',
+          text: 'dec_rr.sections.rating.title'
+        },
+        {
+          link: '#recommendations',
+          text: 'component.recommendations.title'
+        },
+        {
+          link: '#building',
+          text: 'dec_rr.sections.building.title'
+        },
+        {
+          link: '#assessor',
+          text: 'dec_rr.sections.assessor.title'
+        },
+        {
+          link: '#other_reports',
+          text: 'component.related.reports.title'
+        }
+      ]
+    } %>
+  </div>
   <div class="govuk-grid-column-two-thirds">
     <hr class="epc-light-top" />
     <%== erb :component__epc_summary_compact, locals: {
@@ -34,15 +62,17 @@
       assessment: assessment,
     } %>
 
-    <%== erb :component__related_assessments, locals: {
-      assessment: assessment,
-      section_heading: t('component.related.title', type: assessment[:typeOfAssessment]),
-      reminder: t('component.related.reports.text', contact_centre_number: t('contact.help_desk_number')),
-      no_related_text: t('component.related.reports.no_related_reports'),
-      assessment_type: assessment[:typeOfAssessment],
-      heading_report_reference: t('component.related.reference_number'),
-      heading_valid_until: t('component.related.valid_until'),
-      expired_text: t('component.related.expired'),
-    } %>
+    <div id="other_reports">
+      <%== erb :component__related_assessments, locals: {
+        assessment: assessment,
+        section_heading: t('component.related.title', type: assessment[:typeOfAssessment]),
+        reminder: t('component.related.reports.text', contact_centre_number: t('contact.help_desk_number')),
+        no_related_text: t('component.related.reports.no_related_reports'),
+        assessment_type: assessment[:typeOfAssessment],
+        heading_report_reference: t('component.related.reference_number'),
+        heading_valid_until: t('component.related.valid_until'),
+        expired_text: t('component.related.expired'),
+      } %>
+    </div>
   </div>
 </div>

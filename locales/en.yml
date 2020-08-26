@@ -1201,6 +1201,8 @@ en:
   dec_rr:
     top_heading: "Display Energy Certificate Recommendation Report (DEC-RR)"
     sections:
+      contents:
+        title: 'Report contents'
       rating:
         title: 'Energy rating and DEC'
         text: 'This building has an energy rating of %{band}.'
