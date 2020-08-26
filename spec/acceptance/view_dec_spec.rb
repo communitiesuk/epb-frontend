@@ -208,7 +208,7 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
                                         text: "Other DECs for this property"
       expect(response.body).to have_css "p",
                                         text:
-                                            "If you are aware of previous certificates for this property and they are not listed here, please contact the Help Desk at 01632 164 6672."
+                                          "If you are aware of previous certificates for this property and they are not listed here, please contact the Help Desk at 01632 164 6672."
       expect(response.body).to have_css "dt", text: "Reference number"
       expect(response.body).to have_link "0000-0000-0000-0000-0001",
                                          href: "/energy-performance-certificate/0000-0000-0000-0000-0001"
@@ -222,8 +222,7 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
     context "when there are no related assessments" do
       before do
         FetchAssessmentSummary::AssessmentStub.fetch_dec(
-          assessment_id: "0000-0000-0000-0000-1111",
-          related_assessments: [],
+          assessment_id: "0000-0000-0000-0000-1111", related_assessments: [],
         )
       end
 
@@ -233,7 +232,8 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
       end
 
       it "shows the no related assessments content" do
-        expect(response.body).to have_css "p", text: "There are no related certificates for this property."
+        expect(response.body).to have_css "p",
+                                          text: "There are no related certificates for this property."
       end
     end
   end
