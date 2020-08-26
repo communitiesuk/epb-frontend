@@ -419,12 +419,13 @@ cy:
       property_info:
         'Welsh: This property is a %{property_type} and has a total floor area of %{total_floor_area} square metres.'
     related:
+      title: 'Welsh: Other %{type}s for this property'
       certificates:
         title: 'Welsh: Other certificates for this property'
         text: 'Welsh: If you are aware of previous certificates for this property and they are not listed here, please contact the Help Desk at 01632 164 6672.'
         no_related_certificates: 'Welsh: There are no related certificates for this property.'
       reports:
-        title: 'Welsh: Other %{type}s for this property'
+        title: 'Welsh: Other reports for this property'
         text: 'Welsh: If you are aware of previous reports for this property and they are not listed here, please contact the Help Desk at %{contact_centre_number}.'
         no_related_reports: 'Welsh: There are no related reports for this property.'
       reference_number: 'Welsh: Reference number'
