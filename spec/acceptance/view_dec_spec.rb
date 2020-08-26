@@ -203,57 +203,37 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
       end
     end
 
-    describe "viewing the related assessments section" do
-      it "shows the related assessments section title" do
-        expect(response.body).to include(
-          ">Other certificates for this property</h2>",
+    it "shows the Other reports for this property section" do
+      expect(response.body).to have_css "h2",
+                                        text: "Other DECs for this property"
+      expect(response.body).to have_css "p",
+                                        text:
+                                            "If you are aware of previous certificates for this property and they are not listed here, please contact the Help Desk at 01632 164 6672."
+      expect(response.body).to have_css "dt", text: "Reference number"
+      expect(response.body).to have_link "0000-0000-0000-0000-0001",
+                                         href: "/energy-performance-certificate/0000-0000-0000-0000-0001"
+      expect(response.body).to have_css "dt", text: "Valid until"
+      expect(response.body).to have_css "dd", text: "4 May 2026"
+      expect(response.body).not_to have_link "0000-0000-0000-0000-0002",
+                                             href: "/energy-performance-certificate/0000-0000-0000-0000-0002"
+      expect(response.body).not_to have_css "dd", text: "4 May 2019 (Expired)"
+    end
+
+    context "when there are no related assessments" do
+      before do
+        FetchAssessmentSummary::AssessmentStub.fetch_dec(
+          assessment_id: "0000-0000-0000-0000-1111",
+          related_assessments: [],
         )
       end
 
-      it "shows the description text" do
-        expect(response.body).to have_css "p",
-                                          text:
-                                            "If you are aware of previous certificates for this property and they are not listed here, please contact the Help Desk at 01632 164 6672."
+      it "shows the related assessments section title" do
+        expect(response.body).to have_css "h2",
+                                          text: "Other DECs for this property"
       end
 
-      it "shows headings on the list of the related assessments" do
-        expect(response.body).to have_css "dt", text: "Reference number"
-        expect(response.body).to have_css "dt", text: "Valid until"
-      end
-
-      it "shows the expected valid related assessment" do
-        expect(response.body).to have_link "0000-0000-0000-0000-0001",
-                                           href:
-                                             "/energy-performance-certificate/0000-0000-0000-0000-0001"
-        expect(response.body).to have_css "dd", text: "4 May 2026"
-      end
-
-      it "shows the expected expired related assessment" do
-        expect(response.body).to have_link "0000-0000-0000-0000-0002",
-                                           href:
-                                             "/energy-performance-certificate/0000-0000-0000-0000-0002"
-        expect(response.body).to have_css "dd", text: "1 July 2002 (Expired)"
-      end
-
-      context "when there are no related assessments" do
-        before do
-          FetchAssessmentSummary::AssessmentStub.fetch_dec(
-            assessment_id: "0000-0000-0000-0000-1111",
-            related_assessments: false,
-          )
-        end
-
-        it "shows the related assessments section title" do
-          expect(response.body).to include(
-            ">Other certificates for this property</h2>",
-          )
-        end
-
-        it "shows the no related assessments content" do
-          expect(response.body).to include(
-            ">There are no related certificates for the property.</p>",
-          )
-        end
+      it "shows the no related assessments content" do
+        expect(response.body).to have_css "p", text: "There are no related certificates for this property."
       end
     end
   end

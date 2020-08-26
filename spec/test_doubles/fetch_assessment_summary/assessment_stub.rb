@@ -178,7 +178,20 @@ module FetchAssessmentSummary
     def self.fetch_dec(
       assessment_id: "0000-0000-0000-0000-0001",
       date_of_expiry: "2030-01-01",
-      related_assessments: true,
+      related_assessments: [
+        {
+          assessmentExpiryDate: "2026-05-04",
+          assessmentId: "0000-0000-0000-0000-0001",
+          assessmentStatus: "ENTERED",
+          assessmentType: "DEC",
+        },
+        {
+          assessmentExpiryDate: "2002-07-01",
+          assessmentId: "0000-0000-0000-0000-0002",
+          assessmentStatus: "EXPIRED",
+          assessmentType: "CEPC-RR",
+        },
+      ],
       related_party: nil
     )
       body = {
@@ -249,23 +262,7 @@ module FetchAssessmentSummary
               email: "test@testscheme.com", telephone: "012345"
             },
           },
-          relatedAssessments:
-            if related_assessments
-              [
-                {
-                  assessmentExpiryDate: "2026-05-04",
-                  assessmentId: "0000-0000-0000-0000-0001",
-                  assessmentStatus: "ENTERED",
-                  assessmentType: "CEPC",
-                },
-                {
-                  assessmentExpiryDate: "2002-07-01",
-                  assessmentId: "0000-0000-0000-0000-0002",
-                  assessmentStatus: "EXPIRED",
-                  assessmentType: "CEPC-RR",
-                },
-              ]
-            end,
+          relatedAssessments: related_assessments,
         },
       }
       WebMock.stub_request(

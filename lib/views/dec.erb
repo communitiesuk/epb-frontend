@@ -92,14 +92,15 @@
         } %>
       </div>
       <div id="other_certificates">
-        <%== erb :component__related_assessments, locals: {
-          relatedAssessments: assessment[:relatedAssessments],
-          section_title: t('component.related.certificates.title'),
-          description: t('component.related.certificates.text'),
-          heading_certificate_reference: t('non_domestic_epc.sections.other_reports.certificate_reference'),
-          heading_valid_until: t('non_domestic_epc.sections.other_reports.valid_until'),
-          expired_text: t('non_domestic_epc.sections.other_reports.expired'),
-          no_related_assessments: t('non_domestic_epc.sections.other_reports.no_related')
+        <%== erb :component__recommendation_report_related_reports, locals: {
+          assessment: assessment,
+          section_heading: t('component.related.reports.title', type: assessment[:typeOfAssessment]),
+          reminder: t('component.related.certificates.text', contact_centre_number: t('contact.help_desk_number')),
+          no_related_text: t('component.related.certificates.no_related_certificates'),
+          assessment_type: "DEC",
+          heading_report_reference: t('component.related.reference_number'),
+          heading_valid_until: t('component.related.valid_until'),
+          expired_text: t('component.related.expired'),
         } %>
       </div>
   </div>

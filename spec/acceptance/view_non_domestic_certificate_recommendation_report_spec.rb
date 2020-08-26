@@ -141,9 +141,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
     end
 
     it "shows the no related reports text" do
-      expect(response.body).to include(
-        "There are no related reports for this property.",
-      )
+      expect(response.body).to have_css "p", text: "There are no related reports for this property."
     end
   end
 

@@ -446,6 +446,7 @@ en:
       certificates:
         title: 'Other certificates for this property'
         text: 'If you are aware of previous certificates for this property and they are not listed here, please contact the Help Desk at 01632 164 6672.'
+        no_related_certificates: 'There are no related certificates for this property.'
       reports:
         title: 'Other %{type}s for this property'
         text: 'If you are aware of previous reports for this property and they are not listed here, please contact the Help Desk at %{contact_centre_number}.'
