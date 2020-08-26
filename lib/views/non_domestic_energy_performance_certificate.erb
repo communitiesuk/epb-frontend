@@ -129,7 +129,7 @@
     } %>
 
     <a id="other_reports"></a>
-    <%== erb :component__recommendation_report_related_reports, locals: {
+    <%== erb :component__related_assessments, locals: {
       assessment: assessment,
       section_heading: t('component.related.reports.title', type: assessment[:typeOfAssessment]),
       reminder: t('component.related.certificates.text', contact_centre_number: t('contact.help_desk_number')),

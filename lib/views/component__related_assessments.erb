@@ -1,31 +1,32 @@
-<div class="epc-blue-bottom govuk-!-display-none-print">
-  <h2 class="govuk-heading-l"><%= section_title %></h2>
-  <p class="govuk-body"><%= description %></p>
-
-  <% if relatedAssessments.nil? || relatedAssessments.empty? %>
-    <p class="govuk-body"><%= no_related_assessments %></p>
+<div class="epc-blue-bottom">
+  <h2 class="govuk-heading-l"><%= section_heading %></h2>
+  <p class="govuk-body"><%= reminder %></p>
+  <% if related_assessments(assessment, assessment_type).empty? %>
+    <p class="govuk-body"><%= no_related_text %></p>
   <% else %>
     <dl class="govuk-summary-list">
-      <% relatedAssessments.each do |related_assessment| %>
-        <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
-          <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
-            heading_certificate_reference
-          %></dt>
-          <dd class="govuk-summary-list__value govuk-!-width-one-half">
-            <a href="<%= localised_url('/energy-performance-certificate/' + related_assessment[:assessmentId]) %>"><%= related_assessment[:assessmentId] %></a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
-            heading_valid_until
-          %></dt>
-          <dd class="govuk-summary-list__value govuk-!-width-one-half"><%
-            if related_assessment[:assessmentStatus] == "EXPIRED" %>
-              <span class="expired-text govuk-!-font-weight-bold"><%= date(related_assessment[:assessmentExpiryDate]) %> (<%= expired_text %>)</span>
-            <% else %><%=
+      <% assessment[:relatedAssessments].each do |related_assessment| %>
+        <% if related_assessment[:assessmentType] == assessment_type %>
+          <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
+            <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
+              heading_report_reference
+            %></dt>
+            <dd class="govuk-summary-list__value govuk-!-width-one-half">
+              <a href="<%= localised_url('/energy-performance-certificate/' + related_assessment[:assessmentId]) %>"><%= related_assessment[:assessmentId] %></a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
+              heading_valid_until
+            %></dt>
+            <dd class="govuk-summary-list__value govuk-!-width-one-half"><%
+              if related_assessment[:assessmentStatus] == "EXPIRED" %>
+                <span class="expired-text govuk-!-font-weight-bold"><%= date(related_assessment[:assessmentExpiryDate]) %> (<%= expired_text %>)</span>
+                <% else %><%=
               date(related_assessment[:assessmentExpiryDate])
             %><% end %></dd>
-        </div>
+          </div>
+        <% end %>
       <% end %>
     </dl>
   <% end %>
