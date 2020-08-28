@@ -2,6 +2,23 @@
 
 module FetchAssessmentSummary
   class AssessmentStub
+    def self.fetch_ac_cert(
+      assessment_id:
+    )
+      body = {
+        data: {
+          assessmentId: assessment_id,
+          reportType: "3",
+          typeOfAssessment: "AC-CERT",
+        },
+      }
+
+      WebMock.stub_request(
+        :get,
+        "http://test-api.gov.uk/api/assessments/#{assessment_id}/summary",
+      ).to_return(status: 200, body: body.to_json)
+    end
+
     def self.fetch_cepc(
       assessment_id:,
       energyEfficiencyBand:,

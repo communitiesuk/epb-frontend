@@ -1147,3 +1147,6 @@ cy:
         employer_address: 'Welsh: Employer’s address'
         number: 'Welsh: Assessor number'
         scheme: 'Welsh: Accreditation scheme'
+
+  ac_cert:
+    top_heading: 'Welsh: Air Conditioning Inspection Certificate'
