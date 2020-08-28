@@ -15,7 +15,8 @@ describe "Acceptance::AirConditioningInspectionCertificate", type: :feature do
     end
 
     it "shows the page title" do
-      expect(response.body).to have_css "h1", text: "Air Conditioning Inspection Certificate"
+      expect(response.body).to have_css "h1",
+                                        text: "Air Conditioning Inspection Certificate"
     end
   end
 end

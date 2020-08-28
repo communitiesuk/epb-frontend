@@ -2,9 +2,7 @@
 
 module FetchAssessmentSummary
   class AssessmentStub
-    def self.fetch_ac_cert(
-      assessment_id:
-    )
+    def self.fetch_ac_cert(assessment_id:)
       body = {
         data: {
           assessmentId: assessment_id,
