@@ -123,19 +123,21 @@
     width: 0;
     height: 0;
     border-style: solid;
-    border-width: 15px 15px 0 0;
+    border-width: 17px 17px 0 0;
     border-color: #eee transparent transparent transparent;
     content: "";
     float: left;
+    margin-top: -1px;
+    margin-left: -1px;
     display: block;
   }
 
   .arrow:after {
     position: absolute;
-    border-width: 15px 0 0 15px;
+    border-width: 17px 0 0 17px;
     border-color: transparent transparent transparent #eee;
     float: none;
-    bottom: 0;
+    bottom: -1px;
     left: 0;
   }
 
@@ -214,30 +216,32 @@
           <tr>
             <td>
               <p class="govuk-body">
-                Address line 1<br />
-                Address line 2<br />
-                Town<br />
-                Postcode
+                <%== [assessment[:address][:addressLine1],
+                     assessment[:address][:addressLine2],
+                     assessment[:address][:addressLine3],
+                     assessment[:address][:addressLine4],
+                     assessment[:address][:town],
+                     assessment[:address][:postcode]].reject(&:nil?).reject(&:empty?).join('<br />') %>
               </p>
             </td>
             <td class="giant-letter">
               Energy rating<br />
-              <span>D</span>
+              <span><%= assessment[:currentAssessment][:energyEfficiencyBand].upcase %></span>
             </td>
             <td>
               <table class="border-bottom">
                 <tbody>
                   <tr>
                     <td>Certificate number:</td>
-                    <td>0000-0000-0000-0000-0000</td>
+                    <td><%= assessment[:assessmentId] %></td>
                   </tr>
                   <tr>
                     <td>Valid until:</td>
-                    <td>30 July 2099</td>
+                    <td><%= assessment[:dateOfExpiry] %></td>
                   </tr>
                   <tr>
                     <td>Total useful floor area:</td>
-                    <td>999 square meters</td>
+                    <td><%= assessment[:technicalInformation][:floorArea] %> square meters</td>
                   </tr>
                 </tbody>
               </table>
@@ -263,153 +267,12 @@
               <tbody>
                 <tr>
                   <td>
-                    <svg width="100%" height="386" xmlns="http://www.w3.org/2000/svg" aria-labelledby="svg-title" role="img">
-                      <title id="svg-title">This building’s energy rating is  ()</title>
-
-                      <style>
-                        .letter {
-                          font-size: 40px;
-                          font-family: sans-serif;
-                          fill: 	#0b0c0c;
-                          font-weight: bold;
-                        }
-
-                        .small {
-                          font-size: 13px;
-                          font-family: sans-serif;
-                          fill: 	#0b0c0c;
-                          line-height: 50px;
-                          margin-top: 100px;
-                          font-weight: bold;
-                        }
-
-                        .band-a{
-                          fill: #008054
-                        }
-                        .band-b{
-                          fill: #19b459
-                        }
-                        .band-c{
-                          fill: #8dce46
-                        }
-                        .band-d{
-                          fill: #ffd500
-                        }
-                        .band-e{
-                          fill: #fcaa65
-                        }
-                        .band-f{
-                          fill: #ef8023
-                        }
-                        .band-g{
-                          fill: #e9153b
-                        }
-                        .band-a-score{
-                          fill: #67A687
-                        }
-                        .band-b-score{
-                          fill: #72CA8B
-                        }
-                        .band-c-score{
-                          fill: #b4df86
-                        }
-                        .band-d-score{
-                          fill: #ffe666
-                        }
-                        .band-e-score{
-                          fill: #fdc79b
-                        }
-                        .band-f-score{
-                          fill: #f4ac71
-                        }
-                        .band-g-score{
-                          fill: #f2738a
-                        }
-                      </style>
-
-                      <line x1="60" y1="0" x2="60" y2="386" style="stroke:#b1b4b6;stroke-width:1"></line>
-                      <line x1="203" y1="0" x2="203" y2="386" style="stroke:#b1b4b6;stroke-width:1"></line>
-                      <line x1="293" y1="0" x2="293" y2="386" style="stroke:#b1b4b6;stroke-width:1"></line>
-                      <line x1="0" y1="25" x2="615" y2="25" style="stroke:#b1b4b6;stroke-width:1"></line>
-                      <line x1="0" y1="0" x2="615" y2="0" style="stroke:#b1b4b6;stroke-width:1"></line>
-
-                      <line x1="0" y1="0" x2="0" y2="386" style="stroke:#b1b4b6;stroke-width:1"></line>
-                      <line x1="364" y1="386" x2="364" y2="0" style="stroke:#b1b4b6;stroke-width:1"></line>
-                      <line x1="615" y1="386" x2="0" y2="386" style="stroke:#b1b4b6;stroke-width:1"></line>
-
-                      <rect width="50" height="50" x="60" y="25" class="band-a">
-                      </rect>
-                      <rect width="65" height="50" x="60" y="75" class="band-b">
-                      </rect>
-                      <rect width="80" height="50" x="60" y="125" class="band-c">
-                      </rect>
-                      <rect width="95" height="50" x="60" y="175" class="band-d">
-                      </rect>
-                      <rect width="114.5" height="50" x="60" y="240.0" class="band-e">
-                      </rect>
-                      <rect width="128.0" height="50" x="60" y="285.0" class="band-f">
-                      </rect>
-                      <rect width="143.0" height="50" x="60" y="335.0" class="band-g">
-                      </rect>
-
-                      <rect width="60" height="50" x="0" y="25" class="band-a-score">
-                      </rect>
-                      <rect width="60" height="50" x="0" y="75" class="band-b-score">
-                      </rect>
-                      <rect width="60" height="50" x="0" y="125" class="band-c-score">
-                      </rect>
-                      <rect width="60" height="50" x="0" y="175" class="band-d-score">
-                      </rect>
-                      <rect width="60" height="50" x="0" y="240.0" class="band-e-score">
-                      </rect>
-                      <rect width="60" height="50" x="0" y="285.0" class="band-f-score">
-                      </rect>
-                      <rect width="60" height="50" x="0" y="335.0" class="band-g-score">
-                      </rect>
-
-                      <text x="0" y="0" class="letter">
-                        <tspan x="70" y="64">A</tspan>
-                        <tspan x="85" y="114">B</tspan>
-                        <tspan x="100" y="164">C</tspan>
-                        <tspan x="115" y="214">D</tspan>
-                        <tspan x="134.5" y="279.0">E</tspan>
-                        <tspan x="148.0" y="324.0">F</tspan>
-                        <tspan x="163.0" y="374.0">G</tspan>
-                      </text>
-
-                      <text x="0" y="0" class="small">
-                        <tspan x="8" y="55">0-25</tspan>
-                        <tspan x="8" y="105">26-50</tspan>
-                        <tspan x="8" y="155">51-75</tspan>
-                        <tspan x="8" y="205">76-100</tspan>
-                        <tspan x="8" y="270.0">101-125</tspan>
-                        <tspan x="8" y="315.0">126-150</tspan>
-                        <tspan x="8" y="365.0">150+</tspan>
-                      </text>
-
-                      <text x="8" y="15" class="small" dominant-baseline="middle">Score</text>
-
-                      <text x="70" y="15" class="small" dominant-baseline="middle">Energy Rating</text>
-
-                      <text x="248" y="15" class="small" text-anchor="middle" dominant-baseline="middle">This building</text>
-
-                      <text x="327" y="15" class="small" text-anchor="middle" dominant-baseline="middle">Average</text>
-
-                      <line x1="0" y1="233" x2="310" y2="233" stroke-dasharray="3,3" style="stroke:black;stroke-width:2;"></line>
-                      <line x1="350" y1="233" x2="358" y2="233" stroke-dasharray="3,3" style="stroke:#000000;stroke-width:2;"></line>
-                      <text x="0" y="0" class="typical">
-                        <tspan x="313" y="238">100</tspan>
-                      </text>
-
-                      <svg x="205" y="245.0" width="83" height="40">
-                        <rect width="75" height="40" class="band-e" x="25"></rect>
-                        <polygon points="0,20 25,45 25,0 0,20" class="band-e"></polygon>
-                        <text x="60%" y="50%" dominant-baseline="middle" text-anchor="middle">
-                          <tspan>109 | </tspan>
-                          <tspan class="govuk-!-font-weight-bold">E </tspan>
-                        </text>
-                      </svg>
-                    </svg>
+                    <%== erb :dec__print__svg_rating, locals: {
+                      title: t('dec.sections.rating.svg_title', energy_efficiency_band: assessment[:energyEfficiencyBand], energy_efficiency_rating: assessment[:energyEfficiencyRating]),
+                      energy_efficiency_band: assessment[:currentAssessment][:energyEfficiencyBand],
+                      energy_efficiency_rating: assessment[:currentAssessment][:energyEfficiencyRating],
+                      show_on_non_print: true
+                    } %>
                   </td>
                 </tr>
               </tbody>
@@ -431,24 +294,24 @@
                       <tbody>
                         <tr>
                           <th>
-                            Annual energy use (kWh/m2/year)
+                            Annual energy use (in kWh/m2/year)
                           </th>
                           <td>
-                            99
+                            <%= assessment[:technicalInformation][:annualEnergyUseFuelThermal] %>
                           </td>
                           <td>
-                            99
+                            <%= assessment[:technicalInformation][:annualEnergyUseElectrical] %>
                           </td>
                         </tr>
                         <tr>
                           <th>
-                            Typical energy use
+                            Typical energy use (in kWh/m2/year)
                           </th>
                           <td>
-                            99
+                            <%= assessment[:technicalInformation][:typicalThermalUse] %>
                           </td>
                           <td>
-                            99
+                            <%= assessment[:technicalInformation][:typicalElectricalUse] %>
                           </td>
                         </tr>
                         <tr>
@@ -456,10 +319,10 @@
                             Energy from renewables
                           </th>
                           <td>
-                            99
+                            <%= assessment[:technicalInformation][:renewablesFuelThermal] %>%
                           </td>
                           <td>
-                            99
+                            <%= assessment[:technicalInformation][:renewablesElectrical] %>%
                           </td>
                         </tr>
                       </tbody>
@@ -483,22 +346,19 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <td>June 2018</td>
-                          <td>
-                            <div class="arrow band-a">
-                              109 | E
-                            </div>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>June 2018</td>
-                          <td>
-                            <div class="arrow band-a">
-                              109 | E
-                            </div>
-                          </td>
-                        </tr>
+                        <% [assessment[:currentAssessment], assessment[:year1Assessment], assessment[:year2Assessment]].each do |previous_rating| %>
+                          <% next if previous_rating.values.include?(nil) %>
+                          <tr>
+                            <th>
+                              <%=Date.parse(previous_rating[:date]).strftime("%B %Y")%>
+                            </th>
+                            <td>
+                              <div class="arrow band-<%= previous_rating[:energyEfficiencyBand] %>">
+                                <%= previous_rating[:energyEfficiencyRating] %> | <%= previous_rating[:energyEfficiencyBand].upcase %>
+                              </div>
+                            </td>
+                          </tr>
+                        <% end %>
                       </tbody>
                     </table>
                   </td>
@@ -523,18 +383,23 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <th>June 2018</th>
-                          <td>99</td>
-                          <td>99</td>
-                          <td>99</td>
-                        </tr>
-                        <tr>
-                          <th>June 2018</th>
-                          <td>99</td>
-                          <td>99</td>
-                          <td>99</td>
-                        </tr>
+                        <% [assessment[:currentAssessment], assessment[:year1Assessment], assessment[:year2Assessment]].each do |previous_rating| %>
+                          <% next if previous_rating.values.include?(nil) %>
+                          <tr>
+                            <th>
+                              <%=Date.parse(previous_rating[:date]).strftime("%B %Y")%>
+                            </th>
+                            <td>
+                              <%= previous_rating[:electricityCo2] || t('dec.sections.co2.no_value') %>
+                            </td>
+                            <td>
+                              <%= previous_rating[:heatingCo2] || t('dec.sections.co2.no_value') %>
+                            </td>
+                            <td>
+                              <%= previous_rating[:renewablesCo2] || t('dec.sections.co2.no_value') %>
+                            </td>
+                          </tr>
+                        <% end %>
                       </tbody>
                     </table>
                   </td>
@@ -545,66 +410,28 @@
             <h2 class="govuk-heading-s">Assessment details</h2>
             <table class="border-bottom">
               <tbody>
-                <tr>
-                  <td>
-                    <p class="govuk-body govuk-!-font-weight-bold">Assessor name</p>
-                  </td>
-                  <td>
-                    <p class="govuk-body">Benjamin Palmer</p>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <p class="govuk-body govuk-!-font-weight-bold">Accreditation scheme</p>
-                  </td>
-                  <td>
-                    <p class="govuk-body">Quidos</p>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <p class="govuk-body govuk-!-font-weight-bold">Employer/Trading name</p>
-                  </td>
-                  <td>
-                    <p class="govuk-body">Green Zone Surveys (UK) Ltd</p>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <p class="govuk-body govuk-!-font-weight-bold">Employer/Trading address</p>
-                  </td>
-                  <td>
-                    <p class="govuk-body">
-                      Suite 104a Cobalt Business Exchange,
-                      Cobalt Park Way, Newcastle Upon Tyne,
-                      NE28 9NZ
-                    </p>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <p class="govuk-body govuk-!-font-weight-bold">Issue date</p>
-                  </td>
-                  <td>
-                    <p class="govuk-body">31 May 2020</p>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <p class="govuk-body govuk-!-font-weight-bold">Nominated date</p>
-                  </td>
-                  <td>
-                    <p class="govuk-body">1 June 2020</p>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <p class="govuk-body govuk-!-font-weight-bold">Related party disclosure</p>
-                  </td>
-                  <td>
-                    <p class="govuk-body">Contractor to the occupier for EPBD services only.</p>
-                  </td>
-                </tr>
+                <% {
+                   "assessor.list.name": assessment[:assessor][:name],
+                   "scheme_name": assessment[:assessor][:registeredBy][:name],
+                   "company_name": assessment[:assessor][:companyDetails][:name],
+                   "company_address": assessment[:assessor][:companyDetails][:address],
+                   "issue_date": date(assessment[:administrativeInformation][:issueDate]),
+                   "nominated_date": date(assessment[:currentAssessment][:date]),
+                   "related_party_disclosure": party_disclosure(
+                     (assessment[:administrativeInformation][:relatedPartyDisclosure].nil? ?
+                       "8" :
+                       assessment[:administrativeInformation][:relatedPartyDisclosure]), "", "dec_disclosure_code", "dec"
+                   )
+                   }.each do |key, value| %>
+                  <tr>
+                    <td>
+                      <p class="govuk-body govuk-!-font-weight-bold"><%= t("dec.sections.administrative_information." + key.to_s) %></p>
+                    </td>
+                    <td>
+                      <p class="govuk-body"><%= value %></p>
+                    </td>
+                  </tr>
+                <% end %>
               </tbody>
             </table>
           </td>
