@@ -267,7 +267,7 @@
               <tbody>
                 <tr>
                   <td>
-                    <%== erb :dec__print__svg_rating, locals: {
+                    <%== erb :printable_dec__svg_rating, locals: {
                       title: t('dec.sections.rating.svg_title', energy_efficiency_band: assessment[:energyEfficiencyBand], energy_efficiency_rating: assessment[:energyEfficiencyRating]),
                       energy_efficiency_band: assessment[:currentAssessment][:energyEfficiencyBand],
                       energy_efficiency_rating: assessment[:currentAssessment][:energyEfficiencyRating],
@@ -282,7 +282,7 @@
               <tbody>
                 <tr>
                   <td>
-                    <h3 class="govuk-heading-s">This building's energy use</h3>
+                    <h3 class="govuk-heading-s"><%= t('dec.sections.technical_information.print_title') %></h3>
                     <table class="border-bottom">
                       <thead>
                         <tr>
@@ -407,7 +407,7 @@
               </tbody>
             </table>
 
-            <h2 class="govuk-heading-s">Assessment details</h2>
+            <h2 class="govuk-heading-s"><%= t('dec.sections.administrative_information.print_title') %></h2>
             <table class="border-bottom">
               <tbody>
                 <% {

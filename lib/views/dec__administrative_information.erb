@@ -1,27 +1,26 @@
 <div id="administrative_information" class="epc-blue-bottom">
-  <h2 class="govuk-heading-l govuk-!-display-none-print"><%=
+  <h2 class="govuk-heading-l"><%=
     t('dec.sections.administrative_information.title')
   %></h2>
-  <h2 class="govuk-heading-l print-view"><%= t('dec.sections.administrative_information.print_title') %></h2>
-  <p class="govuk-body govuk-!-display-none-print"><%=
+  <p class="govuk-body"><%=
     t('dec.sections.administrative_information.description')
   %></p>
   <dl class="govuk-summary-list">
 
     <%== erb :component__summary_list, locals: {
       list: {
-        "assessment_software": { value: administrative_information[:calculationTool], print: false },
-        "property_reference": { value: address[:addressId], print: false },
+        "assessment_software": { value: administrative_information[:calculationTool] },
+        "property_reference": { value: address[:addressId] },
         "assessor.list.name": assessor[:name],
-        "assessor.list.telephone": { value: assessor[:contactDetails][:telephoneNumber], print: false },
-        "assessor.list.email": { type: "email", value: assessor[:contactDetails][:email], print: false },
-        "assessor.list.number":  { value: assessor[:schemeAssessorId], print: false },
+        "assessor.list.telephone": { value: assessor[:contactDetails][:telephoneNumber] },
+        "assessor.list.email": { type: "email", value: assessor[:contactDetails][:email] },
+        "assessor.list.number":  { value: assessor[:schemeAssessorId] },
         "scheme_name": assessor[:registeredBy][:name],
         "company_name": assessor[:companyDetails][:name],
         "company_address": assessor[:companyDetails][:address],
         "issue_date": date(administrative_information[:issueDate]),
         "nominated_date": date(assessment[:currentAssessment][:date]),
-        "valid_until": { value: date(assessment[:dateOfExpiry]), print: false },
+        "valid_until": { value: date(assessment[:dateOfExpiry]) },
         "related_party_disclosure": party_disclosure(
           administrative_information[:relatedPartyDisclosure].nil? ?
             "8" :
@@ -33,7 +32,7 @@
     } %>
 
   </dl>
-  <div class="govuk-!-display-none-print">
+  <div>
     <% if  administrative_information[:relatedRrn]%>
       <p class="govuk-body"><%==
         t('dec.sections.administrative_information.related_report.text',
