@@ -7,6 +7,7 @@
       "inspection_level": assessment[:technicalInformation][:buildingComplexity],
       "assessment_software": assessment[:technicalInformation][:calculationTool],
       "f_gas_compliant_date": (date(assessment[:technicalInformation][:fGasCompliantDate]) rescue assessment[:technicalInformation][:fGasCompliantDate]),
+      "total_effective_rated_output": [assessment[:technicalInformation][:acRatedOutput], t('unit.kilowatt')].join(" "),
     },
     translation_prefix: 'ac_cert.sections.assessment.',
     skip_null: true

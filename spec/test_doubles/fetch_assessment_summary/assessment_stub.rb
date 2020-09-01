@@ -22,6 +22,7 @@ module FetchAssessmentSummary
             buildingComplexity: "Level 3",
             calculationTool: "CLG, ACReport, v2.0",
             fGasCompliantDate: f_gas_compliant_date,
+            acRatedOutput: "106",
           },
         },
       }

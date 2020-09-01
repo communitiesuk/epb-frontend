@@ -470,6 +470,7 @@ en:
 
   unit:
     square_metres: 'square metres'
+    kilowatt: 'kW'
     kilowatt_hour: 'kW h'
 
   non_domestic_epc:
@@ -1239,3 +1240,4 @@ en:
         inspection_level: 'Inspection level'
         assessment_software: 'Assessment software'
         f_gas_compliant_date: 'F-Gas compliant date'
+        total_effective_rated_output: 'Total effective rated output'

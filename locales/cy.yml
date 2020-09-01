@@ -446,6 +446,7 @@ cy:
 
   unit:
     square_metres: 'Welsh: square metres'
+    kilowatt: 'Welsh: kW'
     kilowatt_hour: 'Welsh: kW h'
 
   non_domestic_epc:
@@ -1157,3 +1158,4 @@ cy:
         inspection_level: 'Welsh: Inspection level'
         assessment_software: 'Welsh: Assessment software'
         f_gas_compliant_date: 'Welsh: F-Gas compliant date'
+        total_effective_rated_output: 'Welsh: Total effective rated output'
