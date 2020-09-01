@@ -17,6 +17,9 @@ module FetchAssessmentSummary
             town: "London",
             postcode: "SW1B 2BB",
           },
+          technicalInformation: {
+            dateOfAssessment: "2019-09-22",
+          },
         },
       }
 

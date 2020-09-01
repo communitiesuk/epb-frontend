@@ -1235,3 +1235,4 @@ en:
     sections:
       assessment:
         title: 'Assessment details'
+        inspection_date: 'Inspection date'

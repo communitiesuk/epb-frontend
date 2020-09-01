@@ -1153,3 +1153,4 @@ cy:
     sections:
       assessment:
         title: 'Welsh: Assessment details'
+        inspection_date: 'Welsh: Inspection date'

@@ -32,6 +32,8 @@ describe "Acceptance::AirConditioningInspectionCertificate", type: :feature do
 
     it "shows the Assessment details section" do
       expect(response.body).to have_css "h2", text: "Assessment details"
+      expect(response.body).to have_css "dt", text: "Inspection date"
+      expect(response.body).to have_css "dd", text: "22 September 2019"
     end
   end
 end

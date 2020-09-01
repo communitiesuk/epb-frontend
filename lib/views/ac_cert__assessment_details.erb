@@ -1,3 +1,11 @@
 <div class="epc-blue-bottom">
   <h2 class="govuk-heading-l"><%= t('ac_cert.sections.assessment.title') %></h2>
+
+  <%== erb :component__summary_list, locals: {
+    list: {
+      "inspection_date": date(assessment[:technicalInformation][:dateOfAssessment]),
+    },
+    translation_prefix: 'ac_cert.sections.assessment.',
+    skip_null: true
+  } %>
 </div>
