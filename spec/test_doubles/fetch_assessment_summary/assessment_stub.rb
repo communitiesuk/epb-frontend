@@ -35,6 +35,7 @@ module FetchAssessmentSummary
             refrigerantCharge: "73",
           },
           relatedPartyDisclosure: related_party_disclosure,
+          relatedRrn: "0000-0000-0000-0000-8888",
         },
       }
 

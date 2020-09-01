@@ -1173,3 +1173,5 @@ cy:
           N: 'Welsh: No'
       inspection:
         title: 'Welsh: Inspection report'
+        text: 'Welsh: For the assessment’s recommendations, see %{link}.'
+        cta: 'Welsh: the inspection report'

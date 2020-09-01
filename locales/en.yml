@@ -1274,4 +1274,5 @@ en:
           N: 'No'
       inspection:
         title: 'Inspection report'
-
+        text: 'For the assessment’s recommendations, see %{link}.'
+        cta: 'the inspection report'

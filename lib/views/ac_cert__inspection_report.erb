@@ -1,3 +1,11 @@
 <div class="epc-blue-bottom">
   <h2 class="govuk-heading-l"><%= t('ac_cert.sections.inspection.title') %></h2>
+
+  <% if  assessment[:relatedRrn]%>
+    <p class="govuk-body"><%==
+      t('ac_cert.sections.inspection.text',
+        link: '<a href="' + localised_url('/energy-performance-certificate/' + assessment[:relatedRrn]) + '">' +
+          t('ac_cert.sections.inspection.cta') + '</a>')
+    %></p>
+  <% end %>
 </div>
