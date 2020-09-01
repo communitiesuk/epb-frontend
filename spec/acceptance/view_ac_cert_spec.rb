@@ -40,7 +40,8 @@ describe "Acceptance::AirConditioningInspectionCertificate", type: :feature do
       expect(response.body).to have_css "dd", text: "CLG, ACReport, v2.0"
       expect(response.body).to have_css "dt", text: "F-Gas compliant date"
       expect(response.body).to have_css "dd", text: "20 September 2010"
-      expect(response.body).to have_css "dt", text: "Total effective rated output"
+      expect(response.body).to have_css "dt",
+                                        text: "Total effective rated output"
       expect(response.body).to have_css "dd", text: "106 kW"
     end
   end
