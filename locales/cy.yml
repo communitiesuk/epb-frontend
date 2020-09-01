@@ -1154,3 +1154,4 @@ cy:
       assessment:
         title: 'Welsh: Assessment details'
         inspection_date: 'Welsh: Inspection date'
+        inspection_level: 'Welsh: Inspection level'

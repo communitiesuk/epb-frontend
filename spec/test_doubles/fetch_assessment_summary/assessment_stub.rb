@@ -19,6 +19,7 @@ module FetchAssessmentSummary
           },
           technicalInformation: {
             dateOfAssessment: "2019-09-22",
+            buildingComplexity: "Level 3",
           },
         },
       }

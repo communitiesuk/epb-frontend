@@ -4,6 +4,7 @@
   <%== erb :component__summary_list, locals: {
     list: {
       "inspection_date": date(assessment[:technicalInformation][:dateOfAssessment]),
+      "inspection_level": assessment[:technicalInformation][:buildingComplexity],
     },
     translation_prefix: 'ac_cert.sections.assessment.',
     skip_null: true
