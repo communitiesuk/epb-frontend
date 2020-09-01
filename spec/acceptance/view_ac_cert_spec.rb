@@ -38,6 +38,10 @@ describe "Acceptance::AirConditioningInspectionCertificate", type: :feature do
       expect(response.body).to have_css "dd", text: "Level 3"
       expect(response.body).to have_css "dt", text: "Assessment software"
       expect(response.body).to have_css "dd", text: "CLG, ACReport, v2.0"
+      expect(response.body).to have_css "dt", text: "Assessor’s declaration"
+      expect(response.body).to have_css "dd",
+                                        text:
+                                          "Not related to the owner/occupier or person who has technical control of the system or subcontractor."
       expect(response.body).to have_css "dt", text: "F-Gas compliant date"
       expect(response.body).to have_css "dd", text: "20 September 2010"
       expect(response.body).to have_css "dt",
@@ -52,6 +56,40 @@ describe "Acceptance::AirConditioningInspectionCertificate", type: :feature do
       expect(response.body).to have_css "dt",
                                         text: "Total estimated refrigerant charge"
       expect(response.body).to have_css "dd", text: "73 kg"
+    end
+
+    context "with different related party disclosure codes" do
+      it "shows the corresponding related party disclosure text" do
+        related_party_disclosures = {
+          "1":
+            "Not related to the owner/occupier or person who has technical control of the system or subcontractor.",
+          "2": "Related to the building owner/occupier.",
+          "3":
+            "Related to the person who has technical control of the system or subcontractor.",
+          "4": "Occupier of the building.",
+          "5": "Owner or Director of the organisation.",
+          "6":
+            "Financial interest in the building/organisation with technical control of the system or subcontractor.",
+          "7":
+            "Contracted by the owner to provide other Energy Assessment services.",
+          "8":
+            "Contracted by the owner to provide other (non-Energy Assessment) services.",
+          "9":
+            "Contracted by the owner to provide air conditioning maintenance services.",
+        }
+
+        related_party_disclosures.each do |code, disclosure|
+          FetchAssessmentSummary::AssessmentStub.fetch_ac_cert(
+            assessment_id: "0000-0000-0000-0000-1111",
+            related_party_disclosure: code,
+          )
+
+          response =
+            get "/energy-performance-certificate/0000-0000-0000-0000-1111"
+
+          expect(response.body).to have_css "dd", text: disclosure
+        end
+      end
     end
 
     context "when F-Gas compliant date is Not Provided" do

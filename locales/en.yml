@@ -1105,6 +1105,25 @@ en:
       relation: "Previous relation to the occupier."
     8:
       relation: "The assessor has not indicated whether they have a relation to this property."
+  aci_disclosure_code:
+    1:
+      relation: "Not related to the owner/occupier or person who has technical control of the system or subcontractor."
+    2:
+      relation: "Related to the building owner/occupier."
+    3:
+      relation: "Related to the person who has technical control of the system or subcontractor."
+    4:
+      relation: "Occupier of the building."
+    5:
+      relation: "Owner or Director of the organisation."
+    6:
+      relation: "Financial interest in the building/organisation with technical control of the system or subcontractor."
+    7:
+      relation: "Contracted by the owner to provide other Energy Assessment services."
+    8:
+      relation: "Contracted by the owner to provide other (non-Energy Assessment) services."
+    9:
+      relation: "Contracted by the owner to provide air conditioning maintenance services."
 
   property_summary:
     type:
@@ -1240,6 +1259,7 @@ en:
         inspection_date: 'Inspection date'
         inspection_level: 'Inspection level'
         assessment_software: 'Assessment software'
+        declaration: 'Assessor’s declaration'
         f_gas_compliant_date: 'F-Gas compliant date'
         total_effective_rated_output: 'Total effective rated output'
         system_sampling: 'System sampling'

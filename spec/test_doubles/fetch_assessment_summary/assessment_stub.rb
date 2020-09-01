@@ -6,7 +6,8 @@ module FetchAssessmentSummary
       assessment_id:,
       f_gas_compliant_date: "20/09/2010",
       system_sampling: "Y",
-      subsystems_metered: "1"
+      subsystems_metered: "1",
+      related_party_disclosure: "1"
     )
       body = {
         data: {
@@ -33,6 +34,7 @@ module FetchAssessmentSummary
             acSystemMetered: subsystems_metered,
             refrigerantCharge: "73",
           },
+          relatedPartyDisclosure: related_party_disclosure,
         },
       }
 

@@ -1158,6 +1158,7 @@ cy:
         inspection_date: 'Welsh: Inspection date'
         inspection_level: 'Welsh: Inspection level'
         assessment_software: 'Welsh: Assessment software'
+        declaration: 'Welsh: Assessor’s declaration'
         f_gas_compliant_date: 'Welsh: F-Gas compliant date'
         total_effective_rated_output: 'Welsh: Total effective rated output'
         system_sampling: 'Welsh: System sampling'
