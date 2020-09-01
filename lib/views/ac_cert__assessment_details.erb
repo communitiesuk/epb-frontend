@@ -9,7 +9,9 @@
       "f_gas_compliant_date": (
         date(assessment[:technicalInformation][:fGasCompliantDate]) rescue assessment[:technicalInformation][:fGasCompliantDate]
       ),
-      "total_effective_rated_output": [assessment[:technicalInformation][:acRatedOutput], t('unit.kilowatt')].join(" "),
+      "total_effective_rated_output": (
+        assessment[:technicalInformation][:acRatedOutput].nil? ? nil : [assessment[:technicalInformation][:acRatedOutput], t('unit.kilowatt')].join(" ")
+      ),
       "system_sampling": t("ac_cert.sections.assessment.sampling.#{assessment[:technicalInformation][:randomSampling]}"),
       "treated_floor_area": (
         assessment[:technicalInformation][:treatedFloorArea].nil? ? nil : [assessment[:technicalInformation][:treatedFloorArea], t('unit.square_metres')].join(" ")
