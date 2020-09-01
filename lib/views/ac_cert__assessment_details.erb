@@ -10,6 +10,7 @@
         date(assessment[:technicalInformation][:fGasCompliantDate]) rescue assessment[:technicalInformation][:fGasCompliantDate]
       ),
       "total_effective_rated_output": [assessment[:technicalInformation][:acRatedOutput], t('unit.kilowatt')].join(" "),
+      "system_sampling": t("ac_cert.sections.assessment.sampling.#{assessment[:technicalInformation][:randomSampling]}"),
     },
     translation_prefix: 'ac_cert.sections.assessment.',
     skip_null: true

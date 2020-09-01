@@ -1159,3 +1159,7 @@ cy:
         assessment_software: 'Welsh: Assessment software'
         f_gas_compliant_date: 'Welsh: F-Gas compliant date'
         total_effective_rated_output: 'Welsh: Total effective rated output'
+        system_sampling: 'Welsh: System sampling'
+        sampling:
+          Y: 'Welsh: Yes'
+          N: 'Welsh: No'

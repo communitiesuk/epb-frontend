@@ -43,20 +43,36 @@ describe "Acceptance::AirConditioningInspectionCertificate", type: :feature do
       expect(response.body).to have_css "dt",
                                         text: "Total effective rated output"
       expect(response.body).to have_css "dd", text: "106 kW"
-    end
-  end
-
-  context "when F-Gas compliant date is Not Provided" do
-    before do
-      FetchAssessmentSummary::AssessmentStub.fetch_ac_cert(
-        assessment_id: "0000-0000-0000-0000-9999",
-        f_gas_compliant_date: "Not Provided",
-      )
+      expect(response.body).to have_css "dt", text: "System sampling"
+      expect(response.body).to have_css "dd", text: "Yes"
     end
 
-    it "shows Not Provided" do
-      expect(response.body).to have_css "dt", text: "F-Gas compliant date"
-      expect(response.body).to have_css "dd", text: "Not Provided"
+    context "when F-Gas compliant date is Not Provided" do
+      before do
+        FetchAssessmentSummary::AssessmentStub.fetch_ac_cert(
+            assessment_id: "0000-0000-0000-0000-9999",
+            f_gas_compliant_date: "Not Provided",
+            )
+      end
+
+      it "shows Not Provided" do
+        expect(response.body).to have_css "dt", text: "F-Gas compliant date"
+        expect(response.body).to have_css "dd", text: "Not Provided"
+      end
+    end
+
+    context "when System sampling is N" do
+      before do
+        FetchAssessmentSummary::AssessmentStub.fetch_ac_cert(
+            assessment_id: "0000-0000-0000-0000-9999",
+            system_sampling: "N",
+            )
+      end
+
+      it "shows No" do
+        expect(response.body).to have_css "dt", text: "System sampling"
+        expect(response.body).to have_css "dd", text: "No"
+      end
     end
   end
 end
