@@ -1171,3 +1171,5 @@ cy:
           '2': 'Welsh: In part'
           Y: 'Welsh: Yes'
           N: 'Welsh: No'
+      inspection:
+        title: 'Welsh: Inspection report'

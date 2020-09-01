@@ -1272,3 +1272,6 @@ en:
           '2': 'In part'
           Y: 'Yes'
           N: 'No'
+      inspection:
+        title: 'Inspection report'
+

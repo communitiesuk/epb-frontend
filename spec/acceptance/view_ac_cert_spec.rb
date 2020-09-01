@@ -146,5 +146,9 @@ describe "Acceptance::AirConditioningInspectionCertificate", type: :feature do
         expect(response.body).to have_css "dd", text: "In part"
       end
     end
+
+    it "shows the Inspection report section" do
+      expect(response.body).to have_css "h2", text: "Inspection report"
+    end
   end
 end
