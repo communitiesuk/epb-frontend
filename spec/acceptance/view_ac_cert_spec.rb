@@ -42,4 +42,18 @@ describe "Acceptance::AirConditioningInspectionCertificate", type: :feature do
       expect(response.body).to have_css "dd", text: "20 September 2010"
     end
   end
+
+  context "when F-Gas compliant date is Not Provided" do
+    before do
+      FetchAssessmentSummary::AssessmentStub.fetch_ac_cert(
+        assessment_id: "0000-0000-0000-0000-9999",
+        f_gas_compliant_date: "Not Provided",
+      )
+    end
+
+    it "shows Not Provided" do
+      expect(response.body).to have_css "dt", text: "F-Gas compliant date"
+      expect(response.body).to have_css "dd", text: "Not Provided"
+    end
+  end
 end

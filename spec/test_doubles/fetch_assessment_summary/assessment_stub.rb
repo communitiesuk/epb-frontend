@@ -2,7 +2,7 @@
 
 module FetchAssessmentSummary
   class AssessmentStub
-    def self.fetch_ac_cert(assessment_id:)
+    def self.fetch_ac_cert(assessment_id:, f_gas_compliant_date: "20/09/2010")
       body = {
         data: {
           assessmentId: assessment_id,
@@ -21,7 +21,7 @@ module FetchAssessmentSummary
             dateOfAssessment: "2019-09-22",
             buildingComplexity: "Level 3",
             calculationTool: "CLG, ACReport, v2.0",
-            fGasCompliantDate: "20/09/2010",
+            fGasCompliantDate: f_gas_compliant_date,
           },
         },
       }
