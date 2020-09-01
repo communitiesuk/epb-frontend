@@ -1,0 +1,617 @@
+<style>
+  * {
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: sans-serif;
+    border-spacing: 0;
+    border: none;
+    margin-bottom: 20px;
+  }
+
+  table tr, table tr td, table tr th {
+    vertical-align: top;
+    text-align: left;
+    padding: 0;
+  }
+
+  table.split > tbody > tr > td {
+    width: 50%;
+    padding-right: 15px;
+  }
+
+  table.split > tbody > tr > td:last-child {
+    padding-right: 0;
+    padding-left: 15px;
+  }
+
+  table.accentuate {
+    background: #1d70b8;
+    color: #fff;
+  }
+
+  table.accentuate table {
+    color: #fff;
+  }
+
+  table.header {
+    background: #000;
+    color: #fff;
+    line-height: 52px;
+  }
+
+  table.header h1.govuk-heading-m {
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    line-height: 52px;
+  }
+
+  table.accentuate p.govuk-body {
+    color: #fff;
+  }
+
+  table.accentuate > tbody > tr > td {
+    padding: 20px;
+    border-left: 1px solid #fff;
+  }
+
+  table.accentuate > tbody > tr > td:first-child {
+    border-left: none;
+  }
+
+  td.giant-letter {
+    text-align: center;
+  }
+
+  td.giant-letter span {
+    font-size: 50px;
+  }
+
+  table.greybox {
+    background: #eee;
+    margin-bottom: 20pX;
+  }
+
+  table.greybox > tbody > tr > td {
+    padding: 15px;
+  }
+
+  table.border-bottom tr td, table.border-bottom tr th {
+    border-bottom: 1px solid #ccc;
+    padding: 5px;
+  }
+
+  table.border-bottom tr td:first-child, table.border-bottom tr th:first-child {
+    padding-left: 0;
+  }
+
+  table.border-bottom tr td:last-child, table.border-bottom tr th:last-child {
+    padding-right: 0;
+  }
+
+  table.accentuate table.border-bottom tr td, table.accentuate table.border-bottom tr th {
+    border-bottom-color: #fff;
+  }
+
+  table.border-bottom tbody tr:last-child td, table.border-bottom tbody tr:last-child th {
+    border-bottom: none;
+  }
+
+  table > tbody > tr > td > table.border-bottom {
+    margin-bottom: 0;
+  }
+
+  table.border-bottom h3, table.border-bottom p {
+    margin: 0!important;
+    padding: 0!important;
+  }
+
+  .arrow {
+    display: inline-block;
+    line-height: 30px;
+    color: #fff;
+    padding-right: 10px;
+    position: relative;
+  }
+
+  .arrow:before, .arrow:after {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 15px 15px 0 0;
+    border-color: #eee transparent transparent transparent;
+    content: "";
+    float: left;
+    display: block;
+  }
+
+  .arrow:after {
+    position: absolute;
+    border-width: 15px 0 0 15px;
+    border-color: transparent transparent transparent #eee;
+    float: none;
+    bottom: 0;
+    left: 0;
+  }
+
+  .band-a{
+    background: #008054
+  }
+
+  .band-b{
+    background: #19b459
+  }
+
+  .band-c{
+    background: #8dce46
+  }
+
+  .band-d{
+    background: #ffd500
+  }
+
+  .band-e{
+    background: #fcaa65
+  }
+
+  .band-f{
+    background: #ef8023
+  }
+
+  .band-g{
+    background: #e9153b
+  }
+
+  @-moz-document url-prefix() {
+    table.accentuate, table.accentuate table, table.header, table.header h1.govuk-heading-m, table.accentuate p.govuk-body {
+      color: transparent;
+      text-shadow: 0 0 0 #fff;
+    }
+
+    table.split > tbody > tr > td:first-child {
+      padding: 0!important;
+    }
+
+    table.split > tbody > tr > td:first-child p {
+      margin: 0!important;
+      padding: 0!important;
+    }
+  }
+
+</style>
+
+<table>
+  <tbody>
+  <tr>
+    <td>
+      <table class="header">
+        <tbody>
+          <tr>
+            <td>
+              <svg role="presentation" focusable="false" class="govuk-header__logotype-crown" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 132 97" height="32" width="36" style="display: inline-block; vertical-align: middle; padding-left: 15px;">
+                <path fill="currentColor" fill-rule="evenodd" d="M25 30.2c3.5 1.5 7.7-.2 9.1-3.7 1.5-3.6-.2-7.8-3.9-9.2-3.6-1.4-7.6.3-9.1 3.9-1.4 3.5.3 7.5 3.9 9zM9 39.5c3.6 1.5 7.8-.2 9.2-3.7 1.5-3.6-.2-7.8-3.9-9.1-3.6-1.5-7.6.2-9.1 3.8-1.4 3.5.3 7.5 3.8 9zM4.4 57.2c3.5 1.5 7.7-.2 9.1-3.8 1.5-3.6-.2-7.7-3.9-9.1-3.5-1.5-7.6.3-9.1 3.8-1.4 3.5.3 7.6 3.9 9.1zm38.3-21.4c3.5 1.5 7.7-.2 9.1-3.8 1.5-3.6-.2-7.7-3.9-9.1-3.6-1.5-7.6.3-9.1 3.8-1.3 3.6.4 7.7 3.9 9.1zm64.4-5.6c-3.6 1.5-7.8-.2-9.1-3.7-1.5-3.6.2-7.8 3.8-9.2 3.6-1.4 7.7.3 9.2 3.9 1.3 3.5-.4 7.5-3.9 9zm15.9 9.3c-3.6 1.5-7.7-.2-9.1-3.7-1.5-3.6.2-7.8 3.7-9.1 3.6-1.5 7.7.2 9.2 3.8 1.5 3.5-.3 7.5-3.8 9zm4.7 17.7c-3.6 1.5-7.8-.2-9.2-3.8-1.5-3.6.2-7.7 3.9-9.1 3.6-1.5 7.7.3 9.2 3.8 1.3 3.5-.4 7.6-3.9 9.1zM89.3 35.8c-3.6 1.5-7.8-.2-9.2-3.8-1.4-3.6.2-7.7 3.9-9.1 3.6-1.5 7.7.3 9.2 3.8 1.4 3.6-.3 7.7-3.9 9.1zM69.7 17.7l8.9 4.7V9.3l-8.9 2.8c-.2-.3-.5-.6-.9-.9L72.4 0H59.6l3.5 11.2c-.3.3-.6.5-.9.9l-8.8-2.8v13.1l8.8-4.7c.3.3.6.7.9.9l-5 15.4v.1c-.2.8-.4 1.6-.4 2.4 0 4.1 3.1 7.5 7 8.1h.2c.3 0 .7.1 1 .1.4 0 .7 0 1-.1h.2c4-.6 7.1-4.1 7.1-8.1 0-.8-.1-1.7-.4-2.4V34l-5.1-15.4c.4-.2.7-.6 1-.9zM66 92.8c16.9 0 32.8 1.1 47.1 3.2 4-16.9 8.9-26.7 14-33.5l-9.6-3.4c1 4.9 1.1 7.2 0 10.2-1.5-1.4-3-4.3-4.2-8.7L108.6 76c2.8-2 5-3.2 7.5-3.3-4.4 9.4-10 11.9-13.6 11.2-4.3-.8-6.3-4.6-5.6-7.9 1-4.7 5.7-5.9 8-.5 4.3-8.7-3-11.4-7.6-8.8 7.1-7.2 7.9-13.5 2.1-21.1-8 6.1-8.1 12.3-4.5 20.8-4.7-5.4-12.1-2.5-9.5 6.2 3.4-5.2 7.9-2 7.2 3.1-.6 4.3-6.4 7.8-13.5 7.2-10.3-.9-10.9-8-11.2-13.8 2.5-.5 7.1 1.8 11 7.3L80.2 60c-4.1 4.4-8 5.3-12.3 5.4 1.4-4.4 8-11.6 8-11.6H55.5s6.4 7.2 7.9 11.6c-4.2-.1-8-1-12.3-5.4l1.4 16.4c3.9-5.5 8.5-7.7 10.9-7.3-.3 5.8-.9 12.8-11.1 13.8-7.2.6-12.9-2.9-13.5-7.2-.7-5 3.8-8.3 7.1-3.1 2.7-8.7-4.6-11.6-9.4-6.2 3.7-8.5 3.6-14.7-4.6-20.8-5.8 7.6-5 13.9 2.2 21.1-4.7-2.6-11.9.1-7.7 8.8 2.3-5.5 7.1-4.2 8.1.5.7 3.3-1.3 7.1-5.7 7.9-3.5.7-9-1.8-13.5-11.2 2.5.1 4.7 1.3 7.5 3.3l-4.7-15.4c-1.2 4.4-2.7 7.2-4.3 8.7-1.1-3-.9-5.3 0-10.2l-9.5 3.4c5 6.9 9.9 16.7 14 33.5 14.8-2.1 30.8-3.2 47.7-3.2z">
+                </path>
+              </svg>
+            </td>
+            <td>
+              <h1 class="govuk-heading-m">Display Energy Certificate - <span class="govuk-!-font-weight-regular">how energy efficient is this building?</span></h1>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <table class="accentuate">
+        <tbody>
+          <tr>
+            <td>
+              <p class="govuk-body">
+                Address line 1<br />
+                Address line 2<br />
+                Town<br />
+                Postcode
+              </p>
+            </td>
+            <td class="giant-letter">
+              Energy rating<br />
+              <span>D</span>
+            </td>
+            <td>
+              <table class="border-bottom">
+                <tbody>
+                  <tr>
+                    <td>Certificate number:</td>
+                    <td>0000-0000-0000-0000-0000</td>
+                  </tr>
+                  <tr>
+                    <td>Valid until:</td>
+                    <td>30 July 2099</td>
+                  </tr>
+                  <tr>
+                    <td>Total useful floor area:</td>
+                    <td>999 square meters</td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <table class="split">
+        <tbody>
+        <tr>
+          <td>
+            <h2 class="govuk-heading-s">Energy performance of this building</h2>
+            <p class="govuk-body">The building’s energy performance is based on its carbon dioxide (CO2) emissions for the last year.</p>
+            <p class="govuk-body">It is given a score and an energy rating on a scale from A (lowest emissions) to G (highest emissions).</p>
+            <p class="govuk-body">Typical energy performance for a public building is 100. This typical score gives an energy rating of D.</p>
+
+            <table>
+              <tbody>
+                <tr>
+                  <td>
+                    <svg width="100%" height="386" xmlns="http://www.w3.org/2000/svg" aria-labelledby="svg-title" role="img">
+                      <title id="svg-title">This building’s energy rating is  ()</title>
+
+                      <style>
+                        .letter {
+                          font-size: 40px;
+                          font-family: sans-serif;
+                          fill: 	#0b0c0c;
+                          font-weight: bold;
+                        }
+
+                        .small {
+                          font-size: 13px;
+                          font-family: sans-serif;
+                          fill: 	#0b0c0c;
+                          line-height: 50px;
+                          margin-top: 100px;
+                          font-weight: bold;
+                        }
+
+                        .band-a{
+                          fill: #008054
+                        }
+                        .band-b{
+                          fill: #19b459
+                        }
+                        .band-c{
+                          fill: #8dce46
+                        }
+                        .band-d{
+                          fill: #ffd500
+                        }
+                        .band-e{
+                          fill: #fcaa65
+                        }
+                        .band-f{
+                          fill: #ef8023
+                        }
+                        .band-g{
+                          fill: #e9153b
+                        }
+                        .band-a-score{
+                          fill: #67A687
+                        }
+                        .band-b-score{
+                          fill: #72CA8B
+                        }
+                        .band-c-score{
+                          fill: #b4df86
+                        }
+                        .band-d-score{
+                          fill: #ffe666
+                        }
+                        .band-e-score{
+                          fill: #fdc79b
+                        }
+                        .band-f-score{
+                          fill: #f4ac71
+                        }
+                        .band-g-score{
+                          fill: #f2738a
+                        }
+                      </style>
+
+                      <line x1="60" y1="0" x2="60" y2="386" style="stroke:#b1b4b6;stroke-width:1"></line>
+                      <line x1="203" y1="0" x2="203" y2="386" style="stroke:#b1b4b6;stroke-width:1"></line>
+                      <line x1="293" y1="0" x2="293" y2="386" style="stroke:#b1b4b6;stroke-width:1"></line>
+                      <line x1="0" y1="25" x2="615" y2="25" style="stroke:#b1b4b6;stroke-width:1"></line>
+                      <line x1="0" y1="0" x2="615" y2="0" style="stroke:#b1b4b6;stroke-width:1"></line>
+
+                      <line x1="0" y1="0" x2="0" y2="386" style="stroke:#b1b4b6;stroke-width:1"></line>
+                      <line x1="364" y1="386" x2="364" y2="0" style="stroke:#b1b4b6;stroke-width:1"></line>
+                      <line x1="615" y1="386" x2="0" y2="386" style="stroke:#b1b4b6;stroke-width:1"></line>
+
+                      <rect width="50" height="50" x="60" y="25" class="band-a">
+                      </rect>
+                      <rect width="65" height="50" x="60" y="75" class="band-b">
+                      </rect>
+                      <rect width="80" height="50" x="60" y="125" class="band-c">
+                      </rect>
+                      <rect width="95" height="50" x="60" y="175" class="band-d">
+                      </rect>
+                      <rect width="114.5" height="50" x="60" y="240.0" class="band-e">
+                      </rect>
+                      <rect width="128.0" height="50" x="60" y="285.0" class="band-f">
+                      </rect>
+                      <rect width="143.0" height="50" x="60" y="335.0" class="band-g">
+                      </rect>
+
+                      <rect width="60" height="50" x="0" y="25" class="band-a-score">
+                      </rect>
+                      <rect width="60" height="50" x="0" y="75" class="band-b-score">
+                      </rect>
+                      <rect width="60" height="50" x="0" y="125" class="band-c-score">
+                      </rect>
+                      <rect width="60" height="50" x="0" y="175" class="band-d-score">
+                      </rect>
+                      <rect width="60" height="50" x="0" y="240.0" class="band-e-score">
+                      </rect>
+                      <rect width="60" height="50" x="0" y="285.0" class="band-f-score">
+                      </rect>
+                      <rect width="60" height="50" x="0" y="335.0" class="band-g-score">
+                      </rect>
+
+                      <text x="0" y="0" class="letter">
+                        <tspan x="70" y="64">A</tspan>
+                        <tspan x="85" y="114">B</tspan>
+                        <tspan x="100" y="164">C</tspan>
+                        <tspan x="115" y="214">D</tspan>
+                        <tspan x="134.5" y="279.0">E</tspan>
+                        <tspan x="148.0" y="324.0">F</tspan>
+                        <tspan x="163.0" y="374.0">G</tspan>
+                      </text>
+
+                      <text x="0" y="0" class="small">
+                        <tspan x="8" y="55">0-25</tspan>
+                        <tspan x="8" y="105">26-50</tspan>
+                        <tspan x="8" y="155">51-75</tspan>
+                        <tspan x="8" y="205">76-100</tspan>
+                        <tspan x="8" y="270.0">101-125</tspan>
+                        <tspan x="8" y="315.0">126-150</tspan>
+                        <tspan x="8" y="365.0">150+</tspan>
+                      </text>
+
+                      <text x="8" y="15" class="small" dominant-baseline="middle">Score</text>
+
+                      <text x="70" y="15" class="small" dominant-baseline="middle">Energy Rating</text>
+
+                      <text x="248" y="15" class="small" text-anchor="middle" dominant-baseline="middle">This building</text>
+
+                      <text x="327" y="15" class="small" text-anchor="middle" dominant-baseline="middle">Average</text>
+
+                      <line x1="0" y1="233" x2="310" y2="233" stroke-dasharray="3,3" style="stroke:black;stroke-width:2;"></line>
+                      <line x1="350" y1="233" x2="358" y2="233" stroke-dasharray="3,3" style="stroke:#000000;stroke-width:2;"></line>
+                      <text x="0" y="0" class="typical">
+                        <tspan x="313" y="238">100</tspan>
+                      </text>
+
+                      <svg x="205" y="245.0" width="83" height="40">
+                        <rect width="75" height="40" class="band-e" x="25"></rect>
+                        <polygon points="0,20 25,45 25,0 0,20" class="band-e"></polygon>
+                        <text x="60%" y="50%" dominant-baseline="middle" text-anchor="middle">
+                          <tspan>109 | </tspan>
+                          <tspan class="govuk-!-font-weight-bold">E </tspan>
+                        </text>
+                      </svg>
+                    </svg>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <table class="greybox">
+              <tbody>
+                <tr>
+                  <td>
+                    <h3 class="govuk-heading-s">This building's energy use</h3>
+                    <table class="border-bottom">
+                      <thead>
+                        <tr>
+                          <td>Energy use</td>
+                          <th>Heating</th>
+                          <th>Electricity</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th>
+                            Annual energy use (kWh/m2/year)
+                          </th>
+                          <td>
+                            99
+                          </td>
+                          <td>
+                            99
+                          </td>
+                        </tr>
+                        <tr>
+                          <th>
+                            Typical energy use
+                          </th>
+                          <td>
+                            99
+                          </td>
+                          <td>
+                            99
+                          </td>
+                        </tr>
+                        <tr>
+                          <th>
+                            Energy from renewables
+                          </th>
+                          <td>
+                            99
+                          </td>
+                          <td>
+                            99
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td>
+            <table class="greybox">
+              <tbody>
+                <tr>
+                  <td>
+                    <h2 class="govuk-heading-s">Previous energy rating</h2>
+                    <table class="border-bottom">
+                      <thead>
+                        <tr>
+                          <th>Date</th>
+                          <th>Energy rating</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>June 2018</td>
+                          <td>
+                            <div class="arrow band-a">
+                              109 | E
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>June 2018</td>
+                          <td>
+                            <div class="arrow band-a">
+                              109 | E
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+
+            <table class="greybox">
+              <tbody>
+                <tr>
+                  <td>
+                    <h2 class="govuk-heading-s">Total CO2 emissions</h2>
+                    <p class="govuk-body">This tells you how much carbon dioxide the building emits. It shows tonnes per year of CO2.</p>
+                    <table class="border-bottom">
+                      <thead>
+                        <tr>
+                          <th>Date</th>
+                          <th>Electricity</th>
+                          <th>Heating</th>
+                          <th>Renewables</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th>June 2018</th>
+                          <td>99</td>
+                          <td>99</td>
+                          <td>99</td>
+                        </tr>
+                        <tr>
+                          <th>June 2018</th>
+                          <td>99</td>
+                          <td>99</td>
+                          <td>99</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h2 class="govuk-heading-s">Assessment details</h2>
+            <table class="border-bottom">
+              <tbody>
+                <tr>
+                  <td>
+                    <p class="govuk-body govuk-!-font-weight-bold">Assessor name</p>
+                  </td>
+                  <td>
+                    <p class="govuk-body">Benjamin Palmer</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p class="govuk-body govuk-!-font-weight-bold">Accreditation scheme</p>
+                  </td>
+                  <td>
+                    <p class="govuk-body">Quidos</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p class="govuk-body govuk-!-font-weight-bold">Employer/Trading name</p>
+                  </td>
+                  <td>
+                    <p class="govuk-body">Green Zone Surveys (UK) Ltd</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p class="govuk-body govuk-!-font-weight-bold">Employer/Trading address</p>
+                  </td>
+                  <td>
+                    <p class="govuk-body">
+                      Suite 104a Cobalt Business Exchange,
+                      Cobalt Park Way, Newcastle Upon Tyne,
+                      NE28 9NZ
+                    </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p class="govuk-body govuk-!-font-weight-bold">Issue date</p>
+                  </td>
+                  <td>
+                    <p class="govuk-body">31 May 2020</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p class="govuk-body govuk-!-font-weight-bold">Nominated date</p>
+                  </td>
+                  <td>
+                    <p class="govuk-body">1 June 2020</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p class="govuk-body govuk-!-font-weight-bold">Related party disclosure</p>
+                  </td>
+                  <td>
+                    <p class="govuk-body">Contractor to the occupier for EPBD services only.</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </td>
+  </tr>
+  </tbody>
+</table>
