@@ -1232,3 +1232,6 @@ en:
 
   ac_cert:
     top_heading: 'Air Conditioning Inspection Certificate'
+    sections:
+      assessment:
+        title: 'Assessment details'

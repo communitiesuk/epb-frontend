@@ -1150,3 +1150,6 @@ cy:
 
   ac_cert:
     top_heading: 'Welsh: Air Conditioning Inspection Certificate'
+    sections:
+      assessment:
+        title: 'Welsh: Assessment details'

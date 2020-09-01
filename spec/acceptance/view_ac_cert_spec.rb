@@ -29,5 +29,9 @@ describe "Acceptance::AirConditioningInspectionCertificate", type: :feature do
       expect(response.body).to have_css "span", text: "21 September 2024"
       expect(response.body).to have_text "Print this certificate"
     end
+
+    it "shows the Assessment details section" do
+      expect(response.body).to have_css "h2", text: "Assessment details"
+    end
   end
 end
