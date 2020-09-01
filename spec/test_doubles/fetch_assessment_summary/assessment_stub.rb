@@ -20,6 +20,7 @@ module FetchAssessmentSummary
           technicalInformation: {
             dateOfAssessment: "2019-09-22",
             buildingComplexity: "Level 3",
+            calculationTool: "CLG, ACReport, v2.0",
           },
         },
       }
