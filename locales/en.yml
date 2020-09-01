@@ -1242,7 +1242,11 @@ en:
         f_gas_compliant_date: 'F-Gas compliant date'
         total_effective_rated_output: 'Total effective rated output'
         system_sampling: 'System sampling'
-        sampling:
+        treated_floor_area: 'Treated floor area'
+        subsystems_metered: 'Subsystems metered'
+        flags:
+          '0': 'Yes'
+          '1': 'No'
+          '2': 'In part'
           Y: 'Yes'
           N: 'No'
-        treated_floor_area: "Treated floor area"

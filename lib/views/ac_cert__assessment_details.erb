@@ -12,10 +12,11 @@
       "total_effective_rated_output": (
         assessment[:technicalInformation][:acRatedOutput].nil? ? nil : [assessment[:technicalInformation][:acRatedOutput], t('unit.kilowatt')].join(" ")
       ),
-      "system_sampling": t("ac_cert.sections.assessment.sampling.#{assessment[:technicalInformation][:randomSampling]}"),
+      "system_sampling": t("ac_cert.sections.assessment.flags.#{assessment[:technicalInformation][:randomSampling]}"),
       "treated_floor_area": (
         assessment[:technicalInformation][:treatedFloorArea].nil? ? nil : [assessment[:technicalInformation][:treatedFloorArea], t('unit.square_metres')].join(" ")
       ),
+      "subsystems_metered": t("ac_cert.sections.assessment.flags.#{assessment[:technicalInformation][:acSystemMetered]}"),
     },
     translation_prefix: 'ac_cert.sections.assessment.',
     skip_null: true

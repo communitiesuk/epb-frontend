@@ -47,6 +47,8 @@ describe "Acceptance::AirConditioningInspectionCertificate", type: :feature do
       expect(response.body).to have_css "dd", text: "Yes"
       expect(response.body).to have_css "dt", text: "Treated floor area"
       expect(response.body).to have_css "dd", text: "410 square metres"
+      expect(response.body).to have_css "dt", text: "Subsystems metered"
+      expect(response.body).to have_css "dd", text: "No"
     end
 
     context "when F-Gas compliant date is Not Provided" do
@@ -74,6 +76,35 @@ describe "Acceptance::AirConditioningInspectionCertificate", type: :feature do
       it "shows No" do
         expect(response.body).to have_css "dt", text: "System sampling"
         expect(response.body).to have_css "dd", text: "No"
+      end
+    end
+
+    context "when Subsystem metered is 0" do
+      before do
+        FetchAssessmentSummary::AssessmentStub.fetch_ac_cert(
+            assessment_id: "0000-0000-0000-0000-9999",
+            system_sampling: "N",
+            subsystems_metered: "0"
+            )
+      end
+
+      it "shows Yes" do
+        expect(response.body).to have_css "dt", text: "Subsystems metered"
+        expect(response.body).to have_css "dd", text: "Yes"
+      end
+    end
+
+    context "when Subsystem metered is 2" do
+      before do
+        FetchAssessmentSummary::AssessmentStub.fetch_ac_cert(
+            assessment_id: "0000-0000-0000-0000-9999",
+            subsystems_metered: "2"
+        )
+      end
+
+      it "shows In part" do
+        expect(response.body).to have_css "dt", text: "Subsystems metered"
+        expect(response.body).to have_css "dd", text: "In part"
       end
     end
   end

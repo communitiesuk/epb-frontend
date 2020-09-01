@@ -1160,7 +1160,11 @@ cy:
         f_gas_compliant_date: 'Welsh: F-Gas compliant date'
         total_effective_rated_output: 'Welsh: Total effective rated output'
         system_sampling: 'Welsh: System sampling'
-        sampling:
+        treated_floor_area: 'Welsh: Treated floor area'
+        subsystems_metered: 'Welsh: Subsystems metered'
+        flags:
+          0: 'Welsh: Yes'
+          1: 'Welsh: No'
+          2: 'Welsh: In part'
           Y: 'Welsh: Yes'
           N: 'Welsh: No'
-        treated_floor_area: "Welsh: Treated floor area"
