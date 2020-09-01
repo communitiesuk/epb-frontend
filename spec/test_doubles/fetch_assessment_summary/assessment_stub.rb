@@ -2,7 +2,12 @@
 
 module FetchAssessmentSummary
   class AssessmentStub
-    def self.fetch_ac_cert(assessment_id:, f_gas_compliant_date: "20/09/2010", system_sampling: "Y", subsystems_metered: "1")
+    def self.fetch_ac_cert(
+      assessment_id:,
+      f_gas_compliant_date: "20/09/2010",
+      system_sampling: "Y",
+      subsystems_metered: "1"
+    )
       body = {
         data: {
           assessmentId: assessment_id,

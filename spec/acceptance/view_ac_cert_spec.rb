@@ -54,9 +54,9 @@ describe "Acceptance::AirConditioningInspectionCertificate", type: :feature do
     context "when F-Gas compliant date is Not Provided" do
       before do
         FetchAssessmentSummary::AssessmentStub.fetch_ac_cert(
-            assessment_id: "0000-0000-0000-0000-9999",
-            f_gas_compliant_date: "Not Provided",
-            )
+          assessment_id: "0000-0000-0000-0000-9999",
+          f_gas_compliant_date: "Not Provided",
+        )
       end
 
       it "shows Not Provided" do
@@ -68,9 +68,8 @@ describe "Acceptance::AirConditioningInspectionCertificate", type: :feature do
     context "when System sampling is N" do
       before do
         FetchAssessmentSummary::AssessmentStub.fetch_ac_cert(
-            assessment_id: "0000-0000-0000-0000-9999",
-            system_sampling: "N",
-            )
+          assessment_id: "0000-0000-0000-0000-9999", system_sampling: "N",
+        )
       end
 
       it "shows No" do
@@ -82,10 +81,10 @@ describe "Acceptance::AirConditioningInspectionCertificate", type: :feature do
     context "when Subsystem metered is 0" do
       before do
         FetchAssessmentSummary::AssessmentStub.fetch_ac_cert(
-            assessment_id: "0000-0000-0000-0000-9999",
-            system_sampling: "N",
-            subsystems_metered: "0"
-            )
+          assessment_id: "0000-0000-0000-0000-9999",
+          system_sampling: "N",
+          subsystems_metered: "0",
+        )
       end
 
       it "shows Yes" do
@@ -97,8 +96,7 @@ describe "Acceptance::AirConditioningInspectionCertificate", type: :feature do
     context "when Subsystem metered is 2" do
       before do
         FetchAssessmentSummary::AssessmentStub.fetch_ac_cert(
-            assessment_id: "0000-0000-0000-0000-9999",
-            subsystems_metered: "2"
+          assessment_id: "0000-0000-0000-0000-9999", subsystems_metered: "2",
         )
       end
 
