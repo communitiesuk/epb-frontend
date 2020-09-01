@@ -42,11 +42,10 @@
   </div>
   <div class="govuk-grid-column-two-thirds">
     <hr class="epc-light-top" />
-      <%== erb :component__epc_summary_compact,
-               locals: {
-                 assessment: assessment,
-               }
-      %>
+      <%== erb :component__epc_summary_compact, locals: {
+        assessment: assessment,
+        type: t('component.print.type.report'),
+      } %>
 
     <% if assessment[:relatedCertificate] && assessment[:energyBandFromRelatedCertificate] %>
       <%== erb :non_domestic_energy_performance_certificate_recommendation_report__rating,

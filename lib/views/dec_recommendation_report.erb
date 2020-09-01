@@ -42,6 +42,7 @@
     <hr class="epc-light-top" />
     <%== erb :component__epc_summary_compact, locals: {
       assessment: assessment,
+      type: t('component.print.type.report'),
     } %>
 
     <% unless assessment[:energyBandFromRelatedCertificate].nil? %>

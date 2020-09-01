@@ -17,7 +17,7 @@
         <label><%=
           t('non_domestic_epc.rr.summary.certificate_id')
         %></label>
-        <b><%= assessment[:assessmentId] %></b>
+        <span class="govuk-!-font-weight-bold"><%= assessment[:assessmentId] %></span>
       </div>
 
       <div class="govuk-body epc-extra-box">
@@ -26,13 +26,12 @@
             t('non_domestic_epc.rr.summary.expired')
             : t('non_domestic_epc.rr.summary.valid_until')
         %></label>
-        <b><%= date(assessment[:dateOfExpiry]) %></b>
+        <span class="govuk-!-font-weight-bold"><%= date(assessment[:dateOfExpiry]) %></span>
       </div>
     </div>
-
   </div>
 
   <%== erb :component__print, locals: {
-    type: t('component.print.type.report')
+    type: type
   } %>
 </div>

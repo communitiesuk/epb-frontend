@@ -8,6 +8,15 @@ module FetchAssessmentSummary
           assessmentId: assessment_id,
           reportType: "3",
           typeOfAssessment: "AC-CERT",
+          dateOfExpiry: "2024-09-21",
+          address: {
+            addressLine1: "66 Primrose Hill",
+            addressLine2: nil,
+            addressLine3: nil,
+            addressLine4: nil,
+            town: "London",
+            postcode: "SW1B 2BB",
+          },
         },
       }
 

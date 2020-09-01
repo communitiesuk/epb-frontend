@@ -9,4 +9,12 @@
       <h1 class="govuk-heading-xl"><%= t('ac_cert.top_heading') %></h1>
     </div>
   </div>
+  <div class="govuk-grid-column-two-thirds">
+    <hr class="epc-light-top govuk-!-display-none-print" />
+
+    <%== erb :component__epc_summary_compact, locals: {
+      assessment: assessment,
+      type: t('component.print.type.certificate')
+    } %>
+  </div>
 </div>
