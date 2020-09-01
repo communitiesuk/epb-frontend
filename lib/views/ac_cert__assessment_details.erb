@@ -6,6 +6,7 @@
       "inspection_date": date(assessment[:technicalInformation][:dateOfAssessment]),
       "inspection_level": assessment[:technicalInformation][:buildingComplexity],
       "assessment_software": assessment[:technicalInformation][:calculationTool],
+      "f_gas_compliant_date": date(assessment[:technicalInformation][:fGasCompliantDate]),
     },
     translation_prefix: 'ac_cert.sections.assessment.',
     skip_null: true
