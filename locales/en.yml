@@ -469,9 +469,10 @@ en:
         potential_impact_heading: 'Potential impact'
 
   unit:
-    square_metres: 'square metres'
+    kilogram: 'kg'
     kilowatt: 'kW'
     kilowatt_hour: 'kW h'
+    square_metres: 'square metres'
 
   non_domestic_epc:
     top_heading: 'Non-domestic Energy Performance Certificate'
@@ -1244,6 +1245,7 @@ en:
         system_sampling: 'System sampling'
         treated_floor_area: 'Treated floor area'
         subsystems_metered: 'Subsystems metered'
+        refrigerant_charge: 'Total estimated refrigerant charge'
         flags:
           '0': 'Yes'
           '1': 'No'

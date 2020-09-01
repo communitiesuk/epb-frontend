@@ -17,6 +17,9 @@
         assessment[:technicalInformation][:treatedFloorArea].nil? ? nil : [assessment[:technicalInformation][:treatedFloorArea], t('unit.square_metres')].join(" ")
       ),
       "subsystems_metered": t("ac_cert.sections.assessment.flags.#{assessment[:technicalInformation][:acSystemMetered]}"),
+      "refrigerant_charge": (
+        assessment[:technicalInformation][:refrigerantCharge].nil? ? nil : [assessment[:technicalInformation][:refrigerantCharge], t('unit.kilogram')].join(" ")
+      ),
     },
     translation_prefix: 'ac_cert.sections.assessment.',
     skip_null: true

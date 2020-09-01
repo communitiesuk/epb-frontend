@@ -31,6 +31,7 @@ module FetchAssessmentSummary
             randomSampling: system_sampling,
             treatedFloorArea: "410",
             acSystemMetered: subsystems_metered,
+            refrigerantCharge: "73",
           },
         },
       }

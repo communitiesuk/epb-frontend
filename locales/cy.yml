@@ -445,9 +445,10 @@ cy:
         potential_impact_heading: 'Welsh: Potential impact'
 
   unit:
-    square_metres: 'Welsh: square metres'
+    kilogram: 'Welsh: kg'
     kilowatt: 'Welsh: kW'
     kilowatt_hour: 'Welsh: kW h'
+    square_metres: 'Welsh: square metres'
 
   non_domestic_epc:
     top_heading: 'Welsh: Non-domestic Energy Performance Certificate'
@@ -1162,9 +1163,10 @@ cy:
         system_sampling: 'Welsh: System sampling'
         treated_floor_area: 'Welsh: Treated floor area'
         subsystems_metered: 'Welsh: Subsystems metered'
+        refrigerant_charge: 'Welsh: Total estimated refrigerant charge'
         flags:
-          0: 'Welsh: Yes'
-          1: 'Welsh: No'
-          2: 'Welsh: In part'
+          '0': 'Welsh: Yes'
+          '1': 'Welsh: No'
+          '2': 'Welsh: In part'
           Y: 'Welsh: Yes'
           N: 'Welsh: No'
