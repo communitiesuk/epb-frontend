@@ -49,7 +49,8 @@ describe "Acceptance::AirConditioningInspectionCertificate", type: :feature do
       expect(response.body).to have_css "dd", text: "410 square metres"
       expect(response.body).to have_css "dt", text: "Subsystems metered"
       expect(response.body).to have_css "dd", text: "No"
-      expect(response.body).to have_css "dt", text: "Total estimated refrigerant charge"
+      expect(response.body).to have_css "dt",
+                                        text: "Total estimated refrigerant charge"
       expect(response.body).to have_css "dd", text: "73 kg"
     end
 
