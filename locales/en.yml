@@ -1245,3 +1245,4 @@ en:
         sampling:
           Y: 'Yes'
           N: 'No'
+        treated_floor_area: "Treated floor area"

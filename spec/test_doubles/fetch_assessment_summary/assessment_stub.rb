@@ -24,6 +24,7 @@ module FetchAssessmentSummary
             fGasCompliantDate: f_gas_compliant_date,
             acRatedOutput: "106",
             randomSampling: system_sampling,
+            treatedFloorArea: "410",
           },
         },
       }

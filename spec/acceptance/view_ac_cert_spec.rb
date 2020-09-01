@@ -45,6 +45,8 @@ describe "Acceptance::AirConditioningInspectionCertificate", type: :feature do
       expect(response.body).to have_css "dd", text: "106 kW"
       expect(response.body).to have_css "dt", text: "System sampling"
       expect(response.body).to have_css "dd", text: "Yes"
+      expect(response.body).to have_css "dt", text: "Treated floor area"
+      expect(response.body).to have_css "dd", text: "410 square metres"
     end
 
     context "when F-Gas compliant date is Not Provided" do
