@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-describe "Acceptance::Assessor" do
+describe "Acceptance::Assessor", type: :feature do
   include RSpecFrontendServiceMixin
 
   describe ".get /find-an-assessor/search-by-postcode" do
@@ -326,25 +326,19 @@ describe "Acceptance::Assessor" do
       end
 
       it "displays an error message" do
-        expect(response.body).to include(
-          '<span id="name-error" class="govuk-error-message">',
-        )
-        expect(response.body).to include(
-          "Enter the assessor’s full name, including their first name and last name",
-        )
+        expect(response.body).to have_css "span",
+                                          text:
+                                            "Enter the assessor’s full name, including their first name and last name"
       end
     end
 
-    context "when entering an empty name" do
+    context "when entering a single name" do
       let(:response) { get "/find-an-assessor/search-by-name?name=bob" }
 
       it "displays an error message" do
-        expect(response.body).to include(
-          '<span id="name-error" class="govuk-error-message">',
-        )
-        expect(response.body).to include(
-          "Enter the assessor’s full name, including their first name and last name",
-        )
+        expect(response.body).to have_css "span",
+                                          text:
+                                            "Enter the assessor’s full name, including their first name and last name"
       end
     end
 
