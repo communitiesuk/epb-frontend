@@ -17,7 +17,7 @@
 
     <div class="govuk-summary-list__row<%= print ? "" : " govuk-!-display-none-print" %>">
       <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= translation_prefix ? t(translation_prefix + key.to_s) : key.to_s %></dt>
-      <dd class="govuk-summary-list__value">
+      <dd class="govuk-summary-list__value govuk-!-width-one-half">
         <%
           case type
           when "email"
