@@ -329,7 +329,22 @@ describe "Acceptance::Assessor" do
         expect(response.body).to include(
           '<span id="name-error" class="govuk-error-message">',
         )
-        expect(response.body).to include("Enter a name")
+        expect(response.body).to include(
+          "Enter the assessor’s full name, including their first name and last name",
+        )
+      end
+    end
+
+    context "when entering an empty name" do
+      let(:response) { get "/find-an-assessor/search-by-name?name=bob" }
+
+      it "displays an error message" do
+        expect(response.body).to include(
+          '<span id="name-error" class="govuk-error-message">',
+        )
+        expect(response.body).to include(
+          "Enter the assessor’s full name, including their first name and last name",
+        )
       end
     end
 

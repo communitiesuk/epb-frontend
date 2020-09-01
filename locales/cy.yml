@@ -176,7 +176,7 @@ cy:
     top_heading: 'Welsh: Find an assessor by name'
     question: "Enter the assessor's full name"
     hint: 'Welsh: For example Matt Anderson'
-    name_error: 'Welsh: Enter a name'
+    name_error: 'Welsh: Enter the assessor’s full name, including their first name and last name'
     button_text: 'Welsh: Search'
     too_many_results: 'Welsh: There are too many results for that name. Please narrow your search term.'
 

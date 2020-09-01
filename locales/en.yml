@@ -174,9 +174,9 @@ en:
     head:
       title: 'Energy performance of buildings register - Find an energy assessor'
     top_heading: 'Find an assessor by name'
-    question: "Enter the assessor's full name"
+    question: 'Enter the assessor’s full name'
     hint: 'For example Matt Anderson'
-    name_error: 'Enter a name'
+    name_error: 'Enter the assessor’s full name, including their first name and last name'
     button_text: 'Search'
     too_many_results: 'There are too many results for that name. Please narrow your search term.'
 
