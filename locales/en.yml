@@ -1159,7 +1159,7 @@ en:
       rating:
         title: 'Energy performance of this building'
         emissions_text: 'The building’s energy performance is based on its carbon dioxide (CO2) emissions for the last year.'
-        text: 'It is given a score and an energy rating on a scale from A&nbsp;(lowest emissions) to G&nbsp;(highest emissions).'
+        text: 'It is given a score and an energy rating on a scale from A (lowest emissions) to G (highest emissions).'
         typical_text: 'Typical energy performance for a public building is 100. This typical score gives an energy rating of D.'
         svg_title: 'This building’s energy rating is %{energy_efficiency_band} (%{energy_efficiency_rating})'
         guidance_text: 'You can read %{link}.'

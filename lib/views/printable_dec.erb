@@ -23,6 +23,14 @@
     font-size: 14px;
   }
 
+  table.split table:last-child {
+    margin-bottom: 0;
+  }
+
+  table.split {
+    margin-bottom: 0;
+  }
+
   table.split > tbody > tr > td {
     width: 50%;
     padding-right: 15px;
@@ -198,9 +206,41 @@
     }
   }
 
+  @media not all and (min-resolution:.001dpcm) {
+    @media {
+      h1.govuk-heading-m {
+        font-size: 20px;
+      }
+
+      h2.govuk-heading-s {
+        margin-bottom: 5px;
+      }
+
+      p.govuk-body {
+        margin-bottom: 10px;
+      }
+
+      svg[role="img"] {
+        zoom: 0.75;
+      }
+
+      table {
+        margin-bottom: 15px;
+      }
+
+      table.greybox {
+        margin-bottom: 10px;
+      }
+
+      table.greybox > tbody > tr > td {
+        padding: 5px;
+      }
+    }
+  }
+
 </style>
 
-<table class="govuk-body">
+<table class="govuk-body govuk-!-margin-bottom-0">
   <tbody>
   <tr>
     <td>
