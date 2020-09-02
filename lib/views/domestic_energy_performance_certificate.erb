@@ -46,9 +46,7 @@
           </p>
         </div>
         <p class="epc-address govuk-body">
-          <%== [assessment[:addressLine1], assessment[:addressLine2], assessment[:addressLine3], assessment[:addressLine4]].reject(&:nil?).join('<br />') %><br>
-          <%= assessment[:town] %><br />
-          <%= assessment[:postcode] %>
+          <%== [assessment[:addressLine1], assessment[:addressLine2], assessment[:addressLine3], assessment[:addressLine4], assessment[:town], assessment[:postcode]].compact.map{|e| CGI.escape_html(e)}.reject(&:nil?).join('<br />') %>
         </p>
         <p class="govuk-body epc-extra-box"><%= t('domestic_epc.summary.date_of_expiry', :date_of_expiry => date(assessment[:dateOfExpiry])) %></p>
         <p class="govuk-body epc-extra-box">

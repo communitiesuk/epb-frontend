@@ -44,9 +44,8 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
 
     describe "viewing the summary section" do
       it "shows the address summary" do
-        expect(response.body).to include(
-          '<p class="epc-address govuk-body">Flat 33<br>2 Marsham Street<br>London<br>SW1B 2BB</p>',
-        )
+        expect(response.body).to have_css "p.epc-address",
+                                          text: "Flat 332 Marsham StreetLondonSW1B 2BB"
       end
 
       it "shows the energy rating title" do
