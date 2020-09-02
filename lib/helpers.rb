@@ -90,25 +90,6 @@ module Sinatra
         url
       end
 
-      def get_energy_rating_band(number)
-        case
-        when number <= 20
-          "g"
-        when number.between?(21,38)
-          "f"
-        when number.between?(39,54)
-          "e"
-        when number.between?(55,68)
-          "d"
-        when number.between?(69,80)
-          "c"
-        when number.between?(81,91)
-          "b"
-        when number >= 92
-          "a"
-        end
-      end
-
       def potential_rating_text(number)
         case number
         when 1
