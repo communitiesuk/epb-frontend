@@ -1151,9 +1151,11 @@ en:
       body: 'If you pasted the web address, check you copied the entire address.'
   dec:
     top_heading: "Display Energy Certificate"
+    tagline: "how energy efficient is this building?"
     sections:
       contents:
         title: 'Certificate contents'
+        certificate_number: 'Certificate number'
       rating:
         title: 'Energy performance of this building'
         emissions_text: 'The building’s energy performance is based on its carbon dioxide (CO2) emissions for the last year.'
@@ -1164,6 +1166,8 @@ en:
         cta: 'guidance on Display Energy Certificates and advisory reports for public buildings'
         url: 'https://www.gov.uk/government/publications/display-energy-certificates-and-advisory-reports-for-public-buildings'
       previous_energy_ratings:
+        energy_rating: "Energy rating"
+        date: "Date"
         title: "Previous energy ratings"
         explanation: "This tells you how efficiently energy has been used in this building over the last three accounting periods."
       co2:

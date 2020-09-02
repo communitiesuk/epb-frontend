@@ -74,11 +74,11 @@ describe "Acceptance::PrintableDisplayEnergyCertificate", type: :feature do
       expect(response.body).to have_css "th", text: "Heating"
       expect(response.body).to have_css "th", text: "Electricity"
       expect(response.body).to have_css "th",
-                                        text: "Annual energy use (in kWh/m2/year)"
+                                        text: "Annual energy use (kWh/m2/year)"
       expect(response.body).to have_css "td", text: "11"
       expect(response.body).to have_css "td", text: "12"
       expect(response.body).to have_css "th",
-                                        text: "Typical energy use (in kWh/m2/year)"
+                                        text: "Typical energy use (kWh/m2/year)"
       expect(response.body).to have_css "td", text: "13"
       expect(response.body).to have_css "td", text: "14"
       expect(response.body).to have_css "th", text: "Energy from renewables"

@@ -201,7 +201,7 @@
               </svg>
             </td>
             <td>
-              <h1 class="govuk-heading-m">Display Energy Certificate - <span class="govuk-!-font-weight-regular">how energy efficient is this building?</span></h1>
+              <h1 class="govuk-heading-m"><%= t('dec.top_heading') %> - <span class="govuk-!-font-weight-regular"><%= t('dec.tagline') %></span></h1>
             </td>
           </tr>
         </tbody>
@@ -225,22 +225,22 @@
               </p>
             </td>
             <td class="giant-letter">
-              Energy rating<br />
+              <%= t('dec.sections.previous_energy_ratings.energy_rating') %><br />
               <span><%= assessment[:currentAssessment][:energyEfficiencyBand].upcase %></span>
             </td>
             <td>
               <table class="border-bottom">
                 <tbody>
                   <tr>
-                    <td>Certificate number:</td>
+                    <td><%= t('dec.sections.contents.certificate_number') %>:</td>
                     <td><%= assessment[:assessmentId] %></td>
                   </tr>
                   <tr>
-                    <td>Valid until:</td>
+                    <td><%= t('dec.sections.administrative_information.valid_until') %>:</td>
                     <td><%= assessment[:dateOfExpiry] %></td>
                   </tr>
                   <tr>
-                    <td>Total useful floor area:</td>
+                    <td><%= t('dec.sections.technical_information.floor_area') %>:</td>
                     <td><%= assessment[:technicalInformation][:floorArea] %> square meters</td>
                   </tr>
                 </tbody>
@@ -258,10 +258,10 @@
         <tbody>
         <tr>
           <td>
-            <h2 class="govuk-heading-s">Energy performance of this building</h2>
-            <p class="govuk-body">The building’s energy performance is based on its carbon dioxide (CO2) emissions for the last year.</p>
-            <p class="govuk-body">It is given a score and an energy rating on a scale from A (lowest emissions) to G (highest emissions).</p>
-            <p class="govuk-body">Typical energy performance for a public building is 100. This typical score gives an energy rating of D.</p>
+            <h2 class="govuk-heading-s"><%= t('dec.sections.rating.title') %></h2>
+            <p class="govuk-body"><%= t('dec.sections.rating.emissions_text') %></p>
+            <p class="govuk-body"><%= t('dec.sections.rating.text') %></p>
+            <p class="govuk-body"><%= t('dec.sections.rating.typical_text') %></p>
 
             <table>
               <tbody>
@@ -286,15 +286,15 @@
                     <table class="border-bottom">
                       <thead>
                         <tr>
-                          <td>Energy use</td>
-                          <th>Heating</th>
-                          <th>Electricity</th>
+                          <td><%= t('dec.sections.technical_information.energy_use') %></td>
+                          <th><%= t('dec.sections.technical_information.heating') %></th>
+                          <th><%= t('dec.sections.technical_information.electricity') %></th>
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
                           <th>
-                            Annual energy use (in kWh/m2/year)
+                            <%= t('dec.sections.technical_information.annual_energy_use') %>
                           </th>
                           <td>
                             <%= assessment[:technicalInformation][:annualEnergyUseFuelThermal] %>
@@ -305,7 +305,7 @@
                         </tr>
                         <tr>
                           <th>
-                            Typical energy use (in kWh/m2/year)
+                            <%= t('dec.sections.technical_information.typical_energy_use') %>
                           </th>
                           <td>
                             <%= assessment[:technicalInformation][:typicalThermalUse] %>
@@ -316,7 +316,7 @@
                         </tr>
                         <tr>
                           <th>
-                            Energy from renewables
+                            <%= t('dec.sections.technical_information.energy_from_renewables') %>
                           </th>
                           <td>
                             <%= assessment[:technicalInformation][:renewablesFuelThermal] %>%
@@ -337,12 +337,12 @@
               <tbody>
                 <tr>
                   <td>
-                    <h2 class="govuk-heading-s">Previous energy ratings</h2>
+                    <h2 class="govuk-heading-s"><%= t('dec.sections.previous_energy_ratings.title') %></h2>
                     <table class="border-bottom">
                       <thead>
                         <tr>
-                          <th>Date</th>
-                          <th>Energy rating</th>
+                          <th><%= t('dec.sections.previous_energy_ratings.date') %></th>
+                          <th><%= t('dec.sections.previous_energy_ratings.energy_rating') %></th>
                         </tr>
                       </thead>
                       <tbody>
@@ -371,15 +371,15 @@
               <tbody>
                 <tr>
                   <td>
-                    <h2 class="govuk-heading-s">Total CO2 emissions</h2>
-                    <p class="govuk-body">This tells you how much carbon dioxide the building emits. It shows tonnes per year of CO2.</p>
+                    <h2 class="govuk-heading-s"><%= t('dec.sections.co2.title') %></h2>
+                    <p class="govuk-body"><%= t('dec.sections.co2.explanation') %></p>
                     <table class="border-bottom">
                       <thead>
                         <tr>
-                          <th>Date</th>
-                          <th>Electricity</th>
-                          <th>Heating</th>
-                          <th>Renewables</th>
+                          <th><%= t('dec.sections.co2.col.date') %></th>
+                          <th><%= t('dec.sections.co2.col.electricity') %></th>
+                          <th><%= t('dec.sections.co2.col.heating') %></th>
+                          <th><%= t('dec.sections.co2.col.renewables') %></th>
                         </tr>
                       </thead>
                       <tbody>
