@@ -337,7 +337,7 @@
               <tbody>
                 <tr>
                   <td>
-                    <h2 class="govuk-heading-s">Previous energy rating</h2>
+                    <h2 class="govuk-heading-s">Previous energy ratings</h2>
                     <table class="border-bottom">
                       <thead>
                         <tr>
@@ -424,11 +424,11 @@
                    )
                    }.each do |key, value| %>
                   <tr>
+                    <th>
+                      <%= t("dec.sections.administrative_information." + key.to_s) %>
+                    </th>
                     <td>
-                      <p class="govuk-body govuk-!-font-weight-bold"><%= t("dec.sections.administrative_information." + key.to_s) %></p>
-                    </td>
-                    <td>
-                      <p class="govuk-body"><%= value %></p>
+                      <%= value %>
                     </td>
                   </tr>
                 <% end %>
