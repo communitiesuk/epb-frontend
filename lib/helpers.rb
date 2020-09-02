@@ -91,20 +91,20 @@ module Sinatra
       end
 
       def get_energy_rating_band(number)
-        case number
-        when 1..20
+        case
+        when number <= 20
           "g"
-        when 21..38
+        when number.between?(21,38)
           "f"
-        when 39..54
+        when number.between?(39,54)
           "e"
-        when 55..68
+        when number.between?(55,68)
           "d"
-        when 69..80
+        when number.between?(69,80)
           "c"
-        when 81..91
+        when number.between?(81,91)
           "b"
-        when 92..100
+        when number >= 92
           "a"
         end
       end
