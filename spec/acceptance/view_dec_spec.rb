@@ -44,13 +44,26 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
     end
 
     it "shows the rating section" do
-      expect(response.body).to have_css "h2", text: "Energy performance of this building"
-      expect(response.body).to have_css "p", text: "The building’s energy performance is based on its carbon dioxide (CO2) emissions for the last year."
-      expect(response.body).to have_css "p", text: "It is given a score and an energy rating on a scale from A (lowest emissions) to G (highest emissions)."
-      expect(response.body).to have_css "p", text: "Typical energy performance for a public building is 100. This typical score gives an energy rating of D."
+      expect(response.body).to have_css "h2",
+                                        text: "Energy performance of this building"
+      expect(response.body).to have_css "p",
+                                        text:
+                                          "The building’s energy performance is based on its carbon dioxide (CO2) emissions for the last year."
+      expect(response.body).to have_css "p",
+                                        text:
+                                          "It is given a score and an energy rating on a scale from A (lowest emissions) to G (highest emissions)."
+      expect(response.body).to have_css "p",
+                                        text:
+                                          "Typical energy performance for a public building is 100. This typical score gives an energy rating of D."
       expect(response.body).to have_css "text", text: "1 | A"
-      expect(response.body).to have_css "p", text: "You can read guidance on Display Energy Certificates and advisory reports for public buildings."
-      expect(response.body).to have_link "guidance on Display Energy Certificates and advisory reports for public buildings", href: "https://www.gov.uk/government/publications/display-energy-certificates-and-advisory-reports-for-public-buildings"
+      expect(response.body).to have_css "p",
+                                        text:
+                                          "You can read guidance on Display Energy Certificates and advisory reports for public buildings."
+      expect(
+        response.body,
+      ).to have_link "guidance on Display Energy Certificates and advisory reports for public buildings",
+                     href:
+                       "https://www.gov.uk/government/publications/display-energy-certificates-and-advisory-reports-for-public-buildings"
     end
 
     it "shows the previous operational ratings section" do
