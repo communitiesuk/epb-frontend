@@ -19,6 +19,10 @@
     padding: 0;
   }
 
+  table th, table td {
+    font-size: 14px;
+  }
+
   table.split > tbody > tr > td {
     width: 50%;
     padding-right: 15px;
@@ -36,6 +40,14 @@
 
   table.accentuate table {
     color: #fff;
+  }
+
+  table.numerical tbody tr td {
+    text-align: right;
+  }
+
+  table.numerical thead tr th:not(:first-child) {
+    text-align: right;
   }
 
   table.header {
@@ -117,6 +129,7 @@
     color: #fff;
     padding-right: 10px;
     position: relative;
+    width: 65px;
   }
 
   .arrow:before, .arrow:after {
@@ -187,7 +200,7 @@
 
 </style>
 
-<table>
+<table class="govuk-body">
   <tbody>
   <tr>
     <td>
@@ -238,15 +251,15 @@
               <table class="border-bottom">
                 <tbody>
                   <tr>
-                    <td><%= t('dec.sections.contents.certificate_number') %>:</td>
+                    <th><%= t('dec.sections.contents.certificate_number') %>:</th>
                     <td><%= assessment[:assessmentId] %></td>
                   </tr>
                   <tr>
-                    <td><%= t('dec.sections.administrative_information.valid_until') %>:</td>
+                    <th><%= t('dec.sections.administrative_information.valid_until') %>:</th>
                     <td><%= assessment[:dateOfExpiry] %></td>
                   </tr>
                   <tr>
-                    <td><%= t('dec.sections.technical_information.floor_area') %>:</td>
+                    <th><%= t('dec.sections.technical_information.floor_area') %>:</th>
                     <td><%= assessment[:technicalInformation][:floorArea] %> square meters</td>
                   </tr>
                 </tbody>
@@ -289,7 +302,7 @@
                 <tr>
                   <td>
                     <h3 class="govuk-heading-s"><%= t('dec.sections.technical_information.print_title') %></h3>
-                    <table class="border-bottom">
+                    <table class="border-bottom numerical">
                       <thead>
                         <tr>
                           <td><%= t('dec.sections.technical_information.energy_use') %></td>
@@ -379,7 +392,7 @@
                   <td>
                     <h2 class="govuk-heading-s"><%= t('dec.sections.co2.title') %></h2>
                     <p class="govuk-body"><%= t('dec.sections.co2.explanation') %></p>
-                    <table class="border-bottom">
+                    <table class="border-bottom numerical">
                       <thead>
                         <tr>
                           <th><%= t('dec.sections.co2.col.date') %></th>
