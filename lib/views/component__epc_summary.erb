@@ -18,6 +18,7 @@
   <p class="govuk-body"><%=  t('component.epc_summary.property_info', property_type: property_type, total_floor_area: floor_area)  %></p>
   <%  end %>
   <%== erb :component__print, locals: {
-    type: t('component.print.type.certificate')
+    type: t('component.print.type.certificate'),
+    custom_print: defined?(custom_print)
   } %>
 </div>

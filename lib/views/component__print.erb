@@ -1,5 +1,11 @@
-<div class="component__print govuk-!-display-none-print">
-  <a onclick="window.print();return false;" class="govuk-link govuk-!-margin-bottom-5" id="link" href="#" style="display: none;"><%= t('component.print.label', type: t("component.print.type.#{type}")) %></a>
-  <noscript><p class="govuk-body"><%= t('component.print.noscript_text', type: type) %></p></noscript>
-  <script>document.getElementById('link').style.display = 'block';</script>
-</div>
+<% if defined?(custom_print) %>
+  <div class="component__print govuk-!-display-none-print">
+    <a href="<%= request.path_info + (request.path_info.include?("?") ? "&" : "?") %>print=true" class="govuk-link govuk-!-margin-bottom-5" id="link"><%= t('component.print.label', type: t("component.print.type.#{type}")) %></a>
+  </div>
+<% else %>
+  <div class="component__print govuk-!-display-none-print">
+    <a onclick="window.print();return false;" class="govuk-link govuk-!-margin-bottom-5" id="link" href="#" style="display: none;"><%= t('component.print.label', type: t("component.print.type.#{type}")) %></a>
+    <noscript><p class="govuk-body"><%= t('component.print.noscript_text', type: type) %></p></noscript>
+    <script>document.getElementById('link').style.display = 'block';</script>
+  </div>
+<% end %>
