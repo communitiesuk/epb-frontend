@@ -1,0 +1,18 @@
+<div id="administrative_information" class="epc-blue-bottom">
+  <h2 class="govuk-heading-l"><%=
+    t('ac_cert.sections.administrative_information.title')
+  %></h2>
+  <%== erb :component__summary_list, locals: {
+    list: {
+      "assessor.list.name": assessor[:name],
+      "assessor.list.telephone": { value: assessor[:contactDetails][:telephoneNumber] },
+      "assessor.list.email": { type: "email", value: assessor[:contactDetails][:email] },
+      "assessor.list.number":  { value: assessor[:schemeAssessorId] },
+      "scheme_name": assessor[:registeredBy][:name],
+      "company_name": assessor[:companyDetails][:name],
+      "company_address": assessor[:companyDetails][:address]
+    },
+    translation_prefix: 'ac_cert.sections.administrative_information.',
+    skip_null: true
+  } %>
+</div>

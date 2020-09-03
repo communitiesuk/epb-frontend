@@ -54,6 +54,17 @@ module FetchAssessmentSummary
               refrigerantType: "R410A",
             },
           ],
+          assessor: {
+            name: "TEST NAME BOI",
+            schemeAssessorId: "SPEC000000",
+            contactDetails: {
+              email: "test@testscheme.com", telephone: "012345"
+            },
+            companyDetails: {
+              name: "Joe Bloggs Ltd", address: "123 My Street, My City, AB3 4CD"
+            },
+            registeredBy: { name: "test scheme", schemeId: "3" },
+          },
         },
       }
 

@@ -74,6 +74,21 @@ describe "Acceptance::AirConditioningInspectionCertificate", type: :feature do
       expect(response.body).to have_css "td", text: "2013"
     end
 
+    it "can show the Administrative information section" do
+      expect(response.body).to have_css "h2", text: "Administrative information"
+      expect(response.body).to have_css "dt", text: "Assessor name"
+      expect(response.body).to have_css "dd", text: "TEST NAME BOI"
+      expect(response.body).to have_css "dt", text: "Assessor number"
+      expect(response.body).to have_css "dd", text: "SPEC000000"
+      expect(response.body).to have_css "dt", text: "Accreditation scheme"
+      expect(response.body).to have_css "dd", text: "test scheme"
+      expect(response.body).to have_css "dt", text: "Employer/Trading name"
+      expect(response.body).to have_css "dd", text: "Joe Bloggs Ltd"
+      expect(response.body).to have_css "dt", text: "Employer/Trading address"
+      expect(response.body).to have_css "dd",
+                                        text: "123 My Street, My City, AB3 4CD"
+    end
+
     context "with different related party disclosure codes" do
       it "shows the corresponding related party disclosure text" do
         related_party_disclosures = {

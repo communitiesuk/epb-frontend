@@ -28,5 +28,9 @@
     <%== erb :ac_cert__sub_systems, locals: {
       assessment: assessment,
     } %>
+
+    <%== erb :ac_cert__administrative_information, locals: {
+      assessor: assessment[:assessor],
+    } %>
   </div>
 </div>

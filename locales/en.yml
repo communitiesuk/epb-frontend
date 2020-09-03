@@ -1286,4 +1286,15 @@ en:
         description: 'Description'
         refrigerant_type: 'Refrigerant type'
         age: 'Age of main components'
+      administrative_information:
+        title: "Administrative information"
+        scheme_name: 'Accreditation scheme'
+        company_name: 'Employer/Trading name'
+        company_address: 'Employer/Trading address'
+        assessor:
+          list:
+            name: 'Assessor name'
+            number: 'Assessor number'
+            telephone: 'Telephone'
+            email: 'E-mail address'
 
