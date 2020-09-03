@@ -36,7 +36,7 @@ module FetchAssessmentSummary
           },
           relatedPartyDisclosure: related_party_disclosure,
           relatedRrn: "0000-0000-0000-0000-8888",
-          subSystems: [
+          subsystems: [
             {
               number:
                 "VOL001/SYS001/CP001 Ground Floor Banking Hall, Interview Room and Cashiers Area",

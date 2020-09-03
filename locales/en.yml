@@ -1280,9 +1280,9 @@ en:
         title: 'Inspection report'
         text: 'For the assessment’s recommendations, see %{link}.'
         cta: 'the inspection report'
-      sub_systems:
-        title: 'Sub systems inspected'
-        number: 'Sub system ID'
+      subsystems:
+        title: 'Subsystems inspected'
+        number: 'Subsystem ID'
         description: 'Description'
         refrigerant_type: 'Refrigerant type'
         age: 'Age of main components'

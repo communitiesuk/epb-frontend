@@ -58,9 +58,9 @@ describe "Acceptance::AirConditioningInspectionCertificate", type: :feature do
       expect(response.body).to have_css "dd", text: "73 kg"
     end
 
-    it "shows the sub systems inspected section" do
-      expect(response.body).to have_css "h2", text: "Sub systems inspected"
-      expect(response.body).to have_css "th", text: "Sub system ID"
+    it "shows the subsystems inspected section" do
+      expect(response.body).to have_css "h2", text: "Subsystems inspected"
+      expect(response.body).to have_css "th", text: "Subsystem ID"
       expect(response.body).to have_css "th", text: "Description"
       expect(response.body).to have_css "th", text: "Refrigerant type"
       expect(response.body).to have_css "th", text: "Age of main components"
