@@ -60,14 +60,18 @@ describe "Acceptance::AirConditioningInspectionCertificate", type: :feature do
 
     it "shows the sub systems inspected section" do
       expect(response.body).to have_css "h2", text: "Sub systems inspected"
-      expect(response.body).to have_css "dt", text: "Sub system ID"
-      expect(response.body).to have_css "dt", text: "Description"
-      expect(response.body).to have_css "dt", text: "Refrigerant type"
-      expect(response.body).to have_css "dt", text: "Age of main components"
-      expect(response.body).to have_css "dd", text: "12"
-      expect(response.body).to have_css "dd", text: "Some sort of aircon thing"
-      expect(response.body).to have_css "dd", text: "R410A"
-      expect(response.body).to have_css "dd", text: "2013"
+      expect(response.body).to have_css "th", text: "Sub system ID"
+      expect(response.body).to have_css "th", text: "Description"
+      expect(response.body).to have_css "th", text: "Refrigerant type"
+      expect(response.body).to have_css "th", text: "Age of main components"
+      expect(response.body).to have_css "td",
+                                        text:
+                                          "VOL001/SYS001/CP001 Ground Floor Banking Hall, Interview Room and Cashiers Area"
+      expect(response.body).to have_css "td",
+                                        text:
+                                          "Mitsubishi Electric PURY-P250LM-A1 VRF packaged system x 1 serve ceiling slot diffuser internal unit x 6"
+      expect(response.body).to have_css "td", text: "R410A"
+      expect(response.body).to have_css "td", text: "2013"
     end
 
     context "with different related party disclosure codes" do

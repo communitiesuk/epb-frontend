@@ -38,9 +38,19 @@ module FetchAssessmentSummary
           relatedRrn: "0000-0000-0000-0000-8888",
           subSystems: [
             {
-              number: "12",
-              description: "Some sort of aircon thing",
+              number:
+                "VOL001/SYS001/CP001 Ground Floor Banking Hall, Interview Room and Cashiers Area",
+              description:
+                "Mitsubishi Electric PURY-P250LM-A1 VRF packaged system x 1 serve ceiling slot diffuser internal unit x 6",
               age: "2013",
+              refrigerantType: "R410A",
+            },
+            {
+              number:
+                "VOL001/SYS002/ CP002 Lower Ground Floor Waiting Area and Interview Room Areas",
+              description:
+                "Mitsubishi Electric PURY-P450LM-A1 VRF packaged system x 1 serve ceiling slot diffuser internal unit x 10",
+              age: "2017",
               refrigerantType: "R410A",
             },
           ],
