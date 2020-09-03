@@ -479,7 +479,7 @@
               <tbody>
                 <% {
                    "assessor.list.name": assessment[:assessor][:name],
-                   "scheme_name": assessment[:assessor][:registeredBy][:name],
+                   "scheme_name": scheme_details(assessment[:assessor], 'name'),
                    "company_name": assessment[:assessor][:companyDetails][:name],
                    "company_address": assessment[:assessor][:companyDetails][:address],
                    "issue_date": date(assessment[:administrativeInformation][:issueDate]),

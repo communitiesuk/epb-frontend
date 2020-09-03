@@ -97,7 +97,7 @@ describe "Acceptance::PrintableDisplayEnergyCertificate", type: :feature do
         expect(response.body).to have_css "th", text: "Assessor name"
         expect(response.body).to have_css "td", text: "TEST NAME BOI"
         expect(response.body).to have_css "th", text: "Accreditation scheme"
-        expect(response.body).to have_css "td", text: "test scheme"
+        expect(response.body).to have_css "td", text: "Quidos"
         expect(response.body).to have_css "th", text: "Employer/Trading name"
         expect(response.body).to have_css "td", text: "Joe Bloggs Ltd"
         expect(response.body).to have_css "th", text: "Employer/Trading address"
