@@ -1217,6 +1217,10 @@ en:
             number: 'Assessor number'
             telephone: 'Telephone'
             email: 'E-mail address'
+        scheme:
+          name: "Accreditation scheme"
+          phone: "Accreditation scheme telephone"
+          email: "Accreditation scheme email"
       information:
         certificate:
           list:

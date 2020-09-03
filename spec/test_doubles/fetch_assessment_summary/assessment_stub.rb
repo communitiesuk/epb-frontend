@@ -323,7 +323,7 @@ module FetchAssessmentSummary
           assessor: {
             name: "TEST NAME BOI",
             schemeAssessorId: "SPEC000000",
-            registeredBy: { name: "test scheme", schemeId: 1 },
+            registeredBy: { name: "quidos", schemeId: 1 },
             companyDetails: {
               address: "123 My Street, My City, AB3 4CD", name: "Joe Bloggs Ltd"
             },
