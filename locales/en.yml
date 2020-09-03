@@ -1288,7 +1288,10 @@ en:
         age: 'Age of main components'
       administrative_information:
         title: "Administrative information"
-        scheme_name: 'Accreditation scheme'
+        scheme:
+          name: "Accreditation scheme"
+          phone: "Accreditation scheme telephone"
+          email: "Accreditation scheme email"
         company_name: 'Employer/Trading name'
         company_address: 'Employer/Trading address'
         assessor:
