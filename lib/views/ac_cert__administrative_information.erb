@@ -8,6 +8,7 @@
       "assessor.list.telephone": { value: assessor[:contactDetails][:telephoneNumber] },
       "assessor.list.email": { type: "email", value: assessor[:contactDetails][:email] },
       "assessor.list.number":  { value: assessor[:schemeAssessorId] },
+      "scheme.name": scheme_details(assessor, 'name'),
       "scheme.phone": scheme_details(assessor, 'phone'),
       "scheme.email":  { type: "email", value: scheme_details(assessor, 'email') },
       "company_name": assessor[:companyDetails][:name],

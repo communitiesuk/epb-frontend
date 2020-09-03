@@ -81,7 +81,7 @@ describe "Acceptance::AirConditioningInspectionCertificate", type: :feature do
       expect(response.body).to have_css "dt", text: "Assessor number"
       expect(response.body).to have_css "dd", text: "SPEC000000"
       expect(response.body).to have_css "dt", text: "Accreditation scheme"
-      expect(response.body).to have_css "dd", text: "quidos"
+      expect(response.body).to have_css "dd", text: "Quidos"
       expect(response.body).to have_css "dt", text: "Accreditation scheme telephone"
       expect(response.body).to have_css "dd", text: "01225 667 570"
       expect(response.body).to have_css "dt", text: "Accreditation scheme email"
