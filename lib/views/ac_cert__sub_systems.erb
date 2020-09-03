@@ -1,0 +1,39 @@
+<div class="epc-blue-bottom">
+  <h2 class="govuk-heading-l"><%= t('ac_cert.sections.sub_systems.title') %></h2>
+
+  <% if assessment[:subSystems]%>
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          <%= t('ac_cert.sections.sub_systems.number') %>
+        </dt>
+        <dt class="govuk-summary-list__key">
+          <%= t('ac_cert.sections.sub_systems.description') %>
+        </dt>
+        <dt class="govuk-summary-list__key">
+          <%= t('ac_cert.sections.sub_systems.refrigerant_type') %>
+        </dt>
+        <dt class="govuk-summary-list__key">
+          <%= t('ac_cert.sections.sub_systems.age') %>
+        </dt>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <% assessment[:subSystems].each do |sub_system| %>
+          <dd class="govuk-summary-list__value">
+            <%== sub_system[:number] %>
+          </dd>
+          <dd class="govuk-summary-list__value">
+            <%== sub_system[:description] %>
+          </dd>
+          <dd class="govuk-summary-list__value">
+            <%==  sub_system[:refrigerantType] %>
+          </dd>
+          <dd class="govuk-summary-list__value">
+            <%== sub_system[:age] %>
+          </dd>
+        <% end %>
+      </div>
+    </dl>
+  <% end %>
+</div>
