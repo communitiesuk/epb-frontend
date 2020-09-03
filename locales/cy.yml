@@ -1175,3 +1175,9 @@ cy:
         title: 'Welsh: Inspection report'
         text: 'Welsh: For the assessment’s recommendations, see %{link}.'
         cta: 'Welsh: the inspection report'
+      sub_systems:
+        title: 'Welsh: Sub systems inspected'
+        number: 'Welsh: Sub system ID'
+        description: 'Welsh: Description'
+        refrigerant_type: 'Welsh: Refrigerant type'
+        age: 'Welsh: Age of main components'
