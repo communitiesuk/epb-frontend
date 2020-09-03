@@ -58,6 +58,18 @@ describe "Acceptance::AirConditioningInspectionCertificate", type: :feature do
       expect(response.body).to have_css "dd", text: "73 kg"
     end
 
+    it "shows the sub systems inspected section" do
+      expect(response.body).to have_css "h2", text: "Sub systems inspected"
+      expect(response.body).to have_css "dt", text: "Sub system ID"
+      expect(response.body).to have_css "dt", text: "Description"
+      expect(response.body).to have_css "dt", text: "Refrigerant type"
+      expect(response.body).to have_css "dt", text: "Age of main components"
+      expect(response.body).to have_css "dd", text: "12"
+      expect(response.body).to have_css "dd", text: "Some sort of aircon thing"
+      expect(response.body).to have_css "dd", text: "R410A"
+      expect(response.body).to have_css "dd", text: "2013"
+    end
+
     context "with different related party disclosure codes" do
       it "shows the corresponding related party disclosure text" do
         related_party_disclosures = {

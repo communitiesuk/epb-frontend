@@ -36,6 +36,14 @@ module FetchAssessmentSummary
           },
           relatedPartyDisclosure: related_party_disclosure,
           relatedRrn: "0000-0000-0000-0000-8888",
+          subSystems: [
+            {
+              number: "12",
+              description: "Some sort of aircon thing",
+              age: "2013",
+              refrigerantType: "R410A",
+            },
+          ],
         },
       }
 
