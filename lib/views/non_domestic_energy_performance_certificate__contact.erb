@@ -13,120 +13,44 @@
     t('non_domestic_epc.contact.assessor.heading')
   %></h3>
 
-  <dl class="govuk-summary-list">
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
-        t('non_domestic_epc.contact.assessor.name')
-      %></dt>
-      <dd class="govuk-summary-list__value govuk-!-width-one-half"><%=
-        assessor[:name]
-      %></dd>
-    </div>
-    <% if assessor[:contactDetails].key?(:telephone) && !assessor[:contactDetails][:telephone].empty? %>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
-          t('non_domestic_epc.contact.assessor.phone')
-        %></dt>
-        <dd class="govuk-summary-list__value govuk-!-width-one-half"><%=
-          assessor[:contactDetails][:telephone]
-        %></dd>
-      </div>
-    <% end %>
-    <% if assessor[:contactDetails].key?(:email) && !assessor[:contactDetails][:email].empty? %>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
-          t('non_domestic_epc.contact.assessor.email')
-        %></dt>
-        <dd class="govuk-summary-list__value govuk-!-width-one-half"><%=
-          assessor[:contactDetails][:email]
-        %></dd>
-      </div>
-    <% end %>
-  </dl>
+  <%== erb :component__summary_list, locals: {
+    list: {
+      "name": assessor[:name],
+      "phone": assessor[:contactDetails][:telephone],
+      "email": { type: "email", value: assessor[:contactDetails][:email] },
+    },
+    translation_prefix: 'non_domestic_epc.contact.assessor.',
+    skip_null: true
+  } %>
 
   <h3 class="govuk-heading-m"><%=
     t('non_domestic_epc.contact.scheme.heading')
   %></h3>
 
-  <dl class="govuk-summary-list">
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
-        t('non_domestic_epc.contact.scheme.name')
-      %></dt>
-      <dd class="govuk-summary-list__value govuk-!-width-one-half"><%=
-        scheme_details(assessor, 'name')
-      %></dd>
-    </div>
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
-        t('non_domestic_epc.contact.assessor.id')
-      %></dt>
-      <dd class="govuk-summary-list__value govuk-!-width-one-half"><%=
-        assessor[:schemeAssessorId]
-      %></dd>
-    </div>
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
-        t('non_domestic_epc.contact.scheme.phone')
-      %></dt>
-      <dd class="govuk-summary-list__value govuk-!-width-one-half"><%=
-        scheme_details(assessor, 'phone')
-      %></dd>
-    </div>
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
-        t('non_domestic_epc.contact.scheme.email')
-      %></dt>
-      <dd class="govuk-summary-list__value govuk-!-width-one-half"><%=
-        scheme_details(assessor, 'email')
-      %></dd>
-    </div>
-  </dl>
+  <%== erb :component__summary_list, locals: {
+    list: {
+      "scheme.name": scheme_details(assessor, 'name'),
+      "assessor.id": assessor[:schemeAssessorId],
+      "scheme.phone": scheme_details(assessor, 'phone'),
+      "scheme.email":  { tpye: "email", value: scheme_details(assessor, 'email') },
+    },
+    translation_prefix: 'non_domestic_epc.contact.',
+    skip_null: true
+  } %>
 
   <h3 class="govuk-heading-m"><%=
     t('non_domestic_epc.contact.assessment.heading')
   %></h3>
 
-  <dl class="govuk-summary-list">
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
-        t('non_domestic_epc.contact.assessment.date_assessed')
-      %></dt>
-      <dd class="govuk-summary-list__value govuk-!-width-one-half"><%=
-        date(assessment_date)
-      %></dd>
-    </div>
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
-        t('non_domestic_epc.contact.assessment.date_certificate')
-      %></dt>
-      <dd class="govuk-summary-list__value govuk-!-width-one-half"><%=
-        date(registration_date)
-      %></dd>
-    </div>
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
-        t('non_domestic_epc.contact.assessment.employer')
-      %></dt>
-      <dd class="govuk-summary-list__value govuk-!-width-one-half"><%=
-        assessor[:companyDetails][:name]
-      %></dd>
-    </div>
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
-        t('non_domestic_epc.contact.assessment.employer_address')
-      %></dt>
-      <dd class="govuk-summary-list__value govuk-!-width-one-half"><%=
-        assessor[:companyDetails][:address]
-      %></dd>
-    </div>
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
-        t('non_domestic_epc.contact.assessment.declaration')
-      %></dt>
-      <dd class="govuk-summary-list__value govuk-!-width-one-half"><%=
-        party_disclosure(related_party_disclosure.nil? ? "13" : related_party_disclosure, "", "non_domestic_disclosure_code", "non_domestic_epc")
-      %></dd>
-    </div>
-  </dl>
+  <%== erb :component__summary_list, locals: {
+    list: {
+      "date_assessed": date(assessment_date),
+      "date_certificate": date(registration_date),
+      "employer": assessor[:companyDetails][:name],
+      "employer_address":  assessor[:companyDetails][:address],
+      "declaration": party_disclosure(related_party_disclosure.nil? ? "13" : related_party_disclosure, "", "non_domestic_disclosure_code", "non_domestic_epc"),
+    },
+    translation_prefix: 'non_domestic_epc.contact.assessment.',
+    skip_null: true
+  } %>
 </div>
