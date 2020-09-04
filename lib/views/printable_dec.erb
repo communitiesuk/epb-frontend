@@ -406,7 +406,6 @@
                   <td>
                     <h2 class="govuk-heading-s"><%= t('dec.sections.previous_energy_ratings.title') %></h2>
                     <table class="border-bottom">
-                      <thead>
                         <tr>
                           <th><%= t('dec.sections.previous_energy_ratings.date') %></th>
                           <th><%= t('dec.sections.previous_energy_ratings.energy_rating') %></th>
@@ -416,7 +415,7 @@
                         <% [assessment[:currentAssessment], assessment[:year1Assessment], assessment[:year2Assessment]].each do |previous_rating| %>
                           <% next if previous_rating.values.include?(nil) %>
                           <tr>
-                            <th>
+                            <th class="govuk-!-padding-top-2">
                               <%=Date.parse(previous_rating[:date]).strftime("%B %Y")%>
                             </th>
                             <td>
