@@ -129,14 +129,14 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
   end
 
   context "when finding a non-domestic assessor by postcode" do
-    it "finds a non-domestic assessor" do
+    xit "finds a non-domestic assessor" do
       visit "/find-an-assessor"
       click_on "find a non domestic assessor"
       fill_in "postcode", with: "SW1A 2AA"
       click_on "Find"
     end
 
-    it "displays an error message when entering an empty postcode" do
+    xit "displays an error message when entering an empty postcode" do
       visit "/find-an-assessor"
       click_on "find a non domestic assessor"
       fill_in "postcode", with: ""
@@ -144,7 +144,7 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
       expect(page).to have_content "Enter a real postcode"
     end
 
-    it "displays an error message when entering an invalid postcode" do
+    xit "displays an error message when entering an invalid postcode" do
       visit "/find-an-assessor"
       click_on "find a non domestic assessor"
       fill_in "postcode", with: "NOT A POSTCODE"
@@ -152,7 +152,7 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
       expect(page).to have_content "Enter a real postcode"
     end
 
-    it "displays the find a non domestic assessor page heading when entering a valid postcode " do
+    xit "displays the find a non domestic assessor page heading when entering a valid postcode " do
       visit "/find-an-assessor"
       click_on "find a non domestic assessor"
       fill_in "postcode", with: "SW1A 2AA"
@@ -162,7 +162,7 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
       ).to have_content "7 assessors in order of distance from SW1A 2AA"
     end
 
-    it "displays accreditation scheme contact details for the first assessor" do
+    xit "displays accreditation scheme contact details for the first assessor" do
       visit "/find-an-assessor"
       click_on "find a non domestic assessor"
       fill_in "postcode", with: "SW1A 2AA"
@@ -173,7 +173,7 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
       expect(page).to have_content "Telephone: 0845 621 11 11"
     end
 
-    it "displays no longer accredited text for unaccredited scheme" do
+    xit "displays no longer accredited text for unaccredited scheme" do
       visit "/find-an-assessor"
       click_on "find a non domestic assessor"
       fill_in "postcode", with: "SW1A 2AA"

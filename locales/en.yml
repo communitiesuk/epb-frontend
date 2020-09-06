@@ -40,12 +40,14 @@ en:
   find_an_assessor:
     head:
       title: 'Energy performance of buildings register - Find an energy assessor for a residential property'
-    top_heading: 'Getting a new Energy Performance Certificate (EPC) for a domestic property'
+    top_heading: 'Getting a new energy certificate'
     introduction:
-      what_you_need: 'You need an EPC when you build, sell or let a domestic property.'
-      assessor: 'To get a new EPC, you need to book an assessor. They will assess the energy performance of the property and create an EPC. An EPC is valid for 10 years'
+      what_you_need: 'You need to book a property assessment to get a new:'
+      epc: 'energy performance certificate (EPC)'
+      dec: 'display energy certificate (DEC) for a public building'
+      ac: 'air conditioning inspection certificate and report'
+      england_wales_northern_ireland: 'Use this service to find a qualified assessor in England, Wales or Northern Ireland.'
       cost: 'The cost of an assessment varies by assessor and the size of the property.'
-      england_wales_northern_ireland: 'Use this service to find an accredited assessor in England, Wales and Northern Ireland.'
     buildings_not_epc:
       cta: 'Buildings that don’t need an EPC'
       intro: 'Properties do not need an EPC if they are:'
@@ -61,13 +63,13 @@ en:
       phone_number: '0233 788 1234'
       scotland:
         description: 'If the property is in Scotland, use the %{link}'
-        link: 'Scottish government’s EPC service.'
+        link: 'Scottish government’s energy certificate service'
       commercial:
         description: 'For commercial or public buildings, use the %{link} service.'
         link: 'find a non domestic assessor'
       existing_epc:
-        description: 'To check if a property has an existing EPC, use the %{link} service.'
-        link: 'find an EPC for a domestic property'
+        description: 'You can %{link}.'
+        link: 'check if the property already has a valid energy certificate'
   schemes:
     head:
       title: 'Energy performance of buildings register - Contact an energy assessor accreditation scheme'

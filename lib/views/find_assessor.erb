@@ -8,9 +8,17 @@
         <%= t('find_an_assessor.introduction.what_you_need') %>
       </p>
 
-      <p class="govuk-body">
-        <%= t('find_an_assessor.introduction.assessor') %>
-      </p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <%= t('find_an_assessor.introduction.epc') %>
+        </li>
+        <li>
+          <%= t('find_an_assessor.introduction.dec') %>
+        </li>
+        <li>
+          <%= t('find_an_assessor.introduction.ac') %>
+        </li>
+      </ul>
 
       <p class="govuk-body">
         <%= t('find_an_assessor.introduction.england_wales_northern_ireland') %>
@@ -52,7 +60,6 @@
         <%== t('find_an_assessor.before_you_start.existing_epc.description', :link => '<a href="https://mhclg-epb-prototypes.london.cloudapps.digital/find-a-certificate">' + t('find_an_assessor.before_you_start.existing_epc.link') + '</a>') %>
       </p>
 
-
       <p class="govuk-body">
         <%== t('find_an_assessor.before_you_start.phone_text', :link =>  t('find_an_assessor.before_you_start.phone_number') ) %>
       </p>
@@ -60,11 +67,6 @@
       <p class="govuk-body">
         <%== t('find_an_assessor.before_you_start.scotland.description', :link => '<a href="https://www.scottishepcregister.org.uk/">' + t('find_an_assessor.before_you_start.scotland.link') + '</a>') %>
       </p>
-
-      <p class="govuk-body">
-        <%== t('find_an_assessor.before_you_start.commercial.description', :link => '<a href="' + localised_url('/find-a-non-domestic-assessor/search-by-postcode') + '">' + t('find_an_assessor.before_you_start.commercial.link') + '</a>' ) %>
-      </p>
-
     </div>
 
     <p class="govuk-body">

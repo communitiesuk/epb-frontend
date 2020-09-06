@@ -40,12 +40,14 @@ cy:
   find_an_assessor:
     head:
       title: 'Welsh: Energy performance of buildings register - Find an energy assessor for a residential property'
-    top_heading: 'Welsh: Getting a new Energy Performance Certificate (EPC) for a domestic property'
+    top_heading: 'Welsh: Getting a new energy certificate'
     introduction:
-      what_you_need: 'Welsh: You need an EPC when you build, sell or let a domestic property.'
-      assessor: 'Welsh: To get a new EPC, you need to book an assessor. They will assess the energy performance of the property and create an EPC. An EPC is valid for 10 years'
+      what_you_need: 'Welsh: You need to book a property assessment to get a new:'
+      epc: 'energy performance certificate (EPC)'
+      dec: 'display energy certificate (DEC) for a public building'
+      ac: 'air conditioning inspection certificate and report'
       cost: 'Welsh: The cost of an assessment varies by assessor and the size of the property.'
-      england_wales_northern_ireland: 'Welsh: Use this service to find an accredited assessor in England, Wales and Northern Ireland.'
+      england_wales_northern_ireland: 'Use this service to find a qualified assessor in England, Wales or Northern Ireland.'
     buildings_not_epc:
       cta: 'Welsh: Buildings that don’t need an EPC'
       intro: 'Welsh: Properties do not need an EPC if they are:'
@@ -61,10 +63,7 @@ cy:
       phone_number: '0233 788 1234'
       scotland:
         description: 'Welsh: If the property is in Scotland, use the %{link}'
-        link: 'Welsh: Scottish government’s EPC service.'
-      commercial:
-        description: 'Welsh: For commercial or public buildings, use the %{link} service.'
-        link: 'Welsh: find a non domestic assessor'
+        link: 'Welsh: Scottish government’s energy certificate service'
       existing_epc:
         description: 'Welsh: To check if a property has an existing EPC, use the %{link} service.'
         link: 'Welsh: find an EPC for a domestic property'

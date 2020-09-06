@@ -125,6 +125,6 @@ describe "Journey::FindDomesticCertificate", type: :feature, journey: true do
 
     expect(
       page,
-    ).to have_content "Getting a new Energy Performance Certificate (EPC)"
+    ).to have_content "Getting a new energy certificate"
   end
 end
