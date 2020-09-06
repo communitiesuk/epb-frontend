@@ -39,7 +39,7 @@ en:
 
   find_an_assessor:
     head:
-      title: 'Energy performance of buildings register - Find an energy assessor for a residential property'
+      title: 'Energy performance of buildings register - Getting a new energy certificate'
     top_heading: 'Getting a new energy certificate'
     introduction:
       what_you_need: 'You need to book a property assessment to get a new:'
@@ -70,6 +70,16 @@ en:
       existing_epc:
         description: 'You can %{link}.'
         link: 'check if the property already has a valid energy certificate'
+    property_type:
+      question_title: "What type of property is the certificate for?"
+      options:
+        domestic:
+          title: "A domestic property"
+          hint: "Such as a house or flat"
+        non_domestic:
+          title: "A non-domestic property"
+          hint: "such as a commercial, industrial or public building"
+      cta: "Continue"
   schemes:
     head:
       title: 'Energy performance of buildings register - Contact an energy assessor accreditation scheme'

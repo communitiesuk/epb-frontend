@@ -35,7 +35,12 @@ class FrontendService < Sinatra::Base
 
   get "/find-an-assessor" do
     @page_title = t("find_an_assessor.head.title")
-    erb :find_assessor, layout: :layout
+    erb :find_assessor__property_type, layout: :layout
+  end
+
+  get "/find-an-assessor/type-of-property" do
+    @page_title = t("find_an_assessor.head.title")
+    erb :find_assessor__property_type, layout: :layout
   end
 
   get "/find-a-non-domestic-certificate" do
