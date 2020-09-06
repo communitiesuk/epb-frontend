@@ -3,18 +3,18 @@
 describe "Journey::FindAssessor", type: :feature, journey: true do
   before(:all) do
     process =
-      IO.popen(
-        [
-          "rackup",
-          "config_test.ru",
-          "-q",
-          "-o",
-          "127.0.0.1",
-          "-p",
-          "9393",
-          err: %i[child out],
-        ],
-      )
+        IO.popen(
+            [
+                "rackup",
+                "config_test.ru",
+                "-q",
+                "-o",
+                "127.0.0.1",
+                "-p",
+                "9393",
+                err: %i[child out],
+            ],
+        )
     @process_id = process.pid
 
     unless process.readline.include?("port=9393")
@@ -26,21 +26,17 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
   it "finds an assessor by postcode" do
     visit "/find-an-assessor"
     click_on "Start now"
+    find("#label-domestic").click
+    click_on "Continue"
     fill_in "postcode", with: "SW1A 2AA"
     click_on "Find"
-  end
-
-  it "finds an assessor by postcode in Welsh" do
-    visit "/find-an-assessor"
-    click_on "Welsh (Cymraeg)"
-    click_on "Welsh: Start now"
-    fill_in "postcode", with: "SW1A 2AA"
-    click_on "Welsh: Find"
   end
 
   it "displays an error message when entering an empty postcode" do
     visit "/find-an-assessor"
     click_on "Start now"
+    find("#label-domestic").click
+    click_on "Continue"
     fill_in "postcode", with: ""
     click_on "Find"
     expect(page).to have_content "Enter a real postcode"
@@ -49,6 +45,8 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
   it "displays an error message when entering an invalid postcode" do
     visit "/find-an-assessor"
     click_on "Start now"
+    find("#label-domestic").click
+    click_on "Continue"
     fill_in "postcode", with: "NOT A POSTCODE"
     click_on "Find"
     expect(page).to have_content "Enter a real postcode"
@@ -58,16 +56,20 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
     it "displays the find an assessor page heading" do
       visit "/find-an-assessor"
       click_on "Start now"
+      find("#label-domestic").click
+      click_on "Continue"
       fill_in "postcode", with: "SW1A 2AA"
       click_on "Find"
       expect(
-        page,
+          page,
       ).to have_content "7 assessors in order of distance from SW1A 2AA"
     end
 
     it "displays accreditation scheme contact details for the first assessor" do
       visit "/find-an-assessor"
       click_on "Start now"
+      find("#label-domestic").click
+      click_on "Continue"
       fill_in "postcode", with: "SW1A 2AA"
       click_on "Find"
       find("span", text: "More information", match: :first).click
@@ -79,6 +81,8 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
     it "displays no longer accredited text for unaccredited scheme" do
       visit "/find-an-assessor"
       click_on "Start now"
+      find("#label-domestic").click
+      click_on "Continue"
       fill_in "postcode", with: "SW1A 2AA"
       click_on "Find"
       find_all("span", text: "More information")[4].click
@@ -89,27 +93,33 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
   it "displays an error message when entering an empty name" do
     visit "/find-an-assessor"
     click_on "Start now"
+    find("#label-domestic").click
+    click_on "Continue"
     click_on "find an assessor by name"
     click_on "Search"
     expect(
-      page,
+        page,
     ).to have_content "Enter the assessor’s full name, including their first name and last name"
   end
 
   it "displays an assessor when searched for one that does exist" do
     visit "/find-an-assessor"
     click_on "Start now"
+    find("#label-domestic").click
+    click_on "Continue"
     click_on "find an assessor by name"
     fill_in "name", with: "Supercommon"
     click_on "Search"
     expect(
-      page,
+        page,
     ).to have_content "Enter the assessor’s full name, including their first name and last name"
   end
 
   it "displays an assessor when searched for one that does exist" do
     visit "/find-an-assessor"
     click_on "Start now"
+    find("#label-domestic").click
+    click_on "Continue"
     click_on "find an assessor by name"
     fill_in "name", with: "Supercommon Name"
     click_on "Search"
@@ -119,6 +129,9 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
   it "displays accreditation scheme contact details for an existing assessor by name" do
     visit "/find-an-assessor"
     click_on "Start now"
+    expect(page).to have_content "What type of property is the certificate for?"
+    find("#label-domestic").click
+    click_on "Continue"
     click_on "find an assessor by name"
     fill_in "name", with: "Supercommon Name"
     click_on "Search"
@@ -158,7 +171,7 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
       fill_in "postcode", with: "SW1A 2AA"
       click_on "Find"
       expect(
-        page,
+          page,
       ).to have_content "7 assessors in order of distance from SW1A 2AA"
     end
 

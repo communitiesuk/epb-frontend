@@ -75,7 +75,7 @@ cy:
           hint: "Such as a house or flat"
         non_domestic:
           title: "A non-domestic property"
-          hint: "such as a commercial, industrial or public building"
+          hint: "Such as a commercial, industrial or public building"
       cta: "Continue"
   schemes:
     head:

@@ -1,32 +1,34 @@
-<fieldset class="govuk-fieldset">
-  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-    <h1 class="govuk-fieldset__heading">
-      <%= t('find_an_assessor.property_type.question_title') %>
-    </h1>
-  </legend>
-  <div class="govuk-form-group">
-    <div class="govuk-radios">
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="domestic" name="property_type" type="radio" value="domestic" aria-describedby="domestic-item-hint">
-        <label class="govuk-label govuk-radios__label" for="domestic">
-          <%= t('find_an_assessor.property_type.options.domestic.title') %>
-        </label>
-        <div id="domestic-item-hint" class="govuk-hint govuk-radios__hint">
-          <%= t('find_an_assessor.property_type.options.domestic.hint') %>
+<form>
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        <%= t('find_an_assessor.property_type.question_title') %>
+      </h1>
+    </legend>
+    <div class="govuk-form-group">
+      <div class="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="domestic" name="property_type" type="radio" value="domestic" aria-describedby="domestic-item-hint">
+          <label id="label-domestic" class="govuk-label govuk-radios__label" for="domestic">
+            <%= t('find_an_assessor.property_type.options.domestic.title') %>
+          </label>
+          <div id="domestic-item-hint" class="govuk-hint govuk-radios__hint">
+            <%= t('find_an_assessor.property_type.options.domestic.hint') %>
+          </div>
         </div>
-      </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="non_domestic" name="property_type" type="radio" value="non_domestic" aria-describedby="non_domestic-item-hint">
-        <label class="govuk-label govuk-radios__label" for="non_domestic">
-          <%= t('find_an_assessor.property_type.options.non_domestic.title') %>
-        </label>
-        <div id="non_domestic-item-hint" class="govuk-hint govuk-radios__hint">
-          <%= t('find_an_assessor.property_type.options.non_domestic.hint') %>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="non_domestic" name="property_type" type="radio" value="non_domestic" aria-describedby="non_domestic-item-hint">
+          <label id="label-non-domestic" class="govuk-label govuk-radios__label" for="non_domestic">
+            <%= t('find_an_assessor.property_type.options.non_domestic.title') %>
+          </label>
+          <div id="non_domestic-item-hint" class="govuk-hint govuk-radios__hint">
+            <%= t('find_an_assessor.property_type.options.non_domestic.hint') %>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <button class="govuk-button" data-module="govuk-button">
-    <%= t('find_an_assessor.property_type.cta') %>
-  </button>
-</fieldset>
+    <button class="govuk-button" data-module="govuk-button" type="submit">
+      <%= t('find_an_assessor.property_type.cta') %>
+    </button>
+  </fieldset>
+</form>
