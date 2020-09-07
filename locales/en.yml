@@ -1319,4 +1319,7 @@ en:
         age: 'Age of main components'
   ac_report:
     top_heading: "Air conditioning inspection report"
+    sections:
+      exec_summary:
+        title: "Executive summary"
 

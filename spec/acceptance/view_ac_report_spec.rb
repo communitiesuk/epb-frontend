@@ -49,5 +49,10 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
       expect(response.body).to have_css "dd",
                                         text: "123 My Street, My City, AB3 4CD"
     end
+
+    it "can show the Executive summary section" do
+      expect(response.body).to have_css "h2", text: "Executive summary"
+      expect(response.body).to have_css "pre", text: "My\nSummary\t\tInspected"
+    end
   end
 end

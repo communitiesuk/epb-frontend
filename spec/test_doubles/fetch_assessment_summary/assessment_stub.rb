@@ -3,7 +3,8 @@
 module FetchAssessmentSummary
   class AssessmentStub
 
-    def self.fetch_ac_report(assessment_id:)
+    def self.fetch_ac_report(assessment_id:,
+                             executive_summary: "My\nSummary\t\tInspected")
       body = {
         data: {
           typeOfAssessment: "AC-REPORT",
@@ -30,6 +31,7 @@ module FetchAssessmentSummary
                 },
               registeredBy: { name: "quidos", schemeId: "3" },
             },
+          executiveSummary: executive_summary
         },
         meta: {}
       }
