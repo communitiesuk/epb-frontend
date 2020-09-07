@@ -1322,4 +1322,13 @@ en:
     sections:
       exec_summary:
         title: "Executive summary"
-
+      owner_operator:
+        title: "Equipment owner and operator"
+        owner_name: "Owner name"
+        owner_organisation: "Owner organisation"
+        owner_telephone: "Owner's phone number"
+        owner_address: "Owner's address"
+        operator_responsible_person: "Operator responsible person"
+        operator_organisation: "Operator organisation"
+        operator_telephone: "Operator's phone number"
+        operator_address: "Operator's address"
