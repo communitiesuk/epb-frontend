@@ -1334,3 +1334,5 @@ en:
         operator_address: "Operator's address"
       key_recommendations:
         title: "Key recommendations"
+        efficiency:
+          title: "Efficiency of the air conditioning sub system(s)"

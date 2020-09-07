@@ -1,0 +1,14 @@
+<% unless recommendations.empty? %>
+  <h3 class="govuk-heading-m">
+    <%= t(title) %>
+  </h3>
+
+  <% recommendations
+       .sort{|a,b| a[:sequence].to_i <=> b[:sequence].to_i }
+       .each do |r| %>
+    <p>
+      <%= r[:text] %>
+    </p>
+
+  <% end %>
+<% end %>

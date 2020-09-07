@@ -77,6 +77,9 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
 
     it "can show the key recommendations section" do
       expect(response.body).to have_css "h2", text: "Key recommendations"
+      expect(response.body).to have_css "h3", text: "Efficiency of the air conditioning sub system(s)"
+      expect(response.body).to have_css "p", text: "A way to improve your efficiency"
+      expect(response.body).to have_css "p", text: "A second way to improve efficiency"
     end
   end
 end

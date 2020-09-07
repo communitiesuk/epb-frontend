@@ -2,4 +2,10 @@
   <h2 class="govuk-heading-l">
     <%= t('ac_report.sections.key_recommendations.title') %>
   </h2>
+
+  <%== erb :ac_report__recommendation_list, locals: {
+    title: 'ac_report.sections.key_recommendations.efficiency.title',
+    recommendations: assessment[:keyRecommendations][:efficiency]
+  } %>
+
 </div>
