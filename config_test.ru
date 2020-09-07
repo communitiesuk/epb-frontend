@@ -97,6 +97,9 @@ FetchAssessmentSummary::AssessmentStub.fetch_dec_rr assessment_id:
 FetchAssessmentSummary::AssessmentStub.fetch_ac_cert assessment_id:
                                                        "0000-0000-0000-0000-9999"
 
+FetchAssessmentSummary::AssessmentStub.fetch_ac_report assessment_id:
+                                                       "0000-0000-0000-0000-5555"
+
 ENV["EPB_AUTH_CLIENT_ID"] = "test.id"
 ENV["EPB_AUTH_CLIENT_SECRET"] = "test.client.secret"
 ENV["EPB_AUTH_SERVER"] = "http://test-auth-server.gov.uk"

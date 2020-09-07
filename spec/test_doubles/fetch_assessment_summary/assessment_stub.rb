@@ -2,6 +2,33 @@
 
 module FetchAssessmentSummary
   class AssessmentStub
+
+    def self.fetch_ac_report(assessment_id:)
+      body = {
+          "data": {
+              "typeOfAssessment": "AC-REPORT",
+              "assessmentId": assessment_id,
+              "reportType": "5",
+              "dateOfExpiry": "2025-02-06",
+              "address": {
+                  "addressLine1": "",
+                  "addressLine2": "The Bank Plc",
+                  "addressLine3": "49-51 Northumberland Street",
+                  "addressLine4": "",
+                  "town": "NEWCASTLE UPON TYNE",
+                  "postcode": "NE1 7AF"
+              },
+              "relatedPartyDisclosure": "1"
+          },
+          "meta": {}
+      }
+
+      WebMock.stub_request(
+          :get,
+          "http://test-api.gov.uk/api/assessments/#{assessment_id}/summary",
+          ).to_return(status: 200, body: body.to_json)
+    end
+
     def self.fetch_ac_cert(
       assessment_id:,
       f_gas_compliant_date: "20/09/2010",

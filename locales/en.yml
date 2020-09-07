@@ -1316,4 +1316,6 @@ en:
             number: 'Assessor number'
             telephone: 'Telephone'
             email: 'E-mail address'
+  ac_report:
+    top_heading: "Air conditioning inspection report"
 

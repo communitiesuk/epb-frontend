@@ -1190,3 +1190,5 @@ cy:
         description: 'Welsh: Description'
         refrigerant_type: 'Welsh: Refrigerant type'
         age: 'Welsh: Age of main components'
+  ac_report:
+    top_heading: "Air conditioning inspection report"
