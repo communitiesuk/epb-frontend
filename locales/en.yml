@@ -1332,3 +1332,5 @@ en:
         operator_organisation: "Operator organisation"
         operator_telephone: "Operator's phone number"
         operator_address: "Operator's address"
+      key_recommendations:
+        title: "Key recommendations"

@@ -58,6 +58,15 @@ module FetchAssessmentSummary
                   postcode: "CV11 2FF",
               },
           },
+          keyRecommendations: {
+              efficiency: [
+                  { sequence: "0", text: "A way to improve your efficiency" },
+                  { sequence: "1", text: "A second way to improve efficiency" },
+              ],
+              maintenance: [{ sequence: "0", text: "Text2" }],
+              control: [{ sequence: "0", text: "Text4" }],
+              management: [{ sequence: "0", text: "Text6" }],
+          },
         },
         meta: {}
       }

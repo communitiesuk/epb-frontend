@@ -74,5 +74,9 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
       expect(response.body).to have_css "dt", text: "Operator's address"
       expect(response.body).to have_css "dd", text: "Low street, COVENTRY, CV11 2FF"
     end
+
+    it "can show the key recommendations section" do
+      expect(response.body).to have_css "h2", text: "Key recommendations"
+    end
   end
 end
