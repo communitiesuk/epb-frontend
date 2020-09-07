@@ -14,7 +14,7 @@
       <tbody class="govuk-table__body">
       <% assessment[:subsystems].each do |subsystem| %>
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell"><%== subsystem[:number] %></td>
+          <td class="govuk-table__cell" style="word-break: break-word;"><%== subsystem[:number] %></td>
           <td class="govuk-table__cell"><%== subsystem[:description] %></td>
           <td class="govuk-table__cell"><%== subsystem[:refrigerantType] %></td>
           <td class="govuk-table__cell"><%== subsystem[:age] %></td>
