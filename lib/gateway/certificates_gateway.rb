@@ -35,29 +35,5 @@ module Gateway
 
       JSON.parse(response.body, symbolize_names: true)
     end
-
-    def fetch(assessment_id)
-      route = "/api/assessments/#{CGI.escape(assessment_id)}"
-      response = @internal_api_client.get(route)
-
-      assessment_details = JSON.parse(response.body, symbolize_names: true)
-
-      if response.status == 200
-        assessment_details[:data][:dateOfExpiry] =
-          Date.parse(assessment_details[:data][:dateOfExpiry]).strftime(
-            "%-d %B %Y",
-          )
-        assessment_details[:data][:dateOfAssessment] =
-          Date.parse(assessment_details[:data][:dateOfAssessment]).strftime(
-            "%-d %B %Y",
-          )
-        assessment_details[:data][:dateRegistered] =
-          Date.parse(assessment_details[:data][:dateRegistered]).strftime(
-            "%-d %B %Y",
-          )
-      end
-
-      assessment_details
-    end
   end
 end
