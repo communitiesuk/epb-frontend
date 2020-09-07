@@ -16,5 +16,10 @@
       assessment: assessment,
       type: t('component.print.type.certificate')
     } %>
+
+    <%== erb :component__administrative_information, locals: {
+      assessor: assessment[:assessor],
+    } %>
+
   </div>
 </div>

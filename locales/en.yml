@@ -449,6 +449,19 @@ en:
       type:
         report: 'report'
         certificate: 'certificate'
+    administrative_information:
+      assessor:
+        list:
+          name: 'Assessor name'
+          number: 'Assessor number'
+          telephone: 'Telephone'
+          email: 'E-mail address'
+      scheme:
+        name: "Accreditation scheme"
+        phone: "Accreditation scheme telephone"
+        email: "Accreditation scheme email"
+      company_name: 'Employer/Trading name'
+      company_address: 'Employer/Trading address'
     epc_summary:
       title: "Energy Rating"
       date_of_expiry: "Valid until %{date_of_expiry}"

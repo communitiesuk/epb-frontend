@@ -29,5 +29,25 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
       expect(response.body).to have_css "span", text: "6 February 2025"
       expect(response.body).to have_text "Print this certificate"
     end
+
+    it "can show the Administrative information section" do
+      expect(response.body).to have_css "h2", text: "Administrative information"
+      expect(response.body).to have_css "dt", text: "Assessor name"
+      expect(response.body).to have_css "dd", text: "TEST NAME BOI"
+      expect(response.body).to have_css "dt", text: "Assessor number"
+      expect(response.body).to have_css "dd", text: "SPEC000000"
+      expect(response.body).to have_css "dt", text: "Accreditation scheme"
+      expect(response.body).to have_css "dd", text: "Quidos"
+      expect(response.body).to have_css "dt",
+                                        text: "Accreditation scheme telephone"
+      expect(response.body).to have_css "dd", text: "01225 667 570"
+      expect(response.body).to have_css "dt", text: "Accreditation scheme email"
+      expect(response.body).to have_css "dd", text: "info@quidos.co.uk"
+      expect(response.body).to have_css "dt", text: "Employer/Trading name"
+      expect(response.body).to have_css "dd", text: "Joe Bloggs Ltd"
+      expect(response.body).to have_css "dt", text: "Employer/Trading address"
+      expect(response.body).to have_css "dd",
+                                        text: "123 My Street, My City, AB3 4CD"
+    end
   end
 end

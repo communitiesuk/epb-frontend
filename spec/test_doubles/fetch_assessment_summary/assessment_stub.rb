@@ -5,22 +5,33 @@ module FetchAssessmentSummary
 
     def self.fetch_ac_report(assessment_id:)
       body = {
-          "data": {
-              "typeOfAssessment": "AC-REPORT",
-              "assessmentId": assessment_id,
-              "reportType": "5",
-              "dateOfExpiry": "2025-02-06",
-              "address": {
-                  "addressLine1": "",
-                  "addressLine2": "The Bank Plc",
-                  "addressLine3": "49-51 Northumberland Street",
-                  "addressLine4": "",
-                  "town": "NEWCASTLE UPON TYNE",
-                  "postcode": "NE1 7AF"
-              },
-              "relatedPartyDisclosure": "1"
-          },
-          "meta": {}
+        data: {
+          typeOfAssessment: "AC-REPORT",
+          assessmentId: assessment_id,
+          reportType: "5",
+          dateOfExpiry: "2025-02-06",
+          address: {
+              addressLine1: "",
+              addressLine2: "The Bank Plc",
+              addressLine3: "49-51 Northumberland Street",
+              addressLine4: "",
+              town: "NEWCASTLE UPON TYNE",
+              postcode: "NE1 7AF"
+            },
+          relatedPartyDisclosure: "1",
+          assessor: {
+              name: "TEST NAME BOI",
+              schemeAssessorId: "SPEC000000",
+              contactDetails: {
+                  email: "test@testscheme.com", telephone: "012345"
+                },
+              companyDetails: {
+                  name: "Joe Bloggs Ltd", address: "123 My Street, My City, AB3 4CD"
+                },
+              registeredBy: { name: "quidos", schemeId: "3" },
+            },
+        },
+        meta: {}
       }
 
       WebMock.stub_request(
