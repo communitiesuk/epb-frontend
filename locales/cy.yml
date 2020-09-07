@@ -158,6 +158,7 @@ cy:
       nonDomesticNos3: 'Welsh: Non-Domestic Energy Assessor (Level 3)'
       nonDomesticNos4: 'Welsh: Non-Domestic Energy Assessor (Level 4)'
       nonDomesticNos5: 'Welsh: Non-Domestic Energy Assessor (Level 5)'
+      gda: 'Welsh: Green Deal Assessor'
 
   find_assessor_by_postcode_results:
     head:
