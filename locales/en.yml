@@ -1336,3 +1336,9 @@ en:
         title: "Key recommendations"
         efficiency:
           title: "Efficiency of the air conditioning sub system(s)"
+        maintenance:
+          title: "Maintenance of the air conditioning sub system(s)"
+        control:
+          title: "Control of the air conditioning sub system(s)"
+        management:
+          title: "Management of the air conditioning sub system(s)"

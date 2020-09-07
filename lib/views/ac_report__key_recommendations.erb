@@ -8,4 +8,19 @@
     recommendations: assessment[:keyRecommendations][:efficiency]
   } %>
 
+  <%== erb :ac_report__recommendation_list, locals: {
+    title: 'ac_report.sections.key_recommendations.maintenance.title',
+    recommendations: assessment[:keyRecommendations][:maintenance]
+  } %>
+
+  <%== erb :ac_report__recommendation_list, locals: {
+    title: 'ac_report.sections.key_recommendations.control.title',
+    recommendations: assessment[:keyRecommendations][:control]
+  } %>
+
+  <%== erb :ac_report__recommendation_list, locals: {
+    title: 'ac_report.sections.key_recommendations.management.title',
+    recommendations: assessment[:keyRecommendations][:management]
+  } %>
+
 </div>
