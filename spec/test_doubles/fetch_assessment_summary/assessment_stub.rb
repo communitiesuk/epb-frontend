@@ -17,7 +17,7 @@ module FetchAssessmentSummary
               addressLine3: "49-51 Northumberland Street",
               addressLine4: "",
               town: "NEWCASTLE UPON TYNE",
-              postcode: "NE1 7AF"
+              postcode: "NE1 7AF",
             },
           relatedPartyDisclosure: "1",
           assessor: {
@@ -60,15 +60,28 @@ module FetchAssessmentSummary
           },
           keyRecommendations: {
               efficiency: [
-                  { sequence: "0", text: "A way to improve your efficiency" },
+                { sequence: "0", text: "A way to improve your efficiency" },
                   { sequence: "1", text: "A second way to improve efficiency" },
               ],
               maintenance: [{ sequence: "0", text: "Text2" }],
               control: [{ sequence: "0", text: "Text4" }],
               management: [{ sequence: "0", text: "Text6" }],
           },
+          subSystems: [
+            volumeDefinitions: "VOL001 The Shop",
+            id: "VOL001/SYS001 R410A Inverter Split Systems to Sales Area",
+            description: "This sub system comprised of; 4Nr 10kW R410A Mitsubishi Heavy Industries inverter driven split AC condensers.",
+            coolingOutput: "40",
+            areaServed: "Sales Area",
+            inspectionDate: "2019-05-20",
+            coolingPlantCount: "4",
+            ahuCount: "0",
+            terminalUnitsCount: "4",
+            controlsCount: "5",
+          ],
+
         },
-        meta: {}
+        meta: {},
       }
 
       WebMock.stub_request(
