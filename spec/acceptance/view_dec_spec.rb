@@ -20,6 +20,8 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
 
     it "shows the contents section" do
       expect(response.body).to have_css "h2", text: "Certificate contents"
+      expect(response.body).to have_link "Print this certificate",
+                                         href: "#print_certificate"
       expect(response.body).to have_link "Energy performance of this building",
                                          href: "#rating"
       expect(response.body).to have_link "Previous operational ratings",
@@ -40,7 +42,13 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
       expect(response.body).to include("2 Lonely Street")
       expect(response.body).to include("Post-Town1")
       expect(response.body).to include("A0 0AA")
-      expect(response.body).to have_text "Print this certificate"
+    end
+
+    it "shows the print certificate section" do
+      expect(response.body).to have_css "h2", text: "Print this certificate"
+      expect(response.body).to have_css "p", text: "his certificate should be printed on A3 paper and displayed in the building"
+      expect(response.body).to have_link "Open the print version of this certificate",
+                                         href: "/energy-performance-certificate/0000-0000-0000-0000-1111?print=true"
     end
 
     it "shows the rating section" do

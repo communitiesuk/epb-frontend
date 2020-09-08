@@ -15,6 +15,10 @@
       title: t("dec.sections.contents.title"),
       sections: [
         {
+          link: '#print_certificate',
+          text: 'dec.sections.print_certificate.title'
+        },
+        {
           link: '#rating',
           text: 'dec.sections.rating.title'
         },
@@ -53,6 +57,14 @@
       custom_print: true,
       rating_type: t('dec.sections.previous_energy_ratings.energy_rating')
     } %>
+
+    <div id="print_certificate" class="govuk-body epc-blue-bottom">
+      <h2 class="govuk-heading-l"><%= t('dec.sections.print_certificate.title') %></h2>
+      <p class="govuk-body"><%= t('dec.sections.print_certificate.discription') %></p>
+      <div class="component__print govuk-!-display-none-print">
+        <a href="<%= request.path_info + (request.path_info.include?("?") ? "&" : "?") %>print=true" class="govuk-link govuk-!-margin-bottom-5" id="link"><%= t('dec.sections.print_certificate.open_print_version') %></a>
+      </div>
+    </div>
 
     <div class="column-l">
       <%== erb :dec__rating, locals: {

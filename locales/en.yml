@@ -1192,6 +1192,10 @@ en:
         guidance_text: 'You can read %{link}.'
         cta: 'guidance on Display Energy Certificates and advisory reports for public buildings'
         url: 'https://www.gov.uk/government/publications/display-energy-certificates-and-advisory-reports-for-public-buildings'
+      print_certificate:
+        title: 'Print this certificate'
+        discription: 'This certificate should be printed on A3 paper and displayed in the building'
+        open_print_version: 'Open the print version of this certificate'
       previous_energy_ratings:
         energy_rating: "Operational rating"
         date: "Date"
