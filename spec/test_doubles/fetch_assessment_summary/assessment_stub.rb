@@ -846,7 +846,7 @@ module FetchAssessmentSummary
                 assessmentExpiryDate: "2006-05-04",
                 assessmentId: "0000-0000-0000-0000-0001",
                 assessmentStatus: "EXPIRED",
-                assessmentType: "CEPC",
+                assessmentType: "RdSAP",
               },
               {
                 assessmentExpiryDate: "2002-07-01",
