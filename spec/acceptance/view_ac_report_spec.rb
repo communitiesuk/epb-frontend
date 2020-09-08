@@ -10,8 +10,8 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
   context "when an ac report exists" do
     before do
       FetchAssessmentSummary::AssessmentStub.fetch_ac_report(
-          assessment_id: "0000-0000-0000-0000-9999",
-          )
+        assessment_id: "0000-0000-0000-0000-9999",
+      )
     end
 
     it "shows the page title" do
@@ -21,7 +21,8 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
 
     it "shows the summary section" do
       expect(response.body).to have_css "span", text: "The Bank Plc"
-      expect(response.body).to have_css "span", text: "49-51 Northumberland Street"
+      expect(response.body).to have_css "span",
+                                        text: "49-51 Northumberland Street"
       expect(response.body).to have_css "span", text: "NE1 7AF"
       expect(response.body).to have_css "label", text: "Certificate number"
       expect(response.body).to have_css "span", text: "0000-0000-0000-0000-9999"
@@ -56,7 +57,8 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
     end
 
     it "can show the owner and operator section" do
-      expect(response.body).to have_css "h2", text: "Equipment owner and operator"
+      expect(response.body).to have_css "h2",
+                                        text: "Equipment owner and operator"
       expect(response.body).to have_css "dt", text: "Owner name"
       expect(response.body).to have_css "dd", text: "Office manager"
       expect(response.body).to have_css "dt", text: "Owner organisation"
@@ -64,38 +66,51 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
       expect(response.body).to have_css "dt", text: "Owner's phone number"
       expect(response.body).to have_css "dd", text: "01234"
       expect(response.body).to have_css "dt", text: "Owner's address"
-      expect(response.body).to have_css "dd", text: "High street, North side, NEWCASTLE UPON TYNE, NE2 7DT"
-      expect(response.body).to have_css "dt", text: "Operator responsible person"
+      expect(response.body).to have_css "dd",
+                                        text: "High street, North side, NEWCASTLE UPON TYNE, NE2 7DT"
+      expect(response.body).to have_css "dt",
+                                        text: "Operator responsible person"
       expect(response.body).to have_css "dd", text: "Chief engineer"
       expect(response.body).to have_css "dt", text: "Operator organisation"
       expect(response.body).to have_css "dd", text: "Air Con Ltd"
       expect(response.body).to have_css "dt", text: "Operator's phone number"
       expect(response.body).to have_css "dd", text: "44432"
       expect(response.body).to have_css "dt", text: "Operator's address"
-      expect(response.body).to have_css "dd", text: "Low street, COVENTRY, CV11 2FF"
+      expect(response.body).to have_css "dd",
+                                        text: "Low street, COVENTRY, CV11 2FF"
     end
 
     it "can show the key recommendations section" do
       expect(response.body).to have_css "h2", text: "Key recommendations"
-      expect(response.body).to have_css "h3", text: "Efficiency of the air conditioning sub system(s)"
-      expect(response.body).to have_css "p", text: "A way to improve your efficiency"
-      expect(response.body).to have_css "p", text: "A second way to improve efficiency"
-      expect(response.body).to have_css "h3", text: "Maintenance of the air conditioning sub system(s)"
+      expect(response.body).to have_css "h3",
+                                        text: "Efficiency of the air conditioning sub system(s)"
+      expect(response.body).to have_css "p",
+                                        text: "A way to improve your efficiency"
+      expect(response.body).to have_css "p",
+                                        text: "A second way to improve efficiency"
+      expect(response.body).to have_css "h3",
+                                        text: "Maintenance of the air conditioning sub system(s)"
       expect(response.body).to have_css "p", text: "Text2"
-      expect(response.body).to have_css "h3", text: "Control of the air conditioning sub system(s)"
+      expect(response.body).to have_css "h3",
+                                        text: "Control of the air conditioning sub system(s)"
       expect(response.body).to have_css "p", text: "Text4"
-      expect(response.body).to have_css "h3", text: "Management of the air conditioning sub system(s)"
+      expect(response.body).to have_css "h3",
+                                        text: "Management of the air conditioning sub system(s)"
       expect(response.body).to have_css "p", text: "Text6"
     end
 
     it "can show the sub systems section" do
       expect(response.body).to have_css "h2", text: "Sub systems inspected"
-      expect(response.body).to have_css "h3", text: "VOL001/SYS001 R410A Inverter Split Systems to Sales Area"
+      expect(response.body).to have_css "h3",
+                                        text: "VOL001/SYS001 R410A Inverter Split Systems to Sales Area"
       expect(response.body).to have_css "dt", text: "Volume definitions"
       expect(response.body).to have_css "dd", text: "VOL001 The Shop"
       expect(response.body).to have_css "dt", text: "Description"
-      expect(response.body).to have_css "dd", text: "This sub system comprised of; 4Nr 10kW R410A Mitsubishi Heavy Industries inverter driven split AC condensers."
-      expect(response.body).to have_css "dt", text: "Effective rated cooling output"
+      expect(response.body).to have_css "dd",
+                                        text:
+                                          "This sub system comprised of; 4Nr 10kW R410A Mitsubishi Heavy Industries inverter driven split AC condensers."
+      expect(response.body).to have_css "dt",
+                                        text: "Effective rated cooling output"
       expect(response.body).to have_css "dd", text: "40 kW"
       expect(response.body).to have_css "dt", text: "Area served"
       expect(response.body).to have_css "dd", text: "Sales Area"

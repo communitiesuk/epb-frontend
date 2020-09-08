@@ -3,18 +3,18 @@
 describe "Journey::FindAssessor", type: :feature, journey: true do
   before(:all) do
     process =
-        IO.popen(
-            [
-                "rackup",
-                "config_test.ru",
-                "-q",
-                "-o",
-                "127.0.0.1",
-                "-p",
-                "9393",
-                err: %i[child out],
-            ],
-        )
+      IO.popen(
+        [
+          "rackup",
+          "config_test.ru",
+          "-q",
+          "-o",
+          "127.0.0.1",
+          "-p",
+          "9393",
+          err: %i[child out],
+        ],
+      )
     @process_id = process.pid
 
     unless process.readline.include?("port=9393")
@@ -61,7 +61,7 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
       fill_in "postcode", with: "SW1A 2AA"
       click_on "Find"
       expect(
-          page,
+        page,
       ).to have_content "7 assessors in order of distance from SW1A 2AA"
     end
 
@@ -98,7 +98,7 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
     click_on "find an assessor by name"
     click_on "Search"
     expect(
-        page,
+      page,
     ).to have_content "Enter the assessor’s full name, including their first name and last name"
   end
 
@@ -111,7 +111,7 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
     fill_in "name", with: "Supercommon"
     click_on "Search"
     expect(
-        page,
+      page,
     ).to have_content "Enter the assessor’s full name, including their first name and last name"
   end
 
@@ -171,7 +171,7 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
       fill_in "postcode", with: "SW1A 2AA"
       click_on "Find"
       expect(
-          page,
+        page,
       ).to have_content "7 assessors in order of distance from SW1A 2AA"
     end
 

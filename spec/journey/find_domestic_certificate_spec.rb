@@ -123,8 +123,6 @@ describe "Journey::FindDomesticCertificate", type: :feature, journey: true do
     expect(page).to have_content "A certificate was not found at this address."
     click_on "Find an assessor"
 
-    expect(
-      page,
-    ).to have_content "Getting a new energy certificate"
+    expect(page).to have_content "Getting a new energy certificate"
   end
 end

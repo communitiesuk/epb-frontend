@@ -46,9 +46,14 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
 
     it "shows the print certificate section" do
       expect(response.body).to have_css "h2", text: "Print this certificate"
-      expect(response.body).to have_css "p", text: "his certificate should be printed on A3 paper and displayed in the building"
-      expect(response.body).to have_link "Open the print version of this certificate",
-                                         href: "/energy-performance-certificate/0000-0000-0000-0000-1111?print=true"
+      expect(response.body).to have_css "p",
+                                        text:
+                                          "his certificate should be printed on A3 paper and displayed in the building"
+      expect(
+        response.body,
+      ).to have_link "Open the print version of this certificate",
+                     href:
+                       "/energy-performance-certificate/0000-0000-0000-0000-1111?print=true"
     end
 
     it "shows the rating section" do
@@ -75,7 +80,8 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
     end
 
     it "shows the previous operational ratings section" do
-      expect(response.body).to have_css "h2", text: "Previous operational ratings"
+      expect(response.body).to have_css "h2",
+                                        text: "Previous operational ratings"
       expect(response.body).to have_css "dt", text: "January 2020"
       expect(response.body).to have_css "dd", text: "1 | A"
       expect(response.body).to have_css "dt", text: "January 2019"

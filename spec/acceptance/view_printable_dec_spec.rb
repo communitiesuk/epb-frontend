@@ -20,9 +20,7 @@ describe "Acceptance::PrintableDisplayEnergyCertificate", type: :feature do
     end
 
     it "shows the page title" do
-      expect(
-        response.body,
-      ).to have_text "Display Energy Certificate"
+      expect(response.body).to have_text "Display Energy Certificate"
     end
 
     it "shows the summary box" do
@@ -49,7 +47,8 @@ describe "Acceptance::PrintableDisplayEnergyCertificate", type: :feature do
     end
 
     it "shows the previous operational ratings section" do
-      expect(response.body).to have_css "h2", text: "Previous operational ratings"
+      expect(response.body).to have_css "h2",
+                                        text: "Previous operational ratings"
       expect(response.body).to have_css "th", text: "January 2020"
       expect(response.body).to have_css "td", text: "1 | A"
       expect(response.body).to have_css "th", text: "January 2019"
@@ -74,7 +73,8 @@ describe "Acceptance::PrintableDisplayEnergyCertificate", type: :feature do
     end
 
     it "shows the technical information section" do
-      expect(response.body).to have_css "h3", text: "This building’s operational energy use"
+      expect(response.body).to have_css "h3",
+                                        text: "This building’s operational energy use"
       expect(response.body).to have_css "td", text: "Energy use"
       expect(response.body).to have_css "th", text: "Heating"
       expect(response.body).to have_css "th", text: "Electricity"

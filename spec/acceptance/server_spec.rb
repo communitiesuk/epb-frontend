@@ -33,9 +33,7 @@ describe "Acceptance::Server" do
       )
     end
     it "displays the find-an-assessor page heading" do
-      expect(response.body).to include(
-        "Getting a new energy certificate",
-      )
+      expect(response.body).to include("Getting a new energy certificate")
     end
   end
 
