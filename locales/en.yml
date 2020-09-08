@@ -1346,3 +1346,14 @@ en:
           title: "Control of the air conditioning sub system(s)"
         management:
           title: "Management of the air conditioning sub system(s)"
+      sub_systems:
+        title: "Sub systems inspected"
+        volume_definitions: "Volume definitions"
+        description: "Description"
+        cooling_output: "Effective rated cooling output"
+        area_served: "Area served"
+        inspection_date: "Inspection date"
+        cooling_plant_count: "Cooling plant count"
+        ahu_count: "AHU count"
+        terminal_units_count: "Terminal units count"
+        controls_count: "Sub system controls count"

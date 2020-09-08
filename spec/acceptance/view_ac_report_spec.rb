@@ -87,5 +87,28 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
       expect(response.body).to have_css "h3", text: "Management of the air conditioning sub system(s)"
       expect(response.body).to have_css "p", text: "Text6"
     end
+
+    it "can show the sub systems section" do
+      expect(response.body).to have_css "h2", text: "Sub systems inspected"
+      expect(response.body).to have_css "h3", text: "VOL001/SYS001 R410A Inverter Split Systems to Sales Area"
+      expect(response.body).to have_css "dt", text: "Volume definitions"
+      expect(response.body).to have_css "dd", text: "VOL001 The Shop"
+      expect(response.body).to have_css "dt", text: "Description"
+      expect(response.body).to have_css "dd", text: "This sub system comprised of; 4Nr 10kW R410A Mitsubishi Heavy Industries inverter driven split AC condensers."
+      expect(response.body).to have_css "dt", text: "Effective rated cooling output"
+      expect(response.body).to have_css "dd", text: "40 kW"
+      expect(response.body).to have_css "dt", text: "Area served"
+      expect(response.body).to have_css "dd", text: "Sales Area"
+      expect(response.body).to have_css "dt", text: "Inspection date"
+      expect(response.body).to have_css "dd", text: "20 May 2019"
+      expect(response.body).to have_css "dt", text: "Cooling plant count"
+      expect(response.body).to have_css "dd", text: "4"
+      expect(response.body).to have_css "dt", text: "AHU count"
+      expect(response.body).to have_css "dd", text: "0"
+      expect(response.body).to have_css "dt", text: "Terminal units count"
+      expect(response.body).to have_css "dd", text: "4"
+      expect(response.body).to have_css "dt", text: "Sub system controls count"
+      expect(response.body).to have_css "dd", text: "5"
+    end
   end
 end

@@ -1,0 +1,28 @@
+<div id="administrative_information" class="epc-blue-bottom">
+  <h2 class="govuk-heading-l"><%=
+    t('ac_report.sections.sub_systems.title')
+  %></h2>
+
+  <% assessment[:subSystems]
+       .each do |s| %>
+
+    <h3 class="govuk-heading-m"><%= s[:id] %></h3>
+
+    <%== erb :component__summary_list, locals: {
+      list: {
+        "volume_definitions": s[:volumeDefinitions],
+        "description": s[:description],
+        "cooling_output": s[:coolingOutput]? s[:coolingOutput] + " kW" : nil,
+        "area_served": s[:areaServed],
+        "inspection_date": s[:inspectionDate]? date(s[:inspectionDate]) : nil,
+        "cooling_plant_count": s[:coolingPlantCount],
+        "ahu_count": s[:ahuCount],
+        "terminal_units_count": s[:terminalUnitsCount],
+        "controls_count": s[:controlsCount],
+      },
+      translation_prefix: 'ac_report.sections.sub_systems.',
+      skip_null: true
+    } %>
+
+  <% end %>
+</div>
