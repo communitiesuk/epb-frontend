@@ -367,8 +367,8 @@
                       <thead>
                         <tr>
                           <td><%= t('dec.sections.technical_information.energy_use') %></td>
-                          <th><%= t('dec.sections.technical_information.heating') %></th>
                           <th><%= t('dec.sections.technical_information.electricity') %></th>
+                          <th><%= t('dec.sections.technical_information.other_fuels') %></th>
                         </tr>
                       </thead>
                       <tbody>
@@ -377,10 +377,10 @@
                             <%= t('dec.sections.technical_information.annual_energy_use') %>
                           </th>
                           <td>
-                            <%= assessment[:technicalInformation][:annualEnergyUseFuelThermal] %>
+                            <%= assessment[:technicalInformation][:annualEnergyUseElectrical] %>
                           </td>
                           <td>
-                            <%= assessment[:technicalInformation][:annualEnergyUseElectrical] %>
+                            <%= assessment[:technicalInformation][:annualEnergyUseFuelThermal] %>
                           </td>
                         </tr>
                         <tr>
@@ -388,10 +388,10 @@
                             <%= t('dec.sections.technical_information.typical_energy_use') %>
                           </th>
                           <td>
-                            <%= assessment[:technicalInformation][:typicalThermalUse] %>
+                            <%= assessment[:technicalInformation][:typicalElectricalUse] %>
                           </td>
                           <td>
-                            <%= assessment[:technicalInformation][:typicalElectricalUse] %>
+                            <%= assessment[:technicalInformation][:typicalThermalUse] %>
                           </td>
                         </tr>
                         <tr>
@@ -399,10 +399,10 @@
                             <%= t('dec.sections.technical_information.energy_from_renewables') %>
                           </th>
                           <td>
-                            <%= assessment[:technicalInformation][:renewablesFuelThermal] %>%
+                            <%= assessment[:technicalInformation][:renewablesElectrical] %>%
                           </td>
                           <td>
-                            <%= assessment[:technicalInformation][:renewablesElectrical] %>%
+                            <%= assessment[:technicalInformation][:renewablesFuelThermal] %>%
                           </td>
                         </tr>
                       </tbody>

@@ -27,25 +27,25 @@
     <thead class="govuk-table__head">
     <tr class="govuk-table__row">
       <th scope="col" class="govuk-table__header"><%= t('dec.sections.technical_information.energy_use') %></th>
-      <th scope="col" class="govuk-table__header govuk-table__header--numeric"><%= t('dec.sections.technical_information.heating') %></th>
       <th scope="col" class="govuk-table__header govuk-table__header--numeric"><%= t('dec.sections.technical_information.electricity') %></th>
+      <th scope="col" class="govuk-table__header govuk-table__header--numeric"><%= t('dec.sections.technical_information.other_fuels') %></th>
     </tr>
     </thead>
     <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header"><%= t('dec.sections.technical_information.annual_energy_use') %></th>
-      <td class="govuk-table__cell govuk-table__cell--numeric"><%= assessment[:technicalInformation][:annualEnergyUseFuelThermal] %></td>
       <td class="govuk-table__cell govuk-table__cell--numeric"><%= assessment[:technicalInformation][:annualEnergyUseElectrical] %></td>
+      <td class="govuk-table__cell govuk-table__cell--numeric"><%= assessment[:technicalInformation][:annualEnergyUseFuelThermal] %></td>
     </tr>
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header"><%= t('dec.sections.technical_information.typical_energy_use') %></th>
-      <td class="govuk-table__cell govuk-table__cell--numeric"><%= assessment[:technicalInformation][:typicalThermalUse] %></td>
       <td class="govuk-table__cell govuk-table__cell--numeric"><%= assessment[:technicalInformation][:typicalElectricalUse] %></td>
+      <td class="govuk-table__cell govuk-table__cell--numeric"><%= assessment[:technicalInformation][:typicalThermalUse] %></td>
     </tr>
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header"><%= t('dec.sections.technical_information.energy_from_renewables') %></th>
-      <td class="govuk-table__cell govuk-table__cell--numeric"><%= assessment[:technicalInformation][:renewablesFuelThermal] %>%</td>
       <td class="govuk-table__cell govuk-table__cell--numeric"><%= assessment[:technicalInformation][:renewablesElectrical] %>%</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric"><%= assessment[:technicalInformation][:renewablesFuelThermal] %>%</td>
     </tr>
     </tbody>
   </table>
