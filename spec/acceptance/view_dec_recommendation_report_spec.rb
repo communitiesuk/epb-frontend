@@ -38,7 +38,7 @@ describe "Acceptance::DecRecommendationReport", type: :feature do
 
     it "shows the contents section" do
       expect(response.body).to have_css "h2", text: "Report contents"
-      expect(response.body).to have_link "Energy rating and DEC",
+      expect(response.body).to have_link "Operational rating and DEC",
                                          href: "#rating"
       expect(response.body).to have_link "Recommendations",
                                          href: "#recommendations"
@@ -58,9 +58,9 @@ describe "Acceptance::DecRecommendationReport", type: :feature do
     end
 
     it "shows the rating section" do
-      expect(response.body).to have_css "h2", text: "Energy rating and DEC"
+      expect(response.body).to have_css "h2", text: "Operational rating and DEC"
       expect(response.body).to have_css "p",
-                                        text: "This building has an energy rating of A."
+                                        text: "This building has an operational rating of A."
       expect(response.body).to have_css "p",
                                         text: "See the Display Energy Certificate for this building."
       expect(

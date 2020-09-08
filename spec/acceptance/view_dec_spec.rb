@@ -22,7 +22,7 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
       expect(response.body).to have_css "h2", text: "Certificate contents"
       expect(response.body).to have_link "Energy performance of this building",
                                          href: "#rating"
-      expect(response.body).to have_link "Previous energy ratings",
+      expect(response.body).to have_link "Previous operational ratings",
                                          href: "#previous_energy_ratings"
       expect(response.body).to have_link "Total CO2 emissions", href: "#co2"
       expect(response.body).to have_link "Technical information",
@@ -48,13 +48,13 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
                                         text: "Energy performance of this building"
       expect(response.body).to have_css "p",
                                         text:
-                                          "The building’s energy performance is based on its carbon dioxide (CO2) emissions for the last year."
+                                          "The building’s operational energy performance rating is based on its carbon dioxide (CO2) emissions for the last year."
       expect(response.body).to have_css "p",
                                         text:
-                                          "It is given a score and an energy rating on a scale from A (lowest emissions) to G (highest emissions)."
+                                          "It is given a score and an operational rating on a scale from A (lowest emissions) to G (highest emissions)."
       expect(response.body).to have_css "p",
                                         text:
-                                          "Typical energy performance for a public building is 100. This typical score gives an energy rating of D."
+                                          "Typical operational score for a public building is 100. This typical score gives an operational rating of D."
       expect(response.body).to have_css "text", text: "1 | A"
       expect(response.body).to have_css "p",
                                         text:
@@ -67,7 +67,7 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
     end
 
     it "shows the previous operational ratings section" do
-      expect(response.body).to have_css "h2", text: "Previous energy ratings"
+      expect(response.body).to have_css "h2", text: "Previous operational ratings"
       expect(response.body).to have_css "dt", text: "January 2020"
       expect(response.body).to have_css "dd", text: "1 | A"
       expect(response.body).to have_css "dt", text: "January 2019"

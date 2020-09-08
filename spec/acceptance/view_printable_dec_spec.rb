@@ -40,16 +40,16 @@ describe "Acceptance::PrintableDisplayEnergyCertificate", type: :feature do
         ">Energy performance of this building</h2>",
       )
       expect(response.body).to include(
-        "The building’s energy performance is based on its carbon dioxide (CO2) emissions for the last year.",
+        "The building’s operational energy performance rating is based on its carbon dioxide (CO2) emissions for the last year.",
       )
       expect(response.body).to include(
-        "Typical energy performance for a public building is 100. This typical score gives an energy rating of D.",
+        "Typical operational score for a public building is 100. This typical score gives an operational rating of D.",
       )
       expect(response.body).to include("1 | A")
     end
 
     it "shows the previous operational ratings section" do
-      expect(response.body).to have_css "h2", text: "Previous energy ratings"
+      expect(response.body).to have_css "h2", text: "Previous operational ratings"
       expect(response.body).to have_css "th", text: "January 2020"
       expect(response.body).to have_css "td", text: "1 | A"
       expect(response.body).to have_css "th", text: "January 2019"
@@ -74,7 +74,7 @@ describe "Acceptance::PrintableDisplayEnergyCertificate", type: :feature do
     end
 
     it "shows the technical information section" do
-      expect(response.body).to have_css "h3", text: "This building’s energy use"
+      expect(response.body).to have_css "h3", text: "This building’s operational energy use"
       expect(response.body).to have_css "td", text: "Energy use"
       expect(response.body).to have_css "th", text: "Heating"
       expect(response.body).to have_css "th", text: "Electricity"

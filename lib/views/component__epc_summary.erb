@@ -1,7 +1,11 @@
 <div class="govuk-body epc-blue-bottom govuk-!-display-none-print">
   <div class="epc-box govuk-!-margin-bottom-5">
     <div class="epc-rating-box">
-      <p class="epc-rating-title govuk-body"><%= t('component.epc_summary.title') %></p>
+      <% if defined?(rating_type) %>
+        <p class="epc-rating-title govuk-body"><%= rating_type %></p>
+      <% else %>
+        <p class="epc-rating-title govuk-body"><%= t('component.epc_summary.title') %></p>
+      <% end  %>
       <p class="epc-rating-result govuk-body"><%= energy_efficiency_band.upcase %></p>
     </div>
     <p class="epc-address govuk-body"><%==
