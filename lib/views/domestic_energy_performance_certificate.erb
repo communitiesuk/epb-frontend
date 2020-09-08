@@ -260,12 +260,20 @@
       } %>
 
     </div>
-  </div>
-  <% if assessment.has_key?(:greenDealPlan) %>
-    <%== erb :domestic_energy_performance_certificate__green_deal_plan, locals: { assessment: assessment } %>
-  <% end %>
+      <% if assessment.has_key?(:greenDealPlan) %>
+        <%== erb :domestic_energy_performance_certificate__green_deal_plan, locals: { assessment: assessment } %>
+      <% end %>
 
-  <% unless assessment[:relatedAssessments] == [] || assessment[:relatedAssessments].nil? %>
-    <%== erb :domestic_energy_performance_certificate__related_assessments, locals: { assessment: assessment } %>
-  <% end %>
+      <%= assessment[:relatedAssessments] %>
+      <%== erb :component__related_assessments, locals: {
+          assessment: assessment,
+          section_heading: t('component.related.title', type: assessment[:typeOfAssessment]),
+          reminder: t('component.related.certificates.text', contact_centre_number: t('contact.help_desk_number')),
+          no_related_text: t('component.related.certificates.no_related_certificates'),
+          assessment_type: assessment[:typeOfAssessment],
+          heading_report_reference: t('component.related.reference_number'),
+          heading_valid_until: t('component.related.valid_until'),
+          expired_text: t('component.related.expired'),
+        } %>
+  </div>
 </div>

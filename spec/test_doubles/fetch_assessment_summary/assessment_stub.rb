@@ -2,9 +2,9 @@
 
 module FetchAssessmentSummary
   class AssessmentStub
-
-    def self.fetch_ac_report(assessment_id:,
-                             executive_summary: "My\nSummary\t\tInspected")
+    def self.fetch_ac_report(
+      assessment_id:, executive_summary: "My\nSummary\t\tInspected"
+    )
       body = {
         data: {
           typeOfAssessment: "AC-REPORT",
@@ -12,65 +12,66 @@ module FetchAssessmentSummary
           reportType: "5",
           dateOfExpiry: "2025-02-06",
           address: {
-              addressLine1: "",
-              addressLine2: "The Bank Plc",
-              addressLine3: "49-51 Northumberland Street",
-              addressLine4: "",
-              town: "NEWCASTLE UPON TYNE",
-              postcode: "NE1 7AF",
-            },
+            addressLine1: "",
+            addressLine2: "The Bank Plc",
+            addressLine3: "49-51 Northumberland Street",
+            addressLine4: "",
+            town: "NEWCASTLE UPON TYNE",
+            postcode: "NE1 7AF",
+          },
           relatedPartyDisclosure: "1",
           assessor: {
-              name: "TEST NAME BOI",
-              schemeAssessorId: "SPEC000000",
-              contactDetails: {
-                  email: "test@testscheme.com", telephone: "012345"
-                },
-              companyDetails: {
-                  name: "Joe Bloggs Ltd", address: "123 My Street, My City, AB3 4CD"
-                },
-              registeredBy: { name: "quidos", schemeId: "3" },
+            name: "TEST NAME BOI",
+            schemeAssessorId: "SPEC000000",
+            contactDetails: {
+              email: "test@testscheme.com", telephone: "012345"
             },
+            companyDetails: {
+              name: "Joe Bloggs Ltd", address: "123 My Street, My City, AB3 4CD"
+            },
+            registeredBy: { name: "quidos", schemeId: "3" },
+          },
           executiveSummary: executive_summary,
           equipmentOwner: {
-              name: "Office manager",
-              telephone: "01234",
-              organisation: "The bank",
-              address: {
-                  addressLine1: "High street",
-                  addressLine2: "North side",
-                  addressLine3: nil,
-                  addressLine4: nil,
-                  town: "NEWCASTLE UPON TYNE",
-                  postcode: "NE2 7DT",
-              },
+            name: "Office manager",
+            telephone: "01234",
+            organisation: "The bank",
+            address: {
+              addressLine1: "High street",
+              addressLine2: "North side",
+              addressLine3: nil,
+              addressLine4: nil,
+              town: "NEWCASTLE UPON TYNE",
+              postcode: "NE2 7DT",
+            },
           },
           equipmentOperator: {
-              responsiblePerson: "Chief engineer",
-              telephone: "44432",
-              organisation: "Air Con Ltd",
-              address: {
-                  addressLine1: "Low street",
-                  addressLine2: nil,
-                  addressLine3: nil,
-                  addressLine4: nil,
-                  town: "COVENTRY",
-                  postcode: "CV11 2FF",
-              },
+            responsiblePerson: "Chief engineer",
+            telephone: "44432",
+            organisation: "Air Con Ltd",
+            address: {
+              addressLine1: "Low street",
+              addressLine2: nil,
+              addressLine3: nil,
+              addressLine4: nil,
+              town: "COVENTRY",
+              postcode: "CV11 2FF",
+            },
           },
           keyRecommendations: {
-              efficiency: [
-                { sequence: "0", text: "A way to improve your efficiency" },
-                  { sequence: "1", text: "A second way to improve efficiency" },
-              ],
-              maintenance: [{ sequence: "0", text: "Text2" }],
-              control: [{ sequence: "0", text: "Text4" }],
-              management: [{ sequence: "0", text: "Text6" }],
+            efficiency: [
+              { sequence: "0", text: "A way to improve your efficiency" },
+              { sequence: "1", text: "A second way to improve efficiency" },
+            ],
+            maintenance: [{ sequence: "0", text: "Text2" }],
+            control: [{ sequence: "0", text: "Text4" }],
+            management: [{ sequence: "0", text: "Text6" }],
           },
           subSystems: [
             volumeDefinitions: "VOL001 The Shop",
             id: "VOL001/SYS001 R410A Inverter Split Systems to Sales Area",
-            description: "This sub system comprised of; 4Nr 10kW R410A Mitsubishi Heavy Industries inverter driven split AC condensers.",
+            description:
+              "This sub system comprised of; 4Nr 10kW R410A Mitsubishi Heavy Industries inverter driven split AC condensers.",
             coolingOutput: "40",
             areaServed: "Sales Area",
             inspectionDate: "2019-05-20",
@@ -79,15 +80,14 @@ module FetchAssessmentSummary
             terminalUnitsCount: "4",
             controlsCount: "5",
           ],
-
         },
         meta: {},
       }
 
       WebMock.stub_request(
-          :get,
-          "http://test-api.gov.uk/api/assessments/#{assessment_id}/summary",
-          ).to_return(status: 200, body: body.to_json)
+        :get,
+        "http://test-api.gov.uk/api/assessments/#{assessment_id}/summary",
+      ).to_return(status: 200, body: body.to_json)
     end
 
     def self.fetch_ac_cert(
@@ -853,6 +853,12 @@ module FetchAssessmentSummary
                 assessmentId: "0000-0000-0000-0000-0002",
                 assessmentStatus: "EXPIRED",
                 assessmentType: "CEPC-RR",
+              },
+              {
+                assessmentId: "9024-0000-0000-0000-0000",
+                assessmentStatus: "CANCELLED",
+                assessmentType: "RdSAP",
+                assessmentExpiryDate: "2030-05-04",
               },
             ],
           },

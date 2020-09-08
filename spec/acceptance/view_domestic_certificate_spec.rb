@@ -581,19 +581,19 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
 
     context "when viewing the related certificates section" do
       it "shows the section title" do
-        expect(response.body).to include(
-          '<h2 class="govuk-heading-l">Other EPCs for this property</h2>',
+        expect(response.body).to have_css(
+          "h2",
+          text: "Other RdSAPs for this property",
         )
       end
 
-      it "shows a link to the reference number of a related certificate" do
-        expect(response.body).to include(
-          '<a href="/energy-performance-certificate/0000-0000-0000-0000-0001">0000-0000-0000-0000-0001</a>',
-        )
-      end
-
-      it "shows the expiry date of a previous certificate in red with Expired next to it" do
-        expect(response.body).to include("1 July 2002 (Expired)")
+      context "when there are CANCELLED related certificates" do
+        it "does not show cancelled related certificates" do
+          expect(response.body).not_to have_css(
+            "dd",
+            text: "9024-0000-0000-0000-0000",
+          )
+        end
       end
 
       context "when there are no related certificates" do
