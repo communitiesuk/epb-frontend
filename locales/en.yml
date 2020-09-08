@@ -1184,10 +1184,10 @@ en:
         title: 'Certificate contents'
         certificate_number: 'Certificate number'
       rating:
-        title: 'Energy performance of this building'
-        emissions_text: 'The building’s operational energy performance rating is based on its carbon dioxide (CO2) emissions for the last year.'
+        title: 'Energy performance operational rating'
+        emissions_text: 'The building’s energy performance operational rating is based on its carbon dioxide (CO2) emissions for the last year.'
         text: 'It is given a score and an operational rating on a scale from A (lowest emissions) to G (highest emissions).'
-        typical_text: 'Typical operational score for a public building is 100. This typical score gives an operational rating of D.'
+        typical_text: 'Typical score for a public building is 100. This typical score gives an operational rating of D.'
         svg_title: 'This building’s operational rating is %{energy_efficiency_band} (%{energy_efficiency_rating})'
         guidance_text: 'You can read %{link}.'
         cta: 'guidance on Display Energy Certificates and advisory reports for public buildings'
@@ -1212,7 +1212,7 @@ en:
         no_value: "Not applicable"
       technical_information:
         title: 'Technical information'
-        print_title: 'This building’s operational energy use'
+        print_title: 'This building’s energy use'
         description: 'This tells you technical information about how energy is used in this building. Consumption data based on actual meter readings.'
         heating_fuel: 'Main heating fuel'
         building_environment: 'Building environment'

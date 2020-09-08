@@ -22,7 +22,7 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
       expect(response.body).to have_css "h2", text: "Certificate contents"
       expect(response.body).to have_link "Print this certificate",
                                          href: "#print_certificate"
-      expect(response.body).to have_link "Energy performance of this building",
+      expect(response.body).to have_link "Energy performance operational rating",
                                          href: "#rating"
       expect(response.body).to have_link "Previous operational ratings",
                                          href: "#previous_energy_ratings"
@@ -58,16 +58,16 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
 
     it "shows the rating section" do
       expect(response.body).to have_css "h2",
-                                        text: "Energy performance of this building"
+                                        text: "Energy performance operational rating"
       expect(response.body).to have_css "p",
                                         text:
-                                          "The building’s operational energy performance rating is based on its carbon dioxide (CO2) emissions for the last year."
+                                          "The building’s energy performance operational rating is based on its carbon dioxide (CO2) emissions for the last year."
       expect(response.body).to have_css "p",
                                         text:
                                           "It is given a score and an operational rating on a scale from A (lowest emissions) to G (highest emissions)."
       expect(response.body).to have_css "p",
                                         text:
-                                          "Typical operational score for a public building is 100. This typical score gives an operational rating of D."
+                                          "Typical score for a public building is 100. This typical score gives an operational rating of D."
       expect(response.body).to have_css "text", text: "1 | A"
       expect(response.body).to have_css "p",
                                         text:

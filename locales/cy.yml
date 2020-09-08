@@ -1067,10 +1067,10 @@ cy:
       contents:
         title: 'Welsh: Certificate contents'
       rating:
-        title: 'Welsh: Energy performance of this building'
-        emissions_text: 'Welsh: The building’s operational energy performance rating is based on its carbon dioxide (CO2) emissions for the last year.'
+        title: 'Welsh: Energy performance operational rating'
+        emissions_text: 'Welsh: The building’s energy performance operational rating is based on its carbon dioxide (CO2) emissions for the last year.'
         text: 'Welsh: It is given a score and an operational rating on a scale from A (lowest emissions) to G (highest emissions).'
-        typical_text: 'Welsh: Typical operational score for a public building is 100. This typical score gives an operational rating of D.'
+        typical_text: 'Welsh: Typical score for a public building is 100. This typical score gives an operational rating of D.'
         svg_title: 'Welsh: This building’s operational rating is %{energy_efficiency_band} (%{energy_efficiency_rating})'
         guidance_text: 'Welsh: You can read %{link}.'
         cta: 'Welsh: guidance for public buildings on Display Energy Certificates and advisory reports'
