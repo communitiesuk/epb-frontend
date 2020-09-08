@@ -129,6 +129,18 @@ module Sinatra
 
         output.compact
       end
+
+      def address_size(address)
+        address_without_address_id =
+          address.tap { |key| key.delete(:addressId) }
+
+        line_count = 0
+        address_without_address_id.compact.each_value do |value|
+          line_value = value.length >= 30 ? 2 : 1
+          line_count += line_value
+        end
+        line_count >= 6 ? "govuk-body small-font" : "govuk-body"
+      end
     end
   end
 end

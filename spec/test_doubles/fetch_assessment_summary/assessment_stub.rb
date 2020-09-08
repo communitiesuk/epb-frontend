@@ -360,9 +360,9 @@ module FetchAssessmentSummary
           address: {
             addressId: "UPRN-000000000001",
             addressLine1: "2 Lonely Street",
-            addressLine2: nil,
-            addressLine3: nil,
-            addressLine4: nil,
+            addressLine2: "Something road",
+            addressLine3: "Place area",
+            addressLine4: "General grid",
             town: "Post-Town1",
             postcode: "A0 0AA",
           },

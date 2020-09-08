@@ -176,6 +176,10 @@
     float: right;
   }
 
+  .small-font {
+    font-size: 12px;
+  }
+
   .band-a{
     background: #008054
   }
@@ -243,7 +247,7 @@
       }
 
       svg[role="img"] {
-        zoom: 0.75;
+        zoom: 0.70;
       }
 
       table {
@@ -277,7 +281,6 @@
           <tr>
             <td>
               <h1 class="govuk-heading-m" style="padding-left: 15px; margin: 5px"><%= t('dec.top_heading') %>
-<!--                <span class="govuk-!-font-weight-regular"><%#= t('dec.tagline') %></span>-->
               </h1>
             </td>
             <td>
@@ -295,7 +298,8 @@
         <tbody>
           <tr>
             <td>
-              <p class="govuk-body">
+              <p class="<%= address_size(assessment[:address]) %>">
+
                 <%== [assessment[:address][:addressLine1],
                      assessment[:address][:addressLine2],
                      assessment[:address][:addressLine3],
