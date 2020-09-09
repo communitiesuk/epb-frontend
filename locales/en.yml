@@ -1373,7 +1373,7 @@ en:
           temperatureControls: "Description of method of control of temperature"
         desirable:
           title: "Desirable records"
-          comissioningResults: "For relevant air supply and extract systems, commissioning results of measured absorbed power at normal air delivery and extract rates, and commissioning results for normal delivered delivery and extract air flow rates (or independently calculated specific fan power for the systems)"
+          commissioningResults: "For relevant air supply and extract systems, commissioning results of measured absorbed power at normal air delivery and extract rates, and commissioning results for normal delivered delivery and extract air flow rates (or independently calculated specific fan power for the systems)"
           consumptionRecords: "Records of sub-metered air conditioning plant use or energy consumption"
           controlSystemMaintenance: "Records of calibration and maintenance operations carried out on control systems and sensors, or BMS systems and sensors"
           deliverySystemMaintenance: "Records of maintenance operations carried out on air delivery systems, including filter cleaning and changing, and cleaning of heat exchangers"
