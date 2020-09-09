@@ -235,6 +235,16 @@ en:
         url: '/find-a-non-domestic-certificate'
         cta: 'find a non-domestic EPC'
       call_center: 'If you need additional support to find an EPC, call our helpdesk on 0233 788 1234 (Monday to Friday, 9am - 5pm).'
+    property_type:
+      question_title: "What type of property is the certificate for?"
+      options:
+        domestic:
+          title: "A domestic property"
+          hint: "Such as a house or flat"
+        non_domestic:
+          title: "A non-domestic property"
+          hint: "Such as a commercial, industrial or public building"
+      cta: "Continue"
 
   find_certificate_by_postcode:
     head:

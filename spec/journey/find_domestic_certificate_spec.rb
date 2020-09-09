@@ -26,6 +26,8 @@ describe "Journey::FindDomesticCertificate", type: :feature, journey: true do
   it "finds a certificate by postcode" do
     visit "/find-a-certificate"
     click_on "Start now"
+    find("#label-domestic").click
+    click_on "Continue"
     fill_in "postcode", with: "SW1A 2AA"
     click_button "Find"
     expect(page).to have_content "1-2 of 2 results matching SW1A 2AA"
@@ -36,6 +38,8 @@ describe "Journey::FindDomesticCertificate", type: :feature, journey: true do
       visit "/find-a-certificate"
       click_on "Welsh (Cymraeg)"
       click_on "Welsh: Start now"
+      find("#label-domestic").click
+      click_on "Welsh: Continue"
       fill_in "postcode", with: "SW1A 2AA"
       click_button "Welsh: Find"
       expect(page).to have_content "Welsh: 1-2 of 2 results matching SW1A 2AA"
@@ -45,6 +49,8 @@ describe "Journey::FindDomesticCertificate", type: :feature, journey: true do
   it "displays an error message when entering an empty postcode" do
     visit "/find-a-certificate"
     click_on "Start now"
+    find("#label-domestic").click
+    click_on "Continue"
     fill_in "postcode", with: ""
     click_on("Find")
     expect(page).to have_content "Enter a real postcode"
@@ -53,6 +59,8 @@ describe "Journey::FindDomesticCertificate", type: :feature, journey: true do
   it "displays an error message when entering an invalid postcode" do
     visit "/find-a-certificate"
     click_on "Start now"
+    find("#label-domestic").click
+    click_on "Continue"
     fill_in "postcode", with: "NOT A POSTCODE"
     click_on "Find"
     expect(page).to have_content "Enter a real postcode"
@@ -61,6 +69,8 @@ describe "Journey::FindDomesticCertificate", type: :feature, journey: true do
   it "displays the find a certificate page heading when entering a valid postcode" do
     visit "/find-a-certificate"
     click_on "Start now"
+    find("#label-domestic").click
+    click_on "Continue"
     fill_in "postcode", with: "SW1A 2AA"
     click_on "Find"
     expect(page).to have_content "of 2 results matching"
@@ -69,6 +79,8 @@ describe "Journey::FindDomesticCertificate", type: :feature, journey: true do
   it "redirects directly to the certificate page when entering a valid certificate reference number" do
     visit "/find-a-certificate"
     click_on "Start now"
+    find("#label-domestic").click
+    click_on "Continue"
     click_on "certificate by reference"
     fill_in "reference_number", with: "4567-6789-4567-6789-4567"
     click_on "Find"
@@ -79,6 +91,8 @@ describe "Journey::FindDomesticCertificate", type: :feature, journey: true do
   it "displays an error message when entering an empty street name" do
     visit "/find-a-certificate"
     click_on "Start now"
+    find("#label-domestic").click
+    click_on "Continue"
     click_on "find an EPC using the street name and town"
     fill_in "town", with: "Beauty Town"
     click_on "Find"
@@ -88,6 +102,8 @@ describe "Journey::FindDomesticCertificate", type: :feature, journey: true do
   it "displays an error message when entering an empty town" do
     visit "/find-a-certificate"
     click_on "Start now"
+    find("#label-domestic").click
+    click_on "Continue"
     click_on "find an EPC using the street name and town"
     fill_in "street_name", with: "1 Makeup Street"
     click_on "Find"
@@ -97,6 +113,8 @@ describe "Journey::FindDomesticCertificate", type: :feature, journey: true do
   it "displays an error message when entering an empty town and street name" do
     visit "/find-a-certificate"
     click_on "Start now"
+    find("#label-domestic").click
+    click_on "Continue"
     click_on "find an EPC using the street name and town"
     click_on "Find"
     expect(page).to have_content "Enter the town"
@@ -106,6 +124,8 @@ describe "Journey::FindDomesticCertificate", type: :feature, journey: true do
   it "displays the find a certificate page heading when entering a valid query" do
     visit "/find-a-certificate"
     click_on "Start now"
+    find("#label-domestic").click
+    click_on "Continue"
     click_on "find an EPC using the street name and town"
     fill_in "street_name", with: "1 Makeup Street"
     fill_in "town", with: "Beauty Town"
@@ -116,6 +136,8 @@ describe "Journey::FindDomesticCertificate", type: :feature, journey: true do
   it "displays the error message when searching for a certificate that doesnt exist" do
     visit "/find-a-certificate"
     click_on "Start now"
+    find("#label-domestic").click
+    click_on "Continue"
     click_on "find an EPC using the street name and town"
     fill_in "street_name", with: "Madeup Street"
     fill_in "town", with: "Madeup Town"

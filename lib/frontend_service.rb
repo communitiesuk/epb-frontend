@@ -39,13 +39,16 @@ class FrontendService < Sinatra::Base
   end
 
   get "/find-an-assessor/type-of-property" do
+    query = params.map { |key, value| "#{key}=#{value}" }.join("&")
+
     if params["property_type"] == "domestic"
-      redirect "/find-an-assessor/search-by-postcode"
+      redirect "/find-an-assessor/search-by-postcode?#{query}"
     elsif params["property_type"] == "non_domestic"
-      redirect "/find-a-non-domestic-assessor/search-by-postcode"
+      redirect "/find-a-non-domestic-assessor/search-by-postcode?#{query}"
     else
       @page_title = t("find_an_assessor.head.title")
-      erb :find_assessor__property_type, layout: :layout
+      erb :find_assessor__property_type,
+          layout: :layout, locals: { lang: params[:lang] }
     end
   end
 
@@ -225,6 +228,19 @@ class FrontendService < Sinatra::Base
   get "/find-a-certificate" do
     @page_title = t("find_a_certificate.head.title")
     erb :find_certificate, layout: :layout
+  end
+
+  get "/find-a-certificate/type-of-property" do
+    query = params.map { |key, value| "#{key}=#{value}" }.join("&")
+    if params["property_type"] == "domestic"
+      redirect "/find-a-certificate/search-by-postcode?#{query}"
+    elsif params["property_type"] == "non_domestic"
+      redirect "/find-a-non-domestic-certificate/search-by-postcode?#{query}"
+    else
+      @page_title = t("find_an_assessor.head.title")
+      erb :find_certificate__property_type,
+          layout: :layout, locals: { lang: params[:lang] }
+    end
   end
 
   get "/find-a-certificate/search-by-postcode" do

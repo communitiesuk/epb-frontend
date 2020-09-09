@@ -68,15 +68,15 @@ cy:
         description: 'Welsh: To check if a property has an existing EPC, use the %{link} service.'
         link: 'Welsh: find an EPC for a domestic property'
     property_type:
-      question_title: "What type of property is the certificate for?"
+      question_title: "Welsh: What type of property is the certificate for?"
       options:
         domestic:
-          title: "A domestic property"
-          hint: "Such as a house or flat"
+          title: "Welsh: A domestic property"
+          hint: "Welsh: Such as a house or flat"
         non_domestic:
-          title: "A non-domestic property"
-          hint: "Such as a commercial, industrial or public building"
-      cta: "Continue"
+          title: "Welsh: A non-domestic property"
+          hint: "Welsh: Such as a commercial, industrial or public building"
+      cta: "Welsh: Continue"
   schemes:
     head:
       title: 'Welsh: Energy performance of buildings register - Contact an energy assessor accreditation scheme'
@@ -220,7 +220,7 @@ cy:
       switch_language:
         description: 'Welsh: This service is also available in %{link}.'
         link: 'Welsh: English (English)'
-        url: 'Welsh: /find-a-certificate?lang=en'
+        url: '/find-a-certificate?lang=en'
       scotland:
         text: 'Welsh: For properties in Scotland, use the %{link}.'
         cta: "Scottish government's EPC service"
@@ -232,6 +232,16 @@ cy:
         url: '/find-a-non-domestic-certificate'
         cta: 'Welsh: find a non-domestic EPC'
       call_center: 'Welsh: If you need additional support to find an EPC, call our helpdesk on 0233 788 1234 (Monday to Friday, 9am - 5pm).'
+    property_type:
+      question_title: "Welsh: What type of property is the certificate for?"
+      options:
+        domestic:
+          title: "Welsh: A domestic property"
+          hint: "Welsh: Such as a house or flat"
+        non_domestic:
+          title: "Welsh: A non-domestic property"
+          hint: "Welsh: Such as a commercial, industrial or public building"
+      cta: "Welsh: Continue"
 
   find_certificate_by_postcode:
     head:
