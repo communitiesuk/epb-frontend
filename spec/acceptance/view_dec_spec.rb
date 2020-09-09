@@ -22,8 +22,11 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
       expect(response.body).to have_css "h2", text: "Certificate contents"
       expect(response.body).to have_link "Print this certificate",
                                          href: "#print_certificate"
-      expect(response.body).to have_link "Energy performance operational rating",
-                                         href: "#rating"
+      expect(
+        response.body,
+      ).to have_link "Energy performance operational rating", href: "#rating"
+      expect(response.body).to have_link "Recommendation report",
+                                         href: "#recommendation_report"
       expect(response.body).to have_link "Previous operational ratings",
                                          href: "#previous_energy_ratings"
       expect(response.body).to have_link "Total CO2 emissions", href: "#co2"
@@ -88,6 +91,15 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
       expect(response.body).to have_css "dd", text: "24 | A"
       expect(response.body).to have_css "dt", text: "January 2018"
       expect(response.body).to have_css "dd", text: "40 | B"
+    end
+
+    it "show the recommendation report link " do
+      expect(response.body).to have_css "h2", text: "Recommendation report"
+      expect(response.body).to have_css "p",
+                                        text:
+                                          "Guidance on improving the energy performance operational rating of this building can be found in the recommendation report."
+      expect(response.body).to have_link "recommendation report",
+                                         href: "/energy-performance-certificate/4192-1535-8427-8844-6702"
     end
 
     it "shows the total CO2 emissions section" do
@@ -189,13 +201,6 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
         expect(response.body).to have_css "dd",
                                           text:
                                             "The assessor has not indicated whether they have a relation to this property."
-        expect(response.body).to have_css "p",
-                                          text:
-                                            "Recommendations for improving the energy performance of the building are contained in the associated Recommendation Report."
-        expect(response.body).to have_link "Recommendation Report",
-                                           href:
-                                             "/energy-performance-certificate/4192-1535-8427-8844-6702"
-
         expect(response.body).to have_css "dt", text: "Summary XML"
         expect(response.body).to have_link "Download summary XML", href: "#"
       end

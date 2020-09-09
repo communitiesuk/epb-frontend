@@ -1075,6 +1075,10 @@ cy:
         guidance_text: 'Welsh: You can read %{link}.'
         cta: 'Welsh: guidance for public buildings on Display Energy Certificates and advisory reports'
         url: 'https://www.gov.uk/government/publications/display-energy-certificates-and-advisory-reports-for-public-buildings'
+      recommendation_report:
+        title: "Welsh: Recommendation report"
+        cta: "Welsh: recommendation report"
+        text: "Welsh: Guidance on improving the energy performance operational rating of this building can be found in the %{link}."
       print_certificate:
         title: 'Welsh: Print this certificate'
         discription: 'Welsh: This certificate should be printed on A3 paper and displayed in the building'

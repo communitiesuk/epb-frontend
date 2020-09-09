@@ -23,6 +23,10 @@
           text: 'dec.sections.rating.title'
         },
         {
+          link: '#recommendation_report',
+          text: 'dec.sections.recommendation_report.title'
+        },
+        {
           link: '#technical_information',
           text: 'dec.sections.technical_information.title'
         },
@@ -70,6 +74,17 @@
       <%== erb :dec__rating, locals: {
         assessment: assessment,
       } %>
+
+      <% if  assessment[:administrativeInformation][:relatedRrn]%>
+        <div id="recommendation_report" class="govuk-body epc-blue-bottom">
+          <h2 class="govuk-heading-l"><%= t('dec.sections.recommendation_report.title') %></h2>
+          <p class="govuk-body"><%==
+            t('dec.sections.recommendation_report.text',
+              link: '<a href="' + localised_url('/energy-performance-certificate/' + assessment[:administrativeInformation][:relatedRrn]) + '">' +
+                t('dec.sections.recommendation_report.cta') + '</a>')
+          %></p>
+        </div>
+      <% end %>
 
       <%== erb :dec__technical_information, locals: {
         assessment: assessment,
