@@ -3,11 +3,13 @@
 module FetchAssessmentSummary
   class AssessmentStub
     def self.fetch_ac_report(
-      assessment_id:, executive_summary: "My\nSummary\t\tInspected", sub_systems: [
+      assessment_id:,
+      executive_summary: "My\nSummary\t\tInspected",
+      sub_systems: [
         volumeDefinitions: "VOL001 The Shop",
         id: "VOL001/SYS001 R410A Inverter Split Systems to Sales Area",
         description:
-            "This sub system comprised of; 4Nr 10kW R410A Mitsubishi Heavy Industries inverter driven split AC condensers.",
+          "This sub system comprised of; 4Nr 10kW R410A Mitsubishi Heavy Industries inverter driven split AC condensers.",
         coolingOutput: "40",
         areaServed: "Sales Area",
         inspectionDate: "2019-05-20",
@@ -103,8 +105,7 @@ module FetchAssessmentSummary
               coolingLoadEstimate: false,
               monitoringCapability: false,
             },
-
-          }
+          },
         },
         meta: {},
       }

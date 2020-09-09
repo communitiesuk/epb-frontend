@@ -127,7 +127,8 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
     end
 
     it "can show the pre inspection section" do
-      expect(response.body).to have_css "h2", text: "Pre inspection records requested"
+      expect(response.body).to have_css "h2",
+                                        text: "Pre inspection records requested"
       expect(response.body).to have_css "h3", text: "Essential records"
       expect(response.body).to have_css "h3", text: "Desirable records"
       expect(response.body).to have_css "h3", text: "Optional records"
@@ -141,7 +142,8 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
       end
 
       it "does not show the Sub systems inspected section" do
-        expect(response.body).not_to have_css "h2", text: "Sub systems inspected"
+        expect(response.body).not_to have_css "h2",
+                                              text: "Sub systems inspected"
       end
     end
   end
