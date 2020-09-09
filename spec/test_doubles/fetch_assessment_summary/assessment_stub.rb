@@ -80,6 +80,31 @@ module FetchAssessmentSummary
             management: [{ sequence: "0", text: "Text6" }],
           },
           subSystems: sub_systems,
+          preInspectionChecklist: {
+            essential: {
+              controlZones: false,
+              coolingCapacities: false,
+              listOfSystems: true,
+              operationControls: false,
+              schematics: false,
+              temperatureControls: false,
+            },
+            desirable: {
+              commissioningResults: false,
+              consumptionRecords: false,
+              controlSystemMaintenance: false,
+              deliverySystemMaintenance: false,
+              previousReports: false,
+              refrigerationMaintenance: false,
+            },
+            optional: {
+              bmsCapability: false,
+              complaintRecords: false,
+              coolingLoadEstimate: false,
+              monitoringCapability: false,
+            },
+
+          }
         },
         meta: {},
       }

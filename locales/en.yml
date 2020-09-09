@@ -1361,3 +1361,19 @@ en:
         ahu_count: "AHU count"
         terminal_units_count: "Terminal units count"
         controls_count: "Sub system controls count"
+      pre_inspection:
+        title: "Pre inspection records requested"
+        essential:
+          title: "Essential records"
+          controlZones: "Description of system control zones, with schematic drawings"
+          coolingCapacities: "Cooling capacities, with locations of the indoor and outdoor components of each plant"
+          listOfSystems: "Itemised list of installed air conditioning and refrigeration plant including product makes, models and identification numbers"
+          operationControls: "Description of method of control of periods of operation."
+          schematics: "Floor plans and schematics of air conditioning systems."
+          temperatureControls: "Description of method of control of temperature"
+        desirable:
+          title: "Desirable records"
+        optional:
+          title: "Optional records"
+        reviewed: "Reviewed"
+        not_available: "Not available"

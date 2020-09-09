@@ -126,6 +126,13 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
       expect(response.body).to have_css "dd", text: "5"
     end
 
+    it "can show the pre inspection section" do
+      expect(response.body).to have_css "h2", text: "Pre inspection records requested"
+      expect(response.body).to have_css "h3", text: "Essential records"
+      expect(response.body).to have_css "h3", text: "Desirable records"
+      expect(response.body).to have_css "h3", text: "Optional records"
+    end
+
     context "when there are no subsystems" do
       before do
         FetchAssessmentSummary::AssessmentStub.fetch_ac_report(

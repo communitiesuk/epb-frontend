@@ -1230,3 +1230,13 @@ cy:
         ahu_count: "AHU count"
         terminal_units_count: "Terminal units count"
         controls_count: "Sub system controls count"
+      pre_inspection:
+        title: "Pre inspection records requested"
+        essential:
+          title: "Essential records"
+        desirable:
+          title: "Desirable records"
+        optional:
+          title: "Optional records"
+        reviewed: "Reviewed"
+        not_available: "Not available"
