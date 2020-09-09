@@ -3,7 +3,6 @@
 module UseCase
   class FetchCertificate < UseCase::Base
     def execute(assessment_id)
-      # Attempt to use the assessment summary endpoint first
       response = Gateway::AssessmentSummaryGateway.new.fetch(assessment_id)
 
       raise_errors_if_exists(response) do |error_code|
