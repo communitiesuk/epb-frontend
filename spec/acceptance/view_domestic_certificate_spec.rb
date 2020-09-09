@@ -232,18 +232,24 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       end
 
       it "shows possible energy saving with loft insulation" do
-        expect(response.body).to include(">Loft insulation</th>")
-        expect(response.body).to include(">79 kWh per year</td>")
+        expect(response.body).to have_css "th",
+                                          text: "Loft insulation"
+        expect(response.body).to have_css "td",
+                                          text: "79 kWh per year"
       end
 
       it "shows possible energy saving with cavity wall insulation" do
-        expect(response.body).to include(">Cavity wall insulation</th>")
-        expect(response.body).to include(">67 kWh per year</td>")
+        expect(response.body).to have_css "th",
+                                          text: "Cavity wall insulation"
+        expect(response.body).to have_css "td",
+                                          text: "67 kWh per year"
       end
 
       it "shows possible energy saving with solid wall insulation" do
-        expect(response.body).to include(">Solid wall insulation</th>")
-        expect(response.body).to include(">69 kWh per year</td>")
+        expect(response.body).to have_css "th",
+                                          text: "Solid wall insulation"
+        expect(response.body).to have_css "td",
+                                          text: "69 kWh per year"
       end
     end
 
