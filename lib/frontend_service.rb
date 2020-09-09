@@ -520,6 +520,23 @@ class FrontendService < Sinatra::Base
     end
   end
 
+  get "/energy-performance-certificate/:assessment_id/dec_summary" do
+    use_case = @container.get_object(:fetch_dec_summary_use_case)
+    assessment = use_case.execute(params[:assessment_id])
+
+    status 200
+    assessment[:data]
+  rescue StandardError => e
+    pp e
+    pp e.backtrace if e.methods.include?(:backtrace)
+    case e
+    when Errors::AssessmentNotFound
+      not_found
+    else
+      return server_error(e)
+    end
+  end
+
   def show(template, locals)
     locals[:errors] = @errors
     erb template, layout: :layout, locals: locals

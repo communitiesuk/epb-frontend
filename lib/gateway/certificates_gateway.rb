@@ -35,5 +35,14 @@ module Gateway
 
       JSON.parse(response.body, symbolize_names: true)
     end
+
+    def fetch_dec_summary(certificate_id)
+      route =
+        "/api/assessments/#{CGI.escape(certificate_id)}/dec_summary"
+
+      response = @internal_api_client.get(route)
+
+      JSON.parse(response.body, symbolize_names: true)
+    end
   end
 end
