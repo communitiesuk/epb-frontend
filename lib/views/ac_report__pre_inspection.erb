@@ -7,7 +7,6 @@
     <%= t('ac_report.sections.pre_inspection.essential.title') %>
   </h3>
 
-
   <%== erb :component__summary_list, locals: {
     list: assessment[:preInspectionChecklist][:essential]
       .map{ | k, v| [k.to_s, v ? t('ac_report.sections.pre_inspection.reviewed') : t('ac_report.sections.pre_inspection.not_available')]},
@@ -15,10 +14,17 @@
     skip_null: true
   } %>
 
-
   <h3 class="govuk-heading-m">
     <%= t('ac_report.sections.pre_inspection.desirable.title') %>
   </h3>
+
+  <%== erb :component__summary_list, locals: {
+    list: assessment[:preInspectionChecklist][:desirable]
+      .map{ | k, v| [k.to_s, v ? t('ac_report.sections.pre_inspection.reviewed') : t('ac_report.sections.pre_inspection.not_available')]},
+    translation_prefix: 'ac_report.sections.pre_inspection.desirable.',
+    skip_null: true
+  } %>
+
   <h3 class="govuk-heading-m">
     <%= t('ac_report.sections.pre_inspection.optional.title') %>
   </h3>
