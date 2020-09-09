@@ -2,12 +2,8 @@
 
 module FetchDecSummary
   class AssessmentStub
-    def self.fetch(
-      assessment_id:
-    )
-      body = {
-        data: "<xml></xml>"
-      }
+    def self.fetch(assessment_id:)
+      body = { data: "<xml></xml>" }
 
       WebMock.stub_request(
         :get,

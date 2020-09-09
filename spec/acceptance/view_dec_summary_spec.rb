@@ -10,7 +10,7 @@ describe "Acceptance::ViewDecSummary", type: :feature do
   context "when a dec summary exists" do
     before do
       FetchDecSummary::AssessmentStub.fetch(
-        assessment_id: "0000-0000-0000-0000-1111"
+        assessment_id: "0000-0000-0000-0000-1111",
       )
     end
 
