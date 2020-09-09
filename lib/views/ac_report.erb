@@ -33,9 +33,10 @@
       assessment: assessment,
     } %>
 
-    <%== erb :ac_report__sub_systems, locals: {
-      assessment: assessment,
-    } %>
-
+    <% unless assessment[:subSystems].empty? %>
+      <%== erb :ac_report__sub_systems, locals: {
+        assessment: assessment,
+      } %>
+    <% end %>
   </div>
 </div>

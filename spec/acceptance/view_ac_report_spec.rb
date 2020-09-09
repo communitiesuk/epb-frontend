@@ -125,5 +125,17 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
       expect(response.body).to have_css "dt", text: "Sub system controls count"
       expect(response.body).to have_css "dd", text: "5"
     end
+
+    context "when there are no subsystems" do
+      before do
+        FetchAssessmentSummary::AssessmentStub.fetch_ac_report(
+          assessment_id: "0000-0000-0000-0000-9999", sub_systems: [],
+        )
+      end
+
+      it "does not show the Sub systems inspected section" do
+        expect(response.body).not_to have_css "h2", text: "Sub systems inspected"
+      end
+    end
   end
 end

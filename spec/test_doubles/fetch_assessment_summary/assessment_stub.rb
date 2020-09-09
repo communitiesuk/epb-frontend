@@ -3,7 +3,19 @@
 module FetchAssessmentSummary
   class AssessmentStub
     def self.fetch_ac_report(
-      assessment_id:, executive_summary: "My\nSummary\t\tInspected"
+      assessment_id:, executive_summary: "My\nSummary\t\tInspected", sub_systems: [
+        volumeDefinitions: "VOL001 The Shop",
+        id: "VOL001/SYS001 R410A Inverter Split Systems to Sales Area",
+        description:
+            "This sub system comprised of; 4Nr 10kW R410A Mitsubishi Heavy Industries inverter driven split AC condensers.",
+        coolingOutput: "40",
+        areaServed: "Sales Area",
+        inspectionDate: "2019-05-20",
+        coolingPlantCount: "4",
+        ahuCount: "0",
+        terminalUnitsCount: "4",
+        controlsCount: "5",
+      ]
     )
       body = {
         data: {
@@ -67,19 +79,7 @@ module FetchAssessmentSummary
             control: [{ sequence: "0", text: "Text4" }],
             management: [{ sequence: "0", text: "Text6" }],
           },
-          subSystems: [
-            volumeDefinitions: "VOL001 The Shop",
-            id: "VOL001/SYS001 R410A Inverter Split Systems to Sales Area",
-            description:
-              "This sub system comprised of; 4Nr 10kW R410A Mitsubishi Heavy Industries inverter driven split AC condensers.",
-            coolingOutput: "40",
-            areaServed: "Sales Area",
-            inspectionDate: "2019-05-20",
-            coolingPlantCount: "4",
-            ahuCount: "0",
-            terminalUnitsCount: "4",
-            controlsCount: "5",
-          ],
+          subSystems: sub_systems,
         },
         meta: {},
       }
