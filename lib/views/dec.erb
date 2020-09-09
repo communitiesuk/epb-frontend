@@ -62,29 +62,16 @@
       rating_type: t('dec.sections.previous_energy_ratings.energy_rating')
     } %>
 
-    <div id="print_certificate" class="govuk-body epc-blue-bottom">
-      <h2 class="govuk-heading-l"><%= t('dec.sections.print_certificate.title') %></h2>
-      <p class="govuk-body"><%= t('dec.sections.print_certificate.discription') %></p>
-      <div class="component__print govuk-!-display-none-print">
-        <a href="<%= request.path_info + (request.path_info.include?("?") ? "&" : "?") %>print=true" class="govuk-link govuk-!-margin-bottom-5" id="link"><%= t('dec.sections.print_certificate.open_print_version') %></a>
-      </div>
-    </div>
+    <%== erb :dec__print_certificate %>
 
     <div class="column-l">
       <%== erb :dec__rating, locals: {
         assessment: assessment,
       } %>
 
-      <% if  assessment[:administrativeInformation][:relatedRrn]%>
-        <div id="recommendation_report" class="govuk-body epc-blue-bottom">
-          <h2 class="govuk-heading-l"><%= t('dec.sections.recommendation_report.title') %></h2>
-          <p class="govuk-body"><%==
-            t('dec.sections.recommendation_report.text',
-              link: '<a href="' + localised_url('/energy-performance-certificate/' + assessment[:administrativeInformation][:relatedRrn]) + '">' +
-                t('dec.sections.recommendation_report.cta') + '</a>')
-          %></p>
-        </div>
-      <% end %>
+      <%== erb :dec__recommendation_report, locals: {
+        administrative_information: assessment[:administrativeInformation]
+      } %>
 
       <%== erb :dec__technical_information, locals: {
         assessment: assessment,
