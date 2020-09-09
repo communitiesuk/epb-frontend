@@ -1381,5 +1381,9 @@ en:
           refrigerationMaintenance: "Records of maintenance operations carried out on refrigeration systems, including cleaning indoor and outdoor heat exchangers, refrigerant leakage tests, repairs to refrigeration components replenishing with refrigerant"
         optional:
           title: "Optional records"
+          bmsCapability: "Where a BMS is used the manager should arrange for a short statement to be provided describing its capabilities, the plant it is connected to control, the set points for the control of temperature, the frequency with which it is maintained, and the date of the last inspection and maintenance"
+          complaintRecords: "Records of any issues or complaints that have been raised concerning the indoor comfort conditions achieved in the treated spaces"
+          coolingLoadEstimate: "An estimate of the design cooling load for each system (if available). Otherwise, a brief description of the occupation of the cooled spaces, and of power consuming equipment normally used in those spaces"
+          monitoringCapability: "Where a monitoring station, or remote monitoring facility, is used to continually observe the performance of equipment such as chillers, the manager should arrange for a statement to be provided describing the parameters monitored, and a statement reviewing the operating efficiency of the equipment"
         reviewed: "Reviewed"
         not_available: "Not available"
