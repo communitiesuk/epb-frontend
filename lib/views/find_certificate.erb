@@ -6,15 +6,13 @@
     <p class="govuk-body">
       <%= t('find_a_certificate.service.introduction') %>
     </p>
-    <p class="govuk-body">
-      <%= t('find_a_certificate.service.what_is_in_epc') %>
-    </p>
-    <p class="govuk-body">
-      <%= t('find_a_certificate.service.advice_on_improving') %>
-    </p>
-    <p class="govuk-body">
-      <%= t('find_a_certificate.service.need_epc') %>
-    </p>
+
+    <p class="govuk-body"><%= t('find_a_certificate.service.this_includes') %></p>
+    <ul class="govuk-list govuk-list--bullet govuk-!-margin-left-5">
+      <li><%== t('find_a_certificate.service.epc') %></li>
+      <li><%== t('find_a_certificate.service.dec') %></li>
+      <li><%== t('find_a_certificate.service.air_con_cert_report') %></li>
+    </ul>
 
     <div class="govuk-inset-text">
       <%== t('find_a_certificate.before_you_start.switch_language.description', :link => '<a href="' + t('find_a_certificate.before_you_start.switch_language.url') + '">' + t('find_a_certificate.before_you_start.switch_language.link') + '</a>' ) %>
@@ -44,20 +42,15 @@
     </h2>
 
     <p class="govuk-body">
-      <%= t('find_a_certificate.before_you_start.call_center') %>
-    </p>
-
-
-    <p class="govuk-body">
-      <%== t('find_a_certificate.before_you_start.scotland.text', :link => '<a href="https://www.scottishepcregister.org.uk/">' + t('find_a_certificate.before_you_start.scotland.cta') + '</a>') %>
-    </p>
-
-    <p class="govuk-body">
       <%== t('find_a_certificate.before_you_start.property_guidance.description', :link => '<a href="' + t('find_a_certificate.before_you_start.property_guidance.url') + '">' + t('find_a_certificate.before_you_start.property_guidance.link') + '</a>') %>
     </p>
 
     <p class="govuk-body">
-      <%== t('find_a_certificate.before_you_start.commercial.text', :link => '<a href="' + t('find_a_certificate.before_you_start.commercial.url') + '">' + t('find_a_certificate.before_you_start.commercial.cta') + '</a>') %>
+      <%= t('find_a_certificate.before_you_start.call_center') %>
+    </p>
+
+    <p class="govuk-body">
+      <%== t('find_a_certificate.before_you_start.scotland.text', :link => '<a href="https://www.scottishepcregister.org.uk/">' + t('find_a_certificate.before_you_start.scotland.cta') + '</a>') %>
     </p>
   </div>
 </div>

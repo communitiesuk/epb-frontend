@@ -210,12 +210,13 @@ en:
   find_a_certificate:
     head:
       title: 'Energy performance of buildings register - Find an energy assessor for a residential property'
-    top_heading: 'Find an Energy Performance Certificate for a domestic property'
+    top_heading: 'Find an energy certificate'
     service:
-      introduction: 'Use this service to find an EPC for a domestic property (house or flat) in England, Wales or Northern Ireland.'
-      what_is_in_epc: 'An EPC lists the energy rating of a property.'
-      advice_on_improving: 'It also has advice on improving the energy performance of a property.'
-      need_epc: 'You need an EPC when you build, sell or let a domestic property. It is valid for 10 years.'
+      introduction: 'Use this service to find energy certificates and recommendation reports for properties in England, Wales and Northern Ireland.'
+      this_includes: 'This includes:'
+      epc: 'energy performance certificates (EPCs)'
+      dec: 'display energy certificates (DECs) for public buildings'
+      air_con_cert_report: 'air conditioning inspection certificates and reports'
     cta: 'Start now'
     before_you_start:
       title: 'Before you start'
@@ -227,11 +228,10 @@ en:
         text: 'For properties in Scotland, use the %{link}.'
         cta: "Scottish government's EPC service"
       property_guidance:
-        description: 'To check if your property requires an EPC, read the %{link}.'
-        link: 'guidance on properties that do not need an EPC'
-        url:  'https://mhclg-epb-prototypes.london.cloudapps.digital/domestic'
+        description: 'If your property does not have an energy certificate or the certificate is expired, you can %{link}.'
+        link: 'get a new energy certificate.'
+        url:  '/find-an-assessor'
       commercial:
-        text: 'For commercial or public buildings, use the %{link} service.'
         url: '/find-a-non-domestic-certificate'
         cta: 'find a non-domestic EPC'
       call_center: 'If you need additional support to find an EPC, call our helpdesk on 0233 788 1234 (Monday to Friday, 9am - 5pm).'

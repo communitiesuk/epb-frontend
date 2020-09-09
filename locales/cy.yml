@@ -207,12 +207,13 @@ cy:
   find_a_certificate:
     head:
       title: 'Welsh: Energy performance of buildings register - Find an energy assessor for a residential property'
-    top_heading: 'Welsh: Find an Energy Performance Certificate for a domestic property'
+    top_heading: 'Welsh: Find an energy certificate'
     service:
-      introduction: 'Welsh: Use this service to find an EPC for a domestic property (house or flat) in England, Wales or Northern Ireland.'
-      what_is_in_epc: 'Welsh: An EPC lists the energy rating of a property.'
-      advice_on_improving: 'Welsh: It also has advice on improving the energy performance of a property.'
-      need_epc: 'Welsh: You need an EPC when you build, sell or let a domestic property. It is valid for 10 years.'
+      introduction: 'Welsh: Use this service to find energy certificates and recommendation reports for properties in England, Wales and Northern Ireland.'
+      this_includes: 'Welsh: This includes:'
+      epc: 'Welsh: energy performance certificates (EPCs)'
+      dec: 'Welsh: display energy certificates (DECs) for public buildings'
+      air_con_cert_report: 'Welsh: air conditioning inspection certificates and reports'
     cta: 'Welsh: Start now'
     before_you_start:
       title: 'Welsh: Before you start'
@@ -224,11 +225,10 @@ cy:
         text: 'Welsh: For properties in Scotland, use the %{link}.'
         cta: "Scottish government's EPC service"
       property_guidance:
-        description: 'Welsh: To check if your property requires an EPC, read the %{link}.'
-        link: 'Welsh: guidance on properties that do not need an EPC'
-        url:  'https://mhclg-epb-prototypes.london.cloudapps.digital/domestic'
+        description: 'Welsh: If your property does not have an energy certificate or the certificate is expired, you can %{link}.'
+        link: 'Welsh: get a new energy certificate.'
+        url:  '/find-an-assessor'
       commercial:
-        text: 'Welsh: For commercial or public buildings, use the %{link} service.'
         url: '/find-a-non-domestic-certificate'
         cta: 'Welsh: find a non-domestic EPC'
       call_center: 'Welsh: If you need additional support to find an EPC, call our helpdesk on 0233 788 1234 (Monday to Friday, 9am - 5pm).'
