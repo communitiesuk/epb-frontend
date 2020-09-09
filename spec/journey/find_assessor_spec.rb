@@ -141,6 +141,14 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
     expect(page).to have_content "0333 123 1418"
   end
 
+  it "will allow a user to go back to the find-an-assessor page" do
+    visit "/find-an-assessor"
+    click_on "Start now"
+    expect(page).to have_content "What type of property is the certificate for?"
+    click_link "Back"
+    expect(page).to have_content "Getting a new energy certificate"
+  end
+
   context "when finding a non-domestic assessor by postcode" do
     xit "finds a non-domestic assessor" do
       visit "/find-an-assessor"
