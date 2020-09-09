@@ -202,7 +202,7 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
                                           text:
                                             "The assessor has not indicated whether they have a relation to this property."
         expect(response.body).to have_css "dt", text: "Summary XML"
-        expect(response.body).to have_link "Download summary XML", href: "#"
+        expect(response.body).to have_link "Download summary XML", href: "/energy-performance-certificate/0000-0000-0000-0000-1111/dec_summary"
       end
     end
 
