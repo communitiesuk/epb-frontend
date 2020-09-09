@@ -41,7 +41,7 @@ describe "Acceptance::PrintableDisplayEnergyCertificate", type: :feature do
         "The building’s energy performance operational rating is based on its carbon dioxide (CO2) emissions for the last year.",
       )
       expect(response.body).to include(
-        "Typical score for a public building is 100. This typical score gives an operational rating of D.",
+        "The typical score for a public building is 100. This typical score gives an operational rating of D.",
       )
       expect(response.body).to include("1 | A")
     end

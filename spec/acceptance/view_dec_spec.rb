@@ -70,7 +70,7 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
                                           "It is given a score and an operational rating on a scale from A (lowest emissions) to G (highest emissions)."
       expect(response.body).to have_css "p",
                                         text:
-                                          "Typical score for a public building is 100. This typical score gives an operational rating of D."
+                                          "The typical score for a public building is 100. This typical score gives an operational rating of D."
       expect(response.body).to have_css "text", text: "1 | A"
       expect(response.body).to have_css "p",
                                         text:

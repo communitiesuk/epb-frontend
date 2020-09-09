@@ -67,7 +67,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
       end
 
       it "shows the certificate number label" do
-        expect(response.body).to include("<label>Certificate Number</label>")
+        expect(response.body).to include("<label>Certificate number</label>")
       end
 
       it "shows the certificate number" do

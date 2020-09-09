@@ -466,7 +466,7 @@ en:
     epc_summary:
       title: "Energy Rating"
       date_of_expiry: "Valid until %{date_of_expiry}"
-      certificate_id: "Certificate Number"
+      certificate_id: "Certificate number"
       property_info:
           'This property is a %{property_type} and has a total floor area of %{total_floor_area} square metres.'
     related:
@@ -1177,7 +1177,7 @@ en:
       intro: 'If you typed the web address, check it is correct.'
       body: 'If you pasted the web address, check you copied the entire address.'
   dec:
-    top_heading: "Display Energy Certificate"
+    top_heading: "Display Energy Certificate (DEC)"
     tagline: "how energy efficient is this building?"
     sections:
       contents:
@@ -1187,7 +1187,7 @@ en:
         title: 'Energy performance operational rating'
         emissions_text: 'The building’s energy performance operational rating is based on its carbon dioxide (CO2) emissions for the last year.'
         text: 'It is given a score and an operational rating on a scale from A (lowest emissions) to G (highest emissions).'
-        typical_text: 'Typical score for a public building is 100. This typical score gives an operational rating of D.'
+        typical_text: 'The typical score for a public building is 100. This typical score gives an operational rating of D.'
         svg_title: 'This building’s operational rating is %{energy_efficiency_band} (%{energy_efficiency_rating})'
         guidance_text: 'You can read %{link}.'
         cta: 'guidance on Display Energy Certificates and advisory reports for public buildings'
@@ -1198,7 +1198,7 @@ en:
         text: "Guidance on improving the energy performance operational rating of this building can be found in the %{link}."
       print_certificate:
         title: 'Print this certificate'
-        discription: 'This certificate should be printed on A3 paper and displayed in the building'
+        discription: 'This certificate should be printed on A3 paper and displayed in the building.'
         open_print_version: 'Open the print version of this certificate'
       previous_energy_ratings:
         energy_rating: "Operational rating"
