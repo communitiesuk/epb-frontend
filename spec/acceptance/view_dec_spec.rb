@@ -195,6 +195,9 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
         expect(response.body).to have_link "Recommendation Report",
                                            href:
                                              "/energy-performance-certificate/4192-1535-8427-8844-6702"
+
+        expect(response.body).to have_css "dt", text: "Summary XML"
+        expect(response.body).to have_link "Download summary XML", href: "#"
       end
     end
 

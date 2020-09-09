@@ -3,10 +3,12 @@
     <%
       type = "string"
       print = true
+      link = ""
 
       if value.class == Hash
         type = value[:type]
         print = value[:print]
+        link = value[:link]
         value = value[:value]
       end
 
@@ -37,6 +39,10 @@
                 </div>
               </details>
             <%
+          when "link"
+              %>
+                <a href="<%= link %>"><%= value %></a>
+              <%
           else
             %>
               <%= value %>

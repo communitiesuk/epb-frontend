@@ -1242,6 +1242,8 @@ en:
         related_report:
           cta: "Recommendation Report"
           text: "Recommendations for improving the energy performance of the building are contained in the associated %{link}."
+        download_xml: 'Summary XML'
+        download_xml_cta: 'Download summary XML'
         assessor:
           list:
             name: 'Assessor name'
