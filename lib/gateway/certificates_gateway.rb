@@ -38,7 +38,7 @@ module Gateway
 
     def fetch_dec_summary(certificate_id)
       route =
-        "/api/assessments/#{CGI.escape(certificate_id)}/dec_summary"
+        "/api/dec_summary/#{CGI.escape(certificate_id)}"
 
       response = @internal_api_client.get(route)
 
