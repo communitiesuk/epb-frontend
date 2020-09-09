@@ -774,6 +774,7 @@ cy:
         provider_email: 'Welsh: Email'
       related_assessments:
         title: 'Welsh: Other EPCs for this property'
+        certificate_type: 'Welsh: EPC'
         reference_number: 'Welsh: Reference number'
         assessment_type: 'Welsh: Report type'
         expiry_date: 'Welsh: Expiry date'

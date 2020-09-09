@@ -816,6 +816,7 @@ en:
         provider_email: 'Email'
       related_assessments:
         title: 'Other EPCs for this property'
+        certificate_type: 'EPC'
         reference_number: 'Reference number'
         assessment_type: 'Report type'
         expiry_date: 'Expiry date'

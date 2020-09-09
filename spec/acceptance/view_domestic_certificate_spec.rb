@@ -589,7 +589,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       it "shows the section title" do
         expect(response.body).to have_css(
           "h2",
-          text: "Other RdSAPs for this property",
+          text: "Other EPCs for this property",
         )
       end
 
