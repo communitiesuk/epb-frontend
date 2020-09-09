@@ -525,6 +525,10 @@ class FrontendService < Sinatra::Base
     assessment = use_case.execute(params[:assessment_id])
 
     status 200
+
+    content_type "application/xml"
+    attachment params[:assessment_id] + ".xml"
+
     assessment[:data]
   rescue StandardError => e
     pp e
