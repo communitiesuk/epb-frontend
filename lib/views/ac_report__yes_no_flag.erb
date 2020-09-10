@@ -1,0 +1,15 @@
+<p class="inspection_item">
+  <strong><%= question %></strong>
+</p>
+
+<p class="finding">
+  <% if inspection[:flag] %>
+      <%= t('ac_report.flag.finding_yes') %>
+  <% else %>
+      <%= t('ac_report.flag.finding_no') %>
+  <% end %>
+
+  <% unless inspection[:note].nil? || inspection[:note].empty? %>
+  : <%= inspection[:note] %>
+  <% end %>
+</p>

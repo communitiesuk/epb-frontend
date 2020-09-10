@@ -1423,3 +1423,11 @@ en:
           manufacturer: "Manufacturer"
           systemsServed: "Systems served from cooling plant"
           yearInstalled: "Year installed"
+        filters:
+          title: "CS6.1, CS6.2, CS6.3: Filters"
+          condition: "Are air intake and filter conditions acceptable?"
+          change_frequency: "Have filters been changed according to current industry guidance?"
+          differential_pressure_gauge: "Is the filter differential pressure gauge, where fitted, working?"
+    flag:
+      finding_yes: "Yes"
+      finding_no: "No"

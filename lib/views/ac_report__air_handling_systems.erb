@@ -13,5 +13,23 @@
       translation_prefix: 'ac_report.sections.air_handling_systems.equipment.',
       skip_null: true
     } %>
+
+    <h4 class="govuk-heading-s">
+      <%= t('ac_report.sections.air_handling_systems.filters.title') %>
+    </h4>
+
+    <%== erb :ac_report__yes_no_flag, locals: {
+      question: t('ac_report.sections.air_handling_systems.filters.condition'),
+      inspection: system[:inspection][:filters][:filterCondition]
+    } %>
+    <%== erb :ac_report__yes_no_flag, locals: {
+      question: t('ac_report.sections.air_handling_systems.filters.change_frequency'),
+      inspection: system[:inspection][:filters][:changeFrequency]
+    } %>
+    <%== erb :ac_report__yes_no_flag, locals: {
+      question: t('ac_report.sections.air_handling_systems.filters.differential_pressure_gauge'),
+      inspection: system[:inspection][:filters][:differentialPressureGauge]
+    } %>
+
 <% end %>
 </div>

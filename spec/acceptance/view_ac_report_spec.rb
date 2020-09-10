@@ -148,6 +148,7 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
       expect(response.body).to have_css "dt",
                                         text: "Systems served from cooling plant"
       expect(response.body).to have_css "dd", text: "Corridor"
+      expect(response.body).to have_css "h4", text: "CS6.1, CS6.2, CS6.3: Filters"
     end
 
     context "when there are no subsystems" do
