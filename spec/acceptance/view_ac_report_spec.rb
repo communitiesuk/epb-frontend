@@ -137,6 +137,18 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
     it "can show the air handling systems" do
       expect(response.body).to have_css "h2", text: "Air handling systems"
       expect(response.body).to have_css "h3", text: "123: VENT1 Heat recovery"
+      expect(response.body).to have_css "dt", text: "Areas or systems served"
+      expect(response.body).to have_css "dd", text: "Corridor"
+      expect(response.body).to have_css "dt", text: "Discrepancies noted"
+      expect(response.body).to have_css "dd", text: "None"
+      expect(response.body).to have_css "dt", text: "Year installed"
+      expect(response.body).to have_css "dd", text: "2016"
+      expect(response.body).to have_css "dt", text: "Location of plant"
+      expect(response.body).to have_css "dd", text: "Above corridor ceiling"
+      expect(response.body).to have_css "dt", text: "Manufacturer"
+      expect(response.body).to have_css "dd", text: "NUAIRE"
+      expect(response.body).to have_css "dt", text: "Systems served from cooling plant"
+      expect(response.body).to have_css "dd", text: "Corridor"
     end
 
     context "when there are no subsystems" do

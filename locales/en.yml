@@ -1402,3 +1402,10 @@ en:
           unavailable: "These records were not available:"
       air_handling_systems:
         title: "Air handling systems"
+        equipment:
+          areasServed: "Areas or systems served"
+          discrepancy: "Discrepancies noted"
+          location: "Location of plant"
+          manufacturer: "Manufacturer"
+          systemsServed: "Systems served from cooling plant"
+          yearInstalled: "Year installed"
