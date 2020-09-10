@@ -118,6 +118,27 @@ module FetchAssessmentSummary
                 unit: "123",
                 yearInstalled: "2016",
               },
+              inspection: {
+                filters: {
+                  filterCondition: {
+                    flag: true,
+                    note: nil,
+                    recommendations: []
+                  },
+                  changeFrequency: {
+                      flag: true,
+                      note: "Originally changed on an annual basis but now upgraded to six monthly.",
+                      recommendations: [
+                        { sequence: "0", text: "Change this more frequently" },
+                      ]
+                    },
+                  differentialPressureGauge: {
+                      flag: false,
+                      note: "Not fitted.",
+                      recommendations: []
+                    },
+                },
+              }
             },
           ],
         },
