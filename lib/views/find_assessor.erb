@@ -1,7 +1,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     <%== erb :related__content %>
-    <div class="govuk-body epc-page-break epc-blue-bottom">
+    <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">
         <%= t('find_an_assessor.top_heading') %>
       </h1>
@@ -68,18 +68,6 @@
       <p class="govuk-body">
         <%== t('find_an_assessor.before_you_start.scotland.description', :link => '<a href="https://www.scottishepcregister.org.uk/">' + t('find_an_assessor.before_you_start.scotland.link') + '</a>') %>
       </p>
-    </div>
-
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-third"><p></p></div>
-      <div class="govuk-grid-column-two-thirds">
-        <p class="govuk-body">
-          <%= t('find_an_assessor.buildings_not_epc.intro') %>
-        </p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li><%== t('find_an_assessor.buildings_not_epc.list').gsub('|', '</li><li>') %></li>
-        </ul>
-      </div>
     </div>
   </div>
 </div>
