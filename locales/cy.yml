@@ -710,7 +710,7 @@ cy:
         more_advice_url: 'https://www.simpleenergyadvice.org.uk/'
         heating_in_property: 'Welsh: Heating use in this property'
         energy_costs: 'Welsh: Heating a property usually makes up the majority of energy costs.'
-        energy_use_table_description: 'Welsh: The first table shows the estimated energy used to heat this property’s rooms (space) and water.'
+        no_potential_saving: 'The assessor did not find any opportunities to save energy by installing insulation in this property'
         space_heating: 'Welsh: Space heating'
         kwh_per_year: 'Welsh: kWh per year'
         water_heating: 'Welsh: Water heating'
