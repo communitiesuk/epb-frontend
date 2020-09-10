@@ -134,6 +134,11 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
       expect(response.body).to have_css "h3", text: "Optional records"
     end
 
+    it "can show the air handling systems" do
+      expect(response.body).to have_css "h2", text: "Air handling systems"
+      expect(response.body).to have_css "h3", text: "123: VENT1 Heat recovery"
+    end
+
     context "when there are no subsystems" do
       before do
         FetchAssessmentSummary::AssessmentStub.fetch_ac_report(

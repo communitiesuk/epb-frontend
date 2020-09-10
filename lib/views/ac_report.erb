@@ -42,5 +42,12 @@
     <%== erb :ac_report__pre_inspection, locals: {
       assessment: assessment,
     } %>
+
+    <% unless assessment[:airHandlingSystems].empty? %>
+      <%== erb :ac_report__air_handling_systems, locals: {
+        assessment: assessment,
+      } %>
+    <% end %>
+
   </div>
 </div>
