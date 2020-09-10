@@ -30,7 +30,7 @@
   <h3 class="govuk-heading-m"><%= t('domestic_epc.sections.heat-demand.heating_in_property') %></h3>
   <p class="govuk-body"><%= t('domestic_epc.sections.heat-demand.energy_costs') %></p>
 
-  <% unless assessment[:heatDemand][:currentWaterHeatingDemand].nil? && assessment[:heatDemand][:currentSpaceHeatingDemand] %>
+  <% unless assessment[:heatDemand][:currentWaterHeatingDemand].nil? && assessment[:heatDemand][:currentSpaceHeatingDemand].nil? %>
     <h4 class="govuk-heading-s"><%= t('domestic_epc.sections.heat-demand.estimated_energy') %></h4>
     <dl class="govuk-summary-list">
       <% unless assessment[:heatDemand][:currentWaterHeatingDemand].nil? %>
