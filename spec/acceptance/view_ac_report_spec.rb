@@ -3,9 +3,7 @@
 describe "Acceptance::AirConditioningInspectionReport", type: :feature do
   include RSpecFrontendServiceMixin
 
-  let(:response) do
-    get "/energy-certificate/0000-0000-0000-0000-9999"
-  end
+  let(:response) { get "/energy-certificate/0000-0000-0000-0000-9999" }
 
   context "when an ac report exists" do
     before do
@@ -147,7 +145,8 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
       expect(response.body).to have_css "dd", text: "Above corridor ceiling"
       expect(response.body).to have_css "dt", text: "Manufacturer"
       expect(response.body).to have_css "dd", text: "NUAIRE"
-      expect(response.body).to have_css "dt", text: "Systems served from cooling plant"
+      expect(response.body).to have_css "dt",
+                                        text: "Systems served from cooling plant"
       expect(response.body).to have_css "dd", text: "Corridor"
     end
 

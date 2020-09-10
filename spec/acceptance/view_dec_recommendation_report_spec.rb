@@ -3,9 +3,7 @@
 describe "Acceptance::DecRecommendationReport", type: :feature do
   include RSpecFrontendServiceMixin
 
-  let(:response) do
-    get "/energy-certificate/1234-5678-1234-5678-1234"
-  end
+  let(:response) { get "/energy-certificate/1234-5678-1234-5678-1234" }
 
   context "when the assessment does not exist" do
     before do

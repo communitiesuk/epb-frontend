@@ -4,9 +4,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
          type: :feature do
   include RSpecFrontendServiceMixin
 
-  let(:response) do
-    get "/energy-certificate/1234-5678-1234-5678-1234"
-  end
+  let(:response) { get "/energy-certificate/1234-5678-1234-5678-1234" }
 
   context "when the assessment does not exist" do
     before do
@@ -172,8 +170,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
     end
 
     it "doesnt show the related cepc section" do
-      page_without_cepc =
-        get "/energy-certificate/1234-5678-1234-5678-9999"
+      page_without_cepc = get "/energy-certificate/1234-5678-1234-5678-9999"
       expect(page_without_cepc.body).to_not include("Energy rating and EPC")
     end
   end

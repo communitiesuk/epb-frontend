@@ -3,9 +3,7 @@
 describe "Acceptance::AirConditioningInspectionCertificate", type: :feature do
   include RSpecFrontendServiceMixin
 
-  let(:response) do
-    get "/energy-certificate/0000-0000-0000-0000-9999"
-  end
+  let(:response) { get "/energy-certificate/0000-0000-0000-0000-9999" }
 
   context "when a dec exists" do
     before do
@@ -120,8 +118,7 @@ describe "Acceptance::AirConditioningInspectionCertificate", type: :feature do
             related_party_disclosure: code,
           )
 
-          response =
-            get "/energy-certificate/0000-0000-0000-0000-1111"
+          response = get "/energy-certificate/0000-0000-0000-0000-1111"
 
           expect(response.body).to have_css "dd", text: disclosure
         end

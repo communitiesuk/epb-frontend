@@ -4,9 +4,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
          type: :feature do
   include RSpecFrontendServiceMixin
 
-  let(:response) do
-    get "/energy-certificate/1234-5678-1234-5678-1234"
-  end
+  let(:response) { get "/energy-certificate/1234-5678-1234-5678-1234" }
 
   context "when the assessment does not exist" do
     before do
@@ -270,8 +268,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
                                                             related_party_disclosure:
                                                               key
 
-          response =
-            get "/energy-certificate/1234-5678-1234-5678-1234"
+          response = get "/energy-certificate/1234-5678-1234-5678-1234"
 
           expect(response.body).to include(disclosure)
         end

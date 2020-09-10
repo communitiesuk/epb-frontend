@@ -10,9 +10,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       )
     end
 
-    let(:response) do
-      get "/energy-certificate/1234-5678-1234-5678-1234"
-    end
+    let(:response) { get "/energy-certificate/1234-5678-1234-5678-1234" }
 
     it "returns status 200" do
       expect(response.status).to eq(200)
@@ -119,9 +117,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
         )
       end
 
-      let(:response) do
-        get "/energy-certificate/1111-1111-1111-1111-1112"
-      end
+      let(:response) { get "/energy-certificate/1111-1111-1111-1111-1112" }
 
       it "shows related party disclosure text, not disclosure code translation" do
         expect(response.body).to include("Financial interest in the property")
@@ -420,9 +416,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
           )
         end
 
-        let(:response) do
-          get "/energy-certificate/1111-1111-1111-1111-1112"
-        end
+        let(:response) { get "/energy-certificate/1111-1111-1111-1111-1112" }
 
         it "will not show the property summary elements" do
           expect(response.body).not_to include(
@@ -566,9 +560,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
           )
         end
 
-        let(:response) do
-          get "/energy-certificate/1234-5678-1234-5678-1235"
-        end
+        let(:response) { get "/energy-certificate/1234-5678-1234-5678-1235" }
 
         it "responds successfully" do
           expect(response.status).to eq 200
@@ -589,9 +581,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
         )
       end
 
-      let(:response) do
-        get "/energy-certificate/1111-1111-1111-1111-1112"
-      end
+      let(:response) { get "/energy-certificate/1111-1111-1111-1111-1112" }
 
       it "does not show the Green Deal Plan section" do
         expect(response.body).to_not include(
@@ -630,9 +620,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
           )
         end
 
-        let(:response) do
-          get "/energy-certificate/1111-1111-1111-1111-1112"
-        end
+        let(:response) { get "/energy-certificate/1111-1111-1111-1111-1112" }
 
         it "does not show the section title" do
           expect(response.body).not_to include(
@@ -714,9 +702,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
           true,
         )
       end
-      let(:response) do
-        get "/energy-certificate/1111-1111-1111-1111-1112"
-      end
+      let(:response) { get "/energy-certificate/1111-1111-1111-1111-1112" }
 
       it "will show information unavailable instead" do
         expect(response.body).to include("Information unavailable")
@@ -742,9 +728,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
           nil,
         )
       end
-      let(:response) do
-        get "/energy-certificate/1111-1111-1111-1111-1112"
-      end
+      let(:response) { get "/energy-certificate/1111-1111-1111-1111-1112" }
 
       it "will show information unavailable instead" do
         expect(response.body).to include("Not applicable")
@@ -760,9 +744,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
           true,
         )
       end
-      let(:response) do
-        get "/energy-certificate/1111-1111-1111-1111-1112"
-      end
+      let(:response) { get "/energy-certificate/1111-1111-1111-1111-1112" }
 
       it "displays the improvementTitle and improvementDescription instead" do
         expect(response.body).to include("Fix the boiler")
@@ -791,9 +773,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
         "SAP",
       )
     end
-    let(:response) do
-      get "/energy-certificate/1234-5678-1234-5678-1234"
-    end
+    let(:response) { get "/energy-certificate/1234-5678-1234-5678-1234" }
 
     it "displays the SAP type description" do
       expect(response.body).to include(
@@ -809,9 +789,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       )
     end
 
-    let(:response) do
-      get "/energy-certificate/1111-1111-1111-1111-1112"
-    end
+    let(:response) { get "/energy-certificate/1111-1111-1111-1111-1112" }
 
     context "with an invalid typical saving" do
       it "displays N/A on the page" do
@@ -825,9 +803,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       FetchAssessmentSummary::NoAssessmentStub.fetch("1234-5678-1234-5678-1234")
     end
 
-    let(:response) do
-      get "/energy-certificate/1234-5678-1234-5678-1234"
-    end
+    let(:response) { get "/energy-certificate/1234-5678-1234-5678-1234" }
 
     it "returns status 404" do
       expect(response.status).to eq(404)
@@ -847,9 +823,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       )
     end
 
-    let(:response) do
-      get "/energy-certificate/1234-5678-1234-5678-1234"
-    end
+    let(:response) { get "/energy-certificate/1234-5678-1234-5678-1234" }
 
     it "returns status 404" do
       expect(response.status).to eq(404)
@@ -869,9 +843,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       )
     end
 
-    let(:response) do
-      get "/energy-certificate/1111-1111-1111-1111-1112"
-    end
+    let(:response) { get "/energy-certificate/1111-1111-1111-1111-1112" }
 
     it "does not show the estimated energy cost for a year" do
       expect(response.body).to_not include(
