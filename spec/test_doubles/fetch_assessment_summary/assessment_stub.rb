@@ -106,6 +106,20 @@ module FetchAssessmentSummary
               monitoringCapability: false,
             },
           },
+          airHandlingSystems: [
+            {
+              equipment: {
+                areasServed: "Corridor",
+                  component: "VENT1 Heat recovery",
+                  discrepancy: "None",
+                  location: "Above corridor ceiling",
+                  manufacturer: "NUAIRE",
+                  systemsServed: "Corridor",
+                  unit: "123",
+                  yearInstalled: "2016",
+              },
+            },
+          ],
         },
         meta: {},
       }
