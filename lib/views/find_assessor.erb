@@ -1,5 +1,6 @@
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-full">
+    <%== erb :related__content %>
     <div class="govuk-body epc-page-break epc-blue-bottom">
       <h1 class="govuk-heading-xl">
         <%= t('find_an_assessor.top_heading') %>
@@ -69,11 +70,16 @@
       </p>
     </div>
 
-    <p class="govuk-body">
-      <%= t('find_an_assessor.buildings_not_epc.intro') %>
-    </p>
-    <ul class="govuk-list govuk-list--bullet">
-      <li><%== t('find_an_assessor.buildings_not_epc.list').gsub('|', '</li><li>') %></li>
-    </ul>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third"><p></p></div>
+      <div class="govuk-grid-column-two-thirds">
+        <p class="govuk-body">
+          <%= t('find_an_assessor.buildings_not_epc.intro') %>
+        </p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li><%== t('find_an_assessor.buildings_not_epc.list').gsub('|', '</li><li>') %></li>
+        </ul>
+      </div>
+    </div>
   </div>
 </div>

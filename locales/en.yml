@@ -1,4 +1,18 @@
 en:
+  related_content:
+    title: 'Related Content'
+    guidance_on_epc:
+      title: 'Guidance on EPCs when buying or selling your home'
+      url: 'https://www.gov.uk/buy-sell-your-home/energy-performance-certificates'
+    epc_exemptions:
+      title: 'EPC exemptions for business properties'
+      url: 'https://www.gov.uk/energy-performance-certificate-commercial-property/exemptions'
+    what_need_decs:
+      title: 'Guidance on which properties need a DEC'
+      url: 'https://www.gov.uk/check-energy-performance-public-building'
+    air_con_required:
+      title: 'When air conditioning system inspections are required'
+      url: 'https://www.gov.uk/get-your-air-conditioning-system-inspected'
   layout:
     head:
       title: 'Energy performance of buildings register'
