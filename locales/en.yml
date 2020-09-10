@@ -1397,3 +1397,6 @@ en:
           monitoringCapability: "Where a monitoring station, or remote monitoring facility, is used to continually observe the performance of equipment such as chillers, the manager should arrange for a statement to be provided describing the parameters monitored, and a statement reviewing the operating efficiency of the equipment"
         reviewed: "Reviewed"
         not_available: "Not available"
+        checklist:
+          reviewed: "These records were reviewed:"
+          unavailable: "These records were not available:"
