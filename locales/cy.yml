@@ -86,10 +86,10 @@ cy:
       options:
         domestic:
           title: "Welsh: A domestic property"
-          hint: "Welsh: Such as a house or flat"
+          hint: "Welsh: For example a house or flat"
         non_domestic:
           title: "Welsh: A non-domestic property"
-          hint: "Welsh: Such as a commercial, industrial or public building"
+          hint: "Welsh: For example a commercial, industrial or public building"
       cta: "Welsh: Continue"
   schemes:
     head:
@@ -251,10 +251,10 @@ cy:
       options:
         domestic:
           title: "Welsh: A domestic property"
-          hint: "Welsh: Such as a house or flat"
+          hint: "Welsh: For example a house or flat"
         non_domestic:
           title: "Welsh: A non-domestic property"
-          hint: "Welsh: Such as a commercial, industrial or public building"
+          hint: "Welsh: For example a commercial, industrial or public building"
       cta: "Welsh: Continue"
 
   find_certificate_by_postcode:

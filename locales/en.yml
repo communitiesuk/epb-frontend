@@ -89,10 +89,10 @@ en:
       options:
         domestic:
           title: "A domestic property"
-          hint: "Such as a house or flat"
+          hint: "For example a house or flat"
         non_domestic:
           title: "A non-domestic property"
-          hint: "Such as a commercial, industrial or public building"
+          hint: "For example a commercial, industrial or public building"
       cta: "Continue"
   schemes:
     head:
@@ -254,10 +254,10 @@ en:
       options:
         domestic:
           title: "A domestic property"
-          hint: "Such as a house or flat"
+          hint: "For example a house or flat"
         non_domestic:
           title: "A non-domestic property"
-          hint: "Such as a commercial, industrial or public building"
+          hint: "For example a commercial, industrial or public building"
       cta: "Continue"
 
   find_certificate_by_postcode:
