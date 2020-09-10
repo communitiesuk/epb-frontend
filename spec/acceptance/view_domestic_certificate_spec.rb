@@ -196,10 +196,38 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
 
         let(:response) { get "/energy-performance-certificate/123-123" }
 
+        it "shows text instead of the potential space heating energy savings table" do
+          expect(response.body).to have_css "p",
+                                            text: "The assessor did not find any opportunities to save energy by installing insulation in this property"
+        end
+      end
+
+      context "when there is no information about the impact of insulation" do
+        before do
+          FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
+              "123-123",
+              "25",
+              "f",
+              false,
+              7.8453,
+              6.5123,
+              -79,
+              0,
+              nil,
+              )
+        end
+
+        let(:response) { get "/energy-performance-certificate/123-123" }
+
         it "does not show the potential space heating energy savings table" do
-          expect(response.body).not_to include(">Loft insulation</")
-          expect(response.body).not_to include(">Cavity wall insulation</")
-          expect(response.body).not_to include(">Solid wall insulation</")
+          expect(response.body).to have_css "th",
+                                            text: "Loft insulation"
+          expect(response.body).to have_css "td",
+                                            text: "79 kWh per year"
+          expect(response.body).not_to have_css "th",
+                                            text: "Cavity wall insulation"
+          expect(response.body).not_to have_css "th",
+                                                text: "Solid wall insulation"
         end
       end
 
