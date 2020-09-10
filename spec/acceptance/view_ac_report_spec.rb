@@ -4,7 +4,7 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
   include RSpecFrontendServiceMixin
 
   let(:response) do
-    get "/energy-performance-certificate/0000-0000-0000-0000-9999"
+    get "/energy-certificate/0000-0000-0000-0000-9999"
   end
 
   context "when an ac report exists" do

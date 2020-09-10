@@ -28,7 +28,7 @@
             "8" :
             administrative_information[:relatedPartyDisclosure], "", "dec_disclosure_code", "dec"
         ),
-        "download_xml": { type: "link", value: t("dec.sections.administrative_information.download_xml_cta"), link: localised_url("/energy-performance-certificate/" + assessment[:assessmentId] + "/dec_summary") },
+        "download_xml": { type: "link", value: t("dec.sections.administrative_information.download_xml_cta"), link: localised_url("/energy-certificate/" + assessment[:assessmentId] + "/dec_summary") },
       },
       translation_prefix: 'dec.sections.administrative_information.',
       skip_null: true

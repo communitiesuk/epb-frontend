@@ -117,7 +117,7 @@ class FrontendService < Sinatra::Base
             :assessmentId
           ]
 
-        redirect "/energy-performance-certificate/#{fetched_assessment_id}", 303
+        redirect "/energy-certificate/#{fetched_assessment_id}", 303
       rescue StandardError => e
         case e
         when Errors::ReferenceNumberNotValid
@@ -409,7 +409,7 @@ class FrontendService < Sinatra::Base
             :assessmentId
           ]
 
-        redirect "/energy-performance-certificate/#{fetched_assessment_id}", 303
+        redirect "/energy-certificate/#{fetched_assessment_id}", 303
       rescue StandardError => e
         case e
         when Errors::ReferenceNumberNotValid
@@ -491,7 +491,7 @@ class FrontendService < Sinatra::Base
     show(erb_template, locals)
   end
 
-  get "/energy-performance-certificate/:assessment_id" do
+  get "/energy-certificate/:assessment_id" do
     use_case = @container.get_object(:fetch_certificate_use_case)
     assessment = use_case.execute(params[:assessment_id])
 
@@ -536,7 +536,7 @@ class FrontendService < Sinatra::Base
     end
   end
 
-  get "/energy-performance-certificate/:assessment_id/dec_summary" do
+  get "/energy-certificate/:assessment_id/dec_summary" do
     use_case = @container.get_object(:fetch_dec_summary_use_case)
     assessment = use_case.execute(params[:assessment_id])
 

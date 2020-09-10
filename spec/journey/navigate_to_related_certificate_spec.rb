@@ -31,7 +31,7 @@ describe "Journey::NavigateToRelatedCertificate",
   end
 
   it "navigates to a related assessment" do
-    visit "/energy-performance-certificate/4567-6789-4567-6789-4567"
+    visit "/energy-certificate/4567-6789-4567-6789-4567"
     click_on "0000-0000-0000-0000-0001"
 
     expect(find(".epc-box")).to have_content "0000-0000-0000-0000-0001"

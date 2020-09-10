@@ -5,7 +5,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
   include RSpecFrontendServiceMixin
 
   let(:response) do
-    get "/energy-performance-certificate/1234-5678-1234-5678-1234"
+    get "/energy-certificate/1234-5678-1234-5678-1234"
   end
 
   context "when the assessment does not exist" do
@@ -107,11 +107,11 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
                                           "If you are aware of previous reports for this property and they are not listed here, please contact the Help Desk at 01632 164 6672."
       expect(response.body).to have_css "dt", text: "Reference number"
       expect(response.body).to have_link "9457-0000-0000-0000-2000",
-                                         href: "/energy-performance-certificate/9457-0000-0000-0000-2000"
+                                         href: "/energy-certificate/9457-0000-0000-0000-2000"
       expect(response.body).to have_css "dt", text: "Valid until"
       expect(response.body).to have_css "dd", text: "4 May 2026"
       expect(response.body).not_to have_link "0000-0000-0000-0000-5555",
-                                             href: "/energy-performance-certificate/0000-0000-0000-0000-5555"
+                                             href: "/energy-certificate/0000-0000-0000-0000-5555"
     end
   end
 
@@ -121,7 +121,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
         assessment_id: "1234-5678-1234-5678-1234", related_party: "some text",
       )
 
-      response = get "/energy-performance-certificate/1234-5678-1234-5678-1234"
+      response = get "/energy-certificate/1234-5678-1234-5678-1234"
 
       expect(response.body).to have_css "dd.govuk-summary-list__value",
                                         text: "some text"
@@ -173,7 +173,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
 
     it "doesnt show the related cepc section" do
       page_without_cepc =
-        get "/energy-performance-certificate/1234-5678-1234-5678-9999"
+        get "/energy-certificate/1234-5678-1234-5678-9999"
       expect(page_without_cepc.body).to_not include("Energy rating and EPC")
     end
   end

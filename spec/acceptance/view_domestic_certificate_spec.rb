@@ -11,7 +11,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
     end
 
     let(:response) do
-      get "/energy-performance-certificate/1234-5678-1234-5678-1234"
+      get "/energy-certificate/1234-5678-1234-5678-1234"
     end
 
     it "returns status 200" do
@@ -120,7 +120,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       end
 
       let(:response) do
-        get "/energy-performance-certificate/1111-1111-1111-1111-1112"
+        get "/energy-certificate/1111-1111-1111-1111-1112"
       end
 
       it "shows related party disclosure text, not disclosure code translation" do
@@ -145,7 +145,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
         )
       end
 
-      let(:response) { get "/energy-performance-certificate/123-123" }
+      let(:response) { get "/energy-certificate/123-123" }
 
       it "shows related party disclosure code is not valid" do
         expect(response.body).to include(
@@ -171,7 +171,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
         )
       end
 
-      let(:response) { get "/energy-performance-certificate/123-123" }
+      let(:response) { get "/energy-certificate/123-123" }
 
       it "shows related party disclosure text and code not present" do
         expect(response.body).to include("No related party disclosure provided")
@@ -194,7 +194,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
           )
         end
 
-        let(:response) { get "/energy-performance-certificate/123-123" }
+        let(:response) { get "/energy-certificate/123-123" }
 
         it "shows text instead of the potential space heating energy savings table" do
           expect(response.body).to have_css "p",
@@ -218,7 +218,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
           )
         end
 
-        let(:response) { get "/energy-performance-certificate/123-123" }
+        let(:response) { get "/energy-certificate/123-123" }
 
         it "does not show the potential space heating energy savings table" do
           expect(response.body).to have_css "th", text: "Loft insulation"
@@ -334,7 +334,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
           )
         end
 
-        let(:response) { get "/energy-performance-certificate/123-654" }
+        let(:response) { get "/energy-certificate/123-654" }
 
         it "shows the making changes text with the correct reduction value" do
           expect(response.body).to include(
@@ -354,7 +354,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
         FetchAssessmentSummary::AssessmentStub.fetch_rdsap("123-654", "25", "f")
       end
 
-      let(:response) { get "/energy-performance-certificate/123-654" }
+      let(:response) { get "/energy-certificate/123-654" }
       it "shows a warning text" do
         expect(response.body).to include(
           "You may not be able to let this property",
@@ -421,7 +421,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
         end
 
         let(:response) do
-          get "/energy-performance-certificate/1111-1111-1111-1111-1112"
+          get "/energy-certificate/1111-1111-1111-1111-1112"
         end
 
         it "will not show the property summary elements" do
@@ -567,7 +567,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
         end
 
         let(:response) do
-          get "/energy-performance-certificate/1234-5678-1234-5678-1235"
+          get "/energy-certificate/1234-5678-1234-5678-1235"
         end
 
         it "responds successfully" do
@@ -590,7 +590,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       end
 
       let(:response) do
-        get "/energy-performance-certificate/1111-1111-1111-1111-1112"
+        get "/energy-certificate/1111-1111-1111-1111-1112"
       end
 
       it "does not show the Green Deal Plan section" do
@@ -631,7 +631,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
         end
 
         let(:response) do
-          get "/energy-performance-certificate/1111-1111-1111-1111-1112"
+          get "/energy-certificate/1111-1111-1111-1111-1112"
         end
 
         it "does not show the section title" do
@@ -653,7 +653,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       )
     end
 
-    let(:response) { get "/energy-performance-certificate/122-456" }
+    let(:response) { get "/energy-certificate/122-456" }
 
     it "returns status 200" do
       expect(response.status).to eq(200)
@@ -715,7 +715,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
         )
       end
       let(:response) do
-        get "/energy-performance-certificate/1111-1111-1111-1111-1112"
+        get "/energy-certificate/1111-1111-1111-1111-1112"
       end
 
       it "will show information unavailable instead" do
@@ -743,7 +743,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
         )
       end
       let(:response) do
-        get "/energy-performance-certificate/1111-1111-1111-1111-1112"
+        get "/energy-certificate/1111-1111-1111-1111-1112"
       end
 
       it "will show information unavailable instead" do
@@ -761,7 +761,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
         )
       end
       let(:response) do
-        get "/energy-performance-certificate/1111-1111-1111-1111-1112"
+        get "/energy-certificate/1111-1111-1111-1111-1112"
       end
 
       it "displays the improvementTitle and improvementDescription instead" do
@@ -792,7 +792,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       )
     end
     let(:response) do
-      get "/energy-performance-certificate/1234-5678-1234-5678-1234"
+      get "/energy-certificate/1234-5678-1234-5678-1234"
     end
 
     it "displays the SAP type description" do
@@ -810,7 +810,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
     end
 
     let(:response) do
-      get "/energy-performance-certificate/1111-1111-1111-1111-1112"
+      get "/energy-certificate/1111-1111-1111-1111-1112"
     end
 
     context "with an invalid typical saving" do
@@ -826,7 +826,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
     end
 
     let(:response) do
-      get "/energy-performance-certificate/1234-5678-1234-5678-1234"
+      get "/energy-certificate/1234-5678-1234-5678-1234"
     end
 
     it "returns status 404" do
@@ -848,7 +848,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
     end
 
     let(:response) do
-      get "/energy-performance-certificate/1234-5678-1234-5678-1234"
+      get "/energy-certificate/1234-5678-1234-5678-1234"
     end
 
     it "returns status 404" do
@@ -870,7 +870,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
     end
 
     let(:response) do
-      get "/energy-performance-certificate/1111-1111-1111-1111-1112"
+      get "/energy-certificate/1111-1111-1111-1111-1112"
     end
 
     it "does not show the estimated energy cost for a year" do

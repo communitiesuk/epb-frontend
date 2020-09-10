@@ -5,7 +5,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
   include RSpecFrontendServiceMixin
 
   let(:response) do
-    get "/energy-performance-certificate/1234-5678-1234-5678-1234"
+    get "/energy-certificate/1234-5678-1234-5678-1234"
   end
 
   context "when the assessment does not exist" do
@@ -271,7 +271,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
                                                               key
 
           response =
-            get "/energy-performance-certificate/1234-5678-1234-5678-1234"
+            get "/energy-certificate/1234-5678-1234-5678-1234"
 
           expect(response.body).to include(disclosure)
         end
@@ -280,7 +280,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
       it "shows the link to the Recommendation Report" do
         expect(response.body).to include(">Recommendation Report</h2>")
         expect(response.body).to include(
-          "/energy-performance-certificate/4192-1535-8427-8844-6702",
+          "/energy-certificate/4192-1535-8427-8844-6702",
         )
       end
 
@@ -337,11 +337,11 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
                                           "If you are aware of previous certificates for this property and they are not listed here, please contact the Help Desk at 01632 164 6672."
       expect(response.body).to have_css "dt", text: "Reference number"
       expect(response.body).to have_link "0000-0000-0000-0000-0001",
-                                         href: "/energy-performance-certificate/0000-0000-0000-0000-0001"
+                                         href: "/energy-certificate/0000-0000-0000-0000-0001"
       expect(response.body).to have_css "dt", text: "Valid until"
       expect(response.body).to have_css "dd", text: "4 May 2026"
       expect(response.body).not_to have_link "0000-0000-0000-0000-0002",
-                                             href: "/energy-performance-certificate/0000-0000-0000-0000-0002"
+                                             href: "/energy-certificate/0000-0000-0000-0000-0002"
       expect(response.body).not_to have_css "dd", text: "4 May 2019 (Expired)"
     end
 

@@ -4,7 +4,7 @@ describe "Acceptance::PrintableDisplayEnergyCertificate", type: :feature do
   include RSpecFrontendServiceMixin
 
   let(:response) do
-    get "/energy-performance-certificate/0000-0000-0000-0000-1111?print=true"
+    get "/energy-certificate/0000-0000-0000-0000-1111?print=true"
   end
 
   context "when a dec exists" do
@@ -16,7 +16,7 @@ describe "Acceptance::PrintableDisplayEnergyCertificate", type: :feature do
 
     it "shows a back link" do
       expect(response.body).to have_link "Back",
-                                         href: "/energy-performance-certificate/0000-0000-0000-0000-1111"
+                                         href: "/energy-certificate/0000-0000-0000-0000-1111"
     end
 
     it "shows the page title" do
@@ -135,7 +135,7 @@ describe "Acceptance::PrintableDisplayEnergyCertificate", type: :feature do
           )
 
           response =
-            get "/energy-performance-certificate/0000-0000-0000-0000-1111?print=true"
+            get "/energy-certificate/0000-0000-0000-0000-1111?print=true"
 
           expect(response.body).to have_css "td", text: disclosure
         end

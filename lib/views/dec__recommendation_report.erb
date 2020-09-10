@@ -3,7 +3,7 @@
     <h2 class="govuk-heading-l"><%= t('dec.sections.recommendation_report.title') %></h2>
     <p class="govuk-body"><%==
       t('dec.sections.recommendation_report.text',
-        link: '<a href="' + localised_url('/energy-performance-certificate/' + administrative_information[:relatedRrn]) + '">' +
+        link: '<a href="' + localised_url('/energy-certificate/' + administrative_information[:relatedRrn]) + '">' +
           t('dec.sections.recommendation_report.cta') + '</a>')
     %></p>
   </div>

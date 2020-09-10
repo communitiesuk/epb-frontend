@@ -97,7 +97,7 @@ describe "Acceptance::Certificate" do
 
         it "shows a clickable entry" do
           expect(response.body).to include(
-            '<a href="/energy-performance-certificate/1234-5678-9101-1122-1234"',
+            '<a href="/energy-certificate/1234-5678-9101-1122-1234"',
           )
         end
 
@@ -226,7 +226,7 @@ describe "Acceptance::Certificate" do
 
         it "redirects to the URL to view the requested certificate" do
           expect(response.location).to end_with(
-            "/energy-performance-certificate/1234-5678-9101-1121-3141",
+            "/energy-certificate/1234-5678-9101-1121-3141",
           )
         end
       end
@@ -246,7 +246,7 @@ describe "Acceptance::Certificate" do
 
         it "redirects to the URL to view the requested certificate" do
           expect(response.location).to end_with(
-            "/energy-performance-certificate/1234-5678-9101-1121-3141",
+            "/energy-certificate/1234-5678-9101-1121-3141",
           )
         end
       end
@@ -468,7 +468,7 @@ describe "Acceptance::Certificate" do
 
         it "shows a clickable entry" do
           expect(response.body).to include(
-            '<a href="/energy-performance-certificate/1234-5678-9101-1121-3141"',
+            '<a href="/energy-certificate/1234-5678-9101-1121-3141"',
           )
         end
 

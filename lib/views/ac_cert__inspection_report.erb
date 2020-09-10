@@ -4,7 +4,7 @@
   <% if  assessment[:relatedRrn]%>
     <p class="govuk-body"><%==
       t('ac_cert.sections.inspection.text',
-        link: '<a href="' + localised_url('/energy-performance-certificate/' + assessment[:relatedRrn]) + '">' +
+        link: '<a href="' + localised_url('/energy-certificate/' + assessment[:relatedRrn]) + '">' +
           t('ac_cert.sections.inspection.cta') + '</a>')
     %></p>
   <% end %>

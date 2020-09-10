@@ -4,7 +4,7 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
   include RSpecFrontendServiceMixin
 
   let(:response) do
-    get "/energy-performance-certificate/0000-0000-0000-0000-1111"
+    get "/energy-certificate/0000-0000-0000-0000-1111"
   end
 
   context "when a dec exists" do
@@ -56,7 +56,7 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
         response.body,
       ).to have_link "Open the print version of this certificate",
                      href:
-                       "/energy-performance-certificate/0000-0000-0000-0000-1111?print=true"
+                       "/energy-certificate/0000-0000-0000-0000-1111?print=true"
     end
 
     it "shows the rating section" do
@@ -99,7 +99,7 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
                                         text:
                                           "Guidance on improving the energy performance operational rating of this building can be found in the recommendation report."
       expect(response.body).to have_link "recommendation report",
-                                         href: "/energy-performance-certificate/4192-1535-8427-8844-6702"
+                                         href: "/energy-certificate/4192-1535-8427-8844-6702"
     end
 
     it "shows the total CO2 emissions section" do
@@ -204,7 +204,7 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
         expect(response.body).to have_css "dt", text: "Summary XML"
         expect(response.body).to have_link "Download summary XML",
                                            href:
-                                             "/energy-performance-certificate/0000-0000-0000-0000-1111/dec_summary"
+                                             "/energy-certificate/0000-0000-0000-0000-1111/dec_summary"
       end
     end
 
@@ -230,7 +230,7 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
           )
 
           response =
-            get "/energy-performance-certificate/0000-0000-0000-0000-1111"
+            get "/energy-certificate/0000-0000-0000-0000-1111"
 
           expect(response.body).to have_css "dd", text: disclosure
         end
@@ -245,11 +245,11 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
                                           "If you are aware of previous certificates for this property and they are not listed here, please contact the Help Desk at 01632 164 6672."
       expect(response.body).to have_css "dt", text: "Reference number"
       expect(response.body).to have_link "0000-0000-0000-0000-0001",
-                                         href: "/energy-performance-certificate/0000-0000-0000-0000-0001"
+                                         href: "/energy-certificate/0000-0000-0000-0000-0001"
       expect(response.body).to have_css "dt", text: "Valid until"
       expect(response.body).to have_css "dd", text: "4 May 2026"
       expect(response.body).not_to have_link "0000-0000-0000-0000-0002",
-                                             href: "/energy-performance-certificate/0000-0000-0000-0000-0002"
+                                             href: "/energy-certificate/0000-0000-0000-0000-0002"
       expect(response.body).not_to have_css "dd", text: "4 May 2019 (Expired)"
     end
 

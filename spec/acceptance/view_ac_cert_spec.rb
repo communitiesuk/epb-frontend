@@ -4,7 +4,7 @@ describe "Acceptance::AirConditioningInspectionCertificate", type: :feature do
   include RSpecFrontendServiceMixin
 
   let(:response) do
-    get "/energy-performance-certificate/0000-0000-0000-0000-9999"
+    get "/energy-certificate/0000-0000-0000-0000-9999"
   end
 
   context "when a dec exists" do
@@ -121,7 +121,7 @@ describe "Acceptance::AirConditioningInspectionCertificate", type: :feature do
           )
 
           response =
-            get "/energy-performance-certificate/0000-0000-0000-0000-1111"
+            get "/energy-certificate/0000-0000-0000-0000-1111"
 
           expect(response.body).to have_css "dd", text: disclosure
         end
@@ -189,7 +189,7 @@ describe "Acceptance::AirConditioningInspectionCertificate", type: :feature do
                                         text:
                                           "For the assessment’s recommendations, see the inspection report."
       expect(response.body).to have_link "the inspection report",
-                                         href: "/energy-performance-certificate/0000-0000-0000-0000-8888"
+                                         href: "/energy-certificate/0000-0000-0000-0000-8888"
     end
   end
 end

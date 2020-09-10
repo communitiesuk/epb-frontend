@@ -4,7 +4,7 @@ describe "Acceptance::DecRecommendationReport", type: :feature do
   include RSpecFrontendServiceMixin
 
   let(:response) do
-    get "/energy-performance-certificate/1234-5678-1234-5678-1234"
+    get "/energy-certificate/1234-5678-1234-5678-1234"
   end
 
   context "when the assessment does not exist" do
@@ -66,7 +66,7 @@ describe "Acceptance::DecRecommendationReport", type: :feature do
       expect(
         response.body,
       ).to have_link "Display Energy Certificate for this building",
-                     href: "/energy-performance-certificate/0000-0000-0000-0000-1111"
+                     href: "/energy-certificate/0000-0000-0000-0000-1111"
     end
 
     it "shows the Recommendations section" do
@@ -164,12 +164,12 @@ describe "Acceptance::DecRecommendationReport", type: :feature do
                                           "If you are aware of previous reports for this property and they are not listed here, please contact the Help Desk at 01632 164 6672."
       expect(response.body).to have_css "dt", text: "Reference number"
       expect(response.body).to have_link "9457-0000-0000-0000-2000",
-                                         href: "/energy-performance-certificate/9457-0000-0000-0000-2000"
+                                         href: "/energy-certificate/9457-0000-0000-0000-2000"
       expect(response.body).to have_css "dt", text: "Valid until"
       expect(response.body).to have_css "dd", text: "4 May 2026"
       expect(response.body).to have_css "dt", text: "Reference number"
       expect(response.body).to have_link "9457-0000-0000-0000-2001",
-                                         href: "/energy-performance-certificate/9457-0000-0000-0000-2001"
+                                         href: "/energy-certificate/9457-0000-0000-0000-2001"
       expect(response.body).to have_css "dt", text: "Valid until"
       expect(response.body).to have_css "dd", text: "4 May 2019 (Expired)"
     end

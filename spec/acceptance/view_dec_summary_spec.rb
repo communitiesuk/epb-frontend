@@ -4,7 +4,7 @@ describe "Acceptance::ViewDecSummary", type: :feature do
   include RSpecFrontendServiceMixin
 
   let(:response) do
-    get "/energy-performance-certificate/0000-0000-0000-0000-1111/dec_summary"
+    get "/energy-certificate/0000-0000-0000-0000-1111/dec_summary"
   end
 
   context "when a dec summary exists" do
