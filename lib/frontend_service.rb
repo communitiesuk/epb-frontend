@@ -24,6 +24,8 @@ class FrontendService < Sinatra::Base
     setup_locales
 
     @container = Container.new
+    @logger = Logger.new(STDOUT)
+    @logger.level = Logger::INFO
   end
 
   before { set_locale }
@@ -567,9 +569,18 @@ class FrontendService < Sinatra::Base
     erb :error_page_404 unless @errors
   end
 
-  def server_error(error)
-    # TODO: log the error properly
-    pp "500 ERROR: #{error}"
+  def server_error(exception)
+    message =
+      exception.methods.include?(:message) ? exception.message : exception
+
+    error = { type: exception.class.name, message: message }
+
+    if exception.methods.include? :backtrace
+      error[:backtrace] = exception.backtrace
+    end
+
+    @logger.error JSON.generate(error)
+
     status 500
     erb :error_page_500
   end
