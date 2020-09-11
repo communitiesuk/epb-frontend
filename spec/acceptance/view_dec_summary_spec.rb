@@ -18,4 +18,58 @@ describe "Acceptance::ViewDecSummary", type: :feature do
       expect(response.body).to eq("<xml></xml>")
     end
   end
+
+  context "when the assessment doesnt exist" do
+    before do
+      FetchDecSummary::NoAssessmentStub.fetch(
+        assessment_id: "0000-0000-0000-0000-1111",
+      )
+    end
+
+    it "returns status 404" do
+      expect(response.status).to eq(404)
+    end
+
+    it "shows the error page" do
+      expect(response.body).to include(
+        '<h1 class="govuk-heading-xl">Page not found</h1>',
+      )
+    end
+  end
+
+  context "when the assessment has been cancelled or marked not for issue" do
+    before do
+      FetchDecSummary::GoneAssessmentStub.fetch(
+        assessment_id: "0000-0000-0000-0000-1111",
+      )
+    end
+
+    it "returns status 404" do
+      expect(response.status).to eq(404)
+    end
+
+    it "shows the error page" do
+      expect(response.body).to include(
+        '<h1 class="govuk-heading-xl">Page not found</h1>',
+      )
+    end
+  end
+
+  context "when an assessment that is not a DEC" do
+    before do
+      FetchDecSummary::AssessmentSummaryErrorStub.fetch(
+        assessment_id: "0000-0000-0000-0000-1111",
+      )
+    end
+
+    it "returns status 404" do
+      expect(response.status).to eq(404)
+    end
+
+    it "shows the error page" do
+      expect(response.body).to include(
+        '<h1 class="govuk-heading-xl">Page not found</h1>',
+      )
+    end
+  end
 end
