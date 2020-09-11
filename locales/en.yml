@@ -772,7 +772,7 @@ en:
         water_heating: 'Water heating'
         estimated_use: 'Estimated energy use'
         potential_saving: 'Potential energy savings by installing insulation'
-        no_potential_saving: 'The assessor did not find any opportunities to save energy by installing insulation in this property'
+        no_potential_saving: 'The assessor did not find any opportunities to save energy by installing insulation in this property.'
         type_of_insulation: 'Type of insulation'
         amount_saved: 'Amount of energy saved'
         loft_insulation: 'Loft insulation'

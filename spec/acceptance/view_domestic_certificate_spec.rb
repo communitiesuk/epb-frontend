@@ -195,7 +195,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
         it "shows text instead of the potential space heating energy savings table" do
           expect(response.body).to have_css "p",
                                             text:
-                                              "The assessor did not find any opportunities to save energy by installing insulation in this property"
+                                              "The assessor did not find any opportunities to save energy by installing insulation in this property."
         end
       end
 
