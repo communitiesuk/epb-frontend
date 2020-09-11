@@ -1,6 +1,5 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <%== erb :related__content %>
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">
         <%= t('find_a_certificate.top_heading') %>
@@ -55,5 +54,6 @@
         <%== t('find_a_certificate.before_you_start.scotland.text', :link => '<a href="https://www.scottishepcregister.org.uk/">' + t('find_a_certificate.before_you_start.scotland.cta') + '</a>') %>
       </p>
     </div>
+      <%== erb :related__content %>
   </div>
 </div>
