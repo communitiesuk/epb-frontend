@@ -15,6 +15,19 @@
     } %>
 
     <h4 class="govuk-heading-s">
+      <%= t('ac_report.sections.air_handling_systems.fan_power.title') %>
+    </h4>
+
+    <%== erb :ac_report__yes_no_flag, locals: {
+      question: t('ac_report.sections.air_handling_systems.fan_power.condition'),
+      inspection: system[:inspection][:fanPower][:condition]
+    } %>
+
+    <p>
+      The calculation used was: <%= system[:inspection][:fanPower][:sfpCalculation] %>
+    </p>
+
+    <h4 class="govuk-heading-s">
       <%= t('ac_report.sections.air_handling_systems.filters.title') %>
     </h4>
 

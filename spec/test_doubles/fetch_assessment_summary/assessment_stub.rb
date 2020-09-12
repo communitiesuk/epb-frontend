@@ -157,7 +157,11 @@ module FetchAssessmentSummary
                 fanControl: {
                   setting: { note: "No dampers", recommendations: [] },
                 },
-              }
+                fanPower: {
+                  condition: {note: nil, flag: true, recommendations: []},
+                  sfpCalculation: "464 watts x 70% - 0.311/400 = 8.12 w/ltr.",
+                },
+              },
             },
           ],
         },

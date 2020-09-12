@@ -1312,6 +1312,9 @@ cy:
         outdoor_inlets:
           title: "CS 7.1, CS7.2 Outdoor air inlets"
           condition: "Locate the inlets for outdoor air. Note any significant obstructions or blockages to inlet grilles, screens and pre- filters. Note where inlets may be affected by proximity to local sources of heat, or to air exhausts."
+        fan_power:
+          title: "CS1.5 Specific fan power"
+          condition: "Are air flow rates and system pressures available from commissioning data?"
     flag:
       finding_yes: "Yes"
       finding_no: "No"
