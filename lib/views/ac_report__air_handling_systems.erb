@@ -31,5 +31,36 @@
       inspection: system[:inspection][:filters][:differentialPressureGauge]
     } %>
 
+    <h4 class="govuk-heading-s">
+      <%= t('ac_report.sections.air_handling_systems.heat_exchangers.title') %>
+    </h4>
+
+    <%== erb :ac_report__yes_no_flag, locals: {
+      question: t('ac_report.sections.air_handling_systems.heat_exchangers.condition'),
+      inspection: system[:inspection][:heatExchangers][:condition]
+    } %>
+
+    <h4 class="govuk-heading-s">
+      <%= t('ac_report.sections.air_handling_systems.refrigeration.title') %>
+    </h4>
+
+    <%== erb :ac_report__yes_no_flag, locals: {
+      question: t('ac_report.sections.air_handling_systems.refrigeration.leaks'),
+      inspection: system[:inspection][:refrigeration][:leaks]
+    } %>
+
+    <h4 class="govuk-heading-s">
+      <%= t('ac_report.sections.air_handling_systems.fan_rotation.title') %>
+    </h4>
+
+    <%== erb :ac_report__yes_no_flag, locals: {
+      question: t('ac_report.sections.air_handling_systems.fan_rotation.direction'),
+      inspection: system[:inspection][:fanRotation][:direction]
+    } %>
+
+    <%== erb :ac_report__yes_no_flag, locals: {
+      question: t('ac_report.sections.air_handling_systems.fan_rotation.modulation'),
+      inspection: system[:inspection][:fanRotation][:modulation]
+    } %>
 <% end %>
 </div>

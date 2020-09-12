@@ -135,6 +135,16 @@ module FetchAssessmentSummary
                     flag: false, note: "Not fitted.", recommendations: []
                   },
                 },
+                heatExchangers: {
+                    condition: { flag: true, note: nil, recommendations: [] }
+                },
+                refrigeration: {
+                    leaks: { flag: true, note: nil, recommendations: [] }
+                },
+                fanRotation: {
+                    direction: {flag: true, note: nil, recommendations: []},
+                    modulation: {flag: true, note: nil, recommendations: []},
+                }
               },
             },
           ],

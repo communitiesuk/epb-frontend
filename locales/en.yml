@@ -1428,6 +1428,16 @@ en:
           condition: "Are air intake and filter conditions acceptable?"
           change_frequency: "Have filters been changed according to current industry guidance?"
           differential_pressure_gauge: "Is the filter differential pressure gauge, where fitted, working?"
+        heat_exchangers:
+          title: "CS6.5 Condition of heat exchangers"
+          condition: "Are heat exchangers in good condition?"
+        refrigeration:
+          title: "CS6.6 Refrigeration leaks (if DXCoil installed)"
+          leaks: "Are there any signs of a refrigerant leak?"
+        fan_rotation:
+          title: "CS6.7/b Fan rotation"
+          direction: "Does the fan rotate in the correct direction?"
+          modulation: "Is the speed control or modulation operational?"
     flag:
       finding_yes: "Yes"
       finding_no: "No"
