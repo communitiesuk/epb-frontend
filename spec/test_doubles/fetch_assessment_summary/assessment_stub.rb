@@ -164,6 +164,41 @@ module FetchAssessmentSummary
               },
             },
           ],
+          terminalUnits: [
+            {
+              equipment: {
+                unit: "VOL1/SYS1",
+                component:
+                      "Indoor wall type split which is part of a multi system with 5 indoor units.",
+                description: "VOL1/SYS1/a",
+                coolingPlant: "Cooling system",
+                manufacturer: "Mitsubishi Electric",
+                yearInstalled: "2011",
+                areaServed: "ICT Suite",
+                discrepancy: "None",
+              },
+              inspection: {
+                insulation: {
+                  pipework: { note: nil, recommendations: [], flag: true },
+                  ductwork: { note: nil, recommendations: [], flag: false },
+                },
+                unit: { condition: { note: nil, recommendations: [], flag: true } },
+                grillesAirFlow: {
+                  distribution: { note: nil, recommendations: [], flag: true },
+                  tampering: { note: nil, recommendations: [], flag: true },
+                  waterSupply: { note: nil, recommendations: [], flag: false },
+                  complaints: { note: nil, recommendations: [], flag: false },
+                },
+                diffuserPositions: {
+                  positionIssues: { note: nil, recommendations: [], flag: true },
+                  partitioningIssues: {
+                    note: nil, recommendations: [], flag: false
+                  },
+                  controlOperation: { note: nil, recommendations: [], flag: true },
+                },
+              },
+            }
+          ]
         },
         meta: {},
       }
