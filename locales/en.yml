@@ -1435,7 +1435,7 @@ en:
           title: "CS6.6 Refrigeration leaks (if DXCoil installed)"
           leaks: "Are there any signs of a refrigerant leak?"
         fan_rotation:
-          title: "CS6.7/b Fan rotation"
+          title: "CS6.7/a Fan rotation"
           direction: "Does the fan rotate in the correct direction?"
           modulation: "Is the speed control or modulation operational?"
         fan_control:
