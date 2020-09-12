@@ -145,19 +145,19 @@ module FetchAssessmentSummary
                   direction: { flag: true, note: nil, recommendations: [] },
                   modulation: { flag: true, note: nil, recommendations: [] },
                 },
-              },
-              airLeakage: {
-                condition: { note: "No leaks", recommendations: [] },
-              },
-              heatRecovery: {
-                energyConservation: { note: "None", recommendations: [] },
-              },
-              outdoorInlets: {
-                condition: { note: "Diffusers clean", recommendations: [] },
-              },
-              fanControl: {
-                setting: { note: "No dampers", recommendations: [] },
-              },
+                airLeakage: {
+                  condition: { note: "No leaks", recommendations: [] },
+                },
+                heatRecovery: {
+                  energyConservation: { note: "None", recommendations: [] },
+                },
+                outdoorInlets: {
+                  condition: { note: "Diffusers clean", recommendations: [] },
+                },
+                fanControl: {
+                  setting: { note: "No dampers", recommendations: [] },
+                },
+              }
             },
           ],
         },

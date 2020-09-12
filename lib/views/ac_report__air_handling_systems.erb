@@ -62,5 +62,42 @@
       question: t('ac_report.sections.air_handling_systems.fan_rotation.modulation'),
       inspection: system[:inspection][:fanRotation][:modulation]
     } %>
+
+    <h4 class="govuk-heading-s">
+      <%= t('ac_report.sections.air_handling_systems.fan_control.title') %>
+    </h4>
+
+    <%== erb :ac_report__yes_no_flag, locals: {
+      question: t('ac_report.sections.air_handling_systems.fan_control.setting'),
+      inspection: system[:inspection][:fanControl][:setting]
+    } %>
+
+    <h4 class="govuk-heading-s">
+      <%= t('ac_report.sections.air_handling_systems.heat_recovery.title') %>
+    </h4>
+
+    <%== erb :ac_report__yes_no_flag, locals: {
+      question: t('ac_report.sections.air_handling_systems.heat_recovery.energy_conservation'),
+      inspection: system[:inspection][:heatRecovery][:energyConservation]
+    } %>
+
+    <h4 class="govuk-heading-s">
+      <%= t('ac_report.sections.air_handling_systems.air_leakage.title') %>
+    </h4>
+
+    <%== erb :ac_report__yes_no_flag, locals: {
+      question: t('ac_report.sections.air_handling_systems.air_leakage.condition'),
+      inspection: system[:inspection][:airLeakage][:condition]
+    } %>
+
+    <h4 class="govuk-heading-s">
+      <%= t('ac_report.sections.air_handling_systems.outdoor_inlets.title') %>
+    </h4>
+
+    <%== erb :ac_report__yes_no_flag, locals: {
+      question: t('ac_report.sections.air_handling_systems.outdoor_inlets.condition'),
+      inspection: system[:inspection][:outdoorInlets][:condition]
+    } %>
+
 <% end %>
 </div>

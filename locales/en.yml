@@ -1438,6 +1438,18 @@ en:
           title: "CS6.7/b Fan rotation"
           direction: "Does the fan rotate in the correct direction?"
           modulation: "Is the speed control or modulation operational?"
+        fan_control:
+          title: "CS6.7/b Fan and control"
+          setting: "Note the fan type, and method of air speed control. Check the setting and operation of any fresh air/recirculation dampers."
+        heat_recovery:
+          title: "CS6.8 Heat recovery"
+          energy_conservation: "Identify whether the systems have any energy conservation facilities, e.g. heat recovery, free cooling sequence, and check for evidence that such facilities are/have been functioning."
+        air_leakage:
+          title: "CS6.9 Air leakage"
+          condition: "Observe the air handling plant and visible air containment including ductwork, floor or ceiling plenums and builders' work shafts for signs of excessive leakage and energy loss."
+        outdoor_inlets:
+          title: "CS 7.1, CS7.2 Outdoor air inlets"
+          condition: "Locate the inlets for outdoor air. Note any significant obstructions or blockages to inlet grilles, screens and pre- filters. Note where inlets may be affected by proximity to local sources of heat, or to air exhausts."
     flag:
       finding_yes: "Yes"
       finding_no: "No"

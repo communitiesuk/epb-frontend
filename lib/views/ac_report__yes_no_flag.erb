@@ -3,14 +3,20 @@
 </p>
 
 <p class="finding">
-  <% if inspection[:flag] %>
-      <%= t('ac_report.flag.finding_yes') %>
-  <% else %>
-      <%= t('ac_report.flag.finding_no') %>
+  <% unless inspection[:flag].nil? %>
+    <% if inspection[:flag] %>
+        <%= t('ac_report.flag.finding_yes') %>
+    <% else %>
+        <%= t('ac_report.flag.finding_no') %>
+    <% end %>
+  <% end %>
+
+  <% unless inspection[:flag].nil? or inspection[:note].nil? %>
+    :
   <% end %>
 
   <% unless inspection[:note].nil? || inspection[:note].empty? %>
-  : <%= inspection[:note] %>
+    <%= inspection[:note] %>
   <% end %>
 
   <% unless inspection[:recommendations].empty? %>
