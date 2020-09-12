@@ -1462,6 +1462,24 @@ en:
           yearInstalled: "Year installed"
           areaServed: "Area served"
           discrepancy: "Discrepancies noted"
+        insulation:
+          title: "CS4.1 Insulation"
+          pipework: "Is the pipework adequately insulated?"
+          ductwork: "Is the ductwork adequately insulated?"
+        unit:
+          title: "CS4.2 Unit condition"
+          condition: "Are the terminal units in good working order?"
+        grilles_air_flow:
+          title: "CS5.1, CS5.2 Grilles and air flow"
+          distribution: "Do air delivery openings provide good distribution?"
+          tampering: "Is there evidence of tampering with diffusers?"
+          water_supply: "Are chilled and hot water being supplied to terminals simultaneously?"
+          complaints: "Are there are any records of occupant complaints regarding air distribution?"
+        diffuser_positions:
+          title: "CS5.3, CS5.4, CS5.5 Diffuser positions"
+          position_issues: "Is there potential for air to short-circuit from supply to extract?"
+          partitioning_issues: "Is the position of partitioning or furniture adversely affecting performance?"
+          control_operation: "Is the control and operation adequate?"
     flag:
       finding_yes: "Yes"
       finding_no: "No"

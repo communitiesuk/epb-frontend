@@ -14,5 +14,66 @@
       skip_null: true
     } %>
 
-  <% end %>
+    <h4 class="govuk-heading-s">
+      <%= t('ac_report.sections.terminal_units.insulation.title') %>
+    </h4>
+
+    <%== erb :ac_report__yes_no_flag, locals: {
+      question: t('ac_report.sections.terminal_units.insulation.pipework'),
+      inspection: system[:inspection][:insulation][:pipework]
+    } %>
+
+    <%== erb :ac_report__yes_no_flag, locals: {
+      question: t('ac_report.sections.terminal_units.insulation.ductwork'),
+      inspection: system[:inspection][:insulation][:pipework]
+    } %>
+
+    <h4 class="govuk-heading-s">
+      <%= t('ac_report.sections.terminal_units.unit.title') %>
+    </h4>
+
+    <%== erb :ac_report__yes_no_flag, locals: {
+      question: t('ac_report.sections.terminal_units.unit.condition'),
+      inspection: system[:inspection][:unit][:condition]
+    } %>
+
+    <h4 class="govuk-heading-s">
+      <%= t('ac_report.sections.terminal_units.grilles_air_flow.title') %>
+    </h4>
+
+    <%== erb :ac_report__yes_no_flag, locals: {
+      question: t('ac_report.sections.terminal_units.grilles_air_flow.distribution'),
+      inspection: system[:inspection][:grillesAirFlow][:distribution]
+    } %>
+    <%== erb :ac_report__yes_no_flag, locals: {
+      question: t('ac_report.sections.terminal_units.grilles_air_flow.tampering'),
+      inspection: system[:inspection][:grillesAirFlow][:tampering]
+    } %>
+    <%== erb :ac_report__yes_no_flag, locals: {
+      question: t('ac_report.sections.terminal_units.grilles_air_flow.water_supply'),
+      inspection: system[:inspection][:grillesAirFlow][:waterSupply]
+    } %>
+    <%== erb :ac_report__yes_no_flag, locals: {
+      question: t('ac_report.sections.terminal_units.grilles_air_flow.complaints'),
+      inspection: system[:inspection][:grillesAirFlow][:complaints]
+    } %>
+
+    <h4 class="govuk-heading-s">
+      <%= t('ac_report.sections.terminal_units.diffuser_positions.title') %>
+    </h4>
+
+    <%== erb :ac_report__yes_no_flag, locals: {
+      question: t('ac_report.sections.terminal_units.diffuser_positions.position_issues'),
+      inspection: system[:inspection][:diffuserPositions][:positionIssues]
+    } %>
+    <%== erb :ac_report__yes_no_flag, locals: {
+      question: t('ac_report.sections.terminal_units.diffuser_positions.partitioning_issues'),
+      inspection: system[:inspection][:diffuserPositions][:partitioningIssues]
+    } %>
+    <%== erb :ac_report__yes_no_flag, locals: {
+      question: t('ac_report.sections.terminal_units.diffuser_positions.control_operation'),
+      inspection: system[:inspection][:diffuserPositions][:controlOperation]
+    } %>
+
+<% end %>
 </div>
