@@ -136,15 +136,27 @@ module FetchAssessmentSummary
                   },
                 },
                 heatExchangers: {
-                    condition: { flag: true, note: nil, recommendations: [] }
+                  condition: { flag: true, note: nil, recommendations: [] },
                 },
                 refrigeration: {
-                    leaks: { flag: true, note: nil, recommendations: [] }
+                  leaks: { flag: true, note: nil, recommendations: [] },
                 },
                 fanRotation: {
-                    direction: {flag: true, note: nil, recommendations: []},
-                    modulation: {flag: true, note: nil, recommendations: []},
-                }
+                  direction: { flag: true, note: nil, recommendations: [] },
+                  modulation: { flag: true, note: nil, recommendations: [] },
+                },
+              },
+              airLeakage: {
+                condition: { note: "No leaks", recommendations: [] },
+              },
+              heatRecovery: {
+                energyConservation: { note: "None", recommendations: [] },
+              },
+              outdoorInlets: {
+                condition: { note: "Diffusers clean", recommendations: [] },
+              },
+              fanControl: {
+                setting: { note: "No dampers", recommendations: [] },
               },
             },
           ],

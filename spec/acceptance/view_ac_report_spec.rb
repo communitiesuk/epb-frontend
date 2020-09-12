@@ -150,13 +150,22 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
       expect(response.body).to have_css "dd", text: "Corridor"
       expect(response.body).to have_css "h4",
                                         text: "CS6.1, CS6.2, CS6.3: Filters"
-      expect(response.body).to have_css "p", text: "Are air intake and filter conditions acceptable?"
-      expect(response.body).to have_css "p", text: "Have filters been changed according to current industry guidance?"
-      expect(response.body).to have_css "p", text: "Is the filter differential pressure gauge, where fitted, working?"
-      expect(response.body).to have_css "p", text: "Originally changed on an annual basis but now upgraded to six monthly."
-      expect(response.body).to have_css "p", text: "The assessor made the following notes and recommendations:"
-      expect(response.body).to have_css "li", text: "Change this more frequently"
-
+      expect(response.body).to have_css "p",
+                                        text: "Are air intake and filter conditions acceptable?"
+      expect(response.body).to have_css "p",
+                                        text:
+                                          "Have filters been changed according to current industry guidance?"
+      expect(response.body).to have_css "p",
+                                        text:
+                                          "Is the filter differential pressure gauge, where fitted, working?"
+      expect(response.body).to have_css "p",
+                                        text:
+                                          "Originally changed on an annual basis but now upgraded to six monthly."
+      expect(response.body).to have_css "p",
+                                        text:
+                                          "The assessor made the following notes and recommendations:"
+      expect(response.body).to have_css "li",
+                                        text: "Change this more frequently"
     end
 
     context "when there are no subsystems" do
