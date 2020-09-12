@@ -1,0 +1,18 @@
+<div class="epc-blue-bottom executive-summary">
+  <h2 class="govuk-heading-l">
+    <%= t('ac_report.sections.terminal_units.title') %>
+  </h2>
+
+  <% assessment[:terminalUnits].each do |system| %>
+    <h3 class="govuk-heading-m">
+      <%= system[:equipment][:unit] %>: <%= system[:equipment][:component] %>
+    </h3>
+
+    <%== erb :component__summary_list, locals: {
+      list: system[:equipment].reject{|k| [:unit, :component].include? k},
+      translation_prefix: 'ac_report.sections.terminal_units.equipment.',
+      skip_null: true
+    } %>
+
+  <% end %>
+</div>

@@ -49,5 +49,11 @@
       } %>
     <% end %>
 
+    <% unless assessment[:terminalUnits].empty? %>
+      <%== erb :ac_report__terminal_units, locals: {
+        assessment: assessment,
+      } %>
+    <% end %>
+
   </div>
 </div>

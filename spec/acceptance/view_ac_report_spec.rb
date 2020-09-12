@@ -168,6 +168,11 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
                                         text: "Change this more frequently"
     end
 
+    it "can show the terminal units" do
+      expect(response.body).to have_css "h2", text: "Terminal units"
+      expect(response.body).to have_css "h3", text: "VOL1/SYS1: Indoor wall type split which is part of a multi system with 5 indoor units."
+    end
+
     context "when there are no subsystems" do
       before do
         FetchAssessmentSummary::AssessmentStub.fetch_ac_report(

@@ -1453,6 +1453,15 @@ en:
         fan_power:
           title: "CS1.5 Specific fan power"
           condition: "Are air flow rates and system pressures available from commissioning data?"
+      terminal_units:
+        title: "Terminal units"
+        equipment:
+          description: "Description of unit"
+          coolingPlant: "Cooling plant serving terminal unit"
+          manufacturer: "Manufacturer"
+          yearInstalled: "Year installed"
+          areaServed: "Area served"
+          discrepancy: "Discrepancies noted"
     flag:
       finding_yes: "Yes"
       finding_no: "No"
