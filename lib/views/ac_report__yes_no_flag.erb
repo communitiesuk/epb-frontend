@@ -12,4 +12,18 @@
   <% unless inspection[:note].nil? || inspection[:note].empty? %>
   : <%= inspection[:note] %>
   <% end %>
+
+  <% unless inspection[:recommendations].empty? %>
+
+  <p><%=  t('ac_report.flag.recommendations')%></p>
+
+  <ul class="govuk-list govuk-list--bullet">
+    <% inspection[:recommendations]
+         .sort{|a,b| a[:sequence].to_i <=> b[:sequence].to_i }
+         .each do |r|%>
+      <li><%= r[:text] %></li>
+
+    <% end %>
+  </ul>
+  <%end %>
 </p>

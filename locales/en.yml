@@ -1431,3 +1431,4 @@ en:
     flag:
       finding_yes: "Yes"
       finding_no: "No"
+      recommendations: "The assessor made the following notes and recommendations:"
