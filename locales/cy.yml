@@ -1345,6 +1345,11 @@ cy:
       system_controls:
         title: "System controls"
         subtitle_prefix: "Control for"
+        zoning:
+          title: "CS8.1 Zoning"
+          question: "Is the zoning appropriate in relation to anticipated cooling demand?"
+        dead_band:
+          question: ""
     flag:
       finding_yes: "Yes"
       finding_no: "No"

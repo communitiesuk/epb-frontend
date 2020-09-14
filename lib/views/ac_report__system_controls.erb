@@ -8,5 +8,51 @@
       <%= t('ac_report.sections.system_controls.subtitle_prefix')%> <%= system[:subSystemId] %>
     </h3>
 
-    <% end %>
+    <%== erb :ac_report__yes_no_flag, locals: {
+      question: t('ac_report.sections.system_controls.zoning.question'),
+      inspection: system[:inspection][:zoning]
+    } %>
+
+    <%== erb :ac_report__yes_no_flag, locals: {
+      question: t('ac_report.sections.system_controls.time.question'),
+      inspection: system[:inspection][:time]
+    } %>
+
+    <%== erb :ac_report__yes_no_flag, locals: {
+      question: t('ac_report.sections.system_controls.set_on_period.question'),
+      inspection: system[:inspection][:setOnPeriod]
+    } %>
+
+    <%== erb :ac_report__yes_no_flag, locals: {
+      question: t('ac_report.sections.system_controls.timer_shortfall.question'),
+      inspection: system[:inspection][:timerShortfall]
+    } %>
+
+    <%== erb :ac_report__yes_no_flag, locals: {
+      question: t('ac_report.sections.system_controls.sensors.question'),
+      inspection: system[:inspection][:sensors]
+    } %>
+
+    <%== erb :ac_report__yes_no_flag, locals: {
+      question: t('ac_report.sections.system_controls.dead_band.question'),
+      inspection: system[:inspection][:deadBand]
+    } %>
+
+    <%== erb :ac_report__yes_no_flag, locals: {
+      question: t('ac_report.sections.system_controls.capacity.question'),
+      inspection: system[:inspection][:capacity]
+    } %>
+
+    <%== erb :ac_report__yes_no_flag, locals: {
+      question: t('ac_report.sections.system_controls.airflow.question'),
+      inspection: system[:inspection][:airflow]
+    } %>
+
+    <%== erb :ac_report__yes_no_flag, locals: {
+      question: t('ac_report.sections.system_controls.guidance_controls.question'),
+      inspection: system[:inspection][:guidanceControls]
+    } %>
+
+
+<% end %>
 </div>

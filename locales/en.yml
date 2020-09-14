@@ -1483,6 +1483,24 @@ en:
       system_controls:
         title: "System controls"
         subtitle_prefix: "Control for"
+        zoning:
+          question: "CS8.1 Is the zoning appropriate in relation to anticipated cooling demand?"
+        time:
+          question: "CS8.2 Note the current indicated weekday and time of day on controllers or BMS against the actual time."
+        set_on_period:
+          question: "CS8.3/a Note the set on and off periods (for weekday and weekend if this facility is available with the timer)."
+        timer_shortfall:
+          question: "CS 8.3/b Is there a shortfall in timer capabilities?"
+        sensors:
+          question: "CS8.4 Identify and assess zone heating and cooling temperature control sensors. Are the sensor types and locations appropriate in relation to heating and cooling emitters, heat flows or likely temperature distributions in the zone or space?"
+        dead_band:
+          question: "CS8.6 Note whether a 'dead band' is, or can be, set between heating and cooling."
+        capacity:
+          question: "CS8.7 Do the sub system controls integrate effectively with the overall system control strategy?"
+        airflow:
+          question: "CS8.8 Assess the means of modulating or controlling air flow rate through the air supply and exhaust ducts."
+        guidance_controls:
+          question: "PS3.6 Are guidance notices visible or controls available to inhibit use of cooling equipment whilst windows are open or cooling/heating is on?"
     flag:
       finding_yes: "Yes"
       finding_no: "No"

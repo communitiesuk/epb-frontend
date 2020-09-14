@@ -207,7 +207,7 @@ module FetchAssessmentSummary
           ],
           systemControls: [
             {
-              subSystemId:
+                subSystemId:
                 "VOL001/SYS001 R410A Inverter Split Systems to Sales Area",
               component:
                 "VOL001/SYS001/SC1 AC Local Controller to Sales Area Unit 1",
