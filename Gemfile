@@ -25,6 +25,6 @@ source "https://rubygems.org" do
   gem "rake"
   gem "rubocop-govuk", "~> 3.17"
   gem "sassc", "~> 2.4"
-  gem "sinatra", "~> 2.0", ">= 2.0.7"
+  gem "sinatra", "~> 2.1"
   gem "zeitwerk", "~> 2.4.0"
 end
