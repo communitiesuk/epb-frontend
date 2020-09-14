@@ -5,7 +5,9 @@ describe "Acceptance::Certificate" do
 
   describe ".get find-energy-certificate/find-a-certificate/search-by-postcode" do
     context "when search page rendered" do
-      let(:response) { get "http://find-energy-certificate.local.gov.uk/find-a-certificate/search-by-postcode" }
+      let(:response) do
+        get "http://find-energy-certificate.local.gov.uk/find-a-certificate/search-by-postcode"
+      end
 
       it "returns status 200" do
         expect(response.status).to eq(200)
@@ -33,7 +35,9 @@ describe "Acceptance::Certificate" do
     end
 
     context "when entering an empty postcode" do
-      let(:response) { get "http://find-energy-certificate.local.gov.uk/find-a-certificate/search-by-postcode?postcode=" }
+      let(:response) do
+        get "http://find-energy-certificate.local.gov.uk/find-a-certificate/search-by-postcode?postcode="
+      end
 
       it "returns status 400" do
         expect(response.status).to eq(400)
@@ -158,7 +162,9 @@ describe "Acceptance::Certificate" do
 
   describe ".get find-energy-certificate/find-a-certificate/search-by-reference-number" do
     context "when search page rendered" do
-      let(:response) { get "http://find-energy-certificate.local.gov.uk/find-a-certificate/search-by-reference-number" }
+      let(:response) do
+        get "http://find-energy-certificate.local.gov.uk/find-a-certificate/search-by-reference-number"
+      end
 
       it "returns status 200" do
         expect(response.status).to eq(200)

@@ -5,7 +5,9 @@ describe "Acceptance::Assessor", type: :feature do
 
   describe ".get getting-new-energy-certificate/find-an-assessor/search-by-postcode" do
     context "when search page rendered" do
-      let(:response) { get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/search-by-postcode" }
+      let(:response) do
+        get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/search-by-postcode"
+      end
 
       it "returns status 200" do
         expect(response.status).to eq(200)
@@ -31,7 +33,9 @@ describe "Acceptance::Assessor", type: :feature do
     end
 
     context "when entering an empty postcode" do
-      let(:response) { get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/search-by-postcode?postcode=" }
+      let(:response) do
+        get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/search-by-postcode?postcode="
+      end
 
       it "returns status 400" do
         expect(response.status).to eq(400)
@@ -289,7 +293,9 @@ describe "Acceptance::Assessor", type: :feature do
 
   describe ".get /find-an-assessor/search-by-name" do
     context "when search page rendered" do
-      let(:response) { get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/search-by-name" }
+      let(:response) do
+        get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/search-by-name"
+      end
 
       it "returns status 200" do
         expect(response.status).to eq(200)
@@ -315,7 +321,9 @@ describe "Acceptance::Assessor", type: :feature do
     end
 
     context "when entering an empty name" do
-      let(:response) { get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/search-by-name?name=" }
+      let(:response) do
+        get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/search-by-name?name="
+      end
 
       it "returns status 400" do
         expect(response.status).to eq(400)
@@ -333,7 +341,9 @@ describe "Acceptance::Assessor", type: :feature do
     end
 
     context "when entering a single name" do
-      let(:response) { get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/search-by-name?name=bob" }
+      let(:response) do
+        get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/search-by-name?name=bob"
+      end
 
       it "displays an error message" do
         expect(response.body).to have_css "span",

@@ -208,7 +208,7 @@ module FetchAssessmentSummary
           systemControls: [
             {
               subSystemId:
-              "VOL001/SYS001 R410A Inverter Split Systems to Sales Area",
+                "VOL001/SYS001 R410A Inverter Split Systems to Sales Area",
               component:
                 "VOL001/SYS001/SC1 AC Local Controller to Sales Area Unit 1",
               inspection: {
@@ -228,73 +228,76 @@ module FetchAssessmentSummary
                   note:
                     "Time/date on the local controller is not used as Central controller timeclock controls the units.",
                   recommendations: [
-                      { sequence: "1", text: "No recommendation required." },
-                    ],
+                    { sequence: "1", text: "No recommendation required." },
+                  ],
                 },
                 setOnPeriod: {
                   note: "N/A Central controller timeclock controls the units.",
                   recommendations: [
-                      { sequence: "1", text: "No recommendation required" },
-                    ],
+                    { sequence: "1", text: "No recommendation required" },
+                  ],
                 },
                 timerShortfall: {
                   note: "There is no shortfall in controller capabilities.",
                   recommendations: [
-                      { sequence: "1", text: "No recommendation required." },
-                    ],
+                    { sequence: "1", text: "No recommendation required." },
+                  ],
                   flag: false,
                 },
                 sensors: {
                   note: "Sensors are considered satisfactory.",
                   recommendations: [
-                      { sequence: "1", text: "No recommendation required." },
-                    ],
+                    { sequence: "1", text: "No recommendation required." },
+                  ],
                   flag: true,
                 },
                 setTemperature: {
                   note: "The set temperature on local controller; 18 deg C",
                   recommendations: [
-                      { sequence: "1",
-                        text: "Ensure staff are educated to run AC systems for comfort and efficiency by setting the AC system temperature to circa 22 deg C +/- 1 deg C." },
-                    ]
+                    {
+                      sequence: "1",
+                      text:
+                        "Ensure staff are educated to run AC systems for comfort and efficiency by setting the AC system temperature to circa 22 deg C +/- 1 deg C.",
+                    },
+                  ],
                 },
                 deadBand: {
                   note:
                     "System dead-bands for the indoor unit are set at manufacture stage, these are considered satisfactory.",
                   recommendations: [
-                      {
-                        sequence: "1",
-                        text:
-                          "There were LPHW ceiling heaters within the same zones as AC systems and it was unclear from the BMS panel whether interlocks were provided between the systems to prevent both operating simultaneously. This should be investigated at head office were the BMS is set from and ensure that the AC systems do not operate at the same time as the heating and that adequate dead-bands are configured between the systems.",
-                      },
-                    ],
+                    {
+                      sequence: "1",
+                      text:
+                        "There were LPHW ceiling heaters within the same zones as AC systems and it was unclear from the BMS panel whether interlocks were provided between the systems to prevent both operating simultaneously. This should be investigated at head office were the BMS is set from and ensure that the AC systems do not operate at the same time as the heating and that adequate dead-bands are configured between the systems.",
+                    },
+                  ],
                 },
                 capacity: {
                   note: "",
                   recommendations: [
-                      { sequence: "1", text: "No recommendation required." },
-                    ],
+                    { sequence: "1", text: "No recommendation required." },
+                  ],
                   flag: true,
                 },
                 airflow: {
                   note: "N/A Unit is not ducted type",
                   recommendations: [
-                      {
-                        sequence: "1",
-                        text:
-                          "Considered satisfactory, no recommendation required.",
-                      },
-                    ],
+                    {
+                      sequence: "1",
+                      text:
+                        "Considered satisfactory, no recommendation required.",
+                    },
+                  ],
                 },
                 guidanceControls: {
                   note: "Provision of Guidance notices would be useful.",
                   recommendations: [
-                      {
-                        sequence: "1",
-                        text:
-                          "Consider providing ‘Good Practise Guideline’ notices (laminated sheet adjacent each AC controller) including ‘simple step’ recommendations on how to operate the systems efficiently.",
-                      },
-                    ],
+                    {
+                      sequence: "1",
+                      text:
+                        "Consider providing ‘Good Practise Guideline’ notices (laminated sheet adjacent each AC controller) including ‘simple step’ recommendations on how to operate the systems efficiently.",
+                    },
+                  ],
                   flag: false,
                 },
               },

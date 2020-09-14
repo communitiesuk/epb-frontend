@@ -5,7 +5,9 @@ describe "Acceptance::Non Domestic Certificate" do
 
   describe ".get find-energy-certificate/find-a-non-domestic-certificate" do
     context "when search page rendered" do
-      let(:response) { get "http://find-energy-certificate.local.gov.uk/find-a-non-domestic-certificate" }
+      let(:response) do
+        get "http://find-energy-certificate.local.gov.uk/find-a-non-domestic-certificate"
+      end
 
       it "returns status 200" do
         expect(response.status).to eq(200)

@@ -16,8 +16,12 @@ describe "Integration::Rackup" do
 
   after(:all) { Process.kill("KILL", @process_id) }
 
-  let(:request_assessor) { Net::HTTP.new("getting-new-energy-certificate.local.gov.uk", 9_393) }
-  let(:request_certificate) { Net::HTTP.new("find-energy-certificate.local.gov.uk", 9_393) }
+  let(:request_assessor) do
+    Net::HTTP.new("getting-new-energy-certificate.local.gov.uk", 9_393)
+  end
+  let(:request_certificate) do
+    Net::HTTP.new("find-energy-certificate.local.gov.uk", 9_393)
+  end
 
   describe "GET /getting-new-energy-certificate" do
     it "renders the getting-new-energy-certificate page" do

@@ -46,7 +46,13 @@ RSpec.configure do |config|
   config.shared_context_metadata_behavior = :apply_to_host_groups
 
   config.filter_run_when_matching :focus
-  WebMock.disable_net_connect!(allow_localhost: true, allow: ['find-energy-certificate.local.gov.uk', 'getting-new-energy-certificate.local.gov.uk'])
+  WebMock.disable_net_connect!(
+    allow_localhost: true,
+    allow: %w[
+      find-energy-certificate.local.gov.uk
+      getting-new-energy-certificate.local.gov.uk
+    ],
+  )
 
   config.before(:each) { OauthStub.token }
 end
