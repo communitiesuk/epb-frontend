@@ -33,7 +33,7 @@ installed.
 * [Chrome](https://www.google.com/chrome)
 * [ChromeDriver](https://chromedriver.chromium.org/downloads)
   * download the same ChromeDriver version as your version of Chrome.
-  
+
 Depending on how ChromeDriver was installed, it may need to be added to the
 `PATH` environment variable. Instructions below are for MacOS users.
 
@@ -54,6 +54,13 @@ export PATH="$PATH:$HOME/bin" # Add this line at the end of the file
 Run `$ source ~/.bash_profile`, or `.zprofile`. Alternatively, restart the
 terminal.
 
+5. You must add additional local hosts to your hosts file on your machine, navigate to `/private/etc` and add:
+
+```
+127.0.0.1	getting-new-energy-certificate.local.gov.uk
+127.0.0.1	find-energy-certificate.local.gov.uk
+```
+
 ### Test suites
 
 To run the respective test suites:
@@ -65,7 +72,7 @@ To run the respective test suites:
 
 ### Environment configuration
 
-The frontend needs to authenticate and connect to the API.  The following 
+The frontend needs to authenticate and connect to the API.  The following
 environment variables should be set to specify the auth server and API server to
 use:
 
