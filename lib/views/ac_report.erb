@@ -9,6 +9,51 @@
       <h1 class="govuk-heading-xl"><%= t('ac_report.top_heading') %></h1>
     </div>
   </div>
+  <div class="govuk-grid-column-one-third">
+    <hr class="epc-blue-top" />
+    <%== erb :component__contents, locals: {
+      title: t("dec.sections.contents.title"),
+      sections: [
+        {
+          link: '#administrative_information',
+          text: 'component.administrative_information.title'
+        },
+        {
+          link: '#executive_summary',
+          text: 'ac_report.sections.exec_summary.title'
+        },
+        {
+          link: '#owner_operator',
+          text: 'ac_report.sections.owner_operator.title'
+        },
+        {
+          link: '#key_recommendations',
+          text: 'ac_report.sections.key_recommendations.title'
+        },
+        {
+          link: '#sub_systems',
+          text: 'ac_report.sections.sub_systems.title'
+        },
+        {
+          link: '#pre_inspection',
+          text: 'ac_report.sections.pre_inspection.title'
+        },
+        {
+          link: '#air_handling_systems',
+          text: 'ac_report.sections.air_handling_systems.title'
+        },
+        {
+          link: '#terminal_units',
+          text: 'ac_report.sections.terminal_units.title'
+        },
+        {
+          link: '#system_controls',
+          text: 'ac_report.sections.system_controls.title'
+        },
+      ]
+    } %>
+  </div>
+
   <div class="govuk-grid-column-two-thirds">
     <hr class="epc-light-top govuk-!-display-none-print" />
 
