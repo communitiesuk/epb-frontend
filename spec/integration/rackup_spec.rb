@@ -16,12 +16,22 @@ describe "Integration::Rackup" do
 
   after(:all) { Process.kill("KILL", @process_id) }
 
-  let(:request) { Net::HTTP.new("127.0.0.1", 9_393) }
+  let(:request_assessor) { Net::HTTP.new("getting-new-energy-certificate.local.gov.uk", 9_393) }
+  let(:request_certificate) { Net::HTTP.new("find-energy-certificate.local.gov.uk", 9_393) }
 
-  describe "GET /" do
-    it "renders the home page" do
+  describe "GET /getting-new-energy-certificate" do
+    it "renders the getting-new-energy-certificate page" do
       req = Net::HTTP::Get.new("/")
-      response = request.request(req)
+      response = request_assessor.request(req)
+      expect(response.code).to eq("200")
+      expect(response.body).to include("Energy performance of buildings")
+    end
+  end
+
+  describe "GET /find-energy-certificate.local.gov.uk" do
+    it "renders the find-energy-certificate.local.gov.uk page" do
+      req = Net::HTTP::Get.new("/")
+      response = request_certificate.request(req)
       expect(response.code).to eq("200")
       expect(response.body).to include("Energy performance of buildings")
     end
@@ -30,7 +40,7 @@ describe "Integration::Rackup" do
   describe "GET /healthcheck" do
     it "passes a healthcheck" do
       req = Net::HTTP::Get.new("/healthcheck")
-      response = request.request(req)
+      response = request_assessor.request(req)
       expect(response.code).to eq("200")
     end
   end
@@ -38,7 +48,7 @@ describe "Integration::Rackup" do
   describe "GET non-existent page" do
     it "returns custom 404 error page" do
       req = Net::HTTP::Get.new("/this-page-does-not-exist")
-      response = request.request(req)
+      response = request_assessor.request(req)
       expect(response.code).to eq("404")
       expect(response.body).to include(
         "If you typed the web address, check it is correct.",

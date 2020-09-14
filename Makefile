@@ -46,6 +46,10 @@ deploy-app: ## Deploys the app to PaaS
 test:
 	@bundle exec rspec --tag ~journey
 
+.PHONY: hosts
+hosts:
+	@scripts/configure-tests-hosts.sh
+
 .PHONY: run
 run:
 	@bundle exec rackup -p 9292 ${ARGS}

@@ -24,7 +24,7 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
   after(:all) { Process.kill("KILL", @process_id) }
 
   it "finds an assessor by postcode" do
-    visit "/find-an-assessor"
+    visit "http://getting-new-energy-certificate.local.gov.uk:9393"
     click_on "Start now"
     find("#label-domestic").click
     click_on "Continue"
@@ -33,7 +33,7 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
   end
 
   it "displays an error message when entering an empty postcode" do
-    visit "/find-an-assessor"
+    visit "http://getting-new-energy-certificate.local.gov.uk:9393"
     click_on "Start now"
     find("#label-domestic").click
     click_on "Continue"
@@ -43,7 +43,7 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
   end
 
   it "displays an error message when entering an invalid postcode" do
-    visit "/find-an-assessor"
+    visit "http://getting-new-energy-certificate.local.gov.uk:9393"
     click_on "Start now"
     find("#label-domestic").click
     click_on "Continue"
@@ -54,7 +54,7 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
 
   context "when entering a valid postcode" do
     it "displays the find an assessor page heading" do
-      visit "/find-an-assessor"
+      visit "http://getting-new-energy-certificate.local.gov.uk:9393"
       click_on "Start now"
       find("#label-domestic").click
       click_on "Continue"
@@ -66,7 +66,7 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
     end
 
     it "displays accreditation scheme contact details for the first assessor" do
-      visit "/find-an-assessor"
+      visit "http://getting-new-energy-certificate.local.gov.uk:9393"
       click_on "Start now"
       find("#label-domestic").click
       click_on "Continue"
@@ -79,7 +79,7 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
     end
 
     it "displays no longer accredited text for unaccredited scheme" do
-      visit "/find-an-assessor"
+      visit "http://getting-new-energy-certificate.local.gov.uk:9393"
       click_on "Start now"
       find("#label-domestic").click
       click_on "Continue"
@@ -91,7 +91,7 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
   end
 
   it "displays an error message when entering an empty name" do
-    visit "/find-an-assessor"
+    visit "http://getting-new-energy-certificate.local.gov.uk:9393"
     click_on "Start now"
     find("#label-domestic").click
     click_on "Continue"
@@ -103,7 +103,7 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
   end
 
   it "displays an assessor when searched for one that does exist" do
-    visit "/find-an-assessor"
+    visit "http://getting-new-energy-certificate.local.gov.uk:9393"
     click_on "Start now"
     find("#label-domestic").click
     click_on "Continue"
@@ -116,7 +116,7 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
   end
 
   it "displays an assessor when searched for one that does exist" do
-    visit "/find-an-assessor"
+    visit "http://getting-new-energy-certificate.local.gov.uk:9393"
     click_on "Start now"
     find("#label-domestic").click
     click_on "Continue"
@@ -127,7 +127,7 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
   end
 
   it "displays accreditation scheme contact details for an existing assessor by name" do
-    visit "/find-an-assessor"
+    visit "http://getting-new-energy-certificate.local.gov.uk:9393"
     click_on "Start now"
     expect(page).to have_content "What type of property is the certificate for?"
     find("#label-domestic").click
@@ -141,8 +141,8 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
     expect(page).to have_content "0333 123 1418"
   end
 
-  it "will allow a user to go back to the find-an-assessor page" do
-    visit "/find-an-assessor"
+  it "will allow a user to go back to the getting-new-energy-certificate page" do
+    visit "http://getting-new-energy-certificate.local.gov.uk:9393"
     click_on "Start now"
     expect(page).to have_content "What type of property is the certificate for?"
     click_link "Back"

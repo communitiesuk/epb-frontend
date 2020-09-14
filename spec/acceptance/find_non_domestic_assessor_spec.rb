@@ -3,9 +3,9 @@
 describe "Acceptance::NonDomesticAssessor" do
   include RSpecFrontendServiceMixin
 
-  describe ".get /find-a-non-domestic-assessor/search-by-postcode" do
+  describe ".get getting-new-energy-certificate/find-a-non-domestic-assessor/search-by-postcode" do
     context "when search page rendered" do
-      let(:response) { get "/find-a-non-domestic-assessor/search-by-postcode" }
+      let(:response) { get "http://getting-new-energy-certificate.local.gov.uk/find-a-non-domestic-assessor/search-by-postcode" }
 
       it "returns status 200" do
         expect(response.status).to eq(200)
@@ -34,7 +34,7 @@ describe "Acceptance::NonDomesticAssessor" do
 
     context "when entering an empty postcode" do
       let(:response) do
-        get "/find-a-non-domestic-assessor/search-by-postcode?postcode="
+        get "http://getting-new-energy-certificate.local.gov.uk/find-a-non-domestic-assessor/search-by-postcode?postcode="
       end
 
       it "returns status 400" do
@@ -57,7 +57,7 @@ describe "Acceptance::NonDomesticAssessor" do
 
     context "when entering an invalid postcode" do
       let(:response) do
-        get "/find-a-non-domestic-assessor/search-by-postcode?postcode=NOT+A+POSTCODE"
+        get "http://getting-new-energy-certificate.local.gov.uk/find-a-non-domestic-assessor/search-by-postcode?postcode=NOT+A+POSTCODE"
       end
 
       it "returns status 400" do
@@ -88,7 +88,7 @@ describe "Acceptance::NonDomesticAssessor" do
         end
 
         let(:response) do
-          get "/find-a-non-domestic-assessor/search-by-postcode?postcode=++SW1A+2AA++"
+          get "http://getting-new-energy-certificate.local.gov.uk/find-a-non-domestic-assessor/search-by-postcode?postcode=++SW1A+2AA++"
         end
 
         it "returns status 200" do
@@ -105,7 +105,7 @@ describe "Acceptance::NonDomesticAssessor" do
         end
 
         let(:response) do
-          get "/find-a-non-domestic-assessor/search-by-postcode?postcode=SW1A+2AA"
+          get "http://getting-new-energy-certificate.local.gov.uk/find-a-non-domestic-assessor/search-by-postcode?postcode=SW1A+2AA"
         end
 
         it "returns status 200" do
@@ -231,7 +231,7 @@ describe "Acceptance::NonDomesticAssessor" do
         end
 
         let(:response) do
-          get "/find-a-non-domestic-assessor/search-by-postcode?postcode=E1+4AA"
+          get "http://getting-new-energy-certificate.local.gov.uk/find-a-non-domestic-assessor/search-by-postcode?postcode=E1+4AA"
         end
 
         it "returns status 200" do
@@ -258,7 +258,7 @@ describe "Acceptance::NonDomesticAssessor" do
         end
 
         let(:response) do
-          get "/find-a-non-domestic-assessor/search-by-postcode?postcode=B11+4FF"
+          get "http://getting-new-energy-certificate.local.gov.uk/find-a-non-domestic-assessor/search-by-postcode?postcode=B11+4FF"
         end
 
         it "returns status 404" do
@@ -286,7 +286,7 @@ describe "Acceptance::NonDomesticAssessor" do
         end
 
         let(:response) do
-          get "/find-a-non-domestic-assessor/search-by-postcode?postcode=C11+4FF"
+          get "http://getting-new-energy-certificate.local.gov.uk/find-a-non-domestic-assessor/search-by-postcode?postcode=C11+4FF"
         end
 
         it "returns status 400" do
@@ -318,7 +318,7 @@ describe "Acceptance::NonDomesticAssessor" do
         end
 
         let(:response) do
-          get "/find-a-non-domestic-assessor/search-by-postcode?postcode=D11+4FF"
+          get "http://getting-new-energy-certificate.local.gov.uk/find-a-non-domestic-assessor/search-by-postcode?postcode=D11+4FF"
         end
 
         it "returns status 500" do

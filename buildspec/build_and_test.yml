@@ -24,6 +24,7 @@ phases:
       - gem install bundler:2.1.4
       - bundle install
       - npm install
+      - make hosts
   build:
     commands:
       - make frontend-build

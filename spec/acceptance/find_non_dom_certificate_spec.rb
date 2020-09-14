@@ -3,9 +3,9 @@
 describe "Acceptance::Non Domestic Certificate" do
   include RSpecFrontendServiceMixin
 
-  describe ".get /find-a-non-domestic-certificate" do
+  describe ".get find-energy-certificate/find-a-non-domestic-certificate" do
     context "when search page rendered" do
-      let(:response) { get "/find-a-non-domestic-certificate" }
+      let(:response) { get "http://find-energy-certificate.local.gov.uk/find-a-non-domestic-certificate" }
 
       it "returns status 200" do
         expect(response.status).to eq(200)
@@ -19,10 +19,10 @@ describe "Acceptance::Non Domestic Certificate" do
     end
   end
 
-  describe ".get /find-a-non-domestic-certificate/search-by-postcode" do
+  describe ".get find-energy-certificate/find-a-non-domestic-certificate/search-by-postcode" do
     context "when search page rendered" do
       let(:response) do
-        get "/find-a-non-domestic-certificate/search-by-postcode"
+        get "http://find-energy-certificate.local.gov.uk/find-a-non-domestic-certificate/search-by-postcode"
       end
 
       it "returns status 200" do
@@ -58,7 +58,7 @@ describe "Acceptance::Non Domestic Certificate" do
 
     context "when entering an empty postcode" do
       let(:response) do
-        get "/find-a-non-domestic-certificate/search-by-postcode?postcode="
+        get "http://find-energy-certificate.local.gov.uk/find-a-non-domestic-certificate/search-by-postcode?postcode="
       end
 
       it "returns status 400" do
@@ -84,7 +84,7 @@ describe "Acceptance::Non Domestic Certificate" do
         before { FindCertificate::Stub.search_by_postcode("SW1A 2AA", "CEPC") }
 
         let(:response) do
-          get "/find-a-non-domestic-certificate/search-by-postcode?postcode=++SW1A+2AA++"
+          get "http://find-energy-certificate.local.gov.uk/find-a-non-domestic-certificate/search-by-postcode?postcode=++SW1A+2AA++"
         end
 
         it "returns status 200" do
@@ -96,7 +96,7 @@ describe "Acceptance::Non Domestic Certificate" do
         before { FindCertificate::Stub.search_by_postcode("SW1A 2AA", "CEPC") }
 
         let(:response) do
-          get "/find-a-non-domestic-certificate/search-by-postcode?postcode=SW1A+2AA"
+          get "http://find-energy-certificate.local.gov.uk/find-a-non-domestic-certificate/search-by-postcode?postcode=SW1A+2AA"
         end
 
         it "returns status 200" do
@@ -141,7 +141,7 @@ describe "Acceptance::Non Domestic Certificate" do
         end
 
         let(:response) do
-          get "/find-a-non-domestic-certificate/search-by-postcode?postcode=E1+4FF"
+          get "http://find-energy-certificate.local.gov.uk/find-a-non-domestic-certificate/search-by-postcode?postcode=E1+4FF"
         end
 
         it "returns status 200" do
@@ -167,7 +167,7 @@ describe "Acceptance::Non Domestic Certificate" do
         before { FindCertificate::NoNetworkStub.search_by_postcode("D11 4FF") }
 
         let(:response) do
-          get "/find-a-non-domestic-certificate/search-by-postcode?postcode=D11+4FF"
+          get "http://find-energy-certificate.local.gov.uk/find-a-non-domestic-certificate/search-by-postcode?postcode=D11+4FF"
         end
 
         it "returns status 500" do
@@ -187,7 +187,7 @@ describe "Acceptance::Non Domestic Certificate" do
     end
   end
 
-  describe ".get /find-a-non-domestic-certificate/search-by-street-and-town" do
+  describe ".get getting-new-energy-certificate/find-a-non-domestic-certificate/search-by-street-and-town" do
     context "when entering a valid street name and town" do
       context "shows page" do
         before do
@@ -200,7 +200,7 @@ describe "Acceptance::Non Domestic Certificate" do
         end
 
         let(:response) do
-          get "/find-a-non-domestic-certificate/search-by-street-name-and-town?street_name=1%20Makeup%20Street&town=Beauty%20Town"
+          get "http://find-energy-certificate.local.gov.uk/find-a-non-domestic-certificate/search-by-street-name-and-town?street_name=1%20Makeup%20Street&town=Beauty%20Town"
         end
 
         it "returns status 200" do
@@ -248,7 +248,7 @@ describe "Acceptance::Non Domestic Certificate" do
         end
 
         let(:response) do
-          get "/find-a-non-domestic-certificate/search-by-street-name-and-town?street_name=3%20Alien%20Street&town=Mars"
+          get "http://find-energy-certificate.local.gov.uk/find-a-non-domestic-certificate/search-by-street-name-and-town?street_name=3%20Alien%20Street&town=Mars"
         end
 
         it "returns status 200" do
@@ -277,7 +277,7 @@ describe "Acceptance::Non Domestic Certificate" do
         end
 
         let(:response) do
-          get "/find-a-certificate/search-by-street-name-and-town?street_name=Doesnt%20Matter&town=Nothing"
+          get "http://find-energy-certificate.local.gov.uk/find-a-certificate/search-by-street-name-and-town?street_name=Doesnt%20Matter&town=Nothing"
         end
 
         it "returns status 500" do
@@ -297,10 +297,10 @@ describe "Acceptance::Non Domestic Certificate" do
     end
   end
 
-  describe ".get /find-a-non-domestic-certificate/search-by-reference-number" do
+  describe ".get find-energy-certificate.local.gov.uk/find-a-non-domestic-certificate/search-by-reference-number" do
     context "when search page rendered" do
       let(:response) do
-        get "/find-a-non-domestic-certificate/search-by-reference-number"
+        get "http://find-energy-certificate.local.gov.uk/find-a-non-domestic-certificate/search-by-reference-number"
       end
 
       it "returns status 200" do
@@ -332,7 +332,7 @@ describe "Acceptance::Non Domestic Certificate" do
 
     context "when entering an empty reference number" do
       let(:response) do
-        get "/find-a-non-domestic-certificate/search-by-reference-number?reference_number="
+        get "http://find-energy-certificate.local.gov.uk/find-a-non-domestic-certificate/search-by-reference-number?reference_number="
       end
 
       it "returns status 400" do
@@ -360,7 +360,7 @@ describe "Acceptance::Non Domestic Certificate" do
         end
 
         let(:response) do
-          get "/find-a-non-domestic-certificate/search-by-reference-number?reference_number=1234-5678-9101-1121-3141"
+          get "http://find-energy-certificate.local.gov.uk/find-a-non-domestic-certificate/search-by-reference-number?reference_number=1234-5678-9101-1121-3141"
         end
 
         it "returns status 303" do
@@ -382,7 +382,7 @@ describe "Acceptance::Non Domestic Certificate" do
         end
 
         let(:response) do
-          get "/find-a-non-domestic-certificate/search-by-reference-number?reference_number=1234-5678-9101-1120"
+          get "http://find-energy-certificate.local.gov.uk/find-a-non-domestic-certificate/search-by-reference-number?reference_number=1234-5678-9101-1120"
         end
 
         it "returns status 200" do
@@ -410,7 +410,7 @@ describe "Acceptance::Non Domestic Certificate" do
         end
 
         let(:response) do
-          get "/find-a-non-domestic-certificate/search-by-reference-number?reference_number=1234-5678-9101-1122-1234"
+          get "http://find-energy-certificate.local.gov.uk/find-a-non-domestic-certificate/search-by-reference-number?reference_number=1234-5678-9101-1122-1234"
         end
 
         it "returns status 500" do

@@ -24,8 +24,10 @@ describe "Journey::FindNonDomesticCertificate", type: :feature, journey: true do
   after(:all) { Process.kill("KILL", @process_id) }
 
   it "finds a certificate by postcode" do
-    visit "/find-a-non-domestic-certificate"
+    visit "http://find-energy-certificate.local.gov.uk:9393"
     click_on "Start now"
+    find("#label-non-domestic").click
+    click_on "Continue"
     fill_in "postcode", with: "SW1A 2AA"
     click_button "Find"
     expect(page).to have_content "2 certificates and reports for SW1A 2AA"
@@ -33,9 +35,11 @@ describe "Journey::FindNonDomesticCertificate", type: :feature, journey: true do
 
   describe "viewing in Welsh" do
     it "finds a certificate by postcode" do
-      visit "/find-a-non-domestic-certificate"
+      visit "http://find-energy-certificate.local.gov.uk:9393"
       click_on "Welsh (Cymraeg)"
       click_on "Welsh: Start now"
+      find("#label-non-domestic").click
+      click_on "Continue"
       fill_in "postcode", with: "SW1A 2AA"
       click_button "Welsh: Find"
       expect(
@@ -45,24 +49,30 @@ describe "Journey::FindNonDomesticCertificate", type: :feature, journey: true do
   end
 
   it "displays an error message when entering an empty postcode" do
-    visit "/find-a-non-domestic-certificate"
+    visit "http://find-energy-certificate.local.gov.uk:9393"
     click_on "Start now"
+    find("#label-non-domestic").click
+    click_on "Continue"
     fill_in "postcode", with: ""
     click_on("Find")
     expect(page).to have_content "Enter a real postcode"
   end
 
   it "displays an error message when entering an invalid postcode" do
-    visit "/find-a-non-domestic-certificate"
+    visit "http://find-energy-certificate.local.gov.uk:9393"
     click_on "Start now"
+    find("#label-non-domestic").click
+    click_on "Continue"
     fill_in "postcode", with: "NOT A POSTCODE"
     click_on "Find"
     expect(page).to have_content "Enter a real postcode"
   end
 
   it "displays the find a certificate page heading when entering a valid postcode" do
-    visit "/find-a-non-domestic-certificate"
+    visit "http://find-energy-certificate.local.gov.uk:9393"
     click_on "Start now"
+    find("#label-non-domestic").click
+    click_on "Continue"
     fill_in "postcode", with: "SW1A 2AA"
     click_on "Find"
     expect(page).to have_content "2 certificates and reports for"

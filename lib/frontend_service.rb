@@ -28,19 +28,37 @@ class FrontendService < Sinatra::Base
     @logger.level = Logger::INFO
   end
 
-  before { set_locale }
+  def find_energy_certificate_url_env
+    current_url = request.url
+    port = Rack::Server.new.options[:Port]
 
-  get "/" do
-    @page_title = t("index.head.title")
-    erb :index, layout: :layout
+    if settings.development?
+      "http://getting-new-energy-certificate.local.gov.uk:#{port}"
+    elsif current_url.include? "getting-new-energy-certificate-staging"
+      "getting-new-energy-certificate-staging.digital.communities.gov.uk"
+    elsif current_url.include? "getting-new-energy-certificate-integration"
+      "getting-new-energy-certificate-integration.digital.communities.gov.uk"
+    else
+      "getting-new-energy-certificate.digital.communities.gov.uk"
+    end
   end
 
-  get "/find-an-assessor" do
+  before { set_locale }
+
+  getting_new_energy_certificate_host_name = "getting-new-energy-certificate"
+  find_energy_certificate_host_name = "find-energy-certificate"
+
+  get "/", host_name: /#{getting_new_energy_certificate_host_name}/ do
     @page_title = t("find_an_assessor.head.title")
     erb :find_assessor, layout: :layout
   end
 
-  get "/find-an-assessor/type-of-property" do
+  get "/", host_name: /#{find_energy_certificate_host_name}/ do
+    @page_title = t("find_a_certificate.head.title")
+    erb :find_certificate, layout: :layout
+  end
+
+  get "/find-an-assessor/type-of-property", host_name: /#{getting_new_energy_certificate_host_name}/ do
     query = params.map { |key, value| "#{key}=#{value}" }.join("&")
 
     if params["property_type"] == "domestic"
@@ -54,13 +72,13 @@ class FrontendService < Sinatra::Base
     end
   end
 
-  get "/find-a-non-domestic-certificate" do
+  get "/find-a-non-domestic-certificate", host_name: /#{find_energy_certificate_host_name}/ do
     @page_title =
       "Find an energy certificate or report for a non-domestic property"
     erb :find_non_dom_certificate, layout: :layout
   end
 
-  get "/find-a-non-domestic-certificate/search-by-postcode" do
+  get "/find-a-non-domestic-certificate/search-by-postcode", host_name: /#{find_energy_certificate_host_name}/ do
     @errors = {}
     locals = {}
     erb_template = :find_non_dom_certificate_by_postcode
@@ -98,7 +116,7 @@ class FrontendService < Sinatra::Base
     show(erb_template, locals)
   end
 
-  get "/find-a-non-domestic-certificate/search-by-reference-number" do
+  get "/find-a-non-domestic-certificate/search-by-reference-number", host_name: /#{find_energy_certificate_host_name}/ do
     @errors = {}
     locals = {}
     erb_template = :find_non_dom_certificate_by_reference_number
@@ -145,7 +163,7 @@ class FrontendService < Sinatra::Base
     show(erb_template, locals)
   end
 
-  get "/find-an-assessor/search-by-postcode" do
+  get "/find-an-assessor/search-by-postcode", host_name: /#{getting_new_energy_certificate_host_name}/ do
     @errors = {}
     locals = {}
     erb_template = :find_assessor_by_postcode
@@ -186,7 +204,7 @@ class FrontendService < Sinatra::Base
     show(erb_template, locals)
   end
 
-  get "/find-an-assessor/search-by-name" do
+  get "/find-an-assessor/search-by-name", host_name: /#{getting_new_energy_certificate_host_name}/ do
     @errors = {}
     locals = {}
     erb_template = :find_assessor_by_name
@@ -227,12 +245,7 @@ class FrontendService < Sinatra::Base
     status 200
   end
 
-  get "/find-a-certificate" do
-    @page_title = t("find_a_certificate.head.title")
-    erb :find_certificate, layout: :layout
-  end
-
-  get "/find-a-certificate/type-of-property" do
+  get "/find-a-certificate/type-of-property", host_name: /#{find_energy_certificate_host_name}/ do
     query = params.map { |key, value| "#{key}=#{value}" }.join("&")
     if params["property_type"] == "domestic"
       redirect "/find-a-certificate/search-by-postcode?#{query}"
@@ -245,7 +258,7 @@ class FrontendService < Sinatra::Base
     end
   end
 
-  get "/find-a-certificate/search-by-postcode" do
+  get "/find-a-certificate/search-by-postcode", host_name: /#{find_energy_certificate_host_name}/ do
     @errors = {}
     locals = {}
     erb_template = :find_certificate_by_postcode
@@ -282,7 +295,7 @@ class FrontendService < Sinatra::Base
     show(erb_template, locals)
   end
 
-  get "/find-a-non-domestic-assessor/search-by-postcode" do
+  get "/find-a-non-domestic-assessor/search-by-postcode", host_name: /#{getting_new_energy_certificate_host_name}/ do
     @errors = {}
     locals = {}
     erb_template = :find_non_domestic_assessor_by_postcode
@@ -324,7 +337,7 @@ class FrontendService < Sinatra::Base
     show(erb_template, locals)
   end
 
-  get "/find-a-non-domestic-certificate/search-by-street-name-and-town" do
+  get "/find-a-non-domestic-certificate/search-by-street-name-and-town", host_name: /#{find_energy_certificate_host_name}/ do
     @errors = {}
     locals = {}
     erb_template = :find_non_dom_certificate_by_street_name_and_town
@@ -377,7 +390,7 @@ class FrontendService < Sinatra::Base
               "find_non_dom_certificate_by_street_name_and_town.no_such_address.body",
             cta:
               "find_non_dom_certificate_by_street_name_and_town.no_such_address.cta",
-            url: "/find-an-assessor",
+            url: find_energy_certificate_url_env,
           }
         else
           return server_error(e)
@@ -390,7 +403,7 @@ class FrontendService < Sinatra::Base
     show(erb_template, locals)
   end
 
-  get "/find-a-certificate/search-by-reference-number" do
+  get "/find-a-certificate/search-by-reference-number",host_name: /#{find_energy_certificate_host_name}/ do
     @errors = {}
     locals = {}
     erb_template = :find_certificate_by_reference_number
@@ -435,7 +448,7 @@ class FrontendService < Sinatra::Base
     show(erb_template, locals)
   end
 
-  get "/find-a-certificate/search-by-street-name-and-town" do
+  get "/find-a-certificate/search-by-street-name-and-town", host_name: /#{find_energy_certificate_host_name}/ do
     @errors = {}
     locals = {}
     erb_template = :find_certificate_by_street_name_and_town
@@ -481,7 +494,7 @@ class FrontendService < Sinatra::Base
             body:
               "find_certificate_by_street_name_and_town.no_such_address.body",
             cta: "find_certificate_by_street_name_and_town.no_such_address.cta",
-            url: "/find-an-assessor",
+            url: find_energy_certificate_url_env,
           }
         else
           return server_error(e)

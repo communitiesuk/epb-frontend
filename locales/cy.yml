@@ -398,7 +398,7 @@ cy:
     switch_language:
       description: 'Welsh: This service is also available in %{link}.'
       link: 'Welsh: Welsh (Cymraeg)'
-      url: '/find-a-non-domestic-certificate?lang=en'
+      url: 'lang=en'
     cta: 'Welsh: Start now'
     before_you_start:
       heading: 'Welsh: Before you start'

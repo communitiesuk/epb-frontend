@@ -24,7 +24,7 @@ describe "Journey::FindDomesticCertificate", type: :feature, journey: true do
   after(:all) { Process.kill("KILL", @process_id) }
 
   it "finds a certificate by postcode" do
-    visit "/find-a-certificate"
+    visit "http://find-energy-certificate.local.gov.uk:9393"
     click_on "Start now"
     find("#label-domestic").click
     click_on "Continue"
@@ -35,7 +35,7 @@ describe "Journey::FindDomesticCertificate", type: :feature, journey: true do
 
   describe "viewing in Welsh" do
     it "finds a certificate by postcode" do
-      visit "/find-a-certificate"
+      visit "http://find-energy-certificate.local.gov.uk:9393"
       click_on "Welsh (Cymraeg)"
       click_on "Welsh: Start now"
       find("#label-domestic").click
@@ -47,7 +47,7 @@ describe "Journey::FindDomesticCertificate", type: :feature, journey: true do
   end
 
   it "displays an error message when entering an empty postcode" do
-    visit "/find-a-certificate"
+    visit "http://find-energy-certificate.local.gov.uk:9393"
     click_on "Start now"
     find("#label-domestic").click
     click_on "Continue"
@@ -57,7 +57,7 @@ describe "Journey::FindDomesticCertificate", type: :feature, journey: true do
   end
 
   it "displays an error message when entering an invalid postcode" do
-    visit "/find-a-certificate"
+    visit "http://find-energy-certificate.local.gov.uk:9393"
     click_on "Start now"
     find("#label-domestic").click
     click_on "Continue"
@@ -67,7 +67,7 @@ describe "Journey::FindDomesticCertificate", type: :feature, journey: true do
   end
 
   it "displays the find a certificate page heading when entering a valid postcode" do
-    visit "/find-a-certificate"
+    visit "http://find-energy-certificate.local.gov.uk:9393"
     click_on "Start now"
     find("#label-domestic").click
     click_on "Continue"
@@ -77,7 +77,7 @@ describe "Journey::FindDomesticCertificate", type: :feature, journey: true do
   end
 
   it "redirects directly to the certificate page when entering a valid certificate reference number" do
-    visit "/find-a-certificate"
+    visit "http://find-energy-certificate.local.gov.uk:9393"
     click_on "Start now"
     find("#label-domestic").click
     click_on "Continue"
@@ -89,7 +89,7 @@ describe "Journey::FindDomesticCertificate", type: :feature, journey: true do
   end
 
   it "displays an error message when entering an empty street name" do
-    visit "/find-a-certificate"
+    visit "http://find-energy-certificate.local.gov.uk:9393"
     click_on "Start now"
     find("#label-domestic").click
     click_on "Continue"
@@ -100,7 +100,7 @@ describe "Journey::FindDomesticCertificate", type: :feature, journey: true do
   end
 
   it "displays an error message when entering an empty town" do
-    visit "/find-a-certificate"
+    visit "http://find-energy-certificate.local.gov.uk:9393"
     click_on "Start now"
     find("#label-domestic").click
     click_on "Continue"
@@ -111,7 +111,7 @@ describe "Journey::FindDomesticCertificate", type: :feature, journey: true do
   end
 
   it "displays an error message when entering an empty town and street name" do
-    visit "/find-a-certificate"
+    visit "http://find-energy-certificate.local.gov.uk:9393"
     click_on "Start now"
     find("#label-domestic").click
     click_on "Continue"
@@ -122,7 +122,7 @@ describe "Journey::FindDomesticCertificate", type: :feature, journey: true do
   end
 
   it "displays the find a certificate page heading when entering a valid query" do
-    visit "/find-a-certificate"
+    visit "http://find-energy-certificate.local.gov.uk:9393"
     click_on "Start now"
     find("#label-domestic").click
     click_on "Continue"
@@ -134,7 +134,9 @@ describe "Journey::FindDomesticCertificate", type: :feature, journey: true do
   end
 
   it "displays the error message when searching for a certificate that doesnt exist" do
-    visit "/find-a-certificate"
+    port = Rack::Server.new.options[:Port]
+
+    visit "http://find-energy-certificate.local.gov.uk:#{port}"
     click_on "Start now"
     find("#label-domestic").click
     click_on "Continue"

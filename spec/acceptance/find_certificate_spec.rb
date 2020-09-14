@@ -3,9 +3,9 @@
 describe "Acceptance::Certificate" do
   include RSpecFrontendServiceMixin
 
-  describe ".get /find-a-certificate/search-by-postcode" do
+  describe ".get find-energy-certificate/find-a-certificate/search-by-postcode" do
     context "when search page rendered" do
-      let(:response) { get "/find-a-certificate/search-by-postcode" }
+      let(:response) { get "http://find-energy-certificate.local.gov.uk/find-a-certificate/search-by-postcode" }
 
       it "returns status 200" do
         expect(response.status).to eq(200)
@@ -33,7 +33,7 @@ describe "Acceptance::Certificate" do
     end
 
     context "when entering an empty postcode" do
-      let(:response) { get "/find-a-certificate/search-by-postcode?postcode=" }
+      let(:response) { get "http://find-energy-certificate.local.gov.uk/find-a-certificate/search-by-postcode?postcode=" }
 
       it "returns status 400" do
         expect(response.status).to eq(400)
@@ -58,7 +58,7 @@ describe "Acceptance::Certificate" do
         before { FindCertificate::Stub.search_by_postcode("SW1A 2AA") }
 
         let(:response) do
-          get "/find-a-certificate/search-by-postcode?postcode=++SW1A+2AA++"
+          get "http://find-energy-certificate.local.gov.uk/find-a-certificate/search-by-postcode?postcode=++SW1A+2AA++"
         end
 
         it "returns status 200" do
@@ -70,7 +70,7 @@ describe "Acceptance::Certificate" do
         before { FindCertificate::Stub.search_by_postcode("SW1A 2AA") }
 
         let(:response) do
-          get "/find-a-certificate/search-by-postcode?postcode=SW1A+2AA"
+          get "http://find-energy-certificate.local.gov.uk/find-a-certificate/search-by-postcode?postcode=SW1A+2AA"
         end
 
         it "returns status 200" do
@@ -112,7 +112,7 @@ describe "Acceptance::Certificate" do
         end
 
         let(:response) do
-          get "/find-a-certificate/search-by-postcode?postcode=E1+4FF"
+          get "http://find-energy-certificate.local.gov.uk/find-a-certificate/search-by-postcode?postcode=E1+4FF"
         end
 
         it "returns status 200" do
@@ -136,7 +136,7 @@ describe "Acceptance::Certificate" do
         before { FindCertificate::NoNetworkStub.search_by_postcode("D11 4FF") }
 
         let(:response) do
-          get "/find-a-certificate/search-by-postcode?postcode=D11+4FF"
+          get "http://find-energy-certificate.local.gov.uk/find-a-certificate/search-by-postcode?postcode=D11+4FF"
         end
 
         it "returns status 500" do
@@ -156,9 +156,9 @@ describe "Acceptance::Certificate" do
     end
   end
 
-  describe ".get /find-a-certificate/search-by-reference-number" do
+  describe ".get find-energy-certificate/find-a-certificate/search-by-reference-number" do
     context "when search page rendered" do
-      let(:response) { get "/find-a-certificate/search-by-reference-number" }
+      let(:response) { get "http://find-energy-certificate.local.gov.uk/find-a-certificate/search-by-reference-number" }
 
       it "returns status 200" do
         expect(response.status).to eq(200)
@@ -189,7 +189,7 @@ describe "Acceptance::Certificate" do
 
     context "when entering an empty reference number" do
       let(:response) do
-        get "/find-a-certificate/search-by-reference-number?reference_number="
+        get "http://find-energy-certificate.local.gov.uk/find-a-certificate/search-by-reference-number?reference_number="
       end
 
       it "returns status 400" do
@@ -217,7 +217,7 @@ describe "Acceptance::Certificate" do
         end
 
         let(:response) do
-          get "/find-a-certificate/search-by-reference-number?reference_number=1234-5678-9101-1121-3141"
+          get "http://find-energy-certificate.local.gov.uk/find-a-certificate/search-by-reference-number?reference_number=1234-5678-9101-1121-3141"
         end
 
         it "returns status 303" do
@@ -237,7 +237,7 @@ describe "Acceptance::Certificate" do
         end
 
         let(:response) do
-          get "/find-a-certificate/search-by-reference-number?reference_number=12345678910111213141"
+          get "http://find-energy-certificate.local.gov.uk/find-a-certificate/search-by-reference-number?reference_number=12345678910111213141"
         end
 
         it "returns status 303" do
@@ -259,7 +259,7 @@ describe "Acceptance::Certificate" do
         end
 
         let(:response) do
-          get "/find-a-certificate/search-by-reference-number?reference_number=1234-5678-9101-1120"
+          get "http://find-energy-certificate.local.gov.uk/find-a-certificate/search-by-reference-number?reference_number=1234-5678-9101-1120"
         end
 
         it "returns status 200" do
@@ -287,7 +287,7 @@ describe "Acceptance::Certificate" do
         end
 
         let(:response) do
-          get "/find-a-certificate/search-by-reference-number?reference_number=1234-5678-9101-1122-1234"
+          get "http://find-energy-certificate.local.gov.uk/find-a-certificate/search-by-reference-number?reference_number=1234-5678-9101-1122-1234"
         end
 
         it "returns status 500" do
@@ -307,10 +307,10 @@ describe "Acceptance::Certificate" do
     end
   end
 
-  describe ".get /find-a-certificate/search-by-street-name-and-town" do
+  describe ".get find-energy-certificate/find-a-certificate/search-by-street-name-and-town" do
     context "when search page rendered" do
       let(:response) do
-        get "/find-a-certificate/search-by-street-name-and-town"
+        get "http://find-energy-certificate.local.gov.uk/find-a-certificate/search-by-street-name-and-town"
       end
 
       it "returns status 200" do
@@ -340,7 +340,7 @@ describe "Acceptance::Certificate" do
 
     context "when missing the street name" do
       let(:response) do
-        get "/find-a-certificate/search-by-street-name-and-town?street_name=&town=Brighton"
+        get "http://find-energy-certificate.local.gov.uk/find-a-certificate/search-by-street-name-and-town?street_name=&town=Brighton"
       end
 
       it "returns status 400" do
@@ -363,7 +363,7 @@ describe "Acceptance::Certificate" do
 
     context "when the street name is a whitespace" do
       let(:response) do
-        get "/find-a-certificate/search-by-street-name-and-town?street_name=+&town=london"
+        get "http://find-energy-certificate.local.gov.uk/find-a-certificate/search-by-street-name-and-town?street_name=+&town=london"
       end
 
       it "returns status 400" do
@@ -381,7 +381,7 @@ describe "Acceptance::Certificate" do
 
     context "when missing the town" do
       let(:response) do
-        get "/find-a-certificate/search-by-street-name-and-town?street_name=18%20Palmers%20Road&town="
+        get "http://find-energy-certificate.local.gov.uk/find-a-certificate/search-by-street-name-and-town?street_name=18%20Palmers%20Road&town="
       end
 
       it "returns status 400" do
@@ -404,7 +404,7 @@ describe "Acceptance::Certificate" do
 
     context "when both town and street name are missing" do
       let(:response) do
-        get "/find-a-certificate/search-by-street-name-and-town?street_name=&town="
+        get "http://find-energy-certificate.local.gov.uk/find-a-certificate/search-by-street-name-and-town?street_name=&town="
       end
 
       it "returns status 400" do
@@ -439,7 +439,7 @@ describe "Acceptance::Certificate" do
         end
 
         let(:response) do
-          get "/find-a-certificate/search-by-street-name-and-town?street_name=1%20Makeup%20Street&town=Beauty%20Town"
+          get "http://find-energy-certificate.local.gov.uk/find-a-certificate/search-by-street-name-and-town?street_name=1%20Makeup%20Street&town=Beauty%20Town"
         end
 
         it "returns status 200" do
@@ -486,7 +486,7 @@ describe "Acceptance::Certificate" do
         end
 
         let(:response) do
-          get "/find-a-certificate/search-by-street-name-and-town?street_name=3%20Alien%20Street&town=Mars"
+          get "http://find-energy-certificate.local.gov.uk/find-a-certificate/search-by-street-name-and-town?street_name=3%20Alien%20Street&town=Mars"
         end
 
         it "returns status 200" do
@@ -515,7 +515,7 @@ describe "Acceptance::Certificate" do
         end
 
         let(:response) do
-          get "/find-a-certificate/search-by-street-name-and-town?street_name=Doesnt%20Matter&town=Nothing"
+          get "http://find-energy-certificate.local.gov.uk/find-a-certificate/search-by-street-name-and-town?street_name=Doesnt%20Matter&town=Nothing"
         end
 
         it "returns status 500" do

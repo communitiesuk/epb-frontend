@@ -3,9 +3,9 @@
 describe "Acceptance::Assessor", type: :feature do
   include RSpecFrontendServiceMixin
 
-  describe ".get /find-an-assessor/search-by-postcode" do
+  describe ".get getting-new-energy-certificate/find-an-assessor/search-by-postcode" do
     context "when search page rendered" do
-      let(:response) { get "/find-an-assessor/search-by-postcode" }
+      let(:response) { get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/search-by-postcode" }
 
       it "returns status 200" do
         expect(response.status).to eq(200)
@@ -31,7 +31,7 @@ describe "Acceptance::Assessor", type: :feature do
     end
 
     context "when entering an empty postcode" do
-      let(:response) { get "/find-an-assessor/search-by-postcode?postcode=" }
+      let(:response) { get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/search-by-postcode?postcode=" }
 
       it "returns status 400" do
         expect(response.status).to eq(400)
@@ -51,7 +51,7 @@ describe "Acceptance::Assessor", type: :feature do
 
     context "when entering an invalid postcode" do
       let(:response) do
-        get "/find-an-assessor/search-by-postcode?postcode=NOT+A+POSTCODE"
+        get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/search-by-postcode?postcode=NOT+A+POSTCODE"
       end
 
       it "returns status 400" do
@@ -75,7 +75,7 @@ describe "Acceptance::Assessor", type: :feature do
         before { FindAssessor::ByPostcode::Stub.search_by_postcode("SW1A 2AA") }
 
         let(:response) do
-          get "/find-an-assessor/search-by-postcode?postcode=++SW1A+2AA++"
+          get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/search-by-postcode?postcode=++SW1A+2AA++"
         end
 
         it "returns status 200" do
@@ -87,7 +87,7 @@ describe "Acceptance::Assessor", type: :feature do
         before { FindAssessor::ByPostcode::Stub.search_by_postcode("SW1A 2AA") }
 
         let(:response) do
-          get "/find-an-assessor/search-by-postcode?postcode=SW1A+2AA"
+          get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/search-by-postcode?postcode=SW1A+2AA"
         end
 
         it "returns status 200" do
@@ -187,7 +187,7 @@ describe "Acceptance::Assessor", type: :feature do
         end
 
         let(:response) do
-          get "/find-an-assessor/search-by-postcode?postcode=E1+4FF"
+          get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/search-by-postcode?postcode=E1+4FF"
         end
 
         it "returns status 200" do
@@ -213,7 +213,7 @@ describe "Acceptance::Assessor", type: :feature do
         end
 
         let(:response) do
-          get "/find-an-assessor/search-by-postcode?postcode=B11+4FF"
+          get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/search-by-postcode?postcode=B11+4FF"
         end
 
         it "returns status 404" do
@@ -240,7 +240,7 @@ describe "Acceptance::Assessor", type: :feature do
         end
 
         let(:response) do
-          get "/find-an-assessor/search-by-postcode?postcode=C11+4FF"
+          get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/search-by-postcode?postcode=C11+4FF"
         end
 
         it "returns status 400" do
@@ -267,7 +267,7 @@ describe "Acceptance::Assessor", type: :feature do
         end
 
         let(:response) do
-          get "/find-an-assessor/search-by-postcode?postcode=D11+4FF"
+          get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/search-by-postcode?postcode=D11+4FF"
         end
 
         it "returns status 500" do
@@ -289,7 +289,7 @@ describe "Acceptance::Assessor", type: :feature do
 
   describe ".get /find-an-assessor/search-by-name" do
     context "when search page rendered" do
-      let(:response) { get "/find-an-assessor/search-by-name" }
+      let(:response) { get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/search-by-name" }
 
       it "returns status 200" do
         expect(response.status).to eq(200)
@@ -315,7 +315,7 @@ describe "Acceptance::Assessor", type: :feature do
     end
 
     context "when entering an empty name" do
-      let(:response) { get "/find-an-assessor/search-by-name?name=" }
+      let(:response) { get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/search-by-name?name=" }
 
       it "returns status 400" do
         expect(response.status).to eq(400)
@@ -333,7 +333,7 @@ describe "Acceptance::Assessor", type: :feature do
     end
 
     context "when entering a single name" do
-      let(:response) { get "/find-an-assessor/search-by-name?name=bob" }
+      let(:response) { get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/search-by-name?name=bob" }
 
       it "displays an error message" do
         expect(response.body).to have_css "span",
@@ -347,7 +347,7 @@ describe "Acceptance::Assessor", type: :feature do
         before { FindAssessor::ByName::Stub.search_by_name("Ronald McDonald") }
 
         let(:response) do
-          get "/find-an-assessor/search-by-name?name=Ronald%20McDonald"
+          get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/search-by-name?name=Ronald%20McDonald"
         end
 
         it "returns status 200" do
@@ -399,7 +399,7 @@ describe "Acceptance::Assessor", type: :feature do
         end
 
         let(:response) do
-          get "/find-an-assessor/search-by-name?name=R%20McDonald"
+          get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/search-by-name?name=R%20McDonald"
         end
 
         it "does show that they are loose matches" do
@@ -415,7 +415,7 @@ describe "Acceptance::Assessor", type: :feature do
         end
 
         let(:response) do
-          get "/find-an-assessor/search-by-name?name=Nonexistent%20Person"
+          get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/search-by-name?name=Nonexistent%20Person"
         end
 
         it "returns status 200" do
@@ -439,7 +439,7 @@ describe "Acceptance::Assessor", type: :feature do
         end
 
         let(:response) do
-          get "/find-an-assessor/search-by-name?name=Breaking%20Person"
+          get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/search-by-name?name=Breaking%20Person"
         end
 
         it "returns status 500" do

@@ -3,37 +3,27 @@
 describe "Acceptance::Server" do
   include RSpecFrontendServiceMixin
 
-  describe ".get /index" do
-    let(:response) { get "/" }
+  describe ".get /index for getting-new-energy-certificate", type: :feature do
+    let(:response) { get 'http://getting-new-energy-certificate.local.gov.uk/'}
 
     it "returns status 200" do
       expect(response.status).to eq(200)
     end
+
     it "includes the index page title" do
-      expect(response.body).to include(
-        "<title>Energy performance of buildings register - Select your service</title>",
-      )
-    end
-    it "displays the index page heading" do
-      expect(response.body).to include(
-        "Services related to Energy Performance Certificate (EPC)",
-      )
+      expect(response.body).to have_css "h1", text: "Getting a new energy certificate"
     end
   end
 
-  describe ".get /find-an-assessor" do
-    let(:response) { get "/find-an-assessor" }
+  describe ".get /index for find-energy-certificate", type: :feature do
+    let(:response) { get 'http://find-energy-certificate.local.gov.uk/'}
 
     it "returns status 200" do
       expect(response.status).to eq(200)
     end
-    it "includes the find-an-assessor page title" do
-      expect(response.body).to include(
-        " <title>Energy performance of buildings register - Getting a new energy certificate</title>",
-      )
-    end
-    it "displays the find-an-assessor page heading" do
-      expect(response.body).to include("Getting a new energy certificate")
+
+    it "includes the index page title" do
+      expect(response.body).to have_css "h1", text: "Find an energy certificate"
     end
   end
 

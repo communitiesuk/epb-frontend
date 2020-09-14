@@ -72,7 +72,7 @@ en:
       switch_language:
         description: 'This service is also available in %{link}.'
         link: 'Welsh (Cymraeg)'
-        url: '/find-an-assessor?lang=cy'
+        url: '?lang=cy'
       phone_text: 'If you need additional support to find an assessor, call our helpdesk on %{link} (Monday to Friday, 9am - 5pm).'
       phone_number: '0233 788 1234'
       scotland:
@@ -237,7 +237,7 @@ en:
       switch_language:
         description: 'This service is also available in %{link}.'
         link: 'Welsh (Cymraeg)'
-        url: '/find-a-certificate?lang=cy'
+        url: '?lang=cy'
       scotland:
         text: 'For properties in Scotland, use the %{link}.'
         cta: "Scottish government's EPC service"
@@ -401,7 +401,7 @@ en:
     switch_language:
       description: 'This service is also available in %{link}.'
       link: 'Welsh (Cymraeg)'
-      url: '/find-a-non-domestic-certificate?lang=cy'
+      url: '?lang=cy'
     cta: 'Start now'
     before_you_start:
       heading: 'Before you start'
