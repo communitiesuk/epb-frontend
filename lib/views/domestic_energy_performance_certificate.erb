@@ -222,30 +222,20 @@
       } %>
 
       <h3 class="govuk-heading-m govuk-!-margin-top-9"><%= t('domestic_epc.sections.information.scheme.title') %></h3>
-      <dl class="govuk-summary-list">
-        <div class="govuk-summary-list__row" id="Accreditation_scheme">
-          <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= t('domestic_epc.sections.information.scheme.list.name') %></dt>
-          <dd class="govuk-summary-list__value"><%= assessment[:assessor][:registeredBy][:name] %></dd>
-        </div>
-        <div class="govuk-summary-list__row" id="accreditation_id">
-          <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= t('domestic_epc.sections.information.scheme.list.scheme_assessor_id') %></dt>
-          <dd class="govuk-summary-list__value"><%= assessment[:assessor][:schemeAssessorId] %></dd>
-        </div>
-        <% unless scheme_details(assessment[:assessor], 'phone').include?('missing')%>
-          <div class="govuk-summary-list__row" id="accreditation_id">
-            <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= t('domestic_epc.sections.information.assessor.list.telephone') %></dt>
-            <dd class="govuk-summary-list__value"><%= scheme_details(assessment[:assessor], "phone") %></dd>
-          </div>
-          <div class="govuk-summary-list__row" id="accreditation_id">
-            <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= t('domestic_epc.sections.information.assessor.list.email') %></dt>
-            <dd class="govuk-summary-list__value">
-              <a href="mailto:<%= scheme_details(assessment[:assessor], 'email') %>">
-                <%= scheme_details(assessment[:assessor], 'email') %>
-              </a>
-            </dd>
-          </div>
-        <% end %>
-      </dl>
+
+      <%== erb :component__summary_list, locals: {
+        list: {
+          "scheme.title": assessment[:assessor][:registeredBy][:name],
+          "scheme.list.scheme_assessor_id": assessment[:assessor][:schemeAssessorId],
+          "assessor.list.telephone": scheme_details(assessment[:assessor], 'phone').include?('missing') ? nil : scheme_details(assessment[:assessor], "phone"),
+          "assessor.list.email": {
+            "type": "email",
+            "value": scheme_details(assessment[:assessor], 'email').include?('missing') ? nil : scheme_details(assessment[:assessor], 'email') }
+        },
+        translation_prefix: 'domestic_epc.sections.information.',
+        skip_null: true
+      } %>
+
       <h3 class="govuk-heading-m govuk-!-margin-top-9"><%= t('domestic_epc.sections.information.certificate.title') %></h3>
 
       <%== erb :component__summary_list, locals: {
