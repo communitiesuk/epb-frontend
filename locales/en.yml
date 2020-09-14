@@ -139,6 +139,61 @@ en:
         phone: '01225 667 570'
         email: 'info@quidos.co.uk'
         url: 'https://quidos.co.uk'
+      bre:
+        name: 'BRE'
+        phone: ''
+        email: ''
+        url: ''
+      besca:
+        name: 'BESCA'
+        phone: ''
+        email: ''
+        url: ''
+      ciat:
+        name: 'CIAT'
+        phone: ''
+        email: ''
+        url: ''
+      hvca:
+        name: 'HVCA'
+        phone: ''
+        email: ''
+        url: ''
+      knauf:
+        name: 'Knauf Insulation'
+        phone: ''
+        email: ''
+        url: ''
+      napit:
+        name: 'NAPIT'
+        phone: ''
+        email: ''
+        url: ''
+      NHER:
+        name: 'NHER'
+        phone: ''
+        email: ''
+        url: ''
+      national:
+        name: 'National Energy Services'
+        phone: ''
+        email: ''
+        url: ''
+      northgate:
+        name: 'Northgate'
+        phone: ''
+        email: ''
+        url: ''
+      rics:
+        name: 'RICS'
+        phone: ''
+        email: ''
+        url: ''
+      sava:
+        name: 'SAVA'
+        phone: ''
+        email: ''
+        url: ''
 
   find_assessor_by_postcode:
     head:
