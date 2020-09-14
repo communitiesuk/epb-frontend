@@ -3,4 +3,10 @@
     t('ac_report.sections.system_controls.title')
   %></h2>
 
+  <% assessment[:systemControls].each do |system| %>
+    <h3 class="govuk-heading-m">
+      <%= t('ac_report.sections.system_controls.subtitle_prefix')%> <%= system[:subSystemId] %>
+    </h3>
+
+    <% end %>
 </div>

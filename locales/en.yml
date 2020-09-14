@@ -1482,6 +1482,7 @@ en:
           control_operation: "Is the control and operation adequate?"
       system_controls:
         title: "System controls"
+        subtitle_prefix: "Control for"
     flag:
       finding_yes: "Yes"
       finding_no: "No"

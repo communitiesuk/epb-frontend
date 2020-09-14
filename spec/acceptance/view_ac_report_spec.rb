@@ -179,7 +179,7 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
       expect(response.body).to have_css "h2", text: "System controls"
       expect(response.body).to have_css "h3",
                                         text:
-                                          "VOL1/SYS1: Indoor wall type split which is part of a multi system with 5 indoor units."
+                                          "Control for VOL001/SYS001 R410A Inverter Split Systems to Sales Area"
     end
 
     context "when there are no subsystems" do
