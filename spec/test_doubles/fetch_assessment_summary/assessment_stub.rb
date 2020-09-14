@@ -158,7 +158,7 @@ module FetchAssessmentSummary
                   setting: { note: "No dampers", recommendations: [] },
                 },
                 fanPower: {
-                  condition: {note: nil, flag: true, recommendations: []},
+                  condition: { note: nil, flag: true, recommendations: [] },
                   sfpCalculation: "464 watts x 70% - 0.311/400 = 8.12 w/ltr.",
                 },
               },
@@ -169,7 +169,7 @@ module FetchAssessmentSummary
               equipment: {
                 unit: "VOL1/SYS1",
                 component:
-                      "Indoor wall type split which is part of a multi system with 5 indoor units.",
+                  "Indoor wall type split which is part of a multi system with 5 indoor units.",
                 description: "VOL1/SYS1/a",
                 coolingPlant: "Cooling system",
                 manufacturer: "Mitsubishi Electric",
@@ -182,7 +182,9 @@ module FetchAssessmentSummary
                   pipework: { note: nil, recommendations: [], flag: true },
                   ductwork: { note: nil, recommendations: [], flag: false },
                 },
-                unit: { condition: { note: nil, recommendations: [], flag: true } },
+                unit: {
+                  condition: { note: nil, recommendations: [], flag: true },
+                },
                 grillesAirFlow: {
                   distribution: { note: nil, recommendations: [], flag: true },
                   tampering: { note: nil, recommendations: [], flag: true },
@@ -190,15 +192,19 @@ module FetchAssessmentSummary
                   complaints: { note: nil, recommendations: [], flag: false },
                 },
                 diffuserPositions: {
-                  positionIssues: { note: nil, recommendations: [], flag: true },
+                  positionIssues: {
+                    note: nil, recommendations: [], flag: true
+                  },
                   partitioningIssues: {
                     note: nil, recommendations: [], flag: false
                   },
-                  controlOperation: { note: nil, recommendations: [], flag: true },
+                  controlOperation: {
+                    note: nil, recommendations: [], flag: true
+                  },
                 },
               },
-            }
-          ]
+            },
+          ],
         },
         meta: {},
       }
