@@ -34,6 +34,11 @@
     } %>
 
     <%== erb :ac_report__yes_no_flag, locals: {
+      question: t('ac_report.sections.system_controls.set_temperature.question'),
+      inspection: system[:inspection][:setTemperature]
+    } %>
+
+    <%== erb :ac_report__yes_no_flag, locals: {
       question: t('ac_report.sections.system_controls.dead_band.question'),
       inspection: system[:inspection][:deadBand]
     } %>

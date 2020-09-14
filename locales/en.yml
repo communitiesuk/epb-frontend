@@ -1556,6 +1556,8 @@ en:
           question: "CS8.8 Assess the means of modulating or controlling air flow rate through the air supply and exhaust ducts."
         guidance_controls:
           question: "PS3.6 Are guidance notices visible or controls available to inhibit use of cooling equipment whilst windows are open or cooling/heating is on?"
+        set_temperature:
+          question: "CS8.5 Note the set temperature in each zone for heating and cooling in relation to the activities and occupancy of zones and spaces in relation to the manager's intent."
     flag:
       finding_yes: "Yes"
       finding_no: "No"
