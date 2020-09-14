@@ -54,7 +54,7 @@ export PATH="$PATH:$HOME/bin" # Add this line at the end of the file
 Run `$ source ~/.bash_profile`, or `.zprofile`. Alternatively, restart the
 terminal.
 
-5. You must add additional local hosts to your hosts file on your machine, navigate to `/private/etc` and add:
+5. You must add additional local hosts to your hosts file on your machine with:
 
 ```
 127.0.0.1	getting-new-energy-certificate.local.gov.uk
