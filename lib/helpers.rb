@@ -9,6 +9,20 @@ module Sinatra
         Regexp.new('^[A-Z]{1,2}\d[A-Z\d]?\s?\d[A-Z]{2}$', Regexp::IGNORECASE)
       end
 
+      def find_energy_certificate_url_env
+        current_url = request.url
+
+        if settings.development?
+          "http://getting-new-energy-certificate.local.gov.uk:9292"
+        elsif current_url.include? "getting-new-energy-certificate-staging"
+          "getting-new-energy-certificate-staging.digital.communities.gov.uk"
+        elsif current_url.include? "getting-new-energy-certificate-integration"
+          "getting-new-energy-certificate-integration.digital.communities.gov.uk"
+        else
+          "getting-new-energy-certificate.digital.communities.gov.uk"
+        end
+      end
+      
       def number_to_currency(number)
         if number.to_f > number.to_i || number.to_f < number.to_i
           sprintf("£%.2f", number).gsub(/(\d)(?=(\d{3})+(?!\d))/, '\\1,')
