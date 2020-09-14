@@ -9,31 +9,17 @@ module Sinatra
         Regexp.new('^[A-Z]{1,2}\d[A-Z\d]?\s?\d[A-Z]{2}$', Regexp::IGNORECASE)
       end
 
-      def getting_new_energy_certificate_url
+      def set_subdomain_url(subdomain)
         current_url = request.url
 
         if settings.development?
-          "http://getting-new-energy-certificate.local.gov.uk:9292"
-        elsif current_url.include? "getting-new-energy-certificate-staging"
-          "getting-new-energy-certificate-staging.digital.communities.gov.uk"
-        elsif current_url.include? "getting-new-energy-certificate-integration"
-          "getting-new-energy-certificate-integration.digital.communities.gov.uk"
+          "http://#{subdomain}.local.gov.uk:9292"
+        elsif current_url.include? "#{subdomain}-staging"
+          "#{subdomain}-staging.digital.communities.gov.uk"
+        elsif current_url.include? "#{subdomain}-integration"
+          "#{subdomain}-integration.digital.communities.gov.uk"
         else
-          "getting-new-energy-certificate.digital.communities.gov.uk"
-        end
-      end
-
-      def find_energy_certificate_url
-        current_url = request.url
-
-        if settings.development?
-          "http://find-energy-certificate.local.gov.uk:9292"
-        elsif current_url.include? "find-energy-certificate-staging"
-          "find-energy-certificate-staging.digital.communities.gov.uk"
-        elsif current_url.include? "find-energy-certificate-integration"
-          "find-energy-certificate-integration.digital.communities.gov.uk"
-        else
-          "find-energy-certificate.digital.communities.gov.uk"
+          "#{subdomain}.digital.communities.gov.uk"
         end
       end
 
