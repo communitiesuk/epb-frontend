@@ -30,10 +30,9 @@ class FrontendService < Sinatra::Base
 
   def find_energy_certificate_url_env
     current_url = request.url
-    port = Rack::Server.new.options[:Port]
 
     if settings.development?
-      "http://getting-new-energy-certificate.local.gov.uk:#{port}"
+      "http://getting-new-energy-certificate.local.gov.uk:9292"
     elsif current_url.include? "getting-new-energy-certificate-staging"
       "getting-new-energy-certificate-staging.digital.communities.gov.uk"
     elsif current_url.include? "getting-new-energy-certificate-integration"
