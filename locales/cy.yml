@@ -1297,7 +1297,13 @@ cy:
       key_recommendations:
         title: "Key recommendations"
         efficiency:
-          title: "Efficiency of the air conditioning sub system(s)"
+          title: "Efficiency"
+        maintenance:
+          title: "Maintenance"
+        control:
+          title: "Control"
+        management:
+          title: "Management"
       sub_systems:
         title: "Sub systems inspected"
         volume_definitions: "Volume definitions"
