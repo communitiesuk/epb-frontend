@@ -1342,6 +1342,8 @@ cy:
           position_issues: "Is there potential for air to short-circuit from supply to extract?"
           partitioning_issues: "Is the position of partitioning or furniture adversely affecting performance?"
           control_operation: "Is the control and operation adequate?"
+      system_controls:
+        title: "System controls"
     flag:
       finding_yes: "Yes"
       finding_no: "No"

@@ -55,5 +55,11 @@
       } %>
     <% end %>
 
+    <% unless assessment[:systemControls].empty? %>
+      <%== erb :ac_report__system_controls, locals: {
+        assessment: assessment,
+      } %>
+    <% end %>
+
   </div>
 </div>
