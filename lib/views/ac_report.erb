@@ -23,12 +23,12 @@
           text: 'ac_report.sections.exec_summary.title'
         },
         {
-          link: '#owner_operator',
-          text: 'ac_report.sections.owner_operator.title'
-        },
-        {
           link: '#key_recommendations',
           text: 'ac_report.sections.key_recommendations.title'
+        },
+        {
+          link: '#owner_operator',
+          text: 'ac_report.sections.owner_operator.title'
         },
         {
           link: '#sub_systems',
@@ -70,11 +70,11 @@
       assessment: assessment,
     } %>
 
-    <%== erb :ac_report__owner_operator, locals: {
+    <%== erb :ac_report__key_recommendations, locals: {
       assessment: assessment,
     } %>
 
-    <%== erb :ac_report__key_recommendations, locals: {
+    <%== erb :ac_report__owner_operator, locals: {
       assessment: assessment,
     } %>
 
