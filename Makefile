@@ -44,7 +44,7 @@ deploy-app: ## Deploys the app to PaaS
 
 .PHONY: test
 test:
-	@bundle exec rspec --tag ~journey
+	@bundle exec rspec
 
 .PHONY: hosts
 hosts:

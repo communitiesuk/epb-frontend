@@ -134,9 +134,7 @@ describe "Journey::FindDomesticCertificate", type: :feature, journey: true do
   end
 
   it "displays the error message when searching for a certificate that doesnt exist" do
-    port = Rack::Server.new.options[:Port]
-
-    visit "http://find-energy-certificate.local.gov.uk:#{port}"
+    visit "http://find-energy-certificate.local.gov.uk:9393"
     click_on "Start now"
     find("#label-domestic").click
     click_on "Continue"
@@ -145,8 +143,5 @@ describe "Journey::FindDomesticCertificate", type: :feature, journey: true do
     fill_in "town", with: "Madeup Town"
     click_on "Find"
     expect(page).to have_content "A certificate was not found at this address."
-    click_on "Find an assessor"
-
-    expect(page).to have_content "Getting a new energy certificate"
   end
 end
