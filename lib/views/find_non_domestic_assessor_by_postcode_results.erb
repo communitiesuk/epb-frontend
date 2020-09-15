@@ -1,6 +1,8 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <a href="<%= localised_url('/')%>" class="govuk-back-link">
+    <a
+      href="<%= localised_url('/find-an-assessor')%>"
+      class="govuk-back-link">
       <%=t('layout.body.breadcrumb.back')%>
     </a>
 
@@ -8,32 +10,38 @@
       <%= t('find_non_domestic_assessor_by_postcode_results.top_heading') %>
     </h1>
 
-    <form method="GET" action="<%=localised_url('/find-a-non-domestic-assessor/search-by-postcode')%>">
+    <form method="GET" action="<%=localised_url('/find-a-non-domestic-assessor/search-by-postcode')%>" >
       <% if I18n.locale != I18n.available_locales[0] %>
         <input type="hidden" name="lang" value="<%= I18n.locale.to_s %>">
-        <% end %>
-        <fieldset class="epc-search-fieldset">
-          <div class="epc-search-bar-holder">
-            <input id="postcode" name="postcode" type="text" class="govuk-input epc-search-bar" aria-describedby="postcode-hint" autocomplete="postal-code" spellcheck="false" value="<%= params['postcode'].upcase %>"/>
-          </div>
-          <button class="epc-search-button" data-module="govuk-button" aria-label="<%= t('find_assessor_by_postcode.button_text') %>"></button>
-        </fieldset>
-      </form>
+      <% end %>
+      <fieldset class="epc-search-fieldset">
+        <div class="epc-search-bar-holder">
+          <input id="postcode" name="postcode" type="text"
+                 class="govuk-input epc-search-bar"
+                 aria-describedby="postcode-hint"
+                 autocomplete="postal-code"
+                 spellcheck="false"
+                 value="<%= params['postcode'].upcase %>"
+          />
+        </div>
+        <button class="epc-search-button" data-module="govuk-button" aria-label="<%= t('find_assessor_by_postcode.button_text') %>"></button>
+      </fieldset>
+    </form>
 
-      <% if results.size > 0 %>
-        <h2 class="govuk-heading-m"><%= t('find_assessor_by_postcode_results.results', :quantity=>results.length, :postcode=>params['postcode'].upcase) %></h2>
-        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    <% if results.size > 0 %>
+      <h2 class="govuk-heading-m"><%= t('find_assessor_by_postcode_results.results', :quantity=>results.length, :postcode=>params['postcode'].upcase) %></h2>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
-          <ul class="govuk-list">
-            <% results.each do |result| %>
-              <%== erb :find_non_domestic_assessor_list_assessor, locals: {
+      <ul class="govuk-list">
+          <% results.each do |result| %>
+          <%== erb :find_non_domestic_assessor_list_assessor, locals: {
             assessor: result } %>
-            <% end %>
-          </ul>
-        <% else %>
-          <p class="govuk-body">
-            <%= t('find_assessor_by_postcode_results.no_assessors') %>
-          </p>
-        <% end %>
-      </div>
-    </div>
+          <% end %>
+      </ul>
+    <% else %>
+      <p class="govuk-body">
+        <%= t('find_assessor_by_postcode_results.no_assessors') %>
+      </p>
+    <% end %>
+  </div>
+</div>

@@ -151,14 +151,14 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
 
   context "when finding a non-domestic assessor by postcode" do
     xit "finds a non-domestic assessor" do
-      visit "/"
+      visit "/find-an-assessor"
       click_on "find a non domestic assessor"
       fill_in "postcode", with: "SW1A 2AA"
       click_on "Find"
     end
 
     xit "displays an error message when entering an empty postcode" do
-      visit "/"
+      visit "/find-an-assessor"
       click_on "find a non domestic assessor"
       fill_in "postcode", with: ""
       click_on "Find"
@@ -166,7 +166,7 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
     end
 
     xit "displays an error message when entering an invalid postcode" do
-      visit "/"
+      visit "/find-an-assessor"
       click_on "find a non domestic assessor"
       fill_in "postcode", with: "NOT A POSTCODE"
       click_on "Find"
@@ -174,7 +174,7 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
     end
 
     xit "displays the find a non domestic assessor page heading when entering a valid postcode " do
-      visit "/"
+      visit "/find-an-assessor"
       click_on "find a non domestic assessor"
       fill_in "postcode", with: "SW1A 2AA"
       click_on "Find"
@@ -184,7 +184,7 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
     end
 
     xit "displays accreditation scheme contact details for the first assessor" do
-      visit "/"
+      visit "/find-an-assessor"
       click_on "find a non domestic assessor"
       fill_in "postcode", with: "SW1A 2AA"
       click_on "Find"
@@ -195,7 +195,7 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
     end
 
     xit "displays no longer accredited text for unaccredited scheme" do
-      visit "/"
+      visit "/find-an-assessor"
       click_on "find a non domestic assessor"
       fill_in "postcode", with: "SW1A 2AA"
       click_on "Find"
