@@ -33,19 +33,6 @@ describe "Journey::FindDomesticCertificate", type: :feature, journey: true do
     expect(page).to have_content "1-2 of 2 results matching SW1A 2AA"
   end
 
-  describe "viewing in Welsh" do
-    it "finds a certificate by postcode" do
-      visit "http://find-energy-certificate.local.gov.uk:9393"
-      click_on "Welsh (Cymraeg)"
-      click_on "Welsh: Start now"
-      find("#label-domestic").click
-      click_on "Welsh: Continue"
-      fill_in "postcode", with: "SW1A 2AA"
-      click_button "Welsh: Find"
-      expect(page).to have_content "Welsh: 1-2 of 2 results matching SW1A 2AA"
-    end
-  end
-
   it "displays an error message when entering an empty postcode" do
     visit "http://find-energy-certificate.local.gov.uk:9393"
     click_on "Start now"
