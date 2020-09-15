@@ -12,15 +12,10 @@ module Sinatra
       def set_subdomain_url(subdomain)
         current_url = request.url
 
-        if settings.development?
-          return "http://#{subdomain}.local.gov.uk:9292"
-        elsif current_url.include? "#{subdomain}-staging"
-          return "https://#{subdomain}-staging.digital.communities.gov.uk"
-        elsif current_url.include? "#{subdomain}-integration"
-          return "https://#{subdomain}-integration.digital.communities.gov.uk"
-        else
-          return "https://#{subdomain}.digital.communities.gov.uk"
-        end
+        return "http://#{subdomain}.local.gov.uk:9292" if settings.development?
+        return "https://#{subdomain}-integration.digital.communities.gov.uk" if current_url.include? "#{subdomain}-integration"
+        return "https://#{subdomain}-staging.digital.communities.gov.uk" if current_url.include? "#{subdomain}-staging"
+        return "https://#{subdomain}.digital.communities.gov.uk" if current_url.include? "#{subdomain}.digital.communities.gov.uk"
       end
 
       def number_to_currency(number)
