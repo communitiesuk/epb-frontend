@@ -335,8 +335,7 @@ describe "Acceptance::Assessor", type: :feature do
 
       it "displays an error message" do
         expect(response.body).to have_css "span",
-                                          text:
-                                            "Enter the first and last name of the assessor"
+                                          text: "Enter the first and last name of the assessor"
       end
     end
 
@@ -347,8 +346,7 @@ describe "Acceptance::Assessor", type: :feature do
 
       it "displays an error message" do
         expect(response.body).to have_css "span",
-                                          text:
-                                            "Enter the first and last name of the assessor"
+                                          text: "Enter the first and last name of the assessor"
       end
     end
 
@@ -400,7 +398,9 @@ describe "Acceptance::Assessor", type: :feature do
         end
 
         it "shows a downcased clickable email" do
-          expect(response.body).not_to include("mailto:UPPERCASE_EMAIL@eXaMpLe.com")
+          expect(response.body).not_to include(
+            "mailto:UPPERCASE_EMAIL@eXaMpLe.com",
+          )
           expect(response.body).to include("mailto:uppercase_email@example.com")
         end
 

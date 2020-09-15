@@ -44,7 +44,8 @@ module FindAssessor
                   "firstName": "Paul",
                   "lastName": "John",
                   "contactDetails": {
-                    "telephoneNumber": "string", "email": "UPPERCASE_EMAIL@eXaMpLe.com"
+                    "telephoneNumber": "string",
+                    "email": "UPPERCASE_EMAIL@eXaMpLe.com",
                   },
                   "qualifications": qualification_status,
                   "searchResultsComparisonPostcode": "SW1A 1AA",
