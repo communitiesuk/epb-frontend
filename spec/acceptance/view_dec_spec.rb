@@ -27,7 +27,7 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
                                          href: "#recommendation_report"
       expect(response.body).to have_link "Previous operational ratings",
                                          href: "#previous_energy_ratings"
-      expect(response.body).to have_link "Total CO2 emissions", href: "#co2"
+      expect(response.body).to have_link "Total carbon dioxide (CO2) emissions", href: "#co2"
       expect(response.body).to have_link "Technical information",
                                          href: "#technical_information"
       expect(response.body).to have_link "Administrative information",
@@ -100,7 +100,7 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
     end
 
     it "shows the total CO2 emissions section" do
-      expect(response.body).to include("Total CO2 emissions")
+      expect(response.body).to include("Total carbon dioxide (CO2) emissions")
       expect(response.body).to include(
         "This tells you how much carbon dioxide the building emits. It shows tonnes per year of CO2.",
       )

@@ -574,7 +574,7 @@ en:
       title: 'Energy efficiency rating for this building'
       current_rating_text: 'This building’s current energy rating is %{current_energy_efficiency_band}.'
       rating_desc: 'Buildings are given a rating from A+ (most efficient) to G (least efficient).'
-      score_desc: 'Buildings are also given a score. The larger the number, the more CO2 your building is likely to emit.'
+      score_desc: 'Buildings are also given a score. The larger the number, the more carbon dioxide (CO2) your building is likely to emit.'
       svg:
         aria-label: "This building’s energy rating is %{current_energy_efficiency_band} (%{current_energy_efficiency_rating})"
     sections:
@@ -730,7 +730,7 @@ en:
         aria-label: 'Your energy rating is %{current_energy_efficiency_band}(%{current_energy_efficiency_rating}) and your potential is %{potential_energy_efficiency_band}(%{potential_energy_efficiency_rating})'
         body1: 'The graph shows this property’s current and potential energy efficiency.'
         body2: 'Properties are given a rating from A (most efficient) to G (least efficient).'
-        body3: 'Properties are also given a score. The higher this number, the lower your CO2 emissions are likely to be.'
+        body3: 'Properties are also given a score. The higher this number, the lower your carbon dioxide (CO2) emissions are likely to be.'
         body4: 'The average energy rating and score for a property in England and Wales are D (60).'
       breakdown:
         title: "Breakdown of property’s energy performance"
@@ -1272,7 +1272,7 @@ en:
         title: "Previous operational ratings"
         explanation: "This tells you how efficiently energy has been used in this building over the last three accounting periods."
       co2:
-        title: "Total CO2 emissions"
+        title: "Total carbon dioxide (CO2) emissions"
         explanation: "This tells you how much carbon dioxide the building emits. It shows tonnes per year of CO2."
         col:
           date: "Date"
