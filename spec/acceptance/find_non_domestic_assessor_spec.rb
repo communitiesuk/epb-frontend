@@ -146,6 +146,16 @@ describe "Acceptance::NonDomesticAssessor" do
           expect(response.body).to include("mailto:user@example.com")
         end
 
+        it "downcases the email of an entry" do
+          expect(response.body).not_to include("UPPERCASE_EMAIL@eXaMpLe.com")
+          expect(response.body).to include("uppercase_email@example.com")
+        end
+
+        it "shows a downcased clickable email" do
+          expect(response.body).not_to include("mailto:UPPERCASE_EMAIL@eXaMpLe.com")
+          expect(response.body).to include("mailto:uppercase_email@example.com")
+        end
+
         it "shows a phone number of an entry" do
           expect(response.body).to include("07921 021 368")
         end
