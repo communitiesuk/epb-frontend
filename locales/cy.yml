@@ -1413,6 +1413,10 @@ cy:
           question: ""
         set_temperature:
           question: "CS8.5 Note the set temperature in each zone for heating and cooling in relation to the activities and occupancy of zones and spaces in relation to the manager's intent."
+      related_certificate:
+        title: "Related certificate"
+        text: "A summary of this information can be found on the %{link}."
+        cta: "associated Air Conditionining Inspection Certificate"
     flag:
       finding_yes: "Yes"
       finding_no: "No"

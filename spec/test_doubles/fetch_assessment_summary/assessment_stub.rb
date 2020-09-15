@@ -34,6 +34,7 @@ module FetchAssessmentSummary
             postcode: "NE1 7AF",
           },
           relatedPartyDisclosure: "1",
+          relatedRrn: "0000-0000-0000-0003",
           assessor: {
             name: "TEST NAME BOI",
             schemeAssessorId: "SPEC000000",

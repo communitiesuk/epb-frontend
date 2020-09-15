@@ -50,6 +50,10 @@
           link: '#system_controls',
           text: 'ac_report.sections.system_controls.title'
         },
+        {
+          link: '#related_certificate',
+          text: 'ac_report.sections.related_certificate.title'
+        },
       ]
     } %>
   </div>
@@ -102,6 +106,12 @@
 
     <% unless assessment[:systemControls].empty? %>
       <%== erb :ac_report__system_controls, locals: {
+        assessment: assessment,
+      } %>
+    <% end %>
+
+    <% unless assessment[:relatedRrn].nil? || assessment[:relatedRrn].empty? %>
+      <%== erb :ac_report__related_certificate, locals: {
         assessment: assessment,
       } %>
     <% end %>
