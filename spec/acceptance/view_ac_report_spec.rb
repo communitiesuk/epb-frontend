@@ -180,8 +180,8 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
 
     it "can show the related certificate" do
       expect(response.body).to have_css "h2", text: "Related certificate"
-      expect(response.body).to have_css "a", text: "associated Air Conditioning Inspection Certificate"
-
+      expect(response.body).to have_css "a",
+                                        text: "associated Air Conditioning Inspection Certificate"
     end
 
     context "when there are no subsystems" do
