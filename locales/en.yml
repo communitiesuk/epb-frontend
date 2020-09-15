@@ -295,7 +295,7 @@ en:
         url: '?lang=cy'
       scotland:
         text: 'For properties in Scotland, use the %{link}.'
-        cta: "Scottish government's EPC service"
+        cta: "Scottish government’s EPC service"
       property_guidance:
         description: 'If your property does not have an energy certificate or the certificate is expired, you can %{link}.'
         link: 'get a new energy certificate.'
@@ -325,7 +325,7 @@ en:
     hint: 'For example SW1A 2AA'
     certificate_by_street_name_and_town:
       heading: 'Search by street and town'
-      body: "If you do not know the property's postcode, %{link}."
+      body: "If you do not know the property’s postcode, %{link}."
       cta: 'find an EPC using the street name and town'
     certificate_by_reference_number:
       heading: 'Search by reference number'
@@ -463,7 +463,7 @@ en:
       additional_support: 'If you need additional support to find an energy certificate or report, call our helpdesk on 0233 788 1234 (Monday to Friday, 9am - 5pm).'
       scotland:
         description: 'For non-domestic properties in Scotland, use the %{link}'
-        link: 'Scottish government''s EPC and DEC service.'
+        link: 'Scottish government’s EPC and DEC service.'
     check_if_epc_needed:
       intro: 'To check if your property needs a certificate or report, read:'
       epc: 'the EPC exemptions for business properties'
@@ -487,7 +487,7 @@ en:
       body: 'There is an internal network error'
     certificate_by_street_name_and_town:
       heading: 'Search by street and town'
-      body: "If you do not know the property's postcode, %{link}."
+      body: "If you do not know the property’s postcode, %{link}."
       cta: 'find an EPC using the street name and town'
     certificate_by_reference_number:
       heading: 'Search by reference number'
@@ -658,7 +658,7 @@ en:
       if_newly_built: "If newly built"
       if_typical_existing_stock: "If typical of the existing stock"
     energy_peformance_breakdown:
-      heading: "Breakdown of this building's energy performance"
+      heading: "Breakdown of this building’s energy performance"
       main_heating_fuel: "Main heating fuel"
       building_environment: "Building environment"
       floor_area: "Total useful floor area (m2)"
@@ -673,10 +673,10 @@ en:
       p4: "Accreditation schemes are appointed by the government to ensure that assessors are qualified to carry out EPC assessments."
       assessor:
         heading: "Assessor contact details"
-        name: "Assessor's Name"
+        name: "Assessor’s Name"
         phone: "Telephone"
         email: "Email"
-        id: "Assessor's accreditation number"
+        id: "Assessor’s accreditation number"
       scheme:
         heading: "Accreditation scheme contact details"
         name: "Accreditation scheme"
@@ -688,7 +688,7 @@ en:
         date_certificate: "Date of certificate"
         employer: "Employer"
         employer_address: "Employer address"
-        declaration: "Assessor's declaration"
+        declaration: "Assessor’s declaration"
     related_report:
       heading: "Recommendation Report"
       cta: "recommendation report"
@@ -708,7 +708,7 @@ en:
       sections:
         renting: 'Rules on letting this property'
         epc: 'Energy performance rating for this property'
-        summary: "Breakdown of property's energy performance"
+        summary: "Breakdown of property’s energy performance"
         energy: 'Environmental impact of this property'
         recommendations: 'How to improve this property’s energy performance'
         heat-demand: 'Estimated energy use and potential savings'
@@ -747,7 +747,7 @@ en:
         body3: 'Properties are also given a score. The higher this number, the lower your CO2 emissions are likely to be.'
         body4: 'The average energy rating and score for a property in England and Wales are D (60).'
       breakdown:
-        title: "Breakdown of property's energy performance"
+        title: "Breakdown of property’s energy performance"
         intro: "This section shows the energy performance for features of this property. The assessment does not consider the condition of a feature and how well it is working."
         assessment_rating_explaination: 'Each feature is assessed as one of the following:'
         assessment_ratings:
@@ -772,7 +772,7 @@ en:
           dwelling_type: 'Property type'
       environmental-impact:
         title: "Environmental impact of this property"
-        summary: "One of the biggest contributors to climate change is carbon dioxide (CO2). The energy used for heating, lighting and power in our homes produces over a quarter of the UK's CO2 emissions."
+        summary: "One of the biggest contributors to climate change is carbon dioxide (CO2). The energy used for heating, lighting and power in our homes produces over a quarter of the UK’s CO2 emissions."
         making_changes: "By making the %{link}, you will reduce this property’s CO2 emissions by %{reduction} tonnes per year. This will help to protect the environment."
         making_changes_cta: 'recommended changes'
         making_changes_url: '#recommendations'
@@ -781,7 +781,7 @@ en:
           text: "Average household produces"
           carbon: "6"
         property_produces: "This property produces"
-        potential: "This property's potential production"
+        potential: "This property’s potential production"
         tonnes_of_carbon_emission: " tonnes of %{carbon}"
       recommendations:
         title: 'How to improve this property’s energy performance'
@@ -846,12 +846,12 @@ en:
           list:
             telephone: 'Telephone'
             email: 'E-mail address'
-            name: "Assessor's name"
+            name: "Assessor’s name"
         scheme:
           title: 'Accreditation scheme contact details'
           list:
             name: 'Accreditation scheme'
-            scheme_assessor_id: "Assessor's accreditation number"
+            scheme_assessor_id: "Assessor’s accreditation number"
         certificate:
           title: 'Assessment details'
           list:
@@ -1176,7 +1176,7 @@ en:
     3:
       relation: "The assessor is a relative of the professional dealing with the property transaction."
     4:
-      relation: "The assessor has an indirect relation to the owner (for example, somebody in the assessor's family might be employed by the building owner)."
+      relation: "The assessor has an indirect relation to the owner (for example, somebody in the assessor’s family might be employed by the building owner)."
     5:
       relation: "The assessor occupies the property."
     6:
@@ -1413,12 +1413,12 @@ en:
         title: "Equipment owner and operator"
         owner_name: "Owner name"
         owner_organisation: "Owner organisation"
-        owner_telephone: "Owner's phone number"
-        owner_address: "Owner's address"
+        owner_telephone: "Owner’s phone number"
+        owner_address: "Owner’s address"
         operator_responsible_person: "Operator responsible person"
         operator_organisation: "Operator organisation"
-        operator_telephone: "Operator's phone number"
-        operator_address: "Operator's address"
+        operator_telephone: "Operator’s phone number"
+        operator_address: "Operator’s address"
       key_recommendations:
         title: "Key recommendations"
         efficiency:
@@ -1557,7 +1557,7 @@ en:
         guidance_controls:
           question: "PS3.6 Are guidance notices visible or controls available to inhibit use of cooling equipment whilst windows are open or cooling/heating is on?"
         set_temperature:
-          question: "CS8.5 Note the set temperature in each zone for heating and cooling in relation to the activities and occupancy of zones and spaces in relation to the manager's intent."
+          question: "CS8.5 Note the set temperature in each zone for heating and cooling in relation to the activities and occupancy of zones and spaces in relation to the manager’s intent."
     flag:
       finding_yes: "Yes"
       finding_no: "No"

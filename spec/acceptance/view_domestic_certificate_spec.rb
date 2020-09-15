@@ -291,7 +291,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
     context "when viewing environmental impact section" do
       it "shows the summary text" do
         expect(response.body).to include(
-          "The energy used for heating, lighting and power in our homes produces over a quarter of the UK's CO2 emissions.",
+          "The energy used for heating, lighting and power in our homes produces over a quarter of the UK’s CO2 emissions.",
         )
       end
 
@@ -313,7 +313,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
         expect(response.body).to include(">This property produces</")
         expect(response.body).to include(">2.4 tonnes of CO2</dd>")
         expect(response.body).to include(
-          ">This property's potential production</",
+          ">This property’s potential production</",
         )
         expect(response.body).to include(">1.4 tonnes of CO2</dd>")
       end
@@ -366,10 +366,10 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       end
     end
 
-    context "when viewing the breakdown of property's energy performance section" do
+    context "when viewing the breakdown of property’s energy performance section" do
       it "shows the section title" do
         expect(response.body).to include(
-          "<h2 class=\"govuk-heading-l\">Breakdown of property's energy performance</h2>",
+          "<h2 class=\"govuk-heading-l\">Breakdown of property’s energy performance</h2>",
         )
       end
 

@@ -199,7 +199,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
 
       it "shows the breakdown of this buildings energy performance section" do
         expect(response.body).to include(
-          ">Breakdown of this building's energy performance</h2>",
+          ">Breakdown of this building’s energy performance</h2>",
         )
         expect(response.body).to include("Natural Gas")
         expect(response.body).to include("Air Conditioning")
@@ -239,7 +239,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
           "3":
             "The assessor is a relative of the professional dealing with the property transaction.",
           "4":
-            "The assessor has an indirect relation to the owner (for example, somebody in the assessor's family might be employed by the building owner).",
+            "The assessor has an indirect relation to the owner (for example, somebody in the assessor’s family might be employed by the building owner).",
           "5": "The assessor occupies the property.",
           "6":
             "The assessor is the owner or director of the organisation dealing with the property transaction.",
@@ -302,7 +302,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
           '<p class="govuk-body"><a href="#how_this_building_compares">How this building compares to others</a></p>',
         )
         expect(response.body).to include(
-          '<p class="govuk-body"><a href="#energy_peformance_breakdown">Breakdown of this building\'s energy performance</a></p>',
+          '<p class="govuk-body"><a href="#energy_peformance_breakdown">Breakdown of this building’s energy performance</a></p>',
         )
         expect(response.body).to include(
           '<p class="govuk-body"><a href="#related_report">Recommendation Report</a></p>',

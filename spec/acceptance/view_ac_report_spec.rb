@@ -61,9 +61,9 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
       expect(response.body).to have_css "dd", text: "Office manager"
       expect(response.body).to have_css "dt", text: "Owner organisation"
       expect(response.body).to have_css "dd", text: "The bank"
-      expect(response.body).to have_css "dt", text: "Owner's phone number"
+      expect(response.body).to have_css "dt", text: "Owner’s phone number"
       expect(response.body).to have_css "dd", text: "01234"
-      expect(response.body).to have_css "dt", text: "Owner's address"
+      expect(response.body).to have_css "dt", text: "Owner’s address"
       expect(response.body).to have_css "dd",
                                         text: "High street, North side, NEWCASTLE UPON TYNE, NE2 7DT"
       expect(response.body).to have_css "dt",
@@ -71,9 +71,9 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
       expect(response.body).to have_css "dd", text: "Chief engineer"
       expect(response.body).to have_css "dt", text: "Operator organisation"
       expect(response.body).to have_css "dd", text: "Air Con Ltd"
-      expect(response.body).to have_css "dt", text: "Operator's phone number"
+      expect(response.body).to have_css "dt", text: "Operator’s phone number"
       expect(response.body).to have_css "dd", text: "44432"
-      expect(response.body).to have_css "dt", text: "Operator's address"
+      expect(response.body).to have_css "dt", text: "Operator’s address"
       expect(response.body).to have_css "dd",
                                         text: "Low street, COVENTRY, CV11 2FF"
     end
