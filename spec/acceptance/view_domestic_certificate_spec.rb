@@ -483,7 +483,9 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
 
       it "shows the providers email" do
         expect(response.body).to include("Email")
-        expect(response.body).to include('<a class="govuk-link" href="mailto:lender@example.com">')
+        expect(response.body).to include(
+          '<a class="govuk-link" href="mailto:lender@example.com">',
+        )
       end
 
       context "but there are no provider contact details" do

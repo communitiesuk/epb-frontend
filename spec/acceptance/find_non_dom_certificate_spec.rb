@@ -38,12 +38,10 @@ describe "Acceptance::Non Domestic Certificate" do
       end
 
       it "displays the data gap warning" do
+        expect(response.body).to include("Warning")
         expect(response.body).to include(
-                                     "Warning",
-                                     )
-        expect(response.body).to include(
-                                     "For certificates issued between 9 June 2020 and 19 September",
-                                     )
+          "For certificates issued between 9 June 2020 and 19 September",
+        )
       end
 
       it "has an input field" do
@@ -325,12 +323,10 @@ describe "Acceptance::Non Domestic Certificate" do
       end
 
       it "displays the data gap warning" do
+        expect(response.body).to include("Warning")
         expect(response.body).to include(
-                                     "Warning",
-                                     )
-        expect(response.body).to include(
-                                     "For certificates issued between 9 June 2020 and 19 September",
-                                     )
+          "For certificates issued between 9 June 2020 and 19 September",
+        )
       end
 
       it "has an input field" do

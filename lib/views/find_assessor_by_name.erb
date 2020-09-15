@@ -6,15 +6,16 @@
       <%=t('layout.body.breadcrumb.back')%>
     </a>
 
-    <h1 class="govuk-heading-xl">
-      <%= t('find_assessor_by_name.top_heading') %>
-    </h1>
-
     <form method="GET" action="<%=localised_url('/find-an-assessor/search-by-name')%>" >
       <% if I18n.locale != I18n.available_locales[0] %>
         <input type="hidden" name="lang" value="<%= I18n.locale.to_s %>">
       <% end %>
-      <fieldset class="govuk-fieldset fieldset-background">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-heading-xl">
+            <%= t('find_assessor_by_name.top_heading') %>
+          </h1>
+        </legend>
         <div class="govuk-form-group<% if errors[:name] %> govuk-form-group--error<% end %>">
           <label class="govuk-label" for="name">
             <%= t('find_assessor_by_name.question') %>

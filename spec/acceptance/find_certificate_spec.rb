@@ -14,18 +14,14 @@ describe "Acceptance::Certificate" do
       end
 
       it "displays the find a certificate page heading" do
-        expect(response.body).to include(
-          "Search for an EPC by postcode",
-        )
+        expect(response.body).to include("Search for an EPC by postcode")
       end
 
       it "displays the data gap warning" do
+        expect(response.body).to include("Warning")
         expect(response.body).to include(
-                                     "Warning",
-                                     )
-        expect(response.body).to include(
-                                     "For certificates issued between 9 June 2020 and 19 September",
-                                     )
+          "For certificates issued between 9 June 2020 and 19 September",
+        )
       end
 
       it "has an input field" do
@@ -186,12 +182,10 @@ describe "Acceptance::Certificate" do
       end
 
       it "displays the data gap warning" do
+        expect(response.body).to include("Warning")
         expect(response.body).to include(
-                                     "Warning",
-                                     )
-        expect(response.body).to include(
-                                     "For certificates issued between 9 June 2020 and 19 September",
-                                     )
+          "For certificates issued between 9 June 2020 and 19 September",
+        )
       end
 
       it "has an input field" do
@@ -342,18 +336,14 @@ describe "Acceptance::Certificate" do
       end
 
       it "displays the find a certificate page heading" do
-        expect(response.body).to include(
-          "Find an EPC by street and town",
-        )
+        expect(response.body).to include("Find an EPC by street and town")
       end
 
       it "displays the data gap warning" do
+        expect(response.body).to include("Warning")
         expect(response.body).to include(
-                                     "Warning",
-                                     )
-        expect(response.body).to include(
-                                     "For certificates issued between 9 June 2020 and 19 September",
-                                     )
+          "For certificates issued between 9 June 2020 and 19 September",
+        )
       end
 
       it "has an input field" do

@@ -5,18 +5,19 @@
       class="govuk-back-link">
       <%=t('layout.body.breadcrumb.back')%>
     </a>
-
-    <h1 class="govuk-heading-xl">
-      <%= t('find_certificate_by_postcode.top_heading') %>
-    </h1>
-
+    
     <%== erb :__data_gap_warning_domestic %>
 
     <form method="GET" action="<%=localised_url('/find-a-certificate/search-by-postcode')%>" >
       <% if I18n.locale != I18n.available_locales[0] %>
         <input type="hidden" name="lang" value="<%= I18n.locale.to_s %>">
       <% end %>
-      <fieldset class="govuk-fieldset fieldset-background">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-heading-xl">
+            <%= t('find_certificate_by_postcode.top_heading') %>
+          </h1>
+        </legend>
         <div class="govuk-form-group<% if errors[:postcode] %> govuk-form-group--error<% end %>">
           <label class="govuk-label" for="postcode">
             <%= t('find_certificate_by_postcode.question') %>
