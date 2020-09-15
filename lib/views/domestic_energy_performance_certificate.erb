@@ -63,7 +63,7 @@
 
       <p class="govuk-body"><%== t(
                'domestic_epc.summary.property_info',
-              dwelling_type: assessment[:dwellingType],
+              dwelling_type: assessment[:dwellingType].downcase,
               total_floor_area: "%g" % assessment[:totalFloorArea]
        ) %></p>
 

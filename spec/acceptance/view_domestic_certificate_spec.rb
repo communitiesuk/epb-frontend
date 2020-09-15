@@ -60,8 +60,9 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       )
     end
 
-    it "shows the type of dwelling" do
-      expect(response.body).to include("This property is a Top floor flat")
+    it "shows the type of dwelling - downcased" do
+      expect(response.body).not_to include("This property is a Top floor flat")
+      expect(response.body).to include("This property is a top floor flat")
     end
 
     it "shows the SVG with energy ratings" do
