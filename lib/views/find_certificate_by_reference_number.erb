@@ -6,8 +6,6 @@
       <%=t('layout.body.breadcrumb.back')%>
     </a>
 
-    <%== erb :__data_gap_warning_domestic %>
-
     <form method="GET" action="<%=localised_url('/find-a-certificate/search-by-reference-number')%>" >
       <% if I18n.locale != I18n.available_locales[0] %>
         <input type="hidden" name="lang" value="<%= I18n.locale.to_s %>">
@@ -18,6 +16,9 @@
             <%= t('find_certificate_by_reference_number.top_heading') %>
           </h1>
         </legend>
+
+        <%== erb :__data_gap_warning_domestic %>
+
         <div class="govuk-form-group<% if errors[:reference_number] %> govuk-form-group--error<% end %>">
           <label class="govuk-label" for="reference_number">
             <%= t('find_certificate_by_reference_number.question') %>
