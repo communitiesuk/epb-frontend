@@ -23,7 +23,7 @@ en:
       govuk: 'GOV.UK'
       beta:
         heading: 'beta'
-        description: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+        description: 'This is a new service – your <a class="govuk-link" href="https://forms.office.com/Pages/ResponsePage.aspx?id=EGg0v32c3kOociSi7zmVqPbdKK1xB5FPizueLd4cs19UQVdISTJKQTNPSUtON0pPUDYzWFMyVEVIWC4u">feedback</a> will help us to improve it.'
       breadcrumb:
         home: 'Home'
         epbr: 'Energy performance of buildings register'
