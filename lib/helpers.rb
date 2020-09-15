@@ -13,13 +13,13 @@ module Sinatra
         current_url = request.url
 
         if settings.development?
-          "http://#{subdomain}.local.gov.uk:9292"
+          return "http://#{subdomain}.local.gov.uk:9292"
         elsif current_url.include? "#{subdomain}-staging"
-          "https://#{subdomain}-staging.digital.communities.gov.uk"
+          return "https://#{subdomain}-staging.digital.communities.gov.uk"
         elsif current_url.include? "#{subdomain}-integration"
-          "https://#{subdomain}-integration.digital.communities.gov.uk"
+          return "https://#{subdomain}-integration.digital.communities.gov.uk"
         else
-          "https://#{subdomain}.digital.communities.gov.uk"
+          return "https://#{subdomain}.digital.communities.gov.uk"
         end
       end
 
