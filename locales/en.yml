@@ -40,7 +40,7 @@ en:
     introduction: 'Use this service to find assessors and certificates'
     find_an_assessor:
       body: 'Find a qualified assessor through the %{link} service'
-      url: '/find-an-assessor'
+      url: '/'
       cta: 'Find an assessor'
     find_a_certificate:
       body: 'Find an existing certificate for a property through the %{link} service'
@@ -299,7 +299,7 @@ en:
       property_guidance:
         description: 'If your property does not have an energy certificate or the certificate is expired, you can %{link}.'
         link: 'get a new energy certificate.'
-        url:  '/find-an-assessor'
+        url:  '/'
       commercial:
         url: '/find-a-non-domestic-certificate'
         cta: 'find a non-domestic EPC'

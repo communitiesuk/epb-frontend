@@ -40,7 +40,7 @@ cy:
     introduction: 'Welsh: Use this service to find assessors and certificates'
     find_an_assessor:
       body: 'Welsh: Find a qualified assessor through the %{link} service'
-      url: '/find-an-assessor'
+      url: '/'
       cta: 'Welsh: Find an assessor'
     find_a_certificate:
       body: 'Welsh: Find an existing certificate for a property through the %{link} service'
@@ -72,7 +72,7 @@ cy:
       switch_language:
         description: 'Welsh: This service is also available in %{link}.'
         link: 'Welsh: English (English)'
-        url: '/find-an-assessor?lang=en'
+        url: '/?lang=en'
       phone_text: 'Welsh: If you need additional support to find an assessor, call our helpdesk on %{link} (Monday to Friday, 9am - 5pm).'
       phone_number: '0233 788 1234'
       scotland:
@@ -296,7 +296,7 @@ cy:
       property_guidance:
         description: 'Welsh: If your property does not have an energy certificate or the certificate is expired, you can %{link}.'
         link: 'Welsh: get a new energy certificate.'
-        url:  '/find-an-assessor'
+        url:  '/'
       commercial:
         url: '/find-a-non-domestic-certificate'
         cta: 'Welsh: find a non-domestic EPC'

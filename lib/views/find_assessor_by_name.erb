@@ -1,7 +1,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <a
-      href="<%= localised_url('/find-an-assessor')%>"
+      href="<%= localised_url('/')%>"
       class="govuk-back-link">
       <%=t('layout.body.breadcrumb.back')%>
     </a>
@@ -10,7 +10,7 @@
       <%= t('find_assessor_by_name.top_heading') %>
     </h1>
 
-    <form method="GET" action="<%=localised_url('/find-an-assessor/search-by-name')%>" >
+    <form method="GET" action="<%=localised_url('/search-by-name')%>" >
       <% if I18n.locale != I18n.available_locales[0] %>
         <input type="hidden" name="lang" value="<%= I18n.locale.to_s %>">
       <% end %>

@@ -43,12 +43,12 @@ class FrontendService < Sinatra::Base
     erb :find_certificate, layout: :layout
   end
 
-  get "/find-an-assessor/type-of-property",
+  get "/type-of-property",
       host_name: /#{getting_new_energy_certificate_host_name}/ do
     query = params.map { |key, value| "#{key}=#{value}" }.join("&")
 
     if params["property_type"] == "domestic"
-      redirect "/find-an-assessor/search-by-postcode?#{query}"
+      redirect "/search-by-postcode?#{query}"
     elsif params["property_type"] == "non_domestic"
       redirect "/find-a-non-domestic-assessor/search-by-postcode?#{query}"
     else
@@ -152,7 +152,7 @@ class FrontendService < Sinatra::Base
     show(erb_template, locals)
   end
 
-  get "/find-an-assessor/search-by-postcode",
+  get "/search-by-postcode",
       host_name: /#{getting_new_energy_certificate_host_name}/ do
     @errors = {}
     locals = {}
@@ -194,7 +194,7 @@ class FrontendService < Sinatra::Base
     show(erb_template, locals)
   end
 
-  get "/find-an-assessor/search-by-name",
+  get "/search-by-name",
       host_name: /#{getting_new_energy_certificate_host_name}/ do
     @errors = {}
     locals = {}
