@@ -17,7 +17,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
     end
 
     it "shows the EPC title" do
-      expect(response.body).to include("Energy Performance Certificate")
+      expect(response.body).to include("Energy performance certificate")
     end
 
     it "shows the address summary" do

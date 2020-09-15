@@ -58,7 +58,7 @@ describe "Acceptance::Non Domestic Certificate" do
         expect(response.body).not_to include("govuk-error-message")
       end
 
-      it "has a link to search by reference number" do
+      it "has a link to search by certificate number" do
         expect(
           response.body,
         ).to include "find-a-non-domestic-certificate/search-by-reference-number"
@@ -122,7 +122,7 @@ describe "Acceptance::Non Domestic Certificate" do
           expect(response.body).to include("2 Marsham Street, London, SW1B 2BB")
         end
 
-        it "shows the report reference number of an entry" do
+        it "shows the report certificate number of an entry" do
           expect(response.body).to include("1234-5678-9101-1122-1234")
         end
 
@@ -218,7 +218,7 @@ describe "Acceptance::Non Domestic Certificate" do
 
         it "displays the find a certificate page heading" do
           expect(response.body).to include(
-            "Find an energy certificate or report for a building",
+            "Find an energy certificate or report",
           )
         end
 
@@ -228,7 +228,7 @@ describe "Acceptance::Non Domestic Certificate" do
           )
         end
 
-        it "shows the report reference number of an entry" do
+        it "shows the report certificate number of an entry" do
           expect(response.body).to include("1234-5678-9101-1121-3141")
         end
 
@@ -318,7 +318,7 @@ describe "Acceptance::Non Domestic Certificate" do
 
       it "displays the find a non-domestic certificate page heading" do
         expect(response.body).to include(
-          "Search for energy certificates and reports by reference number",
+          "Search for energy certificates and reports by certificate number",
         )
       end
 
@@ -346,7 +346,7 @@ describe "Acceptance::Non Domestic Certificate" do
       end
     end
 
-    context "when entering an empty reference number" do
+    context "when entering an empty certificate number" do
       let(:response) do
         get "http://find-energy-certificate.local.gov.uk/find-a-non-domestic-certificate/search-by-reference-number?reference_number="
       end
@@ -357,7 +357,7 @@ describe "Acceptance::Non Domestic Certificate" do
 
       it "displays the find a non-domestic certificate page heading" do
         expect(response.body).to include(
-          "Search for energy certificates and reports by reference number",
+          "Search for energy certificates and reports by certificate number",
         )
       end
 
@@ -365,11 +365,11 @@ describe "Acceptance::Non Domestic Certificate" do
         expect(response.body).to include(
           '<span id="reference-number-error" class="govuk-error-message">',
         )
-        expect(response.body).to include("Enter a 20-digit reference number")
+        expect(response.body).to include("Enter a 20-digit certificate number")
       end
     end
 
-    context "when entering a valid reference number" do
+    context "when entering a valid certificate number" do
       context "that exists in the register" do
         before do
           FindCertificate::Stub.search_by_id("1234-5678-9101-1121-3141", "CEPC")
@@ -407,13 +407,13 @@ describe "Acceptance::Non Domestic Certificate" do
 
         it "displays the find a certificate page heading" do
           expect(response.body).to include(
-            "Search for energy certificates and reports by reference number",
+            "Search for energy certificates and reports by certificate number",
           )
         end
 
         it "explains that no certificates are present" do
           expect(response.body).to include(
-            "A certificate was not found with this reference number",
+            "A certificate was not found with this certificate number",
           )
         end
       end

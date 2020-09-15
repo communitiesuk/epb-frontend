@@ -16,7 +16,7 @@
               end
             %>
 
-            <%= qualifications.join(", ") %>
+            <%== qualifications.join('<br />') %>
           </dd>
         </div>
         <div class="govuk-summary-list__row govuk-!-padding-bottom-0 govuk-!-margin-bottom-0">
@@ -30,10 +30,6 @@
           <dd class="govuk-summary-list__value govuk-!-font-weight-bold">
             <a class="govuk-link" href="mailto:<%= assessor[:contactDetails][:email] %>"><%= assessor[:contactDetails][:email] %></a>
           </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key govuk-!-font-weight-regular"><%= t('find_assessor_by_postcode_results.accredited_id') %></dt>
-          <dd class="govuk-summary-list__value govuk-!-font-weight-bold"><%= assessor[:schemeAssessorId] %></dd>
         </div>
         <div class="govuk-summary-list__row govuk-!-padding-bottom-0 govuk-!-margin-bottom-0">
           <dt class="govuk-summary-list__key govuk-!-padding-bottom-0 govuk-!-margin-bottom-0 govuk-!-font-weight-regular"><%= t('find_assessor_by_postcode_results.accredited_scheme') %></dt>
@@ -64,6 +60,10 @@
               </div>
             </details>
           </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-font-weight-regular"><%= t('find_assessor_by_postcode_results.accredited_id') %></dt>
+          <dd class="govuk-summary-list__value govuk-!-font-weight-bold"><%= assessor[:schemeAssessorId] %></dd>
         </div>
       </dl>
     </div>

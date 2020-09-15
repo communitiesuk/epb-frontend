@@ -14,7 +14,9 @@ describe "Acceptance::Certificate" do
       end
 
       it "displays the find a certificate page heading" do
-        expect(response.body).to include("Search for an EPC by postcode")
+        expect(response.body).to include(
+          "Find an energy performance certificate (EPC) by postcode",
+        )
       end
 
       it "displays the data gap warning" do
@@ -96,7 +98,7 @@ describe "Acceptance::Certificate" do
           expect(response.body).to include("2 Marsham Street, London, SW1B 2BB")
         end
 
-        it "shows the report reference number of an entry" do
+        it "shows the report certificate number of an entry" do
           expect(response.body).to include("1234-5678-9101-1122-1234")
         end
 
@@ -177,7 +179,7 @@ describe "Acceptance::Certificate" do
 
       it "displays the find a certificate page heading" do
         expect(response.body).to include(
-          "Search for an EPC by reference number",
+          "Find an energy performance certificate (EPC) by certificate number",
         )
       end
 
@@ -205,7 +207,7 @@ describe "Acceptance::Certificate" do
       end
     end
 
-    context "when entering an empty reference number" do
+    context "when entering an empty certificate number" do
       let(:response) do
         get "http://find-energy-certificate.local.gov.uk/find-a-certificate/search-by-reference-number?reference_number="
       end
@@ -224,11 +226,11 @@ describe "Acceptance::Certificate" do
         expect(response.body).to include(
           '<span id="reference-number-error" class="govuk-error-message">',
         )
-        expect(response.body).to include("Enter a 20-digit reference number")
+        expect(response.body).to include("Enter a 20-digit certificate number")
       end
     end
 
-    context "when entering a valid reference number" do
+    context "when entering a valid certificate number" do
       context "redirects to certificate page when the param has hyphens" do
         before do
           FindCertificate::Stub.search_by_id("1234-5678-9101-1121-3141")
@@ -292,7 +294,7 @@ describe "Acceptance::Certificate" do
 
         it "explains that no certificates are present" do
           expect(response.body).to include(
-            "A certificate was not found with this reference number",
+            "A certificate was not found with this certificate number",
           )
         end
       end
@@ -336,7 +338,9 @@ describe "Acceptance::Certificate" do
       end
 
       it "displays the find a certificate page heading" do
-        expect(response.body).to include("Find an EPC by street and town")
+        expect(response.body).to include(
+          "Find an energy performance certificate (EPC) by street and town",
+        )
       end
 
       it "displays the data gap warning" do
@@ -481,7 +485,7 @@ describe "Acceptance::Certificate" do
           )
         end
 
-        it "shows the report reference number of an entry" do
+        it "shows the report certificate number of an entry" do
           expect(response.body).to include("1234-5678-9101-1121-3141")
         end
 

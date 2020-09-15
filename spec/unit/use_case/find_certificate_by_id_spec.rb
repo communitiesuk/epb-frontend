@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 describe UseCase::FindCertificateById do
-  context "when there are no certificates by that reference number" do
+  context "when there are no certificates by that certificate number" do
     let(:certificates_gateway) { CertificatesGateway::EmptyStub.new }
     let(:find_certificate) { described_class.new(certificates_gateway) }
 
@@ -14,7 +14,7 @@ describe UseCase::FindCertificateById do
     end
   end
 
-  context "when there are certificates with that reference number" do
+  context "when there are certificates with that certificate number" do
     let(:valid_certificates) do
       [
         {

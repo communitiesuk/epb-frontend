@@ -1,6 +1,6 @@
 cy:
   related_content:
-    title: 'Welsh: Related Content'
+    title: 'Welsh: Related content'
     guidance_on_epc:
       title: 'Welsh: Guidance on EPCs when buying or selling your home'
       url: 'https://www.gov.uk/buy-sell-your-home/energy-performance-certificates'
@@ -76,7 +76,7 @@ cy:
       phone_text: 'Welsh: If you need additional support to find an assessor, call our helpdesk on %{link} (Monday to Friday, 9am - 5pm).'
       phone_number: '0233 788 1234'
       scotland:
-        description: 'Welsh: If the property is in Scotland, use the %{link}'
+        description: 'Welsh: For properties in Scotland, use the %{link}'
         link: 'Welsh: Scottish government’s energy certificate service'
       existing_epc:
         description: 'Welsh: To check if a property has an existing EPC, use the %{link} service.'

@@ -336,7 +336,7 @@ describe "Acceptance::Assessor", type: :feature do
       it "displays an error message" do
         expect(response.body).to have_css "span",
                                           text:
-                                            "Enter the assessor’s full name, including their first name and last name"
+                                            "Enter the first and last name of the assessor"
       end
     end
 
@@ -348,7 +348,7 @@ describe "Acceptance::Assessor", type: :feature do
       it "displays an error message" do
         expect(response.body).to have_css "span",
                                           text:
-                                            "Enter the assessor’s full name, including their first name and last name"
+                                            "Enter the first and last name of the assessor"
       end
     end
 
