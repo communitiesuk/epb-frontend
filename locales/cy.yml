@@ -1417,3 +1417,17 @@ cy:
       finding_yes: "Yes"
       finding_no: "No"
       recommendations: "The assessor made the following notes and recommendations:"
+
+  data_gap_warning:
+    domestic:
+      pre_text: 'Welsh: For certificates issued between 9 June 2020 and 19 September 2020, you should use:'
+      link_ew: 'Welsh: <a href="https://www.epcregister.com">the EPC register for England and Wales</a>'
+      link_ni: 'Welsh: <a href="https://www.epbniregister.com">the EPC register for Northern Ireland</a>'
+      post_text_1: 'Welsh: Find all other certificates and reports using this page’s search'
+      post_text_2: 'Welsh: If you cannot find a certificate, you should contact the energy assessor who carried out the assessment.'
+    non_domestic:
+      pre_text: 'Welsh: For certificates issued between 9 June 2020 and 19 September 2020, you should use:'
+      link_ew: 'Welsh: <a href="https://www.ndepcregister.com">the energy performance register for England and Wales</a>'
+      link_ni: 'Welsh: <a href="https://www.epbniregisternd.com">the energy performance register for Northern Ireland</a>'
+      post_text_1: 'Welsh: Find all other certificates and reports using this page’s search.'
+      post_text_2: 'Welsh: If you cannot find a certificate or report, you should contact the energy assessor who carried out the assessment.'

@@ -37,6 +37,15 @@ describe "Acceptance::Non Domestic Certificate" do
         )
       end
 
+      it "displays the data gap warning" do
+        expect(response.body).to include(
+                                     "Warning",
+                                     )
+        expect(response.body).to include(
+                                     "For certificates issued between 9 June 2020 and 19 September",
+                                     )
+      end
+
       it "has an input field" do
         expect(response.body).to include('<input id="postcode" name="postcode"')
       end
@@ -313,6 +322,15 @@ describe "Acceptance::Non Domestic Certificate" do
         expect(response.body).to include(
           "Search for energy certificates and reports by reference number",
         )
+      end
+
+      it "displays the data gap warning" do
+        expect(response.body).to include(
+                                     "Warning",
+                                     )
+        expect(response.body).to include(
+                                     "For certificates issued between 9 June 2020 and 19 September",
+                                     )
       end
 
       it "has an input field" do
