@@ -52,7 +52,7 @@
       </h2>
 
       <p class="govuk-body">
-        <%== t('find_an_assessor.before_you_start.existing_epc.description', :link => '<a href="/find-a-certificate">' + t('find_an_assessor.before_you_start.existing_epc.link') + '</a>') %>
+        <%= t('find_an_assessor.before_you_start.existing_epc.description') %> <a href= <%= set_subdomain_url("find-energy-certificate") %>> <%= t('find_an_assessor.before_you_start.existing_epc.link') %></a>
       </p>
 
       <p class="govuk-body">

@@ -82,7 +82,7 @@ en:
         description: 'For commercial or public buildings, use the %{link} service.'
         link: 'find a non domestic assessor'
       existing_epc:
-        description: 'You can %{link}.'
+        description: 'You can'
         link: 'check if the property already has a valid energy certificate'
     property_type:
       question_title: "What type of property is the certificate for?"
@@ -297,7 +297,7 @@ en:
         text: 'For properties in Scotland, use the %{link}.'
         cta: "Scottish government’s EPC service"
       property_guidance:
-        description: 'If your property does not have an energy certificate or the certificate is expired, you can %{link}.'
+        description: 'If your property does not have an energy certificate or the certificate is expired, you can'
         link: 'get a new energy certificate.'
         url:  '/find-an-assessor'
       commercial:
