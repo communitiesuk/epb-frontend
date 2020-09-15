@@ -13,9 +13,14 @@ module Sinatra
         current_url = request.url
 
         return "http://#{subdomain}.local.gov.uk:9292" if settings.development?
-        return "https://#{subdomain}-integration.digital.communities.gov.uk" if current_url.include? "#{subdomain}-integration"
-        return "https://#{subdomain}-staging.digital.communities.gov.uk" if current_url.include? "#{subdomain}-staging"
-        return "https://#{subdomain}.digital.communities.gov.uk" if current_url.include? "#{subdomain}.digital.communities.gov.uk"
+
+        if current_url.include? "integration"
+          "https://#{subdomain}-integration.digital.communities.gov.uk"
+        elsif current_url.include? "staging"
+          "https://#{subdomain}-staging.digital.communities.gov.uk"
+        else
+          "https://#{subdomain}.digital.communities.gov.uk"
+       end
       end
 
       def number_to_currency(number)
