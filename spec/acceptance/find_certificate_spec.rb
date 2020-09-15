@@ -110,7 +110,7 @@ describe "Acceptance::Certificate" do
 
         it "shows a clickable entry" do
           expect(response.body).to include(
-            '<a href="/energy-certificate/1234-5678-9101-1122-1234"',
+            '<a class="govuk-link" href="/energy-certificate/1234-5678-9101-1122-1234"',
           )
         end
 
@@ -501,7 +501,7 @@ describe "Acceptance::Certificate" do
 
         it "shows a clickable entry" do
           expect(response.body).to include(
-            '<a href="/energy-certificate/1234-5678-9101-1121-3141"',
+            '<a class="govuk-link" href="/energy-certificate/1234-5678-9101-1121-3141"',
           )
         end
 

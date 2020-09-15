@@ -12,7 +12,7 @@
       expire = Date.parse(result[:dateOfExpiry]) < Date.today
       %>
         <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header"><a href="/energy-certificate/<%= result[:assessmentId] %>"><%= [results[:addressLine1], results[:addressLine2], results[:town], results[:postcode]].reject { |a| a.to_s.empty? }.join(", ") %></a></th>
+          <th scope="row" class="govuk-table__header"><a class="govuk-link" href="/energy-certificate/<%= result[:assessmentId] %>"><%= [results[:addressLine1], results[:addressLine2], results[:town], results[:postcode]].reject { |a| a.to_s.empty? }.join(", ") %></a></th>
           <td class="govuk-table__cell"><%= result[:currentEnergyEfficiencyBand].upcase %></td>
           <td class="govuk-table__cell<%== ( expire ? ' govuk-!-font-weight-bold expired-text"' : "") %>"><%= date(result[:dateOfExpiry]) %> <%= expire ? t('find_certificate_results.expired') : '' %></td>
         </tr>

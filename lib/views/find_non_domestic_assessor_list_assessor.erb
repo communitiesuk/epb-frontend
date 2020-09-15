@@ -28,7 +28,7 @@
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key govuk-!-font-weight-regular"><%= t('find_assessor_by_postcode_results.contact_details.email') %></dt>
           <dd class="govuk-summary-list__value govuk-!-font-weight-bold">
-            <a href="mailto:<%= assessor[:contactDetails][:email] %>"><%= assessor[:contactDetails][:email] %></a>
+            <a class="govuk-link" href="mailto:<%= assessor[:contactDetails][:email] %>"><%= assessor[:contactDetails][:email] %></a>
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -55,7 +55,7 @@
                     <%== t('schemes.contact_details.text', scheme_name: scheme_details(assessor, 'name')) %>
                   </p>
                   <p class="govuk-body">
-                    <%== t('schemes.contact_details.email') %> <a href="mailto:<%= scheme_details(assessor, 'email') %>"><%= scheme_details(assessor, 'email') %></a>
+                    <%== t('schemes.contact_details.email') %> <a class="govuk-link" href="mailto:<%= scheme_details(assessor, 'email') %>"><%= scheme_details(assessor, 'email') %></a>
                   </p>
                   <p class="govuk-body">
                     <%== t('schemes.contact_details.telephone') %> <%= scheme_details(assessor, 'phone') %>

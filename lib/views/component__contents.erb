@@ -2,7 +2,7 @@
   <h2 class="govuk-heading-m"><%= title %></h2>
   <div class="dashed-p">
     <% sections.each do |section| %>
-      <p class="govuk-body"><a href="<%= section[:link] %>"><%=
+      <p class="govuk-body"><a class="govuk-link" href="<%= section[:link] %>"><%=
         t(section[:text])
       %></a></p>
     <% end %>

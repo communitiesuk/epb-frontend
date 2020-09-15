@@ -65,7 +65,7 @@
             <span class="govuk-visually-hidden"><%= t('error.error') %></span><%== t(errors[:generic][:error]) %>
           </span>
         <p class="govuk-body">
-          <%== t(errors[:generic][:body], :link => '<a href="' + localised_url(errors[:generic][:url]) + '">' +
+          <%== t(errors[:generic][:body], :link => '<a class="govuk-link" href="' + localised_url(errors[:generic][:url]) + '">' +
             t(errors[:generic][:cta]) +
             '</a>') %>
         </p>

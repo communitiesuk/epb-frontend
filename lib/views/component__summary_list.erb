@@ -24,7 +24,7 @@
           case type
           when "email"
             %>
-              <a href="mailto:<%= value %>"><%= value %></a>
+              <a class="govuk-link" href="mailto:<%= value %>"><%= value %></a>
             <%
           when "details"
             %>
@@ -41,7 +41,7 @@
             <%
           when "link"
               %>
-                <a href="<%= link %>"><%= value %></a>
+                <a class="govuk-link" href="<%= link %>"><%= value %></a>
               <%
           else
             %>

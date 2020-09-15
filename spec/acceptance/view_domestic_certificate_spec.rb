@@ -297,7 +297,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
 
       it "shows the making changes text with the correct reduction value" do
         expect(response.body).to include(
-          'By making the <a href="#recommendations">recommended changes</a>, you will reduce this property’s CO2 emissions by 1.0 tonnes per year.',
+          'By making the <a class="govuk-link" href="#recommendations">recommended changes</a>, you will reduce this property’s CO2 emissions by 1.0 tonnes per year.',
         )
       end
 
@@ -334,7 +334,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
 
         it "shows the making changes text with the correct reduction value" do
           expect(response.body).to include(
-            'By making the <a href="#recommendations">recommended changes</a>, you will reduce this property’s CO2 emissions by 1.33 tonnes per year.',
+            'By making the <a class="govuk-link" href="#recommendations">recommended changes</a>, you will reduce this property’s CO2 emissions by 1.33 tonnes per year.',
           )
         end
 
@@ -483,7 +483,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
 
       it "shows the providers email" do
         expect(response.body).to include("Email")
-        expect(response.body).to include('<a href="mailto:lender@example.com">')
+        expect(response.body).to include('<a class="govuk-link" href="mailto:lender@example.com">')
       end
 
       context "but there are no provider contact details" do
@@ -591,7 +591,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
 
       it "does not show the Green Deal Plan section tab" do
         expect(response.body).to_not include(
-          '<a href="#renting">Green Deal Plan</a>',
+          '<a class="govuk-link" href="#renting">Green Deal Plan</a>',
         )
       end
     end
