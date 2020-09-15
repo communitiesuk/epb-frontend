@@ -13,7 +13,7 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
     end
 
     it "shows the page title" do
-      expect(response.body).to include("Display Energy Certificate")
+      expect(response.body).to include("Display energy certificate")
     end
 
     it "shows the contents section" do

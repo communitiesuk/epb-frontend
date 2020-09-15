@@ -20,7 +20,7 @@ describe "Acceptance::PrintableDisplayEnergyCertificate", type: :feature do
     end
 
     it "shows the page title" do
-      expect(response.body).to have_text "Display Energy Certificate"
+      expect(response.body).to have_text "Display energy certificate"
     end
 
     it "shows the summary box" do

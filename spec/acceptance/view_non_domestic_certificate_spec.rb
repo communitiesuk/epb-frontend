@@ -288,7 +288,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
 
     describe "viewing the report contents section" do
       it "shows the report contents title" do
-        expect(response.body).to include(">Certificate Contents</h2>")
+        expect(response.body).to include(">Certificate contents</h2>")
       end
 
       it "shows the section links" do

@@ -569,7 +569,7 @@ en:
   non_domestic_epc:
     top_heading: 'Non-domestic energy performance certificate (EPC)'
     contents:
-      title: 'Certificate Contents'
+      title: 'Certificate contents'
     energy_rating_section:
       title: 'Energy efficiency rating for this building'
       current_rating_text: 'This building’s current energy rating is %{current_energy_efficiency_band}.'
@@ -609,7 +609,7 @@ en:
         expired: 'This certificate expired on'
         certificate_id: 'Certificate number'
       contents:
-        title: 'Report Contents'
+        title: 'Report contents'
       rating:
         title: 'Energy rating and EPC'
         current_energy_rating: 'This building’s current energy rating is %{band}.'
@@ -700,7 +700,7 @@ en:
         heat-demand: 'Estimated energy use and potential savings'
         information: 'Contacting the assessor and accreditation scheme'
         green_deal: 'Green deal plan'
-        related_asssesments: 'Related asssesments'
+        related_asssesments: 'Related assessments'
         previous: 'Other certificates for this property'
     sections:
       renting:
@@ -1243,7 +1243,7 @@ en:
       intro: 'If you typed the web address, check it is correct.'
       body: 'If you pasted the web address, check you copied the entire address.'
   dec:
-    top_heading: "Display Energy Certificate (DEC)"
+    top_heading: "Display energy certificate"
     tagline: "how energy efficient is this building?"
     sections:
       contents:
@@ -1328,7 +1328,7 @@ en:
             disclosure_number_not_valid: 'The disclosure code provided is not valid.'
 
   dec_rr:
-    top_heading: "Display Energy Certificate Recommendation Report (DEC-RR)"
+    top_heading: "Display energy certificate recommendation report"
     sections:
       contents:
         title: 'Report contents'
@@ -1360,7 +1360,7 @@ en:
         scheme: 'Accreditation scheme'
 
   ac_cert:
-    top_heading: 'Air Conditioning Inspection Certificate'
+    top_heading: 'Air conditioning inspection certificate'
     sections:
       assessment:
         title: 'Assessment details'
@@ -1547,7 +1547,7 @@ en:
       related_certificate:
         title: "Related certificate"
         text: "A summary of this information can be found on the %{link}."
-        cta: "associated Air Conditioning Inspection Certificate"
+        cta: "associated air conditioning inspection certificate"
     flag:
       finding_yes: "Yes"
       finding_no: "No"

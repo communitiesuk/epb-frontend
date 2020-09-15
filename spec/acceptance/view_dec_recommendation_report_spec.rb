@@ -30,7 +30,7 @@ describe "Acceptance::DecRecommendationReport", type: :feature do
 
     it "shows the page title" do
       expect(response.body).to include(
-        "Display Energy Certificate Recommendation Report (DEC-RR)",
+        "Display energy certificate recommendation report",
       )
     end
 
