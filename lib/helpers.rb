@@ -15,11 +15,11 @@ module Sinatra
         if settings.development?
           "http://#{subdomain}.local.gov.uk:9292"
         elsif current_url.include? "#{subdomain}-staging"
-          "#{subdomain}-staging.digital.communities.gov.uk"
+          "https://#{subdomain}-staging.digital.communities.gov.uk"
         elsif current_url.include? "#{subdomain}-integration"
-          "#{subdomain}-integration.digital.communities.gov.uk"
+          "https://#{subdomain}-integration.digital.communities.gov.uk"
         else
-          "#{subdomain}.digital.communities.gov.uk"
+          "https://#{subdomain}.digital.communities.gov.uk"
         end
       end
 
