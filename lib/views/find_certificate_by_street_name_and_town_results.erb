@@ -1,5 +1,11 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+    <a
+      href="<%= localised_url('/find-a-certificate/search-by-street-name-and-town')%>"
+      class="govuk-back-link">
+      <%=t('layout.body.breadcrumb.back')%>
+    </a>
+
     <h1 class="govuk-heading-xl">
       <%= t('find_certificate_by_street_name_and_town_results.top_heading') %>
     </h1>
@@ -17,10 +23,5 @@
         <%= t('find_certificate_by_street_name_and_town_results.no_certificates') %>
       </p>
     <% end %>
-    <a
-      href="<%= localised_url('/find-a-certificate/search-by-reference-number')%>"
-      class="govuk-back-link">
-      <%=t('layout.body.breadcrumb.back')%>
-    </a>
   </div>
 </div>
