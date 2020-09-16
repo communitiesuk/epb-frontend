@@ -5,11 +5,17 @@
       class="govuk-back-link">
       <%=t('layout.body.breadcrumb.back')%>
     </a>
-    
+
     <h1 class="govuk-heading-xl">
       <%= t('find_certificate_by_postcode_results.top_heading') %>
     </h1>
 
+    <p class="govuk-body">
+      <%= t('find_certificate_by_postcode_results.no_epc.get_a_new_one') %>
+      <a href= <%= set_subdomain_url("getting-new-energy-certificate") %>>
+        <%= t('find_certificate_by_postcode_results.no_epc.get_a_new_one_link') %>
+      </a>.
+    </p>
     <% if results.size > 0 %>
       <h2 class="govuk-heading-m"><%= t('find_certificate_by_postcode_results.list', :length => count_certificates(results), :postcode => params['postcode'] ) %></h2>
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">

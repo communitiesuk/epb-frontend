@@ -9,6 +9,12 @@
     <h1 class="govuk-heading-xl">
       <%= t('find_certificate_by_street_name_and_town_results.top_heading') %>
     </h1>
+    <p class="govuk-body">
+      <%= t('find_certificate_by_postcode_results.no_epc.get_a_new_one') %>
+      <a href= <%= set_subdomain_url("getting-new-energy-certificate") %>>
+        <%= t('find_certificate_by_postcode_results.no_epc.get_a_new_one_link') %>
+      </a>.
+    </p>
   </div>
 
   <div class="govuk-grid-column-full">
