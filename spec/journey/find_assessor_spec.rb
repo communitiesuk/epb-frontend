@@ -119,7 +119,7 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
     click_on "find an assessor by name"
     fill_in "name", with: "Supercommon Name"
     click_on "Search"
-    expect(page).to have_content "7 results, found by the name Supercommon Name"
+    expect(page).to have_content "7 results for the name Supercommon Name"
   end
 
   it "displays accreditation scheme contact details for an existing assessor by name" do

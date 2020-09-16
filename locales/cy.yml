@@ -251,7 +251,7 @@ cy:
     accreditation_summary_title: 'Welsh: Accreditation schemes and complaints'
     accreditation_summary_text: 'Welsh: Accreditation schemes are appointed by the government to ensure that assessors are qualified to carry out energy assessments and to create EPCs.<br /><br />If you’re unhappy about an energy assessment or EPC, you can complain to the assessor directly. If you’re still unhappy, you should contact your assessor’s accreditation scheme.'
     results:
-      results: 'Welsh: %{quantity} results, found by the name %{name}'
+      results: 'Welsh: %{quantity} results for the name %{name}'
       results_like: 'Welsh: %{quantity} results, similar to the name %{name}'
     contact_details_text: 'Welsh: Contact details'
     accredited_by_text: 'Welsh: Accreditation scheme'
