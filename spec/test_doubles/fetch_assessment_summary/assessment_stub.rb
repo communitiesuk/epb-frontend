@@ -47,32 +47,6 @@ module FetchAssessmentSummary
             registeredBy: { name: "quidos", schemeId: "3" },
           },
           executiveSummary: executive_summary,
-          equipmentOwner: {
-            name: "Office manager",
-            telephone: "01234",
-            organisation: "The bank",
-            address: {
-              addressLine1: "High street",
-              addressLine2: "North side",
-              addressLine3: nil,
-              addressLine4: nil,
-              town: "NEWCASTLE UPON TYNE",
-              postcode: "NE2 7DT",
-            },
-          },
-          equipmentOperator: {
-            responsiblePerson: "Chief engineer",
-            telephone: "44432",
-            organisation: "Air Con Ltd",
-            address: {
-              addressLine1: "Low street",
-              addressLine2: nil,
-              addressLine3: nil,
-              addressLine4: nil,
-              town: "COVENTRY",
-              postcode: "CV11 2FF",
-            },
-          },
           keyRecommendations: {
             efficiency: [
               { sequence: "0", text: "A way to improve your efficiency" },

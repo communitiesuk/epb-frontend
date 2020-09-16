@@ -28,10 +28,6 @@
           text: 'ac_report.sections.key_recommendations.title'
         },
         {
-          link: '#owner_operator',
-          text: 'ac_report.sections.owner_operator.title'
-        },
-        {
           link: '#sub_systems',
           text: 'ac_report.sections.sub_systems.title',
           hidden: assessment[:subSystems].empty?
@@ -85,10 +81,6 @@
     } %>
 
     <%== erb :ac_report__key_recommendations, locals: {
-      assessment: assessment,
-    } %>
-
-    <%== erb :ac_report__owner_operator, locals: {
       assessment: assessment,
     } %>
 
