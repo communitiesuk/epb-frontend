@@ -274,6 +274,12 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
       expect(response.body).to have_css "dd", text: "13"
       expect(response.body).to have_css "dt", text: "The Temperature is Deemed"
       expect(response.body).to have_css "dd", text: "As expected"
+
+      expect(response.body).to have_css "h5",
+                                        text: "Are there any signs of a refrigerant leak?"
+      expect(response.body).to have_css "p",
+                                        text:
+                                          "There were no visible signs of a leak observed during the inspection."
     end
   end
 end

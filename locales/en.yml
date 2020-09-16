@@ -1603,6 +1603,7 @@ en:
               post_processor: "Post Compressor(°C)"
               ambient: "Ambient(°C)"
               acceptable_temperature: "The Temperature is Deemed"
+            leak: "Are there any signs of a refrigerant leak?"
       related_certificate:
         title: "Related certificate"
         text: "A summary of this information can be found on the %{link}."

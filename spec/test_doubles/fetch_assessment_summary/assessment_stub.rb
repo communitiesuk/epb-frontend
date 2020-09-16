@@ -224,13 +224,41 @@ module FetchAssessmentSummary
                 ],
                 postProcessor: "7",
                 preCompressor: "22",
-                refrigerantLeak:
-                  "\n            There were no visible signs of a leak observed during the inspection.\n            No\n            \n              \n                1\n                OTHER\n                Ensure a site F Gas Register is always in place on site in accordance with current legislation and complete the register any time refrigerant is added/removed from a system.\n              \n            \n          ",
+                refrigerantLeak: {
+                  note:
+                    "There were no visible signs of a leak observed during the inspection.",
+                  state: false,
+                },
                 refrigerantName: "R410A",
               },
-              maintenance: {},
-              metering: {},
-              humidityControl: {},
+              maintenance: {
+                competentPerson: {
+                  note:
+                    "Maintenance contract advised as being in place and would appear satisfactory due to unit condition.",
+                  state: true,
+                },
+                guidance: nil,
+                recordsKept: {
+                  note: "Yes system appears in good order for age.", state: true
+                },
+              },
+              metering: {
+                bemInstalled: {
+                  note: "The system is linked to a Central Controller.",
+                  state: true,
+                },
+                excessiveUse: { note: "No details available.", state: false },
+                meteringInstalled: { note: "", state: false },
+                usageRecords: {
+                  note:
+                    "There were no records of air conditioning plant usage or sub-metered energy consumption with expected hours of use per year for the plant or systems located on site.",
+                  state: false,
+                },
+              },
+              humidityControl: {
+                note: "N/A no humidity control installed to this system",
+                state: false,
+              },
             },
             {
               systemNumber:
@@ -297,8 +325,11 @@ module FetchAssessmentSummary
                 ],
                 postProcessor: "8",
                 preCompressor: "22",
-                refrigerantLeak:
-                  "\n            There were no visible signs of a leak observed during the inspection.\n            No\n            \n              \n                1\n                OTHER\n                Ensure a site F Gas Register is always in place on site in accordance with current legislation and complete the register any time refrigerant is added/removed from a system.\n              \n            \n          ",
+                refrigerantLeak: {
+                  note:
+                    "There were no visible signs of a leak observed during the inspection.",
+                  state: false,
+                },
                 refrigerantName: "R410A",
               },
               maintenance: {},

@@ -80,5 +80,11 @@
       translation_prefix: 'ac_report.sections.cooling_plants.cooling_plant.refrigeration.details.',
       skip_null: true
     } %>
-  <% end %>
+
+    <h5 class="govuk-heading-s"><%= t('ac_report.sections.cooling_plants.cooling_plant.refrigeration.leak') %></h5>
+    <p class="govuk-body"><%= t('ac_report.sections.cooling_plants.cooling_plant.inspection.' + (cooling_plant[:refrigeration][:refrigerantLeak] ? "positive": "negative")) %></p>
+    <% unless cooling_plant[:refrigeration][:refrigerantLeak][:note].nil? %>
+      <p><%= cooling_plant[:refrigeration][:refrigerantLeak][:note] %></p>
+    <% end %>
+<% end %>
 </div>
