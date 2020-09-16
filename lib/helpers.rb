@@ -20,7 +20,7 @@ module Sinatra
           "https://#{subdomain}-staging.digital.communities.gov.uk"
         else
           "https://#{subdomain}.digital.communities.gov.uk"
-       end
+        end
       end
 
       def number_to_currency(number)
