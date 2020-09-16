@@ -231,10 +231,11 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
       expect(response.body).to have_css "dd", text: "2014"
       expect(response.body).to have_css "dt", text: "Areas/Systems Served"
       expect(response.body).to have_css "dd", text: "Sales Area"
-      expect(response.body).to have_css "dt",
+
+      expect(response.body).to have_css "h5",
                                         text:
                                           "Note below any discrepancy between information provided by client and on site information collected, or any information of additional relevance to the cooling plant/system:"
-      expect(response.body).to have_css "dd", text: "Something more random"
+      expect(response.body).to have_css "p", text: "Something more random"
 
       expect(response.body).to have_css "h4", text: "Approved sections"
       expect(response.body).to have_css "h5",
