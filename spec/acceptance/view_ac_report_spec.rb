@@ -45,8 +45,7 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
       expect(response.body).to have_css "dt", text: "Employer/Trading name"
       expect(response.body).to have_css "dd", text: "Joe Bloggs Ltd"
       expect(response.body).to have_css "dt", text: "Employer/Trading address"
-      expect(response.body).to have_css "dd",
-                                        text: "123 My Street, My City, AB3 4CD"
+      expect(response.body).to have_css "dd", text: "123 My Street, My City, AB3 4CD"
     end
 
     it "can show the Executive summary section" do
@@ -195,6 +194,44 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
         expect(response.body).not_to have_css "h2",
                                               text: "Sub systems inspected"
       end
+    end
+
+    it "can show the cooling plant section" do
+      expect(response.body).to have_css "h2", text: "Cooling plants"
+      expect(response.body).to have_css "h3", text: "Cooling plant"
+      expect(response.body).to have_css "dt", text: "Unit Identifier"
+      expect(response.body).to have_css "dd", text: "VOL001/SYS001 R410A Inverter Split Systems to Sales Are"
+      expect(response.body).to have_css "dt", text: "Component Identifier"
+      expect(response.body).to have_css "dd", text: "VOL001/SYS001/CP1 Sampled R410A Inverter Split Area (1)"
+
+      expect(response.body).to have_css "h4", text: "Equipment"
+
+      expect(response.body).to have_css "dt", text: "Rated Cooling Capacity (kW)"
+      expect(response.body).to have_css "dd", text: "10"
+      expect(response.body).to have_css "dt",
+                                        text: "Description (type/details)"
+      expect(response.body).to have_css "dd", text: "Externally on roof"
+      expect(response.body).to have_css "dt",
+                                        text: "Description (type/details)"
+      expect(response.body).to have_css "dd", text: "Externally on roof"
+      expect(response.body).to have_css "dt", text: "Manufacturer"
+      expect(response.body).to have_css "dd", text: "Mitsubishi"
+      expect(response.body).to have_css "dt", text: "Model/Reference"
+      expect(response.body).to have_css "dd", text: "FDC100VN"
+      expect(response.body).to have_css "dt", text: "Rated Cooling Capacity (kW)"
+      expect(response.body).to have_css "dd", text: "3"
+      expect(response.body).to have_css "dt", text: "Serial Number"
+      expect(response.body).to have_css "dd", text: "not visible"
+      expect(response.body).to have_css "dt", text: "Year Plant Installed"
+      expect(response.body).to have_css "dd", text: "2014"
+      expect(response.body).to have_css "dt", text: "Refrigerant Type"
+      expect(response.body).to have_css "dd", text: "R410A"
+      expect(response.body).to have_css "dt", text: "Year Plant Installed"
+      expect(response.body).to have_css "dd", text: "2014"
+      expect(response.body).to have_css "dt", text: "Areas/Systems Served"
+      expect(response.body).to have_css "dd", text: "Something random"
+      expect(response.body).to have_css "dt", text: "Note below any discrepancy between information provided by client and on site information collected, or any information of additional relevance to the cooling plant/system:"
+      expect(response.body).to have_css "dd", text: "Something random"
     end
   end
 end

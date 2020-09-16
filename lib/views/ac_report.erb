@@ -92,6 +92,10 @@
       assessment: assessment,
     } %>
 
+    <%== erb :ac_report__cooling_plants, locals: {
+      cooling_plants: assessment[:cooling_plants],
+    } %>
+
     <% unless assessment[:airHandlingSystems].empty? %>
       <%== erb :ac_report__air_handling_systems, locals: {
         assessment: assessment,

@@ -1562,6 +1562,9 @@ en:
         title: "Related certificate"
         text: "A summary of this information can be found on the %{link}."
         cta: "associated Air Conditioning Inspection Certificate"
+      cooling_plant:
+        title:
+
     flag:
       finding_yes: "Yes"
       finding_no: "No"

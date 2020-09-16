@@ -107,6 +107,56 @@ module FetchAssessmentSummary
               monitoringCapability: false,
             },
           },
+          cooling_plants: [
+            {
+              system_number: "VOL001/SYS001 R410A Inverter Split Systems to Sales Area",
+              identifier: "VOL001/SYS001/CP1 Sampled R410A Inverter Split Area (1)",
+              equipment: {
+                cooling_capacity: "10",
+                description: "Single Split",
+                location: "Externally on roof",
+                manufacturer: "Mitsubishi",
+                model_reference: "FDC100VN",
+                refrigerant_charge: "3",
+                refrigerant_type: {
+                  ecfgasregulation: nil, ecozoneregulation: nil, type: "R410A"
+                },
+                serial_number: "not visible",
+                year_installed: "2014",
+              },
+              inspection: {},
+              sizing: {},
+              refrigeration: {},
+              maintenance: {},
+              metering: {},
+              humidity_control: {},
+            },
+            {
+              system_number: "VOL001/SYS001 R410A Inverter Split Systems to Sales Area",
+              identifier: "VOL001/SYS001/CP2 Sampled R410A Inverter Split Area (2)",
+              equipment: {
+                cooling_capacity: "10",
+                description: "Single Split",
+                location: "Externally on roof",
+                manufacturer: "Mitsubishi",
+                model_reference: "FDC100VN",
+                refrigerant_charge: "3",
+                refrigerant_type: {
+                  ecfgasregulation: nil, ecozoneregulation: nil, type: "R410A"
+                },
+                serial_number: "not visible",
+                year_installed: "2014",
+                area_served: "Sales Area",
+                discrepancy_note: "Something random",
+              },
+              inspection: {},
+              sizing: {},
+              refrigeration: {},
+              maintenance: {},
+              metering: {},
+              humidity_control: {},
+            },
+          ],
           airHandlingSystems: [
             {
               equipment: {
