@@ -1625,6 +1625,9 @@ en:
             title: "Water Cooled Chillers (Cooling Towers & Evaporative Condensers)"
             waterCooled: "Is the water flow through cooling towers or evaporative coolers even and efficient, and there is no loss of water?"
             waterTreatment: "Is there a management regime in place to ensure that water is regularly checked and treated to ensure that there is no Legionella risk?"
+          humidity_control:
+            title: "Humidity Control"
+            control: "Is there separate equipment installed for humidity control?"
       related_certificate:
         title: "Related certificate"
         text: "A summary of this information can be found on the %{link}."

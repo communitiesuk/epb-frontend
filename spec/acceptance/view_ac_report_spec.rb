@@ -332,6 +332,12 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
                                           "Is there a management regime in place to ensure that water is regularly checked and treated to ensure that there is no Legionella risk?"
       expect(response.body).to have_css "p",
                                         text: "N/A no cooling towers installed to this site"
+
+      expect(response.body).to have_css "h5",
+                                        text:
+                                          "Is there separate equipment installed for humidity control?"
+      expect(response.body).to have_css "p",
+                                        text: "N/A no humidity control installed to this system"
     end
   end
 end

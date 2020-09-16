@@ -127,5 +127,12 @@
         <% end %>
       <% end %>
     <% end %>
+
+    <h4 class="govuk-heading-s"><%= t('ac_report.sections.cooling_plants.cooling_plant.humidity_control.title') %></h4>
+    <h5 class="govuk-heading-s govuk-!-margin-bottom-0"><%= t('ac_report.sections.cooling_plants.cooling_plant.humidity_control.control') %></h5>
+    <p class="govuk-body"><%= t('ac_report.sections.cooling_plants.cooling_plant.inspection.' + (cooling_plant[:humidityControl][:state] ? "positive": "negative")) %></p>
+    <% unless cooling_plant[:humidityControl][:note].nil? %>
+      <p class="govuk-body"><%= cooling_plant[:humidityControl][:note] %></p>
+    <% end %>
 <% end %>
 </div>
