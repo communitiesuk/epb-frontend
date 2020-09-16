@@ -30,20 +30,7 @@ describe "Journey::FindDomesticCertificate", type: :feature, journey: true do
     click_on "Continue"
     fill_in "postcode", with: "SW1A 2AA"
     click_button "Find"
-    expect(page).to have_content "1-2 of 2 results matching SW1A 2AA"
-  end
-
-  describe "viewing in Welsh" do
-    it "finds a certificate by postcode" do
-      visit "http://find-energy-certificate.local.gov.uk:9393"
-      click_on "Welsh (Cymraeg)"
-      click_on "Welsh: Start now"
-      find("#label-domestic").click
-      click_on "Welsh: Continue"
-      fill_in "postcode", with: "SW1A 2AA"
-      click_button "Welsh: Find"
-      expect(page).to have_content "Welsh: 1-2 of 2 results matching SW1A 2AA"
-    end
+    expect(page).to have_content "2 EPCs for SW1A 2AA"
   end
 
   it "displays an error message when entering an empty postcode" do
@@ -73,15 +60,15 @@ describe "Journey::FindDomesticCertificate", type: :feature, journey: true do
     click_on "Continue"
     fill_in "postcode", with: "SW1A 2AA"
     click_on "Find"
-    expect(page).to have_content "of 2 results matching"
+    expect(page).to have_content "2 EPCs for SW1A 2AA"
   end
 
-  it "redirects directly to the certificate page when entering a valid certificate reference number" do
+  it "redirects directly to the certificate page when entering a valid certificate number" do
     visit "http://find-energy-certificate.local.gov.uk:9393"
     click_on "Start now"
     find("#label-domestic").click
     click_on "Continue"
-    click_on "certificate by reference"
+    click_on "find an EPC by using its certificate number"
     fill_in "reference_number", with: "4567-6789-4567-6789-4567"
     click_on "Find"
     expect(page).to have_content "2 Marsham Street"

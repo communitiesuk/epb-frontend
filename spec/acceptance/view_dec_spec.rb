@@ -13,7 +13,7 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
     end
 
     it "shows the page title" do
-      expect(response.body).to include("Display Energy Certificate")
+      expect(response.body).to include("Display energy certificate")
     end
 
     it "shows the contents section" do
@@ -27,7 +27,7 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
                                          href: "#recommendation_report"
       expect(response.body).to have_link "Previous operational ratings",
                                          href: "#previous_energy_ratings"
-      expect(response.body).to have_link "Total CO2 emissions", href: "#co2"
+      expect(response.body).to have_link "Total carbon dioxide (CO2) emissions", href: "#co2"
       expect(response.body).to have_link "Technical information",
                                          href: "#technical_information"
       expect(response.body).to have_link "Administrative information",
@@ -100,7 +100,7 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
     end
 
     it "shows the total CO2 emissions section" do
-      expect(response.body).to include("Total CO2 emissions")
+      expect(response.body).to include("Total carbon dioxide (CO2) emissions")
       expect(response.body).to include(
         "This tells you how much carbon dioxide the building emits. It shows tonnes per year of CO2.",
       )
@@ -239,7 +239,7 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
       expect(response.body).to have_css "p",
                                         text:
                                           "If you are aware of previous certificates for this property and they are not listed here, please contact the Help Desk at 01632 164 6672."
-      expect(response.body).to have_css "dt", text: "Reference number"
+      expect(response.body).to have_css "dt", text: "Certificate number"
       expect(response.body).to have_link "0000-0000-0000-0000-0001",
                                          href: "/energy-certificate/0000-0000-0000-0000-0001"
       expect(response.body).to have_css "dt", text: "Valid until"

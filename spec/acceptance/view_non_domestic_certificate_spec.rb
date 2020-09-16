@@ -36,7 +36,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
 
     it "shows the non-domestic energy performance certificate title" do
       expect(response.body).to include(
-        '<h1 class="govuk-heading-xl">Non-domestic Energy Performance Certificate</h1>',
+        '<h1 class="govuk-heading-xl">Non-domestic energy performance certificate (EPC)</h1>',
       )
     end
 
@@ -90,7 +90,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
 
       it "shows the letting info text" do
         expect(response.body).to include(
-          '<p class="govuk-body">Properties can be let if they have an energy rating of A+ to E.</p>',
+          '<p class="govuk-body">Properties can be let if they have an energy rating from A+ to E.</p>',
         )
 
         expect(response.body).to include(
@@ -140,7 +140,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
 
         it "shows the recommendation text" do
           expect(response.body).to include(
-            '<p class="govuk-body">Properties can be let if they have an energy rating of A+ to E. The <a class="govuk-link" href="#">recommendation report</a> sets out changes you can make to improve the property’s rating.</p>',
+            '<p class="govuk-body">Properties can be let if they have an energy rating from A+ to E. The <a class="govuk-link" href="#">recommendation report</a> sets out changes you can make to improve the property’s rating.</p>',
           )
         end
       end
@@ -187,7 +187,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
 
       it "shows the energy rating score description" do
         expect(response.body).to include(
-          '<p class="govuk-body">Buildings are also given a score. The larger the number, the more CO2 your building is likely to emit.</p>',
+          '<p class="govuk-body">Buildings are also given a score. The larger the number, the more carbon dioxide (CO2) your building is likely to emit.</p>',
         )
       end
 
@@ -288,7 +288,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
 
     describe "viewing the report contents section" do
       it "shows the report contents title" do
-        expect(response.body).to include(">Certificate Contents</h2>")
+        expect(response.body).to include(">Certificate contents</h2>")
       end
 
       it "shows the section links" do
@@ -332,7 +332,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
       expect(response.body).to have_css "p",
                                         text:
                                           "If you are aware of previous certificates for this property and they are not listed here, please contact the Help Desk at 01632 164 6672."
-      expect(response.body).to have_css "dt", text: "Reference number"
+      expect(response.body).to have_css "dt", text: "Certificate number"
       expect(response.body).to have_link "0000-0000-0000-0000-0001",
                                          href: "/energy-certificate/0000-0000-0000-0000-0001"
       expect(response.body).to have_css "dt", text: "Valid until"

@@ -97,9 +97,7 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
     click_on "Continue"
     click_on "find an assessor by name"
     click_on "Search"
-    expect(
-      page,
-    ).to have_content "Enter the assessor’s full name, including their first name and last name"
+    expect(page).to have_content "Enter the first and last name of the assessor"
   end
 
   it "displays an assessor when searched for one that does exist" do
@@ -110,9 +108,7 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
     click_on "find an assessor by name"
     fill_in "name", with: "Supercommon"
     click_on "Search"
-    expect(
-      page,
-    ).to have_content "Enter the assessor’s full name, including their first name and last name"
+    expect(page).to have_content "Enter the first and last name of the assessor"
   end
 
   it "displays an assessor when searched for one that does exist" do

@@ -1,6 +1,6 @@
 en:
   related_content:
-    title: 'Related Content'
+    title: 'Related content'
     guidance_on_epc:
       title: 'Guidance on EPCs when buying or selling your home'
       url: 'https://www.gov.uk/buy-sell-your-home/energy-performance-certificates'
@@ -33,21 +33,6 @@ en:
         license: 'All content is available under the <a class="govuk-footer__link" href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated'
         copyright: '<a class="govuk-footer__link govuk-footer__copyright-logo" href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/">&copy; Crown copyright</a>'
 
-  index:
-    head:
-      title: 'Energy performance of buildings register - Select your service'
-    top_heading: 'Services related to Energy Performance Certificate (EPC)'
-    introduction: 'Use this service to find assessors and certificates'
-    find_an_assessor:
-      body: 'Find a qualified assessor through the %{link} service'
-      url: '/find-an-assessor'
-      cta: 'Find an assessor'
-    find_a_certificate:
-      body: 'Find an existing certificate for a property through the %{link} service'
-      url: '/find-a-certificate'
-      cta: 'Find a certificate'
-    caution: 'This page is intended for Private Beta use, and will not be a part of the public service'
-
   contact:
     help_desk_number: '01632 164 6672'
 
@@ -76,23 +61,23 @@ en:
       phone_text: 'If you need additional support to find an assessor, call our helpdesk on %{link} (Monday to Friday, 9am - 5pm).'
       phone_number: '0233 788 1234'
       scotland:
-        description: 'If the property is in Scotland, use the %{link}'
-        link: 'Scottish government’s energy certificate service'
+        description: 'For properties in Scotland, use the %{link}.'
+        link: 'Scottish energy certificate service'
       commercial:
         description: 'For commercial or public buildings, use the %{link} service.'
         link: 'find a non domestic assessor'
       existing_epc:
-        description: 'You can %{link}.'
+        description: 'You can'
         link: 'check if the property already has a valid energy certificate'
     property_type:
       question_title: "What type of property is the certificate for?"
       options:
         domestic:
           title: "A domestic property"
-          hint: "For example a house or flat"
+          hint: "For example a house or flat."
         non_domestic:
           title: "A non-domestic property"
-          hint: "For example a commercial, industrial or public building"
+          hint: "For example a commercial, industrial or public building."
       cta: "Continue"
   schemes:
     head:
@@ -200,7 +185,7 @@ en:
       title: 'Energy performance of buildings register - Find an energy assessor'
     top_heading: 'Find an assessor by postcode'
     assessor_by_name:
-      title: 'Search by name'
+      title: 'Search by assessor’s name'
       body: 'If you know the name of an assessor and want to check their details, you can %{link}.'
       cta: 'find an assessor by name'
     question: 'Enter the postcode of the property'
@@ -216,12 +201,12 @@ en:
   find_non_domestic_assessor_by_postcode:
     head:
       title: 'Energy performance of buildings register - Find a non-domestic energy assessor'
-    top_heading: 'Find a non-domestic assessor to get a new EPC'
+    top_heading: 'Find an assessor by postcode'
 
   find_non_domestic_assessor_by_postcode_results:
-    top_heading: 'Contact a non-domestic assessor to book an EPC assessment'
+    top_heading: 'Contact an assessor to book an energy assessment'
     qualification:
-      title: 'Qualification'
+      title: 'Qualifications'
       domesticSap: 'Standard Assessment Procedure (SAP)'
       domesticRdSap: 'Reduced Data Standard Assessment Procedure (RdSAP)'
       nonDomesticSp3: 'Air Conditioning Simple Packaged (Level 3)'
@@ -235,7 +220,7 @@ en:
   find_assessor_by_postcode_results:
     head:
       title: 'Energy performance of buildings register - Results for energy assessors near you'
-    top_heading: 'Contact an assessor to book an EPC assessment'
+    top_heading: 'Contact an assessor to book an energy assessment'
     description: 'Contact an assessor listed below to book an energy assessment.'
     no_assessors: 'There are no assessors near you at this point.'
     accreditation_summary_title: 'More information'
@@ -256,15 +241,16 @@ en:
     head:
       title: 'Energy performance of buildings register - Find an energy assessor'
     top_heading: 'Find an assessor by name'
-    question: 'Enter the assessor’s full name'
+    question: 'Enter the assessor’s first and last names'
     hint: 'For example Matt Anderson'
-    name_error: 'Enter the assessor’s full name, including their first name and last name'
+    name_error: 'Enter the first and last name of the assessor'
     button_text: 'Search'
     too_many_results: 'There are too many results for that name. Please narrow your search term.'
 
   find_assessor_by_name_results:
     head:
       title: 'Energy performance of buildings register - Results for energy assessors'
+    top_heading: 'Contact an assessor to book an energy assessment'
     description: 'See what assessors are accredited by the name you searched for.'
     no_assessors: 'There are no assessors with this name.'
     accreditation_summary_title: 'Accreditation schemes and complaints'
@@ -295,31 +281,31 @@ en:
         url: '?lang=cy'
       scotland:
         text: 'For properties in Scotland, use the %{link}.'
-        cta: "Scottish government’s EPC service"
+        cta: "Scottish energy certificate service"
       property_guidance:
-        description: 'If your property does not have an energy certificate or the certificate is expired, you can %{link}.'
+        description: 'If your property does not have an energy certificate or the certificate is expired, you can'
         link: 'get a new energy certificate.'
         url:  '/find-an-assessor'
       commercial:
         url: '/find-a-non-domestic-certificate'
         cta: 'find a non-domestic EPC'
-      call_center: 'If you need additional support to find an EPC, call our helpdesk on 0233 788 1234 (Monday to Friday, 9am - 5pm).'
+      call_center: 'If you need additional support to find an energy certificate or report, call our helpdesk on 0233 788 1234 (Monday to Friday, 9am - 5pm).'
     property_type:
       question_title: "What type of property is the certificate for?"
       options:
         domestic:
           title: "A domestic property"
-          hint: "For example a house or flat"
+          hint: "For example a house or flat."
         non_domestic:
           title: "A non-domestic property"
-          hint: "For example a commercial, industrial or public building"
+          hint: "For example a commercial, industrial or public building."
       cta: "Continue"
 
   find_certificate_by_postcode:
     head:
       title: 'Energy performance of buildings register - Find an energy performance certificate'
-    top_heading: 'Search for an EPC by postcode'
-    question: 'Enter the postcode'
+    top_heading: 'Find an energy performance certificate (EPC) by postcode'
+    question: 'Enter the postcode of the property'
     postcode_not_valid: 'Enter a real postcode'
     button_text: 'Find'
     hint: 'For example SW1A 2AA'
@@ -328,9 +314,9 @@ en:
       body: "If you do not know the property’s postcode, %{link}."
       cta: 'find an EPC using the street name and town'
     certificate_by_reference_number:
-      heading: 'Search by reference number'
-      body: 'Use %{link} if you know your certificate number and want to validate it.'
-      cta: 'find certificate by reference number'
+      heading: 'Search by certificate number'
+      body: "You can %{link}."
+      cta: 'find an EPC by using its certificate number'
     no_network:
       heading: 'Network connection failed'
       body: 'There is an internal network error'
@@ -352,8 +338,8 @@ en:
   find_certificate_by_postcode_results:
     head:
       title: 'Energy performance of buildings register - Results for energy performance certificates at your postcode'
-    top_heading: 'Find an Energy Performance Certificate for a building'
-    list: '1-%{length} of %{length} results matching %{postcode}'
+    top_heading: 'Find an energy performance certificate (EPC)'
+    list: '%{length} EPCs for %{postcode}'
     table:
       address: 'Address'
       rating: 'Energy rating'
@@ -363,31 +349,31 @@ en:
   find_certificate_by_reference_number:
     head:
       title: 'Energy performance of buildings register - Find an energy performance certificate'
-    top_heading: 'Search for an EPC by reference number'
-    question: 'Enter a reference number'
-    reference_number_not_registered: 'A certificate was not found with this reference number'
-    reference_number_not_valid: 'Enter a 20-digit reference number'
+    top_heading: 'Find an energy performance certificate (EPC) by certificate number'
+    question: 'Enter a certificate number'
+    reference_number_not_registered: 'A certificate was not found with this certificate number'
+    reference_number_not_valid: 'Enter a 20-digit certificate number'
     button_text: 'Find'
-    hint: 'For example 1234-5678-9101-1121-3141'
+    hint: 'For example 9002-3775-9101-5482-3149'
     no_network:
       heading: 'Network connection failed'
       body: 'There is an internal network error'
 
   find_certificate_by_reference_number_results:
     head:
-      title: 'Energy performance of buildings register - Results for energy performance certificates by reference number'
-    top_heading: 'Find an Energy Performance Certificate for a building'
+      title: 'Energy performance of buildings register - Results for energy performance certificates by certificate number'
+    top_heading: 'Find an energy performance certificate (EPC)'
     list: '1-%{length} of %{length} results matching %{reference_number}'
     table:
       address: 'Address'
       rating: 'Energy rating'
       expiry: 'Expiry date'
-    no_certificates: 'There are no certificates matching that EPC Reference Number.'
+    no_certificates: 'There are no certificates matching that EPC certificate number.'
 
   find_certificate_by_street_name_and_town:
     head:
       title: 'Energy performance of buildings register - Find an energy performance certificate'
-    top_heading: 'Find an EPC by street and town'
+    top_heading: 'Find an energy performance certificate (EPC) by street and town'
     no_such_address:
       error: 'A certificate was not found at this address.'
       body: 'If you need to get an EPC for your property, please use the %{link} service'
@@ -395,10 +381,10 @@ en:
     button_text: 'Find'
     street_name_question: 'Enter the street'
     street_name_hint: 'For example 14 Primrose Street'
-    town_question: 'Enter the town'
+    town_question: 'Enter the town or city'
     town_hint: 'For example Bournemouth'
     street_name_missing: 'Enter the street name'
-    town_missing: 'Enter the town'
+    town_missing: 'Enter the town or city'
     no_network:
       heading: 'Network connection failed'
       body: 'There is an internal network error'
@@ -414,29 +400,29 @@ en:
     button_text: 'Find'
     street_name_question: 'Enter the street'
     street_name_hint: 'For example 14 Primrose Street'
-    town_question: 'Enter the town'
+    town_question: 'Enter the town or city'
     town_hint: 'For example Bournemouth'
     street_name_missing: 'Enter the street name'
-    town_missing: 'Enter the town'
+    town_missing: 'Enter the town or city'
     no_network:
       heading: 'Network connection failed'
       body: 'There is an internal network error'
 
   find_certificate_by_street_name_and_town_results:
     head:
-      title: 'Energy performance of buildings register - Results for energy performance certificates by reference number'
-    top_heading: 'Find an Energy Performance Certificate for a building'
+      title: 'Energy performance of buildings register - Results for energy performance certificates by certificate number'
+    top_heading: 'Find an energy performance certificate (EPC)'
     list: '1-%{length} of %{length} results matching %{query}'
     table:
       address: 'Address'
       rating: 'Energy rating'
       expiry: 'Expiry date'
-    no_certificates: 'There are no certificates matching that EPC Reference Number.'
+    no_certificates: 'There are no certificates matching that EPC certificate number.'
 
   find_non_dom_certificate_by_street_name_and_town_results:
     head:
       title: 'Energy performance of buildings register - Results for non domestic certificates'
-    top_heading: 'Find an energy certificate or report for a building'
+    top_heading: 'Find an energy certificate or report'
     list: '1-%{length} of %{length} results matching %{query}'
     table:
       address: 'Address'
@@ -490,9 +476,9 @@ en:
       body: "If you do not know the property’s postcode, %{link}."
       cta: 'find an EPC using the street name and town'
     certificate_by_reference_number:
-      heading: 'Search by reference number'
-      body: "Use %{link} if you know your certificate number and want to validate it."
-      cta: 'find certificate by reference number'
+      heading: 'Search by certificate number'
+      body: "You can %{link}."
+      cta: 'find an EPC by using its certificate number'
 
   find_non_dom_certificate_by_postcode_results:
     head:
@@ -504,21 +490,21 @@ en:
   find_non_dom_certificate_by_reference_number:
     head:
       title: 'Energy performance of buildings register - Find an energy performance certificate'
-    top_heading: 'Search for energy certificates and reports by reference number'
-    question: 'Enter a reference number'
-    reference_number_not_registered: 'A certificate was not found with this reference number'
-    reference_number_not_valid: 'Enter a 20-digit reference number'
+    top_heading: 'Search for energy certificates and reports by certificate number'
+    question: 'Enter a certificate number'
+    reference_number_not_registered: 'A certificate was not found with this certificate number'
+    reference_number_not_valid: 'Enter a 20-digit certificate number'
     button_text: 'Find'
-    hint: 'For example 1234-5678-9101-1121-3141'
+    hint: 'For example 9002-3775-9101-5482-3149'
     no_network:
       heading: 'Network connection failed'
       body: 'There is an internal network error'
 
   find_non_dom_certificate_by_reference_number_results:
     head:
-      title: 'Energy performance of buildings register - Results for energy performance certificates and reports matching reference number'
+      title: 'Energy performance of buildings register - Results for energy performance certificates and reports matching certificate number'
     top_heading: 'View energy certificates and reports for non-domestic properties'
-    no_certificates: 'There are no certificates or reports matching that reference number.'
+    no_certificates: 'There are no certificates or reports matching that certificate number.'
     list: '%{length} certificates and reports for %{reference_number}'
 
   component:
@@ -558,7 +544,7 @@ en:
         title: 'Other reports for this property'
         text: 'If you are aware of previous reports for this property and they are not listed here, please contact the Help Desk at %{contact_centre_number}.'
         no_related_reports: 'There are no related reports for this property.'
-      reference_number: 'Reference number'
+      reference_number: 'Certificate number'
       valid_until: 'Valid until'
       expired: 'Expired'
     recommendations:
@@ -581,14 +567,14 @@ en:
     square_metres: 'square metres'
 
   non_domestic_epc:
-    top_heading: 'Non-domestic Energy Performance Certificate'
+    top_heading: 'Non-domestic energy performance certificate (EPC)'
     contents:
-      title: 'Certificate Contents'
+      title: 'Certificate contents'
     energy_rating_section:
       title: 'Energy efficiency rating for this building'
       current_rating_text: 'This building’s current energy rating is %{current_energy_efficiency_band}.'
       rating_desc: 'Buildings are given a rating from A+ (most efficient) to G (least efficient).'
-      score_desc: 'Buildings are also given a score. The larger the number, the more CO2 your building is likely to emit.'
+      score_desc: 'Buildings are also given a score. The larger the number, the more carbon dioxide (CO2) your building is likely to emit.'
       svg:
         aria-label: "This building’s energy rating is %{current_energy_efficiency_band} (%{current_energy_efficiency_rating})"
     sections:
@@ -597,7 +583,7 @@ en:
       renting:
         title: 'Rules on letting this property'
         rental_info:
-          body_1: 'Properties can be let if they have an energy rating of A+ to E.'
+          body_1: 'Properties can be let if they have an energy rating from A+ to E.'
           body_2: 'If a property has an energy rating of F or G, the landlord cannot grant a tenancy to new or existing tenants, unless an exemption has been registered.'
           summary: 'From 1 April 2023, landlords will not be allowed to continue letting a non-domestic property on an existing lease if that property has an energy rating of F or G.'
           guidance_text: 'You can read %{link}.'
@@ -607,7 +593,7 @@ en:
           assistive_text:  'Warning'
           text: 'You may not be able to let this property.'
           body: 'This property has an energy rating of %{current_energy_efficiency_band}. The landlord cannot grant a tenancy to new or existing tenants, unless an exemption has been registered.'
-        recommendation: 'Properties can be let if they have an energy rating of A+ to E. The %{link} sets out changes you can make to improve the property’s rating.'
+        recommendation: 'Properties can be let if they have an energy rating from A+ to E. The %{link} sets out changes you can make to improve the property’s rating.'
         cta: 'recommendation report'
         url: '#'
       other_reports:
@@ -617,13 +603,13 @@ en:
         expired: 'Expired'
         no_related: 'There are no related certificates for the property.'
     rr:
-      top_heading: 'Non-domestic Energy Performance Certificate Recommendation Report'
+      top_heading: 'Non-domestic energy performance certificate recommendation report'
       summary:
         valid_until: 'Valid until'
         expired: 'This certificate expired on'
         certificate_id: 'Certificate number'
       contents:
-        title: 'Report Contents'
+        title: 'Report contents'
       rating:
         title: 'Energy rating and EPC'
         current_energy_rating: 'This building’s current energy rating is %{band}.'
@@ -695,11 +681,11 @@ en:
       text: "Guidance on improving the energy performance of this building can be found in the %{link}."
 
   domestic_epc:
-    top_heading: 'Energy Performance Certificate (EPC)'
+    top_heading: 'Energy performance certificate (EPC)'
     summary:
       date_of_expiry: 'Valid until %{date_of_expiry}'
-      certificate_id: 'Certificate Number'
-      energy_rating_title: 'Energy Rating'
+      certificate_id: 'Certificate number'
+      energy_rating_title: 'Energy rating'
       property_info: 'This property is a %{dwelling_type} and has a total floor area of %{total_floor_area} square metres.'
       print_certificate: 'Print this certificate'
       print_certificate_noscript : 'To print this certificate, press cmd/ctrl+p on your keyboard'
@@ -714,7 +700,7 @@ en:
         heat-demand: 'Estimated energy use and potential savings'
         information: 'Contacting the assessor and accreditation scheme'
         green_deal: 'Green deal plan'
-        related_asssesments: 'Related asssesments'
+        related_asssesments: 'Related assessments'
         previous: 'Other certificates for this property'
     sections:
       renting:
@@ -722,15 +708,15 @@ en:
         landlord_warning:
           hidden_text: 'Warning'
           subtitle: 'You may not be able to let this property'
-          energy_rating_title: 'Energy Rating'
+          energy_rating_title: 'Energy rating'
           body:
             text: 'Your property has an energy rating of %{current_energy_efficiency_band}. It cannot be let, unless an exemption has been registered.'
-            text_2: 'Properties can be rented if they have an energy rating of A to E.'
-            recommendations_text: 'The %{recommendations_link} of the EPC sets out changes you can make to improve the property’s rating.'
+            text_2: 'Properties can be rented if they have an energy rating from A to E.'
+            recommendations_text: 'The %{recommendations_link} sets out changes you can make to improve the property’s rating.'
             recommendations_cta: 'recommendations section'
             recommendations_url: '#recommendations'
         rental_info:
-          body_1: 'Properties can be rented if they have an energy rating of A to E.'
+          body_1: 'Properties can be rented if they have an energy rating from A to E.'
           body_2: 'If the property is rated F or G, it cannot be let, unless an exemption has been registered.'
           guidance_text: ' You can read %{link}.'
           cta: 'guidance for landlords on the regulations and exemptions'
@@ -744,7 +730,7 @@ en:
         aria-label: 'Your energy rating is %{current_energy_efficiency_band}(%{current_energy_efficiency_rating}) and your potential is %{potential_energy_efficiency_band}(%{potential_energy_efficiency_rating})'
         body1: 'The graph shows this property’s current and potential energy efficiency.'
         body2: 'Properties are given a rating from A (most efficient) to G (least efficient).'
-        body3: 'Properties are also given a score. The higher this number, the lower your CO2 emissions are likely to be.'
+        body3: 'Properties are also given a score. The higher this number, the lower your carbon dioxide (CO2) emissions are likely to be.'
         body4: 'The average energy rating and score for a property in England and Wales are D (60).'
       breakdown:
         title: "Breakdown of property’s energy performance"
@@ -756,7 +742,7 @@ en:
           average: 'average'
           good: 'good'
           very_good: 'very good (most efficient)'
-        not_inspected: "When the description says 'assumed', it means that the feature could not be inspected and an assumption has been made based on the age and type of your property."
+        not_inspected: "When the description says 'assumed', it means that the feature could not be inspected and an assumption has been made based on the property’s age and type."
         energy_performance: "energy performance"
         primary_energy_use: 'Primary energy use'
         primary_energy_use_description: 'The primary energy use for this property per year is 989 kilowatt hours (kWh) per square metre'
@@ -1257,7 +1243,7 @@ en:
       intro: 'If you typed the web address, check it is correct.'
       body: 'If you pasted the web address, check you copied the entire address.'
   dec:
-    top_heading: "Display Energy Certificate (DEC)"
+    top_heading: "Display energy certificate"
     tagline: "how energy efficient is this building?"
     sections:
       contents:
@@ -1286,7 +1272,7 @@ en:
         title: "Previous operational ratings"
         explanation: "This tells you how efficiently energy has been used in this building over the last three accounting periods."
       co2:
-        title: "Total CO2 emissions"
+        title: "Total carbon dioxide (CO2) emissions"
         explanation: "This tells you how much carbon dioxide the building emits. It shows tonnes per year of CO2."
         col:
           date: "Date"
@@ -1342,7 +1328,7 @@ en:
             disclosure_number_not_valid: 'The disclosure code provided is not valid.'
 
   dec_rr:
-    top_heading: "Display Energy Certificate Recommendation Report (DEC-RR)"
+    top_heading: "Display energy certificate recommendation report"
     sections:
       contents:
         title: 'Report contents'
@@ -1374,7 +1360,7 @@ en:
         scheme: 'Accreditation scheme'
 
   ac_cert:
-    top_heading: 'Air Conditioning Inspection Certificate'
+    top_heading: 'Air conditioning inspection certificate'
     sections:
       assessment:
         title: 'Assessment details'
@@ -1561,10 +1547,7 @@ en:
       related_certificate:
         title: "Related certificate"
         text: "A summary of this information can be found on the %{link}."
-        cta: "associated Air Conditioning Inspection Certificate"
-      cooling_plant:
-        title:
-
+        cta: "associated air conditioning inspection certificate"
     flag:
       finding_yes: "Yes"
       finding_no: "No"
@@ -1575,7 +1558,7 @@ en:
       pre_text: 'For certificates issued between 9 June 2020 and 19 September 2020, you should use:'
       link_ew: '<a href="https://www.epcregister.com">the EPC register for England and Wales</a>'
       link_ni: '<a href="https://www.epbniregister.com">the EPC register for Northern Ireland</a>'
-      post_text_1: 'Find all other certificates and reports using this page’s search'
+      post_text_1: 'Find all other certificates and reports using this page’s search.'
       post_text_2: 'If you cannot find a certificate, you should contact the energy assessor who carried out the assessment.'
     non_domestic:
       pre_text: 'For certificates issued between 9 June 2020 and 19 September 2020, you should use:'

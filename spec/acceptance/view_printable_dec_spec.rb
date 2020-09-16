@@ -20,7 +20,7 @@ describe "Acceptance::PrintableDisplayEnergyCertificate", type: :feature do
     end
 
     it "shows the page title" do
-      expect(response.body).to have_text "Display Energy Certificate"
+      expect(response.body).to have_text "Display energy certificate"
     end
 
     it "shows the summary box" do
@@ -58,7 +58,7 @@ describe "Acceptance::PrintableDisplayEnergyCertificate", type: :feature do
     end
 
     it "shows the total CO2 emissions section" do
-      expect(response.body).to include("Total CO2 emissions")
+      expect(response.body).to include("Total carbon dioxide (CO2) emissions")
       expect(response.body).to include(
         "This tells you how much carbon dioxide the building emits. It shows tonnes per year of CO2.",
       )

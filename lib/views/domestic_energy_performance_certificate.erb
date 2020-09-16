@@ -55,17 +55,18 @@
         </p>
       </div>
 
-      <p class="govuk-body"><%== t(
-               'domestic_epc.summary.property_info',
-              dwelling_type: assessment[:dwellingType],
-              total_floor_area: "%g" % assessment[:totalFloorArea]
-       ) %></p>
-
       <div>
         <a onclick="window.print();return false;" class="govuk-link govuk-!-margin-bottom-5" id="link" href="#" style="display: none;"><%= t('domestic_epc.summary.print_certificate') %></a>
         <noscript><p class="govuk-body"><%= t('domestic_epc.summary.print_certificate_noscript') %></p></noscript>
         <script>document.getElementById('link').style.display = 'block';</script>
       </div>
+
+      <p class="govuk-body"><%== t(
+               'domestic_epc.summary.property_info',
+              dwelling_type: assessment[:dwellingType].downcase,
+              total_floor_area: "%g" % assessment[:totalFloorArea]
+       ) %></p>
+
     </div>
   </div>
   <div class="govuk-grid-column-one-third"><br></div>

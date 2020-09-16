@@ -1,6 +1,6 @@
 cy:
   related_content:
-    title: 'Welsh: Related Content'
+    title: 'Welsh: Related content'
     guidance_on_epc:
       title: 'Welsh: Guidance on EPCs when buying or selling your home'
       url: 'https://www.gov.uk/buy-sell-your-home/energy-performance-certificates'
@@ -33,21 +33,6 @@ cy:
         license: 'Welsh: All content is available under the <a class="govuk-footer__link" href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated'
         copyright: 'Welsh: <a class="govuk-footer__link govuk-footer__copyright-logo" href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/">&copy; Crown copyright</a>'
 
-  index:
-    head:
-      title: 'Welsh: Energy performance of buildings register - Select your service'
-    top_heading: 'Welsh: Services related to Energy Performance Certificate (EPC)'
-    introduction: 'Welsh: Use this service to find assessors and certificates'
-    find_an_assessor:
-      body: 'Welsh: Find a qualified assessor through the %{link} service'
-      url: '/find-an-assessor'
-      cta: 'Welsh: Find an assessor'
-    find_a_certificate:
-      body: 'Welsh: Find an existing certificate for a property through the %{link} service'
-      url: '/find-a-certificate'
-      cta: 'Welsh: Find a certificate'
-    caution: 'Welsh: This page is intended for Private Beta use, and will not be a part of the public service'
-
   contact:
     help_desk_number: '01632 164 6672'
 
@@ -76,7 +61,7 @@ cy:
       phone_text: 'Welsh: If you need additional support to find an assessor, call our helpdesk on %{link} (Monday to Friday, 9am - 5pm).'
       phone_number: '0233 788 1234'
       scotland:
-        description: 'Welsh: If the property is in Scotland, use the %{link}'
+        description: 'Welsh: For properties in Scotland, use the %{link}'
         link: 'Welsh: Scottish government’s energy certificate service'
       existing_epc:
         description: 'Welsh: To check if a property has an existing EPC, use the %{link} service.'
@@ -365,7 +350,7 @@ cy:
     reference_number_not_registered: 'Welsh: A certificate was not found with this reference number'
     reference_number_not_valid: 'Welsh: Enter a 20-digit reference number'
     button_text: 'Welsh: Find'
-    hint: 'Welsh: For example 1234-5678-9101-1121-3141'
+    hint: 'Welsh: For example 9002-3775-9101-5482-3149'
     no_network:
       heading: 'Welsh: Network connection failed'
       body: 'Welsh: There is an internal network error'

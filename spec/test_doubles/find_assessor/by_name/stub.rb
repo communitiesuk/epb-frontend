@@ -23,7 +23,8 @@ module FindAssessor
                   "firstName": "Supercommon",
                   "lastName": "Name",
                   "contactDetails": {
-                    "telephoneNumber": "string", "email": "user@example.com"
+                    "telephoneNumber": "string",
+                    "email": "UPPERCASE_EMAIL@eXaMpLe.com",
                   },
                   "searchResultsComparisonPostcode": "SW1A 1AA",
                   "registeredBy": { "schemeId": "432", "name": "CIBSE" },

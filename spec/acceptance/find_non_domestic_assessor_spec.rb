@@ -14,9 +14,7 @@ describe "Acceptance::NonDomesticAssessor" do
       end
 
       it "displays the find a non-domestic assessor page heading" do
-        expect(response.body).to include(
-          "Find a non-domestic assessor to get a new EPC",
-        )
+        expect(response.body).to include("Find an assessor by postcode")
       end
 
       it "has a postcode input field" do
@@ -44,9 +42,7 @@ describe "Acceptance::NonDomesticAssessor" do
       end
 
       it "displays the find a non-domestic assessor page heading" do
-        expect(response.body).to include(
-          "Find a non-domestic assessor to get a new EPC",
-        )
+        expect(response.body).to include("Find an assessor by postcode")
       end
 
       it "displays an error message" do
@@ -67,9 +63,7 @@ describe "Acceptance::NonDomesticAssessor" do
       end
 
       it "displays the find an assessor page heading" do
-        expect(response.body).to include(
-          "Find a non-domestic assessor to get a new EPC",
-        )
+        expect(response.body).to include("Find an assessor by postcode")
       end
 
       it "displays an error message" do
@@ -144,6 +138,18 @@ describe "Acceptance::NonDomesticAssessor" do
 
         it "shows a clickable email" do
           expect(response.body).to include("mailto:user@example.com")
+        end
+
+        it "downcases the email of an entry" do
+          expect(response.body).not_to include("UPPERCASE_EMAIL@eXaMpLe.com")
+          expect(response.body).to include("uppercase_email@example.com")
+        end
+
+        it "shows a downcased clickable email" do
+          expect(response.body).not_to include(
+            "mailto:UPPERCASE_EMAIL@eXaMpLe.com",
+          )
+          expect(response.body).to include("mailto:uppercase_email@example.com")
         end
 
         it "shows a phone number of an entry" do
