@@ -76,6 +76,7 @@
         ambient: cooling_plant[:refrigeration][:ambient],
         acceptable_temperature: t('ac_report.sections.cooling_plants.cooling_plant.sizing.details.acceptable_installed_size_section.' + (cooling_plant[:refrigeration][:acceptableTemperature].to_i + 1).to_s),
         refrigerant_name: cooling_plant[:refrigeration][:refrigerantName],
+        compressor_control: cooling_plant[:refrigeration][:compressorControl][:note]
       },
       translation_prefix: 'ac_report.sections.cooling_plants.cooling_plant.refrigeration.details.',
       skip_null: true

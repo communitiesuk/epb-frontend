@@ -280,6 +280,12 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
       expect(response.body).to have_css "p",
                                         text:
                                           "There were no visible signs of a leak observed during the inspection."
+
+      expect(response.body).to have_css "dt",
+                                        text:
+                                          "Assess the refrigeration compressor(s) and the method of refrigeration capacity control"
+      expect(response.body).to have_css "dd",
+                                        text: "The capacity control is inverter."
     end
   end
 end

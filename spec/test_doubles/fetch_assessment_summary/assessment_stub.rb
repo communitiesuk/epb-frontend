@@ -205,10 +205,14 @@ module FetchAssessmentSummary
               refrigeration: {
                 acceptableTemperature: "0",
                 ambient: "13",
-                compressorControl:
-                  "\n            The capacity control is inverter.\n            \n              \n                1\n                OTHER\n                This would be considered suitably efficient by current standards as the system does not use more energy than required.\n              \n            \n          ",
-                fGasInspection:
-                  "\n            The system operated using refrigerant which is not banned.\n            Yes\n            \n              \n                1\n                OTHER\n                This refrigerant is considered satisfactory and not presently proposed to be banned or phased out. However the refrigerant is covered by the F Gas regulations and as such should be included on an F Gas Register which should be located on site.\n              \n            \n          ",
+                compressorControl: {
+                  note: "The capacity control is inverter.",
+                },
+                fGasInspection: {
+                  note:
+                    "The system operated using refrigerant which is not banned.",
+                  state: true,
+                },
                 guidance: [
                   {
                     code: "OTHER",
@@ -306,10 +310,14 @@ module FetchAssessmentSummary
               refrigeration: {
                 acceptableTemperature: "0",
                 ambient: "13",
-                compressorControl:
-                  "\n            The capacity control is inverter.\n            \n              \n                1\n                OTHER\n                This would be considered suitably efficient by current standards as the system does not use more energy than required.\n              \n            \n          ",
-                fGasInspection:
-                  "\n            The system operated using refrigerant which is not banned.\n            Yes\n            \n              \n                1\n                OTHER\n                This refrigerant is considered satisfactory and not presently proposed to be banned or phased out. However the refrigerant is covered by the F Gas regulations and as such should be included on an F Gas Register which should be located on site.\n              \n            \n          ",
+                compressorControl: {
+                  note: "The capacity control is inverter.",
+                },
+                fGasInspection: {
+                  note:
+                    "The system operated using refrigerant which is not banned.",
+                  state: true,
+                },
                 guidance: [
                   {
                     code: "OTHER",
