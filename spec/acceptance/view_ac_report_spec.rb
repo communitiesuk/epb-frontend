@@ -289,6 +289,9 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
 
       expect(response.body).to have_css "dt", text: "Refrigerant Type"
       expect(response.body).to have_css "dd", text: "R410A"
+
+      expect(response.body).to have_css "h5", text: "Montreal/ODS/F-Gas controlled?"
+      expect(response.body).to have_css "p", text: "There were no visible signs of a leak observed during the inspection."
     end
   end
 end

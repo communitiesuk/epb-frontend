@@ -1606,6 +1606,7 @@ en:
               refrigerant_name: "Refrigerant Type"
               compressor_control: "Assess the refrigeration compressor(s) and the method of refrigeration capacity control"
             leak: "Are there any signs of a refrigerant leak?"
+            f_gas_inspection: "Montreal/ODS/F-Gas controlled?"
       related_certificate:
         title: "Related certificate"
         text: "A summary of this information can be found on the %{link}."
