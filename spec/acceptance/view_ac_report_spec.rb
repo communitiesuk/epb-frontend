@@ -295,6 +295,16 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
 
       expect(response.body).to have_css "p", text: "Maintenance contract advised as being in place and would appear satisfactory due to unit condition."
       expect(response.body).to have_css "p", text: "Yes system appears in good order for age."
+
+      expect(response.body).to have_css "h5", text: "Is the refrigeration plant connected to a BEMS that can provide out of range alarms?"
+      expect(response.body).to have_css "p", text: "The system is linked to a Central Controller."
+      expect(response.body).to have_css "h5", text: "Are there any records of air conditioning plant usage or sub-metered energy consumption with expected hours of use per year for the plant?"
+      expect(response.body).to have_css "p", text: "No details available."
+      expect(response.body).to have_css "h5", text: "Is metering installed to enable monitoring of energy consumption of refrigeration plant?"
+      expect(response.body).to have_css "p", text: "Recorded meter reading: 987654321"
+      expect(response.body).to have_css "h5", text: "Is the energy consumption or hours of use excessive?"
+      expect(response.body).to have_css "p", text: "There were no records of air conditioning plant usage or sub-metered energy consumption with expected hours of use per year for the plant or systems located on site."
+
     end
   end
 end

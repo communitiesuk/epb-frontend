@@ -252,7 +252,7 @@ module FetchAssessmentSummary
                   state: true,
                 },
                 excessiveUse: { note: "No details available.", state: false },
-                meteringInstalled: { note: "", state: false },
+                meteringInstalled: { note: "987654321", state: true },
                 usageRecords: {
                   note:
                     "There were no records of air conditioning plant usage or sub-metered energy consumption with expected hours of use per year for the plant or systems located on site.",

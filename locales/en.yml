@@ -1614,6 +1614,13 @@ en:
             title: "Regular Maintenance"
             competent_person: "Is the maintenance undertaken by suitably competent people and in accordance to industry guidelines?"
             records_kept: "Is there evidence of regular maintenance?"
+          metering:
+            title: "Metering Comparison to appropriate energy benchmarks"
+            bemInstalled: "Is the refrigeration plant connected to a BEMS that can provide out of range alarms?"
+            excessiveUse: "Are there any records of air conditioning plant usage or sub-metered energy consumption with expected hours of use per year for the plant?"
+            meteringInstalled: "Is metering installed to enable monitoring of energy consumption of refrigeration plant?"
+            usageRecords: "Is the energy consumption or hours of use excessive?"
+            reading: "Recorded meter reading: %{meter_reading}"
       related_certificate:
         title: "Related certificate"
         text: "A summary of this information can be found on the %{link}."

@@ -108,6 +108,13 @@
       <p class="govuk-body"><%= cooling_plant[:maintenance][:competentPerson][:note] %></p>
     <% end %>
 
-
-  <% end %>
+    <h4 class="govuk-heading-s"><%= t('ac_report.sections.cooling_plants.cooling_plant.metering.title') %></h4>
+    <% cooling_plant[:metering].each do |inspection_key, inspection_data| %>
+      <h5 class="govuk-heading-s govuk-!-margin-bottom-0"><%= t('ac_report.sections.cooling_plants.cooling_plant.metering.' + inspection_key.to_s) %></h5>
+      <p class="govuk-body"><%= t('ac_report.sections.cooling_plants.cooling_plant.metering.' + (inspection_data[:state] ? "positive": "negative")) %></p>
+      <% unless inspection_data[:note].nil? %>
+        <p class="govuk-body"><%= t("ac_report.sections.cooling_plants.cooling_plant.metering.reading", meter_reading: inspection_data[:note]) %></p>
+      <% end %>
+    <% end %>
+<% end %>
 </div>
