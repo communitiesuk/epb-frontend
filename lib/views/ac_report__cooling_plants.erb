@@ -93,5 +93,21 @@
     <% unless cooling_plant[:refrigeration][:fGasInspection][:note].nil? %>
       <p><%= cooling_plant[:refrigeration][:fGasInspection][:note] %></p>
     <% end %>
-<% end %>
+
+    <h4 class="govuk-heading-s"><%= t('ac_report.sections.cooling_plants.cooling_plant.maintenance.title') %></h4>
+
+    <h5 class="govuk-heading-s govuk-!-margin-bottom-0"><%= t('ac_report.sections.cooling_plants.cooling_plant.maintenance.records_kept') %></h5>
+    <p class="govuk-body"><%= t('ac_report.sections.cooling_plants.cooling_plant.inspection.' + (cooling_plant[:maintenance][:recordsKept][:state] ? "positive": "negative")) %></p>
+    <% unless cooling_plant[:maintenance][:recordsKept][:note].nil? %>
+      <p class="govuk-body"><%= cooling_plant[:maintenance][:recordsKept][:note] %></p>
+    <% end %>
+
+    <h5 class="govuk-heading-s govuk-!-margin-bottom-0"><%= t('ac_report.sections.cooling_plants.cooling_plant.maintenance.competent_person') %></h5>
+    <p class="govuk-body"><%= t('ac_report.sections.cooling_plants.cooling_plant.inspection.' + (cooling_plant[:maintenance][:competentPerson][:state] ? "positive": "negative")) %></p>
+    <% unless cooling_plant[:maintenance][:competentPerson][:note].nil? %>
+      <p class="govuk-body"><%= cooling_plant[:maintenance][:competentPerson][:note] %></p>
+    <% end %>
+
+
+  <% end %>
 </div>

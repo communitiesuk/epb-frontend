@@ -340,9 +340,34 @@ module FetchAssessmentSummary
                 },
                 refrigerantName: "R410A",
               },
-              maintenance: {},
-              metering: {},
-              humidityControl: {},
+              maintenance: {
+                competentPerson: {
+                  note:
+                    "Maintenance contract advised as being in place and would appear satisfactory due to unit condition.",
+                  state: true,
+                },
+                guidance: nil,
+                recordsKept: {
+                  note: "Yes system appears in good order for age.", state: true
+                },
+              },
+              metering: {
+                bemInstalled: {
+                  note: "The system is linked to a Central Controller.",
+                  state: true,
+                },
+                excessiveUse: { note: "No details available.", state: false },
+                meteringInstalled: { note: "", state: false },
+                usageRecords: {
+                  note:
+                    "There were no records of air conditioning plant usage or sub-metered energy consumption with expected hours of use per year for the plant or systems located on site.",
+                  state: false,
+                },
+              },
+              humidityControl: {
+                note: "N/A no humidity control installed to this system",
+                state: false,
+              },
             },
           ],
           airHandlingSystems: [
