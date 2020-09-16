@@ -1588,11 +1588,18 @@ en:
               upper_heat_gain: "Maximum Instantaneous Heat Gain (W/m2)"
               acceptable_installed_size: "The Installed Size is Deemed"
               acceptable_installed_size_section:
-                0: "As expected"
-                1: "Less than expected"
-                2: "More than expected"
+                1: "As expected"
+                2: "Less than expected"
+                3: "More than expected"
             recommendation_intro_text: "The current version of the Building Regulations Approved Document Part L documentation provides guidance suggesting that the plant should not be more than 20% oversized. This should be adopted as means of comparison to stay in line with current standards."
             recommendation_title: "Notes and Recommendations"
+          refrigeration:
+            title: "Refrigeration"
+            details:
+              pre_compressor: "Pre Compressor(°C)"
+              post_processor: "Post Compressor(°C)"
+              ambient: "Ambient(°C)"
+              acceptable_temperature: "The Temperature is Deemed"
       related_certificate:
         title: "Related certificate"
         text: "A summary of this information can be found on the %{link}."

@@ -265,6 +265,15 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
 
       expect(response.body).to have_css "p",
                                         text: "Floor area was measured whilst on site."
+
+      expect(response.body).to have_css "dt", text: "Pre Compressor(°C)"
+      expect(response.body).to have_css "dd", text: "22"
+      expect(response.body).to have_css "dt", text: "Post Compressor(°C)"
+      expect(response.body).to have_css "dd", text: "7"
+      expect(response.body).to have_css "dt", text: "Ambient(°C)"
+      expect(response.body).to have_css "dd", text: "13"
+      expect(response.body).to have_css "dt", text: "The Temperature is Deemed"
+      expect(response.body).to have_css "dd", text: "As expected"
     end
   end
 end

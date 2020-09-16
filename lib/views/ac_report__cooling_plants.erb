@@ -53,7 +53,7 @@
         total_floor_area: cooling_plant[:sizing][:totalFloorArea],
         total_occupants: cooling_plant[:sizing][:totalOccupants],
         upper_heat_gain: cooling_plant[:sizing][:upperHeatGain],
-        acceptable_installed_size: t('ac_report.sections.cooling_plants.cooling_plant.sizing.details.acceptable_installed_size_section.' + cooling_plant[:sizing][:acceptableInstalledSize].to_s),
+        acceptable_installed_size: t('ac_report.sections.cooling_plants.cooling_plant.sizing.details.acceptable_installed_size_section.' + (cooling_plant[:sizing][:acceptableInstalledSize].to_i + 1).to_s),
       },
       translation_prefix: 'ac_report.sections.cooling_plants.cooling_plant.sizing.details.',
       skip_null: true
@@ -65,5 +65,17 @@
       <% next if guidance[:text].nil? %>
       <p class="govuk-body"><%= guidance[:text] %></p>
     <% end %>
+
+    <h4 class="govuk-heading-s"><%= t('ac_report.sections.cooling_plants.cooling_plant.refrigeration.title') %></h4>
+    <%== erb :component__summary_list, locals: {
+      list: {
+        pre_compressor: cooling_plant[:refrigeration][:preCompressor],
+        post_processor: cooling_plant[:refrigeration][:postProcessor],
+        ambient: cooling_plant[:refrigeration][:ambient],
+        acceptable_temperature: t('ac_report.sections.cooling_plants.cooling_plant.sizing.details.acceptable_installed_size_section.' + (cooling_plant[:refrigeration][:acceptableTemperature].to_i + 1).to_s),
+      },
+      translation_prefix: 'ac_report.sections.cooling_plants.cooling_plant.refrigeration.details.',
+      skip_null: true
+    } %>
   <% end %>
 </div>

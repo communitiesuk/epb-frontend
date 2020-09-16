@@ -202,7 +202,32 @@ module FetchAssessmentSummary
                 totalOccupants: "40",
                 upperHeatGain: "140.0",
               },
-              refrigeration: {},
+              refrigeration: {
+                acceptableTemperature: "0",
+                ambient: "13",
+                compressorControl:
+                  "\n            The capacity control is inverter.\n            \n              \n                1\n                OTHER\n                This would be considered suitably efficient by current standards as the system does not use more energy than required.\n              \n            \n          ",
+                fGasInspection:
+                  "\n            The system operated using refrigerant which is not banned.\n            Yes\n            \n              \n                1\n                OTHER\n                This refrigerant is considered satisfactory and not presently proposed to be banned or phased out. However the refrigerant is covered by the F Gas regulations and as such should be included on an F Gas Register which should be located on site.\n              \n            \n          ",
+                guidance: [
+                  {
+                    code: "OTHER",
+                    seqNumber: "1",
+                    text:
+                      "Access to the pre and post compressor for this type of system is difficult with a visual inspection; therefore the air on/room temperature and air off temperatures were taken from the indoor unit. (Pre Compressor temperature detailed is therefore the room temperature).",
+                  },
+                  {
+                    code: "OTHER",
+                    seqNumber: "2",
+                    text: "No recommendation required.",
+                  },
+                ],
+                postProcessor: "7",
+                preCompressor: "22",
+                refrigerantLeak:
+                  "\n            There were no visible signs of a leak observed during the inspection.\n            No\n            \n              \n                1\n                OTHER\n                Ensure a site F Gas Register is always in place on site in accordance with current legislation and complete the register any time refrigerant is added/removed from a system.\n              \n            \n          ",
+                refrigerantName: "R410A",
+              },
               maintenance: {},
               metering: {},
               humidityControl: {},
@@ -250,7 +275,32 @@ module FetchAssessmentSummary
                 totalOccupants: "40",
                 upperHeatGain: "140.0",
               },
-              refrigeration: {},
+              refrigeration: {
+                acceptableTemperature: "0",
+                ambient: "13",
+                compressorControl:
+                  "\n            The capacity control is inverter.\n            \n              \n                1\n                OTHER\n                This would be considered suitably efficient by current standards as the system does not use more energy than required.\n              \n            \n          ",
+                fGasInspection:
+                  "\n            The system operated using refrigerant which is not banned.\n            Yes\n            \n              \n                1\n                OTHER\n                This refrigerant is considered satisfactory and not presently proposed to be banned or phased out. However the refrigerant is covered by the F Gas regulations and as such should be included on an F Gas Register which should be located on site.\n              \n            \n          ",
+                guidance: [
+                  {
+                    code: "OTHER",
+                    seqNumber: "1",
+                    text:
+                      "Access to the pre and post compressor for this type of system is difficult with a visual inspection.",
+                  },
+                  {
+                    code: "OTHER",
+                    seqNumber: "2",
+                    text: "No recommendation required.",
+                  },
+                ],
+                postProcessor: "8",
+                preCompressor: "22",
+                refrigerantLeak:
+                  "\n            There were no visible signs of a leak observed during the inspection.\n            No\n            \n              \n                1\n                OTHER\n                Ensure a site F Gas Register is always in place on site in accordance with current legislation and complete the register any time refrigerant is added/removed from a system.\n              \n            \n          ",
+                refrigerantName: "R410A",
+              },
               maintenance: {},
               metering: {},
               humidityControl: {},
