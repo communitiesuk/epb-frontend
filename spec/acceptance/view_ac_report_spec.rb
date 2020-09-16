@@ -146,12 +146,12 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
       expect(response.body).to have_css "dd", text: "Corridor"
       expect(response.body).to have_css "h4",
                                         text: "CS6.1, CS6.2, CS6.3: Filters"
-      expect(response.body).to have_css "p",
+      expect(response.body).to have_css "h5",
                                         text: "Are air intake and filter conditions acceptable?"
-      expect(response.body).to have_css "p",
+      expect(response.body).to have_css "h5",
                                         text:
                                           "Have filters been changed according to current industry guidance?"
-      expect(response.body).to have_css "p",
+      expect(response.body).to have_css "h5",
                                         text:
                                           "Is the filter differential pressure gauge, where fitted, working?"
       expect(response.body).to have_css "p",
