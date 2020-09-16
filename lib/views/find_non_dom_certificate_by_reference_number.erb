@@ -16,7 +16,7 @@
       <% if I18n.locale != I18n.available_locales[0] %>
         <input type="hidden" name="lang" value="<%= I18n.locale.to_s %>">
       <% end %>
-      <fieldset class="govuk-fieldset fieldset-background">
+      <fieldset class="govuk-fieldset">
         <div class="govuk-form-group<% if errors[:reference_number] %> govuk-form-group--error<% end %>">
           <label class="govuk-label" for="reference_number">
             <%= t('find_non_dom_certificate_by_reference_number.question') %>
