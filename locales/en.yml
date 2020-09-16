@@ -1603,6 +1603,7 @@ en:
               post_processor: "Post Compressor(°C)"
               ambient: "Ambient(°C)"
               acceptable_temperature: "The Temperature is Deemed"
+              refrigerant_name: "Refrigerant Type"
               compressor_control: "Assess the refrigeration compressor(s) and the method of refrigeration capacity control"
             leak: "Are there any signs of a refrigerant leak?"
       related_certificate:

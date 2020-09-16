@@ -286,6 +286,9 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
                                           "Assess the refrigeration compressor(s) and the method of refrigeration capacity control"
       expect(response.body).to have_css "dd",
                                         text: "The capacity control is inverter."
+
+      expect(response.body).to have_css "dt", text: "Refrigerant Type"
+      expect(response.body).to have_css "dd", text: "R410A"
     end
   end
 end
