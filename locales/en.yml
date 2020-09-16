@@ -1565,8 +1565,9 @@ en:
               area_served: "Areas/Systems Served"
               discrepancy_note: "Note below any discrepancy between information provided by client and on site information collected, or any information of additional relevance to the cooling plant/system:"
           inspection:
-            positive_title: "Approved sections"
-            negative_title: "Rejected sections"
+            title: "Approved sections"
+            positive: "Yes"
+            negative: "No"
             pipeInsulationOk: "Is the insulation on circulation pipe work well fitted and in good order?"
             heatRejectionOperational: "Is the heat rejection plant operational?"
             heatRejectionAreaClear: "Is the area around the heat rejection plant clear of obstructions & debris?"
@@ -1590,6 +1591,7 @@ en:
                 0: "As expected"
                 1: "Less than expected"
                 2: "More than expected"
+            recommendation_intro_text: "The current version of the Building Regulations Approved Document Part L documentation provides guidance suggesting that the plant should not be more than 20% oversized. This should be adopted as means of comparison to stay in line with current standards."
             recommendation_title: "Notes and Recommendations"
       related_certificate:
         title: "Related certificate"

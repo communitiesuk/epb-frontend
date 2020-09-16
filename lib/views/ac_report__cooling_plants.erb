@@ -37,27 +37,12 @@
       <p class="govuk-body"><%= cooling_plant[:equipment][:discrepancyNote] %></p>
     <% end %>
 
-    <% skip_negative = true %>
-    <h4 class="govuk-heading-s"><%= t('ac_report.sections.cooling_plants.cooling_plant.inspection.positive_title') %></h4>
+    <h4 class="govuk-heading-s"><%= t('ac_report.sections.cooling_plants.cooling_plant.inspection.title') %></h4>
     <% cooling_plant[:inspection].each do |inspection_key, inspection_data| %>
-      <% if inspection_data[:state] != true %>
-        <% skip_negative = false %>
-        <% next %>
-      <% end %>
       <h5 class="govuk-heading-s govuk-!-margin-bottom-0"><%= t('ac_report.sections.cooling_plants.cooling_plant.inspection.' + inspection_key.to_s) %></h5>
+      <p class="govuk-body"><%= t('ac_report.sections.cooling_plants.cooling_plant.inspection.' + (inspection_data[:state] ? "positive": "negative")) %></p>
       <% unless inspection_data[:note].nil? %>
         <p class="govuk-body"><%= inspection_data[:note] %></p>
-      <% end %>
-    <% end %>
-
-    <% unless skip_negative %>
-      <h4 class="govuk-heading-s"><%= t('ac_report.sections.cooling_plants.cooling_plant.inspection.negative_title') %></h4>
-      <% cooling_plant[:inspection].each do |inspection_key, inspection_data| %>
-        <% next if inspection_data[:state] != false %>
-        <h5 class="govuk-heading-s govuk-!-margin-bottom-0"><%= t('ac_report.sections.cooling_plants.cooling_plant.inspection.' + inspection_key.to_s) %></h5>
-        <% unless inspection_data[:note].nil? %>
-          <p class="govuk-body"><%= inspection_data[:note] %></p>
-        <% end %>
       <% end %>
     <% end %>
 
@@ -76,6 +61,7 @@
     } %>
 
     <h5 class="govuk-heading-s"><%= t('ac_report.sections.cooling_plants.cooling_plant.sizing.recommendation_title') %></h5>
+    <p class="govuk-body"><%= t('ac_report.sections.cooling_plants.cooling_plant.sizing.recommendation_intro_text') %></p>
     <% cooling_plant[:sizing][:guidance].each do |guidance| %>
       <% next if guidance[:text].nil? %>
       <p class="govuk-body"><%= guidance[:text] %></p>
