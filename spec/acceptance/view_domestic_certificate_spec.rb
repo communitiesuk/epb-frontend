@@ -56,13 +56,13 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
 
     it "shows the total floor area" do
       expect(response.body).to include(
-        "has a total floor area of 150 square metres",
+        "It has a total floor area of 150 square metres.",
       )
     end
 
     it "shows the type of dwelling - downcased" do
-      expect(response.body).not_to include("This property is a Top floor flat")
-      expect(response.body).to include("This property is a top floor flat")
+      expect(response.body).not_to include("This property is a Top floor flat.")
+      expect(response.body).to include("This property is a top floor flat.")
     end
 
     it "shows the SVG with energy ratings" do
