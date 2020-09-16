@@ -7,7 +7,7 @@
     <h3 class="govuk-heading-m"><%= t('ac_report.sections.cooling_plants.cooling_plant.title') %></h3>
     <%== erb :component__summary_list, locals: {
       list: {
-        system_number: cooling_plant[:system_number],
+        system_number: cooling_plant[:systemNumber],
         identifier: cooling_plant[:identifier],
       },
       translation_prefix: 'ac_report.sections.cooling_plants.cooling_plant.details.',
@@ -17,24 +17,24 @@
     <h4 class="govuk-heading-s"><%= t('ac_report.sections.cooling_plants.cooling_plant.equipment.title') %></h4>
     <%== erb :component__summary_list, locals: {
       list: {
-        cooling_capacity: cooling_plant[:equipment][:cooling_capacity],
+        cooling_capacity: cooling_plant[:equipment][:coolingCapacity],
         description: cooling_plant[:equipment][:description],
         location: cooling_plant[:equipment][:location],
         manufacturer: cooling_plant[:equipment][:manufacturer],
-        model_reference: cooling_plant[:equipment][:model_reference],
-        refrigerant_charge: cooling_plant[:equipment][:refrigerant_charge],
-        refrigerant_type: cooling_plant[:equipment][:refrigerant_type][:type],
-        serial_number: cooling_plant[:equipment][:serial_number],
-        year_installed: cooling_plant[:equipment][:year_installed],
-        area_served: cooling_plant[:equipment][:area_served],
-        discrepancy_note: cooling_plant[:equipment][:discrepancy_note],
+        model_reference: cooling_plant[:equipment][:modelReference],
+        refrigerant_charge: cooling_plant[:equipment][:refrigerantCharge],
+        refrigerant_type: cooling_plant[:equipment][:refrigerantType][:type],
+        serial_number: cooling_plant[:equipment][:serialNumber],
+        year_installed: cooling_plant[:equipment][:yearInstalled],
+        area_served: cooling_plant[:equipment][:areaServed],
+        discrepancy_note: cooling_plant[:equipment][:discrepancyNote],
       },
       translation_prefix: 'ac_report.sections.cooling_plants.cooling_plant.equipment.details.',
       skip_null: true
     } %>
-    <% unless cooling_plant[:equipment][:discrepancy_note].nil? %>
+    <% unless cooling_plant[:equipment][:discrepancyNote].nil? %>
       <h5 class="govuk-heading-s"><%= t('ac_report.sections.cooling_plants.cooling_plant.equipment.details.discrepancy_note') %></h5>
-      <p class="govuk-body"><%= cooling_plant[:equipment][:discrepancy_note] %></p>
+      <p class="govuk-body"><%= cooling_plant[:equipment][:discrepancyNote] %></p>
     <% end %>
 
     <% skip_negative = true %>

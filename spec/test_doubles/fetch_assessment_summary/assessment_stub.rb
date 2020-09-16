@@ -107,64 +107,64 @@ module FetchAssessmentSummary
               monitoringCapability: false,
             },
           },
-          cooling_plants: [
+          coolingPlants: [
             {
-              system_number:
+              systemNumber:
                 "VOL001/SYS001 R410A Inverter Split Systems to Sales Area",
               identifier:
                 "VOL001/SYS001/CP1 Sampled R410A Inverter Split Area (1)",
               equipment: {
-                cooling_capacity: "10",
+                coolingCapacity: "10",
                 description: "Single Split",
                 location: "Externally on roof",
                 manufacturer: "Mitsubishi",
-                model_reference: "FDC100VN",
-                refrigerant_charge: "3",
-                refrigerant_type: {
+                modelReference: "FDC100VN",
+                refrigerantCharge: "3",
+                refrigerantType: {
                   ecfgasregulation: nil, ecozoneregulation: nil, type: "R410A"
                 },
-                serial_number: "not visible",
-                year_installed: "2014",
-                discrepancy_note: "Something more random",
+                serialNumber: "not visible",
+                yearInstalled: "2014",
+                discrepancyNote: "Something more random",
               },
               inspection: {
-                air_recirculation: {
+                airRecirculation: {
                   note: "The condenser was considered suitably located.",
                   state: true,
                 },
-                chiller_placement_ok: {
+                chillerPlacementOk: {
                   note: "The condenser is considered suitably located.",
                   state: true,
                 },
-                chiller_plant_area_clear: {
+                chillerPlantAreaClear: {
                   note: "Area appeared clear and satisfactory.", state: true
                 },
-                chiller_plant_ok: {
+                chillerPlantOk: {
                   note: "General condition of the plant appeared satisfactory.",
                   state: true,
                 },
-                chiller_plant_operational: {
+                chillerPlantOperational: {
                   note: "System appeared to operate satisfactorily.",
                   state: true,
                 },
-                compressors_operational: {
+                compressorsOperational: {
                   note:
                     "The compressor appeared to operate satisfactorily with the air off temperatures as expected.",
                   state: true,
                 },
-                heat_exchanger_ok: {
+                heatExchangerOk: {
                   note: "Heat exchangers appeared satisfactory and clean.",
                   state: true,
                 },
-                heat_rejection_area_clear: {
+                heatRejectionAreaClear: {
                   note: "The area was clear and appeared satisfactory.",
                   state: true,
                 },
-                heat_rejection_operational: {
+                heatRejectionOperational: {
                   note: "Heat rejection plant appeared to operate as expected.",
                   state: true,
                 },
-                pipe_insulation_ok: {
+                pipeInsulationOk: {
                   note:
                     "Thermal insulation appeared in good order and well fitted.",
                   state: true,
@@ -174,34 +174,34 @@ module FetchAssessmentSummary
               refrigeration: {},
               maintenance: {},
               metering: {},
-              humidity_control: {},
+              humidityControl: {},
             },
             {
-              system_number:
+              systemNumber:
                 "VOL001/SYS001 R410A Inverter Split Systems to Sales Area",
               identifier:
                 "VOL001/SYS001/CP2 Sampled R410A Inverter Split Area (2)",
               equipment: {
-                cooling_capacity: "10",
+                coolingCapacity: "10",
                 description: "Single Split",
                 location: "Externally on roof",
                 manufacturer: "Mitsubishi",
-                model_reference: "FDC100VN",
-                refrigerant_charge: "3",
-                refrigerant_type: {
+                modelReference: "FDC100VN",
+                refrigerantCharge: "3",
+                refrigerantType: {
                   ecfgasregulation: nil, ecozoneregulation: nil, type: "R410A"
                 },
-                serial_number: "not visible",
-                year_installed: "2014",
-                area_served: "Sales Area",
-                discrepancy_note: "Something random",
+                serialNumber: "not visible",
+                yearInstalled: "2014",
+                areaServed: "Sales Area",
+                discrepancyNote: "Something random",
               },
               inspection: {},
               sizing: {},
               refrigeration: {},
               maintenance: {},
               metering: {},
-              humidity_control: {},
+              humidityControl: {},
             },
           ],
           airHandlingSystems: [
