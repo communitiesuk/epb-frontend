@@ -237,8 +237,33 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
       expect(response.body).to have_css "dd", text: "Something more random"
 
       expect(response.body).to have_css "h4", text: "Approved sections"
-      expect(response.body).to have_css "h5", text: "Is the insulation on circulation pipe work well fitted and in good order?"
-      expect(response.body).to have_css "p", text: "The condenser was considered suitably located."
+      expect(response.body).to have_css "h5",
+                                        text:
+                                          "Is the insulation on circulation pipe work well fitted and in good order?"
+      expect(response.body).to have_css "p",
+                                        text: "The condenser was considered suitably located."
+
+      expect(response.body).to have_css "dt",
+                                        text: "Installed Cooling Capacity (kW)"
+      expect(response.body).to have_css "dd", text: "10.0"
+      expect(response.body).to have_css "dt",
+                                        text: "Occupant Density (m2/person)"
+      expect(response.body).to have_css "dd", text: "8.93"
+      expect(response.body).to have_css "dt",
+                                        text: "Total Floor Area served by this plant(m2)"
+      expect(response.body).to have_css "dd", text: "357"
+      expect(response.body).to have_css "dt",
+                                        text: "Total Occupants served by this plant"
+      expect(response.body).to have_css "dd", text: "40"
+      expect(response.body).to have_css "dt",
+                                        text: "Maximum Instantaneous Heat Gain (W/m2)"
+      expect(response.body).to have_css "dd", text: "140.0"
+      expect(response.body).to have_css "dt",
+                                        text: "The Installed Size is Deemed"
+      expect(response.body).to have_css "dd", text: "Less than expected"
+
+      expect(response.body).to have_css "p",
+                                        text: "Floor area was measured whilst on site."
     end
   end
 end

@@ -170,7 +170,38 @@ module FetchAssessmentSummary
                   state: true,
                 },
               },
-              sizing: {},
+              sizing: {
+                acceptableInstalledSize: "1",
+                guidance: [
+                  {
+                    code: "OTHER",
+                    seqNumber: "1",
+                    text:
+                      "This occupancy is based on information obtained from site",
+                  },
+                  {
+                    code: "OTHER",
+                    seqNumber: "2",
+                    text:
+                      "No recommendation required; occupancy level appears appropriate.",
+                  },
+                  {
+                    code: "OTHER",
+                    seqNumber: "3",
+                    text: "Floor area was measured whilst on site.",
+                  },
+                  {
+                    code: "OTHER",
+                    seqNumber: "4",
+                    text: "No recommendation required.",
+                  },
+                ],
+                installedCapacity: "10.0",
+                occupantDensity: "8.93",
+                totalFloorArea: "357",
+                totalOccupants: "40",
+                upperHeatGain: "140.0",
+              },
               refrigeration: {},
               maintenance: {},
               metering: {},
@@ -197,7 +228,28 @@ module FetchAssessmentSummary
                 discrepancyNote: "Something random",
               },
               inspection: {},
-              sizing: {},
+              sizing: {
+                acceptableInstalledSize: "1",
+                guidance: [
+                  {
+                    code: "OTHER",
+                    seqNumber: "1",
+                    text:
+                      "This occupancy is based on information obtained from site",
+                  },
+                  {
+                    code: "OTHER",
+                    seqNumber: "2",
+                    text:
+                      "No recommendation required; occupancy level appears appropriate.",
+                  },
+                ],
+                installedCapacity: "10.0",
+                occupantDensity: "8.93",
+                totalFloorArea: "357",
+                totalOccupants: "40",
+                upperHeatGain: "140.0",
+              },
               refrigeration: {},
               maintenance: {},
               metering: {},

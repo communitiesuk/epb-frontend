@@ -1577,6 +1577,20 @@ en:
             chillerPlantAreaClear: "Is the area around the refrigeration plant clear of obstructions & debris?"
             chillerPlacementOk: "Is the condenser placed clear from warm air discharge louvres?"
             airRecirculation: "Is the condenser free of any possibility of air recirculation?"
+          sizing:
+            title: "Appropriately Sized Cooling Plant"
+            details:
+              installed_capacity: "Installed Cooling Capacity (kW)"
+              occupant_density: "Occupant Density (m2/person)"
+              total_floor_area: "Total Floor Area served by this plant(m2)"
+              total_occupants: "Total Occupants served by this plant"
+              upper_heat_gain: "Maximum Instantaneous Heat Gain (W/m2)"
+              acceptable_installed_size: "The Installed Size is Deemed"
+              acceptable_installed_size_section:
+                0: "As expected"
+                1: "Less than expected"
+                2: "More than expected"
+            recommendation_title: "Notes and Recommendations"
       related_certificate:
         title: "Related certificate"
         text: "A summary of this information can be found on the %{link}."
