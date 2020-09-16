@@ -3,7 +3,7 @@
     <div class="govuk-body">
       <a
         href="<%= localised_url('/find-a-non-domestic-certificate/search-by-postcode')%>"
-        onclick="window.history.back(); return false;"
+        onclick="if(document.referrer.indexOf(location.protocol+'//'+location.host)===0) {window.history.back(); return false;} else {return true;}"
         class="govuk-back-link">
         <%=t('layout.body.breadcrumb.back')%>
       </a>
