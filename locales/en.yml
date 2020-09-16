@@ -492,8 +492,8 @@ en:
   find_non_dom_certificate_by_reference_number:
     head:
       title: 'Energy performance of buildings register - Find an energy performance certificate'
-    top_heading: 'Search for energy certificates and reports by certificate number'
-    question: 'Enter a certificate number'
+    top_heading: 'Find energy certificates and reports by their number'
+    question: 'Enter a certificate or report number'
     reference_number_not_registered: 'A certificate was not found with this certificate number'
     reference_number_not_valid: 'Enter a 20-digit certificate number'
     button_text: 'Find'
