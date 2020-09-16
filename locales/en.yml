@@ -424,8 +424,8 @@ en:
   find_non_dom_certificate_by_street_name_and_town_results:
     head:
       title: 'Energy performance of buildings register - Results for non domestic certificates'
-    top_heading: 'Find an energy certificate or report'
-    list: '1-%{length} of %{length} results matching %{query}'
+    top_heading: 'Find energy certificates and reports'
+    list: '%{length} certificates and reports for %{query}'
     table:
       address: 'Address'
       rating: 'Energy rating'
@@ -486,6 +486,9 @@ en:
     head:
       title: 'Energy performance of buildings register - Results for energy performance certificates and reports at your postcode'
     top_heading: 'Find energy certificates and reports'
+    no_epc:
+      get_a_new_one: "If your property does not have a required certificate or it has expired, you can"
+      get_a_new_one_link: "get a new energy certificate"
     no_certificates: 'There are no certificates or reports matching that postcode.'
     list: '%{length} certificates and reports for %{postcode}'
 
