@@ -127,7 +127,49 @@ module FetchAssessmentSummary
                 year_installed: "2014",
                 discrepancy_note: "Something more random",
               },
-              inspection: {},
+              inspection: {
+                air_recirculation: {
+                  note: "The condenser was considered suitably located.",
+                  state: true,
+                },
+                chiller_placement_ok: {
+                  note: "The condenser is considered suitably located.",
+                  state: true,
+                },
+                chiller_plant_area_clear: {
+                  note: "Area appeared clear and satisfactory.", state: true
+                },
+                chiller_plant_ok: {
+                  note: "General condition of the plant appeared satisfactory.",
+                  state: true,
+                },
+                chiller_plant_operational: {
+                  note: "System appeared to operate satisfactorily.",
+                  state: true,
+                },
+                compressors_operational: {
+                  note:
+                    "The compressor appeared to operate satisfactorily with the air off temperatures as expected.",
+                  state: true,
+                },
+                heat_exchanger_ok: {
+                  note: "Heat exchangers appeared satisfactory and clean.",
+                  state: true,
+                },
+                heat_rejection_area_clear: {
+                  note: "The area was clear and appeared satisfactory.",
+                  state: true,
+                },
+                heat_rejection_operational: {
+                  note: "Heat rejection plant appeared to operate as expected.",
+                  state: true,
+                },
+                pipe_insulation_ok: {
+                  note:
+                    "Thermal insulation appeared in good order and well fitted.",
+                  state: true,
+                },
+              },
               sizing: {},
               refrigeration: {},
               maintenance: {},

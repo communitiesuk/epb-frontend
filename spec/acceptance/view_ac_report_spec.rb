@@ -235,6 +235,10 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
                                         text:
                                           "Note below any discrepancy between information provided by client and on site information collected, or any information of additional relevance to the cooling plant/system:"
       expect(response.body).to have_css "dd", text: "Something more random"
+
+      expect(response.body).to have_css "h4", text: "Approved sections"
+      expect(response.body).to have_css "h5", text: "Is the insulation on circulation pipe work well fitted and in good order?"
+      expect(response.body).to have_css "p", text: "The condenser was considered suitably located."
     end
   end
 end
