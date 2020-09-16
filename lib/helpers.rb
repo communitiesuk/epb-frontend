@@ -85,9 +85,9 @@ module Sinatra
         text
       end
 
-      def calculate_yearly_charges(assessment)
+      def calculate_yearly_charges(green_deal_plan)
         all_charges = []
-        assessment[:greenDealPlan][:charges].each do |charge|
+        green_deal_plan[:charges].each do |charge|
           all_charges.append(charge[:dailyCharge].to_f)
         end
         charges = all_charges.inject(0, &:+) * 365.25

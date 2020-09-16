@@ -14,23 +14,23 @@
   <dl class="govuk-summary-list">
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= t('domestic_epc.sections.green_deal.current_charge') %></dt>
-      <dd class="govuk-summary-list__value govuk-!-width-one-half">£<%= calculate_yearly_charges(assessment) %> per year</dd>
+      <dd class="govuk-summary-list__value govuk-!-width-one-half">£<%= calculate_yearly_charges(green_deal_plan) %> per year</dd>
     </div>
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= t('domestic_epc.sections.green_deal.estimated_saving') %></dt>
-      <dd class="govuk-summary-list__value govuk-!-width-one-half">£<%= assessment[:greenDealPlan][:estimatedSavings] %> per year</dd>
+      <dd class="govuk-summary-list__value govuk-!-width-one-half">£<%= green_deal_plan[:estimatedSavings] %> per year</dd>
     </div>
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= t('domestic_epc.sections.green_deal.payment_period_start') %></dt>
-      <dd class="govuk-summary-list__value govuk-!-width-one-half"><%= date(assessment[:greenDealPlan][:startDate]) %></dd>
+      <dd class="govuk-summary-list__value govuk-!-width-one-half"><%= date(green_deal_plan[:startDate]) %></dd>
     </div>
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= t('domestic_epc.sections.green_deal.payment_period_end') %></dt>
-      <dd class="govuk-summary-list__value govuk-!-width-one-half"><%= date(assessment[:greenDealPlan][:endDate]) %></dd>
+      <dd class="govuk-summary-list__value govuk-!-width-one-half"><%= date(green_deal_plan[:endDate]) %></dd>
     </div>
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= t('domestic_epc.sections.green_deal.interest_rate_payable') %></dt>
-      <dd class="govuk-summary-list__value govuk-!-width-one-half"><% interest_rate = assessment[:greenDealPlan][:interest][:fixed] ? 'fixed' : 'variable' %><%= interest_rate %> at <%= assessment[:greenDealPlan][:interest][:rate] %>% APR</dd>
+      <dd class="govuk-summary-list__value govuk-!-width-one-half"><% interest_rate = green_deal_plan[:interest][:fixed] ? 'fixed' : 'variable' %><%= interest_rate %> at <%= green_deal_plan[:interest][:rate] %>% APR</dd>
     </div>
   </dl>
 
@@ -43,7 +43,7 @@
     </ul>
 
   <dl class="govuk-summary-list">
-    <% assessment[:greenDealPlan][:measures].each do |green_deal_product| %>
+    <% green_deal_plan[:measures].each do |green_deal_product| %>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= green_deal_product[:product] %></dt>
         <dd class="govuk-summary-list__value govuk-!-width-one-half"><%= t('domestic_epc.sections.green_deal.paid_off_header') %> <%= ((green_deal_product[:repaidDate] == nil) or green_deal_product[:repaidDate].empty?) ? "" : date(green_deal_product[:repaidDate]) %></dd>
@@ -56,22 +56,22 @@
   <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= t('domestic_epc.sections.green_deal.plan_number') %></dt>
-        <dd class="govuk-summary-list__value govuk-!-width-one-half"><%= assessment[:greenDealPlan][:greenDealPlanId] %></dd>
+        <dd class="govuk-summary-list__value govuk-!-width-one-half"><%= green_deal_plan[:greenDealPlanId] %></dd>
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= t('domestic_epc.sections.green_deal.provider_name') %></dt>
-        <dd class="govuk-summary-list__value govuk-!-width-one-half"><%= assessment[:greenDealPlan][:providerDetails][:name] %></dd>
+        <dd class="govuk-summary-list__value govuk-!-width-one-half"><%= green_deal_plan[:providerDetails][:name] %></dd>
       </div>
-      <% unless assessment[:greenDealPlan][:providerDetails][:telephone].to_s.empty? %>
+      <% unless green_deal_plan[:providerDetails][:telephone].to_s.empty? %>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=  t('domestic_epc.sections.green_deal.provider_telephone')  %></dt>
-          <dd class="govuk-summary-list__value govuk-!-width-one-half"><%=  assessment[:greenDealPlan][:providerDetails][:telephone]  %></dd>
+          <dd class="govuk-summary-list__value govuk-!-width-one-half"><%=  green_deal_plan[:providerDetails][:telephone]  %></dd>
         </div>
       <% end %>
-      <% unless assessment[:greenDealPlan][:providerDetails][:email].to_s.empty? %>
+      <% unless green_deal_plan[:providerDetails][:email].to_s.empty? %>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= t('domestic_epc.sections.green_deal.provider_email') %></dt>
-          <dd class="govuk-summary-list__value govuk-!-width-one-half"><a class="govuk-link" href="mailto:<%= assessment[:greenDealPlan][:providerDetails][:email] %>"><%= assessment[:greenDealPlan][:providerDetails][:email] %></a></dd>
+          <dd class="govuk-summary-list__value govuk-!-width-one-half"><a class="govuk-link" href="mailto:<%= green_deal_plan[:providerDetails][:email] %>"><%= green_deal_plan[:providerDetails][:email] %></a></dd>
         </div>
       <% end %>
   </dl>

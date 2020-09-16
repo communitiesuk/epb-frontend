@@ -24,7 +24,7 @@
         <p class="govuk-body"><a class="govuk-link" href="#recommendations"><%= t('domestic_epc.sidebar.sections.recommendations') %></a></p>
         <p class="govuk-body"><a class="govuk-link" href="#heat-demand"><%= t('domestic_epc.sidebar.sections.heat-demand') %></a></p>
         <p class="govuk-body"><a class="govuk-link" href="#information"><%= t('domestic_epc.sidebar.sections.information') %></a></p>
-        <% if assessment.has_key?(:greenDealPlan) %>
+        <% if assessment.has_key?(:greenDealPlan) && !assessment[:greenDealPlan].empty? %>
           <p class="govuk-body"><a class="govuk-link" href="#green_deal"><%= t('domestic_epc.sidebar.sections.green_deal') %></a></p>
         <% end %>
         <% unless assessment[:relatedAssessments] == [] || assessment[:relatedAssessments].nil? %>
@@ -253,7 +253,9 @@
 
     </div>
       <% if assessment.has_key?(:greenDealPlan) %>
-        <%== erb :domestic_energy_performance_certificate__green_deal_plan, locals: { assessment: assessment } %>
+        <% assessment[:greenDealPlan].each do |plan| %>
+          <%== erb :domestic_energy_performance_certificate__green_deal_plan, locals: { assessment: assessment, green_deal_plan: plan } %>
+        <% end %>
       <% end %>
 
       <%== erb :component__related_assessments, locals: {
