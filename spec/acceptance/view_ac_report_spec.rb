@@ -290,21 +290,48 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
       expect(response.body).to have_css "dt", text: "Refrigerant Type"
       expect(response.body).to have_css "dd", text: "R410A"
 
-      expect(response.body).to have_css "h5", text: "Montreal/ODS/F-Gas controlled?"
-      expect(response.body).to have_css "p", text: "There were no visible signs of a leak observed during the inspection."
+      expect(response.body).to have_css "h5",
+                                        text: "Montreal/ODS/F-Gas controlled?"
+      expect(response.body).to have_css "p",
+                                        text:
+                                          "There were no visible signs of a leak observed during the inspection."
 
-      expect(response.body).to have_css "p", text: "Maintenance contract advised as being in place and would appear satisfactory due to unit condition."
-      expect(response.body).to have_css "p", text: "Yes system appears in good order for age."
+      expect(response.body).to have_css "p",
+                                        text:
+                                          "Maintenance contract advised as being in place and would appear satisfactory due to unit condition."
+      expect(response.body).to have_css "p",
+                                        text: "Yes system appears in good order for age."
 
-      expect(response.body).to have_css "h5", text: "Is the refrigeration plant connected to a BEMS that can provide out of range alarms?"
-      expect(response.body).to have_css "p", text: "The system is linked to a Central Controller."
-      expect(response.body).to have_css "h5", text: "Are there any records of air conditioning plant usage or sub-metered energy consumption with expected hours of use per year for the plant?"
+      expect(response.body).to have_css "h5",
+                                        text:
+                                          "Is the refrigeration plant connected to a BEMS that can provide out of range alarms?"
+      expect(response.body).to have_css "p",
+                                        text: "The system is linked to a Central Controller."
+      expect(response.body).to have_css "h5",
+                                        text:
+                                          "Are there any records of air conditioning plant usage or sub-metered energy consumption with expected hours of use per year for the plant?"
       expect(response.body).to have_css "p", text: "No details available."
-      expect(response.body).to have_css "h5", text: "Is metering installed to enable monitoring of energy consumption of refrigeration plant?"
-      expect(response.body).to have_css "p", text: "Recorded meter reading: 987654321"
-      expect(response.body).to have_css "h5", text: "Is the energy consumption or hours of use excessive?"
-      expect(response.body).to have_css "p", text: "There were no records of air conditioning plant usage or sub-metered energy consumption with expected hours of use per year for the plant or systems located on site."
+      expect(response.body).to have_css "h5",
+                                        text:
+                                          "Is metering installed to enable monitoring of energy consumption of refrigeration plant?"
+      expect(response.body).to have_css "p",
+                                        text: "Recorded meter reading: 987654321"
+      expect(response.body).to have_css "h5",
+                                        text: "Is the energy consumption or hours of use excessive?"
+      expect(response.body).to have_css "p",
+                                        text:
+                                          "There were no records of air conditioning plant usage or sub-metered energy consumption with expected hours of use per year for the plant or systems located on site."
 
+      expect(response.body).to have_css "h5",
+                                        text:
+                                          "Is the water flow through cooling towers or evaporative coolers even and efficient, and there is no loss of water?"
+      expect(response.body).to have_css "p",
+                                        text: "N/A no cooling towers installed to this system"
+      expect(response.body).to have_css "h5",
+                                        text:
+                                          "Is there a management regime in place to ensure that water is regularly checked and treated to ensure that there is no Legionella risk?"
+      expect(response.body).to have_css "p",
+                                        text: "N/A no cooling towers installed to this site"
     end
   end
 end

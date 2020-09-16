@@ -263,6 +263,16 @@ module FetchAssessmentSummary
                 note: "N/A no humidity control installed to this system",
                 state: false,
               },
+              chillers: {
+                waterCooled: {
+                  note: "N/A no cooling towers installed to this system",
+                  state: false,
+                },
+                waterTreatment: {
+                  note: "N/A no cooling towers installed to this site",
+                  state: false,
+                },
+              },
             },
             {
               systemNumber:
@@ -368,6 +378,7 @@ module FetchAssessmentSummary
                 note: "N/A no humidity control installed to this system",
                 state: false,
               },
+              chillers: nil,
             },
           ],
           airHandlingSystems: [

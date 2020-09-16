@@ -1621,6 +1621,10 @@ en:
             meteringInstalled: "Is metering installed to enable monitoring of energy consumption of refrigeration plant?"
             usageRecords: "Is the energy consumption or hours of use excessive?"
             reading: "Recorded meter reading: %{meter_reading}"
+          chillers:
+            title: "Water Cooled Chillers (Cooling Towers & Evaporative Condensers)"
+            waterCooled: "Is the water flow through cooling towers or evaporative coolers even and efficient, and there is no loss of water?"
+            waterTreatment: "Is there a management regime in place to ensure that water is regularly checked and treated to ensure that there is no Legionella risk?"
       related_certificate:
         title: "Related certificate"
         text: "A summary of this information can be found on the %{link}."
