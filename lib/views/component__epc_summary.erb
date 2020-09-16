@@ -23,6 +23,13 @@
       <b><%= assessment_id %></b>
     </p>
   </div>
+
+  <div>
+    <a onclick="window.print();return false;" class="govuk-link govuk-!-margin-bottom-5" id="link" href="#" style="display: none;"><%= t('component.print_certificate') %></a>
+    <noscript><p class="govuk-body"><%= t('component.print_certificate_noscript') %></p></noscript>
+    <script>document.getElementById('link').style.display = 'block';</script>
+  </div>
+
   <% unless property_type.nil? || floor_area.nil? %>
   <p class="govuk-body">
     <%=  t('component.epc_summary.property_info', property_type: property_type)  %>
