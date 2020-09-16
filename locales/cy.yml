@@ -752,13 +752,13 @@ cy:
           link: 'https://www.gov.uk/improve-energy-efficiency'
       heat-demand:
         title: 'Welsh: Estimated energy use and potential savings'
-        estimated_cost: 'Welsh: Estimated energy cost for this property over a year'
-        three_year_saving: 'Welsh: Over a year you could save'
-        costs_and_savings: 'Welsh: The estimated cost and savings show how much the average household would spend in this property for heating, lighting and hot water. It is not based on how energy is used by the people living at the property.'
+        estimated_cost: 'Welsh: Estimated yearly energy cost for this property'
+        three_year_saving: 'Welsh: Potential saving'
+        costs_and_savings: 'Welsh: The estimated cost shows how much the average household would spend in this property for heating, lighting and hot water. It is not based on how energy is used by the people living at the property.'
         based_on: 'Welsh: The estimated saving is based on making all of the recommendations in %{link}.'
         based_on_cta: 'Welsh: how to improve this property’s energy performance'
         based_on_url: 'Welsh: #recommendations'
-        more_advice: 'Welsh: For more advice on how to reduce your energy bills visit %{link}.'
+        more_advice: 'Welsh: For advice on how to reduce your energy bills visit %{link}.'
         more_advice_cta: 'Welsh: Simple Energy Advice'
         more_advice_url: 'https://www.simpleenergyadvice.org.uk/'
         heating_in_property: 'Welsh: Heating use in this property'
@@ -787,7 +787,7 @@ cy:
           title: 'Welsh: Assessor contact details'
           list:
             telephone: 'Welsh: Telephone'
-            email: 'Welsh: E-mail address'
+            email: 'Welsh: Email'
             name: "Assessor's name"
         scheme:
           title: 'Welsh: Accreditation scheme contact details'
@@ -1196,7 +1196,7 @@ cy:
             name: 'Welsh: Assessor name'
             number: 'Welsh: Assessor number'
             telephone: 'Welsh: Telephone'
-            email: 'Welsh: E-mail address'
+            email: 'Welsh: Email'
       information:
         certificate:
           list:

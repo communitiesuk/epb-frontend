@@ -227,7 +227,7 @@
 
       <%== erb :component__summary_list, locals: {
         list: {
-          "scheme.title": assessment[:assessor][:registeredBy][:name],
+          "scheme.list.name": assessment[:assessor][:registeredBy][:name],
           "scheme.list.scheme_assessor_id": assessment[:assessor][:schemeAssessorId],
           "assessor.list.telephone": scheme_details(assessment[:assessor], 'phone').include?('missing') ? nil : scheme_details(assessment[:assessor], "phone"),
           "assessor.list.email": {

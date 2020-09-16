@@ -235,13 +235,13 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
 
       it "shows the estimated energy cost for a year" do
         expect(response.body).to include(
-          "Estimated energy cost for this property over a year",
+          "Estimated yearly energy cost for this property",
         )
         expect(response.body).to include("&pound;689.83")
       end
 
       it "shows the potential energy cost saving for a year" do
-        expect(response.body).to include("Over a year you could save")
+        expect(response.body).to include("Potential saving")
         expect(response.body).to include("&pound;174")
       end
 
@@ -298,7 +298,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
 
       it "shows the making changes text with the correct reduction value" do
         expect(response.body).to include(
-          'By making the <a class="govuk-link" href="#recommendations">recommended changes</a>, you will reduce this property’s CO2 emissions by 1.0 tonnes per year.',
+          'By making the <a class="govuk-link" href="#recommendations">recommended changes</a>, you could reduce this property’s CO2 emissions by 1.0 tonnes per year.',
         )
       end
 
@@ -309,7 +309,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       end
 
       it "shows the carbon emissions of the property" do
-        expect(response.body).to include(">Average household produces</")
+        expect(response.body).to include(">An average household produces</")
         expect(response.body).to include(">6 tonnes of CO2</dd>")
         expect(response.body).to include(">This property produces</")
         expect(response.body).to include(">2.4 tonnes of CO2</dd>")
@@ -335,7 +335,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
 
         it "shows the making changes text with the correct reduction value" do
           expect(response.body).to include(
-            'By making the <a class="govuk-link" href="#recommendations">recommended changes</a>, you will reduce this property’s CO2 emissions by 1.33 tonnes per year.',
+            'By making the <a class="govuk-link" href="#recommendations">recommended changes</a>, you could reduce this property’s CO2 emissions by 1.33 tonnes per year.',
           )
         end
 
@@ -385,7 +385,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
           '<h2 class="govuk-heading-m">Primary energy use</h2>',
         )
         expect(response.body).to include(
-          '<p class="govuk-body">The primary energy use for this property per year is 989 kilowatt hours (kWh) per square metre</p>',
+          '<p class="govuk-body">The primary energy use for this property per year is 989 kilowatt hours (kWh) per square metre.</p>',
         )
         expect(response.body).to include(
           '<span class="govuk-details__summary-text">What is primary energy use?</span>',
@@ -575,11 +575,6 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
           expect(response.status).to eq 200
         end
 
-        it "does not show the provider email" do
-          expect(response.body).not_to include(
-            "<dt class=\"govuk-summary-list__key govuk-!-width-one-half\">Email</dt>",
-          )
-        end
       end
     end
 
@@ -655,9 +650,9 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
     it "returns status 200" do
       expect(response.status).to eq(200)
     end
-    it "shows making any of the recommended changes will improve your property’s energy efficiency text" do
+    it "shows making any of the recommended changes will improve this property’s energy efficiency text" do
       expect(response.body).to include(
-        "Making any of the recommended changes will improve your property’s energy efficiency.",
+        "Making any of the recommended changes will improve this property’s energy efficiency.",
       )
     end
 
