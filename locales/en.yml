@@ -1544,6 +1544,27 @@ en:
           question: "PS3.6 Are guidance notices visible or controls available to inhibit use of cooling equipment whilst windows are open or cooling/heating is on?"
         set_temperature:
           question: "CS8.5 Note the set temperature in each zone for heating and cooling in relation to the activities and occupancy of zones and spaces in relation to the manager’s intent."
+      cooling_plants:
+        title: "Cooling plants"
+        cooling_plant:
+          title: "Cooling plant"
+          details:
+            system_number: "Unit Identifier"
+            identifier: "Component Identifier"
+          equipment:
+            title: "Equipment Inspected"
+            details:
+              cooling_capacity: "Rated Cooling Capacity (kW)"
+              description: "Description (type/details)"
+              location: "Location of Cooling Plant"
+              manufacturer: "Manufacturer"
+              model_reference: "Model/Reference"
+              refrigerant_charge: "Rated Cooling Capacity (kW)"
+              refrigerant_type: "Refrigerant Type"
+              serial_number: "Serial Number"
+              year_installed: "Year Plant Installed"
+              area_served: "Areas/Systems Served"
+              discrepancy_note: "Note below any discrepancy between information provided by client and on site information collected, or any information of additional relevance to the cooling plant/system:"
       related_certificate:
         title: "Related certificate"
         text: "A summary of this information can be found on the %{link}."

@@ -109,8 +109,10 @@ module FetchAssessmentSummary
           },
           cooling_plants: [
             {
-              system_number: "VOL001/SYS001 R410A Inverter Split Systems to Sales Area",
-              identifier: "VOL001/SYS001/CP1 Sampled R410A Inverter Split Area (1)",
+              system_number:
+                "VOL001/SYS001 R410A Inverter Split Systems to Sales Area",
+              identifier:
+                "VOL001/SYS001/CP1 Sampled R410A Inverter Split Area (1)",
               equipment: {
                 cooling_capacity: "10",
                 description: "Single Split",
@@ -123,6 +125,7 @@ module FetchAssessmentSummary
                 },
                 serial_number: "not visible",
                 year_installed: "2014",
+                discrepancy_note: "Something more random",
               },
               inspection: {},
               sizing: {},
@@ -132,8 +135,10 @@ module FetchAssessmentSummary
               humidity_control: {},
             },
             {
-              system_number: "VOL001/SYS001 R410A Inverter Split Systems to Sales Area",
-              identifier: "VOL001/SYS001/CP2 Sampled R410A Inverter Split Area (2)",
+              system_number:
+                "VOL001/SYS001 R410A Inverter Split Systems to Sales Area",
+              identifier:
+                "VOL001/SYS001/CP2 Sampled R410A Inverter Split Area (2)",
               equipment: {
                 cooling_capacity: "10",
                 description: "Single Split",
