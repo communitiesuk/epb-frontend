@@ -32,7 +32,8 @@
         },
         {
           link: '#sub_systems',
-          text: 'ac_report.sections.sub_systems.title'
+          text: 'ac_report.sections.sub_systems.title',
+          hidden: assessment[:subSystems].empty?
         },
         {
           link: '#pre_inspection',
@@ -44,19 +45,23 @@
         },
         {
           link: '#air_handling_systems',
-          text: 'ac_report.sections.air_handling_systems.title'
+          text: 'ac_report.sections.air_handling_systems.title',
+          hidden: assessment[:airHandlingSystems].empty?
         },
         {
           link: '#terminal_units',
-          text: 'ac_report.sections.terminal_units.title'
+          text: 'ac_report.sections.terminal_units.title',
+          hidden: assessment[:terminalUnits].empty?
         },
         {
           link: '#system_controls',
-          text: 'ac_report.sections.system_controls.title'
+          text: 'ac_report.sections.system_controls.title',
+          hidden: assessment[:systemControls].empty?,
         },
         {
           link: '#related_certificate',
-          text: 'ac_report.sections.related_certificate.title'
+          text: 'ac_report.sections.related_certificate.title',
+          hidden: assessment[:relatedRrn].nil? || assessment[:relatedRrn].empty?
         },
       ]
     } %>
@@ -98,7 +103,6 @@
 
     <%== erb :ac_report__cooling_plants, locals: {
       cooling_plants: assessment[:coolingPlants],
-
     } %>
 
     <% unless assessment[:airHandlingSystems].empty? %>

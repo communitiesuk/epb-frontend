@@ -1,7 +1,7 @@
 <div class="component__contents">
   <h2 class="govuk-heading-m"><%= title %></h2>
   <div class="dashed-p">
-    <% sections.each do |section| %>
+    <% sections.reject{|section| section[:hidden]}.each do |section| %>
       <p class="govuk-body"><a class="govuk-link" href="<%= section[:link] %>"><%=
         t(section[:text])
       %></a></p>
