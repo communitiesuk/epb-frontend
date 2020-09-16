@@ -474,7 +474,7 @@ cy:
   find_non_dom_certificate_by_postcode_results:
     head:
       title: 'Welsh: Energy performance of buildings register - Results for energy performance certificates and reports at your postcode'
-    top_heading: 'Welsh: View energy certificates and reports for non-domestic properties'
+    top_heading: 'Welsh: Find energy certificates and reports'
     no_certificates: 'Welsh: There are no certificates or reports matching that postcode.'
     list: 'Welsh: %{length} certificates and reports for %{postcode}'
 

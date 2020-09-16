@@ -114,7 +114,7 @@ describe "Acceptance::Non Domestic Certificate" do
 
         it "displays the find a non-domestic certificate results page heading" do
           expect(response.body).to include(
-            "View energy certificates and reports for non-domestic properties",
+            "Find energy certificates and reports",
           )
         end
 
@@ -159,7 +159,7 @@ describe "Acceptance::Non Domestic Certificate" do
 
         it "displays the find a certificate page heading" do
           expect(response.body).to include(
-            "View energy certificates and reports for non-domestic properties",
+            "Find energy certificates and reports",
           )
         end
 

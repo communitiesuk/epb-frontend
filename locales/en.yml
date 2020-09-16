@@ -485,7 +485,7 @@ en:
   find_non_dom_certificate_by_postcode_results:
     head:
       title: 'Energy performance of buildings register - Results for energy performance certificates and reports at your postcode'
-    top_heading: 'View energy certificates and reports for non-domestic properties'
+    top_heading: 'Find energy certificates and reports'
     no_certificates: 'There are no certificates or reports matching that postcode.'
     list: '%{length} certificates and reports for %{postcode}'
 
@@ -505,7 +505,7 @@ en:
   find_non_dom_certificate_by_reference_number_results:
     head:
       title: 'Energy performance of buildings register - Results for energy performance certificates and reports matching certificate number'
-    top_heading: 'View energy certificates and reports for non-domestic properties'
+    top_heading: 'Find energy certificates and reports'
     no_certificates: 'There are no certificates or reports matching that certificate number.'
     list: '%{length} certificates and reports for %{reference_number}'
 
