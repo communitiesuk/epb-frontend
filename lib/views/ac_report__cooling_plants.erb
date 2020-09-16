@@ -61,9 +61,10 @@
 
     <h5 class="govuk-heading-s"><%= t('ac_report.sections.cooling_plants.cooling_plant.sizing.recommendation_title') %></h5>
     <p class="govuk-body"><%= t('ac_report.sections.cooling_plants.cooling_plant.sizing.recommendation_intro_text') %></p>
-    <% unless cooling_plant[:sizing][:guidance].nil? %>
+    <% if cooling_plant[:sizing].key?(:guidance) && !cooling_plant[:sizing][:guidance].nil? %>
       <% cooling_plant[:sizing][:guidance].each do |guidance| %>
         <% next if guidance[:text].nil? %>
+        <p class="govuk-body"><%= guidance[:text] %></p>
       <% end %>
     <% end %>
 
