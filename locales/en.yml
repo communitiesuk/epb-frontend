@@ -534,11 +534,11 @@ en:
       company_name: 'Employer/Trading name'
       company_address: 'Employer/Trading address'
     epc_summary:
-      title: "Energy Rating"
+      title: "Energy rating"
       date_of_expiry: "Valid until %{date_of_expiry}"
       certificate_id: "Certificate number"
-      property_info:
-          'This property is a %{property_type} and has a total floor area of %{total_floor_area} square metres.'
+      property_info: 'This property is a %{property_type}.'
+      floor_area: 'It has a total floor area of %{total_floor_area} square metres.'
     related:
       title: 'Other %{type}s for this property'
       certificates:
@@ -572,7 +572,7 @@ en:
     square_metres: 'square metres'
 
   non_domestic_epc:
-    top_heading: 'Non-domestic energy performance certificate (EPC)'
+    top_heading: 'Energy performance certificate (EPC)'
     contents:
       title: 'Certificate contents'
     energy_rating_section:

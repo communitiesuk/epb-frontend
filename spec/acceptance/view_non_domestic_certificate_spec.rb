@@ -36,7 +36,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
 
     it "shows the non-domestic energy performance certificate title" do
       expect(response.body).to include(
-        '<h1 class="govuk-heading-xl">Non-domestic energy performance certificate (EPC)</h1>',
+        '<h1 class="govuk-heading-xl">Energy performance certificate (EPC)</h1>',
       )
     end
 
@@ -48,7 +48,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
 
       it "shows the energy rating title" do
         expect(response.body).to include(
-          '<p class="epc-rating-title govuk-body">Energy Rating</p>',
+          '<p class="epc-rating-title govuk-body">Energy rating</p>',
         )
       end
 
@@ -73,11 +73,11 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
       end
 
       it "shows the property type" do
-        expect(response.body).to include("B1 Offices and Workshop businesses")
+        expect(response.body).to include("This property is a B1 Offices and Workshop businesses.")
       end
 
       it "shows the total floor area" do
-        expect(response.body).to include("403 square metres")
+        expect(response.body).to include("It has a total floor area of 403 square metres.")
       end
     end
 
