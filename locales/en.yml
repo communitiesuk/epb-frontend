@@ -465,8 +465,8 @@ en:
   find_non_dom_certificate_by_postcode:
     head:
       title: 'Energy performance of buildings register - Find energy certificates and reports by postcode'
-    top_heading: 'Search for energy certificates and reports by postcode'
-    question: 'Enter a postcode'
+    top_heading: 'Find energy certificates and reports by postcode'
+    question: 'Enter the postcode of the property'
     postcode_not_valid: 'Enter a real postcode'
     button_text: 'Find'
     hint: 'For example SW1A 2AA'
@@ -476,11 +476,11 @@ en:
     certificate_by_street_name_and_town:
       heading: 'Search by street and town'
       body: "If you do not know the property’s postcode, %{link}."
-      cta: 'find an EPC using the street name and town'
+      cta: 'find energy certificates and reports using the street name and town'
     certificate_by_reference_number:
       heading: 'Search by certificate number'
       body: "You can %{link}."
-      cta: 'find an EPC by using its certificate number'
+      cta: 'find a certificate by using its certificate number'
 
   find_non_dom_certificate_by_postcode_results:
     head:
