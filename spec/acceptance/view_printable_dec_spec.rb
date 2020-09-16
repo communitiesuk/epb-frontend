@@ -106,15 +106,15 @@ describe "Acceptance::PrintableDisplayEnergyCertificate", type: :feature do
         expect(response.body).to have_css "td", text: "14 May 2020"
         expect(response.body).to have_css "th", text: "Nominated date"
         expect(response.body).to have_css "td", text: "1 January 2020"
-        expect(response.body).to have_css "th", text: "Related party disclosure"
+        expect(response.body).to have_css "th", text: "Assessor’s declaration"
         expect(response.body).to have_css "td",
                                           text:
                                             "The assessor has not indicated whether they have a relation to this property."
       end
     end
 
-    context "with different related party disclosure codes" do
-      it "shows the corresponding related party disclosure text" do
+    context "with different assessor declaration codes" do
+      it "shows the corresponding assessor declaration text" do
         related_party_disclosures = {
           "1": "Not related to the occupier.",
           "2": "Employed by the occupier.",

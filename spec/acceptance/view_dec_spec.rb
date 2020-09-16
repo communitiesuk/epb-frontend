@@ -195,7 +195,7 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
         expect(response.body).to have_css "dd", text: "1 January 2020"
         expect(response.body).to have_css "dt", text: "Valid until"
         expect(response.body).to have_css "dd", text: "21 February 2030"
-        expect(response.body).to have_css "dt", text: "Related party disclosure"
+        expect(response.body).to have_css "dt", text: "Assessor’s declaration"
         expect(response.body).to have_css "dd",
                                           text:
                                             "The assessor has not indicated whether they have a relation to this property."

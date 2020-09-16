@@ -845,7 +845,7 @@ en:
         certificate:
           title: 'Assessment details'
           list:
-            disclosure: 'Related party disclosure'
+            disclosure: 'Assessor’s declaration'
             date_of_assessment: 'Date of assessment'
             date_of_certificate: 'Date of certificate'
             type_of_assessment: 'Type of assessment'
@@ -853,7 +853,7 @@ en:
             sap_description_second_part: 'This type of assessment must be carried out on all new properties built after 1 April 2008 in England and Wales, and 30 September 2008 in Northern Ireland.'
             rdsap_description_first_part: 'RdSAP (Reduced data Standard Assessment Procedure) is a method used to assess and compare the energy and environmental performance of properties in the UK. It uses a site visit and survey of the property to calculate energy performance.'
             rdsap_description_second_part: 'This type of assessment can be carried out on properties built before 1 April 2008 in England and Wales, and 30 September 2008 in Northern Ireland. It can also be used for newer properties, as long as they have a previous SAP assessment, which uses detailed information about the property’s construction to calculate energy performance.'
-            no_disclosure: 'No related party disclosure provided'
+            no_disclosure: 'No assessor’s declaration provided'
             disclosure_number_not_valid: 'The disclosure code provided is not valid'
       green_deal:
         title: 'Green Deal Plan'
@@ -1312,7 +1312,7 @@ en:
         issue_date: 'Issue date'
         nominated_date: 'Nominated date'
         valid_until: 'Valid until'
-        related_party_disclosure: 'Related party disclosure'
+        related_party_disclosure: 'Assessor’s declaration'
         download_xml: 'Summary XML'
         download_xml_cta: 'Download summary XML'
         assessor:
@@ -1328,7 +1328,7 @@ en:
       information:
         certificate:
           list:
-            no_disclosure: 'No related party disclosure provided.'
+            no_disclosure: 'No assessor’s declaration provided.'
             disclosure_number_not_valid: 'The disclosure code provided is not valid.'
 
   dec_rr:

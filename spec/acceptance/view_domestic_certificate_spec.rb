@@ -171,7 +171,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       let(:response) { get "/energy-certificate/123-123" }
 
       it "shows related party disclosure text and code not present" do
-        expect(response.body).to include("No related party disclosure provided")
+        expect(response.body).to include("No assessor’s declaration provided")
       end
     end
 

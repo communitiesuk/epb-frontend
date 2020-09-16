@@ -797,7 +797,7 @@ cy:
         certificate:
           title: 'Welsh: Assessment details'
           list:
-            disclosure: 'Welsh: Related party disclosure'
+            disclosure: 'Welsh: Assessor’s declaration'
             date_of_assessment: 'Welsh: Date of assessment'
             date_of_certificate: 'Welsh: Date of certificate'
             type_of_assessment: 'Welsh: Type of assessment'
@@ -805,7 +805,7 @@ cy:
             sap_description_second_part: 'Welsh: This type of assessment must be carried out on all new properties built after 1 April 2008 in England and Wales, and 30 September 2008 in Northern Ireland.'
             rdsap_description_first_part: 'Welsh: RdSAP (Reduced data Standard Assessment Procedure) is a method used to assess and compare the energy and environmental performance of properties in the UK. It uses a site visit and survey of the property to calculate energy performance.'
             rdsap_description_second_part: 'Welsh: This type of assessment can be carried out on properties built before 1 April 2008 in England and Wales, and 30 September 2008 in Northern Ireland. It can also be used for newer properties, as long as they have a previous SAP assessment, which uses detailed information about the property’s construction to calculate energy performance.'
-            no_disclosure: 'Welsh: No related party disclosure provided'
+            no_disclosure: 'Welsh: No assessor’s declaration provided'
             disclosure_number_not_valid: 'Welsh: The disclosure code provided is not valid'
       green_deal:
         title: 'Welsh: Green Deal Plan'
@@ -1187,7 +1187,7 @@ cy:
         issue_date: 'Welsh: Issue date'
         nominated_date: 'Welsh: Nominated date'
         valid_until: 'Welsh: Valid until'
-        related_party_disclosure: 'Welsh: Related party disclosure'
+        related_party_disclosure: 'Welsh: Assessor’s declaration'
         related_report:
           cta: "Welsh: Recommendation Report"
           text: "Welsh: Recommendations for improving the energy performance of the building are contained in the associated %{link}."
@@ -1200,7 +1200,7 @@ cy:
       information:
         certificate:
           list:
-            no_disclosure: 'Welsh: No related party disclosure provided.'
+            no_disclosure: 'Welsh: No assessor’s declaration provided.'
             disclosure_number_not_valid: 'Welsh: The disclosure code provided is not valid.'
 
   dec_rr:
