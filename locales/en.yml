@@ -19,7 +19,6 @@ en:
     body:
       service_name: 'Energy Performance of Buildings Register'
       skip: 'Skip to main content'
-      cookies: 'GOV.UK uses cookies to make the site simpler. <a href="#">Find out more about cookies</a>'
       govuk: 'GOV.UK'
       beta:
         heading: 'beta'
