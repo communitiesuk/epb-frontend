@@ -58,7 +58,7 @@ en:
         link: 'Welsh (Cymraeg)'
         url: '?lang=cy'
       phone_text: 'If you need additional support to find an assessor, call our helpdesk on %{link} (Monday to Friday, 9am - 5pm).'
-      phone_number: '0233 788 1234'
+      phone_number: '020 3829 0748'
       scotland:
         description: 'For properties in Scotland, use the %{link}.'
         link: 'Scottish energy certificate service'
