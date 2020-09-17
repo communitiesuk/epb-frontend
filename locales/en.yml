@@ -57,8 +57,10 @@ en:
         description: 'This service is also available in %{link}.'
         link: 'Welsh (Cymraeg)'
         url: '?lang=cy'
-      phone_text: 'If you need additional support to find an assessor, call our helpdesk on %{link} (Monday to Friday, 9am - 5pm).'
-      phone_number: '020 3829 0748'
+      contact:
+        text: "If you need additional support to find an assessor, contact us on %{link}, or call our helpdesk on 020 3829 0748 (Monday to Friday, 9am - 5pm)."
+        link: "mailto:mhclg.digital-services@communities.gov.uk?subject=EPB - "
+        cta: "mhclg.digital-services@communities.gov.uk"
       scotland:
         description: 'For properties in Scotland, use the %{link}.'
         link: 'Scottish energy certificate service'
