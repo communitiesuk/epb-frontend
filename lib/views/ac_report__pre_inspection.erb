@@ -22,47 +22,54 @@
 
     <% else %>
 
-  <p>
-    <em>
-      <%= t('ac_report.sections.pre_inspection.scss') %>
-    </em>
-  </p>
+    <% unless assessment[:preInspectionChecklist][:sccs].nil? %>
+      <p>
+        <em>
+          <%= t('ac_report.sections.pre_inspection.scss') %>
+        </em>
+      </p>
 
-    <%== erb :ac_report__pre_inspection__checklist, locals: {
-      list: assessment[:preInspectionChecklist][:sccs][:essential],
-      translation_prefix: 'ac_report.sections.pre_inspection.essential.'
-    } %>
+        <%== erb :ac_report__pre_inspection__checklist, locals: {
+          list: assessment[:preInspectionChecklist][:sccs][:essential],
+          translation_prefix: 'ac_report.sections.pre_inspection.essential.'
+        } %>
 
-    <%== erb :ac_report__pre_inspection__checklist, locals: {
-      list: assessment[:preInspectionChecklist][:sccs][:desirable],
-      translation_prefix: 'ac_report.sections.pre_inspection.desirable.'
-    } %>
+        <%== erb :ac_report__pre_inspection__checklist, locals: {
+          list: assessment[:preInspectionChecklist][:sccs][:desirable],
+          translation_prefix: 'ac_report.sections.pre_inspection.desirable.'
+        } %>
 
-    <%== erb :ac_report__pre_inspection__checklist, locals: {
-      list: assessment[:preInspectionChecklist][:sccs][:optional],
-      translation_prefix: 'ac_report.sections.pre_inspection.optional.'
-    } %>
+        <%== erb :ac_report__pre_inspection__checklist, locals: {
+          list: assessment[:preInspectionChecklist][:sccs][:optional],
+          translation_prefix: 'ac_report.sections.pre_inspection.optional.'
+        } %>
 
-    <p>
-      <em>
-        <%= t('ac_report.sections.pre_inspection.pcs') %>
-      </em>
-    </p>
+      <% end %>
 
-    <%== erb :ac_report__pre_inspection__checklist, locals: {
-      list: assessment[:preInspectionChecklist][:pcs][:essential],
-      translation_prefix: 'ac_report.sections.pre_inspection.essential.'
-    } %>
+    <% unless assessment[:preInspectionChecklist][:pcs].nil? %>
+      <p>
+        <em>
+          <%= t('ac_report.sections.pre_inspection.pcs') %>
+        </em>
+      </p>
 
-    <%== erb :ac_report__pre_inspection__checklist, locals: {
-      list: assessment[:preInspectionChecklist][:pcs][:desirable],
-      translation_prefix: 'ac_report.sections.pre_inspection.desirable.'
-    } %>
+      <%== erb :ac_report__pre_inspection__checklist, locals: {
+        list: assessment[:preInspectionChecklist][:pcs][:essential],
+        translation_prefix: 'ac_report.sections.pre_inspection.essential.'
+      } %>
 
-    <%== erb :ac_report__pre_inspection__checklist, locals: {
-      list: assessment[:preInspectionChecklist][:pcs][:optional],
-      translation_prefix: 'ac_report.sections.pre_inspection.optional.'
-    } %>
+      <%== erb :ac_report__pre_inspection__checklist, locals: {
+        list: assessment[:preInspectionChecklist][:pcs][:desirable],
+        translation_prefix: 'ac_report.sections.pre_inspection.desirable.'
+      } %>
+
+      <%== erb :ac_report__pre_inspection__checklist, locals: {
+        list: assessment[:preInspectionChecklist][:pcs][:optional],
+        translation_prefix: 'ac_report.sections.pre_inspection.optional.'
+      } %>
+
+    <% end %>
+
 
 <% end %>
 </div>
