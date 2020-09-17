@@ -77,13 +77,8 @@
     <div id="other_reports">
       <%== erb :component__related_assessments, locals: {
         assessment: assessment,
-        section_heading: t('component.related.title', type: "EPC recommendation report"),
-        reminder: t('component.related.reports.text', contact_centre_number: t('contact.help_desk_number')),
-        no_related_text: t('component.related.reports.no_related_reports'),
-        assessment_type: assessment[:typeOfAssessment],
-        heading_report_reference: t('component.related.reference_number'),
-        heading_valid_until: t('component.related.valid_until'),
-        expired_text: t('component.related.expired'),
+        type: 'report',
+        assessment_type:  assessment[:typeOfAssessment],
       } %>
     </div>
   </div>

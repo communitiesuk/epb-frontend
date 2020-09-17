@@ -518,17 +518,19 @@ en:
       floor_area: 'It has a total floor area of %{total_floor_area} square metres.'
     related:
       title: 'Other %{type}s for this property'
-      certificates:
-        title: 'Other certificates for this property'
-        text: 'If you are aware of previous certificates for this property and they are not listed here, please contact the Help Desk at 020 3829 0748.'
-        no_related_certificates: 'There are no related certificates for this property.'
-      reports:
-        title: 'Other reports for this property'
-        text: 'If you are aware of previous reports for this property and they are not listed here, please contact the Help Desk at %{contact_centre_number}.'
-        no_related_reports: 'There are no related reports for this property.'
+      certificate: 'certificate'
+      report: 'report'
+      message: 'If you are aware of previous %{type}s for this property and they are not listed here, please contact us on %{link}, or call our helpdesk on 020 3829 0748.'
+      no_related: 'There are no related %{type}s for this property.'
       reference_number: 'Certificate number'
       valid_until: 'Valid until'
       expired: 'Expired'
+      link: "mailto:mhclg.digital-services@communities.gov.uk?subject=EPB - "
+      cta: "mhclg.digital-services@communities.gov.uk"
+      certificates:
+        title: "Other certificates for this property"
+      reports:
+        title: "Other reports for this property"
     recommendations:
       title: 'Recommendations'
       text: 'Make these changes to improve the property’s energy efficiency.'

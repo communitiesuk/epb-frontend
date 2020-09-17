@@ -605,7 +605,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       it "shows the section title" do
         expect(response.body).to have_css(
           "h2",
-          text: "Other EPCs for this property",
+          text: "Other certificates for this property",
         )
       end
 
@@ -627,10 +627,8 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
 
         let(:response) { get "/energy-certificate/1111-1111-1111-1111-1112" }
 
-        it "does not show the section title" do
-          expect(response.body).not_to include(
-            '<h2 class="govuk-heading-l">Other certificates for this property</h2>',
-          )
+        it "Shows an appropriate message" do
+          expect(response.body).to have_css("p", text: "There are no related certificates for this property.")
         end
       end
     end

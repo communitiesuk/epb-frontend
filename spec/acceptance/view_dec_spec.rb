@@ -230,10 +230,10 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
 
     it "shows the Other reports for this property section" do
       expect(response.body).to have_css "h2",
-                                        text: "Other DECs for this property"
+                                        text: "Other certificates for this property"
       expect(response.body).to have_css "p",
                                         text:
-                                          "If you are aware of previous certificates for this property and they are not listed here, please contact the Help Desk at 020 3829 0748."
+                                          "If you are aware of previous certificates for this property and they are not listed here, please contact us on mhclg.digital-services@communities.gov.uk, or call our helpdesk on 020 3829 0748."
       expect(response.body).to have_css "dt", text: "Certificate number"
       expect(response.body).to have_link "0000-0000-0000-0000-0001",
                                          href: "/energy-certificate/0000-0000-0000-0000-0001"
@@ -253,7 +253,7 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
 
       it "shows the related assessments section title" do
         expect(response.body).to have_css "h2",
-                                          text: "Other DECs for this property"
+                                          text: "Other certificates for this property"
       end
 
       it "shows the no related assessments content" do

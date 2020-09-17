@@ -1,28 +1,32 @@
 <div class="epc-blue-bottom">
-  <h2 class="govuk-heading-l"><%= section_heading %></h2>
-  <p class="govuk-body"><%= reminder %></p>
+  <h2 class="govuk-heading-l"><%= t('component.related.title', type: type) %></h2>
+  <p class="govuk-body">
+    <%== t('component.related.message', type: type, link: "<a href=\"" + t('component.related.link') + "\">" + t('component.related.cta') + "</a>") %>
+  </p>
   <% if related_assessments(assessment, assessment_type).empty? %>
-    <p class="govuk-body"><%= no_related_text %></p>
+    <p class="govuk-body"><%= t('component.related.no_related', type: type) %></p>
   <% else %>
     <dl class="govuk-summary-list">
       <% assessment[:relatedAssessments].each do |related_assessment| %>
         <% if related_assessment[:assessmentType] == assessment_type %>
         <% next if related_assessment[:assessmentStatus] == "CANCELLED" || related_assessment[:assessmentStatus] == "NOT_FOR_ISSUE" %>
           <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
-            <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
-              heading_report_reference
-            %></dt>
+            <dt class="govuk-summary-list__key govuk-!-width-one-half">
+              <%= t('component.related.reference_number') %>
+            </dt>
             <dd class="govuk-summary-list__value govuk-!-width-one-half">
               <a class="govuk-link" href="<%= localised_url('/energy-certificate/' + related_assessment[:assessmentId]) %>"><%= related_assessment[:assessmentId] %></a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
-              heading_valid_until
-            %></dt>
+            <dt class="govuk-summary-list__key govuk-!-width-one-half">
+              <%= t('component.related.valid_until')  %>
+            </dt>
             <dd class="govuk-summary-list__value govuk-!-width-one-half"><%
               if related_assessment[:assessmentStatus] == "EXPIRED" %>
-                <span class="expired-text govuk-!-font-weight-bold"><%= date(related_assessment[:assessmentExpiryDate]) %> (<%= expired_text %>)</span>
+                <span class="expired-text govuk-!-font-weight-bold">
+                  <%= date(related_assessment[:assessmentExpiryDate]) %> (<%= t('component.related.expired')  %>)
+                </span>
                 <% else %><%=
               date(related_assessment[:assessmentExpiryDate])
             %><% end %></dd>

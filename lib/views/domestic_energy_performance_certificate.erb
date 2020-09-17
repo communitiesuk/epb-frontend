@@ -258,15 +258,10 @@
         <% end %>
       <% end %>
 
-      <%== erb :component__related_assessments, locals: {
-          assessment: assessment,
-          section_heading: t('component.related.title', type: t('domestic_epc.sections.related_assessments.certificate_type')),
-          reminder: t('component.related.certificates.text', contact_centre_number: t('contact.help_desk_number')),
-          no_related_text: t('component.related.certificates.no_related_certificates'),
-          assessment_type: assessment[:typeOfAssessment],
-          heading_report_reference: t('component.related.reference_number'),
-          heading_valid_until: t('component.related.valid_until'),
-          expired_text: t('component.related.expired'),
-        } %>
+    <%== erb :component__related_assessments, locals: {
+      assessment: assessment,
+      type: 'certificate',
+      assessment_type:  assessment[:typeOfAssessment],
+    } %>
   </div>
 </div>
