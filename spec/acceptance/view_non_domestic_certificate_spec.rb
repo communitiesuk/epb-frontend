@@ -212,6 +212,12 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
         expect(response.body).to include("413.22")
       end
 
+      it "shows the primary energy use explanation" do
+        expect(response.body).to include(
+                                     "What is primary energy use?",
+                                     )
+      end
+
       it "shows the contact section" do
         expect(response.body).to include(
           ">Contacting the assessor and accreditation scheme</h2>",
@@ -366,6 +372,22 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
         expect(response.body).to have_css "p",
                                           text: "There are no related certificates for this property."
       end
+    end
+  end
+
+  context "when the assessment exists without primary energy value" do
+    before do
+      FetchAssessmentSummary::AssessmentStub.fetch_cepc assessment_id:
+                                                            "1234-5678-1234-5678-1234",
+                                                        energyEfficiencyBand:
+                                                            "b",
+                                                        primaryEnergyUse: nil
+    end
+
+    it "hides the primary energy use explanation" do
+      expect(response.body).not_to include(
+                                   "What is primary energy use?",
+                                   )
     end
   end
 end

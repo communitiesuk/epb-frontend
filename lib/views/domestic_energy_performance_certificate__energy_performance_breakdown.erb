@@ -36,17 +36,5 @@
 
   <h2 class="govuk-heading-m"><%= t('domestic_epc.sections.breakdown.primary_energy_use') %></h2>
   <p class="govuk-body"><%= t('domestic_epc.sections.breakdown.primary_energy_use_description', :primary_energy => assessment[:primaryEnergyUse]) %></p>
-  <details class="govuk-details" data-module="govuk-details">
-    <summary class="govuk-details__summary">
-      <span class="govuk-details__summary-text"><%= t('domestic_epc.sections.breakdown.primary_energy_use_dropdown.what_is_primary_energy_use_title') %></span>
-    </summary>
-    <div class="govuk-details__text">
-      <p class="govuk-body"><%= t('domestic_epc.sections.breakdown.primary_energy_use_dropdown.what_is_primary_energy_use_details') %></p>
-      <ul class="govuk-list govuk-list--bullet govuk-!-margin-left-6">
-        <li><%= t('domestic_epc.sections.breakdown.primary_energy_use_dropdown.efficiency_of_heating') %></li>
-        <li><%= t('domestic_epc.sections.breakdown.primary_energy_use_dropdown.efficiency_of_electricity') %></li>
-        <li><%= t('domestic_epc.sections.breakdown.primary_energy_use_dropdown.fuel_for_property') %></li>
-      </ul>
-    </div>
-  </details>
+  <%== erb :__primary_energy_use_dropdown %>
 </div>

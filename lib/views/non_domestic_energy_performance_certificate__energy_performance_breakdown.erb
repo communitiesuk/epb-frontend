@@ -15,4 +15,7 @@
     translation_prefix: 'non_domestic_epc.energy_peformance_breakdown.',
     skip_null: true
   } %>
+
+  <% unless primary_energy_use.nil? %><%== erb :__primary_energy_use_dropdown %><% end %>
+
 </div>

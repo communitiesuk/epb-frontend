@@ -642,6 +642,7 @@ module FetchAssessmentSummary
     def self.fetch_cepc(
       assessment_id:,
       energyEfficiencyBand:,
+      primaryEnergyUse: "413.22",
       related_rrn: "4192-1535-8427-8844-6702",
       related_party_disclosure: nil,
       related_assessments: [
@@ -682,7 +683,7 @@ module FetchAssessmentSummary
             buildingLevel: "3",
           },
           buildingEmissionRate: "67.09",
-          primaryEnergyUse: "413.22",
+          primaryEnergyUse: primaryEnergyUse,
           relatedRrn: related_rrn,
           newBuildRating: "28",
           newBuildBand: "b",
