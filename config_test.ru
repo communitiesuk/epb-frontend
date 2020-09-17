@@ -99,6 +99,52 @@ FetchAssessmentSummary::AssessmentStub.fetch_ac_cert assessment_id:
 
 FetchAssessmentSummary::AssessmentStub.fetch_ac_report assessment_id:
                                                          "0000-0000-0000-0000-5555"
+FetchAssessmentSummary::AssessmentStub.fetch_ac_report(
+    assessment_id: "0000-0000-0000-0000-5556",
+    pre_inspection_checklist: {
+        pcs: {
+            essential: {
+                listOfSystems: false,
+                temperatureControlMethod: false,
+                operationControlMethod: false,
+            },
+            desirable: {
+                previousReports: false,
+                maintenanceRecords: false,
+                calibrationRecords: false,
+                consumptionRecords: false,
+            },
+            optional: {
+                coolingLoadEstimate: false, complaintRecords: false
+            },
+        },
+        sccs: {
+            essential: {
+                listOfSystems: true,
+                coolingCapacities: true,
+                controlZones: true,
+                temperatureControls: true,
+                operationControls: true,
+                schematics: false,
+            },
+            desirable: {
+                previousReports: true,
+                refrigerationMaintenance: false,
+                deliverySystemMaintenance: true,
+                controlSystemMaintenance: true,
+                consumptionRecords: true,
+                commissioningResults: true,
+            },
+            optional: {
+                coolingLoadEstimate: true,
+                complaintRecords: true,
+                bmsCapability: true,
+                monitoringCapability: true,
+            },
+        },
+    }
+)
+
 
 ENV["EPB_AUTH_CLIENT_ID"] = "test.id"
 ENV["EPB_AUTH_CLIENT_SECRET"] = "test.client.secret"

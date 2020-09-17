@@ -316,4 +316,58 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
                                         text: "N/A no humidity control installed to this system"
     end
   end
+
+  context "CEPC 6.0 AC report" do
+    before do
+      FetchAssessmentSummary::AssessmentStub.fetch_ac_report(
+          assessment_id: "0000-0000-0000-0000-9999",
+          pre_inspection_checklist: {
+              pcs: {
+                  essential: {
+                      listOfSystems: false,
+                      temperatureControlMethod: false,
+                      operationControlMethod: false,
+                  },
+                  desirable: {
+                      previousReports: false,
+                      maintenanceRecords: false,
+                      calibrationRecords: false,
+                      consumptionRecords: false,
+                  },
+                  optional: {
+                      coolingLoadEstimate: false, complaintRecords: false
+                  },
+              },
+              sccs: {
+                  essential: {
+                      listOfSystems: true,
+                      coolingCapacities: true,
+                      controlZones: true,
+                      temperatureControls: true,
+                      operationControls: true,
+                      schematics: false,
+                  },
+                  desirable: {
+                      previousReports: true,
+                      refrigerationMaintenance: false,
+                      deliverySystemMaintenance: true,
+                      controlSystemMaintenance: true,
+                      consumptionRecords: true,
+                      commissioningResults: true,
+                  },
+                  optional: {
+                      coolingLoadEstimate: true,
+                      complaintRecords: true,
+                      bmsCapability: true,
+                      monitoringCapability: true,
+                  },
+              },
+          }
+          )
+    end
+
+    it "can show the cooling plant section" do
+      expect(response.body).to have_css "h2", text: "Pre inspection records requested"
+    end
+  end
 end

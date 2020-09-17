@@ -3,6 +3,8 @@
     <%= t('ac_report.sections.pre_inspection.title') %>
   </h2>
 
+<% unless assessment[:preInspectionChecklist][:essential].nil? %>
+
   <%== erb :ac_report__pre_inspection__checklist, locals: {
     list: assessment[:preInspectionChecklist][:essential],
     translation_prefix: 'ac_report.sections.pre_inspection.essential.'
@@ -17,5 +19,5 @@
     list: assessment[:preInspectionChecklist][:optional],
     translation_prefix: 'ac_report.sections.pre_inspection.optional.'
   } %>
-
+<% end %>
 </div>
