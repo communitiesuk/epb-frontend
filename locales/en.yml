@@ -531,9 +531,9 @@ en:
       expired: 'Expired'
     recommendations:
       title: 'Recommendations'
-      text: 'The assessment found opportunities to improve the building’s energy efficiency.'
+      text: 'Make these changes to improve the property’s energy efficiency.'
       recommended_improvements_text: 'Recommended improvements are grouped by the estimated time it would take for the change to pay for itself. The assessor may also make additional recommendations.'
-      description: 'Each recommendation is marked as low, medium or high for the potential impact the change would have on reducing the building’s carbon emissions.'
+      description: 'Each recommendation is marked as low, medium or high. This shows the potential impact of the change on reducing the property’s carbon emissions.'
       table:
         three_years_heading: 'Changes that pay for themselves within 3 years'
         three_to_seven_years_heading: 'Changes that pay for themselves within 3 to 7 years'
@@ -593,11 +593,11 @@ en:
       rating:
         title: 'Energy rating and EPC'
         current_energy_rating: 'This property’s current energy rating is %{band}.'
-        more_info: 'For more information, see the %{link}.'
-        cta: 'Energy Performance Certificate for this report'
+        more_info: 'For more information on the property’s energy performance, %{link}.'
+        cta: 'see the EPC for this property'
         url: '#'
       property_details:
-        title: 'Building and report details'
+        title: 'Property and report details'
         issued_on: 'Report issued on'
         floor_area: 'Total useful floor area'
         environment: 'Building environment'
@@ -619,12 +619,12 @@ en:
           list:
             no_disclosure: 'The assessor has not indicated whether they have a relation to this property.'
     how_this_building_compares:
-      heading: "How this building compares to others"
-      explanation: "Buildings similar to this one could have ratings:"
+      heading: "How this property compares to others"
+      explanation: "Properties similar to this one could have ratings:"
       if_newly_built: "If newly built"
       if_typical_existing_stock: "If typical of the existing stock"
     energy_peformance_breakdown:
-      heading: "Breakdown of this building’s energy performance"
+      heading: "Breakdown of this property’s energy performance"
       main_heating_fuel: "Main heating fuel"
       building_environment: "Building environment"
       floor_area: "Total useful floor area (m2)"
@@ -658,7 +658,7 @@ en:
     related_report:
       heading: "Recommendation report"
       cta: "recommendation report"
-      text: "Guidance on improving the energy performance of this building can be found in the %{link}."
+      text: "Guidance on improving the energy performance of this property can be found in the %{link}."
 
   domestic_epc:
     top_heading: 'Energy performance certificate (EPC)'
@@ -1135,13 +1135,13 @@ en:
       relation: 'Relative of the professional dealing with the property transaction'
   non_domestic_disclosure_code:
     1:
-      relation: "The assessor is not related to the owner of the building."
+      relation: "The assessor is not related to the owner of the property."
     2:
-      relation: "The assessor is a relative of the building owner."
+      relation: "The assessor is a relative of the property owner."
     3:
       relation: "The assessor is a relative of the professional dealing with the property transaction."
     4:
-      relation: "The assessor has an indirect relation to the owner (for example, somebody in the assessor’s family might be employed by the building owner)."
+      relation: "The assessor has an indirect relation to the owner (for example, somebody in the assessor’s family might be employed by the property owner)."
     5:
       relation: "The assessor occupies the property."
     6:
@@ -1151,7 +1151,7 @@ en:
     8:
       relation: "The assessor has declared a financial interest in the property."
     9:
-      relation: "The assessor is employed by the building owner."
+      relation: "The assessor is employed by the property owner."
     10:
       relation: "The assessor is contracted by the owner to provide other energy assessment services."
     11:
@@ -1181,15 +1181,15 @@ en:
     1:
       relation: "Not related to the owner/occupier or person who has technical control of the system or subcontractor."
     2:
-      relation: "Related to the building owner/occupier."
+      relation: "Related to the property owner/occupier."
     3:
       relation: "Related to the person who has technical control of the system or subcontractor."
     4:
-      relation: "Occupier of the building."
+      relation: "Occupier of the property."
     5:
       relation: "Owner or Director of the organisation."
     6:
-      relation: "Financial interest in the building/organisation with technical control of the system or subcontractor."
+      relation: "Financial interest in the property/organisation with technical control of the system or subcontractor."
     7:
       relation: "Contracted by the owner to provide other Energy Assessment services."
     8:

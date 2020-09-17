@@ -97,13 +97,13 @@ describe "Acceptance::AirConditioningInspectionCertificate", type: :feature do
         related_party_disclosures = {
           "1":
             "Not related to the owner/occupier or person who has technical control of the system or subcontractor.",
-          "2": "Related to the building owner/occupier.",
+          "2": "Related to the property owner/occupier.",
           "3":
             "Related to the person who has technical control of the system or subcontractor.",
-          "4": "Occupier of the building.",
+          "4": "Occupier of the property.",
           "5": "Owner or Director of the organisation.",
           "6":
-            "Financial interest in the building/organisation with technical control of the system or subcontractor.",
+            "Financial interest in the property/organisation with technical control of the system or subcontractor.",
           "7":
             "Contracted by the owner to provide other Energy Assessment services.",
           "8":

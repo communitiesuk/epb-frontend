@@ -71,13 +71,13 @@ describe "Acceptance::DecRecommendationReport", type: :feature do
       expect(response.body).to have_css "h2", text: "Recommendations"
       expect(response.body).to have_css "p",
                                         text:
-                                          "The assessment found opportunities to improve the building’s energy efficiency."
+                                          "Make these changes to improve the property’s energy efficiency."
       expect(response.body).to have_css "p",
                                         text:
                                           "Recommended improvements are grouped by the estimated time it would take for the change to pay for itself. The assessor may also make additional recommendations."
       expect(response.body).to have_css "p",
                                         text:
-                                          "Each recommendation is marked as low, medium or high for the potential impact the change would have on reducing the building’s carbon emissions."
+                                          "Each recommendation is marked as low, medium or high. This shows the potential impact of the change on reducing the property’s carbon emissions."
       expect(response.body).to have_css "th", text: "Recommendation"
       expect(response.body).to have_css "th", text: "Potential impact"
       expect(response.body).to have_css "caption",
