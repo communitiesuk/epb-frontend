@@ -132,7 +132,7 @@
     <div id="other_reports">
       <%== erb :component__related_assessments, locals: {
         assessment: assessment,
-        section_heading: t('component.related.title', type: assessment[:typeOfAssessment]),
+        section_heading: t('component.related.title', type: "EPC"),
         reminder: t('component.related.certificates.text', contact_centre_number: t('contact.help_desk_number')),
         no_related_text: t('component.related.certificates.no_related_certificates'),
         assessment_type: assessment[:typeOfAssessment],

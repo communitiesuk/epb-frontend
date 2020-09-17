@@ -336,9 +336,9 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
       end
     end
 
-    it "shows the Other CEPCs for this property section" do
+    it "shows the Other EPCs for this property section" do
       expect(response.body).to have_css "h2",
-                                        text: "Other CEPCs for this property"
+                                        text: "Other EPCs for this property"
       expect(response.body).to have_css "p",
                                         text:
                                           "If you are aware of previous certificates for this property and they are not listed here, please contact the Help Desk at 020 3829 0748."
@@ -365,7 +365,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
 
       it "shows the related assessments section title" do
         expect(response.body).to have_css "h2",
-                                          text: "Other CEPCs for this property"
+                                          text: "Other EPCs for this property"
       end
 
       it "shows the no related assessments content" do

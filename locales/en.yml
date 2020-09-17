@@ -639,7 +639,7 @@ en:
       p4: "Accreditation schemes are appointed by the government to ensure that assessors are qualified to carry out EPC assessments."
       assessor:
         heading: "Assessor contact details"
-        name: "Assessor’s Name"
+        name: "Assessor’s name"
         phone: "Telephone"
         email: "Email"
         id: "Assessor ID"
