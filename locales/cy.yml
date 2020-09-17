@@ -584,7 +584,7 @@ cy:
         email: 'Welsh: Email'
         employer_name: 'Welsh: Employer’s name'
         employer_address: 'Welsh: Employer’s address'
-        number: 'Welsh: Assessor number'
+        number: 'Welsh: Assessor ID'
         scheme: 'Welsh: Accreditation scheme'
         declaration: 'Welsh: Assessor’s declaration'
         no_connection_text: 'Welsh: No connection to the property'
@@ -1145,7 +1145,7 @@ cy:
         text: "Welsh: Guidance on improving the energy performance operational rating of this building can be found in the %{link}."
       print_certificate:
         title: 'Welsh: Print this certificate'
-        discription: 'Welsh: This certificate should be printed on A3 paper and displayed in the building'
+        description: 'Welsh: This certificate should be printed on A3 paper and displayed in the building'
         open_print_version: 'Welsh: Open the print version of this certificate'
       previous_energy_ratings:
         title: "Welsh: Previous operational ratings"
@@ -1180,7 +1180,7 @@ cy:
         assessment_software: 'Welsh: Assessment software'
         property_reference: 'Welsh: Property reference'
         assessor_name: 'Welsh: Assessor name'
-        assessor_number: 'Welsh: Assessor number'
+        assessor_number: 'Welsh: Assessor ID'
         scheme_name: 'Welsh: Accreditation scheme'
         company_name: 'Welsh: Employer/Trading name'
         company_address: 'Welsh: Employer/Trading address'
@@ -1194,7 +1194,7 @@ cy:
         assessor:
           list:
             name: 'Welsh: Assessor name'
-            number: 'Welsh: Assessor number'
+            number: 'Welsh: Assessor ID'
             telephone: 'Welsh: Telephone'
             email: 'Welsh: Email'
       information:
@@ -1229,7 +1229,7 @@ cy:
         name: 'Welsh: Assessor’s name'
         employer_name: 'Welsh: Employer’s name'
         employer_address: 'Welsh: Employer’s address'
-        number: 'Welsh: Assessor number'
+        number: 'Welsh: Assessor ID'
         scheme: 'Welsh: Accreditation scheme'
 
   ac_cert:

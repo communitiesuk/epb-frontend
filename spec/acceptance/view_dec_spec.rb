@@ -29,7 +29,7 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
                                          href: "#previous_energy_ratings"
       expect(response.body).to have_link "Total carbon dioxide (CO2) emissions",
                                          href: "#co2"
-      expect(response.body).to have_link "Technical information",
+      expect(response.body).to have_link "This building’s energy use",
                                          href: "#technical_information"
       expect(response.body).to have_link "Administrative information",
                                          href: "#administrative_information"
@@ -50,7 +50,7 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
       expect(response.body).to have_css "h2", text: "Print this certificate"
       expect(response.body).to have_css "p",
                                         text:
-                                          "his certificate should be printed on A3 paper and displayed in the building"
+                                          "Public authorities must display their DEC in a prominent place that is clearly visible to the public, such as near the building’s entrance. They can be fined £500 if they do not."
       expect(
         response.body,
       ).to have_link "Open the print version of this certificate",
@@ -72,10 +72,10 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
       expect(response.body).to have_css "text", text: "1 | A"
       expect(response.body).to have_css "p",
                                         text:
-                                          "You can read guidance on Display Energy Certificates and advisory reports for public buildings."
+                                          "You can read guidance on DECs and advisory reports for public buildings."
       expect(
         response.body,
-      ).to have_link "guidance on Display Energy Certificates and advisory reports for public buildings",
+      ).to have_link "guidance on DECs and advisory reports for public buildings",
                      href:
                        "https://www.gov.uk/government/publications/display-energy-certificates-and-advisory-reports-for-public-buildings"
     end
@@ -132,10 +132,7 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
     end
 
     it "shows the technical information section" do
-      expect(response.body).to have_css "h2", text: "Technical information"
-      expect(response.body).to have_css "p",
-                                        text:
-                                          "This tells you technical information about how energy is used in this building. Consumption data based on actual meter readings."
+      expect(response.body).to have_css "h2", text: "This building’s energy use"
       expect(response.body).to have_css "dt", text: "Main heating fuel"
       expect(response.body).to have_css "dd", text: "Natural Gas"
       expect(response.body).to have_css "dt", text: "Building environment"
@@ -165,16 +162,13 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
       it "shows the section heading" do
         expect(response.body).to have_css "h2",
                                           text: "Administrative information"
-        expect(response.body).to have_css "p",
-                                          text:
-                                            "This is a Display Energy Certificate as defined in the Energy Performance of Buildings Regulations 2012 as amended."
         expect(response.body).to have_css "dt", text: "Assessment software"
         expect(response.body).to have_css "dd", text: "DCLG, ORCalc, v3.6.3"
         expect(response.body).to have_css "dt", text: "Property reference"
         expect(response.body).to have_css "dd", text: "UPRN-000000000001"
-        expect(response.body).to have_css "dt", text: "Assessor name"
+        expect(response.body).to have_css "dt", text: "Assessor’s name"
         expect(response.body).to have_css "dd", text: "TEST NAME BOI"
-        expect(response.body).to have_css "dt", text: "Assessor number"
+        expect(response.body).to have_css "dt", text: "Assessor ID"
         expect(response.body).to have_css "dd", text: "SPEC000000"
         expect(response.body).to have_css "dt", text: "Accreditation scheme"
         expect(response.body).to have_css "dd", text: "Quidos"

@@ -500,8 +500,8 @@ en:
       title: "Administrative information"
       assessor:
         list:
-          name: 'Assessor name'
-          number: 'Assessor number'
+          name: 'Assessor’s name'
+          number: 'Assessor ID'
           telephone: 'Telephone'
           email: 'Email'
       scheme:
@@ -609,7 +609,7 @@ en:
         email: "Email"
         employer_name: 'Employer’s name'
         employer_address: 'Employer’s address'
-        number: 'Assessor number'
+        number: 'Assessor ID'
         scheme: 'Accreditation scheme'
         declaration: 'Assessor’s declaration'
         no_connection_text: 'No connection to the property'
@@ -1222,7 +1222,7 @@ en:
       intro: 'If you typed the web address, check it is correct.'
       body: 'If you pasted the web address, check you copied the entire address.'
   dec:
-    top_heading: "Display energy certificate"
+    top_heading: "Display energy certificate (DEC)"
     tagline: "how energy efficient is this building?"
     sections:
       contents:
@@ -1235,7 +1235,7 @@ en:
         typical_text: 'The typical score for a public building is 100. This typical score gives an operational rating of D.'
         svg_title: 'This building’s operational rating is %{energy_efficiency_band} (%{energy_efficiency_rating})'
         guidance_text: 'You can read %{link}.'
-        cta: 'guidance on Display Energy Certificates and advisory reports for public buildings'
+        cta: 'guidance on DECs and advisory reports for public buildings'
         url: 'https://www.gov.uk/government/publications/display-energy-certificates-and-advisory-reports-for-public-buildings'
       recommendation_report:
         title: "Recommendation report"
@@ -1243,7 +1243,8 @@ en:
         text: "Guidance on improving the energy performance operational rating of this building can be found in the %{link}."
       print_certificate:
         title: 'Print this certificate'
-        discription: 'This certificate should be printed on A3 paper and displayed in the building.'
+        description: 'Public authorities must display their DEC in a prominent place that is clearly visible to the public, such as near the building’s entrance. They can be fined £500 if they do not.'
+        a3: 'This certificate should be printed no smaller than A3 size.'
         open_print_version: 'Open the print version of this certificate'
       previous_energy_ratings:
         energy_rating: "Operational rating"
@@ -1260,9 +1261,8 @@ en:
           renewables: "Renewables"
         no_value: "Not applicable"
       technical_information:
-        title: 'Technical information'
+        title: 'This building’s energy use'
         print_title: 'This building’s energy use'
-        description: 'This tells you technical information about how energy is used in this building. Consumption data based on actual meter readings.'
         heating_fuel: 'Main heating fuel'
         building_environment: 'Building environment'
         floor_area: 'Total useful floor area'
@@ -1276,11 +1276,10 @@ en:
       administrative_information:
         title: 'Administrative information'
         print_title: 'Assessment details'
-        description: 'This is a Display Energy Certificate as defined in the Energy Performance of Buildings Regulations 2012 as amended.'
         assessment_software: 'Assessment software'
         property_reference: 'Property reference'
-        assessor_name: 'Assessor name'
-        assessor_number: 'Assessor number'
+        assessor_name: 'Assessor’s name'
+        assessor_number: 'Assessor ID'
         scheme_name: 'Accreditation scheme'
         company_name: 'Employer/Trading name'
         company_address: 'Employer/Trading address'
@@ -1292,8 +1291,8 @@ en:
         download_xml_cta: 'Download summary XML'
         assessor:
           list:
-            name: 'Assessor name'
-            number: 'Assessor number'
+            name: 'Assessor’s name'
+            number: 'Assessor ID'
             telephone: 'Telephone'
             email: 'Email'
         scheme:
@@ -1335,7 +1334,7 @@ en:
         name: 'Assessor’s name'
         employer_name: 'Employer’s name'
         employer_address: 'Employer’s address'
-        number: 'Assessor number'
+        number: 'Assessor ID'
         scheme: 'Accreditation scheme'
 
   ac_cert:

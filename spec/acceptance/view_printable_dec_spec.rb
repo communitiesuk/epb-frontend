@@ -93,7 +93,7 @@ describe "Acceptance::PrintableDisplayEnergyCertificate", type: :feature do
     describe "viewing the assessment details section" do
       it "shows the section heading" do
         expect(response.body).to have_css "h2", text: "Assessment details"
-        expect(response.body).to have_css "th", text: "Assessor name"
+        expect(response.body).to have_css "th", text: "Assessor’s name"
         expect(response.body).to have_css "td", text: "TEST NAME BOI"
         expect(response.body).to have_css "th", text: "Accreditation scheme"
         expect(response.body).to have_css "td", text: "Quidos"
