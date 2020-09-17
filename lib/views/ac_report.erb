@@ -90,13 +90,18 @@
       } %>
     <% end %>
 
-    <%== erb :ac_report__pre_inspection, locals: {
-      assessment: assessment,
-    } %>
+    <% unless assessment[:preInspectionChecklist].empty? %>
+      <%== erb :ac_report__pre_inspection, locals: {
+        assessment: assessment,
+      } %>
+    <% end %>
 
-    <%== erb :ac_report__cooling_plants, locals: {
-      cooling_plants: assessment[:coolingPlants],
-    } %>
+    <% unless assessment[:coolingPlants].empty? %>
+      <%== erb :ac_report__cooling_plants, locals: {
+        cooling_plants: assessment[:coolingPlants],
+      } %>
+    <% end %>
+
 
     <% unless assessment[:airHandlingSystems].empty? %>
       <%== erb :ac_report__air_handling_systems, locals: {
