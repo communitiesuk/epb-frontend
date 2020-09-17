@@ -10,18 +10,14 @@
         <%= t('ac_report.flag.finding_no') %>
     <% end %>
   <% end %>
+</p>
 
-  <% unless inspection[:flag].nil? or inspection[:note].nil? %>
-    :
-  <% end %>
+<% unless inspection[:note].nil? || inspection[:note].empty? %>
+  <p class="govuk-body"><%= inspection[:note] %></p>
+<% end %>
 
-  <% unless inspection[:note].nil? || inspection[:note].empty? %>
-    <%= inspection[:note] %>
-  <% end %>
-
-  <% unless inspection[:recommendations].empty? %>
-
-  <p><%=  t('ac_report.flag.recommendations')%></p>
+<% unless inspection[:recommendations].empty? %>
+  <p class="govuk-body"><%=  t('ac_report.flag.recommendations')%></p>
 
   <ul class="govuk-list govuk-list--bullet">
     <% inspection[:recommendations]
@@ -31,5 +27,4 @@
 
     <% end %>
   </ul>
-  <%end %>
-</p>
+<% end %>
