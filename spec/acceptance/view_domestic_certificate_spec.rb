@@ -385,7 +385,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
           '<h2 class="govuk-heading-m">Primary energy use</h2>',
         )
         expect(response.body).to include(
-          '<p class="govuk-body">The primary energy use for this property per year is 989 kilowatt hours (kWh) per square metre.</p>',
+          '<p class="govuk-body">The primary energy use for this property per year is 989 kilowatt hours per square metre (kWh/m2).</p>',
         )
         expect(response.body).to include(
           '<span class="govuk-details__summary-text">What is primary energy use?</span>',
@@ -504,6 +504,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
             nil,
             1,
             nil,
+            989,
             "RdSAP",
             76,
             [

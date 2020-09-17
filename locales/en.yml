@@ -751,7 +751,7 @@ en:
         not_inspected: "When the description says 'assumed', it means that the feature could not be inspected and an assumption has been made based on the property’s age and type."
         energy_performance: "energy performance"
         primary_energy_use: 'Primary energy use'
-        primary_energy_use_description: 'The primary energy use for this property per year is 989 kilowatt hours (kWh) per square metre.'
+        primary_energy_use_description: 'The primary energy use for this property per year is %{primary_energy} kilowatt hours per square metre (kWh/m2).'
         primary_energy_use_dropdown:
           what_is_primary_energy_use_title: 'What is primary energy use?'
           what_is_primary_energy_use_details: 'Primary energy use is a measure of the energy required for lighting, heating and hot water in a property. The calculation includes:'
