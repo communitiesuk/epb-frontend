@@ -1501,7 +1501,10 @@ en:
           condition: "Are air flow rates and system pressures available from commissioning data?"
       terminal_units:
         title: "Terminal units"
+        sub_heading: "Terminal unit"
         equipment:
+          unit: "Unit"
+          component: "Component"
           description: "Description of unit"
           coolingPlant: "Cooling plant serving terminal unit"
           manufacturer: "Manufacturer"
