@@ -3,8 +3,8 @@
     <%= t('ac_report.sections.cooling_plants.title') %>
   </h2>
 
-  <% cooling_plants.each do |cooling_plant| %>
-    <h3 class="govuk-heading-m"><%= t('ac_report.sections.cooling_plants.cooling_plant.title') %></h3>
+  <% cooling_plants.each_with_index do |cooling_plant, index| %>
+    <h3 class="govuk-heading-m"><%= t('ac_report.sections.cooling_plants.cooling_plant.title') %> <%= index + 1 %></h3>
     <%== erb :component__summary_list, locals: {
       list: {
         system_number: cooling_plant[:systemNumber],
@@ -133,6 +133,9 @@
     <p class="govuk-body"><%= t('ac_report.sections.cooling_plants.cooling_plant.inspection.' + (cooling_plant[:humidityControl][:state] ? "positive": "negative")) %></p>
     <% unless cooling_plant[:humidityControl][:note].nil? %>
       <p class="govuk-body"><%= cooling_plant[:humidityControl][:note] %></p>
+    <% end %>
+    <% unless cooling_plants.size - 1 == index  %>
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" style="border-bottom-width: 3px;">
     <% end %>
 <% end %>
 </div>
