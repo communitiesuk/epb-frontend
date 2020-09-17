@@ -58,13 +58,6 @@ class FrontendService < Sinatra::Base
     end
   end
 
-  get "/find-a-non-domestic-certificate",
-      host_name: /#{find_energy_certificate_host_name}/ do
-    @page_title =
-      "Find an energy certificate or report for a non-domestic property"
-    erb :find_non_dom_certificate, layout: :layout
-  end
-
   get "/find-a-non-domestic-certificate/search-by-postcode",
       host_name: /#{find_energy_certificate_host_name}/ do
     @errors = {}

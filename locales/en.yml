@@ -432,36 +432,6 @@ en:
       expiry: 'Expiry date'
     no_certificates: 'There are no certificates matching that address.'
 
-  find_non_dom_certificate:
-    top_heading: 'Find an energy certificate or report for a non-domestic property'
-    service:
-      introduction: 'Use this service to find energy certificates and reports for non-domestic properties in England, Wales and Northern Ireland.'
-      what_is_non_dom: 'Non-domestic properties are commercial and public properties.'
-      what_non_dom_info_is_available:  'For non-domestic properties, you can view their:'
-      epc_rr: 'Energy Performance Certificate (EPC) and Recommendation Report (EPC-RR)'
-      dec_rr: 'Display Energy Certificate (DEC) and Recommendation Report (DEC-RR)'
-      ac: 'Air Conditioning Inspection Report (AC-REPORT) and Certificate (AC-CERT)'
-    switch_language:
-      description: 'This service is also available in %{link}.'
-      link: 'Welsh (Cymraeg)'
-      url: '?lang=cy'
-    cta: 'Start now'
-    before_you_start:
-      heading: 'Before you start'
-      additional_support: 'If you need additional support to find an energy certificate or report, call our helpdesk on 020 3829 0748 (Monday to Friday, 9am - 5pm).'
-      scotland:
-        description: 'For non-domestic properties in Scotland, use the %{link}'
-        link: 'Scottish government’s EPC and DEC service.'
-    check_if_epc_needed:
-      intro: 'To check if your property needs a certificate or report, read:'
-      epc: 'the EPC exemptions for business properties'
-      dec: 'which properties need a DEC'
-      ac: 'when air conditioning system inspections are required'
-    related_content:
-      heading: 'Related content'
-      find_a_non-domestic_assessor_link: 'Getting a new energy certificate or report for a non-domestic property'
-      find_a_certificate_link: 'Find an EPC for a domestic property'
-
   find_non_dom_certificate_by_postcode:
     head:
       title: 'Energy performance of buildings register - Find energy certificates and reports by postcode'
@@ -681,7 +651,7 @@ en:
         employer_address: "Employer address"
         declaration: "Assessor’s declaration"
     related_report:
-      heading: "Recommendation Report"
+      heading: "Recommendation report"
       cta: "recommendation report"
       text: "Guidance on improving the energy performance of this building can be found in the %{link}."
 

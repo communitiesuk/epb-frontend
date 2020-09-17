@@ -285,7 +285,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
       end
 
       it "shows the link to the Recommendation Report" do
-        expect(response.body).to include(">Recommendation Report</h2>")
+        expect(response.body).to include(">Recommendation report</h2>")
         expect(response.body).to include(
           "/energy-certificate/4192-1535-8427-8844-6702",
         )
@@ -315,7 +315,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
           '<p class="govuk-body"><a class="govuk-link" href="#energy_peformance_breakdown">Breakdown of this building’s energy performance</a></p>',
         )
         expect(response.body).to include(
-          '<p class="govuk-body"><a class="govuk-link" href="#related_report">Recommendation Report</a></p>',
+          '<p class="govuk-body"><a class="govuk-link" href="#related_report">Recommendation report</a></p>',
         )
         expect(response.body).to include(
           '<p class="govuk-body"><a class="govuk-link" href="#contact">Contacting the assessor and accreditation scheme</a></p>',
