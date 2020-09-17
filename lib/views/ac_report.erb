@@ -38,7 +38,8 @@
         },
         {
           link: '#cooling_plants',
-          text: 'ac_report.sections.cooling_plants.title'
+          text: 'ac_report.sections.cooling_plants.title',
+          hidden: assessment[:coolingPlants].empty?
         },
         {
           link: '#air_handling_systems',
