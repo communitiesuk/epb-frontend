@@ -106,7 +106,11 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
 
     it "can show the air handling systems" do
       expect(response.body).to have_css "h2", text: "Air handling systems"
-      expect(response.body).to have_css "h3", text: "123: VENT1 Heat recovery"
+      expect(response.body).to have_css "h3", text: "Air handling system 1"
+      expect(response.body).to have_css "dt", text: "Component"
+      expect(response.body).to have_css "dd", text: "VENT1 Heat recovery"
+      expect(response.body).to have_css "dt", text: "Unit"
+      expect(response.body).to have_css "dd", text: "123"
       expect(response.body).to have_css "dt", text: "Areas or systems served"
       expect(response.body).to have_css "dd", text: "Corridor"
       expect(response.body).to have_css "dt", text: "Discrepancies noted"

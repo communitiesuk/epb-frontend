@@ -1453,7 +1453,10 @@ en:
           unavailable: "These records were not available:"
       air_handling_systems:
         title: "Air handling systems"
+        sub_heading: "Air handling system"
         equipment:
+          unit: "Unit"
+          component: "Component"
           areasServed: "Areas or systems served"
           discrepancy: "Discrepancies noted"
           location: "Location of plant"

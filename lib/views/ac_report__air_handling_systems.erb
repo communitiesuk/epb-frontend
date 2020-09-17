@@ -3,13 +3,22 @@
     <%= t('ac_report.sections.air_handling_systems.title') %>
   </h2>
 
-  <% assessment[:airHandlingSystems].each do |system| %>
+  <% assessment[:airHandlingSystems].each_with_index do |system, index| %>
     <h3 class="govuk-heading-m">
-      <%= system[:equipment][:unit] %>: <%= system[:equipment][:component] %>
+      <%= t('ac_report.sections.air_handling_systems.sub_heading')%> <%= index + 1 %>
     </h3>
 
     <%== erb :component__summary_list, locals: {
-      list: system[:equipment].reject{|k| [:unit, :component].include? k},
+      list: {
+         unit: system[:equipment][:unit],
+         component: system[:equipment][:component],
+         areasServed: system[:equipment][:areasServed],
+         discrepancy: system[:equipment][:discrepancy],
+         location: system[:equipment][:location],
+         manufacturer: system[:equipment][:manufacturer],
+         systemsServed:system[:equipment][:systemsServed],
+         yearInstalled: system[:equipment][:yearInstalled],
+      },
       translation_prefix: 'ac_report.sections.air_handling_systems.equipment.',
       skip_null: true
     } %>
@@ -112,5 +121,8 @@
       inspection: system[:inspection][:outdoorInlets][:condition]
     } %>
 
+    <% unless assessment[:airHandlingSystems].size - 1 == index  %>
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" style="border-bottom-width: 3px;">
+    <% end %>
 <% end %>
 </div>
