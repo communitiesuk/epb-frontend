@@ -35,7 +35,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
 
     it "Shows the page title" do
       expect(response.body).to include(
-        "Non-domestic energy performance certificate recommendation report",
+        "Energy performance certificate (EPC) recommendation report",
       )
     end
 
@@ -49,7 +49,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
 
     it "Shows the efficiency band from the related cepc" do
       expect(response.body).to include(
-        "This building’s current energy rating is D.",
+        "This property’s current energy rating is D.",
       )
     end
 

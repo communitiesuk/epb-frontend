@@ -539,7 +539,7 @@ en:
       title: "Energy rating"
       date_of_expiry: "Valid until %{date_of_expiry}"
       certificate_id: "Certificate number"
-      property_info: 'This property is a %{property_type}.'
+      property_info: 'This property is %{property_type}.'
       floor_area: 'It has a total floor area of %{total_floor_area} square metres.'
     related:
       title: 'Other %{type}s for this property'
@@ -578,12 +578,12 @@ en:
     contents:
       title: 'Certificate contents'
     energy_rating_section:
-      title: 'Energy efficiency rating for this building'
-      current_rating_text: 'This building’s current energy rating is %{current_energy_efficiency_band}.'
-      rating_desc: 'Buildings are given a rating from A+ (most efficient) to G (least efficient).'
-      score_desc: 'Buildings are also given a score. The larger the number, the more carbon dioxide (CO2) your building is likely to emit.'
+      title: 'Energy efficiency rating for this property'
+      current_rating_text: 'This property’s current energy rating is %{current_energy_efficiency_band}.'
+      rating_desc: 'Properties are given a rating from A+ (most efficient) to G (least efficient).'
+      score_desc: 'Properties are also given a score. The larger the number, the more carbon dioxide (CO2) your property is likely to emit.'
       svg:
-        aria-label: "This building’s energy rating is %{current_energy_efficiency_band} (%{current_energy_efficiency_rating})"
+        aria-label: "This property’s energy rating is %{current_energy_efficiency_band} (%{current_energy_efficiency_rating})"
     sections:
       renting:
         title: 'Rules on letting this property'
@@ -608,7 +608,7 @@ en:
         expired: 'Expired'
         no_related: 'There are no related certificates for the property.'
     rr:
-      top_heading: 'Non-domestic energy performance certificate recommendation report'
+      top_heading: 'Energy performance certificate (EPC) recommendation report'
       summary:
         valid_until: 'Valid until'
         expired: 'This certificate expired on'
@@ -617,7 +617,7 @@ en:
         title: 'Report contents'
       rating:
         title: 'Energy rating and EPC'
-        current_energy_rating: 'This building’s current energy rating is %{band}.'
+        current_energy_rating: 'This property’s current energy rating is %{band}.'
         more_info: 'For more information, see the %{link}.'
         cta: 'Energy Performance Certificate for this report'
         url: '#'

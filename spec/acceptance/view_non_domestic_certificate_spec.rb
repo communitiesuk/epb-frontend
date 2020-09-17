@@ -74,7 +74,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
 
       it "shows the property type" do
         expect(response.body).to include(
-          "This property is a B1 Offices and Workshop businesses.",
+          "This property is B1 Offices and Workshop businesses.",
         )
       end
 
@@ -153,25 +153,25 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
     context "when viewing the Energy efficiency rating for this building section" do
       it "shows the section heading" do
         expect(response.body).to include(
-          '<h2 class="govuk-heading-l">Energy efficiency rating for this building</h2>',
+          '<h2 class="govuk-heading-l">Energy efficiency rating for this property</h2>',
         )
       end
 
       it "shows the current energy rating text" do
         expect(response.body).to include(
-          '<p class="govuk-body">This building’s current energy rating is B.</p>',
+          '<p class="govuk-body">This property’s current energy rating is B.</p>',
         )
       end
 
       it "shows the SVG title" do
         expect(response.body).to include(
-          '<title id="svg-title">This building’s energy rating is B (35)</title>',
+          '<title id="svg-title">This property’s energy rating is B (35)</title>',
         )
       end
 
       it "shows the net zero carbon emissions text" do
         expect(response.body).to include(
-          '<text x="420" y="65" class="small">Net zero CO₂</text>',
+          '<text x="420" y="65" class="small">Net zero CO2</text>',
         )
       end
 
@@ -185,13 +185,13 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
 
       it "shows the energy rating description" do
         expect(response.body).to include(
-          '<p class="govuk-body govuk-!-margin-top-3">Buildings are given a rating from A+ (most efficient) to G (least efficient).</p>',
+          '<p class="govuk-body govuk-!-margin-top-3">Properties are given a rating from A+ (most efficient) to G (least efficient).</p>',
         )
       end
 
       it "shows the energy rating score description" do
         expect(response.body).to include(
-          '<p class="govuk-body">Buildings are also given a score. The larger the number, the more carbon dioxide (CO2) your building is likely to emit.</p>',
+          '<p class="govuk-body">Properties are also given a score. The larger the number, the more carbon dioxide (CO2) your property is likely to emit.</p>',
         )
       end
 
@@ -300,7 +300,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
           '<p class="govuk-body"><a class="govuk-link" href="#renting">Rules on letting this property</a></p>',
         )
         expect(response.body).to include(
-          '<p class="govuk-body"><a class="govuk-link" href="#energy_rating_section">Energy efficiency rating for this building</a></p>',
+          '<p class="govuk-body"><a class="govuk-link" href="#energy_rating_section">Energy efficiency rating for this property</a></p>',
         )
         expect(response.body).to include(
           '<p class="govuk-body"><a class="govuk-link" href="#how_this_building_compares">How this building compares to others</a></p>',
