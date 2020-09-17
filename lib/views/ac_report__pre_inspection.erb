@@ -22,7 +22,7 @@
 
     <% else %>
 
-    <% unless assessment[:preInspectionChecklist][:sccs].nil? %>
+    <% unless assessment[:preInspectionChecklist][:sccs].empty? %>
       <p>
         <em>
           <%= t('ac_report.sections.pre_inspection.scss') %>
@@ -46,7 +46,7 @@
 
       <% end %>
 
-    <% unless assessment[:preInspectionChecklist][:pcs].nil? %>
+    <% unless assessment[:preInspectionChecklist][:pcs].empty? %>
       <p>
         <em>
           <%= t('ac_report.sections.pre_inspection.pcs') %>
