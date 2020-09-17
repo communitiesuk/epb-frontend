@@ -102,7 +102,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
                                         text: "Other CEPC-RRs for this property"
       expect(response.body).to have_css "p",
                                         text:
-                                          "If you are aware of previous reports for this property and they are not listed here, please contact the Help Desk at 01632 164 6672."
+                                          "If you are aware of previous reports for this property and they are not listed here, please contact the Help Desk at 020 3829 0748."
       expect(response.body).to have_css "dt", text: "Certificate number"
       expect(response.body).to have_link "9457-0000-0000-0000-2000",
                                          href: "/energy-certificate/9457-0000-0000-0000-2000"

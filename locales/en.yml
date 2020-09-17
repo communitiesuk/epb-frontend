@@ -33,7 +33,7 @@ en:
         copyright: '<a class="govuk-footer__link govuk-footer__copyright-logo" href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/">&copy; Crown copyright</a>'
 
   contact:
-    help_desk_number: '01632 164 6672'
+    help_desk_number: '020 3829 0748'
 
   find_an_assessor:
     head:
@@ -288,7 +288,7 @@ en:
       commercial:
         url: '/find-a-non-domestic-certificate'
         cta: 'find a non-domestic EPC'
-      call_center: 'If you need additional support to find an energy certificate or report, call our helpdesk on 0233 788 1234 (Monday to Friday, 9am - 5pm).'
+      call_center: 'If you need additional support to find an energy certificate or report, call our helpdesk on 020 3829 0748 (Monday to Friday, 9am - 5pm).'
     property_type:
       question_title: "What type of property is the certificate for?"
       options:
@@ -448,7 +448,7 @@ en:
     cta: 'Start now'
     before_you_start:
       heading: 'Before you start'
-      additional_support: 'If you need additional support to find an energy certificate or report, call our helpdesk on 0233 788 1234 (Monday to Friday, 9am - 5pm).'
+      additional_support: 'If you need additional support to find an energy certificate or report, call our helpdesk on 020 3829 0748 (Monday to Friday, 9am - 5pm).'
       scotland:
         description: 'For non-domestic properties in Scotland, use the %{link}'
         link: 'Scottish government’s EPC and DEC service.'
@@ -545,7 +545,7 @@ en:
       title: 'Other %{type}s for this property'
       certificates:
         title: 'Other certificates for this property'
-        text: 'If you are aware of previous certificates for this property and they are not listed here, please contact the Help Desk at 01632 164 6672.'
+        text: 'If you are aware of previous certificates for this property and they are not listed here, please contact the Help Desk at 020 3829 0748.'
         no_related_certificates: 'There are no related certificates for this property.'
       reports:
         title: 'Other reports for this property'
