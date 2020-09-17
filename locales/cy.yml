@@ -1397,6 +1397,7 @@ cy:
       finding_yes: "Yes"
       finding_no: "No"
       recommendations: "The assessor made the following notes and recommendations:"
+    detailed_inspection_unavailable: ""
 
   data_gap_warning:
     domestic:

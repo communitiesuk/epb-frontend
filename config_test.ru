@@ -101,6 +101,10 @@ FetchAssessmentSummary::AssessmentStub.fetch_ac_report assessment_id:
                                                          "0000-0000-0000-0000-5555"
 FetchAssessmentSummary::AssessmentStub.fetch_ac_report(
     assessment_id: "0000-0000-0000-0000-5556",
+    cooling_plants:[],
+    air_handling_systems: [],
+    terminal_units: [],
+    system_controls: [],
     pre_inspection_checklist: {
         pcs: {
             essential: {

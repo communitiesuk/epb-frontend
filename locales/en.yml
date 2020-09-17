@@ -1636,7 +1636,11 @@ en:
       finding_yes: "Yes"
       finding_no: "No"
       recommendations: "The assessor made the following notes and recommendations:"
-
+    detailed_inspection_unavailable:
+      text: "The detailed inspection notes from this report are no longer available online. If you require the detailed inspection notes, contact us at %{link}"
+      link: "mailto:mhclg.digital-services@communities.gov.uk?subject=EPB - "
+      cta: "mhclg.digital-services@communities.gov.uk"
+      title: "Detailed inspection notes"
   data_gap_warning:
     domestic:
       pre_text: 'For certificates issued between 9 June 2020 and 19 September 2020, you should use:'

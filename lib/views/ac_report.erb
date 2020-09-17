@@ -96,29 +96,41 @@
       } %>
     <% end %>
 
-    <% unless assessment[:coolingPlants].empty? %>
-      <%== erb :ac_report__cooling_plants, locals: {
-        cooling_plants: assessment[:coolingPlants],
-      } %>
-    <% end %>
+    <% unless assessment[:coolingPlants].empty? && assessment[:airHandlingSystems].empty? && assessment[:terminalUnits].empty? && assessment[:systemControls].empty? %>
 
+      <% unless assessment[:coolingPlants].empty? %>
+        <%== erb :ac_report__cooling_plants, locals: {
+          cooling_plants: assessment[:coolingPlants],
+        } %>
+      <% end %>
 
-    <% unless assessment[:airHandlingSystems].empty? %>
-      <%== erb :ac_report__air_handling_systems, locals: {
-        assessment: assessment,
-      } %>
-    <% end %>
+      <% unless assessment[:airHandlingSystems].empty? %>
+        <%== erb :ac_report__air_handling_systems, locals: {
+          assessment: assessment,
+        } %>
+      <% end %>
 
-    <% unless assessment[:terminalUnits].empty? %>
-      <%== erb :ac_report__terminal_units, locals: {
-        assessment: assessment,
-      } %>
-    <% end %>
+      <% unless assessment[:terminalUnits].empty? %>
+        <%== erb :ac_report__terminal_units, locals: {
+          assessment: assessment,
+        } %>
+      <% end %>
 
-    <% unless assessment[:systemControls].empty? %>
-      <%== erb :ac_report__system_controls, locals: {
-        assessment: assessment,
-      } %>
+      <% unless assessment[:systemControls].empty? %>
+        <%== erb :ac_report__system_controls, locals: {
+          assessment: assessment,
+        } %>
+      <% end %>
+
+    <%else %>
+      <div class="epc-blue-bottom">
+        <h2 class="govuk-heading-l">
+          <%= t('ac_report.detailed_inspection_unavailable.title') %>
+        </h2>
+        <p class="govuk-body">
+          <%== t('ac_report.detailed_inspection_unavailable.text', :link=>'<a class="govuk-link" href="' + t('ac_report.detailed_inspection_unavailable.link') + '">' + t('ac_report.detailed_inspection_unavailable.cta') + '</a>') %>
+        </p>
+      </div>
     <% end %>
 
     <% unless assessment[:relatedRrn].nil? || assessment[:relatedRrn].empty? %>
