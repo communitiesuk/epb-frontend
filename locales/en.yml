@@ -1366,8 +1366,8 @@ en:
           N: 'No'
       inspection:
         title: 'Inspection report'
-        text: 'For the assessment’s recommendations, see %{link}.'
-        cta: 'the inspection report'
+        text: 'For the assessor’s recommendations, %{link}.'
+        cta: 'see the inspection report'
       subsystems:
         title: 'Subsystems inspected'
         number: 'Subsystem ID'
@@ -1386,11 +1386,11 @@ en:
         maintenance:
           title: "Maintenance"
         control:
-          title: "Control"
+          title: "Controls"
         management:
           title: "Management"
       sub_systems:
-        title: "Sub systems inspected"
+        title: "Subsystems inspected"
         volume_definitions: "Volume definitions"
         description: "Description"
         cooling_output: "Effective rated cooling output"
@@ -1401,7 +1401,7 @@ en:
         terminal_units_count: "Terminal units count"
         controls_count: "Sub system controls count"
       pre_inspection:
-        title: "Pre inspection records requested"
+        title: "Pre-inspection records requested"
         essential:
           title: "Essential records"
           controlZones: "Description of system control zones, with schematic drawings"

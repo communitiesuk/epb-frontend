@@ -26,7 +26,7 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
       expect(response.body).to have_css "span", text: "0000-0000-0000-0000-9999"
       expect(response.body).to have_css "label", text: "Valid until"
       expect(response.body).to have_css "span", text: "6 February 2025"
-      expect(response.body).to have_text "Print this certificate"
+      expect(response.body).to have_text "Print this report"
     end
 
     it "can show the Administrative information section" do
@@ -69,8 +69,8 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
       expect(response.body).to have_css "p", text: "Text6"
     end
 
-    it "can show the sub systems section" do
-      expect(response.body).to have_css "h2", text: "Sub systems inspected"
+    it "can show the subsystems section" do
+      expect(response.body).to have_css "h2", text: "Subsystems inspected"
       expect(response.body).to have_css "h3",
                                         text: "VOL001/SYS001 R410A Inverter Split Systems to Sales Area"
       expect(response.body).to have_css "dt", text: "Volume definitions"
@@ -96,9 +96,9 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
       expect(response.body).to have_css "dd", text: "5"
     end
 
-    it "can show the pre inspection section" do
+    it "can show the pre-inspection section" do
       expect(response.body).to have_css "h2",
-                                        text: "Pre inspection records requested"
+                                        text: "Pre-inspection records requested"
       expect(response.body).to have_css "h3", text: "Essential records"
       expect(response.body).to have_css "h3", text: "Desirable records"
       expect(response.body).to have_css "h3", text: "Optional records"
@@ -191,9 +191,9 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
         )
       end
 
-      it "does not show the Sub systems inspected section" do
+      it "does not show the Subsystems inspected section" do
         expect(response.body).not_to have_css "h2",
-                                              text: "Sub systems inspected"
+                                              text: "Subsystems inspected"
       end
     end
 
@@ -394,7 +394,7 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
 
     it "can show the records section" do
       expect(response.body).to have_css "h2",
-                                        text: "Pre inspection records requested"
+                                        text: "Pre-inspection records requested"
       expect(response.body).to have_css "h3", text: "Essential records"
       expect(response.body).to have_css "h3", text: "Desirable records"
       expect(response.body).to have_css "h3", text: "Optional records"

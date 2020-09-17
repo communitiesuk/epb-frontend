@@ -13,7 +13,7 @@
   <div class="govuk-grid-column-one-third">
     <hr class="epc-blue-top" />
     <%== erb :component__contents, locals: {
-      title: t("dec.sections.contents.title"),
+      title: t("rr.contents.title"),
       sections: [
         {
           link: '#administrative_information',
@@ -70,7 +70,7 @@
 
     <%== erb :component__epc_summary_compact, locals: {
       assessment: assessment,
-      type: t('component.print.type.certificate')
+      type: t('component.print.type.report')
     } %>
 
     <%== erb :component__administrative_information, locals: {

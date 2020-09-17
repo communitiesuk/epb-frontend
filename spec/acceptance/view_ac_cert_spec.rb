@@ -184,7 +184,7 @@ describe "Acceptance::AirConditioningInspectionCertificate", type: :feature do
       expect(response.body).to have_css "h2", text: "Inspection report"
       expect(response.body).to have_css "p",
                                         text:
-                                          "For the assessment’s recommendations, see the inspection report."
+                                          "For the assessor’s recommendations, see the inspection report."
       expect(response.body).to have_link "the inspection report",
                                          href: "/energy-certificate/0000-0000-0000-0000-8888"
     end
