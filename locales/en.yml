@@ -1310,15 +1310,15 @@ en:
             disclosure_number_not_valid: 'The disclosure code provided is not valid.'
 
   dec_rr:
-    top_heading: "Display energy certificate recommendation report"
+    top_heading: "Display energy certificate (DEC) recommendation report"
     sections:
       contents:
         title: 'Report contents'
       rating:
         title: 'Operational rating and DEC'
-        text: 'This building has an operational rating of %{band}.'
-        dec: 'See the %{cta}.'
-        cta: 'Display Energy Certificate for this building'
+        text: 'This building’s operational rating is %{band}.'
+        dec: 'For more information on the building’s energy performance, %{cta}.'
+        cta: 'see the DEC for this building'
       building:
         title: 'Building and report details'
         occupier: 'Building occupier'
@@ -1336,6 +1336,8 @@ en:
       assessor:
         title: 'Assessor’s details'
         name: 'Assessor’s name'
+        email: 'Email'
+        phone: 'Telephone'
         employer_name: 'Employer’s name'
         employer_address: 'Employer’s address'
         number: 'Assessor ID'

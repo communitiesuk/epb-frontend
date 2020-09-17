@@ -30,7 +30,7 @@ describe "Acceptance::DecRecommendationReport", type: :feature do
 
     it "shows the page title" do
       expect(response.body).to include(
-        "Display energy certificate recommendation report",
+        "Display energy certificate (DEC) recommendation report",
       )
     end
 
@@ -58,12 +58,12 @@ describe "Acceptance::DecRecommendationReport", type: :feature do
     it "shows the rating section" do
       expect(response.body).to have_css "h2", text: "Operational rating and DEC"
       expect(response.body).to have_css "p",
-                                        text: "This building has an operational rating of A."
+                                        text: "This building’s operational rating is A."
       expect(response.body).to have_css "p",
-                                        text: "See the Display Energy Certificate for this building."
+                                        text: "see the DEC for this building."
       expect(
         response.body,
-      ).to have_link "Display Energy Certificate for this building",
+      ).to have_link "see the DEC for this building",
                      href: "/energy-certificate/0000-0000-0000-0000-1111"
     end
 
