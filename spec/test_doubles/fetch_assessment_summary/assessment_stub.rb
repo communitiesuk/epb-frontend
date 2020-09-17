@@ -3,9 +3,9 @@
 module FetchAssessmentSummary
   class AssessmentStub
     def self.fetch_ac_report(
-      assessment_id:,
-      executive_summary: "My\nSummary\t\tInspected",
-      sub_systems: [
+        assessment_id:,
+        executive_summary: "My\nSummary\t\tInspected",
+        sub_systems: [
         volumeDefinitions: "VOL001 The Shop",
         id: "VOL001/SYS001 R410A Inverter Split Systems to Sales Area",
         description:
@@ -17,7 +17,31 @@ module FetchAssessmentSummary
         ahuCount: "0",
         terminalUnitsCount: "4",
         controlsCount: "5",
-      ]
+      ],
+        pre_inspection_checklist: {
+          essential: {
+              controlZones: false,
+              coolingCapacities: false,
+              listOfSystems: true,
+              operationControls: false,
+              schematics: false,
+              temperatureControls: false,
+          },
+          desirable: {
+              commissioningResults: false,
+              consumptionRecords: false,
+              controlSystemMaintenance: false,
+              deliverySystemMaintenance: false,
+              previousReports: false,
+              refrigerationMaintenance: false,
+          },
+          optional: {
+              bmsCapability: false,
+              complaintRecords: false,
+              coolingLoadEstimate: false,
+              monitoringCapability: false,
+          },
+      }
     )
       body = {
         data: {
@@ -57,30 +81,7 @@ module FetchAssessmentSummary
             management: [{ sequence: "0", text: "Text6" }],
           },
           subSystems: sub_systems,
-          preInspectionChecklist: {
-            essential: {
-              controlZones: false,
-              coolingCapacities: false,
-              listOfSystems: true,
-              operationControls: false,
-              schematics: false,
-              temperatureControls: false,
-            },
-            desirable: {
-              commissioningResults: false,
-              consumptionRecords: false,
-              controlSystemMaintenance: false,
-              deliverySystemMaintenance: false,
-              previousReports: false,
-              refrigerationMaintenance: false,
-            },
-            optional: {
-              bmsCapability: false,
-              complaintRecords: false,
-              coolingLoadEstimate: false,
-              monitoringCapability: false,
-            },
-          },
+          preInspectionChecklist: pre_inspection_checklist,
           coolingPlants: [
             {
               systemNumber:
