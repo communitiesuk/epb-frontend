@@ -1318,6 +1318,8 @@ cy:
         checklist:
           reviewed: "These records were reviewed:"
           unavailable: "These records were not available:"
+        scss: "For the centralised cooling systems"
+        pcs: "For the packaged cooling systems"
       air_handling_systems:
         title: "Air handling systems"
         filters:

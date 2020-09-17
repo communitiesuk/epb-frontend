@@ -370,8 +370,13 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
           )
     end
 
-    it "can show the cooling plant section" do
+    it "can show the records section" do
       expect(response.body).to have_css "h2", text: "Pre inspection records requested"
+      expect(response.body).to have_css "h3", text: "Essential records"
+      expect(response.body).to have_css "h3", text: "Desirable records"
+      expect(response.body).to have_css "h3", text: "Optional records"
+      expect(response.body).to have_css "p", text: "For the centralised cooling systems"
+      expect(response.body).to have_css "p", text: "For the packaged cooling systems"
     end
   end
 end
