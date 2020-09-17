@@ -124,6 +124,9 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
       expect(response.body).to have_css "dt",
                                         text: "Systems served from cooling plant"
       expect(response.body).to have_css "dd", text: "Corridor"
+      expect(response.body).to have_css "p",
+                                        text:
+                                          "The calculation used was: 464 watts x 70% - 0.311/400 = 8.12 w/ltr."
       expect(response.body).to have_css "h4",
                                         text: "CS6.1, CS6.2, CS6.3: Filters"
       expect(response.body).to have_css "h5",
@@ -148,12 +151,15 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
       expect(response.body).to have_css "h2", text: "Terminal units"
       expect(response.body).to have_css "h3", text: "Terminal unit 1"
       expect(response.body).to have_css "dt", text: "Component"
-      expect(response.body).to have_css "dd", text: "Indoor wall type split which is part of a multi system with 5 indoor units."
+      expect(response.body).to have_css "dd",
+                                        text:
+                                          "Indoor wall type split which is part of a multi system with 5 indoor units."
       expect(response.body).to have_css "dt", text: "Unit"
       expect(response.body).to have_css "dd", text: "VOL1/SYS1"
       expect(response.body).to have_css "dt", text: "Description of unit"
       expect(response.body).to have_css "dd", text: "VOL1/SYS1/a"
-      expect(response.body).to have_css "dt", text: "Cooling plant serving terminal unit"
+      expect(response.body).to have_css "dt",
+                                        text: "Cooling plant serving terminal unit"
       expect(response.body).to have_css "dd", text: "Cooling system"
       expect(response.body).to have_css "dt", text: "Manufacturer"
       expect(response.body).to have_css "dd", text: "Mitsubishi Electric"
@@ -338,68 +344,70 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
   context "CEPC 6.0 AC report" do
     before do
       FetchAssessmentSummary::AssessmentStub.fetch_ac_report(
-          assessment_id: "0000-0000-0000-0000-9999",
-          cooling_plants:[],
-          air_handling_systems: [],
-          terminal_units: [],
-          system_controls: [],
-
-          pre_inspection_checklist: {
-              pcs: {
-                  essential: {
-                      listOfSystems: false,
-                      temperatureControlMethod: false,
-                      operationControlMethod: false,
-                  },
-                  desirable: {
-                      previousReports: false,
-                      maintenanceRecords: false,
-                      calibrationRecords: false,
-                      consumptionRecords: false,
-                  },
-                  optional: {
-                      coolingLoadEstimate: false, complaintRecords: false
-                  },
-              },
-              sccs: {
-                  essential: {
-                      listOfSystems: true,
-                      coolingCapacities: true,
-                      controlZones: true,
-                      temperatureControls: true,
-                      operationControls: true,
-                      schematics: false,
-                  },
-                  desirable: {
-                      previousReports: true,
-                      refrigerationMaintenance: false,
-                      deliverySystemMaintenance: true,
-                      controlSystemMaintenance: true,
-                      consumptionRecords: true,
-                      commissioningResults: true,
-                  },
-                  optional: {
-                      coolingLoadEstimate: true,
-                      complaintRecords: true,
-                      bmsCapability: true,
-                      monitoringCapability: true,
-                  },
-              },
-          }
-          )
+        assessment_id: "0000-0000-0000-0000-9999",
+        cooling_plants: [],
+        air_handling_systems: [],
+        terminal_units: [],
+        system_controls: [],
+        pre_inspection_checklist: {
+          pcs: {
+            essential: {
+              listOfSystems: false,
+              temperatureControlMethod: false,
+              operationControlMethod: false,
+            },
+            desirable: {
+              previousReports: false,
+              maintenanceRecords: false,
+              calibrationRecords: false,
+              consumptionRecords: false,
+            },
+            optional: { coolingLoadEstimate: false, complaintRecords: false },
+          },
+          sccs: {
+            essential: {
+              listOfSystems: true,
+              coolingCapacities: true,
+              controlZones: true,
+              temperatureControls: true,
+              operationControls: true,
+              schematics: false,
+            },
+            desirable: {
+              previousReports: true,
+              refrigerationMaintenance: false,
+              deliverySystemMaintenance: true,
+              controlSystemMaintenance: true,
+              consumptionRecords: true,
+              commissioningResults: true,
+            },
+            optional: {
+              coolingLoadEstimate: true,
+              complaintRecords: true,
+              bmsCapability: true,
+              monitoringCapability: true,
+            },
+          },
+        },
+      )
     end
 
     it "can show the records section" do
-      expect(response.body).to have_css "h2", text: "Pre inspection records requested"
+      expect(response.body).to have_css "h2",
+                                        text: "Pre inspection records requested"
       expect(response.body).to have_css "h3", text: "Essential records"
       expect(response.body).to have_css "h3", text: "Desirable records"
       expect(response.body).to have_css "h3", text: "Optional records"
-      expect(response.body).to have_css "p", text: "For the centralised cooling systems"
-      expect(response.body).to have_css "p", text: "For the packaged cooling systems"
+      expect(response.body).to have_css "p",
+                                        text: "For the centralised cooling systems"
+      expect(response.body).to have_css "p",
+                                        text: "For the packaged cooling systems"
     end
 
     it "Explains that the detailed notes are not available" do
-      expect(response.body).to have_css "p", text: "The detailed inspection notes from this report are no longer available online. If you require the detailed inspection notes, contact us at mhclg.digital-services@communities.gov.uk"
+      expect(response.body).to have_css "p",
+                                        text:
+                                          "The detailed inspection notes from this report are no longer available online. If you require the detailed inspection notes, contact us at mhclg.digital-services@communities.gov.uk"
     end
   end
 end

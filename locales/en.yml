@@ -1502,7 +1502,9 @@ en:
           condition: "Locate the inlets for outdoor air. Note any significant obstructions or blockages to inlet grilles, screens and pre- filters. Note where inlets may be affected by proximity to local sources of heat, or to air exhausts."
         fan_power:
           title: "CS1.5 Specific fan power"
+          estimate_power: "Estimate the specific fan power (SFP) of air movement systems."
           condition: "Are air flow rates and system pressures available from commissioning data?"
+          sfp: "The calculation used was: %{sfp_value}"
       terminal_units:
         title: "Terminal units"
         sub_heading: "Terminal unit"
