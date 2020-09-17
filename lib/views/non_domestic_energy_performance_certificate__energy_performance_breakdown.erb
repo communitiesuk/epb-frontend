@@ -3,46 +3,16 @@
   <h2 class="govuk-heading-l"><%=
     t('non_domestic_epc.energy_peformance_breakdown.heading')
   %></h2>
-  <dl class="govuk-summary-list">
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key govuk-!-width-one-half" ><%=
-        t('non_domestic_epc.energy_peformance_breakdown.main_heating_fuel')
-      %></dt>
-      <dd class="govuk-summary-list__value govuk-!-width-one-half" style="text-align: right"><%=
-        main_heating_fuel
-      %></dd>
-    </div>
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key govuk-!-width-one-half" ><%=
-        t('non_domestic_epc.energy_peformance_breakdown.building_environment')
-      %></dt>
-      <dd class="govuk-summary-list__value govuk-!-width-one-half" style="text-align: right"><%=
-        building_environment
-      %></dd>
-    </div>
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key govuk-!-width-one-half" ><%=
-        t('non_domestic_epc.energy_peformance_breakdown.assessment_level')
-      %></dt>
-      <dd class="govuk-summary-list__value govuk-!-width-one-half" style="text-align: right"><%=
-        assessment_level
-      %></dd>
-    </div>
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key govuk-!-width-one-half" ><%=
-        t('non_domestic_epc.energy_peformance_breakdown.emission_rate')
-      %></dt>
-      <dd class="govuk-summary-list__value govuk-!-width-one-half" style="text-align: right"><%=
-        emission_rate
-      %></dd>
-    </div>
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key govuk-!-width-one-half" ><%=
-        t('non_domestic_epc.energy_peformance_breakdown.primary_energy_use')
-      %></dt>
-      <dd class="govuk-summary-list__value govuk-!-width-one-half" style="text-align: right"><%=
-        primary_energy_use
-      %></dd>
-    </div>
-  </dl>
+
+  <%== erb :component__summary_list, locals: {
+    list: {
+      "main_heating_fuel": { value: main_heating_fuel },
+      "building_environment": { value: building_environment },
+      "assessment_level": { value: assessment_level },
+      "emission_rate": { value: emission_rate },
+      "primary_energy_use": { value: primary_energy_use },
+    },
+    translation_prefix: 'non_domestic_epc.energy_peformance_breakdown.',
+    skip_null: true
+  } %>
 </div>
