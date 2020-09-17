@@ -147,6 +147,22 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
     it "can show the terminal units" do
       expect(response.body).to have_css "h2", text: "Terminal units"
       expect(response.body).to have_css "h3", text: "Terminal unit 1"
+      expect(response.body).to have_css "dt", text: "Component"
+      expect(response.body).to have_css "dd", text: "Indoor wall type split which is part of a multi system with 5 indoor units."
+      expect(response.body).to have_css "dt", text: "Unit"
+      expect(response.body).to have_css "dd", text: "VOL1/SYS1"
+      expect(response.body).to have_css "dt", text: "Description of unit"
+      expect(response.body).to have_css "dd", text: "VOL1/SYS1/a"
+      expect(response.body).to have_css "dt", text: "Cooling plant serving terminal unit"
+      expect(response.body).to have_css "dd", text: "Cooling system"
+      expect(response.body).to have_css "dt", text: "Manufacturer"
+      expect(response.body).to have_css "dd", text: "Mitsubishi Electric"
+      expect(response.body).to have_css "dt", text: "Year installed"
+      expect(response.body).to have_css "dd", text: "2011"
+      expect(response.body).to have_css "dt", text: "Area served"
+      expect(response.body).to have_css "dd", text: "ICT Suite"
+      expect(response.body).to have_css "dt", text: "Discrepancies noted"
+      expect(response.body).to have_css "dd", text: "None"
     end
 
     it "can show the system controls" do
