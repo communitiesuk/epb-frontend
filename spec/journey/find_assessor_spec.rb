@@ -187,7 +187,7 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
       find_all("span", text: "More information")[1].click
       expect(page).to have_content "Contact details for Stroma Certification Ltd:"
       expect(page).to have_content "Email: certification@stroma.com"
-      expect(page).to have_content "Telephone: 0845 621 11 11"
+      expect(page).to have_content "Telephone: 0330 124 9660"
     end
 
     xit "displays no longer accredited text for unaccredited scheme" do

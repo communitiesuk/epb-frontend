@@ -158,7 +158,7 @@ describe "Acceptance::Assessor", type: :feature do
           it "shows Stroma contact details" do
             expect(response.body).to include("Contact details for Stroma Certification Ltd:")
             expect(response.body).to include("certification@stroma.com")
-            expect(response.body).to include("0845 621 11 11")
+            expect(response.body).to include("0330 124 9660")
           end
 
           it "shows Sterling contact details" do
