@@ -6,7 +6,7 @@ module Sinatra
   module FrontendService
     module Helpers
       def valid_postcode
-        Regexp.new('^[A-Z]{1,2}\d[A-Z\d]?\s?\d[A-Z]{2}$', Regexp::IGNORECASE)
+        Regexp.new('^[a-zA-Z0-9_ ]{1,10}$', Regexp::IGNORECASE)
       end
 
       def set_subdomain_url(subdomain)

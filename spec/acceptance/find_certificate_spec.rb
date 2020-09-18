@@ -64,6 +64,29 @@ describe "Acceptance::Certificate" do
       end
     end
 
+    context "when entering a postcode that are over 10 characters" do
+      let(:response) do
+        get "http://find-energy-certificate.local.gov.uk/find-a-certificate/search-by-postcode?postcode=++SW1A+2AA7A8++"
+      end
+
+      it "returns status 400" do
+        expect(response.status).to eq(400)
+      end
+
+      it "displays the find a certificate page heading" do
+        expect(response.body).to include(
+                                     "Find an energy performance certificate",
+                                     )
+      end
+
+      it "displays an error message" do
+        expect(response.body).to include(
+                                     '<span id="postcode-error" class="govuk-error-message">',
+                                     )
+        expect(response.body).to include("Enter a real postcode")
+      end
+    end
+
     context "when entering an valid postcode" do
       context "with surrounding whitespaces" do
         before { FindCertificate::Stub.search_by_postcode("SW1A 2AA") }
