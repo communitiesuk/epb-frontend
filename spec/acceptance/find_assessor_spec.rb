@@ -140,13 +140,13 @@ describe "Acceptance::Assessor", type: :feature do
           end
 
           it "shows CIBSE contact details" do
-            expect(response.body).to include("Contact details for CIBSE:")
+            expect(response.body).to include("Contact details for CIBSE Certification Limited:")
             expect(response.body).to include("epc@cibsecertification.org")
             expect(response.body).to include("020 8772 3649")
           end
 
           it "shows Quidos contact details" do
-            expect(response.body).to include("Contact details for Quidos:")
+            expect(response.body).to include("Contact details for Quidos Limited:")
             expect(response.body).to include("info@quidos.co.uk")
             expect(response.body).to include("01225 667 570")
           end
@@ -156,27 +156,27 @@ describe "Acceptance::Assessor", type: :feature do
           end
 
           it "shows Stroma contact details" do
-            expect(response.body).to include("Contact details for Stroma:")
+            expect(response.body).to include("Contact details for Stroma Certification Ltd:")
             expect(response.body).to include("certification@stroma.com")
             expect(response.body).to include("0845 621 11 11")
           end
 
           it "shows Sterling contact details" do
-            expect(response.body).to include("Contact details for Sterling:")
+            expect(response.body).to include("Contact details for Sterling Accreditation Ltd:")
             expect(response.body).to include("info@sterlingaccreditaiton.com")
             expect(response.body).to include("0161 727 4303")
           end
 
           it "shows Elmhurst contact details" do
             expect(response.body).to include(
-              "Contact details for Elmhurst Energy:",
+              "Contact details for Elmhurst Energy Systems Ltd:",
             )
             expect(response.body).to include("enquiries@elmhurstenergy.co.uk")
             expect(response.body).to include("01455 883 250")
           end
 
           it "shows ECMK contact details" do
-            expect(response.body).to include("Contact details for Sterling:")
+            expect(response.body).to include("Contact details for Sterling Accreditation Ltd:")
             expect(response.body).to include("info@ecmk.co.uk")
             expect(response.body).to include("0333 123 1418")
           end

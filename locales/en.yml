@@ -96,7 +96,7 @@ en:
       cta: 'Go to website'
       commercial: 'Commercial <br />properties only'
       cibse:
-        name: 'CIBSE'
+        name: 'CIBSE Certification Limited'
         phone: '020 8772 3649'
         email: 'epc@cibsecertification.org'
         url: 'https://www.cibsecertification.co.uk'
@@ -106,22 +106,22 @@ en:
         email: 'info@ecmk.co.uk'
         url: 'https://www.ecmk.co.uk'
       elmhurst:
-        name: 'Elmhurst Energy'
+        name: 'Elmhurst Energy Systems Ltd'
         phone: '01455 883 250'
         email: 'enquiries@elmhurstenergy.co.uk'
         url: 'https://www.elmhurstenergy.co.uk'
       sterling:
-        name: 'Sterling'
+        name: 'Sterling Accreditation Ltd'
         phone: '0161 727 4303'
         email: 'info@sterlingaccreditaiton.com'
         url: 'http://www.sterlingaccreditation.com'
       stroma:
-        name: 'Stroma'
+        name: 'Stroma Certification Ltd'
         phone: '0845 621 11 11'
         email: 'certification@stroma.com'
         url: 'https://www.stroma.com/certification'
       quidos:
-        name: 'Quidos'
+        name: 'Quidos Limited'
         phone: '01225 667 570'
         email: 'info@quidos.co.uk'
         url: 'https://quidos.co.uk'

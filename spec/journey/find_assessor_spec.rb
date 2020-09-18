@@ -73,7 +73,7 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
       fill_in "postcode", with: "SW1A 2AA"
       click_on "Find"
       find("span", text: "More information", match: :first).click
-      expect(page).to have_content "Contact details for CIBSE:"
+      expect(page).to have_content "Contact details for CIBSE Certification Limited:"
       expect(page).to have_content "epc@cibsecertification.org"
       expect(page).to have_content "020 8772 3649"
     end
@@ -185,7 +185,7 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
       fill_in "postcode", with: "SW1A 2AA"
       click_on "Find"
       find_all("span", text: "More information")[1].click
-      expect(page).to have_content "Contact details for Stroma:"
+      expect(page).to have_content "Contact details for Stroma Certification Ltd:"
       expect(page).to have_content "Email: certification@stroma.com"
       expect(page).to have_content "Telephone: 0845 621 11 11"
     end
