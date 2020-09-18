@@ -104,14 +104,14 @@ describe "Acceptance::Non Domestic Certificate" do
 
       it "displays the find a certificate page heading" do
         expect(response.body).to include(
-                                     "Find an energy performance certificate",
-                                     )
+          "Find an energy performance certificate",
+        )
       end
 
       it "displays an error message" do
         expect(response.body).to include(
-                                     '<span id="postcode-error" class="govuk-error-message">',
-                                     )
+          '<span id="postcode-error" class="govuk-error-message">',
+        )
         expect(response.body).to include("Enter a real postcode")
       end
     end

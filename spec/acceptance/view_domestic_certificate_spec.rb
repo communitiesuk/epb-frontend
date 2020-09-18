@@ -377,7 +377,9 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       end
 
       it "shows the link to the simple energy advice service" do
-        expect(response.body).to include("Simple Energy Advice has guidance on improving a property’s energy use.")
+        expect(response.body).to include(
+          "Simple Energy Advice has guidance on improving a property’s energy use.",
+        )
       end
     end
 

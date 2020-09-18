@@ -110,8 +110,8 @@ describe "Acceptance::NonDomesticAssessor" do
 
       it "displays an error message" do
         expect(response.body).to include(
-                                     '<span id="postcode-error" class="govuk-error-message">',
-                                     )
+          '<span id="postcode-error" class="govuk-error-message">',
+        )
         expect(response.body).to include("Enter a real postcode")
       end
     end
@@ -204,13 +204,17 @@ describe "Acceptance::NonDomesticAssessor" do
           end
 
           it "shows CIBSE contact details" do
-            expect(response.body).to include("Contact details for CIBSE Certification Limited:")
+            expect(response.body).to include(
+              "Contact details for CIBSE Certification Limited:",
+            )
             expect(response.body).to include("epc@cibsecertification.org")
             expect(response.body).to include("020 8772 3649")
           end
 
           it "shows Quidos contact details" do
-            expect(response.body).to include("Contact details for Quidos Limited:")
+            expect(response.body).to include(
+              "Contact details for Quidos Limited:",
+            )
             expect(response.body).to include("info@quidos.co.uk")
             expect(response.body).to include("01225 667 570")
           end
@@ -220,13 +224,17 @@ describe "Acceptance::NonDomesticAssessor" do
           end
 
           it "shows Stroma contact details" do
-            expect(response.body).to include("Contact details for Stroma Certification Ltd:")
+            expect(response.body).to include(
+              "Contact details for Stroma Certification Ltd:",
+            )
             expect(response.body).to include("certification@stroma.com")
             expect(response.body).to include("0330 124 9660")
           end
 
           it "shows Sterling contact details" do
-            expect(response.body).to include("Contact details for Sterling Accreditation Ltd:")
+            expect(response.body).to include(
+              "Contact details for Sterling Accreditation Ltd:",
+            )
             expect(response.body).to include("info@sterlingaccreditaiton.com")
             expect(response.body).to include("0161 727 4303")
           end
@@ -240,7 +248,9 @@ describe "Acceptance::NonDomesticAssessor" do
           end
 
           it "shows ECMK contact details" do
-            expect(response.body).to include("Contact details for Sterling Accreditation Ltd:")
+            expect(response.body).to include(
+              "Contact details for Sterling Accreditation Ltd:",
+            )
             expect(response.body).to include("info@ecmk.co.uk")
             expect(response.body).to include("0333 123 1418")
           end
