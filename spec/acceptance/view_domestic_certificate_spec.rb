@@ -56,13 +56,23 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
 
     it "shows the total floor area" do
       expect(response.body).to include(
-        "It has a total floor area of 150 square metres.",
+        '<dd class="govuk-summary-list__value govuk-!-width-one-half">
+              It has a total floor area of 150 square metres.
+      </dd>',
       )
     end
 
     it "shows the type of dwelling - downcased" do
-      expect(response.body).not_to include("This property is a Top floor flat.")
-      expect(response.body).to include("This property is a top floor flat.")
+      expect(response.body).not_to include(
+        '<dd class="govuk-summary-list__value govuk-!-width-one-half">
+          This property is a Top floor flat.
+          </dd>',
+      )
+      expect(response.body).to include(
+        '<dd class="govuk-summary-list__value govuk-!-width-one-half">
+              This property is a top floor flat.
+      </dd>',
+      )
     end
 
     it "shows the SVG with energy ratings" do
@@ -575,7 +585,6 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
         it "responds successfully" do
           expect(response.status).to eq 200
         end
-
       end
     end
 
