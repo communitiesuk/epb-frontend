@@ -7,7 +7,7 @@ module FindCertificate
 
       uri +=
         if type == "CEPC"
-          "&assessment_type[]=CEPC&assessment_type[]=DEC&assessment_type[]=DEC-RR&assessment_type[]=CEPC-RR"
+          "&assessment_type[]=AC-CERT&assessment_type[]=AC-REPORT&assessment_type[]=CEPC&assessment_type[]=DEC&assessment_type[]=DEC-RR&assessment_type[]=CEPC-RR"
         else
           "&assessment_type[]=SAP&assessment_type[]=RdSAP"
         end
