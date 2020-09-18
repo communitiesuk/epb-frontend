@@ -3,10 +3,9 @@
 module UseCase
   class FindCertificateByPostcode < UseCase::Base
     def execute(query, types = %w[RdSAP SAP])
-      unless Regexp.new(
-        '^[a-zA-Z0-9_ ]{1,10}$',
-        Regexp::IGNORECASE,
-      ).match(query)
+      unless Regexp.new("^[a-zA-Z0-9_ ]{4,10}$", Regexp::IGNORECASE).match(
+        query,
+      )
         raise Errors::PostcodeNotValid
       end
 

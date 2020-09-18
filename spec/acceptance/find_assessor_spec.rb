@@ -68,6 +68,27 @@ describe "Acceptance::Assessor", type: :feature do
 
       it "displays an error message" do
         expect(response.body).to include(
+          '<span id="postcode-error" class="govuk-error-message">',
+        )
+        expect(response.body).to include("Enter a real postcode")
+      end
+    end
+
+    context "when entering a postcode that is less than 4 characters" do
+      let(:response) do
+        get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/search-by-postcode?postcode=ETC"
+      end
+
+      it "returns status 400" do
+        expect(response.status).to eq(400)
+      end
+
+      it "displays the find an assessor page heading" do
+        expect(response.body).to include("Find an energy assessor")
+      end
+
+      it "displays an error message" do
+        expect(response.body).to include(
                                      '<span id="postcode-error" class="govuk-error-message">',
                                      )
         expect(response.body).to include("Enter a real postcode")
