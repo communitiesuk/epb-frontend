@@ -74,7 +74,7 @@ describe "Acceptance::NonDomesticAssessor" do
       end
     end
 
-    context "when entering a postcode that are over 10 characters" do
+    context "when entering a postcode that is over 10 characters" do
       let(:response) do
         get "http://getting-new-energy-certificate.local.gov.uk/find-a-non-domestic-assessor/search-by-postcode?postcode=++SW1A+2AA7A8++"
       end
