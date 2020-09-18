@@ -9,7 +9,7 @@
   <tbody class="govuk-table__body">
     <% certificate.each do |_address_id, results| %>
       <tr class="govuk-table__row">
-        <th scope="row" class="govuk-table__header"><%= [results[:addressLine1], results[:addressLine2], results[:town], results[:postcode]].reject { |a| a.to_s.empty? }.join(", ") %></th>
+        <th scope="row" class="govuk-table__header"><%= [results[:addressLine1], results[:addressLine2], results[:addressLine3], results[:addressLine4], results[:town], results[:postcode]].reject { |a| a.nil? || a.to_s.empty? }.join(", ") %></th>
         <td class="govuk-table__cell govuk-!-border-bottom-none">
           <% results[:certificates].each do |result| %>
             <a class="govuk-link" href="/energy-certificate/<%= result[:assessmentId] %>"><%= result[:typeOfAssessment].upcase %></a><br /><br />
