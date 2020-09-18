@@ -372,8 +372,12 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
     context "when there were no recommendations made" do
       it "shows there aren’t any recommendations for this property text" do
         expect(response.body).to include(
-          "There are no recommendations for this property.",
+          "The assessor did not make any recommendations for this property.",
         )
+      end
+
+      it "shows the link to the simple energy advice service" do
+        expect(response.body).to include("Simple Energy Advice has guidance on improving a property’s energy use.")
       end
     end
 

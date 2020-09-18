@@ -757,7 +757,9 @@ en:
           energy_rating_description1: 'An energy rating shows a property’s energy efficiency.'
           energy_rating_description2: 'Properties are given a rating from A (most efficient) to G (least efficient).'
           energy_rating_description3: 'Properties are also given a score. The higher this number, the lower your CO2 emissions are likely to be.'
-          no_recommendations_summary: 'There are no recommendations for this property.'
+          no_recommendations_summary: 'The assessor did not make any recommendations for this property.'
+          simple_energy_text: 'Simple Energy Advice has guidance on improving a property’s energy use.'
+          simple_energy_link: 'https://www.simpleenergyadvice.org.uk/'
         box:
           energy_rating_title: 'Potential energy rating'
         list:
