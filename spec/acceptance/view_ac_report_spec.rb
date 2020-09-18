@@ -192,8 +192,7 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
       end
 
       it "does not show the Subsystems inspected section" do
-        expect(response.body).not_to have_css "h2",
-                                              text: "Subsystems inspected"
+        expect(response.body).not_to have_css "h2", text: "Subsystems inspected"
       end
     end
 

@@ -3,9 +3,9 @@
 module FetchAssessmentSummary
   class AssessmentStub
     def self.fetch_ac_report(
-        assessment_id:,
-        executive_summary: "My\nSummary\t\tInspected",
-        sub_systems: [
+      assessment_id:,
+      executive_summary: "My\nSummary\t\tInspected",
+      sub_systems: [
         volumeDefinitions: "VOL001 The Shop",
         id: "VOL001/SYS001 R410A Inverter Split Systems to Sales Area",
         description:
@@ -18,501 +18,480 @@ module FetchAssessmentSummary
         terminalUnitsCount: "4",
         controlsCount: "5",
       ],
-        pre_inspection_checklist: {
-          essential: {
-              controlZones: false,
-              coolingCapacities: false,
-              listOfSystems: true,
-              operationControls: false,
-              schematics: false,
-              temperatureControls: false,
-          },
-          desirable: {
-              commissioningResults: false,
-              consumptionRecords: false,
-              controlSystemMaintenance: false,
-              deliverySystemMaintenance: false,
-              previousReports: false,
-              refrigerationMaintenance: false,
-          },
-          optional: {
-              bmsCapability: false,
-              complaintRecords: false,
-              coolingLoadEstimate: false,
-              monitoringCapability: false,
-          },
+      pre_inspection_checklist: {
+        essential: {
+          controlZones: false,
+          coolingCapacities: false,
+          listOfSystems: true,
+          operationControls: false,
+          schematics: false,
+          temperatureControls: false,
+        },
+        desirable: {
+          commissioningResults: false,
+          consumptionRecords: false,
+          controlSystemMaintenance: false,
+          deliverySystemMaintenance: false,
+          previousReports: false,
+          refrigerationMaintenance: false,
+        },
+        optional: {
+          bmsCapability: false,
+          complaintRecords: false,
+          coolingLoadEstimate: false,
+          monitoringCapability: false,
+        },
       },
-        cooling_plants: [
-            {
-                systemNumber:
-                    "VOL001/SYS001 R410A Inverter Split Systems to Sales Area",
-                identifier:
-                    "VOL001/SYS001/CP1 Sampled R410A Inverter Split Area (1)",
-                equipment: {
-                    coolingCapacity: "10",
-                    description: "Single Split",
-                    location: "Externally on roof",
-                    manufacturer: "Mitsubishi",
-                    modelReference: "FDC100VN",
-                    refrigerantCharge: "3",
-                    refrigerantType: {
-                        ecfgasregulation: nil, ecozoneregulation: nil, type: "R410A"
-                    },
-                    serialNumber: "not visible",
-                    yearInstalled: "2014",
-                    discrepancyNote: "Something more random",
-                },
-                inspection: {
-                    airRecirculation: {
-                        note: "The condenser was considered suitably located.",
-                        state: true,
-                    },
-                    chillerPlacementOk: {
-                        note: "The condenser is considered suitably located.",
-                        state: true,
-                    },
-                    chillerPlantAreaClear: {
-                        note: "Area appeared clear and satisfactory.", state: true
-                    },
-                    chillerPlantOk: {
-                        note: "General condition of the plant appeared satisfactory.",
-                        state: true,
-                    },
-                    chillerPlantOperational: {
-                        note: "System appeared to operate satisfactorily.",
-                        state: true,
-                    },
-                    compressorsOperational: {
-                        note:
-                            "The compressor appeared to operate satisfactorily with the air off temperatures as expected.",
-                        state: true,
-                    },
-                    heatExchangerOk: {
-                        note: "Heat exchangers appeared satisfactory and clean.",
-                        state: true,
-                    },
-                    heatRejectionAreaClear: {
-                        note: "The area was clear and appeared satisfactory.",
-                        state: true,
-                    },
-                    heatRejectionOperational: {
-                        note: "Heat rejection plant appeared to operate as expected.",
-                        state: true,
-                    },
-                    pipeInsulationOk: {
-                        note:
-                            "Thermal insulation appeared in good order and well fitted.",
-                        state: true,
-                    },
-                },
-                sizing: {
-                    acceptableInstalledSize: "1",
-                    guidance: [
-                        {
-                            code: "OTHER",
-                            seqNumber: "1",
-                            text:
-                                "This occupancy is based on information obtained from site",
-                        },
-                        {
-                            code: "OTHER",
-                            seqNumber: "2",
-                            text:
-                                "No recommendation required; occupancy level appears appropriate.",
-                        },
-                        {
-                            code: "OTHER",
-                            seqNumber: "3",
-                            text: "Floor area was measured whilst on site.",
-                        },
-                        {
-                            code: "OTHER",
-                            seqNumber: "4",
-                            text: "No recommendation required.",
-                        },
-                    ],
-                    installedCapacity: "10.0",
-                    occupantDensity: "8.93",
-                    totalFloorArea: "357",
-                    totalOccupants: "40",
-                    upperHeatGain: "140.0",
-                },
-                refrigeration: {
-                    acceptableTemperature: "0",
-                    ambient: "13",
-                    compressorControl: {
-                        note: "The capacity control is inverter.",
-                    },
-                    fGasInspection: {
-                        note:
-                            "The system operated using refrigerant which is not banned.",
-                        state: true,
-                    },
-                    guidance: [
-                        {
-                            code: "OTHER",
-                            seqNumber: "1",
-                            text:
-                                "Access to the pre and post compressor for this type of system is difficult with a visual inspection; therefore the air on/room temperature and air off temperatures were taken from the indoor unit. (Pre Compressor temperature detailed is therefore the room temperature).",
-                        },
-                        {
-                            code: "OTHER",
-                            seqNumber: "2",
-                            text: "No recommendation required.",
-                        },
-                    ],
-                    postProcessor: "7",
-                    preCompressor: "22",
-                    refrigerantLeak: {
-                        note:
-                            "There were no visible signs of a leak observed during the inspection.",
-                        state: false,
-                    },
-                    refrigerantName: "R410A",
-                },
-                maintenance: {
-                    competentPerson: {
-                        note:
-                            "Maintenance contract advised as being in place and would appear satisfactory due to unit condition.",
-                        state: true,
-                    },
-                    guidance: nil,
-                    recordsKept: {
-                        note: "Yes system appears in good order for age.", state: true
-                    },
-                },
-                metering: {
-                    bemInstalled: {
-                        note: "The system is linked to a Central Controller.",
-                        state: true,
-                    },
-                    excessiveUse: { note: "No details available.", state: false },
-                    meteringInstalled: { note: "987654321", state: true },
-                    usageRecords: {
-                        note:
-                            "There were no records of air conditioning plant usage or sub-metered energy consumption with expected hours of use per year for the plant or systems located on site.",
-                        state: false,
-                    },
-                },
-                humidityControl: {
-                    note: "N/A no humidity control installed to this system",
-                    state: false,
-                },
-                chillers: {
-                    waterCooled: {
-                        note: "N/A no cooling towers installed to this system",
-                        state: false,
-                    },
-                    waterTreatment: {
-                        note: "N/A no cooling towers installed to this site",
-                        state: false,
-                    },
-                },
+      cooling_plants: [
+        {
+          systemNumber:
+            "VOL001/SYS001 R410A Inverter Split Systems to Sales Area",
+          identifier: "VOL001/SYS001/CP1 Sampled R410A Inverter Split Area (1)",
+          equipment: {
+            coolingCapacity: "10",
+            description: "Single Split",
+            location: "Externally on roof",
+            manufacturer: "Mitsubishi",
+            modelReference: "FDC100VN",
+            refrigerantCharge: "3",
+            refrigerantType: {
+              ecfgasregulation: nil, ecozoneregulation: nil, type: "R410A"
             },
-            {
-                systemNumber:
-                    "VOL001/SYS001 R410A Inverter Split Systems to Sales Area",
-                identifier:
-                    "VOL001/SYS001/CP2 Sampled R410A Inverter Split Area (2)",
-                equipment: {
-                    coolingCapacity: "10",
-                    description: "Single Split",
-                    location: "Externally on roof",
-                    manufacturer: "Mitsubishi",
-                    modelReference: "FDC100VN",
-                    refrigerantCharge: "3",
-                    refrigerantType: {
-                        ecfgasregulation: nil, ecozoneregulation: nil, type: "R410A"
-                    },
-                    serialNumber: "not visible",
-                    yearInstalled: "2014",
-                    areaServed: "Sales Area",
-                    discrepancyNote: "Something random",
-                },
-                inspection: {},
-                sizing: {
-                    acceptableInstalledSize: "1",
-                    guidance: [
-                        {
-                            code: "OTHER",
-                            seqNumber: "1",
-                            text:
-                                "This occupancy is based on information obtained from site",
-                        },
-                        {
-                            code: "OTHER",
-                            seqNumber: "2",
-                            text:
-                                "No recommendation required; occupancy level appears appropriate.",
-                        },
-                    ],
-                    installedCapacity: "10.0",
-                    occupantDensity: "8.93",
-                    totalFloorArea: "357",
-                    totalOccupants: "40",
-                    upperHeatGain: "140.0",
-                },
-                refrigeration: {
-                    acceptableTemperature: "0",
-                    ambient: "13",
-                    compressorControl: {
-                        note: "The capacity control is inverter.",
-                    },
-                    fGasInspection: {
-                        note:
-                            "The system operated using refrigerant which is not banned.",
-                        state: true,
-                    },
-                    guidance: [
-                        {
-                            code: "OTHER",
-                            seqNumber: "1",
-                            text:
-                                "Access to the pre and post compressor for this type of system is difficult with a visual inspection.",
-                        },
-                        {
-                            code: "OTHER",
-                            seqNumber: "2",
-                            text: "No recommendation required.",
-                        },
-                    ],
-                    postProcessor: "8",
-                    preCompressor: "22",
-                    refrigerantLeak: {
-                        note:
-                            "There were no visible signs of a leak observed during the inspection.",
-                        state: false,
-                    },
-                    refrigerantName: "R410A",
-                },
-                maintenance: {
-                    competentPerson: {
-                        note:
-                            "Maintenance contract advised as being in place and would appear satisfactory due to unit condition.",
-                        state: true,
-                    },
-                    guidance: nil,
-                    recordsKept: {
-                        note: "Yes system appears in good order for age.", state: true
-                    },
-                },
-                metering: {
-                    bemInstalled: {
-                        note: "The system is linked to a Central Controller.",
-                        state: true,
-                    },
-                    excessiveUse: { note: "No details available.", state: false },
-                    meteringInstalled: { note: "", state: false },
-                    usageRecords: {
-                        note:
-                            "There were no records of air conditioning plant usage or sub-metered energy consumption with expected hours of use per year for the plant or systems located on site.",
-                        state: false,
-                    },
-                },
-                humidityControl: {
-                    note: "N/A no humidity control installed to this system",
-                    state: false,
-                },
-                chillers: nil,
+            serialNumber: "not visible",
+            yearInstalled: "2014",
+            discrepancyNote: "Something more random",
+          },
+          inspection: {
+            airRecirculation: {
+              note: "The condenser was considered suitably located.",
+              state: true,
             },
-        ],
-        air_handling_systems: [
-            {
-                equipment: {
-                    areasServed: "Corridor",
-                    component: "VENT1 Heat recovery",
-                    discrepancy: "None",
-                    location: "Above corridor ceiling",
-                    manufacturer: "NUAIRE",
-                    systemsServed: "Corridor",
-                    unit: "123",
-                    yearInstalled: "2016",
-                },
-                inspection: {
-                    filters: {
-                        filterCondition: {
-                            flag: true, note: nil, recommendations: []
-                        },
-                        changeFrequency: {
-                            flag: true,
-                            note:
-                                "Originally changed on an annual basis but now upgraded to six monthly.",
-                            recommendations: [
-                                { sequence: "0", text: "Change this more frequently" },
-                            ],
-                        },
-                        differentialPressureGauge: {
-                            flag: false, note: "Not fitted.", recommendations: []
-                        },
-                    },
-                    heatExchangers: {
-                        condition: { flag: true, note: nil, recommendations: [] },
-                    },
-                    refrigeration: {
-                        leaks: { flag: true, note: nil, recommendations: [] },
-                    },
-                    fanRotation: {
-                        direction: { flag: true, note: nil, recommendations: [] },
-                        modulation: { flag: true, note: nil, recommendations: [] },
-                    },
-                    airLeakage: {
-                        condition: { note: "No leaks", recommendations: [] },
-                    },
-                    heatRecovery: {
-                        energyConservation: { note: "None", recommendations: [] },
-                    },
-                    outdoorInlets: {
-                        condition: { note: "Diffusers clean", recommendations: [] },
-                    },
-                    fanControl: {
-                        setting: { note: "No dampers", recommendations: [] },
-                    },
-                    fanPower: {
-                        condition: { note: nil, flag: true, recommendations: [] },
-                        sfpCalculation: "464 watts x 70% - 0.311/400 = 8.12 w/ltr.",
-                    },
-                },
+            chillerPlacementOk: {
+              note: "The condenser is considered suitably located.", state: true
             },
-        ],
-        terminal_units: [
-            {
-                                         equipment: {
-                                             unit: "VOL1/SYS1",
-                                             component:
-                                                 "Indoor wall type split which is part of a multi system with 5 indoor units.",
-                                             description: "VOL1/SYS1/a",
-                                             coolingPlant: "Cooling system",
-                                             manufacturer: "Mitsubishi Electric",
-                                             yearInstalled: "2011",
-                                             areaServed: "ICT Suite",
-                                             discrepancy: "None",
-                                         },
-                                         inspection: {
-                                             insulation: {
-                                                 pipework: { note: nil, recommendations: [], flag: true },
-                                                 ductwork: { note: nil, recommendations: [], flag: false },
-                                             },
-                                             unit: {
-                                                 condition: { note: nil, recommendations: [], flag: true },
-                                             },
-                                             grillesAirFlow: {
-                                                 distribution: { note: nil, recommendations: [], flag: true },
-                                                 tampering: { note: nil, recommendations: [], flag: true },
-                                                 waterSupply: { note: nil, recommendations: [], flag: false },
-                                                 complaints: { note: nil, recommendations: [], flag: false },
-                                             },
-                                             diffuserPositions: {
-                                                 positionIssues: {
-                                                     note: nil, recommendations: [], flag: true
-                                                 },
-                                                 partitioningIssues: {
-                                                     note: nil, recommendations: [], flag: false
-                                                 },
-                                                 controlOperation: {
-                                                     note: nil, recommendations: [], flag: true
-                                                 },
-                                             },
-                                         },
-                                     },
-        ],
-        system_controls: [
-            {
-                subSystemId:
-                    "VOL001/SYS001 R410A Inverter Split Systems to Sales Area",
-                component:
-                    "VOL001/SYS001/SC1 AC Local Controller to Sales Area Unit 1",
-                inspection: {
-                    zoning: {
-                        note:
-                            "Local Controller\n\n            Zoning is considered satisfactory as systems are linked to single controller.",
-                        recommendations: [
-                            {
-                                sequence: "1",
-                                text:
-                                    "Where an area/room has more than one AC system installed that have separate controllers; it should be ensured that AC systems are set to the same set point temperature and mode (heating/cooling/auto).",
-                            },
-                        ],
-                        flag: true,
-                    },
-                    time: {
-                        note:
-                            "Time/date on the local controller is not used as Central controller timeclock controls the units.",
-                        recommendations: [
-                            { sequence: "1", text: "No recommendation required." },
-                        ],
-                    },
-                    setOnPeriod: {
-                        note: "N/A Central controller timeclock controls the units.",
-                        recommendations: [
-                            { sequence: "1", text: "No recommendation required" },
-                        ],
-                    },
-                    timerShortfall: {
-                        note: "There is no shortfall in controller capabilities.",
-                        recommendations: [
-                            { sequence: "1", text: "No recommendation required." },
-                        ],
-                        flag: false,
-                    },
-                    sensors: {
-                        note: "Sensors are considered satisfactory.",
-                        recommendations: [
-                            { sequence: "1", text: "No recommendation required." },
-                        ],
-                        flag: true,
-                    },
-                    setTemperature: {
-                        note: "The set temperature on local controller; 18 deg C",
-                        recommendations: [
-                            {
-                                sequence: "1",
-                                text:
-                                    "Ensure staff are educated to run AC systems for comfort and efficiency by setting the AC system temperature to circa 22 deg C +/- 1 deg C.",
-                            },
-                        ],
-                    },
-                    deadBand: {
-                        note:
-                            "System dead-bands for the indoor unit are set at manufacture stage, these are considered satisfactory.",
-                        recommendations: [
-                            {
-                                sequence: "1",
-                                text:
-                                    "There were LPHW ceiling heaters within the same zones as AC systems and it was unclear from the BMS panel whether interlocks were provided between the systems to prevent both operating simultaneously. This should be investigated at head office were the BMS is set from and ensure that the AC systems do not operate at the same time as the heating and that adequate dead-bands are configured between the systems.",
-                            },
-                        ],
-                    },
-                    capacity: {
-                        note: "",
-                        recommendations: [
-                            { sequence: "1", text: "No recommendation required." },
-                        ],
-                        flag: true,
-                    },
-                    airflow: {
-                        note: "N/A Unit is not ducted type",
-                        recommendations: [
-                            {
-                                sequence: "1",
-                                text:
-                                    "Considered satisfactory, no recommendation required.",
-                            },
-                        ],
-                    },
-                    guidanceControls: {
-                        note: "Provision of Guidance notices would be useful.",
-                        recommendations: [
-                            {
-                                sequence: "1",
-                                text:
-                                    "Consider providing ‘Good Practise Guideline’ notices (laminated sheet adjacent each AC controller) including ‘simple step’ recommendations on how to operate the systems efficiently.",
-                            },
-                        ],
-                        flag: false,
-                    },
-                },
+            chillerPlantAreaClear: {
+              note: "Area appeared clear and satisfactory.", state: true
             },
-        ]
+            chillerPlantOk: {
+              note: "General condition of the plant appeared satisfactory.",
+              state: true,
+            },
+            chillerPlantOperational: {
+              note: "System appeared to operate satisfactorily.", state: true
+            },
+            compressorsOperational: {
+              note:
+                "The compressor appeared to operate satisfactorily with the air off temperatures as expected.",
+              state: true,
+            },
+            heatExchangerOk: {
+              note: "Heat exchangers appeared satisfactory and clean.",
+              state: true,
+            },
+            heatRejectionAreaClear: {
+              note: "The area was clear and appeared satisfactory.", state: true
+            },
+            heatRejectionOperational: {
+              note: "Heat rejection plant appeared to operate as expected.",
+              state: true,
+            },
+            pipeInsulationOk: {
+              note:
+                "Thermal insulation appeared in good order and well fitted.",
+              state: true,
+            },
+          },
+          sizing: {
+            acceptableInstalledSize: "1",
+            guidance: [
+              {
+                code: "OTHER",
+                seqNumber: "1",
+                text:
+                  "This occupancy is based on information obtained from site",
+              },
+              {
+                code: "OTHER",
+                seqNumber: "2",
+                text:
+                  "No recommendation required; occupancy level appears appropriate.",
+              },
+              {
+                code: "OTHER",
+                seqNumber: "3",
+                text: "Floor area was measured whilst on site.",
+              },
+              {
+                code: "OTHER",
+                seqNumber: "4",
+                text: "No recommendation required.",
+              },
+            ],
+            installedCapacity: "10.0",
+            occupantDensity: "8.93",
+            totalFloorArea: "357",
+            totalOccupants: "40",
+            upperHeatGain: "140.0",
+          },
+          refrigeration: {
+            acceptableTemperature: "0",
+            ambient: "13",
+            compressorControl: { note: "The capacity control is inverter." },
+            fGasInspection: {
+              note:
+                "The system operated using refrigerant which is not banned.",
+              state: true,
+            },
+            guidance: [
+              {
+                code: "OTHER",
+                seqNumber: "1",
+                text:
+                  "Access to the pre and post compressor for this type of system is difficult with a visual inspection; therefore the air on/room temperature and air off temperatures were taken from the indoor unit. (Pre Compressor temperature detailed is therefore the room temperature).",
+              },
+              {
+                code: "OTHER",
+                seqNumber: "2",
+                text: "No recommendation required.",
+              },
+            ],
+            postProcessor: "7",
+            preCompressor: "22",
+            refrigerantLeak: {
+              note:
+                "There were no visible signs of a leak observed during the inspection.",
+              state: false,
+            },
+            refrigerantName: "R410A",
+          },
+          maintenance: {
+            competentPerson: {
+              note:
+                "Maintenance contract advised as being in place and would appear satisfactory due to unit condition.",
+              state: true,
+            },
+            guidance: nil,
+            recordsKept: {
+              note: "Yes system appears in good order for age.", state: true
+            },
+          },
+          metering: {
+            bemInstalled: {
+              note: "The system is linked to a Central Controller.", state: true
+            },
+            excessiveUse: { note: "No details available.", state: false },
+            meteringInstalled: { note: "987654321", state: true },
+            usageRecords: {
+              note:
+                "There were no records of air conditioning plant usage or sub-metered energy consumption with expected hours of use per year for the plant or systems located on site.",
+              state: false,
+            },
+          },
+          humidityControl: {
+            note: "N/A no humidity control installed to this system",
+            state: false,
+          },
+          chillers: {
+            waterCooled: {
+              note: "N/A no cooling towers installed to this system",
+              state: false,
+            },
+            waterTreatment: {
+              note: "N/A no cooling towers installed to this site", state: false
+            },
+          },
+        },
+        {
+          systemNumber:
+            "VOL001/SYS001 R410A Inverter Split Systems to Sales Area",
+          identifier: "VOL001/SYS001/CP2 Sampled R410A Inverter Split Area (2)",
+          equipment: {
+            coolingCapacity: "10",
+            description: "Single Split",
+            location: "Externally on roof",
+            manufacturer: "Mitsubishi",
+            modelReference: "FDC100VN",
+            refrigerantCharge: "3",
+            refrigerantType: {
+              ecfgasregulation: nil, ecozoneregulation: nil, type: "R410A"
+            },
+            serialNumber: "not visible",
+            yearInstalled: "2014",
+            areaServed: "Sales Area",
+            discrepancyNote: "Something random",
+          },
+          inspection: {},
+          sizing: {
+            acceptableInstalledSize: "1",
+            guidance: [
+              {
+                code: "OTHER",
+                seqNumber: "1",
+                text:
+                  "This occupancy is based on information obtained from site",
+              },
+              {
+                code: "OTHER",
+                seqNumber: "2",
+                text:
+                  "No recommendation required; occupancy level appears appropriate.",
+              },
+            ],
+            installedCapacity: "10.0",
+            occupantDensity: "8.93",
+            totalFloorArea: "357",
+            totalOccupants: "40",
+            upperHeatGain: "140.0",
+          },
+          refrigeration: {
+            acceptableTemperature: "0",
+            ambient: "13",
+            compressorControl: { note: "The capacity control is inverter." },
+            fGasInspection: {
+              note:
+                "The system operated using refrigerant which is not banned.",
+              state: true,
+            },
+            guidance: [
+              {
+                code: "OTHER",
+                seqNumber: "1",
+                text:
+                  "Access to the pre and post compressor for this type of system is difficult with a visual inspection.",
+              },
+              {
+                code: "OTHER",
+                seqNumber: "2",
+                text: "No recommendation required.",
+              },
+            ],
+            postProcessor: "8",
+            preCompressor: "22",
+            refrigerantLeak: {
+              note:
+                "There were no visible signs of a leak observed during the inspection.",
+              state: false,
+            },
+            refrigerantName: "R410A",
+          },
+          maintenance: {
+            competentPerson: {
+              note:
+                "Maintenance contract advised as being in place and would appear satisfactory due to unit condition.",
+              state: true,
+            },
+            guidance: nil,
+            recordsKept: {
+              note: "Yes system appears in good order for age.", state: true
+            },
+          },
+          metering: {
+            bemInstalled: {
+              note: "The system is linked to a Central Controller.", state: true
+            },
+            excessiveUse: { note: "No details available.", state: false },
+            meteringInstalled: { note: "", state: false },
+            usageRecords: {
+              note:
+                "There were no records of air conditioning plant usage or sub-metered energy consumption with expected hours of use per year for the plant or systems located on site.",
+              state: false,
+            },
+          },
+          humidityControl: {
+            note: "N/A no humidity control installed to this system",
+            state: false,
+          },
+          chillers: nil,
+        },
+      ],
+      air_handling_systems: [
+        {
+          equipment: {
+            areasServed: "Corridor",
+            component: "VENT1 Heat recovery",
+            discrepancy: "None",
+            location: "Above corridor ceiling",
+            manufacturer: "NUAIRE",
+            systemsServed: "Corridor",
+            unit: "123",
+            yearInstalled: "2016",
+          },
+          inspection: {
+            filters: {
+              filterCondition: { flag: true, note: nil, recommendations: [] },
+              changeFrequency: {
+                flag: true,
+                note:
+                  "Originally changed on an annual basis but now upgraded to six monthly.",
+                recommendations: [
+                  { sequence: "0", text: "Change this more frequently" },
+                ],
+              },
+              differentialPressureGauge: {
+                flag: false, note: "Not fitted.", recommendations: []
+              },
+            },
+            heatExchangers: {
+              condition: { flag: true, note: nil, recommendations: [] },
+            },
+            refrigeration: {
+              leaks: { flag: true, note: nil, recommendations: [] },
+            },
+            fanRotation: {
+              direction: { flag: true, note: nil, recommendations: [] },
+              modulation: { flag: true, note: nil, recommendations: [] },
+            },
+            airLeakage: {
+              condition: { note: "No leaks", recommendations: [] },
+            },
+            heatRecovery: {
+              energyConservation: { note: "None", recommendations: [] },
+            },
+            outdoorInlets: {
+              condition: { note: "Diffusers clean", recommendations: [] },
+            },
+            fanControl: {
+              setting: { note: "No dampers", recommendations: [] },
+            },
+            fanPower: {
+              condition: { note: nil, flag: true, recommendations: [] },
+              sfpCalculation: "464 watts x 70% - 0.311/400 = 8.12 w/ltr.",
+            },
+          },
+        },
+      ],
+      terminal_units: [
+        {
+          equipment: {
+            unit: "VOL1/SYS1",
+            component:
+              "Indoor wall type split which is part of a multi system with 5 indoor units.",
+            description: "VOL1/SYS1/a",
+            coolingPlant: "Cooling system",
+            manufacturer: "Mitsubishi Electric",
+            yearInstalled: "2011",
+            areaServed: "ICT Suite",
+            discrepancy: "None",
+          },
+          inspection: {
+            insulation: {
+              pipework: { note: nil, recommendations: [], flag: true },
+              ductwork: { note: nil, recommendations: [], flag: false },
+            },
+            unit: { condition: { note: nil, recommendations: [], flag: true } },
+            grillesAirFlow: {
+              distribution: { note: nil, recommendations: [], flag: true },
+              tampering: { note: nil, recommendations: [], flag: true },
+              waterSupply: { note: nil, recommendations: [], flag: false },
+              complaints: { note: nil, recommendations: [], flag: false },
+            },
+            diffuserPositions: {
+              positionIssues: { note: nil, recommendations: [], flag: true },
+              partitioningIssues: {
+                note: nil, recommendations: [], flag: false
+              },
+              controlOperation: { note: nil, recommendations: [], flag: true },
+            },
+          },
+        },
+      ],
+      system_controls: [
+        {
+          subSystemId:
+            "VOL001/SYS001 R410A Inverter Split Systems to Sales Area",
+          component:
+            "VOL001/SYS001/SC1 AC Local Controller to Sales Area Unit 1",
+          inspection: {
+            zoning: {
+              note:
+                "Local Controller\n\n            Zoning is considered satisfactory as systems are linked to single controller.",
+              recommendations: [
+                {
+                  sequence: "1",
+                  text:
+                    "Where an area/room has more than one AC system installed that have separate controllers; it should be ensured that AC systems are set to the same set point temperature and mode (heating/cooling/auto).",
+                },
+              ],
+              flag: true,
+            },
+            time: {
+              note:
+                "Time/date on the local controller is not used as Central controller timeclock controls the units.",
+              recommendations: [
+                { sequence: "1", text: "No recommendation required." },
+              ],
+            },
+            setOnPeriod: {
+              note: "N/A Central controller timeclock controls the units.",
+              recommendations: [
+                { sequence: "1", text: "No recommendation required" },
+              ],
+            },
+            timerShortfall: {
+              note: "There is no shortfall in controller capabilities.",
+              recommendations: [
+                { sequence: "1", text: "No recommendation required." },
+              ],
+              flag: false,
+            },
+            sensors: {
+              note: "Sensors are considered satisfactory.",
+              recommendations: [
+                { sequence: "1", text: "No recommendation required." },
+              ],
+              flag: true,
+            },
+            setTemperature: {
+              note: "The set temperature on local controller; 18 deg C",
+              recommendations: [
+                {
+                  sequence: "1",
+                  text:
+                    "Ensure staff are educated to run AC systems for comfort and efficiency by setting the AC system temperature to circa 22 deg C +/- 1 deg C.",
+                },
+              ],
+            },
+            deadBand: {
+              note:
+                "System dead-bands for the indoor unit are set at manufacture stage, these are considered satisfactory.",
+              recommendations: [
+                {
+                  sequence: "1",
+                  text:
+                    "There were LPHW ceiling heaters within the same zones as AC systems and it was unclear from the BMS panel whether interlocks were provided between the systems to prevent both operating simultaneously. This should be investigated at head office were the BMS is set from and ensure that the AC systems do not operate at the same time as the heating and that adequate dead-bands are configured between the systems.",
+                },
+              ],
+            },
+            capacity: {
+              note: "",
+              recommendations: [
+                { sequence: "1", text: "No recommendation required." },
+              ],
+              flag: true,
+            },
+            airflow: {
+              note: "N/A Unit is not ducted type",
+              recommendations: [
+                {
+                  sequence: "1",
+                  text: "Considered satisfactory, no recommendation required.",
+                },
+              ],
+            },
+            guidanceControls: {
+              note: "Provision of Guidance notices would be useful.",
+              recommendations: [
+                {
+                  sequence: "1",
+                  text:
+                    "Consider providing ‘Good Practise Guideline’ notices (laminated sheet adjacent each AC controller) including ‘simple step’ recommendations on how to operate the systems efficiently.",
+                },
+              ],
+              flag: false,
+            },
+          },
+        },
+      ]
     )
       body = {
         data: {

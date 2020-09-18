@@ -213,9 +213,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
       end
 
       it "shows the primary energy use explanation" do
-        expect(response.body).to include(
-                                     "What is primary energy use?",
-                                     )
+        expect(response.body).to include("What is primary energy use?")
       end
 
       it "shows the contact section" do
@@ -378,16 +376,14 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
   context "when the assessment exists without primary energy value" do
     before do
       FetchAssessmentSummary::AssessmentStub.fetch_cepc assessment_id:
-                                                            "1234-5678-1234-5678-1234",
+                                                          "1234-5678-1234-5678-1234",
                                                         energyEfficiencyBand:
-                                                            "b",
+                                                          "b",
                                                         primaryEnergyUse: nil
     end
 
     it "hides the primary energy use explanation" do
-      expect(response.body).not_to include(
-                                   "What is primary energy use?",
-                                   )
+      expect(response.body).not_to include("What is primary energy use?")
     end
   end
 end

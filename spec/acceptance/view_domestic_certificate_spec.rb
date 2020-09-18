@@ -637,7 +637,10 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
         let(:response) { get "/energy-certificate/1111-1111-1111-1111-1112" }
 
         it "Shows an appropriate message" do
-          expect(response.body).to have_css("p", text: "There are no related certificates for this property.")
+          expect(response.body).to have_css(
+            "p",
+            text: "There are no related certificates for this property.",
+          )
         end
       end
     end

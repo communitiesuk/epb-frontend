@@ -61,10 +61,8 @@ describe "Acceptance::DecRecommendationReport", type: :feature do
                                         text: "This building’s operational rating is A."
       expect(response.body).to have_css "p",
                                         text: "see the DEC for this building."
-      expect(
-        response.body,
-      ).to have_link "see the DEC for this building",
-                     href: "/energy-certificate/0000-0000-0000-0000-1111"
+      expect(response.body).to have_link "see the DEC for this building",
+                                         href: "/energy-certificate/0000-0000-0000-0000-1111"
     end
 
     it "shows the Recommendations section" do
