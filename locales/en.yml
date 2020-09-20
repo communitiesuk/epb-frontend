@@ -1671,3 +1671,48 @@ en:
       link_ni: '<a href="https://www.epbniregisternd.com">the energy performance register for Northern Ireland</a>'
       post_text_1: 'Find all other certificates and reports using this page’s search.'
       post_text_2: 'If you cannot find a certificate or report, you should contact the energy assessor who carried out the assessment.'
+
+  accessibility_statement:
+    top_heading: 'Accessibility statement'
+    intro: 'This statement applies to content published on <a class= "govuk-link" href="https://find-energy-certificate.digital.communities.gov.uk">find-energy-certificate.digital.communities.gov.uk</a> and <a class= "govuk-link" href="https://getting-new-energy-certificate.digital.communities.gov.uk">getting-new-energy-certificate.digital.communities.gov.uk</a>.'
+    paragraph_1: 'This website is run by the Ministry of Housing, Communities and Local Government. We want as many people as possible to be able to use this website. For example, that means you should be able to:
+                  <ul class="govuk-list govuk-list--bullet">
+                    <li>change colours, contrast levels and fonts</li>
+                    <li>zoom in up to 300% without the text spilling off the screen</li>
+                    <li>navigate most of the website using just a keyboard</li>
+                    <li>navigate most of the website using speech recognition software</li>
+                    <li>listen to most of the website using a screen reader (including the most recent versions of JAWS, NVDA and VoiceOver)</li>
+                  </ul>'
+    paragraph_2: 'We’ve also made the website text as simple as possible to understand.'
+    paragraph_3: '<a class="govuk-link" href="https://mcmw.abilitynet.org.uk/">AbilityNet</a> has advice on making your device easier to use if you have a disability.'
+    paragraph_4: 'We know some parts of this website are not fully accessible:
+                  <ul class="govuk-list govuk-list--bullet">
+                    <li>some content comes from accredited assessors. This may not be correctly structured for the web and difficult to browse with a screen reader, most notably on the Air Conditioning Inspection Reports</li>
+                  </ul>'
+    contact_heading: 'Feedback and contact information'
+    contact_paragraph: 'If you need information on this website in a different format like accessible PDF, large print, easy read, audio recording or braille:
+                       <ul class="govuk-list govuk-list--bullet">
+                         <li>Email: <a href="mailto:mhclg.digital-services@communities.gov.uk?subject=EPB - ">mhclg.digital-services@communities.gov.uk</a></li>
+                         <li>Telephone: 020 3829 0748</li>
+                       </ul>'
+    reporting_heading: 'Reporting accessibility problems with this website'
+    reporting_paragraph: 'We’re always looking to improve the accessibility of this website. If you find any problems not listed on this page or think we’re not meeting accessibility requirements please <a class="govuk-link" href="https://forms.office.com/Pages/ResponsePage.aspx?id=EGg0v32c3kOociSi7zmVqPbdKK1xB5FPizueLd4cs19UQVdISTJKQTNPSUtON0pPUDYzWFMyVEVIWC4u">give feedback</a>.'
+    enforcement_heading: 'Enforcement procedure'
+    enforcement_paragraph: 'The Equality and Human Rights Commission (EHRC) is responsible for enforcing the Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018 (the ‘accessibility regulations’). If you’re not happy with how we respond to your complaint, <a class="govuk-link" href="https://www.equalityadvisoryservice.com/">contact the Equality Advisory and Support Service (EASS)</a>.'
+    technical_heading: 'Technical information about this website’s accessibility'
+    technical_paragraph: 'The Ministry of Communities, Housing and Local Communities is committed to making its website accessible, in accordance with the Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018.'
+    compliance_heading: 'Compliance status'
+    compliance_paragraph: 'This website is partially compliant with the <a class="govuk-link" href="https://www.w3.org/TR/WCAG21/">Web Content Accessibility Guidelines version 2.1 AA standard</a>, due to the non-compliances listed below.'
+    non_accessible_heading: 'Non-accessible content'
+    non_accessible_paragraph: 'The content listed below is non-accessible for the following reasons.'
+    non_compliance_heading: 'Non-compliance with the accessibility regulations'
+    non_compliance_paragraph_1: 'Some images do not have a text alternative, so people using a screen reader cannot access the information. This fails WCAG 2.1 success criterion 1.1.1 (non-text content).'
+    non_compliance_paragraph_2: 'We plan to add text alternatives for all images by November 2020. When we publish new content we’ll make sure our use of images meets accessibility standards.'
+    non_compliance_paragraph_3: 'In some cases people using a screen reader might hear a label for content that doesn’t appear on the page.'
+    non_compliance_paragraph_4: 'We plan to correct broken references for all content by November 2020.'
+    out_of_scope_heading: 'Content that’s not within the scope of the accessibility regulations'
+    out_of_scope_paragraph: 'Not applicable'
+    what_we_do_heading: 'What we’re doing to improve accessibility'
+    what_we_do_paragraph: 'This service will be externally tested for compliance with Web Content Accessibility Guidelines V2.1 level A by November 2020.'
+    preparation_heading: 'Preparation of this accessibility statement'
+    preparation_paragraph: 'This statement was prepared on 17 September 2020. It was last reviewed on 17 September 2020. We carried out our own testing on 17 September 2020.'

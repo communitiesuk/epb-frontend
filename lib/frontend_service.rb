@@ -562,6 +562,11 @@ class FrontendService < Sinatra::Base
     end
   end
 
+  get "/accessibility-statement" do
+    status 200
+    erb :accessibility_statement
+  end
+
   def show(template, locals)
     locals[:errors] = @errors
     erb template, layout: :layout, locals: locals
