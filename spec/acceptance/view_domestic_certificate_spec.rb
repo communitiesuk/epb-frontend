@@ -837,6 +837,26 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
     end
   end
 
+  context "when the assessment id is malformed" do
+    before do
+      FetchAssessmentSummary::NoAssessmentStub.fetch_invalid_assessment_id(
+        "1234-5678-5678-1234",
+      )
+    end
+
+    let(:response) { get "/energy-certificate/1234-5678-5678-1234" }
+
+    it "returns status 404" do
+      expect(response.status).to eq(404)
+    end
+
+    it "shows the error page" do
+      expect(response.body).to include(
+        '<h1 class="govuk-heading-xl">Page not found</h1>',
+      )
+    end
+  end
+
   context "when the assessment has been cancelled or marked not for issue" do
     before do
       FetchAssessmentSummary::GoneAssessmentStub.fetch(
