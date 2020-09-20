@@ -24,11 +24,13 @@
     </p>
   </div>
 
-  <div>
-    <a onclick="window.print();return false;" class="govuk-link govuk-!-margin-bottom-5" id="link" href="#" style="display: none;"><%= t('component.print_certificate') %></a>
-    <noscript><p class="govuk-body"><%= t('component.print_certificate_noscript') %></p></noscript>
-    <script>document.getElementById('link').style.display = 'block';</script>
-  </div>
+  <% unless defined?(custom_print) %>
+    <div>
+      <a onclick="window.print();return false;" class="govuk-link govuk-!-margin-bottom-5" id="link" href="#" style="display: none;"><%= t('component.print_certificate') %></a>
+      <noscript><p class="govuk-body"><%= t('component.print_certificate_noscript') %></p></noscript>
+      <script>document.getElementById('link').style.display = 'block';</script>
+    </div>
+  <% end %>
 
   <% unless property_type.nil? || floor_area.nil? %>
   <p class="govuk-body">
@@ -36,7 +38,7 @@
     <br />
     <%=  t('component.epc_summary.floor_area', total_floor_area: floor_area)  %>
   </p>
-  <%  end %>
+  <% end %>
   <%== erb :component__print, locals: {
     type: t('component.print.type.certificate'),
     custom_print: defined?(custom_print)
