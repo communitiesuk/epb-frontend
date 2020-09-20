@@ -1009,14 +1009,14 @@ module FetchAssessmentSummary
       primary_energy_use = 989,
       type_of_assessment = "RdSAP",
       energy_performance_rating_improvement = 76,
-      green_deal_plan = nil,
+      green_deal_plan = [],
       estimatedEnergyCost = nil,
       potentialEnergySaving = nil,
       energy_performance_band_improvement = "c"
     )
       FetchAssessmentSummary::AssessmentSummaryErrorStub.fetch(assessment_id)
       property_summary ||= generate_property_summary
-      green_deal_plan ||= generate_green_deal_plan
+      green_deal_plan = generate_green_deal_plan if green_deal_plan == []
 
       if assessment_id == "1111-1111-1111-1111-1112"
         body = {
