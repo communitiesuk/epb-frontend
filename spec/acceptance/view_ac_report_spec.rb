@@ -178,10 +178,11 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
                                           "Control for VOL001/SYS001 R410A Inverter Split Systems to Sales Area"
     end
 
-    it "can show the related certificate" do
-      expect(response.body).to have_css "h2", text: "Related certificate"
+    it "can show the inspection certificate" do
+      expect(response.body).to have_css "h2", text: "Inspection certificate"
       expect(response.body).to have_css "a",
-                                        text: "associated air conditioning inspection certificate"
+                                        text:
+                                          "See the air conditioning inspection certificate for this property."
     end
 
     context "when there are no subsystems" do

@@ -1,10 +1,9 @@
 <div class="govuk-body epc-blue-bottom">
-  <a id="related_certificate"></a>
+  <a id="inspection_certificate"></a>
   <h2 class="govuk-heading-l"><%=
-    t('ac_report.sections.related_certificate.title')
+    t('ac_report.sections.inspection_certificate.title')
   %></h2>
-  <p><%==
-    t('ac_report.sections.related_certificate.text',
-      :link => "<a href=\"../energy-certificate/#{assessment[:relatedRrn]}\">" + t('ac_report.sections.related_certificate.cta') + '</a>')
-  %></p>
+  <p class="govuk-body">
+      <a href=<%= "../energy-certificate/#{assessment[:relatedRrn]}" %>> <%= t('ac_report.sections.inspection_certificate.text') %></a>
+  </p>
 </div>

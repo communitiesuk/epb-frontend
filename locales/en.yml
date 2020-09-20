@@ -1637,10 +1637,9 @@ en:
           humidity_control:
             title: "Humidity Control"
             control: "Is there separate equipment installed for humidity control?"
-      related_certificate:
-        title: "Related certificate"
-        text: "A summary of this information can be found on the %{link}."
-        cta: "associated air conditioning inspection certificate"
+      inspection_certificate:
+        title: "Inspection certificate"
+        text: "See the air conditioning inspection certificate for this property."
     flag:
       finding_yes: "Yes"
       finding_no: "No"
