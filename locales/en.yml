@@ -1689,10 +1689,6 @@ en:
                   </ul>'
     paragraph_2: 'We’ve also made the website text as simple as possible to understand.'
     paragraph_3: '<a class="govuk-link" href="https://mcmw.abilitynet.org.uk/">AbilityNet</a> has advice on making your device easier to use if you have a disability.'
-    paragraph_4: 'We know some parts of this website are not fully accessible:
-                  <ul class="govuk-list govuk-list--bullet">
-                    <li>some content comes from accredited assessors. This may not be correctly structured for the web and difficult to browse with a screen reader, most notably on the Air Conditioning Inspection Reports</li>
-                  </ul>'
     contact_heading: 'Feedback and contact information'
     contact_paragraph: 'If you need information on this website in a different format like accessible PDF, large print, easy read, audio recording or braille:
                        <ul class="govuk-list govuk-list--bullet">
@@ -1710,10 +1706,11 @@ en:
     non_accessible_heading: 'Non-accessible content'
     non_accessible_paragraph: 'The content listed below is non-accessible for the following reasons.'
     non_compliance_heading: 'Non-compliance with the accessibility regulations'
-    non_compliance_paragraph_1: 'Some images do not have a text alternative, so people using a screen reader cannot access the information. This fails WCAG 2.1 success criterion 1.1.1 (non-text content).'
-    non_compliance_paragraph_2: 'We plan to add text alternatives for all images by November 2020. When we publish new content we’ll make sure our use of images meets accessibility standards.'
-    non_compliance_paragraph_3: 'In some cases people using a screen reader might hear a label for content that doesn’t appear on the page.'
-    non_compliance_paragraph_4: 'We plan to correct broken references for all content by November 2020.'
+    non_compliance_paragraph_1: 'Some content comes from accredited assessors. This may not be correctly structured for the web and difficult to browse with a screen reader, most notably on the Air Conditioning Inspection Reports.'
+    non_compliance_paragraph_2: 'Some images do not have a text alternative, so people using a screen reader cannot access the information. This fails WCAG 2.1 success criterion 1.1.1 (non-text content).'
+    non_compliance_paragraph_3: 'We plan to add text alternatives for all images by November 2020. When we publish new content we’ll make sure our use of images meets accessibility standards.'
+    non_compliance_paragraph_4: 'In some cases people using a screen reader might hear a label for content that doesn’t appear on the page.'
+    non_compliance_paragraph_5: 'We plan to correct broken references for all content by November 2020.'
     out_of_scope_heading: 'Content that’s not within the scope of the accessibility regulations'
     out_of_scope_paragraph: 'Not applicable.'
     what_we_do_heading: 'What we’re doing to improve accessibility'
