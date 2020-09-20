@@ -247,12 +247,12 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
         expect(response.body).to include(
           "Estimated yearly energy cost for this property",
         )
-        expect(response.body).to include("&pound;689.83")
+        expect(response.body).to include("£689.83")
       end
 
       it "shows the potential energy cost saving for a year" do
         expect(response.body).to include("Potential saving")
-        expect(response.body).to include("&pound;174")
+        expect(response.body).to include("£174")
       end
 
       it "shows the current space heat demand" do

@@ -3,12 +3,14 @@
     <%
       type = "string"
       print = true
+      numerical = false
       link = ""
 
       if value.class == Hash
         type = value[:type]
         print = value[:print]
         link = value[:link]
+        numerical = value[:numerical]
         value = value[:value]
       end
 
@@ -19,7 +21,7 @@
 
     <div class="govuk-summary-list__row<%= print ? "" : " govuk-!-display-none-print" %>">
       <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= translation_prefix ? t(translation_prefix + key.to_s) : key.to_s %></dt>
-      <dd class="govuk-summary-list__value govuk-!-width-one-half">
+      <dd class="govuk-summary-list__value govuk-!-width-one-half<%= numerical ? " govuk-table__cell--numeric" : "" %>">
         <%
           case type
           when "email"

@@ -2,25 +2,20 @@
   <a id="heat-demand"></a>
   <h2 class="govuk-heading-l"><%= t('domestic_epc.sections.heat-demand.title') %></h2>
   <% unless assessment[:estimatedEnergyCost].nil? && assessment[:potentialEnergySaving].nil? %>
-    <dl class="govuk-summary-list">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
-          t('domestic_epc.sections.heat-demand.estimated_cost')
-        %></dt>
-        <dd class="govuk-summary-list__value govuk-!-width-one-half" style="text-align: right">&pound;<%=
-          assessment[:estimatedEnergyCost].chomp(".00")
-        %></dd>
-      </div>
-
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
-          t('domestic_epc.sections.heat-demand.three_year_saving')
-        %></dt>
-        <dd class="govuk-summary-list__value govuk-!-width-one-half" style="text-align: right">&pound;<%=
-          assessment[:potentialEnergySaving].chomp(".00")
-        %></dd>
-      </div>
-    </dl>
+    <%== erb :component__summary_list, locals: {
+      list: {
+        "estimated_cost": {
+          numerical: true,
+          value: "£" + assessment[:estimatedEnergyCost].chomp(".00")
+        },
+        "three_year_saving": {
+          numerical: true,
+          value: "£" + assessment[:potentialEnergySaving].chomp(".00")
+        }
+      },
+      translation_prefix: 'domestic_epc.sections.heat-demand.',
+      skip_null: true,
+    } %>
 
     <p class="govuk-body"><%= t('domestic_epc.sections.heat-demand.costs_and_savings') %></p>
     <p class="govuk-body"><%== t('domestic_epc.sections.heat-demand.based_on', :link => '<a class="govuk-link" href="' + t('domestic_epc.sections.heat-demand.based_on_url') + '">' + t('domestic_epc.sections.heat-demand.based_on_cta') + '</a>') %></p>
@@ -32,29 +27,20 @@
 
   <% unless assessment[:heatDemand][:currentWaterHeatingDemand].nil? && assessment[:heatDemand][:currentSpaceHeatingDemand].nil? %>
     <h4 class="govuk-heading-s"><%= t('domestic_epc.sections.heat-demand.estimated_energy') %></h4>
-    <dl class="govuk-summary-list">
-      <% unless assessment[:heatDemand][:currentWaterHeatingDemand].nil? %>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
-            t('domestic_epc.sections.heat-demand.space_heating')
-          %></dt>
-          <dd class="govuk-summary-list__value govuk-!-width-one-half" style="text-align: right"><%=
-            assessment[:heatDemand][:currentWaterHeatingDemand] %> <%= t('domestic_epc.sections.heat-demand.kwh_per_year')
-          %></dd>
-        </div>
-      <% end %>
-
-      <% unless assessment[:heatDemand][:currentSpaceHeatingDemand].nil? %>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key govuk-!-width-one-half"><%=
-            t('domestic_epc.sections.heat-demand.water_heating')
-          %></dt>
-          <dd class="govuk-summary-list__value govuk-!-width-one-half" style="text-align: right"><%=
-            assessment[:heatDemand][:currentSpaceHeatingDemand] %> <%= t('domestic_epc.sections.heat-demand.kwh_per_year')
-          %></dd>
-        </div>
-      <% end %>
-    </dl>
+    <%== erb :component__summary_list, locals: {
+      list: {
+        "space_heating": {
+          numerical: true,
+          value: t('domestic_epc.sections.heat-demand.kwh_per_year', demand: assessment[:heatDemand][:currentSpaceHeatingDemand])
+        },
+        "water_heating": {
+          numerical: true,
+          value: t('domestic_epc.sections.heat-demand.kwh_per_year', demand: assessment[:heatDemand][:currentWaterHeatingDemand])
+        }
+      },
+      translation_prefix: 'domestic_epc.sections.heat-demand.',
+      skip_null: true,
+    } %>
   <% end %>
 
   <% if assessment[:heatDemand][:impactOfLoftInsulation].nil? && assessment[:heatDemand][:impactOfCavityInsulation].nil? && assessment[:heatDemand][:impactOfSolidWallInsulation].nil? %>
@@ -76,7 +62,7 @@
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header"><%= t('domestic_epc.sections.heat-demand.loft_insulation') %></th>
           <td class="govuk-table__cell" id="loft-insulation">
-            <%= assessment[:heatDemand][:impactOfLoftInsulation].abs %> <%= t('domestic_epc.sections.heat-demand.kwh_per_year') %>
+            <%= t('domestic_epc.sections.heat-demand.kwh_per_year', demand: assessment[:heatDemand][:impactOfLoftInsulation].abs) %>
           </td>
         </tr>
       <% end %>
@@ -84,7 +70,7 @@
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header"><%= t('domestic_epc.sections.heat-demand.cavity_insulation') %></th>
           <td class="govuk-table__cell" id="cavity-insulation">
-            <%= assessment[:heatDemand][:impactOfCavityInsulation].abs %> <%= t('domestic_epc.sections.heat-demand.kwh_per_year') %>
+            <%= t('domestic_epc.sections.heat-demand.kwh_per_year', demand: assessment[:heatDemand][:impactOfCavityInsulation].abs) %>
           </td>
         </tr>
       <% end %>
@@ -92,7 +78,7 @@
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header"><%= t('domestic_epc.sections.heat-demand.solid_wall_insulation') %></th>
         <td class="govuk-table__cell" id="solid-wall-insulation">
-          <%= assessment[:heatDemand][:impactOfSolidWallInsulation].abs %> <%= t('domestic_epc.sections.heat-demand.kwh_per_year') %>
+          <%= t('domestic_epc.sections.heat-demand.kwh_per_year', demand: assessment[:heatDemand][:impactOfSolidWallInsulation].abs) %>
         </td>
       </tr>
       <% end %>
