@@ -1674,7 +1674,11 @@ en:
 
   accessibility_statement:
     top_heading: 'Accessibility statement'
-    intro: 'This statement applies to content published on <a class= "govuk-link" href="https://find-energy-certificate.digital.communities.gov.uk">find-energy-certificate.digital.communities.gov.uk</a> and <a class= "govuk-link" href="https://getting-new-energy-certificate.digital.communities.gov.uk">getting-new-energy-certificate.digital.communities.gov.uk</a>.'
+    intro: 'This statement applies to content published on:
+            <ul class="govuk-list govuk-list--bullet">
+              <li><a class= "govuk-link" href="https://find-energy-certificate.digital.communities.gov.uk">find-energy-certificate.digital.communities.gov.uk</a></li>
+              <li><a class= "govuk-link" href="https://getting-new-energy-certificate.digital.communities.gov.uk">getting-new-energy-certificate.digital.communities.gov.uk</a></li>
+            </ul>'
     paragraph_1: 'This website is run by the Ministry of Housing, Communities and Local Government. We want as many people as possible to be able to use this website. For example, that means you should be able to:
                   <ul class="govuk-list govuk-list--bullet">
                     <li>change colours, contrast levels and fonts</li>
@@ -1716,3 +1720,4 @@ en:
     what_we_do_paragraph: 'This service will be externally tested for compliance with Web Content Accessibility Guidelines V2.1 level A by November 2020.'
     preparation_heading: 'Preparation of this accessibility statement'
     preparation_paragraph: 'This statement was prepared on 17 September 2020. It was last reviewed on 17 September 2020. We carried out our own testing on 17 September 2020.'
+    accessibility_audit: 'A full accessibility audit will be carried out by November 2020. We will report the findings here, and work to rectify any additional issues identified as quickly as possible.'
