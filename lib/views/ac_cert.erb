@@ -10,6 +10,32 @@
       <h1 class="govuk-heading-xl"><%= t('ac_cert.top_heading') %></h1>
     </div>
   </div>
+
+  <div class="govuk-grid-column-one-third">
+    <hr class="epc-blue-top" />
+    <%== erb :component__contents, locals: {
+      title: t("dec.sections.contents.title"),
+      sections: [
+        {
+          link: '#assessment_details',
+          text: 'ac_cert.sections.assessment.title'
+        },
+        {
+          link: '#inspection_report',
+          text: 'ac_cert.sections.inspection.title'
+        },
+        {
+          link: '#sub_systems',
+          text: 'ac_cert.sections.subsystems.title'
+        },
+        {
+          link: '#administrative_information',
+          text: 'component.administrative_information.title'
+        },
+      ]
+    } %>
+  </div>
+
   <div class="govuk-grid-column-two-thirds">
     <hr class="epc-light-top govuk-!-display-none-print" />
 

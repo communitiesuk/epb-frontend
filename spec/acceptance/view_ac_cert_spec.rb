@@ -17,6 +17,14 @@ describe "Acceptance::AirConditioningInspectionCertificate", type: :feature do
                                         text: "Air conditioning inspection certificate"
     end
 
+    it "shows the contents section" do
+      expect(response.body).to have_css "h2", text: "Certificate contents"
+      expect(response.body).to have_css "p", text: "Assessment details"
+      expect(response.body).to have_css "p", text: "Inspection report"
+      expect(response.body).to have_css "p", text: "Subsystems inspected"
+      expect(response.body).to have_css "p", text: "Administrative information"
+    end
+
     it "shows the summary section" do
       expect(response.body).to have_css "span", text: "66 Primrose Hill"
       expect(response.body).to have_css "span", text: "London"
