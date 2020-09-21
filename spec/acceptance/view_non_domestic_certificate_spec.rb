@@ -144,7 +144,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
 
         it "shows the recommendation text" do
           expect(response.body).to include(
-            '<p class="govuk-body">Properties can be let if they have an energy rating from A+ to E. The <a class="govuk-link" href="#">recommendation report</a> sets out changes you can make to improve the property’s rating.</p>',
+            '<p class="govuk-body">Properties can be let if they have an energy rating from A+ to E. The <a class="govuk-link" href="#related_report">recommendation report</a> sets out changes you can make to improve the property’s rating.</p>',
           )
         end
       end

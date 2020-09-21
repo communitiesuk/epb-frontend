@@ -579,7 +579,7 @@ en:
           body: 'This property has an energy rating of %{current_energy_efficiency_band}. The landlord cannot grant a tenancy to new or existing tenants, unless an exemption has been registered.'
         recommendation: 'Properties can be let if they have an energy rating from A+ to E. The %{link} sets out changes you can make to improve the property’s rating.'
         cta: 'recommendation report'
-        url: '#'
+        url: '#related_report'
       other_reports:
         title: 'Other certificates for this property'
         certificate_reference: 'Reference number'
@@ -599,7 +599,6 @@ en:
         current_energy_rating: 'This property’s current energy rating is %{band}.'
         more_info: 'For more information on the property’s energy performance, %{link}.'
         cta: 'see the EPC for this property'
-        url: '#'
       property_details:
         title: 'Property and report details'
         issued_on: 'Report issued on'
