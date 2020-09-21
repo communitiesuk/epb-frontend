@@ -787,7 +787,7 @@ en:
         energy_costs: 'Heating a property usually makes up the majority of energy costs.'
         estimated_energy: 'Estimated energy used to heat this property'
         space_heating: 'Space heating'
-        kwh_per_year: '%{demand} kWh per year'
+        kwh_per_year: 'kWh per year'
         water_heating: 'Water heating'
         estimated_use: 'Estimated energy use'
         potential_saving: 'Potential energy savings by installing insulation'
