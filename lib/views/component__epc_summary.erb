@@ -33,12 +33,16 @@
   <% end %>
 
   <% unless property_type.nil? || floor_area.nil? %>
-  <p class="govuk-body">
-    <%=  t('component.epc_summary.property_info', property_type: property_type)  %>
-    <br />
-    <%=  t('component.epc_summary.floor_area', total_floor_area: floor_area)  %>
-  </p>
+    <%== erb :component__summary_list, locals: {
+      list: {
+        dwelling_type: property_type,
+        total_floor_area: t('domestic_epc.summary.floor_area', total_floor_area: "%g" % floor_area) ,
+      },
+      translation_prefix: 'domestic_epc.sections.breakdown.list.',
+      skip_null: true
+    } %>
   <% end %>
+
   <%== erb :component__print, locals: {
     type: t('component.print.type.certificate'),
     custom_print: defined?(custom_print)

@@ -64,7 +64,7 @@
 
       <%== erb :component__summary_list, locals: {
         list: {
-         dwelling_type: t('domestic_epc.summary.property_info', dwelling_type: assessment[:dwellingType].downcase)  ,
+         dwelling_type: assessment[:dwellingType],
          total_floor_area: t('domestic_epc.summary.floor_area', total_floor_area: "%g" % assessment[:totalFloorArea]) ,
         },
         translation_prefix: 'domestic_epc.sections.breakdown.list.',

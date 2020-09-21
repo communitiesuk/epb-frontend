@@ -516,8 +516,7 @@ en:
       title: "Energy rating"
       date_of_expiry: "Valid until %{date_of_expiry}"
       certificate_id: "Certificate number"
-      property_info: 'This property is %{property_type}.'
-      floor_area: 'It has a total floor area of %{total_floor_area} square metres.'
+      floor_area: '%{total_floor_area} square metres'
     related:
       title: 'Other %{type}s for this property'
       certificate: 'certificate'
@@ -669,8 +668,7 @@ en:
       date_of_expiry: 'Valid until %{date_of_expiry}'
       certificate_id: 'Certificate number'
       energy_rating_title: 'Energy rating'
-      property_info: 'This property is a %{dwelling_type}.'
-      floor_area: 'It has a total floor area of %{total_floor_area} square metres.'
+      floor_area: '%{total_floor_area} square metres'
       print_certificate: 'Print this certificate'
       print_certificate_noscript : 'To print this certificate, press CMD/CTRL + P on your keyboard'
     sidebar:

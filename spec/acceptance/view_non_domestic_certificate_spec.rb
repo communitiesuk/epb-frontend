@@ -73,15 +73,11 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
       end
 
       it "shows the property type" do
-        expect(response.body).to include(
-          "This property is B1 Offices and Workshop businesses.",
-        )
+        expect(response.body).to include("B1 Offices and Workshop businesses")
       end
 
       it "shows the total floor area" do
-        expect(response.body).to include(
-          "It has a total floor area of 403 square metres.",
-        )
+        expect(response.body).to include("403 square metres")
       end
     end
 
