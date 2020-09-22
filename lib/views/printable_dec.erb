@@ -467,10 +467,10 @@
                       </thead>
                       <tbody>
                         <% [assessment[:currentAssessment], assessment[:year1Assessment], assessment[:year2Assessment]].each do |previous_rating| %>
-                          <% next if previous_rating.values.include?(nil) %>
+                          <% next if previous_rating[:date].nil? %>
                           <tr>
                             <th>
-                              <%=Date.parse(previous_rating[:date]).strftime("%B %Y")%>
+                              <%= Date.parse(previous_rating[:date]).strftime("%B %Y") %>
                             </th>
                             <td>
                               <%= previous_rating[:electricityCo2] || t('dec.sections.co2.no_value') %>
