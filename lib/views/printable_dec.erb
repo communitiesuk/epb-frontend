@@ -45,12 +45,12 @@
   }
 
   table.split > tbody > tr > td {
-    width: 60%;
+    width: 55%;
     padding-right: 15px;
   }
 
   table.split > tbody > tr > td:last-child {
-    width: 40%;
+    width: 45%;
     padding-right: 0;
     padding-left: 15px;
   }
@@ -182,6 +182,10 @@
     height: 52px;
     padding: 5px;
     float: right;
+  }
+
+  .energy-rating-chart-printable-dec {
+    width: 100%;
   }
 
   .small-font {
@@ -363,12 +367,16 @@
               <tbody>
                 <tr>
                   <td>
-                    <%== erb :printable_dec__svg_rating, locals: {
-                      title: t('dec.sections.rating.svg_title', energy_efficiency_band: assessment[:energyEfficiencyBand], energy_efficiency_rating: assessment[:energyEfficiencyRating]),
-                      energy_efficiency_band: assessment[:currentAssessment][:energyEfficiencyBand],
-                      energy_efficiency_rating: assessment[:currentAssessment][:energyEfficiencyRating],
-                      show_on_non_print: true
-                    } %>
+                    <img
+                      class="energy-rating-chart-printable-dec"
+                      alt="<%= t('dec.sections.rating.svg_title', energy_efficiency_band: assessment[:energyEfficiencyBand], energy_efficiency_rating: assessment[:energyEfficiencyRating]) %>"
+                      src="data:image/svg+xml;base64,<%== Base64.encode64(erb :printable_dec__svg_rating, locals: {
+                        title: t('dec.sections.rating.svg_title', energy_efficiency_band: assessment[:energyEfficiencyBand], energy_efficiency_rating: assessment[:energyEfficiencyRating]),
+                        energy_efficiency_band: assessment[:currentAssessment][:energyEfficiencyBand],
+                        energy_efficiency_rating: assessment[:currentAssessment][:energyEfficiencyRating],
+                        show_on_non_print: true
+                      }) %>"
+                    />
                   </td>
                 </tr>
               </tbody>
