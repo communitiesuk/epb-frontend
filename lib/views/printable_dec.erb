@@ -430,7 +430,7 @@
                       </thead>
                       <tbody>
                         <% [assessment[:currentAssessment], assessment[:year1Assessment], assessment[:year2Assessment]].each do |previous_rating| %>
-                          <% next if previous_rating.values.include?(nil) %>
+                          <% next if previous_rating[:energyEfficiencyRating].nil? || previous_rating[:energyEfficiencyBand].nil? || previous_rating[:date].nil? %>
                           <tr>
                             <th class="govuk-!-padding-top-2">
                               <%=Date.parse(previous_rating[:date]).strftime("%B %Y")%>
