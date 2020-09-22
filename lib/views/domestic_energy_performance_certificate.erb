@@ -72,6 +72,8 @@
     </div>
   </div>
   <div class="govuk-grid-column-one-third"><br></div>
+
+  <% unless assessment[:postcode][0..1] == "BT" %>
   <div class="govuk-grid-column-two-thirds">
     <div class="govuk-body epc-blue-bottom">
       <a id="renting"></a>
@@ -108,6 +110,8 @@
     </div>
   </div>
   <div class="govuk-grid-column-one-third"><br></div>
+  <% end %>
+
   <div class="govuk-grid-column-two-thirds">
     <div class="govuk-body epc-blue-bottom">
       <a id="epc"></a>

@@ -110,7 +110,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       expect(response.body).to include("test.boi@quidos.com")
     end
 
-    it "does not shows the warning to landlords that it cannot be rented out" do
+    it "does not show the warning to landlords that it cannot be rented out" do
       expect(response.body).to_not include(
         "The owner of this property may not be able to let it",
       )
@@ -359,6 +359,40 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       let(:response) { get "/energy-certificate/123-654" }
       it "shows a warning text" do
         expect(response.body).to include(
+          "You may not be able to let this property",
+        )
+      end
+    end
+
+    context "property is in Northern Ireland" do
+      before do
+        FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
+          "123-123",
+          "25",
+          "f",
+          false,
+          "7.8453",
+          "6.5123",
+          nil,
+          nil,
+          nil,
+          nil,
+          12,
+          nil,
+          989,
+          "RdSAP",
+          76,
+          [],
+          nil,
+          nil,
+          "c",
+          "BT1 2BB",
+        )
+      end
+
+      let(:response) { get "/energy-certificate/123-123" }
+      it "shows a warning text" do
+        expect(response.body).to_not include(
           "You may not be able to let this property",
         )
       end

@@ -1012,7 +1012,8 @@ module FetchAssessmentSummary
       green_deal_plan = [],
       estimatedEnergyCost = nil,
       potentialEnergySaving = nil,
-      energy_performance_band_improvement = "c"
+      energy_performance_band_improvement = "c",
+      postcode = "SW1B 2BB"
     )
       FetchAssessmentSummary::AssessmentSummaryErrorStub.fetch(assessment_id)
       property_summary ||= generate_property_summary
@@ -1279,7 +1280,7 @@ module FetchAssessmentSummary
             potentialCarbonEmission: potential_carbon_emission,
             potentialEnergyEfficiencyRating: 99,
             potentialEnergyEfficiencyBand: "a",
-            postcode: "SW1B 2BB",
+            postcode: postcode,
             primaryEnergyUse: primary_energy_use,
             addressLine1: "Flat 33",
             addressLine2: "2 Marsham Street",
