@@ -2,7 +2,7 @@
   @page
   {
     size: auto;
-    margin: 0mm;
+    margin: 0;
     width: 100%;
   }
 
@@ -45,8 +45,8 @@
   }
 
   table.split > tbody > tr > td {
-    width: 55%;
-    padding-right: 15px;
+    width: 50%;
+    padding-right: 30px;
   }
 
   table.split > tbody > tr > td:last-child {
@@ -190,6 +190,10 @@
 
   .small-font {
     font-size: 12px;
+  }
+
+  .light-font {
+    font-weight: 300;
   }
 
   .band-a{
@@ -359,9 +363,9 @@
         <tr>
           <td>
             <h2 class="govuk-heading-s"><%= t('dec.sections.rating.title') %></h2>
-            <p class="govuk-body"><%= t('dec.sections.rating.emissions_text') %></p>
-            <p class="govuk-body"><%= t('dec.sections.rating.text') %></p>
-            <p class="govuk-body"><%= t('dec.sections.rating.typical_text') %></p>
+            <p class="govuk-body govuk-!-font-size-16 light-font"><%= t('dec.sections.rating.emissions_text') %></p>
+            <p class="govuk-body govuk-!-font-size-16 light-font"><%= t('dec.sections.rating.text') %></p>
+            <p class="govuk-body govuk-!-font-size-16 light-font"><%= t('dec.sections.rating.typical_text') %></p>
 
             <table>
               <tbody>
@@ -443,9 +447,10 @@
                   <td>
                     <h2 class="govuk-heading-s"><%= t('dec.sections.previous_energy_ratings.title') %></h2>
                     <table class="border-bottom">
+                      <thead>
                         <tr>
                           <th><%= t('dec.sections.previous_energy_ratings.date') %></th>
-                          <th><%= t('dec.sections.previous_energy_ratings.energy_rating') %></th>
+                          <th class="govuk-table__header--numeric"><%= t('dec.sections.previous_energy_ratings.energy_rating') %></th>
                         </tr>
                       </thead>
                       <tbody>
@@ -455,7 +460,7 @@
                             <th class="govuk-!-padding-top-2">
                               <%=Date.parse(previous_rating[:date]).strftime("%B %Y")%>
                             </th>
-                            <td>
+                            <td class="govuk-table__cell--numeric">
                               <div class="arrow band-<%= previous_rating[:energyEfficiencyBand] %>">
                                 <%= previous_rating[:energyEfficiencyRating] %> | <%= previous_rating[:energyEfficiencyBand].upcase %>
                               </div>
