@@ -30,14 +30,14 @@
       }
       %>
 
-      <% unless year1.values.include?(nil) %>
+      <% unless year1[:date].nil? %>
         <%== erb :dec__co2__row, locals: {
           year: year1,
         }
         %>
       <% end %>
 
-      <% unless year2.values.include?(nil) %>
+      <% unless year2[:date].nil? %>
         <%== erb :dec__co2__row, locals: {
           year: year2,
         }
