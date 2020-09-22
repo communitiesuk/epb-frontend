@@ -144,6 +144,22 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
           )
         end
       end
+
+      context "with the property is in Northern Ireland" do
+        before do
+          FetchAssessmentSummary::AssessmentStub.fetch_cepc assessment_id:
+                                                              "1234-5678-1234-5678-1234",
+                                                            energyEfficiencyBand:
+                                                              "g",
+                                                            postcode: "BT4 3WS"
+        end
+
+        it "shows the letting info warning text" do
+          expect(response.body).to_not include(
+            '<h2 class="govuk-heading-l">Rules on letting this property</h2>',
+          )
+        end
+      end
     end
 
     context "when viewing the Energy efficiency rating for this building section" do

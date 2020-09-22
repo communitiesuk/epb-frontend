@@ -637,7 +637,8 @@ module FetchAssessmentSummary
           assessmentStatus: "EXPIRED",
           assessmentType: "CEPC-RR",
         },
-      ]
+      ],
+      postcode: "SW1B 2BB"
     )
       body = {
         data: {
@@ -653,7 +654,7 @@ module FetchAssessmentSummary
             addressLine3: nil,
             addressLine4: nil,
             town: "London",
-            postcode: "SW1B 2BB",
+            postcode: postcode,
           },
           technicalInformation: {
             mainHeatingFuel: "Natural Gas",
