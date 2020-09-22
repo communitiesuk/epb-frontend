@@ -1286,7 +1286,7 @@ en:
           electricity: "Electricity"
           heating: "Heating"
           renewables: "Renewables"
-        no_value: "Not applicable"
+        no_value: "N/A"
       technical_information:
         title: 'This building’s energy use'
         print_title: 'This building’s energy use'

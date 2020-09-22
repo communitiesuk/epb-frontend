@@ -1158,7 +1158,7 @@ cy:
           electricity: "Electricity"
           heating: "Heating"
           renewables: "Renewables"
-        no_value: "Not applicable"
+        no_value: "Welsh: N/A"
       technical_information:
         title: 'Welsh: Technical information'
         print_title: 'Welsh: This building’s operational use'
