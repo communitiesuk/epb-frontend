@@ -3,7 +3,8 @@
 describe "Acceptance::Non Domestic Certificate" do
   include RSpecFrontendServiceMixin
 
-  describe ".get find-energy-certificate/find-a-non-domestic-certificate/search-by-postcode", type: :feature do
+  describe ".get find-energy-certificate/find-a-non-domestic-certificate/search-by-postcode",
+           type: :feature do
     context "when search page rendered" do
       let(:response) do
         get "http://find-energy-certificate.local.gov.uk/find-a-non-domestic-certificate/search-by-postcode"
@@ -14,16 +15,25 @@ describe "Acceptance::Non Domestic Certificate" do
       end
 
       it "displays the find a non-domestic certificate page heading" do
-        expect(response.body).to have_css "h1", text: "Find energy certificates and reports by postcode"
+        expect(response.body).to have_css "h1",
+                                          text: "Find energy certificates and reports by postcode"
       end
 
       it "displays the data gap warning" do
         expect(response.body).to have_text "Warning"
-        expect(response.body).to have_css "strong", text: "For certificates issued between 9 June 2020 and 19 September 2020, and all expired certificates, you should use:"
-        expect(response.body).to have_css "li", text: "the EPC register for England and Wales"
-        expect(response.body).to have_css "li", text: "the EPC register for Northern Ireland"
-        expect(response.body).to have_css "strong", text: "Find all other valid certificates using this page’s search."
-        expect(response.body).to have_css "strong", text: "If you cannot find a certificate, you should contact the energy assessor who carried out the assessment."
+        expect(response.body).to have_css "strong",
+                                          text:
+                                            "For certificates issued between 9 June 2020 and 19 September 2020, and all expired certificates, you should use:"
+        expect(response.body).to have_css "li",
+                                          text: "the EPC register for England and Wales"
+        expect(response.body).to have_css "li",
+                                          text: "the EPC register for Northern Ireland"
+        expect(response.body).to have_css "strong",
+                                          text:
+                                            "Find all other valid certificates using this page’s search."
+        expect(response.body).to have_css "strong",
+                                          text:
+                                            "If you cannot find a certificate, you should contact the energy assessor who carried out the assessment."
       end
 
       it "has an input field" do
@@ -39,7 +49,11 @@ describe "Acceptance::Non Domestic Certificate" do
       end
 
       it "has a link to search by certificate number" do
-        expect(response.body).to have_link "find a certificate by using its certificate number", href: "/find-a-non-domestic-certificate/search-by-reference-number"
+        expect(
+          response.body,
+        ).to have_link "find a certificate by using its certificate number",
+                       href:
+                         "/find-a-non-domestic-certificate/search-by-reference-number"
       end
     end
 
@@ -220,7 +234,8 @@ describe "Acceptance::Non Domestic Certificate" do
     end
   end
 
-  describe ".get getting-new-energy-certificate/find-a-non-domestic-certificate/search-by-street-name-and-town", type: :feature do
+  describe ".get getting-new-energy-certificate/find-a-non-domestic-certificate/search-by-street-name-and-town",
+           type: :feature do
     context "when search page rendered" do
       let(:response) do
         get "http://find-energy-certificate.local.gov.uk/find-a-non-domestic-certificate/search-by-street-name-and-town"
@@ -231,16 +246,25 @@ describe "Acceptance::Non Domestic Certificate" do
       end
 
       it "displays the find a non-domestic certificate page heading" do
-        expect(response.body).to have_css "h1", text: "Find energy certificates and reports by street and town"
+        expect(response.body).to have_css "h1",
+                                          text: "Find energy certificates and reports by street and town"
       end
 
       it "displays the data gap warning" do
         expect(response.body).to have_text "Warning"
-        expect(response.body).to have_css "strong", text: "For certificates issued between 9 June 2020 and 19 September 2020, and all expired certificates, you should use:"
-        expect(response.body).to have_css "li", text: "the EPC register for England and Wales"
-        expect(response.body).to have_css "li", text: "the EPC register for Northern Ireland"
-        expect(response.body).to have_css "strong", text: "Find all other valid certificates using this page’s search."
-        expect(response.body).to have_css "strong", text: "If you cannot find a certificate, you should contact the energy assessor who carried out the assessment."
+        expect(response.body).to have_css "strong",
+                                          text:
+                                            "For certificates issued between 9 June 2020 and 19 September 2020, and all expired certificates, you should use:"
+        expect(response.body).to have_css "li",
+                                          text: "the EPC register for England and Wales"
+        expect(response.body).to have_css "li",
+                                          text: "the EPC register for Northern Ireland"
+        expect(response.body).to have_css "strong",
+                                          text:
+                                            "Find all other valid certificates using this page’s search."
+        expect(response.body).to have_css "strong",
+                                          text:
+                                            "If you cannot find a certificate, you should contact the energy assessor who carried out the assessment."
       end
 
       it "has two input fields" do
@@ -366,7 +390,8 @@ describe "Acceptance::Non Domestic Certificate" do
     end
   end
 
-  describe ".get find-energy-certificate.local.gov.uk/find-a-non-domestic-certificate/search-by-reference-number", type: :feature do
+  describe ".get find-energy-certificate.local.gov.uk/find-a-non-domestic-certificate/search-by-reference-number",
+           type: :feature do
     context "when search page rendered" do
       let(:response) do
         get "http://find-energy-certificate.local.gov.uk/find-a-non-domestic-certificate/search-by-reference-number"
@@ -377,16 +402,25 @@ describe "Acceptance::Non Domestic Certificate" do
       end
 
       it "displays the find a non-domestic certificate page heading" do
-        expect(response.body).to have_css "h1", text: "Find energy certificates and reports by their number"
+        expect(response.body).to have_css "h1",
+                                          text: "Find energy certificates and reports by their number"
       end
 
       it "displays the data gap warning" do
         expect(response.body).to have_text "Warning"
-        expect(response.body).to have_css "strong", text: "For certificates issued between 9 June 2020 and 19 September 2020, and all expired certificates, you should use:"
-        expect(response.body).to have_css "li", text: "the EPC register for England and Wales"
-        expect(response.body).to have_css "li", text: "the EPC register for Northern Ireland"
-        expect(response.body).to have_css "strong", text: "Find all other valid certificates using this page’s search."
-        expect(response.body).to have_css "strong", text: "If you cannot find a certificate, you should contact the energy assessor who carried out the assessment."
+        expect(response.body).to have_css "strong",
+                                          text:
+                                            "For certificates issued between 9 June 2020 and 19 September 2020, and all expired certificates, you should use:"
+        expect(response.body).to have_css "li",
+                                          text: "the EPC register for England and Wales"
+        expect(response.body).to have_css "li",
+                                          text: "the EPC register for Northern Ireland"
+        expect(response.body).to have_css "strong",
+                                          text:
+                                            "Find all other valid certificates using this page’s search."
+        expect(response.body).to have_css "strong",
+                                          text:
+                                            "If you cannot find a certificate, you should contact the energy assessor who carried out the assessment."
       end
 
       it "has an input field" do
