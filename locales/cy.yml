@@ -1400,15 +1400,12 @@ cy:
     detailed_inspection_unavailable: ""
 
   data_gap_warning:
+    pre_text: 'Welsh: For certificates issued between 9 June 2020 and 19 September 2020, and all expired certificates, you should use:'
+    post_text_1: 'Welsh: Find all other valid certificates using this page’s search.'
+    post_text_2: 'Welsh: If you cannot find a certificate, you should contact the energy assessor who carried out the assessment.'
     domestic:
-      pre_text: 'Welsh: For certificates issued between 9 June 2020 and 19 September 2020, and all expired certificates, you should use:'
       link_ew: 'Welsh: <a href="https://www.epcregister.com">the EPC register for England and Wales</a>'
       link_ni: 'Welsh: <a href="https://www.epbniregister.com">the EPC register for Northern Ireland</a>'
-      post_text_1: 'Welsh: Find all other valid certificates using this page’s search.'
-      post_text_2: 'Welsh: If you cannot find a certificate, you should contact the energy assessor who carried out the assessment.'
     non_domestic:
-      pre_text: 'Welsh: For certificates issued between 9 June 2020 and 19 September 2020, and all expired certificates, you should use:'
       link_ew: 'Welsh: <a href="https://www.ndepcregister.com">the EPC register for England and Wales</a>'
       link_ni: 'Welsh: <a href="https://www.epbniregisternd.com">the EPC register for Northern Ireland</a>'
-      post_text_1: 'Welsh: Find all other valid certificates using this page’s search.'
-      post_text_2: 'Welsh: If you cannot find a certificate, you should contact the energy assessor who carried out the assessment.'
