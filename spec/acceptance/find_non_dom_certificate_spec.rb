@@ -25,9 +25,9 @@ describe "Acceptance::Non Domestic Certificate" do
                                           text:
                                             "For certificates issued between 9 June 2020 and 19 September 2020, and all expired certificates, you should use:"
         expect(response.body).to have_css "li",
-                                          text: "the EPC register for England and Wales"
+                                          text: "the energy performance register for England and Wales"
         expect(response.body).to have_css "li",
-                                          text: "the EPC register for Northern Ireland"
+                                          text: "the energy performance register for Northern Ireland"
         expect(response.body).to have_css "strong",
                                           text:
                                             "Find all other valid certificates using this page’s search."
@@ -256,9 +256,9 @@ describe "Acceptance::Non Domestic Certificate" do
                                           text:
                                             "For certificates issued between 9 June 2020 and 19 September 2020, and all expired certificates, you should use:"
         expect(response.body).to have_css "li",
-                                          text: "the EPC register for England and Wales"
+                                          text: "the energy performance register for England and Wales"
         expect(response.body).to have_css "li",
-                                          text: "the EPC register for Northern Ireland"
+                                          text: "the energy performance register for Northern Ireland"
         expect(response.body).to have_css "strong",
                                           text:
                                             "Find all other valid certificates using this page’s search."
@@ -412,9 +412,9 @@ describe "Acceptance::Non Domestic Certificate" do
                                           text:
                                             "For certificates issued between 9 June 2020 and 19 September 2020, and all expired certificates, you should use:"
         expect(response.body).to have_css "li",
-                                          text: "the EPC register for England and Wales"
+                                          text: "the energy performance register for England and Wales"
         expect(response.body).to have_css "li",
-                                          text: "the EPC register for Northern Ireland"
+                                          text: "the energy performance register for Northern Ireland"
         expect(response.body).to have_css "strong",
                                           text:
                                             "Find all other valid certificates using this page’s search."
