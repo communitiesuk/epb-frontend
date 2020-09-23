@@ -20,6 +20,10 @@ describe "Acceptance::Certificate" do
       it "displays the data gap warning" do
         expect(response.body).to have_text "Warning"
         expect(response.body).to have_css "strong", text: "For certificates issued between 9 June 2020 and 19 September 2020, and all expired certificates, you should use:"
+        expect(response.body).to have_css "li", text: "the EPC register for England and Wales"
+        expect(response.body).to have_css "li", text: "the EPC register for Northern Ireland"
+        expect(response.body).to have_css "strong", text: "Find all other valid certificates using this page’s search."
+        expect(response.body).to have_css "strong", text: "If you cannot find a certificate, you should contact the energy assessor who carried out the assessment."
       end
 
       it "has an input field" do
