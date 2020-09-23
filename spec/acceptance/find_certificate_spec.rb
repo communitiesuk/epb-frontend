@@ -3,41 +3,35 @@
 describe "Acceptance::Certificate" do
   include RSpecFrontendServiceMixin
 
-  describe ".get find-energy-certificate/find-a-certificate/search-by-postcode" do
+  describe ".get find-energy-certificate/find-a-certificate/search-by-postcode", type: :feature do
     context "when search page rendered" do
       let(:response) do
         get "http://find-energy-certificate.local.gov.uk/find-a-certificate/search-by-postcode"
       end
 
       it "returns status 200" do
-        expect(response.status).to eq(200)
+        expect(response.status).to eq 200
       end
 
       it "displays the find a certificate page heading" do
-        expect(response.body).to include(
-          "Find an energy performance certificate (EPC) by postcode",
-        )
+        expect(response.body).to have_css "h1", text: "Find an energy performance certificate (EPC) by postcode"
       end
 
       it "displays the data gap warning" do
-        expect(response.body).to include("Warning")
-        expect(response.body).to include(
-          "For certificates issued between 9 June 2020 and 19 September",
-        )
+        expect(response.body).to have_text "Warning"
+        expect(response.body).to have_css "strong", text: "For certificates issued between 9 June 2020 and 19 September 2020, and all expired certificates, you should use:"
       end
 
       it "has an input field" do
-        expect(response.body).to include('<input id="postcode" name="postcode"')
+        expect(response.body).to have_css "input#postcode"
       end
 
       it "has a Find button" do
-        expect(response.body).to include(
-          '<button class="govuk-button" data-module="govuk-button">Find</button>',
-        )
+        expect(response.body).to have_css "button", text: "Find"
       end
 
       it "does not display an error message" do
-        expect(response.body).not_to include("govuk-error-message")
+        expect(response.body).not_to have_text "govuk-error-message"
       end
     end
 
