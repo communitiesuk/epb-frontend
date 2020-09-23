@@ -25,6 +25,9 @@ frontend-build: ## Run the frontend build process to compile sass and move asset
 	@echo "Building frontend assets..."
 	ruby ./compile_assets.rb
 
+frontend-build-watch:
+	@$(SHELL) ./scripts/frontend-build-watch.sh
+
 .PHONY: deploy-app
 deploy-app: ## Deploys the app to PaaS
 	$(call check_space)
