@@ -1110,6 +1110,7 @@ module FetchAssessmentSummary
                 "nonDomesticNos5": "INACTIVE",
               },
             },
+            greenDealPlan: [],
           },
           "meta": {},
         }

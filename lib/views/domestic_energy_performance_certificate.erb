@@ -12,29 +12,52 @@
       </h1>
     </div>
   </div>
-  <div class="govuk-grid-column-one-third">
-    <div class="related-links govuk-!-display-none-print">
-      <hr class="epc-blue-top"/>
-      <h3 class="govuk-heading-m" id="contents"><%= t('domestic_epc.sidebar.title') %></h3>
-      <div class="dashed-p">
-        <% unless assessment[:postcode][0..1] == "BT" %>
-          <p class="govuk-body"><a class="govuk-link" href="#renting"><%= t('domestic_epc.sidebar.sections.renting') %></a></p>
-        <% end %>
-        <p class="govuk-body"><a class="govuk-link" href="#epc"><%= t('domestic_epc.sidebar.sections.epc') %></a></p>
-        <p class="govuk-body"><a class="govuk-link" href="#summary"><%= t('domestic_epc.sidebar.sections.summary') %></a></p>
-        <p class="govuk-body"><a class="govuk-link" href="#energy"><%= t('domestic_epc.sidebar.sections.energy') %></a></p>
-        <p class="govuk-body"><a class="govuk-link" href="#recommendations"><%= t('domestic_epc.sidebar.sections.recommendations') %></a></p>
-        <p class="govuk-body"><a class="govuk-link" href="#heat-demand"><%= t('domestic_epc.sidebar.sections.heat-demand') %></a></p>
-        <p class="govuk-body"><a class="govuk-link" href="#information"><%= t('domestic_epc.sidebar.sections.information') %></a></p>
-        <% if assessment.has_key?(:greenDealPlan) && !assessment[:greenDealPlan].empty? %>
-          <p class="govuk-body"><a class="govuk-link" href="#green_deal"><%= t('domestic_epc.sidebar.sections.green_deal') %></a></p>
-        <% end %>
-        <% unless assessment[:relatedAssessments] == [] || assessment[:relatedAssessments].nil? %>
-          <p class="govuk-body"><a class="govuk-link" href="#related_asssesments"><%= t('domestic_epc.sidebar.sections.related_asssesments') %></a></p>
-        <% end %>
-        <!-- <p class="govuk-body"><a class="govuk-link" href="#previous"><%= t('domestic_epc.sidebar.sections.previous') %></a></p> -->
-      </div>
-    </div>
+  <div class="govuk-grid-column-one-third govuk-!-display-none-print">
+    <hr class="epc-blue-top" />
+    <%== erb :component__contents, locals: {
+      title: t("domestic_epc.sidebar.title"),
+      sections: [
+        {
+          link: '#renting',
+          text: 'domestic_epc.sidebar.sections.renting',
+          hidden: assessment[:postcode][0..1] == "BT"
+        },
+        {
+          link: '#epc',
+          text: 'domestic_epc.sidebar.sections.epc'
+        },
+        {
+          link: '#summary',
+          text: 'domestic_epc.sidebar.sections.summary'
+        },
+        {
+          link: '#energy',
+          text: 'domestic_epc.sidebar.sections.energy'
+        },
+        {
+          link: '#recommendations',
+          text: 'domestic_epc.sidebar.sections.recommendations'
+        },
+        {
+          link: '#heat-demand',
+          text: 'domestic_epc.sidebar.sections.heat-demand'
+        },
+        {
+          link: '#information',
+          text: 'domestic_epc.sidebar.sections.information'
+        },
+        {
+          link: '#green_deal',
+          text: 'domestic_epc.sidebar.sections.green_deal',
+          hidden: assessment[:greenDealPlan].empty? || assessment[:greenDealPlan].nil?
+        },
+        {
+          link: '#related_asssesments',
+          text: 'domestic_epc.sidebar.sections.related_asssesments',
+          hidden: assessment[:relatedAssessments].empty? || assessment[:relatedAssessments].nil?
+        },
+      ]
+    } %>
   </div>
   <div class="govuk-grid-column-two-thirds">
     <hr class="epc-light-top" />
