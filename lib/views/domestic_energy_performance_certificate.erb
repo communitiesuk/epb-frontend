@@ -49,7 +49,7 @@
         {
           link: '#green_deal',
           text: 'domestic_epc.sidebar.sections.green_deal',
-          hidden: assessment[:greenDealPlan].empty? || assessment[:greenDealPlan].nil?
+          hidden: (true unless assessment.has_key?(:greenDealPlan) && !assessment[:greenDealPlan].empty?)
         },
         {
           link: '#related_asssesments',
