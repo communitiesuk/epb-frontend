@@ -256,7 +256,7 @@ describe "Acceptance::Assessor", type: :feature do
 
         it "explains that no assessors are nearby" do
           expect(response.body).to include(
-                                       "We did not find any assessors for E1 4FF.",
+            "We did not find any assessors for E1 4FF.",
           )
         end
       end
@@ -282,14 +282,14 @@ describe "Acceptance::Assessor", type: :feature do
 
         it "displays the no results found message" do
           expect(response.body).to include(
-            'We did not find any assessors for B11 4FF',
+            "We did not find any assessors for B11 4FF",
           )
         end
 
         it "displays the link to postcode finder" do
           expect(response.body).to include(
-                                       '<a class="govuk-link" href="https://www.royalmail.com/find-a-postcode">',
-                                       )
+            '<a class="govuk-link" href="https://www.royalmail.com/find-a-postcode">',
+          )
         end
       end
 
@@ -316,9 +316,7 @@ describe "Acceptance::Assessor", type: :feature do
           expect(response.body).to include(
             '<span id="postcode-error" class="govuk-error-message">',
           )
-          expect(response.body).to include(
-            "Enter a real postcode",
-          )
+          expect(response.body).to include("Enter a real postcode")
         end
       end
 
