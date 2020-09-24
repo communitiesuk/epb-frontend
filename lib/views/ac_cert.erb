@@ -11,7 +11,7 @@
     </div>
   </div>
 
-  <div class="govuk-grid-column-one-third">
+  <div class="govuk-grid-column-one-third govuk-!-display-none-print">
     <hr class="epc-blue-top" />
     <%== erb :component__contents, locals: {
       title: t("dec.sections.contents.title"),
@@ -37,7 +37,7 @@
   </div>
 
   <div class="govuk-grid-column-two-thirds">
-    <hr class="epc-light-top govuk-!-display-none-print" />
+    <hr class="epc-light-top" />
 
     <%== erb :component__epc_summary_compact, locals: {
       assessment: assessment,
