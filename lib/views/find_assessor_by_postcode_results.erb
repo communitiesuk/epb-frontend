@@ -39,9 +39,12 @@
           <% end %>
       </ul>
     <% else %>
+      <h2 class="govuk-heading-m"><%= t('find_assessor_by_postcode_results.no_assessors_heading', :postcode=>params['postcode'].upcase) %></h2>
       <p class="govuk-body">
-        <%= t('find_assessor_by_postcode_results.no_assessors') %>
+        <%= t('find_assessor_by_postcode_results.no_assessors_1', :postcode=>params['postcode'].upcase) %>
       </p>
+      <p class="govuk-body"><%= t('find_assessor_by_postcode_results.no_assessors_2') %></p>
+      <p class="govuk-body"><a class="govuk-link" href="https://www.royalmail.com/find-a-postcode"><%= t('find_assessor_by_postcode_results.postcode_finder') %></a></p>
     <% end %>
   </div>
 </div>

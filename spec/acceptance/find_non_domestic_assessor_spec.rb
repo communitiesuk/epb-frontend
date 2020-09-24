@@ -304,7 +304,7 @@ describe "Acceptance::NonDomesticAssessor" do
 
         it "explains that no assessors are nearby" do
           expect(response.body).to include(
-            I18n.t("find_assessor_by_postcode_results.no_assessors"),
+                                       "We did not find any assessors for E1 4AA."
           )
         end
       end
@@ -321,19 +321,24 @@ describe "Acceptance::NonDomesticAssessor" do
           get "http://getting-new-energy-certificate.local.gov.uk/find-a-non-domestic-assessor/search-by-postcode?postcode=B11+4FF"
         end
 
-        it "returns status 404" do
-          expect(response.status).to eq(404)
+        it "returns status 200" do
+          expect(response.status).to eq(200)
         end
 
         it "displays the find a non-domestic assessor page heading" do
           expect(response.body).to include("Find a non-domestic energy")
         end
 
-        it "displays an error message" do
+        it "displays the no results found message" do
           expect(response.body).to include(
-            '<span id="postcode-error" class="govuk-error-message">',
-          )
-          expect(response.body).to include("We could not find this postcode")
+                                       'We did not find any assessors for B11 4FF',
+                                       )
+        end
+
+        it "displays the link to postcode finder" do
+          expect(response.body).to include(
+                                       '<a class="govuk-link" href="https://www.royalmail.com/find-a-postcode">',
+                                       )
         end
       end
 

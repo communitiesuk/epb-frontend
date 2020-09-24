@@ -165,9 +165,8 @@ class FrontendService < Sinatra::Base
         rescue StandardError => e
           case e
           when Errors::PostcodeNotRegistered
-            status 404
-            @errors[:postcode] =
-              t("find_assessor_by_postcode.postcode_not_registered")
+            locals[:results] = []
+            erb_template = :find_assessor_by_postcode_results
           when Errors::PostcodeNotValid
             status 400
             @errors[:postcode] =
@@ -303,9 +302,8 @@ class FrontendService < Sinatra::Base
         rescue StandardError => e
           case e
           when Errors::PostcodeNotRegistered
-            status 404
-            @errors[:postcode] =
-              t("find_assessor_by_postcode.postcode_not_registered")
+            locals[:results] = []
+            erb_template = :find_non_domestic_assessor_by_postcode_results
           when Errors::PostcodeNotValid
             status 400
             @errors[:postcode] =
