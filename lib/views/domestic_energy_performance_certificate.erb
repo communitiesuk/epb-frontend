@@ -93,51 +93,44 @@
         translation_prefix: 'domestic_epc.sections.breakdown.list.',
         skip_null: true
       } %>
-
     </div>
-  </div>
-  <div class="govuk-grid-column-one-third"><br></div>
 
-  <% unless assessment[:postcode][0..1] == "BT" %>
-  <div class="govuk-grid-column-two-thirds">
-    <div class="govuk-body epc-blue-bottom">
-      <a id="renting"></a>
-      <h2 class="govuk-heading-l"><%= t('domestic_epc.sections.renting.title') %></h2>
-      <% minimum_energy_rating_for_rentals = 'e' %>
-      <% if assessment[:currentEnergyEfficiencyBand] > minimum_energy_rating_for_rentals %>
-        <div class="govuk-warning-text">
-          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-          <div class="govuk-warning-text__text">
-            <span class="govuk-warning-text__assistive"><%= t('domestic_epc.sections.renting.landlord_warning.hidden_text') %></span>
-            <h2 class="govuk-error-summary__title" id="error-summary-title">
-              <%= t('domestic_epc.sections.renting.landlord_warning.subtitle') %>
-            </h2>
-            <div class="govuk-error-summary__body">
-              <p class="govuk-body">
-                <%== t('domestic_epc.sections.renting.landlord_warning.body.text', :current_energy_efficiency_band => assessment[:currentEnergyEfficiencyBand].upcase) %>
-                <%== t('domestic_epc.sections.renting.rental_info.guidance_text', :link => '<a class="govuk-link" href="' + t('domestic_epc.sections.renting.rental_info.url') + '">' + t('domestic_epc.sections.renting.rental_info.cta') + '</a>') %>
-              </p>
-              <p class="govuk-body">
-                <%== t('domestic_epc.sections.renting.landlord_warning.body.text_2') %>
-                <%== t('domestic_epc.sections.renting.landlord_warning.body.recommendations_text', :recommendations_link => '<a class="govuk-link" href="' + t('domestic_epc.sections.renting.landlord_warning.body.recommendations_url') + '">' + t('domestic_epc.sections.renting.landlord_warning.body.recommendations_cta') + '</a>') %>
-              </p>
+    <% unless assessment[:postcode][0..1] == "BT" %>
+      <div class="govuk-body epc-blue-bottom">
+        <a id="renting"></a>
+        <h2 class="govuk-heading-l"><%= t('domestic_epc.sections.renting.title') %></h2>
+        <% minimum_energy_rating_for_rentals = 'e' %>
+        <% if assessment[:currentEnergyEfficiencyBand] > minimum_energy_rating_for_rentals %>
+          <div class="govuk-warning-text">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <div class="govuk-warning-text__text">
+              <span class="govuk-warning-text__assistive"><%= t('domestic_epc.sections.renting.landlord_warning.hidden_text') %></span>
+              <h2 class="govuk-error-summary__title" id="error-summary-title">
+                <%= t('domestic_epc.sections.renting.landlord_warning.subtitle') %>
+              </h2>
+              <div class="govuk-error-summary__body">
+                <p class="govuk-body">
+                  <%== t('domestic_epc.sections.renting.landlord_warning.body.text', :current_energy_efficiency_band => assessment[:currentEnergyEfficiencyBand].upcase) %>
+                  <%== t('domestic_epc.sections.renting.rental_info.guidance_text', :link => '<a class="govuk-link" href="' + t('domestic_epc.sections.renting.rental_info.url') + '">' + t('domestic_epc.sections.renting.rental_info.cta') + '</a>') %>
+                </p>
+                <p class="govuk-body">
+                  <%== t('domestic_epc.sections.renting.landlord_warning.body.text_2') %>
+                  <%== t('domestic_epc.sections.renting.landlord_warning.body.recommendations_text', :recommendations_link => '<a class="govuk-link" href="' + t('domestic_epc.sections.renting.landlord_warning.body.recommendations_url') + '">' + t('domestic_epc.sections.renting.landlord_warning.body.recommendations_cta') + '</a>') %>
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-      <% else %>
-        <p class="govuk-body">
-          <%== t('domestic_epc.sections.renting.rental_info.body_1') %>
-        </p>
-        <p class="govuk-body">
-          <%== t('domestic_epc.sections.renting.rental_info.body_2') + t('domestic_epc.sections.renting.rental_info.guidance_text', :link => '<a class="govuk-link" href="' + t('domestic_epc.sections.renting.rental_info.url') + '">' + t('domestic_epc.sections.renting.rental_info.cta') + '</a>' ) %>
-        </p>
-      <% end %>
-    </div>
-  </div>
-  <div class="govuk-grid-column-one-third"><br></div>
-  <% end %>
+        <% else %>
+          <p class="govuk-body">
+            <%== t('domestic_epc.sections.renting.rental_info.body_1') %>
+          </p>
+          <p class="govuk-body">
+            <%== t('domestic_epc.sections.renting.rental_info.body_2') + t('domestic_epc.sections.renting.rental_info.guidance_text', :link => '<a class="govuk-link" href="' + t('domestic_epc.sections.renting.rental_info.url') + '">' + t('domestic_epc.sections.renting.rental_info.cta') + '</a>' ) %>
+          </p>
+        <% end %>
+      </div>
+    <% end %>
 
-  <div class="govuk-grid-column-two-thirds">
     <div class="govuk-body epc-blue-bottom">
       <a id="epc"></a>
       <h2 class="govuk-heading-l"><%= t('domestic_epc.sections.epc.title') %></h2>
@@ -159,21 +152,15 @@
       <p class="govuk-body govuk-!-margin-top-6"><%= t('domestic_epc.sections.epc.body3') %></p>
       <p class="govuk-body govuk-!-margin-top-6"><%= t('domestic_epc.sections.epc.body4') %></p>
     </div>
-  </div>
-  <div class="govuk-grid-column-one-third"><br></div>
-  <div class="govuk-grid-column-two-thirds">
-    <%== erb :domestic_energy_performance_certificate__energy_performance_breakdown,
-             locals: { assessment: assessment }
+
+    <%== erb :domestic_energy_performance_certificate__energy_performance_breakdown, locals: {
+      assessment: assessment
+    } %>
+
+    <%== erb :domestic_energy_performance_certificate__environmental_impact, locals: {
+      assessment: assessment }
     %>
-  </div>
-  <div class="govuk-grid-column-one-third"><br></div>
-  <div class="govuk-grid-column-two-thirds">
-    <%== erb :domestic_energy_performance_certificate__environmental_impact,
-             locals: { assessment: assessment }
-    %>
-  </div>
-  <div class="govuk-grid-column-one-third"><br></div>
-  <div class="govuk-grid-column-two-thirds">
+
     <a id="recommendations"></a>
     <h2 class="govuk-heading-l"><%= t('domestic_epc.sections.recommendations.title') %></h2>
     <div class=<%=assessment[:recommendedImprovements].empty? ? 'epc-blue-bottom' : ''%>>
@@ -207,37 +194,25 @@
         </details>
       <% end %>
     </div>
-  </div>
-  <% unless assessment[:recommendedImprovements].empty? %>
-    <div class="govuk-grid-column-one-third"><br></div>
-    <div class="govuk-grid-column-two-thirds">
+
+    <% unless assessment[:recommendedImprovements].empty? %>
       <div class="govuk-body">
         <hr class="epc-light-top"/>
         <% assessment[:recommendedImprovements].each_with_index do |recommendation, index| %>
           <%== erb :domestic_energy_performance_certificate__recommended_improvement, locals: { recommendation: recommendation, index: index } %>
-      <% end %>
+        <% end %>
       </div>
-    </div>
-  <% end %>
-  <div class="govuk-grid-column-one-third"><br></div>
-  <div class="govuk-grid-column-two-thirds">
+    <% end %>
+
     <div class="epc-blue-bottom">
-      <h3 class="govuk-heading-m">
-        <%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.title') %>
-      </h3>
+      <h3 class="govuk-heading-m"><%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.title') %></h3>
       <p class="govuk-body">
-        <a class="govuk-link" href="<%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.link') %>">
-          <%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.text') %>
-        </a>
+        <a class="govuk-link" href="<%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.link') %>"><%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.text') %></a>
       </p>
     </div>
-  </div>
-  <div class="govuk-grid-column-one-third"><br></div>
-  <div class="govuk-grid-column-two-thirds">
+
     <%== erb :domestic_energy_performance_certificate__estimated_energy_use, locals: { assessment: assessment } %>
-  </div>
-  <div class="govuk-grid-column-one-third"><br></div>
-  <div class="govuk-grid-column-two-thirds">
+
     <div class="govuk-body epc-blue-bottom">
       <a id="information"></a>
       <h2 class="govuk-heading-l"><%= t('domestic_epc.sections.information.title') %></h2>
@@ -281,13 +256,13 @@
         translation_prefix: 'domestic_epc.sections.information.certificate.list.',
         skip_null: true
       } %>
-
     </div>
-      <% if assessment.has_key?(:greenDealPlan) %>
-        <% assessment[:greenDealPlan].each do |plan| %>
-          <%== erb :domestic_energy_performance_certificate__green_deal_plan, locals: { assessment: assessment, green_deal_plan: plan } %>
-        <% end %>
+
+    <% if assessment.has_key?(:greenDealPlan) %>
+      <% assessment[:greenDealPlan].each do |plan| %>
+        <%== erb :domestic_energy_performance_certificate__green_deal_plan, locals: { assessment: assessment, green_deal_plan: plan } %>
       <% end %>
+    <% end %>
 
     <%== erb :component__related_assessments, locals: {
       assessment: assessment,
