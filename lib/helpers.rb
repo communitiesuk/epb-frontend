@@ -155,6 +155,13 @@ module Sinatra
         end
         line_count >= 6 ? "govuk-body small-font" : "govuk-body"
       end
+
+      def compact_address(address_lines, town, postcode)
+        (
+          address_lines +
+            [(address_lines.include?(town) ? nil : town), postcode]
+        ).compact.reject { |a| a.to_s.strip.chomp.empty? }
+      end
     end
   end
 end

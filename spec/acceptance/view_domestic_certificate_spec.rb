@@ -26,6 +26,35 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       expect(response.body).to include("SW1B 2BB")
     end
 
+    it "doesn't show town name twice" do
+      FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
+        "1234-5678-1234-5678-1234",
+        90,
+        "b",
+        false,
+        "2.4",
+        "1.4",
+        -79,
+        -67,
+        -69,
+        nil,
+        1,
+        nil,
+        989,
+        "RdSAP",
+        76,
+        [],
+        nil,
+        nil,
+        "c",
+        "SW1B 2BB",
+        "London",
+      )
+
+      expect(response.body).to have_css "p",
+                                        text: "Flat 332 Marsham StreetLondonSW1B 2BB"
+    end
+
     it "shows the certificate number" do
       expect(response.body).to include("1234-5678-1234-5678-1234")
     end

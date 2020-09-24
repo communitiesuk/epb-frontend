@@ -1014,7 +1014,8 @@ module FetchAssessmentSummary
       estimatedEnergyCost = nil,
       potentialEnergySaving = nil,
       energy_performance_band_improvement = "c",
-      postcode = "SW1B 2BB"
+      postcode = "SW1B 2BB",
+      address_line3 = ""
     )
       FetchAssessmentSummary::AssessmentSummaryErrorStub.fetch(assessment_id)
       property_summary ||= generate_property_summary
@@ -1037,7 +1038,7 @@ module FetchAssessmentSummary
             "dateOfExpiry": "2030-05-04",
             "addressLine1": "1 Some Street",
             "addressLine2": "",
-            "addressLine3": "",
+            "addressLine3": address_line3,
             "addressLine4": "",
             "town": "Post-Town1",
             estimatedEnergyCost: estimatedEnergyCost,
@@ -1285,7 +1286,7 @@ module FetchAssessmentSummary
             primaryEnergyUse: primary_energy_use,
             addressLine1: "Flat 33",
             addressLine2: "2 Marsham Street",
-            addressLine3: "",
+            addressLine3: address_line3,
             addressLine4: "",
             town: "London",
             estimatedEnergyCost: "689.83",

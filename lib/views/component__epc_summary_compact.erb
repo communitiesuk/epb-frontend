@@ -2,14 +2,16 @@
   <div class="epc-box-summary govuk-!-margin-bottom-5">
     <div class="epc-box-element epb-box-element-full-height govuk-body">
       <%==
-        [
-           assessment[:address][:addressLine1],
-           assessment[:address][:addressLine2],
-           assessment[:address][:addressLine3],
-           assessment[:address][:addressLine4],
-           assessment[:address][:town],
-           assessment[:address][:postcode],
-        ].compact.reject(&:nil?).map { |line| "<span>#{line}</span>" }.join("\n")
+        compact_address(
+          [
+            assessment[:address][:addressLine1],
+            assessment[:address][:addressLine2],
+            assessment[:address][:addressLine3],
+            assessment[:address][:addressLine4]
+          ],
+          assessment[:address][:town],
+          assessment[:address][:postcode],
+        ).map { |line| "<span>#{line}</span>" }.join("\n")
       %>
     </div>
     <div class="epc-box-element">

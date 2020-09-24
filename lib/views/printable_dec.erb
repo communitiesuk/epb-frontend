@@ -307,12 +307,16 @@
             <td>
               <p class="<%= address_size(assessment[:address]) %>">
 
-                <%== [assessment[:address][:addressLine1],
-                     assessment[:address][:addressLine2],
-                     assessment[:address][:addressLine3],
-                     assessment[:address][:addressLine4],
-                     assessment[:address][:town],
-                     assessment[:address][:postcode]].reject(&:nil?).reject(&:empty?).join('<br />') %>
+                <%== compact_address(
+                  [
+                    assessment[:address][:addressLine1],
+                    assessment[:address][:addressLine2],
+                    assessment[:address][:addressLine3],
+                    assessment[:address][:addressLine4]
+                  ],
+                  assessment[:address][:town],
+                  assessment[:address][:postcode]
+                ).join('<br />') %>
               </p>
             </td>
             <td class="giant-letter">
