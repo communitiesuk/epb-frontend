@@ -1,4 +1,7 @@
 en:
+  validation_errors:
+    postcode_error: 'Enter a real postcode'
+
   related_content:
     title: 'Related content'
     guidance_on_epc:
@@ -191,8 +194,6 @@ en:
       cta: 'find an assessor by name'
     question: 'Enter the postcode of the property'
     hint: 'For example SW1A 2AA'
-    postcode_error: 'Enter a real postcode'
-    postcode_not_valid: 'Enter a postcode that is not malformed'
     postcode_not_registered: '<h3 class="govuk-heading-m">We could not find this postcode</h3><p class="govuk-body">Check it and enter the postcode again.</p>'
     button_text: 'Find'
     scheme_not_found:
@@ -312,7 +313,6 @@ en:
       title: 'Energy performance of buildings register - Find an energy performance certificate'
     top_heading: 'Find an energy performance certificate (EPC) by postcode'
     question: 'Enter the postcode of the property'
-    postcode_not_valid: 'Enter a real postcode'
     button_text: 'Find'
     hint: 'For example SW1A 2AA'
     certificate_by_street_name_and_town:
@@ -444,7 +444,6 @@ en:
       title: 'Energy performance of buildings register - Find energy certificates and reports by postcode'
     top_heading: 'Find energy certificates and reports by postcode'
     question: 'Enter the postcode of the property'
-    postcode_not_valid: 'Enter a real postcode'
     button_text: 'Find'
     hint: 'For example SW1A 2AA'
     no_network:

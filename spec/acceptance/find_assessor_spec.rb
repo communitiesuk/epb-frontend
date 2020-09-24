@@ -312,7 +312,7 @@ describe "Acceptance::Assessor", type: :feature do
             '<span id="postcode-error" class="govuk-error-message">',
           )
           expect(response.body).to include(
-            "Enter a postcode that is not malformed",
+            "Enter a real postcode",
           )
         end
       end
