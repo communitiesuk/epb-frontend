@@ -893,7 +893,7 @@ en:
 
   energy_performance_rating:
     '0':
-      energy_performance: ''
+      energy_performance: N/A
     1:
       energy_performance: Very poor
     2:

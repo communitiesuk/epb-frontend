@@ -861,7 +861,7 @@ cy:
 
   energy_performance_rating:
     '0':
-      energy_performance: 'Welsh: '
+      energy_performance: 'Welsh: N/A'
     1:
       energy_performance: Very poor
     2:

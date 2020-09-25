@@ -22,16 +22,25 @@
       </tr>
     </thead>
     <tbody class="govuk-table__body">
-      <tr class="govuk-table__row">
       <% assessment[:propertySummary]&.each do |property_item| %>
         <% if property_item[:energyEfficiencyRating].to_i > 0 %>
+          <tr class="govuk-table__row">
+            <th class="govuk-table__cell govuk-!-font-weight-regular"><%= t("property_summary.type." + property_item[:name])%></th>
+            <td class="govuk-table__cell"><%=property_item[:description]%></td>
+            <td class="govuk-table__cell"><%=t('energy_performance_rating.' + property_item[:energyEfficiencyRating].to_s + '.energy_performance')%></td>
+          </tr>
+        <% end %>
+      <% end %>
+    <% assessment[:propertySummary]&.each do |property_item| %>
+      <% if property_item[:energyEfficiencyRating].zero? %>
+        <tr class="govuk-table__row">
           <th class="govuk-table__cell govuk-!-font-weight-regular"><%= t("property_summary.type." + property_item[:name])%></th>
           <td class="govuk-table__cell"><%=property_item[:description]%></td>
           <td class="govuk-table__cell"><%=t('energy_performance_rating.' + property_item[:energyEfficiencyRating].to_s + '.energy_performance')%></td>
-        <% end %>
-      </tr>
-    </tbody>
+        </tr>
+      <% end %>
     <% end %>
+    </tbody>
   </table>
 
   <h2 class="govuk-heading-m"><%= t('domestic_epc.sections.breakdown.primary_energy_use') %></h2>
