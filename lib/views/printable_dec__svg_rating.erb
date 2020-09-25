@@ -103,6 +103,14 @@
       font-weight: bold;
     }
 
+    .typical {
+      font-size: 16px;
+      font-family: sans-serif;
+      fill: 	#0b0c0c;
+      line-height: 50px;
+      margin-top: 100px;
+    }
+
     <% bands.each do |key, settings| %>
     .band-<%= key %>{
       fill: <%= settings[:color] %>
