@@ -131,38 +131,6 @@ table.border-bottom h3, table.border-bottom p {
   padding: 0!important;
 }
 
-.arrow {
-  display: inline-block;
-  line-height: 30px;
-  color: #fff;
-  padding-right: 10px;
-  position: relative;
-  width: 75px;
-  text-align: center;
-}
-
-.arrow:before, .arrow:after {
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 17px 17px 0 0;
-  border-color: #eee transparent transparent transparent;
-  content: "";
-  float: left;
-  margin-top: -1px;
-  margin-left: -1px;
-  display: block;
-}
-
-.arrow:after {
-  position: absolute;
-  border-width: 17px 0 0 17px;
-  border-color: transparent transparent transparent #eee;
-  float: none;
-  bottom: -1px;
-  left: 0;
-}
-
 .hm-gov-crest {
   height: 3rem;
   padding: 0 5px;
@@ -182,7 +150,7 @@ table.border-bottom h3, table.border-bottom p {
 }
 
 .address-small-font {
-  font-size: 1rem;
+  font-size: 0.9rem;
   margin: 0;
 }
 
@@ -193,8 +161,6 @@ table.border-bottom h3, table.border-bottom p {
 @-moz-document url-prefix() {
   @media print {
     html {
-      visibility: hidden;
-      font-size: 1.2vh;
       background-color: #ffffff !important;
     }
   }

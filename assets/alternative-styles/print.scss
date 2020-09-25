@@ -4,8 +4,9 @@
   width: 100%;
 }
 
+@import "print/layout";
+
 @media print {
-  @import "print/layout";
   @import "print/govuk-scaling";
   @import "print/reset";
   @import "print/colour";
