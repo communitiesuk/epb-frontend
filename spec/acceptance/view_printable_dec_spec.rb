@@ -43,18 +43,14 @@ describe "Acceptance::PrintableDisplayEnergyCertificate", type: :feature do
       expect(response.body).to include(
         "The typical score for a public building is 100. This typical score gives an operational rating of D.",
       )
-      expect(response.body).to include("1 | A")
     end
 
     it "shows the previous operational ratings section" do
       expect(response.body).to have_css "h2",
                                         text: "Previous operational ratings"
       expect(response.body).to have_css "th", text: "January 2020"
-      expect(response.body).to have_css "td", text: "1 | A"
       expect(response.body).to have_css "th", text: "January 2019"
-      expect(response.body).to have_css "td", text: "24 | A"
       expect(response.body).to have_css "th", text: "January 2018"
-      expect(response.body).to have_css "td", text: "40 | B"
     end
 
     it "shows the total CO2 emissions section" do
