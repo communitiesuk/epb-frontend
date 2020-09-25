@@ -508,7 +508,7 @@ class FrontendService < Sinatra::Base
     elsif assessment[:data][:typeOfAssessment] == "DEC"
       @print_title = t("dec.top_heading")
       if params["print"]
-        show(:printable_dec, assessment: assessment[:data])
+        show(:printable_dec, { assessment: assessment[:data] }, :print_layout)
       else
         show(:dec, assessment: assessment[:data])
       end
@@ -561,9 +561,9 @@ class FrontendService < Sinatra::Base
     erb :accessibility_statement
   end
 
-  def show(template, locals)
+  def show(template, locals, layout = :layout)
     locals[:errors] = @errors
-    erb template, layout: :layout, locals: locals
+    erb template, layout: layout, locals: locals
   end
 
   not_found do

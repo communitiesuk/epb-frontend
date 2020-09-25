@@ -1,0 +1,34 @@
+@page {
+  size: $page-size;
+  margin: 10mm;
+  width: 100%;
+}
+
+@media print {
+  @import "print/layout";
+  @import "print/govuk-scaling";
+  @import "print/reset";
+  @import "print/colour";
+  html {
+    visibility: hidden;
+    font-size: $primary-font-scale;
+    background-color: #ffffff !important;
+  }
+
+  .printable-area {
+    visibility: visible;
+    width: 100% !important;
+    margin: 0;
+  }
+
+  .govuk-width-container {
+    max-width: 100% !important;
+    margin: 0;
+    padding: 0;
+  }
+
+  .govuk-main-wrapper {
+    margin: 0;
+    padding: 0;
+  }
+}

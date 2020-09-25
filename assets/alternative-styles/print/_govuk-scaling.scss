@@ -1,0 +1,39 @@
+.govuk-body, .govuk-body-m {
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.printable-area {
+  h1.govuk-heading-m {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+  }
+
+  h2.govuk-heading-s {
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media not all and (min-resolution:.001dpcm) {
+  @media {
+    p.govuk-body {
+      margin-bottom: 0.5rem;
+    }
+
+    svg[role="img"] {
+      zoom: 0.70;
+    }
+
+    table {
+      margin-bottom: 0.5rem;
+    }
+
+    table.greybox {
+      margin-bottom: 0.4rem;
+    }
+
+    table.greybox > tbody > tr > td {
+      padding: 5px;
+    }
+  }
+}
