@@ -10,15 +10,11 @@ def build_sass(source, destination)
   File.write(destination, css)
 end
 
-
 puts "Building Application SASS files"
-build_sass "./assets/sass/application.scss",
-           "./public/application.css"
+build_sass "./assets/sass/application.scss", "./public/application.css"
 
 puts "Building Print SASS files"
-build_sass "./assets/sass/printable.scss",
-           "./public/printable.css"
-
+build_sass "./assets/sass/printable.scss", "./public/printable.css"
 
 puts "Copying fonts"
 FileUtils.copy_entry "./assets/fonts", "./public/fonts"
@@ -28,4 +24,3 @@ FileUtils.copy_entry "./assets/images", "./public/images"
 
 puts "Copying robots.txt"
 FileUtils.copy_entry "./assets/robots.txt", "./public/robots.txt"
-

@@ -479,7 +479,8 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
         describe "with no energy efficiency rating" do
           it "does show the element/feature" do
             expect(response.body).to have_css "th", text: "Roof"
-            expect(response.body).to have_css "td", text: "(another dwelling above)"
+            expect(response.body).to have_css "td",
+                                              text: "(another dwelling above)"
             expect(response.body).to have_css "td", text: "N/A"
           end
         end
