@@ -45,7 +45,7 @@ describe Sinatra::FrontendService::Helpers do
     it "show the number of lines" do
       expect(
         HelpersStub.new.address_size(long_address),
-      ).to eq "govuk-body small-font"
+      ).to eq "govuk-body address-small-font"
     end
 
     it "show the number of lines" do
@@ -55,7 +55,7 @@ describe Sinatra::FrontendService::Helpers do
     it "show the number of lines" do
       expect(
         HelpersStub.new.address_size(long_line_address),
-      ).to eq "govuk-body small-font"
+      ).to eq "govuk-body address-small-font"
     end
   end
 end
