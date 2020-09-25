@@ -132,38 +132,6 @@
     padding: 0!important;
   }
 
-  .arrow {
-    display: inline-block;
-    line-height: 30px;
-    color: #fff;
-    padding-right: 10px;
-    position: relative;
-    width: 75px;
-    text-align: center;
-  }
-
-  .arrow:before, .arrow:after {
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 17px 17px 0 0;
-    border-color: #eee transparent transparent transparent;
-    content: "";
-    float: left;
-    margin-top: -1px;
-    margin-left: -1px;
-    display: block;
-  }
-
-  .arrow:after {
-    position: absolute;
-    border-width: 17px 0 0 17px;
-    border-color: transparent transparent transparent #eee;
-    float: none;
-    bottom: -1px;
-    left: 0;
-  }
-
   .hm-gov-crest {
     height: 3rem;
     padding: 0 5px;
@@ -190,24 +158,6 @@
   .light-font {
     font-weight: 300;
   }
-
-  @-moz-document url-prefix() {
-    @media print {
-      html {
-        visibility: hidden;
-        font-size: 1.2vh;
-        background-color: #ffffff !important;
-      }
-    }
-
-    table.accentuate, table.accentuate table, table.header, table.header h1.govuk-heading-m, table.accentuate p.govuk-body {
-      color: transparent;
-      text-shadow: 0 0 0 #fff;
-    }
-  }
-
-
-
 </style>
 
 <a

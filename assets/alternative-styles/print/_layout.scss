@@ -190,34 +190,6 @@ table.border-bottom h3, table.border-bottom p {
   font-weight: 300;
 }
 
-.band-a{
-  background: #008054
-}
-
-.band-b{
-  background: #19b459
-}
-
-.band-c{
-  background: #8dce46
-}
-
-.band-d{
-  background: #ffd500
-}
-
-.band-e{
-  background: #fcaa65
-}
-
-.band-f{
-  background: #ef8023
-}
-
-.band-g{
-  background: #e9153b
-}
-
 @-moz-document url-prefix() {
   @media print {
     html {
@@ -231,19 +203,6 @@ table.border-bottom h3, table.border-bottom p {
     color: transparent;
     text-shadow: 0 0 0 #fff;
   }
-
-  table.split > tbody > tr > td:first-child {
-    /*padding: 0!important;*/
-  }
-
-  table.split > tbody > tr > td:first-child p {
-    /*margin: 0!important;*/
-    /*padding: 0!important;*/
-  }
-
-  /*.arrow {*/
-  /*  width: 75px;*/
-  /*}*/
 }
 
 @media not all and (min-resolution:.001dpcm) {
