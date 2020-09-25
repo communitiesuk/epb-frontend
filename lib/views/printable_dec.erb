@@ -1,29 +1,11 @@
 <style>
-  @page
-  {
-    size: auto;
-    margin: 0;
-    width: 100%;
-  }
-
-  @media print {
-    .govuk-width-container {
-      max-width: 100% !important;
-    }
-  }
-
-  * {
-    -webkit-print-color-adjust: exact !important;
-    color-adjust: exact !important;
-  }
-
   table {
     width: 100%;
     border-collapse: collapse;
     font-family: sans-serif;
     border-spacing: 0;
     border: none;
-    margin-bottom: 20px;
+    margin-bottom: 0.6rem;
   }
 
   table tr, table tr td, table tr th {
@@ -33,7 +15,7 @@
   }
 
   table th, table td {
-    font-size: 14px;
+    font-size: 0.8rem;
   }
 
   table.split table:last-child {
@@ -75,14 +57,15 @@
   table.header {
     background: #000;
     color: #fff;
-    line-height: 52px;
+    line-height: 2rem;
   }
 
   table.header h1.govuk-heading-m {
     color: #fff;
     margin: 0;
     padding: 0;
-    line-height: 52px;
+    line-height: 3rem;
+    font-size: 1.8rem;
   }
 
   table.accentuate p.govuk-body {
@@ -90,7 +73,7 @@
   }
 
   table.accentuate > tbody > tr > td {
-    padding: 20px;
+    padding: 0.8rem 1rem;
     border-left: 1px solid #fff;
   }
 
@@ -104,26 +87,28 @@
   }
 
   td.giant-letter span {
-    font-size: 60px;
+    font-size: 5rem;
     font-weight: 700;
   }
 
   table.greybox {
     background: #eee;
-    margin-bottom: 20pX;
+    margin-bottom: 1rem;
   }
 
   table.greybox > tbody > tr > td {
-    padding: 15px;
+    padding: 0.6rem 0.9rem;
   }
 
   table.border-bottom tr td, table.border-bottom tr th {
     border-bottom: 1px solid #ccc;
-    padding: 5px;
+    padding: 0.8rem 0.5rem;
+    vertical-align: middle;
   }
 
   table.border-bottom tr td:first-child, table.border-bottom tr th:first-child {
     padding-left: 0;
+    width: 45%;
   }
 
   table.border-bottom tr td:last-child, table.border-bottom tr th:last-child {
@@ -179,9 +164,8 @@
     left: 0;
   }
 
-
   .hm-gov-crest {
-    height: 58px;
+    height: 3rem;
     padding: 0 5px;
     float: right;
   }
@@ -190,110 +174,52 @@
     width: 100%;
   }
 
+  .energy-rating-arrow {
+    height: 1.8rem;
+  }
+
   .small-font {
-    font-size: 12px;
+    font-size: 0.8rem;
+  }
+
+  .address-small-font {
+    font-size: 1rem;
+    margin: 0;
   }
 
   .light-font {
     font-weight: 300;
   }
 
-  .band-a{
-    background: #008054
-  }
-
-  .band-b{
-    background: #19b459
-  }
-
-  .band-c{
-    background: #8dce46
-  }
-
-  .band-d{
-    background: #ffd500
-  }
-
-  .band-e{
-    background: #fcaa65
-  }
-
-  .band-f{
-    background: #ef8023
-  }
-
-  .band-g{
-    background: #e9153b
-  }
-
   @-moz-document url-prefix() {
-    h1.govuk-heading-m {
-      font-size: 20px;
+    @media print {
+      html {
+        visibility: hidden;
+        font-size: 1.2vh;
+        background-color: #ffffff !important;
+      }
     }
 
     table.accentuate, table.accentuate table, table.header, table.header h1.govuk-heading-m, table.accentuate p.govuk-body {
       color: transparent;
       text-shadow: 0 0 0 #fff;
     }
-
-    table.split > tbody > tr > td:first-child {
-      padding: 0!important;
-    }
-
-    table.split > tbody > tr > td:first-child p {
-      margin: 0!important;
-      padding: 0!important;
-    }
-
-    .arrow {
-      width: auto;
-    }
   }
 
-  @media not all and (min-resolution:.001dpcm) {
-    @media {
-      h1.govuk-heading-m {
-        font-size: 20px;
-      }
 
-      h2.govuk-heading-s {
-        margin-bottom: 5px;
-      }
-
-      p.govuk-body {
-        margin-bottom: 10px;
-      }
-
-      svg[role="img"] {
-        zoom: 0.70;
-      }
-
-      table {
-        margin-bottom: 15px;
-      }
-
-      table.greybox {
-        margin-bottom: 10px;
-      }
-
-      table.greybox > tbody > tr > td {
-        padding: 5px;
-      }
-    }
-  }
 
 </style>
 
-<table class="govuk-body govuk-!-margin-bottom-0">
+<a
+  href="<%= localised_url("/energy-certificate/" + assessment[:assessmentId])%>"
+  class="govuk-back-link govuk-!-display-none-print">
+  <%=t('layout.body.breadcrumb.back')%>
+</a>
+
+<table class="printable-area">
   <tbody>
   <tr>
     <td>
-      <a
-        href="<%= localised_url("/energy-certificate/" + assessment[:assessmentId])%>"
-        class="govuk-back-link">
-        <%=t('layout.body.breadcrumb.back')%>
-      </a>
-
       <table class="header">
         <tbody>
           <tr>
@@ -316,7 +242,7 @@
       <table class="accentuate">
         <tbody>
           <tr>
-            <td>
+            <td style="vertical-align: middle">
               <p class="<%= address_size(assessment[:address]) %>">
 
                 <%== compact_address(
@@ -366,9 +292,9 @@
         <tr>
           <td>
             <h2 class="govuk-heading-s"><%= t('dec.sections.rating.title') %></h2>
-            <p class="govuk-body govuk-!-font-size-16 light-font"><%= t('dec.sections.rating.emissions_text') %></p>
-            <p class="govuk-body govuk-!-font-size-16 light-font"><%= t('dec.sections.rating.text') %></p>
-            <p class="govuk-body govuk-!-font-size-16 light-font"><%= t('dec.sections.rating.typical_text') %></p>
+            <p class="govuk-body light-font"><%= t('dec.sections.rating.emissions_text') %></p>
+            <p class="govuk-body light-font"><%= t('dec.sections.rating.text') %></p>
+            <p class="govuk-body light-font"><%= t('dec.sections.rating.typical_text') %></p>
 
             <table>
               <tbody>

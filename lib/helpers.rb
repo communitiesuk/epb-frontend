@@ -153,7 +153,7 @@ module Sinatra
           line_value = value.length >= 30 ? 2 : 1
           line_count += line_value
         end
-        line_count >= 6 ? "govuk-body small-font" : "govuk-body"
+        line_count >= 6 ? "govuk-body address-small-font" : "govuk-body"
       end
 
       def compact_address(address_lines, town, postcode)
