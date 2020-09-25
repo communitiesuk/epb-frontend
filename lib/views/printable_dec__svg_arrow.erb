@@ -1,0 +1,134 @@
+<svg width="100px"
+     height="40px"
+     xmlns="http://www.w3.org/2000/svg"
+     style="max-width: 100%;"
+     aria-labelledby="svg-title"
+     role="img"
+     class="govuk-!-margin-bottom-5">
+<title id="svg-title"><%= title %></title>
+  <%
+
+    bands = {
+      'a': {
+        'range': '0-25',
+        'position': 0,
+        'color': '#008054'
+      },
+      'b': {
+        'range': '26-50',
+        'position': 1,
+        'color': '#19b459'
+      },
+      'c': {
+        'range': '51-75',
+        'position': 2,
+        'color': '#8dce46'
+      },
+      'd': {
+        'range': '76-100',
+        'position': 3,
+        'color': '#ffd500'
+      },
+      'e': {
+        'range': '101-125',
+        'position': 4.3,
+        'color': '#fcaa65'
+      },
+      'f': {
+        'range': '126-150',
+        'position': 5.2,
+        color: '#ef8023'
+      },
+      'g': {
+        'range': '150+',
+        'position': 6.2,
+        'color': '#e9153b'
+      }
+    }
+
+    score_bands = {
+      'a-score': {
+        'position': 0,
+        'color': '#67A687'
+      },
+      'b-score': {
+        'position': 1,
+        'color': '#72CA8B'
+      },
+      'c-score': {
+        'position': 2,
+        'color': '#b4df86'
+      },
+      'd-score': {
+        'position': 3,
+        'color': '#ffe666'
+      },
+      'e-score': {
+        'position': 4.3,
+        'color': '#fdc79b'
+      },
+      'f-score': {
+        'position': 5.2,
+        'color': '#f4ac71'
+      },
+      'g-score': {
+        'position': 6.2,
+        'color': '#f2738a'
+      }
+    }
+
+  %>
+
+  <style>
+    .letter {
+      font-size: 40px;
+      font-family: sans-serif;
+      fill: 	#0b0c0c;
+      font-weight: bold;
+    }
+
+    .current-band {
+      font-size: 1.1875rem;
+      font-family: sans-serif;
+      fill: 	#fefefe;
+      font-weight: bold;
+    }
+
+    .small {
+      font-size: 13px;
+      font-family: sans-serif;
+      fill: 	#0b0c0c;
+      line-height: 50px;
+      margin-top: 100px;
+      font-weight: bold;
+    }
+
+    .typical {
+      font-size: 16px;
+      font-family: sans-serif;
+      fill: 	#0b0c0c;
+      line-height: 50px;
+      margin-top: 100px;
+    }
+
+    <% bands.each do |key, settings| %>
+    .band-<%= key %>{
+      fill: <%= settings[:color] %>
+    }
+    <% end %>
+    <% score_bands.each do |key, settings| %>
+    .band-<%= key %>{
+      fill: <%= settings[:color] %>
+    }
+    <% end %>
+  </style>
+
+  <svg x="0" y="0" width="100" height="40">
+    <rect width="100" height="40" class="band-<%= energy_efficiency_band %>" x="25"></rect>
+    <polygon points="0,20 25,40 25,0 0,20" class="band-<%= energy_efficiency_band %>"></polygon>
+    <text x="60%" y="50%" dominant-baseline="middle" text-anchor="middle" class="current-band">
+      <tspan><%= energy_efficiency_rating %> | </tspan>
+      <tspan class="govuk-!-font-weight-bold"><%= energy_efficiency_band.upcase %> </tspan>
+    </text>
+  </svg>
+</svg>

@@ -464,9 +464,16 @@
                               <%=Date.parse(previous_rating[:date]).strftime("%B %Y")%>
                             </th>
                             <td class="govuk-table__cell--numeric">
-                              <div class="arrow band-<%= previous_rating[:energyEfficiencyBand] %>">
-                                <%= previous_rating[:energyEfficiencyRating] %> | <%= previous_rating[:energyEfficiencyBand].upcase %>
-                              </div>
+                              <img
+                                class="energy-rating-arrow"
+                                alt="<%= t('dec.sections.rating.svg_title', energy_efficiency_band: assessment[:energyEfficiencyBand], energy_efficiency_rating: assessment[:energyEfficiencyRating]) %>"
+                                src="data:image/svg+xml;base64,<%== Base64.encode64(erb :printable_dec__svg_arrow, locals: {
+                                  title: t('dec.sections.rating.svg_title', energy_efficiency_band: assessment[:energyEfficiencyBand], energy_efficiency_rating: assessment[:energyEfficiencyRating]),
+                                  energy_efficiency_band: previous_rating[:energyEfficiencyBand],
+                                  energy_efficiency_rating: previous_rating[:energyEfficiencyRating],
+                                  show_on_non_print: true
+                                }) %>"
+                                />
                             </td>
                           </tr>
                         <% end %>
