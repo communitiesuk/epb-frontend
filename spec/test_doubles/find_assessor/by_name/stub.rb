@@ -44,7 +44,7 @@ module FindAssessor
                   "firstName": "Name",
                   "lastName": "Uno",
                   "contactDetails": {
-                    "telephoneNumber": "string", "email": "user@example.com"
+                    "telephoneNumber": "string", "email": "User@eXample.com"
                   },
                   "searchResultsComparisonPostcode": "SW1A 1AA",
                   "registeredBy": { "schemeId": "472", "name": "ECMK" },

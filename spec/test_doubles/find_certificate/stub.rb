@@ -58,7 +58,7 @@ module FindCertificate
                   "providerDetails": {
                     "name": "The Bank",
                     "telephone": "0800 0000000",
-                    "email": "lender@example.com",
+                    "email": "Lender@Example.com",
                   },
                   "interest": { "rate": 12.3, "fixed": true },
                   "chargeUplift": { "amount": 1.25, "date": "2025-03-29" },

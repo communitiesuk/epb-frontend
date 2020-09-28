@@ -32,7 +32,7 @@
           case type
           when "email"
             %>
-              <a class="govuk-link" href="mailto:<%= value %>"><%= value %></a>
+              <a class="govuk-link" href="mailto:<%= value.downcase %>"><%= value.downcase %></a>
             <%
           when "details"
             %>
