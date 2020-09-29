@@ -434,6 +434,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
 
       it "does not show the Simple Energy Advice text" do
         expect(response.body).not_to have_css "p", text: "For advice on how to reduce your energy bills visit Simple Energy Advice."
+        expect(response.body).not_to have_link "Simple Energy Advice has guidance on improving a property’s energy use.", href: "https://www.simpleenergyadvice.org.uk/"
       end
     end
 

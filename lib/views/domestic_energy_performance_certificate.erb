@@ -189,7 +189,10 @@
       </div>
       <% if assessment[:recommendedImprovements].empty? %>
         <p class="govuk-body "><%= t('domestic_epc.sections.recommendations.summary.no_recommendations_summary') %></p>
-        <a class="govuk-body" href=" <%= t('domestic_epc.sections.recommendations.summary.simple_energy_link') %>"><%= t('domestic_epc.sections.recommendations.summary.simple_energy_text') %></a>
+
+        <% unless assessment[:postcode][0..1] == "BT" %>
+          <a class="govuk-body" href="<%= t('domestic_epc.sections.recommendations.summary.simple_energy_link') %>"><%= t('domestic_epc.sections.recommendations.summary.simple_energy_text') %></a>
+        <% end %>
       <% else %>
         <p class="govuk-body"><%= t('domestic_epc.sections.recommendations.summary.make_changes_text') %></p>
         <p class="govuk-body">
