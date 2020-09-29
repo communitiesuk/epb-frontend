@@ -21,7 +21,10 @@
 
     <p class="govuk-body"><%= t('domestic_epc.sections.heat-demand.costs_and_savings') %></p>
     <p class="govuk-body"><%== t('domestic_epc.sections.heat-demand.based_on', :link => '<a class="govuk-link" href="' + t('domestic_epc.sections.heat-demand.based_on_url') + '">' + t('domestic_epc.sections.heat-demand.based_on_cta') + '</a>') %></p>
-    <p class="govuk-body"><%== t('domestic_epc.sections.heat-demand.more_advice', :link => '<a class="govuk-link" href="' + t('domestic_epc.sections.heat-demand.more_advice_url') + '">' + t('domestic_epc.sections.heat-demand.more_advice_cta') + '</a>') %></p>
+
+    <% unless assessment[:postcode][0..1] == "BT" %>
+      <p class="govuk-body"><%== t('domestic_epc.sections.heat-demand.more_advice', :link => '<a class="govuk-link" href="' + t('domestic_epc.sections.heat-demand.more_advice_url') + '">' + t('domestic_epc.sections.heat-demand.more_advice_cta') + '</a>') %></p>
+    <% end %>
   <% end %>
 
   <h3 class="govuk-heading-m"><%= t('domestic_epc.sections.heat-demand.heating_in_property') %></h3>
