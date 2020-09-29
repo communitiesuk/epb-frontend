@@ -147,6 +147,10 @@
   .light-font {
     font-weight: 300;
   }
+
+  .carbon-emissions-tr {
+    line-height: 0.6rem;
+  }
 </style>
 
 <a
@@ -358,7 +362,7 @@
                     <p class="govuk-body"><%= t('dec.sections.co2.explanation') %></p>
                     <table class="border-bottom numerical">
                       <thead>
-                        <tr>
+                        <tr class="carbon-emissions-tr">
                           <th><%= t('dec.sections.co2.col.date') %></th>
                           <th><%= t('dec.sections.co2.col.electricity') %></th>
                           <th><%= t('dec.sections.co2.col.heating') %></th>
@@ -368,7 +372,7 @@
                       <tbody>
                         <% [assessment[:currentAssessment], assessment[:year1Assessment], assessment[:year2Assessment]].each do |previous_rating| %>
                           <% next if previous_rating[:date].nil? %>
-                          <tr>
+                          <tr class="carbon-emissions-tr">
                             <th>
                               <%= Date.parse(previous_rating[:date]).strftime("%B %Y") %>
                             </th>
