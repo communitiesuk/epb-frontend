@@ -428,17 +428,28 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       end
 
       it "shows the average rating text" do
-        expect(response.body).to have_css "p", text: "The average energy rating and score for a property in Northern Ireland is D (60)."
-        expect(response.body).not_to have_css "p", text: "The average energy rating and score for a property in England and Wales are D (60)."
+        expect(response.body).to have_css "p",
+                                          text:
+                                            "The average energy rating and score for a property in Northern Ireland is D (60)."
+        expect(response.body).not_to have_css "p",
+                                              text:
+                                                "The average energy rating and score for a property in England and Wales are D (60)."
       end
 
       it "does not show the Simple Energy Advice text" do
-        expect(response.body).not_to have_css "p", text: "For advice on how to reduce your energy bills visit Simple Energy Advice."
-        expect(response.body).not_to have_link "Simple Energy Advice has guidance on improving a property’s energy use.", href: "https://www.simpleenergyadvice.org.uk/"
+        expect(response.body).not_to have_css "p",
+                                              text:
+                                                "For advice on how to reduce your energy bills visit Simple Energy Advice."
+        expect(
+          response.body,
+        ).not_to have_link "Simple Energy Advice has guidance on improving a property’s energy use.",
+                           href: "https://www.simpleenergyadvice.org.uk/"
       end
 
       it "does not show the RHI text" do
-        expect(response.body).not_to have_css "p", text: "You might be able to receive Renewable Heat Incentive payments. This will help to reduce carbon emissions by replacing your existing heating system with one that generates renewable heat. The estimated energy required for space and water heating will form the basis of the payments."
+        expect(response.body).not_to have_css "p",
+                                              text:
+                                                "You might be able to receive Renewable Heat Incentive payments. This will help to reduce carbon emissions by replacing your existing heating system with one that generates renewable heat. The estimated energy required for space and water heating will form the basis of the payments."
       end
     end
 
