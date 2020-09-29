@@ -160,7 +160,12 @@
       <p class="govuk-body govuk-!-margin-top-6"><%= t('domestic_epc.sections.epc.body1') %></p>
       <p class="govuk-body govuk-!-margin-top-6"><%= t('domestic_epc.sections.epc.body2') %></p>
       <p class="govuk-body govuk-!-margin-top-6"><%= t('domestic_epc.sections.epc.body3') %></p>
-      <p class="govuk-body govuk-!-margin-top-6"><%= t('domestic_epc.sections.epc.body4') %></p>
+
+      <% if assessment[:postcode][0..1] == "BT" %>
+        <p class="govuk-body govuk-!-margin-top-6"><%=  t('domestic_epc.sections.epc.ni_average_rating')  %></p>
+      <%  else  %>
+        <p class="govuk-body govuk-!-margin-top-6"><%=  t('domestic_epc.sections.epc.body4')  %></p>
+      <%  end %>
     </div>
 
     <%== erb :domestic_energy_performance_certificate__energy_performance_breakdown, locals: {

@@ -420,10 +420,16 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       end
 
       let(:response) { get "/energy-certificate/123-123" }
+
       it "shows a warning text" do
         expect(response.body).to_not include(
           "You may not be able to let this property",
         )
+      end
+
+      it "shows the average rating text" do
+        expect(response.body).to have_css "p", text: "The average energy rating and score for a property in Northern Ireland is D (60)."
+        expect(response.body).not_to have_css "p", text: "The average energy rating and score for a property in England and Wales are D (60)."
       end
     end
 
