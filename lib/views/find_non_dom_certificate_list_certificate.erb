@@ -28,7 +28,7 @@
           <% end %>
         </td>
         <td class="govuk-table__cell">
-          <% results[:certificates].each do |result| %>
+          <% results[:certificates].sort_by { |h| h[:typeOfAssessment] }.each do |result| %>
             <% expire = Date.parse(result[:dateOfExpiry]) < Date.today %>
             <span class="<%== ( expire ? 'govuk-!-font-weight-bold expired-text' : "") %>">
               <%= date(result[:dateOfExpiry]) %> <%= expire ? t('find_certificate_results.expired') : '' %>
