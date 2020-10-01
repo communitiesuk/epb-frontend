@@ -4,6 +4,6 @@
     t('ac_report.sections.inspection_certificate.title')
   %></h2>
   <p class="govuk-body">
-      <a href=<%= "../energy-certificate/#{assessment[:relatedRrn]}" %>> <%= t('ac_report.sections.inspection_certificate.text') %></a>
+      <a href="<%= localised_url("/energy-certificate/#{assessment[:relatedRrn]}") %>"> <%= t('ac_report.sections.inspection_certificate.text') %></a>
   </p>
 </div>
