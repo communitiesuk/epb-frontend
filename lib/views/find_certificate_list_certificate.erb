@@ -13,7 +13,7 @@
       %>
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">
-            <a class="govuk-link" href="/energy-certificate/<%= result[:assessmentId] %>">
+            <a class="govuk-link" href="<%= localised_url("/energy-certificate/" + result[:assessmentId]) %>">
               <%= compact_address(
                     [results[:addressLine1], results[:addressLine2]],
                     results[:town],
