@@ -35,7 +35,8 @@ module UseCase
               )
             elsif Date.parse(other_cert[:dateOfExpiry]) ==
                 Date.parse(certificate[:dateOfExpiry])
-              if Date.parse(other_cert[:dateOfAssessment]) < Date.parse(certificate[:dateOfAssessment])
+              if Date.parse(other_cert[:dateOfAssessment]) <
+                  Date.parse(certificate[:dateOfAssessment])
                 filtered_certificates[address_id][:certificates].delete(
                   other_cert,
                 )
