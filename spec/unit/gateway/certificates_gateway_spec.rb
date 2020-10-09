@@ -14,7 +14,7 @@ describe Gateway::CertificatesGateway do
     before { FindCertificate::Stub.search_by_postcode("SW1A 2AA") }
 
     it "checks the number of certificates returned from the api" do
-      expect(response[:data][:assessments].count).to eq(3)
+      expect(response[:data][:assessments].count).to eq(4)
     end
 
     it "checks the shape of the object passed in the certificate object" do
