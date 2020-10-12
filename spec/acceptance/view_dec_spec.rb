@@ -271,7 +271,9 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
     context "when there is no Asset Rating" do
       before do
         FetchAssessmentSummary::AssessmentStub.fetch_dec(
-          assessment_id: "0000-0000-0000-0000-1111", date_of_expiry: "2030-02-21", asset_rating: nil,
+          assessment_id: "0000-0000-0000-0000-1111",
+          date_of_expiry: "2030-02-21",
+          asset_rating: nil,
         )
       end
 
