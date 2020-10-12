@@ -38,11 +38,13 @@
           numerical: true,
           value: assessment[:heatDemand][:currentSpaceHeatingDemand],
           suffix: " " + t('domestic_epc.sections.heat-demand.kwh_per_year'),
+          print: true,
         },
         "water_heating": {
           numerical: true,
           value: assessment[:heatDemand][:currentWaterHeatingDemand],
           suffix: " " + t('domestic_epc.sections.heat-demand.kwh_per_year'),
+          print: true,
         }
       },
       translation_prefix: 'domestic_epc.sections.heat-demand.',
