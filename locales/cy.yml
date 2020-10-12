@@ -1175,6 +1175,7 @@ cy:
         annual_energy_use: 'Welsh: Annual energy use (kWh/m2/year)'
         typical_energy_use: 'Welsh: Typical energy use (kWh/m2/year)'
         energy_from_renewables: 'Welsh: Energy from renewables'
+        na: "Welsh: Not applicable"
       administrative_information:
         title: 'Welsh: Administrative information'
         print_title: 'Welsh: Assessment details'

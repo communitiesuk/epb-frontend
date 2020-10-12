@@ -807,7 +807,8 @@ module FetchAssessmentSummary
           assessmentType: "CEPC-RR",
         },
       ],
-      related_party: nil
+      related_party: nil,
+      asset_rating: "1"
     )
       body = {
         data: {
@@ -852,7 +853,7 @@ module FetchAssessmentSummary
             mainHeatingFuel: "Natural Gas",
             buildingEnvironment: "Heating and Natural Ventilation",
             floorArea: "99",
-            assetRating: "1",
+            assetRating: asset_rating,
             annualEnergyUseFuelThermal: "11",
             annualEnergyUseElectrical: "12",
             typicalThermalUse: "13",

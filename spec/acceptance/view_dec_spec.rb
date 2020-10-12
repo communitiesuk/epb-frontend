@@ -267,5 +267,18 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
                                           text: "There are no related certificates for this property."
       end
     end
+
+    context "when there is no Asset Rating" do
+      before do
+        FetchAssessmentSummary::AssessmentStub.fetch_dec(
+          assessment_id: "0000-0000-0000-0000-1111", date_of_expiry: "2030-02-21", asset_rating: nil,
+        )
+      end
+
+      it "shows Not applicable" do
+        expect(response.body).to have_css "dt", text: "Asset rating"
+        expect(response.body).to have_css "dd", text: "1"
+      end
+    end
   end
 end

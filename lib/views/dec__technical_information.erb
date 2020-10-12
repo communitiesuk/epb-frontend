@@ -6,7 +6,7 @@
       "heating_fuel": assessment[:technicalInformation][:mainHeatingFuel],
       "building_environment": assessment[:technicalInformation][:buildingEnvironment],
       "floor_area": [assessment[:technicalInformation][:floorArea], t('unit.square_metres')].join(" "),
-      "asset_rating": assessment[:technicalInformation][:assetRating],
+      "asset_rating": assessment[:technicalInformation][:assetRating].nil? ? t('dec.sections.technical_information.na') : assessment[:technicalInformation][:assetRating],
     },
     translation_prefix: 'dec.sections.technical_information.',
     skip_null: true
