@@ -63,14 +63,15 @@ module FetchAssessmentSummary
           },
           inspection: {
             airRecirculation: {
-              note: "The condenser was considered suitably located.",
+              note: "",
               state: true,
+              guidance: "No recommendation required.",
             },
             chillerPlacementOk: {
-              note: "The condenser is considered suitably located.", state: true
+              note: "The condenser is considered suitably located.", state: true, guidance: "No recommendation required."
             },
             chillerPlantAreaClear: {
-              note: "Area appeared clear and satisfactory.", state: true
+              note: "Area appeared clear and satisfactory.", state: true, guidance: ""
             },
             chillerPlantOk: {
               note: "General condition of the plant appeared satisfactory.",

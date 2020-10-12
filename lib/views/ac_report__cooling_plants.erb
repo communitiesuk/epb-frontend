@@ -43,16 +43,23 @@
       <% key = t('ac_report.sections.cooling_plants.cooling_plant.inspection.' + inspection_key.to_s) %>
       <% body = t('ac_report.sections.cooling_plants.cooling_plant.inspection.' + (inspection_data[:state] ? "positive": "negative")) %>
       <% result = { key: key, body: body } %>
-      <% unless inspection_data[:note].nil? %>
+
+      <% unless inspection_data[:note].nil? || inspection_data[:note].empty? %>
         <% result[:note] = inspection_data[:note] %>
       <% end %>
+
+      <% unless inspection_data[:guidance].nil? || inspection_data[:guidance].empty? %>
+        <% result[:guidance] = inspection_data[:guidance] %>
+      <% end %>
+
       <% ordered_cooling_plants << result %>
     <% end %>
 
     <% ordered_cooling_plants.sort_by!{ |h| h[:key] }.each do |c_plant| %>
       <h5 class="govuk-heading-s govuk-!-margin-bottom-0"><%= c_plant[:key] %></h5>
       <p class="govuk-body"><%= c_plant[:body] %></p>
-      <p class="govuk-body"><%= c_plant[:note] %></p>
+      <% if c_plant[:note] %><p class="govuk-body"><%= c_plant[:note] %></p><% end %>
+      <% if c_plant[:guidance] %><p class="govuk-body"><%= c_plant[:guidance] %></p><% end %>
     <% end %>
 
     <h4 class="govuk-heading-s"><%= t('ac_report.sections.cooling_plants.cooling_plant.sizing.title') %></h4>

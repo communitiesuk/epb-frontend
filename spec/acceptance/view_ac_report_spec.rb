@@ -241,8 +241,8 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
                                         text:
                                           "Is the insulation on circulation pipe work well fitted and in good order?"
       expect(response.body).to have_css "p",
-                                        text: "The condenser was considered suitably located."
-
+                                        text: "The condenser is considered suitably located."
+      expect(response.body).to have_css "p", text: "No recommendation required."
       expect(response.body).to have_css "dt",
                                         text: "Installed Cooling Capacity (kW)"
       expect(response.body).to have_css "dd", text: "10.0"
