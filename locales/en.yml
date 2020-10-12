@@ -1573,7 +1573,7 @@ en:
               location: "Location of Cooling Plant"
               manufacturer: "Manufacturer"
               model_reference: "Model/Reference"
-              refrigerant_charge: "Rated Cooling Capacity (kW)"
+              refrigerant_charge: "Refrigerant Charge (kg)"
               refrigerant_type: "Refrigerant Type"
               serial_number: "Serial Number"
               year_installed: "Year Plant Installed"
