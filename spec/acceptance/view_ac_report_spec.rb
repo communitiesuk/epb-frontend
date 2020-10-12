@@ -220,8 +220,7 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
       expect(response.body).to have_css "dd", text: "Mitsubishi"
       expect(response.body).to have_css "dt", text: "Model/Reference"
       expect(response.body).to have_css "dd", text: "FDC100VN"
-      expect(response.body).to have_css "dt",
-                                        text: "Refrigerant Charge (kg)"
+      expect(response.body).to have_css "dt", text: "Refrigerant Charge (kg)"
       expect(response.body).to have_css "dd", text: "3"
       expect(response.body).to have_css "dt", text: "Serial Number"
       expect(response.body).to have_css "dd", text: "not visible"
