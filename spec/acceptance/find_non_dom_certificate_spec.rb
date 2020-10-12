@@ -287,7 +287,7 @@ describe "Acceptance::Non Domestic Certificate" do
           FindCertificate::Stub.search_by_street_name_and_town(
             "1 Makeup Street",
             "Beauty Town",
-            %w[DEC DEC-RR CEPC CEPC-RR],
+            %w[AC-CERT AC-REPORT DEC DEC-RR CEPC CEPC-RR],
             "CEPC",
           )
         end
@@ -336,7 +336,7 @@ describe "Acceptance::Non Domestic Certificate" do
           FindCertificate::NoCertificatesStub.search_by_street_name_and_town(
             "3 Alien Street",
             "Mars",
-            %w[DEC DEC-RR CEPC CEPC-RR],
+            %w[AC-CERT AC-REPORT DEC DEC-RR CEPC CEPC-RR],
           )
         end
 

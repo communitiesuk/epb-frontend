@@ -336,7 +336,7 @@ class FrontendService < Sinatra::Base
           ).execute(
             params["street_name"],
             params["town"],
-            %w[DEC DEC-RR CEPC CEPC-RR],
+            %w[AC-CERT AC-REPORT DEC DEC-RR CEPC CEPC-RR],
           )[
             :data
           ][
