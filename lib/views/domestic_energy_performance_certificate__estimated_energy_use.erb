@@ -8,11 +8,13 @@
           numerical: true,
           prefix: "£",
           value: assessment[:estimatedEnergyCost].chomp(".00"),
+          print: true,
         },
         "three_year_saving": {
           numerical: true,
           prefix: "£",
           value: assessment[:potentialEnergySaving].chomp(".00"),
+          print: true,
         }
       },
       translation_prefix: 'domestic_epc.sections.heat-demand.',
