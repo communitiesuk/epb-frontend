@@ -33,6 +33,7 @@ module Sinatra
 
       def remove_special_characters(input)
         input.sub!("?", "£")
+        input
       end
 
       def setup_locales
