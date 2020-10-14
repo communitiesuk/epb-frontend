@@ -32,7 +32,7 @@ module Sinatra
       end
 
       def remove_special_characters(input)
-        input.sub!("?", "£")
+        input.gsub!("?", "£")
         input
       end
 
