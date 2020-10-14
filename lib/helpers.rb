@@ -31,6 +31,10 @@ module Sinatra
         end
       end
 
+      def remove_special_characters(input)
+        input.sub!("?", "£")
+      end
+
       def setup_locales
         I18n.load_path = Dir[File.join(settings.root, "/../locales", "*.yml")]
         I18n.enforce_available_locales = true

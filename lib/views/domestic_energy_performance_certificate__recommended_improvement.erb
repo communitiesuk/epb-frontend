@@ -13,7 +13,7 @@
     %></dt>
     <dd class="govuk-summary-list__value govuk-!-width-one-half" style="text-align: right">
       <% if recommendation[:indicativeCost].nil? || recommendation[:indicativeCost].empty? ? (indicative_cost_result = 'Information unavailable') : (indicative_cost_result = recommendation[:indicativeCost]) %>
-        <%= indicative_cost_result %>
+        <%= remove_special_characters(indicative_cost_result) %>
       <% end %>
     </dd>
   </div>
