@@ -1,1414 +1,1605 @@
 cy:
-  validation_errors:
-    postcode_error: 'Welsh: Enter a real postcode'
-
   related_content:
-    title: 'Welsh: Related content'
+    title: "Cynnwys perthynol"
     guidance_on_epc:
-      title: 'Welsh: Guidance on EPCs when buying or selling your home'
-      url: 'https://www.gov.uk/buy-sell-your-home/energy-performance-certificates'
+      title: "Canllawiau ar EPCs wrth brynu neu werthu'ch cartref"
+      url: "https://www.gov.uk/buy-sell-your-home/energy-performance-certificates"
     epc_exemptions:
-      title: 'Welsh: EPC exemptions for business properties'
-      url: 'https://www.gov.uk/energy-performance-certificate-commercial-property/exemptions'
+      title: "Esemptiadau rhag EPCs i eiddo busnesau"
+      url: "https://www.gov.uk/energy-performance-certificate-commercial-property/exemptions"
     what_need_decs:
-      title: 'Welsh: Guidance on which properties need a DEC'
-      url: 'https://www.gov.uk/check-energy-performance-public-building'
+      title: "Canllawiau ar ba adeiladau sydd angen DEC"
+      url: "https://www.gov.uk/check-energy-performance-public-building"
     air_con_required:
-      title: 'Welsh: When air conditioning system inspections are required'
-      url: 'https://www.gov.uk/get-your-air-conditioning-system-inspected'
+      title: "Pryd mae angen i systemau aerdymheru gael eu harchwilio"
+      url: "https://www.gov.uk/get-your-air-conditioning-system-inspected"
   layout:
     head:
-      title: 'Welsh: Energy performance of buildings register'
+      title: "Cofrestr perfformiad ynni adeiladau"
     body:
-      service_name: 'Welsh: Energy Performance of Buildings Register'
-      skip: 'Welsh: Skip to main content'
-      govuk: 'Welsh: GOV.UK'
+      service_name: "Cofrestr Perfformiad Ynni Adeiladau"
+      skip: "Sgipiwch i'r prif gynnwys"
+      govuk: "GOV.UK"
       beta:
-        heading: 'Welsh: beta'
-        description: 'Welsh: This is a new service – your <a class="govuk-link" href="https://forms.office.com/Pages/ResponsePage.aspx?id=EGg0v32c3kOociSi7zmVqPbdKK1xB5FPizueLd4cs19UQVdISTJKQTNPSUtON0pPUDYzWFMyVEVIWC4u">feedback</a> will help us to improve it.'
+        heading: beta
+        description: "Gwasanaeth newydd yw hwn a bydd eich adborth yn ein helpu i'w wella."
       breadcrumb:
-        home: 'Welsh: Home'
-        epbr: 'Welsh: Energy performance of buildings register'
-        back: 'Welsh: Back'
+        home: Hafan
+        epbr: "Cofrestr perfformiad ynni adeiladau"
+        back: "Yn ôl"
       footer:
-        heading: 'Welsh: Support links'
-        license: 'Welsh: All content is available under the <a class="govuk-footer__link" href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated'
-        copyright: 'Welsh: <a class="govuk-footer__link govuk-footer__copyright-logo" href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/">&copy; Crown copyright</a>'
-
+        heading: "Dolenni cymorth"
+        license: "Mae'r cynnwys i gyd ar gael o dan y <a class=\"govuk-footer__link\" href=\"https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/\" rel=\"license\">Drwydded Llywodraeth Agored v3.0</a>,  ac eithrio lle nodir fel arall."
+        copyright: "<a class=\"govuk-footer__link govuk-footer__copyright-logo\" href=\"https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/\">&copy; Crown copyright</a>"
   contact:
-    help_desk_number: '01632 164 6672'
-
+    help_desk_number: "020 3829 0748"
   find_an_assessor:
     head:
-      title: 'Welsh: Energy performance of buildings register - Getting a new energy certificate'
-    top_heading: 'Welsh: Getting a new energy certificate'
+      title: "Cofrestr perfformiad ynni adeiladau - Sicrhau tystysgrif ynni newydd"
+    top_heading: "Sicrhau tystysgrif ynni newydd"
     introduction:
-      what_you_need: 'Welsh: You need to book a property assessment to get a new:'
-      epc: 'energy performance certificate (EPC)'
-      dec: 'display energy certificate (DEC) for a public building'
-      ac: 'air conditioning inspection certificate and report'
-      cost: 'Welsh: The cost of an assessment varies by assessor and the size of the property.'
-      england_wales_northern_ireland: 'Use this service to find a qualified assessor in England, Wales or Northern Ireland.'
+      what_you_need: "Mae angen ichi drefnu asesiad eiddo er mwyn sicrhau:"
+      epc: "tystysgrif perfformiad ynni (EPC) newydd"
+      dec: "tystysgrif ynni arddangos (DEC) newydd i adeilad cyhoeddus"
+      ac: "tystysgrif ac adroddiad newydd ar archwiliad aerdymheru"
+      england_wales_northern_ireland: "Defnyddiwch y gwasanaeth hwn i ddod o hyd i asesydd cymwysedig yng Nghymru, Lloegr neu Ogledd Iwerddon"
+      cost: "Mae cost asesiad yn amrywio yn ôl yr asesydd ac yn ôl maint yr eiddo"
     buildings_not_epc:
-      cta: 'Welsh: Buildings that don’t need an EPC'
-      intro: 'Welsh: Properties do not need an EPC if they are:'
-      list: 'Welsh: places of worship|temporary buildings that will be used for less than 2 years|stand-alone buildings with total useful floor space of less than 50 square metres|industrial sites, workshops and non-residential agricultural buildings that don’t use a lot of energy|some buildings that are due to be demolished|holiday accommodation that’s rented out for less than 4 months a year or is let under a licence to occupy|listed buildings - you should get advice from your local authority conservation officer if the work would alter the building’s character|residential buildings intended to be used less than 4 months a year'
-    cta: 'Welsh: Start now'
+      cta: "Adeiladau nad oes angen EPC ar eu cyfer"
+      intro: "Does dim angen EPC ar gyfer eiddo os yw'r eiddo:"
+      list: "yn fan addoli|adeilad dros dro a ddefnyddir am lai na dwy flynedd | adeilad annibynnol ac iddo arwynebedd defnyddiadwy sy'n gyfanswm o lai na 50 metr sgwâr|safle diwydiannol, gweithdai ac adeiladau amaethyddol amhreswyl nad ydynt yn defnyddio llawer o ynni |rhai adeiladau sydd i fod i afael eu dymchwel|llety gwyliau sy'n cael ei rentu allan am lai na 4 mis y flwyddyn neu sy'n cael ei osod o dan drwydded i'w feddiannu|adeiladau rhestredig - dylech sicrhau cyngor gan swyddog cadwraeth eich awdurdod lleol os byddai'r gwaith yn newid cymeriad yr adeilad|adeiladau preswyl sydd wedi'u bwriadu i i gael eu defnyddio am lai na 4 mis y flwyddyn"
+    cta: "Dechrau nawr"
     before_you_start:
-      heading: 'Welsh: Before you start'
+      heading: "Cyn ichi ddechrau"
       switch_language:
-        description: 'Welsh: This service is also available in %{link}.'
-        link: 'Welsh: English (English)'
-        url: '/find-an-assessor?lang=en'
-      phone_text: 'Welsh: If you need additional support to find an assessor, call our helpdesk on %{link} (Monday to Friday, 9am - 5pm).'
-      phone_number: '0233 788 1234'
+        description: "Mae'r gwasanaeth hwn ar gael hefyd mewn %{link}."
+        link: "Saesneg (English)"
+        url: "?lang=en"
+      contact:
+        text: "Os oes arnoch angen rhagor o gymorth i ddod o hyd i asesydd, cysylltwch â ni ar %{link}, neu ffoniwch ein desg gymorth ar 020 3829 0748 (dydd Llun i ddydd Gwener, 9am - 5pm)."
+        link: "mailto:mhclg.digital-services@communities.gov.uk?subject=EPB - "
+        cta: "mhclg.digital-services@communities.gov.uk"
       scotland:
-        description: 'Welsh: For properties in Scotland, use the %{link}'
-        link: 'Welsh: Scottish government’s energy certificate service'
+        description: "Ar gyfer eiddo yn yr Alban, defnyddiwch %{link}."
+        link: "Wasanaeth tystysgrifau ynni yr Alban"
+      commercial:
+        description: "Ar gyfer adeiladau masnachol neu gyhoeddus, defnyddiwch y gwasanaeth %{link}."
+        link: "chwiliwch am asesydd annomestig"
       existing_epc:
-        description: 'Welsh: To check if a property has an existing EPC, use the %{link} service.'
-        link: 'Welsh: find an EPC for a domestic property'
+        description: "Fe allwch chi"
+        link: "wirio a oes gan yr eiddo dystysgrif ynni ddilys yn barod"
     property_type:
-      question_title: "Welsh: What type of property is the certificate for?"
+      question_title: "Tystysgrif i ba fath o eiddo yw hi?"
       options:
         domestic:
-          title: "Welsh: A domestic property"
-          hint: "Welsh: For example a house or flat"
+          title: "Eiddo domestig"
+          hint: "Er enghraifft tŷ neu fflat"
         non_domestic:
-          title: "Welsh: A non-domestic property"
-          hint: "Welsh: For example a commercial, industrial or public building"
-      cta: "Welsh: Continue"
+          title: "Eiddo annomestig"
+          hint: "Er enghraifft adeilad masnachol, diwydiannol neu gyhoeddus."
+      cta: Parhau
   schemes:
     head:
-      title: 'Welsh: Energy performance of buildings register - Contact an energy assessor accreditation scheme'
-    top_heading: 'Welsh: Contact an energy assessor accreditation scheme'
-    description: 'Welsh: The following schemes license energy assessors to assess properties and create energy certificates'
-    contact: 'Welsh: You should contact a scheme if you need to contact someone about an assessor'
-    unaccredited: 'Welsh: is no longer accredited.'
+      title: "Cofrestr perfformiad ynni adeiladau - Cysylltwch â chynllun achredu aseswyr ynni"
+    top_heading: "Cysylltwch â chynllun achredu aseswyr ynni"
+    description: "Mae'r cynlluniau a ganlyn yn trwyddedu aseswyr ynni i asesu eiddo a chreu tystysgrifau ynni"
+    contact: "Dylech gysylltu â chynllun os oes angen ichi gysylltu â rhywun ynghylch asesydd"
+    unaccredited: "heb ei achredu mwyach"
     contact_details:
-      text: 'Welsh: Contact details for %{scheme_name}:'
-      email: 'Welsh: Email:'
-      telephone: 'Welsh: Telephone:'
+      text: "Manylion cysylltu ar gyfer %{scheme_name}:"
+      email: "Ebost:"
+      telephone: "Ffôn:"
     list:
-      heading: 'Welsh: Energy assessment accreditation schemes'
-      cta: 'Welsh: Go to website'
-      commercial: 'Welsh: Commercial <br />properties only'
+      heading: "Cynlluniau achredu aseswyr ynni"
+      cta: "Ewch i'r wefan"
+      commercial: "Eiddo masnachol yn unig"
       cibse:
-        name: 'CIBSE'
-        phone: '020 8772 3649'
-        email: 'epc@cibsecertification.org'
-        url: 'https://www.cibsecertification.co.uk'
+        name: "CIBSE Certification Limited"
+        phone: "020 8772 3649"
+        email: "epc@cibsecertification.org"
+        url: "https://www.cibsecertification.co.uk"
       ecmk:
-        name: 'ECMK'
-        phone: '0333 123 1418'
-        email: 'info@ecmk.co.uk'
-        url: 'https://www.ecmk.co.uk'
+        name: ECMK
+        phone: "0333 123 1418"
+        email: "info@ecmk.co.uk"
+        url: "https://www.ecmk.co.uk"
       elmhurst:
-        name: 'Elmhurst Energy'
-        phone: '01455 883 250'
-        email: 'enquiries@elmhurstenergy.co.uk'
-        url: 'https://www.elmhurstenergy.co.uk'
+        name: "Elmhurst Energy Systems Ltd"
+        phone: "01455 883 250"
+        email: "enquiries@elmhurstenergy.co.uk"
+        url: "https://www.elmhurstenergy.co.uk"
       sterling:
-        name: 'Sterling'
-        phone: '0161 727 4303'
-        email: 'info@sterlingaccreditaiton.com'
-        url: 'http://www.sterlingaccreditation.com'
+        name: "Sterling Accreditation Ltd"
+        phone: "0161 727 4303"
+        email: "info@sterlingaccreditaiton.com"
+        url: "http://www.sterlingaccreditation.com"
       stroma:
-        name: 'Stroma'
-        phone: '0845 621 11 11'
-        email: 'certification@stroma.com'
-        url: 'https://www.stroma.com/certification'
+        name: "Stroma Certification Ltd"
+        phone: "0330 124 9660"
+        email: "certification@stroma.com"
+        url: "https://www.stroma.com/certification"
       quidos:
-        name: 'Quidos'
-        phone: '01225 667 570'
-        email: 'info@quidos.co.uk'
-        url: 'https://quidos.co.uk'
+        name: "Quidos Limited"
+        phone: "01225 667 570"
+        email: "info@quidos.co.uk"
+        url: "https://quidos.co.uk"
       bre:
-        name: 'BRE'
-        phone: ''
-        email: ''
-        url: ''
+        name: BRE
+        phone: "01455 883 250"
+        email: "enquiries@elmhurstenergy.co.uk"
+        url: "https://www.elmhurstenergy.co.uk"
       besca:
-        name: 'BESCA'
-        phone: ''
-        email: ''
-        url: ''
+        name: BESCA
+        phone: "020 3829 0748"
+        email: "mhclg.digital-services@communities.gov.uk"
+        url: ""
       ciat:
-        name: 'CIAT'
-        phone: ''
-        email: ''
-        url: ''
+        name: CIAT
+        phone: "020 3829 0748"
+        email: "mhclg.digital-services@communities.gov.uk"
+        url: ""
       hvca:
-        name: 'HVCA'
-        phone: ''
-        email: ''
-        url: ''
+        name: HVCA
+        phone: "020 3829 0748"
+        email: "mhclg.digital-services@communities.gov.uk"
+        url: ""
       knauf:
-        name: 'Knauf Insulation'
-        phone: ''
-        email: ''
-        url: ''
+        name: "Knauf Insulation"
+        phone: "020 3829 0748"
+        email: "mhclg.digital-services@communities.gov.uk"
+        url: ""
       napit:
-        name: 'NAPIT'
-        phone: ''
-        email: ''
-        url: ''
+        name: NAPIT
+        phone: "020 3829 0748"
+        email: "mhclg.digital-services@communities.gov.uk"
+        url: ""
       nher:
-        name: 'NHER'
-        phone: ''
-        email: ''
-        url: ''
+        name: NHER
+        phone: "01455 883 250"
+        email: "enquiries@elmhurstenergy.co.uk"
+        url: "https://www.elmhurstenergy.co.uk"
       national:
-        name: 'National Energy Services'
-        phone: ''
-        email: ''
-        url: ''
+        name: "National Energy Services"
+        phone: "01455 883 250"
+        email: "enquiries@elmhurstenergy.co.uk"
+        url: "https://www.elmhurstenergy.co.uk"
       northgate:
-        name: 'Northgate'
-        phone: ''
-        email: ''
-        url: ''
+        name: Northgate
+        phone: "01455 883 250"
+        email: "enquiries@elmhurstenergy.co.uk"
+        url: "https://www.elmhurstenergy.co.uk"
       rics:
-        name: 'RICS'
-        phone: ''
-        email: ''
-        url: ''
+        name: RICS
+        phone: "020 3829 0748"
+        email: "mhclg.digital-services@communities.gov.uk"
+        url: ""
       sava:
-        name: 'SAVA'
-        phone: ''
-        email: ''
-        url: ''
-
+        name: SAVA
+        phone: "01455 883 250"
+        email: "enquiries@elmhurstenergy.co.uk"
+        url: "https://www.elmhurstenergy.co.uk"
   find_assessor_by_postcode:
     head:
-      title: 'Welsh: Energy performance of buildings register - Find an energy assessor'
-    top_heading: 'Welsh: Find an assessor by postcode'
+      title: "Cofrestr perfformiad ynni adeiladau - Chwiliwch am asesydd ynni"
+    top_heading: "Chwiliwch am asesydd yn ôl cod post"
     assessor_by_name:
-      title: 'Welsh: Search by name'
-      body: 'Welsh: If you know the name of an assessor and want to check their details, you can %{link}.'
-      cta: 'Welsh: find an assessor by name'
-    question: 'Welsh: Enter the postcode of the property'
-    hint: 'Welsh: For example SW1A 2AA'
-    button_text: 'Welsh: Find'
+      title: "Chwiliwch yn ôl enw'r asesydd"
+      body: "Os ydych yn gwybod enw asesydd a'ch bod chi am wirio'i fanylion, gallwch chi %{link}."
+      cta: "chwilio am asesydd yn ôl enw"
+    question: "Rhowch god post yr eiddo"
+    hint: "Er enghraifft SW1A 2AA"
+    postcode_error: "Rhowch god post go iawn"
+    postcode_not_valid: "Rhowch god post sydd wedi'i ffurfio'n gywir"
+    postcode_not_registered: "Allwn ni ddim dod o hyd i'r cod post hwn. Gwiriwch y cod post a'i roi unwaith eto."
+    button_text: Chwiliwch
     scheme_not_found:
-      heading: 'Welsh: Accreditation scheme not found'
-      body: 'Welsh: There is no scheme for one of the requested assessor'
-
+      heading: "Y cynllun achredu heb ei ganfod"
+      body: "Does dim cynllun ar gyfer yr asesydd y gofynnwyd amdano"
   find_non_domestic_assessor_by_postcode:
     head:
-      title: 'Welsh: Energy performance of buildings register - Find a non-domestic energy assessor'
-    top_heading: 'Welsh: Find a non-domestic assessor to get a new EPC'
-
+      title: "Cofrestr perfformiad ynni adeiladau - Chwiliwch am asesydd ynni annomestig"
+    top_heading: "Chwiliwch am asesydd yn ôl cod post"
   find_non_domestic_assessor_by_postcode_results:
-    top_heading: 'Welsh: Contact a non-domestic assessor to book an EPC assessment'
+    top_heading: "Cysylltwch ag asesydd i drefnu asesiad ynni"
     qualification:
-      title: 'Welsh: Qualification'
-      domesticSap: 'Welsh: Standard Assessment Procedure (SAP)'
-      domesticRdSap: 'Welsh: Reduced Data Standard Assessment Procedure (RdSAP)'
-      nonDomesticSp3: 'Welsh: Air Conditioning Simple Packaged (Level 3)'
-      nonDomesticCc4: 'Welsh: Air Conditioning Complexed Central (Level 4)'
-      nonDomesticDec: 'Welsh: Display Energy Certificate (DEC)'
-      nonDomesticNos3: 'Welsh: Non-Domestic Energy Assessor (Level 3)'
-      nonDomesticNos4: 'Welsh: Non-Domestic Energy Assessor (Level 4)'
-      nonDomesticNos5: 'Welsh: Non-Domestic Energy Assessor (Level 5)'
-      gda: 'Welsh: Green Deal Assessor'
-
+      title: Cymwysterau
+      domesticSap: "Gweithdrefn Asesu Safonol (SAP)"
+      domesticRdSap: "Gweithdrefn Asesu Safonol â Llai o Ddata (RdSAP)"
+      nonDomesticSp3: "Aerdymheru Syml wedi'i Becynnu (Lefel 3)"
+      nonDomesticCc4: "Aerdymheru Canolog Cymhleth (Lefel 4)"
+      nonDomesticDec: "Tystysgrif Ynni i'w Harddangos (DEC)"
+      nonDomesticNos3: "Asesydd Ynni Annomestig (Lefel 3)"
+      nonDomesticNos4: "Asesydd Ynni Annomestig (Lefel 4)"
+      nonDomesticNos5: "Asesydd Ynni Annomestig (Lefel 5)"
+      gda: "Asesydd Bargen Werdd"
   find_assessor_by_postcode_results:
     head:
-      title: 'Welsh: Energy performance of buildings register - Results for energy assessors near you'
-    top_heading: 'Welsh: Contact an assessor to book an EPC assessment'
-    description: 'Welsh: Contact an assessor listed below to book an energy assessment.'
-    no_assessors_heading: 'Welsh: No results for %{postcode}'
-    no_assessors_1: 'Welsh: We did not find any assessors for %{postcode}.'
-    no_assessors_2: 'Welsh: Check the postcode is correct and enter it again, or try searching for another nearby postcode.'
-    postcode_finder: 'Welsh: Find a postcode on Royal Mail’s postcode finder'
-    accreditation_summary_title: 'Welsh: More information'
-    accreditation_summary_text: 'Welsh: Accreditation schemes are appointed by the government to ensure that assessors are qualified to carry out EPC assessments.<br /><br />If you are unhappy about an EPC assessment, you can complain to the assessor directly. If you are still unhappy, you should contact your assessor’s accreditation scheme.'
-    results: 'Welsh: %{quantity} assessors in order of distance from %{postcode}'
+      title: "Cofrestr perfformiad ynni adeiladau - Canlyniadau ar gyfer aseswyr yn eich ardal chi"
+    top_heading: "Cysylltwch ag asesydd i drefnu asesiad ynni"
+    description: "Cysylltwch ag asesydd sydd wedi'i restru isod i drefnu asesiad ynni."
+    no_assessors: "Does dim aseswyr yn eich ardal chi ar hyn o bryd."
+    accreditation_summary_title: "Rhagor o wybodaeth"
+    accreditation_summary_text: "Mae cynlluniau achredu'n cael eu penodi gan y llywodraeth i sicrhau bod gan aseswyr gymwysterau i wneud asesiadau EPC.<br /><br />Os ydych yn anfodlon ar asesiad EPC, gallwch gwyno i'r asesydd yn uniongyrchol. Os ydych yn dal yn anfodlon, dylech gysylltu â chynllun achredu'ch asesydd."
+    results: "aseswyr yn nhrefn eu pellter o"
     distance:
-      heading: 'Welsh: Distance'
-      default_miles_away_text: 'Welsh: Less than 1 mile away'
-      miles_away_text: 'Welsh: miles away'
+      heading: Pellter
+      default_miles_away_text: "Llai na milltir i fwrdd"
+      miles_away_text: "milltiroedd i ffwrdd"
     contact_details:
-      email: 'Welsh: Email'
-      telephone: 'Welsh: Telephone'
-    accredited_id: 'Welsh: Assessor ID'
-    accredited_scheme: 'Welsh: Accreditation scheme'
-    assessor_id_text: 'Welsh: assessor ID'
-
+      email: Ebost
+      telephone: "Ffôn"
+    accredited_id: "ID yr Asesydd"
+    accredited_scheme: "Cynllun achredu"
+    assessor_id_text: "ID yr Asesydd"
   find_assessor_by_name:
     head:
-      title: 'Welsh: Energy performance of buildings register - Find an energy assessor'
-    top_heading: 'Welsh: Find an assessor by name'
-    question: "Enter the assessor's full name"
-    hint: 'Welsh: For example Matt Anderson'
-    name_error: 'Welsh: Enter the assessor’s full name, including their first name and last name'
-    button_text: 'Welsh: Search'
-    too_many_results: 'Welsh: There are too many results for that name. Please narrow your search term.'
-
+      title: "Cofrestr perfformiad ynni adeiladau - Chwiliwch am asesydd ynni"
+    top_heading: "Chwiliwch am asesydd yn ôl enw"
+    question: "Rhowch enw cyntaf ac enw olaf yr asesydd"
+    hint: "Er enghraifft Matt Anderson"
+    name_error: "Rhowch enw cyntaf ac enw olaf yr asesydd"
+    button_text: Chwiliwch
+    too_many_results: "Mae gormod o ganlyniadau ar gyfer yr enw hwnnw. Chwiliwch yn fwy cul."
   find_assessor_by_name_results:
     head:
-      title: 'Welsh: Energy performance of buildings register - Results for energy assessors'
-    description: 'Welsh: See what assessors are accredited by the name you searched for.'
-    no_assessors: 'Welsh: There are no assessors with this name.'
-    accreditation_summary_title: 'Welsh: Accreditation schemes and complaints'
-    accreditation_summary_text: 'Welsh: Accreditation schemes are appointed by the government to ensure that assessors are qualified to carry out energy assessments and to create EPCs.<br /><br />If you’re unhappy about an energy assessment or EPC, you can complain to the assessor directly. If you’re still unhappy, you should contact your assessor’s accreditation scheme.'
+      title: "Cofrestr perfformiad ynni adeiladau - Canlyniadau ar gyfer aseswyr ynni"
+    top_heading: "Cysylltwch ag asesydd i drefnu asesiad ynni"
+    description: "Gweld pa aseswyr sydd wedi'u hachredu o dan yr enw rydych chi'n chwilio amdano"
+    no_assessors: "Does dim aseswyr â'r enw hwnnw"
+    accreditation_summary_title: "Cynlluniau achredu a chwynion"
+    accreditation_summary_text: "Mae cynlluniau achredu'n cael eu penodi gan y llywodraeth i sicrhau bod gan aseswyr gymwysterau i wneud asesiadau EPC.<br /><br />Os ydych yn anfodlon ar asesiad EPC, gallwch gwyno i'r asesydd yn uniongyrchol. Os ydych yn dal yn anfodlon, dylech gysylltu â chynllun achredu'ch asesydd."
     results:
-      results: 'Welsh: %{quantity} results for the name %{name}'
-      results_like: 'Welsh: %{quantity} results, similar to the name %{name}'
-    contact_details_text: 'Welsh: Contact details'
-    accredited_by_text: 'Welsh: Accreditation scheme'
-    assessor_id_text: 'Welsh: assessor ID'
-
+      results: "canlyniadau ar gyfer yr enw"
+      results_like: "canlyniadau, yn debyg i'r enw"
+    contact_details_text: "Manylion cysylltu"
+    accredited_by_text: "Cynllun achredu"
+    assessor_id_text: "ID yr Asesydd"
   find_a_certificate:
     head:
-      title: 'Welsh: Energy performance of buildings register - Find an energy assessor for a residential property'
-    top_heading: 'Welsh: Find an energy certificate'
+      title: "Cofrestr perfformiad ynni adeiladau - Chwiliwch am asesydd ynni ar gyfer eiddo preswyl"
+    top_heading: "Chwiliwch am dystysgrif ynni"
     service:
-      introduction: 'Welsh: Use this service to find energy certificates and recommendation reports for properties in England, Wales and Northern Ireland.'
-      this_includes: 'Welsh: This includes:'
-      epc: 'Welsh: energy performance certificates (EPCs)'
-      dec: 'Welsh: display energy certificates (DECs) for public buildings'
-      air_con_cert_report: 'Welsh: air conditioning inspection certificates and reports'
-    cta: 'Welsh: Start now'
+      introduction: "Defnyddiwch y gwasanaeth hwn i chwilio am dystysgrifau ynni ac adroddiadau ar argymhellion ar gyfer eiddo yng Nghymru, Lloegr a Gogledd Iwerddon."
+      this_includes: "Mae hyn yn cynnwys:"
+      epc: "tystysgrifau perfformiad ynni (EPCs)"
+      dec: "tystysgrifau ynni i'w harddangos (DECs) i adeiladau cyhoeddus"
+      air_con_cert_report: "tystysgrifau ac adroddiadau ar archwiliadau systemau aerdymheru"
+    cta: "Dechreuwch nawr"
     before_you_start:
-      title: 'Welsh: Before you start'
+      title: "Cyn ichi ddechrau"
       switch_language:
-        description: 'Welsh: This service is also available in %{link}.'
-        link: 'Welsh: English (English)'
-        url: '/find-a-certificate?lang=en'
+        description: "Mae'r gwasanaeth hwn ar gael hefyd mewn"
+        link: "Saesneg (English)"
+        url: "?lang=en"
       scotland:
-        text: 'Welsh: For properties in Scotland, use the %{link}.'
-        cta: "Scottish government's EPC service"
+        text: "Ar gyfer eiddo yn yr Alban, defnyddiwch %{link}."
+        cta: "Wasanaeth tystysgrifau ynni yr Alban"
       property_guidance:
-        description: 'Welsh: If your property does not have an energy certificate or the certificate is expired, you can %{link}.'
-        link: 'Welsh: get a new energy certificate.'
-        url:  '/find-an-assessor'
+        description: "Os nad oes gan eich eiddo dystysgrif ynni neu os yw'r dystysgrif wedi dod i ben, fe allwch chi"
+        link: "sicrhau tystysgrif ynni newydd"
+        url: "/chwilio-am-asesydd"
       commercial:
-        url: '/find-a-non-domestic-certificate'
-        cta: 'Welsh: find a non-domestic EPC'
-      call_center: 'Welsh: If you need additional support to find an EPC, call our helpdesk on 0233 788 1234 (Monday to Friday, 9am - 5pm).'
+        url: "/chwilio-am-dystysgrif annomestig"
+        cta: "chwilio am EPC annomestig"
+      call_center: "Os oes arnoch angen rhagor o gymorth i chwilio am dystysgrif ynni neu adroddiad, ffoniwch ein desg gymorth ar 020 3829 0748 (dydd Llun i ddydd Gwener, 9am - 5pm)."
+      contact:
+        text: "Os oes arnoch angen rhagor o gymorth i chwilio am dystysgrif ynni neu adroddiad, cysylltwch â ni ar %{link}, neu ffoniwch ein desg gymorth ar 020 3829 0748 (dydd Llun i ddydd Gwener, 9am - 5pm)."
+        link: "mailto:mhclg.digital-services@communities.gov.uk?subject=EPB - "
+        cta: "mhclg.digital-services@communities.gov.uk"
     property_type:
-      question_title: "Welsh: What type of property is the certificate for?"
+      question_title: "Tystysgrif i ba fath o eiddo yw hi?"
       options:
         domestic:
-          title: "Welsh: A domestic property"
-          hint: "Welsh: For example a house or flat"
+          title: "Eiddo domestig"
+          hint: "Er enghraifft tŷ neu fflat"
         non_domestic:
-          title: "Welsh: A non-domestic property"
-          hint: "Welsh: For example a commercial, industrial or public building"
-      cta: "Welsh: Continue"
-
+          title: "Eiddo annomestig"
+          hint: "Er enghraifft adeilad masnachol, diwydiannol neu gyhoeddus"
+      cta: Parhau
   find_certificate_by_postcode:
     head:
-      title: 'Welsh: Energy performance of buildings register - Find an energy performance certificate'
-    top_heading: 'Welsh: Search for an EPC by postcode'
-    question: 'Welsh: Enter the postcode'
-    button_text: 'Welsh: Find'
-    hint: 'Welsh: For example SW1A 2AA'
+      title: "Cofrestr perfformiad ynni adeiladau - Chwiliwch am dystysgrif perfformiad ynni"
+    top_heading: "Chwiliwch am dystysgrif perfformiad ynni yn ôl cod post"
+    question: "Rhowch god post yr eiddo"
+    postcode_not_valid: "Rhowch god post go iawn"
+    button_text: Chwiliwch
+    hint: "Er enghraifft SW1A 2AA"
     certificate_by_street_name_and_town:
-      heading: 'Welsh: Search by street and town'
-      body: "If you do not know the property's postcode, %{link}."
-      cta: 'Welsh: find an EPC using the street name and town'
+      heading: "Chwiliwch yn ôl y stryd a'r dref"
+      body: "Os nad ydych yn gwybod cod post yr eiddo"
+      cta: "chwiliwch am EPC drwy ddefnyddio enw'r stryd a'r dref"
     certificate_by_reference_number:
-      heading: 'Welsh: Search by reference number'
-      body: 'Welsh: Use %{link} if you know your certificate number and want to validate it.'
-      cta: 'Welsh: find certificate by reference number'
+      heading: "Chwiliwch yn ôl rhif y dystysgrif"
+      body: "Fe allwch chi"
+      cta: "chwilio am EPC drwy ddefnyddio rhif y dystysgrif"
     no_network:
-      heading: 'Welsh: Network connection failed'
-      body: 'Welsh: There is an internal network error'
-
+      heading: "Cysylltiad â'r rhwydwaith wedi methu"
+      body: "Mae yna wall rhwydwaith mewnol"
   find_certificate_results:
     table:
-      address: 'Welsh: Address'
-      rating: 'Welsh: Energy rating'
-      expiry: 'Welsh: Expiry date'
-    expired: 'Welsh: (expired)'
-
+      address: Cyfeiriad
+      rating: "Cyfraddiad ynni"
+      expiry: "Dyddiad y daw i ben"
+    expired: "(wedi dod i ben)"
   find_non_dom_certificate_results:
     table:
-      address: 'Welsh: Address'
-      type: 'Welsh: Certificate and report type'
-      expiry: 'Welsh: Expiry date'
-    expired: 'Welsh: (expired)'
-
+      address: Cyfeiriad
+      type: "Y math o dystysgrif ac adroddiad"
+      expiry: "Dyddiad y daw i ben"
+    expired: "(wedi dod i ben)"
   find_certificate_by_postcode_results:
     head:
-      title: 'Welsh: Energy performance of buildings register - Results for energy performance certificates at your postcode'
-    top_heading: 'Welsh: Find an Energy Performance Certificate for a building'
-    list: 'Welsh: 1-%{length} of %{length} results matching %{postcode}'
+      title: "Cofrestr perfformiad ynni adeiladau - Canlyniadau ar gyfer tystysgrifau perfformiad ynni yn eich cod post chi"
+    top_heading: "Chwiliwch am dystysgrif perfformiad ynni (EPC)"
+    no_epc:
+      get_a_new_one: "Os nad oes gan eich eiddo chi EPC neu os yw wedi dod i ben, fe allwch chi"
+      get_a_new_one_link: "sicrhau tystysgrif ynni newydd"
+    list: "%{length} EPCs ar gyfer %{postcode}"
     table:
-      address: 'Welsh: Address'
-      rating: 'Welsh: Energy rating'
-      expiry: 'Welsh: Expiry date'
-    no_certificates: 'Welsh: There are no certificates matching that postcode.'
-
+      address: Cyfeiriad
+      rating: "Cyfraddiad ynni"
+      expiry: "Dyddiad y daw i ben"
+    no_certificates: "Does dim tystysgrifau'n cyfateb i'r cod post hwnnw"
   find_certificate_by_reference_number:
     head:
-      title: 'Welsh: Energy performance of buildings register - Find an energy performance certificate'
-    top_heading: 'Welsh: Search for an EPC by reference number'
-    question: 'Welsh: Enter a reference number'
-    reference_number_not_registered: 'Welsh: A certificate was not found with this reference number'
-    reference_number_not_valid: 'Welsh: Enter a 20-digit reference number'
-    button_text: 'Welsh: Find'
-    hint: 'Welsh: For example 9002-3775-9101-5482-3149'
+      title: "Cofrestr perfformiad ynni adeiladau - Chwiliwch am dystysgrif perfformiad ynni"
+    top_heading: "Chwiliwch am dystysgrif perfformiad ynni (EPC) yn ôl rhif y dystysgrif"
+    question: "Rhowch rif tystysgrif"
+    reference_number_not_registered: "Does dim tystysgrif wedi'i chanfod â'r rhif tystysgrif hwn"
+    reference_number_not_valid: "Rhowch rif tystysgrif 20-digid"
+    button_text: Chwiliwch
+    hint: "Er enghraifft 9002-3775-9101-5482-3149"
     no_network:
-      heading: 'Welsh: Network connection failed'
-      body: 'Welsh: There is an internal network error'
-
+      heading: "Cysylltiad â'r rhwydwaith wedi methu"
+      body: "Mae yna wall rhwydwaith mewnol"
   find_certificate_by_reference_number_results:
     head:
-      title: 'Welsh: Energy performance of buildings register - Results for energy performance certificates by reference number'
-    top_heading: 'Welsh: Find an Energy Performance Certificate for a building'
-    list: 'Welsh: 1-%{length} of %{length} results matching %{reference_number}'
+      title: "Cofrestr perfformiad ynni adeiladau - Canlyniadau ar gyfer tystysgrif perfformiad ynni yn ôl rhif y dystysgrif"
+    top_heading: "Chwiliwch am dystysgrif perfformiad ynni (EPC)"
+    list: "1-%{length} o %{length} o ganlyniadau yn cyfateb i %{reference_number}"
     table:
-      address: 'Welsh: Address'
-      rating: 'Welsh: Energy rating'
-      expiry: 'Welsh: Expiry date'
-    no_certificates: 'Welsh: There are no certificates matching that EPC Reference Number.'
-
+      address: Cyfeiriad
+      rating: "Cyfraddiad ynni"
+      expiry: "Dyddiad y daw i ben"
+    no_certificates: "Does dim tystysgrifau'n cyfateb i'r rhif tystysgrif EPC hwnnw"
   find_certificate_by_street_name_and_town:
     head:
-      title: 'Welsh: Energy performance of buildings register - Find an energy performance certificate'
-    top_heading: 'Welsh: Find an EPC by street and town'
+      title: "Cofrestr perfformiad ynni adeiladau - Chwiliwch am dystysgrif perfformiad ynni"
+    top_heading: "Chwiliwch am dystysgrif perfformiad ynni (EPC) yn ôl y stryd a'r dref"
     no_such_address:
-      error: 'Welsh: A certificate was not found at this address.'
-      body: 'Welsh: If you need to get an EPC for your property, please use the %{link} service'
-      cta: 'Welsh: Find an assessor'
-    button_text: 'Welsh: Find'
-    street_name_question: 'Welsh: Enter the street'
-    street_name_hint: 'Welsh: For example Primrose Street'
-    town_question: 'Welsh: Enter the town'
-    town_hint: 'Welsh: For example Bournemouth'
-    street_name_missing: 'Welsh: Enter the street name'
-    town_missing: 'Welsh: Enter the town'
+      error: "Methwyd â dod o hyd i dystysgrif yn y cyfeiriad hwn"
+      body: "Os oes angen ichi gael EPC ar gyfer eich eiddo, defnyddiwch y gwasanaeth %{link}"
+      cta: "Chwiliwch am asesydd"
+    button_text: Chwiliwch
+    street_name_question: "Rhowch y stryd"
+    street_name_hint: "Er enghraifft Primrose Street"
+    town_question: "Rhowch y dref neu'r ddinas"
+    town_hint: "Er enghraifft Bournemouth"
+    street_name_missing: "Rhowch enw'r stryd"
+    town_missing: "Rhowch y dref neu'r ddinas"
     no_network:
-      heading: 'Welsh: Network connection failed'
-      body: 'Welsh: There is an internal network error'
-
+      heading: "Cysylltiad â'r rhwydwaith wedi methu"
+      body: "Mae yna wall rhwydwaith mewnol"
   find_non_dom_certificate_by_street_name_and_town:
     head:
-      title: 'Energy performance of buildings register - Find a non domestic certificate'
-    top_heading: 'Find energy certificates and reports by street and town'
+      title: "Cofrestr perfformiad ynni adeiladau - Chwiliwch am dystysgrif annomestig"
+    top_heading: "Chwiliwch am dystysgrifau ynni ac adroddiadau yn ôl y stryd a'r dref"
     no_such_address:
-      error: 'A certificate was not found at this address.'
-      body: 'If you need to get an EPC for your property, please use the %{link} service'
-      cta: 'Find an assessor for a non-domestic property'
-    button_text: 'Find'
-    street_name_question: 'Welsh: Enter the street'
-    street_name_hint: 'For example Primrose Street'
-    town_question: 'Enter the town'
-    town_hint: 'For example Bournemouth'
-    street_name_missing: 'Welsh: Enter the street'
-    town_missing: 'Enter the town'
+      error: "Methwyd â dod o hyd i dystysgrif yn y cyfeiriad hwn"
+      body: "Os oes angen ichi gael EPC ar gyfer eich eiddo, defnyddiwch y gwasanaeth %{link}"
+      cta: "Chwiliwch am asesydd ar gyfer eiddo annomestig"
+    button_text: Chwiliwch
+    street_name_question: "Rhowch y stryd"
+    street_name_hint: "Er enghraifft Primrose Street"
+    town_question: "Rhowch y dref neu'r ddinas"
+    town_hint: "Er enghraifft Bournemouth"
+    street_name_missing: "Rhowch enw'r stryd"
+    town_missing: "Rhowch y dref neu'r ddinas"
     no_network:
-      heading: 'Network connection failed'
-      body: 'There is an internal network error'
-
+      heading: "Cysylltiad â'r rhwydwaith wedi methu"
+      body: "Mae yna wall rhwydwaith mewnol"
   find_certificate_by_street_name_and_town_results:
     head:
-      title: 'Welsh: Energy performance of buildings register - Results for energy performance certificates by reference number'
-    top_heading: 'Welsh: Find an Energy Performance Certificate for a building'
-    list: 'Welsh: 1-%{length} of %{length} results matching %{query}'
+      title: "Cofrestr perfformiad ynni adeiladau - Canlyniadau ar gyfer tystysgrifau perfformiad ynni yn ôl rhif y dystysgrif"
+    top_heading: "Chwiliwch am dystysgrif perfformiad ynni (EPC)"
+    list: "1-%{length} o %{length} o ganlyniadau yn cyfateb i %{query}"
     table:
-      address: 'Welsh: Address'
-      rating: 'Welsh: Energy rating'
-      expiry: 'Welsh: Expiry date'
-    no_certificates: 'Welsh: There are no certificates matching that EPC Reference Number.'
-
+      address: Cyfeiriad
+      rating: "Cyfraddiad ynni"
+      expiry: "Dyddiad y daw i ben"
+    no_certificates: "Does dim tystysgrifau'n cyfateb i'r rhif tystysgrif EPC hwnnw"
   find_non_dom_certificate_by_street_name_and_town_results:
     head:
-      title: 'Energy performance of buildings register - Results for non domestic certificates'
-    top_heading: 'Find an energy certificate or report for a building'
-    list: '1-%{length} of %{length} results matching %{query}'
+      title: "Cofrestr perfformiad ynni adeiladau - Canlyniadau ar gyfer tystysgrifau annomestig"
+    top_heading: "Chwiliwch am dystysgrifau ynni ac adroddiadau"
+    list: "%{length} o dystysgrifau ac adroddiadau ar gyfer %{query}"
     table:
-      address: 'Address'
-      rating: 'Energy rating'
-      expiry: 'Expiry date'
-    no_certificates: 'There are no certificates matching that address.'
-
-  find_non_dom_certificate:
-    top_heading: 'Welsh: Find an energy certificate or report for a non-domestic property'
-    service:
-      introduction: 'Welsh: Use this service to find energy certificates and reports for non-domestic properties in England, Wales and Northern Ireland.'
-      what_is_non_dom: 'Welsh: Non-domestic properties are commercial and public properties.'
-      what_non_dom_info_is_available:  'For non-domestic properties, you can view their:'
-      epc_rr: 'Welsh: Energy Performance Certificate (EPC) and Recommendation Report (EPC-RR)'
-      dec_rr: 'Welsh: Display Energy Certificate (DEC) and Recommendation Report (DEC-RR)'
-      ac: 'Welsh: Air Conditioning Inspection Report (AC-REPORT) and Certificate (AC-CERT)'
-    switch_language:
-      description: 'Welsh: This service is also available in %{link}.'
-      link: 'Welsh: Welsh (Cymraeg)'
-      url: 'lang=en'
-    cta: 'Welsh: Start now'
-    before_you_start:
-      heading: 'Welsh: Before you start'
-      additional_support: 'Welsh: If you need additional support to find an energy certificate or report, call our helpdesk on 0233 788 1234 (Monday to Friday, 9am - 5pm).'
-      scotland:
-        description: 'Welsh: For non-domestic properties in Scotland, use the %{link}'
-        link: 'Welsh: Scottish government''s EPC and DEC service.'
-    check_if_epc_needed:
-      intro: 'Welsh: To check if your property needs a certificate or report, read:'
-      epc: 'Welsh: the EPC exemptions for business properties'
-      dec: 'Welsh: which properties need a DEC'
-      ac: 'Welsh: when air conditioning system inspections are required'
-    related_content:
-      heading: 'Welsh: Related content'
-      find_a_non-domestic_assessor_link: 'Welsh: Getting a new energy certificate or report for a non-domestic property'
-      find_a_certificate_link: 'Welsh: Find an EPC for a domestic property'
-
+      address: Cyfeiriad
+      rating: "Cyfraddiad ynni"
+      expiry: "Dyddiad y daw i ben"
+    no_certificates: "Does dim tystysgrifau'n cyfateb i'r cyfeiriad hwnnw"
   find_non_dom_certificate_by_postcode:
     head:
-      title: 'Welsh: Energy performance of buildings register - Find energy certificates and reports by postcode'
-    top_heading: 'Welsh: Find energy certificates and reports by postcode'
-    question: 'Welsh: Enter a postcode'
-    button_text: 'Welsh: Find'
-    hint: 'Welsh: For example SW1A 2AA'
+      title: "Cofrestr perfformiad ynni adeiladau - Chwiliwch am dystysgrifau ynni ac adroddiadau yn ôl cod post"
+    top_heading: "Chwiliwch am dystysgrifau ynni ac adroddiadau yn ôl cod post"
+    question: "Rhowch god post yr eiddo"
+    postcode_not_valid: "Rhowch god post go iawn"
+    button_text: Chwiliwch
+    hint: "Er enghraifft SW1A 2AA"
     no_network:
-      heading: 'Welsh: Network connection failed'
-      body: 'Welsh: There is an internal network error'
+      heading: "Cysylltiad â'r rhwydwaith wedi methu"
+      body: "Mae yna wall rhwydwaith mewnol"
     certificate_by_street_name_and_town:
-      heading: 'Welsh: Search by street and town'
-      body: "Welsh: If you do not know the property's postcode, %{link}."
-      cta: 'Welsh: find an EPC using the street name and town'
-
+      heading: "Chwiliwch yn ôl y stryd a'r dref"
+      body: "Os nad ydych yn gwybod cod post yr eiddo, %{link}."
+      cta: "chwiliwch am dystysgrifau perfformiad ynni drwy ddefnyddio enw'r stryd a'r dref"
+    certificate_by_reference_number:
+      heading: "Chwiliwch yn ôl rhif y dystysgrif"
+      body: "Fe allwch chi %{link}."
+      cta: "chwilio am dystysgrif drwy ddefnyddio'i rhif tystysgrif"
   find_non_dom_certificate_by_postcode_results:
     head:
-      title: 'Welsh: Energy performance of buildings register - Results for energy performance certificates and reports at your postcode'
-    top_heading: 'Welsh: Find energy certificates and reports'
-    no_certificates: 'Welsh: There are no certificates or reports matching that postcode.'
-    list: 'Welsh: %{length} certificates and reports for %{postcode}'
-
+      title: "Cofrestr perfformiad ynni adeiladau - Canlyniadau ar gyfer tystysgrifau perfformiad ynni ac adroddiadau yn eich cod post chi"
+    top_heading: "Chwiliwch am dystysgrifau ynni ac adroddiadau"
+    no_epc:
+      get_a_new_one: "Os nad oes gan eich eiddo dystysgrif angenrheidiol neu os yw'r dystysgrif wedi dod i ben, fe allwch chi"
+      get_a_new_one_link: "sicrhau tystysgrif ynni newydd"
+    no_certificates: "Does dim tystysgrifau nac adroddiadau yn cyfateb i'r cod post hwnnw"
+    list: "%{length} o dystysgrifau ac adroddiadau ar gyfer %{postcode}"
+  find_non_dom_certificate_by_reference_number:
+    head:
+      title: "Cofrestr perfformiad ynni adeiladau - Chwiliwch am dystysgrif perfformiad ynni"
+    top_heading: "Chwiliwch am dystysgrifau ynni ac adroddiadau yn ôl eu rhif"
+    question: "Rhowch rif tystysgrif neu adroddiad"
+    reference_number_not_registered: "Methwyd â dod o hyd i dystysgrif â'r rhif hwn"
+    reference_number_not_valid: "Rhowch rif tystysgrif 20-digid"
+    button_text: Chwiliwch
+    hint: "Er enghraifft 9002-3775-9101-5482-3149"
+    no_network:
+      heading: "Cysylltiad â'r rhwydwaith wedi methu"
+      body: "Mae yna wall rhwydwaith mewnol"
+  find_non_dom_certificate_by_reference_number_results:
+    head:
+      title: "Cofrestr perfformiad ynni adeiladau - Canlyniadau ar gyfer tystysgrifau ynni ac adroddiadau yn cyfateb i dystysgrif rhif"
+    top_heading: "Chwiliwch am dystysgrifau ynni ac adroddiadau"
+    no_certificates: "Does dim tystysgrifau nac adroddiadau'n cyfateb i'r rhif tystysgrif hwnnw"
+    list: "%{length} o dystysgrifau ac adroddiadau ar gyfer %{reference_number}"
   component:
+    print_certificate: "Argraffwch y dystysgrif hon"
+    print_certificate_noscript: "I argraffu'r dystysgrif hon, pwyswch CMD/CTRL + P ar eich bysellfwrdd"
     print:
-      label: 'Welsh: Print this %{type}'
-      noscript_text: 'Welsh: To print this %{type}, press CMD/CTRL + P on your keyboard'
+      label: "Argraffwch y %{type} yma"
+      noscript_text: "I argraffu'r %{type} yma, pwyswch CMD/CTRL + P ar eich bysellfwrdd"
       type:
-        report: 'report'
-        certificate: 'certificate'
-    epc_summary:
-      title: "Energy Rating"
-      date_of_expiry: "Valid until %{date_of_expiry}"
-      certificate_id: "Certificate Number"
-      property_info:
-        'Welsh: This property is a %{property_type} and has a total floor area of %{total_floor_area} square metres.'
-    related:
-      title: 'Welsh: Other %{type}s for this property'
-      certificates:
-        title: 'Welsh: Other certificates for this property'
-        text: 'Welsh: If you are aware of previous certificates for this property and they are not listed here, please contact the Help Desk at 01632 164 6672.'
-        no_related_certificates: 'Welsh: There are no related certificates for this property.'
-      reports:
-        title: 'Welsh: Other reports for this property'
-        text: 'Welsh: If you are aware of previous reports for this property and they are not listed here, please contact the Help Desk at %{contact_centre_number}.'
-        no_related_reports: 'Welsh: There are no related reports for this property.'
-      reference_number: 'Welsh: Reference number'
-      valid_until: 'Welsh: Valid until'
-      expired: 'Welsh: Expired'
-    recommendations:
-      title: 'Welsh: Recommendations'
-      text: 'Welsh: The assessment found opportunities to improve the building’s energy efficiency.'
-      recommended_improvements_text: 'Welsh: Recommended improvements are grouped by the estimated time it would take for the change to pay for itself. The assessor may also make additional recommendations.'
-      description: 'Welsh: Each recommendation is marked as low, medium or high for the potential impact the change would have on reducing the building’s carbon emissions.'
-      table:
-        three_years_heading: 'Welsh: Changes that pay for themselves within 3 years'
-        three_to_seven_years_heading: 'Welsh: Changes that pay for themselves within 3 to 7 years'
-        more_than_seven_years_heading: 'Welsh: Changes that pay for themselves in more than 7 years'
-        additional_heading: 'Welsh: Additional recommendations'
-        recommendation_heading: 'Welsh: Recommendation'
-        potential_impact_heading: 'Welsh: Potential impact'
-
-  unit:
-    kilogram: 'Welsh: kg'
-    kilowatt: 'Welsh: kW'
-    kilowatt_hour: 'Welsh: kW h'
-    square_metres: 'Welsh: square metres'
-
-  non_domestic_epc:
-    top_heading: 'Welsh: Non-domestic Energy Performance Certificate'
-    energy_rating_section:
-      title: 'Welsh: Energy efficiency rating for this building'
-      current_rating_text: 'Welsh: This building’s current energy rating is %{current_energy_efficiency_band}.'
-      rating_desc: 'Welsh: Buildings are given a rating from A+ (most efficient) to G (least efficient).'
-      score_desc: 'Welsh: Buildings are also given a score. The larger the number, the more expensive your fuel bills are likely to be.'
-      svg:
-        aria-label: "Welsh: This building’s energy rating is %{current_energy_efficiency_band} (%{current_energy_efficiency_rating})"
-    sections:
-      summary:
-        property_info: 'Welsh: This property is a %{property_type} and has a total floor area of %{total_floor_area} square metres.'
-      renting:
-        title: 'Welsh: Rules on letting this property'
-        rental_info:
-          body_1: 'Welsh: Properties can be let if they have an energy rating of A+ to E.'
-          body_2: 'Welsh: If a property has an energy rating of F or G, the landlord cannot grant a tenancy to new or existing tenants, unless an exemption has been registered.'
-          summary: 'Welsh: From 1 April 2023, landlords will not be allowed to continue letting a non-domestic property on an existing lease if that property has an energy rating of F or G.'
-          guidance_text: 'Welsh: You can read %{link}.'
-          cta: 'Welsh: guidance for landlords on the regulations and exemptions'
-          url: 'https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/824018/Non-Dom_Private_Rented_Property_Minimum_Standard_-_Landlord_Guidance.pdf'
-        warning:
-          assistive_text: 'Welsh: Warning'
-          text: 'Welsh: You may not be able to let this property.'
-          body: "Welsh: This property has an energy rating of %{current_energy_efficiency_band}. The landlord cannot grant a tenancy to new or existing tenants, unless an exemption has been registered."
-        recommendation: 'Welsh: Properties can be let if they have an energy rating of A+ to E. The %{link} sets out changes you can make to improve the property’s rating.'
-        cta: 'Welsh: recommendation report'
-        url: '#'
-      other_reports:
-        title: 'Welsh: Other certificates for this property'
-        certificate_reference: 'Welsh: Reference number'
-        valid_until: 'Welsh: Valid until'
-        expired: 'Welsh: Expired'
-        no_related: 'Welsh: There are no related certificates for the property.'
-    rr:
-      top_heading: 'Welsh: Non-domestic Energy Performance Certificate Recommendation Report'
-      summary:
-        valid_until: 'Welsh: Valid until'
-        expired: 'Welsh: The certificate expired on'
-        certificate_id: 'Welsh: Certificate number'
-      contents:
-        title: 'Welsh: Report Contents'
-      rating:
-        title: 'Welsh: Energy rating and EPC'
-        current_energy_rating: 'Welsh: This building’s current energy rating is %{band}.'
-        more_info: 'Welsh: For more information, see the %{link}.'
-        cta: 'Welsh: Energy Performance Certificate for this report'
-        url: '#'
-      property_details:
-        title: 'Welsh: Building and report details'
-        issued_on: 'Welsh: Report issued on'
-        floor_area: 'Welsh: Total useful floor area'
-        environment: 'Welsh: Building environment'
-        tool: 'Welsh: Calculation tool'
-      assessor_details:
-        title: 'Welsh: Assessor’s details'
-        name: 'Welsh: Assessor’s name'
-        phone: 'Welsh: Telephone'
-        email: 'Welsh: Email'
-        employer_name: 'Welsh: Employer’s name'
-        employer_address: 'Welsh: Employer’s address'
-        number: 'Welsh: Assessor ID'
-        scheme: 'Welsh: Accreditation scheme'
-        declaration: 'Welsh: Assessor’s declaration'
-        no_connection_text: 'Welsh: No connection to the property'
-        has_connection_text: 'Welsh: The assessor has made a declaration'
-        declaration_text: 'Welsh: The assessor declared they have no personal or business connection with the property’s owner or anyone who may have an interest in the property.'
-      information:
-        certificate:
-          list:
-            no_disclosure: 'Welsh: The assessor has not indicated whether they have a relation to this property.'
-    how_this_building_compares:
-      heading: "Welsh: How this building compares to others"
-      explanation: "Welsh: Buildings similar to this one could have ratings:"
-      if_newly_built: "Welsh: If newly built"
-      if_typical_existing_stock: "Welsh: If typical of the existing stock"
-    energy_peformance_breakdown:
-      heading: "Welsh: Breakdown of this building's energy performance"
-      main_heating_fuel: "Welsh: Main heating fuel"
-      building_environment: "Welsh: Building environment"
-      floor_area: "Welsh: Total useful floor area (m2)"
-      assessment_level: "Welsh: Assessment level"
-      emission_rate: "Welsh: Building emission rate (kgCO2/m2 per year)"
-      primary_energy_use: "Welsh: Primary energy use (kWh/m2 per year)"
-    contact:
-      heading: "Contacting the assessor and accreditation scheme"
-      p1: "This EPC was created by a qualified energy assessor."
-      p2: "If you are unhappy about your property’s energy assessment or certificate, you can complain to the assessor directly."
-      p3: "If you are still unhappy after contacting the assessor, you should contact the assessor’s accreditation scheme."
-      p4: "Accreditation schemes are appointed by the government to ensure that assessors are qualified to carry out EPC assessments."
+        report: adroddiad
+        certificate: dystysgrif
+    administrative_information:
+      title: "Gwybodaeth weinyddol"
       assessor:
-        heading: "Assessor contact details"
-        name: "Assessor's Name"
-        phone: "Telephone"
-        email: "Email"
-        id: "Assessor's accreditation number"
+        list:
+          name: "Enw'r asesydd"
+          number: "ID yr Asesydd"
+          telephone: "Ffôn"
+          email: Ebost
       scheme:
-        heading: "Accreditation scheme contact details"
-        name: "Accreditation scheme"
-        phone: "Telephone"
-        email: "Email"
-      assessment:
-        heading: "Assessment details"
-        date_assessed: "Date of assessment"
-        date_certificate: "Date of certificate"
-        employer: "Employer"
-        employer_address: "Employer address"
-        declaration: "Assessor's declaration"
-    related_report:
-      heading: "Recommendation Report"
-      cta: "recommendation report"
-      text: "Guidance on improving the energy performance of this building can be found in the %{link}."
-
-  domestic_epc:
-    top_heading: 'Welsh: Energy Performance Certificate (EPC)'
-    summary:
-      date_of_expiry: 'Welsh: Valid until %{date_of_expiry}'
-      certificate_id: 'Welsh: Certificate Number'
-      energy_rating_title: 'Welsh: Energy Rating'
-      property_info: 'Welsh: This property is a %{dwelling_type} and has a total floor area of %{total_floor_area} square metres.'
-      print_certificate: 'Welsh: Print this certificate'
-      print_certificate_noscript : 'Welsh: To print this certificate, press cmd/ctrl+p on your keyboard'
-    sidebar:
-      title: 'Welsh: Certificate contents'
-      sections:
-        renting: 'Welsh: Rules on letting this property'
-        epc: 'Welsh: Energy performance rating for this property'
-        summary: "Breakdown of property's energy performance"
-        energy: 'Welsh: Environmental impact of this property'
-        recommendations: 'Welsh: How to improve this property’s energy performance'
-        heat-demand: 'Welsh: Estimated energy use and potential savings'
-        information: 'Welsh: Contacting the assessor and accreditation scheme'
-        green_deal: 'Welsh: Green deal plan'
-        related_asssesments: 'Welsh: Related asssesments'
-        previous: 'Welsh: Other certificates for this property'
+        name: "Cynllun achredu"
+        phone: "Rhif ffôn y cynllun achredu"
+        email: "Ebost y cynllun achredu"
+      company_name: "Enw'r Cyflogwr/Enw Masnachu"
+      company_address: "Cyfeiriad y Cyflogwr/Cyfeiriad Masnachu"
+    epc_summary:
+      title: "Cyfraddiad ynni"
+      date_of_expiry: "Dilys tan %{date_of_expiry}"
+      certificate_id: "Rhif y dystysgrif"
+      property_info: "Mae'r eiddo hwn yn %{property_type}."
+      floor_area: "Cyfanswm arwynebedd yr eiddo yw %{total_floor_area} o fetrau sgwâr."
+    related:
+      title: "%{type}au eraill ar gyfer yr eiddo hwn"
+      certificate: tystysgrif
+      report: adroddiad
+      message: "Os ydych yn ymwybodol bod yna %{type}au blaenorol ar gyfer yr eiddo hwn ac nad ydyn nhw wedi'u rhestru yma, cysylltwch â ni yn %{link} neu ffoniwch ein desg gymorth ar 020 3829 0748."
+      no_related: "Does dim %{type}au perthynol ar gyfer yr eiddo hwn."
+      reference_number: "Rhif y dystysgrif"
+      valid_until: "Dilys tan"
+      expired: "Wedi dod i ben"
+      link: "mailto:mhclg.digital-services@communities.gov.uk?subject=EPB - "
+      cta: "mhclg.digital-services@communities.gov.uk"
+      certificates:
+        title: "Tystysgrifau eraill ar gyfer yr eiddo hwn"
+      reports:
+        title: "Adroddiadau eraill ar gyfer yr eiddo hwn"
+    recommendations:
+      title: Argymhellion
+      text: "Gwnewch y newidiadau hyn er mwyn gwella effeithlonrwydd ynni'r eiddo."
+      recommended_improvements_text: "Mae'r gwelliannau sy'n cael eu hargymell wedi'u gosod mewn grwpiau yn ôl amcangyfrif o'r amser a gymerai i'r newid dalu amdano'i hun. Gall yr asesydd wneud argymhellion ychwanegol hefyd."
+      description: "Mae pob argymhelliad wedi ei farcio fel isel, canolig neu uchel. Mae hyn yn dangos effaith bosibl y newid ar leihau allyriadau carbon yr eiddo.'carbon emissions."
+      table:
+        three_years_heading: "Newidiadau sy'n talu amdanynt eu hunain o fewn 3 blynedd"
+        three_to_seven_years_heading: "Newidiadau sy'n talu amdanynt eu hunain o fewn 3 i 7 mlynedd"
+        more_than_seven_years_heading: "Newidiadau sy'n talu amdanynt eu hunain mewn mwy na 7 mlynedd"
+        additional_heading: "Argymhellion ychwanegol"
+        recommendation_heading: Argymhelliad
+        potential_impact_heading: "Effaith bosibl"
+  unit:
+    kilogram: kg
+    kilowatt: kW
+    kilowatt_hour: "kW h"
+    square_metres: "metr sgwâr"
+  non_domestic_epc:
+    top_heading: "Tystysgrif perfformiad ynni (EPC)"
+    contents:
+      title: "Cynnwys y dystysgrif"
+    energy_rating_section:
+      title: "Cyfraddiad effeithlonrwydd ynni yr eiddo hwn"
+      current_rating_text: "Cyfraddiad effeithlonrwydd ynni presennol yr eiddo hwn yw %{current_energy_efficiency_band}."
+      rating_desc: "Mae cyfraddiad yn cael ei roi i bob eiddo, gan amrywio rhwng A+ (y mwyaf effeithlon) ac G (y lleiaf effeithlon)."
+      score_desc: "Mae pob eiddo'n cael sgôr hefyd. Uchaf i gyd yw'r rhif, mwyaf i gyd o garbon deuocsid (CO2) mae'ch eiddo'n debygol o'i allyrru."
+      svg:
+        "aria-label": "Cyfraddiad effeithlonrwydd ynni yr eiddo hwn yw s %{current_energy_efficiency_band} (%{current_energy_efficiency_rating})"
     sections:
       renting:
-        title: 'Welsh: Rules on letting this property'
-        landlord_warning:
-          hidden_text: 'Welsh: Warning'
-          subtitle: 'Welsh: You may not be able to let this property'
-          energy_rating_title: 'Welsh: Energy Rating'
-          body:
-            text: 'Welsh: Your property has an energy rating of %{current_energy_efficiency_band}. It cannot be let, unless an exemption has been registered.'
-            text_2: 'Welsh: Properties can be rented if they have an energy rating of A to E.'
-            recommendations_text: 'Welsh: The %{recommendations_link} of the EPC sets out changes you can make to improve the property’s rating.'
-            recommendations_cta: 'Welsh: recommendations section'
-            recommendations_url: 'Welsh: #recommendations'
+        title: "Rheolau ar osod yr eiddo hwn"
         rental_info:
-          body_1: 'Welsh: Properties can be rented if they have an energy rating of A to E.'
-          body_2: 'Welsh: If the property is rated F or G, it cannot be let, unless an exemption has been registered.'
-          guidance_text: 'Welsh:  You can read %{link}.'
-          cta: 'Welsh: guidance for landlords on the regulations and exemptions'
-          url: 'https://www.gov.uk/guidance/domestic-private-rented-property-minimum-energy-efficiency-standard-landlord-guidance'
-      epc:
-        title: 'Welsh: Energy efficiency rating for this property'
-        intro:
-          text: 'Welsh: This property’s current energy rating is  %{current_energy_efficiency_band}. It has the potential to be %{potential_energy_efficiency_band}.'
-          cta: 'Welsh: See how to improve this property’s energy performance.'
-          url: 'Welsh: #recommendations'
-        aria-label: 'Welsh: Your energy rating is %{current_energy_efficiency_band}(%{current_energy_efficiency_rating}) and your potential is %{potential_energy_efficiency_band}(%{potential_energy_efficiency_rating})'
-        body1: 'Welsh: The graph shows this property’s current and potential energy efficiency.'
-        body2: 'Welsh: Properties are given a rating from A (most efficient) to G (least efficient).'
-        body3: 'Welsh: Properties are also given a score. The higher this number, the cheaper your fuel bills are likely to be.'
-        body4: 'Welsh: The average energy rating and score for a property in England and Wales are D (60).'
-        ni_average_rating: 'Welsh: The average energy rating and score for a property in Northern Ireland are D (60).'
-      breakdown:
-        title: "Welsh: Breakdown of property's energy performance"
-        intro: "Welsh: This section shows the energy performance for features of this property. The assessment does not consider the condition of a feature and how well it is working."
-        assessment_rating_explaination: 'Welsh: Each feature is assessed as one of the following:'
-        assessment_ratings:
-          very_poor: 'Welsh: very poor (least efficient)'
-          poor: 'Welsh: poor'
-          average: 'Welsh: average'
-          good: 'Welsh: good'
-          very_good: 'Welsh: very good (most efficient)'
-        not_inspected: "Welsh: When the description says 'assumed', it means that the feature could not be inspected and an assumption has been made based on the age and type of your property."
-        energy_performance: "Welsh: energy performance"
-        primary_energy_use: 'Welsh: Primary energy use'
-        primary_energy_use_description: 'Welsh: The primary energy use for this property per year is 989 kilowatt hours (kWh) per square metre'
-        primary_energy_use_dropdown:
-          what_is_primary_energy_use_title: 'Welsh: What is primary energy use?'
-          what_is_primary_energy_use_details: 'Welsh: Primary energy use is a measure of the energy required for lighting, heating and hot water in a property. The calculation includes:'
-          efficiency_of_heating: 'Welsh: the efficiency of the property’s heating system'
-          efficiency_of_electricity: 'Welsh: power station efficiency for electricity'
-          fuel_for_property: 'Welsh: the energy used to produce the fuel and deliver it to the property'
-        list:
-          total_floor_area: 'Welsh: Total floor area'
-          meters_squared: 'Welsh: meters squared'
-          dwelling_type: 'Welsh: Property type'
-      environmental-impact:
-        title: "Environmental impact of this property"
-        summary: "One of the biggest contributors to climate change is carbon dioxide (CO2). The energy used for heating, lighting and power in our homes produces over a quarter of the UK's CO2 emissions."
-        making_changes: "By making the %{link}, you will reduce this property’s CO2 emissions by %{reduction} tonnes per year. This will help to protect the environment."
-        making_changes_cta: 'Welsh: recommended changes'
-        making_changes_url: 'Welsh: #recommendations'
-        environmental_impact_rating: "Environmental impact ratings are based on assumptions about average occupancy and energy use. They may not reflect how energy is consumed by the people living at the property."
-        average_household:
-          text: "Welsh: Average household produces"
-          carbon: "6"
-        property_produces: "Welsh: This property produces"
-        potential: "Welsh: This property's potential production"
-        tonnes_of_carbon_emission: " tonnes of %{carbon}"
-      recommendations:
-        title: 'Welsh: How to improve this property’s energy performance'
-        summary:
-          make_changes_text: 'Welsh: Making any of the recommended changes will improve your property’s energy efficiency.'
-          improve_rating_text: 'Welsh: If you make all of the recommended changes, this will improve the property’s energy rating and score from %{current_energy_efficiency_band} (%{current_energy_efficiency_rating}) to %{potential_energy_efficiency_band} (%{potential_energy_efficiency_rating}).'
-          what_is_energy_rating: 'Welsh: What is an energy rating?'
-          energy_rating_description1: 'Welsh: An energy rating shows a property’s energy efficiency.'
-          energy_rating_description2: 'Welsh: Properties are given a rating from A (most efficient) to G (least efficient).'
-          energy_rating_description3: 'Welsh: Properties are also given a score. The higher this number, the cheaper your fuel bills are likely to be.'
-          no_recommendations_summary: 'Welsh: There are no recommendations for this property.'
-        box:
-          energy_rating_title: 'Welsh: Potential Energy Rating'
-        list:
-          title: 'Welsh: Recommendation'
-          installation_cost: 'Welsh: Typical installation cost'
-          yearly_saving: 'Welsh: Typical yearly saving'
-          na: 'Welsh: Not applicable'
-          costs_savings: 'Welsh:  costs and savings'
-          potential_rating_1: 'Welsh: Potential rating after carrying out recommendation 1'
-          potential_rating_2: 'Welsh: Potential rating after carrying out recommendations 1&nbsp;and&nbsp;2'
-          potential_rating_3: 'Welsh: Potential rating after carrying out recommendations 1&nbsp;to'
-        paying_for_energy_improvements:
-          title: 'Welsh: Paying for energy improvements'
-          text: 'Welsh: Find energy grants and ways to save energy in your home.'
-          link: 'https://www.gov.uk/improve-energy-efficiency'
-      heat-demand:
-        title: 'Welsh: Estimated energy use and potential savings'
-        estimated_cost: 'Welsh: Estimated yearly energy cost for this property'
-        three_year_saving: 'Welsh: Potential saving'
-        costs_and_savings: 'Welsh: The estimated cost shows how much the average household would spend in this property for heating, lighting and hot water. It is not based on how energy is used by the people living at the property.'
-        based_on: 'Welsh: The estimated saving is based on making all of the recommendations in %{link}.'
-        based_on_cta: 'Welsh: how to improve this property’s energy performance'
-        based_on_url: 'Welsh: #recommendations'
-        more_advice: 'Welsh: For advice on how to reduce your energy bills visit %{link}.'
-        more_advice_cta: 'Welsh: Simple Energy Advice'
-        more_advice_url: 'https://www.simpleenergyadvice.org.uk/'
-        heating_in_property: 'Welsh: Heating use in this property'
-        energy_costs: 'Welsh: Heating a property usually makes up the majority of energy costs.'
-        no_potential_saving: 'Welsh: The assessor did not find any opportunities to save energy by installing insulation in this property.'
-        space_heating: 'Welsh: Space heating'
-        kwh_per_year: 'Welsh: kWh per year'
-        water_heating: 'Welsh: Water heating'
-        estimated_use: 'Welsh: Estimated energy use'
-        savings_table_description: 'Welsh: The second table shows the energy that could be saved by installing insulation.'
-        potential_saving: 'Welsh: Potential energy savings by installing insulation'
-        type_of_insulation: 'Welsh: Type of insulation'
-        amount_saved: 'Welsh: Amount of energy saved'
-        loft_insulation: 'Welsh: Loft insulation'
-        cavity_insulation: 'Welsh: Cavity wall insulation'
-        solid_wall_insulation: 'Welsh: Solid wall insulation'
-        renewable_heat_incentive:
-          body: 'Welsh: You might be able to receive %{link}. This will help to reduce carbon emissions by replacing your existing heating system with one that generates renewable heat. The estimated energy required for space and water heating will form the basis of the payments.'
-          url: 'https://www.gov.uk/domestic-renewable-heat-incentive'
-          cta: 'Welsh: Renewable Heat Incentive payments'
-        not_applicable: 'Welsh: Not applicable'
+          body_1: "Gall eiddo gael ei osod os yw ei gyfraddiad ynni rhwng A+ ac E."
+          body_2: "Os yw cyfraddiad ynni yn F neu G, nid yw'r landlord yn cael rhoi tenantiaeth i denantiaid newydd na'r tenantiaid presennol oni bai bod esemptiad wedi'i gofrestru."
+          summary: "O 1 Ebrill 2023, ni fydd landlordiaid yn cael parhau i osod eiddo annomestig ar brydles bresennol os yw cyfraddiad ynni'r eiddo hwnnw'n F neu G."
+          guidance_text: "Gallwch ddarllen %{link}."
+          cta: "canllawiau i landlordiaid ar y rheoliadau ac esemptiadau"
+          url: "https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/824018/Non-Dom_Private_Rented_Property_Minimum_Standard_-_Landlord_Guidance.pdf"
+        warning:
+          assistive_text: Rhybudd
+          text: "Efallai na chewch chi osod yr eiddo hwn"
+          body: "Cyfraddiad ynni yr eiddo hwn yw %{current_energy_efficiency_band}. Ni chaiff y landlord roi tenantiaeth i denantiaid newydd na thenantiaid presennol oni bai bod esemptiad wedi'i gofrestru."
+        recommendation: "Caniateir i eiddo gael ei osod os yw ei gyfraddiad ynni rhwng A+ ac E. Mae %{link} yn nodi'r newidiadau y gallwch eu gwneud i wella cyfraddiad yr eiddo"
+        cta: "adroddiad ar argymhellion"
+        url: "#"
+      other_reports:
+        title: "Tystysgrifau eraill ar gyfer yr eiddo hwn"
+        certificate_reference: "Rhif cyfeirnod"
+        valid_until: "Dilys tan"
+        expired: "Wedi dod i ben"
+        no_related: "Does dim tystysgrifau perthynol ar gyfer yr eiddo."
+    rr:
+      top_heading: "Adroddiad ar argymhellion tystysgrif perfformiad ynni (EPC)"
+      summary:
+        valid_until: "Dilys tan"
+        expired: "Daeth y dystysgrif hon i ben ar"
+        certificate_id: "Rhif y dystysgrif"
+      contents:
+        title: "Cynnwys yr adroddiad"
+      rating:
+        title: "Cyfraddiad ynni ac EPC"
+        current_energy_rating: "Cyfraddiad ynni presennol yr eiddo hwn yw %{band}."
+        more_info: "I gael rhagor o wybodaeth am berfformiad ynni'r eiddo, %{link}."
+        cta: "gweler EPC yr eiddo"
+        url: "#"
+      property_details:
+        title: "Manylion yr eiddo a'r adroddiad"
+        issued_on: "Rhoddwyd yr adroddiad ar"
+        floor_area: "Cyfanswm yr arwynebedd defnyddiadwy"
+        environment: "Amgylchedd yr adeilad"
+        tool: "Dull cyfrifo"
+      assessor_details:
+        title: "Manylion yr asesydd"
+        name: "Enw'r asesydd"
+        phone: "Ffôn"
+        email: Ebost
+        employer_name: "Enw'r cyflogwr"
+        employer_address: "Cyfeiriad y cyflogwr"
+        number: "ID yr Asesydd"
+        scheme: "Cynllun achredu"
+        declaration: "Datganiad yr asesydd"
+        no_connection_text: "Dim cysylltiad â'r eiddo"
+        has_connection_text: "Mae'r asesydd wedi gwneud datganiad"
       information:
-        title: 'Welsh: Contacting the assessor and accreditation scheme'
-        intro: 'Welsh: This EPC was created by a qualified energy assessor.<br /><br />If you are unhappy about your property’s energy assessment or certificate, you can complain to the assessor directly.<br /><br />If you are still unhappy after contacting the assessor, you should contact the assessor’s accreditation scheme.<br /><br />Accreditation schemes are appointed by the government to ensure that assessors are qualified to carry out EPC assessments.'
-        assessor:
-          title: 'Welsh: Assessor contact details'
-          list:
-            telephone: 'Welsh: Telephone'
-            email: 'Welsh: Email'
-            name: "Assessor's name"
-        scheme:
-          title: 'Welsh: Accreditation scheme contact details'
-          list:
-            name: 'Welsh: Accreditation scheme'
-            scheme_assessor_id: "Assessor's accreditation number"
         certificate:
-          title: 'Welsh: Assessment details'
           list:
-            disclosure: 'Welsh: Assessor’s declaration'
-            date_of_assessment: 'Welsh: Date of assessment'
-            date_of_certificate: 'Welsh: Date of certificate'
-            type_of_assessment: 'Welsh: Type of assessment'
-            sap_description_first_part: 'Welsh: SAP (Standard Assessment Procedure) is a method used to assess and compare the energy and environmental performance of properties in the UK. It uses detailed information about the property’s construction to calculate energy performance.'
-            sap_description_second_part: 'Welsh: This type of assessment must be carried out on all new properties built after 1 April 2008 in England and Wales, and 30 September 2008 in Northern Ireland.'
-            rdsap_description_first_part: 'Welsh: RdSAP (Reduced data Standard Assessment Procedure) is a method used to assess and compare the energy and environmental performance of properties in the UK. It uses a site visit and survey of the property to calculate energy performance.'
-            rdsap_description_second_part: 'Welsh: This type of assessment can be carried out on properties built before 1 April 2008 in England and Wales, and 30 September 2008 in Northern Ireland. It can also be used for newer properties, as long as they have a previous SAP assessment, which uses detailed information about the property’s construction to calculate energy performance.'
-            no_disclosure: 'Welsh: No assessor’s declaration provided'
-            disclosure_number_not_valid: 'Welsh: The disclosure code provided is not valid'
+            no_disclosure: "Nid yw'r asesydd wedi dweud a oes ganddo berthynas â'r eiddo ai peidio"
+    how_this_building_compares:
+      heading: "Sut mae'r eiddo hwn yn cymharu ag eraill"
+      explanation: "Gallai eiddo sy'n debyg i'r eiddo hwn fod â chyfraddiadau:"
+      if_newly_built: "Os ydyn nhw newydd gael eu hadeiladu"
+      if_typical_existing_stock: "Os ydyn nhw'n nodweddiadol o'r stoc bresennol"
+    energy_peformance_breakdown:
+      heading: "Dadansoddiad o berfformiad ynni'r eiddo hwn"
+      main_heating_fuel: "Y prif danwydd at wresogi"
+      building_environment: "Amgylchedd yr adeilad"
+      floor_area: "Cyfanswm yr arwynebedd defnyddiadwy (m2)"
+      assessment_level: "Lefel yr asesiad"
+      emission_rate: "Cyfraddiad allyriadau'r adeilad (kgCO2/m2 y flwyddyn)"
+      primary_energy_use: "Prif ddefnydd ynni (kWh/m2 y flwyddyn)"
+    contact:
+      heading: "Cysylltu â'r asesydd a'ch cynllun achredu"
+      p1: "Cafodd yr EPC hon ei chreu gan asesydd ynni cymwysedig."
+      p2: "Os ydych yn anfodlon ar asesiad neu dystysgrif ynni'ch eiddo, gallwch gwyno i'r asesydd dyn uniongyrchol."
+      p3: "Os ydych yn dal yn anfodlon ar ôl cysylltu â'r asesydd, dylech gysylltu â chynllun achredu'r asesydd."
+      p4: "Mae cynlluniau achredu'n cael eu penodi gan y llywodraeth i sicrhau bod gan aseswyr y cymwysterau i gyflawni asesiadau EPC."
+      assessor:
+        heading: "Manylion cysylltu'r asesydd"
+        name: "Enw'r asesydd"
+        phone: "Ffôn"
+        email: Ebost
+        id: "ID yr asesydd"
+      scheme:
+        heading: "Manylion cysylltu'r cynllun achredu"
+        name: "Cynllun achredu"
+        phone: "Ffôn"
+        email: Ebost
+      assessment:
+        heading: "Manylion yr asesiad"
+        date_assessed: "Dyddiad yr asesiad"
+        date_certificate: "Dyddiad y dystysgrif"
+        employer: Cyflogwr
+        employer_address: "Cyfeiriad y cyflogwr"
+        declaration: "Datganiad yr asesydd"
+    related_report:
+      heading: "Adroddiad ar argymhellion"
+      cta: "adroddiad ar argymhellion"
+      text: "Mae canllawiau ar wella perfformiad ynni'r eiddo hwn ar gael yn y %{link}."
+  domestic_epc:
+    top_heading: "Tystysgrif perfformiad ynni (EPC)"
+    summary:
+      date_of_expiry: "Dilys tan %{date_of_expiry}"
+      certificate_id: "Rhif y dystysgrif"
+      energy_rating_title: "Cyfraddiad ynni"
+      property_info: "Mae'r eiddo hwn yn %{dwelling_type}."
+      floor_area: "Cyfanswm arwynebedd yr eiddo yw %{total_floor_area} o fetrau sgwâr."
+      print_certificate: "Argraffwch y dystysgrif hon"
+      print_certificate_noscript: "I argraffu'r dystysgrif hon, pwyswch CMD/CTRL + P ar eich bysellfwrdd"
+    sidebar:
+      title: "Cynnwys y dystysgrif"
+      sections:
+        renting: "Rheolau ar osod yr eiddo hwn"
+        epc: "Cyfraddiad perfformiad ynni'r eiddo hwn"
+        summary: "Ddadansoddiad o berfformiad ynni'r eiddo"
+        energy: "Effaith amgylcheddol yr eiddo hwn."
+        recommendations: "Sut i wella perfformiad amgylcheddol yr eiddo hwn."
+        "heat-demand": "Amcangyfrif o'r ynni a ddefnyddir a'r arbedion posibl"
+        information: "Cysylltu â'r asesydd a'r cynllun achredu"
+        green_deal: "Cynllun y Fargen Werdd"
+        related_asssesments: "Asesiadau perthynol"
+        previous: "Tystysgrifau eraill ar gyfer yr eiddo hwn"
+    sections:
+      renting:
+        title: "Rheolau ar osod yr eiddo hwn"
+        landlord_warning:
+          hidden_text: Rhybudd
+          subtitle: "Efallai na chewch chi osod yr eiddo hwn"
+          energy_rating_title: "Cyfraddiad ynni"
+          body:
+            text: "Cyfraddiad ynni'r eiddo hwn yw %{current_energy_efficiency_band}. Ni chaniateir ei osod oni bai bod esemptiad wedi'i gofrestru."
+            text_2: "Caniateir i eiddo gael ei rentu os yw ei gyfraddiad ynni rhwng A ac E."
+            recommendations_text: "Mae'r %{recommendations_link} yn nodi newidiadau y gallwch eu gwneud er mwyn gwella cyfraddiad yr eiddo."
+            recommendations_cta: "adran argymhellion"
+            recommendations_url: "#argymhellion"
+        rental_info:
+          body_1: "Caniateir i eiddo gael ei rentu os yw ei gyfraddiad ynni rhwng A ac E."
+          body_2: "Os yw cyfraddiad yr eiddo yn F neu G, ni chaniateir ei osod oni bai bod esemptiad wedi'i gofrestru"
+          guidance_text: "Gallwch ddarllen %{link}."
+          cta: "canllawiau i landlordiaid ar y rheoliadau ac esemptiadau"
+          url: "https://www.gov.uk/guidance/domestic-private-rented-property-minimum-energy-efficiency-standard-landlord-guidance"
+      epc:
+        title: "Cyfraddiad effeithlonrwydd ynni'r eiddo hwn"
+        intro:
+          text: "Cyfraddiad effeithlonrwydd ynni presennol yr eiddo hwn yw %{current_energy_efficiency_band}. Mae ganddo'r potensial i fod yn %{potential_energy_efficiency_band}."
+          cta: "Gweld sut i wella perfformiad ynni'r eiddo hwn."
+          url: "#argymhellion"
+        "aria-label": "Eich cyfraddiad ynni yw %{current_energy_efficiency_band}(%{current_energy_efficiency_rating}) a'ch potensial yw %{potential_energy_efficiency_band}(%{potential_energy_efficiency_rating})"
+        body1: "Mae'r graff yn dangos effeithlonrwydd ynni'r eiddo hwn ar hyn o bryd a'i effeithlonrwydd ynni posibl."
+        body2: "Mae cyfraddiad yn cael ei roi i bob eiddo, gan amrywio rhwng A+ (y mwyaf effeithlon) ac G (y lleiaf effeithlon)."
+        body3: "Mae pob eiddo'n cael sgôr hefyd. Uchaf i gyd yw'r rhif, isaf i gyd mae eich allyriadau carbon deuocsid (CO2) yn debygol o fod."
+        body4: "Cyfraddiad a sgôr ynni cyfartalog eiddo yng Nghymru a Lloegr yw D (60)."
+      breakdown:
+        title: "Dadansoddiad o berfformiad ynni'r eiddo hwn"
+        intro: "Mae'r adran hon yn dangos perfformiad ynni nodweddiadol yr eiddo. Nid yw'r asesiad yn ystyried cyflwr nodwedd na pha mor dda y mae'n gweithio."
+        assessment_rating_explaination: "Asesir pob nodwedd fel un o'r canlynol:"
+        assessment_ratings:
+          very_poor: "gwael iawn (lleiaf effeithlon)"
+          poor: gwael
+          average: gweddol
+          good: da
+          very_good: "da iawn (mwyaf effeithlon)"
+        not_inspected: "Pan fo'r disgrifiad yn dweud 'tybiedig', mae'n golygu nad oedd modd asesu'r nodwedd a bod tybiaeth wedi'i gwneud a hynny ar sail oedran a math yr eiddo."
+        energy_performance: "perfformiad ynni"
+        primary_energy_use: "Prif ddefnydd ynni"
+        primary_energy_use_description: "Prif ddefnydd ynni'r eiddo hwn y flwyddyn yw %{primary_energy} o gilowat oriau am bob metr sgwâr (kWh/m2)."
+        list:
+          total_floor_area: "Cyfanswm yr arwynebedd"
+          meters_squared: "o fetrau sgwâr"
+          dwelling_type: "Math o eiddo"
+      "environmental-impact":
+        title: "Effaith amgylcheddol yr eiddo hwn"
+        summary: "Un o'r cyfranwyr mwyaf at newid yr hinsawdd yw carbon deuocsid (CO2). Yr ynni a ddefnyddir i wresogi, goleuo a phweru'n cartrefi sy'n cynhyrchu mwy na chwarter allyriadau CO2 y Deyrnas Unedig."
+        making_changes: "Drwy gyflawni'r %{link}, fe allech chi ostwng allyriadau CO2 yr eiddo hwn yn ôl %{reduction} tunnell y flwyddyn. Bydd hynny'n helpu i ddiogelu'r amgylchedd."
+        making_changes_cta: "newidiadau a argymhellir"
+        making_changes_url: "#argymhellion"
+        environmental_impact_rating: "Mae cyfraddiadau effaith amgylcheddol yn cael eu seilio ar dybiaethau ynghylch y feddiannaeth gyfartalog a'r defnydd ynni cyfartalog. Mae'n bosibl nad ydyn nhw'n adlewyrchu sut mae ynni'n cael ei ddefnyddio gan y bobl sy'n byw yn yr eiddo."
+        average_household:
+          text: "Mae'r aelwyd gyfartalog yn cynhyrchu"
+          carbon: 6
+        property_produces: "Mae'r eiddo hwn yn cynhyrchu"
+        potential: "Mae gan yr eiddo hwn y potensial i gynhyrchu"
+        tonnes_of_carbon_emission: " o dunelli o %{carbon}"
+      recommendations:
+        title: "Sut i wella perfformiad ynni'r eiddo hwn"
+        summary:
+          make_changes_text: "Bydd cyflawni unrhyw un neu ragor o'r newidiadau a argymhellir yn gwella effeithlonrwydd dynni'r eiddo."
+          improve_rating_text: "Os gwnewch chi bob un o'r newidiadau a argymhellir, bydd hyn yn gwella cyfraddiad ynni a sgôr eich eiddo o %{current_energy_efficiency_band} (%{current_energy_efficiency_rating}) i %{potential_energy_efficiency_band} "
+          what_is_energy_rating: "Beth yw cyfraddiad ynni?"
+          energy_rating_description1: "Mae cyfraddiad ynni yn dangos effeithlonrwydd ynni'r eiddo"
+          energy_rating_description2: "Mae cyfraddiad yn cael ei roi i bob eiddo, gan amrywio rhwng A+ (y mwyaf effeithlon) ac G (y lleiaf effeithlon)."
+          energy_rating_description3: "Mae pob eiddo'n cael sgôr hefyd. Uchaf i gyd yw'r rhif, isaf i gyd mae eich allyriadau CO2 yn debygol o fod."
+          no_recommendations_summary: "Chafodd dim argymhellion eu gwneud gan yr asesydd ar gyfer yr eiddo hwn"
+          simple_energy_text: "Mae gan Simple Energy Advice ganllawiau ar wella'r defnydd ynni mewn eiddo"
+          simple_energy_link: "https://www.simpleenergyadvice.org.uk/"
+        box:
+          energy_rating_title: "Cyfraddiad ynni posibl"
+        list:
+          title: Argymhelliad
+          installation_cost: "Cost nodweddiadol y gwaith gosod"
+          yearly_saving: "Arbedion blynyddol nodweddiadol"
+          na: "Heb fod yn gymwys"
+          costs_savings: "costau ac arbedion"
+          potential_rating_1: "Cyfraddiad posibl ar ôl cyflawni argymhelliad 1"
+          potential_rating_2: "Cyfraddiad posibl ar ôl cyflawni argymhellion 1&nbsp;a&nbsp;2"
+          potential_rating_3: "Cyfraddiad posibl ar ôl cyflawni argymhellion 1&nbsp;i"
+        paying_for_energy_improvements:
+          title: "Talu am welliannau ynni"
+          text: "Chwiliwch am grantiau ynni a ffyrdd i arbed ynni yn eich cartref."
+          link: "https://www.gov.uk/improve-energy-efficiency"
+      "heat-demand":
+        title: "Amcangyfrif o'r defnydd ynni a'r arbedion posibl"
+        estimated_cost: "Amcangyfrif o gost flynyddol yr ynni ar gyfer yr eiddo hwn"
+        three_year_saving: "Arbediad posibl"
+        costs_and_savings: "Mae'r amcangyfrif o'r gost yn dangos faint y byddai'r aelwyd gyfartalog yn ei wario yn yr eiddo hwn ar gyfer gwresogi, golau a dŵr poeth. Nid yw'n cael ei seilio ar sut mae ynni'n cael ei ddefnyddio gan y bobl sy'n byw yn yr eiddo."
+        based_on: "Mae'r amcangyfrif o'r arbedion wedi'i seilio ar gyflawni pob un o'r argymhellion yn %{link}."
+        based_on_cta: "sut i wella perfformiad ynni'r eiddo hwn"
+        based_on_url: "#argymhellion"
+        more_advice: "I gael cyngor ar sut i leihau'ch biliau ynni, ewch i %{link}."
+        more_advice_cta: "Simple Energy Advice"
+        more_advice_url: "https://www.simpleenergyadvice.org.uk/"
+        heating_in_property: "Defnydd gwres yn yr eiddo hwn"
+        energy_costs: "Gwresogi eiddo sydd fel arfer yn creu'r rhan fwyaf o'ch costau ynni."
+        estimated_energy: "Amcangyfrif o'r ynni a ddefnyddir i wresogi'r eiddo hwn"
+        space_heating: "Gwresogi lle"
+        kwh_per_year: "%{demand} kWh y flwyddyn"
+        water_heating: "Cynhesu dŵr"
+        estimated_use: "Amcangyfrif o'r ynni a ddefnyddir"
+        potential_saving: "Arbedion ynni posibl drwy osod inswleiddiad"
+        no_potential_saving: "Welodd yr asesydd ddim cyfleoedd i arbed ynni drwy osod inswleiddiad yn yr eiddo hwn."
+        type_of_insulation: "Math o inswleiddiad"
+        amount_saved: "Faint o ynni a arbedir"
+        loft_insulation: "Inswleiddio'r croglofft"
+        cavity_insulation: "Inswleiddio waliau ceudod"
+        solid_wall_insulation: "Inswleiddio waliau solet"
+        renewable_heat_incentive:
+          body: "Efallai y gallwch gael %{link}. Bydd hynny'n helpu i leihau allyriadau carbon drwy osod system wresogi sy'n creu gwres adnewyddadwy yn lle'ch system bresennol. Yr amcangyfrif o'r ynni y mae ei angen ar gyfer gwresogi lle a chynhesu dŵr"
+          url: "https://www.gov.uk/domestic-renewable-heat-incentive"
+          cta: "taliadau'r Cymhelliant Gwres Adnewyddadwy"
+        not_applicable: "Heb fod yn gymwys"
+      information:
+        title: "Cysylltu â'r asesydd a'r cynllun achredu"
+        intro: "Cafodd yr EPC hon ei chreu gan asesydd ynni cymwysedig.<br /><br />Os ydych yn anfodlon ar asesiad neu dystysgrif ynni'ch eiddo, gallwch gwyno i'r asesydd yn uniongyrchol.<br /><br />Os ydych yn dal yn anfodlon ar ôl cysylltu â'r asesydd, dylech gysylltu â chynllun achredu'r asesydd.<br /><br />Mae cynlluniau achredu'n cael eu penodi gan y llywodraeth i sicrhau bod gan aseswyr gymwysterau i gyflawni asesiadau EPC."
+        assessor:
+          title: "Manylion cysylltu'r asesydd"
+          list:
+            telephone: "Ffôn"
+            email: Ebost
+            name: "Enw'r asesydd"
+        scheme:
+          title: "Manylion cysylltu'r cynllun achredu"
+          list:
+            name: "Cynllun achredu"
+            scheme_assessor_id: "ID yr asesydd"
+        certificate:
+          title: "Manylion yr asesiad"
+          list:
+            disclosure: "Datganiad yr asesydd"
+            date_of_assessment: "Dyddiad yr asesiad"
+            date_of_certificate: "Dyddiad y dystysgrif"
+            type_of_assessment: "Math o asesiad"
+            sap_description_first_part: "Mae SAP (Gweithdrefn Asesu Safonol) yn ddull a ddefnyddir i asesu a chymharu perfformiad ynni a pherfformiad amgylcheddol eiddo yn y Deyrnas Unedig. Mae'n defnyddio gwybodaeth fanwl am adeiledd yr adeilad i gyfrifo'i berfformiad ynni."
+            sap_description_second_part: "Rhaid i'r math hwn o asesiad gael ei gyflawni ar bob eiddo newydd a godwyd ar ôl 1 Ebrill yng Nghymru a Lloegr, a 30 Medi 2008 yng Ngogledd Iwerddon."
+            rdsap_description_first_part: "Mae RdSAP (Gweithdrefn Asesu Safonol â Llai o Ddata) yn ddull a ddefnyddir i asesu a chymharu perfformiad ynni a pherfformiad amgylcheddol eiddo yn y Deyrnas Unedig. Mae'n defnyddio ymweliad â'r safle ac arolwg o'r eiddo i gyfrifo'i berfformiad ynni."
+            rdsap_description_second_part: "Gall y math hwn o asesiad gael ei gyflawni ar eiddo a godwyd cyn 1 Ebrill 2008 yng Nghymru a Lloegr, a 30 Medi 2008 yng Ngogledd. Gall gael ei ddefnyddio hefyd ar eiddo mwy diweddar cyhyd â bod gan yr eiddo asesiad SAP blaenorol sy'n defnyddio gwybodaeth fanwl am adeiladwaith yr eiddo i gyfrifo'r perfformiad ynni."
+            no_disclosure: "Dim datganiad asesydd wedi'i ddarparu"
+            disclosure_number_not_valid: "Nid yw'r cod datgelu a roddwyd yn ddilys"
       green_deal:
-        title: 'Welsh: Green Deal Plan'
-        info: 'Welsh: Energy efficiency improvements were made to this property by a %{link}.'
-        url: 'https://www.gov.uk/green-deal-energy-saving-measures/moving-into-a-property-with-a-green-deal'
-        copy_of_plan: 'Welsh: Before buying or renting this property, you should ask the property’s owner for a copy of the plan. You can also get a copy of the plan from the plan’s provider with the owner’s consent.'
-        cost_of_plan: 'Welsh: Cost of the plan'
+        title: "Cynllun y Fargen Werdd"
+        info: "Cafodd gwelliannau effeithlonrwydd ynni eu gwneid i'r eiddo hwn gan %{link}."
+        url: "https://www.gov.uk/green-deal-energy-saving-measures/moving-into-a-property-with-a-green-deal"
+        copy_of_plan: "Cyn prynu neu rentu'r eiddo hwn, dylech ofyn i berchennog yr eiddo am gopi o'r cynllun. Gallach gael copi o'r cynllun hefyd oddi wrth ddarparwr y cynllun gyda chydsyniad y perchennog."
+        cost_of_plan: "Cost y cynllun"
         plan_charges:
-          title: 'Welsh: Plan charges:'
-          point_one: 'Welsh: are payable as part of the electricity bill'
-          point_two: 'Welsh: reduce as each improvement is paid off'
-        current_charge: 'Welsh: Current charge'
-        estimated_saving: 'Welsh: Estimated saving'
-        payment_period_start: 'Welsh: Payment period start'
-        payment_period_end: 'Welsh: Payment period end'
-        interest_rate_payable: 'Welsh: Interest rate payable'
-        charge_overtime: 'Welsh: This is the current charge, but the charge can change over time depending on the details of the plan. The plan can be paid off early, although extra costs may apply.'
+          title: "Mae taliadau'r cynllun:"
+          point_one: "yn daladwy fel rhan o'r bil trydan"
+          point_two: "yn gostwng wrth i chi dalu am bob gwelliant"
+        current_charge: "Y tâl presennol"
+        estimated_saving: "Amcangyfrif o'r arbedion"
+        payment_period_start: "Dechrau'r cyfnod talu"
+        payment_period_end: "Diwedd y cyfnod talu"
+        interest_rate_payable: "Y gyfradd log sy'n daladwy"
+        charge_overtime: "Dyma'r tâl presennol, ond gall y tâl newid dros amser gan ddibynnu ar fanylion y cynllun. Gallwch orffen talu am y cynllun yn gynt, er y gall fod yna gostau ychwanegol"
         estimated_savings:
-          title: 'Welsh: The estimated saving is based on:'
-          assessment: 'Welsh: the original Green Deal assessment'
-          improvements_made: 'Welsh: the improvements made by the plan'
-          typical_energy_use: 'Welsh: typical energy use for this type of property, using current energy prices'
-        improvements_header: 'Welsh: Improvements'
-        paid_off_header: 'Welsh: Paid off'
-        plan_and_provider_details: 'Welsh: Plan and provider details'
-        plan_number: 'Welsh: Plan number'
-        provider_name: 'Welsh: Provider'
-        provider_telephone: 'Welsh: Telephone'
-        provider_email: 'Welsh: Email'
+          title: "Mae'r amcangyfrif o'r arbedion wedi'i seilio ar:"
+          assessment: "asesiad gwreiddiol y Fargen Werdd"
+          improvements_made: "y gwelliannau sydd wedi'u gwneud gan y cynllun"
+          typical_energy_use: "defnydd ynni nodweddiadol y math hwn o eiddo, yn defnyddio'r prisiau ynni presennol."
+        improvements_header: Gwelliannau
+        paid_off_header: "Wedi'i dalu"
+        plan_and_provider_details: "Manylion y cynllun a'r darparwr"
+        plan_number: "Rhif y cynllun"
+        provider_name: Darparwr
+        provider_telephone: "Ffôn"
+        provider_email: Ebost
       related_assessments:
-        title: 'Welsh: Other EPCs for this property'
-        certificate_type: 'Welsh: EPC'
-        reference_number: 'Welsh: Reference number'
-        assessment_type: 'Welsh: Report type'
-        expiry_date: 'Welsh: Expiry date'
-        certificate_number_col: 'Welsh: Certificate number'
-        valid_until: 'Welsh: Valid until'
-        expired: 'Welsh: Expired'
-
+        title: "EPCs eraill ar gyfer yr eiddo hwn"
+        certificate_type: EPC
+        reference_number: "Rhif cyfeirnod"
+        assessment_type: "Y math o adroddiad"
+        expiry_date: "Dyddiad y daw i ben"
+        certificate_number_col: "Rhif y dystysgrif"
+        valid_until: "Dilys tan"
+        expired: "Wedi dod i ben"
+        type:
+          CEPC: "Tystysgrif perfformiad ynni masnachol"
+          "CEPC-RR": "Adroddiad ar argymhellion tystysgrif perfformiad ynni masnachol"
+          RdSAP: "Tystysgrif perfformiad ynni"
+          SAP: "Tystysgrif perfformiad ynni"
+          "AC-REPORT": "Adroddiad ar archwiliad aerdymheru"
+          "AC-CERT": "Tystysgrif archwiliad aerdymheru"
+          DEC: "Tystysgrif ynni i'w harddangos"
+          "DEC-RR": "Adroddiad ar argymhellion tystysgrif ynni i'w harddangos"
   assessment_types:
-    CEPC: 'Welsh: Commercial energy performance certificate'
-    CEPC-RR: 'Welsh: Commercial energy performance certificate recommendation report'
-    RdSAP: 'Welsh: Energy performance certificate'
-    SAP: 'Welsh: Energy performance certificate'
-    AC-REPORT: 'Welsh: Air conditioning inspection report'
-    AC-CERT: 'Welsh: Air conditioning inspection certificate'
-    DEC: 'Welsh: Display energy certificate'
-    DEC-RR: 'Welsh: Display energy certificate recommendation report'
-
-  expired: 'Welsh: Expired'
-  valid_until: 'Welsh: Valid until'
-
+    CEPC: "Tystysgrif perfformiad ynni masnachol"
+    "CEPC-RR": "Adroddiad ar argymhellion tystysgrif perfformiad ynni masnachol"
+    RdSAP: "Tystysgrif perfformiad ynni"
+    SAP: "Tystysgrif perfformiad ynni"
+    "AC-REPORT": "Adroddiad ar archwiliad aerdymheru awyr"
+    "AC-CERT": "Tystysgrif archwiliad aerdymheru"
+    DEC: "Tystysgrif ynni i'w harddangos"
+    "DEC-RR": "Adroddiad ar argymhellion tystysgrif ynni i'w harddangos"
+  expired: "Wedi dod i ben"
+  valid_until: "Dilys tan"
   energy_performance_rating:
-    '0':
-      energy_performance: 'Welsh: N/A'
-    1:
-      energy_performance: Very poor
-    2:
-      energy_performance: Poor
-    3:
-      energy_performance: Average
-    4:
-      energy_performance: Good
-    5:
-      energy_performance: Very good
-
+    "0":
+      energy_performance: ""
+    "1":
+      energy_performance: "Gwael iawn"
+    "2":
+      energy_performance: Gwael
+    "3":
+      energy_performance: Gweddol
+    "4":
+      energy_performance: Da
+    "5":
+      energy_performance: "Da iawn"
   improvement_code:
-    1:
-      title: Hot water cylinder insulation
-      description: Insulate hot water cylinder with 80 mm jacket
-
-    2:
-      title: Hot water cylinder insulation
-      description: Increase hot water cylinder insulation
-
-    3:
-      title: Hot water cylinder insulation
-      description: Add additional 80 mm jacket to hot water cylinder
-
-    4:
-      title: Hot water cylinder thermostat
-      description: Hot water cylinder thermostat
-
-    5:
-      title: Increase loft insulation to 270 mm
-      description: Increase loft insulation to 270 mm
-
-    6:
-      title: Cavity wall insulation
-      description: Cavity wall insulation
-
-    7:
-      title: Internal or external wall insulation
-      description: Internal or external wall insulation
-
-    8:
-      title: Double glazed windows
-      description: Replace single glazed windows with low-E double glazed windows
-
-    9:
-      title: Secondary glazing
-      description: Secondary glazing to single glazed windows
-
-    10:
-      title: Draught proofing
-      description: Draught proofing
-
-    11:
-      title: Heating controls (programmer, room thermostat and TRVs)
-      description: Heating controls (programmer, thermostat, TRVs)
-
-    12:
-      title: Heating controls (room thermostat and TRVs)
-      description: Heating controls (room thermostat and TRVs)
-
-    13:
-      title: Heating controls (thermostatic radiator valves)
-      description: Heating controls (TRVs)
-
-    14:
-      title: Heating controls (room thermostat)
-      description: Heating controls (room thermostat)
-
-    15:
-      title: Heating controls (programmer and TRVs)
-      description: Heating controls (programmer and TRVs)
-
-    16:
-      title: Heating controls (time and temperature zone control)
-      description: Heating controls (zone control)
-
-    17:
-      title: Heating controls (programmer and room thermostat)
-      description: Heating controls (programmer and thermostat)
-
-    18:
-      title: Heating controls (room thermostat)
-      description: Heating controls (room thermostat)
-
-    19:
-      title: Solar water heating
-      description: Solar water heating
-
-    20:
-      title: Replace boiler with new condensing boiler
-      description: Condensing boiler
-
-    22:
-      title: Replace boiler with biomass boiler
-      description: Biomass boiler
-
-    23:
-      title: Biomass stove with boiler
-      description: Biomass stove with boiler
-
-    26:
-      title: Replacement warm air unit
-      description: Replacement warm air unit
-
-    27:
-      title: Change heating to gas condensing boiler
-      description: Gas condensing boiler
-
-    28:
-      title: Condensing oil boiler with radiators
-      description: Condensing oil boiler
-
-    29:
-      title: Gas condensing boiler
-      description: Gas condensing boiler
-
-    34:
-      title: Solar photovoltaic panels, 2.5 kWp
-      description: Solar photovoltaic panels
-
-    35:
-      title: Low energy lighting
-      description: Low energy lighting
-
-    36:
-      title: Condensing heating unit
-      description: Condensing heating unit
-
-    37:
-      title: Condensing boiler (separate from the range cooker)
-      description: Condensing boiler
-
-    38:
-      title: Condensing boiler (separate from the range cooker)
-      description: Condensing boiler
-
-    39:
-      title: Biomass stove with boiler
-      description: Biomass stove with boiler
-
-    40:
-      title: Change room heaters to condensing boiler
-      description: Condensing boiler
-
-    42:
-      title: Mains gas condensing heating unit
-      description: Mains gas condensing heating unit
-
-    44:
-      title: Wind turbine
-      description: Wind turbine
-
-    45:
-      title: Flat roof or sloping ceiling insulation
-      description: Flat roof or sloping ceiling insulation
-
-    46:
-      title: Room-in-roof insulation
-      description: Room-in-roof insulation
-
-    48:
-      title: High performance external doors
-      description: High performance external doors
-
-    49:
-      title: Heat recovery system for mixer showers
-      description: Heat recovery system for mixer showers
-
-    50:
-      title: Flue gas heat recovery device in conjunction with boiler
-      description: Flue gas heat recovery
-
-    51:
-      title: Air or ground source heat pump
-      description: ..
-
-    52:
-      title: Air or ground source heat pump with underfloor heating
-      description: ..
-
-    53:
-      title: Micro CHP
-      description: ..
-
-    54:
-      title: Biomass boiler (Exempted Appliance if in Smoke Control Area)
-      description: ..
-
-    55:
-      title: External and cavity wall insulation
-      description: ..
-
-    56:
-      title: Replacement glazing units
-      description: Replacement glazing units
-
-    57:
-      title: Floor insulation (suspended floor)
-      description: Floor insulation (suspended floor)
-
-    58:
-      title: Floor insulation (solid floor)
-      description: Floor insulation (solid floor)
-
-    59:
-      title: High heat retention storage heaters
-      description: High heat retention storage heaters
-
-    60:
-      title: High heat retention storage heaters
-      description: High heat retention storage heaters
-
-    61:
-      title: High heat retention storage heaters
-      description: High heat retention storage heaters
-
-    62:
-      title: High heat retention storage heaters
-      description: High heat retention storage heaters
-
-    63:
-      title: Party wall insulation
-      description: Party wall insulation
-
+    "1":
+      title: "Inswleiddiad silindr dŵr poeth"
+      description: "Inswleiddio'r silindr dŵr poeth â siaced 80 mm "
+    "2":
+      title: "Inswleiddiad silindr dŵr poeth"
+      description: "Cynyddu inswleiddiad y silindr dŵr poeth"
+    "3":
+      title: "Inswleiddiad silindr dŵr poeth"
+      description: "Ychwanegu siaced 80 mm ychwanegol at y silindr dŵr poeth"
+    "4":
+      title: "Thermostat silindr dŵr poeth"
+      description: "Thermostat silindr dŵr poeth"
+    "5":
+      title: "Cynyddu inswleiddiad y croglofft i 270 mm"
+      description: "Cynyddu inswleiddiad y croglofft i 270 mm"
+    "6":
+      title: "Inswleiddio waliau ceudod"
+      description: "Inswleiddio waliau ceudod"
+    "7":
+      title: "Inswleiddio waliau mewnol neu allanol"
+      description: "Inswleiddio waliau mewnol neu allanol"
+    "8":
+      title: "Ffenestri gwydr dwbl"
+      description: "Newid ffenestri gwydr sengl am rai gwydr dwbl E-isel"
+    "9":
+      title: "Ffenestri eilaidd"
+      description: "Ffenestri eilaidd ar ffenestri gwydr sengl"
+    "10":
+      title: "Atal drafftiau"
+      description: "Atal drafftiau"
+    "11":
+      title: "Rheolyddion gwres (rhaglennydd, thermostat ystafell a TRVs)"
+      description: "Rheolyddion gwres (rhaglennydd, themostat, TRVs)"
+    "12":
+      title: "Rheolyddion gwres (thermostat ystafell a TRVs)"
+      description: "Rheolyddion gwres (thermostat ystafell a TRVs)"
+    "13":
+      title: "Rheolyddion gwres (falfiau thermostatig rheiddiaduron)"
+      description: "Rheolyddion gwres (TRVs)"
+    "14":
+      title: "Rheolyddion gwres (thermostat ystafell)"
+      description: "Rheolyddion gwres (thermostat ystafell)"
+    "15":
+      title: "Rheolyddion gwres (rhaglennydd a TRVs)"
+      description: "Rheolyddion gwres (rhaglennydd a TRVs)"
+    "16":
+      title: "Rheolyddion gwres (rheolydd amser a pharthau tymheredd)"
+      description: "Rheolyddion gwres (rheolydd parthau)"
+    "17":
+      title: "Rheolyddion gwres (rhaglennydd a thermostat ystafell)"
+      description: "Rheolyddion gwres (rhaglennydd a thermostat)"
+    "18":
+      title: "Rheolyddion gwres (thermostat ystafell)"
+      description: "Rheolyddion gwres (thermostat ystafell)"
+    "19":
+      title: "Gwresogi dŵr solar"
+      description: "Gwresogi dŵr solar"
+    "20":
+      title: "Cyfnewid y bwyler am fwyler cyddwyso newydd"
+      description: "Bwyler cyddwyso"
+    "21":
+      title: "Cyfnewid y bwyler am fwyler cyddwyso newydd"
+      description: "Cyfnewid y bwyler am fwyler cyddwyso newydd"
+    "22":
+      title: "Cyfnewid bwyler am fwyler biomas"
+      description: "Bwyler biomas"
+    "23":
+      title: "Stôf biomas gyda bwyler"
+      description: "Stôf biomas gyda bwyler"
+    "24":
+      title: "Gwresogyddion stôr â chymorth ffan a silindr trochi deuol"
+      description: "Gwresogyddion stôr â chymorth ffan a silindr trochi deuol"
+    "25":
+      title: "Gwresogyddion stôr â chymorth ffan"
+      description: "Gwresogyddion stôr â chymorth ffan"
+    "26":
+      title: "Cyfnewid uned aer poeth"
+      description: "Cyfnewid uned aer poeth"
+    "27":
+      title: "Newid y gwres i fwyler cyddwyso nwy"
+      description: "Bwyler cyddwyso nwy"
+    "28":
+      title: "Bwyler cyddwyso olew gyda rheiddiaduron"
+      description: "Bwyler cyddwyso olew"
+    "29":
+      title: "Bwyler cyddwyso nwy"
+      description: "Bwyler cyddwyso nwy"
+    "30":
+      title: "Gwresogyddion stôr â chymorth ffan a silindr trochi deuol"
+      description: "Gwresogyddion stôr â chymorth ffan a silindr trochi deuol"
+    "31":
+      title: "Gwresogyddion stôr â chymorth ffan"
+      description: "Gwresogyddion stôr â chymorth ffan"
+    "32":
+      title: "Newid y gwres i fwyler cyddwyso nwy"
+      description: "Newid y gwres i fwyler cyddwyso nwy"
+    "34":
+      title: "Paneli ffotofoltäig solar, 2.5 kWp"
+      description: "Paneli ffotofoltäig solar"
+    "35":
+      title: "Goleuadau ynni isel"
+      description: "Goleuadau ynni isel"
+    "36":
+      title: "Uned wresogi gyddwyso"
+      description: "Uned wresogi gyddwyso"
+    "37":
+      title: "Bwyler cyddwyso (ar wahân i’r cwcer estynedig)"
+      description: "Bwyler cyddwyso"
+    "38":
+      title: "Bwyler cyddwyso (ar wahân i’r cwcer estynedig)"
+      description: "Bwyler cyddwyso"
+    "39":
+      title: "Stôf biomas gyda bwyler"
+      description: "Stôf biomas gyda bwyler"
+    "40":
+      title: "Newid gwresogyddion ystafell i fwyler cyddwyso"
+      description: "Bwyler cyddwyso"
+    "42":
+      title: "Uned wresogi gyddwyso prif gyflenwad nwy"
+      description: "Uned wresogi gyddwyso prif gyflenwad nwy"
+    "44":
+      title: "Tyrbin gwynt"
+      description: "Tyrbin gwynt"
+    "45":
+      title: "Inswleiddio to gwastad neu nenfwd ar oleddf"
+      description: "Inswleiddio to gwastad neu nenfwd ar oleddf"
+    "46":
+      title: "Inswleiddio ystafell yn y to"
+      description: "Inswleiddio ystafell yn y to"
+    "47":
+      title: "Inswleiddio'r llawr"
+      description: "Inswleiddio'r llawr"
+    "48":
+      title: "Drysau allanol perfformiad uchel"
+      description: "Drysau allanol perfformiad uchel"
+    "49":
+      title: "System adennill gwres i gawodydd cymysg"
+      description: "System adennill gwres i gawodydd cymysg"
+    "50":
+      title: "Dyfais adennill gwres o'r ffliw nwy ar y cyd â bwyler"
+      description: "Adennill gwres o'r ffliw nwy"
+    "51":
+      title: "Pwmp gwres sy'n tarddu yn yr awyr neu'r ddaear"
+      description: ".."
+    "52":
+      title: "Pwmp gwres sy'n tarddu yn yr awyr neu'r ddaear gyda gwres dan y llawr"
+      description: ".."
+    "53":
+      title: "CHP meicro"
+      description: ".."
+    "54":
+      title: "Bwyler biomas (Cyfarpar Esempt os ydych mewn Ardal Rheoli Mwg)"
+      description: ".."
+    "55":
+      title: "Inswleiddio waliau allanol a waliau ceudod"
+      description: ".."
+    "56":
+      title: "Cyfnewid unedau gwydro"
+      description: "Cyfnewid unedau gwydro"
+    "57":
+      title: "Inswleiddio'r llawr (llawr crog)"
+      description: "Inswleiddio'r llawr (llawr crog)"
+    "58":
+      title: "Inswleiddio'r llawr (llawr solet)"
+      description: "Inswleiddio'r llawr (llawr solet)"
+    "59":
+      title: "Gwresogyddion storio sy’n cadw llawer o wres"
+      description: "Gwresogyddion storio sy’n cadw llawer o wres"
+    "60":
+      title: "Gwresogyddion storio sy’n cadw llawer o wres"
+      description: "Gwresogyddion storio sy’n cadw llawer o wres"
+    "61":
+      title: "Gwresogyddion storio sy’n cadw llawer o wres"
+      description: "Gwresogyddion storio sy’n cadw llawer o wres"
+    "62":
+      title: "Gwresogyddion storio sy’n cadw llawer o wres"
+      description: "Gwresogyddion storio sy’n cadw llawer o wres"
+    "63":
+      title: "Inswleiddio mur cydrannol"
+      description: "Inswleiddio mur cydrannol"
   disclosure_code:
-    1:
-      relation: 'Welsh: No related party'
-    2:
-      relation: 'Welsh: Relative of homeowner or of occupier of the property'
-    3:
-      relation: 'Welsh: Residing at the property'
-    4:
-      relation: 'Welsh: Financial interest in the property'
-    5:
-      relation: 'Welsh: Owner or Director of the organisation dealing with the property transaction'
-    6:
-      relation: 'Welsh: Employed by the professional dealing with the property transaction'
-    7:
-      relation: 'Welsh: Relative of the professional dealing with the property transaction'
-
+    "1":
+      relation: "Dim parti perthynol"
+    "2":
+      relation: "Perthynas i berchennog y cartref neu i ddeiliad yr eiddo"
+    "3":
+      relation: "Yn byw yn yr eiddo"
+    "4":
+      relation: "Buddiant ariannol yn yr eiddo"
+    "5":
+      relation: "Perchennog neu Gyfarwyddwr y sefydliad sy'n ymdrin â'r trafodiad eiddo"
+    "6":
+      relation: "Yn cael ei gyflogi gan y gweithiwr proffesiynol sy'n ymdrin â'r trafodiad eiddo"
+    "7":
+      relation: "Perthynas i'r gweithiwr proffesiynol sy'n ymdrin â'r trafodiad eiddo"
+  non_domestic_disclosure_code:
+    "1":
+      relation: "Nid yw'r asesydd yn perthyn i berchennog yr eiddo"
+    "2":
+      relation: "Mae'r asesydd yn berthynas i berchennog yr eiddo"
+    "3":
+      relation: "Mae'r asesydd yn berthynas i'r gweithiwr proffesiynol sy'n ymdrin â'r trafodiad eiddo."
+    "4":
+      relation: "Mae gan yr asesydd berthynas anuniongyrchol â'r perchennog (er enghraifft, gallai rhywun yn nheulu'r asesydd fod yn cael ei gyflogi gan berchennog yr eiddo)."
+    "5":
+      relation: "Yr asesydd yw deiliad yr eiddo"
+    "6":
+      relation: "Yr asesydd yw perchennog neu gyfarwyddwr y sefydliad sy'n ymdrin â'r trafodiad eiddo"
+    "7":
+      relation: "Mae'r asesydd yn cael ei gyflogi gan y sefydliad sy'n ymdrin â'r trafodiad eiddo"
+    "8":
+      relation: "Mae'r asesydd wedi datgan buddiant ariannol yn yr eiddo."
+    "9":
+      relation: "Mae'r asesydd yn cael ei gyflogi gan berchennog yr eiddo."
+    "10":
+      relation: "Mae'r asesydd o dan gontract i'r perchennog i ddarparu gwasanaethau asesu ynni eraill."
+    "11":
+      relation: "Mae'r asesydd o dan gontract i'r perchennog i ddarparu Gwasanaethau heblaw asesiadau ynni."
+    "12":
+      relation: "Mae gan yr asesydd berthynas flaenorol â'r perchennog (er enghraifft, efallai ei fod wedi'i gyflogi neu wedi bod yn gontractwr gynt)."
+    "13":
+      relation: "Nid yw'r asesydd wedi nodi a oes ganddo berthynas â'r eiddo hwn."
+  dec_disclosure_code:
+    "1":
+      relation: "Heb fod yn perthyn i'r deiliad"
+    "2":
+      relation: "Yn cael ei gyflogi gan y deiliad"
+    "3":
+      relation: "Contractwr i'r deiliad ar gyfer gwasanaethau EPBD yn unig."
+    "4":
+      relation: "Contractwr i'r deiliad ar gyfer gwasanaethau heblaw gwasanaethau EPBD."
+    "5":
+      relation: "Perthynas anuniongyrchol â'r deiliad."
+    "6":
+      relation: "Buddiant ariannol yn y deiliad a/neu'r eiddo."
+    "7":
+      relation: "Perthynas flaenorol â'r deiliad"
+    "8":
+      relation: "Nid yw'r asesydd wedi nodi a oes ganddo berthynas â'r eiddo hwn."
+  aci_disclosure_code:
+    "1":
+      relation: "Heb fod yn perthyn i'r perchennog/deiliad neu'r person sydd â rheolaeth dechnegol dros y system neu'r is-gontractwr."
+    "2":
+      relation: "Yn perthyn i'r perchennog/deiliad."
+    "3":
+      relation: "Yn perthyn i'r person sydd â rheolaeth dechnegol dros y system neu'r is-gontractwr."
+    "4":
+      relation: "Deiliad yr eiddo"
+    "5":
+      relation: "Perchennog neu gyfarwyddwr y sefydliad"
+    "6":
+      relation: "Buddiant ariannol yr yn eiddo/sefydliad gyda rheolaeth dechnegol dros y system neu'r is-gontractwr"
+    "7":
+      relation: "Dan gontract i'r perchennog i ddarparu gwasanaethau asesu ynni eraill."
+    "8":
+      relation: "Dan gontract i'r perchennog i ddarparu gwasanaethau eraill (heblaw asesu ynni)"
+    "9":
+      relation: "Dan gontract i'r perchennog i ddarparu gwasanaethau cynnal a chadw aerdymheru"
   property_summary:
     type:
-      air_tightness: 'Welsh: Air tightness'
-      floor: 'Welsh: Floor'
-      hot_water: 'Welsh: Hot water'
-      lighting: 'Welsh: Lighting'
-      main_heating: 'Welsh: Main heating'
-      main_heating_controls: 'Welsh: Main heating control'
-      roof: 'Welsh: Roof'
-      secondary_heating: 'Welsh: Secondary heating'
-      wall: 'Welsh: Wall'
-      walls: 'Welsh: Walls'
-      window: 'Welsh: Window'
-      windows: 'Welsh: Windows'
-
+      air_tightness: Aerglosrwydd
+      floor: Llawr
+      hot_water: "Dŵr poeth"
+      lighting: Goleuadau
+      main_heating: "Y prif wres"
+      main_heating_controls: "Prif reolydd gwres"
+      roof: To
+      secondary_heating: "Gwres eilaidd"
+      wall: Wal
+      walls: Waliau
+      window: Ffenestr
+      windows: Ffenestri
   error:
-    error: 'Welsh: Error: '
-    500:
-      heading: 'Welsh: Sorry, there is a problem with the service'
-      body: 'Welsh: Try again later.'
-    404:
-      heading: 'Welsh: Page not found'
-      intro: 'Welsh: If you typed the web address, check it is correct.'
-      body: 'Welsh: If you pasted the web address, check you copied the entire address.'
+    error: "Gwall: "
+    "500":
+      heading: "Ymddiheuriadau, mae problem gyda'r gwasanaeth."
+      body: "Rhowch gynnig arall arni yn nes ymlaen"
+    "404":
+      heading: "Y tudalen heb ei ganfod"
+      intro: "Os gwnaethoch chi deipio'r cyfeiriad gwe, gwiriwch ei fod yn gywir."
+      body: "Os gwnaethoch chi ludo'r cyfeiriad gwe, gwiriwch ei fod yn gywir."
   dec:
-    top_heading: "Welsh: Display Energy Certificate"
+    top_heading: "Tystysgrif ynni i'w harddangos (DEC)"
+    tagline: "pa mor effeithlon yw'r adeilad hwn o ran ynni?"
     sections:
       contents:
-        title: 'Welsh: Certificate contents'
+        title: "Cynnwys y dystysgrif"
+        certificate_number: "Rhif y dystysgrif"
       rating:
-        title: 'Welsh: Energy performance operational rating'
-        emissions_text: 'Welsh: The building’s energy performance operational rating is based on its carbon dioxide (CO2) emissions for the last year.'
-        text: 'Welsh: It is given a score and an operational rating on a scale from A (lowest emissions) to G (highest emissions).'
-        typical_text: 'Welsh: Typical score for a public building is 100. This typical score gives an operational rating of D.'
-        svg_title: 'Welsh: This building’s operational rating is %{energy_efficiency_band} (%{energy_efficiency_rating})'
-        guidance_text: 'Welsh: You can read %{link}.'
-        cta: 'Welsh: guidance for public buildings on Display Energy Certificates and advisory reports'
-        url: 'https://www.gov.uk/government/publications/display-energy-certificates-and-advisory-reports-for-public-buildings'
+        title: "Cyfraddiad gweithredol perfformiad ynni"
+        emissions_text: "Mae cyfraddiad gweithredol perfformiad ynni'r adeilad wedi'i seilio ar ei allyriadau carbon deuocsid (CO2) am y flwyddyn ddiwethaf"
+        text: "Mae sgôr a chyfraddiad gweithredol yn cael eu rhoi i'r eiddo ar raddfa rhwng A (yr allyriadau isaf) i G (yr allyriadau uchaf)"
+        typical_text: "Sgôr nodweddiadol adeilad cyhoeddus yw 100. Mae'r sgôr nodweddiadol hon yn rhoi cyfraddiad gweithredol o D."
+        svg_title: "Cyfraddiad gweithredol yr adeilad hwn yw %{energy_efficiency_band} (%{energy_efficiency_rating})"
+        guidance_text: "Gallwch ddarllen %{link}."
+        cta: "canllawiau ar DECs ac adroddiadau cynghori ar adeiladau cyhoeddus"
+        url: "https://www.gov.uk/government/publications/display-energy-certificates-and-advisory-reports-for-public-buildings"
       recommendation_report:
-        title: "Welsh: Recommendation report"
-        cta: "Welsh: recommendation report"
-        text: "Welsh: Guidance on improving the energy performance operational rating of this building can be found in the %{link}."
+        title: "Adroddiad ar argymhellion"
+        cta: "adroddiad ar argymhellion"
+        text: "Mae canllawiau ar wella cyfraddiad gweithredol perfformiad ynni'r adeilad hwn ar gael yn y %{link}."
       print_certificate:
-        title: 'Welsh: Print this certificate'
-        description: 'Welsh: This certificate should be printed on A3 paper and displayed in the building'
-        open_print_version: 'Welsh: Open the print version of this certificate'
+        title: "Argraffwch y dystysgrif hon"
+        description: "Rhaid i awdurdodau cyhoeddus arddangos eu DEC mewn man amlwg sy'n amlwg yn weladwy i'r cyhoedd, megis yn agos i fynedfa'r adeilad. Os na wnân nhw hyn, gallant gael dirwy o Â£500."
+        a3: "Dylai'r dystysgrif hon gael ei hargraffu ar faint A3 o leiaf"
+        open_print_version: "Agorwch fersiwn brint y dystysgrif"
       previous_energy_ratings:
-        title: "Welsh: Previous operational ratings"
-        explanation: "Welsh: This tells you how efficiently energy has been used in this building over the last three accounting periods."
+        energy_rating: "Cyfraddiad gweithredol"
+        date: Dyddiad
+        title: "Cyfraddiadau gweithredol blaenorol"
+        explanation: "Mae hyn yn dweud pa mor effeithlon mae ynni wedi'i ddefnyddio yn yr adeilad hwn dros y tri chyfnod cyfrifyddu diwethaf."
       co2:
-        title: "Total CO2 emissions"
-        explanation: "This tells you how much carbon dioxide the building emits. It shows tonnes per year of CO2."
+        title: "Cyfanswm yr allyriadau carbon deuocsid (CO2)"
+        explanation: "Mae hyn yn dweud faint o garbon deuocsid y mae'r adeilad yn ei allyrru. Mae'n dangos CO2 mewn tunelli y flwyddyn."
         col:
-          date: "Date"
-          electricity: "Electricity"
-          heating: "Heating"
-          renewables: "Renewables"
-        no_value: "Welsh: N/A"
+          date: Dyddiad
+          electricity: Trydan
+          heating: Gwres
+          renewables: "Ynni adnewyddadwy"
+        no_value: "Heb fod yn gymwys"
       technical_information:
-        title: 'Welsh: Technical information'
-        print_title: 'Welsh: This building’s operational use'
-        description: 'Welsh: This tells you technical information about how energy is used in this building. Consumption data based on actual meter readings.'
-        heating_fuel: 'Welsh: Main heating fuel'
-        building_environment: 'Welsh: Building environment'
-        floor_area: 'Welsh: Total useful floor area'
-        asset_rating: 'Welsh: Asset rating'
-        energy_use: 'Welsh: Energy use'
-        electricity: 'Welsh: Electricity'
-        other_fuels: 'Welsh: Other fuels'
-        annual_energy_use: 'Welsh: Annual energy use (kWh/m2/year)'
-        typical_energy_use: 'Welsh: Typical energy use (kWh/m2/year)'
-        energy_from_renewables: 'Welsh: Energy from renewables'
-        na: "Welsh: Not applicable"
+        title: "Defnydd ynni'r adeilad hwn"
+        print_title: "Defnydd ynni'r adeilad hwn"
+        heating_fuel: "Prif danwydd gwresogi"
+        building_environment: "Amgylchedd yr adeilad"
+        floor_area: "Cyfanswm yr arwynebedd defnyddiadwy"
+        asset_rating: "Cyfraddiad yr ased"
+        energy_use: "Defnydd ynni"
+        electricity: Trydan
+        other_fuels: "Tanwyddau eraill"
+        annual_energy_use: "Defnydd ynni blynyddol (kWh/m2/flwyddyn)"
+        typical_energy_use: "Defnydd ynni nodweddiadol (kWh/m2/flwyddyn)"
+        energy_from_renewables: "Ynni o ffynonellau ynni adnewyddadwy"
       administrative_information:
-        title: 'Welsh: Administrative information'
-        print_title: 'Welsh: Assessment details'
-        description: 'Welsh: This is a Display Energy Certificate as defined in the Energy Performance of Buildings Regulations 2012 as amended.'
-        assessment_software: 'Welsh: Assessment software'
-        property_reference: 'Welsh: Property reference'
-        assessor_name: 'Welsh: Assessor name'
-        assessor_number: 'Welsh: Assessor ID'
-        scheme_name: 'Welsh: Accreditation scheme'
-        company_name: 'Welsh: Employer/Trading name'
-        company_address: 'Welsh: Employer/Trading address'
-        issue_date: 'Welsh: Issue date'
-        nominated_date: 'Welsh: Nominated date'
-        valid_until: 'Welsh: Valid until'
-        related_party_disclosure: 'Welsh: Assessor’s declaration'
-        related_report:
-          cta: "Welsh: Recommendation Report"
-          text: "Welsh: Recommendations for improving the energy performance of the building are contained in the associated %{link}."
+        title: "Gwybodaeth weinyddol"
+        print_title: "Manylion yr asesiad"
+        assessment_software: "Meddalwedd asesu"
+        property_reference: "Cyfeirnod yr eiddo"
+        assessor_name: "Enw'r asesydd"
+        assessor_number: "ID yr Asesydd"
+        scheme_name: "Cynllun achredu"
+        company_name: "Enw'r cyflogwr/enw masnachu"
+        company_address: "Cyfeiriad y cyflogwr/cyfeiriad masnachu"
+        issue_date: "Dyddiad dyroddi"
+        nominated_date: "Dyddiad enwebu"
+        valid_until: "Dilys tan"
+        related_party_disclosure: "Datganiad yr asesydd"
+        download_xml: "Crynodeb XML"
+        download_xml_cta: "Lawrlwytho Crynodeb XML"
         assessor:
           list:
-            name: 'Welsh: Assessor name'
-            number: 'Welsh: Assessor ID'
-            telephone: 'Welsh: Telephone'
-            email: 'Welsh: Email'
+            name: "Enw'r asesydd"
+            number: "ID yr Asesydd"
+            telephone: "Ffôn"
+            email: Ebost
+        scheme:
+          name: "Cynllun achredu"
+          phone: "Rhif ffôn y cynllun achredu"
+          email: "Ebost y cynllun achredu"
       information:
         certificate:
           list:
-            no_disclosure: 'Welsh: No assessor’s declaration provided.'
-            disclosure_number_not_valid: 'Welsh: The disclosure code provided is not valid.'
-
+            no_disclosure: "Dim datganiad asesydd wedi'i ddarparu."
+            disclosure_number_not_valid: "Nid yw'r cod datgelu a roddwyd yn dilys"
   dec_rr:
-    top_heading: "Welsh: Display Energy Certificate Recommendation Report (DEC-RR)"
+    top_heading: "Adroddiad ar argymhellion tystysgrif ynni i'w harddangos (DEC)"
     sections:
+      contents:
+        title: "Cynnwys yr adroddiad"
       rating:
-        title: 'Welsh: Operational rating and DEC'
-        text: 'Welsh: This building has an operational rating of %{band}.'
-        dec: 'Welsh: See the %{cta}.'
-        cta: 'Welsh: Display Energy Certificate for this building'
+        title: "Cyfraddiad gweithredol a DEC"
+        text: "Cyfraddiad gweithredol yr adeilad hwn yw %{band}."
+        dec: "I gael rhagor o wybodaeth am berfformiad ynni'r adeilad, %{cta}."
+        cta: "gweler DEC yr adeilad hwn"
       building:
-        title: 'Welsh: Building and report details'
-        occupier: 'Welsh: Building occupier'
-        building_type: 'Welsh: Building type'
-        building_environment: 'Welsh: Building environment'
-        renewable: 'Welsh: On-site renewable energy sources'
-        discount: 'Welsh: Separable energy uses discounted'
-        floor_area: 'Welsh: Total useful floor area'
-        building_reference: 'Welsh: Building reference'
-        issue_date: 'Welsh: Report issued on'
-        calculation_tool: 'Welsh: Calculation tool'
-        inspection_type: 'Welsh: Type of inspection'
-        gas_used: 'Welsh: Gas used'
+        title: "Manylion yr adeilad a'r adroddiad"
+        occupier: "Deiliad yr adeilad"
+        building_type: "Math o adeilad"
+        building_environment: "Amgylchedd yr adeilad"
+        renewable: "Ffynonellau ynni adnewyddadwy ar y safle"
+        discount: "Dibenion ynni gwahanadwy wedi'u disgowntio"
+        floor_area: "Cyfanswm yr arwynebedd defnyddiadwy"
+        building_reference: "Cyfeirnod yr adeilad"
+        issue_date: "Dyroddwyd yr adroddiad ar"
+        calculation_tool: "Dull cyfrifo"
+        inspection_type: "Math o archwiliad"
+        electricity_used: "Trydan a ddefnyddiwyd"
+        gas_used: "Nwy a ddefnyddiwyd"
       assessor:
-        title: 'Welsh: Assessor’s details'
-        name: 'Welsh: Assessor’s name'
-        employer_name: 'Welsh: Employer’s name'
-        employer_address: 'Welsh: Employer’s address'
-        number: 'Welsh: Assessor ID'
-        scheme: 'Welsh: Accreditation scheme'
-
+        title: "Manylion yr asesydd"
+        name: "Enw'r asesydd"
+        email: Ebost
+        phone: "Ffôn"
+        employer_name: "Enw'r cyflogwr"
+        employer_address: "Cyfeiriad y cyflogwr"
+        number: "ID yr Asesydd"
+        scheme: "Cynllun achredu"
   ac_cert:
-    top_heading: 'Welsh: Air Conditioning Inspection Certificate'
+    top_heading: "Tystysgrif archwilio system aerdymheru"
     sections:
       assessment:
-        title: 'Welsh: Assessment details'
-        inspection_date: 'Welsh: Inspection date'
-        inspection_level: 'Welsh: Inspection level'
-        assessment_software: 'Welsh: Assessment software'
-        declaration: 'Welsh: Assessor’s declaration'
-        f_gas_compliant_date: 'Welsh: F-Gas compliant date'
-        total_effective_rated_output: 'Welsh: Total effective rated output'
-        system_sampling: 'Welsh: System sampling'
-        treated_floor_area: 'Welsh: Treated floor area'
-        subsystems_metered: 'Welsh: Subsystems metered'
-        refrigerant_charge: 'Welsh: Total estimated refrigerant charge'
+        title: "Manylion yr asesiad"
+        inspection_date: "Dyddiad yr archwiliad"
+        inspection_level: "Lefel yr archwiliad"
+        assessment_software: "Meddalwedd asesu"
+        declaration: "Datganiad yr asesydd"
+        f_gas_compliant_date: "Dyddiad cydymffurfio F-Gas"
+        total_effective_rated_output: "Cyfanswm yr allbwn effeithiol wedi'i raddio"
+        system_sampling: "Samplu systemau"
+        treated_floor_area: "Arwynebedd a driniwyd"
+        subsystems_metered: "Is-systemau â mesurydd"
+        refrigerant_charge: "Amcangyfrif o gyfanswm y tâl am oerydd"
         flags:
-          '0': 'Welsh: Yes'
-          '1': 'Welsh: No'
-          '2': 'Welsh: In part'
-          Y: 'Welsh: Yes'
-          N: 'Welsh: No'
+          "0": Ie
+          "1": Na
+          "2": "Yn rhannol"
+          Y: Ie
+          N: Na
       inspection:
-        title: 'Welsh: Inspection report'
-        text: 'Welsh: For the assessment’s recommendations, see %{link}.'
-        cta: 'Welsh: the inspection report'
+        title: "Adroddiad ar yr archwiliad"
+        text: "I gael argymhellion yr asesydd, %{link}."
+        cta: "gweler yr adroddiad ar yr archwiliad"
       subsystems:
-        title: 'Welsh: Sub systems inspected'
-        number: 'Welsh: Sub system ID'
-        description: 'Welsh: Description'
-        refrigerant_type: 'Welsh: Refrigerant type'
-        age: 'Welsh: Age of main components'
+        title: "Is-systemau a archwiliwyd"
+        number: "ID yr is-system"
+        description: Disgrifiad
+        refrigerant_type: "Y math o oerydd"
+        age: "Oedran y prif gydrannau"
   ac_report:
-    top_heading: "Air conditioning inspection report"
+    top_heading: "Adroddiad ar archwiliad aerdymheru"
     sections:
       exec_summary:
-        title: "Executive summary"
+        title: "Crynodeb gweithredol"
       key_recommendations:
-        title: "Key recommendations"
+        title: "Argymhellion allweddol"
         efficiency:
-          title: "Efficiency"
+          title: Effeithlonrwydd
         maintenance:
-          title: "Maintenance"
+          title: "Cynnal a chadw"
         control:
-          title: "Control"
+          title: "Dulliau rheoli"
         management:
-          title: "Management"
+          title: Rheolaeth
       sub_systems:
-        title: "Sub systems inspected"
-        volume_definitions: "Volume definitions"
-        description: "Description"
-        cooling_output: "Effective rated cooling output"
-        area_served: "Area served"
-        inspection_date: "Inspection date"
-        cooling_plant_count: "Cooling plant count"
-        ahu_count: "AHU count"
-        terminal_units_count: "Terminal units count"
-        controls_count: "Sub system controls count"
+        title: "Is-systemau a archwiliwyd"
+        volume_definitions: "Diffiniadau cyfaint"
+        description: Disgrifiad
+        cooling_output: "Allbwn oeri effeithiol wedi'i raddio "
+        area_served: "Ardal a wasanaethir"
+        inspection_date: "Dyddiad yr archwiliad"
+        cooling_plant_count: "Nifer yr offer oeri"
+        ahu_count: "Nifer yr AHUs"
+        terminal_units_count: "Nifer yr unedau terfynell"
+        controls_count: "Nifer y rheolyddion is-systemau"
       pre_inspection:
-        title: "Pre inspection records requested"
+        title: "Cofnodion archwilio y gofynnwyd amdanynt"
         essential:
-          title: "Essential records"
-          controlZones: "Description of system control zones, with schematic drawings"
-          coolingCapacities: "Cooling capacities, with locations of the indoor and outdoor components of each plant"
-          listOfSystems: "Itemised list of installed air conditioning and refrigeration plant including product makes, models and identification numbers"
-          operationControls: "Description of method of control of periods of operation."
-          schematics: "Floor plans and schematics of air conditioning systems."
-          temperatureControls: "Description of method of control of temperature"
+          title: "Cofnodion hanfodol"
+          controlZones: "Disgrifiad o'r parthau rheoli system, gyda lluniadau sgematig"
+          coolingCapacities: "Capasiti oeri, gyda lleoliadau cydrannau'r holl offer o dan do ac yn yr awyr agored"
+          listOfSystems: "Rhestr fesul eitem o'r offer aerdymheru ac oeri sydd wedi'u gosod gan gynnwys gwneuthuriad y cynhyrchion, y model a'r rhif adnabod"
+          operationControls: "Disgrifiad o ddull rheoli'r cyfnodau gweithredu."
+          schematics: "Cynlluniau llawr a sgemateg y systemau aerdymheru"
+          temperatureControls: "Disgrifiad o ddull rheoli'r tymheredd"
+          temperatureControlMethod: "Disgrifiad o ddull rheoli'r tymheredd"
+          operationControlMethod: "Disgrifiad o ddull rheoli'r cyfnodau gweithredu."
         desirable:
-          title: "Desirable records"
-          commissioningResults: "For relevant air supply and extract systems, commissioning results of measured absorbed power at normal air delivery and extract rates, and commissioning results for normal delivered delivery and extract air flow rates (or independently calculated specific fan power for the systems)"
-          consumptionRecords: "Records of sub-metered air conditioning plant use or energy consumption"
-          controlSystemMaintenance: "Records of calibration and maintenance operations carried out on control systems and sensors, or BMS systems and sensors"
-          deliverySystemMaintenance: "Records of maintenance operations carried out on air delivery systems, including filter cleaning and changing, and cleaning of heat exchangers"
-          previousReports: "Reports from earlier inspections of air conditioning systems, and for the generation of an energy performance certificate"
-          refrigerationMaintenance: "Records of maintenance operations carried out on refrigeration systems, including cleaning indoor and outdoor heat exchangers, refrigerant leakage tests, repairs to refrigeration components replenishing with refrigerant"
+          title: "Cofnodion dymunol"
+          commissioningResults: "Ar gyfer systemau cyflenwi a thynnu aer perthnasol, comisiynu canlyniadau'r pŵer a amsugnir a fesurwyd ar y cyfraddau cyflenwi a thynnu aer arferol, a chomisiynu canlyniadau ar gyfer cyfraddau llif arferol aer a gyflenwir ac a dynnir (neu bŵer ffaniau penodol y systemau wedi'i gyfrifo'n annibynnol)"
+          consumptionRecords: "Cofnodion o ddefnydd, neu ddefnydd ynni, offer aerdymheru sydd ag is-fesurydd"
+          controlSystemMaintenance: "Cofnodion gwaith calibradu a gwaith cynnal a wnaed ar systemau rheoli a synwyryddion, neu systemau a synwyryddion BMS"
+          deliverySystemMaintenance: "Cofnodion gwaith cynnal a wnaed ar systemau cyflenwi aer, gan gynnwys glanhau a newid hidlyddion, a glanhau cyfnewidyddion gwres"
+          previousReports: "Adroddiadau ar archwiliadau cynharach o systemau aerdymheru, ac er mwyn llunio tystysgrif perfformiad ynni"
+          refrigerationMaintenance: "Cofnodion gwaith cynnal a wnaed ar systemau oeri, gan gynnwys glanhau cyfnewidyddion gwres o dan do ac yn yr awyr agored, prifion gollyngiadau oeryddion, gwaith trwsio ar gydrannau oeri a'u hail-lenwi ag oerydd"
+          maintenanceRecords: "Cofnodion gwaith cynnal a wnaed gan gynnwys glanhau hidlyddion, glanhau cyfnewidyddion gwres o dan do ac yn yr awyr agored, profion gollyngiadau oeryddion, gwaith trwsio ar gydrannau oeri neu eu hail-lenwi ag oerydd"
+          calibrationRecords: "Cofnodion gwaith calibradu a chynnal a wnaed ar systemau rheoli a synwyryddion"
         optional:
-          title: "Optional records"
-          bmsCapability: "Where a BMS is used the manager should arrange for a short statement to be provided describing its capabilities, the plant it is connected to control, the set points for the control of temperature, the frequency with which it is maintained, and the date of the last inspection and maintenance"
-          complaintRecords: "Records of any issues or complaints that have been raised concerning the indoor comfort conditions achieved in the treated spaces"
-          coolingLoadEstimate: "An estimate of the design cooling load for each system (if available). Otherwise, a brief description of the occupation of the cooled spaces, and of power consuming equipment normally used in those spaces"
-          monitoringCapability: "Where a monitoring station, or remote monitoring facility, is used to continually observe the performance of equipment such as chillers, the manager should arrange for a statement to be provided describing the parameters monitored, and a statement reviewing the operating efficiency of the equipment"
-        reviewed: "Reviewed"
-        not_available: "Not available"
+          title: "Cofnodion dewisol"
+          bmsCapability: "Pan ddefnyddir BMS dylai'r rheolwr drefnu bod datganiad byr yn cael ei ddarparu yn disgrifio'i alluoedd, yr offer y mae wedi'i gysylltu ag ef i'w reoli, y pwyntiau gosod ar gyfer rheoli tymheredd, pa mor aml y mae'n cael ei gynnal, a dyddiad yr archwiliad a'r gwaith cynnal diwethaf"
+          complaintRecords: "Cofnodion unrhyw faterion neu gŵynion sydd wedi'u codi ynghylch amodau'r cysur dan do a sicrhawyd yn y mannau a driniwyd"
+          coolingLoadEstimate: "Amcangyfrif o'r llwyth oeri dyluniedig ar gyfer pob system (os yw ar gael). Fel arall, disgrifiad byr o sut mae'r mannau a oerir yn cael eu meddiannu, ac o'r offer sy'n defnyddio pŵer sydd fel arfer yn cael ei ddefnyddio yn y mannau hynny"
+          monitoringCapability: "Pan ddefnyddir gorsaf fonitro, neu gyfleuster monitro o bell, i gadw llygad yn barhaus ar berfformiad offer fel oeryddion, dylai'r rheolwr drefni bod datganiad yn cael ei ddarparu yn disgrifio'r paramedrau sy'n cael eu monitro’r, a datganiad yn adolygu effeithlonrwydd gweithredol yr offer"
+        reviewed: "Wedi'i adolygu"
+        not_available: "Heb fod ar gael"
         checklist:
-          reviewed: "These records were reviewed:"
-          unavailable: "These records were not available:"
-        scss: "For the centralised cooling systems"
-        pcs: "For the packaged cooling systems"
+          reviewed: "Adolygwyd y cofnodion hyn:"
+          unavailable: "Doedd y cofnodion hyn ddim ar gael:"
+        scss: "Ar gyfer y systemau oeri canolog"
+        pcs: "Ar gyfer y systemau oeri mewn pecyn"
       air_handling_systems:
-        title: "Air handling systems"
-        filters:
-          title: "CS6.1, CS6.2, CS6.3: Filters"
-          condition: "Are air intake and filter conditions acceptable?"
-          change_frequency: "Have filters been changed according to current industry guidance?"
-          differential_pressure_gauge: "Is the filter differential pressure gauge, where fitted, working?"
-        heat_exchangers:
-          title: "CS6.5 Condition of heat exchangers"
-          condition: "Are heat exchangers in good condition?"
-        refrigeration:
-          title: "CS6.6 Refrigeration leaks (if DXCoil installed)"
-          leaks: "Are there any signs of a refrigerant leak?"
-        fan_rotation:
-          title: "CS6.7/a Fan rotation"
-          direction: "Does the fan rotate in the correct direction?"
-          modulation: "Is the speed control or modulation operational?"
-        fan_control:
-          title: "CS6.7/b Fan and control"
-          setting: "Note the fan type, and method of air speed control. Check the setting and operation of any fresh air/recirculation dampers."
-        heat_recovery:
-          title: "CS6.8 Heat recovery"
-          energy_conservation: "Identify whether the systems have any energy conservation facilities, e.g. heat recovery, free cooling sequence, and check for evidence that such facilities are/have been functioning."
-        air_leakage:
-          title: "CS6.9 Air leakage"
-          condition: "Observe the air handling plant and visible air containment including ductwork, floor or ceiling plenums and builders' work shafts for signs of excessive leakage and energy loss."
-        outdoor_inlets:
-          title: "CS 7.1, CS7.2 Outdoor air inlets"
-          condition: "Locate the inlets for outdoor air. Note any significant obstructions or blockages to inlet grilles, screens and pre- filters. Note where inlets may be affected by proximity to local sources of heat, or to air exhausts."
-        fan_power:
-          title: "CS1.5 Specific fan power"
-          condition: "Are air flow rates and system pressures available from commissioning data?"
-      terminal_units:
-        title: "Terminal units"
+        title: "Systemau trin awyr"
+        sub_heading: "System trin awyr"
         equipment:
-          description: "Description of unit"
-          coolingPlant: "Cooling plant serving terminal unit"
-          manufacturer: "Manufacturer"
-          yearInstalled: "Year installed"
-          areaServed: "Area served"
-          discrepancy: "Discrepancies noted"
+          unit: Uned
+          component: Cydran
+          areasServed: "Mannau neu systemau a wasanaethir"
+          discrepancy: "Anghysondebau a nodwyd"
+          location: "Lleoliad yr offer"
+          manufacturer: Gweithgynhyrchydd
+          systemsServed: "Systemau a wasanaethir o offer oeri"
+          yearInstalled: "Y flwyddyn y'i gosodwyd "
+        filters:
+          title: "CS6.1, CS6.2, CS6.3: Hidlyddion"
+          condition: "Ydy cyflwr y fewnfa aer a'r hidlyddion yn dderbyniol?"
+          change_frequency: "Ydy'r hidlyddion wedi'u newid yn unol â chanllawiau presennol y diwydiant?"
+          differential_pressure_gauge: "Ydy mesurydd pwysedd gwahaniaethol yr hidlydd, os oes un wedi'i ffitio, yn gweithio?"
+        heat_exchangers:
+          title: "CS6.5 Cyflwr y cyfnewidyddion gwres"
+          condition: "Ydy'r cyfnewidyddion gwres mewn cyflwr da?"
+        refrigeration:
+          title: "CS6.6 Gollyngiadau oerydd (os oes DXCoil wedi'i osod)"
+          leaks: "Oes arwyddion bod oerydd yn gollwng?"
+        fan_rotation:
+          title: "CS6.7/a Cylchdroad y ffan"
+          direction: "Ydy'r ffan yn cylchdroi yn y cyfeiriad cywir?"
+          modulation: "Ydy'r rheolydd cyflymder neu'r modyliad yn gweithio?"
+        fan_control:
+          title: "CS6.7/b Y Ffan a'r Rheolydd"
+          setting: "Nodwch y math o ffan, a'r dull rheoli cyflymder aer. Gwiriwch osodiad a gweithrediad unrhyw ddampwyr awyr iach/ailgylchredeg"
+        heat_recovery:
+          title: "CS6.8 Adennill gwres"
+          energy_conservation: "Nodwch a oes gan y systemau unrhyw gyfleusterau cadw ynni, e.e. adennill gwres, dilyniant oeri rhydd, a chwiliwch am dystiolaeth bod y cyfleusterau hyn yn gweithio/wedi bod yn gweithio."
+        air_leakage:
+          title: "CS6.9 Aer yn gollwng"
+          condition: "Edrychwch ar yr offer trin aer a'r dulliau cyfyngu aer sy'n weladwy gan gynnwys y dwythellau, plena llawr neu nenfwd a siafftiau gwaith adeiladwyr i chwilio am arwyddion o ollyngiadau gormodol a cholli ynni."
+        outdoor_inlets:
+          title: "CS 7.1, CS7.2 Mewnfeydd i aer o'r tu allan"
+          condition: "Dewch o hyd i'r mewnfeydd ar gyfer aer o'r tu allan. Nodwch unrhyw ataliadau arwyddocaol i griliau. sgriniau a rhag-hidlyddion y mewnfeydd. Nodwch ble y gallai agosrwydd at ffynonellau gwres lleol, neu agosrwydd at wacawyr aer, effeithio ar y mewnfeydd"
+        fan_power:
+          title: "CS1.5 Pŵer ffan penodol"
+          estimate_power: "Amcangyfrifwch bŵer ffan penodol (SFP) systemau symud aer"
+          condition: "Ydy cyfraddau llif aer a phwyseddau systemau ar gael o'r data comisiynu?"
+          sfp: "Y cyfrifiad a ddefnyddiwyd oedd: %{sfp_value}"
+      terminal_units:
+        title: "Unedau terfynell"
+        sub_heading: "Uned derfynell"
+        equipment:
+          unit: Uned
+          component: Cydran
+          description: "Disgrifiad o'r uned"
+          coolingPlant: "Offer oeri sy'n gwasanaethu'r uned derfynell"
+          manufacturer: Gweithgynhyrchydd
+          yearInstalled: "Y flwyddyn y'i gosodwyd"
+          areaServed: "Man a wasanaethir"
+          discrepancy: "Anghysondebau a nodwyd"
         insulation:
-          title: "CS4.1 Insulation"
-          pipework: "Is the pipework adequately insulated?"
-          ductwork: "Is the ductwork adequately insulated?"
+          title: "CS4.1 Inswleiddio"
+          pipework: "Ydy'r gwaith pibellau wedi'i inswleiddio'n ddigonol?"
+          ductwork: "Ydy'r gwaith dwythellau wedi'i inswleiddio'n ddigonol?"
         unit:
-          title: "CS4.2 Unit condition"
-          condition: "Are the terminal units in good working order?"
+          title: "CS4.2 Cyflwr yr Unedau"
+          condition: "Ydy'r unedau terfynell mewn cyflwr gweithio da?"
         grilles_air_flow:
-          title: ""
-          distribution: "Do air delivery openings provide good distribution?"
-          tampering: "Is there evidence of tampering with diffusers?"
-          water_supply: "Are chilled and hot water being supplied to terminals simultaneously?"
-          complaints: "Are there are any records of occupant complaints regarding air distribution?"
+          title: "CS5.1, CS5.2 Griliau a llif aer"
+          distribution: "Ydy'r agoriadau cyflenwi aer yn sicrhau bod yr aer yn cael ei ddosbarthu'n dda?"
+          tampering: "Oes tystiolaeth bod rhywun wedi ymyrryd â'r tryledyddion?"
+          water_supply: "Oes dŵr wedi'i oeri a dŵr poeth yn cael eu cyflawni i'r terfynellau yr un pryd?"
+          complaints: "Oes cofnodion o gŵynion gan ddeiliaid ynglŷn â sut mae'r aer yn cael ei ddosbarthu?"
         diffuser_positions:
-          title: "CS5.3, CS5.4, CS5.5 Diffuser positions"
-          position_issues: "Is there potential for air to short-circuit from supply to extract?"
-          partitioning_issues: "Is the position of partitioning or furniture adversely affecting performance?"
-          control_operation: "Is the control and operation adequate?"
+          title: "CS5.3, CS5.4, CS5.5 Safleoedd tryledyddion"
+          position_issues: "Oes potensial i aer greu cylched pwt rhwng cyflenwi a thynnu?"
+          partitioning_issues: "Ydy safle parwydydd neu ddodrefn yn effeithio ar y perfformiad?"
+          control_operation: "Ydy'r dulliau rheoli a'r gweithrediad yn ddigonol?"
       system_controls:
-        title: "System controls"
-        subtitle_prefix: "Control for"
+        title: "Rheolyddion y system"
+        subtitle_prefix: "Rheolydd ar gyfer"
         zoning:
-          title: "CS8.1 Zoning"
-          question: "Is the zoning appropriate in relation to anticipated cooling demand?"
+          question: "CS8.1 Ydy'r rhaniad yn barthau yn briodol o ran y galw am oeri a ragwelir?"
+        time:
+          question: "CS8.2 Nodwch y diwrnodau yn yr wythnos a'r amserau sydd wedi'u dynodi ar y rheolydd neu'r BMS o'u cymharu â'r amser go iawn"
+        set_on_period:
+          question: "CS8.3/a Nodwch yr amserau sydd wedi'u gosod ar gyfer dechrau a gorffen cyfnodau ( a dyddiau'r wythnos a'r penwythnos os yw'r cyfleuster hwnnw ar gael gyda'r amserydd)"
+        timer_shortfall:
+          question: "CS 8.3/b Oes diffyg yng ngalluoedd yr amserydd?"
+        sensors:
+          question: "CS8.4 Nodwch ac aseswch y synwyryddion rheoli tymheredd ar gyfer cynhesu ac oeri parthau. Ydy math a lleoliad y synwyryddion yn briodol o ran yr offer sy'n allyrru'r gwres a'r oerfel, y llifoedd gwres neu'r dosbarthiad tymheredd tebygol yn y parth neu'r lle?"
         dead_band:
-          question: ""
+          question: "CS8.6 Nodwch a oes 'band marw' wedi'i osod neu'n gallu cael ei osod, rhwng cynhesu ac oeri"
+        capacity:
+          question: "CS8.7 Ydy rheolyddion yr is-systemau'n integreiddio'n effeithiol â'r strategaeth gyffredinol ar gyfer rheoli'r system?"
+        airflow:
+          question: "CS8.8 Aseswch y dull ar gyfer modylu neu reoli cyfradd llifer yr aer drwy'r dwythellau cyflenwi a thynnu aer"
+        guidance_controls:
+          question: "PS3.6 Oes nodiadau cyfarwyddyd yn weladwy nei oes rheolyddion ar gael i gyfyngu ar ddefnydd yr offer oeri tra bo ffenestri ar agor neu tra bo'r offer oeri/gwresogi ymlaen?"
         set_temperature:
-          question: "CS8.5 Note the set temperature in each zone for heating and cooling in relation to the activities and occupancy of zones and spaces in relation to the manager's intent."
+          question: "CS8.5 Nodwch y tymheredd sydd wedi'i osod ym mhob parth ar gyfer gwresogi ac oeri o'u cymharu â'r gweithgareddau a'r deiliaid sydd ar gael yn y parthau a'r mannau mewn perthynas â bwriad y rheolwr."
+      cooling_plants:
+        title: "Offer oeri"
+        cooling_plant:
+          title: "Offeryn oeri"
+          details:
+            system_number: "Dynodwr yr Uned"
+            identifier: "Dynodwr y Gydran"
+          equipment:
+            title: "Yr offer a archwiliwyd"
+            details:
+              cooling_capacity: "Capasiti Oeri wedi'i raddio (kW)"
+              description: "Disgrifiad (math/manylion)"
+              location: "Leoliad yr Offer Oeri"
+              manufacturer: Gweithgynhyrchydd
+              model_reference: "Model/Cyfeirnod"
+              refrigerant_charge: "Capasiti Oeri wedi'i raddio (kW)"
+              refrigerant_type: "Math o Oerydd"
+              serial_number: "Rhif Cyfresol"
+              year_installed: "Y flwyddyn y gosodwyd yr offer"
+              area_served: "Y Mannau/Systemau a wasanaethir"
+              discrepancy_note: "Nodwch isod unrhyw anghysondeb rhwng yr wybodaeth a roddwyd gan y cleient a'r wybodaeth a gasglwyd ar y safle, neu unrhyw wybodaeth sydd hefyd yn berthnasol i'r offer/system oeri:"
+          inspection:
+            title: "Adrannau wedi'u cymeradwyo"
+            positive: Ydy
+            negative: "Nac ydy"
+            pipeInsulationOk: "CS4.1 Ydy'r inswleiddiad ar bibellau cylchredeg wedi'i ffitio'n dda ac mewn cyflwr da?"
+            heatRejectionOperational: "CS3.1/a Ydy'r offer gwrthod gwres yn gweithio?"
+            heatRejectionAreaClear: "CS3.2/a Ydy'r man o amgylch yr offer gwrthod gwres yn glir rhag rhwystrau a malurion?"
+            heatExchangerOk: "CS3.1/b Ydy'r cyfnewidyddion gwres cyddwyso yn rhydd rhag difrod/cyrydiad ac yn lân?"
+            compressorsOperational: "CS2.3/a Ydy'r cywasgyddion yn gweithio neu oes modd eu cael nhw i ddechrau gweithio?"
+            chillerPlantOperational: "CS2.1 Ydy'r offer oeri'n gweithio?"
+            chillerPlantOk: "CS2.2/b Ydy cyflwr cyffredinol yr offer poeri ac unrhyw offer canolog perthynol yn dda?"
+            chillerPlantAreaClear: "CS2.2/a Ydy'r man o amgylch yr offer oeri'n rhydd rhag rhwystrau a malurion?"
+            chillerPlacementOk: "CS2.2/c Ydy'r cyddwysydd wedi'i osod yn glir oddi wrth lwfrau arllwys aer cynnes?"
+            airRecirculation: "CS3.2/b Ydy'r cyddwyswr yn rhydd rhag unrhyw bosibiliad o ailgylchredeg aer?"
+          sizing:
+            title: "Offer Oeri o Faint priodol"
+            details:
+              installed_capacity: "Capasiti Oeri sydd wedi'i Osod (kW)"
+              occupant_density: "Dwysedd deiliaid (m2/person)"
+              total_floor_area: "Cyfanswm yr arwynebedd a wasanaethir gan yr offer hwn (m2)"
+              total_occupants: "Cyfanswm y Deiliaid a wasanaethir gan yr offer hwn"
+              upper_heat_gain: "Uchafswm Enillion Gwres Disymwth (W/m2)"
+              acceptable_installed_size: "Bernir bod y Maint sydd wedi'i Osod"
+              acceptable_installed_size_section:
+                "1": "Yn unol â'r disgwyl"
+                "2": "Yn Llai na'r disgwyl"
+                "3": "Yn Fwy na'r disgwyl"
+            recommendation_intro_text: "Mae fersiwn presennol y Ddogfen Rheoliadau Adeiladu a gymeradwywyd, Rhan L, yn rhoi canllawiau sy'n awgrymu na ddylai'r offer fod yn fwy nag 20% yn rhy fawr. Dylech fabwysiad hyn fel dull cymharu er mwyn aros yn unol â'r safonau presennol."
+            recommendation_title: "Nodiadau ac Argymhellion"
+          refrigeration:
+            title: Oeri
+            details:
+              pre_compressor: "Cyn y cywasgydd(Â°C)"
+              post_processor: "Ar ôl y cywasgydd(Â°C)"
+              ambient: "Amgylchol(Â°C)"
+              acceptable_temperature: "Bernir bod y Tymheredd"
+              refrigerant_name: "Math o Oerydd"
+              compressor_control: "Aseswch y cywasgydd(ion) oeri a'r dull ar gyfer rheoli'r capasiti oeri"
+            leak: "Oes arwyddion bod oerydd yn gollwng?"
+            f_gas_inspection: "O dan reolaeth Montreal/ODS/F-Gas/"
+          maintenance:
+            title: "Cynnal a Chadw Rheolaidd"
+            competent_person: "Ydy'r gwaith cynnal-a-chadw yn cael ei wneud gan bobl â chymwysterau addas a hynny yn unol â chanllawiau'r diwydiant??"
+            records_kept: "Oes tystiolaeth o waith cynnal-a-chadw rheolaidd?"
+          metering:
+            title: "Cymharu'r mesurydd â'r meincnodau ynni priodol"
+            bemInstalled: "Ydy'r offer oeri wedi'i gysylltu â BEMS a all ddarparu larymau y tu allan i'r amrediad"
+            excessiveUse: "Oes cofnodion ar gyfer yr offer o ddefnydd yr offer aerdymheru neu o ddefnyddio ynni ar is-fesurydd gyda nifer yr oriau y disgwylir eu defnyddio bob blwyddyn?"
+            meteringInstalled: "Oes mesuryddion wedi'u gosod i ganiatáu i'r ynni a ddefnyddir gan yr offer oeri gael ei fonitro?"
+            usageRecords: "Ydy'r defnydd ynni neu'r oriau defnydd yn ormodol?"
+            reading: "Darlleniad mesurydd a gofnodwyd %{meter_reading}"
+          chillers:
+            title: "Oeryddion a Oerir gan Ddŵr (Tyrau Oeri a Chyddwysyddion Anweddu)"
+            waterCooled: "Ydy llif y dŵr drwy dyrau oeri neu oeryddion anweddu yn gyson ac yn effeithlon, a hynny heb golli dŵr? "
+            waterTreatment: "Oes trefn reoli ar waith i sicrhau bod y dŵr yn cael ei wirio'n rheolaidd a'i drin i sicrhau nad oes risg o Legionella?"
+          humidity_control:
+            title: "Rheoli Lleithder"
+            control: "Oes offer ar wahân wedi'i osod i reoli lleithder?"
       related_certificate:
-        title: "Related certificate"
-        text: "A summary of this information can be found on the %{link}."
-        cta: "associated Air Conditionining Inspection Certificate"
+        title: "Tystysgrif berthynol"
+        text: "Mae crynodeb o'r wybodaeth hon ar gael ar y %{link}."
+        cta: "dystysgrif archwiliad aerdymheru berthynol"
     flag:
-      finding_yes: "Yes"
-      finding_no: "No"
-      recommendations: "The assessor made the following notes and recommendations:"
-    detailed_inspection_unavailable: ""
-
+      finding_yes: Ie
+      finding_no: Na
+      recommendations: "Gwnaeth yr asesydd y nodiadau a'r argymhellion a ganlyn:"
+    detailed_inspection_unavailable:
+      text: "Nid yw nodiadau manwl yr archwiliad o'r adroddiad hwn ar gael ar-lein mwyach. Os oes arnoch angen nodiau manwl yr archwiliad, cysylltwch â ni yn %{link}"
+      link: "mailto:mhclg.digital-services@communities.gov.uk?subject=EPB - "
+      cta: "mhclg.digital-services@communities.gov.uk"
+      title: "Nodiadau manwl ar yr archwiliad"
+  primary_energy_use_dropdown:
+    what_is_primary_energy_use_title: "Beth yw prif ddefnydd ynni?"
+    what_is_primary_energy_use_details: "mae prif ddefnydd ynni yn fesur o'r ynni y mae ei angen ar gyfer golau, gwres a dŵr poeth mewn eiddo. Mae'r cyfrifiad yn cynnwys:"
+    efficiency_of_heating: "effeithlonrwydd system wresogi'r eiddo"
+    efficiency_of_electricity: "effeithlonrwydd gorsaf gynhyrchu ar gyfer trydan"
+    fuel_for_property: "yr ynni a ddefnyddir i gynhyrchu'r tanwydd a'i ddosbarthu i'r eiddo"
   data_gap_warning:
-    pre_text: 'Welsh: For certificates issued between 9 June 2020 and 19 September 2020, and all expired certificates, you should use:'
-    post_text_1: 'Welsh: Find all other valid certificates using this page’s search.'
-    post_text_2: 'Welsh: If you cannot find a certificate, you should contact the energy assessor who carried out the assessment.'
     domestic:
-      link_ew: 'Welsh: <a href="https://www.epcregister.com">the EPC register for England and Wales</a>'
-      link_ni: 'Welsh: <a href="https://www.epbniregister.com">the EPC register for Northern Ireland</a>'
+      pre_text: "Ar gyfer tystysgrifau a ddyroddwyd rhwng 9 Mehefin 2020 a 19 Medi 2020, dylech ddefnyddio:"
+      link_ew: "<a href=\"https://www.epcregister.com\">Cofrestr EPCs Cymru a Lloegr</a>"
+      link_ni: "<a href=\"https://www.epbniregister.com\">Cofrestr EPCs Gogledd Iwerddon</a>"
+      post_text_1: "Chwiliwch am bob tystysgrif ac adroddiad arall drwy ddefnyddio chwiliad y tudalen hwn."
+      post_text_2: "Os na allwch chi ddod o hyd i dystysgrif, dylech gysylltu â'r asesydd ynni a wnaeth yr asesiad."
     non_domestic:
-      link_ew: 'Welsh: <a href="https://www.ndepcregister.com">the energy performance register for England and Wales</a>'
-      link_ni: 'Welsh: <a href="https://www.epbniregisternd.com">the energy performance register for Northern Ireland</a>'
+      pre_text: "Ar gyfer tystysgrifau a ddyroddwyd rhwng 9 Mehefin 2020 a 19 Medi 2020, dylech ddefnyddio:"
+      link_ew: "<a href=\"https://www.epcregister.com\">Cofrestr EPCs Cymru a Lloegr</a>"
+      link_ni: "<a href=\"https://www.epbniregister.com\">Cofrestr EPCs Gogledd Iwerddon</a>"
+      post_text_1: "Chwiliwch am bob tystysgrif ac adroddiad arall drwy ddefnyddio chwiliad y tudalen hwn."
+      post_text_2: "Os na allwch chi ddod o hyd i dystysgrif neu adroddiad, dylech gysylltu â'r asesydd ynni a wnaeth yr asesiad."
+  accessibility_statement:
+    top_heading: "Datganiad ar hygyrchedd"
+    intro: "Mae'r datganiad hwn yn gymwys i gynnwys a gyhoeddir ar: <ul class=\"govuk-list govuk-list--bullet\"> <li><a class= \"govuk-link\" href=\"https://find-energy-certificate.digital.communities.gov.uk\">find-energy-certificate.digital.communities.gov.uk</a></li> <li><a class= \"govuk-link\" href=\"https://getting-new-energy-certificate.digital.communities.gov.uk\">getting-new-energy-certificate.digital.communities.gov.uk</a></li> </ul>"
+    paragraph_1: "Mae'r wefan hon yn cael ei rhedeg gan y Weinyddiaeth Tai, Cymunedau a Llywodraeth Leol. Hoffem weld cynifer â phosibl o bobl yn gallu defnyddio’r wefan. Er enghraifft, mae hynny’n golygu y dylech chi allu: <ul class=\"govuk-list govuk-list--bullet\"> <li>newid lefelau cyferbyniad lliw a ffontiau</li> <li>chwyddo hyd at 300% heb i’r testun ddiferu oddi ar y sgrin </li> <li>llywio’r rhan fwyaf o’r wefan drwy ddefnyddio bysellfwrdd yn unig </li> <li>llywio’r rhan fwyaf o’r wefan drwy ddefnyddio meddalwedd adnabod llais</li> <li>gwrando ar y rhan fwyaf o’r wefan drwy ddefnyddio darllenydd sgrin (gan gynnwys fersiynau diweddaraf JAWS, NVDA a VoiceOver)</li> </ul>"
+    paragraph_2: "Rydyn ni hefyd wedi gwneud testun y wefan mor hawdd â phosibl i'w ddeall"
+    paragraph_3: "Mae gan <a class=\"govuk-link\" href=\"https://mcmw.abilitynet.org.uk/\">AbilityNet</a> gyngor ar wneud eich dyfais yn haws i'w ddefnyddio os oes gennych anabledd' have a disability."
+    contact_heading: "Gwybodaeth am adborth a chysylltiadau"
+    contact_paragraph: "If you need information on this website in a different format like accessible PDF, print bras, tesun hawdd i’w ddarllen, recordiad sain neu braille: <ul class=\"govuk-list govuk-list--bullet\"> <li>anfonwch neges ebost at: <a href=\"mailto:mhclg.digital-services@communities.gov.uk?subject=EPB - \">mhclg.digital-services@communities.gov.uk</a></li> <li>Ffôn: 020 3829 0748</li> </ul>"
+    reporting_heading: "Rhoi gwybod am broblemau hygyrchedd gyda'r wefan hon"
+    reporting_paragraph: "Rydyn ni bob amser yn chwilio am ffyrdd i wella hygyrchedd y wefan hon. Os gwelwch chi unrhyw broblemau sydd heb eu rhestru ar y tudalen hwn neu os nad ydych yn credu ein bod yn bodloni'r gofynion ynglŷn â hygyrchedd, <a class=\"govuk-link\" href=\"https://forms.office.com/Pages/ResponsePage.aspx?id=EGg0v32c3kOociSi7zmVqPbdKK1xB5FPizueLd4cs19UQVdISTJKQTNPSUtON0pPUDYzWFMyVEVIWC4u\">rhowch  adborth</a>."
+    enforcement_heading: "Gweithdrefn orfodi"
+    enforcement_paragraph: "Mae'r Comisiwn Cydraddoldeb a Hawliau Dynol (EHRC) yn gyfrifol am orfodi Rheoliadau Hygyrchedd Cyrff y Sector Cyhoeddus (Gwefannau a Chymwysiadau Symudol) (Rhif 2) 2018 (y â€˜rheoliadau hygyrchedd'). Os nad ydych yn fodlon ar sut rydyn ni'n ymateb i'ch cwyn, <a class=\"govuk-link\" href=\"https://www.equalityadvisoryservice.com/\">cysylltwch â'r Gwasanaeth Cyngor a Chymorth Cydraddoldeb (EASS)</a>."
+    technical_heading: "Gwybodaeth dechnegol am hygyrchedd y wefan hon"
+    technical_paragraph: "Mae'r Weinyddiaeth Gymunedau, Tai a Chymunedau Lleol wedi ymrwymo isicrhau bod ei gwefan yn hygyrch, yn unol â Rheoliadau Hygyrchedd Cyrff y Sector Cyhoeddus (Gwefannau a Chymwysiadau Symudol) (Rhif 2) 2018."
+    compliance_heading: "Statws cydymffurfio"
+    compliance_paragraph: "Mae'r wefan hon yn cydymffurfio'n rhannol â <a class=\"govuk-link\" href=\"https://www.w3.org/TR/WCAG21/\">safon AA Canllawiau Hygyrchedd Cynnwys y We fersiwn 2.1</a>, oherwydd y diffygion cydymffurfio sydd wedi'u rhestru isod."
+    non_accessible_heading: "Cynnwys nad yw'n hygyrch"
+    non_accessible_paragraph: "Nid yw'r cynnwys a restrir isod yn hygyrch a hynny am y rhesymau a ganlyn."
+    non_compliance_heading: "Methu cydymffurfio â'r rheoliadau hygyrchedd' "
+    non_compliance_paragraph_1: "Mae rhywfaint o'r cynnwys yn dod oddi wrth aseswyr achrededig. Efallai na fydd yr wybodaeth hon wedi'i strwythuro'n gywir ar gyfer y we a'i fod yn anodd ei phori â darllenydd sgrin, yn fwyaf arbennig yn yr Adroddiadau ar Archwiliadau aerdymheru."
+    non_compliance_paragraph_2: "Does gan rai delweddau ddim testun amgen, ac felly nid yw pobl sy'n defnyddio darllenydd sgrin yn gallu cyrchu'r wybodaeth. Mae hyn yn methu maen prawf llwyddiant 1.1.1 WCAG 2.1, (cynnwys annhestunol)"
+    non_compliance_paragraph_3: "Rydym yn bwriadu ychwanegu testun amgen ar gyfer pob delwedd erbyn mis Tachwedd 2020. Pan gyhoeddwn gynnwys newydd fe ofalwn ni fod ein defnydd ar ddelweddau yn bodloni'r safonau hygyrchedd"
+    non_compliance_paragraph_4: "Weithiau, gall pobl sy'n defnyddio darllenydd sgrin glywed label nad yw'n ymddangos ar y tudalen."
+    non_compliance_paragraph_5: "Rydym yn bwriadu cywiro cyfeiriadau sydd wedi'u torri ynglŷn â'r holl gynnwys erbyn mis Tachwedd 2020."
+    out_of_scope_heading: "Cynnwys nad yw o fewn rhychwant y rheoliadau hygyrchedd"
+    out_of_scope_paragraph: "Heb fod yn gymwys"
+    what_we_do_heading: "Yr hyn rydyn ni'n ei wneud i wella hygyrchedd"
+    what_we_do_paragraph: "Bydd y gwasanaeth hwn yn cael ei brofi'n allanol o ran cydymffurfio â Chanllawiau Hygyrchedd Cynnwys y We V2.1 lefel A erbyn mis Tachwedd 2020."
+    preparation_heading: "Paratoi'r datganiad hygyrchedd hwn"
+    preparation_paragraph: "Cafodd y datganiad hwn ei baratoi ar 17 Medi 2020. Y tro diwethaf iddo gael ei adolygu oedd 17 Medi 2020. Gwnaethon ein gwaith profi ein hunain ar 17 Medi 2020."
+    accessibility_audit: "Bydd archwiliad hygyrchedd llawn yn cael ei gyflawni erbyn mis Tachwedd 2020. Byddwn yn cyflwyno adroddiad ar y canfyddiadau yma, gan weithio i gywiro unrhyw faterion ychwanegol a nodir mor gyflym ag y bo modd."
