@@ -1,4 +1,6 @@
 cy:
+  validation_errors:
+    postcode_error: "Rhowch god post go iawn"
   related_content:
     title: "Cynnwys perthynol"
     guidance_on_epc:
@@ -218,6 +220,10 @@ cy:
     top_heading: "Cysylltwch ag asesydd i drefnu asesiad ynni"
     description: "Cysylltwch ag asesydd sydd wedi'i restru isod i drefnu asesiad ynni."
     no_assessors: "Does dim aseswyr yn eich ardal chi ar hyn o bryd."
+    no_assessors_heading: "Dim canlyniadau ar gyfer"
+    no_assessors_1: "Rydyn ni heb ganfod aseswyr ar gyfer"
+    no_assessors_2: "Gwiriwch fod y cod post yn gywir a'i roi unwaith eto, neu rhowch gynnig ar chwilio am god post arall gerllaw"
+    postcode_finder: "Chwiliwch am god post ar chwiliwr codau post y Post Brenhinol"
     accreditation_summary_title: "Rhagor o wybodaeth"
     accreditation_summary_text: "Mae cynlluniau achredu'n cael eu penodi gan y llywodraeth i sicrhau bod gan aseswyr gymwysterau i wneud asesiadau EPC.<br /><br />Os ydych yn anfodlon ar asesiad EPC, gallwch gwyno i'r asesydd yn uniongyrchol. Os ydych yn dal yn anfodlon, dylech gysylltu â chynllun achredu'ch asesydd."
     results: "aseswyr yn nhrefn eu pellter o"
@@ -689,6 +695,7 @@ cy:
         body2: "Mae cyfraddiad yn cael ei roi i bob eiddo, gan amrywio rhwng A+ (y mwyaf effeithlon) ac G (y lleiaf effeithlon)."
         body3: "Mae pob eiddo'n cael sgôr hefyd. Uchaf i gyd yw'r rhif, isaf i gyd mae eich allyriadau carbon deuocsid (CO2) yn debygol o fod."
         body4: "Cyfraddiad a sgôr ynni cyfartalog eiddo yng Nghymru a Lloegr yw D (60)."
+        ni_average_rating: "Y sgôr ynni ar gyfartaledd a sgôr eiddo yng Ngogledd Iwerddon yw D (60)."
       breakdown:
         title: "Dadansoddiad o berfformiad ynni'r eiddo hwn"
         intro: "Mae'r adran hon yn dangos perfformiad ynni nodweddiadol yr eiddo. Nid yw'r asesiad yn ystyried cyflwr nodwedd na pha mor dda y mae'n gweithio."
@@ -1208,6 +1215,7 @@ cy:
         annual_energy_use: "Defnydd ynni blynyddol (kWh/m2/flwyddyn)"
         typical_energy_use: "Defnydd ynni nodweddiadol (kWh/m2/flwyddyn)"
         energy_from_renewables: "Ynni o ffynonellau ynni adnewyddadwy"
+        na:	"Heb fod yn gymwys"
       administrative_information:
         title: "Gwybodaeth weinyddol"
         print_title: "Manylion yr asesiad"
@@ -1540,6 +1548,9 @@ cy:
           humidity_control:
             title: "Rheoli Lleithder"
             control: "Oes offer ar wahân wedi'i osod i reoli lleithder?"
+      inspection_certificate:
+        title: "Tystysgrif archwiliad"
+        text: "Gweld tystysgrif archwilio aerdymheru'r eiddo hwn"
       related_certificate:
         title: "Tystysgrif berthynol"
         text: "Mae crynodeb o'r wybodaeth hon ar gael ar y %{link}."
@@ -1560,6 +1571,9 @@ cy:
     efficiency_of_electricity: "effeithlonrwydd gorsaf gynhyrchu ar gyfer trydan"
     fuel_for_property: "yr ynni a ddefnyddir i gynhyrchu'r tanwydd a'i ddosbarthu i'r eiddo"
   data_gap_warning:
+    pre_text: "Ar gyfer tystysgrifau a ddyroddwyd rhwng 9 Mehefin 2020 a 19 Medi 2020, dylech ddefnyddio:"
+    post_text_1: "Chwiliwch am bob tystysgrif ac adroddiad arall drwy ddefnyddio chwiliad y tudalen hwn."
+    post_text_2: "Os na allwch chi ddod o hyd i dystysgrif, dylech gysylltu â'r asesydd ynni a wnaeth yr asesiad."
     domestic:
       pre_text: "Ar gyfer tystysgrifau a ddyroddwyd rhwng 9 Mehefin 2020 a 19 Medi 2020, dylech ddefnyddio:"
       link_ew: "<a href=\"https://www.epcregister.com\">Cofrestr EPCs Cymru a Lloegr</a>"
