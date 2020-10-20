@@ -67,6 +67,7 @@
     <%== erb :component__epc_summary, locals: {
       energy_efficiency_band: assessment[:currentEnergyEfficiencyBand],
       address: assessment[:address],
+      occupier: nil,
       date_of_expiry: assessment[:dateOfExpiry],
       assessment_id: assessment[:assessmentId],
       property_type: assessment[:propertyType],

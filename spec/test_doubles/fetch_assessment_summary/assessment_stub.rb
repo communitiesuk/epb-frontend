@@ -854,6 +854,7 @@ module FetchAssessmentSummary
             mainHeatingFuel: "Natural Gas",
             buildingEnvironment: "Heating and Natural Ventilation",
             floorArea: "99",
+            occupier: "Primary School",
             assetRating: asset_rating,
             annualEnergyUseFuelThermal: "11",
             annualEnergyUseElectrical: "12",

@@ -8,7 +8,11 @@
       <% end  %>
       <p class="epc-rating-result govuk-body"><%= energy_efficiency_band.upcase %></p>
     </div>
-    <p class="epc-address govuk-body"><%==
+
+    <p class="epc-address govuk-body">
+      <%= occupier %>
+      <br>
+    <%==
       compact_address(
         [
           address[:addressLine1],

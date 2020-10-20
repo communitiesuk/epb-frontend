@@ -41,6 +41,7 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
       expect(response.body).to include("0000-0000-0000-0000-1111")
       expect(response.body).to include("Valid until 21 February 2030")
       expect(response.body).to include("A")
+      expect(response.body).to include("Primary School")
       expect(response.body).to include("2 Lonely Street")
       expect(response.body).to include("Post-Town1")
       expect(response.body).to include("A0 0AA")
