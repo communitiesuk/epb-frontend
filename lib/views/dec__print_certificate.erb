@@ -3,6 +3,6 @@
   <p class="govuk-body"><%= t('dec.sections.print_certificate.description') %></p>
   <p class="govuk-body"><%= t('dec.sections.print_certificate.a3') %></p>
   <div class="component__print govuk-!-display-none-print">
-    <a href="<%= request.path_info + (request.path_info.include?("?") ? "&" : "?") %>print=true" class="govuk-link govuk-!-margin-bottom-5" id="link"><%= t('dec.sections.print_certificate.open_print_version') %></a>
+    <a href="<%= localised_url(request.path_info) + (localised_url(request.path_info).include?("?") ? "&" : "?") %>print=true" class="govuk-link govuk-!-margin-bottom-5" id="link"><%= t('dec.sections.print_certificate.open_print_version') %></a>
   </div>
 </div>
