@@ -15,6 +15,10 @@
         <li><%== t('find_a_certificate.service.air_con_cert_report') %></li>
       </ul>
 
+      <div class="govuk-inset-text">
+        <%== t('find_a_certificate.before_you_start.switch_language.description', :link => '<a class="govuk-link" href="' + t('find_a_certificate.before_you_start.switch_language.url') + '">' + t('find_a_certificate.before_you_start.switch_language.link') + '</a>' ) %>
+      </div>
+
       <a
         href="<%= localised_url('/find-a-certificate/type-of-property') %>"
         role="button"

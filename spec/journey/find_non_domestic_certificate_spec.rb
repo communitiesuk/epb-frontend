@@ -33,6 +33,21 @@ describe "Journey::FindNonDomesticCertificate", type: :feature, journey: true do
     expect(page).to have_content "2 certificates and reports for SW1A 2AA"
   end
 
+  describe "viewing in Welsh" do
+    it "finds a certificate by postcode" do
+      visit "http://find-energy-certificate.local.gov.uk:9393"
+      click_on "Welsh (Cymraeg)"
+      click_on "Dechreuwch nawr"
+      find("#label-non-domestic").click
+      click_on "Parhau"
+      fill_in "postcode", with: "SW1A 2AA"
+      click_button "Chwiliwch"
+      expect(
+        page,
+      ).to have_content "2 o dystysgrifau ac adroddiadau ar gyfer SW1A 2AA"
+    end
+  end
+
   it "displays an error message when entering an empty postcode" do
     visit "http://find-energy-certificate.local.gov.uk:9393"
     click_on "Start now"
