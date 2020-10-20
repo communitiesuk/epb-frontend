@@ -699,7 +699,10 @@ cy:
       breakdown:
         title: "Dadansoddiad o berfformiad ynni'r eiddo hwn"
         intro: "Mae'r adran hon yn dangos perfformiad ynni nodweddiadol yr eiddo. Nid yw'r asesiad yn ystyried cyflwr nodwedd na pha mor dda y mae'n gweithio."
-        assessment_rating_explaination: "Asesir pob nodwedd fel un o'r canlynol:"
+        assessment_rating_explanation: "Asesir pob nodwedd fel un o'r canlynol:"
+        heading_feature: 'Nodwedd'
+        heading_description: 'Disgrifiad'
+        heading_rating: 'Cyfraddiad'
         assessment_ratings:
           very_poor: "gwael iawn (lleiaf effeithlon)"
           poor: gwael

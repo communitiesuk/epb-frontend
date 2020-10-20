@@ -719,7 +719,10 @@ en:
       breakdown:
         title: "Breakdown of property’s energy performance"
         intro: "This section shows the energy performance for features of this property. The assessment does not consider the condition of a feature and how well it is working."
-        assessment_rating_explaination: 'Each feature is assessed as one of the following:'
+        assessment_rating_explanation: 'Each feature is assessed as one of the following:'
+        heading_feature: 'Feature'
+        heading_description: 'Description'
+        heading_rating: 'Rating'
         assessment_ratings:
           very_poor: 'very poor (least efficient)'
           poor: 'poor'
