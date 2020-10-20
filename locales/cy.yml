@@ -229,7 +229,7 @@ cy:
     postcode_finder: "Chwiliwch am god post ar chwiliwr codau post y Post Brenhinol"
     accreditation_summary_title: "Rhagor o wybodaeth"
     accreditation_summary_text: "Mae cynlluniau achredu'n cael eu penodi gan y llywodraeth i sicrhau bod gan aseswyr gymwysterau i wneud asesiadau EPC.<br /><br />Os ydych yn anfodlon ar asesiad EPC, gallwch gwyno i'r asesydd yn uniongyrchol. Os ydych yn dal yn anfodlon, dylech gysylltu â chynllun achredu'ch asesydd."
-    results: "aseswyr yn nhrefn eu pellter o"
+    results: "%{quantity} aseswyr yn nhrefn eu pellter o %{postcode}"
     distance:
       heading: "Pellter"
       default_miles_away_text: "Llai na milltir i fwrdd"
@@ -260,8 +260,8 @@ cy:
     accreditation_summary_title: "Cynlluniau achredu a chwynion"
     accreditation_summary_text: "Mae cynlluniau achredu'n cael eu penodi gan y llywodraeth i sicrhau bod gan aseswyr gymwysterau i wneud asesiadau EPC.<br /><br />Os ydych yn anfodlon ar asesiad EPC, gallwch gwyno i'r asesydd yn uniongyrchol. Os ydych yn dal yn anfodlon, dylech gysylltu â chynllun achredu'ch asesydd."
     results:
-      results: "canlyniadau ar gyfer yr enw"
-      results_like: "canlyniadau, yn debyg i'r enw"
+      results: "%{quantity} canlyniadau ar gyfer yr enw %{name}"
+      results_like: "%{quantity} canlyniadau, yn debyg i'r enw %{name}"
     contact_details_text: "Manylion cysylltu"
     accredited_by_text: "Cynllun achredu"
     assessor_id_text: "ID yr asesydd"
@@ -319,11 +319,11 @@ cy:
     hint: "Er enghraifft SW1A 2AA"
     certificate_by_street_name_and_town:
       heading: "Chwiliwch yn ôl y stryd a'r dref"
-      body: "Os nad ydych yn gwybod cod post yr eiddo"
+      body: "Os nad ydych yn gwybod cod post yr eiddo, %{link}"
       cta: "chwiliwch am EPC drwy ddefnyddio enw'r stryd a'r dref"
     certificate_by_reference_number:
       heading: "Chwiliwch yn ôl rhif y dystysgrif"
-      body: "Fe allwch chi"
+      body: "Fe allwch chi %{link}"
       cta: "chwilio am EPC drwy ddefnyddio rhif y dystysgrif"
     no_network:
       heading: "Cysylltiad â'r rhwydwaith wedi methu"
@@ -579,7 +579,7 @@ cy:
           body: "Cyfraddiad ynni yr eiddo hwn yw %{current_energy_efficiency_band}. Ni chaiff y landlord roi tenantiaeth i denantiaid newydd na thenantiaid presennol oni bai bod esemptiad wedi'i gofrestru."
         recommendation: "Caniateir i eiddo gael ei osod os yw ei gyfraddiad ynni rhwng A+ ac E. Mae %{link} yn nodi'r newidiadau y gallwch eu gwneud i wella cyfraddiad yr eiddo"
         cta: "adroddiad ar argymhellion"
-        url: "#"
+        url: "#related_report"
       other_reports:
         title: "Tystysgrifau eraill ar gyfer yr eiddo hwn"
         certificate_reference: "Rhif cyfeirnod"
@@ -754,7 +754,7 @@ cy:
         title: "Sut i wella perfformiad ynni'r eiddo hwn"
         summary:
           make_changes_text: "Bydd cyflawni unrhyw un neu ragor o'r newidiadau a argymhellir yn gwella effeithlonrwydd dynni'r eiddo."
-          improve_rating_text: "Os gwnewch chi bob un o'r newidiadau a argymhellir, bydd hyn yn gwella cyfraddiad ynni a sgôr eich eiddo o %{current_energy_efficiency_band} (%{current_energy_efficiency_rating}) i %{potential_energy_efficiency_band} "
+          improve_rating_text: "Os gwnewch chi bob un o'r newidiadau a argymhellir, bydd hyn yn gwella cyfraddiad ynni a sgôr eich eiddo o %{current_energy_efficiency_band} (%{current_energy_efficiency_rating}) i %{potential_energy_efficiency_band}  (%{potential_energy_efficiency_rating})."
           what_is_energy_rating: "Beth yw cyfraddiad ynni?"
           energy_rating_description1: "Mae cyfraddiad ynni yn dangos effeithlonrwydd ynni'r eiddo"
           energy_rating_description2: "Mae cyfraddiad yn cael ei roi i bob eiddo, gan amrywio rhwng A+ (y mwyaf effeithlon) ac G (y lleiaf effeithlon)."
