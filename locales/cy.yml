@@ -274,7 +274,7 @@ cy:
     before_you_start:
       title: "Cyn ichi ddechrau"
       switch_language:
-        description: "Mae'r gwasanaeth hwn ar gael hefyd mewn"
+        description: "Mae'r gwasanaeth hwn ar gael hefyd mewn %{link}."
         link: "Saesneg (English)"
         url: "?lang=en"
       scotland:
