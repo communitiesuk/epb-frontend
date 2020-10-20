@@ -187,7 +187,8 @@
           <tr>
             <td style="vertical-align: middle">
               <p class="<%= address_size(assessment[:address]) %>">
-
+                <%= assessment[:technicalInformation][:occupier] %>
+                <br>
                 <%== compact_address(
                   [
                     assessment[:address][:addressLine1],
