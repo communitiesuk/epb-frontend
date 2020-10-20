@@ -680,7 +680,7 @@ en:
         summary: "Breakdown of property’s energy performance"
         energy: 'Environmental impact of this property'
         recommendations: 'How to improve this property’s energy performance'
-        heat-demand: 'Estimated energy use and potential savings'
+        heat_demand: 'Estimated energy use and potential savings'
         information: 'Contacting the assessor and accreditation scheme'
         green_deal: 'Green deal plan'
         related_asssesments: 'Related assessments'
@@ -737,7 +737,7 @@ en:
           total_floor_area: 'Total floor area'
           meters_squared: 'meters squared'
           dwelling_type: 'Property type'
-      environmental-impact:
+      environmental_impact:
         title: "Environmental impact of this property"
         summary: "One of the biggest contributors to climate change is carbon dioxide (CO2). The energy used for heating, lighting and power in our homes produces over a quarter of the UK’s CO2 emissions."
         making_changes: "By making the %{link}, you could reduce this property’s CO2 emissions by %{reduction} tonnes per year. This will help to protect the environment."
@@ -777,7 +777,7 @@ en:
           title: 'Paying for energy improvements'
           text: 'Find energy grants and ways to save energy in your home.'
           link: 'https://www.gov.uk/improve-energy-efficiency'
-      heat-demand:
+      heat_demand:
         title: 'Estimated energy use and potential savings'
         estimated_cost: 'Estimated yearly energy cost for this property'
         three_year_saving: 'Potential saving'
@@ -873,24 +873,24 @@ en:
         expired: 'Expired'
 
         type:
-          CEPC: Commercial energy performance certificate
-          CEPC-RR: Commercial energy performance certificate recommendation report
-          RdSAP: Energy performance certificate
-          SAP: Energy performance certificate
-          AC-REPORT: Air conditioning inspection report
-          AC-CERT: Air conditioning inspection certificate
-          DEC: Display energy certificate
-          DEC-RR: Display energy certificate recommendation report
+          CEPC: 'Commercial energy performance certificate'
+          CEPC-RR: 'Commercial energy performance certificate recommendation report'
+          RdSAP: 'Energy performance certificate'
+          SAP: 'Energy performance certificate'
+          AC-REPORT: 'Air conditioning inspection report'
+          AC-CERT: 'Air conditioning inspection certificate'
+          DEC: 'Display energy certificate'
+          DEC-RR: 'Display energy certificate recommendation report'
 
   assessment_types:
-    CEPC: Commercial energy performance certificate
-    CEPC-RR: Commercial energy performance certificate recommendation report
-    RdSAP: Energy performance certificate
-    SAP: Energy performance certificate
-    AC-REPORT: Air conditioning inspection report
-    AC-CERT: Air conditioning inspection certificate
-    DEC: Display energy certificate
-    DEC-RR: Display energy certificate recommendation report
+    CEPC: 'Commercial energy performance certificate'
+    CEPC-RR: 'Commercial energy performance certificate recommendation report'
+    RdSAP: 'Energy performance certificate'
+    SAP: 'Energy performance certificate'
+    AC-REPORT: 'Air conditioning inspection report'
+    AC-CERT: 'Air conditioning inspection certificate'
+    DEC: 'Display energy certificate'
+    DEC-RR: 'Display energy certificate recommendation report'
 
   expired: 'Expired'
   valid_until: 'Valid until'
@@ -1253,6 +1253,7 @@ en:
       heading: 'Page not found'
       intro: 'If you typed the web address, check it is correct.'
       body: 'If you pasted the web address, check you copied the entire address.'
+
   dec:
     top_heading: "Display energy certificate (DEC)"
     tagline: "how energy efficient is this building?"
@@ -1403,6 +1404,7 @@ en:
         description: 'Description'
         refrigerant_type: 'Refrigerant type'
         age: 'Age of main components'
+
   ac_report:
     top_heading: "Air conditioning inspection report"
     sections:
