@@ -186,11 +186,11 @@
         <tbody>
           <tr>
             <td style="vertical-align: middle">
-              <p class="<%= address_size(assessment[:address]) %>">
-                <% unless assessment[:technicalInformation][:occupier].nil? %>
-                  <%= assessment[:technicalInformation][:occupier] %><br />
-                <% end %>
-                <%== compact_address(
+              <p class="<%= address_size(assessment[:address]) %>"><%
+                unless assessment[:technicalInformation][:occupier].nil? %><%=
+                  assessment[:technicalInformation][:occupier] %><br /><%
+                end %><%==
+                compact_address(
                   [
                     assessment[:address][:addressLine1],
                     assessment[:address][:addressLine2],
