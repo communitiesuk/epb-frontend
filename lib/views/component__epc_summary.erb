@@ -10,8 +10,9 @@
     </div>
 
     <p class="epc-address govuk-body">
-      <%= occupier %>
-      <br>
+      <% unless occupier.nil? %>
+        <%= occupier %><br />
+      <% end %>
     <%==
       compact_address(
         [
