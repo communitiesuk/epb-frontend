@@ -24,7 +24,7 @@
         </th>
         <td class="govuk-table__cell govuk-!-border-bottom-none">
           <% results[:certificates].sort_by { |h| h[:typeOfAssessment] }.each do |result| %>
-            <a class="govuk-link" href="/energy-certificate/<%= result[:assessmentId] %>"><%= result[:typeOfAssessment].upcase %></a><br /><br />
+            <a class="govuk-link" href="<%=localised_url("/energy-certificate/" + result[:assessmentId]) %>"><%= result[:typeOfAssessment].upcase %></a><br /><br />
           <% end %>
         </td>
         <td class="govuk-table__cell">
