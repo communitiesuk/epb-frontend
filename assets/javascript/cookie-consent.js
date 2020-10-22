@@ -2,12 +2,15 @@ var cookies = {
   ids: {
     "find-energy-certificate-integration.digital.communities.gov.uk": "G-ZDCS1W2ZRM",
     "getting-new-energy-certificate-integration.digital.communities.gov.uk": "G-TR7Y5Z1GFY",
+    "getting-new-energy-certificate.local.gov.uk": "G-TR7Y5Z1GFY",
+    "find-energy-certificate.local.gov.uk": "G-ZDCS1W2ZRM",
   },
 
   initialize: function() {
     var tag_id = cookies.ids[window.location.hostname];
-
     if(!tag_id) return;
+
+    if(window.location.search.indexOf("cookies-setting=false")!==-1) return;
 
     let cookie_value = cookies.read("cookie_consent");
 
