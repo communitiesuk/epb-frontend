@@ -561,6 +561,11 @@ class FrontendService < Sinatra::Base
     erb :accessibility_statement
   end
 
+  get "/cookies" do
+    status 200
+    erb :cookies
+  end
+
   def show(template, locals, layout = :layout)
     locals[:errors] = @errors
     erb template, layout: layout, locals: locals

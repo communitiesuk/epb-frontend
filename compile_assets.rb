@@ -22,5 +22,8 @@ FileUtils.copy_entry "./assets/fonts", "./public/fonts"
 puts "Copying images"
 FileUtils.copy_entry "./assets/images", "./public/images"
 
+puts "Copying javascript"
+FileUtils.copy_entry "./assets/javascript", "./public/javascript"
+
 puts "Copying robots.txt"
 FileUtils.copy_entry "./assets/robots.txt", "./public/robots.txt"

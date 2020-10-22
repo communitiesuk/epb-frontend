@@ -1,0 +1,47 @@
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Cookies on our service</h1>
+    <p class="govuk-body">The Energy Performance Register service puts small files (known as ‘cookies’) onto your device in order to understand how you use the service so we can update and improve it</p>
+
+    <div class="govuk-inset-text">
+      <p class="govuk-body">The cookies we use don’t identify you personally. You can still get your Energy Performance certificate or report online if you don’t accept cookies that measure website use.</p>
+    </div>
+
+    <h2 class="govuk-heading-m">Cookies that measure website use</h2>
+    <p class="govuk-body">We use Google Analytics to collect information about how you use this service. This helps us check it’s meeting your needs and make improvements.</p>
+    <p class="govuk-body">Google Analytics stores information about:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>how you got to the site</li>
+      <li>pages you visit and how long you spend on them</li>
+      <li>what you click on</li>
+    </ul>
+
+    <p class="govuk-body">No personal details are stored with this information, so you can’t be identified.</p>
+
+    <form action="/" onsubmit="cookies.create('cookie_consent', document.getElementById('cookies-setting').checked === true ? 'true' : 'false'); return true;">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" id="cookies-setting-fieldset" aria-required="true">
+          <legend class="govuk-fieldset__legend govuk-visually-hidden">Cookies on our service</legend>
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="cookies-setting" name="cookies-setting" type="radio" value="true" />
+              <label class="govuk-label govuk-radios__label" id="cookies-setting-true-label" for="cookies-setting">
+                Use cookies that measure my website use
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="cookies-setting-false" name="cookies-setting" type="radio" value="false" />
+              <label class="govuk-label govuk-radios__label" id="cookies-setting-false-label" for="cookies-setting-false">
+                Do not use cookies that measure my website use
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <button name="cookies-setting-button" class="govuk-button button" data-module="govuk-button" id="cookies-setting-button">
+        Save settings
+      </button>
+    </form>
+  </div>
+</div>
