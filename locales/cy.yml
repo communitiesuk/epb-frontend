@@ -730,7 +730,7 @@ cy:
           average: gweddol
           good: da
           very_good: "da iawn (mwyaf effeithlon)"
-        not_inspected: "Pan fo'r disgrifiad yn dweud 'tybiedig', mae'n golygu nad oedd modd asesu'r nodwedd a bod tybiaeth wedi'i gwneud a hynny ar sail oedran a math yr eiddo."
+        not_inspected: "Pan fo'r disgrifiad yn dweud 'assumed', mae'n golygu nad oedd modd asesu'r nodwedd a bod tybiaeth wedi'i gwneud a hynny ar sail oedran a math yr eiddo."
         energy_performance: "perfformiad ynni"
         primary_energy_use: "Prif ddefnydd ynni"
         primary_energy_use_description: "Prif ddefnydd ynni'r eiddo hwn y flwyddyn yw %{primary_energy} o gilowat oriau am bob metr sgwâr (kWh/m2)."
