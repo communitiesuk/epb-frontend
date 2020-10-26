@@ -31,3 +31,4 @@ if ENV["STAGE"] == "production"
 else
   FileUtils.copy_entry "./assets/robots.txt", "./public/robots.txt"
 end
+File.write("./public/robots-.txt", ENV["STAGE"])

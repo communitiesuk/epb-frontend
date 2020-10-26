@@ -33,7 +33,7 @@ deploy-app: ## Deploys the app to PaaS
 	$(call check_space)
 	$(if ${DEPLOY_APPNAME},,$(error Must specify DEPLOY_APPNAME))
 
-	@$(MAKE) frontend-build
+	@$(MAKE) frontend-build STAGE=${STAGE}
 	@$(MAKE) generate-manifest
 
 	cf v3-apply-manifest -f manifest.yml
