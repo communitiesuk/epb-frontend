@@ -334,14 +334,14 @@ cy:
     table:
       address: "Cyfeiriad"
       rating: "Cyfraddiad ynni"
-      expiry: "Dyddiad y daw i ben"
+      expiry: "Dilys tan"
     expired: "(wedi dod i ben)"
 
   find_non_dom_certificate_results:
     table:
       address: Cyfeiriad
       type: "Y math o dystysgrif ac adroddiad"
-      expiry: "Dyddiad y daw i ben"
+      expiry: "Dilys tan"
     expired: "(wedi dod i ben)"
 
   find_certificate_by_postcode_results:
@@ -355,7 +355,7 @@ cy:
     table:
       address: Cyfeiriad
       rating: "Cyfraddiad ynni"
-      expiry: "Dyddiad y daw i ben"
+      expiry: "Dilys tan"
     no_certificates: "Does dim tystysgrifau'n cyfateb i'r cod post hwnnw"
 
   find_certificate_by_reference_number:
@@ -379,7 +379,7 @@ cy:
     table:
       address: Cyfeiriad
       rating: "Cyfraddiad ynni"
-      expiry: "Dyddiad y daw i ben"
+      expiry: "Dilys tan"
     no_certificates: "Does dim tystysgrifau'n cyfateb i'r rhif tystysgrif EPC hwnnw"
 
   find_certificate_by_street_name_and_town:
@@ -428,7 +428,7 @@ cy:
     table:
       address: "Cyfeiriad"
       rating: "Cyfraddiad ynni"
-      expiry: "Dyddiad y daw i ben"
+      expiry: "Dilys tan"
     no_certificates: "Does dim tystysgrifau'n cyfateb i'r rhif tystysgrif EPC hwnnw"
 
   find_non_dom_certificate_by_street_name_and_town_results:
@@ -439,7 +439,7 @@ cy:
     table:
       address: "Cyfeiriad"
       rating: "Cyfraddiad ynni"
-      expiry: "Dyddiad y daw i ben"
+      expiry: "Dilys tan"
     no_certificates: "Does dim tystysgrifau'n cyfateb i'r cyfeiriad hwnnw"
 
   find_non_dom_certificate_by_postcode:
@@ -868,7 +868,7 @@ cy:
         certificate_type: "EPC"
         reference_number: "Rhif cyfeirnod"
         assessment_type: "Y math o adroddiad"
-        expiry_date: "Dyddiad y daw i ben"
+        expiry_date: "Dilys tan"
         certificate_number_col: "Rhif y dystysgrif"
         valid_until: "Dilys tan"
         expired: "Wedi dod i ben"
