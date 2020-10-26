@@ -23,7 +23,7 @@ generate-manifest: ## Generate manifest file for PaaS
 .PHONY: frontend-build
 frontend-build: ## Run the frontend build process to compile sass and move asset files to public
 	@echo "Building frontend assets..."
-	STAGE=${STAGE} ruby ./compile_assets.rb
+	STAGE=${DEPLOY_APPNAME} ruby ./compile_assets.rb
 
 frontend-build-watch:
 	@$(SHELL) ./scripts/frontend-build-watch.sh
@@ -33,7 +33,7 @@ deploy-app: ## Deploys the app to PaaS
 	$(call check_space)
 	$(if ${DEPLOY_APPNAME},,$(error Must specify DEPLOY_APPNAME))
 
-	@STAGE=${STAGE} $(MAKE) frontend-build
+	@$(MAKE) frontend-build
 	@$(MAKE) generate-manifest
 
 	cf v3-apply-manifest -f manifest.yml

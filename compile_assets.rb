@@ -26,9 +26,8 @@ puts "Copying javascript"
 FileUtils.copy_entry "./assets/javascript", "./public/javascript"
 
 puts "Copying robots.txt"
-if ENV["STAGE"] == "production"
+if ENV["DEPLOY_APPNAME"].end_with?("production")
   FileUtils.copy_entry "./assets/robots_public.txt", "./public/robots.txt"
 else
   FileUtils.copy_entry "./assets/robots.txt", "./public/robots.txt"
 end
-File.write("./public/robots-.txt", ENV["STAGE"])
