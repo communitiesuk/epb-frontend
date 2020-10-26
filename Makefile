@@ -23,7 +23,7 @@ generate-manifest: ## Generate manifest file for PaaS
 .PHONY: frontend-build
 frontend-build: ## Run the frontend build process to compile sass and move asset files to public
 	@echo "Building frontend assets..."
-	ruby ./compile_assets.rb
+	ruby ./compile_assets.rb STAGE=${STAGE}
 
 frontend-build-watch:
 	@$(SHELL) ./scripts/frontend-build-watch.sh
