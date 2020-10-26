@@ -39,6 +39,8 @@
 
     &.epb-box-element-full-height {
       padding: 15px;
+      margin-right: -2px;
+      border-right: 2px solid #fff;
 
       span {
         display: block;
