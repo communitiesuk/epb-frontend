@@ -10,7 +10,7 @@
 
       if value.class == Hash
         type = value[:type]
-        print = value[:print]
+        print = value.key?(:print) ? value[:print] : true
         link = value[:link]
         numerical = value[:numerical]
         prefix = value[:prefix]
