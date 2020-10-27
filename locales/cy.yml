@@ -1720,3 +1720,25 @@ cy:
     preparation_heading: "Paratoi'r datganiad hygyrchedd hwn"
     preparation_paragraph: "Cafodd y datganiad hwn ei baratoi ar 17 Medi 2020. Y tro diwethaf iddo gael ei adolygu oedd 17 Medi 2020. Gwnaethon ein gwaith profi ein hunain ar 17 Medi 2020."
     accessibility_audit: "Bydd archwiliad hygyrchedd llawn yn cael ei gyflawni erbyn mis Tachwedd 2020. Byddwn yn cyflwyno adroddiad ar y canfyddiadau yma, gan weithio i gywiro unrhyw faterion ychwanegol a nodir mor gyflym ag y bo modd."
+  cookies:
+    title: "Cwcis ar ein gwasanaeth ni"
+    intro: "Mae cwcis yn ffeiliau sy'n cael eu cadw ar eich ffôn, eich tabled neu'ch cyfrifiadur wrth ichi ymweld â gwefan. Mae'r gwasanaethau 'Dod o hyd i dystysgrif ynni' a 'Sicrhau tystysgrif ynni newydd' yn defnyddio cwcis er mwyn deall sut rydych chi'n defnyddio'r gwasanaethau er mwyn inni allu eu diweddaru a'u gwella."
+    dont_worry: "Dydy'r cwcis rydyn ni'n eu defnyddio ddim yn eich adnabod chi'n bersonol. Gallwch barhau i ddefnyddio'r gwasanaethau 'Dod o hyd i dystysgrif ynni' neu 'Sicrhau tystysgrif ynni newydd' os nad ydych chi’n derbyn cwcis sy'n mesur defnydd gwefannau."
+    measure:
+      title: "Cwcis sy'n mesur defnydd gwefannau"
+      analytics: "Rydyn ni’n defnyddio Google Analytics i gasglu gwybodaeth am sut rydych chi’n defnyddio'r gwasanaeth hwn. Mae hyn yn ein helpu i wirio ei fod yn ateb eich anghenion a gwneud gwelliannau."
+      list:
+        title: "Mae Google Analytics yn storio gwybodaeth am y canlynol:"
+        "1": "sut daethoch chi i'r wefan"
+        "2": "y tudalennau rydych chi'n edrych arnyn nhw a faint o amser rydych chi'n ei dreulio yno"
+        "3": "ar beth rydych chi'n clicio"
+    dont_worry_again: "Does dim manylion personol yn cael eu cadw gyda'r wybodaeth hon, felly does dim modd eich adnabod chi."
+    form_title: "Cwcis ar ein gwasanaeth ni"
+    form_yes: "Defnyddiwch gwcis sy'n mesur faint rwy'n defnyddio'r wefan."
+    form_no: "Peidiwch â defnyddio cwcis sy'n mesur faint rwy'n defnyddio'r wefan."
+    form_save: "Cadw'r gosodiadau"
+    banner:
+      title: "Dywedwch a ydych chi'n derbyn cwcis."
+      intro: "Rydyn ni’n defnyddio cwcis i gasglu gwybodaeth am sut rydych chi’n defnyddio'r gwasanaeth hwn. Mae hyn yn ein helpu i wella’n gwefan a gwneud iddi weithio cystal â phosibl."
+      positive: "Derbyn pob cwci"
+      negative: "Gosod dewisiadau cwcis"

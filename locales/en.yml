@@ -1720,3 +1720,25 @@ en:
     preparation_heading: 'Preparation of this accessibility statement'
     preparation_paragraph: 'This statement was prepared on 17 September 2020. It was last reviewed on 17 September 2020. We carried out our own testing on 17 September 2020.'
     accessibility_audit: 'A full accessibility audit will be carried out by November 2020. We will report the findings here, and work to rectify any additional issues identified as quickly as possible.'
+  cookies:
+    title: "Cookies on our service"
+    intro: "Cookies are files saved on your phone, tablet or computer when you visit a website. The ´Find an energy certificate´ and ´Getting a new energy certificate´ services uses cookies in order to understand how you use the services so we can update and improve them."
+    dont_worry: "The cookies we use don’t identify you personally. You can still use the ´Find an energy certificate´ or ´Getting a new energy certificate´ services if you don’t accept cookies that measure website use."
+    measure:
+      title: "Cookies that measure website use"
+      analytics: "We use Google Analytics to collect information about how you use this service. This helps us check it’s meeting your needs and make improvements."
+      list:
+        title: "Google Analytics stores information about:"
+        "1": "how you got to the site"
+        "2": "pages you visit and how long you spend on them"
+        "3": "what you click on"
+    dont_worry_again: "No personal details are stored with this information, so you can’t be identified."
+    form_title: "Cookies on our service"
+    form_yes: "Use cookies that measure my website use"
+    form_no: "Do not use cookies that measure my website use"
+    form_save: "Save settings"
+    banner:
+      title: "Tell us whether you accept cookies"
+      intro: "We use cookies to collect information about how you use this service. This helps us to improve our website and make it work as well as possible."
+      positive: "Accept all cookies"
+      negative: "Set cookie preferences"

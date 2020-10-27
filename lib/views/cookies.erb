@@ -1,46 +1,46 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-l">Cookies on our service</h1>
-    <p class="govuk-body">Cookies are files saved on your phone, tablet or computer when you visit a website. The ´Find an energy certificate´ and ´Getting a new energy certificate´ services uses cookies in order to understand how you use the services so we can update and improve them.</p>
+    <h1 class="govuk-heading-l"><%= t("cookies.title") %></h1>
+    <p class="govuk-body"><%= t("cookies.intro") %></p>
 
     <div class="govuk-inset-text">
-      <p class="govuk-body">The cookies we use don’t identify you personally. You can still use the ´Find an energy certificate´ or ´Getting a new energy certificate´ services if you don’t accept cookies that measure website use.</p>
+      <p class="govuk-body"><%=t("cookies.dont_worry") %></p>
     </div>
 
-    <h2 class="govuk-heading-m">Cookies that measure website use</h2>
-    <p class="govuk-body">We use Google Analytics to collect information about how you use this service. This helps us check it’s meeting your needs and make improvements.</p>
-    <p class="govuk-body">Google Analytics stores information about:</p>
+    <h2 class="govuk-heading-m"><%= t("cookies.measure.title") %></h2>
+    <p class="govuk-body"><%= t("cookies.measure.analytics") %></p>
+    <p class="govuk-body"><%= t("cookies.measure.list.title") %></p>
 
     <ul class="govuk-list govuk-list--bullet">
-      <li>how you got to the site</li>
-      <li>pages you visit and how long you spend on them</li>
-      <li>what you click on</li>
+      <li><%= t("cookies.measure.list.1") %></li>
+      <li><%= t("cookies.measure.list.2") %></li>
+      <li><%= t("cookies.measure.list.3") %></li>
     </ul>
 
-    <p class="govuk-body">No personal details are stored with this information, so you can’t be identified.</p>
+    <p class="govuk-body"><%= t("cookies.dont_worry_again") %></p>
 
     <form action="/" onsubmit="if(document.getElementById('cookies-setting').checked === true) {cookies.create('cookie_consent',  'true');} return true;">
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" id="cookies-setting-fieldset" aria-required="true">
-          <legend class="govuk-fieldset__legend govuk-visually-hidden">Cookies on our service</legend>
+          <legend class="govuk-fieldset__legend govuk-visually-hidden"><%= t("cookies.form_title") %></legend>
           <div class="govuk-radios">
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="cookies-setting" name="cookies-setting" type="radio" value="true" />
               <label class="govuk-label govuk-radios__label" id="cookies-setting-true-label" for="cookies-setting">
-                Use cookies that measure my website use
+                <%= t("cookies.form_yes") %>
               </label>
             </div>
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="cookies-setting-false" name="cookies-setting" type="radio" value="false" />
               <label class="govuk-label govuk-radios__label" id="cookies-setting-false-label" for="cookies-setting-false">
-                Do not use cookies that measure my website use
+                <%= t("cookies.form_no") %>
               </label>
             </div>
           </div>
         </fieldset>
       </div>
       <button name="cookies-setting-button" class="govuk-button button" data-module="govuk-button" id="cookies-setting-button">
-        Save settings
+        <%= t("cookies.form_save") %>
       </button>
     </form>
   </div>
