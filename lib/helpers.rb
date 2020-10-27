@@ -5,6 +5,21 @@ require "epb-auth-tools"
 module Sinatra
   module FrontendService
     module Helpers
+      WELSH_MONTHS = {
+        "January" => "Ionawr",
+        "February" => "Chwefror",
+        "March" => "Mawrth",
+        "April" => "Ebrill",
+        "May" => "Mai",
+        "June" => "Mehefin",
+        "July" => "Gorffennaf",
+        "August" => "Awst",
+        "September" => "Medi",
+        "October" => "Hydref",
+        "November" => "Tachwedd",
+        "December" => "Rhagfyr",
+      }.freeze
+
       def valid_postcode
         Regexp.new("^[a-zA-Z0-9_ ]{4,10}$", Regexp::IGNORECASE)
       end
@@ -127,7 +142,16 @@ module Sinatra
       end
 
       def date(date)
-        Date.parse(date).strftime "%-d %B %Y"
+        parsed_date =
+          (date.is_a?(Date) ? date : Date.parse(date)).strftime "%-d %B %Y"
+
+        if I18n.locale.to_s == "cy"
+          WELSH_MONTHS.each do |english_month, welsh_month|
+            parsed_date.gsub!(english_month, welsh_month)
+          end
+        end
+
+        parsed_date
       end
 
       def site_service_quantity(assessment, service)

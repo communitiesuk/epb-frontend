@@ -12,23 +12,17 @@ module Gateway
       if response.status == 200
         unless assessment_summary.dig(:data, :dateOfExpiry).nil?
           assessment_summary[:data][:dateOfExpiry] =
-            Date.parse(assessment_summary[:data][:dateOfExpiry]).strftime(
-              "%-d %B %Y",
-            )
+            Date.parse(assessment_summary[:data][:dateOfExpiry])
         end
 
         unless assessment_summary.dig(:data, :dateOfAssessment).nil?
           assessment_summary[:data][:dateOfAssessment] =
-            Date.parse(assessment_summary[:data][:dateOfAssessment]).strftime(
-              "%-d %B %Y",
-            )
+            Date.parse(assessment_summary[:data][:dateOfAssessment])
         end
 
         unless assessment_summary.dig(:data, :dateRegistered).nil?
           assessment_summary[:data][:dateRegistered] =
-            Date.parse(assessment_summary[:data][:dateRegistered]).strftime(
-              "%-d %B %Y",
-            )
+            Date.parse(assessment_summary[:data][:dateRegistered])
         end
       end
 

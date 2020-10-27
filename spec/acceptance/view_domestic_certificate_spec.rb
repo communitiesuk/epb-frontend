@@ -759,6 +759,10 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
         text: "Certificateau eraill ar gyfer yr eiddo hwn",
       )
     end
+
+    it "shows the date in Welsh" do
+      expect(response.body).to have_css("p", text: "Dilys tan 5 Ionawr 2030")
+    end
   end
 
   context "when the assessment exists with recommendations" do

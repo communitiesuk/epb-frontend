@@ -68,7 +68,7 @@
       energy_efficiency_band: assessment[:currentEnergyEfficiencyBand],
       address: assessment[:address],
       occupier: nil,
-      date_of_expiry: assessment[:dateOfExpiry],
+      date_of_expiry: date(assessment[:dateOfExpiry]),
       assessment_id: assessment[:assessmentId],
       property_type: assessment[:propertyType],
       floor_area: assessment[:technicalInformation][:floorArea]
@@ -132,8 +132,8 @@
 
     <%== erb :non_domestic_energy_performance_certificate__contact, locals: {
       assessor: assessment[:assessor],
-      assessment_date: assessment[:dateOfAssessment],
-      registration_date: assessment[:dateOfRegistration],
+      assessment_date: date(assessment[:dateOfAssessment]),
+      registration_date: date(assessment[:dateOfRegistration]),
       related_party_disclosure: assessment[:relatedPartyDisclosure]
     } %>
 

@@ -24,7 +24,7 @@
 
       <div class="govuk-body epc-extra-box">
         <label><%=
-          Date.parse(assessment[:dateOfExpiry]) < Date.today ?
+          assessment[:dateOfExpiry] < Date.today ?
             t('non_domestic_epc.rr.summary.expired')
             : t('non_domestic_epc.rr.summary.valid_until')
         %></label>

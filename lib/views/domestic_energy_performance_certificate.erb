@@ -267,8 +267,8 @@
       <%== erb :component__summary_list, locals: {
         list: {
           "disclosure": party_disclosure(assessment[:relatedPartyDisclosureNumber], assessment[:relatedPartyDisclosureText]),
-          "date_of_assessment": assessment[:dateOfAssessment],
-          "date_of_certificate": assessment[:dateRegistered],
+          "date_of_assessment": date(assessment[:dateOfAssessment]),
+          "date_of_certificate": date(assessment[:dateRegistered]),
           "type_of_assessment": { type: "details", value: assessment[:typeOfAssessment] }
         },
         translation_prefix: 'domestic_epc.sections.information.certificate.list.',
