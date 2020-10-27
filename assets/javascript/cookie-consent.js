@@ -1,7 +1,7 @@
 var cookies = {
   ids: {
-    "find-energy-certificate-integration.digital.communities.gov.uk": "G-ZDCS1W2ZRM",
-    "getting-new-energy-certificate-integration.digital.communities.gov.uk": "G-TR7Y5Z1GFY",
+    "find-energy-certificate.digital.communities.gov.uk": "G-ZDCS1W2ZRM",
+    "getting-new-energy-certificate.digital.communities.gov.uk": "G-TR7Y5Z1GFY",
     "getting-new-energy-certificate.local.gov.uk": "G-TR7Y5Z1GFY",
     "find-energy-certificate.local.gov.uk": "G-ZDCS1W2ZRM",
   },
