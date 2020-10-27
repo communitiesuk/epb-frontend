@@ -1,8 +1,6 @@
 <tr class="govuk-table__row">
   <th scope="row" class="govuk-table__header"><%=
-    Date.parse(year[:date]).strftime(
-      "%B %Y",
-      )
+    date(year[:date])[2..-1]
   %></th>
     <%== erb :dec__co2__row__value, locals: {
       value: year[:electricityCo2],

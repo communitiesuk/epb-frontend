@@ -332,7 +332,7 @@
                           <% next if previous_rating[:energyEfficiencyRating].nil? || previous_rating[:energyEfficiencyBand].nil? || previous_rating[:date].nil? %>
                           <tr>
                             <th class="govuk-!-padding-top-2">
-                              <%=Date.parse(previous_rating[:date]).strftime("%B %Y")%>
+                              <%=date(previous_rating[:date])[2..-1]%>
                             </th>
                             <td style="text-align: right">
                               <img
@@ -376,7 +376,7 @@
                           <% next if previous_rating[:date].nil? %>
                           <tr class="carbon-emissions-tr">
                             <th>
-                              <%= Date.parse(previous_rating[:date]).strftime("%B %Y") %>
+                              <%= date(previous_rating[:date])[2..-1] %>
                             </th>
                             <td>
                               <%= previous_rating[:electricityCo2] || t('dec.sections.co2.no_value') %>

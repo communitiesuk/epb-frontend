@@ -1,7 +1,5 @@
 <dt class="govuk-summary-list__key govuk-!-width-one-half" style="vertical-align: top"><%=
-  Date.parse(year[:date]).strftime(
-    "%B %Y",
-    )
+  date(year[:date])[2..-1]
 %></dt>
 <dd class="govuk-summary-list__value govuk-!-width-one-half" style="text-align: right">
   <svg width="90" height="50" style="vertical-align: middle">
