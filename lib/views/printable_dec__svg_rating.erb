@@ -121,6 +121,16 @@
       fill: <%= settings[:color] %>
     }
     <% end %>
+
+    <%
+     if I18n.locale.to_s == "cy"
+      %>
+        .small {
+          font-size: 10px;
+        }
+      <%
+     end
+   %>
   </style>
 
   <line x1="60" y1="0" x2="60" y2="386" style="stroke:#b1b4b6;stroke-width:1"></line>
