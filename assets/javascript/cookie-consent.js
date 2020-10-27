@@ -6,6 +6,25 @@ var cookies = {
     "find-energy-certificate.local.gov.uk": "G-ZDCS1W2ZRM",
   },
 
+  texts: {
+    title: {
+      en: "Tell us whether you accept cookies",
+      cy: "Dywedwch a ydych chi'n derbyn cwcis."
+    },
+    intro: {
+      en: "We use cookies to collect information about how you use this service. This helps us to improve our website and make it work as well as possible.",
+      cy: "Rydyn ni’n defnyddio cwcis i gasglu gwybodaeth am sut rydych chi’n defnyddio'r gwasanaeth hwn. Mae hyn yn ein helpu i wella’n gwefan a gwneud iddi weithio cystal â phosibl."
+    },
+    positive: {
+      en: "Accept all cookies",
+      cy: "Derbyn pob cwci"
+    },
+    negative: {
+      en: "Set cookie preferences",
+      cy: "Gosod dewisiadau cwcis"
+    }
+  },
+
   initialize: function() {
     var tag_id = cookies.ids[window.location.hostname];
     if(!tag_id) return;
@@ -31,6 +50,8 @@ var cookies = {
   },
 
   display: function(tag_id) {
+    let lang = document.getElementsByTagName("html")[0].getAttribute("lang");
+
     let rootElement = document.createElement("div");
     rootElement.className = "cookie-consent-box";
 
@@ -38,16 +59,16 @@ var cookies = {
     innerBox.className = "inner-box";
 
     let title = document.createElement("p");
-    title.innerHTML = "Tell us whether you accept cookies";
+    title.innerHTML = cookies.texts.title[lang];
     title.className = "govuk-heading-m";
 
     let body = document.createElement("p");
-    body.innerHTML = "We use cookies to collect information about how you use this service. This helps us to improve our website and make it work as well as possible.";
+    body.innerHTML = cookies.texts.intro[lang];
     body.className = "govuk-body";
 
     let consent_button = document.createElement("a");
     consent_button.className = "govuk-button consent";
-    consent_button.innerHTML = "Accept all cookies";
+    consent_button.innerHTML = cookies.texts.positive[lang];
     consent_button.onclick = function() {
       cookies.create("cookie_consent", "true");
 
@@ -58,8 +79,8 @@ var cookies = {
 
     let reject_button = document.createElement("a");
     reject_button.className = "govuk-button reject";
-    reject_button.href = "/cookies";
-    reject_button.innerHTML = "Set cookie preferences";
+    reject_button.href = "/cookies" + (lang !== "en" ? "?lang=" + lang : "");
+    reject_button.innerHTML = cookies.texts.negative[lang];
 
     innerBox.appendChild(title);
     innerBox.appendChild(body);
