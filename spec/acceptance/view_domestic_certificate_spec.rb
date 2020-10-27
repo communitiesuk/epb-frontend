@@ -986,7 +986,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
     end
   end
 
-  context "when the estimated or potentail energy cost is missing" do
+  context "when the estimated or potential energy cost is missing" do
     before do
       FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
         "1111-1111-1111-1111-1112",
