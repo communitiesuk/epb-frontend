@@ -741,11 +741,13 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
   context "when the assessment is fetched in Welsh" do
     before do
       FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
-          "1234-5678-1234-5678-1234",
-          )
+        "1234-5678-1234-5678-1234",
+      )
     end
 
-    let(:response) { get "/energy-certificate/1234-5678-1234-5678-1234?lang=cy" }
+    let(:response) do
+      get "/energy-certificate/1234-5678-1234-5678-1234?lang=cy"
+    end
 
     it "returns status 200" do
       expect(response.status).to eq(200)
@@ -753,9 +755,9 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
 
     it "shows the related certificates section title capitalised" do
       expect(response.body).to have_css(
-                                   "h2",
-                                   text: "Certificateau eraill ar gyfer yr eiddo hwn",
-                                   )
+        "h2",
+        text: "Certificateau eraill ar gyfer yr eiddo hwn",
+      )
     end
   end
 
