@@ -4,7 +4,7 @@
 
     bands = {
       'a+': {
-        'range': 'Under 0',
+        'range': t("rating.under_zero"),
         'position': -0.4,
       },
       'a': {
@@ -143,7 +143,7 @@
   </style>
 
   <line x1="0" y1="65" x2="415" y2="65" class="c02-line"></line>
-  <text x="420" y="70" class="small">Net zero CO2</text>
+  <text x="420" y="70" class="small"><%=t("rating.net_zero_co2") %></text>
 
   <% score_bands.each_with_index do |(key, settings), index| %>
     <% if index == 0 %>

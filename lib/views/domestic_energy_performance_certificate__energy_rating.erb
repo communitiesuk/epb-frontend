@@ -152,19 +152,19 @@
   </text>
 
   <text x="8" y="15" class="small" dominant-baseline="middle">
-    Score
+    <%=t("rating.score") %>
   </text>
 
   <text x="85" y="15" class="small" dominant-baseline="middle">
-    Energy rating
+    <%=t("rating.energy_rating") %>
   </text>
 
   <text x="460" y="15" class="small" text-anchor="middle" dominant-baseline="middle">
-    Current
+    <%=t("rating.current") %>
   </text>
 
   <text x="565" y="15" class="small" text-anchor="middle" dominant-baseline="middle">
-    Potential
+    <%=t("rating.potential") %>
   </text>
 
   <svg x="415" y="<%= 25+bands[current_energy_efficiency_band.to_sym][:position]*50 %>" width="90" height="50">

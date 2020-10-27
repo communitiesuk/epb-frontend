@@ -1674,6 +1674,17 @@ en:
       link_ew: '<a href="https://www.ndepcregister.com">the energy performance register for England and Wales</a>'
       link_ni: '<a href="https://www.epbniregisternd.com">the energy performance register for Northern Ireland</a>'
 
+  rating:
+    score: 'Score'
+    operational_rating: 'Operational rating'
+    this_building: 'This building'
+    typical: 'Typical'
+    energy_rating: 'Energy rating'
+    current: 'Current'
+    potential: 'Potential'
+    net_zero_co2: 'Net zero CO2'
+    under_zero: 'Under 0'
+
   accessibility_statement:
     top_heading: 'Accessibility statement'
     intro: 'This statement applies to content published on:

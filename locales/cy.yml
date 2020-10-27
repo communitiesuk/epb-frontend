@@ -1673,7 +1673,16 @@ cy:
     non_domestic:
       link_ew: "<a href=\"https://www.epcregister.com\">Cofrestr EPCs Cymru a Lloegr</a>"
       link_ni: "<a href=\"https://www.epbniregister.com\">Cofrestr EPCs Gogledd Iwerddon</a>"
-
+  rating:
+    score:  "Sgôr"
+    operational_rating: "Cyfraddiad gweithredol"
+    this_building: "Yr adeilad hwn"
+    typical: "Nodweddiadol"
+    energy_rating: "Cyfraddiad ynni"
+    current: "Cyfredol"
+    potential: "Posibl"
+    net_zero_co2: "CO2 sero net"
+    under_zero: "O dan 0"
   accessibility_statement:
     top_heading: "Datganiad ar hygyrchedd"
     intro: "Mae'r datganiad hwn yn gymwys i gynnwys a gyhoeddir ar:
