@@ -14,6 +14,12 @@ describe "Acceptance::AccessibilityStatement", type: :feature do
           '<a class="govuk-footer__link" href="/accessibility-statement">',
         )
       end
+
+      it "contains a footer link to the cookies page" do
+        expect(response.body).to include(
+                                     '<a class="govuk-footer__link" href="/cookies">',
+                                     )
+      end
     end
   end
 end

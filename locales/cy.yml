@@ -33,6 +33,7 @@ cy:
       footer:
         heading: "Dolenni cymorth"
         accessibility_statement: 'Datganiad ar hygyrchedd'
+        cookies: 'Cwcis ar ein gwasanaeth ni'
         license: "Mae'r cynnwys i gyd ar gael o dan y <a class=\"govuk-footer__link\" href=\"https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/\" rel=\"license\">Drwydded Llywodraeth Agored v3.0</a>,  ac eithrio lle nodir fel arall."
         copyright: "<a class=\"govuk-footer__link govuk-footer__copyright-logo\" href=\"https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/\">&copy; Crown copyright</a>"
 
@@ -1673,6 +1674,7 @@ cy:
     non_domestic:
       link_ew: "<a href=\"https://www.epcregister.com\">Cofrestr EPCs Cymru a Lloegr</a>"
       link_ni: "<a href=\"https://www.epbniregister.com\">Cofrestr EPCs Gogledd Iwerddon</a>"
+
   rating:
     score:  "Sgôr"
     operational_rating: "Cyfraddiad gweithredol"
@@ -1683,6 +1685,7 @@ cy:
     potential: "Posibl"
     net_zero_co2: "CO2 sero net"
     under_zero: "O dan 0"
+
   accessibility_statement:
     top_heading: "Datganiad ar hygyrchedd"
     intro: "Mae'r datganiad hwn yn gymwys i gynnwys a gyhoeddir ar:
@@ -1729,6 +1732,7 @@ cy:
     preparation_heading: "Paratoi'r datganiad hygyrchedd hwn"
     preparation_paragraph: "Cafodd y datganiad hwn ei baratoi ar 17 Medi 2020. Y tro diwethaf iddo gael ei adolygu oedd 17 Medi 2020. Gwnaethon ein gwaith profi ein hunain ar 17 Medi 2020."
     accessibility_audit: "Bydd archwiliad hygyrchedd llawn yn cael ei gyflawni erbyn mis Tachwedd 2020. Byddwn yn cyflwyno adroddiad ar y canfyddiadau yma, gan weithio i gywiro unrhyw faterion ychwanegol a nodir mor gyflym ag y bo modd."
+
   cookies:
     title: "Cwcis ar ein gwasanaeth ni"
     intro: "Mae cwcis yn ffeiliau sy'n cael eu cadw ar eich ffôn, eich tabled neu'ch cyfrifiadur wrth ichi ymweld â gwefan. Mae'r gwasanaethau 'Dod o hyd i dystysgrif ynni' a 'Sicrhau tystysgrif ynni newydd' yn defnyddio cwcis er mwyn deall sut rydych chi'n defnyddio'r gwasanaethau er mwyn inni allu eu diweddaru a'u gwella."

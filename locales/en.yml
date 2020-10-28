@@ -33,6 +33,7 @@ en:
       footer:
         heading: 'Support links'
         accessibility_statement: 'Accessibility statement'
+        cookies: 'Cookies on our service'
         license: 'All content is available under the <a class="govuk-footer__link" href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated'
         copyright: '<a class="govuk-footer__link govuk-footer__copyright-logo" href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/">&copy; Crown copyright</a>'
 
@@ -1731,6 +1732,7 @@ en:
     preparation_heading: 'Preparation of this accessibility statement'
     preparation_paragraph: 'This statement was prepared on 17 September 2020. It was last reviewed on 17 September 2020. We carried out our own testing on 17 September 2020.'
     accessibility_audit: 'A full accessibility audit will be carried out by November 2020. We will report the findings here, and work to rectify any additional issues identified as quickly as possible.'
+
   cookies:
     title: "Cookies on our service"
     intro: "Cookies are files saved on your phone, tablet or computer when you visit a website. The ´Find an energy certificate´ and ´Getting a new energy certificate´ services uses cookies in order to understand how you use the services so we can update and improve them."
