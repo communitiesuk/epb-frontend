@@ -1665,7 +1665,7 @@ cy:
     fuel_for_property: "yr ynni a ddefnyddir i gynhyrchu'r tanwydd a'i ddosbarthu i'r eiddo"
 
   data_gap_warning:
-    pre_text: "Ar gyfer tystysgrifau a ddyroddwyd rhwng 9 Mehefin 2020 a 19 Medi 2020, dylech ddefnyddio:"
+    pre_text: "Ar gyfer tystysgrifau a roddwyd cyn mis Mawrth 2010, dylech ddefnyddio:"
     post_text_1: "Chwiliwch am bob tystysgrif ac adroddiad arall drwy ddefnyddio chwiliad y tudalen hwn."
     post_text_2: "Os na allwch chi ddod o hyd i dystysgrif, dylech gysylltu â'r asesydd ynni a wnaeth yr asesiad."
     domestic:
