@@ -23,7 +23,7 @@ describe "Acceptance::Non Domestic Certificate" do
         expect(response.body).to have_text "Warning"
         expect(response.body).to have_css "strong",
                                           text:
-                                            "For certificates issued between 9 June 2020 and 19 September 2020, and all expired certificates, you should use:"
+                                            "For certificates issued before March 2010, you should use:"
         expect(response.body).to have_css "li",
                                           text: "the energy performance register for England and Wales"
         expect(response.body).to have_css "li",
@@ -254,7 +254,7 @@ describe "Acceptance::Non Domestic Certificate" do
         expect(response.body).to have_text "Warning"
         expect(response.body).to have_css "strong",
                                           text:
-                                            "For certificates issued between 9 June 2020 and 19 September 2020, and all expired certificates, you should use:"
+                                            "For certificates issued before March 2010, you should use:"
         expect(response.body).to have_css "li",
                                           text: "the energy performance register for England and Wales"
         expect(response.body).to have_css "li",
@@ -410,7 +410,7 @@ describe "Acceptance::Non Domestic Certificate" do
         expect(response.body).to have_text "Warning"
         expect(response.body).to have_css "strong",
                                           text:
-                                            "For certificates issued between 9 June 2020 and 19 September 2020, and all expired certificates, you should use:"
+                                            "For certificates issued before March 2010, you should use:"
         expect(response.body).to have_css "li",
                                           text: "the energy performance register for England and Wales"
         expect(response.body).to have_css "li",
