@@ -1665,6 +1665,7 @@ en:
     fuel_for_property: 'the energy used to produce the fuel and deliver it to the property'
 
   data_gap_warning:
+    assistive_text: 'Warning'
     pre_text: 'For certificates issued before March 2010, you should use:'
     post_text_1: 'Find all other valid certificates using this page’s search.'
     post_text_2: 'If you cannot find a certificate, you should contact the energy assessor who carried out the assessment.'
