@@ -1664,18 +1664,6 @@ cy:
     efficiency_of_electricity: "effeithlonrwydd gorsaf gynhyrchu ar gyfer trydan"
     fuel_for_property: "yr ynni a ddefnyddir i gynhyrchu'r tanwydd a'i ddosbarthu i'r eiddo"
 
-  data_gap_warning:
-    assistive_text: "Rhybudd"
-    pre_text: "Ar gyfer tystysgrifau a roddwyd cyn mis Mawrth 2010, dylech ddefnyddio:"
-    post_text_1: "Chwiliwch am bob tystysgrif ac adroddiad arall drwy ddefnyddio chwiliad y tudalen hwn."
-    post_text_2: "Os na allwch chi ddod o hyd i dystysgrif, dylech gysylltu â'r asesydd ynni a wnaeth yr asesiad."
-    domestic:
-      link_ew: "<a href=\"https://www.epcregister.com\">Cofrestr EPCs Cymru a Lloegr</a>"
-      link_ni: "<a href=\"https://www.epbniregister.com\">Cofrestr EPCs Gogledd Iwerddon</a>"
-    non_domestic:
-      link_ew: "<a href=\"https://www.epcregister.com\">Cofrestr EPCs Cymru a Lloegr</a>"
-      link_ni: "<a href=\"https://www.epbniregister.com\">Cofrestr EPCs Gogledd Iwerddon</a>"
-
   rating:
     score:  "Sgôr"
     operational_rating: "Cyfraddiad gweithredol"

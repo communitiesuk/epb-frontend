@@ -19,23 +19,6 @@ describe "Acceptance::Non Domestic Certificate" do
                                           text: "Find energy certificates and reports by postcode"
       end
 
-      it "displays the data gap warning" do
-        expect(response.body).to have_text "Warning"
-        expect(response.body).to have_css "strong",
-                                          text:
-                                            "For certificates issued before March 2010, you should use:"
-        expect(response.body).to have_css "li",
-                                          text: "the energy performance register for England and Wales"
-        expect(response.body).to have_css "li",
-                                          text: "the energy performance register for Northern Ireland"
-        expect(response.body).to have_css "strong",
-                                          text:
-                                            "Find all other valid certificates using this page’s search."
-        expect(response.body).to have_css "strong",
-                                          text:
-                                            "If you cannot find a certificate, you should contact the energy assessor who carried out the assessment."
-      end
-
       it "has an input field" do
         expect(response.body).to have_css "input#postcode"
       end
@@ -250,23 +233,6 @@ describe "Acceptance::Non Domestic Certificate" do
                                           text: "Find energy certificates and reports by street and town"
       end
 
-      it "displays the data gap warning" do
-        expect(response.body).to have_text "Warning"
-        expect(response.body).to have_css "strong",
-                                          text:
-                                            "For certificates issued before March 2010, you should use:"
-        expect(response.body).to have_css "li",
-                                          text: "the energy performance register for England and Wales"
-        expect(response.body).to have_css "li",
-                                          text: "the energy performance register for Northern Ireland"
-        expect(response.body).to have_css "strong",
-                                          text:
-                                            "Find all other valid certificates using this page’s search."
-        expect(response.body).to have_css "strong",
-                                          text:
-                                            "If you cannot find a certificate, you should contact the energy assessor who carried out the assessment."
-      end
-
       it "has two input fields" do
         expect(response.body).to have_css "input#street_name"
         expect(response.body).to have_css "input#town"
@@ -404,23 +370,6 @@ describe "Acceptance::Non Domestic Certificate" do
       it "displays the find a non-domestic certificate page heading" do
         expect(response.body).to have_css "h1",
                                           text: "Find energy certificates and reports by their number"
-      end
-
-      it "displays the data gap warning" do
-        expect(response.body).to have_text "Warning"
-        expect(response.body).to have_css "strong",
-                                          text:
-                                            "For certificates issued before March 2010, you should use:"
-        expect(response.body).to have_css "li",
-                                          text: "the energy performance register for England and Wales"
-        expect(response.body).to have_css "li",
-                                          text: "the energy performance register for Northern Ireland"
-        expect(response.body).to have_css "strong",
-                                          text:
-                                            "Find all other valid certificates using this page’s search."
-        expect(response.body).to have_css "strong",
-                                          text:
-                                            "If you cannot find a certificate, you should contact the energy assessor who carried out the assessment."
       end
 
       it "has an input field" do
