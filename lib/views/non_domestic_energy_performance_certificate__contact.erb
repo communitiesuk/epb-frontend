@@ -48,7 +48,7 @@
       "date_certificate": date(registration_date),
       "employer": assessor[:companyDetails][:name],
       "employer_address":  assessor[:companyDetails][:address],
-      "declaration": party_disclosure(related_party_disclosure.nil? ? "13" : related_party_disclosure, "", "non_domestic_disclosure_code", "non_domestic_epc"),
+      "declaration": party_disclosure(related_party_disclosure.nil? ? "13" : related_party_disclosure, related_party_disclosure, "non_domestic_disclosure_code", "non_domestic_epc"),
     },
     translation_prefix: 'non_domestic_epc.contact.assessment.',
     skip_null: true

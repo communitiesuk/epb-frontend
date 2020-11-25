@@ -409,7 +409,7 @@
                    "related_party_disclosure": party_disclosure(
                      (assessment[:administrativeInformation][:relatedPartyDisclosure].nil? ?
                        "8" :
-                       assessment[:administrativeInformation][:relatedPartyDisclosure]), "", "dec_disclosure_code", "dec"
+                       assessment[:administrativeInformation][:relatedPartyDisclosure]), assessment[:administrativeInformation][:relatedPartyDisclosure], "dec_disclosure_code", "dec"
                    )
                    }.each do |key, value| %>
                   <tr>

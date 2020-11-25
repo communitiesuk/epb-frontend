@@ -23,7 +23,7 @@
         "related_party_disclosure": party_disclosure(
           administrative_information[:relatedPartyDisclosure].nil? ?
             "8" :
-            administrative_information[:relatedPartyDisclosure], "", "dec_disclosure_code", "dec"
+            administrative_information[:relatedPartyDisclosure], administrative_information[:relatedPartyDisclosure], "dec_disclosure_code", "dec"
         ),
         "download_xml": { type: "link", value: t("dec.sections.administrative_information.download_xml_cta"), link: localised_url("/energy-certificate/" + assessment[:assessmentId] + "/dec_summary") },
       },

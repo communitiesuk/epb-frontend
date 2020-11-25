@@ -7,7 +7,7 @@
       "inspection_level": assessment[:technicalInformation][:buildingComplexity],
       "assessment_software": assessment[:technicalInformation][:calculationTool],
       "declaration": party_disclosure(
-        assessment[:relatedPartyDisclosure].nil? ? nil : assessment[:relatedPartyDisclosure], "", "aci_disclosure_code", "ac_cert"
+        assessment[:relatedPartyDisclosure].nil? ? nil : assessment[:relatedPartyDisclosure], assessment[:relatedPartyDisclosure], "aci_disclosure_code", "ac_cert"
       ),
       "f_gas_compliant_date": (
         date(assessment[:technicalInformation][:fGasCompliantDate]) rescue assessment[:technicalInformation][:fGasCompliantDate]
