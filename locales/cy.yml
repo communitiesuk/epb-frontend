@@ -85,6 +85,9 @@ cy:
           title: "Eiddo annomestig"
           hint: "Er enghraifft adeilad masnachol, diwydiannol neu gyhoeddus."
       cta: "Parhau"
+      errors:
+        no_property_type_selected: "Dewiswch fath o eiddo"
+
   schemes:
     head:
       title: "Cofrestr perfformiad ynni adeiladau - Cysylltwch â chynllun achredu aseswyr ynni"

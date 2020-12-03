@@ -43,20 +43,31 @@ class FrontendService < Sinatra::Base
     erb :find_certificate, layout: :layout
   end
 
-  get "/find-an-assessor/type-of-property",
-      host_name: /#{getting_new_energy_certificate_host_name}/ do
+  find_an_assessor_property_type = lambda do
     query = params.map { |key, value| "#{key}=#{value}" }.join("&")
+    @errors = {}
 
     if params["property_type"] == "domestic"
       redirect "/find-an-assessor/search-by-postcode?#{query}"
-    elsif params["property_type"] == "non_domestic"
-      redirect "/find-a-non-domestic-assessor/search-by-postcode?#{query}"
-    else
-      @page_title = t("find_an_assessor.head.title")
-      erb :find_assessor__property_type,
-          layout: :layout, locals: { lang: params[:lang] }
     end
+
+    if params["property_type"] == "non_domestic"
+      redirect "/find-a-non-domestic-assessor/search-by-postcode?#{query}"
+    end
+
+    if request.post? && params["property_type"].nil?
+      @errors = { property_type: t("find_an_assessor.property_type.errors.no_property_type_selected") }
+    end
+
+    @page_title = t("find_an_assessor.head.title")
+    show(:find_assessor__property_type, { lang: params[:lang] })
   end
+
+  get "/find-an-assessor/type-of-property",
+      host_name: /#{getting_new_energy_certificate_host_name}/, &find_an_assessor_property_type
+
+  post "/find-an-assessor/type-of-property",
+      host_name: /#{getting_new_energy_certificate_host_name}/, &find_an_assessor_property_type
 
   get "/find-a-non-domestic-certificate/search-by-postcode",
       host_name: /#{find_energy_certificate_host_name}/ do

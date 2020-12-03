@@ -1,13 +1,18 @@
 <a href="<%= localised_url('/') %>" class="govuk-back-link">Back</a>
-<form>
+<form method="post">
   <fieldset class="govuk-fieldset">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
       <h1 class="govuk-fieldset__heading">
         <%= t('find_an_assessor.property_type.question_title') %>
       </h1>
     </legend>
-    <div class="govuk-form-group">
+    <div class="govuk-form-group<% if errors[:property_type] %> govuk-form-group--error<% end %>">
     <input type="hidden" name="lang" value=<%= lang %> />
+      <% if errors[:property_type] %>
+          <span class="govuk-error-message">
+            <span class="govuk-visually-hidden"><%= t('error.error') %></span><%== errors[:property_type] %>
+          </span>
+      <% end %>
       <div class="govuk-radios">
         <div class="govuk-radios__item">
           <input class="govuk-radios__input" id="domestic" name="property_type" type="radio" value="domestic" aria-describedby="domestic-item-hint">

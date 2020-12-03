@@ -85,6 +85,9 @@ en:
           title: "A non-domestic property"
           hint: "For example a commercial, industrial or public building."
       cta: "Continue"
+      errors:
+        no_property_type_selected: "Please select a type of property"
+
   schemes:
     head:
       title: 'Energy performance of buildings register - Contact an energy assessor accreditation scheme'
