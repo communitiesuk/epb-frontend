@@ -56,6 +56,13 @@ describe "Journey::FindDomesticCertificate", type: :feature, journey: true do
     expect(page).to have_content "Enter a real postcode"
   end
 
+  it "displays an error message when you don't select a property type" do
+    visit "http://find-energy-certificate.local.gov.uk:9393"
+    click_on "Start now"
+    click_on "Continue"
+    expect(page).to have_content "Please select a type of property"
+  end
+
   it "displays an error message when entering an invalid postcode" do
     visit "http://find-energy-certificate.local.gov.uk:9393"
     click_on "Start now"

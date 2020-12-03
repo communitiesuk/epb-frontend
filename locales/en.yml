@@ -314,6 +314,8 @@ en:
           title: "A non-domestic property"
           hint: "For example a commercial, industrial or public building."
       cta: "Continue"
+      errors:
+        no_property_type_selected: "Please select a type of property"
 
   find_certificate_by_postcode:
     head:
