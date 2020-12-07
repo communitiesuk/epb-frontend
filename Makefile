@@ -36,14 +36,14 @@ deploy-app: ## Deploys the app to PaaS
 	@$(MAKE) frontend-build
 	@$(MAKE) generate-manifest
 
-	cf v3-apply-manifest -f manifest.yml
+	cf apply-manifest -f manifest.yml
 
 	cf set-env "${DEPLOY_APPNAME}" EPB_AUTH_CLIENT_ID "${EPB_AUTH_CLIENT_ID}"
 	cf set-env "${DEPLOY_APPNAME}" EPB_AUTH_CLIENT_SECRET "${EPB_AUTH_CLIENT_SECRET}"
 	cf set-env "${DEPLOY_APPNAME}" EPB_AUTH_SERVER "${EPB_AUTH_SERVER}"
 	cf set-env "${DEPLOY_APPNAME}" EPB_API_URL "${EPB_API_URL}"
 
-	cf v3-zdt-push "${DEPLOY_APPNAME}" --wait-for-deploy-complete
+	cf push "${DEPLOY_APPNAME}" --strategy rolling
 
 .PHONY: test
 test:
