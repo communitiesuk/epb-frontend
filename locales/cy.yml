@@ -41,8 +41,6 @@ cy:
     help_desk_number: "020 3829 0748"
 
   find_an_assessor:
-    head:
-      title: "Cofrestr perfformiad ynni adeiladau - Sicrhau tystysgrif ynni newydd"
     top_heading: "Sicrhau tystysgrif ynni newydd"
     introduction:
       what_you_need: "Mae angen ichi drefnu asesiad eiddo er mwyn sicrhau:"

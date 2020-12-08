@@ -41,8 +41,6 @@ en:
     help_desk_number: '020 3829 0748'
 
   find_an_assessor:
-    head:
-      title: 'Energy performance of buildings register - Getting a new energy certificate'
     top_heading: 'Getting a new energy certificate'
     introduction:
       what_you_need: 'You need to book a property assessment to get a new:'
