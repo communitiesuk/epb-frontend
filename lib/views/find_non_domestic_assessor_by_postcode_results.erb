@@ -22,11 +22,6 @@
           <span id="postcode-hint" class="govuk-hint">
             <%= t('find_non_domestic_assessor_by_postcode_results.hint') %>
           </span>
-          <% if errors[:postcode] %>
-          <span id="postcode-error" class="govuk-error-message">
-            <span class="govuk-visually-hidden"><%= t('error.error') %></span><%== errors[:postcode] %>
-          </span>
-          <% end %>
           <input id="postcode" name="postcode" type="text"
                  class="govuk-input epc-search-bar"
                  aria-describedby="postcode-hint"
