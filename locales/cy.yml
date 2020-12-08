@@ -211,6 +211,8 @@ cy:
 
   find_non_domestic_assessor_by_postcode_results:
     top_heading: "Cysylltwch ag asesydd i drefnu asesiad ynni"
+    question: "I chwilio eto rhowch god post yr eiddo"
+    hint: "Er enghraifft SW1A 2AA"
     qualification:
       title: "Cymwysterau"
       domesticSap: "Gweithdrefn Asesu Safonol (SAP)"
@@ -227,6 +229,8 @@ cy:
     head:
       title: "Cofrestr perfformiad ynni adeiladau - Canlyniadau ar gyfer aseswyr yn eich ardal chi"
     top_heading: "Cysylltwch ag asesydd i drefnu asesiad ynni"
+    question: "I chwilio eto rhowch god post yr eiddo"
+    hint: "Er enghraifft SW1A 2AA"
     description: "Cysylltwch ag asesydd sydd wedi'i restru isod i drefnu asesiad ynni."
     no_assessors_heading: "Dim canlyniadau ar gyfer %{postcode}"
     no_assessors_1: "Rydyn ni heb ganfod aseswyr ar gyfer %{postcode}"

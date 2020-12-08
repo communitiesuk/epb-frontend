@@ -211,6 +211,8 @@ en:
 
   find_non_domestic_assessor_by_postcode_results:
     top_heading: 'Contact an assessor to book an energy assessment'
+    question: 'To search again, enter the postcode of the property'
+    hint: 'For example SW1A 2AA'
     qualification:
       title: 'Qualifications'
       domesticSap: 'Standard Assessment Procedure (SAP)'
@@ -227,6 +229,8 @@ en:
     head:
       title: 'Energy performance of buildings register - Results for energy assessors near you'
     top_heading: 'Contact an assessor to book an energy assessment'
+    question: 'To search again, enter the postcode of the property'
+    hint: 'For example SW1A 2AA'
     description: 'Contact an assessor listed below to book an energy assessment.'
     no_assessors_heading: 'No results for %{postcode}'
     no_assessors_1: 'We did not find any assessors for %{postcode}.'

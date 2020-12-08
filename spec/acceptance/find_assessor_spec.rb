@@ -129,7 +129,7 @@ describe "Acceptance::Assessor", type: :feature do
         end
       end
 
-      context "shows page" do
+      context "show results page" do
         before { FindAssessor::ByPostcode::Stub.search_by_postcode("SW1A 2AA") }
 
         let(:response) do
@@ -142,6 +142,10 @@ describe "Acceptance::Assessor", type: :feature do
 
         it "displays the find an assessor page heading" do
           expect(response.body).to include("Find an energy assessor")
+        end
+
+        it "displays the to search again by postcode message" do
+          expect(response.body).to include("To search again")
         end
 
         it "has a postcode input field" do
@@ -364,7 +368,7 @@ describe "Acceptance::Assessor", type: :feature do
         expect(response.body).to include('<input id="name" name="name"')
       end
 
-      it "has a Find button" do
+      it "has a Search button" do
         expect(response.body).to include(
           '<button class="govuk-button" data-module="govuk-button">Search</button>',
         )

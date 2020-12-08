@@ -72,6 +72,18 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
       ).to have_content "7 assessors in order of distance from SW1A 2AA"
     end
 
+    it "displays to search again, enter the postcode of the property" do
+      visit "http://getting-new-energy-certificate.local.gov.uk:9393"
+      click_on "Start now"
+      find("#label-domestic").click
+      click_on "Continue"
+      fill_in "postcode", with: "SW1A 2AA"
+      click_on "Find"
+      expect(
+          page,
+          ).to have_content "To search again, enter the postcode of the property"
+    end
+
     it "displays accreditation scheme contact details for the first assessor" do
       visit "http://getting-new-energy-certificate.local.gov.uk:9393"
       click_on "Start now"
@@ -176,6 +188,18 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
       fill_in "postcode", with: "NOT A POSTCODE"
       click_on "Find"
       expect(page).to have_content "Enter a real postcode"
+    end
+
+    it "displays to search again, enter the postcode of the property" do
+      visit "http://getting-new-energy-certificate.local.gov.uk:9393"
+      click_on "Start now"
+      find("#label-non-domestic").click
+      click_on "Continue"
+      fill_in "postcode", with: "SW1A 2AA"
+      click_on "Find"
+      expect(
+          page,
+          ).to have_content "To search again, enter the postcode of the property"
     end
 
     xit "displays the find a non domestic assessor page heading when entering a valid postcode " do

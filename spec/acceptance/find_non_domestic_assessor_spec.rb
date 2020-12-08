@@ -134,7 +134,7 @@ describe "Acceptance::NonDomesticAssessor" do
         end
       end
 
-      context "shows page" do
+      context "shows results page" do
         before do
           FindAssessor::ByPostcode::Stub.search_by_postcode(
             "SW1A 2AA",
@@ -152,6 +152,10 @@ describe "Acceptance::NonDomesticAssessor" do
 
         it "displays the find a non-domestic assessor page heading" do
           expect(response.body).to include("Find a non-domestic energy")
+        end
+
+        it "displays the to search again by postcode message" do
+          expect(response.body).to include("To search again")
         end
 
         it "has a postcode input field" do
