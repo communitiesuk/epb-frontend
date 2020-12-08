@@ -37,7 +37,7 @@ describe "Integration::Rackup" do
       req = Net::HTTP::Get.new("/")
       response = request_certificate.request(req)
       expect(response.code).to eq("200")
-      expect(response.body).to include("Energy performance of buildings")
+      expect(response.body).to include("Find an energy certificate")
     end
   end
 

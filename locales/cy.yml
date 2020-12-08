@@ -276,8 +276,6 @@ cy:
     assessor_id_text: "ID yr asesydd"
 
   find_a_certificate:
-    head:
-      title: "Cofrestr perfformiad ynni adeiladau - Chwiliwch am asesydd ynni ar gyfer eiddo preswyl"
     top_heading: "Chwiliwch am dystysgrif ynni"
     service:
       introduction: "Defnyddiwch y gwasanaeth hwn i chwilio am dystysgrifau ynni ac adroddiadau ar argymhellion ar gyfer eiddo yng Nghymru, Lloegr a Gogledd Iwerddon."

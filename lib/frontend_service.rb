@@ -39,7 +39,7 @@ class FrontendService < Sinatra::Base
   end
 
   get "/", host_name: /#{find_energy_certificate_host_name}/ do
-    @page_title = t("find_a_certificate.head.title")
+    @page_title = t("find_a_certificate.top_heading")
     erb :find_certificate, layout: :layout
   end
 

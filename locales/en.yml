@@ -276,8 +276,6 @@ en:
     assessor_id_text: 'assessor ID'
 
   find_a_certificate:
-    head:
-      title: 'Energy performance of buildings register - Find an energy assessor for a residential property'
     top_heading: 'Find an energy certificate'
     service:
       introduction: 'Use this service to find energy certificates and recommendation reports for properties in England, Wales and Northern Ireland.'
