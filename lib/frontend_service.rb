@@ -151,7 +151,7 @@ class FrontendService < Sinatra::Base
       end
     end
 
-    @page_title = t("find_non_dom_certificate_by_reference_number.head.title")
+    @page_title = t("find_non_dom_certificate_by_reference_number.top_heading")
     show(erb_template, locals)
   end
 

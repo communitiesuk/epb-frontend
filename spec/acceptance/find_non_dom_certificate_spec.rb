@@ -372,6 +372,12 @@ describe "Acceptance::Non Domestic Certificate" do
                                           text: "Find energy certificates and reports by their number"
       end
 
+      it "displays the find a non-domestic certificate page tab content" do
+        expect(response.body).to include(
+           '<title>Find energy certificates and reports by their number – Energy performance of buildings register – GOV.UK</title>'
+        )
+      end
+
       it "has an input field" do
         expect(response.body).to have_css "input#reference_number"
       end
