@@ -3,6 +3,20 @@
 describe "Acceptance::Assessor", type: :feature do
   include RSpecFrontendServiceMixin
 
+  describe ".get getting-new-energy-certificate/find-an-assessor/type-of-property" do
+    context "when on page to decide property type" do
+      let(:response) do
+        get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/type-of-property"
+      end
+
+      it "tab value is the same as the main header value" do
+        expect(response.body).to include(
+          '<title>What type of property is the certificate for? – Energy performance of buildings register – GOV.UK</title>',
+        )
+      end
+    end
+  end
+
   describe ".get getting-new-energy-certificate/find-an-assessor/search-by-postcode" do
     context "when search page rendered" do
       let(:response) do

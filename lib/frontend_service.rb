@@ -59,7 +59,7 @@ class FrontendService < Sinatra::Base
       @errors = { property_type: t("find_an_assessor.property_type.errors.no_property_type_selected") }
     end
 
-    @page_title = t("find_an_assessor.head.title")
+    @page_title = t("find_an_assessor.property_type.question_title")
     show(:find_assessor__property_type, { lang: params[:lang] })
   end
 
