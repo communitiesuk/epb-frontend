@@ -78,7 +78,7 @@ class FrontendService < Sinatra::Base
     if params["postcode"]
       params["postcode"].strip!
 
-      @page_title = t("find_non_dom_certificate_by_postcode_results.head.title")
+      @page_title = t("find_non_dom_certificate_by_postcode_results.top_heading")
       begin
         erb_template = :find_non_dom_certificate_by_postcode_results
 
@@ -103,7 +103,7 @@ class FrontendService < Sinatra::Base
       end
     end
 
-    @page_title = t("find_certificate_by_postcode.head.title")
+    @page_title = t("find_non_dom_certificate_by_postcode.top_heading")
     show(erb_template, locals)
   end
 

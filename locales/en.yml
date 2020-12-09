@@ -451,8 +451,6 @@ en:
     no_certificates: 'There are no certificates matching that address.'
 
   find_non_dom_certificate_by_postcode:
-    head:
-      title: 'Energy performance of buildings register - Find energy certificates and reports by postcode'
     top_heading: 'Find energy certificates and reports by postcode'
     question: 'Enter the postcode of the property'
     button_text: 'Find'
@@ -470,8 +468,6 @@ en:
       cta: 'find a certificate by using its certificate number'
 
   find_non_dom_certificate_by_postcode_results:
-    head:
-      title: 'Energy performance of buildings register - Results for energy performance certificates and reports at your postcode'
     top_heading: 'Find energy certificates and reports'
     no_epc:
       get_a_new_one: "If your property does not have a required certificate or it has expired, you can"
