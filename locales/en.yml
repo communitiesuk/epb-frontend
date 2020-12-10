@@ -404,9 +404,7 @@ en:
       body: 'There is an internal network error'
 
   find_non_dom_certificate_by_street_name_and_town:
-    head:
-      title: 'Energy performance of buildings register - Find a non domestic certificate'
-    top_heading: 'Find energy certificates and reports by street and town'
+    top_heading: 'Find an energy performance certificate (EPC) by street and town'
     no_such_address:
       error: 'A certificate was not found at this address.'
       body: 'If you need to get an EPC for your property, please use the %{link} service'
@@ -432,9 +430,7 @@ en:
     no_certificates: 'There are no certificates matching that EPC certificate number.'
 
   find_non_dom_certificate_by_street_name_and_town_results:
-    head:
-      title: 'Energy performance of buildings register - Results for non domestic certificates'
-    top_heading: 'Find energy certificates and reports'
+    top_heading: 'Find an energy performance certificate (EPC)'
     list: '%{length} certificates and reports for %{query}'
     table:
       address: 'Address'

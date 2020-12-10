@@ -402,9 +402,7 @@ cy:
       body: "Mae yna wall rhwydwaith mewnol"
 
   find_non_dom_certificate_by_street_name_and_town:
-    head:
-      title: "Cofrestr perfformiad ynni adeiladau - Chwiliwch am dystysgrif annomestig"
-    top_heading: "Chwiliwch am dystysgrifau ynni ac adroddiadau yn ôl y stryd a'r dref"
+    top_heading: "Chwiliwch am dystysgrif perfformiad ynni (EPC) yn ôl y stryd a'r dref"
     no_such_address:
       error: "Methwyd â dod o hyd i dystysgrif yn y cyfeiriad hwn"
       body: "Os oes angen ichi gael EPC ar gyfer eich eiddo, defnyddiwch y gwasanaeth %{link}"
@@ -430,9 +428,7 @@ cy:
     no_certificates: "Does dim tystysgrifau'n cyfateb i'r rhif tystysgrif EPC hwnnw"
 
   find_non_dom_certificate_by_street_name_and_town_results:
-    head:
-      title: "Cofrestr perfformiad ynni adeiladau - Canlyniadau ar gyfer tystysgrifau annomestig"
-    top_heading: "Chwiliwch am dystysgrifau ynni ac adroddiadau"
+    top_heading: "Chwiliwch am dystysgrif perfformiad ynni (EPC)"
     list: "%{length} o dystysgrifau ac adroddiadau ar gyfer %{query}"
     table:
       address: "Cyfeiriad"

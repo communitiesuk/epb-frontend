@@ -392,9 +392,11 @@ class FrontendService < Sinatra::Base
     locals = {}
     erb_template = :find_non_dom_certificate_by_street_name_and_town
 
+    @page_title = "#{t("find_non_dom_certificate_by_street_name_and_town.top_heading")} - #{t('services.find_an_energy_certificate')} - #{t('layout.body.govuk')}"
+
     if params.key?("town") || params.key?("street_name")
-      @page_title =
-        t("find_non_dom_certificate_by_street_name_and_town_results.head.title")
+      @page_title = "#{t("find_non_dom_certificate_by_street_name_and_town_results.top_heading")} - #{t('services.find_an_energy_certificate')} - #{t('layout.body.govuk')}"
+
       begin
         erb_template = :find_non_dom_certificate_by_street_name_and_town_results
 
@@ -448,8 +450,6 @@ class FrontendService < Sinatra::Base
       end
     end
 
-    @page_title =
-      t("find_non_dom_certificate_by_street_name_and_town.head.title")
     show(erb_template, locals)
   end
 
