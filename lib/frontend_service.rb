@@ -459,6 +459,8 @@ class FrontendService < Sinatra::Base
     locals = {}
     erb_template = :find_certificate_by_reference_number
 
+    @page_title = "#{t("find_certificate_by_reference_number.top_heading")} - #{t('services.find_an_energy_certificate')} - #{t('layout.body.govuk')}"
+
     if params["reference_number"]
       begin
         # If we can find the assessment then we redirect directly to it
@@ -490,12 +492,11 @@ class FrontendService < Sinatra::Base
               "find_certificate_by_reference_number.reference_number_not_registered",
             )
         else
-          return server_error(e)
+          server_error(e)
         end
       end
     end
 
-    @page_title = t("find_certificate_by_reference_number.head.title")
     show(erb_template, locals)
   end
 
@@ -505,9 +506,11 @@ class FrontendService < Sinatra::Base
     locals = {}
     erb_template = :find_certificate_by_street_name_and_town
 
+    @page_title = "#{t('find_certificate_by_street_name_and_town.top_heading')} - #{t('services.find_an_energy_certificate')} - #{t('layout.body.govuk')}"
+
     if params.key?("town") || params.key?("street_name")
-      @page_title =
-        t("find_certificate_by_street_name_and_town_results.top_heading")
+      @page_title = "#{t('find_certificate_by_street_name_and_town_results.top_heading')} - #{t('services.find_an_energy_certificate')} - #{t('layout.body.govuk')}"
+
       begin
         erb_template = :find_certificate_by_street_name_and_town_results
 
@@ -554,7 +557,6 @@ class FrontendService < Sinatra::Base
       end
     end
 
-    @page_title = t("find_certificate_by_street_name_and_town.top_heading")
     show(erb_template, locals)
   end
 

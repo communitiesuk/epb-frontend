@@ -2,9 +2,9 @@ cy:
   validation_errors:
     postcode_error: "Rhowch god post go iawn"
 
-    services:
-      find_an_energy_certificate: "Chwiliwch am dystysgrif ynni"
-      getting_an_energy_certificate: "Sicrhau tystysgrif ynni"
+  services:
+    find_an_energy_certificate: "Chwiliwch am dystysgrif ynni"
+    getting_an_energy_certificate: "Sicrhau tystysgrif ynni"
 
   related_content:
     title: "Cynnwys perthynol"
