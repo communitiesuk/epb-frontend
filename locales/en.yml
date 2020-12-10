@@ -387,8 +387,6 @@ en:
     no_certificates: 'There are no certificates matching that EPC certificate number.'
 
   find_certificate_by_street_name_and_town:
-    head:
-      title: 'Energy performance of buildings register - Find an energy performance certificate'
     top_heading: 'Find an energy performance certificate (EPC) by street and town'
     no_such_address:
       error: 'A certificate was not found at this address.'
@@ -425,8 +423,6 @@ en:
       body: 'There is an internal network error'
 
   find_certificate_by_street_name_and_town_results:
-    head:
-      title: 'Energy performance of buildings register - Results for energy performance certificates by certificate number'
     top_heading: 'Find an energy performance certificate (EPC)'
     list: '1-%{length} of %{length} results matching %{query}'
     table:

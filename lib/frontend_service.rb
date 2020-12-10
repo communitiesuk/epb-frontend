@@ -507,7 +507,7 @@ class FrontendService < Sinatra::Base
 
     if params.key?("town") || params.key?("street_name")
       @page_title =
-        t("find_certificate_by_street_name_and_town_results.head.title")
+        t("find_certificate_by_street_name_and_town_results.top_heading")
       begin
         erb_template = :find_certificate_by_street_name_and_town_results
 
@@ -554,7 +554,7 @@ class FrontendService < Sinatra::Base
       end
     end
 
-    @page_title = t("find_certificate_by_street_name_and_town.head.title")
+    @page_title = t("find_certificate_by_street_name_and_town.top_heading")
     show(erb_template, locals)
   end
 

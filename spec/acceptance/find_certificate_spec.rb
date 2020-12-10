@@ -387,6 +387,12 @@ describe "Acceptance::Certificate" do
         expect(response.status).to eq 200
       end
 
+      it "has a tab content that matches the page heading" do
+        expect(response.body).to include(
+                                     "<title>Find an energy performance certificate (EPC) by street and town</title>"
+                                 )
+      end
+
       it "displays the find a certificate page heading" do
         expect(response.body).to have_css "h1",
                                           text:

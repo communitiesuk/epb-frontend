@@ -385,8 +385,6 @@ cy:
     no_certificates: "Does dim tystysgrifau'n cyfateb i'r rhif tystysgrif EPC hwnnw"
 
   find_certificate_by_street_name_and_town:
-    head:
-      title: "Cofrestr perfformiad ynni adeiladau - Chwiliwch am dystysgrif perfformiad ynni"
     top_heading: "Chwiliwch am dystysgrif perfformiad ynni (EPC) yn ôl y stryd a'r dref"
     no_such_address:
       error: "Methwyd â dod o hyd i dystysgrif yn y cyfeiriad hwn"
@@ -423,8 +421,6 @@ cy:
       body: "Mae yna wall rhwydwaith mewnol"
 
   find_certificate_by_street_name_and_town_results:
-    head:
-      title: "Cofrestr perfformiad ynni adeiladau - Canlyniadau ar gyfer tystysgrifau perfformiad ynni yn ôl rhif y dystysgrif"
     top_heading: "Chwiliwch am dystysgrif perfformiad ynni (EPC)"
     list: "1-%{length} o %{length} o ganlyniadau yn cyfateb i %{query}"
     table:
