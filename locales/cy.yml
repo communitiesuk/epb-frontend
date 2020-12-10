@@ -249,6 +249,8 @@ cy:
     accredited_id: "ID yr Asesydd"
     accredited_scheme: "Cynllun achredu"
     assessor_id_text: "ID yr Asesydd"
+    errors:
+      missing_detail: Heb eu darparu
 
   find_assessor_by_name:
     head:

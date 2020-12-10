@@ -132,7 +132,7 @@ describe Gateway::AssessorsGateway do
       before { FindAssessor::ByName::Stub.search_by_name("Some Name") }
 
       it "checks the number of assessors returned from the api" do
-        expect(response[:data][:assessors].count).to eq(7)
+        expect(response[:data][:assessors].count).to eq(8)
       end
 
       it "checks the shape of the object passed in the assessor object" do

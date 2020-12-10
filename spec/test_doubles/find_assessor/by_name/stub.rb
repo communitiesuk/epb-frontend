@@ -93,6 +93,16 @@ module FindAssessor
                   },
                   "schemeAssessorId": "Elmhurst12349876",
                 },
+                {
+                  "firstName": "Nocontact",
+                  "lastName": "Supercommon",
+                  "contactDetails": {},
+                  "searchResultsComparisonPostcode": "SW1A 1AA",
+                  "registeredBy": {
+                    "schemeId": "1222", "name": "Elmhurst Energy"
+                  },
+                  "schemeAssessorId": "Elmhurst12349876",
+                },
               ],
             },
             "meta": { "searchName": name, "looseMatch": loose_match },

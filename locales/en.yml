@@ -249,6 +249,8 @@ en:
     accredited_id: 'Assessor ID'
     accredited_scheme: 'Accreditation scheme'
     assessor_id_text: 'assessor ID'
+    errors:
+      missing_detail: Not Supplied
 
   find_assessor_by_name:
     head:

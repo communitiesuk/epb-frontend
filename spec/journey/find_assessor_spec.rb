@@ -132,6 +132,18 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
     expect(page).to have_content "Enter the first and last name of the assessor"
   end
 
+  it "displays 'Not Supplied' when an assessor has not supplied an email address or phone number" do
+    visit "http://getting-new-energy-certificate.local.gov.uk:9393"
+    click_on "Start now"
+    find("#label-domestic").click
+    click_on "Continue"
+    click_on "find an assessor by name"
+    fill_in "name", with: "Supercommon Name"
+    click_on "Search"
+    expect(page).to have_content "Email Not Supplied"
+    expect(page).to have_content "Telephone Not Supplied"
+  end
+
   it "displays an assessor when searched for one that does exist" do
     visit "http://getting-new-energy-certificate.local.gov.uk:9393"
     click_on "Start now"
@@ -140,7 +152,7 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
     click_on "find an assessor by name"
     fill_in "name", with: "Supercommon Name"
     click_on "Search"
-    expect(page).to have_content "7 results for the name Supercommon Name"
+    expect(page).to have_content "8 results for the name Supercommon Name"
   end
 
   it "displays accreditation scheme contact details for an existing assessor by name" do
