@@ -428,7 +428,7 @@ cy:
     no_certificates: "Does dim tystysgrifau'n cyfateb i'r rhif tystysgrif EPC hwnnw"
 
   find_non_dom_certificate_by_street_name_and_town_results:
-    top_heading: "Chwiliwch am dystysgrif perfformiad ynni (EPC)"
+    top_heading: "Chwiliwch am dystysgrifau ynni ac adroddiadau"
     list: "%{length} o dystysgrifau ac adroddiadau ar gyfer %{query}"
     table:
       address: "Cyfeiriad"

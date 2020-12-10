@@ -270,7 +270,7 @@ describe "Acceptance::Non Domestic Certificate" do
 
         it "displays the find a certificate page heading" do
           expect(response.body).to include(
-            "Find an energy performance certificate (EPC)",
+            "Find energy certificates and reports",
           )
         end
 
@@ -318,7 +318,7 @@ describe "Acceptance::Non Domestic Certificate" do
 
         it "has a tab content that matches the page heading" do
           expect(response.body).to include(
-                                       ' <title>Find an energy performance certificate (EPC) - Find an energy certificate - GOV.UK</title>'
+                                       ' <title>Find energy certificates and reports - Find an energy certificate - GOV.UK</title>'
                                    )
         end
 

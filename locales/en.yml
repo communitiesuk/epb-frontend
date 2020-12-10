@@ -430,7 +430,7 @@ en:
     no_certificates: 'There are no certificates matching that EPC certificate number.'
 
   find_non_dom_certificate_by_street_name_and_town_results:
-    top_heading: 'Find an energy performance certificate (EPC)'
+    top_heading: 'Find energy certificates and reports'
     list: '%{length} certificates and reports for %{query}'
     table:
       address: 'Address'
