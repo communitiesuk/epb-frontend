@@ -95,60 +95,60 @@ describe "Journey::FindDomesticCertificate", type: :feature, journey: true do
     expect(page).to have_content "Valid until 5 January 2030"
   end
 
-  # it "displays an error message when entering an empty street name" do
-  #   visit "http://find-energy-certificate.local.gov.uk:9393"
-  #   click_on "Start now"
-  #   find("#label-domestic").click
-  #   click_on "Continue"
-  #   click_on "find an EPC using the street name and town"
-  #   fill_in "town", with: "Beauty Town"
-  #   click_on "Find"
-  #   expect(page).to have_content "Enter the street name"
-  # end
+  it "displays an error message when entering an empty street name" do
+    visit "http://find-energy-certificate.local.gov.uk:9393"
+    click_on "Start now"
+    find("#label-domestic").click
+    click_on "Continue"
+    click_on "find an EPC using the street name and town"
+    fill_in "town", with: "Beauty Town"
+    click_on "Find"
+    expect(page).to have_content "Enter the street name"
+  end
 
-  # it "displays an error message when entering an empty town" do
-  #   visit "http://find-energy-certificate.local.gov.uk:9393"
-  #   click_on "Start now"
-  #   find("#label-domestic").click
-  #   click_on "Continue"
-  #   click_on "find an EPC using the street name and town"
-  #   fill_in "street_name", with: "1 Makeup Street"
-  #   click_on "Find"
-  #   expect(page).to have_content "Enter the town"
-  # end
+  it "displays an error message when entering an empty town" do
+    visit "http://find-energy-certificate.local.gov.uk:9393"
+    click_on "Start now"
+    find("#label-domestic").click
+    click_on "Continue"
+    click_on "find an EPC using the street name and town"
+    fill_in "street_name", with: "1 Makeup Street"
+    click_on "Find"
+    expect(page).to have_content "Enter the town"
+  end
 
-  # it "displays an error message when entering an empty town and street name" do
-  #   visit "http://find-energy-certificate.local.gov.uk:9393"
-  #   click_on "Start now"
-  #   find("#label-domestic").click
-  #   click_on "Continue"
-  #   click_on "find an EPC using the street name and town"
-  #   click_on "Find"
-  #   expect(page).to have_content "Enter the town"
-  #   expect(page).to have_content "Enter the street name"
-  # end
+  it "displays an error message when entering an empty town and street name" do
+    visit "http://find-energy-certificate.local.gov.uk:9393"
+    click_on "Start now"
+    find("#label-domestic").click
+    click_on "Continue"
+    click_on "find an EPC using the street name and town"
+    click_on "Find"
+    expect(page).to have_content "Enter the town"
+    expect(page).to have_content "Enter the street name"
+  end
 
-  # it "displays the find a certificate page heading when entering a valid query" do
-  #   visit "http://find-energy-certificate.local.gov.uk:9393"
-  #   click_on "Start now"
-  #   find("#label-domestic").click
-  #   click_on "Continue"
-  #   click_on "find an EPC using the street name and town"
-  #   fill_in "street_name", with: "1 Makeup Street"
-  #   fill_in "town", with: "Beauty Town"
-  #   click_on "Find"
-  #   expect(page).to have_content "of 3 results matching"
-  # end
+  it "displays the find a certificate page heading when entering a valid query" do
+    visit "http://find-energy-certificate.local.gov.uk:9393"
+    click_on "Start now"
+    find("#label-domestic").click
+    click_on "Continue"
+    click_on "find an EPC using the street name and town"
+    fill_in "street_name", with: "1 Makeup Street"
+    fill_in "town", with: "Beauty Town"
+    click_on "Find"
+    expect(page).to have_content "of 3 results matching"
+  end
 
-  # it "displays the error message when searching for a certificate that doesnt exist" do
-  #   visit "http://find-energy-certificate.local.gov.uk:9393"
-  #   click_on "Start now"
-  #   find("#label-domestic").click
-  #   click_on "Continue"
-  #   click_on "find an EPC using the street name and town"
-  #   fill_in "street_name", with: "Madeup Street"
-  #   fill_in "town", with: "Madeup Town"
-  #   click_on "Find"
-  #   expect(page).to have_content "A certificate was not found at this address."
-  # end
+  it "displays the error message when searching for a certificate that doesnt exist" do
+    visit "http://find-energy-certificate.local.gov.uk:9393"
+    click_on "Start now"
+    find("#label-domestic").click
+    click_on "Continue"
+    click_on "find an EPC using the street name and town"
+    fill_in "street_name", with: "Madeup Street"
+    fill_in "town", with: "Madeup Town"
+    click_on "Find"
+    expect(page).to have_content "A certificate was not found at this address."
+  end
 end
