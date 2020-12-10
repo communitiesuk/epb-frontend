@@ -369,12 +369,12 @@ describe "Acceptance::Non Domestic Certificate" do
 
       it "displays the find a non-domestic certificate page heading" do
         expect(response.body).to have_css "h1",
-                                          text: "Find energy certificates and reports by their number"
+          text: "Find energy certificates and reports by their number"
       end
 
       it "displays the find a non-domestic certificate page tab content" do
         expect(response.body).to include(
-           '<title>Find energy certificates and reports by their number – Energy performance of buildings register – GOV.UK</title>'
+           '<title>Find energy certificates and reports by their number – Find an energy certificate – GOV.UK</title>'
         )
       end
 

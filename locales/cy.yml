@@ -2,6 +2,10 @@ cy:
   validation_errors:
     postcode_error: "Rhowch god post go iawn"
 
+    services:
+      find_an_energy_certificate: "Chwiliwch am dystysgrif ynni"
+      getting_an_energy_certificate: "Sicrhau tystysgrif ynni"
+
   related_content:
     title: "Cynnwys perthynol"
     guidance_on_epc:
@@ -188,8 +192,6 @@ cy:
         url: "https://www.elmhurstenergy.co.uk"
 
   find_assessor_by_postcode:
-    head:
-      title: "Cofrestr perfformiad ynni adeiladau - Chwiliwch am asesydd ynni"
     top_heading: "Chwiliwch am asesydd yn ôl cod post"
     assessor_by_name:
       title: "Chwiliwch yn ôl enw'r asesydd"
@@ -224,8 +226,6 @@ cy:
       gda: "Asesydd Bargen Werdd"
 
   find_assessor_by_postcode_results:
-    head:
-      title: "Cofrestr perfformiad ynni adeiladau - Canlyniadau ar gyfer aseswyr yn eich ardal chi"
     top_heading: "Cysylltwch ag asesydd i drefnu asesiad ynni"
     question: "I chwilio eto rhowch god post yr eiddo"
     hint: "Er enghraifft SW1A 2AA"

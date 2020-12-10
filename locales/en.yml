@@ -2,6 +2,10 @@ en:
   validation_errors:
     postcode_error: 'Enter a real postcode'
 
+  services:
+    find_an_energy_certificate: 'Find an energy certificate'
+    getting_an_energy_certificate: 'Getting an energy certificate'
+
   related_content:
     title: 'Related content'
     guidance_on_epc:
@@ -188,8 +192,6 @@ en:
         url: 'https://www.elmhurstenergy.co.uk'
 
   find_assessor_by_postcode:
-    head:
-      title: 'Energy performance of buildings register - Find an energy assessor'
     top_heading: 'Find an assessor by postcode'
     assessor_by_name:
       title: 'Search by assessor’s name'
@@ -224,8 +226,6 @@ en:
       gda: 'Green Deal Assessor'
 
   find_assessor_by_postcode_results:
-    head:
-      title: 'Energy performance of buildings register - Results for energy assessors near you'
     top_heading: 'Contact an assessor to book an energy assessment'
     question: 'To search again, enter the postcode of the property'
     hint: 'For example SW1A 2AA'
