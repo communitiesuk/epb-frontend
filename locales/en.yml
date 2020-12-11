@@ -251,8 +251,6 @@ en:
       missing_detail: Not Supplied
 
   find_assessor_by_name:
-    head:
-      title: 'Energy performance of buildings register - Find an energy assessor'
     top_heading: 'Find an assessor by name'
     question: 'Enter the assessor’s first and last names'
     hint: 'For example Matt Anderson'
@@ -261,8 +259,6 @@ en:
     too_many_results: 'There are too many results for that name. Please narrow your search term.'
 
   find_assessor_by_name_results:
-    head:
-      title: 'Energy performance of buildings register - Results for energy assessors'
     top_heading: 'Contact an assessor to book an energy assessment'
     description: 'See what assessors are accredited by the name you searched for.'
     no_assessors: 'There are no assessors with this name.'

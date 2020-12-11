@@ -251,8 +251,6 @@ cy:
       missing_detail: Heb eu darparu
 
   find_assessor_by_name:
-    head:
-      title: "Cofrestr perfformiad ynni adeiladau - Chwiliwch am asesydd ynni"
     top_heading: "Chwiliwch am asesydd yn ôl enw"
     question: "Rhowch enw cyntaf ac enw olaf yr asesydd"
     hint: "Er enghraifft Matt Anderson"
@@ -261,8 +259,6 @@ cy:
     too_many_results: "Mae gormod o ganlyniadau ar gyfer yr enw hwnnw. Chwiliwch yn fwy cul."
 
   find_assessor_by_name_results:
-    head:
-      title: "Cofrestr perfformiad ynni adeiladau - Canlyniadau ar gyfer aseswyr ynni"
     top_heading: "Cysylltwch ag asesydd i drefnu asesiad ynni"
     description: "Gweld pa aseswyr sydd wedi'u hachredu o dan yr enw rydych chi'n chwilio amdano"
     no_assessors: "Does dim aseswyr â'r enw hwnnw"

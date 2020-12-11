@@ -207,8 +207,11 @@ class FrontendService < Sinatra::Base
 
     response = @container.get_object(:find_assessor_by_name_use_case)
 
+    @page_title = "#{t('find_assessor_by_name.top_heading')} – #{t('services.getting_an_energy_certificate')} – #{t('layout.body.govuk')}"
+
     if params["name"]
-      @page_title = t("find_assessor_by_name_results.head.title")
+      @page_title = "#{t('find_assessor_by_name_results.top_heading')} – #{t('services.getting_an_energy_certificate')} – #{t('layout.body.govuk')}"
+
       begin
         erb_template = :find_assessor_by_name_results
         response = response.execute(params["name"])
@@ -226,8 +229,6 @@ class FrontendService < Sinatra::Base
         end
       end
     end
-
-    @page_title = t("find_assessor_by_name.head.title")
 
     show(erb_template, locals)
   end
