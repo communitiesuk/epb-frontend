@@ -258,7 +258,8 @@ class FrontendService < Sinatra::Base
       @errors = { property_type: t("find_a_certificate.property_type.errors.no_property_type_selected") }
     end
 
-    @page_title = t("find_an_assessor.head.title")
+    @page_title = "#{t('find_an_assessor.property_type.question_title')} – #{t('services.find_an_energy_certificate')} – #{t('layout.body.govuk')}"
+
     show(:find_certificate__property_type, { lang: params[:lang] })
   end
 
