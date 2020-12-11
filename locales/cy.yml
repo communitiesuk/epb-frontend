@@ -205,8 +205,6 @@ cy:
       body: "Does dim cynllun ar gyfer yr asesydd y gofynnwyd amdano"
 
   find_non_domestic_assessor_by_postcode:
-    head:
-      title: "Cofrestr perfformiad ynni adeiladau - Chwiliwch am asesydd ynni annomestig"
     top_heading: "Chwiliwch am asesydd yn ôl cod post"
 
   find_non_domestic_assessor_by_postcode_results:

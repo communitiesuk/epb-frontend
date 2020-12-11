@@ -354,11 +354,14 @@ class FrontendService < Sinatra::Base
     response =
       @container.get_object(:find_non_domestic_assessor_by_postcode_use_case)
 
+    @page_title = "#{t("find_non_domestic_assessor_by_postcode.top_heading")} - #{t('services.getting_an_energy_certificate')} - #{t('layout.body.govuk')}"
+
     if params["postcode"]
       params["postcode"].strip!
 
       if valid_postcode.match(params["postcode"])
-        @page_title = t("find_assessor_by_postcode_results.head.title")
+        @page_title = "#{t("find_non_domestic_assessor_by_postcode_results.top_heading")} - #{t('services.getting_an_energy_certificate')} - #{t('layout.body.govuk')}"
+
         begin
           locals[:results] =
             response.execute(params["postcode"])[:data][:assessors]
@@ -382,7 +385,6 @@ class FrontendService < Sinatra::Base
       end
     end
 
-    @page_title = t("find_non_domestic_assessor_by_postcode.head.title")
     show(erb_template, locals)
   end
 

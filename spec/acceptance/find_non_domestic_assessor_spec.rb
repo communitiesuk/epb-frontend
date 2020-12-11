@@ -150,8 +150,14 @@ describe "Acceptance::NonDomesticAssessor" do
           expect(response.status).to eq(200)
         end
 
-        it "displays the find a non-domestic assessor page heading" do
-          expect(response.body).to include("Find a non-domestic energy")
+        it "has a tab content that matches the page heading" do
+          expect(response.body).to include(
+                                       '<title>Contact an assessor to book an energy assessment - Getting an energy certificate - GOV.UK</title>'
+                                   )
+        end
+
+        it "displays the contact an assessor to book an energy assessment page heading" do
+          expect(response.body).to include("Contact an assessor to book an energy assessment")
         end
 
         it "displays the to search again by postcode message" do
@@ -302,8 +308,8 @@ describe "Acceptance::NonDomesticAssessor" do
           expect(response.status).to eq(200)
         end
 
-        it "displays the find a non-domestic assessor page heading" do
-          expect(response.body).to include("Find a non-domestic energy")
+        xit "displays the find a non-domestic assessor page heading" do
+          expect(response.body).to include("Find a non-domestic energy assessor")
         end
 
         it "explains that no assessors are nearby" do
@@ -329,8 +335,14 @@ describe "Acceptance::NonDomesticAssessor" do
           expect(response.status).to eq(200)
         end
 
-        it "displays the find a non-domestic assessor page heading" do
-          expect(response.body).to include("Find a non-domestic energy")
+        it "has a tab content that matches the page heading" do
+          expect(response.body).to include(
+                                       '<title>Contact an assessor to book an energy assessment - Getting an energy certificate - GOV.UK</title>'
+                                   )
+        end
+
+        xit "displays the find a non-domestic assessor page heading" do
+          expect(response.body).to include("Find a non-domestic energy assessor")
         end
 
         it "displays the no results found message" do
@@ -362,7 +374,7 @@ describe "Acceptance::NonDomesticAssessor" do
           expect(response.status).to eq(400)
         end
 
-        it "displays find a non-domestic assessor page heading" do
+        xit "displays find a non-domestic assessor page heading" do
           expect(response.body).to include(
             "Find a non-domestic energy assessor",
           )
