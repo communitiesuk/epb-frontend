@@ -345,8 +345,6 @@ cy:
     expired: "(wedi dod i ben)"
 
   find_certificate_by_postcode_results:
-    head:
-      title: "Cofrestr perfformiad ynni adeiladau - Canlyniadau ar gyfer tystysgrifau perfformiad ynni yn eich cod post chi"
     top_heading: "Chwiliwch am dystysgrif perfformiad ynni (EPC)"
     no_epc:
       get_a_new_one: "Os nad oes gan eich eiddo chi EPC neu os yw wedi dod i ben, fe allwch chi"

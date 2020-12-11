@@ -314,10 +314,13 @@ class FrontendService < Sinatra::Base
     locals = {}
     erb_template = :find_certificate_by_postcode
 
+    @page_title = "#{t("find_certificate_by_postcode.top_heading")} - #{t('services.find_an_energy_certificate')} - #{t('layout.body.govuk')}"
+
     if params["postcode"]
       params["postcode"].strip!
 
-      @page_title = t("find_certificate_by_postcode_results.head.title")
+      @page_title = "#{t("find_certificate_by_postcode_results.top_heading")} - #{t('services.find_an_energy_certificate')} - #{t('layout.body.govuk')}"
+
       begin
         erb_template = :find_certificate_by_postcode_results
 
@@ -341,7 +344,6 @@ class FrontendService < Sinatra::Base
       end
     end
 
-    @page_title = t("find_certificate_by_postcode.head.title")
     show(erb_template, locals)
   end
 
