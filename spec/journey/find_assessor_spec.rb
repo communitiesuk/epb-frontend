@@ -187,9 +187,10 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
       click_on "Find"
     end
 
-    xit "displays an error message when entering an empty postcode" do
-      visit "/find-an-assessor"
-      click_on "find a non domestic assessor"
+    it "displays an error message when entering an empty postcode" do
+      visit "http://getting-new-energy-certificate.local.gov.uk:9393/find-an-assessor/type-of-property"
+      find("#label-non-domestic").click
+      click_on "Continue"
       fill_in "postcode", with: ""
       click_on "Find"
       expect(page).to have_content "Enter a real postcode"
