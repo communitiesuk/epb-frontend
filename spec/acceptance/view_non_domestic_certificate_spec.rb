@@ -34,7 +34,14 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
       expect(response.status).to eq 200
     end
 
-    it "shows the non-domestic energy performance certificate title" do
+    it "has a tab content that shows the page title" do
+      expect(response.body).to include(
+                                   ' <title>Energy performance certificate (EPC) - Find an energy certificate - GOV.UK</title>'
+
+                               )
+    end
+
+    it "shows the non-domestic energy performance certificate title heading" do
       expect(response.body).to include(
         '<h1 class="govuk-heading-xl">Energy performance certificate (EPC)</h1>',
       )
