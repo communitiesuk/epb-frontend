@@ -16,8 +16,15 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       expect(response.status).to eq(200)
     end
 
-    it "shows the EPC title" do
+    it "shows the EPC heading" do
       expect(response.body).to include("Energy performance certificate")
+    end
+
+    it "has a tab content that shows the page title" do
+      expect(response.body).to include(
+                                   ' <title>Energy performance certificate (EPC) - Find an energy certificate - GOV.UK</title>'
+
+                               )
     end
 
     it "shows the address summary" do

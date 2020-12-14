@@ -597,6 +597,7 @@ class FrontendService < Sinatra::Base
       @page_title = "#{t('ac_report.top_heading')}#{@page_title}"
       show(:ac_report, assessment: assessment[:data])
     else
+      @page_title = "#{t('domestic_epc.top_heading')}#{@page_title}"
       show(
         :domestic_energy_performance_certificate,
         assessment: assessment[:data],
