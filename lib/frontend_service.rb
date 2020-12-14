@@ -567,6 +567,7 @@ class FrontendService < Sinatra::Base
   get "/energy-certificate/:assessment_id" do
     use_case = @container.get_object(:fetch_certificate_use_case)
     assessment = use_case.execute(params[:assessment_id])
+    @page_title = " - #{t('services.find_an_energy_certificate')} - #{t('layout.body.govuk')}"
 
     status 200
     if assessment[:data][:typeOfAssessment] == "CEPC"
@@ -589,6 +590,7 @@ class FrontendService < Sinatra::Base
     elsif assessment[:data][:typeOfAssessment] == "DEC-RR"
       show(:dec_recommendation_report, assessment: assessment[:data])
     elsif assessment[:data][:typeOfAssessment] == "AC-CERT"
+      @page_title = "#{t('ac_cert.top_heading')}#{@page_title}"
       show(:ac_cert, assessment: assessment[:data])
     elsif assessment[:data][:typeOfAssessment] == "AC-REPORT"
       show(:ac_report, assessment: assessment[:data])

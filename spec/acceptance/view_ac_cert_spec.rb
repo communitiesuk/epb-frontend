@@ -12,9 +12,16 @@ describe "Acceptance::AirConditioningInspectionCertificate", type: :feature do
       )
     end
 
-    it "shows the page title" do
+    it "shows the page heading" do
       expect(response.body).to have_css "h1",
                                         text: "Air conditioning inspection certificate"
+    end
+
+    it "has a tab content that shows the page title" do
+      expect(response.body).to include(
+                                   ' <title>Air conditioning inspection certificate - Find an energy certificate - GOV.UK</title>'
+
+                               )
     end
 
     it "shows the contents section" do
