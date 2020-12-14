@@ -588,6 +588,7 @@ class FrontendService < Sinatra::Base
         show(:dec, assessment: assessment[:data])
       end
     elsif assessment[:data][:typeOfAssessment] == "DEC-RR"
+      @page_title = "#{t('dec.sections.recommendation_report.title')}#{@page_title}"
       show(:dec_recommendation_report, assessment: assessment[:data])
     elsif assessment[:data][:typeOfAssessment] == "AC-CERT"
       @page_title = "#{t('ac_cert.top_heading')}#{@page_title}"

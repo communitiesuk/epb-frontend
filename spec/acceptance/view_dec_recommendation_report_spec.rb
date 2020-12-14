@@ -34,6 +34,13 @@ describe "Acceptance::DecRecommendationReport", type: :feature do
       )
     end
 
+    it "has a tab content that shows" do
+      expect(response.body).to include(
+                                   ' <title>Recommendation report - Find an energy certificate - GOV.UK</title>'
+
+                               )
+    end
+
     it "shows the contents section" do
       expect(response.body).to have_css "h2", text: "Report contents"
       expect(response.body).to have_link "Operational rating and DEC",
