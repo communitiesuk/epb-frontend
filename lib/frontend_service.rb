@@ -593,6 +593,7 @@ class FrontendService < Sinatra::Base
       @page_title = "#{t('ac_cert.top_heading')}#{@page_title}"
       show(:ac_cert, assessment: assessment[:data])
     elsif assessment[:data][:typeOfAssessment] == "AC-REPORT"
+      @page_title = "#{t('ac_report.top_heading')}#{@page_title}"
       show(:ac_report, assessment: assessment[:data])
     else
       show(

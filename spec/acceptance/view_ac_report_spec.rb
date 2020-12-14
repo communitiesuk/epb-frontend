@@ -17,6 +17,13 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
                                         text: "Air conditioning inspection report"
     end
 
+    it "has a tab content that shows the page title" do
+      expect(response.body).to include(
+                                   ' <title>Air conditioning inspection report - Find an energy certificate - GOV.UK</title>'
+
+                               )
+    end
+
     it "shows the summary section" do
       expect(response.body).to have_css "span", text: "The Bank Plc"
       expect(response.body).to have_css "span",
