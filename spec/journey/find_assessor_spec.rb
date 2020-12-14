@@ -206,8 +206,7 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
     end
 
     it "displays to search again, enter the postcode of the property" do
-      visit "http://getting-new-energy-certificate.local.gov.uk:9393"
-      click_on "Start now"
+      visit "http://getting-new-energy-certificate.local.gov.uk:9393/find-an-assessor/type-of-property"
       find("#label-non-domestic").click
       click_on "Continue"
       fill_in "postcode", with: "SW1A 2AA"
