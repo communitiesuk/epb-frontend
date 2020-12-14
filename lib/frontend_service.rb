@@ -81,10 +81,7 @@ class FrontendService < Sinatra::Base
     if params["postcode"]
       params["postcode"].strip!
 
-      @page_title = "#{t('find_non_dom_certificate_by_postcode_results.top_heading')} – #{t('services.find_an_energy_certificate')} – #{t('layout.body.govuk')}"
       begin
-        erb_template = :find_non_dom_certificate_by_postcode_results
-
         locals[:results] =
           @container.get_object(:find_certificate_by_postcode_use_case).execute(
             params["postcode"],
@@ -94,11 +91,16 @@ class FrontendService < Sinatra::Base
           ][
             :assessments
           ]
+
+        @page_title =
+          "#{t('find_non_dom_certificate_by_postcode_results.top_heading')} – #{
+            t('services.find_an_energy_certificate')
+          } – #{t('layout.body.govuk')}"
+        erb_template = :find_non_dom_certificate_by_postcode_results
       rescue StandardError => e
         case e
         when Errors::PostcodeNotValid
           status 400
-          erb_template = :find_non_dom_certificate_by_postcode
           @errors[:postcode] = t("validation_errors.postcode_error")
         else
           return server_error(e)
