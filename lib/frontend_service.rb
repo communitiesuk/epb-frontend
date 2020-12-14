@@ -576,6 +576,7 @@ class FrontendService < Sinatra::Base
         assessment: assessment[:data],
       )
     elsif assessment[:data][:typeOfAssessment] == "CEPC-RR"
+      @page_title = "#{t('non_domestic_epc.top_heading')}#{@page_title}"
       show(
         :non_domestic_energy_performance_certificate_recommendation_report,
         assessment: assessment[:data],

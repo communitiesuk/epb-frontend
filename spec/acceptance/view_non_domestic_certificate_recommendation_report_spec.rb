@@ -39,6 +39,13 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
       )
     end
 
+    it "has a tab content that shows the page title" do
+      expect(response.body).to include(
+                                   ' <title>Energy performance certificate (EPC) - Find an energy certificate - GOV.UK</title>'
+
+                               )
+    end
+
     it "Shows the top summary box" do
       expect(response.body).to include("1 Lonely Street")
       expect(response.body).to include("Post-Town0")
