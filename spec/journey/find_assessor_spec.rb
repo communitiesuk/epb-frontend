@@ -179,9 +179,10 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
   end
 
   context "when finding a non-domestic assessor by postcode" do
-    xit "finds a non-domestic assessor" do
-      visit "/find-an-assessor"
-      click_on "find a non domestic assessor"
+    it "finds a non-domestic assessor" do
+      visit "http://getting-new-energy-certificate.local.gov.uk:9393/find-an-assessor/type-of-property"
+      find("#label-non-domestic").click
+      click_on "Continue"
       fill_in "postcode", with: "SW1A 2AA"
       click_on "Find"
     end
