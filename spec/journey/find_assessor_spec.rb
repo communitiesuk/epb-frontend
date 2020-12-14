@@ -241,9 +241,10 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
       expect(page).to have_content "Telephone: 0330 124 9660"
     end
 
-    xit "displays no longer accredited text for unaccredited scheme" do
-      visit "/find-an-assessor"
-      click_on "find a non domestic assessor"
+    it "displays no longer accredited text for unaccredited scheme" do
+      visit "http://getting-new-energy-certificate.local.gov.uk:9393/find-an-assessor/type-of-property"
+      find("#label-non-domestic").click
+      click_on "Continue"
       fill_in "postcode", with: "SW1A 2AA"
       click_on "Find"
       find_all("span", text: "More information")[4].click
