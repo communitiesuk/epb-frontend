@@ -23,6 +23,13 @@ describe "Acceptance::PrintableDisplayEnergyCertificate", type: :feature do
       expect(response.body).to have_text "Display energy certificate"
     end
 
+    it "has a tab content that shows the page title" do
+      expect(response.body).to include(
+                                   ' <title>Display energy certificate (DEC) - Find an energy certificate - GOV.UK</title>'
+
+                               )
+    end
+
     it "shows the summary box" do
       expect(response.body).to include("0000-0000-0000-0000-1111")
       expect(response.body).to include("Valid until:")
