@@ -581,7 +581,7 @@ class FrontendService < Sinatra::Base
         assessment: assessment[:data],
       )
     elsif assessment[:data][:typeOfAssessment] == "DEC"
-      @print_title = t("dec.top_heading")
+      @page_title = "#{t('dec.top_heading')}#{@page_title}"
       if params["print"]
         show(:printable_dec, { assessment: assessment[:data] }, :print_layout)
       else
