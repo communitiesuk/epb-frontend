@@ -34,12 +34,18 @@ class FrontendService < Sinatra::Base
   find_energy_certificate_host_name = "find-energy-certificate"
 
   get "/", host_name: /#{getting_new_energy_certificate_host_name}/ do
-    @page_title = "#{t('find_an_assessor.top_heading')} – #{t('services.getting_an_energy_certificate')} – #{t('layout.body.govuk')}"
+    @page_title =
+      "#{t('find_an_assessor.top_heading')} – #{
+        t('services.getting_an_energy_certificate')
+      } – #{t('layout.body.govuk')}"
     erb :find_assessor, layout: :layout
   end
 
   get "/", host_name: /#{find_energy_certificate_host_name}/ do
-    @page_title = "#{t('find_a_certificate.top_heading')} – #{t('services.find_an_energy_certificate')} – #{t('layout.body.govuk')}"
+    @page_title =
+      "#{t('find_a_certificate.top_heading')} – #{
+        t('services.find_an_energy_certificate')
+      } – #{t('layout.body.govuk')}"
 
     erb :find_certificate, layout: :layout
   end
@@ -57,18 +63,26 @@ class FrontendService < Sinatra::Base
     end
 
     if request.post? && params["property_type"].nil?
-      @errors = { property_type: t("find_an_assessor.property_type.errors.no_property_type_selected") }
+      @errors = {
+        property_type:
+          t("find_an_assessor.property_type.errors.no_property_type_selected"),
+      }
     end
 
-    @page_title = "#{t('find_an_assessor.property_type.question_title')} – #{t('services.getting_an_energy_certificate')} – #{t('layout.body.govuk')}"
+    @page_title =
+      "#{t('find_an_assessor.property_type.question_title')} – #{
+        t('services.getting_an_energy_certificate')
+      } – #{t('layout.body.govuk')}"
     show(:find_assessor__property_type, { lang: params[:lang] })
   end
 
   get "/find-an-assessor/type-of-property",
-      host_name: /#{getting_new_energy_certificate_host_name}/, &find_an_assessor_property_type
+      host_name: /#{getting_new_energy_certificate_host_name}/,
+      &find_an_assessor_property_type
 
   post "/find-an-assessor/type-of-property",
-      host_name: /#{getting_new_energy_certificate_host_name}/, &find_an_assessor_property_type
+       host_name: /#{getting_new_energy_certificate_host_name}/,
+       &find_an_assessor_property_type
 
   get "/find-a-non-domestic-certificate/search-by-postcode",
       host_name: /#{find_energy_certificate_host_name}/ do
@@ -76,7 +90,10 @@ class FrontendService < Sinatra::Base
     locals = {}
     erb_template = :find_non_dom_certificate_by_postcode
 
-    @page_title = "#{t('find_non_dom_certificate_by_postcode.top_heading')} – #{t('services.find_an_energy_certificate')} – #{t('layout.body.govuk')}"
+    @page_title =
+      "#{t('find_non_dom_certificate_by_postcode.top_heading')} – #{
+        t('services.find_an_energy_certificate')
+      } – #{t('layout.body.govuk')}"
 
     if params["postcode"]
       params["postcode"].strip!
@@ -155,7 +172,10 @@ class FrontendService < Sinatra::Base
       end
     end
 
-    @page_title = "#{t('find_non_dom_certificate_by_reference_number.top_heading')} – #{t('services.find_an_energy_certificate')} – #{t('layout.body.govuk')}"
+    @page_title =
+      "#{t('find_non_dom_certificate_by_reference_number.top_heading')} – #{
+        t('services.find_an_energy_certificate')
+      } – #{t('layout.body.govuk')}"
 
     show(erb_template, locals)
   end
@@ -167,14 +187,19 @@ class FrontendService < Sinatra::Base
     erb_template = :find_assessor_by_postcode
 
     response = @container.get_object(:find_assessor_by_postcode_use_case)
-    @page_title = "#{t('find_assessor_by_postcode.top_heading')} – #{t('services.getting_an_energy_certificate')} – #{t('layout.body.govuk')}"
-
+    @page_title =
+      "#{t('find_assessor_by_postcode.top_heading')} – #{
+        t('services.getting_an_energy_certificate')
+      } – #{t('layout.body.govuk')}"
 
     if params["postcode"]
       params["postcode"].strip!
 
       if valid_postcode.match(params["postcode"])
-        @page_title = "#{t('find_assessor_by_postcode_results.top_heading')} – #{t('services.getting_an_energy_certificate')} – #{t('layout.body.govuk')}"
+        @page_title =
+          "#{t('find_assessor_by_postcode_results.top_heading')} – #{
+            t('services.getting_an_energy_certificate')
+          } – #{t('layout.body.govuk')}"
 
         begin
           locals[:results] =
@@ -209,7 +234,10 @@ class FrontendService < Sinatra::Base
 
     response = @container.get_object(:find_assessor_by_name_use_case)
 
-    @page_title = "#{t('find_assessor_by_name.top_heading')} – #{t('services.getting_an_energy_certificate')} – #{t('layout.body.govuk')}"
+    @page_title =
+      "#{t('find_assessor_by_name.top_heading')} – #{
+        t('services.getting_an_energy_certificate')
+      } – #{t('layout.body.govuk')}"
 
     if params["name"]
       begin
@@ -259,18 +287,26 @@ class FrontendService < Sinatra::Base
     end
 
     if request.post? && params["property_type"].nil?
-      @errors = { property_type: t("find_a_certificate.property_type.errors.no_property_type_selected") }
+      @errors = {
+        property_type:
+          t("find_a_certificate.property_type.errors.no_property_type_selected"),
+      }
     end
 
-    @page_title = "#{t('find_an_assessor.property_type.question_title')} – #{t('services.find_an_energy_certificate')} – #{t('layout.body.govuk')}"
+    @page_title =
+      "#{t('find_an_assessor.property_type.question_title')} – #{
+        t('services.find_an_energy_certificate')
+      } – #{t('layout.body.govuk')}"
 
     show(:find_certificate__property_type, { lang: params[:lang] })
   end
 
   get "/find-a-certificate/type-of-property",
-      host_name: /#{find_energy_certificate_host_name}/, &find_a_certificate_property_type
+      host_name: /#{find_energy_certificate_host_name}/,
+      &find_a_certificate_property_type
   post "/find-a-certificate/type-of-property",
-       host_name: /#{find_energy_certificate_host_name}/, &find_a_certificate_property_type
+       host_name: /#{find_energy_certificate_host_name}/,
+       &find_a_certificate_property_type
 
   get "/find-a-certificate/search-by-postcode",
       host_name: /#{find_energy_certificate_host_name}/ do

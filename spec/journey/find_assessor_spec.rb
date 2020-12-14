@@ -80,8 +80,8 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
       fill_in "postcode", with: "SW1A 2AA"
       click_on "Find"
       expect(
-          page,
-          ).to have_content "To search again, enter the postcode of the property"
+        page,
+      ).to have_content "To search again, enter the postcode of the property"
     end
 
     it "displays accreditation scheme contact details for the first assessor" do
@@ -210,8 +210,8 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
       fill_in "postcode", with: "SW1A 2AA"
       click_on "Find"
       expect(
-          page,
-          ).to have_content "To search again, enter the postcode of the property"
+        page,
+      ).to have_content "To search again, enter the postcode of the property"
     end
 
     xit "displays the find a non domestic assessor page heading when entering a valid postcode " do

@@ -11,7 +11,7 @@ describe "Acceptance::AccessibilityStatement", type: :feature do
 
       it "tab value is the same as the main header value" do
         expect(response.body).to include(
-          '<title>Getting a new energy certificate – Getting an energy certificate – GOV.UK</title>',
+          "<title>Getting a new energy certificate – Getting an energy certificate – GOV.UK</title>",
         )
       end
 
@@ -31,13 +31,11 @@ describe "Acceptance::AccessibilityStatement", type: :feature do
 
   describe ".get find-energy-certificate.epb-frontend" do
     context "when the home page is rendered" do
-      let(:response) do
-        get "http://find-energy-certificate.local.gov.uk/"
-      end
+      let(:response) { get "http://find-energy-certificate.local.gov.uk/" }
 
       it "tab value is the same as the main header value" do
         expect(response.body).to include(
-          '<title>Find an energy certificate – Find an energy certificate – GOV.UK</title>',
+          "<title>Find an energy certificate – Find an energy certificate – GOV.UK</title>",
         )
       end
     end

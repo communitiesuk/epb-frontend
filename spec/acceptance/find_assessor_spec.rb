@@ -11,7 +11,7 @@ describe "Acceptance::Assessor", type: :feature do
 
       it "displays the tab value the same as the main header value" do
         expect(response.body).to include(
-          '<title>What type of property is the certificate for? – Getting an energy certificate – GOV.UK</title>',
+          "<title>What type of property is the certificate for? – Getting an energy certificate – GOV.UK</title>",
         )
       end
     end
@@ -29,7 +29,7 @@ describe "Acceptance::Assessor", type: :feature do
 
       it "displays the find an assessor by postcode tab heading" do
         expect(response.body).to include(
-          "<title>Find an assessor by postcode – Getting an energy certificate – GOV.UK</title>"
+          "<title>Find an assessor by postcode – Getting an energy certificate – GOV.UK</title>",
         )
       end
 
@@ -63,7 +63,7 @@ describe "Acceptance::Assessor", type: :feature do
 
       it "displays the find an assessor by postcode tab heading" do
         expect(response.body).to include(
-          "<title>Find an assessor by postcode – Getting an energy certificate – GOV.UK</title>"
+          "<title>Find an assessor by postcode – Getting an energy certificate – GOV.UK</title>",
         )
       end
 
@@ -90,7 +90,7 @@ describe "Acceptance::Assessor", type: :feature do
 
       it "displays the find an assessor by postcode tab heading" do
         expect(response.body).to include(
-          "<title>Find an assessor by postcode – Getting an energy certificate – GOV.UK</title>"
+          "<title>Find an assessor by postcode – Getting an energy certificate – GOV.UK</title>",
         )
       end
 
@@ -117,7 +117,7 @@ describe "Acceptance::Assessor", type: :feature do
 
       it "displays the find an assessor by postcode tab heading" do
         expect(response.body).to include(
-          "<title>Find an assessor by postcode – Getting an energy certificate – GOV.UK</title>"
+          "<title>Find an assessor by postcode – Getting an energy certificate – GOV.UK</title>",
         )
       end
 
@@ -144,7 +144,7 @@ describe "Acceptance::Assessor", type: :feature do
 
       it "displays the find an assessor by postcode tab heading" do
         expect(response.body).to include(
-          "<title>Find an assessor by postcode – Getting an energy certificate – GOV.UK</title>"
+          "<title>Find an assessor by postcode – Getting an energy certificate – GOV.UK</title>",
         )
       end
 
@@ -186,13 +186,13 @@ describe "Acceptance::Assessor", type: :feature do
 
         it "displays the Contact an Assessor To Book An Energy Assessment tab heading" do
           expect(response.body).to include(
-            "<title>Contact an assessor to book an energy assessment – Getting an energy certificate – GOV.UK</title>"
+            "<title>Contact an assessor to book an energy assessment – Getting an energy certificate – GOV.UK</title>",
           )
         end
 
         it "displays the Contact an assessor to book an energy assessment page heading" do
           expect(response.body).to have_css "h1",
-            text: "Contact an assessor to book an energy assessment"
+                                            text: "Contact an assessor to book an energy assessment"
         end
 
         it "displays the to search again by postcode message" do
@@ -307,7 +307,7 @@ describe "Acceptance::Assessor", type: :feature do
 
         it "displays the find an assessor page heading" do
           expect(response.body).to have_css "h1",
-            text: "Contact an assessor to book an energy assessment"
+                                            text: "Contact an assessor to book an energy assessment"
         end
 
         it "explains that no assessors are nearby" do
@@ -334,7 +334,7 @@ describe "Acceptance::Assessor", type: :feature do
 
         it "displays the find an assessor page heading" do
           expect(response.body).to have_css "h1",
-            text: "Contact an assessor to book an energy assessment"
+                                            text: "Contact an assessor to book an energy assessment"
         end
 
         it "displays the no results found message" do
@@ -371,7 +371,7 @@ describe "Acceptance::Assessor", type: :feature do
 
         xit "displays the find an assessor page heading" do
           expect(response.body).to have_css "h1",
-             text: "Contact an assessor to book an energy assessment"
+                                            text: "Contact an assessor to book an energy assessment"
         end
 
         it "displays an error message" do
@@ -420,13 +420,12 @@ describe "Acceptance::Assessor", type: :feature do
 
       it "displays the Find an assessor by name tab heading" do
         expect(response.body).to include(
-          "<title>Find an assessor by name – Getting an energy certificate – GOV.UK</title>"
+          "<title>Find an assessor by name – Getting an energy certificate – GOV.UK</title>",
         )
       end
 
       it "displays the Find an assessor by name page heading" do
-        expect(response.body).to have_css "h1",
-          text: "Find an assessor by name"
+        expect(response.body).to have_css "h1", text: "Find an assessor by name"
       end
 
       it "has a postcode input field" do
@@ -455,13 +454,12 @@ describe "Acceptance::Assessor", type: :feature do
 
       xit "displays the Find an assessor by name tab heading" do
         expect(response.body).to include(
-          "<title>Find an assessor by name – Getting an energy certificate – GOV.UK</title>"
+          "<title>Find an assessor by name – Getting an energy certificate – GOV.UK</title>",
         )
       end
 
       it "displays the Find an assessor by name page heading" do
-        expect(response.body).to have_css "h1",
-          text: "Find an assessor by name"
+        expect(response.body).to have_css "h1", text: "Find an assessor by name"
       end
 
       it "displays an error message" do
@@ -495,13 +493,13 @@ describe "Acceptance::Assessor", type: :feature do
 
         it "displays the Contact an assessor to book an energy assessment tab heading" do
           expect(response.body).to include(
-            "<title>Contact an assessor to book an energy assessment – Getting an energy certificate – GOV.UK</title>"
+            "<title>Contact an assessor to book an energy assessment – Getting an energy certificate – GOV.UK</title>",
           )
         end
 
         it "displays the Contact an assessor to book an energy assessment page heading" do
           expect(response.body).to have_css "h1",
-             text: "Contact an assessor to book an energy assessment"
+                                            text: "Contact an assessor to book an energy assessment"
         end
 
         it "has a name input field" do
@@ -582,13 +580,13 @@ describe "Acceptance::Assessor", type: :feature do
 
         it "displays the Contact an assessor to book an energy assessment tab heading" do
           expect(response.body).to include(
-            "<title>Contact an assessor to book an energy assessment – Getting an energy certificate – GOV.UK</title>"
+            "<title>Contact an assessor to book an energy assessment – Getting an energy certificate – GOV.UK</title>",
           )
         end
 
         it "displays the Contact an assessor to book an energy assessment page heading" do
           expect(response.body).to have_css "h1",
-            text: "Contact an assessor to book an energy assessment"
+                                            text: "Contact an assessor to book an energy assessment"
         end
 
         it "explains that no assessors by that name" do
