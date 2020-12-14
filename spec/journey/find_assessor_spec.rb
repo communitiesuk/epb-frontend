@@ -216,9 +216,10 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
       ).to have_content "To search again, enter the postcode of the property"
     end
 
-    xit "displays the find a non domestic assessor page heading when entering a valid postcode " do
-      visit "/find-an-assessor"
-      click_on "find a non domestic assessor"
+    it "displays the find a non domestic assessor page heading when entering a valid postcode " do
+      visit "http://getting-new-energy-certificate.local.gov.uk:9393/find-an-assessor/type-of-property"
+      find("#label-non-domestic").click
+      click_on "Continue"
       fill_in "postcode", with: "SW1A 2AA"
       click_on "Find"
       expect(
