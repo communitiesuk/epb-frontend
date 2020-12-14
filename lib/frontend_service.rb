@@ -513,11 +513,8 @@ class FrontendService < Sinatra::Base
     @page_title = "#{t('find_certificate_by_street_name_and_town.top_heading')} - #{t('services.find_an_energy_certificate')} - #{t('layout.body.govuk')}"
 
     if params.key?("town") || params.key?("street_name")
-      @page_title = "#{t('find_certificate_by_street_name_and_town_results.top_heading')} - #{t('services.find_an_energy_certificate')} - #{t('layout.body.govuk')}"
 
       begin
-        erb_template = :find_certificate_by_street_name_and_town_results
-
         locals[:results] =
           @container.get_object(
             :find_certificate_by_street_name_and_town_use_case,
@@ -526,11 +523,14 @@ class FrontendService < Sinatra::Base
           ][
             :assessments
           ]
+
+        @page_title = "#{t('find_certificate_by_street_name_and_town_results.top_heading')} - #{t('services.find_an_energy_certificate')} - #{t('layout.body.govuk')}"
+        erb_template = :find_certificate_by_street_name_and_town_results
+
       rescue StandardError => e
         case e
         when Errors::AllParamsMissing
           status 400
-          erb_template = :find_certificate_by_street_name_and_town
           @errors[:street_name] =
             t("find_certificate_by_street_name_and_town.street_name_missing")
           @errors[:town] =
