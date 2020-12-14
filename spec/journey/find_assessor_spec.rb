@@ -23,7 +23,7 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
 
   after(:all) { Process.kill("KILL", @process_id) }
 
-  it "finds an assessor by postcode" do
+  it "finds a domestic assessor by postcode" do
     visit "http://getting-new-energy-certificate.local.gov.uk:9393"
     click_on "Start now"
     find("#label-domestic").click
