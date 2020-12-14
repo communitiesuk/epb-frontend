@@ -212,19 +212,21 @@ class FrontendService < Sinatra::Base
     @page_title = "#{t('find_assessor_by_name.top_heading')} – #{t('services.getting_an_energy_certificate')} – #{t('layout.body.govuk')}"
 
     if params["name"]
-      @page_title = "#{t('find_assessor_by_name_results.top_heading')} – #{t('services.getting_an_energy_certificate')} – #{t('layout.body.govuk')}"
-
       begin
-        erb_template = :find_assessor_by_name_results
         response = response.execute(params["name"])
 
         locals[:results] = response[:data][:assessors]
         locals[:meta] = response[:meta]
+
+        @page_title =
+          "#{t('find_assessor_by_name_results.top_heading')} – #{
+            t('services.getting_an_energy_certificate')
+          } – #{t('layout.body.govuk')}"
+        erb_template = :find_assessor_by_name_results
       rescue StandardError => e
         case e
         when Errors::InvalidName
           status 400
-          erb_template = :find_assessor_by_name
           @errors[:name] = t("find_assessor_by_name.name_error")
         else
           return server_error(e)
