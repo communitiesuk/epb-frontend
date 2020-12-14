@@ -227,9 +227,10 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
       ).to have_content "7 assessors in order of distance from SW1A 2AA"
     end
 
-    xit "displays accreditation scheme contact details for the first assessor" do
-      visit "/find-an-assessor"
-      click_on "find a non domestic assessor"
+    it "displays accreditation scheme contact details for the first assessor" do
+      visit "http://getting-new-energy-certificate.local.gov.uk:9393/find-an-assessor/type-of-property"
+      find("#label-non-domestic").click
+      click_on "Continue"
       fill_in "postcode", with: "SW1A 2AA"
       click_on "Find"
       find_all("span", text: "More information")[1].click
