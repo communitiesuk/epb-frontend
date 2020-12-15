@@ -109,6 +109,14 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       expect(response.body).to include('<svg width="615" height="376"')
     end
 
+    it "shows the SVG alternate text title" do
+      expect(response.body).to include('<title id="svg-title">Current and potential energy efficiency chart</title>')
+    end
+
+    it "shows the SVG alternate text description" do
+      expect(response.body).to include('<desc id="svg-desc">Your current energy rating is B with a score of 90. Your potential energy rating is A with a score of 99.</desc>')
+    end
+
     it "shows the SVG with energy rating band numbers" do
       expect(response.body).to include('<tspan x="8" y="55">92+</tspan>')
     end
