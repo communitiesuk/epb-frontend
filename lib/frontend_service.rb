@@ -331,13 +331,18 @@ class FrontendService < Sinatra::Base
         erb_template = :find_certificate_by_postcode_results
 
         locals[:results] =
-          @container.get_object(:find_certificate_by_postcode_use_case).execute(
-            params["postcode"],
-          )[
+          @container
+            .get_object(:find_certificate_by_postcode_use_case)
+            .execute(params["postcode"])[
             :data
           ][
             :assessments
           ]
+        @page_title =
+          "#{t('find_certificate_by_postcode_results.top_heading')} - #{
+            t('services.find_an_energy_certificate')
+          } - #{t('layout.body.govuk')}"
+        erb_template = :find_certificate_by_postcode_results
       rescue StandardError => e
         case e
         when Errors::PostcodeNotValid
@@ -371,12 +376,16 @@ class FrontendService < Sinatra::Base
       params["postcode"].strip!
 
       if valid_postcode.match(params["postcode"])
-        @page_title =
-          "#{
-            t('find_non_domestic_assessor_by_postcode_results.top_heading')
-          } - #{t('services.getting_an_energy_certificate')} - #{
-            t('layout.body.govuk')
-          }"
+        begin
+          locals[:results] =
+            response.execute(params["postcode"])[:data][:assessors]
+
+          @page_title =
+            "#{
+              t('find_non_domestic_assessor_by_postcode_results.top_heading')
+            } - #{t('services.getting_an_energy_certificate')} - #{
+              t('layout.body.govuk')
+            }"
 
         begin
           locals[:results] =
@@ -429,17 +438,27 @@ class FrontendService < Sinatra::Base
         erb_template = :find_non_dom_certificate_by_street_name_and_town_results
 
         locals[:results] =
-          @container.get_object(
-            :find_certificate_by_street_name_and_town_use_case,
-          ).execute(
-            params["street_name"],
-            params["town"],
-            %w[AC-CERT AC-REPORT DEC DEC-RR CEPC CEPC-RR],
-          )[
+          @container
+            .get_object(:find_certificate_by_street_name_and_town_use_case)
+            .execute(
+              params["street_name"],
+              params["town"],
+              %w[AC-CERT AC-REPORT DEC DEC-RR CEPC CEPC-RR],
+            )[
             :data
           ][
             :assessments
           ]
+
+        @page_title =
+          "#{
+            t(
+              'find_non_dom_certificate_by_street_name_and_town_results.top_heading',
+            )
+          } - #{t('services.find_an_energy_certificate')} - #{
+            t('layout.body.govuk')
+          }"
+        erb_template = :find_non_dom_certificate_by_street_name_and_town_results
       rescue StandardError => e
         case e
         when Errors::AllParamsMissing
@@ -673,10 +692,13 @@ class FrontendService < Sinatra::Base
 
   get "/accessibility-statement" do
     status 200
+    @page_title =
+      "#{t('accessibility_statement.top_heading')} - #{t('layout.body.govuk')}"
     erb :accessibility_statement
   end
 
   get "/cookies" do
+    @page_title = "#{t('cookies.title')} - #{t('layout.body.govuk')}"
     status 200
     erb :cookies
   end
@@ -687,6 +709,8 @@ class FrontendService < Sinatra::Base
   end
 
   not_found do
+    @page_title = "#{t('error.404.heading')} - #{t('layout.body.govuk')}"
+
     status 404
     erb :error_page_404 unless @errors
   end
@@ -702,7 +726,7 @@ class FrontendService < Sinatra::Base
     end
 
     @logger.error JSON.generate(error)
-
+    @page_title = "#{t('error.500.heading')} - #{t('layout.body.govuk')}"
     status 500
     erb :error_page_500
   end
