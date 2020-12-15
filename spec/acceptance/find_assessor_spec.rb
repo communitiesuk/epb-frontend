@@ -365,13 +365,9 @@ describe "Acceptance::Assessor", type: :feature do
           expect(response.status).to eq(400)
         end
 
-        xit "displays the find an assessor page heading" do
-          expect(response.body).to include("Find an energy assessor")
-        end
-
-        xit "displays the find an assessor page heading" do
+        it "displays the Contact an assessor page heading" do
           expect(response.body).to have_css "h1",
-                                            text: "Contact an assessor to book an energy assessment"
+                                            text: "Find an assessor by postcode"
         end
 
         it "displays an error message" do

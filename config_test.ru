@@ -17,6 +17,7 @@ FindAssessor::ByPostcode::Stub.search_by_postcode(
   "nonDomesticSp3,nonDomesticCc4,nonDomesticDec,nonDomesticNos3,nonDomesticNos4,nonDomesticNos5",
 )
 FindAssessor::ByPostcode::Stub.search_by_postcode("SW1A 2AA")
+FindAssessor::ByPostcode::InvalidPostcodeStub.search_by_postcode("C11 4FF")
 FindAssessor::ByName::Stub.search_by_name("Supercommon Name")
 FindAssessor::ByName::Stub.search_by_name("Somewhatcommon Name", true)
 FindCertificate::Stub.search_by_postcode("SW1A 2AA")
