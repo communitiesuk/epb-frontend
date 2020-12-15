@@ -448,7 +448,7 @@ describe "Acceptance::Assessor", type: :feature do
         expect(response.status).to eq(400)
       end
 
-      xit "displays the Find an assessor by name tab heading" do
+      it "displays the Find an assessor by name tab heading" do
         expect(response.body).to include(
           "<title>Find an assessor by name – Getting an energy certificate – GOV.UK</title>",
         )
