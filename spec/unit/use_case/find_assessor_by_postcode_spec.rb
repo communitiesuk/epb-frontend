@@ -35,7 +35,8 @@ describe UseCase::FindAssessorByPostcode do
           "firstName": "Gregg",
           "lastName": "Sellen",
           "contactDetails": {
-            "telephoneNumber": "0792 102 1368", "email": "epbassessor@epb.com"
+            "telephoneNumber": "0792 102 1368",
+            "email": "epbassessor@epb.com",
           },
           "searchResultsComparisonPostcode": "SW1A 1AA",
           "registeredBy": { "schemeId": "432", "name": "EPBs 4 U" },
@@ -45,7 +46,8 @@ describe UseCase::FindAssessorByPostcode do
           "firstName": "Juliet",
           "lastName": "Montague",
           "contactDetails": {
-            "telephoneNumber": "0792 102 1368", "email": "epbassessor@epb.com"
+            "telephoneNumber": "0792 102 1368",
+            "email": "epbassessor@epb.com",
           },
           "searchResultsComparisonPostcode": "SW1A 1AA",
           "registeredBy": { "schemeId": "432", "name": "EPBs 4 U" },

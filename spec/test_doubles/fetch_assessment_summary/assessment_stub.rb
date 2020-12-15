@@ -55,7 +55,9 @@ module FetchAssessmentSummary
             modelReference: "FDC100VN",
             refrigerantCharge: "3",
             refrigerantType: {
-              ecfgasregulation: nil, ecozoneregulation: nil, type: "R410A"
+              ecfgasregulation: nil,
+              ecozoneregulation: nil,
+              type: "R410A",
             },
             serialNumber: "not visible",
             yearInstalled: "2014",
@@ -63,7 +65,9 @@ module FetchAssessmentSummary
           },
           inspection: {
             airRecirculation: {
-              note: "", state: true, guidance: "No recommendation required."
+              note: "",
+              state: true,
+              guidance: "No recommendation required.",
             },
             chillerPlacementOk: {
               note: "The condenser is considered suitably located.",
@@ -80,7 +84,8 @@ module FetchAssessmentSummary
               state: true,
             },
             chillerPlantOperational: {
-              note: "System appeared to operate satisfactorily.", state: true
+              note: "System appeared to operate satisfactorily.",
+              state: true,
             },
             compressorsOperational: {
               note:
@@ -92,7 +97,8 @@ module FetchAssessmentSummary
               state: true,
             },
             heatRejectionAreaClear: {
-              note: "The area was clear and appeared satisfactory.", state: true
+              note: "The area was clear and appeared satisfactory.",
+              state: true,
             },
             heatRejectionOperational: {
               note: "Heat rejection plant appeared to operate as expected.",
@@ -175,12 +181,14 @@ module FetchAssessmentSummary
             },
             guidance: nil,
             recordsKept: {
-              note: "Yes system appears in good order for age.", state: true
+              note: "Yes system appears in good order for age.",
+              state: true,
             },
           },
           metering: {
             bemInstalled: {
-              note: "The system is linked to a Central Controller.", state: true
+              note: "The system is linked to a Central Controller.",
+              state: true,
             },
             excessiveUse: { note: "No details available.", state: false },
             meteringInstalled: { note: "987654321", state: true },
@@ -200,7 +208,8 @@ module FetchAssessmentSummary
               state: false,
             },
             waterTreatment: {
-              note: "N/A no cooling towers installed to this site", state: false
+              note: "N/A no cooling towers installed to this site",
+              state: false,
             },
           },
         },
@@ -216,7 +225,9 @@ module FetchAssessmentSummary
             modelReference: "FDC100VN",
             refrigerantCharge: "3",
             refrigerantType: {
-              ecfgasregulation: nil, ecozoneregulation: nil, type: "R410A"
+              ecfgasregulation: nil,
+              ecozoneregulation: nil,
+              type: "R410A",
             },
             serialNumber: "not visible",
             yearInstalled: "2014",
@@ -285,12 +296,14 @@ module FetchAssessmentSummary
             },
             guidance: nil,
             recordsKept: {
-              note: "Yes system appears in good order for age.", state: true
+              note: "Yes system appears in good order for age.",
+              state: true,
             },
           },
           metering: {
             bemInstalled: {
-              note: "The system is linked to a Central Controller.", state: true
+              note: "The system is linked to a Central Controller.",
+              state: true,
             },
             excessiveUse: { note: "No details available.", state: false },
             meteringInstalled: { note: "", state: false },
@@ -331,7 +344,9 @@ module FetchAssessmentSummary
                 ],
               },
               differentialPressureGauge: {
-                flag: false, note: "Not fitted.", recommendations: []
+                flag: false,
+                note: "Not fitted.",
+                recommendations: [],
               },
             },
             heatExchangers: {
@@ -391,7 +406,9 @@ module FetchAssessmentSummary
             diffuserPositions: {
               positionIssues: { note: nil, recommendations: [], flag: true },
               partitioningIssues: {
-                note: nil, recommendations: [], flag: false
+                note: nil,
+                recommendations: [],
+                flag: false,
               },
               controlOperation: { note: nil, recommendations: [], flag: true },
             },
@@ -516,10 +533,12 @@ module FetchAssessmentSummary
             name: "TEST NAME BOI",
             schemeAssessorId: "SPEC000000",
             contactDetails: {
-              email: "test@testscheme.com", telephone: "012345"
+              email: "test@testscheme.com",
+              telephone: "012345",
             },
             companyDetails: {
-              name: "Joe Bloggs Ltd", address: "123 My Street, My City, AB3 4CD"
+              name: "Joe Bloggs Ltd",
+              address: "123 My Street, My City, AB3 4CD",
             },
             registeredBy: { name: "quidos", schemeId: "3" },
           },
@@ -543,10 +562,12 @@ module FetchAssessmentSummary
         meta: {},
       }
 
-      WebMock.stub_request(
-        :get,
-        "http://test-api.gov.uk/api/assessments/#{assessment_id}/summary",
-      ).to_return(status: 200, body: body.to_json)
+      WebMock
+        .stub_request(
+          :get,
+          "http://test-api.gov.uk/api/assessments/#{assessment_id}/summary",
+        )
+        .to_return(status: 200, body: body.to_json)
     end
 
     def self.fetch_ac_cert(
@@ -605,20 +626,24 @@ module FetchAssessmentSummary
             name: "TEST NAME BOI",
             schemeAssessorId: "SPEC000000",
             contactDetails: {
-              email: "test@testscheme.com", telephone: "012345"
+              email: "test@testscheme.com",
+              telephone: "012345",
             },
             companyDetails: {
-              name: "Joe Bloggs Ltd", address: "123 My Street, My City, AB3 4CD"
+              name: "Joe Bloggs Ltd",
+              address: "123 My Street, My City, AB3 4CD",
             },
             registeredBy: { name: "quidos", schemeId: "3" },
           },
         },
       }
 
-      WebMock.stub_request(
-        :get,
-        "http://test-api.gov.uk/api/assessments/#{assessment_id}/summary",
-      ).to_return(status: 200, body: body.to_json)
+      WebMock
+        .stub_request(
+          :get,
+          "http://test-api.gov.uk/api/assessments/#{assessment_id}/summary",
+        )
+        .to_return(status: 200, body: body.to_json)
     end
 
     def self.fetch_cepc(
@@ -678,7 +703,8 @@ module FetchAssessmentSummary
             name: "TEST NAME BOI",
             schemeAssessorId: "SPEC000000",
             contactDetails: {
-              email: "test@testscheme.com", telephone: "012345"
+              email: "test@testscheme.com",
+              telephone: "012345",
             },
             companyDetails: {
               name: "Joe Bloggs Ltd",
@@ -692,10 +718,12 @@ module FetchAssessmentSummary
         },
       }
 
-      WebMock.stub_request(
-        :get,
-        "http://test-api.gov.uk/api/assessments/#{assessment_id}/summary",
-      ).to_return(status: 200, body: body.to_json)
+      WebMock
+        .stub_request(
+          :get,
+          "http://test-api.gov.uk/api/assessments/#{assessment_id}/summary",
+        )
+        .to_return(status: 200, body: body.to_json)
     end
 
     def self.fetch_cepc_rr(
@@ -719,7 +747,8 @@ module FetchAssessmentSummary
         },
       ],
       company_details: {
-        name: "Joe Bloggs Ltd", address: "123 My Street, My City, AB3 4CD"
+        name: "Joe Bloggs Ltd",
+        address: "123 My Street, My City, AB3 4CD",
       }
     )
       body = {
@@ -787,10 +816,12 @@ module FetchAssessmentSummary
           energyBandFromRelatedCertificate: related_energy_band,
         },
       }
-      WebMock.stub_request(
-        :get,
-        "http://test-api.gov.uk/api/assessments/#{assessment_id}/summary",
-      ).to_return(status: 200, body: body.to_json)
+      WebMock
+        .stub_request(
+          :get,
+          "http://test-api.gov.uk/api/assessments/#{assessment_id}/summary",
+        )
+        .to_return(status: 200, body: body.to_json)
     end
 
     def self.fetch_dec(
@@ -876,19 +907,23 @@ module FetchAssessmentSummary
             schemeAssessorId: "SPEC000000",
             registeredBy: { name: "quidos", schemeId: 1 },
             companyDetails: {
-              address: "123 My Street, My City, AB3 4CD", name: "Joe Bloggs Ltd"
+              address: "123 My Street, My City, AB3 4CD",
+              name: "Joe Bloggs Ltd",
             },
             contactDetails: {
-              email: "test@testscheme.com", telephone: "012345"
+              email: "test@testscheme.com",
+              telephone: "012345",
             },
           },
           relatedAssessments: related_assessments,
         },
       }
-      WebMock.stub_request(
-        :get,
-        "http://test-api.gov.uk/api/assessments/#{assessment_id}/summary",
-      ).to_return(status: 200, body: body.to_json)
+      WebMock
+        .stub_request(
+          :get,
+          "http://test-api.gov.uk/api/assessments/#{assessment_id}/summary",
+        )
+        .to_return(status: 200, body: body.to_json)
     end
 
     def self.fetch_dec_rr(
@@ -935,7 +970,8 @@ module FetchAssessmentSummary
             schemeAssessorId: "SPEC000000",
             registeredBy: { name: "test scheme", schemeId: 1 },
             companyDetails: {
-              address: "123 My Street, My City, AB3 4CD", name: "Joe Bloggs Ltd"
+              address: "123 My Street, My City, AB3 4CD",
+              name: "Joe Bloggs Ltd",
             },
           },
           relatedAssessments: related_assessments,
@@ -989,10 +1025,12 @@ module FetchAssessmentSummary
           siteServiceThree: { description: "Not used", quantity: "0" },
         },
       }
-      WebMock.stub_request(
-        :get,
-        "http://test-api.gov.uk/api/assessments/#{assessment_id}/summary",
-      ).to_return(status: 200, body: body.to_json)
+      WebMock
+        .stub_request(
+          :get,
+          "http://test-api.gov.uk/api/assessments/#{assessment_id}/summary",
+        )
+        .to_return(status: 200, body: body.to_json)
     end
 
     def self.fetch_sap(*args)
@@ -1269,7 +1307,8 @@ module FetchAssessmentSummary
               schemeAssessorId: "TESTASSESSOR",
               dateOfBirth: "2019-12-04",
               contactDetails: {
-                telephoneNumber: "12345678901", email: "test.boi@quidos.com"
+                telephoneNumber: "12345678901",
+                email: "test.boi@quidos.com",
               },
               searchResultsComparisonPostcode: "SW1A 2AA",
               qualifications: { domesticRdSap: "ACTIVE" },
@@ -1332,10 +1371,12 @@ module FetchAssessmentSummary
         }
       end
 
-      WebMock.stub_request(
-        :get,
-        "http://test-api.gov.uk/api/assessments/#{assessment_id}/summary",
-      ).to_return(status: 200, body: body.to_json)
+      WebMock
+        .stub_request(
+          :get,
+          "http://test-api.gov.uk/api/assessments/#{assessment_id}/summary",
+        )
+        .to_return(status: 200, body: body.to_json)
     end
 
     def self.generate_green_deal_plan

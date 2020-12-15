@@ -156,7 +156,8 @@ describe "Acceptance::AirConditioningInspectionCertificate", type: :feature do
     context "when System sampling is N" do
       before do
         FetchAssessmentSummary::AssessmentStub.fetch_ac_cert(
-          assessment_id: "0000-0000-0000-0000-9999", system_sampling: "N",
+          assessment_id: "0000-0000-0000-0000-9999",
+          system_sampling: "N",
         )
       end
 
@@ -184,7 +185,8 @@ describe "Acceptance::AirConditioningInspectionCertificate", type: :feature do
     context "when Subsystem metered is 2" do
       before do
         FetchAssessmentSummary::AssessmentStub.fetch_ac_cert(
-          assessment_id: "0000-0000-0000-0000-9999", subsystems_metered: "2",
+          assessment_id: "0000-0000-0000-0000-9999",
+          subsystems_metered: "2",
         )
       end
 

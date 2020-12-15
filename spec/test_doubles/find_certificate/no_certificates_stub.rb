@@ -12,31 +12,38 @@ module FindCertificate
           "&assessment_type[]=SAP&assessment_type[]=RdSAP"
         end
 
-      WebMock.stub_request(:get, uri).to_return(
-        status: 200,
-        body: {
-          "data": { "assessments": [] }, "meta": { "searchPostcode": postcode }
-        }.to_json,
-      )
+      WebMock
+        .stub_request(:get, uri)
+        .to_return(
+          status: 200,
+          body: {
+            "data": { "assessments": [] },
+            "meta": { "searchPostcode": postcode },
+          }.to_json,
+        )
     end
 
     def self.search_by_id(reference_number)
-      WebMock.stub_request(
-        :get,
-        "http://test-api.gov.uk/api/assessments/search?assessment_id=#{
-          reference_number
-        }",
-      ).to_return(
-        status: 200,
-        body: {
-          "data": { "assessments": [] },
-          "meta": { "searchReferenceNumber": reference_number },
-        }.to_json,
-      )
+      WebMock
+        .stub_request(
+          :get,
+          "http://test-api.gov.uk/api/assessments/search?assessment_id=#{
+            reference_number
+          }",
+        )
+        .to_return(
+          status: 200,
+          body: {
+            "data": { "assessments": [] },
+            "meta": { "searchReferenceNumber": reference_number },
+          }.to_json,
+        )
     end
 
     def self.search_by_street_name_and_town(
-      street_name, town, assessment_types = %w[RdSAP SAP]
+      street_name,
+      town,
+      assessment_types = %w[RdSAP SAP]
     )
       route =
         "http://test-api.gov.uk/api/assessments/search?street_name=#{
@@ -44,13 +51,15 @@ module FindCertificate
         }&town=#{town}"
       assessment_types.each { |type| route += "&assessment_type[]=" + type }
 
-      WebMock.stub_request(:get, route).to_return(
-        status: 200,
-        body: {
-          "data": { "assessments": [] },
-          "meta": { "searchReferenceNumber": [street_name, town] },
-        }.to_json,
-      )
+      WebMock
+        .stub_request(:get, route)
+        .to_return(
+          status: 200,
+          body: {
+            "data": { "assessments": [] },
+            "meta": { "searchReferenceNumber": [street_name, town] },
+          }.to_json,
+        )
     end
   end
 end

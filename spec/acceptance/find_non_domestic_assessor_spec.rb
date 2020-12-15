@@ -341,7 +341,7 @@ describe "Acceptance::NonDomesticAssessor" do
 
         it "has a tab content that matches the page heading" do
           expect(response.body).to include(
-            "<title>Contact an assessor to book an energy assessment - Getting an energy certificate - GOV.UK</title>",
+            "<title>Find an assessor by postcode - Getting an energy certificate - GOV.UK</title>",
           )
         end
 
@@ -382,14 +382,12 @@ describe "Acceptance::NonDomesticAssessor" do
 
         it "has a tab content that matches the page heading" do
           expect(response.body).to include(
-                                       "<title>Contact an assessor to book an energy assessment - Getting an energy certificate - GOV.UK</title>",
-                                       )
+            "<title>Find an assessor by postcode - Getting an energy certificate - GOV.UK</title>",
+          )
         end
 
         it "displays find a non-domestic assessor page heading" do
-          expect(response.body).to include(
-            "Find an assessor by postcode",
-          )
+          expect(response.body).to include("Find an assessor by postcode")
         end
 
         it "displays an error message" do

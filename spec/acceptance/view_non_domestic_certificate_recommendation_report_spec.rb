@@ -122,7 +122,8 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
   context "with a related party disclosure" do
     it "shows the the related party disclosure text" do
       FetchAssessmentSummary::AssessmentStub.fetch_cepc_rr(
-        assessment_id: "1234-5678-1234-5678-1234", related_party: "1",
+        assessment_id: "1234-5678-1234-5678-1234",
+        related_party: "1",
       )
 
       response = get "/energy-certificate/1234-5678-1234-5678-1234"

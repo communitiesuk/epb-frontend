@@ -63,7 +63,9 @@ module AssessorsGateway
           ],
         },
         meta: {
-          "timestamp": 1_234_567, "searchName": name, "looseMatch": false
+          "timestamp": 1_234_567,
+          "searchName": name,
+          "looseMatch": false,
         },
       }
     end

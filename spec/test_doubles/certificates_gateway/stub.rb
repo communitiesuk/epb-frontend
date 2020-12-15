@@ -334,7 +334,8 @@ module CertificatesGateway
             schemeAssessorId: "TESTASSESSOR",
             dateOfBirth: "2019-12-04",
             contactDetails: {
-              telephoneNumber: "12345678901", email: "test.boi@quidos.com"
+              telephoneNumber: "12345678901",
+              email: "test.boi@quidos.com",
             },
             searchResultsComparisonPostcode: "SW1A 2AA",
             qualifications: { domesticRdSap: "ACTIVE" },

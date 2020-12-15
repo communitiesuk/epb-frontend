@@ -24,7 +24,8 @@ describe "Acceptance::DecRecommendationReport", type: :feature do
   context "when the assessment exists" do
     before do
       FetchAssessmentSummary::AssessmentStub.fetch_dec_rr(
-        assessment_id: "1234-5678-1234-5678-1234", date_of_expiry: "2030-01-01",
+        assessment_id: "1234-5678-1234-5678-1234",
+        date_of_expiry: "2030-01-01",
       )
     end
 

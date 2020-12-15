@@ -51,7 +51,8 @@ describe Gateway::CertificatesGateway do
 
     it "returns empty results" do
       expect(response).to eq(
-        data: { assessments: [] }, meta: { searchPostcode: "BF1 3AA" },
+        data: { assessments: [] },
+        meta: { searchPostcode: "BF1 3AA" },
       )
     end
   end

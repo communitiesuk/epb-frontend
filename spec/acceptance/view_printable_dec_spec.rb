@@ -10,7 +10,8 @@ describe "Acceptance::PrintableDisplayEnergyCertificate", type: :feature do
   context "when a dec exists" do
     before do
       FetchAssessmentSummary::AssessmentStub.fetch_dec(
-        assessment_id: "0000-0000-0000-0000-1111", date_of_expiry: "2030-02-21",
+        assessment_id: "0000-0000-0000-0000-1111",
+        date_of_expiry: "2030-02-21",
       )
     end
 

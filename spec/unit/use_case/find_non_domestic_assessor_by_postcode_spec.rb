@@ -37,7 +37,8 @@ describe UseCase::FindNonDomesticAssessorByPostcode do
           "firstName": "Gregg",
           "lastName": "Sellen",
           "contactDetails": {
-            "telephoneNumber": "0792 102 1368", "email": "epbassessor@epb.com"
+            "telephoneNumber": "0792 102 1368",
+            "email": "epbassessor@epb.com",
           },
           "qualifications": { "nonDomesticSp3": "ACTIVE" },
           "searchResultsComparisonPostcode": "SW1A 1AA",
@@ -48,7 +49,8 @@ describe UseCase::FindNonDomesticAssessorByPostcode do
           "firstName": "Juliet",
           "lastName": "Montague",
           "contactDetails": {
-            "telephoneNumber": "0792 102 1368", "email": "epbassessor@epb.com"
+            "telephoneNumber": "0792 102 1368",
+            "email": "epbassessor@epb.com",
           },
           "qualifications": { "nonDomesticSp3": "ACTIVE" },
           "searchResultsComparisonPostcode": "SW1A 1AA",

@@ -194,7 +194,8 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
     context "when there are no subsystems" do
       before do
         FetchAssessmentSummary::AssessmentStub.fetch_ac_report(
-          assessment_id: "0000-0000-0000-0000-9999", sub_systems: [],
+          assessment_id: "0000-0000-0000-0000-9999",
+          sub_systems: [],
         )
       end
 

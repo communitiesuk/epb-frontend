@@ -7,7 +7,8 @@ module Gateway
     end
 
     def search_by_postcode(
-      postcode, qualification_type = "domesticSap,domesticRdSap"
+      postcode,
+      qualification_type = "domesticSap,domesticRdSap"
     )
       route =
         "/api/assessors?postcode=#{CGI.escape(postcode)}&qualification=#{

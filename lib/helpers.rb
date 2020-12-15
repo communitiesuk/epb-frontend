@@ -187,8 +187,10 @@ module Sinatra
 
       def compact_address(address_lines, town, postcode)
         (
-          address_lines +
-            [(address_lines.include?(town) ? nil : town), postcode]
+          address_lines + [
+            (address_lines.include?(town) ? nil : town),
+            postcode,
+          ]
         ).compact.reject { |a| a.to_s.strip.chomp.empty? }
       end
     end
