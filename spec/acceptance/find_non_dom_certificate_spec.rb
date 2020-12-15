@@ -224,15 +224,14 @@ describe "Acceptance::Non Domestic Certificate" do
 
       it "has a tab content that matches the page heading" do
         expect(response.body).to include(
-                                     ' <title>Find an energy performance certificate (EPC) by street and town - Find an energy certificate - GOV.UK</title>
-'
-
-                                 )
+          " <title>Find an energy performance certificate (EPC) by street and town - Find an energy certificate - GOV.UK</title>\n",
+        )
       end
 
       it "displays the find a non-domestic certificate page heading" do
         expect(response.body).to have_css "h1",
-                                          text: "Find an energy performance certificate (EPC) by street and town"
+                                          text:
+                                            "Find an energy performance certificate (EPC) by street and town"
       end
 
       it "has two input fields" do
@@ -318,8 +317,8 @@ describe "Acceptance::Non Domestic Certificate" do
 
         it "has a tab content that matches the page heading" do
           expect(response.body).to include(
-                                       ' <title>Find energy certificates and reports - Find an energy certificate - GOV.UK</title>'
-                                   )
+            " <title>Find energy certificates and reports - Find an energy certificate - GOV.UK</title>",
+          )
         end
 
         it "displays the find a certificate page heading" do

@@ -58,9 +58,8 @@ describe "Acceptance::Certificate" do
 
       it "has a tab content that matches the page heading" do
         expect(response.body).to include(
-                                     ' <title>Find an energy performance certificate (EPC) - Find an energy certificate - GOV.UK</title>'
-
-                                 )
+          " <title>Find an energy performance certificate (EPC) - Find an energy certificate - GOV.UK</title>",
+        )
       end
 
       it "displays the find a certificate page heading" do
@@ -246,9 +245,8 @@ describe "Acceptance::Certificate" do
 
       it "has a tab content that matches the page heading" do
         expect(response.body).to include(
-                                     '<title>Find an energy performance certificate (EPC) by certificate number - Find an energy certificate - GOV.UK</title>'
-
-                                 )
+          "<title>Find an energy performance certificate (EPC) by certificate number - Find an energy certificate - GOV.UK</title>",
+        )
       end
 
       it "displays the find a certificate page heading" do
@@ -377,11 +375,11 @@ describe "Acceptance::Certificate" do
           expect(response.status).to eq(500)
         end
 
-        xit "displays the 500 error page heading" do
+        it "displays the 500 error page heading" do
           expect(response.body).to include("Try again later.")
         end
 
-        xit "displays error page body" do
+        it "displays error page body" do
           expect(response.body).to include(
             "Sorry, there is a problem with the service",
           )
@@ -403,9 +401,8 @@ describe "Acceptance::Certificate" do
 
       it "has a tab content that matches the page heading" do
         expect(response.body).to include(
-                                     '<title>Find an energy performance certificate (EPC) by street and town - Find an energy certificate - GOV.UK</title>'
-
-                                 )
+          "<title>Find an energy performance certificate (EPC) by street and town - Find an energy certificate - GOV.UK</title>",
+        )
       end
 
       it "displays the find a certificate page heading" do

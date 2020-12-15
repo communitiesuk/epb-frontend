@@ -19,9 +19,8 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
 
     it "has a tab content that shows the page title" do
       expect(response.body).to include(
-                                   ' <title>Air conditioning inspection report - Find an energy certificate - GOV.UK</title>'
-
-                               )
+        " <title>Air conditioning inspection report - Find an energy certificate - GOV.UK</title>",
+      )
     end
 
     it "shows the summary section" do

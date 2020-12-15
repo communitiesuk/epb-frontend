@@ -314,12 +314,18 @@ class FrontendService < Sinatra::Base
     locals = {}
     erb_template = :find_certificate_by_postcode
 
-    @page_title = "#{t("find_certificate_by_postcode.top_heading")} - #{t('services.find_an_energy_certificate')} - #{t('layout.body.govuk')}"
+    @page_title =
+      "#{t('find_certificate_by_postcode.top_heading')} - #{
+        t('services.find_an_energy_certificate')
+      } - #{t('layout.body.govuk')}"
 
     if params["postcode"]
       params["postcode"].strip!
 
-      @page_title = "#{t("find_certificate_by_postcode_results.top_heading")} - #{t('services.find_an_energy_certificate')} - #{t('layout.body.govuk')}"
+      @page_title =
+        "#{t('find_certificate_by_postcode_results.top_heading')} - #{
+          t('services.find_an_energy_certificate')
+        } - #{t('layout.body.govuk')}"
 
       begin
         erb_template = :find_certificate_by_postcode_results
@@ -356,13 +362,21 @@ class FrontendService < Sinatra::Base
     response =
       @container.get_object(:find_non_domestic_assessor_by_postcode_use_case)
 
-    @page_title = "#{t("find_non_domestic_assessor_by_postcode.top_heading")} - #{t('services.getting_an_energy_certificate')} - #{t('layout.body.govuk')}"
+    @page_title =
+      "#{t('find_non_domestic_assessor_by_postcode.top_heading')} - #{
+        t('services.getting_an_energy_certificate')
+      } - #{t('layout.body.govuk')}"
 
     if params["postcode"]
       params["postcode"].strip!
 
       if valid_postcode.match(params["postcode"])
-        @page_title = "#{t("find_non_domestic_assessor_by_postcode_results.top_heading")} - #{t('services.getting_an_energy_certificate')} - #{t('layout.body.govuk')}"
+        @page_title =
+          "#{
+            t('find_non_domestic_assessor_by_postcode_results.top_heading')
+          } - #{t('services.getting_an_energy_certificate')} - #{
+            t('layout.body.govuk')
+          }"
 
         begin
           locals[:results] =
@@ -396,10 +410,20 @@ class FrontendService < Sinatra::Base
     locals = {}
     erb_template = :find_non_dom_certificate_by_street_name_and_town
 
-    @page_title = "#{t("find_non_dom_certificate_by_street_name_and_town.top_heading")} - #{t('services.find_an_energy_certificate')} - #{t('layout.body.govuk')}"
+    @page_title =
+      "#{t('find_non_dom_certificate_by_street_name_and_town.top_heading')} - #{
+        t('services.find_an_energy_certificate')
+      } - #{t('layout.body.govuk')}"
 
     if params.key?("town") || params.key?("street_name")
-      @page_title = "#{t("find_non_dom_certificate_by_street_name_and_town_results.top_heading")} - #{t('services.find_an_energy_certificate')} - #{t('layout.body.govuk')}"
+      @page_title =
+        "#{
+          t(
+            'find_non_dom_certificate_by_street_name_and_town_results.top_heading',
+          )
+        } - #{t('services.find_an_energy_certificate')} - #{
+          t('layout.body.govuk')
+        }"
 
       begin
         erb_template = :find_non_dom_certificate_by_street_name_and_town_results
@@ -462,8 +486,10 @@ class FrontendService < Sinatra::Base
     @errors = {}
     locals = {}
     erb_template = :find_certificate_by_reference_number
-
-    @page_title = "#{t("find_certificate_by_reference_number.top_heading")} - #{t('services.find_an_energy_certificate')} - #{t('layout.body.govuk')}"
+    @page_title =
+      "#{t('find_certificate_by_reference_number.top_heading')} - #{
+        t('services.find_an_energy_certificate')
+      } - #{t('layout.body.govuk')}"
 
     if params["reference_number"]
       begin
@@ -480,7 +506,6 @@ class FrontendService < Sinatra::Base
           ][
             :assessmentId
           ]
-
         redirect "/energy-certificate/#{fetched_assessment_id}", 303
       rescue StandardError => e
         case e
@@ -496,7 +521,7 @@ class FrontendService < Sinatra::Base
               "find_certificate_by_reference_number.reference_number_not_registered",
             )
         else
-          server_error(e)
+          return server_error(e)
         end
       end
     end
@@ -510,10 +535,12 @@ class FrontendService < Sinatra::Base
     locals = {}
     erb_template = :find_certificate_by_street_name_and_town
 
-    @page_title = "#{t('find_certificate_by_street_name_and_town.top_heading')} - #{t('services.find_an_energy_certificate')} - #{t('layout.body.govuk')}"
+    @page_title =
+      "#{t('find_certificate_by_street_name_and_town.top_heading')} - #{
+        t('services.find_an_energy_certificate')
+      } - #{t('layout.body.govuk')}"
 
     if params.key?("town") || params.key?("street_name")
-
       begin
         locals[:results] =
           @container.get_object(
@@ -524,9 +551,13 @@ class FrontendService < Sinatra::Base
             :assessments
           ]
 
-        @page_title = "#{t('find_certificate_by_street_name_and_town_results.top_heading')} - #{t('services.find_an_energy_certificate')} - #{t('layout.body.govuk')}"
+        @page_title =
+          "#{
+            t('find_certificate_by_street_name_and_town_results.top_heading')
+          } - #{t('services.find_an_energy_certificate')} - #{
+            t('layout.body.govuk')
+          }"
         erb_template = :find_certificate_by_street_name_and_town_results
-
       rescue StandardError => e
         case e
         when Errors::AllParamsMissing
@@ -567,7 +598,10 @@ class FrontendService < Sinatra::Base
   get "/energy-certificate/:assessment_id" do
     use_case = @container.get_object(:fetch_certificate_use_case)
     assessment = use_case.execute(params[:assessment_id])
-    @page_title = " - #{t('services.find_an_energy_certificate')} - #{t('layout.body.govuk')}"
+    @page_title =
+      " - #{t('services.find_an_energy_certificate')} - #{
+        t('layout.body.govuk')
+      }"
 
     status 200
     if assessment[:data][:typeOfAssessment] == "CEPC"
@@ -590,7 +624,8 @@ class FrontendService < Sinatra::Base
         show(:dec, assessment: assessment[:data])
       end
     elsif assessment[:data][:typeOfAssessment] == "DEC-RR"
-      @page_title = "#{t('dec.sections.recommendation_report.title')}#{@page_title}"
+      @page_title =
+        "#{t('dec.sections.recommendation_report.title')}#{@page_title}"
       show(:dec_recommendation_report, assessment: assessment[:data])
     elsif assessment[:data][:typeOfAssessment] == "AC-CERT"
       @page_title = "#{t('ac_cert.top_heading')}#{@page_title}"
@@ -619,7 +654,6 @@ class FrontendService < Sinatra::Base
   get "/energy-certificate/:assessment_id/dec_summary" do
     use_case = @container.get_object(:fetch_dec_summary_use_case)
     assessment = use_case.execute(params[:assessment_id])
-
     status 200
 
     content_type "application/xml"

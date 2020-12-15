@@ -152,12 +152,14 @@ describe "Acceptance::NonDomesticAssessor" do
 
         it "has a tab content that matches the page heading" do
           expect(response.body).to include(
-                                       '<title>Contact an assessor to book an energy assessment - Getting an energy certificate - GOV.UK</title>'
-                                   )
+            "<title>Contact an assessor to book an energy assessment - Getting an energy certificate - GOV.UK</title>",
+          )
         end
 
         it "displays the contact an assessor to book an energy assessment page heading" do
-          expect(response.body).to include("Contact an assessor to book an energy assessment")
+          expect(response.body).to include(
+            "Contact an assessor to book an energy assessment",
+          )
         end
 
         it "displays the to search again by postcode message" do
