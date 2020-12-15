@@ -50,31 +50,32 @@ class FrontendService < Sinatra::Base
     erb :find_certificate, layout: :layout
   end
 
-  find_an_assessor_property_type = lambda do
-    query = params.map { |key, value| "#{key}=#{value}" }.join("&")
-    @errors = {}
+  find_an_assessor_property_type =
+    lambda do
+      query = params.map { |key, value| "#{key}=#{value}" }.join("&")
+      @errors = {}
 
-    if params["property_type"] == "domestic"
-      redirect "/find-an-assessor/search-by-postcode?#{query}"
+      if params["property_type"] == "domestic"
+        redirect "/find-an-assessor/search-by-postcode?#{query}"
+      end
+
+      if params["property_type"] == "non_domestic"
+        redirect "/find-a-non-domestic-assessor/search-by-postcode?#{query}"
+      end
+
+      if request.post? && params["property_type"].nil?
+        @errors = {
+          property_type:
+            t("find_an_assessor.property_type.errors.no_property_type_selected"),
+        }
+      end
+
+      @page_title =
+        "#{t('find_an_assessor.property_type.question_title')} – #{
+          t('services.getting_an_energy_certificate')
+        } – #{t('layout.body.govuk')}"
+      show(:find_assessor__property_type, { lang: params[:lang] })
     end
-
-    if params["property_type"] == "non_domestic"
-      redirect "/find-a-non-domestic-assessor/search-by-postcode?#{query}"
-    end
-
-    if request.post? && params["property_type"].nil?
-      @errors = {
-        property_type:
-          t("find_an_assessor.property_type.errors.no_property_type_selected"),
-      }
-    end
-
-    @page_title =
-      "#{t('find_an_assessor.property_type.question_title')} – #{
-        t('services.getting_an_energy_certificate')
-      } – #{t('layout.body.govuk')}"
-    show(:find_assessor__property_type, { lang: params[:lang] })
-  end
 
   get "/find-an-assessor/type-of-property",
       host_name: /#{getting_new_energy_certificate_host_name}/,
@@ -100,10 +101,12 @@ class FrontendService < Sinatra::Base
 
       begin
         locals[:results] =
-          @container.get_object(:find_certificate_by_postcode_use_case).execute(
-            params["postcode"],
-            %w[CEPC DEC DEC-RR CEPC-RR AC-CERT AC-REPORT],
-          )[
+          @container
+            .get_object(:find_certificate_by_postcode_use_case)
+            .execute(
+              params["postcode"],
+              %w[CEPC DEC DEC-RR CEPC-RR AC-CERT AC-REPORT],
+            )[
             :data
           ][
             :assessments
@@ -133,14 +136,18 @@ class FrontendService < Sinatra::Base
     @errors = {}
     locals = {}
     erb_template = :find_non_dom_certificate_by_reference_number
+    @page_title =
+      "#{t('find_non_dom_certificate_by_reference_number.top_heading')} – #{
+        t('services.find_an_energy_certificate')
+      } – #{t('layout.body.govuk')}"
 
     if params["reference_number"]
       begin
         # If we can find the assessment then we redirect directly to it
         fetched_assessment_id =
-          @container.get_object(:find_certificate_by_id_use_case).execute(
-            params["reference_number"],
-          )[
+          @container
+            .get_object(:find_certificate_by_id_use_case)
+            .execute(params["reference_number"])[
             :data
           ][
             :assessments
@@ -155,13 +162,11 @@ class FrontendService < Sinatra::Base
         case e
         when Errors::ReferenceNumberNotValid
           status 400
-          erb_template = :find_non_dom_certificate_by_reference_number
           @errors[:reference_number] =
             t(
               "find_non_dom_certificate_by_reference_number.reference_number_not_valid",
             )
         when Errors::CertificateNotFound
-          erb_template = :find_non_dom_certificate_by_reference_number
           @errors[:reference_number] =
             t(
               "find_non_dom_certificate_by_reference_number.reference_number_not_registered",
@@ -171,11 +176,6 @@ class FrontendService < Sinatra::Base
         end
       end
     end
-
-    @page_title =
-      "#{t('find_non_dom_certificate_by_reference_number.top_heading')} – #{
-        t('services.find_an_energy_certificate')
-      } – #{t('layout.body.govuk')}"
 
     show(erb_template, locals)
   end
@@ -196,14 +196,13 @@ class FrontendService < Sinatra::Base
       params["postcode"].strip!
 
       if valid_postcode.match(params["postcode"])
-        @page_title =
-          "#{t('find_assessor_by_postcode_results.top_heading')} – #{
-            t('services.getting_an_energy_certificate')
-          } – #{t('layout.body.govuk')}"
-
         begin
           locals[:results] =
             response.execute(params["postcode"])[:data][:assessors]
+          @page_title =
+            "#{t('find_assessor_by_postcode_results.top_heading')} – #{
+              t('services.getting_an_energy_certificate')
+            } – #{t('layout.body.govuk')}"
           erb_template = :find_assessor_by_postcode_results
         rescue StandardError => e
           case e
@@ -274,32 +273,35 @@ class FrontendService < Sinatra::Base
     status 200
   end
 
-  find_a_certificate_property_type = lambda do
-    query = params.map { |key, value| "#{key}=#{value}" }.join("&")
-    @errors = {}
+  find_a_certificate_property_type =
+    lambda do
+      query = params.map { |key, value| "#{key}=#{value}" }.join("&")
+      @errors = {}
 
-    if params["property_type"] == "domestic"
-      redirect "/find-a-certificate/search-by-postcode?#{query}"
+      if params["property_type"] == "domestic"
+        redirect "/find-a-certificate/search-by-postcode?#{query}"
+      end
+
+      if params["property_type"] == "non_domestic"
+        redirect "/find-a-non-domestic-certificate/search-by-postcode?#{query}"
+      end
+
+      if request.post? && params["property_type"].nil?
+        @errors = {
+          property_type:
+            t(
+              "find_a_certificate.property_type.errors.no_property_type_selected",
+            ),
+        }
+      end
+
+      @page_title =
+        "#{t('find_an_assessor.property_type.question_title')} – #{
+          t('services.find_an_energy_certificate')
+        } – #{t('layout.body.govuk')}"
+
+      show(:find_certificate__property_type, { lang: params[:lang] })
     end
-
-    if params["property_type"] == "non_domestic"
-      redirect "/find-a-non-domestic-certificate/search-by-postcode?#{query}"
-    end
-
-    if request.post? && params["property_type"].nil?
-      @errors = {
-        property_type:
-          t("find_a_certificate.property_type.errors.no_property_type_selected"),
-      }
-    end
-
-    @page_title =
-      "#{t('find_an_assessor.property_type.question_title')} – #{
-        t('services.find_an_energy_certificate')
-      } – #{t('layout.body.govuk')}"
-
-    show(:find_certificate__property_type, { lang: params[:lang] })
-  end
 
   get "/find-a-certificate/type-of-property",
       host_name: /#{find_energy_certificate_host_name}/,
@@ -322,14 +324,7 @@ class FrontendService < Sinatra::Base
     if params["postcode"]
       params["postcode"].strip!
 
-      @page_title =
-        "#{t('find_certificate_by_postcode_results.top_heading')} - #{
-          t('services.find_an_energy_certificate')
-        } - #{t('layout.body.govuk')}"
-
       begin
-        erb_template = :find_certificate_by_postcode_results
-
         locals[:results] =
           @container
             .get_object(:find_certificate_by_postcode_use_case)
@@ -347,7 +342,6 @@ class FrontendService < Sinatra::Base
         case e
         when Errors::PostcodeNotValid
           status 400
-          erb_template = :find_certificate_by_postcode
           @errors[:postcode] = t("validation_errors.postcode_error")
         else
           return server_error(e)
@@ -386,11 +380,6 @@ class FrontendService < Sinatra::Base
             } - #{t('services.getting_an_energy_certificate')} - #{
               t('layout.body.govuk')
             }"
-
-        begin
-          locals[:results] =
-            response.execute(params["postcode"])[:data][:assessors]
-
           erb_template = :find_non_domestic_assessor_by_postcode_results
         rescue StandardError => e
           case e
@@ -425,18 +414,7 @@ class FrontendService < Sinatra::Base
       } - #{t('layout.body.govuk')}"
 
     if params.key?("town") || params.key?("street_name")
-      @page_title =
-        "#{
-          t(
-            'find_non_dom_certificate_by_street_name_and_town_results.top_heading',
-          )
-        } - #{t('services.find_an_energy_certificate')} - #{
-          t('layout.body.govuk')
-        }"
-
       begin
-        erb_template = :find_non_dom_certificate_by_street_name_and_town_results
-
         locals[:results] =
           @container
             .get_object(:find_certificate_by_street_name_and_town_use_case)
@@ -463,7 +441,6 @@ class FrontendService < Sinatra::Base
         case e
         when Errors::AllParamsMissing
           status 400
-          erb_template = :find_non_dom_certificate_by_street_name_and_town
           @errors[:street_name] =
             t(
               "find_non_dom_certificate_by_street_name_and_town.street_name_missing",
@@ -472,16 +449,13 @@ class FrontendService < Sinatra::Base
             t("find_non_dom_certificate_by_street_name_and_town.town_missing")
         when Errors::StreetNameMissing
           status 400
-          erb_template = :find_non_dom_certificate_by_street_name_and_town
           @errors[:street_name] =
             t("find_certificate_by_street_name_and_town.street_name_missing")
         when Errors::TownMissing
           status 400
-          erb_template = :find_non_dom_certificate_by_street_name_and_town
           @errors[:town] =
             t("find_certificate_by_street_name_and_town.town_missing")
         when Errors::CertificateNotFound
-          erb_template = :find_non_dom_certificate_by_street_name_and_town
           @errors[:generic] = {
             error:
               "find_non_dom_certificate_by_street_name_and_town.no_such_address.error",
@@ -514,9 +488,9 @@ class FrontendService < Sinatra::Base
       begin
         # If we can find the assessment then we redirect directly to it
         fetched_assessment_id =
-          @container.get_object(:find_certificate_by_id_use_case).execute(
-            params["reference_number"],
-          )[
+          @container
+            .get_object(:find_certificate_by_id_use_case)
+            .execute(params["reference_number"])[
             :data
           ][
             :assessments
@@ -530,11 +504,9 @@ class FrontendService < Sinatra::Base
         case e
         when Errors::ReferenceNumberNotValid
           status 400
-          erb_template = :find_certificate_by_reference_number
           @errors[:reference_number] =
             t("find_certificate_by_reference_number.reference_number_not_valid")
         when Errors::CertificateNotFound
-          erb_template = :find_certificate_by_reference_number
           @errors[:reference_number] =
             t(
               "find_certificate_by_reference_number.reference_number_not_registered",
@@ -562,9 +534,9 @@ class FrontendService < Sinatra::Base
     if params.key?("town") || params.key?("street_name")
       begin
         locals[:results] =
-          @container.get_object(
-            :find_certificate_by_street_name_and_town_use_case,
-          ).execute(params["street_name"], params["town"], %w[RdSAP SAP])[
+          @container
+            .get_object(:find_certificate_by_street_name_and_town_use_case)
+            .execute(params["street_name"], params["town"], %w[RdSAP SAP])[
             :data
           ][
             :assessments
@@ -587,16 +559,13 @@ class FrontendService < Sinatra::Base
             t("find_certificate_by_street_name_and_town.town_missing")
         when Errors::StreetNameMissing
           status 400
-          erb_template = :find_certificate_by_street_name_and_town
           @errors[:street_name] =
             t("find_certificate_by_street_name_and_town.street_name_missing")
         when Errors::TownMissing
           status 400
-          erb_template = :find_certificate_by_street_name_and_town
           @errors[:town] =
             t("find_certificate_by_street_name_and_town.town_missing")
         when Errors::CertificateNotFound
-          erb_template = :find_certificate_by_street_name_and_town
           @errors[:generic] = {
             error:
               "find_certificate_by_street_name_and_town.no_such_address.error",
