@@ -699,7 +699,7 @@ cy:
         chart_description: "Eich cyfraddiad ynni yw %{current_energy_efficiency_band}(%{current_energy_efficiency_rating}) a'ch potensial yw %{potential_energy_efficiency_band}(%{potential_energy_efficiency_rating})"
         body1: "Mae'r graff yn dangos effeithlonrwydd ynni'r eiddo hwn ar hyn o bryd a'i effeithlonrwydd ynni posibl."
         body2: "Mae cyfraddiad yn cael ei roi i bob eiddo, gan amrywio rhwng A+ (y mwyaf effeithlon) ac G (y lleiaf effeithlon)."
-        body3: "Mae pob eiddo'n cael sgôr hefyd. Uchaf i gyd yw'r rhif, isaf i gyd mae eich allyriadau carbon deuocsid (CO2) yn debygol o fod."
+        body3: "Mae pob eiddo'n cael sgôr hefyd. Uchaf i gyd yw'r sgôr, isaf i gyd mae'ch biliau tanwydd yn debygol o fod."
         body4: "Cyfraddiad a sgôr ynni cyfartalog eiddo yng Nghymru a Lloegr yw D (60)."
         ni_average_rating: "Y sgôr ynni ar gyfartaledd a sgôr eiddo yng Ngogledd Iwerddon yw D (60)."
       breakdown:
