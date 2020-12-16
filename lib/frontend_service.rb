@@ -265,7 +265,7 @@ class FrontendService < Sinatra::Base
   end
 
   get "/schemes" do
-    @page_title = t("schemes.head.title")
+    @page_title = t("schemes.top_heading")
     erb :schemes, layout: :layout
   end
 
