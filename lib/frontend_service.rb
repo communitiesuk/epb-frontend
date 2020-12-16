@@ -265,7 +265,7 @@ class FrontendService < Sinatra::Base
   end
 
   get "/schemes" do
-    @page_title = t("schemes.top_heading")
+    @page_title = "#{t('schemes.top_heading')} - #{t('layout.body.govuk')}"
     erb :schemes, layout: :layout
   end
 
