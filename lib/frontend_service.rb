@@ -721,6 +721,7 @@ class FrontendService < Sinatra::Base
     pp e.backtrace if e.methods.include?(:backtrace)
     case e
     when Errors::AssessmentNotFound
+      @page_title = "#{t('error.error')}#{@page_title}"
       not_found
     else
       return server_error(e)
