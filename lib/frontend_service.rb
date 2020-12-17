@@ -744,6 +744,9 @@ class FrontendService < Sinatra::Base
     pp e.backtrace if e.methods.include?(:backtrace)
     case e
     when Errors::AssessmentNotFound
+      @page_title = "#{t('error.error')}- #{t('dec.top_heading')}- #{t('services.find_an_energy_certificate')} - #{
+      t('layout.body.govuk')
+      }"
       not_found
     else
       return server_error(e)
