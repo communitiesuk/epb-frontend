@@ -374,6 +374,10 @@ class FrontendService < Sinatra::Base
         case e
         when Errors::PostcodeNotValid
           status 400
+          @page_title =
+            "#{t('error.error')}- #{t('find_certificate_by_postcode.top_heading')} - #{
+              t('services.find_an_energy_certificate')
+              } - #{t('layout.body.govuk')}"
           @errors[:postcode] = t("validation_errors.postcode_error")
         else
           return server_error(e)
