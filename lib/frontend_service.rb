@@ -441,6 +441,10 @@ class FrontendService < Sinatra::Base
         case e
         when Errors::AllParamsMissing
           status 400
+          @page_title =
+            "#{t('error.error')}- #{t('find_non_dom_certificate_by_street_name_and_town.top_heading')} - #{
+              t('services.find_an_energy_certificate')
+              } - #{t('layout.body.govuk')}"
           @errors[:street_name] =
             t(
               "find_non_dom_certificate_by_street_name_and_town.street_name_missing",
@@ -449,13 +453,25 @@ class FrontendService < Sinatra::Base
             t("find_non_dom_certificate_by_street_name_and_town.town_missing")
         when Errors::StreetNameMissing
           status 400
+          @page_title =
+            "#{t('error.error')}- #{t('find_non_dom_certificate_by_street_name_and_town.top_heading')} - #{
+              t('services.find_an_energy_certificate')
+              } - #{t('layout.body.govuk')}"
           @errors[:street_name] =
             t("find_certificate_by_street_name_and_town.street_name_missing")
         when Errors::TownMissing
           status 400
+          @page_title =
+            "#{t('error.error')}- #{t('find_non_dom_certificate_by_street_name_and_town.top_heading')} - #{
+              t('services.find_an_energy_certificate')
+              } - #{t('layout.body.govuk')}"
           @errors[:town] =
             t("find_certificate_by_street_name_and_town.town_missing")
         when Errors::CertificateNotFound
+          @page_title =
+            "#{t('error.error')}- #{t('find_non_dom_certificate_by_street_name_and_town.top_heading')} - #{
+              t('services.find_an_energy_certificate')
+              } - #{t('layout.body.govuk')}"
           @errors[:generic] = {
             error:
               "find_non_dom_certificate_by_street_name_and_town.no_such_address.error",
