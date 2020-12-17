@@ -279,12 +279,12 @@ class FrontendService < Sinatra::Base
         when Errors::InvalidName
           status 400
           @page_title =
-            "#{t('error.error')}- #{t('find_assessor_by_name.top_heading')} – #{
+            "#{t('find_assessor_by_name.top_heading')} – #{
               t('services.getting_an_energy_certificate')
               } – #{t('layout.body.govuk')}"
           @errors[:name] = t("find_assessor_by_name.name_error")
         else
-          server_error(e)
+          return server_error(e)
         end
       end
     end
