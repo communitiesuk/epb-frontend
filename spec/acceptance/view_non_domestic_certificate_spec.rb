@@ -181,9 +181,15 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
         )
       end
 
-      it "shows the SVG title" do
+      it "shows the SVG alternate text title" do
         expect(response.body).to include(
-          '<title id="svg-title">This property’s energy rating is B (35)</title>',
+          '<title id="svg-title">Current energy efficiency chart</title>',
+        )
+      end
+
+      it "shows the SVG alternate text description" do
+        expect(response.body).to include(
+           '<desc id="svg-desc">This property’s current energy rating is B with a score of 35.</desc>'
         )
       end
 

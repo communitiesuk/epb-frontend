@@ -1,5 +1,6 @@
-<svg width="615" height="426" viewBox="0 0 615 426" xmlns="http://www.w3.org/2000/svg" style="max-width: 100%;" aria-labelledby="svg-title" role="img">
+<svg width="615" height="426" viewBox="0 0 615 426" xmlns="http://www.w3.org/2000/svg" style="max-width: 100%;" aria-labelledby="svg-title" aria-describedby="svg-desc" role="img">
   <title id="svg-title"><%= title %></title>
+  <desc id="svg-desc"><%= description %></desc>
   <%
 
     bands = {
@@ -155,19 +156,19 @@
     <% end %>
   <% end %>
 
-  <text x="0" y="0" class="letter">
+  <text role="presentation" aria-hidden="true" x="0" y="0" class="letter">
     <% bands.each do |key, settings| %>
       <tspan x="<%= 115 + (30 * settings[:position]) + 12 %>" y="<%= 75 + (50 * settings[:position]) - 11 %>"><%= key.upcase %></tspan>
     <% end %>
   </text>
 
-  <text x="0" y="0" class="small">
+  <text role="presentation" aria-hidden="true" x="0" y="0" class="small">
     <% bands.each_value do |settings| %>
       <tspan x="8" y="<%= 50 + (50 * settings[:position]) + 5 %>"><%= settings[:range] %></tspan>
     <% end %>
   </text>
 
-  <svg x="415" y="<%= 25 + bands[current_energy_efficiency_band.to_sym][:position] * 50 %>" width="110" height="50">
+  <svg role="presentation" aria-hidden="true" x="415" y="<%= 25 + bands[current_energy_efficiency_band.to_sym][:position] * 50 %>" width="110" height="50">
     <rect width="75" height="50" class="band-<%= current_energy_efficiency_band %>" x="25"></rect>
     <polygon points="0,25 25,50 25,0 0,25" class="band-<%= current_energy_efficiency_band %>"></polygon>
     <text x="25" y="32" class="current-potential-number"><%= current_energy_efficiency_rating %> |</text>

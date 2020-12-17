@@ -547,7 +547,8 @@ cy:
       rating_desc: "Mae cyfraddiad yn cael ei roi i bob eiddo, gan amrywio rhwng A+ (y mwyaf effeithlon) ac G (y lleiaf effeithlon)."
       score_desc: "Mae pob eiddo'n cael sgôr hefyd. Uchaf i gyd yw'r rhif, mwyaf i gyd o garbon deuocsid (CO2) mae'ch eiddo'n debygol o'i allyrru."
       svg:
-        "aria-label": "Cyfraddiad effeithlonrwydd ynni yr eiddo hwn yw s %{current_energy_efficiency_band} (%{current_energy_efficiency_rating})"
+        chart_title: "Current energy efficiency chart"
+        chart_description: "Cyfraddiad effeithlonrwydd ynni yr eiddo hwn yw s %{current_energy_efficiency_band} (%{current_energy_efficiency_rating})"
     sections:
       renting:
         title: "Rheolau ar osod yr eiddo hwn"
