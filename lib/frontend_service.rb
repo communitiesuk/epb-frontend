@@ -421,7 +421,7 @@ class FrontendService < Sinatra::Base
           case e
           when Errors::PostcodeNotRegistered
             @page_title =
-                "#{t('error.error')}- #{t('find_non_domestic_assessor_by_postcode.top_heading')} - #{
+              "#{t('error.error')}- #{t('find_non_domestic_assessor_by_postcode.top_heading')} - #{
                 t('services.getting_an_energy_certificate')
                 } - #{t('layout.body.govuk')}"
             locals[:results] = []
@@ -429,7 +429,7 @@ class FrontendService < Sinatra::Base
           when Errors::PostcodeNotValid
             status 400
             @page_title =
-                "#{t('error.error')}- #{t('find_non_domestic_assessor_by_postcode.top_heading')} - #{
+              "#{t('error.error')}- #{t('find_non_domestic_assessor_by_postcode.top_heading')} - #{
                 t('services.getting_an_energy_certificate')
                 } - #{t('layout.body.govuk')}"
             @errors[:postcode] = t("validation_errors.postcode_error")
@@ -440,7 +440,7 @@ class FrontendService < Sinatra::Base
       else
         status 400
         @page_title =
-            "#{t('error.error')}- #{t('find_non_domestic_assessor_by_postcode.top_heading')} - #{
+          "#{t('error.error')}- #{t('find_non_domestic_assessor_by_postcode.top_heading')} - #{
             t('services.getting_an_energy_certificate')
             } - #{t('layout.body.govuk')}"
         @errors[:postcode] = t("validation_errors.postcode_error")
