@@ -315,6 +315,10 @@ class FrontendService < Sinatra::Base
       end
 
       if request.post? && params["property_type"].nil?
+        @page_title =
+            "#{t('error.error')}- #{t('find_an_assessor.property_type.question_title')} – #{
+            t('services.find_an_energy_certificate')
+            } – #{t('layout.body.govuk')}"
         @errors = {
           property_type:
             t(
