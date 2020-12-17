@@ -220,7 +220,7 @@ class FrontendService < Sinatra::Base
           case e
           when Errors::PostcodeNotRegistered
             @page_title =
-              "#{t('error.error')}- #{t('find_assessor_by_postcode.top_heading')} – #{
+              "#{t('error.error')}- #{t('find_assessor_by_postcode_results.top_heading')} – #{
                 t('services.getting_an_energy_certificate')
                 } – #{t('layout.body.govuk')}"
             locals[:results] = []
