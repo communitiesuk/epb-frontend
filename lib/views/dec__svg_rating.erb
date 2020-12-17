@@ -4,9 +4,12 @@
      xmlns="http://www.w3.org/2000/svg"
      style="max-width: 100%;"
      aria-labelledby="svg-title"
+     aria-describedby="svg-desc"
      role="img"
      class="govuk-!-margin-bottom-5">
   <title id="svg-title"><%= title %></title>
+  <desc id="svg-desc"><%= description %></desc>
+
   <%
 
     bands = {
@@ -129,33 +132,33 @@
     </rect>
   <% end %>
 
-  <text x="0" y="0" class="letter">
+  <text role="presentation" aria-hidden="true" x="0" y="0" class="letter">
     <% bands.each do |key, settings| %>
       <tspan x="<%= 95+(40*settings[:position])+12 %>" y="<%= 75+(50*settings[:position])-11 %>"><%= key.upcase %></tspan>
     <% end %>
   </text>
 
-  <text x="0" y="0" class="small">
+  <text role="presentation" aria-hidden="true" x="0" y="0" class="small">
     <% bands.each do |key, settings| %>
       <tspan x="8" y="<%= 50+(50*settings[:position])+5 %>"><%= settings[:range] %></tspan>
     <% end %>
   </text>
 
-  <text x="8" y="15" class="small" dominant-baseline="middle"><%= t("rating.score") %></text>
+  <text role="presentation" aria-hidden="true" x="8" y="15" class="small" dominant-baseline="middle"><%= t("rating.score") %></text>
 
-  <text x="85" y="15" class="small" dominant-baseline="middle"><%= t("rating.operational_rating") %></text>
+  <text role="presentation" aria-hidden="true" x="85" y="15" class="small" dominant-baseline="middle"><%= t("rating.operational_rating") %></text>
 
-  <text x="470" y="15" class="small" text-anchor="middle" dominant-baseline="middle"><%= t("rating.this_building") %></text>
+  <text role="presentation" aria-hidden="true" x="470" y="15" class="small" text-anchor="middle" dominant-baseline="middle"><%= t("rating.this_building") %></text>
 
-  <text x="570" y="15" class="small" text-anchor="middle" dominant-baseline="middle"><%= t("rating.typical") %></text>
+  <text role="presentation" aria-hidden="true" x="570" y="15" class="small" text-anchor="middle" dominant-baseline="middle"><%= t("rating.typical") %></text>
 
   <line x1="0" y1="235" x2="558" y2="235" stroke-dasharray="3,3" style="stroke:black;stroke-width:2;"></line>
   <line x1="625" y1="235" x2="598" y2="235" stroke-dasharray="3,3" style="stroke:black;stroke-width:2;"></line>
-  <text x="0" y="0" class="typical">
+  <text role="presentation" aria-hidden="true" x="0" y="0" class="typical">
     <tspan x="560" y="240">100</tspan>
   </text>
 
-  <svg x="420" y="<%= 25+bands[energy_efficiency_band.to_sym][:position]*50 %>" width="90" height="50">
+  <svg role="presentation" aria-hidden="true" x="420" y="<%= 25+bands[energy_efficiency_band.to_sym][:position]*50 %>" width="90" height="50">
     <rect width="75" height="50" class="band-<%= energy_efficiency_band %>" x="25"></rect>
     <polygon points="0,25 25,50 25,0 0,25" class="band-<%= energy_efficiency_band %>"></polygon>
     <text x="60%" y="50%" dominant-baseline="middle" text-anchor="middle" class="govuk-!-font-weight-bold"><%= energy_efficiency_rating %> | <%= energy_efficiency_band.upcase %></text>
