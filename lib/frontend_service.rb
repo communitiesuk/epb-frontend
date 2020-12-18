@@ -576,7 +576,7 @@ class FrontendService < Sinatra::Base
             t("find_certificate_by_reference_number.reference_number_not_valid")
         when Errors::CertificateNotFound
           @page_title =
-            "#{t('error.error')}- #{t('find_certificate_by_reference_number.top_heading')} - #{
+            "#{t('find_certificate_by_reference_number.top_heading')} - #{
               t('services.find_an_energy_certificate')
               } - #{t('layout.body.govuk')}"
           @errors[:reference_number] =

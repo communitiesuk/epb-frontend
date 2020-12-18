@@ -349,7 +349,7 @@ describe "Acceptance::Certificate" do
 
         it "displays the find a certificate page heading" do
           expect(response.body).to include(
-            "Find an energy performance certificate",
+            "Find an energy performance certificate (EPC) by certificate number",
           )
         end
 
