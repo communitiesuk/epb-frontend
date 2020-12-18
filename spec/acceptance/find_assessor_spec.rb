@@ -452,7 +452,7 @@ describe "Acceptance::Assessor", type: :feature do
 
       it "displays the Find an assessor by name tab heading" do
         expect(response.body).to include(
-          "<title>Find an assessor by name – Getting an energy certificate – GOV.UK</title>",
+          "<title>Error: - Find an assessor by name – Getting an energy certificate – GOV.UK</title>",
         )
       end
 
@@ -608,7 +608,13 @@ describe "Acceptance::Assessor", type: :feature do
         end
 
         it "displays the 500 error page heading" do
-          expect(response.body).to include("Try again later.")
+          expect(response.body).to include("Sorry, there is a problem with the service")
+        end
+
+        it "displays the 500 error page tab title" do
+          expect(response.body).to include(
+                                       "<title>Error: - Sorry, there is a problem with the service - GOV.UK</title>",
+                                       )
         end
 
         it "displays error page body" do
