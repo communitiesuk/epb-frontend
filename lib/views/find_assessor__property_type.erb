@@ -7,7 +7,7 @@
       </h1>
     </legend>
     <div class="govuk-form-group<% if errors[:property_type] %> govuk-form-group--error<% end %>">
-    <input type="hidden" name="lang" value=<%= lang %> />
+    <input type="hidden" name="lang" value="<%= I18n.locale %>" />
       <% if errors[:property_type] %>
           <span class="govuk-error-message">
             <span class="govuk-visually-hidden"><%= t('error.error') %></span><%== errors[:property_type] %>
