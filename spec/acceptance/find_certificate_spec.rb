@@ -58,7 +58,7 @@ describe "Acceptance::Certificate" do
 
       it "has a tab content that matches the page heading" do
         expect(response.body).to include(
-          " <title>Error: - Find an energy performance certificate (EPC) by postcode - Find an energy certificate - GOV.UK</title>",
+          " <title>Error: Find an energy performance certificate (EPC) by postcode - Find an energy certificate - GOV.UK</title>",
         )
       end
 

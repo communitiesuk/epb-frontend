@@ -63,7 +63,7 @@ describe "Acceptance::Assessor", type: :feature do
 
       it "displays the find an assessor by postcode tab heading" do
         expect(response.body).to include(
-          "<title>Error: - Find an assessor by postcode – Getting an energy certificate – GOV.UK</title>",
+          "<title>Error: Find an assessor by postcode – Getting an energy certificate – GOV.UK</title>",
         )
       end
 
@@ -90,7 +90,7 @@ describe "Acceptance::Assessor", type: :feature do
 
       it "displays the find an assessor by postcode tab heading" do
         expect(response.body).to include(
-          "<title>Error: - Find an assessor by postcode – Getting an energy certificate – GOV.UK</title>",
+          "<title>Error: Find an assessor by postcode – Getting an energy certificate – GOV.UK</title>",
         )
       end
 
@@ -117,7 +117,7 @@ describe "Acceptance::Assessor", type: :feature do
 
       it "displays the find an assessor by postcode tab heading" do
         expect(response.body).to include(
-          "<title>Error: - Find an assessor by postcode – Getting an energy certificate – GOV.UK</title>",
+          "<title>Error: Find an assessor by postcode – Getting an energy certificate – GOV.UK</title>",
         )
       end
 
@@ -144,7 +144,7 @@ describe "Acceptance::Assessor", type: :feature do
 
       it "displays the find an assessor by postcode tab heading" do
         expect(response.body).to include(
-          "<title>Error: - Find an assessor by postcode – Getting an energy certificate – GOV.UK</title>",
+          "<title>Error: Find an assessor by postcode – Getting an energy certificate – GOV.UK</title>",
         )
       end
 
@@ -393,7 +393,7 @@ describe "Acceptance::Assessor", type: :feature do
 
         it "displays the 500 error page tab title" do
           expect(response.body).to include(
-                                       "<title>Error: - Sorry, there is a problem with the service - GOV.UK</title>",
+                                       "<title>Error: Sorry, there is a problem with the service - GOV.UK</title>",
                                        )
         end
 
@@ -452,7 +452,7 @@ describe "Acceptance::Assessor", type: :feature do
 
       it "displays the Find an assessor by name tab heading" do
         expect(response.body).to include(
-                                     "<title>Error: - Find an assessor by name – Getting an energy certificate – GOV.UK</title>",
+                                     "<title>Error: Find an assessor by name – Getting an energy certificate – GOV.UK</title>",
                                      )
       end
 
