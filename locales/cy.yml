@@ -346,6 +346,10 @@ cy:
 
   find_certificate_by_postcode_results:
     top_heading: "Chwiliwch am dystysgrif perfformiad ynni (EPC)"
+    expired_epc_availablility: "Mae rhai EPCs sydd wedi dod i ben yn dal i gael eu hychwanegu at y gwasanaeth. Dylai'r holl dystysgrifau ac adroddiadau fod ar gael erbyn mis Ionawr 2021."
+    contact_support_part_one: "Os na allwch chi ddod o hyd i EPC a gyhoeddwyd o fewn y 10 mlynedd diwethaf, cysylltwch â ni ar "
+    contact_support_part_two: "neu ffoniwch ein desg gymorth ar 020 3829 0748 (dydd Llun i ddydd Gwener, 9am - 5pm)."
+    mhclg_support_email: 'mhclg.digital-services@communities.gov.uk'
     no_epc:
       get_a_new_one: "Os nad oes gan eich eiddo chi EPC neu os yw wedi dod i ben, fe allwch chi"
       get_a_new_one_link: "sicrhau tystysgrif ynni newydd"
@@ -416,6 +420,10 @@ cy:
 
   find_certificate_by_street_name_and_town_results:
     top_heading: "Chwiliwch am dystysgrif perfformiad ynni (EPC)"
+    expired_epc_availablility: "Mae rhai EPCs sydd wedi dod i ben yn dal i gael eu hychwanegu at y gwasanaeth. Dylai'r holl dystysgrifau ac adroddiadau fod ar gael erbyn mis Ionawr 2021."
+    contact_support_part_one: "Os na allwch chi ddod o hyd i EPC a gyhoeddwyd o fewn y 10 mlynedd diwethaf, cysylltwch â ni ar "
+    contact_support_part_two: "neu ffoniwch ein desg gymorth ar 020 3829 0748 (dydd Llun i ddydd Gwener, 9am - 5pm)."
+    mhclg_support_email: 'mhclg.digital-services@communities.gov.uk'
     list: "1-%{length} o %{length} o ganlyniadau yn cyfateb i %{query}"
     table:
       address: "Cyfeiriad"
@@ -425,6 +433,10 @@ cy:
 
   find_non_dom_certificate_by_street_name_and_town_results:
     top_heading: "Chwiliwch am dystysgrifau ynni ac adroddiadau"
+    expired_epc_availablility: "Mae rhai tystysgrifau ac adroddiadau sydd wedi dod i ben yn dal i gael eu hychwanegu at y gwasanaeth. Dylai'r holl dystysgrifau ac adroddiadau fod ar gael erbyn mis Ionawr 2021."
+    contact_support_part_one: "Os na allwch chi ddod o hyd i dystysgrif neu adroddiad a gyhoeddwyd o fewn y 10 mlynedd diwethaf, cysylltwch â ni ar "
+    contact_support_part_two: "neu ffoniwch ein desg gymorth ar 020 3829 0748 (dydd Llun i ddydd Gwener, 9am - 5pm)."
+    mhclg_support_email: 'mhclg.digital-services@communities.gov.uk'
     list: "%{length} o dystysgrifau ac adroddiadau ar gyfer %{query}"
     table:
       address: "Cyfeiriad"
@@ -451,6 +463,10 @@ cy:
 
   find_non_dom_certificate_by_postcode_results:
     top_heading: "Chwiliwch am dystysgrifau ynni ac adroddiadau"
+    expired_epc_availablility: "Mae rhai tystysgrifau ac adroddiadau sydd wedi dod i ben yn dal i gael eu hychwanegu at y gwasanaeth. Dylai'r holl dystysgrifau ac adroddiadau fod ar gael erbyn mis Ionawr 2021."
+    contact_support_part_one: "Os na allwch chi ddod o hyd i dystysgrif neu adroddiad a gyhoeddwyd o fewn y 10 mlynedd diwethaf, cysylltwch â ni ar "
+    contact_support_part_two: "neu ffoniwch ein desg gymorth ar 020 3829 0748 (dydd Llun i ddydd Gwener, 9am - 5pm)."
+    mhclg_support_email: 'mhclg.digital-services@communities.gov.uk'
     no_epc:
       get_a_new_one: "Os nad oes gan eich eiddo dystysgrif angenrheidiol neu os yw'r dystysgrif wedi dod i ben, fe allwch chi"
       get_a_new_one_link: "sicrhau tystysgrif ynni newydd"
