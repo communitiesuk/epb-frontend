@@ -328,7 +328,7 @@ class FrontendService < Sinatra::Base
       end
 
       @page_title =
-        "#{t('find_a_certificate.property_type.question_title')} – #{
+        "#{t('find_an_assessor.property_type.question_title')} – #{
           t('services.find_an_energy_certificate')
         } – #{t('layout.body.govuk')}"
 
