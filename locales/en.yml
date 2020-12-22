@@ -712,8 +712,8 @@ en:
           text: 'This property’s current energy rating is  %{current_energy_efficiency_band}. It has the potential to be %{potential_energy_efficiency_band}.'
           cta: 'See how to improve this property’s energy performance.'
           url: '#recommendations'
-        chart_title: 'Current and potential energy efficiency chart'
-        chart_description: 'Your current energy rating is %{current_energy_efficiency_band} with a score of %{current_energy_efficiency_rating}. Your potential energy rating is %{potential_energy_efficiency_band} with a score of %{potential_energy_efficiency_rating}.'
+        chart_title: 'Energy efficiency chart'
+        chart_description: "This property's current energy rating is %{current_energy_efficiency_band} with a score of %{current_energy_efficiency_rating}. It has a potential energy rating of %{potential_energy_efficiency_band} with a score of %{potential_energy_efficiency_rating}."
         body1: 'The graph shows this property’s current and potential energy efficiency.'
         body2: 'Properties are given a rating from A (most efficient) to G (least efficient).'
         body3: 'Properties are also given a score. The higher the number the lower your fuel bills are likely to be.'

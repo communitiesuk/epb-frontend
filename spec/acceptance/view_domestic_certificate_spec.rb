@@ -111,13 +111,13 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
 
     it "shows the SVG alternate text title" do
       expect(response.body).to include(
-        '<title id="svg-title">Current and potential energy efficiency chart</title>',
+        '<title id="svg-title">Energy efficiency chart</title>',
       )
     end
 
     it "shows the SVG alternate text description" do
       expect(response.body).to include(
-        '<desc id="svg-desc">Your current energy rating is B with a score of 90. Your potential energy rating is A with a score of 99.</desc>',
+        '<desc id="svg-desc">This property\'s current energy rating is B with a score of 90. It has a potential energy rating of A with a score of 99.</desc>',
       )
     end
 
