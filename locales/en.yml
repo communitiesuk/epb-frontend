@@ -716,7 +716,7 @@ en:
         chart_description: 'Your current energy rating is %{current_energy_efficiency_band} with a score of %{current_energy_efficiency_rating}. Your potential energy rating is %{potential_energy_efficiency_band} with a score of %{potential_energy_efficiency_rating}.'
         body1: 'The graph shows this property’s current and potential energy efficiency.'
         body2: 'Properties are given a rating from A (most efficient) to G (least efficient).'
-        body3: 'Properties are also given a score. The higher the rating the lower your fuel bills are likely to be.'
+        body3: 'Properties are also given a score. The higher the number the lower your fuel bills are likely to be.'
         body4: 'The average energy rating and score for a property in England and Wales are D (60).'
         ni_average_rating: 'The average energy rating and score for a property in Northern Ireland are D (60).'
       breakdown:
