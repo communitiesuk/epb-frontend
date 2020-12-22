@@ -54,6 +54,10 @@ class FrontendService < Sinatra::Base
     lambda do
       query = params.map { |key, value| "#{key}=#{value}" }.join("&")
       @errors = {}
+      @page_title =
+        "#{t('find_an_assessor.property_type.question_title')} – #{
+          t('services.getting_an_energy_certificate')
+        } – #{t('layout.body.govuk')}"
 
       if params["property_type"] == "domestic"
         redirect "/find-an-assessor/search-by-postcode?#{query}"
@@ -68,12 +72,9 @@ class FrontendService < Sinatra::Base
           property_type:
             t("find_an_assessor.property_type.errors.no_property_type_selected"),
         }
+        @page_title = "#{t('error.error')}#{@page_title}"
       end
 
-      @page_title =
-        "#{t('find_an_assessor.property_type.question_title')} – #{
-          t('services.getting_an_energy_certificate')
-        } – #{t('layout.body.govuk')}"
       show(:find_assessor__property_type, { lang: params[:lang] })
     end
 
@@ -305,6 +306,10 @@ class FrontendService < Sinatra::Base
     lambda do
       query = params.map { |key, value| "#{key}=#{value}" }.join("&")
       @errors = {}
+      @page_title =
+        "#{t('find_an_assessor.property_type.question_title')} – #{
+          t('services.find_an_energy_certificate')
+        } – #{t('layout.body.govuk')}"
 
       if params["property_type"] == "domestic"
         redirect "/find-a-certificate/search-by-postcode?#{query}"
@@ -315,22 +320,15 @@ class FrontendService < Sinatra::Base
       end
 
       if request.post? && params["property_type"].nil?
-        @page_title =
-            "#{t('error.error')}#{t('find_an_assessor.property_type.question_title')} – #{
-            t('services.find_an_energy_certificate')
-            } – #{t('layout.body.govuk')}"
         @errors = {
           property_type:
             t(
               "find_a_certificate.property_type.errors.no_property_type_selected",
             ),
         }
-      end
 
-      @page_title =
-        "#{t('find_an_assessor.property_type.question_title')} – #{
-          t('services.find_an_energy_certificate')
-        } – #{t('layout.body.govuk')}"
+        @page_title = "#{t('error.error')}#{@page_title}"
+      end
 
       show(:find_certificate__property_type, { lang: params[:lang] })
     end
