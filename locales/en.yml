@@ -563,7 +563,7 @@ en:
       rating_desc: 'Properties are given a rating from A+ (most efficient) to G (least efficient).'
       score_desc: 'Properties are also given a score. The larger the number, the more carbon dioxide (CO2) your property is likely to emit.'
       svg:
-        chart_title: "Current energy efficiency chart"
+        chart_title: "Energy efficiency chart"
         chart_description: "This property’s current energy rating is %{current_energy_efficiency_band} with a score of %{current_energy_efficiency_rating}."
     sections:
       renting:
