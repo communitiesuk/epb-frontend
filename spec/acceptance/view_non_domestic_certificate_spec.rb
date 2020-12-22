@@ -183,7 +183,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
 
       it "shows the SVG alternate text title" do
         expect(response.body).to include(
-          '<title id="svg-title">Current energy efficiency chart</title>',
+          '<title id="svg-title">Energy efficiency chart</title>',
         )
       end
 

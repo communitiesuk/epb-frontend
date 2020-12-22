@@ -563,8 +563,8 @@ cy:
       rating_desc: "Mae cyfraddiad yn cael ei roi i bob eiddo, gan amrywio rhwng A+ (y mwyaf effeithlon) ac G (y lleiaf effeithlon)."
       score_desc: "Mae pob eiddo'n cael sgôr hefyd. Uchaf i gyd yw'r rhif, mwyaf i gyd o garbon deuocsid (CO2) mae'ch eiddo'n debygol o'i allyrru."
       svg:
-        chart_title: "Current energy efficiency chart"
-        chart_description: "Cyfraddiad effeithlonrwydd ynni yr eiddo hwn yw s %{current_energy_efficiency_band} (%{current_energy_efficiency_rating})"
+        chart_title: "Siart effeithlonrwydd ynni"
+        chart_description: "Cyfraddiad ynni cyfredol yr eiddo hwn yw %{current_energy_efficiency_band} gyda sgôr o %{current_energy_efficiency_rating}."
     sections:
       renting:
         title: "Rheolau ar osod yr eiddo hwn"
@@ -712,8 +712,8 @@ cy:
           text: "Cyfraddiad effeithlonrwydd ynni presennol yr eiddo hwn yw %{current_energy_efficiency_band}. Mae ganddo'r potensial i fod yn %{potential_energy_efficiency_band}."
           cta: "Gweld sut i wella perfformiad ynni'r eiddo hwn."
           url: "#argymhellion"
-        chart_title: "Siart effeithlonrwydd ynni cyfredol a phosibl"
-        chart_description: "Eich cyfraddiad ynni presennol yw %{current_energy_efficiency_band} gyda sgôr o %{current_energy_efficiency_rating}. Eich cyfraddiad ynni posibl yw %{potential_energy_efficiency_band} gyda sgôr o %{potential_energy_efficiency_rating}."
+        chart_title: "Siart effeithlonrwydd ynni"
+        chart_description: "Cyfraddiad ynni cyfredol yr eiddo hwn yw D %{current_energy_efficiency_band} gyda sgôr o %{current_energy_efficiency_rating}. Mae ganddo gyfraddiad ynni posibl o %{potential_energy_efficiency_band} gyda sgôr o %{potential_energy_efficiency_rating}."
         body1: "Mae'r graff yn dangos effeithlonrwydd ynni'r eiddo hwn ar hyn o bryd a'i effeithlonrwydd ynni posibl."
         body2: "Mae cyfraddiad yn cael ei roi i bob eiddo, gan amrywio rhwng A+ (y mwyaf effeithlon) ac G (y lleiaf effeithlon)."
         body3: "Mae eiddo yn cael sgôr hefyd. Uchaf i gyd yw'r rhif, isaf i gyd mae eich biliau tanwydd yn debygol o fod."
@@ -1269,8 +1269,8 @@ cy:
         emissions_text: "Mae cyfraddiad gweithredol perfformiad ynni'r adeilad wedi'i seilio ar ei allyriadau carbon deuocsid (CO2) am y flwyddyn ddiwethaf"
         text: "Mae sgôr a chyfraddiad gweithredol yn cael eu rhoi i'r eiddo ar raddfa rhwng A (yr allyriadau isaf) i G (yr allyriadau uchaf)"
         typical_text: "Sgôr nodweddiadol adeilad cyhoeddus yw 100. Mae'r sgôr nodweddiadol hon yn rhoi cyfraddiad gweithredol o D."
-        chart_title: 'Operational energy efficiency chart'
-        chart_description: 'Cyfraddiad gweithredol yr adeilad hwn yw %{energy_efficiency_band} (%{energy_efficiency_rating}).'
+        chart_title: 'Siart effeithlonrwydd ynni gweithredol'
+        chart_description: 'Cyfraddiad ynni cyfredol yr adeilad hwn yw %{energy_efficiency_band} gyda sgôr o %{energy_efficiency_rating}.'
         guidance_text: "Gallwch ddarllen %{link}."
         cta: "canllawiau ar DECs ac adroddiadau cynghori ar adeiladau cyhoeddus"
         url: "https://www.gov.uk/government/publications/display-energy-certificates-and-advisory-reports-for-public-buildings"

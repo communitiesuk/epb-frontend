@@ -15,6 +15,18 @@ describe "Acceptance::Assessor", type: :feature do
         )
       end
     end
+
+    context "when submitting without deciding a property type" do
+      let(:response) do
+        post "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/type-of-property"
+      end
+
+      it "displays the tab value the same as the main header value" do
+        expect(response.body).to include(
+          "<title>Error: What type of property is the certificate for? – Getting an energy certificate – GOV.UK</title>",
+        )
+      end
+    end
   end
 
   describe ".get getting-new-energy-certificate/find-an-assessor/search-by-postcode" do
