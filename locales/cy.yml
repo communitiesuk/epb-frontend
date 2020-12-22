@@ -1269,8 +1269,8 @@ cy:
         emissions_text: "Mae cyfraddiad gweithredol perfformiad ynni'r adeilad wedi'i seilio ar ei allyriadau carbon deuocsid (CO2) am y flwyddyn ddiwethaf"
         text: "Mae sgôr a chyfraddiad gweithredol yn cael eu rhoi i'r eiddo ar raddfa rhwng A (yr allyriadau isaf) i G (yr allyriadau uchaf)"
         typical_text: "Sgôr nodweddiadol adeilad cyhoeddus yw 100. Mae'r sgôr nodweddiadol hon yn rhoi cyfraddiad gweithredol o D."
-        chart_title: 'Operational energy efficiency chart'
-        chart_description: 'Cyfraddiad gweithredol yr adeilad hwn yw %{energy_efficiency_band} (%{energy_efficiency_rating}).'
+        chart_title: 'Siart effeithlonrwydd ynni gweithredol'
+        chart_description: 'Cyfraddiad ynni cyfredol yr adeilad hwn yw %{energy_efficiency_band} gyda sgôr o %{energy_efficiency_rating}.'
         guidance_text: "Gallwch ddarllen %{link}."
         cta: "canllawiau ar DECs ac adroddiadau cynghori ar adeiladau cyhoeddus"
         url: "https://www.gov.uk/government/publications/display-energy-certificates-and-advisory-reports-for-public-buildings"
