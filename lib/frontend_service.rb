@@ -307,7 +307,7 @@ class FrontendService < Sinatra::Base
       query = params.map { |key, value| "#{key}=#{value}" }.join("&")
       @errors = {}
       @page_title =
-        "#{t('find_an_assessor.property_type.question_title')} – #{
+        "#{t('find_a_certificate.property_type.question_title')} – #{
           t('services.find_an_energy_certificate')
         } – #{t('layout.body.govuk')}"
 
