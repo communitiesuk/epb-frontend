@@ -337,7 +337,6 @@
                             <td style="text-align: right">
                               <img
                                 class="energy-rating-arrow"
-                                alt="<%= t('dec.sections.rating.chart_title', energy_efficiency_band: assessment[:energyEfficiencyBand], energy_efficiency_rating: assessment[:energyEfficiencyRating]) %>"
                                 src="data:image/svg+xml;base64,<%== Base64.encode64(erb :printable_dec__svg_arrow, locals: {
                                   title: t('dec.sections.rating.chart_title', energy_efficiency_band: assessment[:energyEfficiencyBand], energy_efficiency_rating: assessment[:energyEfficiencyRating]),
                                   energy_efficiency_band: previous_rating[:energyEfficiencyBand],
