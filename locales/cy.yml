@@ -394,7 +394,7 @@ cy:
     street_name_question: "Rhowch y stryd"
     street_name_hint: "Er enghraifft Primrose Street"
     town_question: "Rhowch y dref neu'r ddinas"
-    town_hint: "Er enghraifft Caerdydd"
+    town_hint: "Er enghraifft Bournemouth"
     street_name_missing: "Rhowch enw'r stryd"
     town_missing: "Rhowch y dref neu'r ddinas"
     no_network:
