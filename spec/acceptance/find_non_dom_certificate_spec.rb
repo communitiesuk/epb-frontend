@@ -419,6 +419,12 @@ describe "Acceptance::Non Domestic Certificate" do
         )
         expect(response.body).to include("Enter a 20-digit certificate number")
       end
+
+      it "displays an error in the title" do
+        expect(response.body).to include(
+          '<title>Error: Find energy certificates and reports by their number – Find an energy certificate – GOV.UK</title>',
+        )
+      end
     end
 
     context "when entering a valid certificate number" do
@@ -445,12 +451,12 @@ describe "Acceptance::Non Domestic Certificate" do
       context "where no certificates are present" do
         before do
           FindCertificate::NoCertificatesStub.search_by_id(
-            "1234-5678-9101-1120",
+            "1234-5678-9101-1120-1234",
           )
         end
 
         let(:response) do
-          get "http://find-energy-certificate.local.gov.uk/find-a-non-domestic-certificate/search-by-reference-number?reference_number=1234-5678-9101-1120"
+          get "http://find-energy-certificate.local.gov.uk/find-a-non-domestic-certificate/search-by-reference-number?reference_number=1234-5678-9101-1120-1234"
         end
 
         it "returns status 200" do
@@ -466,6 +472,12 @@ describe "Acceptance::Non Domestic Certificate" do
         it "explains that no certificates are present" do
           expect(response.body).to include(
             "A certificate was not found with this certificate number",
+          )
+        end
+
+        it "displays an error in the title" do
+          expect(response.body).to include(
+            '<title>Error: Find energy certificates and reports by their number – Find an energy certificate – GOV.UK</title>',
           )
         end
       end

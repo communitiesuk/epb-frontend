@@ -563,20 +563,13 @@ class FrontendService < Sinatra::Base
           ]
         redirect "/energy-certificate/#{fetched_assessment_id}", 303
       rescue StandardError => e
+        @page_title = "#{t('error.error')}#{@page_title}"
         case e
         when Errors::ReferenceNumberNotValid
           status 400
-          @page_title =
-            "#{t('error.error')}#{t('find_certificate_by_reference_number.top_heading')} - #{
-              t('services.find_an_energy_certificate')
-              } - #{t('layout.body.govuk')}"
           @errors[:reference_number] =
             t("find_certificate_by_reference_number.reference_number_not_valid")
         when Errors::CertificateNotFound
-          @page_title =
-            "#{t('find_certificate_by_reference_number.top_heading')} - #{
-              t('services.find_an_energy_certificate')
-              } - #{t('layout.body.govuk')}"
           @errors[:reference_number] =
             t(
               "find_certificate_by_reference_number.reference_number_not_registered",
