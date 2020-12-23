@@ -247,9 +247,9 @@
                   <td>
                     <img
                       class="energy-rating-chart-printable-dec"
-                      alt="<%= t('dec.sections.rating.svg_title', energy_efficiency_band: assessment[:energyEfficiencyBand], energy_efficiency_rating: assessment[:energyEfficiencyRating]) %>"
+                      alt="<%= t('dec.sections.rating.chart_title', energy_efficiency_band: assessment[:energyEfficiencyBand], energy_efficiency_rating: assessment[:energyEfficiencyRating]) %>"
                       src="data:image/svg+xml;base64,<%== Base64.encode64(erb :printable_dec__svg_rating, locals: {
-                        title: t('dec.sections.rating.svg_title', energy_efficiency_band: assessment[:energyEfficiencyBand], energy_efficiency_rating: assessment[:energyEfficiencyRating]),
+                        title: t('dec.sections.rating.chart_title', energy_efficiency_band: assessment[:energyEfficiencyBand], energy_efficiency_rating: assessment[:energyEfficiencyRating]),
                         energy_efficiency_band: assessment[:currentAssessment][:energyEfficiencyBand],
                         energy_efficiency_rating: assessment[:currentAssessment][:energyEfficiencyRating],
                         show_on_non_print: true
