@@ -189,7 +189,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
 
       it "shows the SVG alternate text description" do
         expect(response.body).to include(
-           '<desc id="svg-desc">This property’s current energy rating is B with a score of 35.</desc>'
+          '<desc id="svg-desc">This property’s current energy rating is B with a score of 35.</desc>',
         )
       end
 

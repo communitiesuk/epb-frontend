@@ -304,7 +304,7 @@ describe "Acceptance::Certificate" do
 
       it "displays an error in the title" do
         expect(response.body).to include(
-          '<title>Error: Find an energy performance certificate (EPC) by certificate number - Find an energy certificate - GOV.UK</title>',
+          "<title>Error: Find an energy performance certificate (EPC) by certificate number - Find an energy certificate - GOV.UK</title>",
         )
       end
     end
@@ -379,7 +379,7 @@ describe "Acceptance::Certificate" do
 
         it "displays an error in the title" do
           expect(response.body).to include(
-            '<title>Error: Find an energy performance certificate (EPC) by certificate number - Find an energy certificate - GOV.UK</title>',
+            "<title>Error: Find an energy performance certificate (EPC) by certificate number - Find an energy certificate - GOV.UK</title>",
           )
         end
       end

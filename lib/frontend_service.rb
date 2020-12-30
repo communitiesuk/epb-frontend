@@ -123,9 +123,11 @@ class FrontendService < Sinatra::Base
         when Errors::PostcodeNotValid
           status 400
           @page_title =
-            "#{t('error.error')}#{t('find_non_dom_certificate_by_postcode.top_heading')} – #{
-              t('services.find_an_energy_certificate')
-              } – #{t('layout.body.govuk')}"
+            "#{t('error.error')}#{
+              t('find_non_dom_certificate_by_postcode.top_heading')
+            } – #{t('services.find_an_energy_certificate')} – #{
+              t('layout.body.govuk')
+            }"
           @errors[:postcode] = t("validation_errors.postcode_error")
         else
           return server_error(e)
@@ -168,18 +170,22 @@ class FrontendService < Sinatra::Base
         when Errors::ReferenceNumberNotValid
           status 400
           @page_title =
-            "#{t('error.error')}#{t('find_non_dom_certificate_by_reference_number.top_heading')} – #{
-              t('services.find_an_energy_certificate')
-              } – #{t('layout.body.govuk')}"
+            "#{t('error.error')}#{
+              t('find_non_dom_certificate_by_reference_number.top_heading')
+            } – #{t('services.find_an_energy_certificate')} – #{
+              t('layout.body.govuk')
+            }"
           @errors[:reference_number] =
             t(
               "find_non_dom_certificate_by_reference_number.reference_number_not_valid",
             )
         when Errors::CertificateNotFound
           @page_title =
-            "#{t('error.error')}#{t('find_non_dom_certificate_by_reference_number.top_heading')} – #{
-              t('services.find_an_energy_certificate')
-              } – #{t('layout.body.govuk')}"
+            "#{t('error.error')}#{
+              t('find_non_dom_certificate_by_reference_number.top_heading')
+            } – #{t('services.find_an_energy_certificate')} – #{
+              t('layout.body.govuk')
+            }"
           @errors[:reference_number] =
             t(
               "find_non_dom_certificate_by_reference_number.reference_number_not_registered",
@@ -223,15 +229,17 @@ class FrontendService < Sinatra::Base
             @page_title =
               "#{t('find_assessor_by_postcode_results.top_heading')} – #{
                 t('services.getting_an_energy_certificate')
-                } – #{t('layout.body.govuk')}"
+              } – #{t('layout.body.govuk')}"
             locals[:results] = []
             erb_template = :find_assessor_by_postcode_results
           when Errors::PostcodeNotValid
             status 400
             @page_title =
-              "#{t('error.error')}#{t('find_assessor_by_postcode.top_heading')} – #{
-                t('services.getting_an_energy_certificate')
-                } – #{t('layout.body.govuk')}"
+              "#{t('error.error')}#{
+                t('find_assessor_by_postcode.top_heading')
+              } – #{t('services.getting_an_energy_certificate')} – #{
+                t('layout.body.govuk')
+              }"
             @errors[:postcode] = t("validation_errors.postcode_error")
           else
             server_error(e)
@@ -242,7 +250,7 @@ class FrontendService < Sinatra::Base
         @page_title =
           "#{t('error.error')}#{t('find_assessor_by_postcode.top_heading')} – #{
             t('services.getting_an_energy_certificate')
-            } – #{t('layout.body.govuk')}"
+          } – #{t('layout.body.govuk')}"
         @errors[:postcode] = t("validation_errors.postcode_error")
       end
     end
@@ -280,9 +288,9 @@ class FrontendService < Sinatra::Base
         when Errors::InvalidName
           status 400
           @page_title =
-              "#{t('error.error')}#{t('find_assessor_by_name.top_heading')} – #{
+            "#{t('error.error')}#{t('find_assessor_by_name.top_heading')} – #{
               t('services.getting_an_energy_certificate')
-              } – #{t('layout.body.govuk')}"
+            } – #{t('layout.body.govuk')}"
           @errors[:name] = t("find_assessor_by_name.name_error")
         else
           return server_error(e)
@@ -373,9 +381,11 @@ class FrontendService < Sinatra::Base
         when Errors::PostcodeNotValid
           status 400
           @page_title =
-            "#{t('error.error')}#{t('find_certificate_by_postcode.top_heading')} - #{
-              t('services.find_an_energy_certificate')
-              } - #{t('layout.body.govuk')}"
+            "#{t('error.error')}#{
+              t('find_certificate_by_postcode.top_heading')
+            } - #{t('services.find_an_energy_certificate')} - #{
+              t('layout.body.govuk')
+            }"
           @errors[:postcode] = t("validation_errors.postcode_error")
         else
           return server_error(e)
@@ -421,15 +431,17 @@ class FrontendService < Sinatra::Base
             @page_title =
               "#{t('find_non_domestic_assessor_by_postcode.top_heading')} - #{
                 t('services.getting_an_energy_certificate')
-                } - #{t('layout.body.govuk')}"
+              } - #{t('layout.body.govuk')}"
             locals[:results] = []
             erb_template = :find_non_domestic_assessor_by_postcode_results
           when Errors::PostcodeNotValid
             status 400
             @page_title =
-              "#{t('error.error')}#{t('find_non_domestic_assessor_by_postcode.top_heading')} - #{
-                t('services.getting_an_energy_certificate')
-                } - #{t('layout.body.govuk')}"
+              "#{t('error.error')}#{
+                t('find_non_domestic_assessor_by_postcode.top_heading')
+              } - #{t('services.getting_an_energy_certificate')} - #{
+                t('layout.body.govuk')
+              }"
             @errors[:postcode] = t("validation_errors.postcode_error")
           else
             return server_error(e)
@@ -438,9 +450,11 @@ class FrontendService < Sinatra::Base
       else
         status 400
         @page_title =
-          "#{t('error.error')}#{t('find_non_domestic_assessor_by_postcode.top_heading')} - #{
-            t('services.getting_an_energy_certificate')
-            } - #{t('layout.body.govuk')}"
+          "#{t('error.error')}#{
+            t('find_non_domestic_assessor_by_postcode.top_heading')
+          } - #{t('services.getting_an_energy_certificate')} - #{
+            t('layout.body.govuk')
+          }"
         @errors[:postcode] = t("validation_errors.postcode_error")
       end
     end
@@ -488,9 +502,11 @@ class FrontendService < Sinatra::Base
         when Errors::AllParamsMissing
           status 400
           @page_title =
-            "#{t('error.error')}#{t('find_non_dom_certificate_by_street_name_and_town.top_heading')} - #{
-              t('services.find_an_energy_certificate')
-              } - #{t('layout.body.govuk')}"
+            "#{t('error.error')}#{
+              t('find_non_dom_certificate_by_street_name_and_town.top_heading')
+            } - #{t('services.find_an_energy_certificate')} - #{
+              t('layout.body.govuk')
+            }"
           @errors[:street_name] =
             t(
               "find_non_dom_certificate_by_street_name_and_town.street_name_missing",
@@ -500,24 +516,30 @@ class FrontendService < Sinatra::Base
         when Errors::StreetNameMissing
           status 400
           @page_title =
-            "#{t('error.error')}#{t('find_non_dom_certificate_by_street_name_and_town.top_heading')} - #{
-              t('services.find_an_energy_certificate')
-              } - #{t('layout.body.govuk')}"
+            "#{t('error.error')}#{
+              t('find_non_dom_certificate_by_street_name_and_town.top_heading')
+            } - #{t('services.find_an_energy_certificate')} - #{
+              t('layout.body.govuk')
+            }"
           @errors[:street_name] =
             t("find_certificate_by_street_name_and_town.street_name_missing")
         when Errors::TownMissing
           status 400
           @page_title =
-            "#{t('error.error')}#{t('find_non_dom_certificate_by_street_name_and_town.top_heading')} - #{
-              t('services.find_an_energy_certificate')
-              } - #{t('layout.body.govuk')}"
+            "#{t('error.error')}#{
+              t('find_non_dom_certificate_by_street_name_and_town.top_heading')
+            } - #{t('services.find_an_energy_certificate')} - #{
+              t('layout.body.govuk')
+            }"
           @errors[:town] =
             t("find_certificate_by_street_name_and_town.town_missing")
         when Errors::CertificateNotFound
           @page_title =
-            "#{t('find_non_dom_certificate_by_street_name_and_town.top_heading')} - #{
-              t('services.find_an_energy_certificate')
-              } - #{t('layout.body.govuk')}"
+            "#{
+              t('find_non_dom_certificate_by_street_name_and_town.top_heading')
+            } - #{t('services.find_an_energy_certificate')} - #{
+              t('layout.body.govuk')
+            }"
           @errors[:generic] = {
             error:
               "find_non_dom_certificate_by_street_name_and_town.no_such_address.error",
@@ -617,9 +639,11 @@ class FrontendService < Sinatra::Base
         when Errors::AllParamsMissing
           status 400
           @page_title =
-            "#{t('error.error')}#{t('find_certificate_by_street_name_and_town.top_heading')} - #{
-              t('services.find_an_energy_certificate')
-              } - #{t('layout.body.govuk')}"
+            "#{t('error.error')}#{
+              t('find_certificate_by_street_name_and_town.top_heading')
+            } - #{t('services.find_an_energy_certificate')} - #{
+              t('layout.body.govuk')
+            }"
           @errors[:street_name] =
             t("find_certificate_by_street_name_and_town.street_name_missing")
           @errors[:town] =
@@ -627,24 +651,28 @@ class FrontendService < Sinatra::Base
         when Errors::StreetNameMissing
           status 400
           @page_title =
-              "#{t('error.error')}#{t('find_certificate_by_street_name_and_town.top_heading')} - #{
-              t('services.find_an_energy_certificate')
-              } - #{t('layout.body.govuk')}"
+            "#{t('error.error')}#{
+              t('find_certificate_by_street_name_and_town.top_heading')
+            } - #{t('services.find_an_energy_certificate')} - #{
+              t('layout.body.govuk')
+            }"
           @errors[:street_name] =
             t("find_certificate_by_street_name_and_town.street_name_missing")
         when Errors::TownMissing
           status 400
           @page_title =
-              "#{t('error.error')}#{t('find_certificate_by_street_name_and_town.top_heading')} - #{
-              t('services.find_an_energy_certificate')
-              } - #{t('layout.body.govuk')}"
+            "#{t('error.error')}#{
+              t('find_certificate_by_street_name_and_town.top_heading')
+            } - #{t('services.find_an_energy_certificate')} - #{
+              t('layout.body.govuk')
+            }"
           @errors[:town] =
             t("find_certificate_by_street_name_and_town.town_missing")
         when Errors::CertificateNotFound
           @page_title =
-              "#{t('find_certificate_by_street_name_and_town.top_heading')} - #{
+            "#{t('find_certificate_by_street_name_and_town.top_heading')} - #{
               t('services.find_an_energy_certificate')
-              } - #{t('layout.body.govuk')}"
+            } - #{t('layout.body.govuk')}"
           @errors[:generic] = {
             error:
               "find_certificate_by_street_name_and_town.no_such_address.error",
@@ -732,9 +760,10 @@ class FrontendService < Sinatra::Base
     pp e.backtrace if e.methods.include?(:backtrace)
     case e
     when Errors::AssessmentNotFound
-      @page_title = "#{t('dec.top_heading')}- #{t('services.find_an_energy_certificate')} - #{
-      t('layout.body.govuk')
-      }"
+      @page_title =
+        "#{t('dec.top_heading')}- #{
+          t('services.find_an_energy_certificate')
+        } - #{t('layout.body.govuk')}"
       not_found
     else
       return server_error(e)
@@ -777,7 +806,8 @@ class FrontendService < Sinatra::Base
     end
 
     @logger.error JSON.generate(error)
-    @page_title = "#{t('error.error')}#{t('error.500.heading')} - #{t('layout.body.govuk')}"
+    @page_title =
+      "#{t('error.error')}#{t('error.500.heading')} - #{t('layout.body.govuk')}"
     status 500
     erb :error_page_500
   end

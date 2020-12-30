@@ -422,7 +422,7 @@ describe "Acceptance::Non Domestic Certificate" do
 
       it "displays an error in the title" do
         expect(response.body).to include(
-          '<title>Error: Find energy certificates and reports by their number – Find an energy certificate – GOV.UK</title>',
+          "<title>Error: Find energy certificates and reports by their number – Find an energy certificate – GOV.UK</title>",
         )
       end
     end
@@ -477,7 +477,7 @@ describe "Acceptance::Non Domestic Certificate" do
 
         it "displays an error in the title" do
           expect(response.body).to include(
-            '<title>Error: Find energy certificates and reports by their number – Find an energy certificate – GOV.UK</title>',
+            "<title>Error: Find energy certificates and reports by their number – Find an energy certificate – GOV.UK</title>",
           )
         end
       end

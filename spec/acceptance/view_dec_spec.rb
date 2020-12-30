@@ -96,11 +96,15 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
     end
 
     it "shows the SVG alternative text title" do
-      expect(response.body).to include('<title id="svg-title">Operational energy efficiency chart</title>')
+      expect(response.body).to include(
+        '<title id="svg-title">Operational energy efficiency chart</title>',
+      )
     end
 
     it "shows the SVG alternative text description" do
-      expect(response.body).to include('<desc id="svg-desc">This building’s operational energy rating is A with a score of 1.</desc>')
+      expect(response.body).to include(
+        '<desc id="svg-desc">This building’s operational energy rating is A with a score of 1.</desc>',
+      )
     end
 
     it "shows the previous operational ratings section" do
