@@ -14,7 +14,7 @@ source "https://rubygems.org" do
     gem "rack-test", "~> 1.1.0"
     gem "rspec", "~>3.10"
     gem "selenium-webdriver", "~> 3.142.7"
-    gem "webdrivers", "~> 4.4.1"
+    gem "webdrivers", "~> 4.4.2"
     gem "webmock", "~> 3.10"
   end
 
