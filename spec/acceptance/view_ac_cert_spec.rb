@@ -5,7 +5,7 @@ describe "Acceptance::AirConditioningInspectionCertificate", type: :feature do
 
   let(:response) { get "/energy-certificate/0000-0000-0000-0000-9999" }
 
-  context "when a dec exists" do
+  context "when an ac certificate exists" do
     before do
       FetchAssessmentSummary::AssessmentStub.fetch_ac_cert(
         assessment_id: "0000-0000-0000-0000-9999",
@@ -205,4 +205,19 @@ describe "Acceptance::AirConditioningInspectionCertificate", type: :feature do
                                          href: "/energy-certificate/0000-0000-0000-0000-8888"
     end
   end
+
+  context "when an ac certificate expires" do
+    before do
+      FetchAssessmentSummary::AssessmentStub.fetch_ac_cert(
+        assessment_id: "0000-0000-0000-0000-9999",
+        date_of_expiry: "2012-05-21",
+      )
+    end
+
+    it "shows the expired summary section" do
+      expect(response.body).to have_css "label", text: "This certificate expired on"
+      expect(response.body).to have_css "span", text: "21 May 2012"
+    end
+  end
+
 end

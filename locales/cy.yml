@@ -519,6 +519,15 @@ cy:
       date_of_expiry: "Dilys tan %{date_of_expiry}"
       certificate_id: "Rhif y dystysgrif"
       floor_area: "Cyfanswm arwynebedd yr eiddo yw %{total_floor_area} o fetrau sgwâr."
+    epc_summary_compact:
+      certificate:
+        valid_until: "Dilys tan"
+        expired: "Daeth y dystysgrif hon i ben ar"
+        identifier: "Rhif y dystysgrif"
+      report:
+        valid_until: "Dilys tan"
+        expired: "Daeth y dystysgrif hon i ben ar"
+        identifier: "Rhif y dystysgrif"
     related:
       title: "%{type}au eraill ar gyfer yr eiddo hwn"
       certificate: tystysgrif
@@ -590,10 +599,6 @@ cy:
         no_related: "Does dim tystysgrifau perthynol ar gyfer yr eiddo."
     rr:
       top_heading: "Adroddiad ar argymhellion tystysgrif perfformiad ynni (EPC)"
-      summary:
-        valid_until: "Dilys tan"
-        expired: "Daeth y dystysgrif hon i ben ar"
-        certificate_id: "Rhif y dystysgrif"
       contents:
         title: "Cynnwys yr adroddiad"
       rating:

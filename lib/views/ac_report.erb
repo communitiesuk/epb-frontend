@@ -70,7 +70,10 @@
 
     <%== erb :component__epc_summary_compact, locals: {
       assessment: assessment,
-      type: t('component.print.type.report')
+      type: t('component.print.type.report'),
+      identifier: t('component.epc_summary_compact.report.identifier'),
+      expired: t('component.epc_summary_compact.report.expired'),
+      valid_until: t('component.epc_summary_compact.report.valid_until')
     } %>
 
     <%== erb :component__administrative_information, locals: {

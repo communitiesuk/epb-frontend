@@ -519,6 +519,15 @@ en:
       date_of_expiry: "Valid until %{date_of_expiry}"
       certificate_id: "Certificate number"
       floor_area: '%{total_floor_area} square metres'
+    epc_summary_compact:
+      certificate:
+        valid_until: 'Valid until'
+        expired: 'This certificate expired on'
+        identifier: 'Certificate number'
+      report:
+        valid_until: 'Valid until'
+        expired: 'This report expired on'
+        identifier: 'Report number'
     related:
       title: 'Other %{type}s for this property'
       certificate: 'certificate'
@@ -590,10 +599,6 @@ en:
         no_related: 'There are no related certificates for the property.'
     rr:
       top_heading: 'Energy performance certificate (EPC) recommendation report'
-      summary:
-        valid_until: 'Valid until'
-        expired: 'This certificate expired on'
-        certificate_id: 'Certificate number'
       contents:
         title: 'Report contents'
       rating:

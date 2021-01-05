@@ -54,12 +54,15 @@ describe "Acceptance::DecRecommendationReport", type: :feature do
                                          href: "#other_reports"
     end
 
-    it "shows the top summary box" do
-      expect(response.body).to include("1 Lonely Street")
-      expect(response.body).to include("Post-Town0")
-      expect(response.body).to include("A0 0AA")
-      expect(response.body).to include("1234-5678-1234-5678-1234")
-      expect(response.body).to include("1 January 2030")
+    it "shows the summary section" do
+      expect(response.body).to have_css "span", text: "1 Lonely Street"
+      expect(response.body).to have_css "span", text: "Post-Town0"
+      expect(response.body).to have_css "span", text: "A0 0AA"
+      expect(response.body).to have_css "label", text: "Report number"
+      expect(response.body).to have_css "span", text: "1234-5678-1234-5678-1234"
+      expect(response.body).to have_css "label", text: "Valid until"
+      expect(response.body).to have_css "span", text: "1 January 2030"
+      expect(response.body).to have_text "Print this report"
     end
 
     it "shows the rating section" do
@@ -212,6 +215,20 @@ describe "Acceptance::DecRecommendationReport", type: :feature do
     it "shows the no related reports text" do
       expect(response.body).to have_css "p",
                                         text: "There are no related reports for this property."
+    end
+  end
+
+  context "when the assessment expires" do
+    before do
+      FetchAssessmentSummary::AssessmentStub.fetch_dec_rr(
+        assessment_id: "1234-5678-1234-5678-1234",
+        date_of_expiry: "2011-02-10",
+      )
+    end
+
+    it "shows the expired summary section" do
+      expect(response.body).to have_css "label", text: "This report expired on"
+      expect(response.body).to have_css "span", text: "10 February 2011"
     end
   end
 end

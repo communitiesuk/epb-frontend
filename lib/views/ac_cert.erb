@@ -41,7 +41,10 @@
 
     <%== erb :component__epc_summary_compact, locals: {
       assessment: assessment,
-      type: t('component.print.type.certificate')
+      type: t('component.print.type.certificate'),
+      identifier: t('component.epc_summary_compact.certificate.identifier'),
+      expired: t('component.epc_summary_compact.certificate.expired'),
+      valid_until: t('component.epc_summary_compact.certificate.valid_until')
     } %>
 
     <%== erb :ac_cert__assessment_details, locals: {

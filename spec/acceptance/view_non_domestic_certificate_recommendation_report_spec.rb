@@ -46,11 +46,14 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
     end
 
     it "Shows the top summary box" do
-      expect(response.body).to include("1 Lonely Street")
-      expect(response.body).to include("Post-Town0")
-      expect(response.body).to include("A0 0AA")
-      expect(response.body).to include("1234-5678-1234-5678-1234")
-      expect(response.body).to include("1 January 2030")
+      expect(response.body).to have_css "span", text: "1 Lonely Street"
+      expect(response.body).to have_css "span", text: "Post-Town0"
+      expect(response.body).to have_css "span", text: "A0 0AA"
+      expect(response.body).to have_css "label", text: "Report number"
+      expect(response.body).to have_css "span", text: "1234-5678-1234-5678-1234"
+      expect(response.body).to have_css "label", text: "Valid until"
+      expect(response.body).to have_css "span", text: "1 January 2030"
+      expect(response.body).to have_text "Print this report"
     end
 
     it "Shows the efficiency band from the related cepc" do
@@ -181,4 +184,19 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
       expect(page_without_cepc.body).to_not include("Energy rating and EPC")
     end
   end
+
+  context "when the assessment exists" do
+    before do
+      FetchAssessmentSummary::AssessmentStub.fetch_cepc_rr(
+        assessment_id: "1234-5678-1234-5678-1234",
+        date_of_expiry: "2014-06-21",
+      )
+    end
+
+    it "Shows the expired top summary box" do
+      expect(response.body).to have_css "label", text: "This report expired on"
+      expect(response.body).to have_css "span", text: "21 June 2014"
+    end
+  end
+
 end

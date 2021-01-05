@@ -28,7 +28,7 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
       expect(response.body).to have_css "span",
                                         text: "49-51 Northumberland Street"
       expect(response.body).to have_css "span", text: "NE1 7AF"
-      expect(response.body).to have_css "label", text: "Certificate number"
+      expect(response.body).to have_css "label", text: "Report number"
       expect(response.body).to have_css "span", text: "0000-0000-0000-0000-9999"
       expect(response.body).to have_css "label", text: "Valid until"
       expect(response.body).to have_css "span", text: "6 February 2025"
@@ -416,4 +416,19 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
                                           "The detailed inspection notes from this report are no longer available online. If you require the detailed inspection notes, contact us at mhclg.digital-services@communities.gov.uk"
     end
   end
+
+  context "when an ac report expires" do
+    before do
+      FetchAssessmentSummary::AssessmentStub.fetch_ac_report(
+        assessment_id: "0000-0000-0000-0000-9999",
+        date_of_expiry: "2010-03-24",
+      )
+    end
+
+    it "shows the expired summary section" do
+      expect(response.body).to have_css "label", text: "This report expired on"
+      expect(response.body).to have_css "span", text: "24 March 2010"
+    end
+  end
+
 end

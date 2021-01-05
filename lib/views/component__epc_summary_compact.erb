@@ -16,18 +16,12 @@
     </div>
     <div class="epc-box-element">
       <div class="govuk-body epc-extra-box">
-        <label><%=
-          t('non_domestic_epc.rr.summary.certificate_id')
-        %></label>
+        <label><%= identifier %></label>
         <span class="govuk-!-font-weight-bold"><%= assessment[:assessmentId] %></span>
       </div>
 
       <div class="govuk-body epc-extra-box">
-        <label><%=
-          assessment[:dateOfExpiry] < Date.today ?
-            t('non_domestic_epc.rr.summary.expired')
-            : t('non_domestic_epc.rr.summary.valid_until')
-        %></label>
+        <label><%= assessment[:dateOfExpiry] < Date.today ? expired : valid_until %></label>
         <span class="govuk-!-font-weight-bold"><%= date(assessment[:dateOfExpiry]) %></span>
       </div>
     </div>

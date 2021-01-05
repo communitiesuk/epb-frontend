@@ -511,14 +511,15 @@ module FetchAssessmentSummary
             },
           },
         },
-      ]
+      ],
+      date_of_expiry: "2025-02-06"
     )
       body = {
         data: {
           typeOfAssessment: "AC-REPORT",
           assessmentId: assessment_id,
           reportType: "5",
-          dateOfExpiry: "2025-02-06",
+          dateOfExpiry: date_of_expiry,
           address: {
             addressLine1: "",
             addressLine2: "The Bank Plc",
@@ -575,14 +576,15 @@ module FetchAssessmentSummary
       f_gas_compliant_date: "20/09/2010",
       system_sampling: "Y",
       subsystems_metered: "1",
-      related_party_disclosure: "1"
+      related_party_disclosure: "1",
+      date_of_expiry: "2024-09-21"
     )
       body = {
         data: {
           assessmentId: assessment_id,
           reportType: "3",
           typeOfAssessment: "AC-CERT",
-          dateOfExpiry: "2024-09-21",
+          dateOfExpiry: date_of_expiry,
           address: {
             addressLine1: "66 Primrose Hill",
             addressLine2: nil,
