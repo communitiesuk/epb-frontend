@@ -526,8 +526,8 @@ cy:
         identifier: "Rhif y dystysgrif"
       report:
         valid_until: "Dilys tan"
-        expired: "Daeth y dystysgrif hon i ben ar"
-        identifier: "Rhif y dystysgrif"
+        expired: "Daeth yr adroddiad hwn i ben ar"
+        identifier: "Rhif yr adroddiad"
     related:
       title: "%{type}au eraill ar gyfer yr eiddo hwn"
       certificate: tystysgrif
