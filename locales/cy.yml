@@ -492,11 +492,13 @@ cy:
     list: "%{length} o dystysgrifau ac adroddiadau ar gyfer %{reference_number}"
 
   component:
-    print_certificate: "Argraffwch y dystysgrif hon"
-    print_certificate_noscript: "I argraffu'r dystysgrif hon, pwyswch CMD/CTRL + P ar eich bysellfwrdd"
     print:
-      label: "Argraffwch y %{type} yma"
-      noscript_text: "I argraffu'r %{type} yma, pwyswch CMD/CTRL + P ar eich bysellfwrdd"
+      certificate:
+        label: "Argraffwch y dystysgrif hon"
+        noscript_text: "I argraffu'r dystysgrif hon, pwyswch CMD/CTRL + P ar eich bysellfwrdd"
+      report:
+        label: "Argraffwch yr adroddiad yma"
+        noscript_text: "I argraffu'r adroddiad yma, pwyswch CMD/CTRL + P ar eich bysellfwrdd"
       type:
         report: "adroddiad"
         certificate: "dystysgrif"

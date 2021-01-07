@@ -492,11 +492,13 @@ en:
     list: '%{length} certificates and reports for %{reference_number}'
 
   component:
-    print_certificate: 'Print this certificate'
-    print_certificate_noscript: 'To print this certificate, press CMD/CTRL + P on your keyboard'
     print:
-      label: 'Print this %{type}'
-      noscript_text: 'To print this %{type}, press CMD/CTRL + P on your keyboard'
+      certificate:
+        label: 'Print this certificate'
+        noscript_text: 'To print this certificate, press CMD/CTRL + P on your keyboard'
+      report:
+        label: 'Print this report'
+        noscript_text: 'To print this report, press CMD/CTRL + P on your keyboard'
       type:
         report: 'report'
         certificate: 'certificate'
