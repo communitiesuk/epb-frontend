@@ -497,8 +497,8 @@ cy:
         label: "Argraffwch y dystysgrif hon"
         noscript_text: "I argraffu'r dystysgrif hon, pwyswch CMD/CTRL + P ar eich bysellfwrdd"
       report:
-        label: "Argraffwch yr adroddiad yma"
-        noscript_text: "I argraffu'r adroddiad yma, pwyswch CMD/CTRL + P ar eich bysellfwrdd"
+        label: "Argraffwch yr adroddiad hwn"
+        noscript_text: "I argraffu'r adroddiad hwn pwyswch CMD/CTRL + P ar eich bysellfwrdd"
       type:
         report: "adroddiad"
         certificate: "dystysgrif"
