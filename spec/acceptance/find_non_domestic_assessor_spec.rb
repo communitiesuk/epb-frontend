@@ -247,7 +247,7 @@ describe "Acceptance::NonDomesticAssessor" do
             expect(response.body).to include(
               "Contact details for Sterling Accreditation Ltd:",
             )
-            expect(response.body).to include("info@sterlingaccreditaiton.com")
+            expect(response.body).to include("info@sterlingaccreditation.com")
             expect(response.body).to include("0161 727 4303")
           end
 
