@@ -29,8 +29,8 @@
 
   <% unless defined?(custom_print) %>
     <div class="govuk-!-display-none-print">
-      <a onclick="window.print();return false;" class="govuk-link govuk-!-margin-bottom-5" id="link" href="#" style="display: none;"><%= t('component.print_certificate') %></a>
-      <noscript><p class="govuk-body"><%= t('component.print_certificate_noscript') %></p></noscript>
+      <a onclick="window.print();return false;" class="govuk-link govuk-!-margin-bottom-5" id="link" href="#" style="display: none;"><%= t('component.print.certificate.label') %></a>
+      <noscript><p class="govuk-body"><%= t('component.print.certificate.noscript_text') %></p></noscript>
       <script>document.getElementById('link').style.display = 'block';</script>
     </div>
   <% end %>
