@@ -26,16 +26,11 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       )
     end
 
-    it "shows the summary section" do
+    it "shows the address summary" do
       expect(response.body).to include("Flat 33")
       expect(response.body).to include("2 Marsham Street")
       expect(response.body).to include("London")
       expect(response.body).to include("SW1B 2BB")
-      expect(response.body).to include("Certificate number")
-      expect(response.body).to include("1234-5678-1234-5678-1234")
-      expect(response.body).to include("Valid until")
-      expect(response.body).to include("5 January 2030")
-      expect(response.body).to include("Print this certificate")
     end
 
     it "doesn't show town name twice" do
@@ -81,6 +76,10 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
 
     it "shows the date of expiry" do
       expect(response.body).to include("5 January 2030")
+    end
+
+    it "shows the print pdf link" do
+      expect(response.body).to include("Print this certificate")
     end
 
     it "shows the type of assessment" do
