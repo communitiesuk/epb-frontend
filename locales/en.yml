@@ -351,7 +351,7 @@ en:
     contact_support_part_two: ', or call our helpdesk on 020 3829 0748 (Monday to Friday, 9am - 5pm).'
     mhclg_support_email: 'mhclg.digital-services@communities.gov.uk'
     no_epc:
-      get_a_new_one: "If your property does not have an EPC, you can"
+      get_a_new_one: "If your property does not have a valid EPC, you can"
       get_a_new_one_link: "get a new energy certificate"
     list: '%{length} EPCs for %{postcode}'
     table:
@@ -425,7 +425,7 @@ en:
     contact_support_part_two: ', or call our helpdesk on 020 3829 0748 (Monday to Friday, 9am - 5pm).'
     mhclg_support_email: 'mhclg.digital-services@communities.gov.uk'
     no_epc:
-      get_a_new_one: "If your property does not have an EPC, you can"
+      get_a_new_one: "If your property does not have a valid EPC, you can"
       get_a_new_one_link: "get a new energy certificate"
     list: '1-%{length} of %{length} results matching %{query}'
     table:
