@@ -25,7 +25,8 @@
         },
         {
           link: '#recommendation_report',
-          text: 'dec.sections.recommendation_report.title'
+          text: 'dec.sections.recommendation_report.title',
+          hidden: assessment[:administrativeInformation][:relatedRrn].nil? || assessment[:administrativeInformation][:relatedRrn].empty?
         },
         {
           link: '#technical_information',

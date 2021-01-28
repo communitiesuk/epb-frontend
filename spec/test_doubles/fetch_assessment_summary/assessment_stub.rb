@@ -844,6 +844,7 @@ module FetchAssessmentSummary
         },
       ],
       related_party: nil,
+      related_rrn: "4192-1535-8427-8844-6702",
       asset_rating: "1"
     )
       body = {
@@ -902,7 +903,7 @@ module FetchAssessmentSummary
             calculationTool: "DCLG, ORCalc, v3.6.3",
             issueDate: "2020-05-14",
             relatedPartyDisclosure: related_party,
-            relatedRrn: "4192-1535-8427-8844-6702",
+            relatedRrn: related_rrn,
           },
           assessor: {
             name: "TEST NAME BOI",

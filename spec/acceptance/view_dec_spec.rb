@@ -305,4 +305,28 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
       end
     end
   end
+
+  context "when a dec exists without a recommendation report" do
+    before do
+      FetchAssessmentSummary::AssessmentStub.fetch_dec(
+        assessment_id: "0000-0000-0000-0000-1111",
+        date_of_expiry: "2030-02-21",
+        related_rrn: nil
+        )
+    end
+
+    it "excludes the recommendation report link from the contents section" do
+      expect(response.body).to have_css "h2", text: "Certificate contents"
+      expect(response.body).not_to have_link "Recommendation report",
+                                         href: "#recommendation_report"
+    end
+
+    it "does not show the recommendation report link" do
+      expect(response.body).not_to have_css "h2", text: "Recommendation report"
+      expect(response.body).not_to have_css "p",
+                                        text:
+                                          "Guidance on improving the energy performance operational rating of this building can be found in the recommendation report."
+      expect(response.body).not_to have_link "recommendation report"
+    end
+  end
 end
