@@ -23,7 +23,10 @@ describe UseCase::FindAssessorByName do
             "email": "epbassessor@epb.com",
           },
           "searchResultsComparisonPostcode": "SW1A 1AA",
-          "registeredBy": { "schemeId": "432", "name": "EPBs 4 U" },
+          "registeredBy": {
+            "schemeId": "432",
+            "name": "EPBs 4 U",
+          },
           "distanceFromPostcodeInMiles": 0.1,
         },
         {
@@ -34,7 +37,10 @@ describe UseCase::FindAssessorByName do
             "email": "epbassessor@epb.com",
           },
           "searchResultsComparisonPostcode": "SW1A 1AA",
-          "registeredBy": { "schemeId": "432", "name": "EPBs 4 U" },
+          "registeredBy": {
+            "schemeId": "432",
+            "name": "EPBs 4 U",
+          },
           "distanceFromPostcodeInMiles": 0.3,
         },
       ]

@@ -40,9 +40,14 @@ describe UseCase::FindNonDomesticAssessorByPostcode do
             "telephoneNumber": "0792 102 1368",
             "email": "epbassessor@epb.com",
           },
-          "qualifications": { "nonDomesticSp3": "ACTIVE" },
+          "qualifications": {
+            "nonDomesticSp3": "ACTIVE",
+          },
           "searchResultsComparisonPostcode": "SW1A 1AA",
-          "registeredBy": { "schemeId": "432", "name": "EPBs 4 U" },
+          "registeredBy": {
+            "schemeId": "432",
+            "name": "EPBs 4 U",
+          },
           "distanceFromPostcodeInMiles": 0.1,
         },
         {
@@ -52,9 +57,14 @@ describe UseCase::FindNonDomesticAssessorByPostcode do
             "telephoneNumber": "0792 102 1368",
             "email": "epbassessor@epb.com",
           },
-          "qualifications": { "nonDomesticSp3": "ACTIVE" },
+          "qualifications": {
+            "nonDomesticSp3": "ACTIVE",
+          },
           "searchResultsComparisonPostcode": "SW1A 1AA",
-          "registeredBy": { "schemeId": "432", "name": "EPBs 4 U" },
+          "registeredBy": {
+            "schemeId": "432",
+            "name": "EPBs 4 U",
+          },
           "distanceFromPostcodeInMiles": 0.3,
         },
       ]

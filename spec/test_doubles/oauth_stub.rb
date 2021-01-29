@@ -24,7 +24,9 @@ class OauthStub
           expires_in: 3_600,
           token_type: "bearer",
         }.to_json,
-        headers: { "Content-Type" => "application/json" },
+        headers: {
+          "Content-Type" => "application/json",
+        },
       )
   end
 end

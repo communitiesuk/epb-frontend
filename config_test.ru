@@ -125,7 +125,10 @@ FetchAssessmentSummary::AssessmentStub.fetch_ac_report(
         calibrationRecords: false,
         consumptionRecords: false,
       },
-      optional: { coolingLoadEstimate: false, complaintRecords: false },
+      optional: {
+        coolingLoadEstimate: false,
+        complaintRecords: false,
+      },
     },
     sccs: {
       essential: {

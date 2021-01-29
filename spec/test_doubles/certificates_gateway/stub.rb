@@ -81,7 +81,9 @@ module CertificatesGateway
             },
           ],
         },
-        meta: { "searchPostcode": "SW1 5RW" },
+        meta: {
+          "searchPostcode": "SW1 5RW",
+        },
       }
     end
 
@@ -142,7 +144,10 @@ module CertificatesGateway
             "assessor": {
               "firstName": "Kevin",
               "lastName": "Keenoy",
-              "registeredBy": { "name": "Quidos", "schemeId": 6 },
+              "registeredBy": {
+                "name": "Quidos",
+                "schemeId": 6,
+              },
               "schemeAssessorId": "3",
               "dateOfBirth": "1994-01-01",
               "contactDetails": {
@@ -193,7 +198,9 @@ module CertificatesGateway
               },
             ],
           },
-          meta: { "searchPostcode": "SW1 5RW" },
+          meta: {
+            "searchPostcode": "SW1 5RW",
+          },
         }
       end
     end
@@ -279,7 +286,9 @@ module CertificatesGateway
             },
           ],
         },
-        meta: { "searchPostcode": "SW1 5RW" },
+        meta: {
+          "searchPostcode": "SW1 5RW",
+        },
       }
     end
 
@@ -330,7 +339,10 @@ module CertificatesGateway
           assessor: {
             firstName: "Test",
             lastName: "Boi",
-            registeredBy: { name: "Quidos", schemeId: 1 },
+            registeredBy: {
+              name: "Quidos",
+              schemeId: 1,
+            },
             schemeAssessorId: "TESTASSESSOR",
             dateOfBirth: "2019-12-04",
             contactDetails: {
@@ -338,7 +350,9 @@ module CertificatesGateway
               email: "test.boi@quidos.com",
             },
             searchResultsComparisonPostcode: "SW1A 2AA",
-            qualifications: { domesticRdSap: "ACTIVE" },
+            qualifications: {
+              domesticRdSap: "ACTIVE",
+            },
           },
           assessmentId: assessment_id,
           dateOfAssessment: "02 January 2020",

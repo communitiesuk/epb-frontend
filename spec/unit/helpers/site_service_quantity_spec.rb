@@ -8,9 +8,18 @@ describe Sinatra::FrontendService::Helpers do
   context "with site services" do
     let(:assessment) do
       {
-        siteServiceOne: { description: "Electricity", quantity: "751445" },
-        siteServiceTwo: { description: "LOTS OF Gas", quantity: "72956" },
-        siteServiceThree: { description: "Not used", quantity: "0" },
+        siteServiceOne: {
+          description: "Electricity",
+          quantity: "751445",
+        },
+        siteServiceTwo: {
+          description: "LOTS OF Gas",
+          quantity: "72956",
+        },
+        siteServiceThree: {
+          description: "Not used",
+          quantity: "0",
+        },
       }
     end
     it "does show the value for electricity" do

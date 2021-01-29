@@ -215,9 +215,9 @@ describe "Acceptance::AirConditioningInspectionCertificate", type: :feature do
     end
 
     it "shows the expired summary section" do
-      expect(response.body).to have_css "label", text: "This certificate expired on"
+      expect(response.body).to have_css "label",
+                                        text: "This certificate expired on"
       expect(response.body).to have_css "span", text: "21 May 2012"
     end
   end
-
 end

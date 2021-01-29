@@ -2,7 +2,8 @@
 
 module Gateway
   class AssessmentSummaryGateway
-    class AssessmentNotFound < StandardError; end
+    class AssessmentNotFound < StandardError
+    end
     def fetch(assessment_id)
       route = "/api/assessments/#{CGI.escape(assessment_id)}/summary"
       response = Container.new.get_object(:internal_api_client).get(route)

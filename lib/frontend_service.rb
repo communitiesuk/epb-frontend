@@ -547,7 +547,10 @@ class FrontendService < Sinatra::Base
               "find_non_dom_certificate_by_street_name_and_town.no_such_address.body",
             cta:
               "find_non_dom_certificate_by_street_name_and_town.no_such_address.cta",
-            url: localised_url(set_subdomain_url(getting_new_energy_certificate_host_name)),
+            url:
+              localised_url(
+                set_subdomain_url(getting_new_energy_certificate_host_name),
+              ),
           }
         else
           return server_error(e)
@@ -679,7 +682,10 @@ class FrontendService < Sinatra::Base
             body:
               "find_certificate_by_street_name_and_town.no_such_address.body",
             cta: "find_certificate_by_street_name_and_town.no_such_address.cta",
-            url: localised_url(set_subdomain_url(getting_new_energy_certificate_host_name)),
+            url:
+              localised_url(
+                set_subdomain_url(getting_new_energy_certificate_host_name),
+              ),
           }
         else
           return server_error(e)

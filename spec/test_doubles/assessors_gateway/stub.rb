@@ -14,7 +14,10 @@ module AssessorsGateway
                 "email": "epbassessor@epb.com",
               },
               "searchResultsComparisonPostcode": "SW1A 1AA",
-              "registeredBy": { "schemeId": "432", "name": "EPBs 4 U" },
+              "registeredBy": {
+                "schemeId": "432",
+                "name": "EPBs 4 U",
+              },
               "distanceFromPostcodeInMiles": 0.1,
             },
             {
@@ -25,12 +28,18 @@ module AssessorsGateway
                 "email": "epbassessor@epb.com",
               },
               "searchResultsComparisonPostcode": "SW1A 1AA",
-              "registeredBy": { "schemeId": "432", "name": "EPBs 4 U" },
+              "registeredBy": {
+                "schemeId": "432",
+                "name": "EPBs 4 U",
+              },
               "distanceFromPostcodeInMiles": 0.3,
             },
           ],
         },
-        meta: { "timestamp": 1_234_567, "searchPostcode": "SW1 5RW" },
+        meta: {
+          "timestamp": 1_234_567,
+          "searchPostcode": "SW1 5RW",
+        },
       }
     end
 
@@ -46,7 +55,10 @@ module AssessorsGateway
                 "email": "epbassessor@epb.com",
               },
               "searchResultsComparisonPostcode": "SW1A 1AA",
-              "registeredBy": { "schemeId": "432", "name": "EPBs 4 U" },
+              "registeredBy": {
+                "schemeId": "432",
+                "name": "EPBs 4 U",
+              },
               "distanceFromPostcodeInMiles": 0.1,
             },
             {
@@ -57,7 +69,10 @@ module AssessorsGateway
                 "email": "epbassessor@epb.com",
               },
               "searchResultsComparisonPostcode": "SW1A 1AA",
-              "registeredBy": { "schemeId": "432", "name": "EPBs 4 U" },
+              "registeredBy": {
+                "schemeId": "432",
+                "name": "EPBs 4 U",
+              },
               "distanceFromPostcodeInMiles": 0.3,
             },
           ],

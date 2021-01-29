@@ -30,7 +30,10 @@ module FindAssessor
                       "email": "UPPERCASE_EMAIL@eXaMpLe.com",
                     },
                     "searchResultsComparisonPostcode": "SW1A 1AA",
-                    "registeredBy": { "schemeId": "432", "name": "CIBSE" },
+                    "registeredBy": {
+                      "schemeId": "432",
+                      "name": "CIBSE",
+                    },
                     "schemeAssessorId": "CIBSE9999990",
                   },
                   {
@@ -41,7 +44,10 @@ module FindAssessor
                       "email": "user@example.com",
                     },
                     "searchResultsComparisonPostcode": "SW1A 1AA",
-                    "registeredBy": { "schemeId": "444", "name": "Stroma" },
+                    "registeredBy": {
+                      "schemeId": "444",
+                      "name": "Stroma",
+                    },
                     "schemeAssessorId": "Stroma9999990",
                   },
                   {
@@ -52,7 +58,10 @@ module FindAssessor
                       "email": "User@eXample.com",
                     },
                     "searchResultsComparisonPostcode": "SW1A 1AA",
-                    "registeredBy": { "schemeId": "472", "name": "ECMK" },
+                    "registeredBy": {
+                      "schemeId": "472",
+                      "name": "ECMK",
+                    },
                     "schemeAssessorId": "ECMK9999990",
                   },
                   {
@@ -63,7 +72,10 @@ module FindAssessor
                       "email": "john@example.com",
                     },
                     "searchResultsComparisonPostcode": "SW1A 1AA",
-                    "registeredBy": { "schemeId": "332", "name": "Sterling" },
+                    "registeredBy": {
+                      "schemeId": "332",
+                      "name": "Sterling",
+                    },
                     "schemeAssessorId": "Sterling999990",
                   },
                   {
@@ -74,7 +86,10 @@ module FindAssessor
                       "email": "user@example.com",
                     },
                     "searchResultsComparisonPostcode": "SW1A 1AA",
-                    "registeredBy": { "schemeId": "432", "name": "EPB 4 U" },
+                    "registeredBy": {
+                      "schemeId": "432",
+                      "name": "EPB 4 U",
+                    },
                     "schemeAssessorId": "epb4u12349876",
                   },
                   {
@@ -85,7 +100,10 @@ module FindAssessor
                       "email": "user@example.com",
                     },
                     "searchResultsComparisonPostcode": "SW1A 1AA",
-                    "registeredBy": { "schemeId": "432", "name": "Quidos" },
+                    "registeredBy": {
+                      "schemeId": "432",
+                      "name": "Quidos",
+                    },
                     "schemeAssessorId": "Quidos12349876",
                   },
                   {
@@ -115,7 +133,10 @@ module FindAssessor
                   },
                 ],
               },
-              "meta": { "searchName": name, "looseMatch": loose_match },
+              "meta": {
+                "searchName": name,
+                "looseMatch": loose_match,
+              },
             }.to_json,
           )
       end

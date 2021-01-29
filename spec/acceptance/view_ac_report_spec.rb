@@ -368,7 +368,10 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
               calibrationRecords: false,
               consumptionRecords: false,
             },
-            optional: { coolingLoadEstimate: false, complaintRecords: false },
+            optional: {
+              coolingLoadEstimate: false,
+              complaintRecords: false,
+            },
           },
           sccs: {
             essential: {
@@ -430,5 +433,4 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
       expect(response.body).to have_css "span", text: "24 March 2010"
     end
   end
-
 end

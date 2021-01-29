@@ -145,7 +145,9 @@ module FetchAssessmentSummary
           refrigeration: {
             acceptableTemperature: "0",
             ambient: "13",
-            compressorControl: { note: "The capacity control is inverter." },
+            compressorControl: {
+              note: "The capacity control is inverter.",
+            },
             fGasInspection: {
               note:
                 "The system operated using refrigerant which is not banned.",
@@ -190,8 +192,14 @@ module FetchAssessmentSummary
               note: "The system is linked to a Central Controller.",
               state: true,
             },
-            excessiveUse: { note: "No details available.", state: false },
-            meteringInstalled: { note: "987654321", state: true },
+            excessiveUse: {
+              note: "No details available.",
+              state: false,
+            },
+            meteringInstalled: {
+              note: "987654321",
+              state: true,
+            },
             usageRecords: {
               note:
                 "There were no records of air conditioning plant usage or sub-metered energy consumption with expected hours of use per year for the plant or systems located on site.",
@@ -260,7 +268,9 @@ module FetchAssessmentSummary
           refrigeration: {
             acceptableTemperature: "0",
             ambient: "13",
-            compressorControl: { note: "The capacity control is inverter." },
+            compressorControl: {
+              note: "The capacity control is inverter.",
+            },
             fGasInspection: {
               note:
                 "The system operated using refrigerant which is not banned.",
@@ -305,8 +315,14 @@ module FetchAssessmentSummary
               note: "The system is linked to a Central Controller.",
               state: true,
             },
-            excessiveUse: { note: "No details available.", state: false },
-            meteringInstalled: { note: "", state: false },
+            excessiveUse: {
+              note: "No details available.",
+              state: false,
+            },
+            meteringInstalled: {
+              note: "",
+              state: false,
+            },
             usageRecords: {
               note:
                 "There were no records of air conditioning plant usage or sub-metered energy consumption with expected hours of use per year for the plant or systems located on site.",
@@ -334,7 +350,11 @@ module FetchAssessmentSummary
           },
           inspection: {
             filters: {
-              filterCondition: { flag: true, note: nil, recommendations: [] },
+              filterCondition: {
+                flag: true,
+                note: nil,
+                recommendations: [],
+              },
               changeFrequency: {
                 flag: true,
                 note:
@@ -350,29 +370,61 @@ module FetchAssessmentSummary
               },
             },
             heatExchangers: {
-              condition: { flag: true, note: nil, recommendations: [] },
+              condition: {
+                flag: true,
+                note: nil,
+                recommendations: [],
+              },
             },
             refrigeration: {
-              leaks: { flag: true, note: nil, recommendations: [] },
+              leaks: {
+                flag: true,
+                note: nil,
+                recommendations: [],
+              },
             },
             fanRotation: {
-              direction: { flag: true, note: nil, recommendations: [] },
-              modulation: { flag: true, note: nil, recommendations: [] },
+              direction: {
+                flag: true,
+                note: nil,
+                recommendations: [],
+              },
+              modulation: {
+                flag: true,
+                note: nil,
+                recommendations: [],
+              },
             },
             airLeakage: {
-              condition: { note: "No leaks", recommendations: [] },
+              condition: {
+                note: "No leaks",
+                recommendations: [],
+              },
             },
             heatRecovery: {
-              energyConservation: { note: "None", recommendations: [] },
+              energyConservation: {
+                note: "None",
+                recommendations: [],
+              },
             },
             outdoorInlets: {
-              condition: { note: "Diffusers clean", recommendations: [] },
+              condition: {
+                note: "Diffusers clean",
+                recommendations: [],
+              },
             },
             fanControl: {
-              setting: { note: "No dampers", recommendations: [] },
+              setting: {
+                note: "No dampers",
+                recommendations: [],
+              },
             },
             fanPower: {
-              condition: { note: nil, flag: true, recommendations: [] },
+              condition: {
+                note: nil,
+                flag: true,
+                recommendations: [],
+              },
               sfpCalculation: "464 watts x 70% - 0.311/400 = 8.12 w/ltr.",
             },
           },
@@ -393,24 +445,62 @@ module FetchAssessmentSummary
           },
           inspection: {
             insulation: {
-              pipework: { note: nil, recommendations: [], flag: true },
-              ductwork: { note: nil, recommendations: [], flag: false },
+              pipework: {
+                note: nil,
+                recommendations: [],
+                flag: true,
+              },
+              ductwork: {
+                note: nil,
+                recommendations: [],
+                flag: false,
+              },
             },
-            unit: { condition: { note: nil, recommendations: [], flag: true } },
+            unit: {
+              condition: {
+                note: nil,
+                recommendations: [],
+                flag: true,
+              },
+            },
             grillesAirFlow: {
-              distribution: { note: nil, recommendations: [], flag: true },
-              tampering: { note: nil, recommendations: [], flag: true },
-              waterSupply: { note: nil, recommendations: [], flag: false },
-              complaints: { note: nil, recommendations: [], flag: false },
+              distribution: {
+                note: nil,
+                recommendations: [],
+                flag: true,
+              },
+              tampering: {
+                note: nil,
+                recommendations: [],
+                flag: true,
+              },
+              waterSupply: {
+                note: nil,
+                recommendations: [],
+                flag: false,
+              },
+              complaints: {
+                note: nil,
+                recommendations: [],
+                flag: false,
+              },
             },
             diffuserPositions: {
-              positionIssues: { note: nil, recommendations: [], flag: true },
+              positionIssues: {
+                note: nil,
+                recommendations: [],
+                flag: true,
+              },
               partitioningIssues: {
                 note: nil,
                 recommendations: [],
                 flag: false,
               },
-              controlOperation: { note: nil, recommendations: [], flag: true },
+              controlOperation: {
+                note: nil,
+                recommendations: [],
+                flag: true,
+              },
             },
           },
         },
@@ -541,7 +631,10 @@ module FetchAssessmentSummary
               name: "Joe Bloggs Ltd",
               address: "123 My Street, My City, AB3 4CD",
             },
-            registeredBy: { name: "quidos", schemeId: "3" },
+            registeredBy: {
+              name: "quidos",
+              schemeId: "3",
+            },
           },
           executiveSummary: executive_summary,
           keyRecommendations: {
@@ -635,7 +728,10 @@ module FetchAssessmentSummary
               name: "Joe Bloggs Ltd",
               address: "123 My Street, My City, AB3 4CD",
             },
-            registeredBy: { name: "quidos", schemeId: "3" },
+            registeredBy: {
+              name: "quidos",
+              schemeId: "3",
+            },
           },
         },
       }
@@ -712,7 +808,10 @@ module FetchAssessmentSummary
               name: "Joe Bloggs Ltd",
               address: "Lloyds House, 18 Lloyd Street, Manchester, M2 5WA",
             },
-            registeredBy: { name: "quidos", schemeId: "3" },
+            registeredBy: {
+              name: "quidos",
+              schemeId: "3",
+            },
           },
           relatedPartyDisclosure: related_party_disclosure,
           propertyType: "B1 Offices and Workshop businesses",
@@ -774,9 +873,15 @@ module FetchAssessmentSummary
           assessor: {
             schemeAssessorId: "SPEC000000",
             name: "Mrs Report Writer",
-            registeredBy: { name: "quidos", schemeId: 3 },
+            registeredBy: {
+              name: "quidos",
+              schemeId: 3,
+            },
             companyDetails: company_details,
-            contactDetails: { email: "a@b.c", telephone: "07921921369" },
+            contactDetails: {
+              email: "a@b.c",
+              telephone: "07921921369",
+            },
           },
           shortPaybackRecommendations: [
             {
@@ -908,7 +1013,10 @@ module FetchAssessmentSummary
           assessor: {
             name: "TEST NAME BOI",
             schemeAssessorId: "SPEC000000",
-            registeredBy: { name: "quidos", schemeId: 1 },
+            registeredBy: {
+              name: "quidos",
+              schemeId: 1,
+            },
             companyDetails: {
               address: "123 My Street, My City, AB3 4CD",
               name: "Joe Bloggs Ltd",
@@ -971,7 +1079,10 @@ module FetchAssessmentSummary
           assessor: {
             name: "John Howard",
             schemeAssessorId: "SPEC000000",
-            registeredBy: { name: "test scheme", schemeId: 1 },
+            registeredBy: {
+              name: "test scheme",
+              schemeId: 1,
+            },
             companyDetails: {
               address: "123 My Street, My City, AB3 4CD",
               name: "Joe Bloggs Ltd",
@@ -1023,9 +1134,18 @@ module FetchAssessmentSummary
             calculationTool: "DCLG, ORCalc, v3.6.2",
             inspectionType: "Physical",
           },
-          siteServiceOne: { description: "Electricity", quantity: "751445" },
-          siteServiceTwo: { description: "Gas", quantity: "72956" },
-          siteServiceThree: { description: "Not used", quantity: "0" },
+          siteServiceOne: {
+            description: "Electricity",
+            quantity: "751445",
+          },
+          siteServiceTwo: {
+            description: "Gas",
+            quantity: "72956",
+          },
+          siteServiceThree: {
+            description: "Not used",
+            quantity: "0",
+          },
         },
       }
       WebMock
@@ -1138,7 +1258,10 @@ module FetchAssessmentSummary
             "assessor": {
               "firstName": "Kevin",
               "lastName": "Keenoy",
-              "registeredBy": { "name": "Quidos", "schemeId": 6 },
+              "registeredBy": {
+                "name": "Quidos",
+                "schemeId": 6,
+              },
               "schemeAssessorId": "3",
               "dateOfBirth": "1994-01-01",
               "contactDetails": {
@@ -1306,7 +1429,10 @@ module FetchAssessmentSummary
             assessor: {
               firstName: "Test",
               lastName: "Boi",
-              registeredBy: { name: "Elmhurst Energy", schemeId: 1 },
+              registeredBy: {
+                name: "Elmhurst Energy",
+                schemeId: 1,
+              },
               schemeAssessorId: "TESTASSESSOR",
               dateOfBirth: "2019-12-04",
               contactDetails: {
@@ -1314,7 +1440,9 @@ module FetchAssessmentSummary
                 email: "test.boi@quidos.com",
               },
               searchResultsComparisonPostcode: "SW1A 2AA",
-              qualifications: { domesticRdSap: "ACTIVE" },
+              qualifications: {
+                domesticRdSap: "ACTIVE",
+              },
             },
             assessmentId: assessment_id,
             dateRegistered: "2020-01-05",
@@ -1393,8 +1521,14 @@ module FetchAssessmentSummary
             telephone: "0800 0000000",
             email: "lender@example.com",
           },
-          interest: { rate: 12.3, fixed: true },
-          chargeUplift: { amount: 1.25, date: "2025-03-29" },
+          interest: {
+            rate: 12.3,
+            fixed: true,
+          },
+          chargeUplift: {
+            amount: 1.25,
+            date: "2025-03-29",
+          },
           ccaRegulated: true,
           structureChanged: false,
           measuresRemoved: false,

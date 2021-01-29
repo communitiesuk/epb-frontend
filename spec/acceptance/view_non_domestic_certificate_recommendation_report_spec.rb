@@ -158,7 +158,10 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
     before do
       FetchAssessmentSummary::AssessmentStub.fetch_cepc_rr(
         assessment_id: "1234-5678-1234-5678-1234",
-        company_details: { name: nil, address: nil },
+        company_details: {
+          name: nil,
+          address: nil,
+        },
       )
     end
 
@@ -198,5 +201,4 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
       expect(response.body).to have_css "span", text: "21 June 2014"
     end
   end
-
 end

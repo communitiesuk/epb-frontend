@@ -63,8 +63,14 @@ module FindCertificate
                       "telephone": "0800 0000000",
                       "email": "Lender@Example.com",
                     },
-                    "interest": { "rate": 12.3, "fixed": true },
-                    "chargeUplift": { "amount": 1.25, "date": "2025-03-29" },
+                    "interest": {
+                      "rate": 12.3,
+                      "fixed": true,
+                    },
+                    "chargeUplift": {
+                      "amount": 1.25,
+                      "date": "2025-03-29",
+                    },
                     "ccaRegulated": true,
                     "structureChanged": false,
                     "measuresRemoved": false,
@@ -146,7 +152,9 @@ module FindCertificate
                 },
               ],
             },
-            "meta": { "searchPostcode": postcode },
+            "meta": {
+              "searchPostcode": postcode,
+            },
           }.to_json,
         )
     end
@@ -199,7 +207,9 @@ module FindCertificate
                 },
               ],
             },
-            "meta": { "searchReferenceNumber": certificate_id },
+            "meta": {
+              "searchReferenceNumber": certificate_id,
+            },
           }.to_json,
         )
     end
@@ -308,7 +318,9 @@ module FindCertificate
                 },
               ],
             },
-            "meta": { "searchReferenceNumber": [street_name, town] },
+            "meta": {
+              "searchReferenceNumber": [street_name, town],
+            },
           }.to_json,
         )
     end

@@ -17,8 +17,12 @@ module FindAssessor
           .to_return(
             status: 200,
             body: {
-              "data": { "assessors": [] },
-              "meta": { "searchPostcode": "BF1 3AA" },
+              "data": {
+                "assessors": [],
+              },
+              "meta": {
+                "searchPostcode": "BF1 3AA",
+              },
             }.to_json,
           )
       end

@@ -637,9 +637,17 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
                 greenDealPlanId: "ABC123456DEF",
                 startDate: "2020-01-30",
                 endDate: "2030-02-28",
-                providerDetails: { name: "The Bank" },
-                interest: { rate: 12.3, fixed: true },
-                chargeUplift: { amount: 1.25, date: "2025-03-29" },
+                providerDetails: {
+                  name: "The Bank",
+                },
+                interest: {
+                  rate: 12.3,
+                  fixed: true,
+                },
+                chargeUplift: {
+                  amount: 1.25,
+                  date: "2025-03-29",
+                },
                 ccaRegulated: true,
                 structureChanged: false,
                 measuresRemoved: false,
