@@ -117,6 +117,13 @@ GEM
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
+    sentry-ruby (4.2.1)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
+      faraday (>= 1.0)
+      sentry-ruby-core (= 4.2.1)
+    sentry-ruby-core (4.2.1)
+      concurrent-ruby
+      faraday
     sinatra (2.1.0)
       mustermann (~> 1.0)
       rack (~> 2.2)
@@ -161,6 +168,7 @@ DEPENDENCIES
   rubocop-govuk (~> 3.17)!
   sassc (~> 2.4)!
   selenium-webdriver (~> 3.142.7)!
+  sentry-ruby (~> 4.2)
   sinatra (~> 2.0, >= 2.0.7)!
   sinatra-contrib!
   webdrivers (~> 4.5.0)!
