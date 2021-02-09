@@ -9,7 +9,7 @@ cy:
   related_content:
     title: "Cynnwys perthynol"
     guidance_on_epc:
-      title: "Canllawiau ar EPCs wrth brynu neu werthu'ch cartref"
+      title: "Canllawiau ar EPCs wrth brynu neu werthu’ch cartref"
       url: "https://www.gov.uk/buy-sell-your-home/energy-performance-certificates"
     epc_exemptions:
       title: "Esemptiadau rhag EPCs i eiddo busnesau"
@@ -25,11 +25,11 @@ cy:
       title: "Cofrestr perfformiad ynni adeiladau"
     body:
       service_name: "Cofrestr Perfformiad Ynni Adeiladau"
-      skip: "Sgipiwch i'r prif gynnwys"
+      skip: "Sgipiwch i’r prif gynnwys"
       govuk: "GOV.UK"
       beta:
         heading: beta
-        description: "Gwasanaeth newydd yw hwn a bydd eich adborth yn ein helpu i'w wella."
+        description: 'Gwasanaeth newydd yw hwn a bydd eich <a class="govuk-link" href="https://forms.office.com/Pages/ResponsePage.aspx?id=EGg0v32c3kOociSi7zmVqPbdKK1xB5FPizueLd4cs19UQVdISTJKQTNPSUtON0pPUDYzWFMyVEVIWC4u">adborth</a> yn ein helpu i’w wella.'
       breadcrumb:
         home: Hafan
         epbr: "Cofrestr perfformiad ynni adeiladau"
@@ -38,7 +38,7 @@ cy:
         heading: "Dolenni cymorth"
         accessibility_statement: 'Datganiad ar hygyrchedd'
         cookies: 'Cwcis ar ein gwasanaeth ni'
-        license: "Mae'r cynnwys i gyd ar gael o dan y <a class=\"govuk-footer__link\" href=\"https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/\" rel=\"license\">Drwydded Llywodraeth Agored v3.0</a>,  ac eithrio lle nodir fel arall."
+        license: "Mae’r cynnwys i gyd ar gael o dan y <a class=\"govuk-footer__link\" href=\"https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/\" rel=\"license\">Drwydded Llywodraeth Agored v3.0</a>,  ac eithrio lle nodir fel arall."
         copyright: "<a class=\"govuk-footer__link govuk-footer__copyright-logo\" href=\"https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/\">&copy; Crown copyright</a>"
 
   contact:
@@ -55,13 +55,13 @@ cy:
       cost: "Mae cost asesiad yn amrywio yn ôl yr asesydd ac yn ôl maint yr eiddo"
     buildings_not_epc:
       cta: "Adeiladau nad oes angen EPC ar eu cyfer"
-      intro: "Does dim angen EPC ar gyfer eiddo os yw'r eiddo:"
-      list: "yn fan addoli|adeilad dros dro a ddefnyddir am lai na dwy flynedd | adeilad annibynnol ac iddo arwynebedd defnyddiadwy sy'n gyfanswm o lai na 50 metr sgwâr|safle diwydiannol, gweithdai ac adeiladau amaethyddol amhreswyl nad ydynt yn defnyddio llawer o ynni |rhai adeiladau sydd i fod i afael eu dymchwel|llety gwyliau sy'n cael ei rentu allan am lai na 4 mis y flwyddyn neu sy'n cael ei osod o dan drwydded i'w feddiannu|adeiladau rhestredig - dylech sicrhau cyngor gan swyddog cadwraeth eich awdurdod lleol os byddai'r gwaith yn newid cymeriad yr adeilad|adeiladau preswyl sydd wedi'u bwriadu i i gael eu defnyddio am lai na 4 mis y flwyddyn"
+      intro: "Does dim angen EPC ar gyfer eiddo os yw’r eiddo:"
+      list: "yn fan addoli|adeilad dros dro a ddefnyddir am lai na dwy flynedd | adeilad annibynnol ac iddo arwynebedd defnyddiadwy sy’n gyfanswm o lai na 50 metr sgwâr|safle diwydiannol, gweithdai ac adeiladau amaethyddol amhreswyl nad ydynt yn defnyddio llawer o ynni |rhai adeiladau sydd i fod i afael eu dymchwel|llety gwyliau sy’n cael ei rentu allan am lai na 4 mis y flwyddyn neu sy’n cael ei osod o dan drwydded i’w feddiannu|adeiladau rhestredig - dylech sicrhau cyngor gan swyddog cadwraeth eich awdurdod lleol os byddai’r gwaith yn newid cymeriad yr adeilad|adeiladau preswyl sydd wedi’u bwriadu i i gael eu defnyddio am lai na 4 mis y flwyddyn"
     cta: "Dechrau nawr"
     before_you_start:
       heading: "Cyn ichi ddechrau"
       switch_language:
-        description: "Mae'r gwasanaeth hwn ar gael hefyd mewn %{link}."
+        description: "Mae’r gwasanaeth hwn ar gael hefyd mewn %{link}."
         link: "Saesneg (English)"
         url: "?lang=en"
       contact:
@@ -94,7 +94,7 @@ cy:
     head:
       title: "Cofrestr perfformiad ynni adeiladau - Cysylltwch â chynllun achredu aseswyr ynni"
     top_heading: "Cysylltwch â chynllun achredu aseswyr ynni"
-    description: "Mae'r cynlluniau a ganlyn yn trwyddedu aseswyr ynni i asesu eiddo a chreu tystysgrifau ynni"
+    description: "Mae’r cynlluniau a ganlyn yn trwyddedu aseswyr ynni i asesu eiddo a chreu tystysgrifau ynni"
     contact: "Dylech gysylltu â chynllun os oes angen ichi gysylltu â rhywun ynghylch asesydd"
     unaccredited: "heb ei achredu mwyach"
     contact_details:
@@ -103,7 +103,7 @@ cy:
       telephone: "Ffôn:"
     list:
       heading: "Cynlluniau achredu aseswyr ynni"
-      cta: "Ewch i'r wefan"
+      cta: "Ewch i’r wefan"
       commercial: "Eiddo masnachol yn unig"
       cibse:
         name: "CIBSE Certification Limited"
@@ -194,8 +194,8 @@ cy:
   find_assessor_by_postcode:
     top_heading: "Chwiliwch am asesydd yn ôl cod post"
     assessor_by_name:
-      title: "Chwiliwch yn ôl enw'r asesydd"
-      body: "Os ydych yn gwybod enw asesydd a'ch bod chi am wirio'i fanylion, gallwch chi %{link}."
+      title: "Chwiliwch yn ôl enw’r asesydd"
+      body: "Os ydych yn gwybod enw asesydd a’ch bod chi am wirio’i fanylion, gallwch chi %{link}."
       cta: "chwilio am asesydd yn ôl enw"
     question: "Rhowch god post yr eiddo"
     hint: "Er enghraifft SW1A 2AA"
@@ -215,9 +215,9 @@ cy:
       title: "Cymwysterau"
       domesticSap: "Gweithdrefn Asesu Safonol (SAP)"
       domesticRdSap: "Gweithdrefn Asesu Safonol â Llai o Ddata (RdSAP)"
-      nonDomesticSp3: "Aerdymheru Syml wedi'i Becynnu (Lefel 3)"
+      nonDomesticSp3: "Aerdymheru Syml wedi’i Becynnu (Lefel 3)"
       nonDomesticCc4: "Aerdymheru Canolog Cymhleth (Lefel 4)"
-      nonDomesticDec: "Tystysgrif Ynni i'w Harddangos (DEC)"
+      nonDomesticDec: "Tystysgrif Ynni i’w Harddangos (DEC)"
       nonDomesticNos3: "Asesydd Ynni Annomestig (Lefel 3)"
       nonDomesticNos4: "Asesydd Ynni Annomestig (Lefel 4)"
       nonDomesticNos5: "Asesydd Ynni Annomestig (Lefel 5)"
@@ -227,13 +227,13 @@ cy:
     top_heading: "Cysylltwch ag asesydd i drefnu asesiad ynni"
     question: "I chwilio eto rhowch god post yr eiddo"
     hint: "Er enghraifft SW1A 2AA"
-    description: "Cysylltwch ag asesydd sydd wedi'i restru isod i drefnu asesiad ynni."
+    description: "Cysylltwch ag asesydd sydd wedi’i restru isod i drefnu asesiad ynni."
     no_assessors_heading: "Dim canlyniadau ar gyfer %{postcode}"
     no_assessors_1: "Rydyn ni heb ganfod aseswyr ar gyfer %{postcode}"
-    no_assessors_2: "Gwiriwch fod y cod post yn gywir a'i roi unwaith eto, neu rhowch gynnig ar chwilio am god post arall gerllaw"
+    no_assessors_2: "Gwiriwch fod y cod post yn gywir a’i roi unwaith eto, neu rhowch gynnig ar chwilio am god post arall gerllaw"
     postcode_finder: "Chwiliwch am god post ar chwiliwr codau post y Post Brenhinol"
     accreditation_summary_title: "Rhagor o wybodaeth"
-    accreditation_summary_text: "Mae cynlluniau achredu'n cael eu penodi gan y llywodraeth i sicrhau bod gan aseswyr gymwysterau i wneud asesiadau EPC.<br /><br />Os ydych yn anfodlon ar asesiad EPC, gallwch gwyno i'r asesydd yn uniongyrchol. Os ydych yn dal yn anfodlon, dylech gysylltu â chynllun achredu'ch asesydd."
+    accreditation_summary_text: "Mae cynlluniau achredu’n cael eu penodi gan y llywodraeth i sicrhau bod gan aseswyr gymwysterau i wneud asesiadau EPC.<br /><br />Os ydych yn anfodlon ar asesiad EPC, gallwch gwyno i’r asesydd yn uniongyrchol. Os ydych yn dal yn anfodlon, dylech gysylltu â chynllun achredu’ch asesydd."
     results: "%{quantity} aseswyr yn nhrefn eu pellter o %{postcode}"
     distance:
       heading: "Pellter"
@@ -258,13 +258,13 @@ cy:
 
   find_assessor_by_name_results:
     top_heading: "Cysylltwch ag asesydd i drefnu asesiad ynni"
-    description: "Gweld pa aseswyr sydd wedi'u hachredu o dan yr enw rydych chi'n chwilio amdano"
-    no_assessors: "Does dim aseswyr â'r enw hwnnw"
+    description: "Gweld pa aseswyr sydd wedi’u hachredu o dan yr enw rydych chi’n chwilio amdano"
+    no_assessors: "Does dim aseswyr â’r enw hwnnw"
     accreditation_summary_title: "Cynlluniau achredu a chwynion"
-    accreditation_summary_text: "Mae cynlluniau achredu'n cael eu penodi gan y llywodraeth i sicrhau bod gan aseswyr gymwysterau i wneud asesiadau EPC.<br /><br />Os ydych yn anfodlon ar asesiad EPC, gallwch gwyno i'r asesydd yn uniongyrchol. Os ydych yn dal yn anfodlon, dylech gysylltu â chynllun achredu'ch asesydd."
+    accreditation_summary_text: "Mae cynlluniau achredu’n cael eu penodi gan y llywodraeth i sicrhau bod gan aseswyr gymwysterau i wneud asesiadau EPC.<br /><br />Os ydych yn anfodlon ar asesiad EPC, gallwch gwyno i’r asesydd yn uniongyrchol. Os ydych yn dal yn anfodlon, dylech gysylltu â chynllun achredu’ch asesydd."
     results:
       results: "%{quantity} canlyniadau ar gyfer yr enw %{name}"
-      results_like: "%{quantity} canlyniadau, yn debyg i'r enw %{name}"
+      results_like: "%{quantity} canlyniadau, yn debyg i’r enw %{name}"
     contact_details_text: "Manylion cysylltu"
     accredited_by_text: "Cynllun achredu"
     assessor_id_text: "ID yr asesydd"
@@ -275,20 +275,20 @@ cy:
       introduction: "Defnyddiwch y gwasanaeth hwn i chwilio am dystysgrifau ynni ac adroddiadau ar argymhellion ar gyfer eiddo yng Nghymru, Lloegr a Gogledd Iwerddon."
       this_includes: "Mae hyn yn cynnwys:"
       epc: "tystysgrifau perfformiad ynni (EPCs)"
-      dec: "tystysgrifau ynni i'w harddangos (DECs) i adeiladau cyhoeddus"
+      dec: "tystysgrifau ynni i’w harddangos (DECs) i adeiladau cyhoeddus"
       air_con_cert_report: "tystysgrifau ac adroddiadau ar archwiliadau systemau aerdymheru"
     cta: "Dechreuwch nawr"
     before_you_start:
       title: "Cyn ichi ddechrau"
       switch_language:
-        description: "Mae'r gwasanaeth hwn ar gael hefyd mewn %{link}."
+        description: "Mae’r gwasanaeth hwn ar gael hefyd mewn %{link}."
         link: "Saesneg (English)"
         url: "?lang=en"
       scotland:
         text: "Ar gyfer eiddo yn yr Alban, defnyddiwch %{link}."
         cta: "Wasanaeth tystysgrifau ynni yr Alban"
       property_guidance:
-        description: "Os nad oes gan eich eiddo dystysgrif ynni neu os yw'r dystysgrif wedi dod i ben, fe allwch chi"
+        description: "Os nad oes gan eich eiddo dystysgrif ynni neu os yw’r dystysgrif wedi dod i ben, fe allwch chi"
         link: "sicrhau tystysgrif ynni newydd"
         url: "/chwilio-am-asesydd"
       commercial:
@@ -319,15 +319,15 @@ cy:
     button_text: "Chwiliwch"
     hint: "Er enghraifft SW1A 2AA"
     certificate_by_street_name_and_town:
-      heading: "Chwiliwch yn ôl y stryd a'r dref"
+      heading: "Chwiliwch yn ôl y stryd a’r dref"
       body: "Os nad ydych yn gwybod cod post yr eiddo, %{link}"
-      cta: "chwiliwch am EPC drwy ddefnyddio enw'r stryd a'r dref"
+      cta: "chwiliwch am EPC drwy ddefnyddio enw’r stryd a’r dref"
     certificate_by_reference_number:
       heading: "Chwiliwch yn ôl rhif y dystysgrif"
       body: "Fe allwch chi %{link}"
       cta: "chwilio am EPC drwy ddefnyddio rhif y dystysgrif"
     no_network:
-      heading: "Cysylltiad â'r rhwydwaith wedi methu"
+      heading: "Cysylltiad â’r rhwydwaith wedi methu"
       body: "Mae yna wall rhwydwaith mewnol"
 
   find_certificate_results:
@@ -346,7 +346,7 @@ cy:
 
   find_certificate_by_postcode_results:
     top_heading: "Chwiliwch am dystysgrif perfformiad ynni (EPC)"
-    expired_epc_availability: "Mae'r canlyniadau'n dangos pob EPC ddilys. Nid yw rhai EPCs sydd wedi dod i ben yn ymddangos, ond dylai pob EPC sydd wedi dod i ben fod ar gael erbyn mis Chwefror 2021."
+    expired_epc_availability: "Mae’r canlyniadau’n dangos pob EPC ddilys. Nid yw rhai EPCs sydd wedi dod i ben yn ymddangos, ond dylai pob EPC sydd wedi dod i ben fod ar gael erbyn mis Chwefror 2021."
     contact_support_part_one: "Os oes arnoch angen cymorth ychwanegol i ddod o hyd i dystysgrif ynni neu adroddiad, cysylltwch â ni ar "
     contact_support_part_two: ", neu ffoniwch ein desg gymorth ar 020 3829 0748 (dydd Llun i ddydd Gwener, 9am - 5pm)."
     mhclg_support_email: 'mhclg.digital-services@communities.gov.uk'
@@ -358,19 +358,19 @@ cy:
       address: Cyfeiriad
       rating: "Cyfraddiad ynni"
       expiry: "Dilys tan"
-    no_certificates: "Does dim tystysgrifau'n cyfateb i'r cod post hwnnw"
+    no_certificates: "Does dim tystysgrifau’n cyfateb i’r cod post hwnnw"
 
   find_certificate_by_reference_number:
     head:
       title: "Cofrestr perfformiad ynni adeiladau - Chwiliwch am dystysgrif perfformiad ynni"
     top_heading: "Chwiliwch am dystysgrif perfformiad ynni (EPC) yn ôl rhif y dystysgrif"
     question: "Rhowch rif tystysgrif"
-    reference_number_not_registered: "Does dim tystysgrif wedi'i chanfod â'r rhif tystysgrif hwn"
+    reference_number_not_registered: "Does dim tystysgrif wedi’i chanfod â’r rhif tystysgrif hwn"
     reference_number_not_valid: "Rhowch rif tystysgrif 20-digid"
     button_text: Chwiliwch
     hint: "Er enghraifft 9002-3775-9101-5482-3149"
     no_network:
-      heading: "Cysylltiad â'r rhwydwaith wedi methu"
+      heading: "Cysylltiad â’r rhwydwaith wedi methu"
       body: "Mae yna wall rhwydwaith mewnol"
 
   find_certificate_by_reference_number_results:
@@ -382,10 +382,10 @@ cy:
       address: Cyfeiriad
       rating: "Cyfraddiad ynni"
       expiry: "Dilys tan"
-    no_certificates: "Does dim tystysgrifau'n cyfateb i'r rhif tystysgrif EPC hwnnw"
+    no_certificates: "Does dim tystysgrifau’n cyfateb i’r rhif tystysgrif EPC hwnnw"
 
   find_certificate_by_street_name_and_town:
-    top_heading: "Chwiliwch am dystysgrif perfformiad ynni (EPC) yn ôl y stryd a'r dref"
+    top_heading: "Chwiliwch am dystysgrif perfformiad ynni (EPC) yn ôl y stryd a’r dref"
     no_such_address:
       error: "Methwyd â dod o hyd i dystysgrif yn y cyfeiriad hwn"
       body: "Os oes angen ichi gael EPC ar gyfer eich eiddo, defnyddiwch y gwasanaeth %{link}"
@@ -393,16 +393,16 @@ cy:
     button_text: Chwiliwch
     street_name_question: "Rhowch y stryd"
     street_name_hint: "Er enghraifft Primrose Street"
-    town_question: "Rhowch y dref neu'r ddinas"
+    town_question: "Rhowch y dref neu’r ddinas"
     town_hint: "Er enghraifft Bournemouth"
-    street_name_missing: "Rhowch enw'r stryd"
-    town_missing: "Rhowch y dref neu'r ddinas"
+    street_name_missing: "Rhowch enw’r stryd"
+    town_missing: "Rhowch y dref neu’r ddinas"
     no_network:
-      heading: "Cysylltiad â'r rhwydwaith wedi methu"
+      heading: "Cysylltiad â’r rhwydwaith wedi methu"
       body: "Mae yna wall rhwydwaith mewnol"
 
   find_non_dom_certificate_by_street_name_and_town:
-    top_heading: "Chwiliwch am dystysgrif perfformiad ynni (EPC) yn ôl y stryd a'r dref"
+    top_heading: "Chwiliwch am dystysgrif perfformiad ynni (EPC) yn ôl y stryd a’r dref"
     no_such_address:
       error: "Methwyd â dod o hyd i dystysgrif yn y cyfeiriad hwn"
       body: "Os oes angen ichi gael EPC ar gyfer eich eiddo, defnyddiwch y gwasanaeth %{link}"
@@ -410,17 +410,17 @@ cy:
     button_text: "Chwiliwch"
     street_name_question: "Rhowch y stryd"
     street_name_hint: "Er enghraifft Primrose Street"
-    town_question: "Rhowch y dref neu'r ddinas"
+    town_question: "Rhowch y dref neu’r ddinas"
     town_hint: "Er enghraifft Bournemouth"
-    street_name_missing: "Rhowch enw'r stryd"
-    town_missing: "Rhowch y dref neu'r ddinas"
+    street_name_missing: "Rhowch enw’r stryd"
+    town_missing: "Rhowch y dref neu’r ddinas"
     no_network:
-      heading: "Cysylltiad â'r rhwydwaith wedi methu"
+      heading: "Cysylltiad â’r rhwydwaith wedi methu"
       body: "Mae yna wall rhwydwaith mewnol"
 
   find_certificate_by_street_name_and_town_results:
     top_heading: "Chwiliwch am dystysgrif perfformiad ynni (EPC)"
-    expired_epc_availability: "Mae'r canlyniadau'n dangos pob EPC ddilys. Nid yw rhai EPCs sydd wedi dod i ben yn ymddangos, ond dylai pob EPC sydd wedi dod i ben fod ar gael erbyn mis Chwefror 2021."
+    expired_epc_availability: "Mae’r canlyniadau’n dangos pob EPC ddilys. Nid yw rhai EPCs sydd wedi dod i ben yn ymddangos, ond dylai pob EPC sydd wedi dod i ben fod ar gael erbyn mis Chwefror 2021."
     contact_support_part_one: "Os oes arnoch angen cymorth ychwanegol i ddod o hyd i dystysgrif ynni neu adroddiad, cysylltwch â ni ar "
     contact_support_part_two: ", neu ffoniwch ein desg gymorth ar 020 3829 0748 (dydd Llun i ddydd Gwener, 9am - 5pm)."
     mhclg_support_email: 'mhclg.digital-services@communities.gov.uk'
@@ -432,11 +432,11 @@ cy:
       address: "Cyfeiriad"
       rating: "Cyfraddiad ynni"
       expiry: "Dilys tan"
-    no_certificates: "Does dim tystysgrifau'n cyfateb i'r rhif tystysgrif EPC hwnnw"
+    no_certificates: "Does dim tystysgrifau’n cyfateb i’r rhif tystysgrif EPC hwnnw"
 
   find_non_dom_certificate_by_street_name_and_town_results:
     top_heading: "Chwiliwch am dystysgrifau ynni ac adroddiadau"
-    expired_epc_availability: "Mae'r canlyniadau'n dangos pob tystysgrif ynni ac adroddiad dilys. Nid yw rhai tystysgrifau ac adroddiadau sydd wedi dod i ben yn ymddangos, ond dylai pob tystysgrif ac adroddiad sydd wedi dod i ben fod ar gael erbyn mis Chwefror 2021."
+    expired_epc_availability: "Mae’r canlyniadau’n dangos pob tystysgrif ynni ac adroddiad dilys. Nid yw rhai tystysgrifau ac adroddiadau sydd wedi dod i ben yn ymddangos, ond dylai pob tystysgrif ac adroddiad sydd wedi dod i ben fod ar gael erbyn mis Chwefror 2021."
     contact_support_part_one: "Os oes arnoch angen cymorth ychwanegol i ddod o hyd i dystysgrif ynni neu adroddiad, cysylltwch â ni ar "
     contact_support_part_two: ", neu ffoniwch ein desg gymorth ar 020 3829 0748 (dydd Llun i ddydd Gwener, 9am - 5pm)."
     mhclg_support_email: 'mhclg.digital-services@communities.gov.uk'
@@ -448,7 +448,7 @@ cy:
       address: "Cyfeiriad"
       rating: "Cyfraddiad ynni"
       expiry: "Dilys tan"
-    no_certificates: "Does dim tystysgrifau'n cyfateb i'r cyfeiriad hwnnw"
+    no_certificates: "Does dim tystysgrifau’n cyfateb i’r cyfeiriad hwnnw"
 
   find_non_dom_certificate_by_postcode:
     top_heading: "Chwiliwch am dystysgrifau ynni ac adroddiadau yn ôl cod post"
@@ -456,55 +456,55 @@ cy:
     button_text: "Chwiliwch"
     hint: "Er enghraifft SW1A 2AA"
     no_network:
-      heading: "Cysylltiad â'r rhwydwaith wedi methu"
+      heading: "Cysylltiad â’r rhwydwaith wedi methu"
       body: "Mae yna wall rhwydwaith mewnol"
     certificate_by_street_name_and_town:
-      heading: "Chwiliwch yn ôl y stryd a'r dref"
+      heading: "Chwiliwch yn ôl y stryd a’r dref"
       body: "Os nad ydych yn gwybod cod post yr eiddo, %{link}."
-      cta: "chwiliwch am dystysgrifau perfformiad ynni drwy ddefnyddio enw'r stryd a'r dref"
+      cta: "chwiliwch am dystysgrifau perfformiad ynni drwy ddefnyddio enw’r stryd a’r dref"
     certificate_by_reference_number:
       heading: "Chwiliwch yn ôl rhif y dystysgrif"
       body: "Fe allwch chi %{link}."
-      cta: "chwilio am dystysgrif drwy ddefnyddio'i rhif tystysgrif"
+      cta: "chwilio am dystysgrif drwy ddefnyddio’i rhif tystysgrif"
 
   find_non_dom_certificate_by_postcode_results:
     top_heading: "Chwiliwch am dystysgrifau ynni ac adroddiadau"
-    expired_epc_availability: "Mae'r canlyniadau'n dangos pob tystysgrif ynni ac adroddiad dilys. Nid yw rhai tystysgrifau ac adroddiadau sydd wedi dod i ben yn ymddangos, ond dylai pob tystysgrif ac adroddiad sydd wedi dod i ben fod ar gael erbyn mis Chwefror 2021."
+    expired_epc_availability: "Mae’r canlyniadau’n dangos pob tystysgrif ynni ac adroddiad dilys. Nid yw rhai tystysgrifau ac adroddiadau sydd wedi dod i ben yn ymddangos, ond dylai pob tystysgrif ac adroddiad sydd wedi dod i ben fod ar gael erbyn mis Chwefror 2021."
     contact_support_part_one: "Os oes arnoch angen cymorth ychwanegol i ddod o hyd i dystysgrif ynni neu adroddiad, cysylltwch â ni ar"
     contact_support_part_two: ", neu ffoniwch ein desg gymorth ar 020 3829 0748 (dydd Llun i ddydd Gwener, 9am - 5pm)."
     mhclg_support_email: 'mhclg.digital-services@communities.gov.uk'
     no_epc:
       get_a_new_one: "Os nad oes gan eich eiddo dystysgrif ynni ddilys, gallwch"
       get_a_new_one_link: "sicrhau tystysgrif ynni newydd"
-    no_certificates: "Does dim tystysgrifau nac adroddiadau yn cyfateb i'r cod post hwnnw"
+    no_certificates: "Does dim tystysgrifau nac adroddiadau yn cyfateb i’r cod post hwnnw"
     list: "%{length} o dystysgrifau ac adroddiadau ar gyfer %{postcode}"
 
   find_non_dom_certificate_by_reference_number:
     top_heading: "Chwiliwch am dystysgrifau ynni ac adroddiadau yn ôl eu rhif"
     question: "Rhowch rif tystysgrif neu adroddiad"
-    reference_number_not_registered: "Methwyd â dod o hyd i dystysgrif â'r rhif hwn"
+    reference_number_not_registered: "Methwyd â dod o hyd i dystysgrif â’r rhif hwn"
     reference_number_not_valid: "Rhowch rif tystysgrif 20-digid"
     button_text: "Chwiliwch"
     hint: "Er enghraifft 9002-3775-9101-5482-3149"
     no_network:
-      heading: "Cysylltiad â'r rhwydwaith wedi methu"
+      heading: "Cysylltiad â’r rhwydwaith wedi methu"
       body: "Mae yna wall rhwydwaith mewnol"
 
   find_non_dom_certificate_by_reference_number_results:
     head:
       title: "Cofrestr perfformiad ynni adeiladau - Canlyniadau ar gyfer tystysgrifau ynni ac adroddiadau yn cyfateb i dystysgrif rhif"
     top_heading: "Chwiliwch am dystysgrifau ynni ac adroddiadau"
-    no_certificates: "Does dim tystysgrifau nac adroddiadau'n cyfateb i'r rhif tystysgrif hwnnw"
+    no_certificates: "Does dim tystysgrifau nac adroddiadau’n cyfateb i’r rhif tystysgrif hwnnw"
     list: "%{length} o dystysgrifau ac adroddiadau ar gyfer %{reference_number}"
 
   component:
     print:
       certificate:
         label: "Argraffwch y dystysgrif hon"
-        noscript_text: "I argraffu'r dystysgrif hon, pwyswch CMD/CTRL + P ar eich bysellfwrdd"
+        noscript_text: "I argraffu’r dystysgrif hon, pwyswch CMD/CTRL + P ar eich bysellfwrdd"
       report:
         label: "Argraffwch yr adroddiad hwn"
-        noscript_text: "I argraffu'r adroddiad hwn pwyswch CMD/CTRL + P ar eich bysellfwrdd"
+        noscript_text: "I argraffu’r adroddiad hwn pwyswch CMD/CTRL + P ar eich bysellfwrdd"
       type:
         report: "adroddiad"
         certificate: "dystysgrif"
@@ -512,7 +512,7 @@ cy:
       title: "Gwybodaeth weinyddol"
       assessor:
         list:
-          name: "Enw'r asesydd"
+          name: "Enw’r asesydd"
           number: "ID yr Asesydd"
           telephone: "Ffôn"
           email: "Ebost"
@@ -520,7 +520,7 @@ cy:
         name: "Cynllun achredu"
         phone: "Rhif ffôn y cynllun achredu"
         email: "Ebost y cynllun achredu"
-      company_name: "Enw'r Cyflogwr/Enw Masnachu"
+      company_name: "Enw’r Cyflogwr/Enw Masnachu"
       company_address: "Cyfeiriad y Cyflogwr/Cyfeiriad Masnachu"
     epc_summary:
       title: "Cyfraddiad ynni"
@@ -540,7 +540,7 @@ cy:
       title: "%{type}au eraill ar gyfer yr eiddo hwn"
       certificate: tystysgrif
       report: adroddiad
-      message: "Os ydych yn ymwybodol bod yna %{type}au blaenorol ar gyfer yr eiddo hwn ac nad ydyn nhw wedi'u rhestru yma, cysylltwch â ni yn %{link} neu ffoniwch ein desg gymorth ar 020 3829 0748."
+      message: "Os ydych yn ymwybodol bod yna %{type}au blaenorol ar gyfer yr eiddo hwn ac nad ydyn nhw wedi’u rhestru yma, cysylltwch â ni yn %{link} neu ffoniwch ein desg gymorth ar 020 3829 0748."
       no_related: "Does dim %{type}au perthynol ar gyfer yr eiddo hwn."
       reference_number: "Rhif y dystysgrif"
       valid_until: "Dilys tan"
@@ -553,13 +553,13 @@ cy:
         title: "Adroddiadau eraill ar gyfer yr eiddo hwn"
     recommendations:
       title: "Argymhellion"
-      text: "Gwnewch y newidiadau hyn er mwyn gwella effeithlonrwydd ynni'r eiddo."
-      recommended_improvements_text: "Mae'r gwelliannau sy'n cael eu hargymell wedi'u gosod mewn grwpiau yn ôl amcangyfrif o'r amser a gymerai i'r newid dalu amdano'i hun. Gall yr asesydd wneud argymhellion ychwanegol hefyd."
-      description: "Mae pob argymhelliad wedi ei farcio fel isel, canolig neu uchel. Mae hyn yn dangos effaith bosibl y newid ar leihau allyriadau carbon yr eiddo.'carbon emissions."
+      text: "Gwnewch y newidiadau hyn er mwyn gwella effeithlonrwydd ynni’r eiddo."
+      recommended_improvements_text: "Mae’r gwelliannau sy’n cael eu hargymell wedi’u gosod mewn grwpiau yn ôl amcangyfrif o’r amser a gymerai i’r newid dalu amdano’i hun. Gall yr asesydd wneud argymhellion ychwanegol hefyd."
+      description: "Mae pob argymhelliad wedi ei farcio fel isel, canolig neu uchel. Mae hyn yn dangos effaith bosibl y newid ar leihau allyriadau carbon yr eiddo.’carbon emissions."
       table:
-        three_years_heading: "Newidiadau sy'n talu amdanynt eu hunain o fewn 3 blynedd"
-        three_to_seven_years_heading: "Newidiadau sy'n talu amdanynt eu hunain o fewn 3 i 7 mlynedd"
-        more_than_seven_years_heading: "Newidiadau sy'n talu amdanynt eu hunain mewn mwy na 7 mlynedd"
+        three_years_heading: "Newidiadau sy’n talu amdanynt eu hunain o fewn 3 blynedd"
+        three_to_seven_years_heading: "Newidiadau sy’n talu amdanynt eu hunain o fewn 3 i 7 mlynedd"
+        more_than_seven_years_heading: "Newidiadau sy’n talu amdanynt eu hunain mewn mwy na 7 mlynedd"
         additional_heading: "Argymhellion ychwanegol"
         recommendation_heading: "Argymhelliad"
         potential_impact_heading: "Effaith bosibl"
@@ -578,7 +578,7 @@ cy:
       title: "Cyfraddiad effeithlonrwydd ynni yr eiddo hwn"
       current_rating_text: "Cyfraddiad effeithlonrwydd ynni presennol yr eiddo hwn yw %{current_energy_efficiency_band}."
       rating_desc: "Mae cyfraddiad yn cael ei roi i bob eiddo, gan amrywio rhwng A+ (y mwyaf effeithlon) ac G (y lleiaf effeithlon)."
-      score_desc: "Mae pob eiddo'n cael sgôr hefyd. Uchaf i gyd yw'r rhif, mwyaf i gyd o garbon deuocsid (CO2) mae'ch eiddo'n debygol o'i allyrru."
+      score_desc: "Mae pob eiddo’n cael sgôr hefyd. Uchaf i gyd yw’r rhif, mwyaf i gyd o garbon deuocsid (CO2) mae’ch eiddo’n debygol o’i allyrru."
       svg:
         chart_title: "Siart effeithlonrwydd ynni"
         chart_description: "Cyfraddiad ynni cyfredol yr eiddo hwn yw %{current_energy_efficiency_band} gyda sgôr o %{current_energy_efficiency_rating}."
@@ -587,16 +587,16 @@ cy:
         title: "Rheolau ar osod yr eiddo hwn"
         rental_info:
           body_1: "Gall eiddo gael ei osod os yw ei gyfraddiad ynni rhwng A+ ac E."
-          body_2: "Os yw cyfraddiad ynni yn F neu G, nid yw'r landlord yn cael rhoi tenantiaeth i denantiaid newydd na'r tenantiaid presennol oni bai bod esemptiad wedi'i gofrestru."
-          summary: "O 1 Ebrill 2023, ni fydd landlordiaid yn cael parhau i osod eiddo annomestig ar brydles bresennol os yw cyfraddiad ynni'r eiddo hwnnw'n F neu G."
+          body_2: "Os yw cyfraddiad ynni yn F neu G, nid yw’r landlord yn cael rhoi tenantiaeth i denantiaid newydd na’r tenantiaid presennol oni bai bod esemptiad wedi’i gofrestru."
+          summary: "O 1 Ebrill 2023, ni fydd landlordiaid yn cael parhau i osod eiddo annomestig ar brydles bresennol os yw cyfraddiad ynni’r eiddo hwnnw’n F neu G."
           guidance_text: "Gallwch ddarllen %{link}."
           cta: "canllawiau i landlordiaid ar y rheoliadau ac esemptiadau"
           url: "https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/824018/Non-Dom_Private_Rented_Property_Minimum_Standard_-_Landlord_Guidance.pdf"
         warning:
           assistive_text: "Rhybudd"
           text: "Efallai na chewch chi osod yr eiddo hwn"
-          body: "Cyfraddiad ynni yr eiddo hwn yw %{current_energy_efficiency_band}. Ni chaiff y landlord roi tenantiaeth i denantiaid newydd na thenantiaid presennol oni bai bod esemptiad wedi'i gofrestru."
-        recommendation: "Caniateir i eiddo gael ei osod os yw ei gyfraddiad ynni rhwng A+ ac E. Mae %{link} yn nodi'r newidiadau y gallwch eu gwneud i wella cyfraddiad yr eiddo"
+          body: "Cyfraddiad ynni yr eiddo hwn yw %{current_energy_efficiency_band}. Ni chaiff y landlord roi tenantiaeth i denantiaid newydd na thenantiaid presennol oni bai bod esemptiad wedi’i gofrestru."
+        recommendation: "Caniateir i eiddo gael ei osod os yw ei gyfraddiad ynni rhwng A+ ac E. Mae %{link} yn nodi’r newidiadau y gallwch eu gwneud i wella cyfraddiad yr eiddo"
         cta: "adroddiad ar argymhellion"
         url: "#related_report"
       other_reports:
@@ -612,57 +612,57 @@ cy:
       rating:
         title: "Cyfraddiad ynni ac EPC"
         current_energy_rating: "Cyfraddiad ynni presennol yr eiddo hwn yw %{band}."
-        more_info: "I gael rhagor o wybodaeth am berfformiad ynni'r eiddo, %{link}."
+        more_info: "I gael rhagor o wybodaeth am berfformiad ynni’r eiddo, %{link}."
         cta: "gweler EPC yr eiddo"
       property_details:
-        title: "Manylion yr eiddo a'r adroddiad"
+        title: "Manylion yr eiddo a’r adroddiad"
         issued_on: "Rhoddwyd yr adroddiad ar"
         floor_area: "Cyfanswm yr arwynebedd defnyddiadwy"
         environment: "Amgylchedd yr adeilad"
         tool: "Dull cyfrifo"
       assessor_details:
         title: "Manylion yr asesydd"
-        name: "Enw'r asesydd"
+        name: "Enw’r asesydd"
         phone: "Ffôn"
         email: "Ebost"
-        employer_name: "Enw'r cyflogwr"
+        employer_name: "Enw’r cyflogwr"
         employer_address: "Cyfeiriad y cyflogwr"
         number: "ID yr Asesydd"
         scheme: "Cynllun achredu"
         declaration: "Datganiad yr asesydd"
-        no_connection_text: "Dim cysylltiad â'r eiddo"
-        has_connection_text: "Mae'r asesydd wedi gwneud datganiad"
+        no_connection_text: "Dim cysylltiad â’r eiddo"
+        has_connection_text: "Mae’r asesydd wedi gwneud datganiad"
       information:
         certificate:
           list:
-            no_disclosure: "Nid yw'r asesydd wedi dweud a oes ganddo berthynas â'r eiddo ai peidio"
+            no_disclosure: "Nid yw’r asesydd wedi dweud a oes ganddo berthynas â’r eiddo ai peidio"
     how_this_building_compares:
-      heading: "Sut mae'r eiddo hwn yn cymharu ag eraill"
-      explanation: "Gallai eiddo sy'n debyg i'r eiddo hwn fod â chyfraddiadau:"
+      heading: "Sut mae’r eiddo hwn yn cymharu ag eraill"
+      explanation: "Gallai eiddo sy’n debyg i’r eiddo hwn fod â chyfraddiadau:"
       if_newly_built: "Os ydyn nhw newydd gael eu hadeiladu"
-      if_typical_existing_stock: "Os ydyn nhw'n nodweddiadol o'r stoc bresennol"
+      if_typical_existing_stock: "Os ydyn nhw’n nodweddiadol o’r stoc bresennol"
     energy_peformance_breakdown:
-      heading: "Dadansoddiad o berfformiad ynni'r eiddo hwn"
+      heading: "Dadansoddiad o berfformiad ynni’r eiddo hwn"
       main_heating_fuel: "Y prif danwydd at wresogi"
       building_environment: "Amgylchedd yr adeilad"
       floor_area: "Cyfanswm yr arwynebedd defnyddiadwy (m2)"
       assessment_level: "Lefel yr asesiad"
-      emission_rate: "Cyfraddiad allyriadau'r adeilad (kgCO2/m2 y flwyddyn)"
+      emission_rate: "Cyfraddiad allyriadau’r adeilad (kgCO2/m2 y flwyddyn)"
       primary_energy_use: "Prif ddefnydd ynni (kWh/m2 y flwyddyn)"
     contact:
-      heading: "Cysylltu â'r asesydd a'ch cynllun achredu"
+      heading: "Cysylltu â’r asesydd a’ch cynllun achredu"
       p1: "Cafodd yr EPC hon ei chreu gan asesydd ynni cymwysedig."
-      p2: "Os ydych yn anfodlon ar asesiad neu dystysgrif ynni'ch eiddo, gallwch gwyno i'r asesydd dyn uniongyrchol."
-      p3: "Os ydych yn dal yn anfodlon ar ôl cysylltu â'r asesydd, dylech gysylltu â chynllun achredu'r asesydd."
-      p4: "Mae cynlluniau achredu'n cael eu penodi gan y llywodraeth i sicrhau bod gan aseswyr y cymwysterau i gyflawni asesiadau EPC."
+      p2: "Os ydych yn anfodlon ar asesiad neu dystysgrif ynni’ch eiddo, gallwch gwyno i’r asesydd dyn uniongyrchol."
+      p3: "Os ydych yn dal yn anfodlon ar ôl cysylltu â’r asesydd, dylech gysylltu â chynllun achredu’r asesydd."
+      p4: "Mae cynlluniau achredu’n cael eu penodi gan y llywodraeth i sicrhau bod gan aseswyr y cymwysterau i gyflawni asesiadau EPC."
       assessor:
-        heading: "Manylion cysylltu'r asesydd"
-        name: "Enw'r asesydd"
+        heading: "Manylion cysylltu’r asesydd"
+        name: "Enw’r asesydd"
         phone: "Ffôn"
         email: "Ebost"
         id: "ID yr asesydd"
       scheme:
-        heading: "Manylion cysylltu'r cynllun achredu"
+        heading: "Manylion cysylltu’r cynllun achredu"
         name: "Cynllun achredu"
         phone: "Ffôn"
         email: "Ebost"
@@ -676,7 +676,7 @@ cy:
     related_report:
       heading: "Adroddiad ar argymhellion"
       cta: "adroddiad ar argymhellion"
-      text: "Mae canllawiau ar wella perfformiad ynni'r eiddo hwn ar gael yn y %{link}."
+      text: "Mae canllawiau ar wella perfformiad ynni’r eiddo hwn ar gael yn y %{link}."
 
   domestic_epc:
     top_heading: "Tystysgrif perfformiad ynni (EPC)"
@@ -686,17 +686,17 @@ cy:
       energy_rating_title: "Cyfraddiad ynni"
       floor_area: "Cyfanswm arwynebedd yr eiddo yw %{total_floor_area} o fetrau sgwâr."
       print_certificate: "Argraffwch y dystysgrif hon"
-      print_certificate_noscript: "I argraffu'r dystysgrif hon, pwyswch CMD/CTRL + P ar eich bysellfwrdd"
+      print_certificate_noscript: "I argraffu’r dystysgrif hon, pwyswch CMD/CTRL + P ar eich bysellfwrdd"
     sidebar:
       title: "Cynnwys y dystysgrif"
       sections:
         renting: "Rheolau ar osod yr eiddo hwn"
-        epc: "Cyfraddiad perfformiad ynni'r eiddo hwn"
-        summary: "Ddadansoddiad o berfformiad ynni'r eiddo"
+        epc: "Cyfraddiad perfformiad ynni’r eiddo hwn"
+        summary: "Ddadansoddiad o berfformiad ynni’r eiddo"
         energy: "Effaith amgylcheddol yr eiddo hwn."
         recommendations: "Sut i wella perfformiad amgylcheddol yr eiddo hwn."
-        heat_demand: "Amcangyfrif o'r ynni a ddefnyddir a'r arbedion posibl"
-        information: "Cysylltu â'r asesydd a'r cynllun achredu"
+        heat_demand: "Amcangyfrif o’r ynni a ddefnyddir a’r arbedion posibl"
+        information: "Cysylltu â’r asesydd a’r cynllun achredu"
         green_deal: "Cynllun y Fargen Werdd"
         related_asssesments: "Asesiadau perthynol"
         previous: "Tystysgrifau eraill ar gyfer yr eiddo hwn"
@@ -708,34 +708,34 @@ cy:
           subtitle: "Efallai na chewch chi osod yr eiddo hwn"
           energy_rating_title: "Cyfraddiad ynni"
           body:
-            text: "Cyfraddiad ynni'r eiddo hwn yw %{current_energy_efficiency_band}. Ni chaniateir ei osod oni bai bod esemptiad wedi'i gofrestru."
+            text: "Cyfraddiad ynni’r eiddo hwn yw %{current_energy_efficiency_band}. Ni chaniateir ei osod oni bai bod esemptiad wedi’i gofrestru."
             text_2: "Caniateir i eiddo gael ei rentu os yw ei gyfraddiad ynni rhwng A ac E."
-            recommendations_text: "Mae'r %{recommendations_link} yn nodi newidiadau y gallwch eu gwneud er mwyn gwella cyfraddiad yr eiddo."
+            recommendations_text: "Mae’r %{recommendations_link} yn nodi newidiadau y gallwch eu gwneud er mwyn gwella cyfraddiad yr eiddo."
             recommendations_cta: "adran argymhellion"
             recommendations_url: "#argymhellion"
         rental_info:
           body_1: "Caniateir i eiddo gael ei rentu os yw ei gyfraddiad ynni rhwng A ac E."
-          body_2: "Os yw cyfraddiad yr eiddo yn F neu G, ni chaniateir ei osod oni bai bod esemptiad wedi'i gofrestru"
+          body_2: "Os yw cyfraddiad yr eiddo yn F neu G, ni chaniateir ei osod oni bai bod esemptiad wedi’i gofrestru"
           guidance_text: "Gallwch ddarllen %{link}."
           cta: "canllawiau i landlordiaid ar y rheoliadau ac esemptiadau"
           url: "https://www.gov.uk/guidance/domestic-private-rented-property-minimum-energy-efficiency-standard-landlord-guidance"
       epc:
-        title: "Cyfraddiad effeithlonrwydd ynni'r eiddo hwn"
+        title: "Cyfraddiad effeithlonrwydd ynni’r eiddo hwn"
         intro:
-          text: "Cyfraddiad effeithlonrwydd ynni presennol yr eiddo hwn yw %{current_energy_efficiency_band}. Mae ganddo'r potensial i fod yn %{potential_energy_efficiency_band}."
-          cta: "Gweld sut i wella perfformiad ynni'r eiddo hwn."
+          text: "Cyfraddiad effeithlonrwydd ynni presennol yr eiddo hwn yw %{current_energy_efficiency_band}. Mae ganddo’r potensial i fod yn %{potential_energy_efficiency_band}."
+          cta: "Gweld sut i wella perfformiad ynni’r eiddo hwn."
           url: "#argymhellion"
         chart_title: "Siart effeithlonrwydd ynni"
         chart_description: "Cyfraddiad ynni cyfredol yr eiddo hwn yw %{current_energy_efficiency_band} gyda sgôr o %{current_energy_efficiency_rating}. Mae ganddo gyfraddiad ynni posibl o %{potential_energy_efficiency_band} gyda sgôr o %{potential_energy_efficiency_rating}."
-        body1: "Mae'r graff yn dangos effeithlonrwydd ynni'r eiddo hwn ar hyn o bryd a'i effeithlonrwydd ynni posibl."
+        body1: "Mae’r graff yn dangos effeithlonrwydd ynni’r eiddo hwn ar hyn o bryd a’i effeithlonrwydd ynni posibl."
         body2: "Mae cyfraddiad yn cael ei roi i bob eiddo, gan amrywio rhwng A+ (y mwyaf effeithlon) ac G (y lleiaf effeithlon)."
-        body3: "Mae eiddo yn cael sgôr hefyd. Uchaf i gyd yw'r rhif, isaf i gyd mae eich biliau tanwydd yn debygol o fod."
+        body3: "Mae eiddo yn cael sgôr hefyd. Uchaf i gyd yw’r rhif, isaf i gyd mae eich biliau tanwydd yn debygol o fod."
         body4: "Cyfraddiad a sgôr ynni cyfartalog eiddo yng Nghymru a Lloegr yw D (60)."
         ni_average_rating: "Y sgôr ynni ar gyfartaledd a sgôr eiddo yng Ngogledd Iwerddon yw D (60)."
       breakdown:
-        title: "Dadansoddiad o berfformiad ynni'r eiddo hwn"
-        intro: "Mae'r adran hon yn dangos perfformiad ynni nodweddiadol yr eiddo. Nid yw'r asesiad yn ystyried cyflwr nodwedd na pha mor dda y mae'n gweithio."
-        assessment_rating_explanation: "Asesir pob nodwedd fel un o'r canlynol:"
+        title: "Dadansoddiad o berfformiad ynni’r eiddo hwn"
+        intro: "Mae’r adran hon yn dangos perfformiad ynni nodweddiadol yr eiddo. Nid yw’r asesiad yn ystyried cyflwr nodwedd na pha mor dda y mae’n gweithio."
+        assessment_rating_explanation: "Asesir pob nodwedd fel un o’r canlynol:"
         heading_feature: 'Nodwedd'
         heading_description: 'Disgrifiad'
         heading_rating: 'Cyfraddiad'
@@ -745,38 +745,38 @@ cy:
           average: gweddol
           good: da
           very_good: "da iawn (mwyaf effeithlon)"
-        not_inspected: "Pan fo'r disgrifiad yn dweud 'assumed', mae'n golygu nad oedd modd asesu'r nodwedd a bod tybiaeth wedi'i gwneud a hynny ar sail oedran a math yr eiddo."
+        not_inspected: "Pan fo’r disgrifiad yn dweud “assumed”, mae’n golygu nad oedd modd asesu’r nodwedd a bod tybiaeth wedi’i gwneud a hynny ar sail oedran a math yr eiddo."
         energy_performance: "perfformiad ynni"
         primary_energy_use: "Prif ddefnydd ynni"
-        primary_energy_use_description: "Prif ddefnydd ynni'r eiddo hwn y flwyddyn yw %{primary_energy} o gilowat oriau am bob metr sgwâr (kWh/m2)."
+        primary_energy_use_description: "Prif ddefnydd ynni’r eiddo hwn y flwyddyn yw %{primary_energy} o gilowat oriau am bob metr sgwâr (kWh/m2)."
         list:
           total_floor_area: "Cyfanswm yr arwynebedd"
           meters_squared: "o fetrau sgwâr"
           dwelling_type: "Math o eiddo"
       environmental_impact:
         title: "Effaith amgylcheddol yr eiddo hwn"
-        summary: "Un o'r cyfranwyr mwyaf at newid yr hinsawdd yw carbon deuocsid (CO2). Yr ynni a ddefnyddir i wresogi, goleuo a phweru'n cartrefi sy'n cynhyrchu mwy na chwarter allyriadau CO2 y Deyrnas Unedig."
-        making_changes: "Drwy gyflawni'r %{link}, fe allech chi ostwng allyriadau CO2 yr eiddo hwn yn ôl %{reduction} tunnell y flwyddyn. Bydd hynny'n helpu i ddiogelu'r amgylchedd."
+        summary: "Un o’r cyfranwyr mwyaf at newid yr hinsawdd yw carbon deuocsid (CO2). Yr ynni a ddefnyddir i wresogi, goleuo a phweru’n cartrefi sy’n cynhyrchu mwy na chwarter allyriadau CO2 y Deyrnas Unedig."
+        making_changes: "Drwy gyflawni’r %{link}, fe allech chi ostwng allyriadau CO2 yr eiddo hwn yn ôl %{reduction} tunnell y flwyddyn. Bydd hynny’n helpu i ddiogelu’r amgylchedd."
         making_changes_cta: "newidiadau a argymhellir"
         making_changes_url: "#argymhellion"
-        environmental_impact_rating: "Mae cyfraddiadau effaith amgylcheddol yn cael eu seilio ar dybiaethau ynghylch y feddiannaeth gyfartalog a'r defnydd ynni cyfartalog. Mae'n bosibl nad ydyn nhw'n adlewyrchu sut mae ynni'n cael ei ddefnyddio gan y bobl sy'n byw yn yr eiddo."
+        environmental_impact_rating: "Mae cyfraddiadau effaith amgylcheddol yn cael eu seilio ar dybiaethau ynghylch y feddiannaeth gyfartalog a’r defnydd ynni cyfartalog. Mae’n bosibl nad ydyn nhw’n adlewyrchu sut mae ynni’n cael ei ddefnyddio gan y bobl sy’n byw yn yr eiddo."
         average_household:
-          text: "Mae'r aelwyd gyfartalog yn cynhyrchu"
+          text: "Mae’r aelwyd gyfartalog yn cynhyrchu"
           carbon: "6"
-        property_produces: "Mae'r eiddo hwn yn cynhyrchu"
+        property_produces: "Mae’r eiddo hwn yn cynhyrchu"
         potential: "Mae gan yr eiddo hwn y potensial i gynhyrchu"
         tonnes_of_carbon_emission: " o dunelli o %{carbon}"
       recommendations:
-        title: "Sut i wella perfformiad ynni'r eiddo hwn"
+        title: "Sut i wella perfformiad ynni’r eiddo hwn"
         summary:
-          make_changes_text: "Bydd cyflawni unrhyw un neu ragor o'r newidiadau a argymhellir yn gwella effeithlonrwydd dynni'r eiddo."
-          improve_rating_text: "Os gwnewch chi bob un o'r newidiadau a argymhellir, bydd hyn yn gwella cyfraddiad ynni a sgôr eich eiddo o %{current_energy_efficiency_band} (%{current_energy_efficiency_rating}) i %{potential_energy_efficiency_band}  (%{potential_energy_efficiency_rating})."
+          make_changes_text: "Bydd cyflawni unrhyw un neu ragor o’r newidiadau a argymhellir yn gwella effeithlonrwydd dynni’r eiddo."
+          improve_rating_text: "Os gwnewch chi bob un o’r newidiadau a argymhellir, bydd hyn yn gwella cyfraddiad ynni a sgôr eich eiddo o %{current_energy_efficiency_band} (%{current_energy_efficiency_rating}) i %{potential_energy_efficiency_band}  (%{potential_energy_efficiency_rating})."
           what_is_energy_rating: "Beth yw cyfraddiad ynni?"
-          energy_rating_description1: "Mae cyfraddiad ynni yn dangos effeithlonrwydd ynni'r eiddo"
+          energy_rating_description1: "Mae cyfraddiad ynni yn dangos effeithlonrwydd ynni’r eiddo"
           energy_rating_description2: "Mae cyfraddiad yn cael ei roi i bob eiddo, gan amrywio rhwng A+ (y mwyaf effeithlon) ac G (y lleiaf effeithlon)."
-          energy_rating_description3: "Mae pob eiddo'n cael sgôr hefyd. Uchaf i gyd yw'r rhif, isaf i gyd mae eich allyriadau CO2 yn debygol o fod."
+          energy_rating_description3: "Mae pob eiddo’n cael sgôr hefyd. Uchaf i gyd yw’r rhif, isaf i gyd mae eich allyriadau CO2 yn debygol o fod."
           no_recommendations_summary: "Chafodd dim argymhellion eu gwneud gan yr asesydd ar gyfer yr eiddo hwn"
-          simple_energy_text: "Mae gan Simple Energy Advice ganllawiau ar wella'r defnydd ynni mewn eiddo"
+          simple_energy_text: "Mae gan Simple Energy Advice ganllawiau ar wella’r defnydd ynni mewn eiddo"
           simple_energy_link: "https://www.simpleenergyadvice.org.uk/"
         box:
           energy_rating_title: "Cyfraddiad ynni posibl"
@@ -794,46 +794,46 @@ cy:
           text: "Chwiliwch am grantiau ynni a ffyrdd i arbed ynni yn eich cartref."
           link: "https://www.gov.uk/improve-energy-efficiency"
       heat_demand:
-        title: "Amcangyfrif o'r defnydd ynni a'r arbedion posibl"
+        title: "Amcangyfrif o’r defnydd ynni a’r arbedion posibl"
         estimated_cost: "Amcangyfrif o gost flynyddol yr ynni ar gyfer yr eiddo hwn"
         three_year_saving: "Arbediad posibl"
-        costs_and_savings: "Mae'r amcangyfrif o'r gost yn dangos faint y byddai'r aelwyd gyfartalog yn ei wario yn yr eiddo hwn ar gyfer gwresogi, golau a dŵr poeth. Nid yw'n cael ei seilio ar sut mae ynni'n cael ei ddefnyddio gan y bobl sy'n byw yn yr eiddo."
-        based_on: "Mae'r amcangyfrif o'r arbedion wedi'i seilio ar gyflawni pob un o'r argymhellion yn %{link}."
-        based_on_cta: "sut i wella perfformiad ynni'r eiddo hwn"
+        costs_and_savings: "Mae’r amcangyfrif o’r gost yn dangos faint y byddai’r aelwyd gyfartalog yn ei wario yn yr eiddo hwn ar gyfer gwresogi, golau a dŵr poeth. Nid yw’n cael ei seilio ar sut mae ynni’n cael ei ddefnyddio gan y bobl sy’n byw yn yr eiddo."
+        based_on: "Mae’r amcangyfrif o’r arbedion wedi’i seilio ar gyflawni pob un o’r argymhellion yn %{link}."
+        based_on_cta: "sut i wella perfformiad ynni’r eiddo hwn"
         based_on_url: "#argymhellion"
-        more_advice: "I gael cyngor ar sut i leihau'ch biliau ynni, ewch i %{link}."
+        more_advice: "I gael cyngor ar sut i leihau’ch biliau ynni, ewch i %{link}."
         more_advice_cta: "Simple Energy Advice"
         more_advice_url: "https://www.simpleenergyadvice.org.uk/"
         heating_in_property: "Defnydd gwres yn yr eiddo hwn"
-        energy_costs: "Gwresogi eiddo sydd fel arfer yn creu'r rhan fwyaf o'ch costau ynni."
-        estimated_energy: "Amcangyfrif o'r ynni a ddefnyddir i wresogi'r eiddo hwn"
+        energy_costs: "Gwresogi eiddo sydd fel arfer yn creu’r rhan fwyaf o’ch costau ynni."
+        estimated_energy: "Amcangyfrif o’r ynni a ddefnyddir i wresogi’r eiddo hwn"
         space_heating: "Gwresogi lle"
         kwh_per_year: "kWh y flwyddyn"
         water_heating: "Cynhesu dŵr"
-        estimated_use: "Amcangyfrif o'r ynni a ddefnyddir"
+        estimated_use: "Amcangyfrif o’r ynni a ddefnyddir"
         potential_saving: "Arbedion ynni posibl drwy osod inswleiddiad"
         no_potential_saving: "Welodd yr asesydd ddim cyfleoedd i arbed ynni drwy osod inswleiddiad yn yr eiddo hwn."
         type_of_insulation: "Math o inswleiddiad"
         amount_saved: "Faint o ynni a arbedir"
-        loft_insulation: "Inswleiddio'r croglofft"
+        loft_insulation: "Inswleiddio’r croglofft"
         cavity_insulation: "Inswleiddio waliau ceudod"
         solid_wall_insulation: "Inswleiddio waliau solet"
         renewable_heat_incentive:
-          body: "Efallai y gallwch gael %{link}. Bydd hynny'n helpu i leihau allyriadau carbon drwy osod system wresogi sy'n creu gwres adnewyddadwy yn lle'ch system bresennol. Yr amcangyfrif o'r ynni y mae ei angen ar gyfer gwresogi lle a chynhesu dŵr"
+          body: "Efallai y gallwch gael %{link}. Bydd hynny’n helpu i leihau allyriadau carbon drwy osod system wresogi sy’n creu gwres adnewyddadwy yn lle’ch system bresennol. Yr amcangyfrif o’r ynni y mae ei angen ar gyfer gwresogi lle a chynhesu dŵr"
           url: "https://www.gov.uk/domestic-renewable-heat-incentive"
-          cta: "taliadau'r Cymhelliant Gwres Adnewyddadwy"
+          cta: "taliadau’r Cymhelliant Gwres Adnewyddadwy"
         not_applicable: "Heb fod yn gymwys"
       information:
-        title: "Cysylltu â'r asesydd a'r cynllun achredu"
-        intro: "Cafodd yr EPC hon ei chreu gan asesydd ynni cymwysedig.<br /><br />Os ydych yn anfodlon ar asesiad neu dystysgrif ynni'ch eiddo, gallwch gwyno i'r asesydd yn uniongyrchol.<br /><br />Os ydych yn dal yn anfodlon ar ôl cysylltu â'r asesydd, dylech gysylltu â chynllun achredu'r asesydd.<br /><br />Mae cynlluniau achredu'n cael eu penodi gan y llywodraeth i sicrhau bod gan aseswyr gymwysterau i gyflawni asesiadau EPC."
+        title: "Cysylltu â’r asesydd a’r cynllun achredu"
+        intro: "Cafodd yr EPC hon ei chreu gan asesydd ynni cymwysedig.<br /><br />Os ydych yn anfodlon ar asesiad neu dystysgrif ynni’ch eiddo, gallwch gwyno i’r asesydd yn uniongyrchol.<br /><br />Os ydych yn dal yn anfodlon ar ôl cysylltu â’r asesydd, dylech gysylltu â chynllun achredu’r asesydd.<br /><br />Mae cynlluniau achredu’n cael eu penodi gan y llywodraeth i sicrhau bod gan aseswyr gymwysterau i gyflawni asesiadau EPC."
         assessor:
-          title: "Manylion cysylltu'r asesydd"
+          title: "Manylion cysylltu’r asesydd"
           list:
             telephone: "Ffôn"
             email: "Ebost"
-            name: "Enw'r asesydd"
+            name: "Enw’r asesydd"
         scheme:
-          title: "Manylion cysylltu'r cynllun achredu"
+          title: "Manylion cysylltu’r cynllun achredu"
           list:
             name: "Cynllun achredu"
             scheme_assessor_id: "ID yr asesydd"
@@ -844,36 +844,36 @@ cy:
             date_of_assessment: "Dyddiad yr asesiad"
             date_of_certificate: "Dyddiad y dystysgrif"
             type_of_assessment: "Math o asesiad"
-            sap_description_first_part: "Mae SAP (Gweithdrefn Asesu Safonol) yn ddull a ddefnyddir i asesu a chymharu perfformiad ynni a pherfformiad amgylcheddol eiddo yn y Deyrnas Unedig. Mae'n defnyddio gwybodaeth fanwl am adeiledd yr adeilad i gyfrifo'i berfformiad ynni."
-            sap_description_second_part: "Rhaid i'r math hwn o asesiad gael ei gyflawni ar bob eiddo newydd a godwyd ar ôl 1 Ebrill yng Nghymru a Lloegr, a 30 Medi 2008 yng Ngogledd Iwerddon."
-            rdsap_description_first_part: "Mae RdSAP (Gweithdrefn Asesu Safonol â Llai o Ddata) yn ddull a ddefnyddir i asesu a chymharu perfformiad ynni a pherfformiad amgylcheddol eiddo yn y Deyrnas Unedig. Mae'n defnyddio ymweliad â'r safle ac arolwg o'r eiddo i gyfrifo'i berfformiad ynni."
-            rdsap_description_second_part: "Gall y math hwn o asesiad gael ei gyflawni ar eiddo a godwyd cyn 1 Ebrill 2008 yng Nghymru a Lloegr, a 30 Medi 2008 yng Ngogledd. Gall gael ei ddefnyddio hefyd ar eiddo mwy diweddar cyhyd â bod gan yr eiddo asesiad SAP blaenorol sy'n defnyddio gwybodaeth fanwl am adeiladwaith yr eiddo i gyfrifo'r perfformiad ynni."
-            no_disclosure: "Dim datganiad asesydd wedi'i ddarparu"
-            disclosure_number_not_valid: "Nid yw'r cod datgelu a roddwyd yn ddilys"
+            sap_description_first_part: "Mae SAP (Gweithdrefn Asesu Safonol) yn ddull a ddefnyddir i asesu a chymharu perfformiad ynni a pherfformiad amgylcheddol eiddo yn y Deyrnas Unedig. Mae’n defnyddio gwybodaeth fanwl am adeiledd yr adeilad i gyfrifo’i berfformiad ynni."
+            sap_description_second_part: "Rhaid i’r math hwn o asesiad gael ei gyflawni ar bob eiddo newydd a godwyd ar ôl 1 Ebrill yng Nghymru a Lloegr, a 30 Medi 2008 yng Ngogledd Iwerddon."
+            rdsap_description_first_part: "Mae RdSAP (Gweithdrefn Asesu Safonol â Llai o Ddata) yn ddull a ddefnyddir i asesu a chymharu perfformiad ynni a pherfformiad amgylcheddol eiddo yn y Deyrnas Unedig. Mae’n defnyddio ymweliad â’r safle ac arolwg o’r eiddo i gyfrifo’i berfformiad ynni."
+            rdsap_description_second_part: "Gall y math hwn o asesiad gael ei gyflawni ar eiddo a godwyd cyn 1 Ebrill 2008 yng Nghymru a Lloegr, a 30 Medi 2008 yng Ngogledd. Gall gael ei ddefnyddio hefyd ar eiddo mwy diweddar cyhyd â bod gan yr eiddo asesiad SAP blaenorol sy’n defnyddio gwybodaeth fanwl am adeiladwaith yr eiddo i gyfrifo’r perfformiad ynni."
+            no_disclosure: "Dim datganiad asesydd wedi’i ddarparu"
+            disclosure_number_not_valid: "Nid yw’r cod datgelu a roddwyd yn ddilys"
       green_deal:
         title: "Cynllun y Fargen Werdd"
-        info: "Cafodd gwelliannau effeithlonrwydd ynni eu gwneid i'r eiddo hwn gan %{link}."
+        info: "Cafodd gwelliannau effeithlonrwydd ynni eu gwneid i’r eiddo hwn gan %{link}."
         url: "https://www.gov.uk/green-deal-energy-saving-measures/moving-into-a-property-with-a-green-deal"
-        copy_of_plan: "Cyn prynu neu rentu'r eiddo hwn, dylech ofyn i berchennog yr eiddo am gopi o'r cynllun. Gallach gael copi o'r cynllun hefyd oddi wrth ddarparwr y cynllun gyda chydsyniad y perchennog."
+        copy_of_plan: "Cyn prynu neu rentu’r eiddo hwn, dylech ofyn i berchennog yr eiddo am gopi o’r cynllun. Gallach gael copi o’r cynllun hefyd oddi wrth ddarparwr y cynllun gyda chydsyniad y perchennog."
         cost_of_plan: "Cost y cynllun"
         plan_charges:
-          title: "Mae taliadau'r cynllun:"
-          point_one: "yn daladwy fel rhan o'r bil trydan"
+          title: "Mae taliadau’r cynllun:"
+          point_one: "yn daladwy fel rhan o’r bil trydan"
           point_two: "yn gostwng wrth i chi dalu am bob gwelliant"
         current_charge: "Y tâl presennol"
-        estimated_saving: "Amcangyfrif o'r arbedion"
-        payment_period_start: "Dechrau'r cyfnod talu"
+        estimated_saving: "Amcangyfrif o’r arbedion"
+        payment_period_start: "Dechrau’r cyfnod talu"
         payment_period_end: "Diwedd y cyfnod talu"
-        interest_rate_payable: "Y gyfradd log sy'n daladwy"
-        charge_overtime: "Dyma'r tâl presennol, ond gall y tâl newid dros amser gan ddibynnu ar fanylion y cynllun. Gallwch orffen talu am y cynllun yn gynt, er y gall fod yna gostau ychwanegol"
+        interest_rate_payable: "Y gyfradd log sy’n daladwy"
+        charge_overtime: "Dyma’r tâl presennol, ond gall y tâl newid dros amser gan ddibynnu ar fanylion y cynllun. Gallwch orffen talu am y cynllun yn gynt, er y gall fod yna gostau ychwanegol"
         estimated_savings:
-          title: "Mae'r amcangyfrif o'r arbedion wedi'i seilio ar:"
+          title: "Mae’r amcangyfrif o’r arbedion wedi’i seilio ar:"
           assessment: "asesiad gwreiddiol y Fargen Werdd"
-          improvements_made: "y gwelliannau sydd wedi'u gwneud gan y cynllun"
-          typical_energy_use: "defnydd ynni nodweddiadol y math hwn o eiddo, yn defnyddio'r prisiau ynni presennol."
+          improvements_made: "y gwelliannau sydd wedi’u gwneud gan y cynllun"
+          typical_energy_use: "defnydd ynni nodweddiadol y math hwn o eiddo, yn defnyddio’r prisiau ynni presennol."
         improvements_header: "Gwelliannau"
-        paid_off_header: "Wedi'i dalu"
-        plan_and_provider_details: "Manylion y cynllun a'r darparwr"
+        paid_off_header: "Wedi’i dalu"
+        plan_and_provider_details: "Manylion y cynllun a’r darparwr"
         plan_number: "Rhif y cynllun"
         provider_name: "Darparwr"
         provider_telephone: "Ffôn"
@@ -895,8 +895,8 @@ cy:
           SAP: "Tystysgrif perfformiad ynni"
           "AC-REPORT": "Adroddiad ar archwiliad aerdymheru"
           "AC-CERT": "Tystysgrif archwiliad aerdymheru"
-          DEC: "Tystysgrif ynni i'w harddangos"
-          "DEC-RR": "Adroddiad ar argymhellion tystysgrif ynni i'w harddangos"
+          DEC: "Tystysgrif ynni i’w harddangos"
+          "DEC-RR": "Adroddiad ar argymhellion tystysgrif ynni i’w harddangos"
 
   assessment_types:
     CEPC: "Tystysgrif perfformiad ynni masnachol"
@@ -905,8 +905,8 @@ cy:
     SAP: "Tystysgrif perfformiad ynni"
     "AC-REPORT": "Adroddiad ar archwiliad aerdymheru awyr"
     "AC-CERT": "Tystysgrif archwiliad aerdymheru"
-    DEC: "Tystysgrif ynni i'w harddangos"
-    "DEC-RR": "Adroddiad ar argymhellion tystysgrif ynni i'w harddangos"
+    DEC: "Tystysgrif ynni i’w harddangos"
+    "DEC-RR": "Adroddiad ar argymhellion tystysgrif ynni i’w harddangos"
 
   expired: "Wedi dod i ben"
   valid_until: "Dilys tan"
@@ -928,7 +928,7 @@ cy:
   improvement_code:
     "1":
       title: "Inswleiddiad silindr dŵr poeth"
-      description: "Inswleiddio'r silindr dŵr poeth â siaced 80 mm "
+      description: "Inswleiddio’r silindr dŵr poeth â siaced 80 mm "
 
     "2":
       title: "Inswleiddiad silindr dŵr poeth"
@@ -1099,8 +1099,8 @@ cy:
       description: "Inswleiddio ystafell yn y to"
 
     "47":
-      title: "Inswleiddio'r llawr"
-      description: "Inswleiddio'r llawr"
+      title: "Inswleiddio’r llawr"
+      description: "Inswleiddio’r llawr"
 
     "48":
       title: "Drysau allanol perfformiad uchel"
@@ -1111,15 +1111,15 @@ cy:
       description: "System adennill gwres i gawodydd cymysg"
 
     "50":
-      title: "Dyfais adennill gwres o'r ffliw nwy ar y cyd â bwyler"
-      description: "Adennill gwres o'r ffliw nwy"
+      title: "Dyfais adennill gwres o’r ffliw nwy ar y cyd â bwyler"
+      description: "Adennill gwres o’r ffliw nwy"
 
     "51":
-      title: "Pwmp gwres sy'n tarddu yn yr awyr neu'r ddaear"
+      title: "Pwmp gwres sy’n tarddu yn yr awyr neu’r ddaear"
       description: ".."
 
     "52":
-      title: "Pwmp gwres sy'n tarddu yn yr awyr neu'r ddaear gyda gwres dan y llawr"
+      title: "Pwmp gwres sy’n tarddu yn yr awyr neu’r ddaear gyda gwres dan y llawr"
       description: ".."
 
     "53":
@@ -1139,12 +1139,12 @@ cy:
       description: "Cyfnewid unedau gwydro"
 
     "57":
-      title: "Inswleiddio'r llawr (llawr crog)"
-      description: "Inswleiddio'r llawr (llawr crog)"
+      title: "Inswleiddio’r llawr (llawr crog)"
+      description: "Inswleiddio’r llawr (llawr crog)"
 
     "58":
-      title: "Inswleiddio'r llawr (llawr solet)"
-      description: "Inswleiddio'r llawr (llawr solet)"
+      title: "Inswleiddio’r llawr (llawr solet)"
+      description: "Inswleiddio’r llawr (llawr solet)"
 
     "59":
       title: "Gwresogyddion storio sy’n cadw llawer o wres"
@@ -1176,74 +1176,74 @@ cy:
     "4":
       relation: "Buddiant ariannol yn yr eiddo"
     "5":
-      relation: "Perchennog neu Gyfarwyddwr y sefydliad sy'n ymdrin â'r trafodiad eiddo"
+      relation: "Perchennog neu Gyfarwyddwr y sefydliad sy’n ymdrin â’r trafodiad eiddo"
     "6":
-      relation: "Yn cael ei gyflogi gan y gweithiwr proffesiynol sy'n ymdrin â'r trafodiad eiddo"
+      relation: "Yn cael ei gyflogi gan y gweithiwr proffesiynol sy’n ymdrin â’r trafodiad eiddo"
     "7":
-      relation: "Perthynas i'r gweithiwr proffesiynol sy'n ymdrin â'r trafodiad eiddo"
+      relation: "Perthynas i’r gweithiwr proffesiynol sy’n ymdrin â’r trafodiad eiddo"
   non_domestic_disclosure_code:
     "1":
-      relation: "Nid yw'r asesydd yn perthyn i berchennog yr eiddo"
+      relation: "Nid yw’r asesydd yn perthyn i berchennog yr eiddo"
     "2":
-      relation: "Mae'r asesydd yn berthynas i berchennog yr eiddo"
+      relation: "Mae’r asesydd yn berthynas i berchennog yr eiddo"
     "3":
-      relation: "Mae'r asesydd yn berthynas i'r gweithiwr proffesiynol sy'n ymdrin â'r trafodiad eiddo."
+      relation: "Mae’r asesydd yn berthynas i’r gweithiwr proffesiynol sy’n ymdrin â’r trafodiad eiddo."
     "4":
-      relation: "Mae gan yr asesydd berthynas anuniongyrchol â'r perchennog (er enghraifft, gallai rhywun yn nheulu'r asesydd fod yn cael ei gyflogi gan berchennog yr eiddo)."
+      relation: "Mae gan yr asesydd berthynas anuniongyrchol â’r perchennog (er enghraifft, gallai rhywun yn nheulu’r asesydd fod yn cael ei gyflogi gan berchennog yr eiddo)."
     "5":
       relation: "Yr asesydd yw deiliad yr eiddo"
     "6":
-      relation: "Yr asesydd yw perchennog neu gyfarwyddwr y sefydliad sy'n ymdrin â'r trafodiad eiddo"
+      relation: "Yr asesydd yw perchennog neu gyfarwyddwr y sefydliad sy’n ymdrin â’r trafodiad eiddo"
     "7":
-      relation: "Mae'r asesydd yn cael ei gyflogi gan y sefydliad sy'n ymdrin â'r trafodiad eiddo"
+      relation: "Mae’r asesydd yn cael ei gyflogi gan y sefydliad sy’n ymdrin â’r trafodiad eiddo"
     "8":
-      relation: "Mae'r asesydd wedi datgan buddiant ariannol yn yr eiddo."
+      relation: "Mae’r asesydd wedi datgan buddiant ariannol yn yr eiddo."
     "9":
-      relation: "Mae'r asesydd yn cael ei gyflogi gan berchennog yr eiddo."
+      relation: "Mae’r asesydd yn cael ei gyflogi gan berchennog yr eiddo."
     "10":
-      relation: "Mae'r asesydd o dan gontract i'r perchennog i ddarparu gwasanaethau asesu ynni eraill."
+      relation: "Mae’r asesydd o dan gontract i’r perchennog i ddarparu gwasanaethau asesu ynni eraill."
     "11":
-      relation: "Mae'r asesydd o dan gontract i'r perchennog i ddarparu Gwasanaethau heblaw asesiadau ynni."
+      relation: "Mae’r asesydd o dan gontract i’r perchennog i ddarparu Gwasanaethau heblaw asesiadau ynni."
     "12":
-      relation: "Mae gan yr asesydd berthynas flaenorol â'r perchennog (er enghraifft, efallai ei fod wedi'i gyflogi neu wedi bod yn gontractwr gynt)."
+      relation: "Mae gan yr asesydd berthynas flaenorol â’r perchennog (er enghraifft, efallai ei fod wedi’i gyflogi neu wedi bod yn gontractwr gynt)."
     "13":
-      relation: "Nid yw'r asesydd wedi nodi a oes ganddo berthynas â'r eiddo hwn."
+      relation: "Nid yw’r asesydd wedi nodi a oes ganddo berthynas â’r eiddo hwn."
   dec_disclosure_code:
     "1":
-      relation: "Heb fod yn perthyn i'r deiliad"
+      relation: "Heb fod yn perthyn i’r deiliad"
     "2":
       relation: "Yn cael ei gyflogi gan y deiliad"
     "3":
-      relation: "Contractwr i'r deiliad ar gyfer gwasanaethau EPBD yn unig."
+      relation: "Contractwr i’r deiliad ar gyfer gwasanaethau EPBD yn unig."
     "4":
-      relation: "Contractwr i'r deiliad ar gyfer gwasanaethau heblaw gwasanaethau EPBD."
+      relation: "Contractwr i’r deiliad ar gyfer gwasanaethau heblaw gwasanaethau EPBD."
     "5":
-      relation: "Perthynas anuniongyrchol â'r deiliad."
+      relation: "Perthynas anuniongyrchol â’r deiliad."
     "6":
-      relation: "Buddiant ariannol yn y deiliad a/neu'r eiddo."
+      relation: "Buddiant ariannol yn y deiliad a/neu’r eiddo."
     "7":
-      relation: "Perthynas flaenorol â'r deiliad"
+      relation: "Perthynas flaenorol â’r deiliad"
     "8":
-      relation: "Nid yw'r asesydd wedi nodi a oes ganddo berthynas â'r eiddo hwn."
+      relation: "Nid yw’r asesydd wedi nodi a oes ganddo berthynas â’r eiddo hwn."
   aci_disclosure_code:
     "1":
-      relation: "Heb fod yn perthyn i'r perchennog/deiliad neu'r person sydd â rheolaeth dechnegol dros y system neu'r is-gontractwr."
+      relation: "Heb fod yn perthyn i’r perchennog/deiliad neu’r person sydd â rheolaeth dechnegol dros y system neu’r is-gontractwr."
     "2":
-      relation: "Yn perthyn i'r perchennog/deiliad."
+      relation: "Yn perthyn i’r perchennog/deiliad."
     "3":
-      relation: "Yn perthyn i'r person sydd â rheolaeth dechnegol dros y system neu'r is-gontractwr."
+      relation: "Yn perthyn i’r person sydd â rheolaeth dechnegol dros y system neu’r is-gontractwr."
     "4":
       relation: "Deiliad yr eiddo"
     "5":
       relation: "Perchennog neu gyfarwyddwr y sefydliad"
     "6":
-      relation: "Buddiant ariannol yr yn eiddo/sefydliad gyda rheolaeth dechnegol dros y system neu'r is-gontractwr"
+      relation: "Buddiant ariannol yr yn eiddo/sefydliad gyda rheolaeth dechnegol dros y system neu’r is-gontractwr"
     "7":
-      relation: "Dan gontract i'r perchennog i ddarparu gwasanaethau asesu ynni eraill."
+      relation: "Dan gontract i’r perchennog i ddarparu gwasanaethau asesu ynni eraill."
     "8":
-      relation: "Dan gontract i'r perchennog i ddarparu gwasanaethau eraill (heblaw asesu ynni)"
+      relation: "Dan gontract i’r perchennog i ddarparu gwasanaethau eraill (heblaw asesu ynni)"
     "9":
-      relation: "Dan gontract i'r perchennog i ddarparu gwasanaethau cynnal a chadw aerdymheru"
+      relation: "Dan gontract i’r perchennog i ddarparu gwasanaethau cynnal a chadw aerdymheru"
 
   property_summary:
     type:
@@ -1263,25 +1263,25 @@ cy:
   error:
     error: "Gwall: "
     "500":
-      heading: "Ymddiheuriadau, mae problem gyda'r gwasanaeth."
+      heading: "Ymddiheuriadau, mae problem gyda’r gwasanaeth."
       body: "Rhowch gynnig arall arni yn nes ymlaen"
     "404":
       heading: "Y tudalen heb ei ganfod"
-      intro: "Os gwnaethoch chi deipio'r cyfeiriad gwe, gwiriwch ei fod yn gywir."
-      body: "Os gwnaethoch chi ludo'r cyfeiriad gwe, gwiriwch ei fod yn gywir."
+      intro: "Os gwnaethoch chi deipio’r cyfeiriad gwe, gwiriwch ei fod yn gywir."
+      body: "Os gwnaethoch chi ludo’r cyfeiriad gwe, gwiriwch ei fod yn gywir."
 
   dec:
-    top_heading: "Tystysgrif ynni i'w harddangos (DEC)"
-    tagline: "pa mor effeithlon yw'r adeilad hwn o ran ynni?"
+    top_heading: "Tystysgrif ynni i’w harddangos (DEC)"
+    tagline: "pa mor effeithlon yw’r adeilad hwn o ran ynni?"
     sections:
       contents:
         title: "Cynnwys y dystysgrif"
         certificate_number: "Rhif y dystysgrif"
       rating:
         title: "Cyfraddiad gweithredol perfformiad ynni"
-        emissions_text: "Mae cyfraddiad gweithredol perfformiad ynni'r adeilad wedi'i seilio ar ei allyriadau carbon deuocsid (CO2) am y flwyddyn ddiwethaf"
-        text: "Mae sgôr a chyfraddiad gweithredol yn cael eu rhoi i'r eiddo ar raddfa rhwng A (yr allyriadau isaf) i G (yr allyriadau uchaf)"
-        typical_text: "Sgôr nodweddiadol adeilad cyhoeddus yw 100. Mae'r sgôr nodweddiadol hon yn rhoi cyfraddiad gweithredol o D."
+        emissions_text: "Mae cyfraddiad gweithredol perfformiad ynni’r adeilad wedi’i seilio ar ei allyriadau carbon deuocsid (CO2) am y flwyddyn ddiwethaf"
+        text: "Mae sgôr a chyfraddiad gweithredol yn cael eu rhoi i’r eiddo ar raddfa rhwng A (yr allyriadau isaf) i G (yr allyriadau uchaf)"
+        typical_text: "Sgôr nodweddiadol adeilad cyhoeddus yw 100. Mae’r sgôr nodweddiadol hon yn rhoi cyfraddiad gweithredol o D."
         chart_title: 'Siart effeithlonrwydd ynni gweithredol'
         chart_description: 'Cyfraddiad ynni cyfredol yr adeilad hwn yw %{energy_efficiency_band} gyda sgôr o %{energy_efficiency_rating}.'
         guidance_text: "Gallwch ddarllen %{link}."
@@ -1290,20 +1290,20 @@ cy:
       recommendation_report:
         title: "Adroddiad ar argymhellion"
         cta: "adroddiad ar argymhellion"
-        text: "Mae canllawiau ar wella cyfraddiad gweithredol perfformiad ynni'r adeilad hwn ar gael yn y %{link}."
+        text: "Mae canllawiau ar wella cyfraddiad gweithredol perfformiad ynni’r adeilad hwn ar gael yn y %{link}."
       print_certificate:
         title: "Argraffwch y dystysgrif hon"
-        description: "Rhaid i awdurdodau cyhoeddus arddangos eu DEC mewn man amlwg sy'n amlwg yn weladwy i'r cyhoedd, megis yn agos i fynedfa'r adeilad. Os na wnân nhw hyn, gallant gael dirwy o Â£500."
-        a3: "Dylai'r dystysgrif hon gael ei hargraffu ar faint A3 o leiaf"
+        description: "Rhaid i awdurdodau cyhoeddus arddangos eu DEC mewn man amlwg sy’n amlwg yn weladwy i’r cyhoedd, megis yn agos i fynedfa’r adeilad. Os na wnân nhw hyn, gallant gael dirwy o Â£500."
+        a3: "Dylai’r dystysgrif hon gael ei hargraffu ar faint A3 o leiaf"
         open_print_version: "Agorwch fersiwn brint y dystysgrif"
       previous_energy_ratings:
         energy_rating: "Cyfraddiad gweithredol"
         date: "Dyddiad"
         title: "Cyfraddiadau gweithredol blaenorol"
-        explanation: "Mae hyn yn dweud pa mor effeithlon mae ynni wedi'i ddefnyddio yn yr adeilad hwn dros y tri chyfnod cyfrifyddu diwethaf."
+        explanation: "Mae hyn yn dweud pa mor effeithlon mae ynni wedi’i ddefnyddio yn yr adeilad hwn dros y tri chyfnod cyfrifyddu diwethaf."
       co2:
         title: "Cyfanswm yr allyriadau carbon deuocsid (CO2)"
-        explanation: "Mae hyn yn dweud faint o garbon deuocsid y mae'r adeilad yn ei allyrru. Mae'n dangos CO2 mewn tunelli y flwyddyn."
+        explanation: "Mae hyn yn dweud faint o garbon deuocsid y mae’r adeilad yn ei allyrru. Mae’n dangos CO2 mewn tunelli y flwyddyn."
         col:
           date: "Dyddiad"
           electricity: "Trydan"
@@ -1311,8 +1311,8 @@ cy:
           renewables: "Ynni adnewyddadwy"
         no_value: "Heb fod yn gymwys"
       technical_information:
-        title: "Defnydd ynni'r adeilad hwn"
-        print_title: "Defnydd ynni'r adeilad hwn"
+        title: "Defnydd ynni’r adeilad hwn"
+        print_title: "Defnydd ynni’r adeilad hwn"
         heating_fuel: "Prif danwydd gwresogi"
         building_environment: "Amgylchedd yr adeilad"
         floor_area: "Cyfanswm yr arwynebedd defnyddiadwy"
@@ -1329,10 +1329,10 @@ cy:
         print_title: "Manylion yr asesiad"
         assessment_software: "Meddalwedd asesu"
         property_reference: "Cyfeirnod yr eiddo"
-        assessor_name: "Enw'r asesydd"
+        assessor_name: "Enw’r asesydd"
         assessor_number: "ID yr Asesydd"
         scheme_name: "Cynllun achredu"
-        company_name: "Enw'r cyflogwr/enw masnachu"
+        company_name: "Enw’r cyflogwr/enw masnachu"
         company_address: "Cyfeiriad y cyflogwr/cyfeiriad masnachu"
         issue_date: "Dyddiad dyroddi"
         nominated_date: "Dyddiad enwebu"
@@ -1342,7 +1342,7 @@ cy:
         download_xml_cta: "Lawrlwytho Crynodeb XML"
         assessor:
           list:
-            name: "Enw'r asesydd"
+            name: "Enw’r asesydd"
             number: "ID yr Asesydd"
             telephone: "Ffôn"
             email: "Ebost"
@@ -1353,26 +1353,26 @@ cy:
       information:
         certificate:
           list:
-            no_disclosure: "Dim datganiad asesydd wedi'i ddarparu."
-            disclosure_number_not_valid: "Nid yw'r cod datgelu a roddwyd yn dilys"
+            no_disclosure: "Dim datganiad asesydd wedi’i ddarparu."
+            disclosure_number_not_valid: "Nid yw’r cod datgelu a roddwyd yn dilys"
 
   dec_rr:
-    top_heading: "Adroddiad ar argymhellion tystysgrif ynni i'w harddangos (DEC)"
+    top_heading: "Adroddiad ar argymhellion tystysgrif ynni i’w harddangos (DEC)"
     sections:
       contents:
         title: "Cynnwys yr adroddiad"
       rating:
         title: "Cyfraddiad gweithredol a DEC"
         text: "Cyfraddiad gweithredol yr adeilad hwn yw %{band}."
-        dec: "I gael rhagor o wybodaeth am berfformiad ynni'r adeilad, %{cta}."
+        dec: "I gael rhagor o wybodaeth am berfformiad ynni’r adeilad, %{cta}."
         cta: "gweler DEC yr adeilad hwn"
       building:
-        title: "Manylion yr adeilad a'r adroddiad"
+        title: "Manylion yr adeilad a’r adroddiad"
         occupier: "Deiliad yr adeilad"
         building_type: "Math o adeilad"
         building_environment: "Amgylchedd yr adeilad"
         renewable: "Ffynonellau ynni adnewyddadwy ar y safle"
-        discount: "Dibenion ynni gwahanadwy wedi'u disgowntio"
+        discount: "Dibenion ynni gwahanadwy wedi’u disgowntio"
         floor_area: "Cyfanswm yr arwynebedd defnyddiadwy"
         building_reference: "Cyfeirnod yr adeilad"
         issue_date: "Dyroddwyd yr adroddiad ar"
@@ -1382,10 +1382,10 @@ cy:
         gas_used: "Nwy a ddefnyddiwyd"
       assessor:
         title: "Manylion yr asesydd"
-        name: "Enw'r asesydd"
+        name: "Enw’r asesydd"
         email: "Ebost"
         phone: "Ffôn"
-        employer_name: "Enw'r cyflogwr"
+        employer_name: "Enw’r cyflogwr"
         employer_address: "Cyfeiriad y cyflogwr"
         number: "ID yr Asesydd"
         scheme: "Cynllun achredu"
@@ -1400,7 +1400,7 @@ cy:
         assessment_software: "Meddalwedd asesu"
         declaration: "Datganiad yr asesydd"
         f_gas_compliant_date: "Dyddiad cydymffurfio F-Gas"
-        total_effective_rated_output: "Cyfanswm yr allbwn effeithiol wedi'i raddio"
+        total_effective_rated_output: "Cyfanswm yr allbwn effeithiol wedi’i raddio"
         system_sampling: "Samplu systemau"
         treated_floor_area: "Arwynebedd a driniwyd"
         subsystems_metered: "Is-systemau â mesurydd"
@@ -1441,7 +1441,7 @@ cy:
         title: "Is-systemau a archwiliwyd"
         volume_definitions: "Diffiniadau cyfaint"
         description: "Disgrifiad"
-        cooling_output: "Allbwn oeri effeithiol wedi'i raddio "
+        cooling_output: "Allbwn oeri effeithiol wedi’i raddio "
         area_served: "Ardal a wasanaethir"
         inspection_date: "Dyddiad yr archwiliad"
         cooling_plant_count: "Nifer yr offer oeri"
@@ -1452,31 +1452,31 @@ cy:
         title: "Cofnodion archwilio y gofynnwyd amdanynt"
         essential:
           title: "Cofnodion hanfodol"
-          controlZones: "Disgrifiad o'r parthau rheoli system, gyda lluniadau sgematig"
-          coolingCapacities: "Capasiti oeri, gyda lleoliadau cydrannau'r holl offer o dan do ac yn yr awyr agored"
-          listOfSystems: "Rhestr fesul eitem o'r offer aerdymheru ac oeri sydd wedi'u gosod gan gynnwys gwneuthuriad y cynhyrchion, y model a'r rhif adnabod"
-          operationControls: "Disgrifiad o ddull rheoli'r cyfnodau gweithredu."
+          controlZones: "Disgrifiad o’r parthau rheoli system, gyda lluniadau sgematig"
+          coolingCapacities: "Capasiti oeri, gyda lleoliadau cydrannau’r holl offer o dan do ac yn yr awyr agored"
+          listOfSystems: "Rhestr fesul eitem o’r offer aerdymheru ac oeri sydd wedi’u gosod gan gynnwys gwneuthuriad y cynhyrchion, y model a’r rhif adnabod"
+          operationControls: "Disgrifiad o ddull rheoli’r cyfnodau gweithredu."
           schematics: "Cynlluniau llawr a sgemateg y systemau aerdymheru"
-          temperatureControls: "Disgrifiad o ddull rheoli'r tymheredd"
-          temperatureControlMethod: "Disgrifiad o ddull rheoli'r tymheredd"
-          operationControlMethod: "Disgrifiad o ddull rheoli'r cyfnodau gweithredu."
+          temperatureControls: "Disgrifiad o ddull rheoli’r tymheredd"
+          temperatureControlMethod: "Disgrifiad o ddull rheoli’r tymheredd"
+          operationControlMethod: "Disgrifiad o ddull rheoli’r cyfnodau gweithredu."
         desirable:
           title: "Cofnodion dymunol"
-          commissioningResults: "Ar gyfer systemau cyflenwi a thynnu aer perthnasol, comisiynu canlyniadau'r pŵer a amsugnir a fesurwyd ar y cyfraddau cyflenwi a thynnu aer arferol, a chomisiynu canlyniadau ar gyfer cyfraddau llif arferol aer a gyflenwir ac a dynnir (neu bŵer ffaniau penodol y systemau wedi'i gyfrifo'n annibynnol)"
+          commissioningResults: "Ar gyfer systemau cyflenwi a thynnu aer perthnasol, comisiynu canlyniadau’r pŵer a amsugnir a fesurwyd ar y cyfraddau cyflenwi a thynnu aer arferol, a chomisiynu canlyniadau ar gyfer cyfraddau llif arferol aer a gyflenwir ac a dynnir (neu bŵer ffaniau penodol y systemau wedi’i gyfrifo’n annibynnol)"
           consumptionRecords: "Cofnodion o ddefnydd, neu ddefnydd ynni, offer aerdymheru sydd ag is-fesurydd"
           controlSystemMaintenance: "Cofnodion gwaith calibradu a gwaith cynnal a wnaed ar systemau rheoli a synwyryddion, neu systemau a synwyryddion BMS"
           deliverySystemMaintenance: "Cofnodion gwaith cynnal a wnaed ar systemau cyflenwi aer, gan gynnwys glanhau a newid hidlyddion, a glanhau cyfnewidyddion gwres"
           previousReports: "Adroddiadau ar archwiliadau cynharach o systemau aerdymheru, ac er mwyn llunio tystysgrif perfformiad ynni"
-          refrigerationMaintenance: "Cofnodion gwaith cynnal a wnaed ar systemau oeri, gan gynnwys glanhau cyfnewidyddion gwres o dan do ac yn yr awyr agored, prifion gollyngiadau oeryddion, gwaith trwsio ar gydrannau oeri a'u hail-lenwi ag oerydd"
+          refrigerationMaintenance: "Cofnodion gwaith cynnal a wnaed ar systemau oeri, gan gynnwys glanhau cyfnewidyddion gwres o dan do ac yn yr awyr agored, prifion gollyngiadau oeryddion, gwaith trwsio ar gydrannau oeri a’u hail-lenwi ag oerydd"
           maintenanceRecords: "Cofnodion gwaith cynnal a wnaed gan gynnwys glanhau hidlyddion, glanhau cyfnewidyddion gwres o dan do ac yn yr awyr agored, profion gollyngiadau oeryddion, gwaith trwsio ar gydrannau oeri neu eu hail-lenwi ag oerydd"
           calibrationRecords: "Cofnodion gwaith calibradu a chynnal a wnaed ar systemau rheoli a synwyryddion"
         optional:
           title: "Cofnodion dewisol"
-          bmsCapability: "Pan ddefnyddir BMS dylai'r rheolwr drefnu bod datganiad byr yn cael ei ddarparu yn disgrifio'i alluoedd, yr offer y mae wedi'i gysylltu ag ef i'w reoli, y pwyntiau gosod ar gyfer rheoli tymheredd, pa mor aml y mae'n cael ei gynnal, a dyddiad yr archwiliad a'r gwaith cynnal diwethaf"
-          complaintRecords: "Cofnodion unrhyw faterion neu gŵynion sydd wedi'u codi ynghylch amodau'r cysur dan do a sicrhawyd yn y mannau a driniwyd"
-          coolingLoadEstimate: "Amcangyfrif o'r llwyth oeri dyluniedig ar gyfer pob system (os yw ar gael). Fel arall, disgrifiad byr o sut mae'r mannau a oerir yn cael eu meddiannu, ac o'r offer sy'n defnyddio pŵer sydd fel arfer yn cael ei ddefnyddio yn y mannau hynny"
-          monitoringCapability: "Pan ddefnyddir gorsaf fonitro, neu gyfleuster monitro o bell, i gadw llygad yn barhaus ar berfformiad offer fel oeryddion, dylai'r rheolwr drefni bod datganiad yn cael ei ddarparu yn disgrifio'r paramedrau sy'n cael eu monitro’r, a datganiad yn adolygu effeithlonrwydd gweithredol yr offer"
-        reviewed: "Wedi'i adolygu"
+          bmsCapability: "Pan ddefnyddir BMS dylai’r rheolwr drefnu bod datganiad byr yn cael ei ddarparu yn disgrifio’i alluoedd, yr offer y mae wedi’i gysylltu ag ef i’w reoli, y pwyntiau gosod ar gyfer rheoli tymheredd, pa mor aml y mae’n cael ei gynnal, a dyddiad yr archwiliad a’r gwaith cynnal diwethaf"
+          complaintRecords: "Cofnodion unrhyw faterion neu gŵynion sydd wedi’u codi ynghylch amodau’r cysur dan do a sicrhawyd yn y mannau a driniwyd"
+          coolingLoadEstimate: "Amcangyfrif o’r llwyth oeri dyluniedig ar gyfer pob system (os yw ar gael). Fel arall, disgrifiad byr o sut mae’r mannau a oerir yn cael eu meddiannu, ac o’r offer sy’n defnyddio pŵer sydd fel arfer yn cael ei ddefnyddio yn y mannau hynny"
+          monitoringCapability: "Pan ddefnyddir gorsaf fonitro, neu gyfleuster monitro o bell, i gadw llygad yn barhaus ar berfformiad offer fel oeryddion, dylai’r rheolwr drefni bod datganiad yn cael ei ddarparu yn disgrifio’r paramedrau sy’n cael eu monitro’r, a datganiad yn adolygu effeithlonrwydd gweithredol yr offer"
+        reviewed: "Wedi’i adolygu"
         not_available: "Heb fod ar gael"
         checklist:
           reviewed: "Adolygwyd y cofnodion hyn:"
@@ -1494,38 +1494,38 @@ cy:
           location: "Lleoliad yr offer"
           manufacturer: Gweithgynhyrchydd
           systemsServed: "Systemau a wasanaethir o offer oeri"
-          yearInstalled: "Y flwyddyn y'i gosodwyd "
+          yearInstalled: "Y flwyddyn y’i gosodwyd "
         filters:
           title: "CS6.1, CS6.2, CS6.3: Hidlyddion"
-          condition: "Ydy cyflwr y fewnfa aer a'r hidlyddion yn dderbyniol?"
-          change_frequency: "Ydy'r hidlyddion wedi'u newid yn unol â chanllawiau presennol y diwydiant?"
-          differential_pressure_gauge: "Ydy mesurydd pwysedd gwahaniaethol yr hidlydd, os oes un wedi'i ffitio, yn gweithio?"
+          condition: "Ydy cyflwr y fewnfa aer a’r hidlyddion yn dderbyniol?"
+          change_frequency: "Ydy’r hidlyddion wedi’u newid yn unol â chanllawiau presennol y diwydiant?"
+          differential_pressure_gauge: "Ydy mesurydd pwysedd gwahaniaethol yr hidlydd, os oes un wedi’i ffitio, yn gweithio?"
         heat_exchangers:
           title: "CS6.5 Cyflwr y cyfnewidyddion gwres"
-          condition: "Ydy'r cyfnewidyddion gwres mewn cyflwr da?"
+          condition: "Ydy’r cyfnewidyddion gwres mewn cyflwr da?"
         refrigeration:
-          title: "CS6.6 Gollyngiadau oerydd (os oes DXCoil wedi'i osod)"
+          title: "CS6.6 Gollyngiadau oerydd (os oes DXCoil wedi’i osod)"
           leaks: "Oes arwyddion bod oerydd yn gollwng?"
         fan_rotation:
           title: "CS6.7/a Cylchdroad y ffan"
-          direction: "Ydy'r ffan yn cylchdroi yn y cyfeiriad cywir?"
-          modulation: "Ydy'r rheolydd cyflymder neu'r modyliad yn gweithio?"
+          direction: "Ydy’r ffan yn cylchdroi yn y cyfeiriad cywir?"
+          modulation: "Ydy’r rheolydd cyflymder neu’r modyliad yn gweithio?"
         fan_control:
-          title: "CS6.7/b Y Ffan a'r Rheolydd"
-          setting: "Nodwch y math o ffan, a'r dull rheoli cyflymder aer. Gwiriwch osodiad a gweithrediad unrhyw ddampwyr awyr iach/ailgylchredeg"
+          title: "CS6.7/b Y Ffan a’r Rheolydd"
+          setting: "Nodwch y math o ffan, a’r dull rheoli cyflymder aer. Gwiriwch osodiad a gweithrediad unrhyw ddampwyr awyr iach/ailgylchredeg"
         heat_recovery:
           title: "CS6.8 Adennill gwres"
           energy_conservation: "Nodwch a oes gan y systemau unrhyw gyfleusterau cadw ynni, e.e. adennill gwres, dilyniant oeri rhydd, a chwiliwch am dystiolaeth bod y cyfleusterau hyn yn gweithio/wedi bod yn gweithio."
         air_leakage:
           title: "CS6.9 Aer yn gollwng"
-          condition: "Edrychwch ar yr offer trin aer a'r dulliau cyfyngu aer sy'n weladwy gan gynnwys y dwythellau, plena llawr neu nenfwd a siafftiau gwaith adeiladwyr i chwilio am arwyddion o ollyngiadau gormodol a cholli ynni."
+          condition: "Edrychwch ar yr offer trin aer a’r dulliau cyfyngu aer sy’n weladwy gan gynnwys y dwythellau, plena llawr neu nenfwd a siafftiau gwaith adeiladwyr i chwilio am arwyddion o ollyngiadau gormodol a cholli ynni."
         outdoor_inlets:
-          title: "CS 7.1, CS7.2 Mewnfeydd i aer o'r tu allan"
-          condition: "Dewch o hyd i'r mewnfeydd ar gyfer aer o'r tu allan. Nodwch unrhyw ataliadau arwyddocaol i griliau. sgriniau a rhag-hidlyddion y mewnfeydd. Nodwch ble y gallai agosrwydd at ffynonellau gwres lleol, neu agosrwydd at wacawyr aer, effeithio ar y mewnfeydd"
+          title: "CS 7.1, CS7.2 Mewnfeydd i aer o’r tu allan"
+          condition: "Dewch o hyd i’r mewnfeydd ar gyfer aer o’r tu allan. Nodwch unrhyw ataliadau arwyddocaol i griliau. sgriniau a rhag-hidlyddion y mewnfeydd. Nodwch ble y gallai agosrwydd at ffynonellau gwres lleol, neu agosrwydd at wacawyr aer, effeithio ar y mewnfeydd"
         fan_power:
           title: "CS1.5 Pŵer ffan penodol"
           estimate_power: "Amcangyfrifwch bŵer ffan penodol (SFP) systemau symud aer"
-          condition: "Ydy cyfraddau llif aer a phwyseddau systemau ar gael o'r data comisiynu?"
+          condition: "Ydy cyfraddau llif aer a phwyseddau systemau ar gael o’r data comisiynu?"
           sfp: "Y cyfrifiad a ddefnyddiwyd oedd: %{sfp_value}"
       terminal_units:
         title: "Unedau terfynell"
@@ -1533,53 +1533,53 @@ cy:
         equipment:
           unit: "Uned"
           component: "Cydran"
-          description: "Disgrifiad o'r uned"
-          coolingPlant: "Offer oeri sy'n gwasanaethu'r uned derfynell"
+          description: "Disgrifiad o’r uned"
+          coolingPlant: "Offer oeri sy’n gwasanaethu’r uned derfynell"
           manufacturer: Gweithgynhyrchydd
-          yearInstalled: "Y flwyddyn y'i gosodwyd"
+          yearInstalled: "Y flwyddyn y’i gosodwyd"
           areaServed: "Man a wasanaethir"
           discrepancy: "Anghysondebau a nodwyd"
         insulation:
           title: "CS4.1 Inswleiddio"
-          pipework: "Ydy'r gwaith pibellau wedi'i inswleiddio'n ddigonol?"
-          ductwork: "Ydy'r gwaith dwythellau wedi'i inswleiddio'n ddigonol?"
+          pipework: "Ydy’r gwaith pibellau wedi’i inswleiddio’n ddigonol?"
+          ductwork: "Ydy’r gwaith dwythellau wedi’i inswleiddio’n ddigonol?"
         unit:
           title: "CS4.2 Cyflwr yr Unedau"
-          condition: "Ydy'r unedau terfynell mewn cyflwr gweithio da?"
+          condition: "Ydy’r unedau terfynell mewn cyflwr gweithio da?"
         grilles_air_flow:
           title: "CS5.1, CS5.2 Griliau a llif aer"
-          distribution: "Ydy'r agoriadau cyflenwi aer yn sicrhau bod yr aer yn cael ei ddosbarthu'n dda?"
-          tampering: "Oes tystiolaeth bod rhywun wedi ymyrryd â'r tryledyddion?"
-          water_supply: "Oes dŵr wedi'i oeri a dŵr poeth yn cael eu cyflawni i'r terfynellau yr un pryd?"
-          complaints: "Oes cofnodion o gŵynion gan ddeiliaid ynglŷn â sut mae'r aer yn cael ei ddosbarthu?"
+          distribution: "Ydy’r agoriadau cyflenwi aer yn sicrhau bod yr aer yn cael ei ddosbarthu’n dda?"
+          tampering: "Oes tystiolaeth bod rhywun wedi ymyrryd â’r tryledyddion?"
+          water_supply: "Oes dŵr wedi’i oeri a dŵr poeth yn cael eu cyflawni i’r terfynellau yr un pryd?"
+          complaints: "Oes cofnodion o gŵynion gan ddeiliaid ynglŷn â sut mae’r aer yn cael ei ddosbarthu?"
         diffuser_positions:
           title: "CS5.3, CS5.4, CS5.5 Safleoedd tryledyddion"
           position_issues: "Oes potensial i aer greu cylched pwt rhwng cyflenwi a thynnu?"
           partitioning_issues: "Ydy safle parwydydd neu ddodrefn yn effeithio ar y perfformiad?"
-          control_operation: "Ydy'r dulliau rheoli a'r gweithrediad yn ddigonol?"
+          control_operation: "Ydy’r dulliau rheoli a’r gweithrediad yn ddigonol?"
       system_controls:
         title: "Rheolyddion y system"
         subtitle_prefix: "Rheolydd ar gyfer"
         zoning:
-          question: "CS8.1 Ydy'r rhaniad yn barthau yn briodol o ran y galw am oeri a ragwelir?"
+          question: "CS8.1 Ydy’r rhaniad yn barthau yn briodol o ran y galw am oeri a ragwelir?"
         time:
-          question: "CS8.2 Nodwch y diwrnodau yn yr wythnos a'r amserau sydd wedi'u dynodi ar y rheolydd neu'r BMS o'u cymharu â'r amser go iawn"
+          question: "CS8.2 Nodwch y diwrnodau yn yr wythnos a’r amserau sydd wedi’u dynodi ar y rheolydd neu’r BMS o’u cymharu â’r amser go iawn"
         set_on_period:
-          question: "CS8.3/a Nodwch yr amserau sydd wedi'u gosod ar gyfer dechrau a gorffen cyfnodau ( a dyddiau'r wythnos a'r penwythnos os yw'r cyfleuster hwnnw ar gael gyda'r amserydd)"
+          question: "CS8.3/a Nodwch yr amserau sydd wedi’u gosod ar gyfer dechrau a gorffen cyfnodau ( a dyddiau’r wythnos a’r penwythnos os yw’r cyfleuster hwnnw ar gael gyda’r amserydd)"
         timer_shortfall:
           question: "CS 8.3/b Oes diffyg yng ngalluoedd yr amserydd?"
         sensors:
-          question: "CS8.4 Nodwch ac aseswch y synwyryddion rheoli tymheredd ar gyfer cynhesu ac oeri parthau. Ydy math a lleoliad y synwyryddion yn briodol o ran yr offer sy'n allyrru'r gwres a'r oerfel, y llifoedd gwres neu'r dosbarthiad tymheredd tebygol yn y parth neu'r lle?"
+          question: "CS8.4 Nodwch ac aseswch y synwyryddion rheoli tymheredd ar gyfer cynhesu ac oeri parthau. Ydy math a lleoliad y synwyryddion yn briodol o ran yr offer sy’n allyrru’r gwres a’r oerfel, y llifoedd gwres neu’r dosbarthiad tymheredd tebygol yn y parth neu’r lle?"
         dead_band:
-          question: "CS8.6 Nodwch a oes 'band marw' wedi'i osod neu'n gallu cael ei osod, rhwng cynhesu ac oeri"
+          question: "CS8.6 Nodwch a oes ‘band marw’ wedi’i osod neu’n gallu cael ei osod, rhwng cynhesu ac oeri"
         capacity:
-          question: "CS8.7 Ydy rheolyddion yr is-systemau'n integreiddio'n effeithiol â'r strategaeth gyffredinol ar gyfer rheoli'r system?"
+          question: "CS8.7 Ydy rheolyddion yr is-systemau’n integreiddio’n effeithiol â’r strategaeth gyffredinol ar gyfer rheoli’r system?"
         airflow:
-          question: "CS8.8 Aseswch y dull ar gyfer modylu neu reoli cyfradd llifer yr aer drwy'r dwythellau cyflenwi a thynnu aer"
+          question: "CS8.8 Aseswch y dull ar gyfer modylu neu reoli cyfradd llifer yr aer drwy’r dwythellau cyflenwi a thynnu aer"
         guidance_controls:
-          question: "PS3.6 Oes nodiadau cyfarwyddyd yn weladwy nei oes rheolyddion ar gael i gyfyngu ar ddefnydd yr offer oeri tra bo ffenestri ar agor neu tra bo'r offer oeri/gwresogi ymlaen?"
+          question: "PS3.6 Oes nodiadau cyfarwyddyd yn weladwy nei oes rheolyddion ar gael i gyfyngu ar ddefnydd yr offer oeri tra bo ffenestri ar agor neu tra bo’r offer oeri/gwresogi ymlaen?"
         set_temperature:
-          question: "CS8.5 Nodwch y tymheredd sydd wedi'i osod ym mhob parth ar gyfer gwresogi ac oeri o'u cymharu â'r gweithgareddau a'r deiliaid sydd ar gael yn y parthau a'r mannau mewn perthynas â bwriad y rheolwr."
+          question: "CS8.5 Nodwch y tymheredd sydd wedi’i osod ym mhob parth ar gyfer gwresogi ac oeri o’u cymharu â’r gweithgareddau a’r deiliaid sydd ar gael yn y parthau a’r mannau mewn perthynas â bwriad y rheolwr."
       cooling_plants:
         title: "Offer oeri"
         cooling_plant:
@@ -1590,45 +1590,45 @@ cy:
           equipment:
             title: "Yr offer a archwiliwyd"
             details:
-              cooling_capacity: "Capasiti Oeri wedi'i raddio (kW)"
+              cooling_capacity: "Capasiti Oeri wedi’i raddio (kW)"
               description: "Disgrifiad (math/manylion)"
               location: "Leoliad yr Offer Oeri"
               manufacturer: "Gweithgynhyrchydd"
               model_reference: "Model/Cyfeirnod"
-              refrigerant_charge: "Capasiti Oeri wedi'i raddio (kW)"
+              refrigerant_charge: "Capasiti Oeri wedi’i raddio (kW)"
               refrigerant_type: "Math o Oerydd"
               serial_number: "Rhif Cyfresol"
               year_installed: "Y flwyddyn y gosodwyd yr offer"
               area_served: "Y Mannau/Systemau a wasanaethir"
-              discrepancy_note: "Nodwch isod unrhyw anghysondeb rhwng yr wybodaeth a roddwyd gan y cleient a'r wybodaeth a gasglwyd ar y safle, neu unrhyw wybodaeth sydd hefyd yn berthnasol i'r offer/system oeri:"
+              discrepancy_note: "Nodwch isod unrhyw anghysondeb rhwng yr wybodaeth a roddwyd gan y cleient a’r wybodaeth a gasglwyd ar y safle, neu unrhyw wybodaeth sydd hefyd yn berthnasol i’r offer/system oeri:"
           inspection:
-            title: "Adrannau wedi'u cymeradwyo"
+            title: "Adrannau wedi’u cymeradwyo"
             positive: "Ydy"
             negative: "Nac ydy"
-            pipeInsulationOk: "CS4.1 Ydy'r inswleiddiad ar bibellau cylchredeg wedi'i ffitio'n dda ac mewn cyflwr da?"
-            heatRejectionOperational: "CS3.1/a Ydy'r offer gwrthod gwres yn gweithio?"
-            heatRejectionAreaClear: "CS3.2/a Ydy'r man o amgylch yr offer gwrthod gwres yn glir rhag rhwystrau a malurion?"
-            heatExchangerOk: "CS3.1/b Ydy'r cyfnewidyddion gwres cyddwyso yn rhydd rhag difrod/cyrydiad ac yn lân?"
-            compressorsOperational: "CS2.3/a Ydy'r cywasgyddion yn gweithio neu oes modd eu cael nhw i ddechrau gweithio?"
-            chillerPlantOperational: "CS2.1 Ydy'r offer oeri'n gweithio?"
+            pipeInsulationOk: "CS4.1 Ydy’r inswleiddiad ar bibellau cylchredeg wedi’i ffitio’n dda ac mewn cyflwr da?"
+            heatRejectionOperational: "CS3.1/a Ydy’r offer gwrthod gwres yn gweithio?"
+            heatRejectionAreaClear: "CS3.2/a Ydy’r man o amgylch yr offer gwrthod gwres yn glir rhag rhwystrau a malurion?"
+            heatExchangerOk: "CS3.1/b Ydy’r cyfnewidyddion gwres cyddwyso yn rhydd rhag difrod/cyrydiad ac yn lân?"
+            compressorsOperational: "CS2.3/a Ydy’r cywasgyddion yn gweithio neu oes modd eu cael nhw i ddechrau gweithio?"
+            chillerPlantOperational: "CS2.1 Ydy’r offer oeri’n gweithio?"
             chillerPlantOk: "CS2.2/b Ydy cyflwr cyffredinol yr offer poeri ac unrhyw offer canolog perthynol yn dda?"
-            chillerPlantAreaClear: "CS2.2/a Ydy'r man o amgylch yr offer oeri'n rhydd rhag rhwystrau a malurion?"
-            chillerPlacementOk: "CS2.2/c Ydy'r cyddwysydd wedi'i osod yn glir oddi wrth lwfrau arllwys aer cynnes?"
-            airRecirculation: "CS3.2/b Ydy'r cyddwyswr yn rhydd rhag unrhyw bosibiliad o ailgylchredeg aer?"
+            chillerPlantAreaClear: "CS2.2/a Ydy’r man o amgylch yr offer oeri’n rhydd rhag rhwystrau a malurion?"
+            chillerPlacementOk: "CS2.2/c Ydy’r cyddwysydd wedi’i osod yn glir oddi wrth lwfrau arllwys aer cynnes?"
+            airRecirculation: "CS3.2/b Ydy’r cyddwyswr yn rhydd rhag unrhyw bosibiliad o ailgylchredeg aer?"
           sizing:
             title: "Offer Oeri o Faint priodol"
             details:
-              installed_capacity: "Capasiti Oeri sydd wedi'i Osod (kW)"
+              installed_capacity: "Capasiti Oeri sydd wedi’i Osod (kW)"
               occupant_density: "Dwysedd deiliaid (m2/person)"
               total_floor_area: "Cyfanswm yr arwynebedd a wasanaethir gan yr offer hwn (m2)"
               total_occupants: "Cyfanswm y Deiliaid a wasanaethir gan yr offer hwn"
               upper_heat_gain: "Uchafswm Enillion Gwres Disymwth (W/m2)"
-              acceptable_installed_size: "Bernir bod y Maint sydd wedi'i Osod"
+              acceptable_installed_size: "Bernir bod y Maint sydd wedi’i Osod"
               acceptable_installed_size_section:
-                "1": "Yn unol â'r disgwyl"
-                "2": "Yn Llai na'r disgwyl"
-                "3": "Yn Fwy na'r disgwyl"
-            recommendation_intro_text: "Mae fersiwn presennol y Ddogfen Rheoliadau Adeiladu a gymeradwywyd, Rhan L, yn rhoi canllawiau sy'n awgrymu na ddylai'r offer fod yn fwy nag 20% yn rhy fawr. Dylech fabwysiad hyn fel dull cymharu er mwyn aros yn unol â'r safonau presennol."
+                "1": "Yn unol â’r disgwyl"
+                "2": "Yn Llai na’r disgwyl"
+                "3": "Yn Fwy na’r disgwyl"
+            recommendation_intro_text: "Mae fersiwn presennol y Ddogfen Rheoliadau Adeiladu a gymeradwywyd, Rhan L, yn rhoi canllawiau sy’n awgrymu na ddylai’r offer fod yn fwy nag 20% yn rhy fawr. Dylech fabwysiad hyn fel dull cymharu er mwyn aros yn unol â’r safonau presennol."
             recommendation_title: "Nodiadau ac Argymhellion"
           refrigeration:
             title: "Oeri"
@@ -1638,46 +1638,46 @@ cy:
               ambient: "Amgylchol(Â°C)"
               acceptable_temperature: "Bernir bod y Tymheredd"
               refrigerant_name: "Math o Oerydd"
-              compressor_control: "Aseswch y cywasgydd(ion) oeri a'r dull ar gyfer rheoli'r capasiti oeri"
+              compressor_control: "Aseswch y cywasgydd(ion) oeri a’r dull ar gyfer rheoli’r capasiti oeri"
             leak: "Oes arwyddion bod oerydd yn gollwng?"
             f_gas_inspection: "O dan reolaeth Montreal/ODS/F-Gas/"
           maintenance:
             title: "Cynnal a Chadw Rheolaidd"
-            competent_person: "Ydy'r gwaith cynnal-a-chadw yn cael ei wneud gan bobl â chymwysterau addas a hynny yn unol â chanllawiau'r diwydiant??"
+            competent_person: "Ydy’r gwaith cynnal-a-chadw yn cael ei wneud gan bobl â chymwysterau addas a hynny yn unol â chanllawiau’r diwydiant??"
             records_kept: "Oes tystiolaeth o waith cynnal-a-chadw rheolaidd?"
           metering:
-            title: "Cymharu'r mesurydd â'r meincnodau ynni priodol"
-            bemInstalled: "Ydy'r offer oeri wedi'i gysylltu â BEMS a all ddarparu larymau y tu allan i'r amrediad"
+            title: "Cymharu’r mesurydd â’r meincnodau ynni priodol"
+            bemInstalled: "Ydy’r offer oeri wedi’i gysylltu â BEMS a all ddarparu larymau y tu allan i’r amrediad"
             excessiveUse: "Oes cofnodion ar gyfer yr offer o ddefnydd yr offer aerdymheru neu o ddefnyddio ynni ar is-fesurydd gyda nifer yr oriau y disgwylir eu defnyddio bob blwyddyn?"
-            meteringInstalled: "Oes mesuryddion wedi'u gosod i ganiatáu i'r ynni a ddefnyddir gan yr offer oeri gael ei fonitro?"
-            usageRecords: "Ydy'r defnydd ynni neu'r oriau defnydd yn ormodol?"
+            meteringInstalled: "Oes mesuryddion wedi’u gosod i ganiatáu i’r ynni a ddefnyddir gan yr offer oeri gael ei fonitro?"
+            usageRecords: "Ydy’r defnydd ynni neu’r oriau defnydd yn ormodol?"
             reading: "Darlleniad mesurydd a gofnodwyd %{meter_reading}"
           chillers:
             title: "Oeryddion a Oerir gan Ddŵr (Tyrau Oeri a Chyddwysyddion Anweddu)"
             waterCooled: "Ydy llif y dŵr drwy dyrau oeri neu oeryddion anweddu yn gyson ac yn effeithlon, a hynny heb golli dŵr? "
-            waterTreatment: "Oes trefn reoli ar waith i sicrhau bod y dŵr yn cael ei wirio'n rheolaidd a'i drin i sicrhau nad oes risg o Legionella?"
+            waterTreatment: "Oes trefn reoli ar waith i sicrhau bod y dŵr yn cael ei wirio’n rheolaidd a’i drin i sicrhau nad oes risg o Legionella?"
           humidity_control:
             title: "Rheoli Lleithder"
-            control: "Oes offer ar wahân wedi'i osod i reoli lleithder?"
+            control: "Oes offer ar wahân wedi’i osod i reoli lleithder?"
       inspection_certificate:
         title: "Tystysgrif archwiliad"
-        text: "Gweld tystysgrif archwilio aerdymheru'r eiddo hwn"
+        text: "Gweld tystysgrif archwilio aerdymheru’r eiddo hwn"
     flag:
       finding_yes: "Ie"
       finding_no: "Na"
-      recommendations: "Gwnaeth yr asesydd y nodiadau a'r argymhellion a ganlyn:"
+      recommendations: "Gwnaeth yr asesydd y nodiadau a’r argymhellion a ganlyn:"
     detailed_inspection_unavailable:
-      text: "Nid yw nodiadau manwl yr archwiliad o'r adroddiad hwn ar gael ar-lein mwyach. Os oes arnoch angen nodiau manwl yr archwiliad, cysylltwch â ni yn %{link}"
+      text: "Nid yw nodiadau manwl yr archwiliad o’r adroddiad hwn ar gael ar-lein mwyach. Os oes arnoch angen nodiau manwl yr archwiliad, cysylltwch â ni yn %{link}"
       link: "mailto:mhclg.digital-services@communities.gov.uk?subject=EPB - "
       cta: "mhclg.digital-services@communities.gov.uk"
       title: "Nodiadau manwl ar yr archwiliad"
 
   primary_energy_use_dropdown:
     what_is_primary_energy_use_title: "Beth yw prif ddefnydd ynni?"
-    what_is_primary_energy_use_details: "mae prif ddefnydd ynni yn fesur o'r ynni y mae ei angen ar gyfer golau, gwres a dŵr poeth mewn eiddo. Mae'r cyfrifiad yn cynnwys:"
-    efficiency_of_heating: "effeithlonrwydd system wresogi'r eiddo"
+    what_is_primary_energy_use_details: "mae prif ddefnydd ynni yn fesur o’r ynni y mae ei angen ar gyfer golau, gwres a dŵr poeth mewn eiddo. Mae’r cyfrifiad yn cynnwys:"
+    efficiency_of_heating: "effeithlonrwydd system wresogi’r eiddo"
     efficiency_of_electricity: "effeithlonrwydd gorsaf gynhyrchu ar gyfer trydan"
-    fuel_for_property: "yr ynni a ddefnyddir i gynhyrchu'r tanwydd a'i ddosbarthu i'r eiddo"
+    fuel_for_property: "yr ynni a ddefnyddir i gynhyrchu’r tanwydd a’i ddosbarthu i’r eiddo"
 
   rating:
     score:  "Sgôr"
@@ -1692,12 +1692,12 @@ cy:
 
   accessibility_statement:
     top_heading: "Datganiad ar hygyrchedd"
-    intro: "Mae'r datganiad hwn yn gymwys i gynnwys a gyhoeddir ar:
+    intro: "Mae’r datganiad hwn yn gymwys i gynnwys a gyhoeddir ar:
           <ul class=\"govuk-list govuk-list--bullet\">
             <li><a class= \"govuk-link\" href=\"https://find-energy-certificate.digital.communities.gov.uk\">find-energy-certificate.digital.communities.gov.uk</a></li>
             <li><a class= \"govuk-link\" href=\"https://getting-new-energy-certificate.digital.communities.gov.uk\">getting-new-energy-certificate.digital.communities.gov.uk</a></li>
           </ul>"
-    paragraph_1: "Mae'r wefan hon yn cael ei rhedeg gan y Weinyddiaeth Tai, Cymunedau a Llywodraeth Leol. Hoffem weld cynifer â phosibl o bobl yn gallu defnyddio’r wefan. Er enghraifft, mae hynny’n golygu y dylech chi allu:
+    paragraph_1: "Mae’r wefan hon yn cael ei rhedeg gan y Weinyddiaeth Tai, Cymunedau a Llywodraeth Leol. Hoffem weld cynifer â phosibl o bobl yn gallu defnyddio’r wefan. Er enghraifft, mae hynny’n golygu y dylech chi allu:
                   <ul class=\"govuk-list govuk-list--bullet\">
                     <li>newid lefelau cyferbyniad lliw a ffontiau</li>
                     <li>chwyddo hyd at 300% heb i’r testun ddiferu oddi ar y sgrin </li>
@@ -1705,57 +1705,57 @@ cy:
                     <li>llywio’r rhan fwyaf o’r wefan drwy ddefnyddio meddalwedd adnabod llais</li>
                     <li>gwrando ar y rhan fwyaf o’r wefan drwy ddefnyddio darllenydd sgrin (gan gynnwys fersiynau diweddaraf JAWS, NVDA a VoiceOver)</li>
                   </ul>"
-    paragraph_2: "Rydyn ni hefyd wedi gwneud testun y wefan mor hawdd â phosibl i'w ddeall"
-    paragraph_3: "Mae gan <a class=\"govuk-link\" href=\"https://mcmw.abilitynet.org.uk/\">AbilityNet</a> gyngor ar wneud eich dyfais yn haws i'w ddefnyddio os oes gennych anabledd' have a disability."
+    paragraph_2: "Rydyn ni hefyd wedi gwneud testun y wefan mor hawdd â phosibl i’w ddeall"
+    paragraph_3: "Mae gan <a class=\"govuk-link\" href=\"https://mcmw.abilitynet.org.uk/\">AbilityNet</a> gyngor ar wneud eich dyfais yn haws i’w ddefnyddio os oes gennych anabledd’ have a disability."
     contact_heading: "Gwybodaeth am adborth a chysylltiadau"
     contact_paragraph: "Os oes angen gwybodaeth arnoch chi ar y wefan hon mewn fformat gwahanol fel PDF hygyrch,, print bras, tesun hawdd i’w ddarllen, recordiad sain neu braille:
                         <ul class=\"govuk-list govuk-list--bullet\">
                           <li>anfonwch neges ebost at: <a href=\"mailto:mhclg.digital-services@communities.gov.uk?subject=EPB - \">mhclg.digital-services@communities.gov.uk</a></li>
                           <li>Ffôn: 020 3829 0748</li>
                         </ul>"
-    reporting_heading: "Rhoi gwybod am broblemau hygyrchedd gyda'r wefan hon"
-    reporting_paragraph: "Rydyn ni bob amser yn chwilio am ffyrdd i wella hygyrchedd y wefan hon. Os gwelwch chi unrhyw broblemau sydd heb eu rhestru ar y tudalen hwn neu os nad ydych yn credu ein bod yn bodloni'r gofynion ynglŷn â hygyrchedd, <a class=\"govuk-link\" href=\"https://forms.office.com/Pages/ResponsePage.aspx?id=EGg0v32c3kOociSi7zmVqPbdKK1xB5FPizueLd4cs19UQVdISTJKQTNPSUtON0pPUDYzWFMyVEVIWC4u\">rhowch  adborth</a>."
+    reporting_heading: "Rhoi gwybod am broblemau hygyrchedd gyda’r wefan hon"
+    reporting_paragraph: "Rydyn ni bob amser yn chwilio am ffyrdd i wella hygyrchedd y wefan hon. Os gwelwch chi unrhyw broblemau sydd heb eu rhestru ar y tudalen hwn neu os nad ydych yn credu ein bod yn bodloni’r gofynion ynglŷn â hygyrchedd, <a class=\"govuk-link\" href=\"https://forms.office.com/Pages/ResponsePage.aspx?id=EGg0v32c3kOociSi7zmVqPbdKK1xB5FPizueLd4cs19UQVdISTJKQTNPSUtON0pPUDYzWFMyVEVIWC4u\">rhowch  adborth</a>."
     enforcement_heading: "Gweithdrefn orfodi"
-    enforcement_paragraph: "Mae'r Comisiwn Cydraddoldeb a Hawliau Dynol (EHRC) yn gyfrifol am orfodi Rheoliadau Hygyrchedd Cyrff y Sector Cyhoeddus (Gwefannau a Chymwysiadau Symudol) (Rhif 2) 2018 (y â€˜rheoliadau hygyrchedd'). Os nad ydych yn fodlon ar sut rydyn ni'n ymateb i'ch cwyn, <a class=\"govuk-link\" href=\"https://www.equalityadvisoryservice.com/\">cysylltwch â'r Gwasanaeth Cyngor a Chymorth Cydraddoldeb (EASS)</a>."
+    enforcement_paragraph: "Mae’r Comisiwn Cydraddoldeb a Hawliau Dynol (EHRC) yn gyfrifol am orfodi Rheoliadau Hygyrchedd Cyrff y Sector Cyhoeddus (Gwefannau a Chymwysiadau Symudol) (Rhif 2) 2018 (y ‘rheoliadau hygyrchedd’). Os nad ydych yn fodlon ar sut rydyn ni’n ymateb i’ch cwyn, <a class=\"govuk-link\" href=\"https://www.equalityadvisoryservice.com/\">cysylltwch â’r Gwasanaeth Cyngor a Chymorth Cydraddoldeb (EASS)</a>."
     technical_heading: "Gwybodaeth dechnegol am hygyrchedd y wefan hon"
-    technical_paragraph: "Mae'r Weinyddiaeth Gymunedau, Tai a Chymunedau Lleol wedi ymrwymo isicrhau bod ei gwefan yn hygyrch, yn unol â Rheoliadau Hygyrchedd Cyrff y Sector Cyhoeddus (Gwefannau a Chymwysiadau Symudol) (Rhif 2) 2018."
+    technical_paragraph: "Mae’r Weinyddiaeth Gymunedau, Tai a Chymunedau Lleol wedi ymrwymo isicrhau bod ei gwefan yn hygyrch, yn unol â Rheoliadau Hygyrchedd Cyrff y Sector Cyhoeddus (Gwefannau a Chymwysiadau Symudol) (Rhif 2) 2018."
     compliance_heading: "Statws cydymffurfio"
-    compliance_paragraph: "Mae'r wefan hon yn cydymffurfio'n rhannol â <a class=\"govuk-link\" href=\"https://www.w3.org/TR/WCAG21/\">safon AA Canllawiau Hygyrchedd Cynnwys y We fersiwn 2.1</a>, oherwydd y diffygion cydymffurfio sydd wedi'u rhestru isod."
-    non_accessible_heading: "Cynnwys nad yw'n hygyrch"
-    non_accessible_paragraph: "Nid yw'r cynnwys a restrir isod yn hygyrch a hynny am y rhesymau a ganlyn."
-    non_compliance_heading: "Methu cydymffurfio â'r rheoliadau hygyrchedd' "
-    non_compliance_paragraph_1: "Mae rhywfaint o'r cynnwys yn dod oddi wrth aseswyr achrededig. Efallai na fydd yr wybodaeth hon wedi'i strwythuro'n gywir ar gyfer y we a'i fod yn anodd ei phori â darllenydd sgrin, yn fwyaf arbennig yn yr Adroddiadau ar Archwiliadau aerdymheru."
-    non_compliance_paragraph_2: "Does gan rai delweddau ddim testun amgen, ac felly nid yw pobl sy'n defnyddio darllenydd sgrin yn gallu cyrchu'r wybodaeth. Mae hyn yn methu maen prawf llwyddiant 1.1.1 WCAG 2.1, (cynnwys annhestunol)"
-    non_compliance_paragraph_3: "Rydym yn bwriadu ychwanegu testun amgen ar gyfer pob delwedd erbyn mis Tachwedd 2020. Pan gyhoeddwn gynnwys newydd fe ofalwn ni fod ein defnydd ar ddelweddau yn bodloni'r safonau hygyrchedd"
-    non_compliance_paragraph_4: "Weithiau, gall pobl sy'n defnyddio darllenydd sgrin glywed label nad yw'n ymddangos ar y tudalen."
-    non_compliance_paragraph_5: "Rydym yn bwriadu cywiro cyfeiriadau sydd wedi'u torri ynglŷn â'r holl gynnwys erbyn mis Tachwedd 2020."
+    compliance_paragraph: "Mae’r wefan hon yn cydymffurfio’n rhannol â <a class=\"govuk-link\" href=\"https://www.w3.org/TR/WCAG21/\">safon AA Canllawiau Hygyrchedd Cynnwys y We fersiwn 2.1</a>, oherwydd y diffygion cydymffurfio sydd wedi’u rhestru isod."
+    non_accessible_heading: "Cynnwys nad yw’n hygyrch"
+    non_accessible_paragraph: "Nid yw’r cynnwys a restrir isod yn hygyrch a hynny am y rhesymau a ganlyn."
+    non_compliance_heading: "Methu cydymffurfio â’r rheoliadau hygyrchedd’ "
+    non_compliance_paragraph_1: "Mae rhywfaint o’r cynnwys yn dod oddi wrth aseswyr achrededig. Efallai na fydd yr wybodaeth hon wedi’i strwythuro’n gywir ar gyfer y we a’i fod yn anodd ei phori â darllenydd sgrin, yn fwyaf arbennig yn yr Adroddiadau ar Archwiliadau aerdymheru."
+    non_compliance_paragraph_2: "Does gan rai delweddau ddim testun amgen, ac felly nid yw pobl sy’n defnyddio darllenydd sgrin yn gallu cyrchu’r wybodaeth. Mae hyn yn methu maen prawf llwyddiant 1.1.1 WCAG 2.1, (cynnwys annhestunol)"
+    non_compliance_paragraph_3: "Rydym yn bwriadu ychwanegu testun amgen ar gyfer pob delwedd erbyn mis Tachwedd 2020. Pan gyhoeddwn gynnwys newydd fe ofalwn ni fod ein defnydd ar ddelweddau yn bodloni’r safonau hygyrchedd"
+    non_compliance_paragraph_4: "Weithiau, gall pobl sy’n defnyddio darllenydd sgrin glywed label nad yw’n ymddangos ar y tudalen."
+    non_compliance_paragraph_5: "Rydym yn bwriadu cywiro cyfeiriadau sydd wedi’u torri ynglŷn â’r holl gynnwys erbyn mis Tachwedd 2020."
     out_of_scope_heading: "Cynnwys nad yw o fewn rhychwant y rheoliadau hygyrchedd"
     out_of_scope_paragraph: "Heb fod yn gymwys"
-    what_we_do_heading: "Yr hyn rydyn ni'n ei wneud i wella hygyrchedd"
-    what_we_do_paragraph: "Bydd y gwasanaeth hwn yn cael ei brofi'n allanol o ran cydymffurfio â Chanllawiau Hygyrchedd Cynnwys y We V2.1 lefel A erbyn mis Tachwedd 2020."
-    preparation_heading: "Paratoi'r datganiad hygyrchedd hwn"
+    what_we_do_heading: "Yr hyn rydyn ni’n ei wneud i wella hygyrchedd"
+    what_we_do_paragraph: "Bydd y gwasanaeth hwn yn cael ei brofi’n allanol o ran cydymffurfio â Chanllawiau Hygyrchedd Cynnwys y We V2.1 lefel A erbyn mis Tachwedd 2020."
+    preparation_heading: "Paratoi’r datganiad hygyrchedd hwn"
     preparation_paragraph: "Cafodd y datganiad hwn ei baratoi ar 17 Medi 2020. Y tro diwethaf iddo gael ei adolygu oedd 17 Medi 2020. Gwnaethon ein gwaith profi ein hunain ar 17 Medi 2020."
     accessibility_audit: "Bydd archwiliad hygyrchedd llawn yn cael ei gyflawni erbyn mis Tachwedd 2020. Byddwn yn cyflwyno adroddiad ar y canfyddiadau yma, gan weithio i gywiro unrhyw faterion ychwanegol a nodir mor gyflym ag y bo modd."
 
   cookies:
     title: "Cwcis ar ein gwasanaeth ni"
-    intro: "Mae cwcis yn ffeiliau sy'n cael eu cadw ar eich ffôn, eich tabled neu'ch cyfrifiadur wrth ichi ymweld â gwefan. Mae'r gwasanaethau 'Dod o hyd i dystysgrif ynni' a 'Sicrhau tystysgrif ynni newydd' yn defnyddio cwcis er mwyn deall sut rydych chi'n defnyddio'r gwasanaethau er mwyn inni allu eu diweddaru a'u gwella."
-    dont_worry: "Dydy'r cwcis rydyn ni'n eu defnyddio ddim yn eich adnabod chi'n bersonol. Gallwch barhau i ddefnyddio'r gwasanaethau 'Dod o hyd i dystysgrif ynni' neu 'Sicrhau tystysgrif ynni newydd' os nad ydych chi’n derbyn cwcis sy'n mesur defnydd gwefannau."
+    intro: "Mae cwcis yn ffeiliau sy’n cael eu cadw ar eich ffôn, eich tabled neu’ch cyfrifiadur wrth ichi ymweld â gwefan. Mae’r gwasanaethau ‘Dod o hyd i dystysgrif ynni’ a ‘Sicrhau tystysgrif ynni newydd’ yn defnyddio cwcis er mwyn deall sut rydych chi’n defnyddio’r gwasanaethau er mwyn inni allu eu diweddaru a’u gwella."
+    dont_worry: "Dydy’r cwcis rydyn ni’n eu defnyddio ddim yn eich adnabod chi’n bersonol. Gallwch barhau i ddefnyddio’r gwasanaethau ‘Dod o hyd i dystysgrif ynni’ neu ‘Sicrhau tystysgrif ynni newydd’ os nad ydych chi’n derbyn cwcis sy’n mesur defnydd gwefannau."
     measure:
-      title: "Cwcis sy'n mesur defnydd gwefannau"
-      analytics: "Rydyn ni’n defnyddio Google Analytics i gasglu gwybodaeth am sut rydych chi’n defnyddio'r gwasanaeth hwn. Mae hyn yn ein helpu i wirio ei fod yn ateb eich anghenion a gwneud gwelliannau."
+      title: "Cwcis sy’n mesur defnydd gwefannau"
+      analytics: "Rydyn ni’n defnyddio Google Analytics i gasglu gwybodaeth am sut rydych chi’n defnyddio’r gwasanaeth hwn. Mae hyn yn ein helpu i wirio ei fod yn ateb eich anghenion a gwneud gwelliannau."
       list:
         title: "Mae Google Analytics yn storio gwybodaeth am y canlynol:"
-        "1": "sut daethoch chi i'r wefan"
-        "2": "y tudalennau rydych chi'n edrych arnyn nhw a faint o amser rydych chi'n ei dreulio yno"
-        "3": "ar beth rydych chi'n clicio"
-    dont_worry_again: "Does dim manylion personol yn cael eu cadw gyda'r wybodaeth hon, felly does dim modd eich adnabod chi."
+        "1": "sut daethoch chi i’r wefan"
+        "2": "y tudalennau rydych chi’n edrych arnyn nhw a faint o amser rydych chi’n ei dreulio yno"
+        "3": "ar beth rydych chi’n clicio"
+    dont_worry_again: "Does dim manylion personol yn cael eu cadw gyda’r wybodaeth hon, felly does dim modd eich adnabod chi."
     form_title: "Cwcis ar ein gwasanaeth ni"
-    form_yes: "Defnyddiwch gwcis sy'n mesur faint rwy'n defnyddio'r wefan."
-    form_no: "Peidiwch â defnyddio cwcis sy'n mesur faint rwy'n defnyddio'r wefan."
-    form_save: "Cadw'r gosodiadau"
+    form_yes: "Defnyddiwch gwcis sy’n mesur faint rwy’n defnyddio’r wefan."
+    form_no: "Peidiwch â defnyddio cwcis sy’n mesur faint rwy’n defnyddio’r wefan."
+    form_save: "Cadw’r gosodiadau"
     banner:
-      title: "Dywedwch a ydych chi'n derbyn cwcis."
-      intro: "Rydyn ni’n defnyddio cwcis i gasglu gwybodaeth am sut rydych chi’n defnyddio'r gwasanaeth hwn. Mae hyn yn ein helpu i wella’n gwefan a gwneud iddi weithio cystal â phosibl."
+      title: "Dywedwch a ydych chi’n derbyn cwcis."
+      intro: "Rydyn ni’n defnyddio cwcis i gasglu gwybodaeth am sut rydych chi’n defnyddio’r gwasanaeth hwn. Mae hyn yn ein helpu i wella’n gwefan a gwneud iddi weithio cystal â phosibl."
       positive: "Derbyn pob cwci"
       negative: "Gosod dewisiadau cwcis"
