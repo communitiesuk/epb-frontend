@@ -11,7 +11,6 @@
   <desc id="svg-desc"><%= description %></desc>
 
   <%
-
     bands = {
       'a': {
         'range': '0-25',
@@ -158,9 +157,9 @@
     <tspan x="560" y="240">100</tspan>
   </text>
 
-  <svg role="presentation" aria-hidden="true" x="420" y="<%= 25+bands[energy_efficiency_band.to_sym][:position]*50 %>" width="90" height="50">
-    <rect width="75" height="50" class="band-<%= energy_efficiency_band %>" x="25"></rect>
-    <polygon points="0,25 25,50 25,0 0,25" class="band-<%= energy_efficiency_band %>"></polygon>
+  <svg role="presentation" aria-hidden="true" x="420" y="<%= 25+bands[energy_efficiency_band.chomp("+").to_sym][:position]*50 %>" width="90" height="50">
+    <rect width="75" height="50" class="band-<%= energy_efficiency_band.chomp("+") %>" x="25"></rect>
+    <polygon points="0,25 25,50 25,0 0,25" class="band-<%= energy_efficiency_band.chomp("+") %>"></polygon>
     <text x="60%" y="50%" dominant-baseline="middle" text-anchor="middle" class="govuk-!-font-weight-bold"><%= energy_efficiency_rating %> | <%= energy_efficiency_band.upcase %></text>
   </svg>
 </svg>

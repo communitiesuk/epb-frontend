@@ -4,8 +4,8 @@
 <dd class="govuk-summary-list__value govuk-!-width-one-half" style="text-align: right">
   <svg width="90" height="50" style="vertical-align: middle">
   <%= band = "band-#{year[:energyEfficiencyBand]}" %>
-  <rect width="75" height="50" class=<%= band %> x="25"></rect>
-  <polygon points="0,25 25,50 25,0 0,25" class=<%= band %>></polygon>
+  <rect width="75" height="50" class=<%= band.chomp("+") %> x="25"></rect>
+  <polygon points="0,25 25,50 25,0 0,25" class=<%= band.chomp("+") %>></polygon>
   <text x="30" y="30"><%= year[:energyEfficiencyRating] %> | <%= year[:energyEfficiencyBand].upcase %></text>
   </svg>
 </dd>
