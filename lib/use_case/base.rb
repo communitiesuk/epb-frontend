@@ -14,7 +14,7 @@ module UseCase
           raise Errors::AuthTokenMissing
         end
 
-        yield(error[:code])
+        yield(error)
       end
     end
   end

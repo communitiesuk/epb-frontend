@@ -5,10 +5,10 @@ module UseCase
     def execute(assessment_id)
       response = Gateway::AssessmentSummaryGateway.new.fetch(assessment_id)
 
-      raise_errors_if_exists(response) do |error_code|
-        raise Errors::AssessmentNotFound if error_code == "NOT_FOUND"
-        raise Errors::AssessmentNotFound if error_code == "GONE"
-        raise Errors::AssessmentNotFound if error_code == "INVALID_QUERY"
+      raise_errors_if_exists(response) do |error|
+        raise Errors::AssessmentNotFound if error[:code] == "NOT_FOUND"
+        raise Errors::AssessmentNotFound if error[:code] == "GONE"
+        raise Errors::AssessmentNotFound if error[:code] == "INVALID_QUERY"
       end
 
       if response[:data][:recommendedImprovements]

@@ -11,8 +11,8 @@ module UseCase
 
       gateway_response = @gateway.search_by_id(reference_id)
 
-      raise_errors_if_exists(gateway_response) do |error_code|
-        raise Errors::ReferenceNumberNotValid if error_code == "INVALID_REQUEST"
+      raise_errors_if_exists(gateway_response) do |error|
+        raise Errors::ReferenceNumberNotValid if error[:code] == "INVALID_REQUEST"
       end
 
       if gateway_response[:data][:assessments].empty?
