@@ -7,7 +7,9 @@ module UseCase
 
       response = @gateway.search_by_name(name)
 
-      raise_errors_if_exists(response)
+      raise_errors_if_exists(response) do |error|
+        raise Errors::InvalidName if error[:code] == "INVALID_REQUEST"
+      end
 
       response
     end
