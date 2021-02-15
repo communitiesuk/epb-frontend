@@ -700,7 +700,7 @@ cy:
         heat_demand: "Amcangyfrif o’r ynni a ddefnyddir a’r arbedion posibl"
         information: "Cysylltu â’r asesydd a’r cynllun achredu"
         green_deal: "Cynllun y Fargen Werdd"
-        related_asssesments: "Asesiadau perthynol"
+        related_assessments: "Asesiadau perthynol"
         previous: "Tystysgrifau eraill ar gyfer yr eiddo hwn"
     sections:
       renting:

@@ -5,7 +5,7 @@
         href="<%= localised_url('/find-a-certificate/search-by-postcode')%>"
         onclick="if(document.referrer.indexOf(location.protocol+'//'+location.host)===0) {window.history.back(); return false;} else {return true;}"
         class="govuk-back-link">
-        <%=t('layout.body.breadcrumb.back')%>
+        <%= t('layout.body.breadcrumb.back') %>
       </a>
       <h1 class="govuk-heading-xl">
         <%= t('domestic_epc.top_heading') %>
@@ -52,8 +52,8 @@
           hidden: (true unless assessment.has_key?(:greenDealPlan) && !assessment[:greenDealPlan].empty?)
         },
         {
-          link: '#related_asssesments',
-          text: 'domestic_epc.sidebar.sections.related_asssesments',
+          link: '#related_assessments',
+          text: 'domestic_epc.sidebar.sections.related_assessments',
           hidden: assessment[:relatedAssessments].empty? || assessment[:relatedAssessments].nil?
         },
       ]

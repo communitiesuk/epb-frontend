@@ -700,7 +700,7 @@ en:
         heat_demand: 'Estimated energy use and potential savings'
         information: 'Contacting the assessor and accreditation scheme'
         green_deal: 'Green deal plan'
-        related_asssesments: 'Related assessments'
+        related_assessments: 'Related assessments'
         previous: 'Other certificates for this property'
     sections:
       renting:
