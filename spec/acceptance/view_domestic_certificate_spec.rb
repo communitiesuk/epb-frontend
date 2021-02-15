@@ -256,7 +256,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
           "c",
           "SW1B 2BB",
           "",
-          nil,
+          "",
         )
       end
 
@@ -266,6 +266,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
         page = Nokogiri.XML(response.body)
         total_floor_area =
           page.css ":contains(\"Total floor area\"):not(:has(:contains(\"Total floor area\")))"
+
         expect(
           total_floor_area.first.parent.css("dd").first.content.strip,
         ).to eq "Not recorded"

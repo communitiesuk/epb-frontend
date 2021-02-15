@@ -1182,7 +1182,7 @@ module FetchAssessmentSummary
       energy_performance_band_improvement = "c",
       postcode = "SW1B 2BB",
       address_line3 = "",
-      total_floor_area = 150
+      total_floor_area = "150"
     )
       FetchAssessmentSummary::AssessmentSummaryErrorStub.fetch(assessment_id)
       property_summary ||= generate_property_summary

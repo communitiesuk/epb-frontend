@@ -186,7 +186,7 @@ module FindCertificate
                   dateRegistered: "2020-01-02",
                   dwellingType: "Top floor flat",
                   typeOfAssessment: type,
-                  totalFloorArea: 50,
+                  totalFloorArea: "50",
                   currentCarbonEmission: 4.4,
                   potentialCarbonEmission: 3.4,
                   currentEnergyEfficiencyRating: 90,
