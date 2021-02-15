@@ -12,7 +12,10 @@ module UseCase
       gateway_response = @gateway.search_by_postcode(query, types)
 
       raise_errors_if_exists(gateway_response) do |error|
-        raise Errors::PostcodeNotValid if error[:title] == "UseCase::FindAssessmentsByPostcode::PostcodeNotValid"
+        if error[:title] ==
+            "UseCase::FindAssessmentsByPostcode::PostcodeNotValid"
+          raise Errors::PostcodeNotValid
+        end
       end
 
       {
