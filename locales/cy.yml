@@ -2,6 +2,8 @@ cy:
   validation_errors:
     postcode_error: "Rhowch god post go iawn"
 
+  not_recorded: "Heb ei gofnodi"
+
   services:
     find_an_energy_certificate: "Chwiliwch am dystysgrif ynni"
     getting_an_energy_certificate: "Sicrhau tystysgrif ynni"

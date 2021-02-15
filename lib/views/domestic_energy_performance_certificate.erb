@@ -98,7 +98,7 @@
       <%== erb :component__summary_list, locals: {
         list: {
          dwelling_type: assessment[:dwellingType],
-         total_floor_area: t('domestic_epc.summary.floor_area', total_floor_area: "%g" % assessment[:totalFloorArea]) ,
+         total_floor_area: assessment[:totalFloorArea].nil? ? t('not_recorded') : t('domestic_epc.summary.floor_area', total_floor_area: "%g" % assessment[:totalFloorArea]),
         },
         translation_prefix: 'domestic_epc.sections.breakdown.list.',
         skip_null: true

@@ -1181,7 +1181,8 @@ module FetchAssessmentSummary
       potentialEnergySaving = nil,
       energy_performance_band_improvement = "c",
       postcode = "SW1B 2BB",
-      address_line3 = ""
+      address_line3 = "",
+      total_floor_area = 150
     )
       FetchAssessmentSummary::AssessmentSummaryErrorStub.fetch(assessment_id)
       property_summary ||= generate_property_summary
@@ -1194,7 +1195,7 @@ module FetchAssessmentSummary
             "dateRegistered": "2020-05-04",
             "dwellingType": "Dwelling-Type0",
             "typeOfAssessment": "RdSAP",
-            "totalFloorArea": 0.0,
+            "totalFloorArea": total_floor_area,
             "assessmentId": "1111-1111-1111-1111-1112",
             "currentEnergyEfficiencyRating": 50,
             "potentialEnergyEfficiencyRating": 50,
@@ -1450,7 +1451,7 @@ module FetchAssessmentSummary
             dateOfAssessment: "2020-01-02",
             dwellingType: "Top floor flat",
             typeOfAssessment: type_of_assessment,
-            totalFloorArea: 150,
+            totalFloorArea: total_floor_area,
             currentEnergyEfficiencyRating: current_rating,
             currentEnergyEfficiencyBand: current_band,
             currentCarbonEmission: current_carbon_emission,

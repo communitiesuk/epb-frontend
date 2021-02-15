@@ -2,6 +2,8 @@ en:
   validation_errors:
     postcode_error: 'Enter a real postcode'
 
+  not_recorded: "Not recorded"
+
   services:
     find_an_energy_certificate: 'Find an energy certificate'
     getting_an_energy_certificate: 'Getting an energy certificate'
