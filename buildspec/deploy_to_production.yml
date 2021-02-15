@@ -18,7 +18,7 @@ env:
     EPB_AUTH_CLIENT_SECRET: "epbr-frontend-auth-client-secret-production"
     EPB_AUTH_SERVER: "epbr-auth-server-production"
     EPB_API_URL: "epbr-api-url-production"
-    SENTRY_DSN: "epbr-sentry-dsn"
+    SENTRY_DSN: "epbr-sentry-dsn-frontend"
 
 phases:
   install:
