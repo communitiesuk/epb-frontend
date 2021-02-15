@@ -16,7 +16,8 @@ module UseCase
           assessment_types,
         )
 
-      raise_errors_if_exists(gateway_response)
+      raise_errors_if_exists(gateway_response) do |error|
+      end
 
       if gateway_response[:data][:assessments].empty?
         raise Errors::CertificateNotFound
