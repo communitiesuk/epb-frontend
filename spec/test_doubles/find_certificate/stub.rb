@@ -112,6 +112,8 @@ module FindCertificate
                   currentEnergyEfficiencyBand: "b",
                   potentialEnergyEfficiencyRating: "a",
                   potentialEnergyEfficiencyBand: 95,
+                  addressLine1: "2 Marsham Street",
+                  town: "London",
                   postcode: "SW1B 2BB",
                   dateOfExpiry: "2030-01-01",
                   heatDemand: {
