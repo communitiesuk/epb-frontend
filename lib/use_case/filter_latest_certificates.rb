@@ -2,7 +2,6 @@
 
 module UseCase
   class FilterLatestCertificates < UseCase::Base
-
     def execute(certificates)
       latest_certs_by_address = {}
 
@@ -63,20 +62,20 @@ module UseCase
     end
 
     def newer_certificate?(prev_certificate, certificate)
-      newer_expiry?(prev_certificate, certificate) or
-        same_expiry_newer_assessment?(prev_certificate, certificate)
+      newer_assessment?(prev_certificate, certificate) or
+        same_assessment_newer_expiry?(prev_certificate, certificate)
     end
 
-    def newer_expiry?(prev_certificate, certificate)
-      Date.parse(prev_certificate[:dateOfExpiry]) <
-        Date.parse(certificate[:dateOfExpiry])
+    def newer_assessment?(prev_certificate, certificate)
+      Date.parse(prev_certificate[:dateOfAssessment]) <
+        Date.parse(certificate[:dateOfAssessment])
     end
 
-    def same_expiry_newer_assessment?(prev_certificate, certificate)
-      Date.parse(prev_certificate[:dateOfExpiry]) ==
-        Date.parse(certificate[:dateOfExpiry]) and
-        Date.parse(prev_certificate[:dateOfAssessment]) <
-          Date.parse(certificate[:dateOfAssessment])
+    def same_assessment_newer_expiry?(prev_certificate, certificate)
+      Date.parse(prev_certificate[:dateOfAssessment]) ==
+        Date.parse(certificate[:dateOfAssessment]) and
+        Date.parse(prev_certificate[:dateOfExpiry]) <
+          Date.parse(certificate[:dateOfExpiry])
     end
 
     def create_address(latest_certs, address_id)
