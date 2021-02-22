@@ -60,14 +60,14 @@ FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
   nil,
   1,
   [
-    { name: "Walls", description: "Its a wall", energyEfficiencyRating: 2 },
+    { name: "walls", description: "Its a wall", energyEfficiencyRating: 2 },
     {
       name: "secondary_heating",
       description: "Heating the house",
       energyEfficiencyRating: 5,
     },
     {
-      name: "MainHeating",
+      name: "main_heating",
       description: "Room heaters, electric",
       energyEfficiencyRating: 3,
     },
