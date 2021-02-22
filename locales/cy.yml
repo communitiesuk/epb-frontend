@@ -915,7 +915,7 @@ cy:
 
   energy_performance_rating:
     "0":
-      energy_performance: ""
+      energy_performance: "Heb fod yn gymwys"
     "1":
       energy_performance: "Gwael iawn"
     "2":
