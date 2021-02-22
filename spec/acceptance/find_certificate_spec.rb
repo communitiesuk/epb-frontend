@@ -187,8 +187,6 @@ describe "Acceptance::Certificate" do
         end
 
         it "does not show an older certificate" do
-          pp response.body
-
           expect(response.body).not_to include "1234-5678-9101-1123-1234"
           expect(response.body).to include "9876-5678-9101-1123-9876"
         end

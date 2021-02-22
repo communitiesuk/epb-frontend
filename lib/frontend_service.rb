@@ -742,8 +742,6 @@ class FrontendService < Sinatra::Base
       )
     end
   rescue StandardError => e
-    pp e
-    pp e.backtrace if e.methods.include?(:backtrace)
     case e
     when Errors::AssessmentNotFound
       not_found
@@ -762,8 +760,6 @@ class FrontendService < Sinatra::Base
 
     assessment[:data]
   rescue StandardError => e
-    pp e
-    pp e.backtrace if e.methods.include?(:backtrace)
     case e
     when Errors::AssessmentNotFound
       @page_title =
