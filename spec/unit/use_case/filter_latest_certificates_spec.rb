@@ -2,17 +2,20 @@ require "rspec"
 require "json"
 
 describe "UseCase::FilterLatestCertificates" do
-  before do
-    @usecase = UseCase::FilterLatestCertificates.new(nil)
-  end
+  before { @usecase = UseCase::FilterLatestCertificates.new(nil) }
 
   context "When processing a response from assessment search by postcode" do
-    let(:json_response) { JSON.parse(get_search_by_postcode, symbolize_names: true) }
+    let(:json_response) do
+      JSON.parse(get_search_by_postcode, symbolize_names: true)
+    end
     let(:result) { @usecase.execute(json_response) }
 
     it "Then the resulting address contains the most recent certificates for each type" do
       certificates = result[:"UPRN-000000000000"][:certificates]
-      expect(certificates).to contain_exactly(latest_sap_certificate, latest_rdsap_certificate)
+      expect(certificates).to contain_exactly(
+        latest_sap_certificate,
+        latest_rdsap_certificate,
+      )
     end
 
     it "Then the resulting address has the most recent address lines" do
@@ -30,7 +33,8 @@ end
 private
 
 def latest_sap_certificate
-  json_body = '{
+  json_body =
+    '{
     "dateOfAssessment": "2011-04-01",
     "typeOfAssessment": "SAP",
     "assessmentId": "0000-0000-0000-0000-0004",
@@ -51,7 +55,8 @@ def latest_sap_certificate
 end
 
 def latest_rdsap_certificate
-  json_body = '{
+  json_body =
+    '{
     "dateOfAssessment": "2011-03-01",
     "typeOfAssessment": "RdSAP",
     "assessmentId": "0000-0000-0000-0000-0003",

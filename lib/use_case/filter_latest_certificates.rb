@@ -12,7 +12,8 @@ module UseCase
           create_address(latest_certs_by_address, address_id)
         end
 
-        address_certificates = latest_certs_by_address[address_id][:certificates]
+        address_certificates =
+          latest_certs_by_address[address_id][:certificates]
         push_if_newer(address_certificates, certificate)
       end
 
@@ -26,7 +27,8 @@ module UseCase
       certs_by_address.each do |_, address|
         recent_certificate = nil
         address[:certificates].each do |certificate|
-          if recent_certificate.nil? || newer_certificate?(recent_certificate, certificate)
+          if recent_certificate.nil? ||
+              newer_certificate?(recent_certificate, certificate)
             recent_certificate = certificate
           end
         end
