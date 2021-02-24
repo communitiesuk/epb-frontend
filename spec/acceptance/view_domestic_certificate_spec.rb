@@ -953,7 +953,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       let(:response) { get "/energy-certificate/1111-1111-1111-1111-1112" }
 
       it "displays the improvementTitle and improvementDescription instead" do
-        expect(response.body).to include("Fix the boiler")
+        expect(response.body).to include("Recommendation 1: Fix the boiler")
         expect(response.body).to include(
           "An informative description of how to fix the boiler",
         )
