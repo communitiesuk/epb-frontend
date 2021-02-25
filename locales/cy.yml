@@ -1650,9 +1650,9 @@ cy:
           metering:
             title: "Cymharu’r mesurydd â’r meincnodau ynni priodol"
             bemInstalled: "Ydy’r offer oeri wedi’i gysylltu â BEMS a all ddarparu larymau y tu allan i’r amrediad"
-            excessiveUse: "Oes cofnodion ar gyfer yr offer o ddefnydd yr offer aerdymheru neu o ddefnyddio ynni ar is-fesurydd gyda nifer yr oriau y disgwylir eu defnyddio bob blwyddyn?"
+            excessiveUse: "Ydy’r defnydd ynni neu’r oriau defnydd yn ormodol?"
             meteringInstalled: "Oes mesuryddion wedi’u gosod i ganiatáu i’r ynni a ddefnyddir gan yr offer oeri gael ei fonitro?"
-            usageRecords: "Ydy’r defnydd ynni neu’r oriau defnydd yn ormodol?"
+            usageRecords: "Oes cofnodion ar gyfer yr offer o ddefnydd yr offer aerdymheru neu o ddefnyddio ynni ar is-fesurydd gyda nifer yr oriau y disgwylir eu defnyddio bob blwyddyn?"
             reading: "Darlleniad mesurydd a gofnodwyd %{meter_reading}"
           chillers:
             title: "Oeryddion a Oerir gan Ddŵr (Tyrau Oeri a Chyddwysyddion Anweddu)"
