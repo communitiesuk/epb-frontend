@@ -446,12 +446,14 @@ module FetchAssessmentSummary
           inspection: {
             insulation: {
               pipework: {
-                note: nil,
+                note:
+                  "Internal refrigerant pipe work connected to this terminal unit was enclosed and not accessible during the inspection.",
                 recommendations: [],
                 flag: true,
               },
               ductwork: {
-                note: nil,
+                note:
+                  "There is no ductwork associated with this type of terminal unit.",
                 recommendations: [],
                 flag: false,
               },

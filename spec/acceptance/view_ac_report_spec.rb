@@ -175,6 +175,12 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
       expect(response.body).to have_css "dd", text: "ICT Suite"
       expect(response.body).to have_css "dt", text: "Discrepancies noted"
       expect(response.body).to have_css "dd", text: "None"
+      expect(response.body).to have_css "p",
+                                        text:
+                                          "Internal refrigerant pipe work connected to this terminal unit was enclosed and not accessible during the inspection."
+      expect(response.body).to have_css "p",
+                                        text:
+                                          "There is no ductwork associated with this type of terminal unit."
     end
 
     it "can show the system controls" do
