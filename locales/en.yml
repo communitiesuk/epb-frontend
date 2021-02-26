@@ -747,7 +747,7 @@ en:
           average: 'average'
           good: 'good'
           very_good: 'very good (most efficient)'
-        not_inspected: "When the description says 'assumed', it means that the feature could not be inspected and an assumption has been made based on the property’s age and type."
+        not_inspected: "When the description says “assumed”, it means that the feature could not be inspected and an assumption has been made based on the property’s age and type."
         energy_performance: "energy performance"
         primary_energy_use: 'Primary energy use'
         primary_energy_use_description: 'The primary energy use for this property per year is %{primary_energy} kilowatt hours per square metre (kWh/m2).'
