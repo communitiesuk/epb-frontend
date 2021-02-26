@@ -605,7 +605,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
 
       it "shows the current charge" do
         expect(response.body).to include("Current charge")
-        expect(response.body).to include("£124.18 per year")
+        expect(response.body).to include("£124 per year")
       end
 
       it "shows the estimated savings" do

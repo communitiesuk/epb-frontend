@@ -107,12 +107,16 @@ module Sinatra
 
       def calculate_yearly_charges(green_deal_plan)
         all_charges = []
+        today = Date.today
         green_deal_plan[:charges].each do |charge|
-          all_charges.append(charge[:dailyCharge].to_f)
+          start_date = Date.parse(charge[:startDate])
+          end_date = Date.parse(charge[:endDate])
+          if (start_date <= today) && (end_date >= today)
+            all_charges.append(charge[:dailyCharge].to_f)
+          end
         end
         charges = all_charges.inject(0, &:+) * 365.25
-        rounded_charges = "%.2f" % charges
-        rounded_charges.chomp(".00")
+        charges.round.to_s
       end
 
       def localised_url(url)

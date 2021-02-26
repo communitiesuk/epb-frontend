@@ -1523,7 +1523,21 @@ module FetchAssessmentSummary
         .to_return(status: 200, body: body.to_json)
     end
 
-    def self.generate_green_deal_plan
+    def self.generate_green_deal_plan(
+      charges = [
+        {
+          sequence: 0,
+          startDate: "2020-03-29",
+          endDate: "2030-03-29",
+          dailyCharge: "0.33",
+        },
+        {
+          sequence: 1,
+          startDate: "2020-03-29",
+          endDate: "2030-03-29",
+          dailyCharge: "0.01",
+        },
+      ])
       [
         {
           greenDealPlanId: "ABC123456DEF",
@@ -1558,20 +1572,7 @@ module FetchAssessmentSummary
               product: "Not applicable",
             },
           ],
-          charges: [
-            {
-              sequence: 0,
-              startDate: "2020-03-29",
-              endDate: "2030-03-29",
-              dailyCharge: "0.33",
-            },
-            {
-              sequence: 1,
-              startDate: "2020-03-29",
-              endDate: "2030-03-29",
-              dailyCharge: "0.01",
-            },
-          ],
+          charges: charges,
           savings: [
             { fuelCode: "39", fuelSaving: 23_253, standingChargeFraction: 0 },
             { fuelCode: "40", fuelSaving: -6331, standingChargeFraction: -0.9 },
