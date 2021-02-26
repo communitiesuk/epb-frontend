@@ -9,96 +9,119 @@ describe Sinatra::FrontendService::Helpers do
     {
       "endDate": "2038-05-31 00:00:00.000000",
       "startDate": "2015-06-01 00:00:00.000000",
-      "dailyCharge": 1.9
+      "dailyCharge": 1.9,
     },
     {
       "endDate": "2039-02-01 00:00:00.000000",
       "startDate": "2038-06-01 00:00:00.000000",
-      "dailyCharge": 0.84
+      "dailyCharge": 0.84,
     },
     {
       "endDate": "2039-02-02 00:00:00.000000",
       "startDate": "2039-02-02 00:00:00.000000",
-      "dailyCharge": 0.95
-    }
+      "dailyCharge": 0.95,
+    },
   ]
 
   overlapping_charges = [
     {
       "endDate": "2038-05-31 00:00:00.000000",
       "startDate": "2015-06-01 00:00:00.000000",
-      "dailyCharge": 1.9
+      "dailyCharge": 1.9,
     },
     {
       "endDate": "2030-02-01 00:00:00.000000",
       "startDate": "2017-06-01 00:00:00.000000",
-      "dailyCharge": 0.87
+      "dailyCharge": 0.87,
     },
     {
       "endDate": "2039-02-02 00:00:00.000000",
       "startDate": "2039-02-02 00:00:00.000000",
-      "dailyCharge": 0.84
-    }
+      "dailyCharge": 0.84,
+    },
   ]
 
   context "given a green deal with a single charge" do
-    before do
-      allow(Date).to receive(:today).and_return Date.new(2021, 03, 29)
-    end
+    before { allow(Date).to receive(:today).and_return Date.new(2021, 0o3, 29) }
     it "calculates the annual cost to the nearest whole pound" do
       charges = [
         {
           "endDate": "2038-05-31 00:00:00.000000",
           "startDate": "2015-06-01 00:00:00.000000",
-          "dailyCharge": 1.00
-        }
+          "dailyCharge": 1.00,
+        },
       ]
 
-      green_deal_plan = FetchAssessmentSummary::AssessmentStub.generate_green_deal_plan(charges)[0]
-      expect(HelpersStub.new.calculate_yearly_charges(green_deal_plan)).to eq("365")
+      green_deal_plan =
+        FetchAssessmentSummary::AssessmentStub.generate_green_deal_plan(
+          charges,
+        )[
+          0
+        ]
+      expect(HelpersStub.new.calculate_yearly_charges(green_deal_plan)).to eq(
+        "365",
+      )
     end
   end
 
   context "given a green deal with varying charges over time" do
-
-    before do
-      allow(Date).to receive(:today).and_return Date.new(2021, 03, 29)
-    end
+    before { allow(Date).to receive(:today).and_return Date.new(2021, 0o3, 29) }
     it "calculates the annual cost when the current date is in charge #1" do
-      green_deal_plan = FetchAssessmentSummary::AssessmentStub.generate_green_deal_plan(varying_charges)[0]
-      expect(HelpersStub.new.calculate_yearly_charges(green_deal_plan)).to eq("694")
+      green_deal_plan =
+        FetchAssessmentSummary::AssessmentStub.generate_green_deal_plan(
+          varying_charges,
+        )[
+          0
+        ]
+      expect(HelpersStub.new.calculate_yearly_charges(green_deal_plan)).to eq(
+        "694",
+      )
     end
   end
 
   context "given a green deal with decreasing charges over time" do
-    before do
-      allow(Date).to receive(:today).and_return Date.new(2038, 07, 01)
-    end
+    before { allow(Date).to receive(:today).and_return Date.new(2038, 0o7, 0o1) }
     it "calculates the annual cost when the current date is in charge #2" do
-      green_deal_plan = FetchAssessmentSummary::AssessmentStub.generate_green_deal_plan(varying_charges)[0]
-      expect(HelpersStub.new.calculate_yearly_charges(green_deal_plan)).to eq("307")
+      green_deal_plan =
+        FetchAssessmentSummary::AssessmentStub.generate_green_deal_plan(
+          varying_charges,
+        )[
+          0
+        ]
+      expect(HelpersStub.new.calculate_yearly_charges(green_deal_plan)).to eq(
+        "307",
+      )
     end
   end
 
   context "given a green deal with decreasing charges over time" do
-    before do
-      allow(Date).to receive(:today).and_return Date.new(2039, 02, 02)
-    end
+    before { allow(Date).to receive(:today).and_return Date.new(2039, 0o2, 0o2) }
     it "calculates the annual cost when the current date is in charge #3" do
-      green_deal_plan = FetchAssessmentSummary::AssessmentStub.generate_green_deal_plan(varying_charges)[0]
-      expect(HelpersStub.new.calculate_yearly_charges(green_deal_plan)).to eq("347")
+      green_deal_plan =
+        FetchAssessmentSummary::AssessmentStub.generate_green_deal_plan(
+          varying_charges,
+        )[
+          0
+        ]
+      expect(HelpersStub.new.calculate_yearly_charges(green_deal_plan)).to eq(
+        "347",
+      )
     end
   end
 
   context "given a green deal with overlapping charges" do
+    green_deal_plan =
+      FetchAssessmentSummary::AssessmentStub.generate_green_deal_plan(
+        overlapping_charges,
+      )[
+        0
+      ]
 
-    green_deal_plan = FetchAssessmentSummary::AssessmentStub.generate_green_deal_plan(overlapping_charges)[0]
-
-    before do
-      allow(Date).to receive(:today).and_return Date.new(2021, 03, 29)
-    end
+    before { allow(Date).to receive(:today).and_return Date.new(2021, 0o3, 29) }
     it "calculates the combined annual cost when the current date is in the overlap period" do
-      expect(HelpersStub.new.calculate_yearly_charges(green_deal_plan)).to eq("1012")
+      expect(HelpersStub.new.calculate_yearly_charges(green_deal_plan)).to eq(
+        "1012",
+      )
     end
   end
 end

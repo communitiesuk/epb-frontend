@@ -160,20 +160,13 @@ module FetchAssessmentSummary
                 text:
                   "Access to the pre and post compressor for this type of system is difficult with a visual inspection; therefore the air on/room temperature and air off temperatures were taken from the indoor unit. (Pre Compressor temperature detailed is therefore the room temperature).",
               },
-              {
-                code: "OTHER",
-                seqNumber: "2",
-                text: "",
-              },
-              {
-                "seqNumber": "3",
-                "code": "OTHER",
-                "text": ""
-              },
+              { code: "OTHER", seqNumber: "2", text: "" },
+              { "seqNumber": "3", "code": "OTHER", "text": "" },
               {
                 "seqNumber": "4",
                 "code": "OTHER",
-                "text": "This system could not be brought into operation, this did not give cause for concern as there was no internal temperature demand on the system during the inspection."
+                "text":
+                  "This system could not be brought into operation, this did not give cause for concern as there was no internal temperature demand on the system during the inspection.",
               },
             ],
             postProcessor: "7",
@@ -1537,7 +1530,8 @@ module FetchAssessmentSummary
           endDate: "2030-03-29",
           dailyCharge: "0.01",
         },
-      ])
+      ]
+    )
       [
         {
           greenDealPlanId: "ABC123456DEF",

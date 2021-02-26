@@ -355,11 +355,14 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
                                           "Is there separate equipment installed for humidity control?"
       expect(response.body).to have_css "p",
                                         text: "N/A no humidity control installed to this system"
+
       # Refrigeration notes section
       expect(response.body).to have_css "p",
-                                        text: "Access to the pre and post compressor for this type of system is difficult with a visual inspection; therefore the air on/room temperature and air off temperatures were taken from the indoor unit. (Pre Compressor temperature detailed is therefore the room temperature)."
+                                        text:
+                                          "Access to the pre and post compressor for this type of system is difficult with a visual inspection; therefore the air on/room temperature and air off temperatures were taken from the indoor unit. (Pre Compressor temperature detailed is therefore the room temperature)."
       expect(response.body).to have_css "p",
-                                        text: "This system could not be brought into operation, this did not give cause for concern as there was no internal temperature demand on the system during the inspection."
+                                        text:
+                                          "This system could not be brought into operation, this did not give cause for concern as there was no internal temperature demand on the system during the inspection."
     end
   end
 
