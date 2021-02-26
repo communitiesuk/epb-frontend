@@ -163,7 +163,17 @@ module FetchAssessmentSummary
               {
                 code: "OTHER",
                 seqNumber: "2",
-                text: "No recommendation required.",
+                text: "",
+              },
+              {
+                "seqNumber": "3",
+                "code": "OTHER",
+                "text": ""
+              },
+              {
+                "seqNumber": "4",
+                "code": "OTHER",
+                "text": "This system could not be brought into operation, this did not give cause for concern as there was no internal temperature demand on the system during the inspection."
               },
             ],
             postProcessor: "7",

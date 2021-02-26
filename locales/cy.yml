@@ -1643,6 +1643,7 @@ cy:
               compressor_control: "Aseswch y cywasgydd(ion) oeri a’r dull ar gyfer rheoli’r capasiti oeri"
             leak: "Oes arwyddion bod oerydd yn gollwng?"
             f_gas_inspection: "O dan reolaeth Montreal/ODS/F-Gas/"
+            recommendation_title: "Nodiadau ac Argymhellion"
           maintenance:
             title: "Cynnal a Chadw Rheolaidd"
             competent_person: "Ydy’r gwaith cynnal-a-chadw yn cael ei wneud gan bobl â chymwysterau addas a hynny yn unol â chanllawiau’r diwydiant??"

@@ -1643,6 +1643,7 @@ en:
               compressor_control: "Assess the refrigeration compressor(s) and the method of refrigeration capacity control"
             leak: "Are there any signs of a refrigerant leak?"
             f_gas_inspection: "Montreal/ODS/F-Gas controlled?"
+            recommendation_title: "Notes and Recommendations"
           maintenance:
             title: "Regular Maintenance"
             competent_person: "Is the maintenance undertaken by suitably competent people and in accordance to industry guidelines?"

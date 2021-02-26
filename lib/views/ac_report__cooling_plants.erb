@@ -111,6 +111,14 @@
       <p><%= cooling_plant[:refrigeration][:fGasInspection][:note] %></p>
     <% end %>
 
+    <% if cooling_plant[:refrigeration].key?(:guidance) && !cooling_plant[:refrigeration][:guidance].nil? %>
+    <h5 class="govuk-heading-s"><%= t('ac_report.sections.cooling_plants.cooling_plant.refrigeration.recommendation_title') %></h5>
+      <% cooling_plant[:refrigeration][:guidance].each do |guidance| %>
+        <% next if guidance[:text].nil? || guidance[:text].empty? %>
+        <p class="govuk-body"><%= guidance[:text] %></p>
+      <% end %>
+    <% end %>
+
     <h4 class="govuk-heading-s"><%= t('ac_report.sections.cooling_plants.cooling_plant.maintenance.title') %></h4>
 
     <h5 class="govuk-heading-s govuk-!-margin-bottom-0"><%= t('ac_report.sections.cooling_plants.cooling_plant.maintenance.records_kept') %></h5>
