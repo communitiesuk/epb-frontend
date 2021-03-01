@@ -36,7 +36,7 @@ module FindAssessor
               :Accept => "*/*",
               "Accept-Encoding" => "gzip;q=1.0,deflate;q=0.6,identity;q=0.3",
               :Authorization => "Bearer abc",
-              "User-Agent" => "Faraday v1.0.1",
+              "User-Agent" => "Faraday v1.3.0",
             },
           )
           .to_return(
