@@ -80,7 +80,9 @@ describe Sinatra::FrontendService::Helpers do
   end
 
   context "given a green deal with decreasing charges over time" do
-    before { allow(Date).to receive(:today).and_return Date.new(2038, 0o7, 0o1) }
+    before do
+      allow(Date).to receive(:today).and_return Date.new(2038, 0o7, 0o1)
+    end
     it "calculates the annual cost when the current date is in charge #2" do
       green_deal_plan =
         FetchAssessmentSummary::AssessmentStub.generate_green_deal_plan(
@@ -95,7 +97,9 @@ describe Sinatra::FrontendService::Helpers do
   end
 
   context "given a green deal with decreasing charges over time" do
-    before { allow(Date).to receive(:today).and_return Date.new(2039, 0o2, 0o2) }
+    before do
+      allow(Date).to receive(:today).and_return Date.new(2039, 0o2, 0o2)
+    end
     it "calculates the annual cost when the current date is in charge #3" do
       green_deal_plan =
         FetchAssessmentSummary::AssessmentStub.generate_green_deal_plan(
