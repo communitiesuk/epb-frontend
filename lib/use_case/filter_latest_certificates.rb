@@ -47,7 +47,13 @@ module UseCase
     def push_if_newer(address_certificates, certificate)
       found_matching_type = false
       address_certificates.each do |prev_certificate|
-        next unless same_assessment_type?(prev_certificate, certificate)
+        if !(
+             Sinatra::FrontendService::Helpers.domestic_certificate_type? certificate[
+                                                                            :typeOfAssessment
+                                                                          ]
+           ) && !same_assessment_type?(prev_certificate, certificate)
+          next
+        end
 
         found_matching_type = true
         if newer_certificate?(prev_certificate, certificate)
