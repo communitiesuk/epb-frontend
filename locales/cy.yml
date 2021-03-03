@@ -788,6 +788,7 @@ cy:
           yearly_saving: "Arbedion blynyddol nodweddiadol"
           na: "Heb fod yn gymwys"
           costs_savings: "costau ac arbedion"
+          information_unavailable: "Nid yw’r wybodaeth ar gael"
           potential_rating_1: "Cyfraddiad posibl ar ôl cyflawni argymhelliad 1"
           potential_rating_2: "Cyfraddiad posibl ar ôl cyflawni argymhellion 1&nbsp;a&nbsp;2"
           potential_rating_3: "Cyfraddiad posibl ar ôl cyflawni argymhellion 1&nbsp;i"

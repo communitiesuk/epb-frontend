@@ -12,7 +12,7 @@
       t('domestic_epc.sections.recommendations.list.installation_cost')
     %></dt>
     <dd class="govuk-summary-list__value govuk-!-width-one-half" style="text-align: right">
-      <% if recommendation[:indicativeCost].nil? || recommendation[:indicativeCost].empty? ? (indicative_cost_result = 'Information unavailable') : (indicative_cost_result = recommendation[:indicativeCost]) %>
+      <% if recommendation[:indicativeCost].nil? || recommendation[:indicativeCost].empty? ? (indicative_cost_result = t('domestic_epc.sections.recommendations.list.information_unavailable')) : (indicative_cost_result = recommendation[:indicativeCost]) %>
         <%= remove_special_characters(indicative_cost_result) %>
       <% end %>
     </dd>
