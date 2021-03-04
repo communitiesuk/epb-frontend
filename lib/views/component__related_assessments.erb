@@ -8,7 +8,7 @@
   <% else %>
     <dl class="govuk-summary-list">
       <% assessment[:relatedAssessments].each do |related_assessment| %>
-        <% if related_assessment[:assessmentType] == assessment_type %>
+        <% if related_assessment[:assessmentType] == assessment_type || (%w[RdSAP SAP].include?(assessment_type) && %w[RdSAP SAP].include?(related_assessment[:assessmentType])) %>
         <% next if related_assessment[:assessmentStatus] == "CANCELLED" || related_assessment[:assessmentStatus] == "NOT_FOR_ISSUE" %>
           <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
             <dt class="govuk-summary-list__key govuk-!-width-one-half">

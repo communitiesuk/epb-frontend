@@ -782,6 +782,13 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
         )
       end
 
+      it "shows the related SAP and RdSAP certificates" do
+        expect(response.body).to have_link "9025-0000-0000-0000-0000",
+                                           href: "/energy-certificate/9025-0000-0000-0000-0000"
+        expect(response.body).to have_link "9026-0000-0000-0000-0000",
+                                           href: "/energy-certificate/9026-0000-0000-0000-0000"
+      end
+
       context "when there are CANCELLED related certificates" do
         it "does not show cancelled related certificates" do
           expect(response.body).not_to have_css(

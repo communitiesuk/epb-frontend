@@ -1503,6 +1503,18 @@ module FetchAssessmentSummary
                 assessmentType: "RdSAP",
                 assessmentExpiryDate: "2030-05-04",
               },
+              {
+                assessmentId: "9025-0000-0000-0000-0000",
+                assessmentStatus: "ENTERED",
+                assessmentType: "RdSAP",
+                assessmentExpiryDate: "2031-05-04",
+              },
+              {
+                assessmentId: "9026-0000-0000-0000-0000",
+                assessmentStatus: "ENTERED",
+                assessmentType: "SAP",
+                assessmentExpiryDate: "2035-05-04",
+              },
             ],
           },
         }
