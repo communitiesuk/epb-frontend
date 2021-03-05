@@ -60,11 +60,11 @@ class FrontendService < Sinatra::Base
         } – #{t('layout.body.govuk')}"
 
       if params["property_type"] == "domestic"
-        redirect "/find-an-assessor/search-by-postcode?#{query}"
+        redirect localised_url("/find-an-assessor/search-by-postcode?#{query}")
       end
 
       if params["property_type"] == "non_domestic"
-        redirect "/find-a-non-domestic-assessor/search-by-postcode?#{query}"
+        redirect localised_url("/find-a-non-domestic-assessor/search-by-postcode?#{query}")
       end
 
       if request.post? && params["property_type"].nil?
@@ -321,11 +321,11 @@ class FrontendService < Sinatra::Base
         } – #{t('layout.body.govuk')}"
 
       if params["property_type"] == "domestic"
-        redirect "/find-a-certificate/search-by-postcode?#{query}"
+        redirect localised_url("/find-a-certificate/search-by-postcode?#{query}")
       end
 
       if params["property_type"] == "non_domestic"
-        redirect "/find-a-non-domestic-certificate/search-by-postcode?#{query}"
+        redirect localised_url("/find-a-non-domestic-certificate/search-by-postcode?#{query}")
       end
 
       if request.post? && params["property_type"].nil?
