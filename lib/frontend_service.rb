@@ -164,7 +164,8 @@ class FrontendService < Sinatra::Base
             :assessmentId
           ]
 
-        redirect "/energy-certificate/#{fetched_assessment_id}", 303
+        redirect localised_url("/energy-certificate/#{fetched_assessment_id}"),
+                 303
       rescue StandardError => e
         case e
         when Errors::ReferenceNumberNotValid
@@ -586,7 +587,8 @@ class FrontendService < Sinatra::Base
           ][
             :assessmentId
           ]
-        redirect "/energy-certificate/#{fetched_assessment_id}", 303
+        redirect localised_url("/energy-certificate/#{fetched_assessment_id}"),
+                 303
       rescue StandardError => e
         @page_title = "#{t('error.error')}#{@page_title}"
         case e

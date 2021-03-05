@@ -446,6 +446,22 @@ describe "Acceptance::Non Domestic Certificate" do
             "/energy-certificate/1234-5678-9101-1121-3141",
           )
         end
+
+        context "when viewing the page in welsh" do
+          let(:response) do
+            get "http://find-energy-certificate.local.gov.uk/find-a-non-domestic-certificate/search-by-reference-number?lang=cy&reference_number=1234-5678-9101-1121-3141"
+          end
+
+          it "returns status 303" do
+            expect(response.status).to eq(303)
+          end
+
+          it "redirects to the URL to view the requested certificate" do
+            expect(response.location).to end_with(
+              "/energy-certificate/1234-5678-9101-1121-3141?lang=cy",
+            )
+          end
+        end
       end
 
       context "where no certificates are present" do
