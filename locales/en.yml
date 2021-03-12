@@ -632,8 +632,6 @@ en:
         number: 'Assessor ID'
         scheme: 'Accreditation scheme'
         declaration: 'Assessor’s declaration'
-        no_connection_text: 'No connection to the property'
-        has_connection_text: 'The assessor has made a declaration'
       information:
         certificate:
           list:

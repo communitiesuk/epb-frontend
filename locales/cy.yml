@@ -632,8 +632,6 @@ cy:
         number: "ID yr Asesydd"
         scheme: "Cynllun achredu"
         declaration: "Datganiad yr asesydd"
-        no_connection_text: "Dim cysylltiad â’r eiddo"
-        has_connection_text: "Mae’r asesydd wedi gwneud datganiad"
       information:
         certificate:
           list:
