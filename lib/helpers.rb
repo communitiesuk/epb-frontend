@@ -177,9 +177,12 @@ module Sinatra
       def related_assessments(assessment, type)
         output =
           assessment[:relatedAssessments].map do |related_assessment|
-            next unless related_assessment[:assessmentType] == type ||
-              %w[RdSAP SAP].include?(related_assessment[:assessmentType]) &&
-                %w[RdSAP SAP].include?(type)
+            unless related_assessment[:assessmentType] == type ||
+                %w[RdSAP SAP].include?(
+                  related_assessment[:assessmentType],
+                ) && %w[RdSAP SAP].include?(type)
+              next
+            end
 
             related_assessment
           end

@@ -246,7 +246,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
           nil,
           "\n        ",
           nil,
-          )
+        )
       end
 
       let(:response) { get "/energy-certificate/123-123" }
