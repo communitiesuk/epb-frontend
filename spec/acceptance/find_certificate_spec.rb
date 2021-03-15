@@ -164,6 +164,18 @@ describe "Acceptance::Certificate" do
           )
         end
 
+        it "shows the information regarding getting a new EPC" do
+          expect(response.body).to include(
+                                     "If your property does not have a valid EPC, you can"
+                                   )
+        end
+
+        it "show the text for the getting a new energy certificate link" do
+          expect(response.body).to have_css "a",
+                                            text:
+                                              "get a new energy certificate"
+        end
+
         it "shows the address of an entry" do
           expect(response.body).to include("2 Marsham Street, London, SW1B 2BB")
         end
@@ -213,9 +225,28 @@ describe "Acceptance::Certificate" do
 
         it "explains that no certificates are present" do
           expect(response.body).to include(
-            I18n.t("find_certificate_by_postcode_results.no_certificates"),
-          )
+                                     I18n.t("find_certificate_by_postcode_results.no_certificates"),
+                                     )
         end
+
+        xit "shows the information regarding getting a new EPC" do
+          expect(response.body).to include(
+                                     "If your property does not have an EPC, you can"
+                                   )
+        end
+
+        xit "does not show the information regarding getting a new EPC for if there are results" do
+          expect(response.body).to_not include(
+                                     "If your property does not have a valid EPC, you can"
+                                   )
+        end
+
+        it "shows the text for the getting a new energy certificate link" do
+          expect(response.body).to have_css "a",
+                                            text:
+                                              "get a new energy certificate"
+        end
+
       end
 
       context "when there is no connection" do
