@@ -635,7 +635,7 @@ en:
       information:
         certificate:
           list:
-            no_disclosure: 'The assessor has not indicated whether they have a relation to this property.'
+            no_disclosure: 'No assessor’s declaration provided'
     how_this_building_compares:
       heading: "How this property compares to others"
       explanation: "Properties similar to this one could have ratings:"
@@ -1354,8 +1354,8 @@ en:
       information:
         certificate:
           list:
-            no_disclosure: 'No assessor’s declaration provided.'
-            disclosure_number_not_valid: 'The disclosure code provided is not valid.'
+            no_disclosure: 'No assessor’s declaration provided'
+            disclosure_number_not_valid: 'The disclosure code provided is not valid'
 
   dec_rr:
     top_heading: "Display energy certificate (DEC) recommendation report"

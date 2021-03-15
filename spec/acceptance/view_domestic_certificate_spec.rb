@@ -232,6 +232,30 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       end
     end
 
+    context "When a related party disclosure code is nil and text is whitespace" do
+      before do
+        FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
+          "123-123",
+          "25",
+          "f",
+          false,
+          "7.8453",
+          "6.5123",
+          nil,
+          nil,
+          nil,
+          "\n        ",
+          nil,
+          )
+      end
+
+      let(:response) { get "/energy-certificate/123-123" }
+
+      it "shows related party disclosure text and code not present" do
+        expect(response.body).to include("No assessor’s declaration provided")
+      end
+    end
+
     context "when there is no total floor area present" do
       before do
         FetchAssessmentSummary::AssessmentStub.fetch_rdsap(

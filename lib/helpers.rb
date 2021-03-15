@@ -92,7 +92,7 @@ module Sinatra
         text = t(code_prefix + ".#{code}.relation")
         if text.include?("missing")
           text = string
-          if text.nil?
+          if text.nil? || text.strip.empty?
             text =
               if code
                 t(

@@ -635,7 +635,7 @@ cy:
       information:
         certificate:
           list:
-            no_disclosure: "Nid yw’r asesydd wedi dweud a oes ganddo berthynas â’r eiddo ai peidio"
+            no_disclosure: "Dim datganiad asesydd wedi’i ddarparu"
     how_this_building_compares:
       heading: "Sut mae’r eiddo hwn yn cymharu ag eraill"
       explanation: "Gallai eiddo sy’n debyg i’r eiddo hwn fod â chyfraddiadau:"
@@ -1354,7 +1354,7 @@ cy:
       information:
         certificate:
           list:
-            no_disclosure: "Dim datganiad asesydd wedi’i ddarparu."
+            no_disclosure: "Dim datganiad asesydd wedi’i ddarparu"
             disclosure_number_not_valid: "Nid yw’r cod datgelu a roddwyd yn dilys"
 
   dec_rr:
