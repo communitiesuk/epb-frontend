@@ -44,6 +44,6 @@
   </table>
 
   <h2 class="govuk-heading-m"><%= t('domestic_epc.sections.breakdown.primary_energy_use') %></h2>
-  <p class="govuk-body"><%= t('domestic_epc.sections.breakdown.primary_energy_use_description', :primary_energy => assessment[:primaryEnergyUse]) %></p>
+  <p class="govuk-body"><%= t('domestic_epc.sections.breakdown.primary_energy_use_description', :primary_energy => assessment[:primaryEnergyUse].to_f.round.to_s) %></p>
   <%== erb :__primary_energy_use_dropdown %>
 </div>

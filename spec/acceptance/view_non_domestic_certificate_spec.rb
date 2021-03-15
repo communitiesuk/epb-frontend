@@ -231,7 +231,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
         expect(response.body).to include("Air Conditioning")
         expect(response.body).to include("3")
         expect(response.body).to include("67.09")
-        expect(response.body).to include("413.22")
+        expect(response.body).to include("413\n") # Check the value is rounded
       end
 
       it "shows the primary energy use explanation" do

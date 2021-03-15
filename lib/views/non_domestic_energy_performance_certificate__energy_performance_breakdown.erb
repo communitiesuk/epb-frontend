@@ -10,7 +10,7 @@
       "building_environment": { value: building_environment },
       "assessment_level": { value: assessment_level },
       "emission_rate": { value: emission_rate },
-      "primary_energy_use": { value: primary_energy_use },
+      "primary_energy_use": { value: (primary_energy_use.nil? ? nil : primary_energy_use.to_f.round.to_s)},
     },
     translation_prefix: 'non_domestic_epc.energy_peformance_breakdown.',
     skip_null: true

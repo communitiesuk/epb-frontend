@@ -752,7 +752,7 @@ module FetchAssessmentSummary
     def self.fetch_cepc(
       assessment_id:,
       energyEfficiencyBand:,
-      primaryEnergyUse: "413.22",
+      primaryEnergyUse: "413.22264873648762",
       related_rrn: "4192-1535-8427-8844-6702",
       related_party_disclosure: nil,
       related_assessments: [
@@ -1178,7 +1178,7 @@ module FetchAssessmentSummary
       related_party_disclosure_text = nil,
       related_party_disclosure_number = 1,
       property_summary = nil,
-      primary_energy_use = 989,
+      primary_energy_use = 989.345346,
       type_of_assessment = "RdSAP",
       energy_performance_rating_improvement = 76,
       green_deal_plan = [],
