@@ -23,7 +23,7 @@ describe "Journey::FindDomesticCertificate", type: :feature, journey: true do
 
   after(:all) { Process.kill("KILL", @process_id) }
 
-  describe "when searching for a certificate by postcode" do
+  describe "when searching for a domestic certificate by postcode" do
     it "finds a certificate by postcode" do
       visit "http://find-energy-certificate.local.gov.uk:9393"
       click_on "Start now"
@@ -97,7 +97,7 @@ describe "Journey::FindDomesticCertificate", type: :feature, journey: true do
     end
   end
 
-  describe "when searching for a certificate by RRN" do
+  describe "when searching for a domestic certificate by RRN" do
     it "redirects directly to the certificate page when entering a valid certificate number" do
       visit "http://find-energy-certificate.local.gov.uk:9393"
       click_on "Start now"
@@ -111,7 +111,7 @@ describe "Journey::FindDomesticCertificate", type: :feature, journey: true do
     end
   end
 
-  describe "when searching for a certificate by street name and town" do
+  describe "when searching for a domestic certificate by street name and town" do
     it "displays an error message when entering an empty street name" do
       visit "http://find-energy-certificate.local.gov.uk:9393"
       click_on "Start now"
