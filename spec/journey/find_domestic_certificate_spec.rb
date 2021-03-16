@@ -56,6 +56,45 @@ describe "Journey::FindDomesticCertificate", type: :feature, journey: true do
       expect(page).to have_content "Getting a new energy certificate"
     end
 
+    it "displays no postcode results and clicks through to search by postcode" do
+      visit "http://find-energy-certificate.local.gov.uk:9393"
+      click_on "Start now"
+      find("#label-domestic").click
+      click_on "Continue"
+      fill_in "postcode", with: "E1 4FF"
+      click_on "Find"
+      click_link "postcode"
+      expect(
+        page,
+      ).to have_content "Find an energy performance certificate (EPC) by postcode"
+    end
+
+    it "displays no postcode results and clicks through to search by street and town" do
+      visit "http://find-energy-certificate.local.gov.uk:9393"
+      click_on "Start now"
+      find("#label-domestic").click
+      click_on "Continue"
+      fill_in "postcode", with: "E1 4FF"
+      click_on "Find"
+      click_link "street and town"
+      expect(
+        page,
+      ).to have_content "Find an energy performance certificate (EPC) by street and town"
+    end
+
+    it "displays no postcode results and clicks through to search by certificate number" do
+      visit "http://find-energy-certificate.local.gov.uk:9393"
+      click_on "Start now"
+      find("#label-domestic").click
+      click_on "Continue"
+      fill_in "postcode", with: "E1 4FF"
+      click_on "Find"
+      click_link "certificate number"
+      expect(
+        page,
+      ).to have_content "Find an energy performance certificate (EPC) by certificate number"
+    end
+
     describe "viewing in Welsh" do
       it "finds a certificate by postcode" do
         visit "http://find-energy-certificate.local.gov.uk:9393"
@@ -166,8 +205,9 @@ describe "Journey::FindDomesticCertificate", type: :feature, journey: true do
       fill_in "street_name", with: "Madeup Street"
       fill_in "town", with: "Madeup Town"
       click_on "Find"
-      expect(page).to have_content "A certificate was not found at this address."
+      expect(
+        page,
+      ).to have_content "A certificate was not found at this address."
     end
   end
-
 end
