@@ -34,7 +34,7 @@ describe "Journey::FindNonDomesticCertificate", type: :feature, journey: true do
       expect(page).to have_content "2 certificates and reports for SW1A 2AA"
     end
 
-    it "displays the found postcode results and clicks through to Getting an Energy Certificate" do
+    xit "displays the found postcode results and clicks through to Getting an Energy Certificate" do
       visit "http://find-energy-certificate.local.gov.uk:9393"
       click_on "Start now"
       find("#label-non-domestic").click
@@ -45,7 +45,7 @@ describe "Journey::FindNonDomesticCertificate", type: :feature, journey: true do
       expect(page).to have_content "Getting a new energy certificate"
     end
 
-    it "displays no postcode results and clicks through to Getting an Energy Certificate" do
+    xit "displays no postcode results and clicks through to Getting an Energy Certificate" do
       visit "http://find-energy-certificate.local.gov.uk:9393"
       click_on "Start now"
       find("#label-non-domestic").click
