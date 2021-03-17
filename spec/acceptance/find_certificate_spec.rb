@@ -616,6 +616,16 @@ describe "Acceptance::Certificate" do
           )
         end
 
+        it "displays the text if user does not have a valid EPC" do
+          expect(response.body).to include(
+                                     "If your property does not have a valid EPC, you can")
+        end
+
+        it "displays the link to getting a new EPC" do
+          expect(response.body).to have_css("a",
+                                            text: "get a new energy certificate")
+        end
+
         it "shows the address of an entry" do
           expect(response.body).to include(
             "1 Makeup Street, Beauty Town, SW1B 2BB",
@@ -667,6 +677,17 @@ describe "Acceptance::Certificate" do
           expect(response.body).to include(
             "A certificate was not found at this address",
           )
+        end
+
+
+        it "displays the text if user does not have an EPC" do
+          expect(response.body).to include(
+                                     "If your property does not have an EPC, you can")
+        end
+
+        it "displays the link to getting a new EPC" do
+          expect(response.body).to have_css("a",
+                                            text: "get a new energy certificate")
         end
       end
 

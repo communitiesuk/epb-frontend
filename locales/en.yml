@@ -393,9 +393,9 @@ en:
   find_certificate_by_street_name_and_town:
     top_heading: 'Find an energy performance certificate (EPC) by street and town'
     no_such_address:
+      get_a_new_one_no_results: "If your property does not have an EPC, you can"
+      get_a_new_one_link: "get a new energy certificate"
       error: 'A certificate was not found at this address.'
-      body: 'If you need to get an EPC for your property, please use the %{link} service'
-      cta: 'Find an assessor'
     button_text: 'Find'
     street_name_question: 'Enter the street'
     street_name_hint: 'For example Primrose Street'
@@ -426,12 +426,8 @@ en:
 
   find_certificate_by_street_name_and_town_results:
     top_heading: 'Find an energy performance certificate (EPC)'
-    expired_epc_availability: 'Results show all valid EPCs. Some expired EPCs do not appear, but all expired EPCs should be available by February 2021.'
-    contact_support_part_one: 'If you need additional support to find an energy certificate or report, contact us on '
-    contact_support_part_two: ', or call our helpdesk on 020 3829 0748 (Monday to Friday, 9am - 5pm).'
-    mhclg_support_email: 'mhclg.digital-services@communities.gov.uk'
     no_epc:
-      get_a_new_one: "If your property does not have a valid EPC, you can"
+      get_a_new_one_with_results: "If your property does not have a valid EPC, you can"
       get_a_new_one_link: "get a new energy certificate"
     list: '1-%{length} of %{length} results matching %{query}'
     table:

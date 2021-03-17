@@ -209,5 +209,20 @@ describe "Journey::FindDomesticCertificate", type: :feature, journey: true do
         page,
       ).to have_content "A certificate was not found at this address."
     end
+
+    it "displays no street search results and clicks through to Getting an Energy Certificate" do
+      visit "http://find-energy-certificate.local.gov.uk:9393"
+      click_on "Start now"
+      find("#label-domestic").click
+      click_on "Continue"
+      click_on "find an EPC using the street name and town"
+      fill_in "street_name", with: "Madeup Street"
+      fill_in "town", with: "Madeup Town"
+      click_on "Find"
+      click_on "get a new energy certificate"
+      expect(
+        page,
+        ).to have_content "Getting a new energy certificate"
+    end
   end
 end
