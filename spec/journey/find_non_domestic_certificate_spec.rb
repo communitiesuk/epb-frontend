@@ -130,4 +130,19 @@ describe "Journey::FindNonDomesticCertificate", type: :feature, journey: true do
       expect(page).to have_content "Enter a real postcode"
     end
   end
+
+  describe "when searching for a non-domestic certificate by street name and town" do
+    it "displays no street search results and clicks through to Getting an Energy Certificate" do
+      visit "http://find-energy-certificate.local.gov.uk:9393"
+      click_on "Start now"
+      find("#label-non-domestic").click
+      click_on "Continue"
+      click_on "find energy certificates and reports using the street name and town"
+      fill_in "street_name", with: "Another Street"
+      fill_in "town", with: "Somewhere Town"
+      click_on "Find"
+      click_on "get a new energy certificate"
+      expect(page).to have_content "Getting a new energy certificate"
+    end
+  end
 end

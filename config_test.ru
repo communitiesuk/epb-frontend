@@ -46,6 +46,13 @@ FindCertificate::NoCertificatesStub.search_by_street_name_and_town(
   "Madeup Street",
   "Madeup Town",
 )
+
+FindCertificate::NoCertificatesStub.search_by_street_name_and_town(
+  "Another Street",
+  "Somewhere Town",
+  %w[DEC DEC-RR CEPC CEPC-RR AC-REPORT AC-CERT],
+)
+
 FetchAssessmentSummary::AssessmentStub.fetch_rdsap("4567-6789-4567-6789-4567")
 FetchAssessmentSummary::AssessmentStub.fetch_rdsap("0000-0000-0000-0000-0001")
 

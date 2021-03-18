@@ -65,9 +65,8 @@
             <span class="govuk-visually-hidden"><%= t('error.error') %></span><%== t(errors[:generic][:error]) %>
           </span>
         <p class="govuk-body">
-          <%== t(errors[:generic][:body], :link => '<a class="govuk-link" href="' + localised_url(errors[:generic][:url]) + '">' +
-            t(errors[:generic][:cta]) +
-            '</a>') %>
+          <%= t('find_non_dom_certificate_by_street_name_and_town.no_such_address.get_a_new_one_no_results') %>
+          <a href= <%=localised_url(set_subdomain_url("getting-new-energy-certificate"))%>><%= t('find_non_dom_certificate_by_street_name_and_town.no_such_address.get_a_new_one_link') %></a>.
         </p>
       <% end %>
     </form>
