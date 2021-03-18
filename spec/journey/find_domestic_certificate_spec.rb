@@ -220,9 +220,7 @@ describe "Journey::FindDomesticCertificate", type: :feature, journey: true do
       fill_in "town", with: "Madeup Town"
       click_on "Find"
       click_on "get a new energy certificate"
-      expect(
-        page,
-        ).to have_content "Getting a new energy certificate"
+      expect(page).to have_content "Getting a new energy certificate"
     end
   end
 end
