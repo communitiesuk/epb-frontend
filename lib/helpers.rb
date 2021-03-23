@@ -87,7 +87,7 @@ module Sinatra
         code,
         string,
         code_prefix = "disclosure_code",
-        certificate_prefix = "domestic_epc"
+        _certificate_prefix = "domestic_epc"
       )
         text = t(code_prefix + ".#{code}.relation")
         if text.include?("missing")
@@ -95,15 +95,9 @@ module Sinatra
           if text.nil? || text.strip.empty?
             text =
               if code
-                t(
-                  certificate_prefix +
-                    ".sections.information.certificate.list.disclosure_number_not_valid",
-                )
+                t("data_missing.disclosure_number_not_valid")
               else
-                t(
-                  certificate_prefix +
-                    ".sections.information.certificate.list.no_disclosure",
-                )
+                t("data_missing.no_disclosure")
               end
           end
         end

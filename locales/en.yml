@@ -2,7 +2,10 @@ en:
   validation_errors:
     postcode_error: 'Enter a real postcode'
 
-  not_recorded: "Not recorded"
+  data_missing:
+    not_recorded: "Not recorded"
+    no_disclosure: 'No assessor’s declaration provided'
+    disclosure_number_not_valid: 'The disclosure code provided is not valid'
 
   services:
     find_an_energy_certificate: 'Find an energy certificate'
@@ -632,10 +635,6 @@ en:
         number: 'Assessor ID'
         scheme: 'Accreditation scheme'
         declaration: 'Assessor’s declaration'
-      information:
-        certificate:
-          list:
-            no_disclosure: 'No assessor’s declaration provided'
     how_this_building_compares:
       heading: "How this property compares to others"
       explanation: "Properties similar to this one could have ratings:"
@@ -849,8 +848,6 @@ en:
             sap_description_second_part: 'This type of assessment must be carried out on all new properties built after 1 April 2008 in England and Wales, and 30 September 2008 in Northern Ireland.'
             rdsap_description_first_part: 'RdSAP (Reduced data Standard Assessment Procedure) is a method used to assess and compare the energy and environmental performance of properties in the UK. It uses a site visit and survey of the property to calculate energy performance.'
             rdsap_description_second_part: 'This type of assessment can be carried out on properties built before 1 April 2008 in England and Wales, and 30 September 2008 in Northern Ireland. It can also be used for newer properties, as long as they have a previous SAP assessment, which uses detailed information about the property’s construction to calculate energy performance.'
-            no_disclosure: 'No assessor’s declaration provided'
-            disclosure_number_not_valid: 'The disclosure code provided is not valid'
       green_deal:
         title: 'Green Deal Plan'
         info: 'Energy efficiency improvements were made to this property by a %{link}.'
@@ -1351,11 +1348,6 @@ en:
           name: "Accreditation scheme"
           phone: "Accreditation scheme telephone"
           email: "Accreditation scheme email"
-      information:
-        certificate:
-          list:
-            no_disclosure: 'No assessor’s declaration provided'
-            disclosure_number_not_valid: 'The disclosure code provided is not valid'
 
   dec_rr:
     top_heading: "Display energy certificate (DEC) recommendation report"

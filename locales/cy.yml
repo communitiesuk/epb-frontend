@@ -2,7 +2,10 @@ cy:
   validation_errors:
     postcode_error: "Rhowch god post go iawn"
 
-  not_recorded: "Heb eu cofnodi"
+  data_missing:
+    not_recorded: "Heb eu cofnodi"
+    no_disclosure: "Dim datganiad asesydd wedi’i ddarparu"
+    disclosure_number_not_valid: "Nid yw’r cod datgelu a roddwyd yn ddilys"
 
   services:
     find_an_energy_certificate: "Chwiliwch am dystysgrif ynni"
@@ -632,10 +635,6 @@ cy:
         number: "ID yr Asesydd"
         scheme: "Cynllun achredu"
         declaration: "Datganiad yr asesydd"
-      information:
-        certificate:
-          list:
-            no_disclosure: "Dim datganiad asesydd wedi’i ddarparu"
     how_this_building_compares:
       heading: "Sut mae’r eiddo hwn yn cymharu ag eraill"
       explanation: "Gallai eiddo sy’n debyg i’r eiddo hwn fod â chyfraddiadau:"
@@ -849,8 +848,6 @@ cy:
             sap_description_second_part: "Rhaid i’r math hwn o asesiad gael ei gyflawni ar bob eiddo newydd a godwyd ar ôl 1 Ebrill yng Nghymru a Lloegr, a 30 Medi 2008 yng Ngogledd Iwerddon."
             rdsap_description_first_part: "Mae RdSAP (Gweithdrefn Asesu Safonol â Llai o Ddata) yn ddull a ddefnyddir i asesu a chymharu perfformiad ynni a pherfformiad amgylcheddol eiddo yn y Deyrnas Unedig. Mae’n defnyddio ymweliad â’r safle ac arolwg o’r eiddo i gyfrifo’i berfformiad ynni."
             rdsap_description_second_part: "Gall y math hwn o asesiad gael ei gyflawni ar eiddo a godwyd cyn 1 Ebrill 2008 yng Nghymru a Lloegr, a 30 Medi 2008 yng Ngogledd. Gall gael ei ddefnyddio hefyd ar eiddo mwy diweddar cyhyd â bod gan yr eiddo asesiad SAP blaenorol sy’n defnyddio gwybodaeth fanwl am adeiladwaith yr eiddo i gyfrifo’r perfformiad ynni."
-            no_disclosure: "Dim datganiad asesydd wedi’i ddarparu"
-            disclosure_number_not_valid: "Nid yw’r cod datgelu a roddwyd yn ddilys"
       green_deal:
         title: "Cynllun y Fargen Werdd"
         info: "Cafodd gwelliannau effeithlonrwydd ynni eu gwneid i’r eiddo hwn gan %{link}."
@@ -1351,11 +1348,6 @@ cy:
           name: "Cynllun achredu"
           phone: "Rhif ffôn y cynllun achredu"
           email: "Ebost y cynllun achredu"
-      information:
-        certificate:
-          list:
-            no_disclosure: "Dim datganiad asesydd wedi’i ddarparu"
-            disclosure_number_not_valid: "Nid yw’r cod datgelu a roddwyd yn dilys"
 
   dec_rr:
     top_heading: "Adroddiad ar argymhellion tystysgrif ynni i’w harddangos (DEC)"
