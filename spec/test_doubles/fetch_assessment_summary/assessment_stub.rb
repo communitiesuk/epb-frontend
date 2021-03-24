@@ -955,12 +955,14 @@ module FetchAssessmentSummary
       ],
       related_party: nil,
       related_rrn: "4192-1535-8427-8844-6702",
-      asset_rating: "1"
+      asset_rating: "1",
+      schema_version: 8.0
     )
       body = {
         data: {
           typeOfAssessment: "DEC",
           assessmentId: assessment_id,
+          schemaVersion: schema_version,
           reportType: "1",
           dateOfExpiry: date_of_expiry,
           address: {

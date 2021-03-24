@@ -145,4 +145,18 @@ describe "Journey::FindNonDomesticCertificate", type: :feature, journey: true do
       expect(page).to have_content "Getting a new energy certificate"
     end
   end
+
+  describe "when searching for an unsupported non domestic certificate by RRN" do
+    it "redirects directly to the certificate page and does not shows a summary xml link" do
+      visit "http://find-energy-certificate.local.gov.uk:9393"
+      click_on "Start now"
+      find("#label-non-domestic").click
+      click_on "Continue"
+      click_on "find a certificate by using its certificate number"
+      fill_in "reference_number", with: "0000-0000-0000-0000-1112"
+      click_on "Find"
+      expect(page).to_not have_content "Summary XML"
+      expect(page).to_not have_link "Download Summary XML"
+    end
+  end
 end

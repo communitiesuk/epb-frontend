@@ -4,32 +4,43 @@
   %></h2>
   <dl class="govuk-summary-list">
 
+    <% admin_list = {
+      "assessment_software": { value: administrative_information[:calculationTool] },
+      "property_reference": { value: address[:addressId] },
+      "assessor.list.name": assessor[:name],
+      "assessor.list.telephone": { value: assessor[:contactDetails][:telephoneNumber] },
+      "assessor.list.email": { type: "email", value: assessor[:contactDetails][:email] },
+      "assessor.list.number":  { value: assessor[:schemeAssessorId] },
+      "scheme.name": scheme_details(assessor, 'name'),
+      "scheme.phone": scheme_details(assessor, 'phone'),
+      "scheme.email":  { type: "email", value: scheme_details(assessor, 'email') },
+      "company_name": assessor[:companyDetails][:name],
+      "company_address": assessor[:companyDetails][:address],
+      "issue_date": date(administrative_information[:issueDate]),
+      "nominated_date": date(assessment[:currentAssessment][:date]),
+      "valid_until": { value: date(assessment[:dateOfExpiry]) },
+      "related_party_disclosure": party_disclosure(
+        administrative_information[:relatedPartyDisclosure].nil? ?
+          "8" :
+          administrative_information[:relatedPartyDisclosure], administrative_information[:relatedPartyDisclosure], "dec_disclosure_code", "dec"
+      ),
+    }
+       if assessment[:schemaVersion] > 6
+         admin_list["download_xml"] = {type: "link", value: t("dec.sections.administrative_information.download_xml_cta"), link: localised_url("/energy-certificate/" + assessment[:assessmentId] + "/dec_summary")}
+       end
+    %>
+
+
     <%== erb :component__summary_list, locals: {
-      list: {
-        "assessment_software": { value: administrative_information[:calculationTool] },
-        "property_reference": { value: address[:addressId] },
-        "assessor.list.name": assessor[:name],
-        "assessor.list.telephone": { value: assessor[:contactDetails][:telephoneNumber] },
-        "assessor.list.email": { type: "email", value: assessor[:contactDetails][:email] },
-        "assessor.list.number":  { value: assessor[:schemeAssessorId] },
-        "scheme.name": scheme_details(assessor, 'name'),
-        "scheme.phone": scheme_details(assessor, 'phone'),
-        "scheme.email":  { type: "email", value: scheme_details(assessor, 'email') },
-        "company_name": assessor[:companyDetails][:name],
-        "company_address": assessor[:companyDetails][:address],
-        "issue_date": date(administrative_information[:issueDate]),
-        "nominated_date": date(assessment[:currentAssessment][:date]),
-        "valid_until": { value: date(assessment[:dateOfExpiry]) },
-        "related_party_disclosure": party_disclosure(
-          administrative_information[:relatedPartyDisclosure].nil? ?
-            "8" :
-            administrative_information[:relatedPartyDisclosure], administrative_information[:relatedPartyDisclosure], "dec_disclosure_code", "dec"
-        ),
-        "download_xml": { type: "link", value: t("dec.sections.administrative_information.download_xml_cta"), link: localised_url("/energy-certificate/" + assessment[:assessmentId] + "/dec_summary") },
-      },
+      list: admin_list,
       translation_prefix: 'dec.sections.administrative_information.',
       skip_null: true
-    } %>
+    }
+
+    %>
+
+
+
 
   </dl>
 </div>

@@ -304,6 +304,25 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
         expect(response.body).to have_css "dd", text: "1"
       end
     end
+
+    context "when the schema version is not supported for dec xml summary" do
+      before do
+        FetchAssessmentSummary::AssessmentStub.fetch_dec(
+          assessment_id: "0000-0000-0000-0000-1111",
+          date_of_expiry: "2008-02-21",
+          asset_rating: nil,
+          schema_version: 5.0,
+        )
+      end
+
+      it "does not have summary download div" do
+        expect(response.body).to_not have_css "dt", text: "Summary XML"
+      end
+
+      it "does not have summary download link" do
+        expect(response.body).to_not have_link "Download summary XML"
+      end
+    end
   end
 
   context "when a dec exists without a recommendation report" do

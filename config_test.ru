@@ -28,6 +28,7 @@ FindCertificate::Stub.search_by_id("4567-6789-4567-6789-4567")
 FindCertificate::Stub.search_by_id("1234-5678-1234-5678-1234", "CEPC")
 FindCertificate::Stub.search_by_id("1234-5678-1234-5678-0000", "CEPC-RR")
 FindCertificate::Stub.search_by_id("0000-0000-0000-0000-1111", "DEC")
+FindCertificate::Stub.search_by_id("0000-0000-0000-0000-1112", "DEC")
 FindCertificate::Stub.search_by_id("1204-5678-1234-5178-0000", "DEC-RR")
 FindCertificate::Stub.search_by_id("0000-0000-0000-0000-9999", "AC-CERT")
 FindCertificate::Stub.search_by_id("0000-0000-0000-0000-5555", "AC-REPORT")
@@ -106,6 +107,11 @@ FetchAssessmentSummary::AssessmentStub.fetch_cepc assessment_id:
 FetchAssessmentSummary::AssessmentStub.fetch_dec assessment_id:
                                                    "0000-0000-0000-0000-1111",
                                                  date_of_expiry: "2030-01-28"
+
+FetchAssessmentSummary::AssessmentStub.fetch_dec assessment_id:
+                                                   "0000-0000-0000-0000-1112",
+                                                 date_of_expiry: "2008-01-28",
+                                                 schema_version: 5.0
 
 FetchAssessmentSummary::AssessmentStub.fetch_dec_rr assessment_id:
                                                       "1204-5678-1234-5178-0000"
