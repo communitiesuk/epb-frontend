@@ -21,4 +21,6 @@ module Errors
   end
   class TownMissing < RuntimeError
   end
+  class AssessmentUnsupported < RuntimeError
+  end
 end

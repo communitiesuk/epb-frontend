@@ -9,6 +9,7 @@ module UseCase
         raise Errors::AssessmentNotFound if error[:code] == "NOT_FOUND"
         raise Errors::AssessmentNotFound if error[:code] == "GONE"
         raise Errors::AssessmentNotFound if error[:code] == "NOT_A_DEC"
+        raise Errors::AssessmentUnsupported if error[:code] == "INVALID_REQUEST"
       end
 
       response

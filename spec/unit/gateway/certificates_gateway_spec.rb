@@ -11,7 +11,7 @@ describe Gateway::CertificatesGateway do
       let(:response) { gateway.search_by_postcode("SW1A 2AA", %w[RdSAP SAP]) }
       let(:certificate) { response[:data][:assessments].first }
 
-    before { FindCertificate::Stub.search_by_postcode("SW1A 2AA") }
+      before { FindCertificate::Stub.search_by_postcode("SW1A 2AA") }
 
       it "checks the number of certificates returned from the api" do
         expect(response[:data][:assessments].count).to eq(4)
@@ -65,23 +65,20 @@ describe Gateway::CertificatesGateway do
   context "for the fetch dec summary gateway" do
     context "when a certificate is unsupported" do
       let(:response) { gateway.fetch_dec_summary("0000-0000-0000-0000-1111") }
-      let(:error) { response[:status]}
 
       before do
-        CertificatesGateway::UnsupportedSchemaStub.fetch_dec_summary("0000-0000-0000-0000-1111")
+        CertificatesGateway::UnsupportedSchemaStub.fetch_dec_summary(
+          "0000-0000-0000-0000-1111",
+        )
       end
 
       it "returns not found error" do
         expect(response).to eq(
           "errors": [
-            {
-              "code": "INVALID_REQUEST",
-              "message": "Unsupported schema type",
-            },
+            { "code": "INVALID_REQUEST", "message": "Unsupported schema type" },
           ],
         )
       end
-
     end
   end
 end
