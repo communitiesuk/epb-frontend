@@ -57,9 +57,14 @@ terminal.
 5. You must add additional local hosts to your hosts file on your machine with:
 
 ```
+127.0.0.1	getting-new-energy-certificate.epb-frontend
+127.0.0.1	find-energy-certificate.epb-frontend
 127.0.0.1	getting-new-energy-certificate.local.gov.uk
 127.0.0.1	find-energy-certificate.local.gov.uk
 ```
+You can add these to your hosts file automatically by running `$ sudo make hosts`.
+You can check what hosts you already have by typing `$ cat /etc/hosts` in the 
+frontend directory.
 
 ### Test suites
 
@@ -85,11 +90,22 @@ EPB_API_URL=<url-of-epb-api>
 
 ### Running the frontend
 
-1. Change directory into the root of the cloned folder: `$ cd epb-frontend`
+#### The test stubs server
+
+1. To run the test stubs server (i.e. the frontend in isolation from the local API), 
+   change directory into the root of the cloned folder: `$ cd epb-frontend`
 2. Start the web server(s) using the following command: `$ make run` or
 `$ make run ARGS=config_test.ru`
+3. Open <http://getting-new-energy-certificate.epb-frontend:9292> or
+   <http://find-energy-certificate.epb-frontend:9292> in your favourite browser to
+   run the test stubs server.
+   
+#### The integrated server
 
-Open <http://localhost:9292> in your favourite browser.
+1. To run the local frontend alongside your local API in Docker, make sure that 
+   the Docker images from the epb-dev-tools repo are running
+2. Then access the frontend at <http://getting-new-energy-certificate.epb-frontend>
+   or <http://find-energy-certificate.epb-frontend> (without the specified ports).
 
 ## Deploy
 
