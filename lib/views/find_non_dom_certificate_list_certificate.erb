@@ -9,7 +9,7 @@
   <tbody class="govuk-table__body">
     <% certificate.each do |_address_id, results| %>
       <tr class="govuk-table__row">
-        <th scope="row" class="govuk-table__header">
+        <th scope="row" class="govuk-table__header" rowspan="<%= results[:certificates].count %>">
           <%=
             compact_address(
               [
@@ -22,21 +22,19 @@
               results[:postcode]
             ).join(", ") %>
         </th>
-        <td class="govuk-table__cell govuk-!-border-bottom-none">
-          <% results[:certificates].sort_by { |h| h[:typeOfAssessment] }.each do |result| %>
-            <a class="govuk-link" href="<%=localised_url("/energy-certificate/" + result[:assessmentId]) %>"><%= result[:typeOfAssessment].upcase %></a><br /><br />
-          <% end %>
-        </td>
-        <td class="govuk-table__cell">
-          <% results[:certificates].sort_by { |h| h[:typeOfAssessment] }.each do |result| %>
+
+        <% results[:certificates].sort_by { |h| h[:typeOfAssessment] }.each do |result| %>
+          <td class="govuk-table__cell govuk-!-border-bottom-none">
+              <a class="govuk-link" href="<%=localised_url("/energy-certificate/" + result[:assessmentId]) %>"><%= result[:typeOfAssessment].upcase %></a><br /><br />
+          </td>
+          <td class="govuk-table__cell">
             <% expire = Date.parse(result[:dateOfExpiry]) < Date.today %>
             <span class="<%== ( expire ? 'govuk-!-font-weight-bold expired-text' : "") %>">
-              <%= date(result[:dateOfExpiry]) %> <%= expire ? t('find_certificate_results.expired') : '' %>
-            </span>
-            <br /><br />
-          <% end %>
-        </td>
-      </tr>
+                <%= date(result[:dateOfExpiry]) %> <%= expire ? t('find_certificate_results.expired') : '' %>
+              </span>
+          </td>
+        </tr>
+        <% end %>
     <% end %>
   </tbody>
 </table>
