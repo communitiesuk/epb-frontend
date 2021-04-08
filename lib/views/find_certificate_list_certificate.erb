@@ -23,7 +23,14 @@
             </a>
           </th>
           <td class="govuk-table__cell"><%= result[:currentEnergyEfficiencyBand].upcase %></td>
-          <td class="govuk-table__cell<%== ( expire ? ' govuk-!-font-weight-bold expired-text"' : "") %>"><%= date(result[:dateOfExpiry]) %> <%= expire ? t('find_certificate_results.expired') : '' %></td>
+          <td class="govuk-table__cell">
+            <span class="govuk-!-font-weight-bold">
+                <%= date(result[:dateOfExpiry]) %>
+            </span>
+            <% if Date.parse(result[:dateOfExpiry]) < Date.today %>
+              <strong class="govuk-tag--red govuk-!-padding-left-2 govuk-!-padding-right-2"><%= t('find_certificate_results.expired').upcase%></strong>
+            <% end %>
+          </td>
         </tr>
       <% end %>
     <% end %>

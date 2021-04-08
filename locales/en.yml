@@ -340,14 +340,14 @@ en:
       address: 'Address'
       rating: 'Energy rating'
       expiry: 'Valid until'
-    expired: '(expired)'
+    expired: 'expired'
 
   find_non_dom_certificate_results:
     table:
       address: 'Address'
       type: 'Certificate and report type'
       expiry: 'Valid until'
-    expired: '(expired)'
+    expired: 'expired'
 
   find_certificate_by_postcode_results:
     top_heading: 'Find an energy performance certificate (EPC)'

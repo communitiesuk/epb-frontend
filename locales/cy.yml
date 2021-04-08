@@ -340,14 +340,14 @@ cy:
       address: "Cyfeiriad"
       rating: "Cyfraddiad ynni"
       expiry: "Dilys tan"
-    expired: "(wedi dod i ben)"
+    expired: "wedi dod i ben"
 
   find_non_dom_certificate_results:
     table:
       address: Cyfeiriad
       type: "Y math o dystysgrif ac adroddiad"
       expiry: "Dilys tan"
-    expired: "(wedi dod i ben)"
+    expired: "wedi dod i ben"
 
   find_certificate_by_postcode_results:
     top_heading: "Chwiliwch am dystysgrif perfformiad ynni (EPC)"
