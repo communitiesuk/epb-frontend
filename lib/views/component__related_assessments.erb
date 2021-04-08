@@ -24,9 +24,10 @@
             </dt>
             <dd class="govuk-summary-list__value govuk-!-width-one-half"><%
               if related_assessment[:assessmentStatus] == "EXPIRED" %>
-                <span class="expired-text govuk-!-font-weight-bold">
-                  <%= date(related_assessment[:assessmentExpiryDate]) %> (<%= t('component.related.expired')  %>)
+                <span class="govuk-!-font-weight-bold">
+                  <%= date(related_assessment[:assessmentExpiryDate]) %>
                 </span>
+                <strong class="govuk-tag--red govuk-!-margin-left-2 govuk-!-padding-left-2 govuk-!-padding-right-2"><%= t('component.related.expired').upcase%></strong>
                 <% else %><%=
               date(related_assessment[:assessmentExpiryDate])
             %><% end %></dd>

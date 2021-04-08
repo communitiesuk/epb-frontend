@@ -177,7 +177,8 @@ describe "Acceptance::DecRecommendationReport", type: :feature do
       expect(response.body).to have_link "9457-0000-0000-0000-2001",
                                          href: "/energy-certificate/9457-0000-0000-0000-2001"
       expect(response.body).to have_css "dt", text: "Valid until"
-      expect(response.body).to have_css "dd", text: "4 May 2019 (Expired)"
+      expect(response.body).to have_css "dd", text: "4 May 2019"
+      expect(response.body).to have_css "dd", text: "EXPIRED"
     end
   end
 
