@@ -59,7 +59,4 @@ describe "Integration::Rackup" do
       )
     end
   end
-
-
-
 end

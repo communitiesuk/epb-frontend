@@ -114,12 +114,10 @@ FetchAssessmentSummary::AssessmentStub.fetch_dec assessment_id:
                                                  schema_version: 5.0
 
 FetchAssessmentSummary::AssessmentStub.fetch_dec_summary assessment_id:
-                                                   "0000-0000-0000-0000-1111"
+                                                           "0000-0000-0000-0000-1111"
 
 FetchAssessmentSummary::AssessmentStub.fetch_dec_summary400 assessment_id:
-                                                           "0000-0000-0000-0000-1112"
-
-
+                                                              "0000-0000-0000-0000-1112"
 
 FetchAssessmentSummary::AssessmentStub.fetch_dec_rr assessment_id:
                                                       "1204-5678-1234-5178-0000"

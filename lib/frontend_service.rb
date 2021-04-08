@@ -775,15 +775,13 @@ class FrontendService < Sinatra::Base
           t('services.find_an_energy_certificate')
         } - #{t('layout.body.govuk')}"
       not_found
-      when Errors::AssessmentUnsupported
+    when Errors::AssessmentUnsupported
       @page_title =
         "#{t('dec.top_heading')}- #{
           t('services.find_an_energy_certificate')
         } - #{t('layout.body.govuk')}"
       not_found
-      else
-
-
+    else
       return server_error(e)
     end
   end
