@@ -26,6 +26,10 @@ describe "Acceptance::AccessibilityStatement", type: :feature do
           '<a class="govuk-footer__link" href="/cookies">',
         )
       end
+
+      it "includes the gov header " do
+        expect(response.body).to have_link "Getting an energy certificate"
+      end
     end
   end
 
@@ -37,6 +41,10 @@ describe "Acceptance::AccessibilityStatement", type: :feature do
         expect(response.body).to include(
           "<title>Find an energy certificate – Find an energy certificate – GOV.UK</title>",
         )
+      end
+
+      it "includes the gov header " do
+        expect(response.body).to have_link "Find an energy certificate"
       end
     end
   end

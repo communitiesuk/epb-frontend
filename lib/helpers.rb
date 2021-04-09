@@ -203,6 +203,15 @@ module Sinatra
           ]
         ).compact.reject { |a| a.to_s.strip.chomp.empty? }
       end
+
+      def get_gov_header
+        sub_domain = request.env["SERVER_NAME"].split(".").first
+        if sub_domain == "find-energy-certificate"
+          t("services.find_an_energy_certificate")
+        else
+          t("services.getting_an_energy_certificate")
+        end
+      end
     end
   end
 end
