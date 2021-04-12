@@ -42,7 +42,6 @@ class FrontendService < Sinatra::Base
   end
 
   get "/", host_name: /#{find_energy_certificate_host_name}/ do
-    @service = request.env["SERVER_NAME"].split(".").first
     @page_title =
       "#{t('find_a_certificate.top_heading')} – #{
         t('services.find_an_energy_certificate')

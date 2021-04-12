@@ -205,8 +205,7 @@ module Sinatra
       end
 
       def get_gov_header
-        sub_domain = request.env["SERVER_NAME"].split(".").first
-        if sub_domain == "find-energy-certificate"
+        if request.env["HTTP_HOST"].match?(/find-energy-certificate/)
           t("services.find_an_energy_certificate")
         else
           t("services.getting_an_energy_certificate")
