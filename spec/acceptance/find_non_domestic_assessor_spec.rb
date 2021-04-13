@@ -9,6 +9,10 @@ describe "Acceptance::NonDomesticAssessor" do
         get "http://getting-new-energy-certificate.local.gov.uk/find-a-non-domestic-assessor/search-by-postcode"
       end
 
+      it "includes the gov header " do
+        expect(response.body).to include("<a href=\"/\" class=\"govuk-header__link govuk-header__link--service-name\">Getting an energy certificate</a>")
+      end
+
       it "returns status 200" do
         expect(response.status).to eq(200)
       end

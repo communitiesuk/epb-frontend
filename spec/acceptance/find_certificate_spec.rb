@@ -36,6 +36,10 @@ describe "Acceptance::Certificate" do
         get "http://find-energy-certificate.local.gov.uk/find-a-certificate/search-by-postcode"
       end
 
+      it "includes the gov header " do
+        expect(response.body).to have_link "Find an energy certificate"
+      end
+
       it "returns status 200" do
         expect(response.status).to eq 200
       end
@@ -288,6 +292,10 @@ describe "Acceptance::Certificate" do
         get "http://find-energy-certificate.local.gov.uk/find-a-certificate/search-by-reference-number"
       end
 
+      it "includes the gov header " do
+        expect(response.body).to have_link "Find an energy certificate"
+      end
+
       it "returns status 200" do
         expect(response.status).to eq 200
       end
@@ -470,6 +478,10 @@ describe "Acceptance::Certificate" do
     context "when search page rendered" do
       let(:response) do
         get "http://find-energy-certificate.local.gov.uk/find-a-certificate/search-by-street-name-and-town"
+      end
+
+      it "includes the gov header " do
+        expect(response.body).to have_link "Find an energy certificate"
       end
 
       it "returns status 200" do

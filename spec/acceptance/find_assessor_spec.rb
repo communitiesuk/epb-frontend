@@ -35,6 +35,10 @@ describe "Acceptance::Assessor", type: :feature do
         get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/search-by-postcode"
       end
 
+      it "includes the gov header " do
+        expect(response.body).to have_link "Getting an energy certificate"
+      end
+
       it "returns status 200" do
         expect(response.status).to eq(200)
       end
@@ -422,6 +426,10 @@ describe "Acceptance::Assessor", type: :feature do
     context "when search page rendered" do
       let(:response) do
         get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/search-by-name"
+      end
+
+      it "includes the gov header " do
+        expect(response.body).to have_link "Getting an energy certificate"
       end
 
       it "returns status 200" do
