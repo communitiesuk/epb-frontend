@@ -19,15 +19,16 @@
             </dd>
           </div>
           <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key govuk-!-width-one-half">
+            <dt class="govuk-summary-list__key">
               <%= t('component.related.valid_until')  %>
             </dt>
-            <dd class="govuk-summary-list__value govuk-!-width-one-half"><%
+            <dd class="govuk-summary-list__value"><%
               if related_assessment[:assessmentStatus] == "EXPIRED" %>
-                <span>
-                  <%= date(related_assessment[:assessmentExpiryDate]) %>
-                </span>
-                <strong class="govuk-tag--red govuk-!-margin-left-2 govuk-!-padding-left-2 govuk-!-padding-right-2"><%= t('component.related.expired').upcase%></strong>
+                <div>
+                  <span class="govuk-!-margin-right-2"> <%= date(related_assessment[:assessmentExpiryDate]) %></span>
+                  <strong style="white-space: nowrap" class="govuk-tag--red govuk-!-padding-left-2 govuk-!-padding-right-2"><%= t('component.related.expired').upcase%></strong>
+                </div>
+
                 <% else %><%=
               date(related_assessment[:assessmentExpiryDate])
             %><% end %></dd>
