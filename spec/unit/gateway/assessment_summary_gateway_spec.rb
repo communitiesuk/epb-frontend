@@ -53,6 +53,7 @@ describe Gateway::AssessmentSummaryGateway do
         )
       end
     end
+
     context "and a certificate does not exist for the assessment id" do
       before { FetchAssessmentSummary::NoAssessmentStub.fetch("0000-0000-0000-0000-0666") }
 
@@ -60,6 +61,18 @@ describe Gateway::AssessmentSummaryGateway do
         expect(response).to eq(
           "errors": [
             { "code": "NOT_FOUND", "title": "Assessment not found" },
+          ],
+        )
+      end
+    end
+
+    context "and a certificate is marked CANCELLED or NOT_FOR_ISSUE" do
+      before { FetchAssessmentSummary::GoneAssessmentStub.fetch("0000-0000-0000-0000-0666") }
+
+      it "returns a 410 GONE error" do
+        expect(response).to eq(
+          "errors": [
+            { "code": "GONE", "title": "Assessment marked not for issue" },
           ],
         )
       end
