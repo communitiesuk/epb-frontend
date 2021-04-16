@@ -146,7 +146,8 @@ describe "Journey::FindDomesticCertificate", type: :feature, journey: true do
       fill_in "reference_number", with: "4567-6789-4567-6789-4567"
       click_on "Find"
       expect(page).to have_content "2 Marsham Street"
-      expect(page).to have_content "Valid until 5 January 2030"
+      expect(page).to have_content "Valid until"
+      expect(page).to have_content "5 January 2030"
     end
   end
 

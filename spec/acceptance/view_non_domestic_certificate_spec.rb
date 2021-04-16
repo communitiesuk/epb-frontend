@@ -65,9 +65,9 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
       end
 
       it "shows the date of expiry" do
-        expect(response.body).to include(
-          '<p class="govuk-body epc-extra-box">Valid until 5 January 2030</p>',
-        )
+        expect(response.body).to have_css "label", text: "Valid until"
+        expect(response.body).to have_css "p",
+                                          text: "5 January 2030"
       end
 
       it "shows the certificate number label" do

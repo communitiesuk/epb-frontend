@@ -864,7 +864,8 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
     end
 
     it "shows the date in Welsh" do
-      expect(response.body).to have_css("p", text: "Dilys tan 5 Ionawr 2030")
+      expect(response.body).to have_css "label", text: "Dilys tan"
+      expect(response.body).to have_css("p", text: "5 Ionawr 2030")
     end
   end
 
