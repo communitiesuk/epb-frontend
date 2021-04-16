@@ -1,4 +1,3 @@
-
 # frozen_string_literal: true
 
 describe Gateway::AssessmentSummaryGateway do
@@ -21,37 +20,48 @@ describe Gateway::AssessmentSummaryGateway do
 
       it "returns the expected keys in the certificate" do
         expect(certificate.keys).to contain_exactly(
-                                      :assessor,
-                                      :assessmentId,
-                                      :dateRegistered,
-                                      :dateOfExpiry,
-                                      :dateOfAssessment,
-                                      :dwellingType,
-                                      :typeOfAssessment,
-                                      :totalFloorArea,
-                                      :currentEnergyEfficiencyRating,
-                                      :currentEnergyEfficiencyBand,
-                                      :currentCarbonEmission,
-                                      :potentialCarbonEmission,
-                                      :potentialEnergyEfficiencyRating,
-                                      :potentialEnergyEfficiencyBand,
-                                      :postcode,
-                                      :primaryEnergyUse,
-                                      :addressLine1,
-                                      :addressLine2,
-                                      :addressLine3,
-                                      :addressLine4,
-                                      :town,
-                                      :estimatedEnergyCost,
-                                      :potentialEnergySaving,
-                                      :heatDemand,
-                                      :recommendedImprovements,
-                                      :relatedPartyDisclosureText,
-                                      :relatedPartyDisclosureNumber,
-                                      :propertySummary,
-                                      :greenDealPlan,
-                                      :relatedAssessments,
-                                      )
+          :assessor,
+          :assessmentId,
+          :dateRegistered,
+          :dateOfExpiry,
+          :dateOfAssessment,
+          :dwellingType,
+          :typeOfAssessment,
+          :totalFloorArea,
+          :currentEnergyEfficiencyRating,
+          :currentEnergyEfficiencyBand,
+          :currentCarbonEmission,
+          :potentialCarbonEmission,
+          :potentialEnergyEfficiencyRating,
+          :potentialEnergyEfficiencyBand,
+          :postcode,
+          :primaryEnergyUse,
+          :addressLine1,
+          :addressLine2,
+          :addressLine3,
+          :addressLine4,
+          :town,
+          :estimatedEnergyCost,
+          :potentialEnergySaving,
+          :heatDemand,
+          :recommendedImprovements,
+          :relatedPartyDisclosureText,
+          :relatedPartyDisclosureNumber,
+          :propertySummary,
+          :greenDealPlan,
+          :relatedAssessments,
+        )
+      end
+    end
+    context "and a certificate does not exist for the assessment id" do
+      before { FetchAssessmentSummary::NoAssessmentStub.fetch("0000-0000-0000-0000-0666") }
+
+      it "returns a 404 NOT_FOUND error" do
+        expect(response).to eq(
+          "errors": [
+            { "code": "NOT_FOUND", "title": "Assessment not found" },
+          ],
+        )
       end
     end
   end
