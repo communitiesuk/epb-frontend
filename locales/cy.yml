@@ -527,20 +527,6 @@ cy:
         email: "Ebost y cynllun achredu"
       company_name: "Enw’r Cyflogwr/Enw Masnachu"
       company_address: "Cyfeiriad y Cyflogwr/Cyfeiriad Masnachu"
-    assessor_details:
-      title: "Manylion yr asesydd"
-      assessor:
-        list:
-          name: "Enw’r asesydd"
-          number: "ID yr Asesydd"
-          telephone: "Ffôn"
-          email: "Ebost"
-      scheme:
-        name: "Cynllun achredu"
-        phone: "Rhif ffôn y cynllun achredu"
-        email: "Ebost y cynllun achredu"
-      company_name: "Enw’r Cyflogwr/Enw Masnachu"
-      company_address: "Cyfeiriad y Cyflogwr/Cyfeiriad Masnachu"
     epc_summary:
       title: "Cyfraddiad ynni"
       date_of_expiry: "Dilys tan %{date_of_expiry}"
@@ -563,7 +549,8 @@ cy:
       no_related: "Does dim %{type}au perthynol ar gyfer yr eiddo hwn."
       reference_number: "Rhif y dystysgrif"
       valid_until: "Dilys tan"
-      expired: "Wedi dod i ben ar"
+      expired: "Wedi dod i ben"
+      expired_on: "Wedi dod i ben ar"
       link: "mailto:mhclg.digital-services@communities.gov.uk?subject=EPB - "
       cta: "mhclg.digital-services@communities.gov.uk"
       certificates:

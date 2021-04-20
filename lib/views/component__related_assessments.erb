@@ -21,7 +21,7 @@
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key govuk-!-width-one-half">
               <% if related_assessment[:assessmentStatus] == "EXPIRED" %>
-              <%= t('component.related.expired')  %>
+              <%= t('component.related.expired_on')  %>
                 <% else %><%= t('component.related.valid_until')  %>
               <% end %>
             </dt>
