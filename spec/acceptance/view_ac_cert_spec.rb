@@ -28,7 +28,7 @@ describe "Acceptance::AirConditioningInspectionCertificate", type: :feature do
       expect(response.body).to have_css "p", text: "Assessment details"
       expect(response.body).to have_css "p", text: "Inspection report"
       expect(response.body).to have_css "p", text: "Subsystems inspected"
-      expect(response.body).to have_css "p", text: "Administrative information"
+      expect(response.body).to have_css "p", text: "Assessor’s details"
     end
 
     it "shows the summary section" do
@@ -86,8 +86,8 @@ describe "Acceptance::AirConditioningInspectionCertificate", type: :feature do
       expect(response.body).to have_css "td", text: "2013"
     end
 
-    it "can show the Administrative information section" do
-      expect(response.body).to have_css "h2", text: "Administrative information"
+    it "can show the Assessor's details section" do
+      expect(response.body).to have_css "h2", text: "Assessor’s details"
       expect(response.body).to have_css "dt", text: "Assessor’s name"
       expect(response.body).to have_css "dd", text: "TEST NAME BOI"
       expect(response.body).to have_css "dt", text: "Assessor ID"

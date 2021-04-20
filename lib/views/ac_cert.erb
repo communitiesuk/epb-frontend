@@ -29,8 +29,8 @@
           text: 'ac_cert.sections.subsystems.title'
         },
         {
-          link: '#administrative_information',
-          text: 'component.administrative_information.title'
+          link: '#assessor_details',
+          text: 'component.assessor_details.title'
         },
       ]
     } %>
@@ -56,7 +56,7 @@
       assessment: assessment,
     } %>
 
-    <%== erb :component__administrative_information, locals: {
+    <%== erb :component__assessor_details, locals: {
       assessor: assessment[:assessor],
     } %>
   </div>

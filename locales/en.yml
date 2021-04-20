@@ -527,6 +527,20 @@ en:
         email: "Accreditation scheme email"
       company_name: 'Employer/Trading name'
       company_address: 'Employer/Trading address'
+    assessor_details:
+      title: "Assessor’s details"
+      assessor:
+        list:
+          name: 'Assessor’s name'
+          number: 'Assessor ID'
+          telephone: 'Telephone'
+          email: 'Email'
+      scheme:
+        name: "Accreditation scheme"
+        phone: "Accreditation scheme telephone"
+        email: "Accreditation scheme email"
+      company_name: 'Employer/Trading name'
+      company_address: 'Employer/Trading address'
     epc_summary:
       title: "Energy rating"
       date_of_expiry: "Valid until %{date_of_expiry}"

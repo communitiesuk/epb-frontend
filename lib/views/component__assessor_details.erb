@@ -1,0 +1,20 @@
+<div id="assessor_details" class="epc-blue-bottom">
+  <h2 class="govuk-heading-l"><%=
+    t('component.assessor_details.title')
+  %></h2>
+  <%== erb :component__summary_list, locals: {
+    list: {
+      "assessor.list.name": assessor[:name],
+      "assessor.list.telephone": { value: assessor[:contactDetails][:telephoneNumber] },
+      "assessor.list.email": { type: "email", value: assessor[:contactDetails][:email] },
+      "assessor.list.number":  { value: assessor[:schemeAssessorId] },
+      "scheme.name": scheme_details(assessor, 'name'),
+      "scheme.phone": scheme_details(assessor, 'phone'),
+      "scheme.email":  { type: "email", value: scheme_details(assessor, 'email') },
+      "company_name": assessor[:companyDetails][:name],
+      "company_address": assessor[:companyDetails][:address]
+    },
+    translation_prefix: 'component.assessor_details.',
+    skip_null: true
+  } %>
+</div>

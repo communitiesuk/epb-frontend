@@ -35,8 +35,8 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
       expect(response.body).to have_text "Print this report"
     end
 
-    it "can show the Administrative information section" do
-      expect(response.body).to have_css "h2", text: "Administrative information"
+    it "can show the Assessor's details section" do
+      expect(response.body).to have_css "h2", text: "Assessor’s details"
       expect(response.body).to have_css "dt", text: "Assessor’s name"
       expect(response.body).to have_css "dd", text: "TEST NAME BOI"
       expect(response.body).to have_css "dt", text: "Assessor ID"

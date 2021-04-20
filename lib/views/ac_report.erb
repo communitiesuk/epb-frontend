@@ -16,10 +16,6 @@
       title: t("non_domestic_epc.rr.contents.title"),
       sections: [
         {
-          link: '#administrative_information',
-          text: 'component.administrative_information.title'
-        },
-        {
           link: '#executive_summary',
           text: 'ac_report.sections.exec_summary.title'
         },
@@ -57,6 +53,10 @@
           hidden: assessment[:systemControls].empty?,
         },
         {
+          link: '#assessor_details',
+          text: 'component.assessor_details.title'
+        },
+        {
           link: '#inspection_certificate',
           text: 'ac_report.sections.inspection_certificate.title',
           hidden: assessment[:relatedRrn].nil? || assessment[:relatedRrn].empty?
@@ -71,10 +71,6 @@
     <%== erb :component__epc_summary_compact, locals: {
       assessment: assessment,
       type: 'report'
-    } %>
-
-    <%== erb :component__administrative_information, locals: {
-      assessor: assessment[:assessor],
     } %>
 
     <%== erb :ac_report__exec_summary, locals: {
@@ -122,6 +118,10 @@
           assessment: assessment,
         } %>
       <% end %>
+
+      <%== erb :component__assessor_details, locals: {
+        assessor: assessment[:assessor],
+      } %>
 
     <%else %>
       <div class="epc-blue-bottom">
