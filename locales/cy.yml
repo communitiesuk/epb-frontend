@@ -563,7 +563,7 @@ cy:
       no_related: "Does dim %{type}au perthynol ar gyfer yr eiddo hwn."
       reference_number: "Rhif y dystysgrif"
       valid_until: "Dilys tan"
-      expired: "Wedi dod i ben"
+      expired: "Wedi dod i ben ar"
       link: "mailto:mhclg.digital-services@communities.gov.uk?subject=EPB - "
       cta: "mhclg.digital-services@communities.gov.uk"
       certificates:
