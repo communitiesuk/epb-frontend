@@ -28,11 +28,11 @@
               <a class="govuk-link" href="<%=localised_url("/energy-certificate/" + result[:assessmentId]) %>"><%= result[:typeOfAssessment].upcase %></a><br /><br />
           </td>
           <td class="govuk-table__cell">
-            <span>
+            <span style="white-space: nowrap;">
                 <%= date(result[:dateOfExpiry]) %>
             </span>
               <% if Date.parse(result[:dateOfExpiry]) < Date.today %>
-                <strong class="govuk-tag--red govuk-!-padding-left-2 govuk-!-padding-right-2" style="white-space: nowrap;"><%= t('find_non_dom_certificate_results.expired').upcase%></strong>
+                <br /><strong class="govuk-tag--red govuk-!-padding-left-2 govuk-!-padding-right-2" style="white-space: nowrap;"><%= t('find_non_dom_certificate_results.expired').upcase%></strong>
               <% end %>
             </td>
         </tr>
