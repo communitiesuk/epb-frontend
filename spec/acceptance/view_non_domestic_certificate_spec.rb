@@ -66,8 +66,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
 
       it "shows the date of expiry" do
         expect(response.body).to have_css "label", text: "Valid until"
-        expect(response.body).to have_css "p",
-                                          text: "5 January 2030"
+        expect(response.body).to have_css "p", text: "5 January 2030"
       end
 
       it "shows the certificate number label" do

@@ -47,8 +47,7 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
     it "shows the summary box" do
       expect(response.body).to have_css "p", text: "0000-0000-0000-0000-1111"
       expect(response.body).to have_css "label", text: "Valid until"
-      expect(response.body).to have_css "p",
-                                        text: "21 February 2030"
+      expect(response.body).to have_css "p", text: "21 February 2030"
       expect(response.body).to have_css "p", text: "A"
       expect(response.body).to have_css "p", text: "Primary School"
       expect(response.body).to have_css "p", text: "2 Lonely Street"

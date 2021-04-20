@@ -10,7 +10,9 @@ describe "Acceptance::NonDomesticAssessor" do
       end
 
       it "includes the gov header " do
-        expect(response.body).to include("<a href=\"/\" class=\"govuk-header__link govuk-header__link--service-name\">Getting an energy certificate</a>")
+        expect(response.body).to include(
+          "<a href=\"/\" class=\"govuk-header__link govuk-header__link--service-name\">Getting an energy certificate</a>",
+        )
       end
 
       it "returns status 200" do
