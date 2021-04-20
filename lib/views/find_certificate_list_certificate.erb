@@ -24,11 +24,11 @@
           </th>
           <td class="govuk-table__cell"><%= result[:currentEnergyEfficiencyBand].upcase %></td>
           <td class="govuk-table__cell">
-            <span>
-                <%= date(result[:dateOfExpiry]) %>
+            <span style="white-space: nowrap;">
+              <%= date(result[:dateOfExpiry]) %>
             </span>
             <% if Date.parse(result[:dateOfExpiry]) < Date.today %>
-              <strong class="govuk-tag--red govuk-!-padding-left-2 govuk-!-padding-right-2" style="white-space: nowrap;"><%= t('find_certificate_results.expired').upcase%></strong>
+              <br /><strong class="govuk-tag--red govuk-!-padding-left-2 govuk-!-padding-right-2" style="white-space: nowrap;"><%= t('find_certificate_results.expired').upcase%></strong>
             <% end %>
           </td>
         </tr>
