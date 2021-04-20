@@ -3,7 +3,7 @@
 describe "Acceptance::Postcodes" do
   include RSpecUnitMixin
 
-  let(:internal_api_client) { container.get_object(:internal_api_client) }
+  let(:internal_api_client) { get_api_client }
   let(:assessors_gateway) { Gateway::AssessorsGateway.new(internal_api_client) }
   let(:find_assessor) { UseCase::FindAssessorByPostcode.new(assessors_gateway) }
 

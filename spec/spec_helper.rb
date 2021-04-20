@@ -21,8 +21,13 @@ ENV["EPB_AUTH_SERVER"] = AUTH_URL
 ENV["EPB_API_URL"] = "http://test-api.gov.uk"
 
 module RSpecUnitMixin
-  def container
-    Container.new
+  def get_api_client
+    @api_client ||=
+      Auth::HttpClient.new ENV["EPB_AUTH_CLIENT_ID"],
+                           ENV["EPB_AUTH_CLIENT_SECRET"],
+                           ENV["EPB_AUTH_SERVER"],
+                           ENV["EPB_API_URL"],
+                           OAuth2::Client
   end
 end
 

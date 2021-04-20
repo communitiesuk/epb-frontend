@@ -3,16 +3,18 @@
 describe Gateway::AssessmentSummaryGateway do
   include RSpecUnitMixin
 
-  let(:gateway) do
-    described_class.new
-  end
+  let(:gateway) { described_class.new(get_api_client) }
 
   context "when a user searches for an assessment using the /summary endpoint" do
     let(:response) { gateway.fetch("0000-0000-0000-0000-0666") }
     context "and a certificate exists for the assessment id" do
       let(:certificate) { response[:data] }
 
-      before { FetchAssessmentSummary::AssessmentStub.fetch_rdsap("0000-0000-0000-0000-0666") }
+      before do
+        FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
+          "0000-0000-0000-0000-0666",
+        )
+      end
 
       it "returns the requested certificate from the api" do
         expect(certificate[:assessmentId]).to eq("0000-0000-0000-0000-0666")
@@ -55,19 +57,25 @@ describe Gateway::AssessmentSummaryGateway do
     end
 
     context "and a certificate does not exist for the assessment id" do
-      before { FetchAssessmentSummary::NoAssessmentStub.fetch("0000-0000-0000-0000-0666") }
+      before do
+        FetchAssessmentSummary::NoAssessmentStub.fetch(
+          "0000-0000-0000-0000-0666",
+        )
+      end
 
       it "returns a 404 NOT_FOUND error" do
         expect(response).to eq(
-          "errors": [
-            { "code": "NOT_FOUND", "title": "Assessment not found" },
-          ],
+          "errors": [{ "code": "NOT_FOUND", "title": "Assessment not found" }],
         )
       end
     end
 
     context "and a certificate is marked CANCELLED or NOT_FOR_ISSUE" do
-      before { FetchAssessmentSummary::GoneAssessmentStub.fetch("0000-0000-0000-0000-0666") }
+      before do
+        FetchAssessmentSummary::GoneAssessmentStub.fetch(
+          "0000-0000-0000-0000-0666",
+        )
+      end
 
       it "returns a 410 GONE error" do
         expect(response).to eq(

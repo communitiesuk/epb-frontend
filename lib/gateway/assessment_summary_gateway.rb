@@ -4,9 +4,14 @@ module Gateway
   class AssessmentSummaryGateway
     class AssessmentNotFound < StandardError
     end
+
+    def initialize(api_client)
+      @internal_api_client = api_client
+    end
+
     def fetch(assessment_id)
       route = "/api/assessments/#{CGI.escape(assessment_id)}/summary"
-      response = Container.new.get_object(:internal_api_client).get(route)
+      response = @internal_api_client.get(route)
 
       assessment_summary = JSON.parse(response.body, symbolize_names: true)
 

@@ -3,9 +3,7 @@
 describe Gateway::AssessorsGateway do
   include RSpecUnitMixin
 
-  let(:gateway) do
-    described_class.new(container.get_object(:internal_api_client))
-  end
+  let(:gateway) { described_class.new(get_api_client) }
 
   context "when searching by postcode" do
     context "when an assessor exist" do
