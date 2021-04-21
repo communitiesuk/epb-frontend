@@ -452,4 +452,35 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
       expect(response.body).to have_css "span", text: "24 March 2010"
     end
   end
+
+  context "when an ac report is both NI and opted out" do
+    before do
+      FetchAssessmentSummary::AssessmentStub.fetch_ac_report(
+          assessment_id: "0000-0000-0000-0000-9999",
+          postcode: "BT1 1AA",
+          opt_out: true
+          )
+    end
+
+    it "removes assessor contact details" do
+      expect(response.body).to have_css "h2", text: "Assessor’s details"
+      expect(response.body).not_to have_css "dt", text: "Assessor’s name"
+      expect(response.body).not_to have_css "dd", text: "TEST NAME BOI"
+      expect(response.body).not_to have_css "dt", text: "Assessor ID"
+      expect(response.body).not_to have_css "dd", text: "SPEC000000"
+      expect(response.body).not_to have_css "dt", text: "Employer/Trading name"
+      expect(response.body).not_to have_css "dd", text: "Joe Bloggs Ltd"
+      expect(response.body).not_to have_css "dt", text: "Employer/Trading address"
+      expect(response.body).not_to have_css "dd",
+                                            text: "123 My Street, My City, AB3 4CD"
+      expect(response.body).to have_css "dt", text: "Accreditation scheme"
+      expect(response.body).to have_css "dd", text: "Quidos"
+      expect(response.body).to have_css "dt",
+                                        text: "Accreditation scheme telephone"
+      expect(response.body).to have_css "dd", text: "01225 667 570"
+      expect(response.body).to have_css "dt", text: "Accreditation scheme email"
+      expect(response.body).to have_css "dd", text: "info@quidos.co.uk"
+
+    end
+  end
 end

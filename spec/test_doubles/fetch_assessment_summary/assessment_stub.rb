@@ -607,7 +607,9 @@ module FetchAssessmentSummary
           },
         },
       ],
-      date_of_expiry: "2025-02-06"
+      date_of_expiry: "2025-02-06",
+      opt_out: false,
+      postcode: "NE1 7AF"
     )
       body = {
         data: {
@@ -621,7 +623,7 @@ module FetchAssessmentSummary
             addressLine3: "49-51 Northumberland Street",
             addressLine4: "",
             town: "NEWCASTLE UPON TYNE",
-            postcode: "NE1 7AF",
+            postcode: postcode,
           },
           relatedPartyDisclosure: "1",
           relatedRrn: "0000-0000-0000-0003",
@@ -657,6 +659,7 @@ module FetchAssessmentSummary
           airHandlingSystems: air_handling_systems,
           terminalUnits: terminal_units,
           systemControls: system_controls,
+          optOut: opt_out,
         },
         meta: {},
       }
@@ -675,7 +678,9 @@ module FetchAssessmentSummary
       system_sampling: "Y",
       subsystems_metered: "1",
       related_party_disclosure: "1",
-      date_of_expiry: "2024-09-21"
+      date_of_expiry: "2024-09-21",
+      postcode: "SW1B 2BB",
+      opt_out: false
     )
       body = {
         data: {
@@ -689,7 +694,7 @@ module FetchAssessmentSummary
             addressLine3: nil,
             addressLine4: nil,
             town: "London",
-            postcode: "SW1B 2BB",
+            postcode: postcode,
           },
           technicalInformation: {
             dateOfAssessment: "2019-09-22",
@@ -738,6 +743,7 @@ module FetchAssessmentSummary
               schemeId: "3",
             },
           },
+          optOut: opt_out,
         },
       }
 
