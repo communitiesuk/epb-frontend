@@ -751,6 +751,10 @@ class FrontendService < Sinatra::Base
     end
   rescue StandardError => e
     case e
+    when Errors::AssessmentGone
+      @page_title = "#{t('error.410.heading')} – #{t('layout.body.govuk')}"
+      status 410
+      erb :error_page_410 unless @errors
     when Errors::AssessmentNotFound
       not_found
     else

@@ -7,7 +7,7 @@ module UseCase
 
       raise_errors_if_exists(response) do |error|
         raise Errors::AssessmentNotFound if error[:code] == "NOT_FOUND"
-        raise Errors::AssessmentNotFound if error[:code] == "GONE"
+        raise Errors::AssessmentGone if error[:code] == "GONE"
         raise Errors::AssessmentNotFound if error[:code] == "INVALID_QUERY"
       end
 

@@ -1264,10 +1264,16 @@ cy:
     "500":
       heading: "Ymddiheuriadau, mae problem gyda’r gwasanaeth."
       body: "Rhowch gynnig arall arni yn nes ymlaen"
-    "404":
+    404:
       heading: "Y tudalen heb ei ganfod"
       intro: "Os gwnaethoch chi deipio’r cyfeiriad gwe, gwiriwch ei fod yn gywir."
       body: "Os gwnaethoch chi ludo’r cyfeiriad gwe, gwiriwch ei fod yn gywir."
+    410:
+      heading: "Nid yw’r dystysgrif ar gael"
+      intro: "Nid yw'r dystysgrif rydych chi’n chwilio amdani ar gael mwyach."
+      body: "Efallai fod yna dystysgrifau mwy diweddar ar gyfer yr eiddo hwn. Defnyddiwch y gwasanaeth "
+      service_link: "Chwilio am dystysgrif ynni"
+      body_continued: " i chwilio am eich eiddo."
 
   dec:
     top_heading: "Tystysgrif ynni i’w harddangos (DEC)"

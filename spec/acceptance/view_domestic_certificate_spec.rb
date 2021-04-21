@@ -1083,15 +1083,29 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
 
     let(:response) { get "/energy-certificate/1234-5678-1234-5678-1234" }
 
-    it "returns status 404" do
-      expect(response.status).to eq(404)
+    it "returns status 410" do
+      expect(response.status).to eq(410)
     end
 
-    it "shows the error page" do
+    it "shows the tag header that matches the page header" do
       expect(response.body).to include(
-        '<h1 class="govuk-heading-xl">Page not found</h1>',
+        "<title>Certificate not available – GOV.UK</title>",
       )
     end
+
+    it "shows the error header" do
+      expect(response.body).to include(
+        '<h1 class="govuk-heading-xl">Certificate not available</h1>',
+      )
+    end
+
+    it "shows the error page text" do
+      expect(response.body).to have_css "p", text: "The certificate that you are looking for is no longer available."
+      expect(response.body).to have_css "p", text: "There may be more up-to-date certificates for this property. Use the "
+      expect(response.body).to have_css "a", text: "Find an energy certificate"
+      expect(response.body).to have_css "p", text: " service to search for your property."
+    end
+
   end
 
   context "when the estimated or potential energy cost is missing" do
