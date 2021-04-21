@@ -18,12 +18,18 @@ FindAssessor::ByPostcode::Stub.search_by_postcode(
 )
 FindAssessor::ByPostcode::Stub.search_by_postcode("SW1A 2AA")
 FindAssessor::ByPostcode::InvalidPostcodeStub.search_by_postcode("C11 4FF")
+
 FindAssessor::ByName::Stub.search_by_name("Supercommon Name")
 FindAssessor::ByName::Stub.search_by_name("Somewhatcommon Name", true)
+
+FetchAssessmentSummary::GoneAssessmentStub.fetch('0000-0000-0000-0000-0666')
+
 FindCertificate::NoCertificatesStub.search_by_postcode("E1 4FF")
 FindCertificate::NoCertificatesStub.search_by_postcode("E1 4FF", "CEPC")
+
 FindCertificate::Stub.search_by_postcode("SW1A 2AA")
 FindCertificate::Stub.search_by_postcode("SW1A 2AA", "CEPC")
+
 FindCertificate::Stub.search_by_id("4567-6789-4567-6789-4567")
 FindCertificate::Stub.search_by_id("1234-5678-1234-5678-1234", "CEPC")
 FindCertificate::Stub.search_by_id("1234-5678-1234-5678-0000", "CEPC-RR")
@@ -32,6 +38,7 @@ FindCertificate::Stub.search_by_id("0000-0000-0000-0000-1112", "DEC")
 FindCertificate::Stub.search_by_id("1204-5678-1234-5178-0000", "DEC-RR")
 FindCertificate::Stub.search_by_id("0000-0000-0000-0000-9999", "AC-CERT")
 FindCertificate::Stub.search_by_id("0000-0000-0000-0000-5555", "AC-REPORT")
+
 FindCertificate::Stub.search_by_street_name_and_town(
   "1 Makeup Street",
   "Beauty Town",

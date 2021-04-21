@@ -224,4 +224,17 @@ describe "Journey::FindDomesticCertificate", type: :feature, journey: true do
       expect(page).to have_content "Getting a new energy certificate"
     end
   end
+
+  describe "when searching for a certificate via a provided link" do
+    context "and the certificate is cancelled or not for issue" do
+      it "redirects users to the main page" do
+        visit "http://find-energy-certificate.local.gov.uk:9393/energy-certificate/0000-0000-0000-0000-0666"
+        within("main") do
+          click_link "Find an energy certificate"
+        end
+        expect(page).to have_content "Find an energy certificate"
+      end
+    end
+
+  end
 end
