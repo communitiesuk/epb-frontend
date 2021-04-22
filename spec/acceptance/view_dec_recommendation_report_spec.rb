@@ -232,4 +232,29 @@ describe "Acceptance::DecRecommendationReport", type: :feature do
       expect(response.body).to have_css "span", text: "10 February 2011"
     end
   end
+
+  context "When a non domestic certificate is both NI and opted out" do
+    before do
+      FetchAssessmentSummary::AssessmentStub.fetch_dec_rr(
+        assessment_id: "1234-5678-1234-5678-1234",
+        date_of_expiry: "2030-01-01",
+        postcode: "BT1 1AA",
+        opt_out: true
+        )
+    end
+    it "removes assessor contact details" do
+      expect(response.body).to have_css "h2", text: "Assessor’s details"
+      expect(response.body).not_to have_css "dt", text: "Assessor’s name"
+      expect(response.body).not_to have_css "dd", text: "John Howard"
+      expect(response.body).not_to have_css "dt", text: "Employer’s name"
+      expect(response.body).not_to have_css "dd", text: "Joe Bloggs Ltd"
+      expect(response.body).not_to have_css "dt", text: "Employer’s address"
+      expect(response.body).not_to have_css "dd",
+                                        text: "123 My Street, My City, AB3 4CD"
+      expect(response.body).not_to have_css "dt", text: "Assessor ID"
+      expect(response.body).not_to have_css "dd", text: "SPEC000000"
+      expect(response.body).to have_css "dt", text: "Accreditation scheme"
+      expect(response.body).to have_css "dd", text: "test scheme"
+    end
+  end
 end

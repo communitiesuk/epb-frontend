@@ -1107,10 +1107,13 @@ module FetchAssessmentSummary
           assessmentType: "DEC-RR",
           assessmentExpiryDate: "2019-05-04",
         },
-      ]
+      ],
+      postcode: "A0 0AA",
+      opt_out: false
     )
       body = {
         data: {
+          optOut: opt_out,
           typeOfAssessment: "DEC-RR",
           assessmentId: assessment_id,
           reportType: "2",
@@ -1122,7 +1125,7 @@ module FetchAssessmentSummary
             addressLine3: nil,
             addressLine4: nil,
             town: "Post-Town0",
-            postcode: "A0 0AA",
+            postcode: postcode,
           },
           assessor: {
             name: "John Howard",

@@ -1,14 +1,22 @@
 <div id="assessor" class="epc-blue-bottom">
   <h2 class="govuk-heading-l"><%= t('dec_rr.sections.assessor.title') %></h2>
 
-  <%== erb :component__summary_list, locals: {
-    list: {
-      "name": assessment[:assessor][:name],
-      "employer_name": assessment[:assessor][:companyDetails][:name],
-      "employer_address": assessment[:assessor][:companyDetails][:address],
-      "number": assessment[:assessor][:schemeAssessorId],
+  <%==
+    list = {
       "scheme": assessment[:assessor][:registeredBy][:name],
-    },
+    }
+
+    unless assessment[:optOut] == true && assessment[:address][:postcode].start_with?("BT")
+      list = {
+        "name": assessment[:assessor][:name],
+        "employer_name": assessment[:assessor][:companyDetails][:name],
+        "employer_address": assessment[:assessor][:companyDetails][:address],
+        "number": assessment[:assessor][:schemeAssessorId],
+      }.merge(list)
+    end
+
+    erb :component__summary_list, locals: {
+    list: list,
     translation_prefix: 'dec_rr.sections.assessor.',
     skip_null: true
   } %>
