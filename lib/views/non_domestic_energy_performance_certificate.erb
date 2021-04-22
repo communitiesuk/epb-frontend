@@ -135,7 +135,9 @@
       assessor: assessment[:assessor],
       assessment_date: assessment[:dateOfAssessment],
       registration_date: assessment[:dateOfRegistration],
-      related_party_disclosure: assessment[:relatedPartyDisclosure]
+      related_party_disclosure: assessment[:relatedPartyDisclosure],
+      opt_out: assessment[:optOut],
+      postcode: assessment[:address][:postcode]
     } %>
 
     <div id="other_reports">

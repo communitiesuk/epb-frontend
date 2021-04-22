@@ -760,7 +760,7 @@ module FetchAssessmentSummary
       energyEfficiencyBand:,
       primaryEnergyUse: "413.22264873648762",
       related_rrn: "4192-1535-8427-8844-6702",
-      related_party_disclosure: nil,
+      related_party_disclosure: 1,
       related_assessments: [
         {
           assessmentExpiryDate: "2026-05-04",
@@ -775,10 +775,12 @@ module FetchAssessmentSummary
           assessmentType: "CEPC-RR",
         },
       ],
-      postcode: "SW1B 2BB"
+      postcode: "SW1B 2BB",
+      opt_out: false
     )
       body = {
         data: {
+          optOut: opt_out,
           assessmentId: assessment_id,
           dateOfExpiry: "2030-01-05",
           dateOfAssessment: "2020-01-04",

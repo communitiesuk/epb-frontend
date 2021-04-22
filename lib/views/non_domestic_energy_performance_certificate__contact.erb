@@ -9,11 +9,14 @@
   <p class="govuk-body"><%= t('non_domestic_epc.contact.p3') %></p>
   <p class="govuk-body"><%= t('non_domestic_epc.contact.p4') %></p>
 
-  <h3 class="govuk-heading-m"><%=
-    t('non_domestic_epc.contact.assessor.heading')
+  <h3 class="govuk-heading-m"><%==
+    unless opt_out == true && postcode.start_with?("BT")
+      t('non_domestic_epc.contact.assessor.heading')
+    end
   %></h3>
 
-  <%== erb :component__summary_list, locals: {
+  <%== unless opt_out == true && postcode.start_with?("BT")
+     erb :component__summary_list, locals: {
     list: {
       "name": assessor[:name],
       "phone": assessor[:contactDetails][:telephone],
@@ -21,7 +24,8 @@
     },
     translation_prefix: 'non_domestic_epc.contact.assessor.',
     skip_null: true
-  } %>
+  }
+  end %>
 
   <h3 class="govuk-heading-m"><%=
     t('non_domestic_epc.contact.scheme.heading')
@@ -42,14 +46,22 @@
     t('non_domestic_epc.contact.assessment.heading')
   %></h3>
 
-  <%== erb :component__summary_list, locals: {
-    list: {
+  <%==
+    list = {
       "date_assessed": date(assessment_date),
       "date_certificate": date(registration_date),
-      "employer": assessor[:companyDetails][:name],
-      "employer_address":  assessor[:companyDetails][:address],
-      "declaration": party_disclosure(related_party_disclosure.nil? ? "13" : related_party_disclosure, related_party_disclosure, "non_domestic_disclosure_code", "non_domestic_epc"),
-    },
+    }
+
+    unless opt_out == true && postcode.start_with?("BT")
+      list = {
+        "employer": assessor[:companyDetails][:name],
+        "employer_address":  assessor[:companyDetails][:address],
+        "declaration": party_disclosure(related_party_disclosure.nil? ? "13" : related_party_disclosure, related_party_disclosure, "non_domestic_disclosure_code", "non_domestic_epc"),
+      }.merge(list)
+    end
+
+    erb :component__summary_list, locals: {
+    list: list,
     translation_prefix: 'non_domestic_epc.contact.assessment.',
     skip_null: true
   } %>
