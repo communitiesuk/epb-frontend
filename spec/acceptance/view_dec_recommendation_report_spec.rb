@@ -233,7 +233,7 @@ describe "Acceptance::DecRecommendationReport", type: :feature do
     end
   end
 
-  context "When a non domestic certificate is both NI and opted out" do
+  context "When a dec report is both NI and opted out" do
     before do
       FetchAssessmentSummary::AssessmentStub.fetch_dec_rr(
         assessment_id: "1234-5678-1234-5678-1234",

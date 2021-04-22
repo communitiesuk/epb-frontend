@@ -202,7 +202,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
     end
   end
 
-  context "When a non domestic certificate is both NI and opted out" do
+  context "When a non domestic report is both NI and opted out" do
     before do
       FetchAssessmentSummary::AssessmentStub.fetch_cepc_rr(
         assessment_id: "1234-5678-1234-5678-1234",
