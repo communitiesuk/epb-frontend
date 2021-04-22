@@ -398,19 +398,25 @@
             <h2 class="govuk-heading-s"><%= t('dec.sections.administrative_information.print_title') %></h2>
             <table class="border-bottom">
               <tbody>
-                <% {
-                   "assessor.list.name": assessment[:assessor][:name],
+                <% list = {
                    "scheme_name": scheme_details(assessment[:assessor], 'name'),
-                   "company_name": assessment[:assessor][:companyDetails][:name],
-                   "company_address": assessment[:assessor][:companyDetails][:address],
                    "issue_date": date(assessment[:administrativeInformation][:issueDate]),
                    "nominated_date": date(assessment[:currentAssessment][:date]),
-                   "related_party_disclosure": party_disclosure(
-                     (assessment[:administrativeInformation][:relatedPartyDisclosure].nil? ?
-                       "8" :
-                       assessment[:administrativeInformation][:relatedPartyDisclosure]), assessment[:administrativeInformation][:relatedPartyDisclosure], "dec_disclosure_code", "dec"
-                   )
-                   }.each do |key, value| %>
+                   }
+
+                   unless assessment[:optOut] == true && assessment[:address][:postcode].start_with?("BT")
+                     list = {
+                       "assessor.list.name": assessment[:assessor][:name],
+                       "company_name": assessment[:assessor][:companyDetails][:name],
+                       "company_address": assessment[:assessor][:companyDetails][:address],
+                       "related_party_disclosure": party_disclosure(
+                         (assessment[:administrativeInformation][:relatedPartyDisclosure].nil? ?
+                            "8" :
+                            assessment[:administrativeInformation][:relatedPartyDisclosure]), assessment[:administrativeInformation][:relatedPartyDisclosure], "dec_disclosure_code", "dec"
+                       )
+                     }.merge(list)
+                   end
+                 list.each do |key, value| %>
                   <tr>
                     <th>
                       <%= t("dec.sections.administrative_information." + key.to_s) %>

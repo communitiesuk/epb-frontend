@@ -145,4 +145,35 @@ describe "Acceptance::PrintableDisplayEnergyCertificate", type: :feature do
       end
     end
   end
+
+  context "When a printable dec certificate is both NI and opted out" do
+    before do
+      FetchAssessmentSummary::AssessmentStub.fetch_dec(
+        assessment_id: "0000-0000-0000-0000-1111",
+        date_of_expiry: "2030-02-21",
+        postcode: "BT1 1AA",
+        opt_out: true
+        )
+    end
+    it "removes assessor contact details" do
+      expect(response.body).to have_css "h2", text: "Assessment details"
+      expect(response.body).not_to have_css "th", text: "Assessor’s name"
+      expect(response.body).not_to have_css "td", text: "TEST NAME BOI"
+      expect(response.body).to have_css "th", text: "Accreditation scheme"
+      expect(response.body).to have_css "td", text: "Quidos"
+      expect(response.body).not_to have_css "th", text: "Employer/Trading name"
+      expect(response.body).not_to have_css "td", text: "Joe Bloggs Ltd"
+      expect(response.body).not_to have_css "th", text: "Employer/Trading address"
+      expect(response.body).not_to have_css "td",
+                                        text: "123 My Street, My City, AB3 4CD"
+      expect(response.body).to have_css "th", text: "Issue date"
+      expect(response.body).to have_css "td", text: "14 May 2020"
+      expect(response.body).to have_css "th", text: "Nominated date"
+      expect(response.body).to have_css "td", text: "1 January 2020"
+      expect(response.body).not_to have_css "th", text: "Assessor’s declaration"
+      expect(response.body).not_to have_css "td",
+                                        text:
+                                          "The assessor has not indicated whether they have a relation to this property."
+    end
+  end
 end
