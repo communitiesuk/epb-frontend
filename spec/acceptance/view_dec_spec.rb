@@ -348,4 +348,55 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
       expect(response.body).not_to have_link "recommendation report"
     end
   end
+
+  context "When a non domestic certificate is both NI and opted out" do
+    before do
+      FetchAssessmentSummary::AssessmentStub.fetch_dec(
+        assessment_id: "0000-0000-0000-0000-1111",
+        postcode: "BT1 1AA",
+        opt_out: true,
+        date_of_expiry: "2030-02-21"
+        )
+    end
+
+    it "removes assessor contact details" do
+      expect(response.body).to have_css "h2",
+                                        text: "Administrative information"
+      expect(response.body).to have_css "dt", text: "Assessment software"
+      expect(response.body).to have_css "dd", text: "DCLG, ORCalc, v3.6.3"
+      expect(response.body).to have_css "dt", text: "Property reference"
+      expect(response.body).to have_css "dd", text: "UPRN-000000000001"
+      expect(response.body).not_to have_css "dt", text: "Assessor’s name"
+      expect(response.body).not_to have_css "dd", text: "TEST NAME BOI"
+      expect(response.body).not_to have_css "dt", text: "Assessor ID"
+      expect(response.body).not_to have_css "dd", text: "SPEC000000"
+      expect(response.body).to have_css "dt", text: "Accreditation scheme"
+      expect(response.body).to have_css "dd", text: "Quidos"
+      expect(response.body).to have_css "dt",
+                                        text: "Accreditation scheme telephone"
+      expect(response.body).to have_css "dd", text: "01225 667 570"
+      expect(response.body).to have_css "dt",
+                                        text: "Accreditation scheme email"
+      expect(response.body).to have_css "dd", text: "info@quidos.co.uk"
+      expect(response.body).not_to have_css "dt", text: "Employer/Trading name"
+      expect(response.body).not_to have_css "dd", text: "Joe Bloggs Ltd"
+      expect(response.body).not_to have_css "dt", text: "Employer/Trading address"
+      expect(response.body).not_to have_css "dd",
+                                        text: "123 My Street, My City, AB3 4CD"
+      expect(response.body).to have_css "dt", text: "Issue date"
+      expect(response.body).to have_css "dd", text: "14 May 2020"
+      expect(response.body).to have_css "dt", text: "Nominated date"
+      expect(response.body).to have_css "dd", text: "1 January 2020"
+      expect(response.body).to have_css "dt", text: "Valid until"
+      expect(response.body).to have_css "dd", text: "21 February 2030"
+      expect(response.body).not_to have_css "dt", text: "Assessor’s declaration"
+      expect(response.body).not_to have_css "dd",
+                                        text:
+                                          "The assessor has not indicated whether they have a relation to this property."
+      expect(response.body).to have_css "dt", text: "Summary XML"
+      expect(response.body).to have_link "Download summary XML",
+                                         href:
+                                           "/energy-certificate/0000-0000-0000-0000-1111/dec_summary"
+    end
+  end
 end

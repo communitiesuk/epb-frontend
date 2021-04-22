@@ -967,10 +967,13 @@ module FetchAssessmentSummary
       related_party: nil,
       related_rrn: "4192-1535-8427-8844-6702",
       asset_rating: "1",
-      schema_version: 8.0
+      schema_version: 8.0,
+      postcode: "A0 0AA",
+      opt_out: false
     )
       body = {
         data: {
+          optOut: opt_out,
           typeOfAssessment: "DEC",
           assessmentId: assessment_id,
           schemaVersion: schema_version,
@@ -983,7 +986,7 @@ module FetchAssessmentSummary
             addressLine3: "Place area",
             addressLine4: "General grid",
             town: "Post-Town1",
-            postcode: "A0 0AA",
+            postcode: postcode,
           },
           currentAssessment: {
             date: "2020-01-01",
