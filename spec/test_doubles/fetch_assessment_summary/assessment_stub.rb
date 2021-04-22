@@ -863,7 +863,9 @@ module FetchAssessmentSummary
       company_details: {
         name: "Joe Bloggs Ltd",
         address: "123 My Street, My City, AB3 4CD",
-      }
+      },
+      postcode: "A0 0AA",
+      opt_out: false
     )
       body = {
         data: {
@@ -881,7 +883,7 @@ module FetchAssessmentSummary
             addressLine3: nil,
             addressLine4: nil,
             town: "Post-Town0",
-            postcode: "A0 0AA",
+            postcode: postcode,
           },
           assessor: {
             schemeAssessorId: "SPEC000000",
@@ -934,6 +936,7 @@ module FetchAssessmentSummary
           },
           relatedPartyDisclosure: related_party,
           energyBandFromRelatedCertificate: related_energy_band,
+          optOut: opt_out,
         },
       }
       WebMock

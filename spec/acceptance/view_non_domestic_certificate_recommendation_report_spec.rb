@@ -201,4 +201,27 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
       expect(response.body).to have_css "span", text: "21 June 2014"
     end
   end
+
+  context "When a non domestic certificate is both NI and opted out" do
+    before do
+      FetchAssessmentSummary::AssessmentStub.fetch_cepc_rr(
+        assessment_id: "1234-5678-1234-5678-1234",
+        postcode: "BT1 1AA",
+        opt_out: true
+        )
+    end
+
+    it "removes assessor contact details" do
+      expect(response.body).not_to include("Mrs Report Writer")
+      expect(response.body).not_to include("07921921369")
+      expect(response.body).not_to include("a@b.c")
+      expect(response.body).not_to include("SPEC000000")
+      expect(response.body).not_to include("Joe Bloggs Ltd")
+      expect(response.body).not_to include("123 My Street, My City, AB3 4CD")
+      expect(response.body).not_to include(
+                                 "The assessor has not indicated whether they have a relation to this property",
+                                 )
+      expect(response.body).to include("Quidos")
+    end
+  end
 end
