@@ -364,6 +364,20 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
                                         text:
                                           "This system could not be brought into operation, this did not give cause for concern as there was no internal temperature demand on the system during the inspection."
     end
+
+    context "when viewing the related certificates section" do
+      it "shows the section title" do
+        expect(response.body).to have_css(
+                                     "h2",
+                                     text: "Other reports for this property",
+                                     )
+      end
+
+      it "shows the related AC-CERT certificates" do
+        expect(response.body).to have_link "0000-0000-0000-0000-0002",
+                                           href: "/energy-certificate/0000-0000-0000-0000-0002"
+      end
+    end
   end
 
   context "CEPC 6.0 AC report" do
