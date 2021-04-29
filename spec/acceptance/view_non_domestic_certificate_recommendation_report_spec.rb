@@ -207,8 +207,8 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
       FetchAssessmentSummary::AssessmentStub.fetch_cepc_rr(
         assessment_id: "1234-5678-1234-5678-1234",
         postcode: "BT1 1AA",
-        opt_out: true
-        )
+        opt_out: true,
+      )
     end
 
     it "removes assessor contact details" do
@@ -219,8 +219,8 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
       expect(response.body).not_to include("Joe Bloggs Ltd")
       expect(response.body).not_to include("123 My Street, My City, AB3 4CD")
       expect(response.body).not_to include(
-                                 "The assessor has not indicated whether they have a relation to this property",
-                                 )
+        "The assessor has not indicated whether they have a relation to this property",
+      )
       expect(response.body).to include("Quidos")
     end
   end

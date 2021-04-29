@@ -208,9 +208,9 @@ describe "Acceptance::AirConditioningInspectionCertificate", type: :feature do
     context "when viewing the related certificates section" do
       it "shows the section title" do
         expect(response.body).to have_css(
-                                     "h2",
-                                     text: "Other certificates for this property",
-                                     )
+          "h2",
+          text: "Other certificates for this property",
+        )
       end
 
       it "shows the related AC-CERT certificates" do
@@ -238,10 +238,10 @@ describe "Acceptance::AirConditioningInspectionCertificate", type: :feature do
   context "when an ac certificate is both NI and opted out" do
     before do
       FetchAssessmentSummary::AssessmentStub.fetch_ac_cert(
-          assessment_id: "0000-0000-0000-0000-9999",
-          postcode: "BT1 1AA",
-          opt_out: true
-          )
+        assessment_id: "0000-0000-0000-0000-9999",
+        postcode: "BT1 1AA",
+        opt_out: true,
+      )
     end
 
     it "removes assessor contact details" do
@@ -252,7 +252,8 @@ describe "Acceptance::AirConditioningInspectionCertificate", type: :feature do
       expect(response.body).not_to have_css "dd", text: "SPEC000000"
       expect(response.body).not_to have_css "dt", text: "Employer/Trading name"
       expect(response.body).not_to have_css "dd", text: "Joe Bloggs Ltd"
-      expect(response.body).not_to have_css "dt", text: "Employer/Trading address"
+      expect(response.body).not_to have_css "dt",
+                                            text: "Employer/Trading address"
       expect(response.body).not_to have_css "dd",
                                             text: "123 My Street, My City, AB3 4CD"
       expect(response.body).to have_css "dt", text: "Accreditation scheme"
@@ -262,7 +263,6 @@ describe "Acceptance::AirConditioningInspectionCertificate", type: :feature do
       expect(response.body).to have_css "dd", text: "01225 667 570"
       expect(response.body).to have_css "dt", text: "Accreditation scheme email"
       expect(response.body).to have_css "dd", text: "info@quidos.co.uk"
-
     end
   end
 end

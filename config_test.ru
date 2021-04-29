@@ -22,7 +22,7 @@ FindAssessor::ByPostcode::InvalidPostcodeStub.search_by_postcode("C11 4FF")
 FindAssessor::ByName::Stub.search_by_name("Supercommon Name")
 FindAssessor::ByName::Stub.search_by_name("Somewhatcommon Name", true)
 
-FetchAssessmentSummary::GoneAssessmentStub.fetch('0000-0000-0000-0000-0666')
+FetchAssessmentSummary::GoneAssessmentStub.fetch("0000-0000-0000-0000-0666")
 
 FindCertificate::NoCertificatesStub.search_by_postcode("E1 4FF")
 FindCertificate::NoCertificatesStub.search_by_postcode("E1 4FF", "CEPC")

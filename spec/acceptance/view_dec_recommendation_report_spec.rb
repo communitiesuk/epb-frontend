@@ -239,8 +239,8 @@ describe "Acceptance::DecRecommendationReport", type: :feature do
         assessment_id: "1234-5678-1234-5678-1234",
         date_of_expiry: "2030-01-01",
         postcode: "BT1 1AA",
-        opt_out: true
-        )
+        opt_out: true,
+      )
     end
     it "removes assessor contact details" do
       expect(response.body).to have_css "h2", text: "Assessor’s details"
@@ -250,7 +250,7 @@ describe "Acceptance::DecRecommendationReport", type: :feature do
       expect(response.body).not_to have_css "dd", text: "Joe Bloggs Ltd"
       expect(response.body).not_to have_css "dt", text: "Employer’s address"
       expect(response.body).not_to have_css "dd",
-                                        text: "123 My Street, My City, AB3 4CD"
+                                            text: "123 My Street, My City, AB3 4CD"
       expect(response.body).not_to have_css "dt", text: "Assessor ID"
       expect(response.body).not_to have_css "dd", text: "SPEC000000"
       expect(response.body).to have_css "dt", text: "Accreditation scheme"

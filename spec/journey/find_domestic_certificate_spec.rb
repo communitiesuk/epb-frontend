@@ -229,12 +229,9 @@ describe "Journey::FindDomesticCertificate", type: :feature, journey: true do
     context "and the certificate is cancelled or not for issue" do
       it "redirects users to the main page" do
         visit "http://find-energy-certificate.local.gov.uk:9393/energy-certificate/0000-0000-0000-0000-0666"
-        within("main") do
-          click_link "Find an energy certificate"
-        end
+        within("main") { click_link "Find an energy certificate" }
         expect(page).to have_content "Find an energy certificate"
       end
     end
-
   end
 end

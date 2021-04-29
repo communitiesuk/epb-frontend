@@ -1100,12 +1100,16 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
     end
 
     it "shows the error page text" do
-      expect(response.body).to have_css "p", text: "The certificate that you are looking for is no longer available."
-      expect(response.body).to have_css "p", text: "There may be more up-to-date certificates for this property. Use the "
+      expect(response.body).to have_css "p",
+                                        text:
+                                          "The certificate that you are looking for is no longer available."
+      expect(response.body).to have_css "p",
+                                        text:
+                                          "There may be more up-to-date certificates for this property. Use the "
       expect(response.body).to have_css "a", text: "Find an energy certificate"
-      expect(response.body).to have_css "p", text: " service to search for your property."
+      expect(response.body).to have_css "p",
+                                        text: " service to search for your property."
     end
-
   end
 
   context "when the estimated or potential energy cost is missing" do
