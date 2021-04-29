@@ -59,5 +59,13 @@
     <%== erb :component__assessor_details, locals: {
       assessment: assessment,
     } %>
+
+    <div id="other_certificates">
+      <%== erb :component__related_assessments, locals: {
+        assessment: assessment,
+        type: 'certificate',
+        assessment_type:  assessment[:typeOfAssessment],
+      } %>
+    </div>
   </div>
 </div>

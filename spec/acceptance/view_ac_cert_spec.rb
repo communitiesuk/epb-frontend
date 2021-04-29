@@ -204,6 +204,20 @@ describe "Acceptance::AirConditioningInspectionCertificate", type: :feature do
       expect(response.body).to have_link "the inspection report",
                                          href: "/energy-certificate/0000-0000-0000-0000-8888"
     end
+
+    context "when viewing the related certificates section" do
+      it "shows the section title" do
+        expect(response.body).to have_css(
+                                     "h2",
+                                     text: "Other certificates for this property",
+                                     )
+      end
+
+      it "shows the related AC-CERT certificates" do
+        expect(response.body).to have_link "0000-0000-0000-0000-0002",
+                                           href: "/energy-certificate/0000-0000-0000-0000-0002"
+      end
+    end
   end
 
   context "when an ac certificate expires" do

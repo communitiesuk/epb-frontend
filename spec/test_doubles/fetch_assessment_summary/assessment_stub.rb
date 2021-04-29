@@ -744,6 +744,12 @@ module FetchAssessmentSummary
             },
           },
           optOut: opt_out,
+          relatedAssessments: [        {
+                                           assessmentExpiryDate: "2002-07-01",
+                                           assessmentId: "0000-0000-0000-0000-0002",
+                                           assessmentStatus: "EXPIRED",
+                                           assessmentType: "AC-CERT",
+                                       }],
         },
       }
 
