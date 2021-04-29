@@ -19,14 +19,15 @@
         ],
         address[:town],
         address[:postcode]
-      ).map{|e| CGI.escapeHTML(e)}.join('<br />') %></p>
-    <p class="govuk-body epc-extra-box" style="line-height: 2.25em">
+      ).map{|e| CGI.escapeHTML(e)}.join('<br />') %>
+    </p>
+    <p class="govuk-body epc-extra-box">
       <label>
         <%= date_of_expiry < Date.today ?
              t('component.epc_summary_compact.certificate.expired')  :
               t('component.epc_summary_compact.certificate.valid_until')
         %></label>
-      <%= date(date_of_expiry) %>
+      <b><%= date(date_of_expiry) %></b>
     </p>
     <p class="govuk-body epc-extra-box">
       <label><%= t('component.epc_summary.certificate_id') %></label>
