@@ -1249,7 +1249,8 @@ module FetchAssessmentSummary
       energy_performance_band_improvement = "c",
       postcode = "SW1B 2BB",
       address_line3 = "",
-      total_floor_area = "150"
+      total_floor_area = "150",
+      addendum = nil
     )
       FetchAssessmentSummary::AssessmentSummaryErrorStub.fetch(assessment_id)
       property_summary ||= generate_property_summary
@@ -1348,6 +1349,7 @@ module FetchAssessmentSummary
                 "nonDomesticNos5": "INACTIVE",
               },
             },
+            "addendum": addendum,
           },
           "meta": {},
         }
@@ -1546,6 +1548,7 @@ module FetchAssessmentSummary
             relatedPartyDisclosureNumber: related_party_disclosure_number,
             propertySummary: property_summary,
             greenDealPlan: green_deal_plan,
+            addendum: addendum,
             relatedAssessments: [
               {
                 assessmentExpiryDate: "2006-05-04",

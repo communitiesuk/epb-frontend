@@ -52,6 +52,7 @@ describe Gateway::AssessmentSummaryGateway do
           :propertySummary,
           :greenDealPlan,
           :relatedAssessments,
+          :addendum,
         )
       end
     end

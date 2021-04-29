@@ -768,6 +768,57 @@ en:
           total_floor_area: 'Total floor area'
           meters_squared: 'meters squared'
           dwelling_type: 'Property type'
+        additional_information:
+          title: 'Additional information'
+          intro: 'Additional information about this property:'
+          cavity_fill_recommended: Cavity fill is recommended
+          stone_walls: Stone walls present, not insulated
+          system_build: System build present
+          access_issues: Dwelling has access issues for cavity wall insulation
+          high_exposure: Dwelling may be exposed to wind-driven rain
+          narrow_cavities: Dwelling may have narrow cavities
+          addendum_number_1:
+            title: 'Wall type does not correspond to options available in RdSAP'
+            details: The dwelling has a type of wall that is not included in the available options. The nearest equivalent type was used for the assessment.
+          addendum_number_2:
+            title: 'Room heater specified for water heating instead of a range cooker'
+            details: 'The water heating in this property is from a range cooker. A room heater using the same fuel, which gives similar ratings, was used for the assessment.'
+          addendum_number_3:
+            title: 'Space heating from individual system and water heating from community system'
+            details: 'The water heating for this property is supplied from a community system. A multipoint gas heater, which gives similar ratings, was used for the assessment.'
+          addendum_number_4:
+            title: 'Dwelling has a swimming pool'
+            details: 'The energy assessment for the dwelling does not include energy used to heat the swimming pool.'
+          addendum_number_5:
+            title: 'Dwelling has micro-CHP not found in database'
+            details: 'The performance characteristics of the micro-CHP system in this dwelling are not known and default values were used for the assessment.'
+          addendum_number_6:
+            title: 'Storage heater or dual immersion, and single electric meter'
+            details: 'A dual rate appliance(s) is present with a single-rate supply. A single-rate appliance has been used for the assessment. Changing the electricity tariff to an off-peak (dual rate) supply is likely to reduce fuel costs and improve the energy rating.'
+          addendum_number_7:
+            title: 'Heating controlled by TRVs only'
+            details: 'It has been noted that the heating is controlled by TRVs only, which is not one of the currently available options. The recommendation on heating controls should be understood as adding a programmer and room thermostat alongside the existing TRVs.'
+          addendum_number_8:
+            title: 'PVs or wind turbine present on the property (England, Wales or Scotland)'
+            details: 'The assessment does not include any feed-in tariffs that may be applicable to this property.'
+          addendum_number_9:
+            title: 'Two main heating systems and heating system upgrade is recommended'
+            details: 'As there is more than one heating system, you should seek professional advice on the most cost-effective option for upgrading the systems.'
+          addendum_number_10:
+            title: 'Dual electricity meter selected but there is also an electricity meter for standard tariff'
+            details: 'The assessment has been done on the basis of an off-peak electricity tariff. However some heating or hot water appliances may be on the standard domestic tariff.'
+          addendum_number_11:
+            title: 'Single electricity meter selected but there is also an electricity meter for an off-peak tariff'
+            details: 'The assessment has been done on the basis of the standard domestic electricity tariff. However some heating or hot water appliances may be on an off-peak tariff.'
+          addendum_number_12:
+            title: 'Dwelling is using a biomass fuel that is not in the RdSAP fuel options'
+            details: 'The dwelling uses a type of fuel that is not included in the available options. The nearest equivalent fuel type was used for the assessment.'
+          addendum_number_13:
+            title: 'Dwelling is a Park Home'
+            details: 'This dwelling is a Park Home.'
+          addendum_number_14:
+            title: 'Dwelling has a special energy saving feature'
+            details: 'The dwelling has a special energy saving feature which is recognised in the assessment, but its impact on the savings shown for improvement measures is ignored.'
       environmental_impact:
         title: "Environmental impact of this property"
         summary: "One of the biggest contributors to climate change is carbon dioxide (CO2). The energy used for heating, lighting and power in our homes produces over a quarter of the UK’s CO2 emissions."
@@ -848,6 +899,7 @@ en:
             telephone: 'Telephone'
             email: 'Email'
             name: "Assessor’s name"
+            details: The dwelling has a type of wall that is not included in the available options. The nearest equivalent type was used for the assessment.
         scheme:
           title: 'Accreditation scheme contact details'
           list:

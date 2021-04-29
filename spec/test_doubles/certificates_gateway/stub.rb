@@ -32,6 +32,7 @@ module CertificatesGateway
                 impactOfCavityInsulation: 67,
                 impactOfSolidWallInsulation: 69,
               },
+              addendum: nil,
             },
             {
               assessmentId: "3345-6789-2345-6789-2345",

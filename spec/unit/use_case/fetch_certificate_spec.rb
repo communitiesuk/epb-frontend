@@ -183,6 +183,7 @@ describe UseCase::FetchCertificate do
             totalFloorArea: "150",
             town: "London",
             typeOfAssessment: "RdSAP",
+            addendum: nil,
           },
         }
       end

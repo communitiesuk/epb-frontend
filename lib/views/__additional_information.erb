@@ -1,0 +1,23 @@
+<h2 class="govuk-heading-m"><%= t('domestic_epc.sections.breakdown.additional_information.title') %></h2>
+<p class="govuk-body">
+  <%= t('domestic_epc.sections.breakdown.additional_information.intro') %>
+</p>
+
+<ul class="govuk-list govuk-list--bullet govuk-!-margin-left-6">
+  <% addendum.each do |key, value| %>
+    <% snakecase_key = key.to_s.gsub!(/(.)([A-Z])/,'\1_\2').downcase %>
+      <% if snakecase_key == "addendum_number" %>
+
+        <% value.each do |number| %>
+          <li>
+            <%= t("domestic_epc.sections.breakdown.additional_information.addendum_number_#{number}.title") %>
+            <p class="govuk-hint"><%= t("domestic_epc.sections.breakdown.additional_information.addendum_number_#{number}.details") %></p>
+          </li>
+        <% end %>
+      <% end %>
+
+      <% if value == true %>
+        <li><%= t("domestic_epc.sections.breakdown.additional_information.#{snakecase_key}") %></li>
+      <% end %>
+  <% end %>
+</ul>
