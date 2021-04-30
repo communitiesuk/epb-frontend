@@ -171,8 +171,16 @@
 
       <% if assessment[:postcode][0..1] == "BT" %>
         <p class="govuk-body govuk-!-margin-top-6"><%=  t('domestic_epc.sections.epc.ni_average_rating')  %></p>
+        <ul>
+          <li><%=  t('domestic_epc.sections.epc.body5')  %></li>
+          <li><%=  t('domestic_epc.sections.epc.body6')  %></li>
+        </ul>
       <%  else  %>
         <p class="govuk-body govuk-!-margin-top-6"><%=  t('domestic_epc.sections.epc.body4')  %></p>
+        <ul>
+          <li><%=  t('domestic_epc.sections.epc.body5')  %></li>
+          <li><%=  t('domestic_epc.sections.epc.body6')  %></li>
+        </ul>
       <%  end %>
     </div>
 

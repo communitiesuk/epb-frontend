@@ -744,8 +744,10 @@ cy:
         body1: "Mae’r graff yn dangos effeithlonrwydd ynni’r eiddo hwn ar hyn o bryd a’i effeithlonrwydd ynni posibl."
         body2: "Mae cyfraddiad yn cael ei roi i bob eiddo, gan amrywio rhwng A+ (y mwyaf effeithlon) ac G (y lleiaf effeithlon)."
         body3: "Mae eiddo yn cael sgôr hefyd. Uchaf i gyd yw’r rhif, isaf i gyd mae eich biliau tanwydd yn debygol o fod."
-        body4: "Cyfraddiad a sgôr ynni cyfartalog eiddo yng Nghymru a Lloegr yw D (60)."
-        ni_average_rating: "Y sgôr ynni ar gyfartaledd a sgôr eiddo yng Ngogledd Iwerddon yw D (60)."
+        body4: "Ar gyfer eiddo yng Nghymru a Lloegr:"
+        body5: "y cyfraddiad ynni cyfartalog yw D"
+        body6: "y sgôr ynni gyfartalog yw 60"
+        ni_average_rating: "Ar gyfer eiddo yng Ngogledd Iwerddon:"
       breakdown:
         title: "Dadansoddiad o berfformiad ynni’r eiddo hwn"
         intro: "Mae’r adran hon yn dangos perfformiad ynni nodweddiadol yr eiddo. Nid yw’r asesiad yn ystyried cyflwr nodwedd na pha mor dda y mae’n gweithio."

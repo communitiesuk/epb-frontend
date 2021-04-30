@@ -744,8 +744,10 @@ en:
         body1: 'The graph shows this property’s current and potential energy efficiency.'
         body2: 'Properties are given a rating from A (most efficient) to G (least efficient).'
         body3: 'Properties are also given a score. The higher the number the lower your fuel bills are likely to be.'
-        body4: 'The average energy rating and score for a property in England and Wales are D (60).'
-        ni_average_rating: 'The average energy rating and score for a property in Northern Ireland are D (60).'
+        body4: 'For properties in England and Wales:'
+        body5: 'the average energy rating is D'
+        body6: 'the average energy score is 60'
+        ni_average_rating: 'For properties in Northern Ireland:'
       breakdown:
         title: "Breakdown of property’s energy performance"
         intro: "This section shows the energy performance for features of this property. The assessment does not consider the condition of a feature and how well it is working."
