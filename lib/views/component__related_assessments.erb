@@ -29,8 +29,6 @@
               <% if related_assessment[:assessmentStatus] == "EXPIRED" %>
                 <div>
                   <span class="govuk-!-margin-right-2"> <%= date(related_assessment[:assessmentExpiryDate]) %></span>
-                  <br>
-                  <strong style="white-space: nowrap" class="govuk-tag--red govuk-!-padding-left-2 govuk-!-padding-right-2"><%= t('component.related.expired').upcase%></strong>
                 </div>
                 <% else %><%=
               date(related_assessment[:assessmentExpiryDate])
