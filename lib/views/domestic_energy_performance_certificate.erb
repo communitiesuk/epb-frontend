@@ -1,5 +1,5 @@
 <div class="govuk-grid-row">
-  <div class="govuk-!-padding-left-3">
+  <div class="govuk-grid-column-full">
     <div class="govuk-body">
       <a
         href="<%= localised_url('/find-a-certificate/search-by-postcode')%>"
@@ -12,6 +12,7 @@
       </h1>
     </div>
   </div>
+
   <div class="govuk-grid-column-one-third govuk-!-display-none-print">
     <hr class="epc-blue-top" />
     <%== erb :component__contents, locals: {
