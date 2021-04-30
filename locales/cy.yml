@@ -712,7 +712,6 @@ cy:
         heat_demand: "Amcangyfrif o’r ynni a ddefnyddir a’r arbedion posibl"
         information: "Cysylltu â’r asesydd a’r cynllun achredu"
         green_deal: "Cynllun y Fargen Werdd"
-        related_assessments: "Asesiadau perthynol"
         previous: "Tystysgrifau eraill ar gyfer yr eiddo hwn"
     sections:
       renting:
@@ -893,15 +892,6 @@ cy:
         provider_name: "Darparwr"
         provider_telephone: "Ffôn"
         provider_email: "Ebost"
-      related_assessments:
-        title: "EPCs eraill ar gyfer yr eiddo hwn"
-        certificate_type: "EPC"
-        reference_number: "Rhif cyfeirnod"
-        assessment_type: "Y math o adroddiad"
-        expiry_date: "Dilys tan"
-        certificate_number_col: "Rhif y dystysgrif"
-        valid_until: "Dilys tan"
-        expired: "Wedi dod i ben"
 
         type:
           CEPC: "Tystysgrif perfformiad ynni masnachol"

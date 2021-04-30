@@ -712,7 +712,6 @@ en:
         heat_demand: 'Estimated energy use and potential savings'
         information: 'Contacting the assessor and accreditation scheme'
         green_deal: 'Green deal plan'
-        related_assessments: 'Related assessments'
         previous: 'Other certificates for this property'
     sections:
       renting:
@@ -893,15 +892,6 @@ en:
         provider_name: 'Provider'
         provider_telephone: 'Telephone'
         provider_email: 'Email'
-      related_assessments:
-        title: 'Other EPCs for this property'
-        certificate_type: 'EPC'
-        reference_number: 'Reference number'
-        assessment_type: 'Report type'
-        expiry_date: 'Valid until'
-        certificate_number_col: 'Certificate number'
-        valid_until: 'Valid until'
-        expired: 'Expired'
 
         type:
           CEPC: 'Commercial energy performance certificate'
