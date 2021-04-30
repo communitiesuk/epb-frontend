@@ -340,7 +340,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
           '<p class="govuk-body"><a class="govuk-link" href="#contact">Contacting the assessor and accreditation scheme</a></p>',
         )
         expect(response.body).to include(
-          '<p class="govuk-body"><a class="govuk-link" href="#other_reports">Other certificates for this property</a></p>',
+          '<p class="govuk-body"><a class="govuk-link" href="#other_certificates_and_reports">Other certificates for this property</a></p>',
         )
       end
 
@@ -351,7 +351,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
         expect(response.body).to include('id="energy_peformance_breakdown"')
         expect(response.body).to include('id="related_report"')
         expect(response.body).to include('id="contact"')
-        expect(response.body).to include('id="other_reports"')
+        expect(response.body).to include('id="other_certificates_and_reports"')
       end
     end
 

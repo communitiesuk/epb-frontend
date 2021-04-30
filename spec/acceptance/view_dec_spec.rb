@@ -41,7 +41,7 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
       expect(response.body).to have_link "Administrative information",
                                          href: "#administrative_information"
       expect(response.body).to have_link "Other certificates for this property",
-                                         href: "#other_certificates"
+                                         href: "#other_certificates_and_reports"
     end
 
     it "shows the summary box" do

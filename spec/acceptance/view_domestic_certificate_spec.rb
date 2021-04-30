@@ -517,17 +517,13 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
 
       it "shows the average rating text" do
         expect(response.body).to have_css "p",
-                                          text:
-                                            "For properties in Northern Ireland:"
+                                          text: "For properties in Northern Ireland:"
         expect(response.body).to have_css "li",
-                                          text:
-                                              "the average energy rating is D"
+                                          text: "the average energy rating is D"
         expect(response.body).to have_css "li",
-                                          text:
-                                              "the average energy score is 60"
+                                          text: "the average energy score is 60"
         expect(response.body).not_to have_css "p",
-                                              text:
-                                                "For properties in England and Wales:"
+                                              text: "For properties in England and Wales:"
       end
 
       it "does not show the Simple Energy Advice text" do

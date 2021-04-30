@@ -45,7 +45,7 @@
           text: 'dec.sections.administrative_information.title'
         },
         {
-          link: '#other_certificates',
+          link: '#other_certificates_and_reports',
           text: 'component.related.certificates.title'
         }
       ]
@@ -100,12 +100,12 @@
         administrative_information: assessment[:administrativeInformation]
       } %>
     </div>
-    <div id="other_certificates">
-      <%== erb :component__related_assessments, locals: {
-        assessment: assessment,
-        type: 'certificate',
-        assessment_type:  assessment[:typeOfAssessment],
-      } %>
-    </div>
+
+    <%== erb :component__related_assessments, locals: {
+      assessment: assessment,
+      type: 'certificate',
+      assessment_type:  assessment[:typeOfAssessment],
+    } %>
+
   </div>
 </div>

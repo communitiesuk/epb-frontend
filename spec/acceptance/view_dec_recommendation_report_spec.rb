@@ -51,7 +51,7 @@ describe "Acceptance::DecRecommendationReport", type: :feature do
                                          href: "#building"
       expect(response.body).to have_link "Assessor’s details", href: "#assessor"
       expect(response.body).to have_link "Other reports for this property",
-                                         href: "#other_reports"
+                                         href: "#other_certificates_and_reports"
     end
 
     it "shows the summary section" do

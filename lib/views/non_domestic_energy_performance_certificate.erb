@@ -42,7 +42,7 @@
         text: 'non_domestic_epc.contact.heading'
       },
       {
-        link: '#other_reports',
+        link: '#other_certificates_and_reports',
         text: 'component.related.certificates.title'
       }
     ]
@@ -140,12 +140,11 @@
       postcode: assessment[:address][:postcode]
     } %>
 
-    <div id="other_reports">
-      <%== erb :component__related_assessments, locals: {
-        assessment: assessment,
-        type: 'certificate',
-        assessment_type:  assessment[:typeOfAssessment],
-      } %>
-    </div>
+    <%== erb :component__related_assessments, locals: {
+      assessment: assessment,
+      type: 'certificate',
+      assessment_type:  assessment[:typeOfAssessment],
+    } %>
+
   </div>
 </div>

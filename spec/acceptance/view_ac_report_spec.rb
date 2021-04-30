@@ -368,9 +368,9 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
     context "when viewing the related certificates section" do
       it "shows the section title" do
         expect(response.body).to have_css(
-                                     "h2",
-                                     text: "Other reports for this property",
-                                     )
+          "h2",
+          text: "Other reports for this property",
+        )
       end
 
       it "shows the related AC-CERT certificates" do

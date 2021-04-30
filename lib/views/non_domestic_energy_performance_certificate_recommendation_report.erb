@@ -26,7 +26,7 @@
         text: 'non_domestic_epc.rr.assessor_details.title'
       },
       {
-        link: '#other_reports',
+        link: '#other_certificates_and_reports',
         text: 'component.related.reports.title'
       }
     ]
@@ -74,12 +74,11 @@
              }
     %>
 
-    <div id="other_reports">
-      <%== erb :component__related_assessments, locals: {
-        assessment: assessment,
-        type: 'report',
-        assessment_type:  assessment[:typeOfAssessment],
-      } %>
-    </div>
+    <%== erb :component__related_assessments, locals: {
+      assessment: assessment,
+      type: 'report',
+      assessment_type:  assessment[:typeOfAssessment],
+    } %>
+
   </div>
 </div>

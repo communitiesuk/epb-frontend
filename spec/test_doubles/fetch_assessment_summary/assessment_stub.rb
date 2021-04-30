@@ -661,12 +661,12 @@ module FetchAssessmentSummary
           systemControls: system_controls,
           optOut: opt_out,
           relatedAssessments: [
-              {
-                  assessmentExpiryDate: "2002-07-01",
-                  assessmentId: "0000-0000-0000-0000-0002",
-                  assessmentStatus: "EXPIRED",
-                  assessmentType: "AC-REPORT",
-              },
+            {
+              assessmentExpiryDate: "2002-07-01",
+              assessmentId: "0000-0000-0000-0000-0002",
+              assessmentStatus: "EXPIRED",
+              assessmentType: "AC-REPORT",
+            },
           ],
         },
         meta: {},
