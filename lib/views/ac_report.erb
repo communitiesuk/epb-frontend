@@ -61,6 +61,10 @@
           text: 'ac_report.sections.inspection_certificate.title',
           hidden: assessment[:relatedRrn].nil? || assessment[:relatedRrn].empty?
         },
+        {
+          link: '#other_reports',
+          text: 'component.related.reports.title'
+        },
       ]
     } %>
   </div>
@@ -140,7 +144,7 @@
       } %>
     <% end %>
 
-    <div id="other_certificates">
+    <div id="other_reports">
       <%== erb :component__related_assessments, locals: {
         assessment: assessment,
         type: 'report',
