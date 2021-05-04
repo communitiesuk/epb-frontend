@@ -1,6 +1,5 @@
 class TogglesStub
   def self.enable(features)
-
     WebMock
       .stub_request(:post, "#{ENV['EPB_UNLEASH_URI']}/client/register")
       .to_return(status: 200, body: "", headers: {})
