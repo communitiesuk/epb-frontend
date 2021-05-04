@@ -6,9 +6,12 @@ require "i18n/backend/fallbacks"
 require "sinatra/base"
 require_relative "container"
 require_relative "helpers"
+require_relative "../lib/helper/toggles"
 
 class FrontendService < Sinatra::Base
   helpers Sinatra::FrontendService::Helpers
+  attr_reader :toggles
+  @toggles = nil
 
   set :erb, escape_html: true
   set :public_folder, (proc { File.join(root, "/../public") })
@@ -19,9 +22,10 @@ class FrontendService < Sinatra::Base
     also_reload "lib/**/*.rb"
   end
 
-  def initialize
+  def initialize(toggles = false)
     super
     setup_locales
+    @toggles = Helper::Toggles.new
 
     @container = Container.new
     @logger = Logger.new(STDOUT)

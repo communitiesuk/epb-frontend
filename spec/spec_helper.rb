@@ -8,17 +8,44 @@ require "helpers"
 require "zeitwerk"
 require "capybara/rspec"
 
-loader = Zeitwerk::Loader.new
-loader.push_dir("#{__dir__}/../lib/")
-loader.push_dir("#{__dir__}/../spec/test_doubles/")
-loader.setup
-
+# loader = Zeitwerk::Loader.new
+# loader.push_dir("#{__dir__}/../lib/")
+# loader.push_dir("#{__dir__}/../spec/test_doubles/")
+# loader.setup
+#
 AUTH_URL = "http://test-auth-server.gov.uk"
 
 ENV["EPB_AUTH_CLIENT_ID"] = "test.id"
 ENV["EPB_AUTH_CLIENT_SECRET"] = "test.client.secret"
 ENV["EPB_AUTH_SERVER"] = AUTH_URL
 ENV["EPB_API_URL"] = "http://test-api.gov.uk"
+ENV["STAGE"] = "test"
+ENV["EPB_UNLEASH_URI"] = "https://test-toggle-server/api"
+
+class TestLoader
+  def self.setup
+    @loader = Zeitwerk::Loader.new
+    @loader.push_dir("#{__dir__}/../lib/")
+    @loader.push_dir("#{__dir__}/../spec/test_doubles/")
+    @loader.setup
+  end
+
+  def self.override(path)
+    load path
+  end
+end
+
+TestLoader.setup
+
+def loader_enable_override(name)
+  TestLoader.override "overrides/#{name}.rb"
+end
+
+def loader_enable_original(lib_name)
+  TestLoader.override "#{__dir__}/../lib/#{lib_name}.rb"
+end
+
+loader_enable_override "helper/toggles"
 
 module RSpecUnitMixin
   def get_api_client
