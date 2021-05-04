@@ -21,7 +21,6 @@ phases:
       ruby: 2.6
       nodejs: 10
     commands:
-      - gem install bundler:2.1.4
       - bundle install
       - npm install
       - make hosts
