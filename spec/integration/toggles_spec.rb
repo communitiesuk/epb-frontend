@@ -1,4 +1,4 @@
-xdescribe "Integration::ToggleService" do
+describe "Integration::ToggleService" do
   before(:all) do
     TogglesStub.enable "test-enabled-feature": true,
                        "test-disabled-feature": false

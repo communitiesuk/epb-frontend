@@ -1,8 +1,5 @@
 require "unleash"
 
-# ENV["STAGE"] = "test"
-# ENV["EPB_UNLEASH_URI"] = "https://test-toggle-server/api"
-
 module Helper
   class Toggles
     def self.enabled?(toggle_name, default = false)

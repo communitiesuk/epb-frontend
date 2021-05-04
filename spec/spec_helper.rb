@@ -8,11 +8,6 @@ require "helpers"
 require "zeitwerk"
 require "capybara/rspec"
 
-# loader = Zeitwerk::Loader.new
-# loader.push_dir("#{__dir__}/../lib/")
-# loader.push_dir("#{__dir__}/../spec/test_doubles/")
-# loader.setup
-#
 AUTH_URL = "http://test-auth-server.gov.uk"
 
 ENV["EPB_AUTH_CLIENT_ID"] = "test.id"
