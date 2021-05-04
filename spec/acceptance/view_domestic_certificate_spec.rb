@@ -621,48 +621,98 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
         end
       end
 
-      context "when there is additional information" do
+      context "when the additional-information-section feature toggle is on" do
         before do
-          FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
-            "1111-1111-1111-1111-1112",
-            90,
-            "b",
-            false,
-            "2.4",
-            "1.4",
-            -79,
-            -67,
-            -69,
-            nil,
-            1,
-            nil,
-            989.345346,
-            "RdSAP",
-            76,
-            [],
-            nil,
-            nil,
-            "c",
-            "SW1B 2BB",
-            "",
-            "150000",
-            { addendumNumber: [4], stoneWalls: true },
-          )
+          Helper::Toggles.set_feature("additional-information-section", true)
         end
 
-        let(:response) { get "/energy-certificate/1111-1111-1111-1111-1112" }
+        context "when there is additional information" do
+          before do
+            FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
+              "1111-1111-1111-1111-1112",
+              90,
+              "b",
+              false,
+              "2.4",
+              "1.4",
+              -79,
+              -67,
+              -69,
+              nil,
+              1,
+              nil,
+              989.345346,
+              "RdSAP",
+              76,
+              [],
+              nil,
+              nil,
+              "c",
+              "SW1B 2BB",
+              "",
+              "150000",
+              { addendumNumber: [4], stoneWalls: true },
+            )
+          end
 
-        it "shows Addditional information section with all details" do
-          expect(response.body).to include(
-            '<h2 class="govuk-heading-m">Additional information</h2>',
-          )
-          expect(response.body).to have_css "li",
-                                            text: "Dwelling has a swimming pool"
-          expect(response.body).to include(
-            '<p class="govuk-hint">The energy assessment for the dwelling does not include energy used to heat the swimming pool.</p>',
-          )
-          expect(response.body).to have_css "li",
-                                            text: "Stone walls present, not insulated"
+          let(:response) { get "/energy-certificate/1111-1111-1111-1111-1112" }
+
+          it "shows Addditional information section with all details" do
+            expect(response.body).to include(
+              '<h2 class="govuk-heading-m">Additional information</h2>',
+            )
+            expect(response.body).to have_css "li",
+                                              text: "Dwelling has a swimming pool"
+            expect(response.body).to include(
+              '<p class="govuk-hint">The energy assessment for the dwelling does not include energy used to heat the swimming pool.</p>',
+            )
+            expect(response.body).to have_css "li",
+                                              text: "Stone walls present, not insulated"
+          end
+        end
+      end
+
+      context "when the additional-information-section feature toggle is off" do
+        before do
+          Helper::Toggles.set_feature("additional-information-section", false)
+        end
+
+        context "when there is additional information" do
+          before do
+            FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
+              "1111-1111-1111-1111-1112",
+              90,
+              "b",
+              false,
+              "2.4",
+              "1.4",
+              -79,
+              -67,
+              -69,
+              nil,
+              1,
+              nil,
+              989.345346,
+              "RdSAP",
+              76,
+              [],
+              nil,
+              nil,
+              "c",
+              "SW1B 2BB",
+              "",
+              "150000",
+              { addendumNumber: [4], stoneWalls: true },
+            )
+          end
+
+          let(:response) { get "/energy-certificate/1111-1111-1111-1111-1112" }
+
+          it "does not show Addditional information section" do
+            expect(response.body).not_to include(
+              '<h2 class="govuk-heading-m">Additional information</h2>',
+            )
+          end
         end
       end
 
