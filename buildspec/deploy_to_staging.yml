@@ -1,7 +1,7 @@
 version: 0.2
 
 runtime-versions:
-  ruby: 2.6
+  ruby: 2.7.2
   nodejs: 10
 
 env:
@@ -24,7 +24,7 @@ env:
 phases:
   install:
     runtime-versions:
-      ruby: 2.6
+      ruby: 2.7.2
       nodejs: 10
     commands:
       - npm install
