@@ -18,6 +18,7 @@ env:
     EPB_AUTH_CLIENT_SECRET: "epbr-frontend-auth-client-secret-staging"
     EPB_AUTH_SERVER: "epbr-auth-server-staging"
     EPB_API_URL: "epbr-api-url-staging"
+    EPB_UNLEASH_URI: "epbr-unleash-staging-uri"
     SENTRY_DSN: "epbr-sentry-dsn-frontend"
 
 phases:
