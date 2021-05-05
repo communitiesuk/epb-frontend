@@ -26,7 +26,6 @@ phases:
       ruby: 2.6
       nodejs: 10
     commands:
-      - bundle install
       - npm install
   pre_build:
     commands:
