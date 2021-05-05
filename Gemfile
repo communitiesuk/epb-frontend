@@ -25,7 +25,7 @@ source "https://rubygems.org" do
   gem "rake"
   gem "rubocop-govuk", "~> 3.17"
   gem "sassc", "~> 2.4"
-  gem "sentry-ruby", "~> 4.3"
+  gem "sentry-ruby", "~> 4.4"
   gem "sinatra", "~> 2.0", ">= 2.0.7"
   gem "unleash", "~> 3.2.2"
   gem "zeitwerk", "~> 2.4.2"

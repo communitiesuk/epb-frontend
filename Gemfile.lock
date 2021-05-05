@@ -48,6 +48,7 @@ GEM
       concurrent-ruby (~> 1.0)
     jwt (2.2.3)
     mini_mime (1.1.0)
+    mini_portile2 (2.5.1)
     minitest (5.14.4)
     multi_json (1.15.0)
     multi_xml (0.6.0)
@@ -55,6 +56,9 @@ GEM
     murmurhash3 (0.1.6)
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
+    nokogiri (1.11.3)
+      mini_portile2 (~> 2.5.0)
+      racc (~> 1.4)
     nokogiri (1.11.3-x86_64-darwin)
       racc (~> 1.4)
     oauth2 (1.4.7)
@@ -126,11 +130,11 @@ GEM
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
-    sentry-ruby (4.4.0)
+    sentry-ruby (4.4.1)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       faraday (>= 1.0)
-      sentry-ruby-core (= 4.4.0)
-    sentry-ruby-core (4.4.0)
+      sentry-ruby-core (= 4.4.1)
+    sentry-ruby-core (4.4.1)
       concurrent-ruby
       faraday
     sinatra (2.1.0)
@@ -180,7 +184,7 @@ DEPENDENCIES
   rubocop-govuk (~> 3.17)!
   sassc (~> 2.4)!
   selenium-webdriver (~> 3.142.7)!
-  sentry-ruby (~> 4.3)!
+  sentry-ruby (~> 4.4)!
   sinatra (~> 2.0, >= 2.0.7)!
   sinatra-contrib!
   unleash (~> 3.2.2)!
