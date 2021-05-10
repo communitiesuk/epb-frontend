@@ -570,6 +570,54 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
         )
       end
 
+      context "when there are no low and zero carbon energy sources" do
+        it "it does not show the LZC energy sources" do
+          expect(response.body).not_to include(
+            "Low and zero carbon energy sources",
+          )
+        end
+      end
+
+      context "when there is a low and zero carbon energy source on the property" do
+        before do
+          FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
+            "1111-1111-1111-1111-1112",
+            90,
+            "b",
+            false,
+            "2.4",
+            "1.4",
+            -79,
+            -67,
+            -69,
+            nil,
+            1,
+            nil,
+            989.345346,
+            "RdSAP",
+            76,
+            [],
+            nil,
+            nil,
+            "c",
+            "SW1B 2BB",
+            "",
+            "150000",
+            nil,
+            [11],
+          )
+        end
+
+        let(:response) { get "/energy-certificate/1111-1111-1111-1111-1112" }
+
+        it "it shows Low and zero carbon energy sources section and the detials" do
+          expect(response.body).to include(
+            '<h2 class="govuk-heading-m">Low and zero carbon energy sources</h2>',
+          )
+          expect(response.body).to have_css "li", text: "Solar photovoltaics"
+        end
+      end
+
       it "shows the primary energy use section" do
         expect(response.body).to include(
           '<h2 class="govuk-heading-m">Primary energy use</h2>',

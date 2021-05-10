@@ -768,6 +768,26 @@ cy:
           total_floor_area: "Cyfanswm yr arwynebedd"
           meters_squared: "o fetrau sgwâr"
           dwelling_type: "Math o eiddo"
+        low_zero_carbon_energy_sources:
+          title: "Ffynonellau ynni di-garbon a charbon-isel"
+          summary: "Mae ffynonellau ynni carbon-isel a di-garbon yn rhyddhau fawr ddim neu ddim CO2. Gall gosod y ffynonellau hyn helpu i leihau biliau ynni yn ogystal â thorri allyriadau carbon. Gosodwyd y ffynonellau ynni carbon-isel neu ddi-garbon canlynol yn yr eiddo hwn:"
+          lzc_energy_source_1: "Prif wres biomas"
+          lzc_energy_source_2: "Gwres biomas cymunedol"
+          lzc_energy_source_3: "Gwres biomas cymunedol i gynhyrchu rhywfaint o wres"
+          lzc_energy_source_4: "Gwres biomas eilaidd"
+          lzc_energy_source_5: "Ffynhonnell gwres geothermol"
+          lzc_energy_source_6: "Gwres a phŵer cyfun cymunedol"
+          lzc_energy_source_7: "Pwmp gwres o'r ddaear"
+          lzc_energy_source_8: "Pwmp gwres o ddŵr"
+          lzc_energy_source_9: "Pwmp gwres o'r aer"
+          lzc_energy_source_10: "Gwres dŵr o'r haul"
+          lzc_energy_source_11: "Ffotofoltäeg yr haul"
+          lzc_energy_source_12: "Tyrbin gwynt"
+          lzc_energy_source_13: "Pwmp gwres cymunedol"
+          lzc_energy_source_14: "Cynhyrchu trydan dŵr"
+          lzc_energy_source_15: "CHP meicro"
+          lzc_energy_source_16: "Pwmp gwres aer gwacáu"
+          lzc_energy_source_17: "Pwmp gwres â chymorth yr haul"
         additional_information:
           title: 'Gwybodaeth ychwanegol'
           intro: 'Gwybodaeth ychwanegol am yr eiddo hwn'

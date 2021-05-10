@@ -184,6 +184,7 @@ describe UseCase::FetchCertificate do
             town: "London",
             typeOfAssessment: "RdSAP",
             addendum: nil,
+            lzcEnergySources: nil,
           },
         }
       end

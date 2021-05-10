@@ -768,6 +768,26 @@ en:
           total_floor_area: 'Total floor area'
           meters_squared: 'meters squared'
           dwelling_type: 'Property type'
+        low_zero_carbon_energy_sources:
+          title: "Low and zero carbon energy sources"
+          summary: "Low and zero carbon energy sources release very little or no CO2. Installing these sources may help reduce energy bills as well as cutting carbon emissions. The following low or zero carbon energy sources are installed in this property:"
+          lzc_energy_source_1: "Biomass main heating"
+          lzc_energy_source_2: "Biomass community heating"
+          lzc_energy_source_3: "Biomass community heating for some of heat generation"
+          lzc_energy_source_4: "Biomass secondary heating"
+          lzc_energy_source_5: "Geothermal heat source"
+          lzc_energy_source_6: "Community combined heat and power"
+          lzc_energy_source_7: "Ground source heat pump"
+          lzc_energy_source_8: "Water source heat pump"
+          lzc_energy_source_9: "Air source heat pump"
+          lzc_energy_source_10: "Solar water heating"
+          lzc_energy_source_11: "Solar photovoltaics"
+          lzc_energy_source_12: "Wind turbine"
+          lzc_energy_source_13: "Community heat pump"
+          lzc_energy_source_14: "Hydro-electric generation"
+          lzc_energy_source_15: "Micro-CHP"
+          lzc_energy_source_16: "Exhaust air heat pump"
+          lzc_energy_source_17: "Solar-assisted heat pump"
         additional_information:
           title: 'Additional information'
           intro: 'Additional information about this property:'

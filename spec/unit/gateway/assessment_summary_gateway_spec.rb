@@ -53,6 +53,7 @@ describe Gateway::AssessmentSummaryGateway do
           :greenDealPlan,
           :relatedAssessments,
           :addendum,
+          :lzcEnergySources,
         )
       end
     end
