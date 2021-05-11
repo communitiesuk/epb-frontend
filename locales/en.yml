@@ -899,7 +899,6 @@ en:
             telephone: 'Telephone'
             email: 'Email'
             name: "Assessor’s name"
-            details: The dwelling has a type of wall that is not included in the available options. The nearest equivalent type was used for the assessment.
         scheme:
           title: 'Accreditation scheme contact details'
           list:
