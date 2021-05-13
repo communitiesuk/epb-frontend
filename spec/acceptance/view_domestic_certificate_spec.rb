@@ -582,35 +582,13 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
         before do
           FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
             "1111-1111-1111-1111-1112",
-            90,
-            "b",
-            false,
-            "2.4",
-            "1.4",
-            -79,
-            -67,
-            -69,
-            nil,
-            1,
-            nil,
-            989.345346,
-            "RdSAP",
-            76,
-            [],
-            nil,
-            nil,
-            "c",
-            "SW1B 2BB",
-            "",
-            "150000",
-            nil,
-            [11],
+            lzc_energy_sources: [11],
           )
         end
 
         let(:response) { get "/energy-certificate/1111-1111-1111-1111-1112" }
 
-        it "it shows Low and zero carbon energy sources section and the detials" do
+        it "it shows Low and zero carbon energy sources section and the details" do
           expect(response.body).to include(
             '<h2 class="govuk-heading-m">Low and zero carbon energy sources</h2>',
           )
@@ -678,28 +656,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
           before do
             FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
               "1111-1111-1111-1111-1112",
-              90,
-              "b",
-              false,
-              "2.4",
-              "1.4",
-              -79,
-              -67,
-              -69,
-              nil,
-              1,
-              nil,
-              989.345346,
-              "RdSAP",
-              76,
-              [],
-              nil,
-              nil,
-              "c",
-              "SW1B 2BB",
-              "",
-              "150000",
-              { addendumNumber: [4], stoneWalls: true },
+              addendum: { addendumNumber: [4], stoneWalls: true },
             )
           end
 
@@ -729,28 +686,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
           before do
             FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
               "1111-1111-1111-1111-1112",
-              90,
-              "b",
-              false,
-              "2.4",
-              "1.4",
-              -79,
-              -67,
-              -69,
-              nil,
-              1,
-              nil,
-              989.345346,
-              "RdSAP",
-              76,
-              [],
-              nil,
-              nil,
-              "c",
-              "SW1B 2BB",
-              "",
-              "150000",
-              { addendumNumber: [4], stoneWalls: true },
+              addendum: { addendumNumber: [4], stoneWalls: true },
             )
           end
 

@@ -1250,8 +1250,8 @@ module FetchAssessmentSummary
       postcode = "SW1B 2BB",
       address_line3 = "",
       total_floor_area = "150",
-      addendum = nil,
-      lzc_energy_sources = nil
+      addendum: nil,
+      lzc_energy_sources: nil
     )
       FetchAssessmentSummary::AssessmentSummaryErrorStub.fetch(assessment_id)
       property_summary ||= generate_property_summary
