@@ -559,7 +559,7 @@ en:
       title: 'Other %{type}s for this property'
       certificate: 'certificate'
       report: 'report'
-      message: 'If you are aware of previous %{type}s for this property and they are not listed here, please contact us at %{link}, or call our helpdesk on 020 3829 0748.'
+      message: 'If you are aware of previous %{type}s for this property and they are not listed here, please contact us at %{link} or call our helpdesk on <span style="white-space: nowrap;">020 3829 0748.</span>'
       no_related: 'There are no related %{type}s for this property.'
       reference_number: 'Certificate number'
       valid_until: 'Valid until'
