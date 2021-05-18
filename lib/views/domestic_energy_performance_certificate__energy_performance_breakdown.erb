@@ -62,11 +62,9 @@
   <p class="govuk-body"><%= t('domestic_epc.sections.breakdown.primary_energy_use_description', :primary_energy => (assessment[:primaryEnergyUse].nil? ? nil : assessment[:primaryEnergyUse].to_f.round.to_s)) %></p>
   <%== erb :__primary_energy_use_dropdown %>
 
-  <% if Helper::Toggles.enabled?("additional-information-section") %>
-    <% unless assessment[:addendum].nil? %>
-      <%== erb :__additional_information, locals: {
-        addendum: assessment[:addendum]
-      } %>
-    <% end %>
+  <% unless assessment[:addendum].nil? %>
+    <%== erb :__additional_information, locals: {
+      addendum: assessment[:addendum]
+    } %>
   <% end %>
 </div>
