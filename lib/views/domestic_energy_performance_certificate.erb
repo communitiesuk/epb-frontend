@@ -58,6 +58,11 @@
         },
       ]
     } %>
+    <%== erb :component__share_certificate, locals: {
+      type: 'certificate',
+      top_heading: 'domestic_epc',
+      assessment: assessment,
+    } %>
   </div>
   <div class="govuk-grid-column-two-thirds">
     <hr class="epc-light-top" />
