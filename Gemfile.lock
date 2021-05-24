@@ -56,7 +56,7 @@ GEM
     murmurhash3 (0.1.6)
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
-    nokogiri (1.11.3)
+    nokogiri (1.11.5)
       mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
     oauth2 (1.4.7)
