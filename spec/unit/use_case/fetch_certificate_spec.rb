@@ -16,6 +16,15 @@ describe UseCase::FetchCertificate do
             addressLine3: "",
             addressLine4: "",
             assessmentId: "0000-0000-0000-0000-0666",
+            "address": {
+              postcode: "SW1B 2BB",
+              addressLine1: "Flat 33",
+              addressLine2: "2 Marsham Street",
+              addressLine3: "",
+              addressLine4: "",
+              town: "London",
+              "addressId": "RRN-1111-1111-1111-1111-1112"
+            },
             assessor: {
               contactDetails: {
                 email: "test.boi@quidos.com",
