@@ -42,6 +42,7 @@ describe Gateway::AssessmentSummaryGateway do
           :addressLine2,
           :addressLine3,
           :addressLine4,
+          :address,
           :town,
           :estimatedEnergyCost,
           :potentialEnergySaving,

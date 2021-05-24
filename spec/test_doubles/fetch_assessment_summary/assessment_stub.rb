@@ -1277,6 +1277,15 @@ module FetchAssessmentSummary
             "addressLine3": address_line3,
             "addressLine4": "",
             "town": "Post-Town1",
+            "address": {
+              "postcode": "A0 0AA",
+              "addressLine1": "1 Some Street",
+              "addressLine2": "",
+              "addressLine3": address_line3,
+              "addressLine4": "",
+              "town": "Post-Town1",
+              "addressId": "RRN-1111-1111-1111-1111-1112"
+            },
             estimatedEnergyCost: estimatedEnergyCost,
             potentialEnergySaving: potentialEnergySaving,
             "heatDemand": {
@@ -1536,6 +1545,15 @@ module FetchAssessmentSummary
             addressLine3: address_line3,
             addressLine4: "",
             town: "London",
+            "address": {
+              postcode: postcode,
+              addressLine1: "Flat 33",
+              addressLine2: "2 Marsham Street",
+              addressLine3: address_line3,
+              addressLine4: "",
+              town: "London",
+              "addressId": "RRN-1111-1111-1111-1111-1112"
+            },
             estimatedEnergyCost: "689.83",
             potentialEnergySaving: "174.00",
             heatDemand: {
