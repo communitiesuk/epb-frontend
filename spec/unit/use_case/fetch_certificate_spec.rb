@@ -23,7 +23,7 @@ describe UseCase::FetchCertificate do
               addressLine3: "",
               addressLine4: "",
               town: "London",
-              "addressId": "RRN-1111-1111-1111-1111-1112"
+              "addressId": "RRN-1111-1111-1111-1111-1112",
             },
             assessor: {
               contactDetails: {
