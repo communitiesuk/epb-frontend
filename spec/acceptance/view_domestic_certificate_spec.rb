@@ -656,7 +656,10 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
           before do
             FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
               "1111-1111-1111-1111-1112",
-              addendum: { addendumNumber: [4], stoneWalls: true },
+              addendum: {
+                addendumNumber: [4],
+                stoneWalls: true,
+              },
             )
           end
 
@@ -686,7 +689,10 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
           before do
             FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
               "1111-1111-1111-1111-1112",
-              addendum: { addendumNumber: [4], stoneWalls: true },
+              addendum: {
+                addendumNumber: [4],
+                stoneWalls: true,
+              },
             )
           end
 
