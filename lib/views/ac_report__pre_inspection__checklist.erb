@@ -3,33 +3,32 @@
 
 <h3 class="govuk-heading-m">
   <%= t(translation_prefix + 'title') %>
-
-  <% unless reviewed.empty? %>
-
-    <p>
-      <%= t('ac_report.sections.pre_inspection.checklist.reviewed') %>
-    </p>
-
-    <ul class="govuk-list--bullet govuk-list">
-      <% reviewed.each do |k, v| %>
-        <li><%= t(translation_prefix + k.to_s) %></li>
-      <% end %>
-    </ul>
-
-  <% end %>
-
-  <% unless unavailable.empty? %>
-
-    <p>
-      <%= t('ac_report.sections.pre_inspection.checklist.unavailable') %>
-    </p>
-
-    <ul class="govuk-list--bullet govuk-list">
-      <% unavailable.each do |k, v| %>
-        <li><%= t(translation_prefix + k.to_s) %></li>
-      <% end %>
-    </ul>
-
-  <% end %>
-
 </h3>
+
+<% unless reviewed.empty? %>
+
+  <p>
+    <%= t('ac_report.sections.pre_inspection.checklist.reviewed') %>
+  </p>
+
+  <ul class="govuk-list--bullet govuk-list">
+    <% reviewed.each do |k, v| %>
+      <li><%= t(translation_prefix + k.to_s) %></li>
+    <% end %>
+  </ul>
+
+<% end %>
+
+<% unless unavailable.empty? %>
+
+  <p>
+    <%= t('ac_report.sections.pre_inspection.checklist.unavailable') %>
+  </p>
+
+  <ul class="govuk-list--bullet govuk-list">
+    <% unavailable.each do |k, v| %>
+      <li><%= t(translation_prefix + k.to_s) %></li>
+    <% end %>
+  </ul>
+
+<% end %>
