@@ -26,6 +26,24 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       )
     end
 
+    it "shows the share certificate section" do
+      expect(response.body).to include(
+        '<h2 class="govuk-heading-m">Share this certificate</h2>',
+      )
+    end
+
+    it "shows the email link" do
+      expect(response.body).to have_link "Email"
+    end
+
+    it "shows the copy link" do
+      expect(response.body).to have_css "button", text: "Copy link"
+    end
+
+    it "shows the print link" do
+      expect(response.body).to have_link "Print"
+    end
+
     it "shows the address summary" do
       expect(response.body).to include("Flat 33")
       expect(response.body).to include("2 Marsham Street")
@@ -76,10 +94,6 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
 
     it "shows the date of expiry" do
       expect(response.body).to include("5 January 2030")
-    end
-
-    it "shows the print pdf link" do
-      expect(response.body).to include("Print this certificate")
     end
 
     it "shows the type of assessment" do
