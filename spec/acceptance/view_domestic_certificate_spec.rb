@@ -36,11 +36,12 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       expect(response.body).to have_link "Email"
     end
 
-    it "shows the copy link" do
+    xit "shows the copy link" do
+
       expect(response.body).to have_css "button", text: "Copy link"
     end
 
-    it "shows the print link" do
+    xit "shows the print link" do
       expect(response.body).to have_link "Print"
     end
 

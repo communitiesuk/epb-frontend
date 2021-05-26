@@ -6,7 +6,7 @@
     <ul style="list-style-type: none; padding: 0; margin: 0;">
       <li>
         <p gov-body >
-          <a style="text-decoration: none;" href="mailto:?subject=<%= t("#{top_heading}.top_heading")%> for <%=assessment[:address][:addressLine1]%>&amp;body=Please find your <%= t("#{top_heading}.top_heading")%> at https://find-energy-certificate.digital.communities.gov.uk/energy-certificate/<%=assessment[:assessmentId]%>"
+          <a id="email" style="text-decoration: none;" href="mailto:?subject=<%= t("#{top_heading}.top_heading")%> for <%=assessment[:address][:addressLine1]%>&amp;body=Please find your <%= t("#{top_heading}.top_heading")%> at https://find-energy-certificate.digital.communities.gov.uk/energy-certificate/<%=assessment[:assessmentId]%>" target="_blank"
              title="Email">
           <span style="padding-top: 5px; padding-right: 5px; padding-bottom: 5px;">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-open" viewBox="0 0 16 16">
@@ -19,7 +19,7 @@
       </li>
       <li>
         <p gov-body style="margin-bottom: 0px;">
-          <button id="copyToClipboardButton" href="" style="text-decoration: none; border: none; padding: 0px; outline: none; color: #1d70b8; background-color: white;" class="govuk-body" onclick="click_handler()">
+          <button id="copyToClipboardButton" href="" style="text-decoration: none; border: none; padding: 0px; outline: none; color: #1d70b8; background-color: white; display: none; cursor: pointer;" class="govuk-body" onclick="click_handler()">
           <span style="padding-top: 5px; padding-right: 5px;">
             <svg id="clipboard" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
               <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
@@ -28,6 +28,7 @@
           </span>
           Copy link
           </button>
+          <script>document.getElementById('copyToClipboardButton').style.display = 'inline';</script>
         </p>
       </li>
       <li>
@@ -35,7 +36,7 @@
           <a onclick="window.print();return false;"
              id="link"
              href="#"
-             style="text-decoration: none;"
+             style="text-decoration: none; display: none;"
           >
           <span style="padding-top: 5px; padding-right: 5px; padding-bottom: 5px; margin-top: 0px;">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-printer" viewBox="0 0 16 16">
@@ -45,12 +46,8 @@
           </span>
             Print
           </a>
+          <script>document.getElementById('link').style.display = 'inline';</script>
         </p>
-
-        <noscript>
-        <p class="govuk-body"><%= t("component.print.#{type}.noscript_text", type: type) %></p>
-        </noscript>
-
       </li>
     </ul>
   </div>
@@ -76,7 +73,7 @@
       text.innerHTML = `<span style="padding-top: 5px; padding-right: 5px; padding-bottom: 5px;">
         <svg id="tick" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2" viewBox="0 0 16 16">
         <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
-      </svg> </span> Copied!`;
+      </svg> </span> Copied`;
 
       setTimeout(function() { text.innerHTML = original_text }, 5000);
     }
