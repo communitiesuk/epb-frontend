@@ -38,6 +38,12 @@
       title: t("non_domestic_epc.rr.contents.title"),
       sections: content_sections
     } %>
+
+    <%== erb :component__share_certificate, locals: {
+      type: 'report',
+      top_heading: 'non_domestic_epc.rr',
+      assessment: assessment,
+    } %>
   </div>
   <div class="govuk-grid-column-two-thirds">
     <hr class="epc-light-top" />

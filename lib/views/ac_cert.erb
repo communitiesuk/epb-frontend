@@ -38,6 +38,12 @@
         },
       ]
     } %>
+
+    <%== erb :component__share_certificate, locals: {
+      type: 'certificate',
+      top_heading: 'ac_cert',
+      assessment: assessment,
+    } %>
   </div>
 
   <div class="govuk-grid-column-two-thirds">

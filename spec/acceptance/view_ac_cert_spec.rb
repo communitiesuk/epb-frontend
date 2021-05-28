@@ -31,6 +31,13 @@ describe "Acceptance::AirConditioningInspectionCertificate", type: :feature do
       expect(response.body).to have_css "p", text: "Assessor’s details"
     end
 
+    it "shows the share certificate section" do
+      expect(response.body).to have_css "h2", text: "Share this certificate"
+      expect(response.body).to have_link "Email"
+      expect(response.body).to have_button "Copy link", visible: false
+      expect(response.body).to have_link "Print", visible: false
+    end
+
     it "shows the summary section" do
       expect(response.body).to have_css "span", text: "66 Primrose Hill"
       expect(response.body).to have_css "span", text: "London"
@@ -39,7 +46,6 @@ describe "Acceptance::AirConditioningInspectionCertificate", type: :feature do
       expect(response.body).to have_css "span", text: "0000-0000-0000-0000-9999"
       expect(response.body).to have_css "label", text: "Valid until"
       expect(response.body).to have_css "span", text: "21 September 2024"
-      expect(response.body).to have_text "Print this certificate"
     end
 
     it "shows the Assessment details section" do
