@@ -51,6 +51,13 @@
         }
       ]
     } %>
+
+    <%== erb :component__share_certificate, locals: {
+      type: 'certificate',
+      top_heading: 'domestic_epc',
+      assessment: assessment,
+      dec: true,
+    } %>
   </div>
   <div class="govuk-grid-column-two-thirds">
     <hr class="epc-light-top" />
@@ -66,7 +73,7 @@
       rating_type: t('dec.sections.previous_energy_ratings.energy_rating')
     } %>
 
-    <%== erb :dec__print_certificate %>
+    <%#== erb :dec__print_certificate %>
 
     <div class="column-l">
       <%== erb :dec__rating, locals: {

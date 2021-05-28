@@ -31,10 +31,13 @@
       </li>
       <li>
         <p>
-          <a onclick="window.print();return false;"
-             id="link"
-             href="#"
-             style="text-decoration: none; display: none;"
+          <a style="text-decoration: none; display: none;" id="link"
+             <% if dec == true %>
+            href="<%= localised_url(request.path_info) + (localised_url(request.path_info).include?("?") ? "&" : "?") %>print=true" class="govuk-link govuk-!-margin-bottom-5" id="link"
+          <% else %>
+            onclick="window.print();return false;"
+               href="#"
+        <% end %>
           >
           <span class="share-icon">
             <img src="/images/print.svg">

@@ -25,8 +25,6 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
 
     it "shows the contents section" do
       expect(response.body).to have_css "h2", text: "Certificate contents"
-      expect(response.body).to have_link "Print this certificate",
-                                         href: "#print_certificate"
       expect(
         response.body,
       ).to have_link "Energy performance operational rating", href: "#rating"
@@ -44,6 +42,13 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
                                          href: "#other_certificates_and_reports"
     end
 
+    it "shows the share certificate section" do
+      expect(response.body).to have_css "h2", text: "Share this certificate"
+      expect(response.body).to have_link "Email"
+      expect(response.body).to have_button "Copy link", visible: false
+      expect(response.body).to have_link "Print", visible: false
+    end
+
     it "shows the summary box" do
       expect(response.body).to have_css "p", text: "0000-0000-0000-0000-1111"
       expect(response.body).to have_css "label", text: "Valid until"
@@ -59,17 +64,6 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
       expect(response.body).not_to have_css "noscript p",
                                             text:
                                               "To print this certificate, press CMD/CTRL + P on your keyboard"
-    end
-
-    it "shows the print certificate section" do
-      expect(response.body).to have_css "h2", text: "Print this certificate"
-      expect(response.body).to have_css "p",
-                                        text:
-                                          "Public authorities must display their DEC in a prominent place that is clearly visible to the public, such as near the building’s entrance. They can be fined £500 if they do not."
-      expect(
-        response.body,
-      ).to have_link "Open the print version of this certificate",
-                     href: "/energy-certificate/0000-0000-0000-0000-1111?print=true"
     end
 
     it "shows the rating section" do
