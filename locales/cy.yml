@@ -504,11 +504,11 @@ cy:
 
   component:
     share:
-      share_certificate: "Share this certificate"
-      share_report: "Share this report"
-      email: "Email"
-      copy_link: "Copy link"
-      print_link: "Print"
+      share_certificate: " Rhannu’r dystysgrif hon"
+      share_report: "Rhannu’r adroddiad hwn"
+      email: "Ebost"
+      copy_link: "Copïo’r ddolen"
+      print_link: "Argraffu"
     print:
       certificate:
         label: "Argraffwch y dystysgrif hon"

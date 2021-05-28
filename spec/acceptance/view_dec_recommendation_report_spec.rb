@@ -54,6 +54,13 @@ describe "Acceptance::DecRecommendationReport", type: :feature do
                                          href: "#other_certificates_and_reports"
     end
 
+    it "shows the share certificate section" do
+      expect(response.body).to have_css "h2", text: "Share this report"
+      expect(response.body).to have_link "Email"
+      expect(response.body).to have_button "Copy link", visible: false
+      expect(response.body).to have_link "Print", visible: false
+    end
+
     it "shows the summary section" do
       expect(response.body).to have_css "span", text: "1 Lonely Street"
       expect(response.body).to have_css "span", text: "Post-Town0"
