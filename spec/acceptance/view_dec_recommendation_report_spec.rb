@@ -69,7 +69,6 @@ describe "Acceptance::DecRecommendationReport", type: :feature do
       expect(response.body).to have_css "span", text: "1234-5678-1234-5678-1234"
       expect(response.body).to have_css "label", text: "Valid until"
       expect(response.body).to have_css "span", text: "1 January 2030"
-      expect(response.body).to have_text "Print this report"
     end
 
     it "shows the rating section" do

@@ -35,14 +35,6 @@
     </p>
   </div>
 
-  <% unless defined?(custom_print) %>
-    <div class="govuk-!-display-none-print">
-      <a onclick="window.print();return false;" class="govuk-link govuk-!-margin-bottom-5" id="link" href="#" style="display: none;"><%= t('component.print.certificate.label') %></a>
-      <noscript><p class="govuk-body"><%= t('component.print.certificate.noscript_text') %></p></noscript>
-      <script>document.getElementById('link').style.display = 'block';</script>
-    </div>
-  <% end %>
-
   <% unless property_type.nil? || floor_area.nil? %>
     <%== erb :component__summary_list, locals: {
       list: {
@@ -53,9 +45,4 @@
       skip_null: true
     } %>
   <% end %>
-
-  <%== erb :component__print, locals: {
-    type: t('component.print.type.certificate'),
-    custom_print: defined?(custom_print)
-  } %>
 </div>

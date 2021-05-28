@@ -1,7 +1,0 @@
-<% unless defined?(custom_print) %>
-  <div class="component__print govuk-!-display-none-print">
-    <a onclick="window.print();return false;" class="govuk-link govuk-!-margin-bottom-5" id="link" href="#" style="display: none;"> <%= t("component.print.#{type}.label", type: type) %></a>
-    <noscript><p class="govuk-body"><%= t("component.print.#{type}.noscript_text", type: type) %></p></noscript>
-    <script>document.getElementById('link').style.display = 'block';</script>
-  </div>
-<% end %>
