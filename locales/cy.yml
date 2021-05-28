@@ -503,6 +503,12 @@ cy:
     list: "%{length} o dystysgrifau ac adroddiadau ar gyfer %{reference_number}"
 
   component:
+    share:
+      share_certificate: "Share this certificate"
+      share_report: "Share this report"
+      email: "Email"
+      copy_link: "Copy link"
+      print_link: "Print"
     print:
       certificate:
         label: "Argraffwch y dystysgrif hon"

@@ -23,6 +23,25 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
       )
     end
 
+    it "shows the share certificate section" do
+      expect(response.body).to include(
+                                 '<h2 class="govuk-heading-m">Share this report</h2>',
+                                 )
+    end
+
+    it "shows the email link" do
+      expect(response.body).to have_link "Email"
+    end
+
+    it "shows the copy link" do
+
+      expect(response.body).to have_button "Copy link", visible: false
+    end
+
+    it "shows the print link" do
+      expect(response.body).to have_link "Print", visible: false
+    end
+
     it "shows the summary section" do
       expect(response.body).to have_css "span", text: "The Bank Plc"
       expect(response.body).to have_css "span",
@@ -32,7 +51,6 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
       expect(response.body).to have_css "span", text: "0000-0000-0000-0000-9999"
       expect(response.body).to have_css "label", text: "Valid until"
       expect(response.body).to have_css "span", text: "6 February 2025"
-      expect(response.body).to have_text "Print this report"
     end
 
     it "can show the Assessor's details section" do
