@@ -4,12 +4,12 @@
 
     <h2 class="govuk-heading-m">Share this certificate</h2>
 
-    <ul id="share_list" style="list-style-type: none; padding: 0; margin: 0;">
+    <ul id="share-list">
       <li>
         <p gov-body >
           <a id="email" style="text-decoration: none;" href="mailto:?subject=<%= t("#{top_heading}.top_heading")%> for <%=assessment[:address][:addressLine1]%>&amp;body=Please find your <%= t("#{top_heading}.top_heading")%> at https://find-energy-certificate.digital.communities.gov.uk/energy-certificate/<%=assessment[:assessmentId]%>" target="_blank"
              title="Email">
-          <span style="padding-top: 5px; padding-right: 5px; padding-bottom: 5px;">
+          <span class="share-icon">
             <img src="/images/email.svg">
           </span>
             Email
@@ -17,9 +17,9 @@
         </p>
       </li>
       <li>
-        <p style="margin-bottom: 0px;">
-          <button id="copyToClipboardButton" href="" style="text-decoration: none; border: none; padding: 0px; outline: none; color: #1d70b8; background-color: white; display: none; cursor: pointer;" class="govuk-body" onclick="click_handler()">
-          <span style="padding-top: 5px; padding-right: 5px;">
+        <p id="copy-to-clipboard-margin">
+          <button id="copyToClipboardButton" class="govuk-body" onclick="click_handler()">
+          <span class="share-icon">
             <img src="/images/copy-link.svg">
           </span>
           Copy link
@@ -34,7 +34,7 @@
              href="#"
              style="text-decoration: none; display: none;"
           >
-          <span style="padding-top: 5px; padding-right: 5px;">
+          <span class="share-icon">
             <img src="/images/print.svg">
           </span>
             Print
@@ -44,29 +44,4 @@
       </li>
     </ul>
   </div>
-<!--  <script>-->
-<!--    function click_handler(){-->
-<!--      copy_to_clipboard();-->
-<!--      change_text_and_icon_animation();-->
-<!--    }-->
-
-<!--    function copy_to_clipboard() {-->
-<!--      let input = document.body.appendChild(document.createElement("input"));-->
-<!--      input.value = window.location.href;-->
-<!--      input.select();-->
-<!--      document.execCommand("copy");-->
-<!--      input.parentNode.removeChild(input);-->
-<!--    }-->
-
-<!--    function change_text_and_icon_animation() {-->
-
-<!--      let text = document.getElementById('copyToClipboardButton');-->
-<!--      let original_text = text.innerHTML;-->
-
-<!--      text.innerHTML = `<span style="padding-top: 5px; padding-right: 5px; padding-bottom: 5px;">-->
-<!--        <img src="/images/check.svg">-->
-<!--        </span> Copied`;-->
-<!--      setTimeout(function() { text.innerHTML = original_text }, 5000);-->
-<!--    }-->
-<!--  </script>-->
 <% end %>

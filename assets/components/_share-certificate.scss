@@ -1,0 +1,28 @@
+#share-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+}
+
+#copyToClipboardButton {
+  text-decoration: none;
+  border: none;
+  padding: 0px;
+  outline: none;
+  color: #1d70b8;
+  background-color: white;
+  display: none;
+  cursor: pointer;
+}
+
+#copy-to-clipboard-margin {
+  margin-bottom: 0px;
+}
+
+.share-icon {
+  padding-top: 5px;
+  padding-right: 5px;
+}
+
+
