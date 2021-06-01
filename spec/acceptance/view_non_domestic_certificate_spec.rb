@@ -78,21 +78,9 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
       end
 
       it "shows the share certificate section" do
-        expect(response.body).to include(
-                                   '<h2 class="govuk-heading-m">Share this certificate</h2>',
-                                   )
-      end
-
-      it "shows the email link" do
+        expect(response.body).to have_css "h2", text: "Share this certificate"
         expect(response.body).to have_link "Email"
-      end
-
-      it "shows the copy link" do
-
         expect(response.body).to have_button "Copy link", visible: false
-      end
-
-      it "shows the print link" do
         expect(response.body).to have_link "Print", visible: false
       end
 
