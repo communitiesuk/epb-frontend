@@ -507,6 +507,9 @@ en:
       share_certificate: "Share this certificate"
       share_report: "Share this report"
       email: "Email"
+      email_subject_for: "for"
+      email_body_part_1: "Please find your"
+      email_body_part_2: "at"
       copy_link: "Copy link"
       print_link: "Print"
     print:

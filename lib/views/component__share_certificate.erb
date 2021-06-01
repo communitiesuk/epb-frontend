@@ -8,7 +8,7 @@
       <li>
         <p gov-body >
           <a id="email" style="text-decoration: none;"
-             href="mailto:?subject=<%= t("#{top_heading}.top_heading")%> for <%=assessment[:address][:addressLine1]%>&amp;body=Please find your <%= t("#{top_heading}.top_heading")%> at https://find-energy-certificate.digital.communities.gov.uk/energy-certificate/<%=assessment[:assessmentId]%>"
+             href="mailto:?subject=<%= t("#{top_heading}.top_heading")%> <%= t("component.share.email_subject_for")%> <%=assessment[:address][:addressLine1]%>&amp;body=<%= t("component.share.email_body_part_1")%> <%= t("#{top_heading}.top_heading")%> <%= t("component.share.email_body_part_2")%> https://find-energy-certificate.digital.communities.gov.uk/energy-certificate/<%=assessment[:assessmentId]%>"
              target="_blank"
              title="Email">
           <span class="share-icon">
