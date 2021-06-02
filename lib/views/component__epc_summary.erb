@@ -10,7 +10,7 @@
     </div>
 
     <p class="epc-address govuk-body"><% unless occupier.nil? %><%= occupier %><br /><% end %><%==
-      compact_address(
+      compact_address_without_occupier(
         [
           address[:addressLine1],
           address[:addressLine2],
@@ -18,9 +18,9 @@
           address[:addressLine4]
         ],
         address[:town],
-        address[:postcode]
-      ).map{|e| CGI.escapeHTML(e)}.join('<br />') %>
-    </p>
+        address[:postcode],
+        occupier,
+      ).map{|e| CGI.escapeHTML(e)}.join('<br />') %></p>
     <p class="govuk-body epc-extra-box">
       <label>
         <%= date_of_expiry < Date.today ?

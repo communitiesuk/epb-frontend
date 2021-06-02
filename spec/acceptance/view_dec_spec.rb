@@ -23,6 +23,15 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
       )
     end
 
+    it "shows the address without duplicated occupier or town (summary box)" do
+      address = "Primary School" \
+      "2 Lonely Street" \
+      "Something road" \
+      "Post-Town1" \
+      "A0 0AA"
+      expect(response.body).to have_css "p", class: "epc-address", exact_text: address
+    end
+
     it "shows the contents section" do
       expect(response.body).to have_css "h2", text: "Certificate contents"
       expect(
@@ -49,15 +58,19 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
       expect(response.body).to have_link "Print", visible: false
     end
 
+    xit "show the send email subject as address header" do
+      # expect(response.body).to have_css "#link", text: "Print", visible: false
+      # expect(response.body).to have_css "#email", text: "Email"
+      # link_title = "Email"
+      # link_url = 'mailto:?subject='
+      # expect(response.body).to have_link link_title, href: link_url, visible: false
+    end
+
     it "shows the summary box" do
       expect(response.body).to have_css "p", text: "0000-0000-0000-0000-1111"
       expect(response.body).to have_css "label", text: "Valid until"
       expect(response.body).to have_css "p", text: "21 February 2030"
       expect(response.body).to have_css "p", text: "A"
-      expect(response.body).to have_css "p", text: "Primary School"
-      expect(response.body).to have_css "p", text: "2 Lonely Street"
-      expect(response.body).to have_css "p", text: "Post-Town1"
-      expect(response.body).to have_css "p", text: "A0 0AA"
     end
 
     it "does not show the print link from EPC summary" do

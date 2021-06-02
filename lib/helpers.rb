@@ -204,6 +204,38 @@ module Sinatra
         ).compact.reject { |a| a.to_s.strip.chomp.empty? }
       end
 
+      def compact_address_without_occupier(address_lines, town, postcode, occupier)
+        address = compact_address(address_lines, town, postcode)
+        if occupier.nil?
+          address
+        else
+          address.reject { |line| line.include?(occupier) }
+        end
+      end
+
+      def find_address_header(assessment)
+        assessment[:address][:addressLine1]
+      end
+
+      def contains_number(str)
+        str =~ /[0-9]/
+      end
+
+      def find_address_line_with_number(assessment)
+        numbered_address_lines = []
+        [
+          assessment[:address][:addressLine1],
+          assessment[:address][:addressLine2],
+          assessment[:address][:addressLine3],
+          assessment[:address][:occupier]
+        ].compact.map do |address_line|
+          unless contains_number(address_line).nil?
+            numbered_address_lines << address_line.strip
+          end
+        end
+        numbered_address_lines.join(", ")
+      end
+
       def get_gov_header
         if request.env["HTTP_HOST"].match?(/find-energy-certificate/)
           t("services.find_an_energy_certificate")
