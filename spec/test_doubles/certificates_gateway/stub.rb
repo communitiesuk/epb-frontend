@@ -31,7 +31,7 @@ module CertificatesGateway
                 impactOfLoftInsulation: 79,
                 impactOfCavityInsulation: 67,
                 impactOfSolidWallInsulation: 69,
-              }
+              },
             },
             {
               assessmentId: "3345-6789-2345-6789-2345",
@@ -55,7 +55,8 @@ module CertificatesGateway
                 impactOfCavityInsulation: 67,
                 impactOfSolidWallInsulation: 69,
               },
-            }],
+            },
+          ],
         },
         meta: {
           "searchPostcode": "SW1 5RW",
