@@ -1,10 +1,18 @@
+<a
+  href="<%= localised_url('/find-a-certificate/type-of-property')%>"
+  class="govuk-back-link">
+  <%=t('layout.body.breadcrumb.back')%>
+</a>
+
+<% if errors[:postcode] %>
+  <%== erb :error_summary, locals: {errors:errors}  %>
+<% end %>
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <a
-      href="<%= localised_url('/find-a-certificate/type-of-property')%>"
-      class="govuk-back-link">
-      <%=t('layout.body.breadcrumb.back')%>
-    </a>
+
+
+
 
     <form method="GET" action="<%=localised_url('/find-a-certificate/search-by-postcode')%>" >
       <% if I18n.locale != I18n.available_locales[0] %>
@@ -24,11 +32,12 @@
           <span id="postcode-hint" class="govuk-hint">
             <%= t('find_certificate_by_postcode.hint') %>
           </span>
-          <% if errors[:postcode] %>
+
+
           <span id="postcode-error" class="govuk-error-message">
             <span class="govuk-visually-hidden"><%= t('error.error') %></span><%== errors[:postcode] %>
           </span>
-          <% end %>
+
           <input id="postcode" name="postcode" type="text"
                  class="govuk-input<% if errors[:postcode] %> govuk-input--error<% end %>"
                  aria-describedby="postcode-hint<% if errors[:postcode] %> postcode-error<% end %>"

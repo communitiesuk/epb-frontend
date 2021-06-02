@@ -1360,6 +1360,7 @@ cy:
       body: "Efallai fod yna dystysgrifau mwy diweddar ar gyfer yr eiddo hwn. Defnyddiwch y gwasanaeth "
       service_link: "Chwilio am dystysgrif ynni"
       body_continued: " i chwilio am eich eiddo."
+    error_summary_header: "Mae yna broblem"
 
   dec:
     top_heading: "Tystysgrif ynni i’w harddangos (DEC)"

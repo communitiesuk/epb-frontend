@@ -1360,6 +1360,7 @@ en:
       body: 'There may be more up-to-date certificates for this property. Use the '
       service_link: 'Find an energy certificate'
       body_continued: ' service to search for your property.'
+    error_summary_header: "There is a problem"
 
   dec:
     top_heading: "Display energy certificate (DEC)"

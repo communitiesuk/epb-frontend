@@ -108,7 +108,7 @@ describe "Journey::FindDomesticCertificate", type: :feature, journey: true do
       end
     end
 
-    it "displays an error message when entering an empty postcode" do
+    it "displays an error message and summary when entering an empty postcode" do
       visit "http://find-energy-certificate.local.gov.uk:9393"
       click_on "Start now"
       find("#label-domestic").click
@@ -116,6 +116,8 @@ describe "Journey::FindDomesticCertificate", type: :feature, journey: true do
       fill_in "postcode", with: ""
       click_on("Find")
       expect(page).to have_content "Enter a real postcode"
+      expect(page).to have_content "There is a problem"
+      expect(page).to have_link "Enter a real postcode"
     end
 
     it "displays an error message when you don't select a property type" do

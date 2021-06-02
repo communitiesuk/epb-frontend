@@ -1,0 +1,16 @@
+<div class="govuk-error-summary error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+  <h2 class="govuk-error-summary__title" id="error-summary-title">
+    <%=  t('error.error_summary_header') %>
+  </h2>
+  <div class="govuk-error-summary__body">
+    <ul class="govuk-list govuk-error-summary__list">
+     <% errors.each do |key, value| %>
+      <li>
+        <a href="#<%= key.to_s%>-error"><%=value %></a>
+      </li>
+        <% end %>
+    </ul>
+  </div>
+</div>
+
+
