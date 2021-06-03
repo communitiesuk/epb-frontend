@@ -23,7 +23,7 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
       )
     end
 
-    it "shows the address without duplicated occupier or town (summary box)" do
+    it "shows the address without duplicated occupier or town in the summary box" do
       address = "Primary School" \
       "2 Lonely Street" \
       "Something road" \
@@ -56,14 +56,6 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
       expect(response.body).to have_link "Email"
       expect(response.body).to have_button "Copy link", visible: false
       expect(response.body).to have_link "Print", visible: false
-    end
-
-    xit "show the send email subject as address header" do
-      # expect(response.body).to have_css "#link", text: "Print", visible: false
-      # expect(response.body).to have_css "#email", text: "Email"
-      # link_title = "Email"
-      # link_url = 'mailto:?subject='
-      # expect(response.body).to have_link link_title, href: link_url, visible: false
     end
 
     it "shows the summary box" do
