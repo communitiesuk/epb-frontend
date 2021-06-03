@@ -389,6 +389,159 @@ describe "Acceptance::Non Domestic Certificate" do
         end
       end
 
+
+      context "when missing the street name" do
+        let(:response) do
+          get "http://find-energy-certificate.local.gov.uk/find-a-non-domestic-certificate/search-by-street-name-and-town?street_name=&town=Brighton"
+        end
+
+        it "returns status 400" do
+          expect(response.status).to eq(400)
+        end
+
+        it "displays the find a certificate page heading" do
+          expect(response.body).to include(
+                                     "Find an energy performance certificate",
+                                     )
+        end
+
+        it "displays an error message" do
+          expect(response.body).to include(
+                                     '<span id="street-name-error" class="govuk-error-message">',
+                                     )
+          expect(response.body).to include("Enter the street name")
+        end
+
+        it "contains the required GDS error summary" do
+          expect(
+            response.body,
+            ).to have_css "div.govuk-error-summary h2.govuk-error-summary__title",
+                          text: "There is a problem"
+          expect(
+            response.body,
+            ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
+                          text: "Enter the street name"
+          expect(response.body).to have_link "Enter the street name",
+                                             href: "#street_name-error"
+        end
+      end
+
+      context "when the street name is a whitespace" do
+        let(:response) do
+          get "http://find-energy-certificate.local.gov.uk/find-a-non-domestic-certificate/search-by-street-name-and-town?street_name=+&town=london"
+        end
+
+        it "returns status 400" do
+          expect(response.status).to eq(400)
+        end
+
+        it "displays the correct error message" do
+          expect(response.body).to include(
+                                     '<span id="street-name-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error: </span>Enter the street name
+          </span>',
+                                     )
+        end
+
+        it "contains the required GDS error summary" do
+          expect(
+            response.body,
+            ).to have_css "div.govuk-error-summary h2.govuk-error-summary__title",
+                          text: "There is a problem"
+          expect(
+            response.body,
+            ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
+                          text: "Enter the street name"
+          expect(response.body).to have_link "Enter the street name",
+                                             href: "#street_name-error"
+        end
+      end
+
+      context "when missing the town" do
+        let(:response) do
+          get "http://find-energy-certificate.local.gov.uk/find-a-non-domestic-certificate/search-by-street-name-and-town?street_name=18%20Palmers%20Road&town="
+        end
+
+        it "returns status 400" do
+          expect(response.status).to eq(400)
+        end
+
+        it "displays the find a certificate page heading" do
+          expect(response.body).to include(
+                                     "Find an energy performance certificate",
+                                     )
+        end
+
+        it "displays an error message" do
+          expect(response.body).to include(
+                                     '<span id="town-error" class="govuk-error-message">',
+                                     )
+          expect(response.body).to include("Enter the town")
+        end
+
+        it "contains the required GDS error summary" do
+          expect(
+            response.body,
+            ).to have_css "div.govuk-error-summary h2.govuk-error-summary__title",
+                          text: "There is a problem"
+          expect(
+            response.body,
+            ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
+                          text: "Enter the town"
+          expect(response.body).to have_link "Enter the town or city",
+                                             href: "#town-error"
+        end
+      end
+
+      context "when both town and street name are missing" do
+        let(:response) do
+          get "http://find-energy-certificate.local.gov.uk/find-a-non-domestic-certificate/search-by-street-name-and-town?street_name=&town="
+        end
+
+        it "returns status 400" do
+          expect(response.status).to eq(400)
+        end
+
+        it "displays the find a certificate page heading" do
+          expect(response.body).to include(
+                                     "Find an energy performance certificate",
+                                     )
+        end
+
+        it "displays an error message" do
+          expect(response.body).to include(
+                                     '<span id="town-error" class="govuk-error-message">',
+                                     )
+          expect(response.body).to include("Enter the town")
+          expect(response.body).to include(
+                                     '<span id="street-name-error" class="govuk-error-message">',
+                                     )
+          expect(response.body).to include("Enter the street name")
+        end
+
+        it "contains the required GDS error summary" do
+          expect(
+            response.body,
+            ).to have_css "div.govuk-error-summary h2.govuk-error-summary__title",
+                          text: "There is a problem"
+          expect(
+            response.body,
+            ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
+                          text: "Enter the street"
+
+          expect(
+            response.body,
+            ).to have_css "div.govuk-error-summary__body ul.govuk-list li:nth-child(2) a",
+                          text: "Enter the town or city"
+
+          expect(response.body).to have_link "Enter the town or city",
+                                             href: "#town-error"
+
+          expect(response.body).to have_link "Enter the street name",
+                                             href: "#street_name-error"
+        end
+      end
+
       context "where no certificates are present" do
         before do
           FindCertificate::NoCertificatesStub.search_by_street_name_and_town(
@@ -436,6 +589,19 @@ describe "Acceptance::Non Domestic Certificate" do
             text: "get a new energy certificate",
           )
         end
+
+        it "does not contain the  GDS error summary" do
+          expect(
+            response.body,
+            ).not_to have_css "div.govuk-error-summary h2.govuk-error-summary__title",
+                              text: "There is a problem"
+
+          expect(
+            response.body,
+            ).not_to have_link "A certificate was not found at this address."
+        end
+
+
       end
 
       context "when there is no connection" do

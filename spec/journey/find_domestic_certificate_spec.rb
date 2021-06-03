@@ -192,30 +192,21 @@ describe "Journey::FindDomesticCertificate", type: :feature, journey: true do
       fill_in "town", with: "Beauty Town"
       click_on "Find"
       expect(page).to have_content "Enter the street name"
-    end
-
-    it "displays an error message when entering an empty street name" do
-      visit "http://find-energy-certificate.local.gov.uk:9393"
-      click_on "Start now"
-      find("#label-domestic").click
-      click_on "Continue"
-      click_on "find an EPC using the street name and town"
-      fill_in "town", with: "London"
-      click_on "Find"
-      expect(page).to have_content "Enter the street name"
       expect(page).to have_content "There is a problem"
-      expect(page).to have_link "Enter the street name"
+      expect(
+        page,
+        ).to have_link "Enter the street name"
     end
 
-    it "displays an error message when entering an empty town" do
+    it "displays an error message when entering an empty town name" do
       visit "http://find-energy-certificate.local.gov.uk:9393"
       click_on "Start now"
       find("#label-domestic").click
       click_on "Continue"
       click_on "find an EPC using the street name and town"
-      fill_in "street_name", with: "1 Makeup Street"
+      fill_in "street_name", with: "1 street ave"
       click_on "Find"
-      expect(page).to have_content "Enter the town"
+      expect(page).to have_content "Enter the town or city"
       expect(page).to have_content "There is a problem"
       expect(page).to have_link "Enter the town or city"
     end

@@ -146,6 +146,52 @@ describe "Journey::FindNonDomesticCertificate", type: :feature, journey: true do
       click_on "get a new energy certificate"
       expect(page).to have_content "Getting a new energy certificate"
     end
+
+    it "displays an error message when entering an empty street name" do
+      visit "http://find-energy-certificate.local.gov.uk:9393"
+      click_on "Start now"
+      find("#label-non-domestic").click
+      click_on "Continue"
+      click_on "find energy certificates and reports using the street name and town"
+      fill_in "town", with: "Beauty Town"
+      click_on "Find"
+      expect(page).to have_content "Enter the street name"
+      expect(page).to have_content "There is a problem"
+      expect(
+        page,
+        ).to have_link "Enter the street name"
+    end
+
+    it "displays an error message when entering an empty town name" do
+      visit "http://find-energy-certificate.local.gov.uk:9393"
+      click_on "Start now"
+      find("#label-non-domestic").click
+      click_on "Continue"
+      click_on "find energy certificates and reports using the street name and town"
+      fill_in "street_name", with: "1 street ave"
+      click_on "Find"
+      expect(page).to have_content "Enter the town or city"
+      expect(page).to have_content "There is a problem"
+      expect(page).to have_link "Enter the town or city"
+    end
+
+    it "displays an error message when entering an empty town and street name" do
+      visit "http://find-energy-certificate.local.gov.uk:9393"
+      click_on "Start now"
+      find("#label-non-domestic").click
+      click_on "Continue"
+      click_on "find energy certificates and reports using the street name and town"
+      click_on "Find"
+
+      expect(page).to have_content "Enter the town"
+      expect(page).to have_content "Enter the street name"
+      expect(page).to have_content "There is a problem"
+      expect(page).to have_link "Enter the town or city"
+      expect(page).to have_link "Enter the street name"
+
+    end
+
+
   end
 
   describe "when searching for an unsupported non domestic certificate by RRN" do
