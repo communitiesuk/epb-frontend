@@ -171,12 +171,11 @@ describe "Journey::FindNonDomesticCertificate", type: :feature, journey: true do
       click_on "Find"
       expect(
         page,
-        ).to have_content "A certificate was not found with this certificate number"
+      ).to have_content "A certificate was not found with this certificate number"
       expect(page).to have_content "There is a problem"
       expect(
         page,
-        ).to have_link "A certificate was not found with this certificate number"
+      ).to have_link "A certificate was not found with this certificate number"
     end
-
   end
 end

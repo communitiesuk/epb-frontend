@@ -101,17 +101,15 @@ describe "Acceptance::Non Domestic Certificate" do
       it "contains the required GDS error summary" do
         expect(
           response.body,
-          ).to have_css "div.govuk-error-summary h2.govuk-error-summary__title",
-                        text: "There is a problem"
+        ).to have_css "div.govuk-error-summary h2.govuk-error-summary__title",
+                      text: "There is a problem"
         expect(
           response.body,
-          ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
-                        text: "Enter a real postcode"
+        ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
+                      text: "Enter a real postcode"
         expect(response.body).to have_link "Enter a real postcode",
                                            href: "#postcode-error"
-        end
-
-
+      end
     end
 
     context "when entering a postcode that is less than 4 characters" do
@@ -137,17 +135,15 @@ describe "Acceptance::Non Domestic Certificate" do
       it "contains the required GDS error summary" do
         expect(
           response.body,
-          ).to have_css "div.govuk-error-summary h2.govuk-error-summary__title",
-                        text: "There is a problem"
+        ).to have_css "div.govuk-error-summary h2.govuk-error-summary__title",
+                      text: "There is a problem"
         expect(
           response.body,
-          ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
-                        text: "Enter a real postcode"
+        ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
+                      text: "Enter a real postcode"
         expect(response.body).to have_link "Enter a real postcode",
                                            href: "#postcode-error"
       end
-
-
     end
 
     context "when entering a valid postcode" do
@@ -541,17 +537,17 @@ describe "Acceptance::Non Domestic Certificate" do
       it "contains the required GDS error summary" do
         expect(
           response.body,
-          ).to have_css "div.govuk-error-summary h2.govuk-error-summary__title",
-                        text: "There is a problem"
+        ).to have_css "div.govuk-error-summary h2.govuk-error-summary__title",
+                      text: "There is a problem"
         expect(
           response.body,
-          ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
-                        text: "Enter a 20-digit certificate number"
-        expect(response.body).to have_link "Enter a 20-digit certificate number",
-                                           href: "#reference_number-error"
+        ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
+                      text: "Enter a 20-digit certificate number"
+        expect(
+          response.body,
+        ).to have_link "Enter a 20-digit certificate number",
+                       href: "#reference_number-error"
       end
-
-
     end
 
     context "when entering a valid certificate number" do
@@ -627,16 +623,14 @@ describe "Acceptance::Non Domestic Certificate" do
         it "contains the required GDS error summary" do
           expect(
             response.body,
-            ).to have_css "div.govuk-error-summary h2.govuk-error-summary__title",
-                          text: "There is a problem"
+          ).to have_css "div.govuk-error-summary h2.govuk-error-summary__title",
+                        text: "There is a problem"
           expect(
             response.body,
-            ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
-                          text: "A certificate was not found with this certificate number"
-
+          ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
+                        text:
+                          "A certificate was not found with this certificate number"
         end
-
-
       end
 
       context "when there is no connection" do
