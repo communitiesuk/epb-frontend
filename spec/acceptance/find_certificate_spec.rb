@@ -126,6 +126,19 @@ describe "Acceptance::Certificate" do
         )
         expect(response.body).to include("Enter a real postcode")
       end
+
+      it "contains the required GDS error summary" do
+        expect(
+          response.body,
+          ).to have_css "div.govuk-error-summary h2.govuk-error-summary__title",
+                        text: "There is a problem"
+        expect(
+          response.body,
+          ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
+                        text: "Enter a real postcode"
+        expect(response.body).to have_link "Enter a real postcode",
+                                           href: "#postcode-error"
+      end
     end
 
     context "when entering a postcode that is less than 4 characters" do
@@ -149,6 +162,20 @@ describe "Acceptance::Certificate" do
         )
         expect(response.body).to include("Enter a real postcode")
       end
+
+      it "contains the required GDS error summary" do
+        expect(
+          response.body,
+          ).to have_css "div.govuk-error-summary h2.govuk-error-summary__title",
+                        text: "There is a problem"
+        expect(
+          response.body,
+          ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
+                        text: "Enter a real postcode"
+        expect(response.body).to have_link "Enter a real postcode",
+                                           href: "#postcode-error"
+      end
+
     end
 
     context "when entering an valid postcode" do
@@ -582,7 +609,6 @@ describe "Acceptance::Certificate" do
         )
       end
 
-
       it "contains the required GDS error summary" do
         expect(
           response.body,
@@ -785,6 +811,16 @@ describe "Acceptance::Certificate" do
             text: "get a new energy certificate",
           )
         end
+
+        it "does not contain the  GDS error summary" do
+          expect(
+            response.body,
+            ).not_to have_css "div.govuk-error-summary h2.govuk-error-summary__title",
+                          text: "There is a problem"
+
+          expect(response.body).not_to have_link "A certificate was not found at this address."
+        end
+
       end
 
       context "when there is no connection" do

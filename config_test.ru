@@ -39,6 +39,8 @@ FindCertificate::Stub.search_by_id("1204-5678-1234-5178-0000", "DEC-RR")
 FindCertificate::Stub.search_by_id("0000-0000-0000-0000-9999", "AC-CERT")
 FindCertificate::Stub.search_by_id("0000-0000-0000-0000-5555", "AC-REPORT")
 
+FindCertificate::NoCertificatesStub.search_by_id("9900-0000-0000-0000-0099")
+
 FindCertificate::Stub.search_by_street_name_and_town(
   "1 Makeup Street",
   "Beauty Town",

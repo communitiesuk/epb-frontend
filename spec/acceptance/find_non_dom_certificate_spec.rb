@@ -507,6 +507,9 @@ describe "Acceptance::Non Domestic Certificate" do
           "<title>Error: Find energy certificates and reports by their number – Find an energy certificate – GOV.UK</title>",
         )
       end
+
+
+
     end
 
     context "when entering a valid certificate number" do

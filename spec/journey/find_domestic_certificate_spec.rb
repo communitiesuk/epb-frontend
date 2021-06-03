@@ -151,6 +151,32 @@ describe "Journey::FindDomesticCertificate", type: :feature, journey: true do
       expect(page).to have_content "Valid until"
       expect(page).to have_content "5 January 2030"
     end
+
+    it "displays an error message when entering a certificate value of more than 20 chars" do
+      visit "http://find-energy-certificate.local.gov.uk:9393"
+      click_on "Start now"
+      find("#label-domestic").click
+      click_on "Continue"
+      click_on "find an EPC by using its certificate number"
+      click_on "Find"
+      expect(page).to have_content "Enter a 20-digit certificate number"
+      expect(page).to have_content "There is a problem"
+      expect(page).to have_link "Enter a 20-digit certificate number"
+    end
+
+    it "displays an error message when entering a certificate value that is not found" do
+      visit "http://find-energy-certificate.local.gov.uk:9393"
+      click_on "Start now"
+      find("#label-domestic").click
+      click_on "Continue"
+      click_on "find an EPC by using its certificate number"
+      fill_in "reference_number", with: "9900-0000-0000-0000-0099"
+      click_on "Find"
+      expect(page).to have_content "A certificate was not found with this certificate number"
+      expect(page).to have_content "There is a problem"
+      expect(page).to have_link "A certificate was not found with this certificate number"
+    end
+
   end
 
   describe "when searching for a domestic certificate by street name and town" do

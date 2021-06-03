@@ -4,7 +4,7 @@
   <%=t('layout.body.breadcrumb.back')%>
 </a>
 
-<% if errors[:postcode] %>
+<% unless errors.empty? %>
   <%== erb :error_summary, locals: {errors:errors}  %>
 <% end %>
 
