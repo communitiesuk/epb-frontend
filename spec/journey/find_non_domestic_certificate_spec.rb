@@ -160,5 +160,23 @@ describe "Journey::FindNonDomesticCertificate", type: :feature, journey: true do
       expect(page).to_not have_content "Summary XML"
       expect(page).to_not have_link "Download Summary XML"
     end
+
+    it "displays an error message when entering a certificate value that is not found" do
+      visit "http://find-energy-certificate.local.gov.uk:9393"
+      click_on "Start now"
+      find("#label-non-domestic").click
+      click_on "Continue"
+      click_on "find a certificate by using its certificate number"
+      fill_in "reference_number", with: "9900-0000-0000-0000-0099"
+      click_on "Find"
+      expect(
+        page,
+        ).to have_content "A certificate was not found with this certificate number"
+      expect(page).to have_content "There is a problem"
+      expect(
+        page,
+        ).to have_link "A certificate was not found with this certificate number"
+    end
+
   end
 end
