@@ -84,10 +84,17 @@ describe "Acceptance::Certificate" do
         )
       end
 
-      it 'contains the required GDS error summary' do
-        expect(response.body).to have_css 'div.govuk-error-summary h2.govuk-error-summary__title', text:'There is a problem'
-        expect(response.body).to have_css 'div.govuk-error-summary__body ul.govuk-list li:first a', text:'Enter a real postcode'
-        expect(response.body).to have_link 'Enter a real postcode', href:'#postcode-error'
+      it "contains the required GDS error summary" do
+        expect(
+          response.body,
+        ).to have_css "div.govuk-error-summary h2.govuk-error-summary__title",
+                      text: "There is a problem"
+        expect(
+          response.body,
+        ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
+                      text: "Enter a real postcode"
+        expect(response.body).to have_link "Enter a real postcode",
+                                           href: "#postcode-error"
       end
 
       it "displays an error message" do
