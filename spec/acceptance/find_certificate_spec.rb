@@ -130,12 +130,12 @@ describe "Acceptance::Certificate" do
       it "contains the required GDS error summary" do
         expect(
           response.body,
-          ).to have_css "div.govuk-error-summary h2.govuk-error-summary__title",
-                        text: "There is a problem"
+        ).to have_css "div.govuk-error-summary h2.govuk-error-summary__title",
+                      text: "There is a problem"
         expect(
           response.body,
-          ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
-                        text: "Enter a real postcode"
+        ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
+                      text: "Enter a real postcode"
         expect(response.body).to have_link "Enter a real postcode",
                                            href: "#postcode-error"
       end
@@ -166,16 +166,15 @@ describe "Acceptance::Certificate" do
       it "contains the required GDS error summary" do
         expect(
           response.body,
-          ).to have_css "div.govuk-error-summary h2.govuk-error-summary__title",
-                        text: "There is a problem"
+        ).to have_css "div.govuk-error-summary h2.govuk-error-summary__title",
+                      text: "There is a problem"
         expect(
           response.body,
-          ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
-                        text: "Enter a real postcode"
+        ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
+                      text: "Enter a real postcode"
         expect(response.body).to have_link "Enter a real postcode",
                                            href: "#postcode-error"
       end
-
     end
 
     context "when entering an valid postcode" do
@@ -579,17 +578,15 @@ describe "Acceptance::Certificate" do
       it "contains the required GDS error summary" do
         expect(
           response.body,
-          ).to have_css "div.govuk-error-summary h2.govuk-error-summary__title",
-                        text: "There is a problem"
+        ).to have_css "div.govuk-error-summary h2.govuk-error-summary__title",
+                      text: "There is a problem"
         expect(
           response.body,
-          ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
-                        text: "Enter the street name"
+        ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
+                      text: "Enter the street name"
         expect(response.body).to have_link "Enter the street name",
                                            href: "#street_name-error"
       end
-
-
     end
 
     context "when the street name is a whitespace" do
@@ -612,15 +609,15 @@ describe "Acceptance::Certificate" do
       it "contains the required GDS error summary" do
         expect(
           response.body,
-          ).to have_css "div.govuk-error-summary h2.govuk-error-summary__title",
-                        text: "There is a problem"
+        ).to have_css "div.govuk-error-summary h2.govuk-error-summary__title",
+                      text: "There is a problem"
         expect(
           response.body,
-          ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
-                        text: "Enter the street name"
+        ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
+                      text: "Enter the street name"
         expect(response.body).to have_link "Enter the street name",
                                            href: "#street_name-error"
-        end
+      end
     end
 
     context "when missing the town" do
@@ -648,16 +645,15 @@ describe "Acceptance::Certificate" do
       it "contains the required GDS error summary" do
         expect(
           response.body,
-          ).to have_css "div.govuk-error-summary h2.govuk-error-summary__title",
-                        text: "There is a problem"
+        ).to have_css "div.govuk-error-summary h2.govuk-error-summary__title",
+                      text: "There is a problem"
         expect(
           response.body,
-          ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
-                        text: "Enter the town"
+        ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
+                      text: "Enter the town"
         expect(response.body).to have_link "Enter the town or city",
                                            href: "#town-error"
       end
-
     end
 
     context "when both town and street name are missing" do
@@ -689,17 +685,17 @@ describe "Acceptance::Certificate" do
       it "contains the required GDS error summary" do
         expect(
           response.body,
-          ).to have_css "div.govuk-error-summary h2.govuk-error-summary__title",
-                        text: "There is a problem"
+        ).to have_css "div.govuk-error-summary h2.govuk-error-summary__title",
+                      text: "There is a problem"
         expect(
           response.body,
-          ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
-                        text: "Enter the street"
+        ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
+                      text: "Enter the street"
 
         expect(
           response.body,
-          ).to have_css "div.govuk-error-summary__body ul.govuk-list li:nth-child(2) a",
-                        text: "Enter the town or city"
+        ).to have_css "div.govuk-error-summary__body ul.govuk-list li:nth-child(2) a",
+                      text: "Enter the town or city"
 
         expect(response.body).to have_link "Enter the town or city",
                                            href: "#town-error"
@@ -707,7 +703,6 @@ describe "Acceptance::Certificate" do
         expect(response.body).to have_link "Enter the street name",
                                            href: "#street_name-error"
       end
-
     end
 
     context "when entering the street name and town" do
@@ -815,12 +810,13 @@ describe "Acceptance::Certificate" do
         it "does not contain the  GDS error summary" do
           expect(
             response.body,
-            ).not_to have_css "div.govuk-error-summary h2.govuk-error-summary__title",
-                          text: "There is a problem"
+          ).not_to have_css "div.govuk-error-summary h2.govuk-error-summary__title",
+                            text: "There is a problem"
 
-          expect(response.body).not_to have_link "A certificate was not found at this address."
+          expect(
+            response.body,
+          ).not_to have_link "A certificate was not found at this address."
         end
-
       end
 
       context "when there is no connection" do

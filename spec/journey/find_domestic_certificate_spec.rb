@@ -172,11 +172,14 @@ describe "Journey::FindDomesticCertificate", type: :feature, journey: true do
       click_on "find an EPC by using its certificate number"
       fill_in "reference_number", with: "9900-0000-0000-0000-0099"
       click_on "Find"
-      expect(page).to have_content "A certificate was not found with this certificate number"
+      expect(
+        page,
+      ).to have_content "A certificate was not found with this certificate number"
       expect(page).to have_content "There is a problem"
-      expect(page).to have_link "A certificate was not found with this certificate number"
+      expect(
+        page,
+      ).to have_link "A certificate was not found with this certificate number"
     end
-
   end
 
   describe "when searching for a domestic certificate by street name and town" do
@@ -191,7 +194,6 @@ describe "Journey::FindDomesticCertificate", type: :feature, journey: true do
       expect(page).to have_content "Enter the street name"
     end
 
-
     it "displays an error message when entering an empty street name" do
       visit "http://find-energy-certificate.local.gov.uk:9393"
       click_on "Start now"
@@ -204,7 +206,6 @@ describe "Journey::FindDomesticCertificate", type: :feature, journey: true do
       expect(page).to have_content "There is a problem"
       expect(page).to have_link "Enter the street name"
     end
-
 
     it "displays an error message when entering an empty town" do
       visit "http://find-energy-certificate.local.gov.uk:9393"
