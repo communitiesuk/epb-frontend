@@ -554,6 +554,20 @@ describe "Acceptance::Assessor", type: :feature do
         expect(response.body).to have_css "span",
                                           text: "Enter the first and last name of the assessor"
       end
+
+      it "contains the required GDS error summary" do
+        expect(
+          response.body,
+          ).to have_css "div.govuk-error-summary h2.govuk-error-summary__title",
+                        text: "There is a problem"
+        expect(
+          response.body,
+          ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
+                        text: "Enter the first and last name of the assessor"
+        expect(response.body).to have_link "Enter the first and last name of the assessor",
+                                           href: "#name-error"
+        expect(response.body).to have_css "#name-error"
+      end
     end
 
     context "when entering a single name" do
@@ -564,6 +578,20 @@ describe "Acceptance::Assessor", type: :feature do
       it "displays an error message" do
         expect(response.body).to have_css "span",
                                           text: "Enter the first and last name of the assessor"
+      end
+
+      it "contains the required GDS error summary" do
+        expect(
+          response.body,
+          ).to have_css "div.govuk-error-summary h2.govuk-error-summary__title",
+                        text: "There is a problem"
+        expect(
+          response.body,
+          ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
+                        text: "Enter the first and last name of the assessor"
+        expect(response.body).to have_link "Enter the first and last name of the assessor",
+                                           href: "#name-error"
+        expect(response.body).to have_css "#name-error"
       end
     end
 
