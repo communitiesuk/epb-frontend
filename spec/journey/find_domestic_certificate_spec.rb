@@ -125,6 +125,8 @@ describe "Journey::FindDomesticCertificate", type: :feature, journey: true do
       click_on "Start now"
       click_on "Continue"
       expect(page).to have_content "Please select a type of property"
+      expect(page).to have_content "There is a problem"
+      expect(page).to have_link "Please select a type of property"
     end
 
     it "displays an error message when entering an invalid postcode" do
@@ -135,6 +137,7 @@ describe "Journey::FindDomesticCertificate", type: :feature, journey: true do
       fill_in "postcode", with: "NOT A POSTCODE"
       click_on "Find"
       expect(page).to have_content "Enter a real postcode"
+
     end
   end
 
@@ -193,9 +196,7 @@ describe "Journey::FindDomesticCertificate", type: :feature, journey: true do
       click_on "Find"
       expect(page).to have_content "Enter the street name"
       expect(page).to have_content "There is a problem"
-      expect(
-        page,
-        ).to have_link "Enter the street name"
+      expect(page).to have_link "Enter the street name"
     end
 
     it "displays an error message when entering an empty town name" do

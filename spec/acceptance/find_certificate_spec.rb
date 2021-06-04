@@ -3,7 +3,8 @@
 describe "Acceptance::Certificate" do
   include RSpecFrontendServiceMixin
 
-  describe ".get getting-new-energy-certificate/find-a-certificate/type-of-property" do
+  describe ".get getting-new-energy-certificate/find-a-certificate/type-of-property", type: :feature do
+
     context "when on page to decide property type" do
       let(:response) do
         get "http://find-energy-certificate.local.gov.uk/find-a-certificate/type-of-property"
@@ -25,6 +26,19 @@ describe "Acceptance::Certificate" do
         expect(response.body).to include(
           "<title>Error: What type of property is the certificate for? – Find an energy certificate – GOV.UK</title>",
         )
+      end
+
+      it "contains the required GDS error summary" do
+        expect(
+          response.body,
+          ).to have_css "div.govuk-error-summary h2.govuk-error-summary__title",
+                        text: "There is a problem"
+        expect(
+          response.body,
+          ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
+                        text: "Please select a type of property"
+        expect(response.body).to have_link "Please select a type of property",
+                                            href: "#property_type-error"
       end
     end
   end

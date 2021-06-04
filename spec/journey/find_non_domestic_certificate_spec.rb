@@ -157,9 +157,7 @@ describe "Journey::FindNonDomesticCertificate", type: :feature, journey: true do
       click_on "Find"
       expect(page).to have_content "Enter the street name"
       expect(page).to have_content "There is a problem"
-      expect(
-        page,
-        ).to have_link "Enter the street name"
+      expect(page).to have_link "Enter the street name"
     end
 
     it "displays an error message when entering an empty town name" do
@@ -188,10 +186,7 @@ describe "Journey::FindNonDomesticCertificate", type: :feature, journey: true do
       expect(page).to have_content "There is a problem"
       expect(page).to have_link "Enter the town or city"
       expect(page).to have_link "Enter the street name"
-
     end
-
-
   end
 
   describe "when searching for an unsupported non domestic certificate by RRN" do

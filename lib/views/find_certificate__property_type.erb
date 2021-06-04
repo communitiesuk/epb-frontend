@@ -1,4 +1,10 @@
 <a href="<%= localised_url('/') %>" class="govuk-back-link">Back</a>
+
+<% unless errors.empty? %>
+  <%== erb :error_summary, locals: {errors:errors}  %>
+<% end %>
+
+
 <form method="post">
   <fieldset class="govuk-fieldset">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
