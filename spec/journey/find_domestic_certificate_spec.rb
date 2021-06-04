@@ -137,7 +137,6 @@ describe "Journey::FindDomesticCertificate", type: :feature, journey: true do
       fill_in "postcode", with: "NOT A POSTCODE"
       click_on "Find"
       expect(page).to have_content "Enter a real postcode"
-
     end
   end
 
