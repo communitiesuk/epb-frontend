@@ -16,7 +16,7 @@
     <input type="hidden" name="lang" value="<%= I18n.locale.to_s %>" />
       <% if errors[:property_type] %>
           <span class="govuk-error-message">
-            <span class="govuk-visually-hidden"><%= t('error.error') %></span><%== errors[:property_type] %>
+            <span id="property_type-error" class="govuk-visually-hidden"><%= t('error.error') %></span><%== errors[:property_type] %>
           </span>
       <% end %>
       <div class="govuk-radios">

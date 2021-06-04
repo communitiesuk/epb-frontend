@@ -32,7 +32,7 @@
             <%= t('find_certificate_by_reference_number.hint') %>
           </span>
           <% if errors[:reference_number] %>
-            <span id="reference-number-error" class="govuk-error-message">
+            <span id="reference_number-error" class="govuk-error-message">
               <span class="govuk-visually-hidden"><%= t('error.error') %></span><%= errors[:reference_number] %>
             </span>
           <% end %>
