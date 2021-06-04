@@ -24,12 +24,15 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
     end
 
     it "shows the address without duplicated occupier or town in the summary box" do
-      address = "Primary School" \
-      "2 Lonely Street" \
-      "Something road" \
-      "Post-Town1" \
-      "A0 0AA"
-      expect(response.body).to have_css "p", class: "epc-address", exact_text: address
+      address =
+        "Primary School" \
+          "2 Lonely Street" \
+          "Something road" \
+          "Post-Town1" \
+          "A0 0AA"
+      expect(response.body).to have_css "p",
+                                        class: "epc-address",
+                                        exact_text: address
     end
 
     it "shows the contents section" do

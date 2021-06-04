@@ -204,7 +204,12 @@ module Sinatra
         ).compact.reject { |a| a.to_s.strip.chomp.empty? }
       end
 
-      def compact_address_without_occupier(address_lines, town, postcode, occupier = nil)
+      def compact_address_without_occupier(
+        address_lines,
+        town,
+        postcode,
+        occupier = nil
+      )
         address = compact_address(address_lines, town, postcode)
         if occupier.nil?
           address
@@ -230,11 +235,15 @@ module Sinatra
             occupier = assessment[:technicalInformation][:occupier]
           end
         end
-        result = compact_address_without_occupier(address_lines, assessment[:address][:town], assessment[:address][:postcode], occupier)
+        result =
+          compact_address_without_occupier(
+            address_lines,
+            assessment[:address][:town],
+            assessment[:address][:postcode],
+            occupier,
+          )
 
-        unless result == []
-          result[0..1].join(", ")
-        end
+        result[0..1].join(", ") unless result == []
       end
 
       def get_gov_header

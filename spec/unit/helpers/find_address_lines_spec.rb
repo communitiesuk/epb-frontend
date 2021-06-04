@@ -1,7 +1,5 @@
-
 describe Sinatra::FrontendService::Helpers do
   include RSpecFrontendServiceMixin
-
 
   class HelpersStub
     include Sinatra::FrontendService::Helpers
@@ -35,8 +33,7 @@ describe Sinatra::FrontendService::Helpers do
         "postcode": "A0 0AA",
       },
       "typeOfAssessment": "DEC",
-      "technicalInformation": {
-      },
+      "technicalInformation": {},
     }
   end
 
@@ -62,12 +59,19 @@ describe Sinatra::FrontendService::Helpers do
 
     it "will return the first address lines that isn't empty" do
       reply = HelpersStub.new.find_address_lines(assessment_without_occupier)
-      expect(reply).to eq("Important Person & Second Important Person, 20 - 22 Upping Street")
+      expect(reply).to eq(
+        "Important Person & Second Important Person, 20 - 22 Upping Street",
+      )
     end
 
     it "will return the first address lines that isn't empty" do
-      reply = HelpersStub.new.find_address_lines(assessment_without_technicalInformation)
-      expect(reply).to eq("Important Person & Second Important Person, 20 - 22 Upping Street")
+      reply =
+        HelpersStub.new.find_address_lines(
+          assessment_without_technicalInformation,
+        )
+      expect(reply).to eq(
+        "Important Person & Second Important Person, 20 - 22 Upping Street",
+      )
     end
   end
 end
