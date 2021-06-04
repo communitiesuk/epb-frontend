@@ -75,6 +75,7 @@ describe "Acceptance::Non Domestic Certificate" do
                       text: "Enter a real postcode"
         expect(response.body).to have_link "Enter a real postcode",
                                            href: "#postcode-error"
+        expect(response.body).to have_css "#postcode-error"
       end
     end
 
@@ -109,6 +110,7 @@ describe "Acceptance::Non Domestic Certificate" do
                       text: "Enter a real postcode"
         expect(response.body).to have_link "Enter a real postcode",
                                            href: "#postcode-error"
+        expect(response.body).to have_css "#postcode-error"
       end
     end
 
@@ -143,6 +145,7 @@ describe "Acceptance::Non Domestic Certificate" do
                       text: "Enter a real postcode"
         expect(response.body).to have_link "Enter a real postcode",
                                            href: "#postcode-error"
+        expect(response.body).to have_css "#postcode-error"
       end
     end
 
@@ -406,7 +409,7 @@ describe "Acceptance::Non Domestic Certificate" do
 
         it "displays an error message" do
           expect(response.body).to include(
-            '<span id="street-name-error" class="govuk-error-message">',
+            '<span id="street_name-error" class="govuk-error-message">',
           )
           expect(response.body).to include("Enter the street name")
         end
@@ -422,6 +425,7 @@ describe "Acceptance::Non Domestic Certificate" do
                         text: "Enter the street name"
           expect(response.body).to have_link "Enter the street name",
                                              href: "#street_name-error"
+          expect(response.body).to have_css "#street_name-error"
         end
       end
 
@@ -436,7 +440,7 @@ describe "Acceptance::Non Domestic Certificate" do
 
         it "displays the correct error message" do
           expect(response.body).to include(
-            '<span id="street-name-error" class="govuk-error-message">
+            '<span id="street_name-error" class="govuk-error-message">
             <span class="govuk-visually-hidden">Error: </span>Enter the street name
           </span>',
           )
@@ -453,6 +457,7 @@ describe "Acceptance::Non Domestic Certificate" do
                         text: "Enter the street name"
           expect(response.body).to have_link "Enter the street name",
                                              href: "#street_name-error"
+          expect(response.body).to have_css "#street_name-error"
         end
       end
 
@@ -489,6 +494,7 @@ describe "Acceptance::Non Domestic Certificate" do
                         text: "Enter the town"
           expect(response.body).to have_link "Enter the town or city",
                                              href: "#town-error"
+          expect(response.body).to have_css "#town-error"
         end
       end
 
@@ -513,7 +519,7 @@ describe "Acceptance::Non Domestic Certificate" do
           )
           expect(response.body).to include("Enter the town")
           expect(response.body).to include(
-            '<span id="street-name-error" class="govuk-error-message">',
+            '<span id="street_name-error" class="govuk-error-message">',
           )
           expect(response.body).to include("Enter the street name")
         end
@@ -538,6 +544,7 @@ describe "Acceptance::Non Domestic Certificate" do
 
           expect(response.body).to have_link "Enter the street name",
                                              href: "#street_name-error"
+          expect(response.body).to have_css "#street_name-error"
         end
       end
 
@@ -686,7 +693,7 @@ describe "Acceptance::Non Domestic Certificate" do
 
       it "displays an error message" do
         expect(response.body).to include(
-          '<span id="reference-number-error" class="govuk-error-message">',
+          '<span id="reference_number-error" class="govuk-error-message">',
         )
         expect(response.body).to include("Enter a 20-digit certificate number")
       end
@@ -710,6 +717,7 @@ describe "Acceptance::Non Domestic Certificate" do
           response.body,
         ).to have_link "Enter a 20-digit certificate number",
                        href: "#reference_number-error"
+        expect(response.body).to have_css "#reference_number-error"
       end
     end
 
@@ -793,7 +801,11 @@ describe "Acceptance::Non Domestic Certificate" do
           ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
                         text:
                           "A certificate was not found with this certificate number"
-        end
+        expect(
+          response.body,
+          ).to have_link "A certificate was not found with this certificate number",
+                         href: "#reference_number-error"
+        expect(response.body).to have_css "#reference_number-error"
       end
 
       context "when there is no connection" do
@@ -824,3 +836,4 @@ describe "Acceptance::Non Domestic Certificate" do
     end
   end
 end
+  end
