@@ -32,7 +32,7 @@ describe Sinatra::FrontendService::Helpers do
         "town": "LONDON",
         "postcode": "A0 0AA",
       },
-      "typeOfAssessment": "DEC",
+      "typeOfAssessment": "CEPC",
       "technicalInformation": {},
     }
   end
@@ -47,7 +47,7 @@ describe Sinatra::FrontendService::Helpers do
         "town": "LONDON",
         "postcode": "A0 0AA",
       },
-      "typeOfAssessment": "DEC",
+      "typeOfAssessment": "RdSAP",
     }
   end
 
