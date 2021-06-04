@@ -208,7 +208,7 @@ module Sinatra
         address_lines,
         town,
         postcode,
-        occupier = nil
+        occupier
       )
         address = compact_address(address_lines, town, postcode)
         if occupier.nil?
@@ -222,28 +222,36 @@ module Sinatra
         assessment[:address][:addressLine1]
       end
 
-      def find_address_lines(assessment)
+      def find_address_lines_only(assessment)
         address_lines = [
           assessment[:address][:addressLine1],
           assessment[:address][:addressLine2],
           assessment[:address][:addressLine3],
+          assessment[:address][:addressLine4],
         ]
 
         occupier = nil
-        if assessment.include?(:technicalInformation)
-          if assessment[:technicalInformation].include?(:occupier)
-            occupier = assessment[:technicalInformation][:occupier]
-          end
+        if assessment.include?(:technicalInformation) && assessment[:technicalInformation].include?(:occupier)
+          occupier = assessment[:technicalInformation][:occupier]
         end
-        result =
+
+        if assessment.include?(:address) && assessment[:address].keys.include?(:town)
+          town_key = ""
+        end
+
+        if assessment.include?(:address) && assessment[:address].keys.include?(:postcode)
+          postcode_key = ""
+        end
+
+        address_block =
           compact_address_without_occupier(
             address_lines,
-            assessment[:address][:town],
-            assessment[:address][:postcode],
+            town_key,
+            postcode_key,
             occupier,
           )
 
-        result[0..1].join(", ") unless result == []
+        address_block.first(2).join(", ")
       end
 
       def get_gov_header
