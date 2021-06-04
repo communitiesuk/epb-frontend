@@ -11,11 +11,6 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <a
-      href="<%= localised_url('/find-a-certificate/type-of-property')%>"
-      class="govuk-back-link">
-      <%=t('layout.body.breadcrumb.back')%>
-    </a>
 
     <form method="GET" action="<%=localised_url('/find-a-non-domestic-certificate/search-by-postcode')%>" >
       <% if I18n.locale != I18n.available_locales[0] %>
