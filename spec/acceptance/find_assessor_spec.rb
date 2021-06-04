@@ -148,6 +148,20 @@ describe "Acceptance::Assessor", type: :feature do
         )
         expect(response.body).to include("Enter a real postcode")
       end
+
+      it "contains the required GDS error summary" do
+        expect(
+          response.body,
+          ).to have_css "div.govuk-error-summary h2.govuk-error-summary__title",
+                        text: "There is a problem"
+        expect(
+          response.body,
+          ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
+                        text: "Enter a real postcode"
+        expect(response.body).to have_link "Enter a real postcode",
+                                           href: "#postcode-error"
+        expect(response.body).to have_css "#postcode-error"
+      end
     end
 
     context "when entering a postcode that is less than 4 characters" do
@@ -175,6 +189,20 @@ describe "Acceptance::Assessor", type: :feature do
         )
         expect(response.body).to include("Enter a real postcode")
       end
+
+      it "contains the required GDS error summary" do
+        expect(
+          response.body,
+          ).to have_css "div.govuk-error-summary h2.govuk-error-summary__title",
+                        text: "There is a problem"
+        expect(
+          response.body,
+          ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
+                        text: "Enter a real postcode"
+        expect(response.body).to have_link "Enter a real postcode",
+                                           href: "#postcode-error"
+        expect(response.body).to have_css "#postcode-error"
+      end
     end
 
     context "when entering an invalid postcode" do
@@ -201,6 +229,20 @@ describe "Acceptance::Assessor", type: :feature do
           '<span id="postcode-error" class="govuk-error-message">',
         )
         expect(response.body).to include("Enter a real postcode")
+      end
+
+      it "contains the required GDS error summary" do
+        expect(
+          response.body,
+          ).to have_css "div.govuk-error-summary h2.govuk-error-summary__title",
+                        text: "There is a problem"
+        expect(
+          response.body,
+          ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
+                        text: "Enter a real postcode"
+        expect(response.body).to have_link "Enter a real postcode",
+                                           href: "#postcode-error"
+        expect(response.body).to have_css "#postcode-error"
       end
     end
 
