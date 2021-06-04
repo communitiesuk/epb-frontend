@@ -1,4 +1,9 @@
 <a href="<%= localised_url('/') %>" class="govuk-back-link">Back</a>
+
+<% unless errors.empty? %>
+  <%== erb :error_summary, locals: {errors:errors}  %>
+<% end %>
+
 <form method="post">
   <fieldset class="govuk-fieldset">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -9,7 +14,7 @@
     <div class="govuk-form-group<% if errors[:property_type] %> govuk-form-group--error<% end %>">
     <input type="hidden" name="lang" value="<%= I18n.locale.to_s %>" />
       <% if errors[:property_type] %>
-          <span class="govuk-error-message">
+          <span id='property_type-error' class="govuk-error-message">
             <span class="govuk-visually-hidden"><%= t('error.error') %></span><%== errors[:property_type] %>
           </span>
       <% end %>
