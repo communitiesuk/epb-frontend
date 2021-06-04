@@ -6,6 +6,10 @@
       <%=t('layout.body.breadcrumb.back')%>
     </a>
 
+    <% unless errors.empty? %>
+      <%== erb :error_summary, locals: {errors:errors}  %>
+    <% end %>
+
     <form method="GET" action="<%=localised_url('/find-an-assessor/search-by-postcode')%>" >
       <% if I18n.locale != I18n.available_locales[0] %>
         <input type="hidden" name="lang" value="<%= I18n.locale.to_s %>">

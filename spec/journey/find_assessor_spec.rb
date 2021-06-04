@@ -40,6 +40,8 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
     fill_in "postcode", with: ""
     click_on "Find"
     expect(page).to have_content "Enter a real postcode"
+    expect(page).to have_content "There is a problem"
+    expect(page).to have_link "Enter a real postcode"
   end
 
   it "displays an error message when you don't select a property type" do
