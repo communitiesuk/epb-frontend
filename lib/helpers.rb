@@ -222,6 +222,27 @@ module Sinatra
         assessment[:address][:addressLine1]
       end
 
+      def update_non_address_line_elements(assessment)
+        non_address_line_elements = {
+          "occupier_key": nil,
+          "town_key": nil,
+          "postcode_key": nil,
+        }
+
+        if assessment.include?(:technicalInformation) && assessment[:technicalInformation].include?(:occupier)
+          non_address_line_elements[:occupier_key] = assessment[:technicalInformation][:occupier]
+        end
+
+        if assessment.include?(:address) && assessment[:address].keys.include?(:town)
+          non_address_line_elements[:town_key] = ""
+        end
+
+        if assessment.include?(:address) && assessment[:address].keys.include?(:postcode)
+          non_address_line_elements[:postcode_key] = ""
+        end
+        non_address_line_elements
+      end
+
       def find_address_lines_only(assessment)
         address_lines = [
           assessment[:address][:addressLine1],
@@ -229,26 +250,14 @@ module Sinatra
           assessment[:address][:addressLine3],
           assessment[:address][:addressLine4],
         ]
-
-        occupier = nil
-        if assessment.include?(:technicalInformation) && assessment[:technicalInformation].include?(:occupier)
-          occupier = assessment[:technicalInformation][:occupier]
-        end
-
-        if assessment.include?(:address) && assessment[:address].keys.include?(:town)
-          town_key = ""
-        end
-
-        if assessment.include?(:address) && assessment[:address].keys.include?(:postcode)
-          postcode_key = ""
-        end
+        non_address_line_elements = update_non_address_line_elements(assessment)
 
         address_block =
           compact_address_without_occupier(
             address_lines,
-            town_key,
-            postcode_key,
-            occupier,
+            non_address_line_elements[:town_key],
+            non_address_line_elements[:postcode_key],
+            non_address_line_elements[:occupier_key],
           )
 
         address_block.first(2).join(", ")
