@@ -13,6 +13,6 @@
   },
   "homepage": "https://github.com/communitiesuk/epb-frontend#readme",
   "dependencies": {
-    "govuk-frontend": "^3.8.1"
+    "govuk-frontend": "^3.12.0"
   }
 }
