@@ -266,7 +266,9 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
     it "displays an error message when entering in an empty name" do
       visit "http://getting-new-energy-certificate.local.gov.uk:9393/find-an-assessor/search-by-name"
       click_on "Search"
-      expect(page).to have_content "Enter the first and last name of the assessor"
+      expect(
+        page,
+      ).to have_content "Enter the first and last name of the assessor"
       expect(page).to have_content "There is a problem"
       expect(page).to have_link "Enter the first and last name of the assessor"
     end
@@ -275,7 +277,9 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
       visit "http://getting-new-energy-certificate.local.gov.uk:9393/find-an-assessor/search-by-name"
       fill_in "name", with: "Bella"
       click_on "Search"
-      expect(page).to have_content "Enter the first and last name of the assessor"
+      expect(
+        page,
+      ).to have_content "Enter the first and last name of the assessor"
       expect(page).to have_content "There is a problem"
       expect(page).to have_link "Enter the first and last name of the assessor"
     end

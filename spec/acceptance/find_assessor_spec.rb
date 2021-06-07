@@ -30,12 +30,12 @@ describe "Acceptance::Assessor", type: :feature do
       it "contains the required GDS error summary" do
         expect(
           response.body,
-          ).to have_css "div.govuk-error-summary h2.govuk-error-summary__title",
-                        text: "There is a problem"
+        ).to have_css "div.govuk-error-summary h2.govuk-error-summary__title",
+                      text: "There is a problem"
         expect(
           response.body,
-          ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
-                        text: "Please select a type of property"
+        ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
+                      text: "Please select a type of property"
         expect(response.body).to have_link "Please select a type of property",
                                            href: "#property_type-error"
         expect(response.body).to have_css "span#property_type-error"
@@ -111,12 +111,12 @@ describe "Acceptance::Assessor", type: :feature do
       it "contains the required GDS error summary" do
         expect(
           response.body,
-          ).to have_css "div.govuk-error-summary h2.govuk-error-summary__title",
-                        text: "There is a problem"
+        ).to have_css "div.govuk-error-summary h2.govuk-error-summary__title",
+                      text: "There is a problem"
         expect(
           response.body,
-          ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
-                        text: "Enter a real postcode"
+        ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
+                      text: "Enter a real postcode"
         expect(response.body).to have_link "Enter a real postcode",
                                            href: "#postcode-error"
         expect(response.body).to have_css "#postcode-error"
@@ -152,12 +152,12 @@ describe "Acceptance::Assessor", type: :feature do
       it "contains the required GDS error summary" do
         expect(
           response.body,
-          ).to have_css "div.govuk-error-summary h2.govuk-error-summary__title",
-                        text: "There is a problem"
+        ).to have_css "div.govuk-error-summary h2.govuk-error-summary__title",
+                      text: "There is a problem"
         expect(
           response.body,
-          ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
-                        text: "Enter a real postcode"
+        ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
+                      text: "Enter a real postcode"
         expect(response.body).to have_link "Enter a real postcode",
                                            href: "#postcode-error"
         expect(response.body).to have_css "#postcode-error"
@@ -193,12 +193,12 @@ describe "Acceptance::Assessor", type: :feature do
       it "contains the required GDS error summary" do
         expect(
           response.body,
-          ).to have_css "div.govuk-error-summary h2.govuk-error-summary__title",
-                        text: "There is a problem"
+        ).to have_css "div.govuk-error-summary h2.govuk-error-summary__title",
+                      text: "There is a problem"
         expect(
           response.body,
-          ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
-                        text: "Enter a real postcode"
+        ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
+                      text: "Enter a real postcode"
         expect(response.body).to have_link "Enter a real postcode",
                                            href: "#postcode-error"
         expect(response.body).to have_css "#postcode-error"
@@ -234,12 +234,12 @@ describe "Acceptance::Assessor", type: :feature do
       it "contains the required GDS error summary" do
         expect(
           response.body,
-          ).to have_css "div.govuk-error-summary h2.govuk-error-summary__title",
-                        text: "There is a problem"
+        ).to have_css "div.govuk-error-summary h2.govuk-error-summary__title",
+                      text: "There is a problem"
         expect(
           response.body,
-          ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
-                        text: "Enter a real postcode"
+        ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
+                      text: "Enter a real postcode"
         expect(response.body).to have_link "Enter a real postcode",
                                            href: "#postcode-error"
         expect(response.body).to have_css "#postcode-error"
@@ -558,14 +558,16 @@ describe "Acceptance::Assessor", type: :feature do
       it "contains the required GDS error summary" do
         expect(
           response.body,
-          ).to have_css "div.govuk-error-summary h2.govuk-error-summary__title",
-                        text: "There is a problem"
+        ).to have_css "div.govuk-error-summary h2.govuk-error-summary__title",
+                      text: "There is a problem"
         expect(
           response.body,
-          ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
-                        text: "Enter the first and last name of the assessor"
-        expect(response.body).to have_link "Enter the first and last name of the assessor",
-                                           href: "#name-error"
+        ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
+                      text: "Enter the first and last name of the assessor"
+        expect(
+          response.body,
+        ).to have_link "Enter the first and last name of the assessor",
+                       href: "#name-error"
         expect(response.body).to have_css "#name-error"
       end
     end
@@ -583,14 +585,16 @@ describe "Acceptance::Assessor", type: :feature do
       it "contains the required GDS error summary" do
         expect(
           response.body,
-          ).to have_css "div.govuk-error-summary h2.govuk-error-summary__title",
-                        text: "There is a problem"
+        ).to have_css "div.govuk-error-summary h2.govuk-error-summary__title",
+                      text: "There is a problem"
         expect(
           response.body,
-          ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
-                        text: "Enter the first and last name of the assessor"
-        expect(response.body).to have_link "Enter the first and last name of the assessor",
-                                           href: "#name-error"
+        ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
+                      text: "Enter the first and last name of the assessor"
+        expect(
+          response.body,
+        ).to have_link "Enter the first and last name of the assessor",
+                       href: "#name-error"
         expect(response.body).to have_css "#name-error"
       end
     end

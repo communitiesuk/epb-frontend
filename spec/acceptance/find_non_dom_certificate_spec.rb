@@ -801,39 +801,39 @@ describe "Acceptance::Non Domestic Certificate" do
           ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
                         text:
                           "A certificate was not found with this certificate number"
-        expect(
-          response.body,
+          expect(
+            response.body,
           ).to have_link "A certificate was not found with this certificate number",
                          href: "#reference_number-error"
-        expect(response.body).to have_css "#reference_number-error"
-      end
-
-      context "when there is no connection" do
-        before do
-          FindCertificate::NoNetworkStub.search_by_id(
-            "1234-5678-9101-1122-1234",
-          )
+          expect(response.body).to have_css "#reference_number-error"
         end
 
-        let(:response) do
-          get "http://find-energy-certificate.local.gov.uk/find-a-non-domestic-certificate/search-by-reference-number?reference_number=1234-5678-9101-1122-1234"
-        end
+        context "when there is no connection" do
+          before do
+            FindCertificate::NoNetworkStub.search_by_id(
+              "1234-5678-9101-1122-1234",
+            )
+          end
 
-        it "returns status 500" do
-          expect(response.status).to eq(500)
-        end
+          let(:response) do
+            get "http://find-energy-certificate.local.gov.uk/find-a-non-domestic-certificate/search-by-reference-number?reference_number=1234-5678-9101-1122-1234"
+          end
 
-        it "displays the 500 error page heading" do
-          expect(response.body).to include("Try again later.")
-        end
+          it "returns status 500" do
+            expect(response.status).to eq(500)
+          end
 
-        it "displays error page body" do
-          expect(response.body).to include(
-            "Sorry, there is a problem with the service",
-          )
+          it "displays the 500 error page heading" do
+            expect(response.body).to include("Try again later.")
+          end
+
+          it "displays error page body" do
+            expect(response.body).to include(
+              "Sorry, there is a problem with the service",
+            )
+          end
         end
       end
     end
   end
 end
-  end

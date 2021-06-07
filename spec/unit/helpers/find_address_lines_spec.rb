@@ -97,7 +97,8 @@ describe Sinatra::FrontendService::Helpers do
     end
 
     it "returns first two non empty address lines from certs without an occupier value" do
-      response = HelpersStub.new.find_address_lines_only(assessment_without_occupier)
+      response =
+        HelpersStub.new.find_address_lines_only(assessment_without_occupier)
       expect(response).to eq(
         "Important Person & Second Important Person, 20 - 22 Upping Street",
       )
@@ -117,10 +118,8 @@ describe Sinatra::FrontendService::Helpers do
       response =
         HelpersStub.new.find_address_lines_only(
           assessment_with_one_address_line,
-          )
-      expect(response).to eq(
-                            "First Line",
-                            )
+        )
+      expect(response).to eq("First Line")
     end
 
     it "handles empty address lines from certs" do
@@ -128,9 +127,7 @@ describe Sinatra::FrontendService::Helpers do
         HelpersStub.new.find_address_lines_only(
           assessment_with_no_address_lines,
         )
-      expect(response).to eq(
-        "",
-      )
+      expect(response).to eq("")
     end
   end
 end

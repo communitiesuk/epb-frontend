@@ -529,8 +529,8 @@ describe "Acceptance::Certificate" do
                           "A certificate was not found with this certificate number"
           expect(
             response.body,
-            ).to have_link "A certificate was not found with this certificate number",
-                           href: "#reference_number-error"
+          ).to have_link "A certificate was not found with this certificate number",
+                         href: "#reference_number-error"
           expect(response.body).to have_css "#reference_number-error"
         end
       end

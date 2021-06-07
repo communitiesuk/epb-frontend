@@ -225,15 +225,19 @@ module Sinatra
           "postcode_key": nil,
         }
 
-        if assessment.include?(:technicalInformation) && assessment[:technicalInformation].include?(:occupier)
-          non_address_line_elements[:occupier_key] = assessment[:technicalInformation][:occupier]
+        if assessment.include?(:technicalInformation) &&
+            assessment[:technicalInformation].include?(:occupier)
+          non_address_line_elements[:occupier_key] =
+            assessment[:technicalInformation][:occupier]
         end
 
-        if assessment.include?(:address) && assessment[:address].keys.include?(:town)
+        if assessment.include?(:address) &&
+            assessment[:address].keys.include?(:town)
           non_address_line_elements[:town_key] = ""
         end
 
-        if assessment.include?(:address) && assessment[:address].keys.include?(:postcode)
+        if assessment.include?(:address) &&
+            assessment[:address].keys.include?(:postcode)
           non_address_line_elements[:postcode_key] = ""
         end
         non_address_line_elements
