@@ -218,10 +218,6 @@ module Sinatra
         end
       end
 
-      def find_address_header(assessment)
-        assessment[:address][:addressLine1]
-      end
-
       def update_non_address_line_elements(assessment)
         non_address_line_elements = {
           "occupier_key": nil,
