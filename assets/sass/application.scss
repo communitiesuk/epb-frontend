@@ -3,7 +3,6 @@ $govuk-assets-path: '';
 
 @import "./node_modules/govuk-frontend/govuk/all";
 @import "./assets/components/epc-box";
-@import "./assets/components/cookie-consent";
 @import "./assets/components/environmental-impact-chart";
 @import "./assets/components/related-items";
 @import "./assets/components/expired-text";
@@ -13,4 +12,3 @@ $govuk-assets-path: '';
 @import "./assets/components/report_contents";
 @import "./assets/components/epc-print-summary";
 @import "./assets/components/share-certificate";
-

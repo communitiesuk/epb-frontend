@@ -8,20 +8,28 @@ var cookies = {
 
   texts: {
     title: {
-      en: "Tell us whether you accept cookies",
-      cy: "Dywedwch a ydych chi'n derbyn cwcis."
+      en: "Cookies on ",
+      cy: "Cwcis ar "
     },
-    intro: {
-      en: "We use cookies to collect information about how you use this service. This helps us to improve our website and make it work as well as possible.",
-      cy: "Rydyn ni’n defnyddio cwcis i gasglu gwybodaeth am sut rydych chi’n defnyddio'r gwasanaeth hwn. Mae hyn yn ein helpu i wella’n gwefan a gwneud iddi weithio cystal â phosibl."
+    intro_essential: {
+      en: "We use some essential cookies to make this service work.",
+      cy: "Rydym yn defnyddio cwcis hanfodol i wneud i'r gwasanaeth hwn weithio."
+    },
+    intro_analytics: {
+      en: "We’d also like to use analytics cookies so we can understand how you use the service and make improvements.",
+      cy: "Fe hoffen ni ddefnyddio cwcis dadansoddeg hefyd, er mwyn deall sut rydych chi'n defnyddio'r gwasanaeth a gwneud gwelliannau."
     },
     positive: {
-      en: "Accept all cookies",
-      cy: "Derbyn pob cwci"
+      en: "Accept analytics cookies",
+      cy: "Derbyn cwcis dadansoddeg"
     },
     negative: {
-      en: "Set cookie preferences",
-      cy: "Gosod dewisiadau cwcis"
+      en: "Reject analytics cookies",
+      cy: "Gwrthod cwcis dadansoddeg"
+    },
+    view_cookies: {
+      en: "View cookies",
+      cy: "Gweld y cwci"
     }
   },
 
@@ -51,47 +59,78 @@ var cookies = {
 
   display: function(tag_id) {
     let lang = document.getElementsByTagName("html")[0].getAttribute("lang");
+    let serviceName = document.getElementsByClassName("govuk-header__link--service-name")[0].textContent
 
     let rootElement = document.createElement("div");
-    rootElement.className = "cookie-consent-box";
+    rootElement.className = "govuk-cookie-banner govuk-!-display-none-print";
+    rootElement.ariaLabel = cookies.texts.title[lang] + serviceName;
+    rootElement.setAttribute("role", "region");
+    rootElement.setAttribute("data-nosnippet", "true");
 
-    let innerBox = document.createElement("div");
-    innerBox.className = "inner-box";
+    let cookieBannerMessage = document.createElement("div");
+    cookieBannerMessage.className = "govuk-cookie-banner__message govuk-width-container";
 
-    let title = document.createElement("p");
-    title.innerHTML = cookies.texts.title[lang];
-    title.className = "govuk-heading-m";
+    let gridRow = document.createElement("div");
+    gridRow.className = "govuk-grid-row";
 
-    let body = document.createElement("p");
-    body.innerHTML = cookies.texts.intro[lang];
-    body.className = "govuk-body";
+    let gridColumn = document.createElement("div");
+    gridColumn.className = "govuk-grid-column-two-thirds";
 
-    let consent_button = document.createElement("a");
-    consent_button.className = "govuk-button consent";
-    consent_button.innerHTML = cookies.texts.positive[lang];
-    consent_button.onclick = function() {
+    let title = document.createElement("h2");
+    title.innerHTML = cookies.texts.title[lang] + serviceName;
+    title.className = "govuk-cookie-banner__heading govuk-heading-m";
+
+    let cookieBannerContent = document.createElement("div");
+    cookieBannerContent.className = "govuk-cookie-banner__content";
+
+    let bodyEssential = document.createElement("p");
+    bodyEssential.innerHTML = cookies.texts.intro_essential[lang];
+
+    let bodyAnalytics = document.createElement("p");
+    bodyAnalytics.innerHTML = cookies.texts.intro_analytics[lang];
+
+    let buttonGroup = document.createElement("div");
+    buttonGroup.className = "govuk-button-group";
+
+    let consentButton = document.createElement("button");
+    consentButton.className = "govuk-button";
+    consentButton.innerHTML = cookies.texts.positive[lang];
+    consentButton.onclick = function() {
       cookies.create("cookie_consent", "true");
 
       cookies.analytics(tag_id);
 
-      this.parentNode.parentNode.classList.add("hidden");
+      let cookieBanner = document.getElementsByClassName("govuk-cookie-banner")[0];
+      cookieBanner.hidden = true;
     };
 
-    let reject_button = document.createElement("a");
-    reject_button.className = "govuk-button reject";
-    reject_button.href = "/cookies" + (lang !== "en" ? "?lang=" + lang : "");
-    reject_button.innerHTML = cookies.texts.negative[lang];
+    let rejectButton = document.createElement("a");
+    rejectButton.className = "govuk-button";
+    rejectButton.href = "/cookies" + (lang !== "en" ? "?lang=" + lang : "");
+    rejectButton.innerHTML = cookies.texts.negative[lang];
 
-    innerBox.appendChild(title);
-    innerBox.appendChild(body);
-    innerBox.appendChild(consent_button);
-    innerBox.appendChild(reject_button);
+    let viewCookiesLink = document.createElement("a");
+    viewCookiesLink.className = "govuk-link";
+    viewCookiesLink.href = "/cookies" + (lang !== "en" ? "?lang=" + lang : "");
+    viewCookiesLink.innerHTML = cookies.texts.view_cookies[lang];
 
-    rootElement.appendChild(innerBox);
+    cookieBannerMessage.appendChild(gridRow);
+      gridRow.appendChild(gridColumn);
+        gridColumn.appendChild(title);
+        gridColumn.appendChild(cookieBannerContent);
+          cookieBannerContent.appendChild(bodyEssential);
+          cookieBannerContent.appendChild(bodyAnalytics);
 
-    let row = document.getElementsByClassName("govuk-grid-row")[0];
+    cookieBannerMessage.appendChild(buttonGroup);
+      buttonGroup.appendChild(consentButton);
+      buttonGroup.appendChild(rejectButton);
+      buttonGroup.appendChild(viewCookiesLink);
 
-    row.insertBefore(rootElement, row.firstChild);
+    rootElement.appendChild(cookieBannerMessage);
+
+    let body = document.getElementsByClassName("govuk-template__body")[0];
+
+    body.insertBefore(rootElement, body.firstChild);
   },
 
   analytics: function(tag_id) {
