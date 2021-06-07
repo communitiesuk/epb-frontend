@@ -25,7 +25,7 @@ GEM
       capybara
       selenium-webdriver
     childprocess (3.0.0)
-    concurrent-ruby (1.1.8)
+    concurrent-ruby (1.1.9)
     crack (0.4.5)
       rexml
     diff-lcs (1.4.4)
@@ -132,11 +132,11 @@ GEM
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
-    sentry-ruby (4.5.0)
+    sentry-ruby (4.5.1)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       faraday (>= 1.0)
-      sentry-ruby-core (= 4.5.0)
-    sentry-ruby-core (4.5.0)
+      sentry-ruby-core (= 4.5.1)
+    sentry-ruby-core (4.5.1)
       concurrent-ruby
       faraday
     sinatra (2.1.0)
