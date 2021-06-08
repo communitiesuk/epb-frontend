@@ -32,6 +32,17 @@ en:
       service_name: 'Energy Performance of Buildings Register'
       skip: 'Skip to main content'
       govuk: 'GOV.UK'
+      cookie_banner:
+        title: "Cookies on "
+        intro_essential: "We use some essential cookies to make this service work."
+        intro_analytics: "We’d also like to use analytics cookies so we can understand how you use the service and make improvements."
+        accept: "Accept analytics cookies"
+        reject: "Reject analytics cookies"
+        view_cookies: "View cookies"
+        change_settings: "change your cookie settings"
+        accepted: "You’ve accepted analytics cookies. You can %{change_settings_link} at any time."
+        rejected: "You’ve rejected analytics cookies. You can %{change_settings_link} at any time."
+        hide_message: "Hide this message"
       beta:
         heading: 'beta'
         description: 'This is a new service – your <a class="govuk-link" href="https://forms.office.com/Pages/ResponsePage.aspx?id=EGg0v32c3kOociSi7zmVqPbdKK1xB5FPizueLd4cs19UQVdISTJKQTNPSUtON0pPUDYzWFMyVEVIWC4u">feedback</a> will help us to improve it.'

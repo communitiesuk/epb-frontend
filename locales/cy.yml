@@ -32,6 +32,17 @@ cy:
       service_name: "Cofrestr Perfformiad Ynni Adeiladau"
       skip: "Sgipiwch i’r prif gynnwys"
       govuk: "GOV.UK"
+      cookie_banner:
+        title: "Cwcis ar "
+        intro_essential: "Rydym yn defnyddio cwcis hanfodol i wneud i'r gwasanaeth hwn weithio."
+        intro_analytics: "Fe hoffen ni ddefnyddio cwcis dadansoddeg hefyd, er mwyn deall sut rydych chi'n defnyddio'r gwasanaeth a gwneud gwelliannau."
+        accept: "Derbyn cwcis dadansoddeg"
+        reject: "Gwrthod cwcis dadansoddeg"
+        view_cookies: "Gweld y cwci"
+        change_settings: "Gallwch newid eich gosodiadau cwcis ar unrhyw adeg."
+        accepted: "Rydych chi wedi derbyn cwcis dadansoddeg. %{change_settings_link}"
+        rejected: "Rydych chi wedi gwrthod cwcis dadansoddeg. %{change_settings_link}"
+        hide_message: "Cuddio’r neges hon"
       beta:
         heading: beta
         description: 'Gwasanaeth newydd yw hwn a bydd eich <a class="govuk-link" href="https://forms.office.com/Pages/ResponsePage.aspx?id=EGg0v32c3kOociSi7zmVqPbdKK1xB5FPizueLd4cs19UQVdISTJKQTNPSUtON0pPUDYzWFMyVEVIWC4u">adborth</a> yn ein helpu i’w wella.'
