@@ -14,5 +14,10 @@
   "homepage": "https://github.com/communitiesuk/epb-frontend#readme",
   "dependencies": {
     "govuk-frontend": "^3.12.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.14.3",
+    "@babel/core": "^7.14.3",
+    "@babel/preset-env": "^7.14.4"
   }
 }

@@ -22,8 +22,8 @@ FileUtils.copy_entry "./assets/fonts", "./public/fonts"
 puts "Copying images"
 FileUtils.copy_entry "./assets/images", "./public/images"
 
-puts "Copying javascript"
-FileUtils.copy_entry "./assets/javascript", "./public/javascript"
+puts "Compiling and copying JavaScript"
+`./node_modules/.bin/babel #{File.realpath('./assets/javascript')} --out-dir #{File.realpath('./public/javascript')}`
 
 puts "Copying robots.txt"
 if ENV["DEPLOY_APPNAME"] && ENV["DEPLOY_APPNAME"].end_with?("production")
