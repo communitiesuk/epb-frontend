@@ -68,8 +68,8 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
         ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
                       text: "Enter a real postcode"
         expect(response.body).to have_link "Enter a real postcode",
-                                           href: "#postcode-error"
-        expect(response.body).to have_css "#postcode-error"
+                                           href: "#postcode"
+        expect(response.body).to have_css "#postcode"
       end
     end
 
@@ -103,8 +103,8 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
         ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
                       text: "Enter a real postcode"
         expect(response.body).to have_link "Enter a real postcode",
-                                           href: "#postcode-error"
-        expect(response.body).to have_css "#postcode-error"
+                                           href: "#postcode"
+        expect(response.body).to have_css "#postcode"
       end
     end
 
@@ -138,8 +138,8 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
         ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
                       text: "Enter a real postcode"
         expect(response.body).to have_link "Enter a real postcode",
-                                           href: "#postcode-error"
-        expect(response.body).to have_css "#postcode-error"
+                                           href: "#postcode"
+        expect(response.body).to have_css "#postcode"
       end
     end
 
@@ -173,8 +173,8 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
         ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
                       text: "Enter a real postcode"
         expect(response.body).to have_link "Enter a real postcode",
-                                           href: "#postcode-error"
-        expect(response.body).to have_css "#postcode-error"
+                                           href: "#postcode"
+        expect(response.body).to have_css "#postcode"
       end
     end
 

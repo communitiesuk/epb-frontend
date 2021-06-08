@@ -37,8 +37,8 @@ describe "Acceptance::Assessor", type: :feature do
         ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
                       text: "Please select a type of property"
         expect(response.body).to have_link "Please select a type of property",
-                                           href: "#property_type-error"
-        expect(response.body).to have_css "span#property_type-error"
+                                           href: "#domestic"
+        expect(response.body).to have_css "#domestic"
       end
     end
   end
@@ -118,8 +118,8 @@ describe "Acceptance::Assessor", type: :feature do
         ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
                       text: "Enter a real postcode"
         expect(response.body).to have_link "Enter a real postcode",
-                                           href: "#postcode-error"
-        expect(response.body).to have_css "#postcode-error"
+                                           href: "#postcode"
+        expect(response.body).to have_css "#postcode"
       end
     end
 
@@ -159,8 +159,8 @@ describe "Acceptance::Assessor", type: :feature do
         ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
                       text: "Enter a real postcode"
         expect(response.body).to have_link "Enter a real postcode",
-                                           href: "#postcode-error"
-        expect(response.body).to have_css "#postcode-error"
+                                           href: "#postcode"
+        expect(response.body).to have_css "#postcode"
       end
     end
 
@@ -200,8 +200,8 @@ describe "Acceptance::Assessor", type: :feature do
         ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
                       text: "Enter a real postcode"
         expect(response.body).to have_link "Enter a real postcode",
-                                           href: "#postcode-error"
-        expect(response.body).to have_css "#postcode-error"
+                                           href: "#postcode"
+        expect(response.body).to have_css "#postcode"
       end
     end
 
@@ -241,8 +241,8 @@ describe "Acceptance::Assessor", type: :feature do
         ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
                       text: "Enter a real postcode"
         expect(response.body).to have_link "Enter a real postcode",
-                                           href: "#postcode-error"
-        expect(response.body).to have_css "#postcode-error"
+                                           href: "#postcode"
+        expect(response.body).to have_css "#postcode"
       end
     end
 
@@ -567,8 +567,8 @@ describe "Acceptance::Assessor", type: :feature do
         expect(
           response.body,
         ).to have_link "Enter the first and last name of the assessor",
-                       href: "#name-error"
-        expect(response.body).to have_css "#name-error"
+                       href: "#name"
+        expect(response.body).to have_css "#name"
       end
     end
 
@@ -594,8 +594,8 @@ describe "Acceptance::Assessor", type: :feature do
         expect(
           response.body,
         ).to have_link "Enter the first and last name of the assessor",
-                       href: "#name-error"
-        expect(response.body).to have_css "#name-error"
+                       href: "#name"
+        expect(response.body).to have_css "#name"
       end
     end
 

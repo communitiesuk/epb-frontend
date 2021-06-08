@@ -17,7 +17,7 @@ describe "Acceptance::Certificate" do
       end
     end
 
-    context "when submitting without deciding a property type" do
+    context "when submitting without deciding a property type " do
       let(:response) do
         post "http://find-energy-certificate.local.gov.uk/find-a-certificate/type-of-property"
       end
@@ -38,8 +38,8 @@ describe "Acceptance::Certificate" do
         ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
                       text: "Please select a type of property"
         expect(response.body).to have_link "Please select a type of property",
-                                           href: "#property_type-error"
-        expect(response.body).to have_css "#property_type-error"
+                                           href: "#domestic"
+        expect(response.body).to have_css "#domestic"
       end
     end
   end
@@ -109,8 +109,8 @@ describe "Acceptance::Certificate" do
         ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
                       text: "Enter a real postcode"
         expect(response.body).to have_link "Enter a real postcode",
-                                           href: "#postcode-error"
-        expect(response.body).to have_css "#postcode-error"
+                                           href: "#postcode"
+        expect(response.body).to have_css "#postcode"
       end
 
       it "displays an error message" do
@@ -153,8 +153,8 @@ describe "Acceptance::Certificate" do
         ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
                       text: "Enter a real postcode"
         expect(response.body).to have_link "Enter a real postcode",
-                                           href: "#postcode-error"
-        expect(response.body).to have_css "#postcode-error"
+                                           href: "#postcode"
+        expect(response.body).to have_css "#postcode"
       end
     end
 
@@ -190,8 +190,8 @@ describe "Acceptance::Certificate" do
         ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
                       text: "Enter a real postcode"
         expect(response.body).to have_link "Enter a real postcode",
-                                           href: "#postcode-error"
-        expect(response.body).to have_css "#postcode-error"
+                                           href: "#postcode"
+        expect(response.body).to have_css "#postcode"
       end
     end
 
@@ -422,8 +422,8 @@ describe "Acceptance::Certificate" do
         expect(
           response.body,
         ).to have_link "Enter a 20-digit certificate number",
-                       href: "#reference_number-error"
-        expect(response.body).to have_css "#reference_number-error"
+                       href: "#reference_number"
+        expect(response.body).to have_css "#reference_number"
       end
     end
 
@@ -530,8 +530,8 @@ describe "Acceptance::Certificate" do
           expect(
             response.body,
           ).to have_link "A certificate was not found with this certificate number",
-                         href: "#reference_number-error"
-          expect(response.body).to have_css "#reference_number-error"
+                         href: "#reference_number"
+          expect(response.body).to have_css "#reference_number"
         end
       end
 
@@ -636,8 +636,8 @@ describe "Acceptance::Certificate" do
         ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
                       text: "Enter the street name"
         expect(response.body).to have_link "Enter the street name",
-                                           href: "#street_name-error"
-        expect(response.body).to have_css "#street_name-error"
+                                           href: "#street_name"
+        expect(response.body).to have_css "#street_name"
       end
     end
 
@@ -668,8 +668,8 @@ describe "Acceptance::Certificate" do
         ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
                       text: "Enter the street name"
         expect(response.body).to have_link "Enter the street name",
-                                           href: "#street_name-error"
-        expect(response.body).to have_css "#street_name-error"
+                                           href: "#street_name"
+        expect(response.body).to have_css "#street_name"
       end
     end
 
@@ -705,8 +705,8 @@ describe "Acceptance::Certificate" do
         ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
                       text: "Enter the town"
         expect(response.body).to have_link "Enter the town or city",
-                                           href: "#town-error"
-        expect(response.body).to have_css "#town-error"
+                                           href: "#town"
+        expect(response.body).to have_css "#town"
       end
     end
 
@@ -751,12 +751,12 @@ describe "Acceptance::Certificate" do
                       text: "Enter the town or city"
 
         expect(response.body).to have_link "Enter the town or city",
-                                           href: "#town-error"
-        expect(response.body).to have_css "#town-error"
+                                           href: "#town"
+        expect(response.body).to have_css "#town"
 
         expect(response.body).to have_link "Enter the street name",
-                                           href: "#street_name-error"
-        expect(response.body).to have_css "#street_name-error"
+                                           href: "#street_name"
+        expect(response.body).to have_css "#street_name"
       end
     end
 

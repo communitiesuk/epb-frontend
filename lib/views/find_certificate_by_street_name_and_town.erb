@@ -4,8 +4,10 @@
   <%=t('layout.body.breadcrumb.back')%>
 </a>
 
+<% error_form_ids = ["street_name", "town"] %>
+
 <% unless errors.empty? || errors[:generic] %>
-   <%==erb :error_summary, locals: {errors: errors }  %>
+   <%==erb :error_summary, locals: {errors: errors },  error_form_ids: error_form_ids %>
 <% end %>
 
 <div class="govuk-grid-row">

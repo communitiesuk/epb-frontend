@@ -1,16 +1,19 @@
-<div class="govuk-error-summary" aria-labelledby="error-summary-title"  role="alert" tabindex="-1" data-module="govuk-error-summary" autofocus>
+<div class="govuk-error-summary" aria-labelledby="error-summary-title"  role="alert" tabindex="-1" data-module="govuk-error-summary">
   <h2 class="govuk-error-summary__title" id="error-summary-title">
     <%=  t('error.error_summary_header') %>
   </h2>
   <div class="govuk-error-summary__body">
     <ul class="govuk-list govuk-error-summary__list">
-     <% errors.each do |key, value| %>
+     <% errors.each_with_index do |(key, value), index| %>
       <li>
-        <a href="#<%= key.to_s%>-error"><%=value %></a>
+          <% if defined?(error_form_ids) %>
+          <a href="#<%= error_form_ids[index] %>"><%=value %></a>
+            <% else %>
+          <a href="#<%= key.to_s%>"><%=value %></a>
+        <% end %>
       </li>
         <% end %>
     </ul>
   </div>
 </div>
-
 

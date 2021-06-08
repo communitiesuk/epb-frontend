@@ -1,7 +1,7 @@
 <a href="<%= localised_url('/') %>" class="govuk-back-link">Back</a>
-
+<% error_form_ids = ["domestic"] %>
 <% unless errors.empty? %>
-  <%== erb :error_summary, locals: {errors:errors}  %>
+  <%== erb :error_summary, locals: {errors:errors, error_form_ids:error_form_ids}  %>
 <% end %>
 
 
@@ -21,8 +21,8 @@
       <% end %>
       <div class="govuk-radios">
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="domestic" name="property_type" type="radio" value="domestic" aria-describedby="domestic-item-hint">
-          <label id="label-domestic" class="govuk-label govuk-radios__label" for="domestic">
+          <input class="govuk-radios__input" id="<%= error_form_ids[0] %>" name="property_type" type="radio" value="<%= error_form_ids[0] %>" aria-describedby="domestic-item-hint">
+          <label id="label-domestic" class="govuk-label govuk-radios__label" for="<%= error_form_ids[0] %>">
             <%= t('find_a_certificate.property_type.options.domestic.title') %>
           </label>
           <div id="domestic-item-hint" class="govuk-hint govuk-radios__hint">
