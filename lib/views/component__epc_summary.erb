@@ -9,7 +9,7 @@
       <p class="epc-rating-result govuk-body"><%= energy_efficiency_band.upcase %></p>
     </div>
 
-    <p class="epc-address govuk-body"><% unless occupier.nil? %><%= occupier %><br /><% end %><%==
+    <p class="epc-address govuk-body"><% unless occupier.nil? || occupier.strip.empty? %><%= occupier %><br /><% end %><%==
       compact_address_without_occupier(
         [
           address[:addressLine1],

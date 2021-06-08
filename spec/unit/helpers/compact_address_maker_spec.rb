@@ -12,7 +12,7 @@ describe Sinatra::FrontendService::Helpers do
       ["2 Lonely Street", "Something road"]
     end
 
-    let(:town) { "Post-Town1" }
+    let(:town) { "Knowhere" }
     let(:postcode) { "A0 0AA" }
     let(:occupier) { "Shop owners are us" }
 
@@ -25,7 +25,7 @@ describe Sinatra::FrontendService::Helpers do
           occupier,
         )
       expect(response).to eq(
-        ["2 Lonely Street", "Something road", "Post-Town1", "A0 0AA"],
+        ["2 Lonely Street", "Something road", "Knowhere", "A0 0AA"],
       )
     end
 
@@ -38,7 +38,35 @@ describe Sinatra::FrontendService::Helpers do
           occupier,
         )
       expect(response).to eq(
-        ["2 Lonely Street", "Something road", "Post-Town1", "A0 0AA"],
+        ["2 Lonely Street", "Something road", "Knowhere", "A0 0AA"],
+      )
+    end
+
+    it "shows the address when the occupier is empty" do
+      occupier = ""
+      response =
+        HelpersStub.new.compact_address_without_occupier(
+          address_lines_without_occupier,
+          town,
+          postcode,
+          occupier,
+        )
+      expect(response).to eq(
+        ["2 Lonely Street", "Something road", "Knowhere", "A0 0AA"],
+      )
+    end
+
+    it "shows the address when the occupier is whitespace" do
+      occupier = " "
+      response =
+        HelpersStub.new.compact_address_without_occupier(
+          address_lines_without_occupier,
+          town,
+          postcode,
+          occupier,
+        )
+      expect(response).to eq(
+        ["2 Lonely Street", "Something road", "Knowhere", "A0 0AA"],
       )
     end
   end

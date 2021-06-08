@@ -211,7 +211,7 @@ module Sinatra
         occupier
       )
         address = compact_address(address_lines, town, postcode)
-        if occupier.nil?
+        if occupier.nil? || occupier.strip.empty?
           address
         else
           address.reject { |line| line.include?(occupier) }
