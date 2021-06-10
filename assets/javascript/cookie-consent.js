@@ -1,150 +1,147 @@
 var cookies = {
   ids: {
-    "find-energy-certificate.digital.communities.gov.uk": "G-ZDCS1W2ZRM",
-    "getting-new-energy-certificate.digital.communities.gov.uk": "G-TR7Y5Z1GFY",
-    "getting-new-energy-certificate.local.gov.uk": "G-TR7Y5Z1GFY",
-    "find-energy-certificate.local.gov.uk": "G-ZDCS1W2ZRM",
+    'find-energy-certificate.digital.communities.gov.uk': 'G-ZDCS1W2ZRM',
+    'getting-new-energy-certificate.digital.communities.gov.uk': 'G-TR7Y5Z1GFY',
+    'getting-new-energy-certificate.local.gov.uk': 'G-TR7Y5Z1GFY',
+    'find-energy-certificate.local.gov.uk': 'G-ZDCS1W2ZRM'
   },
 
-  initialize: function() {
-    var tag_id = cookies.ids[window.location.hostname];
-    if(!tag_id) return;
+  initialize: function () {
+    const location = window.location
+    var tagId = cookies.ids[window.location.hostname]
+    if (!tagId) return
 
-    if(window.location.search.indexOf("cookies-setting=false")!==-1) return;
+    if (location.search.indexOf('cookies-setting=false') !== -1) return
 
-    let cookie_value = cookies.read("cookie_consent");
+    const cookieValue = cookies.read('cookie_consent')
 
-    //Get Google Analytics going if consented
-    if (cookie_value==="true") {
-      cookies.analytics(tag_id);
-    }
-
-    // Don't show the cookie banner on the Cookies page and present which option is selected (opt-in style)
-    else if (location.pathname === "/cookies") {
-      cookies.hideCookieBanner();
-    }
-
-    //If we don't have consent or rejection, display cookie question
-    else if (cookie_value !== "false") {
-      cookies.displayCookieBanner(tag_id);
+    // Get Google Analytics going if consented
+    if (cookieValue === 'true') {
+      cookies.analytics(tagId)
+    } else if (location.pathname === '/cookies') {
+      // Don't show the cookie banner on the Cookies page and present which option is selected (opt-in style)
+      cookies.hideCookieBanner()
+    } else if (cookieValue !== 'false') {
+      // If we don't have consent or rejection, display cookie question
+      cookies.displayCookieBanner(tagId)
     }
 
     // If we're on the cookie page, let's present which option is selected (opt-in style)
-    if(location.pathname.indexOf("/cookies")===0) {
-      document.getElementById("cookies-setting" + (cookie_value==="true"?"":"-false")).checked = true;
+    if (location.pathname.indexOf('/cookies') === 0) {
+      document.getElementById('cookies-setting' + (cookieValue === 'true' ? '' : '-false')).checked = true
     }
   },
 
-  displayCookieBanner: function(tag_id) {
-    cookies.showCookieBanner();
+  displayCookieBanner: function (tagId) {
+    cookies.showCookieBanner()
 
-    let acceptButton = document.getElementById("accept-button")
-    acceptButton.onclick = function() {
-      cookies.create("cookie_consent", "true");
+    const acceptButton = document.getElementById('accept-button')
+    acceptButton.onclick = function () {
+      cookies.create('cookie_consent', 'true')
 
-      cookies.analytics(tag_id);
+      cookies.analytics(tagId)
 
-      cookies.hideCookieQuestion();
+      cookies.hideCookieQuestion()
 
-      cookies.displayConfirmation(true);
-    };
+      cookies.displayConfirmation(true)
+    }
 
-    let rejectButton = document.getElementById("reject-button")
-    rejectButton.onclick = function() {
-      cookies.erase('cookie_consent');
+    const rejectButton = document.getElementById('reject-button')
+    rejectButton.onclick = function () {
+      cookies.erase('cookie_consent')
 
-      cookies.create("cookie_consent", "false");
+      cookies.create('cookie_consent', 'false')
 
-      cookies.hideCookieQuestion();
+      cookies.hideCookieQuestion()
 
-      cookies.displayConfirmation(false);
-    };
+      cookies.displayConfirmation(false)
+    }
 
-    let hideCookieMessageButton = document.getElementById("hide-cookie-message")
-    hideCookieMessageButton.onclick = function() {
-      cookies.hideCookieBanner();
+    const hideCookieMessageButton = document.getElementById('hide-cookie-message')
+    hideCookieMessageButton.onclick = function () {
+      cookies.hideCookieBanner()
     }
   },
 
-  showCookieBanner: function() {
-    let cookieBanner = document.getElementsByClassName("govuk-cookie-banner")[0];
-    cookieBanner.hidden = false;
-    let cookieMessage = document.getElementsByClassName("govuk-cookie-banner__message")[0];
-    cookieMessage.hidden = false;
+  showCookieBanner: function () {
+    const cookieBanner = document.getElementsByClassName('govuk-cookie-banner')[0]
+    cookieBanner.hidden = false
+    const cookieMessage = document.getElementsByClassName('govuk-cookie-banner__message')[0]
+    cookieMessage.hidden = false
   },
 
-  hideCookieQuestion: function() {
-    let cookieMessage = document.getElementsByClassName("govuk-cookie-banner__message")[0];
-    cookieMessage.hidden = true;
+  hideCookieQuestion: function () {
+    const cookieMessage = document.getElementsByClassName('govuk-cookie-banner__message')[0]
+    cookieMessage.hidden = true
   },
 
-  displayConfirmation: function(consent) {
-    let cookieConfirmation = document.getElementById("confirmation");
-    cookieConfirmation.hidden = false;
+  displayConfirmation: function (consent) {
+    const cookieConfirmation = document.getElementById('confirmation')
+    cookieConfirmation.hidden = false
 
-    let id = ""
+    let id = ''
     if (consent === true) {
-      id = "accepted-confirmation";
+      id = 'accepted-confirmation'
     } else {
-      id = "rejected-confirmation";
+      id = 'rejected-confirmation'
     };
 
-    let cookieConfirmationMessage = document.getElementById(id)
-    cookieConfirmationMessage.hidden = false;
+    const cookieConfirmationMessage = document.getElementById(id)
+    cookieConfirmationMessage.hidden = false
   },
 
-  hideCookieBanner: function() {
-    let cookieBanner = document.getElementsByClassName("govuk-cookie-banner")[0];
-    cookieBanner.hidden = true;
+  hideCookieBanner: function () {
+    const cookieBanner = document.getElementsByClassName('govuk-cookie-banner')[0]
+    cookieBanner.hidden = true
   },
 
-  analytics: function(tag_id) {
-    //Add Google Analytics script to page
-    let data_script = document.createElement("script");
-    data_script.src = "https://www.googletagmanager.com/gtag/js?id=" + tag_id;
-    document.getElementsByTagName("head")[0].appendChild(data_script);
+  analytics: function (tagId) {
+    // Add Google Analytics script to page
+    const dataScript = document.createElement('script')
+    dataScript.src = 'https://www.googletagmanager.com/gtag/js?id=' + tagId
+    document.getElementsByTagName('head')[0].appendChild(dataScript)
 
-    //Record visit
+    // Record visit
     setTimeout(
-      function() {
-        window.dataLayer = window.dataLayer || [];
+      function () {
+        window.dataLayer = window.dataLayer || []
 
-        function gtag() {
-          dataLayer.push(arguments);
+        function gtag () {
+          dataLayer.push(arguments)
         }
 
-        gtag('js', new Date());
-        gtag('config', tag_id);
+        gtag('js', new Date())
+        gtag('config', tagId)
       },
       100
-    );
+    )
   },
 
   create: function (name, value, days = 30) {
-    let expires;
+    let expires
     if (days) {
-      let date = new Date();
-      date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-      expires = "; expires=" + date.toUTCString();
+      let date = new Date()
+      date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000))
+      expires = '; expires=' + date.toUTCString()
     }
-    else expires = "";
-    document.cookie = name + "=" + value + expires + "; path=/";
+    else expires = ''
+    document.cookie = name + "=" + value + expires + "; path=/"
   },
 
   read: function (name) {
-    let nameEQ = name + "=";
-    let ca = document.cookie.split(';');
+    const nameEQ = name + '='
+    const ca = document.cookie.split(';')
     for (var i = 0; i < ca.length; i++) {
-      var c = ca[i];
-      while (c.charAt(0) === ' ') c = c.substring(1, c.length);
-      if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+      var c = ca[i]
+      while (c.charAt(0) === ' ') c = c.substring(1, c.length)
+      if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length)
     }
-    return null;
+    return null
   },
 
   erase: function (name) {
-    cookies.create(name, "", -1);
+    cookies.create(name, '', -1)
   }
-};
+}
 
-window.onload = cookies.initialize;
+window.onload = cookies.initialize
