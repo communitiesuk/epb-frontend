@@ -1,4 +1,4 @@
-var cookies = {
+const cookies = {
   ids: {
     'find-energy-certificate.digital.communities.gov.uk': 'G-ZDCS1W2ZRM',
     'getting-new-energy-certificate.digital.communities.gov.uk': 'G-TR7Y5Z1GFY',
@@ -8,7 +8,7 @@ var cookies = {
 
   initialize: function () {
     const location = window.location
-    var tagId = cookies.ids[window.location.hostname]
+    const tagId = cookies.ids[window.location.hostname]
     if (!tagId) return
 
     if (location.search.indexOf('cookies-setting=false') !== -1) return
@@ -107,7 +107,7 @@ var cookies = {
         window.dataLayer = window.dataLayer || []
 
         function gtag () {
-          dataLayer.push(arguments)
+          window.dataLayer.push(arguments)
         }
 
         gtag('js', new Date())
@@ -120,42 +120,41 @@ var cookies = {
   create: function (name, value, days = 30) {
     let expires
     if (days) {
-      let date = new Date()
+      const date = new Date()
       date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000))
       expires = '; expires=' + date.toUTCString()
-    }
-    else expires = ''
-    document.cookie = name + "=" + value + expires + "; path=/"
+    } else expires = ''
+    document.cookie = name + '=' + value + expires + '; path=/'
   },
 
   read: function (name) {
     const nameEQ = name + '='
     const ca = document.cookie.split(';')
-    for (var i = 0; i < ca.length; i++) {
-      var c = ca[i]
+    for (let i = 0; i < ca.length; i++) {
+      let c = ca[i]
       while (c.charAt(0) === ' ') c = c.substring(1, c.length)
       if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length)
     }
     return null
   },
 
-  erase: function() {
-    var cookies =document.cookie.split('; ')
+  erase: function () {
+    const cookies = document.cookie.split('; ')
 
-    for (var i = 0; i < cookies.length; i++) {
-        if (cookies[i].startsWith('_ga')){
-          var expDate = new Date()
-          var name = cookies[i].split("=")[0] + "="
-          var value = cookies[i].split("=")[1] + ";"
+    for (let i = 0; i < cookies.length; i++) {
+      if (cookies[i].startsWith('_ga')) {
+        const expDate = new Date()
+        const name = cookies[i].split('=')[0] + '='
+        const value = cookies[i].split('=')[1] + ';'
 
-          var expires = " expires=" + expDate.toUTCString() + ";"
-          var path = " path=/;"
-          var domain = " domain=" + document.domain.split('.').slice(-3).join('.') + ";"
+        const expires = ' expires=' + expDate.toUTCString() + ';'
+        const path = ' path=/;'
+        const domain = ' domain=' + document.domain.split('.').slice(-3).join('.') + ';'
 
-          document.cookie = name + value + expires + path + domain
-        }
+        document.cookie = name + value + expires + path + domain
+      }
     }
-  document.cookie = 'cookie_consent=false;'
+    document.cookie = 'cookie_consent=false;'
   }
 }
 
