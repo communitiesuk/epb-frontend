@@ -104,7 +104,7 @@ en:
           hint: "For example a commercial, industrial or public building."
       cta: "Continue"
       errors:
-        no_property_type_selected: "Please select a type of property"
+        no_property_type_selected: "Select a type of property"
 
   schemes:
     head:
@@ -327,7 +327,7 @@ en:
           hint: "For example a commercial, industrial or public building."
       cta: "Continue"
       errors:
-        no_property_type_selected: "Please select a type of property"
+        no_property_type_selected: "Select a type of property"
 
   find_certificate_by_postcode:
     top_heading: 'Find an energy performance certificate (EPC) by postcode'
@@ -1140,7 +1140,7 @@ en:
 
     30:
       title: Fan assisted storage heaters and dual immersion cylinder
-      description: Oh please fan assisted storage heaters and dual immersion cylinder
+      description: Fan assisted storage heaters and dual immersion cylinder
 
     31:
       title: Fan-assisted storage heaters

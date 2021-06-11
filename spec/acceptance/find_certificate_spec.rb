@@ -36,8 +36,8 @@ describe "Acceptance::Certificate" do
         expect(
           response.body,
         ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
-                      text: "Please select a type of property"
-        expect(response.body).to have_link "Please select a type of property",
+                      text: "Select a type of property"
+        expect(response.body).to have_link "Select a type of property",
                                            href: "#domestic"
         expect(response.body).to have_css "#domestic"
       end

@@ -48,9 +48,9 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
     visit "http://getting-new-energy-certificate.local.gov.uk:9393"
     click_on "Start now"
     click_on "Continue"
-    expect(page).to have_content "Please select a type of property"
+    expect(page).to have_content "Select a type of property"
     expect(page).to have_content "There is a problem"
-    expect(page).to have_link "Please select a type of property"
+    expect(page).to have_link "Select a type of property"
   end
 
   it "displays an error message when entering an invalid postcode" do
