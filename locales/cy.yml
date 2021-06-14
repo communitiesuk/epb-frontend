@@ -1,6 +1,11 @@
 cy:
   validation_errors:
+    assessor_name_error: "Rhowch enw cyntaf ac enw olaf yr asesydd"
+    no_property_type_selected: "Dewiswch fath o eiddo"
     postcode_error: "Rhowch god post go iawn"
+    reference_number_not_valid: "Rhowch rif tystysgrif 20-digid"
+    street_name_missing: "Rhowch enw’r stryd"
+    town_missing: "Rhowch y dref neu’r ddinas"
 
   data_missing:
     not_recorded: "Heb eu cofnodi"
@@ -268,7 +273,6 @@ cy:
     top_heading: "Chwiliwch am asesydd yn ôl enw"
     question: "Rhowch enw cyntaf ac enw olaf yr asesydd"
     hint: "Er enghraifft Matt Anderson"
-    name_error: "Rhowch enw cyntaf ac enw olaf yr asesydd"
     button_text: "Chwiliwch"
     too_many_results: "Mae gormod o ganlyniadau ar gyfer yr enw hwnnw. Chwiliwch yn fwy cul."
 
@@ -326,8 +330,6 @@ cy:
           title: "Eiddo annomestig"
           hint: "Er enghraifft adeilad masnachol, diwydiannol neu gyhoeddus"
       cta: "Parhau"
-      errors:
-        no_property_type_selected: "Dewiswch fath o eiddo"
 
   find_certificate_by_postcode:
     top_heading: "Chwiliwch am dystysgrif perfformiad ynni yn ôl cod post"
@@ -386,7 +388,6 @@ cy:
     top_heading: "Chwiliwch am dystysgrif perfformiad ynni (EPC) yn ôl rhif y dystysgrif"
     question: "Rhowch rif tystysgrif"
     reference_number_not_registered: "Does dim tystysgrif wedi’i chanfod â’r rhif tystysgrif hwn"
-    reference_number_not_valid: "Rhowch rif tystysgrif 20-digid"
     button_text: Chwiliwch
     hint: "Er enghraifft 9002-3775-9101-5482-3149"
     no_network:
@@ -415,8 +416,6 @@ cy:
     street_name_hint: "Er enghraifft Primrose Street"
     town_question: "Rhowch y dref neu’r ddinas"
     town_hint: "Er enghraifft Bournemouth"
-    street_name_missing: "Rhowch enw’r stryd"
-    town_missing: "Rhowch y dref neu’r ddinas"
     no_network:
       heading: "Cysylltiad â’r rhwydwaith wedi methu"
       body: "Mae yna wall rhwydwaith mewnol"
@@ -432,8 +431,6 @@ cy:
     street_name_hint: "Er enghraifft Primrose Street"
     town_question: "Rhowch y dref neu’r ddinas"
     town_hint: "Er enghraifft Bournemouth"
-    street_name_missing: "Rhowch enw’r stryd"
-    town_missing: "Rhowch y dref neu’r ddinas"
     no_network:
       heading: "Cysylltiad â’r rhwydwaith wedi methu"
       body: "Mae yna wall rhwydwaith mewnol"
@@ -499,7 +496,6 @@ cy:
     top_heading: "Chwiliwch am dystysgrifau ynni ac adroddiadau yn ôl eu rhif"
     question: "Rhowch rif tystysgrif neu adroddiad"
     reference_number_not_registered: "Methwyd â dod o hyd i dystysgrif â’r rhif hwn"
-    reference_number_not_valid: "Rhowch rif tystysgrif 20-digid"
     button_text: "Chwiliwch"
     hint: "Er enghraifft 9002-3775-9101-5482-3149"
     no_network:

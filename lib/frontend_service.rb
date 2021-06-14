@@ -76,7 +76,7 @@ class FrontendService < Sinatra::Base
       if request.post? && params["property_type"].nil?
         @errors = {
           property_type:
-            t("find_an_assessor.property_type.errors.no_property_type_selected"),
+            t("validation_errors.no_property_type_selected"),
         }
         @page_title = "#{t('error.error')}#{@page_title}"
       end
@@ -184,7 +184,7 @@ class FrontendService < Sinatra::Base
             }"
           @errors[:reference_number] =
             t(
-              "find_non_dom_certificate_by_reference_number.reference_number_not_valid",
+              "validation_errors.reference_number_not_valid",
             )
         when Errors::CertificateNotFound
           @page_title =
@@ -298,7 +298,7 @@ class FrontendService < Sinatra::Base
             "#{t('error.error')}#{t('find_assessor_by_name.top_heading')} – #{
               t('services.getting_an_energy_certificate')
             } – #{t('layout.body.govuk')}"
-          @errors[:name] = t("find_assessor_by_name.name_error")
+          @errors[:name] = t("validation_errors.assessor_name_error")
         else
           return server_error(e)
         end
@@ -342,7 +342,7 @@ class FrontendService < Sinatra::Base
         @errors = {
           property_type:
             t(
-              "find_a_certificate.property_type.errors.no_property_type_selected",
+              "validation_errors.no_property_type_selected",
             ),
         }
 
@@ -520,10 +520,10 @@ class FrontendService < Sinatra::Base
             }"
           @errors[:street_name] =
             t(
-              "find_non_dom_certificate_by_street_name_and_town.street_name_missing",
+              "validation_errors.street_name_missing",
             )
           @errors[:town] =
-            t("find_non_dom_certificate_by_street_name_and_town.town_missing")
+            t("validation_errors.town_missing")
         when Errors::StreetNameMissing
           status 400
           @page_title =
@@ -533,7 +533,7 @@ class FrontendService < Sinatra::Base
               t('layout.body.govuk')
             }"
           @errors[:street_name] =
-            t("find_certificate_by_street_name_and_town.street_name_missing")
+            t("validation_errors.street_name_missing")
         when Errors::TownMissing
           status 400
           @page_title =
@@ -543,7 +543,7 @@ class FrontendService < Sinatra::Base
               t('layout.body.govuk')
             }"
           @errors[:town] =
-            t("find_certificate_by_street_name_and_town.town_missing")
+            t("validation_errors.town_missing")
         when Errors::CertificateNotFound
           @page_title =
             "#{
@@ -605,7 +605,7 @@ class FrontendService < Sinatra::Base
         when Errors::ReferenceNumberNotValid
           status 400
           @errors[:reference_number] =
-            t("find_certificate_by_reference_number.reference_number_not_valid")
+            t("validation_errors.reference_number_not_valid")
         when Errors::CertificateNotFound
           @errors[:reference_number] =
             t(
@@ -660,9 +660,9 @@ class FrontendService < Sinatra::Base
               t('layout.body.govuk')
             }"
           @errors[:street_name] =
-            t("find_certificate_by_street_name_and_town.street_name_missing")
+            t("validation_errors.street_name_missing")
           @errors[:town] =
-            t("find_certificate_by_street_name_and_town.town_missing")
+            t("validation_errors.town_missing")
         when Errors::StreetNameMissing
           status 400
           @page_title =
@@ -672,7 +672,7 @@ class FrontendService < Sinatra::Base
               t('layout.body.govuk')
             }"
           @errors[:street_name] =
-            t("find_certificate_by_street_name_and_town.street_name_missing")
+            t("validation_errors.street_name_missing")
         when Errors::TownMissing
           status 400
           @page_title =
@@ -682,7 +682,7 @@ class FrontendService < Sinatra::Base
               t('layout.body.govuk')
             }"
           @errors[:town] =
-            t("find_certificate_by_street_name_and_town.town_missing")
+            t("validation_errors.town_missing")
         when Errors::CertificateNotFound
           @page_title =
             "#{t('find_certificate_by_street_name_and_town.top_heading')} - #{

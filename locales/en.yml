@@ -1,6 +1,11 @@
 en:
   validation_errors:
+    assessor_name_error: 'Enter the first and last name of the assessor'
+    no_property_type_selected: "Select a type of property"
     postcode_error: 'Enter a real postcode'
+    reference_number_not_valid: 'Enter a 20-digit certificate number'
+    street_name_missing: 'Enter the street name'
+    town_missing: 'Enter the town or city'
 
   data_missing:
     not_recorded: "Not recorded"
@@ -268,7 +273,6 @@ en:
     top_heading: 'Find an assessor by name'
     question: 'Enter the assessor’s first and last names'
     hint: 'For example Matt Anderson'
-    name_error: 'Enter the first and last name of the assessor'
     button_text: 'Search'
     too_many_results: 'There are too many results for that name. Please narrow your search term.'
 
@@ -326,8 +330,6 @@ en:
           title: "A non-domestic property"
           hint: "For example a commercial, industrial or public building."
       cta: "Continue"
-      errors:
-        no_property_type_selected: "Select a type of property"
 
   find_certificate_by_postcode:
     top_heading: 'Find an energy performance certificate (EPC) by postcode'
@@ -386,7 +388,6 @@ en:
     top_heading: 'Find an energy performance certificate (EPC) by certificate number'
     question: 'Enter a certificate number'
     reference_number_not_registered: 'A certificate was not found with this certificate number'
-    reference_number_not_valid: 'Enter a 20-digit certificate number'
     button_text: 'Find'
     hint: 'For example 9002-3775-9101-5482-3149'
     no_network:
@@ -415,8 +416,6 @@ en:
     street_name_hint: 'For example Primrose Street'
     town_question: 'Enter the town or city'
     town_hint: 'For example Bournemouth'
-    street_name_missing: 'Enter the street name'
-    town_missing: 'Enter the town or city'
     no_network:
       heading: 'Network connection failed'
       body: 'There is an internal network error'
@@ -432,8 +431,6 @@ en:
     street_name_hint: 'For example Primrose Street'
     town_question: 'Enter the town or city'
     town_hint: 'For example Bournemouth'
-    street_name_missing: 'Enter the street name'
-    town_missing: 'Enter the town or city'
     no_network:
       heading: 'Network connection failed'
       body: 'There is an internal network error'
@@ -499,7 +496,6 @@ en:
     top_heading: 'Find energy certificates and reports by their number'
     question: 'Enter a certificate or report number'
     reference_number_not_registered: 'A certificate was not found with this certificate number'
-    reference_number_not_valid: 'Enter a 20-digit certificate number'
     button_text: 'Find'
     hint: 'For example 9002-3775-9101-5482-3149'
     no_network:
