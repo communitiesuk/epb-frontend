@@ -48,7 +48,7 @@ module Sinatra
         if number.to_f > number.to_i || number.to_f < number.to_i
           sprintf("£%.2f", number).gsub(/(\d)(?=(\d{3})+(?!\d))/, '\\1,')
         elsif !number.to_f.zero?
-          sprintf("£%.f", number).gsub(/(\d)(?=(\d{3})+(?!\d))/, '\\1,')
+          sprintf("£%.0f", number).gsub(/(\d)(?=(\d{3})+(?!\d))/, '\\1,')
         end
       end
 
