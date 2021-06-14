@@ -100,7 +100,7 @@ module UseCase
 
     def get_nullable_address_id(certificate)
       if certificate[:addressId].nil?
-        "RRN-" + certificate[:assessmentId]
+        "RRN-#{certificate[:assessmentId]}"
       else
         certificate[:addressId]
       end.to_sym

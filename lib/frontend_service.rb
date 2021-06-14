@@ -29,7 +29,7 @@ class FrontendService < Sinatra::Base
     @toggles = Helper::Toggles.new
 
     @container = Container.new
-    @logger = Logger.new(STDOUT)
+    @logger = Logger.new($stdout)
     @logger.level = Logger::INFO
   end
 
@@ -718,33 +718,34 @@ class FrontendService < Sinatra::Base
       }"
 
     status 200
-    if assessment[:data][:typeOfAssessment] == "CEPC"
+    case assessment[:data][:typeOfAssessment]
+    when "CEPC"
       @page_title = "#{t('non_domestic_epc.top_heading')}#{@page_title}"
       show(
         :non_domestic_energy_performance_certificate,
         assessment: assessment[:data],
       )
-    elsif assessment[:data][:typeOfAssessment] == "CEPC-RR"
+    when "CEPC-RR"
       @page_title = "#{t('non_domestic_epc.top_heading')}#{@page_title}"
       show(
         :non_domestic_energy_performance_certificate_recommendation_report,
         assessment: assessment[:data],
       )
-    elsif assessment[:data][:typeOfAssessment] == "DEC"
+    when "DEC"
       @page_title = "#{t('dec.top_heading')}#{@page_title}"
       if params["print"]
         show(:printable_dec, { assessment: assessment[:data] }, :print_layout)
       else
         show(:dec, assessment: assessment[:data])
       end
-    elsif assessment[:data][:typeOfAssessment] == "DEC-RR"
+    when "DEC-RR"
       @page_title =
         "#{t('dec.sections.recommendation_report.title')}#{@page_title}"
       show(:dec_recommendation_report, assessment: assessment[:data])
-    elsif assessment[:data][:typeOfAssessment] == "AC-CERT"
+    when "AC-CERT"
       @page_title = "#{t('ac_cert.top_heading')}#{@page_title}"
       show(:ac_cert, assessment: assessment[:data])
-    elsif assessment[:data][:typeOfAssessment] == "AC-REPORT"
+    when "AC-REPORT"
       @page_title = "#{t('ac_report.top_heading')}#{@page_title}"
       show(:ac_report, assessment: assessment[:data])
     else
@@ -773,7 +774,7 @@ class FrontendService < Sinatra::Base
     status 200
 
     content_type "application/xml"
-    attachment params[:assessment_id] + ".xml"
+    attachment "#{params[:assessment_id]}.xml"
 
     assessment[:data]
   rescue StandardError => e

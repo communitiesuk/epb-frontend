@@ -4,7 +4,7 @@ desc "Get missing strings in Welsh"
 
 def flatten_keys(hash, prefix = "")
   keys = []
-  hash.keys.each do |key|
+  hash.each_key do |key|
     if hash[key].is_a? Hash
       current_prefix = prefix + "#{key}."
       keys << flatten_keys(hash[key], current_prefix)
@@ -16,8 +16,8 @@ def flatten_keys(hash, prefix = "")
 end
 
 task :identify_missing_welsh_translations do
-  welsh = YAML.load(File.open(File.expand_path("locales/cy.yml")))
-  english = YAML.load(File.open(File.expand_path("locales/en.yml")))
+  welsh = YAML.safe_load(File.open(File.expand_path("locales/cy.yml")))
+  english = YAML.safe_load(File.open(File.expand_path("locales/en.yml")))
 
   welsh_keys = flatten_keys(welsh[welsh.keys.first])
   english_keys = flatten_keys(english[english.keys.first])
@@ -58,7 +58,7 @@ task :convert_to_yaml do
   input_file.split("\n").each do |row|
     key_value = row.split(":", 2)
     key = key_value[0]
-    value = key_value[1].strip[1..-1]
+    value = key_value[1].strip[1..]
 
     iterate!(key, value, output_object)
   end
