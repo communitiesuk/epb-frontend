@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 describe Sinatra::FrontendService::Helpers do
-  class HelpersStub
-    include Sinatra::FrontendService::Helpers
+  let(:frontend_service_helpers) do
+    Class.new { extend Sinatra::FrontendService::Helpers }
   end
 
   varying_charges = [
@@ -58,9 +58,9 @@ describe Sinatra::FrontendService::Helpers do
         )[
           0
         ]
-      expect(HelpersStub.new.calculate_yearly_charges(green_deal_plan)).to eq(
-        "365",
-      )
+      expect(
+        frontend_service_helpers.calculate_yearly_charges(green_deal_plan),
+      ).to eq("365")
     end
   end
 
@@ -73,9 +73,9 @@ describe Sinatra::FrontendService::Helpers do
         )[
           0
         ]
-      expect(HelpersStub.new.calculate_yearly_charges(green_deal_plan)).to eq(
-        "694",
-      )
+      expect(
+        frontend_service_helpers.calculate_yearly_charges(green_deal_plan),
+      ).to eq("694")
     end
   end
 
@@ -90,9 +90,9 @@ describe Sinatra::FrontendService::Helpers do
         )[
           0
         ]
-      expect(HelpersStub.new.calculate_yearly_charges(green_deal_plan)).to eq(
-        "307",
-      )
+      expect(
+        frontend_service_helpers.calculate_yearly_charges(green_deal_plan),
+      ).to eq("307")
     end
   end
 
@@ -107,9 +107,9 @@ describe Sinatra::FrontendService::Helpers do
         )[
           0
         ]
-      expect(HelpersStub.new.calculate_yearly_charges(green_deal_plan)).to eq(
-        "347",
-      )
+      expect(
+        frontend_service_helpers.calculate_yearly_charges(green_deal_plan),
+      ).to eq("347")
     end
   end
 
@@ -123,9 +123,9 @@ describe Sinatra::FrontendService::Helpers do
 
     before { allow(Date).to receive(:today).and_return Date.new(2021, 0o3, 29) }
     it "calculates the combined annual cost when the current date is in the overlap period" do
-      expect(HelpersStub.new.calculate_yearly_charges(green_deal_plan)).to eq(
-        "1012",
-      )
+      expect(
+        frontend_service_helpers.calculate_yearly_charges(green_deal_plan),
+      ).to eq("1012")
     end
   end
 end

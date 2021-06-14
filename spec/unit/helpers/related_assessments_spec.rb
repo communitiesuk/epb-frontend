@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 describe Sinatra::FrontendService::Helpers do
-  class HelpersStub
-    include Sinatra::FrontendService::Helpers
+  let(:frontend_service_helpers) do
+    Class.new { extend Sinatra::FrontendService::Helpers }
   end
 
   context "with site services" do
@@ -26,7 +26,9 @@ describe Sinatra::FrontendService::Helpers do
     end
 
     it "does show the related assessment for DEC-RR" do
-      expect(HelpersStub.new.related_assessments(assessment, "DEC-RR")).to eq(
+      expect(
+        frontend_service_helpers.related_assessments(assessment, "DEC-RR"),
+      ).to eq(
         [
           {
             "assessmentId": "9273-1041-0269-0300-1496",
@@ -39,7 +41,9 @@ describe Sinatra::FrontendService::Helpers do
     end
 
     it "does show the related assessment for RdSAP" do
-      expect(HelpersStub.new.related_assessments(assessment, "RdSAP")).to eq(
+      expect(
+        frontend_service_helpers.related_assessments(assessment, "RdSAP"),
+      ).to eq(
         [
           {
             "assessmentId": "9273-1041-0269-0300-1497",
@@ -52,7 +56,9 @@ describe Sinatra::FrontendService::Helpers do
     end
 
     it "does show an empty array for nonexistant type" do
-      expect(HelpersStub.new.related_assessments(assessment, "CEPC")).to eq []
+      expect(
+        frontend_service_helpers.related_assessments(assessment, "CEPC"),
+      ).to eq []
     end
   end
 end
