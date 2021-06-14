@@ -3,7 +3,7 @@
 module UseCase
   class FetchCertificate < UseCase::Base
     def execute(assessment_id)
-      response = @gateway.fetch(assessment_id)
+      response = @gateway.fetch(assessment_id.strip)
 
       raise_errors_if_exists(response) do |error|
         raise Errors::AssessmentNotFound if error[:code] == "NOT_FOUND"

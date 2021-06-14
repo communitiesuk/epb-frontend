@@ -94,5 +94,11 @@ describe UseCase::FindCertificateByPostcode do
         find_certificate_by_postcode.execute("SW1A 2AB")[:data][:assessments],
       ).to eq(valid_certificates)
     end
+
+    it "returns list of certificates" do
+      expect(
+        find_certificate_by_postcode.execute(" SW1A 2AB ")[:data][:assessments],
+      ).to eq(valid_certificates)
+    end
   end
 end
