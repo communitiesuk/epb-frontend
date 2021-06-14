@@ -15,6 +15,8 @@ def flatten_keys(hash, prefix = "")
   prefix == "" ? keys.flatten : keys
 end
 
+desc "Identifies missing Welsh translations"
+
 task :identify_missing_welsh_translations do
   welsh = YAML.safe_load(File.open(File.expand_path("locales/cy.yml")))
   english = YAML.safe_load(File.open(File.expand_path("locales/en.yml")))
@@ -35,7 +37,7 @@ task :identify_missing_welsh_translations do
   end
 end
 
-desc "Convert dot-notation with quoted values to YAML"
+desc "Iterate to convert dot-notation with quoted values to YAML"
 
 def iterate!(key, value, hashicorp)
   keys = key.split(".", 2)
@@ -49,6 +51,8 @@ def iterate!(key, value, hashicorp)
     iterate!(keys[1], value, hashicorp[keys[0]])
   end
 end
+
+desc "Convert dot-notation with quoted values to YAML"
 
 task :convert_to_yaml do
   input_file = File.read(ENV["input_file"])
