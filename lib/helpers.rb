@@ -263,6 +263,12 @@ module Sinatra
         address_block.first(2).join(", ")
       end
 
+      def first_word_downcase(word)
+        letter_array = word.split(" ")
+        letter_array[0] = letter_array[0].downcase
+        letter_array.join(" ")
+      end
+
       def get_gov_header
         if request.env["HTTP_HOST"].match?(/find-energy-certificate/)
           t("services.find_an_energy_certificate")
