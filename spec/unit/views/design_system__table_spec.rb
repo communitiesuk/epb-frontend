@@ -209,7 +209,9 @@ describe "design_system__table" do
   end
 
   def render(example_name)
-    ERB.new(template).result_with_hash(example(example_name)["data"])
+    ERB
+      .new(template)
+      .result_with_hash(symbolize_keys(example(example_name)["data"]))
   end
 
   def mount(example_name)
@@ -222,5 +224,31 @@ describe "design_system__table" do
 
   def template
     File.read("lib/views/#{self.class.top_level_description}.erb")
+  end
+
+  def symbolize_keys(hash)
+    hash.each_with_object({}) do |(key, value), result|
+      new_key =
+        case key
+        when String
+          key.to_sym
+        else
+          key
+        end
+      result[new_key] = symbolize_value value
+    end
+  end
+
+  def symbolize_value(value)
+    case value
+    when Hash
+      symbolize_keys(value)
+    when Enumerable
+      value.map do |val|
+        symbolize_value val
+      end
+    else
+      value
+    end
   end
 end
