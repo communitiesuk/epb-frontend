@@ -14,7 +14,7 @@ describe "Journey::NavigateToRelatedCertificate",
           "127.0.0.1",
           "-p",
           "9393",
-          err: %i[child out],
+          { err: %i[child out] },
         ],
       )
     @process_id = process.pid

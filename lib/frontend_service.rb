@@ -11,6 +11,7 @@ require_relative "../lib/helper/toggles"
 class FrontendService < Sinatra::Base
   helpers Sinatra::FrontendService::Helpers
   attr_reader :toggles
+
   @toggles = nil
 
   set :erb, escape_html: true
