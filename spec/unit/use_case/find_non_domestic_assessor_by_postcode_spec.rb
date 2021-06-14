@@ -78,5 +78,11 @@ describe UseCase::FindNonDomesticAssessorByPostcode do
         find_non_domestic_assessor.execute("SW1A+2AB")[:data][:assessors],
       ).to eq(valid_assessors)
     end
+
+    it "returns list of non domestic assessors when the postcode includes leading or trailing whitespaces" do
+      expect(
+        find_non_domestic_assessor.execute(" SW1A+2AB ")[:data][:assessors],
+      ).to eq(valid_assessors)
+    end
   end
 end

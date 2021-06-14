@@ -54,5 +54,11 @@ describe UseCase::FindAssessorByName do
         find_assessor.execute("Somewhatcommon Name")[:data][:assessors],
       ).to eq(valid_assessors)
     end
+
+    it "returns list of assessors when the name includes leading or trailing whitespaces" do
+      expect(
+        find_assessor.execute(" Somewhatcommon   Name ")[:data][:assessors],
+      ).to eq(valid_assessors)
+    end
   end
 end

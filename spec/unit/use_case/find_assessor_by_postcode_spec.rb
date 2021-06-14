@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 describe UseCase::FindAssessorByPostcode do
-  it "returns an error when the postcode doesnt exist" do
+  it "raises an error when the postcode doesn't exist" do
     find_assessors_without_existing_postcode =
       described_class.new(AssessorsGateway::UnregisteredPostcodeStub.new)
 
@@ -10,7 +10,7 @@ describe UseCase::FindAssessorByPostcode do
     }.to raise_exception Errors::PostcodeNotRegistered
   end
 
-  it "returns an error when the postcode is not valid" do
+  it "raises an error when the postcode is not valid" do
     find_assessor_without_valid_postcode =
       described_class.new(AssessorsGateway::InvalidPostcodesStub.new)
 
@@ -67,6 +67,12 @@ describe UseCase::FindAssessorByPostcode do
 
     it "returns list of assessors" do
       expect(find_assessor.execute("SW1A+2AB")[:data][:assessors]).to eq(
+        valid_assessors,
+      )
+    end
+
+    it "returns list of assessors when the postcode includes leading or trailing whitespaces" do
+      expect(find_assessor.execute(" SW1A+2AB ")[:data][:assessors]).to eq(
         valid_assessors,
       )
     end
