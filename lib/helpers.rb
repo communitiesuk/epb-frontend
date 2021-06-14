@@ -78,8 +78,7 @@ module Sinatra
 
       def scheme_details(assessor, property)
         t(
-          "schemes.list." +
-            assessor[:registeredBy][:name].split.first.downcase + ".#{property}",
+          "schemes.list.#{assessor[:registeredBy][:name].split.first.downcase}.#{property}",
         )
       end
 

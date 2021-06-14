@@ -218,7 +218,7 @@ module FindCertificate
         "http://test-api.gov.uk/api/assessments/search?street_name=#{
           street_name
         }&town=#{town}"
-      assessment_types.each { |type| route += "&assessment_type[]=" + type }
+      assessment_types.each { |type| route += "&assessment_type[]=#{type}" }
 
       WebMock
         .stub_request(:get, route)
