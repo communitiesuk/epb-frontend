@@ -1074,11 +1074,7 @@ module FetchAssessmentSummary
         .to_return(status: 200, body: body.to_json)
     end
 
-    def self.fetch_dec_summary(
-      assessment_id: "0000-0000-0000-0000-0001",
-      date_of_expiry: "2030-01-01",
-      schema_version: 8.0
-    )
+    def self.fetch_dec_summary(assessment_id: "0000-0000-0000-0000-0001")
       body = {
         "data":
           "<Reports\n  xmlns=\"https://epbr.digital.communities.gov.uk/xsd/dec-summary\"\n  xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n  xsi:schemaLocation=\"https://epbr.digital.communities.gov.uk/xsd/dec-summary  ../../../../api/schemas/xml/CEPC-8.0.0/DEC-Summary.xsd\"\n>\n  <Report>\n    <Report-Header>\n      <Report-Type>1</Report-Type>\n      <Property-Details>\n        <UPRN></UPRN>\n      </Property-Details>\n      <Calculation-Details>\n        <Output-Engine>ORGen v3.6.3</Output-Engine>\n      </Calculation-Details>\n    </Report-Header>\n    <OR-Operational-Rating>\n      <OR-Assessment-Start-Date>2018-06-01</OR-Assessment-Start-Date>\n      <OR-Assessment-End-Date>2019-06-01</OR-Assessment-End-Date>\n      <OR-Benchmark-Data>\n        <Benchmarks>\n          <Benchmark>\n            <Name>Primary school</Name>\n            <Benchmark-ID>1</Benchmark-ID>\n            <TUFA>1611.54</TUFA>\n          </Benchmark>\n        </Benchmarks>\n      </OR-Benchmark-Data>\n      <OR-Energy-Consumption>\n        <Electricity>\n          <Consumption>74856</Consumption>\n          <Start-Date>2018-06-01</Start-Date>\n          <End-Date>2019-05-31</End-Date>\n          <Estimate>1</Estimate>\n        </Electricity>\n        <Gas>\n          <Consumption>177471</Consumption>\n          <Start-Date>2018-06-01</Start-Date>\n          <End-Date>2019-05-31</End-Date>\n          <Estimate>0</Estimate>\n        </Gas>\n      </OR-Energy-Consumption>\n    </OR-Operational-Rating>\n    <Display-Certificate>\n      <DEC-Annual-Energy-Summary>\n        <Annual-Energy-Use-Electrical>47</Annual-Energy-Use-Electrical>\n        <Annual-Energy-Use-Fuel-Thermal>110</Annual-Energy-Use-Fuel-Thermal>\n        <Renewables-Fuel-Thermal>0.0</Renewables-Fuel-Thermal>\n        <Renewables-Electrical>0.0</Renewables-Electrical>\n        <Typical-Thermal-Use>152</Typical-Thermal-Use>\n        <Typical-Electrical-Use>40</Typical-Electrical-Use>\n      </DEC-Annual-Energy-Summary>\n      <DEC-Status>0</DEC-Status>\n      <This-Assessment>\n        <Nominated-Date>2019-07-31</Nominated-Date>\n        <Energy-Rating>91</Energy-Rating>\n        <Electricity-CO2>41</Electricity-CO2>\n        <Heating-CO2>35</Heating-CO2>\n        <Renewables-CO2>0</Renewables-CO2>\n      </This-Assessment>\n      <Technical-Information>\n        <Main-Heating-Fuel>Natural Gas</Main-Heating-Fuel>\n      </Technical-Information>\n    </Display-Certificate>\n  </Report>\n</Reports>\n",
@@ -1092,10 +1088,7 @@ module FetchAssessmentSummary
         .to_return(status: 200, body: body.to_json)
     end
 
-    def self.fetch_dec_summary400(
-      assessment_id: "0000-0000-0000-0000-0001",
-      date_of_expiry: "2030-01-01"
-    )
+    def self.fetch_dec_summary400(assessment_id: "0000-0000-0000-0000-0001")
       CertificatesGateway::UnsupportedSchemaStub.fetch_dec_summary(
         assessment_id,
       )
