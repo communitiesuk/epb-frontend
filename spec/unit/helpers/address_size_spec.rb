@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 describe Sinatra::FrontendService::Helpers do
-  class HelpersStub
-    include Sinatra::FrontendService::Helpers
+  let(:frontend_service_helpers) do
+    Class.new { extend Sinatra::FrontendService::Helpers }
   end
 
   context "when checking address size" do
@@ -44,17 +44,19 @@ describe Sinatra::FrontendService::Helpers do
 
     it "show the number of lines" do
       expect(
-        HelpersStub.new.address_size(long_address),
+        frontend_service_helpers.address_size(long_address),
       ).to eq "govuk-body address-small-font"
     end
 
     it "show the number of lines" do
-      expect(HelpersStub.new.address_size(short_address)).to eq "govuk-body"
+      expect(
+        frontend_service_helpers.address_size(short_address),
+      ).to eq "govuk-body"
     end
 
     it "show the number of lines" do
       expect(
-        HelpersStub.new.address_size(long_line_address),
+        frontend_service_helpers.address_size(long_line_address),
       ).to eq "govuk-body address-small-font"
     end
   end
