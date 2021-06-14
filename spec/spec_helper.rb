@@ -44,7 +44,7 @@ loader_enable_override "helper/toggles"
 
 module RSpecUnitMixin
   def get_api_client
-    @api_client ||=
+    @get_api_client ||=
       Auth::HttpClient.new ENV["EPB_AUTH_CLIENT_ID"],
                            ENV["EPB_AUTH_CLIENT_SECRET"],
                            ENV["EPB_AUTH_SERVER"],
