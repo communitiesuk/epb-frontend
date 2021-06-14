@@ -1,21 +1,22 @@
 require "rspec"
 require "json"
 
-describe "UseCase::FilterLatestCertificates" do
+describe UseCase::FilterLatestCertificates do
   before { @usecase = UseCase::FilterLatestCertificates.new(nil) }
 
-  context "When processing a response from domestic assessment search by postcode" do
+  context "when processing a response from domestic assessment search by postcode" do
     let(:json_response) do
       JSON.parse(get_domestic_search_by_postcode, symbolize_names: true)
     end
+
     let(:result) { @usecase.execute(json_response) }
 
-    it "Then the resulting address contains the most recent certificate of any domestic type" do
+    it "returns the address with the most recent certificate of any domestic type" do
       certificates = result[:"UPRN-000000000000"][:certificates]
       expect(certificates).to contain_exactly(latest_rdsap_certificate)
     end
 
-    it "Then the resulting address has the most recent address lines" do
+    it "returns the address with the most recent address lines" do
       address = result[:"UPRN-000000000000"]
       expect(address[:addressLine1]).to eq "A3-L1"
       expect(address[:addressLine2]).to eq "A3-L2"
@@ -26,13 +27,13 @@ describe "UseCase::FilterLatestCertificates" do
     end
   end
 
-  context "When processing a response from non-domestic assessment search by postcode" do
+  context "when processing a response from non-domestic assessment search by postcode" do
     let(:json_response) do
       JSON.parse(get_non_domestic_search_by_postcode, symbolize_names: true)
     end
     let(:result) { @usecase.execute(json_response) }
 
-    it "Then the resulting address contains the most recent certificate for each type" do
+    it "returns the address with the most recent certificate for each type" do
       certificates = result[:"UPRN-123456789012"][:certificates]
       expect(certificates).to contain_exactly(
         latest_cepc,
@@ -44,7 +45,7 @@ describe "UseCase::FilterLatestCertificates" do
       )
     end
 
-    it "Then the resulting address has the most recent address lines" do
+    it "returns the address with the most recent address lines" do
       address = result[:"UPRN-123456789012"]
       expect(address[:addressLine1]).to eq "The Coolest Supershop"
       expect(address[:addressLine2]).to eq "350-354 The High Road"

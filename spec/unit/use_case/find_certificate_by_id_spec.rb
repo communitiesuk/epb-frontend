@@ -5,7 +5,7 @@ describe UseCase::FindCertificateById do
     let(:certificates_gateway) { CertificatesGateway::EmptyStub.new }
     let(:find_certificate) { described_class.new(certificates_gateway) }
 
-    it "returns empty array" do
+    it "raises CertificateNotFound error" do
       expect {
         find_certificate.execute("4567-6789-4567-6789-4567")[:data][
           :assessments
