@@ -19,8 +19,7 @@ describe "Journey::NavigateToRelatedCertificate",
       )
     @process_id = process.pid
 
-    unless process.readline.include?("port=9393")
-    end
+    nil unless process.readline.include?("port=9393")
   end
 
   after(:all) { Process.kill("KILL", @process_id) }
