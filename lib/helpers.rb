@@ -47,7 +47,7 @@ module Sinatra
       def number_to_currency(number)
         if number.to_f > number.to_i || number.to_f < number.to_i
           sprintf("£%.2f", number).gsub(/(\d)(?=(\d{3})+(?!\d))/, '\\1,')
-        elsif number.to_f != 0
+        elsif !number.to_f.zero?
           sprintf("£%.f", number).gsub(/(\d)(?=(\d{3})+(?!\d))/, '\\1,')
         end
       end
