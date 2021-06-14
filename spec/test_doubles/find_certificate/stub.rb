@@ -212,7 +212,7 @@ module FindCertificate
       street_name,
       town,
       assessment_types = %w[RdSAP SAP],
-      returnedType = "RdSAP"
+      returned_type = "RdSAP"
     )
       route =
         "http://test-api.gov.uk/api/assessments/search?street_name=#{
@@ -240,7 +240,7 @@ module FindCertificate
                   dateOfAssessment: "2020-01-01",
                   dateRegistered: "2020-01-02",
                   dwellingType: "Top floor flat",
-                  typeOfAssessment: returnedType,
+                  typeOfAssessment: returned_type,
                   totalFloorArea: 50,
                   currentCarbonEmission: 4.4,
                   potentialCarbonEmission: 3.4,
@@ -265,7 +265,7 @@ module FindCertificate
                   dateOfAssessment: "2020-01-01",
                   dateRegistered: "2020-01-02",
                   dwellingType: "Top floor flat",
-                  typeOfAssessment: returnedType,
+                  typeOfAssessment: returned_type,
                   totalFloorArea: 50,
                   currentCarbonEmission: 4.4,
                   potentialCarbonEmission: 3.4,
@@ -290,7 +290,7 @@ module FindCertificate
                   dateOfAssessment: "2020-01-01",
                   dateRegistered: "2020-01-02",
                   dwellingType: "Top floor flat",
-                  typeOfAssessment: returnedType,
+                  typeOfAssessment: returned_type,
                   totalFloorArea: 50,
                   currentCarbonEmission: 4.4,
                   potentialCarbonEmission: 3.4,

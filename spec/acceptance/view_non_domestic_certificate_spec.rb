@@ -26,7 +26,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
     before do
       FetchAssessmentSummary::AssessmentStub.fetch_cepc assessment_id:
                                                           "1234-5678-1234-5678-1234",
-                                                        energyEfficiencyBand:
+                                                        energy_efficiency_band:
                                                           "b"
     end
 
@@ -124,7 +124,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
         before do
           FetchAssessmentSummary::AssessmentStub.fetch_cepc assessment_id:
                                                               "1234-5678-1234-5678-1234",
-                                                            energyEfficiencyBand:
+                                                            energy_efficiency_band:
                                                               "g"
         end
 
@@ -161,7 +161,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
         before do
           FetchAssessmentSummary::AssessmentStub.fetch_cepc assessment_id:
                                                               "1234-5678-1234-5678-1234",
-                                                            energyEfficiencyBand:
+                                                            energy_efficiency_band:
                                                               "g",
                                                             postcode: "BT4 3WS"
         end
@@ -297,7 +297,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
         related_party_disclosures.each do |key, disclosure|
           FetchAssessmentSummary::AssessmentStub.fetch_cepc assessment_id:
                                                               "1234-5678-1234-5678-1234",
-                                                            energyEfficiencyBand:
+                                                            energy_efficiency_band:
                                                               "b",
                                                             related_rrn:
                                                               "4192-1535-8427-8844-6702",
@@ -382,7 +382,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
       before do
         FetchAssessmentSummary::AssessmentStub.fetch_cepc assessment_id:
                                                             "1234-5678-1234-5678-1234",
-                                                          energyEfficiencyBand:
+                                                          energy_efficiency_band:
                                                             "b",
                                                           related_rrn:
                                                             "4192-1535-8427-8844-6702",
@@ -405,9 +405,9 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
     before do
       FetchAssessmentSummary::AssessmentStub.fetch_cepc assessment_id:
                                                           "1234-5678-1234-5678-1234",
-                                                        energyEfficiencyBand:
+                                                        energy_efficiency_band:
                                                           "b",
-                                                        primaryEnergyUse: nil
+                                                        primary_energy_use: nil
     end
 
     it "hides the primary energy use explanation" do
@@ -419,7 +419,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
     before do
       FetchAssessmentSummary::AssessmentStub.fetch_cepc assessment_id:
                                                           "1234-5678-1234-5678-1234",
-                                                        energyEfficiencyBand:
+                                                        energy_efficiency_band:
                                                           "b",
                                                         postcode: "BT1 1AA",
                                                         opt_out: true
