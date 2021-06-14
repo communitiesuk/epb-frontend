@@ -1,5 +1,13 @@
+@mixin black-bg-if-monochrome {
+  @media print and (monochrome) {
+    background-color: #000;
+  }
+}
+
 .epc-box-summary {
   background: #1d70b8;
+
+  @include black-bg-if-monochrome;
 
   display: -webkit-box;
   display: -moz-box;
@@ -91,6 +99,8 @@
   border: 2px solid #fff;
   margin: 10px;
 
+  @include black-bg-if-monochrome;
+
   .epc-rating-title {
     line-height: 30px;
     font-size: 20px;
@@ -116,6 +126,9 @@
   background: #1d70b8;
   padding: 0;
   overflow: hidden;
+  margin-bottom: 0.6rem;
+
+  @include black-bg-if-monochrome;
 
   .epc-address {
     padding-left: 30px;
@@ -164,6 +177,8 @@
   border: 2px solid #fff;
   margin: 10px;
 
+  @include black-bg-if-monochrome;
+
   .epc-rating-title {
     line-height: 30px;
     font-size: 20px;
@@ -184,5 +199,94 @@
   .epc-box-summary {
     width: 100%;
     -moz-box-sizing: border-box;
+  }
+}
+
+$epc-box-print-base-font-size: 0.8rem;
+$epc-box-gutter: 2px;
+
+@media print {
+  div.epc-box {
+    display: flex;
+    flex-direction: row;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: $epc-box-print-base-font-size;
+
+    .epc-rating-box {
+      order: 2;
+      flex-shrink: 0;
+      width: 15%;
+      border: none;
+      float: none;
+      border-left: $epc-box-gutter solid #fff;
+      margin: 0;
+      padding: 1rem 0 10px;
+
+      .epc-rating-title {
+        font-size: $epc-box-print-base-font-size;
+        margin-bottom: 0;
+        line-height: normal;
+      }
+
+      .epc-rating-result {
+        font-size: 3rem;
+        margin-bottom: 0;
+        line-height: 3.5rem;
+      }
+    }
+    .epc-address {
+      order: 1;
+      flex-shrink: 0;
+      width: 35%;
+      padding-top: 1rem;
+      padding-left: 0;
+      font-size: $epc-box-print-base-font-size;
+    }
+    .epc-extra-boxes {
+      order: 3;
+      flex-shrink: 0;
+      width: 50%;
+      border-left: $epc-box-gutter solid #fff;
+      display: flex;
+      flex-direction: column;
+      padding-top: 1rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    .epc-extra-box {
+      border-top: none;
+      width: auto;
+      display: flex;
+      flex-direction: row;
+      padding-bottom: $epc-box-print-base-font-size - 0.2rem;
+      margin-bottom: 0 !important;
+      line-height: inherit;
+
+      & + .epc-extra-box {
+        float: none;
+        border-left: none;
+        border-top: 1px solid #fff;
+        padding-top: $epc-box-print-base-font-size - 0.2rem;
+      }
+
+      label, b {
+        font-size: $epc-box-print-base-font-size;
+        text-align: left;
+        margin-top: 0;
+      }
+
+      label {
+        flex: 2;
+      }
+
+      b {
+        flex: 3;
+      }
+
+      label:after {
+        content: ":";
+      }
+    }
   }
 }

@@ -7,7 +7,7 @@
         class="govuk-back-link">
         <%=t('layout.body.breadcrumb.back')%>
       </a>
-      <h1 class="govuk-heading-xl"><%= t('ac_report.top_heading') %></h1>
+      <h1 class="govuk-heading-xl printable-area"><%= t('ac_report.top_heading') %></h1>
     </div>
   </div>
 
@@ -78,7 +78,7 @@
 
   </div>
 
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-two-thirds epc-ac-report-sections">
     <hr class="epc-light-top" />
 
     <%== erb :component__epc_summary_compact, locals: {

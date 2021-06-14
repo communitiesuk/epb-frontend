@@ -1,4 +1,4 @@
-<div id="assessor_details" class="govuk-body epc-blue-bottom">
+<div id="assessor_details" class="govuk-body epc-blue-bottom printable-area">
   <h2 class="govuk-heading-l"><%= t('non_domestic_epc.rr.assessor_details.title') %></h2>
   <% assessor_declaration = party_disclosure(assessment[:relatedPartyDisclosure].nil? ? "13" : assessment[:relatedPartyDisclosure], assessment[:relatedPartyDisclosure], "non_domestic_disclosure_code", "non_domestic_epc") %>
   <%==

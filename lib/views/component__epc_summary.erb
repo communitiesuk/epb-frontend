@@ -1,4 +1,4 @@
-<div class="govuk-body epc-blue-bottom">
+<div class="govuk-body epc-blue-bottom printable-area">
   <div class="epc-box govuk-!-margin-bottom-5">
     <div class="epc-rating-box">
       <% if defined?(rating_type) %>
@@ -21,18 +21,20 @@
         address[:postcode],
         occupier,
       ).map{|e| CGI.escapeHTML(e)}.join('<br />') %></p>
-    <p class="govuk-body epc-extra-box">
-      <label>
-        <%= date_of_expiry < Date.today ?
-             t('component.epc_summary_compact.certificate.expired')  :
-              t('component.epc_summary_compact.certificate.valid_until')
-        %></label>
-      <b><%= date(date_of_expiry) %></b>
-    </p>
-    <p class="govuk-body epc-extra-box">
-      <label><%= t('component.epc_summary.certificate_id') %></label>
-      <b><%= assessment_id %></b>
-    </p>
+    <div class="epc-extra-boxes">
+      <p class="govuk-body epc-extra-box">
+        <label>
+          <%= date_of_expiry < Date.today ?
+                t('component.epc_summary_compact.certificate.expired')  :
+                t('component.epc_summary_compact.certificate.valid_until')
+          %></label>
+        <b><%= date(date_of_expiry) %></b>
+      </p>
+      <p class="govuk-body epc-extra-box">
+        <label><%= t('component.epc_summary.certificate_id') %></label>
+        <b><%= assessment_id %></b>
+      </p>
+    </div>
   </div>
 
   <% unless property_type.nil? || floor_area.nil? %>

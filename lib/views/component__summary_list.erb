@@ -27,8 +27,8 @@
     %>
 
     <div class="govuk-summary-list__row<%= print ? "" : " govuk-!-display-none-print" %>">
-      <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= translation_prefix ? t(translation_prefix + key.to_s) : key.to_s %></dt>
-      <dd class="govuk-summary-list__value govuk-!-width-one-half<%= numerical ? " govuk-table__cell--numeric" : "" %>">
+      <dt class="govuk-summary-list__key<% unless defined?(print_view) && print_view %> govuk-!-width-one-half<% end %>"><%= translation_prefix ? t(translation_prefix + key.to_s) : key.to_s %></dt>
+      <dd class="govuk-summary-list__value<% unless defined?(print_view) && print_view %> govuk-!-width-one-half<% end %><%= numerical ? " govuk-table__cell--numeric" : "" %>">
         <%
           case type
           when "email"

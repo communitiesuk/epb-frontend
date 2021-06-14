@@ -11,6 +11,9 @@
   <link href="/printable.css" media="print" rel="stylesheet" type="text/css">
   <link href="/application.css" media="screen" rel="stylesheet" type="text/css">
   <!--<![endif]-->
+<% unless @skip_custom_css %>
+  <link href="/print-certificates.css" media="print" rel="stylesheet" type="text/css">
+<% end %>
 
   <title><%=@page_title || t('layout.head.title')%></title>
 

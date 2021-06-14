@@ -1,4 +1,4 @@
-<div id="rating" class="govuk-body epc-blue-bottom">
+<div id="rating" class="govuk-body epc-blue-bottom printable-area">
   <h2 class="govuk-heading-l"><%= t('non_domestic_epc.rr.rating.title') %></h2>
   <p class="govuk-body"><%=
     t('non_domestic_epc.rr.rating.current_energy_rating', band: related_band.upcase)
@@ -6,7 +6,7 @@
   <p class="govuk-body"><%==
     t(
       'non_domestic_epc.rr.rating.more_info',
-      link: '<a class="govuk-link" href="' + localised_url("/energy-certificate/#{related_cepc}") + '">' + t('non_domestic_epc.rr.rating.cta') + '</a>'
+      link: print_view ? t('non_domestic_epc.rr.rating.cta') : '<a class="govuk-link" href="' + localised_url("/energy-certificate/#{related_cepc}") + '">' + t('non_domestic_epc.rr.rating.cta') + '</a>'
     )
   %></p>
 </div>

@@ -1,9 +1,9 @@
-<div class="govuk-body epc-blue-bottom">
+<div class="govuk-body epc-blue-bottom printable-area">
   <a id="related_report"></a>
   <h2 class="govuk-heading-l"><%=
     t('non_domestic_epc.related_report.heading')
   %></h2>
-  <p><%==
+  <p class="govuk-body-m"><%==
     t('non_domestic_epc.related_report.text',
            :link => "<a href=\"" + localised_url( "/energy-certificate/#{related_rrn}" ) + "\">" + t('non_domestic_epc.related_report.cta') + '</a>')
   %></p>

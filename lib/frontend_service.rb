@@ -700,44 +700,48 @@ class FrontendService < Sinatra::Base
       " - #{t('services.find_an_energy_certificate')} - #{
         t('layout.body.govuk')
       }"
+    use_print_view = params["print"] == "true"
 
     status 200
     case assessment[:data][:typeOfAssessment]
     when "CEPC"
       @page_title = "#{t('non_domestic_epc.top_heading')}#{@page_title}"
-      show(
-        :non_domestic_energy_performance_certificate,
-        assessment: assessment[:data],
-      )
+      show_with_print_option :non_domestic_energy_performance_certificate,
+                             { assessment: assessment[:data] },
+                             use_print_view
     when "CEPC-RR"
       @page_title = "#{t('non_domestic_epc.top_heading')}#{@page_title}"
-      show(
-        :non_domestic_energy_performance_certificate_recommendation_report,
-        assessment: assessment[:data],
-      )
+      show_with_print_option :non_domestic_energy_performance_certificate_recommendation_report,
+                             { assessment: assessment[:data] },
+                             use_print_view
     when "DEC"
       @page_title = "#{t('dec.top_heading')}#{@page_title}"
-      if params["print"]
-        show(:printable_dec, { assessment: assessment[:data] }, :print_layout)
-      else
-        show(:dec, assessment: assessment[:data])
-      end
+      template = use_print_view ? :printable_dec : :dec
+      show_with_print_option template,
+                             { assessment: assessment[:data] },
+                             use_print_view,
+                             true
     when "DEC-RR"
       @page_title =
         "#{t('dec.sections.recommendation_report.title')}#{@page_title}"
-      show(:dec_recommendation_report, assessment: assessment[:data])
+      show_with_print_option :dec_recommendation_report,
+                             { assessment: assessment[:data] },
+                             use_print_view
     when "AC-CERT"
       @page_title = "#{t('ac_cert.top_heading')}#{@page_title}"
-      show(:ac_cert, assessment: assessment[:data])
+      show_with_print_option :ac_cert,
+                             { assessment: assessment[:data] },
+                             use_print_view
     when "AC-REPORT"
       @page_title = "#{t('ac_report.top_heading')}#{@page_title}"
-      show(:ac_report, assessment: assessment[:data])
+      show_with_print_option :ac_report,
+                             { assessment: assessment[:data] },
+                             use_print_view
     else
       @page_title = "#{t('domestic_epc.top_heading')}#{@page_title}"
-      show(
-        :domestic_energy_performance_certificate,
-        assessment: assessment[:data],
-      )
+      show_with_print_option :domestic_energy_performance_certificate,
+                             { assessment: assessment[:data] },
+                             use_print_view
     end
   rescue StandardError => e
     case e
@@ -800,6 +804,20 @@ class FrontendService < Sinatra::Base
   def show(template, locals, layout = :layout)
     locals[:errors] = @errors
     erb template, layout: layout, locals: locals
+  end
+
+  def show_with_print_option(
+    template,
+    locals,
+    is_print_view,
+    skip_custom_css = false
+  )
+    @skip_custom_css = true if skip_custom_css
+    show(
+      template,
+      locals.merge({ print_view: is_print_view }),
+      is_print_view ? :print_layout : :layout,
+    )
   end
 
   not_found do

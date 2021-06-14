@@ -1,5 +1,5 @@
 <% unless recommendations.empty? %>
-<div class="govuk-body">
+<div class="govuk-body printable-area">
   <hr class="epc-light-top" />
   <% recommendations.each_with_index do |recommendation, index| %>
     <%== erb :domestic_energy_performance_certificate__recommended_improvement, locals: { recommendation: recommendation, index: index } %>

@@ -1,0 +1,281 @@
+// print CSS rules for all certificates except DEC (which needs to be displayed on a wall)
+
+$govuk-global-styles: true;
+$govuk-assets-path: '';
+
+@import "./node_modules/govuk-frontend/govuk/all";
+@import "./assets/components/_print";
+@import "./assets/components/epc-box";
+
+//hack to target safari (10.1+) ONLY as print rendering significantly different
+//see https://browserstrangeness.bitbucket.io/css_hacks.html#safari
+@mixin target-safari {
+  @media not all and (min-resolution:.001dpcm) {
+    @supports (-webkit-appearance:none) {
+      @content;
+    }
+  }
+}
+
+@include target-safari {
+  html, body {
+    font-size: 10pt;
+  }
+}
+
+@page {
+  margin-top: 20mm;
+  margin-bottom: 20mm;
+}
+
+@mixin split-into-columns {
+  columns: 2;
+  column-gap: 4rem;
+}
+
+h2, h3 {
+  page-break-after: avoid;
+  break-after: avoid-page;
+}
+
+div.epc-blue-bottom {
+  border-bottom: 1px solid #1d70b8;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.govuk-body {
+  margin-bottom: 0;
+
+  .printable-area & {
+    margin-bottom: 20px;
+  }
+
+  &.printable-area {
+    page-break-inside: avoid;
+    break-inside: avoid-page;
+
+    &.allow-break {
+      page-break-inside: auto;
+      break-inside: auto;
+    }
+  }
+}
+
+.epc-section.printable-area {
+  margin-top: 0;
+}
+
+.govuk-main-wrapper {
+  padding: 0;
+}
+
+.govuk-grid-row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.govuk-grid-column-full {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+hr.epc-light-top, hr.epc-blue-top {
+  display: none;
+}
+
+h1.main-heading, h1.govuk-heading-xl {
+  background-color: #000 !important;
+  color: #fff !important;
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.6rem;
+}
+
+h2.govuk-heading-l {
+  font-size: 1.3rem;
+  margin-bottom: 1.6rem;
+}
+
+h2.govuk-heading-m, h3.govuk-heading-m, .epc-energy-rating-graph h2 {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+h4.govuk-heading-s, h5.govuk-heading-s {
+  font-size: 1rem;
+  break-after: avoid;
+}
+
+caption.govuk-table__caption {
+  font-size: 1em;
+  font-weight: normal;
+}
+
+p.govuk-body, p.govuk-body-m, p.govuk-hint, pre.govuk-body, .govuk-body li {
+  font-size: 1rem;
+}
+
+.govuk-summary-list {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+
+  .epc-box-container & {
+    margin-bottom: 0;
+  }
+}
+
+.govuk-summary-list__row {
+  display: flex;
+  line-height: 1rem;
+  padding: 0.4rem 0;
+
+  dt, dd {
+    flex: 1;
+  }
+
+  dt {
+    margin-bottom: 0;
+    font-weight: normal;
+  }
+}
+
+.govuk-summary-list__key, .govuk-summary-list__value {
+  padding: 0;
+}
+
+.govuk-section-break--xl {
+  margin: 2rem 0 1rem !important;
+}
+
+$epc-compare-svg-height: 40px;
+$epc-compare-svg-width: $epc-compare-svg-height * 1.8;
+
+.epc-rating-graph-section {
+  @include split-into-columns;
+
+  svg.epc-energy-rating-graph {
+    margin: -90px 0;
+    break-after: avoid-column;
+
+    @include target-safari {
+      margin: 0;
+    }
+  }
+
+  .epc-how-compares {
+    margin-top: -20px;
+
+    .govuk-summary-list__row {
+      line-height: calc(#{$epc-compare-svg-height} + 1.2rem);
+    }
+
+    dt {
+      width: auto !important;
+    }
+
+    dd {
+      flex: 0 0 $epc-compare-svg-width;
+    }
+
+    svg {
+      height: $epc-compare-svg-height;
+      width: $epc-compare-svg-width;
+
+      text {
+        font-size: 1.3rem;
+      }
+
+      rect, polygon {
+        shape-rendering: crispEdges;
+      }
+    }
+  }
+}
+
+.printable-area details {
+  display: none;
+}
+
+.epc-ac-report-sections {
+  p, li {
+    font-size: 1rem;
+  }
+
+  p, pre, .cooling-plants p.govuk-body {
+    margin-bottom: 0.5rem;
+  }
+
+  h4 {
+    margin-top: 1rem;
+  }
+
+  h5.govuk-heading-s {
+    font-style: italic;
+    font-size: 0.9rem;
+    margin: 0.6rem 0 !important;
+  }
+}
+
+.epc-cepc-rr-sections table, .epc-energy-perf-breakdown table, .epc-recommendation-list table {
+  margin-bottom: 1rem;
+}
+
+.epc-energy-perf-breakdown ul {
+  margin-bottom: 0;
+}
+
+.epc-energy-perf-breakdown .govuk-table__cell {
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.epc-environmental-impact, .epc-estimated-energy-use {
+  @include split-into-columns;
+}
+
+.epc-environmental-impact {
+  break-after: avoid;
+}
+
+.epc-recommendations .epc-rating-box {
+  display: none;
+}
+
+.epc-contact-assessor details {
+  display: inline !important;
+
+  .govuk-details__summary {
+    margin-bottom: 0;
+    padding-left: 0;
+
+    &::before {
+      display: none;
+    }
+  }
+}
+
+.epc-contact-assessor {
+  .govuk-summary-list {
+    margin-bottom: 0;
+  }
+  h3 {
+    margin-top: 1rem;
+    margin-bottom: 0;
+  }
+  dl.govuk-summary-list {
+    display: table;
+  }
+  .govuk-summary-list__row {
+    display: table-row;
+    padding: 0.6rem 0;
+    line-height: 1.3rem;
+    dt, dd {
+      display: table-cell;
+      width: 50% !important;
+    }
+    dd {
+      padding-left: 4rem;
+    }
+  }
+}

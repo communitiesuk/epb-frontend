@@ -7,7 +7,7 @@
         class="govuk-back-link">
         <%=t('layout.body.breadcrumb.back')%>
       </a>
-      <h1 class="govuk-heading-xl"><%= t('non_domestic_epc.top_heading') %></h1>
+      <h1 class="govuk-heading-xl main-heading printable-area"><%= t('non_domestic_epc.top_heading') %></h1>
     </div>
   </div>
 
@@ -79,7 +79,7 @@
     } %>
 
     <% unless assessment[:address][:postcode][0..1] == "BT" %>
-      <div class="govuk-body epc-blue-bottom">
+      <div class="govuk-body epc-blue-bottom printable-area">
         <a id="renting"></a>
         <h2 class="govuk-heading-l"><%= t('non_domestic_epc.sections.renting.title') %></h2>
         <% minimum_energy_band = 'e' %>
@@ -94,13 +94,16 @@
           <p class="govuk-body"><%== t('non_domestic_epc.sections.renting.rental_info.body_2') %></p>
         <% end %>
         <p class="govuk-body"><%== t('non_domestic_epc.sections.renting.rental_info.summary') %></p>
+        <% unless defined?(print_view) && print_view %>
         <p class="govuk-body"><%== t('non_domestic_epc.sections.renting.rental_info.guidance_text', :link => '<a class="govuk-link" href="' + t('non_domestic_epc.sections.renting.rental_info.url') + '">' + t('non_domestic_epc.sections.renting.rental_info.cta') + '</a>') %></p>
+        <% end %>
         <% if assessment[:currentEnergyEfficiencyBand] > minimum_energy_band %>
           <p class="govuk-body"><%== t('non_domestic_epc.sections.renting.recommendation', link: '<a class="govuk-link" href="' + t('non_domestic_epc.sections.renting.url') + '">' + t('non_domestic_epc.sections.renting.cta') + '</a>') %></p>
         <% end %>
       </div>
     <% end %>
 
+    <div class="epc-section epc-rating-graph-section epc-blue-bottom printable-area">
     <div class="govuk-body epc-blue-bottom">
       <a id="energy_rating_section"></a>
       <h2 class="govuk-heading-l"><%= t('non_domestic_epc.energy_rating_section.title') %></h2>
@@ -121,6 +124,7 @@
       new_build_rating: assessment[:newBuildRating],
       new_build_band: assessment[:newBuildBand],
     } %>
+    </div>
 
     <%== erb :non_domestic_energy_performance_certificate__energy_performance_breakdown, locals: {
       main_heating_fuel: assessment[:technicalInformation][:mainHeatingFuel],
@@ -128,7 +132,7 @@
       floor_area: assessment[:technicalInformation][:floorArea],
       assessment_level: assessment[:technicalInformation][:buildingLevel],
       emission_rate: assessment[:buildingEmissionRate],
-      primary_energy_use: assessment[:primaryEnergyUse]
+      primary_energy_use: assessment[:primaryEnergyUse],
     } %>
 
     <%== erb :non_domestic_energy_performance_certificate__related_report, locals: {
@@ -144,11 +148,20 @@
       postcode: assessment[:address][:postcode]
     } %>
 
+    <% unless print_view %>
     <%== erb :component__related_assessments, locals: {
       assessment: assessment,
       type: 'certificate',
       assessment_type:  assessment[:typeOfAssessment],
     } %>
+    <% end %>
 
   </div>
 </div>
+<% if print_view %>
+<script>
+  window.onload = function() {
+    window.print();
+  }
+</script>
+<% end %>

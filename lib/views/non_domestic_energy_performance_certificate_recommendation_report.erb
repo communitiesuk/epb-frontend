@@ -5,7 +5,7 @@
          class="govuk-back-link">
         <%=t('layout.body.breadcrumb.back')%>
       </a>
-      <h1 class="govuk-heading-xl"><%= t('non_domestic_epc.rr.top_heading') %></h1>
+      <h1 class="govuk-heading-xl printable-area"><%= t('non_domestic_epc.rr.top_heading') %></h1>
     </div>
   </div>
 
@@ -46,7 +46,7 @@
       dec: false,
     } %>
   </div>
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-two-thirds epc-cepc-rr-sections">
     <hr class="epc-light-top" />
       <%== erb :component__epc_summary_compact, locals: {
         assessment: assessment,
@@ -57,7 +57,8 @@
       <%== erb :non_domestic_energy_performance_certificate_recommendation_report__rating,
                locals: {
                  related_cepc: assessment[:relatedCertificate],
-                 related_band: assessment[:energyBandFromRelatedCertificate]
+                 related_band: assessment[:energyBandFromRelatedCertificate],
+                 print_view: print_view,
                }
       %>
     <% end %>

@@ -15,6 +15,8 @@ build_sass "./assets/sass/application.scss", "./public/application.css"
 
 puts "Building Print SASS files"
 build_sass "./assets/sass/printable.scss", "./public/printable.css"
+build_sass "./assets/sass/print_certificates.scss",
+           "./public/print-certificates.css"
 
 puts "Copying fonts"
 FileUtils.copy_entry "./assets/fonts", "./public/fonts"

@@ -41,9 +41,9 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
     end
 
     it "shows the non-domestic energy performance certificate title heading" do
-      expect(response.body).to include(
-        '<h1 class="govuk-heading-xl">Energy performance certificate (EPC)</h1>',
-      )
+      dom = Capybara.string(response.body)
+      heading = dom.find("h1")
+      expect(heading.text).to eq "Energy performance certificate (EPC)"
     end
 
     describe "viewing the summary section" do

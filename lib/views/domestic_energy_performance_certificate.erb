@@ -7,7 +7,7 @@
         class="govuk-back-link">
         <%= t('layout.body.breadcrumb.back') %>
       </a>
-      <h1 class="govuk-heading-xl">
+      <h1 class="govuk-heading-xl printable-area">
         <%= t('domestic_epc.top_heading') %>
       </h1>
     </div>
@@ -65,10 +65,10 @@
       dec: false,
     } %>
   </div>
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-two-thirds epc-domestic-sections">
     <hr class="epc-light-top" />
-    <div class="govuk-body epc-blue-bottom">
-      <div class="epc-box govuk-!-margin-bottom-5">
+    <div class="govuk-body epc-blue-bottom printable-area epc-box-container">
+      <div class="epc-box<% unless print_view %> govuk-!-margin-bottom-5<% end %>">
         <div class="epc-rating-box">
           <p class="epc-rating-title govuk-body">
             <%= t('domestic_epc.summary.energy_rating_title') %>
@@ -90,18 +90,20 @@
                 assessment[:postcode]
               ).map{|e| CGI.escape_html(e)}.join('<br />') %>
           </p>
-          <p class="govuk-body epc-extra-box">
-            <label>
-              <%= assessment[:dateOfExpiry] < Date.today ?
-                    t('component.epc_summary_compact.certificate.expired') :
-                    t('component.epc_summary_compact.certificate.valid_until')
-              %></label>
+          <div class="epc-extra-boxes">
+            <p class="govuk-body epc-extra-box">
+              <label>
+                <%= assessment[:dateOfExpiry] < Date.today ?
+                      t('component.epc_summary_compact.certificate.expired') :
+                      t('component.epc_summary_compact.certificate.valid_until')
+                %></label>
               <b><%= date(assessment[:dateOfExpiry]) %></b>
-          </p>
-          <p class="govuk-body epc-extra-box">
-            <label><%= t('domestic_epc.summary.certificate_id') %></label>
-            <b><%= assessment[:assessmentId] %></b>
-          </p>
+            </p>
+            <p class="govuk-body epc-extra-box">
+              <label><%= t('domestic_epc.summary.certificate_id') %></label>
+              <b><%= assessment[:assessmentId] %></b>
+            </p>
+          </div>
       </div>
 
       <%== erb :component__summary_list, locals: {
@@ -115,7 +117,7 @@
     </div>
 
     <% unless assessment[:postcode][0..1] == "BT" %>
-      <div class="govuk-body epc-blue-bottom">
+      <div class="govuk-body epc-blue-bottom printable-area">
         <a id="renting"></a>
         <h2 class="govuk-heading-l"><%= t('domestic_epc.sections.renting.title') %></h2>
         <% minimum_energy_rating_for_rentals = 'e' %>
@@ -150,7 +152,7 @@
       </div>
     <% end %>
 
-    <div class="govuk-body epc-blue-bottom">
+    <div class="govuk-body epc-blue-bottom printable-area epc-rating-graph-section">
       <a id="epc"></a>
       <h2 class="govuk-heading-l"><%= t('domestic_epc.sections.epc.title') %></h2>
       <p class="govuk-body govuk-!-margin-bottom-6">
@@ -194,46 +196,52 @@
       assessment: assessment }
     %>
 
-    <a id="recommendations"></a>
-    <h2 class="govuk-heading-l"><%= t('domestic_epc.sections.recommendations.title') %></h2>
-    <div class=<%=assessment[:recommendedImprovements].empty? ? 'epc-blue-bottom' : ''%>>
-      <div class="epc-rating-box">
-        <p class="epc-rating-title govuk-body">
-          <%= t('domestic_epc.sections.recommendations.box.energy_rating_title') %>
-        </p>
-        <p class="epc-rating-result govuk-body">
-          <%= assessment[:potentialEnergyEfficiencyBand].upcase %>
-        </p>
-      </div>
-      <% if assessment[:recommendedImprovements].empty? %>
-        <p class="govuk-body "><%= t('domestic_epc.sections.recommendations.summary.no_recommendations_summary') %></p>
+    <div class="govuk-body printable-area allow-break epc-recommendations">
+      <a id="recommendations"></a>
+      <h2 class="govuk-heading-l"><%= t('domestic_epc.sections.recommendations.title') %></h2>
+      <div class=<%=assessment[:recommendedImprovements].empty? ? 'epc-blue-bottom' : ''%>>
+        <div class="epc-rating-box">
+          <p class="epc-rating-title govuk-body">
+            <%= t('domestic_epc.sections.recommendations.box.energy_rating_title') %>
+          </p>
+          <p class="epc-rating-result govuk-body">
+            <%= assessment[:potentialEnergyEfficiencyBand].upcase %>
+          </p>
+        </div>
+        <% if assessment[:recommendedImprovements].empty? %>
+          <p class="govuk-body "><%= t('domestic_epc.sections.recommendations.summary.no_recommendations_summary') %></p>
 
-        <% unless assessment[:postcode][0..1] == "BT" %>
-          <a class="govuk-body" href="<%= t('domestic_epc.sections.recommendations.summary.simple_energy_link') %>"><%= t('domestic_epc.sections.recommendations.summary.simple_energy_text') %></a>
+          <% unless assessment[:postcode][0..1] == "BT" %>
+            <a class="govuk-body" href="<%= t('domestic_epc.sections.recommendations.summary.simple_energy_link') %>"><%= t('domestic_epc.sections.recommendations.summary.simple_energy_text') %></a>
+          <% end %>
+        <% else %>
+          <p class="govuk-body"><%= t('domestic_epc.sections.recommendations.summary.make_changes_text') %></p>
+          <p class="govuk-body">
+            <%= t('domestic_epc.sections.recommendations.summary.improve_rating_text', :current_energy_efficiency_band => assessment[:currentEnergyEfficiencyBand].upcase, :current_energy_efficiency_rating => assessment[:currentEnergyEfficiencyRating], :potential_energy_efficiency_band => assessment[:potentialEnergyEfficiencyBand].upcase, :potential_energy_efficiency_rating => assessment[:potentialEnergyEfficiencyRating] ) %>
+          </p>
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text"><%= t('domestic_epc.sections.recommendations.summary.what_is_energy_rating') %></span>
+            </summary>
+            <div class="govuk-details__text">
+              <%= t('domestic_epc.sections.recommendations.summary.energy_rating_description1') %>
+              <br /><br />
+              <%= t('domestic_epc.sections.recommendations.summary.energy_rating_description2') %>
+              <br /><br />
+              <%= t('domestic_epc.sections.recommendations.summary.energy_rating_description3') %>
+            </div>
+          </details>
         <% end %>
-      <% else %>
-        <p class="govuk-body"><%= t('domestic_epc.sections.recommendations.summary.make_changes_text') %></p>
-        <p class="govuk-body">
-          <%= t('domestic_epc.sections.recommendations.summary.improve_rating_text', :current_energy_efficiency_band => assessment[:currentEnergyEfficiencyBand].upcase, :current_energy_efficiency_rating => assessment[:currentEnergyEfficiencyRating], :potential_energy_efficiency_band => assessment[:potentialEnergyEfficiencyBand].upcase, :potential_energy_efficiency_rating => assessment[:potentialEnergyEfficiencyRating] ) %>
-        </p>
-        <details class="govuk-details" data-module="govuk-details">
-          <summary class="govuk-details__summary">
-            <span class="govuk-details__summary-text"><%= t('domestic_epc.sections.recommendations.summary.what_is_energy_rating') %></span>
-          </summary>
-          <div class="govuk-details__text">
-            <%= t('domestic_epc.sections.recommendations.summary.energy_rating_description1') %>
-            <br /><br />
-            <%= t('domestic_epc.sections.recommendations.summary.energy_rating_description2') %>
-            <br /><br />
-            <%= t('domestic_epc.sections.recommendations.summary.energy_rating_description3') %>
-          </div>
-        </details>
-      <% end %>
+      </div>
     </div>
 
+    <% unless print_view %>
     <%== erb :domestic_energy_performance_certificate__recommended_improvements, locals: { recommendations: assessment[:recommendedImprovements] } %>
+    <% else %>
+    <%== erb :domestic_energy_performance_certificate__recommended_improvements_tabulated, locals: { recommendations: assessment[:recommendedImprovements] } %>
+    <% end %>
 
-    <div class="epc-blue-bottom">
+    <div class="govuk-body epc-blue-bottom allow-break printable-area">
       <h3 class="govuk-heading-m"><%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.title') %></h3>
       <p class="govuk-body">
         <a class="govuk-link" href="<%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.link') %>"><%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.text') %></a>
@@ -242,7 +250,7 @@
 
     <%== erb :domestic_energy_performance_certificate__estimated_energy_use, locals: { assessment: assessment } %>
 
-    <div class="govuk-body epc-blue-bottom">
+    <div class="govuk-body epc-blue-bottom printable-area epc-contact-assessor">
       <a id="information"></a>
       <h2 class="govuk-heading-l"><%= t('domestic_epc.sections.information.title') %></h2>
       <p class="govuk-body"><%== t('domestic_epc.sections.information.intro') %></p>
@@ -258,7 +266,7 @@
         skip_null: true
       } %>
 
-      <h3 class="govuk-heading-m govuk-!-margin-top-9"><%= t('domestic_epc.sections.information.scheme.title') %></h3>
+      <h3 class="govuk-heading-m<% unless print_view %> govuk-!-margin-top-9<% end %>"><%= t('domestic_epc.sections.information.scheme.title') %></h3>
 
       <%== erb :component__summary_list, locals: {
         list: {
@@ -273,7 +281,7 @@
         skip_null: true
       } %>
 
-      <h3 class="govuk-heading-m govuk-!-margin-top-9"><%= t('domestic_epc.sections.information.certificate.title') %></h3>
+      <h3 class="govuk-heading-m<% unless print_view %> govuk-!-margin-top-9<% end %>"><%= t('domestic_epc.sections.information.certificate.title') %></h3>
 
       <%== erb :component__summary_list, locals: {
         list: {
@@ -283,7 +291,8 @@
           "type_of_assessment": { type: "details", value: assessment[:typeOfAssessment] }
         },
         translation_prefix: 'domestic_epc.sections.information.certificate.list.',
-        skip_null: true
+        skip_null: true,
+        print_view: print_view
       } %>
     </div>
 
@@ -293,10 +302,19 @@
       <% end %>
     <% end %>
 
+    <% unless print_view %>
     <%== erb :component__related_assessments, locals: {
       assessment: assessment,
       type: 'certificate',
       assessment_type:  assessment[:typeOfAssessment],
     } %>
+    <% end %>
   </div>
 </div>
+<% if print_view %>
+<script>
+  window.onload = function() {
+    window.print();
+  }
+</script>
+<% end %>

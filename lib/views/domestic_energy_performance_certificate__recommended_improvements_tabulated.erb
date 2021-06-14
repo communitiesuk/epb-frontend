@@ -1,0 +1,21 @@
+<% unless recommendations.empty? %>
+  <div class="govuk-body printable-area allow-break epc-recommendation-list">
+    <hr class="epc-light-top" />
+    <%== erb :design_system__table, locals: {
+      firstCellIsHeader: true,
+      head: [
+        t('domestic_epc.sections.recommendations.list.title'),
+        t('domestic_epc.sections.recommendations.list.installation_cost'),
+        t('domestic_epc.sections.recommendations.list.yearly_saving'),
+      ].each_with_index.map { |entry, index| { text: entry, format: index > 0 ? 'numeric' : nil } },
+      rows: recommendations.each_with_index.map do |recommendation, index|
+        header = recommendation_header(recommendation)
+        [
+          "%s. %s" % [index + 1, header.description],
+          recommendation[:indicativeCost] ? remove_special_characters(recommendation[:indicativeCost]) : t('domestic_epc.sections.recommendations.list.information_unavailable'),
+          recommendation[:typicalSaving] ? number_to_currency(recommendation[:typicalSaving]) : t('domestic_epc.sections.recommendations.list.na'),
+        ].each_with_index.map { |cell, index| { text: cell, format: index > 0 ? 'numeric' : nil } }
+      end,
+    } %>
+  </div>
+<% end %>
