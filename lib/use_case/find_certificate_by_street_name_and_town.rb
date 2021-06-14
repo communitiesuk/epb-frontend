@@ -11,8 +11,8 @@ module UseCase
 
       gateway_response =
         @gateway.search_by_street_name_and_town(
-          street_name,
-          town,
+          street_name.strip,
+          town.strip,
           assessment_types,
         )
 

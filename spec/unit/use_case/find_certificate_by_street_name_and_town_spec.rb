@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 describe UseCase::FindCertificateByStreetNameAndTown do
-  context "when there missing parameters" do
+  context "when there are missing parameters" do
     let(:certificates_gateway) { CertificatesGateway::EmptyStub.new }
     let(:find_certificate) { described_class.new(certificates_gateway) }
 
@@ -151,9 +151,19 @@ describe UseCase::FindCertificateByStreetNameAndTown do
     let(:certificates_gateway) { CertificatesGateway::Stub.new }
     let(:find_certificate) { described_class.new(certificates_gateway) }
 
-    it "returns list of certificates" do
+    it "returns list of certificates for correctly formatted street and town" do
       expect(
         find_certificate.execute("Marsham Street", "London", %w[RdSAP SAP])[
+          :data
+        ][
+          :assessments
+        ],
+      ).to eq(valid_certificates)
+    end
+
+    it "returns list of certificates when street/town include leading or trailing whitespaces" do
+      expect(
+        find_certificate.execute(" Marsham Street", " London ", %w[RdSAP SAP])[
           :data
         ][
           :assessments
