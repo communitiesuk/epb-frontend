@@ -1224,7 +1224,6 @@ module FetchAssessmentSummary
       assessment_id,
       current_rating = 90,
       current_band = "b",
-      recommended_improvements = false,
       current_carbon_emission = "2.4",
       potential_carbon_emission = "1.4",
       impact_of_loft_insulation = -79,
@@ -1243,6 +1242,7 @@ module FetchAssessmentSummary
       postcode = "SW1B 2BB",
       address_line3 = "",
       total_floor_area = "150",
+      recommended_improvements: false,
       addendum: nil,
       lzc_energy_sources: nil
     )

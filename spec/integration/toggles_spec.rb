@@ -28,9 +28,9 @@ describe "Integration::ToggleService" do
     end
 
     it "feature test-unknown-feature is active if given true default" do
-      expect(Helper::Toggles.enabled?("test-disabled-feature", true)).to eq(
-        true,
-      )
+      expect(
+        Helper::Toggles.enabled?("test-disabled-feature", default: true),
+      ).to eq(true)
     end
   end
 end

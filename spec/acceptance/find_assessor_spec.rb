@@ -671,7 +671,10 @@ describe "Acceptance::Assessor", type: :feature do
 
       context "which has similar matches" do
         before do
-          FindAssessor::ByName::Stub.search_by_name("Ronald McDonald", true)
+          FindAssessor::ByName::Stub.search_by_name(
+            "Ronald McDonald",
+            loose_match: true,
+          )
         end
 
         let(:response) do

@@ -3,7 +3,7 @@
 module FindAssessor
   module ByName
     class Stub
-      def self.search_by_name(name, loose_match = false)
+      def self.search_by_name(name, loose_match: false)
         WebMock
           .stub_request(
             :get,

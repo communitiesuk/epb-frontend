@@ -2,7 +2,7 @@
 
 module CertificatesGateway
   class Stub
-    def initialize(recommended_improvements = false)
+    def initialize(recommended_improvements: false)
       @recommended_improvements = recommended_improvements
     end
 
