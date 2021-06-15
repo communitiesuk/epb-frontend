@@ -139,8 +139,23 @@ var cookies = {
     return null
   },
 
-  erase: function (name) {
-    cookies.create(name, '', -1)
+  erase: function(name) {
+    var cookies =document.cookie.split('; ')
+
+    for (var i = 0; i < cookies.length; i++) {
+        if (cookies[i].startsWith('_ga')){
+          var expDate = new Date()
+          var name = cookies[i].split("=")[0] + "="
+          var value = cookies[i].split("=")[1] + ";"
+
+          var expires = " expires=" + expDate.toUTCString() + ";"
+          var path = " path=/;"
+          var domain = " domain=" + document.domain.split('.').slice(-3).join('.') + ";"
+
+          document.cookie = name + value + expires + path + domain
+        }
+    }
+  document.cookie = 'cookie_consent=false;'
   }
 }
 
