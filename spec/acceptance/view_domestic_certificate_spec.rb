@@ -45,7 +45,6 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
         "1234-5678-1234-5678-1234",
         90,
         "b",
-        false,
         "2.4",
         "1.4",
         -79,
@@ -191,7 +190,6 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
           "123-123",
           "25",
           "f",
-          false,
           "7.8453",
           "6.5123",
           nil,
@@ -217,7 +215,6 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
           "123-123",
           "25",
           "f",
-          false,
           "7.8453",
           "6.5123",
           nil,
@@ -241,7 +238,6 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
           "123-123",
           "25",
           "f",
-          false,
           "7.8453",
           "6.5123",
           nil,
@@ -265,7 +261,6 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
           "123-123",
           "25",
           "f",
-          false,
           "7.8453",
           "6.5123",
           nil,
@@ -307,7 +302,6 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
             "123-123",
             "25",
             "f",
-            false,
             "7.8453",
             "6.5123",
             nil,
@@ -331,7 +325,6 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
             "123-123",
             "25",
             "f",
-            false,
             "7.8453",
             "6.5123",
             -79,
@@ -450,7 +443,6 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
             "123-654",
             "25",
             "f",
-            false,
             "7.8453",
             "6.5123",
           )
@@ -490,7 +482,6 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
           "123-123",
           "25",
           "f",
-          false,
           "7.8453",
           "6.5123",
           nil,
@@ -751,7 +742,6 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
             "1234-5678-1234-5678-1235",
             90,
             "b",
-            false,
             "2.4",
             "1.4",
             -79,
@@ -941,7 +931,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
         "122-456",
         90,
         "b",
-        true,
+        recommended_improvements: true,
       )
     end
 
@@ -1003,7 +993,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
           "1111-1111-1111-1111-1112",
           90,
           "b",
-          true,
+          recommended_improvements: true,
         )
       end
       let(:response) { get "/energy-certificate/1111-1111-1111-1111-1112" }
@@ -1019,7 +1009,6 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
           "1111-1111-1111-1111-1112",
           "25",
           "f",
-          false,
           7.8453,
           6.5123,
           nil,
@@ -1045,7 +1034,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
           "1111-1111-1111-1111-1112",
           90,
           "b",
-          true,
+          recommended_improvements: true,
         )
       end
       let(:response) { get "/energy-certificate/1111-1111-1111-1111-1112" }

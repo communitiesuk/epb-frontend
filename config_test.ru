@@ -20,7 +20,10 @@ FindAssessor::ByPostcode::Stub.search_by_postcode("SW1A 2AA")
 FindAssessor::ByPostcode::InvalidPostcodeStub.search_by_postcode("C11 4FF")
 
 FindAssessor::ByName::Stub.search_by_name("Supercommon Name")
-FindAssessor::ByName::Stub.search_by_name("Somewhatcommon Name", true)
+FindAssessor::ByName::Stub.search_by_name(
+  "Somewhatcommon Name",
+  loose_match: true,
+)
 
 FetchAssessmentSummary::GoneAssessmentStub.fetch("0000-0000-0000-0000-0666")
 
@@ -70,7 +73,6 @@ FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
   "1234-5678-9101-1122-1234",
   "25",
   "f",
-  true,
   "7.8254",
   "6.5123",
   nil,
@@ -96,6 +98,7 @@ FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
       energyEfficiencyRating: 0,
     },
   ],
+  recommended_improvements: true,
 )
 
 FetchAssessmentSummary::AssessmentStub.fetch_cepc assessment_id:

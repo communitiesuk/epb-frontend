@@ -23,7 +23,7 @@ class FrontendService < Sinatra::Base
     also_reload "lib/**/*.rb"
   end
 
-  def initialize(toggles = false)
+  def initialize
     super
     setup_locales
     @toggles = Helper::Toggles.new
