@@ -4,6 +4,7 @@ require "rspec"
 require "rack/test"
 require "webmock/rspec"
 require "epb-auth-tools"
+require "i18n"
 require "helpers"
 require "zeitwerk"
 require "capybara/rspec"
@@ -16,6 +17,10 @@ ENV["EPB_AUTH_SERVER"] = AUTH_URL
 ENV["EPB_API_URL"] = "http://test-api.gov.uk"
 ENV["STAGE"] = "test"
 ENV["EPB_UNLEASH_URI"] = "https://test-toggle-server/api"
+
+I18n.load_path = Dir[File.join(File.dirname(__FILE__), "/../locales", "*.yml")]
+I18n.enforce_available_locales = true
+I18n.available_locales = %w[en cy]
 
 class TestLoader
   def self.setup
