@@ -3,4 +3,4 @@ inherit_gem:
     - config/default.yml
 
 Metrics/BlockLength:
-  ExcludedMethods: ['get']
+  IgnoredMethods: ['get']
