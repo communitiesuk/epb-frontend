@@ -1,6 +1,6 @@
 describe Sinatra::FrontendService::Helpers do
-  class HelpersStub
-    include Sinatra::FrontendService::Helpers
+  let(:frontend_service_helpers) do
+    Class.new { extend Sinatra::FrontendService::Helpers }
   end
 
   context "when compacting address" do
@@ -17,55 +17,55 @@ describe Sinatra::FrontendService::Helpers do
     let(:occupier) { "Shop owners are us" }
 
     it "shows the address when the occupier is duplicated in the address" do
-      response =
-        HelpersStub.new.compact_address_without_occupier(
+      result =
+        frontend_service_helpers.compact_address_without_occupier(
           address_lines_with_occupier,
           town,
           postcode,
           occupier,
         )
-      expect(response).to eq(
+      expect(result).to eq(
         ["2 Lonely Street", "Something road", "Knowhere", "A0 0AA"],
       )
     end
 
     it "shows  the address when the occupier is not duplicated in the address" do
-      response =
-        HelpersStub.new.compact_address_without_occupier(
+      result =
+        frontend_service_helpers.compact_address_without_occupier(
           address_lines_without_occupier,
           town,
           postcode,
           occupier,
         )
-      expect(response).to eq(
+      expect(result).to eq(
         ["2 Lonely Street", "Something road", "Knowhere", "A0 0AA"],
       )
     end
 
     it "shows the address when the occupier is empty" do
       occupier = ""
-      response =
-        HelpersStub.new.compact_address_without_occupier(
+      result =
+        frontend_service_helpers.compact_address_without_occupier(
           address_lines_without_occupier,
           town,
           postcode,
           occupier,
         )
-      expect(response).to eq(
+      expect(result).to eq(
         ["2 Lonely Street", "Something road", "Knowhere", "A0 0AA"],
       )
     end
 
     it "shows the address when the occupier is whitespace" do
       occupier = " "
-      response =
-        HelpersStub.new.compact_address_without_occupier(
+      result =
+        frontend_service_helpers.compact_address_without_occupier(
           address_lines_without_occupier,
           town,
           postcode,
           occupier,
         )
-      expect(response).to eq(
+      expect(result).to eq(
         ["2 Lonely Street", "Something road", "Knowhere", "A0 0AA"],
       )
     end

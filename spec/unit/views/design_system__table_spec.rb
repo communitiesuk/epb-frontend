@@ -201,7 +201,7 @@ describe "design_system__table" do
   def examples
     YAML.safe_load(
       File.open(
-        File.expand_path(File.dirname(__FILE__) + "/examples/table.yaml"),
+        File.expand_path("#{File.dirname(__FILE__)}/examples/table.yaml"),
       ),
     )[
       "examples"

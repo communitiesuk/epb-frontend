@@ -1,8 +1,8 @@
 describe Sinatra::FrontendService::Helpers do
   include RSpecFrontendServiceMixin
 
-  class HelpersStub
-    include Sinatra::FrontendService::Helpers
+  let(:frontend_service_helpers) do
+    Class.new { extend Sinatra::FrontendService::Helpers }
   end
 
   let(:assessment) do
@@ -92,42 +92,42 @@ describe Sinatra::FrontendService::Helpers do
 
   context "when compacting address for email subject line in share component" do
     it "will return the first address lines that aren't empty & isn't a duplicate occupier value" do
-      response = HelpersStub.new.find_address_lines_only(assessment)
-      expect(response).to eq("20 - 22 Upping Street, Another Address Line")
+      result = frontend_service_helpers.find_address_lines_only(assessment)
+      expect(result).to eq("20 - 22 Upping Street, Another Address Line")
     end
 
     it "returns first two non empty address lines from certs without an occupier value" do
-      response =
-        HelpersStub.new.find_address_lines_only(assessment_without_occupier)
-      expect(response).to eq(
+      result =
+        frontend_service_helpers.find_address_lines_only(assessment_without_occupier)
+      expect(result).to eq(
         "Important Person & Second Important Person, 20 - 22 Upping Street",
       )
     end
 
     it "returns first two non empty address lines from certs without a technicalInformation value" do
-      response =
-        HelpersStub.new.find_address_lines_only(
+      result =
+        frontend_service_helpers.find_address_lines_only(
           assessment_without_technicalInformation,
         )
-      expect(response).to eq(
+      expect(result).to eq(
         "Important Person & Second Important Person, 20 - 22 Upping Street",
       )
     end
 
     it "returns the one valid address line" do
-      response =
-        HelpersStub.new.find_address_lines_only(
+      result =
+        frontend_service_helpers.find_address_lines_only(
           assessment_with_one_address_line,
         )
-      expect(response).to eq("First Line")
+      expect(result).to eq("First Line")
     end
 
     it "handles empty address lines from certs" do
-      response =
-        HelpersStub.new.find_address_lines_only(
+      result =
+        frontend_service_helpers.find_address_lines_only(
           assessment_with_no_address_lines,
         )
-      expect(response).to eq("")
+      expect(result).to eq("")
     end
   end
 end
