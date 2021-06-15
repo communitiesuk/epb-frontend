@@ -127,6 +127,30 @@ module Sinatra
         url
       end
 
+      def recommendation_header(recommendation)
+        if recommendation[:improvementCode]
+          OpenStruct.new(
+            {
+              title:
+                t(
+                  "improvement_code.#{recommendation[:improvementCode]}.title",
+                ),
+              description:
+                t(
+                  "improvement_code.#{recommendation[:improvementCode]}.description",
+                ),
+            },
+          )
+        else
+          OpenStruct.new(
+            {
+              title: recommendation[:improvementTitle],
+              description: recommendation[:improvementDescription],
+            },
+          )
+        end
+      end
+
       def potential_rating_text(number)
         case number
         when 1

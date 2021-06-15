@@ -1,10 +1,6 @@
-<% if recommendation[:improvementCode].nil? || recommendation[:improvementCode].empty? %>
-  <h3 class="govuk-heading-m"><%= t('domestic_epc.sections.recommendations.list.title')%> <%= index + 1 %>: <%= recommendation[:improvementTitle] %></h3>
-  <p class="govuk-body"><%= recommendation[:improvementDescription] %></p>
-<% else %>
-  <h3 class="govuk-heading-m"><%= t('domestic_epc.sections.recommendations.list.title')%> <%= index + 1 %>: <%= t('improvement_code.' + recommendation[:improvementCode].downcase + '.title')%> </h3>
-  <p class="govuk-body"><%= t('improvement_code.' + recommendation[:improvementCode].downcase + '.description')%> </p>
-<% end %>
+<% header = recommendation_header(recommendation) %>
+<h3 class="govuk-heading-m"><%= t('domestic_epc.sections.recommendations.list.title')%> <%= index + 1 %>: <%= header.title %></h3>
+<p class="govuk-body"><%= header.description %></p>
 
 <dl class="govuk-summary-list">
   <div class="govuk-summary-list__row">
