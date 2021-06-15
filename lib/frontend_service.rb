@@ -76,8 +76,7 @@ class FrontendService < Sinatra::Base
 
       if request.post? && params["property_type"].nil?
         @errors = {
-          property_type:
-            t("validation_errors.no_property_type_selected"),
+          property_type: t("validation_errors.no_property_type_selected"),
         }
         @page_title = "#{t('error.error')}#{@page_title}"
       end
@@ -184,9 +183,7 @@ class FrontendService < Sinatra::Base
               t('layout.body.govuk')
             }"
           @errors[:reference_number] =
-            t(
-              "validation_errors.reference_number_not_valid",
-            )
+            t("validation_errors.reference_number_not_valid")
         when Errors::CertificateNotFound
           @page_title =
             "#{t('error.error')}#{
@@ -341,10 +338,7 @@ class FrontendService < Sinatra::Base
 
       if request.post? && params["property_type"].nil?
         @errors = {
-          property_type:
-            t(
-              "validation_errors.no_property_type_selected",
-            ),
+          property_type: t("validation_errors.no_property_type_selected"),
         }
 
         @page_title = "#{t('error.error')}#{@page_title}"
@@ -519,12 +513,8 @@ class FrontendService < Sinatra::Base
             } - #{t('services.find_an_energy_certificate')} - #{
               t('layout.body.govuk')
             }"
-          @errors[:street_name] =
-            t(
-              "validation_errors.street_name_missing",
-            )
-          @errors[:town] =
-            t("validation_errors.town_missing")
+          @errors[:street_name] = t("validation_errors.street_name_missing")
+          @errors[:town] = t("validation_errors.town_missing")
         when Errors::StreetNameMissing
           status 400
           @page_title =
@@ -533,8 +523,7 @@ class FrontendService < Sinatra::Base
             } - #{t('services.find_an_energy_certificate')} - #{
               t('layout.body.govuk')
             }"
-          @errors[:street_name] =
-            t("validation_errors.street_name_missing")
+          @errors[:street_name] = t("validation_errors.street_name_missing")
         when Errors::TownMissing
           status 400
           @page_title =
@@ -543,8 +532,7 @@ class FrontendService < Sinatra::Base
             } - #{t('services.find_an_energy_certificate')} - #{
               t('layout.body.govuk')
             }"
-          @errors[:town] =
-            t("validation_errors.town_missing")
+          @errors[:town] = t("validation_errors.town_missing")
         when Errors::CertificateNotFound
           @page_title =
             "#{
@@ -660,10 +648,8 @@ class FrontendService < Sinatra::Base
             } - #{t('services.find_an_energy_certificate')} - #{
               t('layout.body.govuk')
             }"
-          @errors[:street_name] =
-            t("validation_errors.street_name_missing")
-          @errors[:town] =
-            t("validation_errors.town_missing")
+          @errors[:street_name] = t("validation_errors.street_name_missing")
+          @errors[:town] = t("validation_errors.town_missing")
         when Errors::StreetNameMissing
           status 400
           @page_title =
@@ -672,8 +658,7 @@ class FrontendService < Sinatra::Base
             } - #{t('services.find_an_energy_certificate')} - #{
               t('layout.body.govuk')
             }"
-          @errors[:street_name] =
-            t("validation_errors.street_name_missing")
+          @errors[:street_name] = t("validation_errors.street_name_missing")
         when Errors::TownMissing
           status 400
           @page_title =
@@ -682,8 +667,7 @@ class FrontendService < Sinatra::Base
             } - #{t('services.find_an_energy_certificate')} - #{
               t('layout.body.govuk')
             }"
-          @errors[:town] =
-            t("validation_errors.town_missing")
+          @errors[:town] = t("validation_errors.town_missing")
         when Errors::CertificateNotFound
           @page_title =
             "#{t('find_certificate_by_street_name_and_town.top_heading')} - #{

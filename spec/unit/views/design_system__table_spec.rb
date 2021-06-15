@@ -244,9 +244,7 @@ describe "design_system__table" do
     when Hash
       symbolize_keys(value)
     when Enumerable
-      value.map do |val|
-        symbolize_value val
-      end
+      value.map { |val| symbolize_value val }
     else
       value
     end

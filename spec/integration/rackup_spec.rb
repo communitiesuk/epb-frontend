@@ -6,7 +6,15 @@ describe "Integration::Rackup" do
   before(:all) do
     process =
       IO.popen(
-        ["rackup", "-q", "-o", "127.0.0.1", "-p", "9393", { err: %i[child out] }],
+        [
+          "rackup",
+          "-q",
+          "-o",
+          "127.0.0.1",
+          "-p",
+          "9393",
+          { err: %i[child out] },
+        ],
       )
     @process_id = process.pid
 

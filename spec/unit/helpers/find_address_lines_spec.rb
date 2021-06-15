@@ -98,7 +98,9 @@ describe Sinatra::FrontendService::Helpers do
 
     it "returns first two non empty address lines from certs without an occupier value" do
       result =
-        frontend_service_helpers.find_address_lines_only(assessment_without_occupier)
+        frontend_service_helpers.find_address_lines_only(
+          assessment_without_occupier,
+        )
       expect(result).to eq(
         "Important Person & Second Important Person, 20 - 22 Upping Street",
       )
