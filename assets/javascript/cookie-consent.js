@@ -48,7 +48,7 @@ var cookies = {
 
     const rejectButton = document.getElementById('reject-button')
     rejectButton.onclick = function () {
-      cookies.erase('cookie_consent')
+      cookies.erase()
 
       cookies.create('cookie_consent', 'false')
 
@@ -139,7 +139,7 @@ var cookies = {
     return null
   },
 
-  erase: function(name) {
+  erase: function() {
     var cookies =document.cookie.split('; ')
 
     for (var i = 0; i < cookies.length; i++) {
