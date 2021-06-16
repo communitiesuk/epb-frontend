@@ -1,52 +1,50 @@
-<% unless defined?(custom_print) %>
-  <script type = "text/javascript" src="/javascript/share-certificate.js"></script>
-  <div class="component__print govuk-!-display-none-print">
+<script type = "text/javascript" src="/javascript/share-certificate.js"></script>
+<div class="component__print govuk-!-display-none-print">
 
-    <h2 class="govuk-heading-m"><%= t("component.share.share_#{type}")%></h2>
+  <h2 class="govuk-heading-m"><%= t("component.share.share_#{type}")%></h2>
 
-    <ul id="share-list">
-      <li>
-        <p gov-body >
-          <a id="email" style="text-decoration: none;"
-             href="mailto:?subject= <%= t("#{top_heading}.top_heading")%> <%= t("component.share.email_subject_for")%> <%= find_address_lines_only(assessment)%>&amp;body=<%= t("component.share.email_body_part_1")%> <%= first_word_downcase(t("#{top_heading}.top_heading"))%> <%= t("component.share.email_body_part_2")%> https://find-energy-certificate.digital.communities.gov.uk/energy-certificate/<%= assessment[:assessmentId]%>"
-             target="_blank"
-             title="Email">
-          <span class="share-icon">
-            <img src="/images/email.svg">
-          </span>
-            <%= t("component.share.email")%>
-          </a>
-        </p>
-      </li>
-      <li>
-        <p id="copy-to-clipboard-margin">
-          <button id="copyToClipboardButton" class="govuk-body" onclick="clickHandler()">
-          <span class="share-icon">
-            <img src="/images/copy-link.svg">
-          </span>
-            <%= t("component.share.copy_link")%>
-          </button>
-          <script>document.getElementById('copyToClipboardButton').style.display = 'inline';</script>
-        </p>
-      </li>
-      <li>
-        <p>
-          <a style="text-decoration: none; display: none;" id="link"
-             <% if dec == true %>
-            href="<%= localised_url(request.path_info) + (localised_url(request.path_info).include?("?") ? "&" : "?") %>print=true" class="govuk-link govuk-!-margin-bottom-5" id="link"
-          <% else %>
-            onclick="window.print();return false;"
-               href="#"
-          <% end %>
-          >
-          <span class="share-icon">
-            <img src="/images/print.svg">
-          </span>
-            <%= t("component.share.print_link")%>
-          </a>
-          <script>document.getElementById('link').style.display = 'inline';</script>
-        </p>
-      </li>
-    </ul>
-  </div>
-<% end %>
+  <ul id="share-list">
+    <li>
+      <p gov-body >
+        <a id="email" style="text-decoration: none;"
+           href="mailto:?subject= <%= t("#{top_heading}.top_heading")%> <%= t("component.share.email_subject_for")%> <%= find_address_lines_only(assessment)%>&amp;body=<%= t("component.share.email_body_part_1")%> <%= first_word_downcase(t("#{top_heading}.top_heading"))%> <%= t("component.share.email_body_part_2")%> https://find-energy-certificate.digital.communities.gov.uk/energy-certificate/<%= assessment[:assessmentId]%>"
+           target="_blank"
+           title="Email">
+        <span class="share-icon">
+          <img src="/images/email.svg">
+        </span>
+          <%= t("component.share.email")%>
+        </a>
+      </p>
+    </li>
+    <li>
+      <p id="copy-to-clipboard-margin">
+        <button id="copyToClipboardButton" class="govuk-body" onclick="clickHandler()">
+        <span class="share-icon">
+          <img src="/images/copy-link.svg">
+        </span>
+          <%= t("component.share.copy_link")%>
+        </button>
+        <script>document.getElementById('copyToClipboardButton').style.display = 'inline';</script>
+      </p>
+    </li>
+    <li>
+      <p>
+        <a style="text-decoration: none; display: none;" id="link"
+           <% if dec == true %>
+          href="<%= localised_url(request.path_info) + (localised_url(request.path_info).include?("?") ? "&" : "?") %>print=true" class="govuk-link govuk-!-margin-bottom-5" id="link"
+        <% else %>
+          onclick="window.print();return false;"
+             href="#"
+        <% end %>
+        >
+        <span class="share-icon">
+          <img src="/images/print.svg">
+        </span>
+          <%= t("component.share.print_link")%>
+        </a>
+        <script>document.getElementById('link').style.display = 'inline';</script>
+      </p>
+    </li>
+  </ul>
+</div>
