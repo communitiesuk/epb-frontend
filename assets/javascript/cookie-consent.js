@@ -111,7 +111,9 @@ const cookies = {
         }
 
         gtag('js', new Date())
-        gtag('config', tagId)
+        gtag('config', tagId, {
+          'cookie_expires': 31536000
+        });
       },
       100
     )
