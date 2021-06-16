@@ -128,13 +128,12 @@ module Sinatra
       end
 
       def recommendation_header(recommendation)
-        if recommendation[:improvementCode]
+        if recommendation[:improvementCode] &&
+            !recommendation[:improvementCode].to_s.empty?
           OpenStruct.new(
             {
               title:
-                t(
-                  "improvement_code.#{recommendation[:improvementCode]}.title",
-                ),
+                t("improvement_code.#{recommendation[:improvementCode]}.title"),
               description:
                 t(
                   "improvement_code.#{recommendation[:improvementCode]}.description",
