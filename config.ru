@@ -8,5 +8,6 @@ loader.push_dir("#{__dir__}/lib/")
 loader.setup
 
 Sentry.init
+use Sentry::Rack::CaptureExceptions
 
 run FrontendService.new
