@@ -71,11 +71,13 @@
       assessment: assessment,
     } %>
 
+    <% unless %>
     <%== erb :component__related_assessments, locals: {
       assessment: assessment,
       type: 'certificate',
       assessment_type:  assessment[:typeOfAssessment],
     } %>
+    <% end %>
 
   </div>
 </div>

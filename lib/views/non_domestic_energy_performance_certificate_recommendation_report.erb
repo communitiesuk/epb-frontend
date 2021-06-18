@@ -81,11 +81,13 @@
              }
     %>
 
+    <% unless print_view %>
     <%== erb :component__related_assessments, locals: {
       assessment: assessment,
       type: 'report',
       assessment_type:  assessment[:typeOfAssessment],
     } %>
+    <% end %>
 
   </div>
 </div>
