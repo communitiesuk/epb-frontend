@@ -793,6 +793,10 @@ class FrontendService < Sinatra::Base
     erb :cookies
   end
 
+  post "/cookies" do
+    redirect "/"
+  end
+
   def show(template, locals, layout = :layout)
     locals[:errors] = @errors
     erb template, layout: layout, locals: locals
