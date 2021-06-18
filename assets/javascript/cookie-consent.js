@@ -157,6 +157,14 @@ const cookies = {
       }
     }
     document.cookie = 'cookie_consent=false;'
+  },
+
+  eraseOnPageChange: function () {
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'hidden') {
+        cookies.erase();
+      }
+    })
   }
 }
 
