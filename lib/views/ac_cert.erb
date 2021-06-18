@@ -71,7 +71,7 @@
       assessment: assessment,
     } %>
 
-    <% unless %>
+    <% unless print_view %>
     <%== erb :component__related_assessments, locals: {
       assessment: assessment,
       type: 'certificate',
