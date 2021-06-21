@@ -119,13 +119,12 @@ const cookies = {
     )
   },
 
-  create: function (name, value, days = 30) {
+  create: function (name, value) {
     let expires
-    if (days) {
-      const date = new Date()
-      date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000))
-      expires = '; expires=' + date.toUTCString()
-    } else expires = ''
+    const year_in_milliseconds = 365 * 24 * 60 * 60 * 1000
+    const date = new Date()
+    date.setTime(date.getTime() + year_in_milliseconds)
+    expires = '; expires=' + date.toUTCString()
     document.cookie = name + '=' + value + expires + '; path=/'
   },
 
