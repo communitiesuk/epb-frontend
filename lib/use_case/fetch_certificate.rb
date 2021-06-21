@@ -11,7 +11,7 @@ module UseCase
         raise Errors::AssessmentNotFound if error[:code] == "INVALID_QUERY"
       end
 
-      if response[:data][:recommendedImprovements]
+      if response.dig(:data, :recommendedImprovements)
         response[:data][:recommendedImprovements] =
           response[:data][:recommendedImprovements].sort do |x, y|
             x[:sequence] <=> y[:sequence]

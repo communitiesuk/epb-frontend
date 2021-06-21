@@ -1048,6 +1048,25 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
     end
   end
 
+  context "where the assessment exists with no recommendations" do
+    before do
+      FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
+        "122-456",
+        90,
+        "b",
+        recommended_improvements: false,
+      )
+    end
+
+    let(:response) { get "/energy-certificate/789-012" }
+
+    it "shows there aren’t any recommendations for this property text" do
+      expect(response.body).to include(
+        "There aren’t any recommendations for this property.",
+      )
+    end
+  end
+
   context "when the assessment type is SAP" do
     before do
       FetchAssessmentSummary::AssessmentStub.fetch_sap(
