@@ -14,14 +14,14 @@ module Gateway
         "/api/assessors?postcode=#{CGI.escape(postcode)}&qualification=#{
           CGI.escape(qualification_type)
         }"
-      response = @internal_api_client.get(route)
+      response = Helper::ResponseLogging.log_if_error { @internal_api_client.get(route) }
 
       JSON.parse(response.body, symbolize_names: true)
     end
 
     def search_by_name(name)
       route = "/api/assessors?name=#{name}"
-      response = @internal_api_client.get(route)
+      response = Helper::ResponseLogging.log_if_error { @internal_api_client.get(route) }
 
       JSON.parse(response.body, symbolize_names: true)
     end

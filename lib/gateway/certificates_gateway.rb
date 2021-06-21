@@ -11,7 +11,7 @@ module Gateway
 
       types.each { |type| route += "&assessment_type[]=#{type}" }
 
-      response = @internal_api_client.get(route)
+      response = Helper::ResponseLogging.log_if_error { @internal_api_client.get(route) }
 
       JSON.parse(response.body, symbolize_names: true)
     end
@@ -19,7 +19,7 @@ module Gateway
     def search_by_id(certificate_id)
       route =
         "/api/assessments/search?assessment_id=#{CGI.escape(certificate_id)}"
-      response = @internal_api_client.get(route)
+      response = Helper::ResponseLogging.log_if_error { @internal_api_client.get(route) }
 
       JSON.parse(response.body, symbolize_names: true)
     end
@@ -31,7 +31,7 @@ module Gateway
         }"
       assessment_types.each { |type| route += "&assessment_type[]=#{type}" }
 
-      response = @internal_api_client.get(route)
+      response = Helper::ResponseLogging.log_if_error { @internal_api_client.get(route) }
 
       JSON.parse(response.body, symbolize_names: true)
     end
@@ -39,7 +39,7 @@ module Gateway
     def fetch_dec_summary(certificate_id)
       route = "/api/dec_summary/#{CGI.escape(certificate_id)}"
 
-      response = @internal_api_client.get(route)
+      response = Helper::ResponseLogging.log_if_error { @internal_api_client.get(route) }
 
       JSON.parse(response.body, symbolize_names: true)
     end
