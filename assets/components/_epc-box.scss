@@ -117,10 +117,6 @@
   }
 }
 
-
-
-
-
 .epc-box {
   color: #fff;
   background: #1d70b8;
@@ -162,32 +158,6 @@
       float: right;
       clear: none;
     }
-  }
-
-  .govuk-body {
-    color: #fff;
-  }
-}
-
-.epc-rating-box {
-  width: 150px;
-  background: #1d70b8;
-  text-align: center;
-  float: right;
-  border: 2px solid #fff;
-  margin: 10px;
-
-  @include black-bg-if-monochrome;
-
-  .epc-rating-title {
-    line-height: 30px;
-    font-size: 20px;
-  }
-
-  .epc-rating-result {
-    line-height: 100px;
-    font-size: 100px;
-    font-weight: bold;
   }
 
   .govuk-body {
