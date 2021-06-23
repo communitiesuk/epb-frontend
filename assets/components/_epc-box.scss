@@ -91,6 +91,13 @@
   }
 }
 
+.govuk-summary-list {
+
+  .epc-box-container & {
+    margin-bottom: 0;
+  }
+}
+
 .epc-rating-box {
   width: 150px;
   background: #1d70b8;
