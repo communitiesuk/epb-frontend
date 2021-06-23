@@ -7,9 +7,28 @@
         class="govuk-back-link">
         <%= t('layout.body.breadcrumb.back') %>
       </a>
-      <h1 class="govuk-heading-xl printable-area">
-        <%= t('domestic_epc.top_heading') %>
-      </h1>
+      <table class="printable-area header-with-logo">
+        <tbody>
+        <tr>
+          <td>
+            <table class="header">
+              <tbody>
+              <tr>
+                <td>
+                  <h1 class="govuk-heading-xl" style="margin-bottom: 0">
+                    <%= t('domestic_epc.top_heading') %>
+                  </h1>
+                </td>
+                <td style="vertical-align: middle">
+                  <img src="/images/hm-gov-and-crest.svg" class="hm-gov-crest" alt="HM Government">
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 

@@ -78,6 +78,11 @@
     margin-bottom: 0;
   }
 
+  table.header-with-logo {
+    margin-top: 0.3rem;
+    margin-bottom: 0.6rem;
+  }
+
   tr.govuk-table__row {
     &:last-of-type {
       border-bottom-style: hidden;
