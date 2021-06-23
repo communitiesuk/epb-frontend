@@ -112,6 +112,7 @@ const cookies = {
 
         gtag('js', new Date())
         gtag('config', tagId, {
+          'cookie_domain': document.location.hostname,
           'cookie_expires': 31536000
         });
       },
