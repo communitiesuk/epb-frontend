@@ -29,7 +29,7 @@ GEM
     crack (0.4.5)
       rexml
     diff-lcs (1.4.4)
-    epb-auth-tools (1.0.7)
+    epb-auth-tools (1.0.8)
       jwt (~> 2.2)
       oauth2 (~> 1.4)
     erubis (2.7.0)
@@ -175,7 +175,7 @@ PLATFORMS
 DEPENDENCIES
   capybara (~> 3.35.3)!
   capybara-selenium (~> 0.0.6)!
-  epb-auth-tools (~> 1.0.7)!
+  epb-auth-tools (~> 1.0.8)!
   erubis (~> 2.7)!
   i18n!
   prettier (~> 1.5.5)!
