@@ -5,7 +5,8 @@
          class="govuk-back-link">
         <%=t('layout.body.breadcrumb.back')%>
       </a>
-      <h1 class="govuk-heading-xl printable-area"><%= t('non_domestic_epc.rr.top_heading') %></h1>
+
+      <%== erb :component__cert_header, locals: { text: t('non_domestic_epc.rr.top_heading') } %>
     </div>
   </div>
 
