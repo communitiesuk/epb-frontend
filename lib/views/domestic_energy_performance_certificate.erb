@@ -196,10 +196,10 @@
       assessment: assessment }
     %>
 
-    <div class="govuk-body printable-area allow-break epc-recommendations">
+    <div class="govuk-body printable-area epc-recommendations">
       <a id="recommendations"></a>
       <h2 class="govuk-heading-l"><%= t('domestic_epc.sections.recommendations.title') %></h2>
-      <div class=<%=assessment[:recommendedImprovements].empty? ? 'epc-blue-bottom' : ''%>>
+      <div class="allow-break <%= assessment[:recommendedImprovements].empty? ? 'epc-blue-bottom' : ''%>">
         <div class="epc-rating-box">
           <p class="epc-rating-title govuk-body">
             <%= t('domestic_epc.sections.recommendations.box.energy_rating_title') %>
