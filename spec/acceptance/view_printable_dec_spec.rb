@@ -155,6 +155,7 @@ describe "Acceptance::PrintableDisplayEnergyCertificate", type: :feature do
         opt_out: true,
       )
     end
+
     it "removes assessor contact details" do
       expect(response.body).to have_css "h2", text: "Assessment details"
       expect(response.body).not_to have_css "th", text: "Assessor’s name"

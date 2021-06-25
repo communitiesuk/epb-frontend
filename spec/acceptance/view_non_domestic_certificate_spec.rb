@@ -167,7 +167,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
         end
 
         it "shows the letting info warning text" do
-          expect(response.body).to_not include(
+          expect(response.body).not_to include(
             '<h2 class="govuk-heading-l">Rules on letting this property</h2>',
           )
         end

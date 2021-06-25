@@ -190,7 +190,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
 
     it "doesnt show the related cepc section" do
       page_without_cepc = get "/energy-certificate/1234-5678-1234-5678-9999"
-      expect(page_without_cepc.body).to_not include("Energy rating and EPC")
+      expect(page_without_cepc.body).not_to include("Energy rating and EPC")
     end
   end
 

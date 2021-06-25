@@ -307,7 +307,7 @@ describe "Acceptance::Certificate" do
         end
 
         it "does not show the information regarding getting a new EPC for if there are results" do
-          expect(response.body).to_not include(
+          expect(response.body).not_to include(
             "If your property does not have a valid EPC, you can",
           )
         end

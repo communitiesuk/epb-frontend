@@ -10,6 +10,7 @@ describe Gateway::AssessorsGateway do
       let(:response) { gateway.search_by_postcode("SW1A 2AA") }
 
       let(:assessor) { response[:data][:assessors].first }
+
       before { FindAssessor::ByPostcode::Stub.search_by_postcode("SW1A 2AA") }
 
       it "checks the number of assessors returned from the api" do
@@ -132,6 +133,7 @@ describe Gateway::AssessorsGateway do
       let(:response) { gateway.search_by_name("Some Name") }
 
       let(:assessor) { response[:data][:assessors].first }
+
       before { FindAssessor::ByName::Stub.search_by_name("Some Name") }
 
       it "checks the number of assessors returned from the api" do

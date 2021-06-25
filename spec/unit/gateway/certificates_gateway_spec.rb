@@ -4,6 +4,7 @@ describe Gateway::CertificatesGateway do
   include RSpecUnitMixin
 
   let(:gateway) { described_class.new(get_api_client) }
+
   context "for the search by postcode gateway" do
     context "when a certificate exists" do
       let(:response) { gateway.search_by_postcode("SW1A 2AA", %w[RdSAP SAP]) }

@@ -43,6 +43,7 @@ describe Sinatra::FrontendService::Helpers do
 
   context "given a green deal with a single charge" do
     before { allow(Date).to receive(:today).and_return Date.new(2021, 0o3, 29) }
+
     it "calculates the annual cost to the nearest whole pound" do
       charges = [
         {
@@ -66,6 +67,7 @@ describe Sinatra::FrontendService::Helpers do
 
   context "given a green deal with varying charges over time" do
     before { allow(Date).to receive(:today).and_return Date.new(2021, 0o3, 29) }
+
     it "calculates the annual cost when the current date is in charge #1" do
       green_deal_plan =
         FetchAssessmentSummary::AssessmentStub.generate_green_deal_plan(
@@ -83,6 +85,7 @@ describe Sinatra::FrontendService::Helpers do
     before do
       allow(Date).to receive(:today).and_return Date.new(2038, 0o7, 0o1)
     end
+
     it "calculates the annual cost when the current date is in charge #2" do
       green_deal_plan =
         FetchAssessmentSummary::AssessmentStub.generate_green_deal_plan(
@@ -100,6 +103,7 @@ describe Sinatra::FrontendService::Helpers do
     before do
       allow(Date).to receive(:today).and_return Date.new(2039, 0o2, 0o2)
     end
+
     it "calculates the annual cost when the current date is in charge #3" do
       green_deal_plan =
         FetchAssessmentSummary::AssessmentStub.generate_green_deal_plan(
@@ -122,6 +126,7 @@ describe Sinatra::FrontendService::Helpers do
       ]
 
     before { allow(Date).to receive(:today).and_return Date.new(2021, 0o3, 29) }
+
     it "calculates the combined annual cost when the current date is in the overlap period" do
       expect(
         frontend_service_helpers.calculate_yearly_charges(green_deal_plan),

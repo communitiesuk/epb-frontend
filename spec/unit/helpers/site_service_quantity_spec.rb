@@ -22,6 +22,7 @@ describe Sinatra::FrontendService::Helpers do
         },
       }
     end
+
     it "does show the value for electricity" do
       expect(
         frontend_service_helpers.site_service_quantity(

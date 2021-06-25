@@ -86,7 +86,7 @@ RSpec.configure do |config|
     ],
   )
 
-  config.before(:each) { OauthStub.token }
+  config.before { OauthStub.token }
 end
 
 RSpec::Matchers.define(:redirect_to) do |path|

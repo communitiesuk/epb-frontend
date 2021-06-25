@@ -197,8 +197,8 @@ describe "Journey::FindNonDomesticCertificate", type: :feature, journey: true do
       click_on "find a certificate by using its certificate number"
       fill_in "reference_number", with: "0000-0000-0000-0000-1112"
       click_on "Find"
-      expect(page).to_not have_content "Summary XML"
-      expect(page).to_not have_link "Download Summary XML"
+      expect(page).not_to have_content "Summary XML"
+      expect(page).not_to have_link "Download Summary XML"
     end
 
     it "displays an error message when entering a certificate value that is not found" do

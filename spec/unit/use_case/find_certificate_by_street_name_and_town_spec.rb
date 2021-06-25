@@ -10,11 +10,13 @@ describe UseCase::FindCertificateByStreetNameAndTown do
         Errors::AllParamsMissing,
       )
     end
+
     it "raises an error when street name is missing" do
       expect {
         find_certificate.execute("", "Nowhere Special", %w[RdSAP SAP])
       }.to raise_error(Errors::StreetNameMissing)
     end
+
     it "raises an error when town is missing" do
       expect {
         find_certificate.execute("Somewhere Empty", "", %w[RdSAP SAP])

@@ -165,7 +165,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
     end
 
     it "does not show the warning to landlords that it cannot be rented out" do
-      expect(response.body).to_not include(
+      expect(response.body).not_to include(
         "The owner of this property may not be able to let it",
       )
     end
@@ -469,6 +469,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       end
 
       let(:response) { get "/energy-certificate/123-654" }
+
       it "shows a warning text" do
         expect(response.body).to include(
           "You may not be able to let this property",
@@ -504,7 +505,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       let(:response) { get "/energy-certificate/123-123" }
 
       it "shows a warning text" do
-        expect(response.body).to_not include(
+        expect(response.body).not_to include(
           "You may not be able to let this property",
         )
       end
@@ -565,7 +566,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       end
 
       context "when there are no low and zero carbon energy sources" do
-        it "it does not show the LZC energy sources" do
+        it "does not show the LZC energy sources" do
           expect(response.body).not_to include(
             "Low and zero carbon energy sources",
           )
@@ -582,7 +583,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
 
         let(:response) { get "/energy-certificate/1111-1111-1111-1111-1112" }
 
-        it "it shows Low and zero carbon energy sources section and the details" do
+        it "shows Low and zero carbon energy sources section and the details" do
           expect(response.body).to include(
             '<h2 class="govuk-heading-m">Low and zero carbon energy sources</h2>',
           )
@@ -842,13 +843,13 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       let(:response) { get "/energy-certificate/1111-1111-1111-1111-1112" }
 
       it "does not show the Green Deal Plan section" do
-        expect(response.body).to_not include(
+        expect(response.body).not_to include(
           '<h2 class="govuk-heading-l">Green Deal Plan</h2>',
         )
       end
 
       it "does not show the Green Deal Plan section tab" do
-        expect(response.body).to_not include(
+        expect(response.body).not_to include(
           '<a class="govuk-link" href="#renting">Green Deal Plan</a>',
         )
       end
@@ -940,6 +941,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
     it "returns status 200" do
       expect(response.status).to eq(200)
     end
+
     it "shows making any of the recommended changes will improve this property’s energy efficiency text" do
       expect(response.body).to include(
         "Making any of the recommended changes will improve this property’s energy efficiency.",
@@ -996,6 +998,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
           recommended_improvements: true,
         )
       end
+
       let(:response) { get "/energy-certificate/1111-1111-1111-1111-1112" }
 
       it "will show information unavailable instead" do
@@ -1021,6 +1024,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
           nil,
         )
       end
+
       let(:response) { get "/energy-certificate/1111-1111-1111-1111-1112" }
 
       it "will show information unavailable instead" do
@@ -1037,6 +1041,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
           recommended_improvements: true,
         )
       end
+
       let(:response) { get "/energy-certificate/1111-1111-1111-1111-1112" }
 
       it "displays the improvementTitle and improvementDescription instead" do
@@ -1085,6 +1090,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
         "SAP",
       )
     end
+
     let(:response) { get "/energy-certificate/1234-5678-1234-5678-1234" }
 
     it "displays the SAP type description" do
@@ -1196,13 +1202,13 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
     let(:response) { get "/energy-certificate/1111-1111-1111-1111-1112" }
 
     it "does not show the estimated energy cost for a year" do
-      expect(response.body).to_not include(
+      expect(response.body).not_to include(
         '<td class="govuk-table__cell" id="estimated-cost"></td>',
       )
     end
 
     it "does not show the potential energy cost saving for a year" do
-      expect(response.body).to_not include(
+      expect(response.body).not_to include(
         '<td class="govuk-table__cell" id="potential-saving"></td>',
       )
     end

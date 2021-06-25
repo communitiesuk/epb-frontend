@@ -247,6 +247,7 @@ describe "Acceptance::DecRecommendationReport", type: :feature do
         opt_out: true,
       )
     end
+
     it "removes assessor contact details" do
       expect(response.body).to have_css "h2", text: "Assessor’s details"
       expect(response.body).not_to have_css "dt", text: "Assessor’s name"

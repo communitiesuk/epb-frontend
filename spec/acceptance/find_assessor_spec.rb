@@ -665,7 +665,7 @@ describe "Acceptance::Assessor", type: :feature do
         end
 
         it "does not show that they are loose matches" do
-          expect(response.body).to_not include("similar to")
+          expect(response.body).not_to include("similar to")
         end
       end
 

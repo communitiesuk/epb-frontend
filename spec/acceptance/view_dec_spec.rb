@@ -318,11 +318,11 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
       end
 
       it "does not have summary download div" do
-        expect(response.body).to_not have_css "dt", text: "Summary XML"
+        expect(response.body).not_to have_css "dt", text: "Summary XML"
       end
 
       it "does not have summary download link" do
-        expect(response.body).to_not have_link "Download summary XML"
+        expect(response.body).not_to have_link "Download summary XML"
       end
     end
   end

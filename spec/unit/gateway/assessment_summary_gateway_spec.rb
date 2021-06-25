@@ -7,6 +7,7 @@ describe Gateway::AssessmentSummaryGateway do
 
   context "when a user searches for an assessment using the /summary endpoint" do
     let(:response) { gateway.fetch("0000-0000-0000-0000-0666") }
+
     context "and a certificate exists for the assessment id" do
       let(:certificate) { response[:data] }
 
