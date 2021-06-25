@@ -36,4 +36,22 @@ module Errors
 
   class AssessmentUnsupported < RuntimeError
   end
+
+  class ApiError < RuntimeError
+  end
+
+  class NonJsonResponseError < ApiError
+  end
+
+  class ApiAuthorizationError < ApiError
+  end
+
+  class MalformedErrorResponseError < ApiError
+  end
+
+  class UnknownErrorResponseError < ApiError
+  end
+
+  class ConnectionApiError < ApiError
+  end
 end

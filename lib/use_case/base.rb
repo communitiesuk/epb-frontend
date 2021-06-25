@@ -14,8 +14,12 @@ module UseCase
           raise Errors::AuthTokenMissing
         end
 
-        yield(error)
+        yield(error) if block_given?
       end
+
+      raise Errors::UnknownErrorResponseError,
+            "Unknown error response from internal API; errors sent were: " %
+              response[:errors].to_s
     end
   end
 end

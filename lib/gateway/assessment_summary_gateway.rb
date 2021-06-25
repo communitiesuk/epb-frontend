@@ -11,7 +11,8 @@ module Gateway
 
     def fetch(assessment_id)
       route = "/api/assessments/#{CGI.escape(assessment_id)}/summary"
-      response = @internal_api_client.get(route)
+      response =
+        Helper::Response.ensure_good { @internal_api_client.get(route) }
 
       assessment_summary = JSON.parse(response.body, symbolize_names: true)
 
