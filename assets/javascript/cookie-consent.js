@@ -110,20 +110,19 @@ const cookies = {
 
         gtag('js', new Date())
         gtag('config', tagId, {
-          'cookie_domain': document.location.hostname,
-          'cookie_expires': 31536000
-        });
+          cookie_domain: document.location.hostname,
+          cookie_expires: 31536000
+        })
       },
       100
     )
   },
 
   create: function (name, value) {
-    let expires
-    const year_in_milliseconds = 365 * 24 * 60 * 60 * 1000
+    const yearInMilliseconds = 365 * 24 * 60 * 60 * 1000
     const date = new Date()
-    date.setTime(date.getTime() + year_in_milliseconds)
-    expires = '; expires=' + date.toUTCString()
+    date.setTime(date.getTime() + yearInMilliseconds)
+    const expires = '; expires=' + date.toUTCString()
     document.cookie = name + '=' + value + expires + '; path=/'
   },
 
@@ -160,7 +159,7 @@ const cookies = {
   eraseOnPageChange: function () {
     document.addEventListener('visibilitychange', () => {
       if (document.visibilityState === 'hidden') {
-        cookies.erase();
+        cookies.erase()
       }
     })
   }
