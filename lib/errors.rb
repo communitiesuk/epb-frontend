@@ -40,6 +40,9 @@ module Errors
   class ApiError < RuntimeError
   end
 
+  class ConfigurationError < RuntimeError
+  end
+
   class NonJsonResponseError < ApiError
   end
 
