@@ -258,24 +258,27 @@ $epc-compare-svg-width: $epc-compare-svg-height * 1.8;
 .epc-contact-assessor {
   .govuk-summary-list {
     margin-bottom: 0;
+    width: 100%;
   }
+
   h3 {
     margin-top: 1rem;
     margin-bottom: 0;
   }
+
   dl.govuk-summary-list {
     display: table;
   }
+
   .govuk-summary-list__row {
     display: table-row;
     padding: 0.6rem 0;
     line-height: 1.3rem;
-    dt, dd {
-      display: table-cell;
-      width: 50% !important;
-    }
-    dd {
-      padding-left: 4rem;
-    }
+    width: 100%;
+  }
+
+  .govuk-summary-list__row * {
+    display: table-cell;
+    width: 50%;
   }
 }

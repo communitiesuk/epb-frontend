@@ -97,10 +97,10 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
     end
 
     it "shows the total floor area" do
-      expect(response.body).to include(
+      expect(response.body).not_to include(
         '<dd class="govuk-summary-list__value govuk-!-width-one-half">
-              150 square metres
-      </dd>',
+          150 square metres
+          </dd>',
       )
     end
 

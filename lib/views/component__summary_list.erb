@@ -26,9 +26,12 @@
       value = value.to_s + suffix unless suffix.nil?
     %>
 
+    <% class_half_width = (defined?(params[:print]) && params[:print] == "true") ? "" : " govuk-!-width-one-half" %>
+    <% numeric_cell = numerical ? " govuk-table__cell--numeric" : "" %>
+
     <div class="govuk-summary-list__row<%= print ? "" : " govuk-!-display-none-print" %>">
-      <dt class="govuk-summary-list__key<% unless defined?(print_view) && print_view %> govuk-!-width-one-half<% end %>"><%= translation_prefix ? t(translation_prefix + key.to_s) : key.to_s %></dt>
-      <dd class="govuk-summary-list__value<% unless defined?(print_view) && print_view %> govuk-!-width-one-half<% end %><%= numerical ? " govuk-table__cell--numeric" : "" %>">
+      <dt class="govuk-summary-list__key<%= class_half_width %>"><%= translation_prefix ? t(translation_prefix + key.to_s) : key.to_s %></dt>
+      <dd class="govuk-summary-list__value<%= class_half_width %><%= numeric_cell %>">
         <%
           case type
           when "email"
