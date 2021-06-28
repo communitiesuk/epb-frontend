@@ -54,4 +54,7 @@ module Errors
 
   class ConnectionApiError < ApiError
   end
+
+  class ResponseNotPresentError < ApiError
+  end
 end

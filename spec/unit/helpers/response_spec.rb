@@ -83,5 +83,12 @@ describe Helper::Response do
         end
       }.to raise_error Errors::ConnectionApiError
     end
+
+    it "raises a response not present error if block does not return something response-ish" do
+      bad_response = nil
+      expect {
+        Helper::Response.ensure_good { bad_response }
+      }.to raise_error Errors::ResponseNotPresentError
+    end
   end
 end

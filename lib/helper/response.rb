@@ -17,6 +17,8 @@ module Helper
         end
       end
 
+      ensure_is_response response
+
       if response.status == 401
         raise Errors::ApiAuthorizationError,
               "Authorization issue with internal API. Response body: \"%s\"" %
@@ -48,6 +50,14 @@ module Helper
       true
     rescue JSON::ParserError
       false
+    end
+
+    def self.ensure_is_response(response)
+      unless %i[status body].all? { |method| response.respond_to? method }
+        raise Errors::ResponseNotPresentError,
+              "Response object was expected from call on internal HTTP client, object of type %s returned instead." %
+                response.class
+      end
     end
   end
 end
