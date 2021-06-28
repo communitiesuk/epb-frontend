@@ -9,7 +9,11 @@ module Helper
           response = yield block
         rescue StandardError => e
           raise Errors::ConnectionApiError,
-                sprintf("Connection to API failed, even after retry. Message from %s: \"%s\"", e.class, e.message)
+                sprintf(
+                  "Connection to API failed, even after retry. Message from %s: \"%s\"",
+                  e.class,
+                  e.message,
+                )
         end
       end
 
