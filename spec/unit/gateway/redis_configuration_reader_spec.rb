@@ -28,20 +28,23 @@ describe Gateway::RedisConfigurationReader do
     end
 
     it "raises a configuration error" do
-      expect { subject.read_configuration_url("missing_name") }
-        .to raise_error(Errors::ConfigurationError, "missing_name is not a valid redis instance")
+      expect { subject.read_configuration_url("missing_name") }.to raise_error(
+        Errors::ConfigurationError,
+        "missing_name is not a valid redis instance",
+      )
     end
   end
 
   context "Given no redis configuration is present in VCAP_SERVICES" do
-    before do
-      stub_const("ENV", { "VCAP_SERVICES" => "{}" })
-    end
+    before { stub_const("ENV", { "VCAP_SERVICES" => "{}" }) }
 
     it "raises a configuration error" do
-      expect { subject.read_configuration_url("my_instance_name") }
-        .to raise_error(Errors::ConfigurationError, "No Redis configuration found in VCAP_SERVICES")
+      expect {
+        subject.read_configuration_url("my_instance_name")
+      }.to raise_error(
+        Errors::ConfigurationError,
+        "No Redis configuration found in VCAP_SERVICES",
+      )
     end
   end
-
 end

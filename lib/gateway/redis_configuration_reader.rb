@@ -4,7 +4,8 @@ module Gateway
       vcap_services = JSON.parse(ENV["VCAP_SERVICES"], symbolize_names: true)
 
       if vcap_services[:redis].nil?
-        raise Errors::ConfigurationError, "No Redis configuration found in VCAP_SERVICES"
+        raise Errors::ConfigurationError,
+              "No Redis configuration found in VCAP_SERVICES"
       end
 
       vcap_services[:redis].each do |config|
@@ -13,7 +14,8 @@ module Gateway
         end
       end
 
-      raise Errors::ConfigurationError, "#{instance_name} is not a valid redis instance"
+      raise Errors::ConfigurationError,
+            "#{instance_name} is not a valid redis instance"
     end
   end
 end
