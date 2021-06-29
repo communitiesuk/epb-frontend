@@ -64,11 +64,6 @@ run:
 format:
 	@bundle exec rubocop --auto-correct --format offenses || true
 
-.PHONY: slow-format
-slow-format:
-	@bundle exec rbprettier --write `find . -name '*.rb' -not -path './db/schema.rb'` *.ru Gemfile
-	@bundle exec rubocop --auto-correct --format offenses || true
-
 .PHONY: journey
 journey:
 	@bundle exec rspec --tag journey
