@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-require 'net/http'
-require 'zeitwerk'
-require 'webmock'
-require 'active_support/cache'
-require 'rack/attack'
+require "net/http"
+require "zeitwerk"
+require "webmock"
+require "active_support/cache"
+require "rack/attack"
 
 loader = Zeitwerk::Loader.new
 loader.push_dir("#{__dir__}/lib/")
