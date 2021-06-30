@@ -19,3 +19,6 @@ manifest.yml
 
 .floo
 .flooignore
+
+# don't commit Yarn lock files
+yarn.lock
