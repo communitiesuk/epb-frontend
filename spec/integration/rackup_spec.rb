@@ -8,6 +8,7 @@ describe "Integration::Rackup" do
       IO.popen(
         [
           "rackup",
+          "config_test.ru",
           "-q",
           "-o",
           "127.0.0.1",

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-describe Gateway::RedisConfigurationReader do
+describe Helper::RedisConfigurationReader do
   subject { described_class }
 
   context "Given VCAP_SERVICES has a redis configuation" do

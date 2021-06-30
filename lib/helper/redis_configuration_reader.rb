@@ -1,4 +1,4 @@
-module Gateway
+module Helper
   class RedisConfigurationReader
     def self.read_configuration_url(instance_name)
       vcap_services = JSON.parse(ENV["VCAP_SERVICES"], symbolize_names: true)
