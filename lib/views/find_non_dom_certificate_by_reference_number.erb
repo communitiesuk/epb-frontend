@@ -1,9 +1,3 @@
-<a
-  href="<%= localised_url('/find-a-non-domestic-certificate/search-by-postcode')%>"
-  class="govuk-back-link">
-  <%=t('layout.body.breadcrumb.back')%>
-</a>
-
 <% unless errors.empty? %>
   <%== erb :error_summary, locals: {errors:errors}  %>
 <% end %>

@@ -43,6 +43,8 @@ class FrontendService < Sinatra::Base
       "#{t('find_an_assessor.top_heading')} – #{
         t('services.getting_an_energy_certificate')
       } – #{t('layout.body.govuk')}"
+    @remove_back_link = true
+
     erb :find_assessor, layout: :layout
   end
 
@@ -51,6 +53,7 @@ class FrontendService < Sinatra::Base
       "#{t('find_a_certificate.top_heading')} – #{
         t('services.find_an_energy_certificate')
       } – #{t('layout.body.govuk')}"
+    @remove_back_link = true
 
     erb :find_certificate, layout: :layout
   end
@@ -63,6 +66,7 @@ class FrontendService < Sinatra::Base
         "#{t('find_an_assessor.property_type.question_title')} – #{
           t('services.getting_an_energy_certificate')
         } – #{t('layout.body.govuk')}"
+      back_link "/"
 
       if params["property_type"] == "domestic"
         redirect localised_url("/find-an-assessor/search-by-postcode?#{query}")
@@ -97,6 +101,7 @@ class FrontendService < Sinatra::Base
     @errors = {}
     locals = {}
     erb_template = :find_non_dom_certificate_by_postcode
+    back_link "/find-a-certificate/type-of-property"
 
     @page_title =
       "#{t('find_non_dom_certificate_by_postcode.top_heading')} – #{
@@ -124,6 +129,7 @@ class FrontendService < Sinatra::Base
             t('services.find_an_energy_certificate')
           } – #{t('layout.body.govuk')}"
         erb_template = :find_non_dom_certificate_by_postcode_results
+        back_link "/find-a-non-domestic-certificate/search-by-postcode"
       rescue StandardError => e
         case e
         when Errors::PostcodeNotValid
@@ -149,6 +155,7 @@ class FrontendService < Sinatra::Base
     @errors = {}
     locals = {}
     erb_template = :find_non_dom_certificate_by_reference_number
+    back_link "/find-a-non-domestic-certificate/search-by-postcode"
     @page_title =
       "#{t('find_non_dom_certificate_by_reference_number.top_heading')} – #{
         t('services.find_an_energy_certificate')
@@ -209,6 +216,7 @@ class FrontendService < Sinatra::Base
     @errors = {}
     locals = {}
     erb_template = :find_assessor_by_postcode
+    back_link "/find-an-assessor/type-of-property"
 
     response = @container.get_object(:find_assessor_by_postcode_use_case)
     @page_title =
@@ -228,6 +236,7 @@ class FrontendService < Sinatra::Base
               t('services.getting_an_energy_certificate')
             } – #{t('layout.body.govuk')}"
           erb_template = :find_assessor_by_postcode_results
+          back_link "/find-an-assessor/search-by-postcode"
         rescue StandardError => e
           case e
           when Errors::PostcodeNotRegistered
@@ -268,6 +277,7 @@ class FrontendService < Sinatra::Base
     @errors = {}
     locals = {}
     erb_template = :find_assessor_by_name
+    back_link "/find-an-assessor/search-by-postcode"
 
     response = @container.get_object(:find_assessor_by_name_use_case)
 
@@ -288,6 +298,7 @@ class FrontendService < Sinatra::Base
             t('services.getting_an_energy_certificate')
           } – #{t('layout.body.govuk')}"
         erb_template = :find_assessor_by_name_results
+        back_link "/find-an-assessor/search-by-name"
       rescue StandardError => e
         case e
         when Errors::InvalidName
@@ -323,6 +334,7 @@ class FrontendService < Sinatra::Base
         "#{t('find_a_certificate.property_type.question_title')} – #{
           t('services.find_an_energy_certificate')
         } – #{t('layout.body.govuk')}"
+      back_link "/"
 
       if params["property_type"] == "domestic"
         redirect localised_url(
@@ -359,6 +371,7 @@ class FrontendService < Sinatra::Base
     @errors = {}
     locals = {}
     erb_template = :find_certificate_by_postcode
+    back_link "/find-a-certificate/type-of-property"
 
     @page_title =
       "#{t('find_certificate_by_postcode.top_heading')} - #{
@@ -382,6 +395,7 @@ class FrontendService < Sinatra::Base
             t('services.find_an_energy_certificate')
           } - #{t('layout.body.govuk')}"
         erb_template = :find_certificate_by_postcode_results
+        back_link "/find-a-certificate/search-by-postcode"
       rescue StandardError => e
         case e
         when Errors::PostcodeNotValid
@@ -407,6 +421,7 @@ class FrontendService < Sinatra::Base
     @errors = {}
     locals = {}
     erb_template = :find_non_domestic_assessor_by_postcode
+    back_link "/find-an-assessor/type-of-property"
 
     response =
       @container.get_object(:find_non_domestic_assessor_by_postcode_use_case)
@@ -431,6 +446,7 @@ class FrontendService < Sinatra::Base
               t('layout.body.govuk')
             }"
           erb_template = :find_non_domestic_assessor_by_postcode_results
+          back_link "/find-a-non-domestic-assessor/search-by-postcode"
         rescue StandardError => e
           case e
           when Errors::PostcodeNotRegistered
@@ -473,6 +489,7 @@ class FrontendService < Sinatra::Base
     @errors = {}
     locals = {}
     erb_template = :find_non_dom_certificate_by_street_name_and_town
+    back_link "/find-a-non-domestic-certificate/search-by-postcode"
 
     @page_title =
       "#{t('find_non_dom_certificate_by_street_name_and_town.top_heading')} - #{
@@ -503,6 +520,7 @@ class FrontendService < Sinatra::Base
             t('layout.body.govuk')
           }"
         erb_template = :find_non_dom_certificate_by_street_name_and_town_results
+        back_link "/find-a-non-domestic-certificate/search-by-street-name-and-town"
       rescue StandardError => e
         case e
         when Errors::AllParamsMissing
@@ -566,6 +584,7 @@ class FrontendService < Sinatra::Base
     @errors = {}
     locals = {}
     erb_template = :find_certificate_by_reference_number
+    back_link "/find-a-certificate/search-by-postcode"
     @page_title =
       "#{t('find_certificate_by_reference_number.top_heading')} - #{
         t('services.find_an_energy_certificate')
@@ -614,6 +633,7 @@ class FrontendService < Sinatra::Base
     @errors = {}
     locals = {}
     erb_template = :find_certificate_by_street_name_and_town
+    back_link "/find-a-certificate/search-by-postcode"
 
     @page_title =
       "#{t('find_certificate_by_street_name_and_town.top_heading')} - #{
@@ -638,6 +658,7 @@ class FrontendService < Sinatra::Base
             t('layout.body.govuk')
           }"
         erb_template = :find_certificate_by_street_name_and_town_results
+        back_link "/find-a-certificate/search-by-street-name-and-town"
       rescue StandardError => e
         case e
         when Errors::AllParamsMissing
@@ -711,12 +732,14 @@ class FrontendService < Sinatra::Base
                              use_print_view
     when "CEPC-RR"
       @page_title = "#{t('non_domestic_epc.top_heading')}#{@page_title}"
+      back_link "/find-a-non-domestic-certificate/search-by-postcode"
       show_with_print_option :non_domestic_energy_performance_certificate_recommendation_report,
                              { assessment: assessment[:data] },
                              use_print_view
     when "DEC"
       @page_title = "#{t('dec.top_heading')}#{@page_title}"
       template = use_print_view ? :printable_dec : :dec
+      back_link(use_print_view ? ("/energy-certificate/%s" % params[:assessment_id]) : "/find-a-non-domestic-certificate/search-by-postcode")
       show_with_print_option template,
                              { assessment: assessment[:data] },
                              use_print_view,
@@ -724,6 +747,7 @@ class FrontendService < Sinatra::Base
     when "DEC-RR"
       @page_title =
         "#{t('dec.sections.recommendation_report.title')}#{@page_title}"
+      back_link "/find-a-non-domestic-certificate/search-by-postcode"
       show_with_print_option :dec_recommendation_report,
                              { assessment: assessment[:data] },
                              use_print_view
@@ -844,5 +868,9 @@ class FrontendService < Sinatra::Base
       "#{t('error.error')}#{t('error.500.heading')} - #{t('layout.body.govuk')}"
     status 500
     erb :error_page_500
+  end
+
+  def back_link(url)
+    @back_url = url
   end
 end
