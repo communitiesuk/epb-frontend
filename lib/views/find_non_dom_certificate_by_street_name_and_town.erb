@@ -1,8 +1,3 @@
-<a
-  href="<%= localised_url('/find-a-non-domestic-certificate/search-by-postcode')%>"
-  class="govuk-back-link">
-  <%=t('layout.body.breadcrumb.back')%>
-</a>
 <% error_form_ids = ["street_name", "town"] %>
 <% unless errors.empty? || errors[:generic] %>
   <%==erb :error_summary, locals: {errors: errors },  error_form_ids: error_form_ids %>
