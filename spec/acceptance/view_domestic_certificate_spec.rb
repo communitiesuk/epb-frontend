@@ -60,8 +60,8 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
         nil,
         nil,
         "c",
-        "SW1B 2BB",
         "London",
+        postcode: "SW1B 2BB",
       )
 
       expect(response.body).to have_css "p",
@@ -276,9 +276,9 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
           nil,
           nil,
           "c",
-          "SW1B 2BB",
           "",
           "",
+          postcode: "SW1B 2BB"
         )
       end
 
@@ -498,7 +498,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
           nil,
           nil,
           "c",
-          "BT1 2BB",
+          postcode: "BT1 2BB",
         )
       end
 

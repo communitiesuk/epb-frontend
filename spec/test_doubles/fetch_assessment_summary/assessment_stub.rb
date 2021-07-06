@@ -1239,9 +1239,9 @@ module FetchAssessmentSummary
       estimated_energy_cost = nil,
       potential_energy_saving = nil,
       energy_performance_band_improvement = "c",
-      postcode = "SW1B 2BB",
       address_line3 = "",
       total_floor_area = "150",
+      postcode: "SW1B 2BB",
       recommended_improvements: false,
       addendum: nil,
       lzc_energy_sources: nil

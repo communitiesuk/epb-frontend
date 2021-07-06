@@ -100,6 +100,7 @@ FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
       energyEfficiencyRating: 0,
     },
   ],
+  postcode: "SW1A 2AA",
   recommended_improvements: true,
 )
 
