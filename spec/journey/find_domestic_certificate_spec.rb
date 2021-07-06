@@ -271,12 +271,32 @@ describe "Journey::FindDomesticCertificate", type: :feature, journey: true do
   end
 
   describe "when searching for a certificate via a provided link" do
+    context "and the link is valid" do
+      it "does not show a back link" do
+        visit "http://find-energy-certificate.local.gov.uk:9393/energy-certificate/4567-6789-4567-6789-4567"
+        expect(page).not_to have_content("Back")
+      end
+    end
+
     context "and the certificate is cancelled or not for issue" do
       it "redirects users to the main page" do
         visit "http://find-energy-certificate.local.gov.uk:9393/energy-certificate/0000-0000-0000-0000-0666"
         within("main") { click_link "Find an energy certificate" }
         expect(page).to have_content "Find an energy certificate"
       end
+    end
+  end
+
+  describe "when navigating to a certificate" do
+    it "displays a backlink on the page" do
+      visit "http://find-energy-certificate.local.gov.uk:9393"
+      click_on "Start now"
+      find("#label-domestic").click
+      click_on "Continue"
+      click_on "find an EPC by using its certificate number"
+      fill_in "reference_number", with: "4567-6789-4567-6789-4567"
+      click_on "Find"
+      expect(page).to have_content "Back"
     end
   end
 end
