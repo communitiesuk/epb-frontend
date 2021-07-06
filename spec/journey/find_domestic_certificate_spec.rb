@@ -31,6 +31,12 @@ describe "Journey::FindDomesticCertificate", type: :feature, journey: true do
       fill_in "postcode", with: "SW1A 2AA"
       click_button "Find"
       expect(page).to have_content "2 EPCs for SW1A 2AA"
+
+      click_on "2 Marsham Street, London, SW1A 2AA"
+      expect(page).to have_content "Energy performance certificate (EPC)"
+
+      click_on "Back"
+      expect(page).to have_current_path("/find-a-certificate/search-by-postcode?postcode=SW1A+2AA")
     end
 
     it "displays the found postcode results and clicks through to Getting an Energy Certificate" do
