@@ -228,6 +228,7 @@ class FrontendService < Sinatra::Base
       params["postcode"].strip!
 
       if valid_postcode.match(params["postcode"])
+        back_link "/find-an-assessor/search-by-postcode"
         begin
           locals[:results] =
             response.execute(params["postcode"])[:data][:assessors]
@@ -236,7 +237,6 @@ class FrontendService < Sinatra::Base
               t('services.getting_an_energy_certificate')
             } – #{t('layout.body.govuk')}"
           erb_template = :find_assessor_by_postcode_results
-          back_link "/find-an-assessor/search-by-postcode"
         rescue StandardError => e
           case e
           when Errors::PostcodeNotRegistered
@@ -435,6 +435,7 @@ class FrontendService < Sinatra::Base
       params["postcode"].strip!
 
       if valid_postcode.match(params["postcode"])
+        back_link "/find-a-non-domestic-assessor/search-by-postcode"
         begin
           locals[:results] =
             response.execute(params["postcode"])[:data][:assessors]
@@ -446,7 +447,6 @@ class FrontendService < Sinatra::Base
               t('layout.body.govuk')
             }"
           erb_template = :find_non_domestic_assessor_by_postcode_results
-          back_link "/find-a-non-domestic-assessor/search-by-postcode"
         rescue StandardError => e
           case e
           when Errors::PostcodeNotRegistered
@@ -722,8 +722,10 @@ class FrontendService < Sinatra::Base
         t('layout.body.govuk')
       }"
     use_print_view = params["print"] == "true"
+    back_link request.referrer ? assessment_back_link(assessment) : nil
 
     status 200
+
     case assessment[:data][:typeOfAssessment]
     when "CEPC"
       @page_title = "#{t('non_domestic_epc.top_heading')}#{@page_title}"
@@ -732,14 +734,12 @@ class FrontendService < Sinatra::Base
                              use_print_view
     when "CEPC-RR"
       @page_title = "#{t('non_domestic_epc.top_heading')}#{@page_title}"
-      back_link "/find-a-non-domestic-certificate/search-by-postcode"
       show_with_print_option :non_domestic_energy_performance_certificate_recommendation_report,
                              { assessment: assessment[:data] },
                              use_print_view
     when "DEC"
       @page_title = "#{t('dec.top_heading')}#{@page_title}"
       template = use_print_view ? :printable_dec : :dec
-      back_link(use_print_view ? ("/energy-certificate/%s" % params[:assessment_id]) : "/find-a-non-domestic-certificate/search-by-postcode")
       show_with_print_option template,
                              { assessment: assessment[:data] },
                              use_print_view,
@@ -747,7 +747,6 @@ class FrontendService < Sinatra::Base
     when "DEC-RR"
       @page_title =
         "#{t('dec.sections.recommendation_report.title')}#{@page_title}"
-      back_link "/find-a-non-domestic-certificate/search-by-postcode"
       show_with_print_option :dec_recommendation_report,
                              { assessment: assessment[:data] },
                              use_print_view
@@ -871,6 +870,17 @@ class FrontendService < Sinatra::Base
   end
 
   def back_link(url)
-    @back_url = url
+    if url
+      @back_url = url
+    else
+      @remove_back_link = true
+    end
+  end
+
+  def assessment_back_link(assessment)
+    type_fragment = ["RdSAP", "SAP"].include?(assessment[:data][:typeOfAssessment]) ? "find-a-certificate" : "find-a-non-domestic-certificate"
+    postcode = assessment.dig(:data, :address, :postcode)
+
+    "/#{type_fragment}/search-by-postcode?postcode=#{CGI.escape(postcode)}"
   end
 end
