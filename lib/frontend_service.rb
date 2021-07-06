@@ -743,7 +743,7 @@ class FrontendService < Sinatra::Base
       show_with_print_option template,
                              { assessment: assessment[:data] },
                              use_print_view,
-                             true
+                             skip_custom_css: true
     when "DEC-RR"
       @page_title =
         "#{t('dec.sections.recommendation_report.title')}#{@page_title}"
@@ -833,7 +833,7 @@ class FrontendService < Sinatra::Base
     template,
     locals,
     is_print_view,
-    skip_custom_css = false
+    skip_custom_css: false
   )
     @skip_custom_css = true if skip_custom_css
     show(

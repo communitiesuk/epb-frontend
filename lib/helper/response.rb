@@ -21,8 +21,7 @@ module Helper
 
       if response.status == 401
         raise Errors::ApiAuthorizationError,
-              "Authorization issue with internal API. Response body: \"%s\"" %
-                response.body
+              sprintf("Authorization issue with internal API. Response body: \"%s\"", response.body)
       end
       ensure_json response.body
       unless response.status < 400 ||
@@ -41,7 +40,7 @@ module Helper
     def self.ensure_json(content)
       unless check_valid_json content
         raise Errors::NonJsonResponseError,
-              "Response did not contain JSON: \"%s\"" % content
+              sprintf("Response did not contain JSON: \"%s\"", content)
       end
     end
 
@@ -55,8 +54,7 @@ module Helper
     def self.ensure_is_response(response)
       unless %i[status body].all? { |method| response.respond_to? method }
         raise Errors::ResponseNotPresentError,
-              "Response object was expected from call on internal HTTP client, object of type %s returned instead." %
-                response.class
+              sprintf("Response object was expected from call on internal HTTP client, object of type %s returned instead.", response.class)
       end
     end
   end
