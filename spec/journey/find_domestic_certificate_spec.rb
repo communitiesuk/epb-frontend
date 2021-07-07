@@ -240,7 +240,7 @@ describe "Journey::FindDomesticCertificate", type: :feature, journey: true do
       fill_in "street_name", with: "1 Makeup Street"
       fill_in "town", with: "Beauty Town"
       click_on "Find"
-      expect(page).to have_content "of 3 results matching"
+      expect(page).to have_content "of 1 results matching"
     end
 
     it "displays the error message when searching for a certificate that doesnt exist" do
