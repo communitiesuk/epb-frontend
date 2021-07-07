@@ -34,7 +34,6 @@ cy:
     head:
       title: "Cofrestr perfformiad ynni adeiladau"
     body:
-      service_name: "Cofrestr Perfformiad Ynni Adeiladau"
       skip: "Sgipiwch i’r prif gynnwys"
       govuk: "GOV.UK"
       cookie_banner:
@@ -52,8 +51,6 @@ cy:
         heading: beta
         description: 'Gwasanaeth newydd yw hwn a bydd eich <a class="govuk-link" href="https://forms.office.com/Pages/ResponsePage.aspx?id=EGg0v32c3kOociSi7zmVqPbdKK1xB5FPizueLd4cs19UQVdISTJKQTNPSUtON0pPUDYzWFMyVEVIWC4u">adborth</a> yn ein helpu i’w wella.'
       breadcrumb:
-        home: Hafan
-        epbr: "Cofrestr perfformiad ynni adeiladau"
         back: "Yn ôl"
       footer:
         heading: "Dolenni cymorth"
@@ -112,8 +109,6 @@ cy:
         no_property_type_selected: "Dewiswch fath o eiddo"
 
   schemes:
-    head:
-      title: "Cofrestr perfformiad ynni adeiladau - Cysylltwch â chynllun achredu aseswyr ynni"
     top_heading: "Cysylltwch â chynllun achredu aseswyr ynni"
     description: "Mae’r cynlluniau a ganlyn yn trwyddedu aseswyr ynni i asesu eiddo a chreu tystysgrifau ynni"
     contact: "Dylech gysylltu â chynllun os oes angen ichi gysylltu â rhywun ynghylch asesydd"
@@ -383,8 +378,6 @@ cy:
       no_certificates: "Does dim tystysgrifau’n cyfateb i’r cod post hwnnw."
 
   find_certificate_by_reference_number:
-    head:
-      title: "Cofrestr perfformiad ynni adeiladau - Chwiliwch am dystysgrif perfformiad ynni"
     top_heading: "Chwiliwch am dystysgrif perfformiad ynni (EPC) yn ôl rhif y dystysgrif"
     question: "Rhowch rif tystysgrif"
     reference_number_not_registered: "Does dim tystysgrif wedi’i chanfod â’r rhif tystysgrif hwn"
@@ -395,8 +388,6 @@ cy:
       body: "Mae yna wall rhwydwaith mewnol"
 
   find_certificate_by_reference_number_results:
-    head:
-      title: "Cofrestr perfformiad ynni adeiladau - Canlyniadau ar gyfer tystysgrif perfformiad ynni yn ôl rhif y dystysgrif"
     top_heading: "Chwiliwch am dystysgrif perfformiad ynni (EPC)"
     list: "1-%{length} o %{length} o ganlyniadau yn cyfateb i %{reference_number}"
     table:
@@ -503,8 +494,6 @@ cy:
       body: "Mae yna wall rhwydwaith mewnol"
 
   find_non_dom_certificate_by_reference_number_results:
-    head:
-      title: "Cofrestr perfformiad ynni adeiladau - Canlyniadau ar gyfer tystysgrifau ynni ac adroddiadau yn cyfateb i dystysgrif rhif"
     top_heading: "Chwiliwch am dystysgrifau ynni ac adroddiadau"
     no_certificates: "Does dim tystysgrifau nac adroddiadau’n cyfateb i’r rhif tystysgrif hwnnw"
     list: "%{length} o dystysgrifau ac adroddiadau ar gyfer %{reference_number}"

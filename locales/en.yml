@@ -34,7 +34,6 @@ en:
     head:
       title: 'Energy performance of buildings register'
     body:
-      service_name: 'Energy Performance of Buildings Register'
       skip: 'Skip to main content'
       govuk: 'GOV.UK'
       cookie_banner:
@@ -52,8 +51,6 @@ en:
         heading: 'beta'
         description: 'This is a new service – your <a class="govuk-link" href="https://forms.office.com/Pages/ResponsePage.aspx?id=EGg0v32c3kOociSi7zmVqPbdKK1xB5FPizueLd4cs19UQVdISTJKQTNPSUtON0pPUDYzWFMyVEVIWC4u">feedback</a> will help us to improve it.'
       breadcrumb:
-        home: 'Home'
-        epbr: 'Energy performance of buildings register'
         back: 'Back'
       footer:
         heading: 'Support links'
@@ -112,8 +109,6 @@ en:
         no_property_type_selected: "Select a type of property"
 
   schemes:
-    head:
-      title: 'Energy performance of buildings register - Contact an energy assessor accreditation scheme'
     top_heading: 'Contact an energy assessor accreditation scheme'
     description: 'The following schemes license energy assessors to assess properties and create energy certificates'
     contact: 'You should contact a scheme if you need to contact someone about an assessor'
@@ -383,8 +378,6 @@ en:
       no_certificates: "There are no certificates for this postcode."
 
   find_certificate_by_reference_number:
-    head:
-      title: 'Energy performance of buildings register - Find an energy performance certificate'
     top_heading: 'Find an energy performance certificate (EPC) by certificate number'
     question: 'Enter a certificate number'
     reference_number_not_registered: 'A certificate was not found with this certificate number'
@@ -395,8 +388,6 @@ en:
       body: 'There is an internal network error'
 
   find_certificate_by_reference_number_results:
-    head:
-      title: 'Energy performance of buildings register - Results for energy performance certificates by certificate number'
     top_heading: 'Find an energy performance certificate (EPC)'
     list: '1-%{length} of %{length} results matching %{reference_number}'
     table:
@@ -503,8 +494,6 @@ en:
       body: 'There is an internal network error'
 
   find_non_dom_certificate_by_reference_number_results:
-    head:
-      title: 'Energy performance of buildings register - Results for energy performance certificates and reports matching certificate number'
     top_heading: 'Find energy certificates and reports'
     no_certificates: 'There are no certificates or reports matching that certificate number.'
     list: '%{length} certificates and reports for %{reference_number}'
