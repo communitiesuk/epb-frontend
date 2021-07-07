@@ -47,7 +47,7 @@ module FindCertificate
                 },
                 {
                   dateOfAssessment: "2020-01-01",
-                  dateOfRegistration: "2020-01-02",
+                  dateOfRegistration: "2020-01-03",
                   dateOfExpiry: "2030-01-01",
                   typeOfAssessment: type,
                   assessmentId: "1234-5678-9101-1122-1234",
@@ -65,7 +65,7 @@ module FindCertificate
                 },
                 {
                   dateOfAssessment: "2020-01-01",
-                  dateOfRegistration: "2020-01-02",
+                  dateOfRegistration: "2020-01-05",
                   dateOfExpiry: "2032-01-01",
                   typeOfAssessment: type,
                   assessmentId: "1234-5678-9101-1123-1234",
@@ -83,7 +83,7 @@ module FindCertificate
                 },
                 {
                   dateOfAssessment: "2020-01-02",
-                  dateOfRegistration: "2020-01-02",
+                  dateOfRegistration: "2020-01-04",
                   dateOfExpiry: "2032-01-01",
                   typeOfAssessment: type,
                   assessmentId: "9876-5678-9101-1123-9876",
@@ -131,7 +131,8 @@ module FindCertificate
               "assessments": [
                 {
                   dateOfAssessment: "2020-01-01",
-                  dateOfExpiry: "2019-01-01",
+                  dateOfRegistration: "2020-01-02",
+                  dateOfExpiry: "2029-01-01",
                   typeOfAssessment: type,
                   assessmentId: certificate_id,
                   currentEnergyEfficiencyRating: 90,

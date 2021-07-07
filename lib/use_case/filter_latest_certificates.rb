@@ -71,19 +71,19 @@ module UseCase
 
     def newer_certificate?(prev_certificate, certificate)
       newer_assessment?(prev_certificate, certificate) or
-        same_assessment_newer_expiry?(prev_certificate, certificate)
+        same_assessment_later_registration?(prev_certificate, certificate)
     end
 
     def newer_assessment?(prev_certificate, certificate)
-      Date.parse(prev_certificate[:dateOfAssessment]) <
-        Date.parse(certificate[:dateOfAssessment])
+      Date.parse(prev_certificate[:dateOfRegistration]) <
+        Date.parse(certificate[:dateOfRegistration])
     end
 
-    def same_assessment_newer_expiry?(prev_certificate, certificate)
+    def same_assessment_later_registration?(prev_certificate, certificate)
       Date.parse(prev_certificate[:dateOfAssessment]) ==
         Date.parse(certificate[:dateOfAssessment]) and
-        Date.parse(prev_certificate[:dateOfExpiry]) <
-          Date.parse(certificate[:dateOfExpiry])
+        Date.parse(prev_certificate[:dateOfRegistration]) <
+          Date.parse(certificate[:dateOfRegistration])
     end
 
     def create_address(latest_certs, address_id)

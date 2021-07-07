@@ -32,7 +32,7 @@ describe "Journey::FindDomesticCertificate", type: :feature, journey: true do
       click_button "Find"
       expect(page).to have_content "2 EPCs for SW1A 2AA"
 
-      click_on "2 Marsham Street, London, SW1A 2AA"
+      click_on "2 Marsham Street, London, SW1A 2AA", match: :first
       expect(page).to have_content "Energy performance certificate (EPC)"
       expect(page).to have_content "SW1A 2AA"
 

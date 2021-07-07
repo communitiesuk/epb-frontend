@@ -255,7 +255,7 @@ describe "Acceptance::Certificate" do
         end
 
         it "shows the report certificate number of an entry" do
-          expect(response.body).to include("1234-5678-9101-1122-1234")
+          expect(response.body).to include("1234-5678-9101-1123-1234")
         end
 
         it "shows the rating of an entry" do
@@ -264,7 +264,7 @@ describe "Acceptance::Certificate" do
 
         it "shows a clickable entry" do
           expect(response.body).to include(
-            '<a class="govuk-link" href="/energy-certificate/1234-5678-9101-1122-1234"',
+            '<a class="govuk-link" href="/energy-certificate/1234-5678-9101-1123-1234"',
           )
         end
 
@@ -273,8 +273,8 @@ describe "Acceptance::Certificate" do
         end
 
         it "does not show an older certificate" do
-          expect(response.body).not_to include "1234-5678-9101-1123-1234"
-          expect(response.body).to include "9876-5678-9101-1123-9876"
+          expect(response.body).to include "1234-5678-9101-1123-1234"
+          expect(response.body).not_to include "9876-5678-9101-1123-9876"
         end
       end
 
