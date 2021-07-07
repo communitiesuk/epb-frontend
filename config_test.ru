@@ -3,8 +3,6 @@
 require "net/http"
 require "zeitwerk"
 require "webmock"
-require "active_support/cache"
-require "rack/attack"
 
 loader = Zeitwerk::Loader.new
 loader.push_dir("#{__dir__}/lib/")
@@ -192,8 +190,6 @@ FetchAssessmentSummary::AssessmentStub.fetch_ac_report(
     },
   },
 )
-use Rack::Attack
-Rack::Attack.cache.store = ActiveSupport::Cache::NullStore.new # a local cache
 
 ENV["EPB_AUTH_CLIENT_ID"] = "test.id"
 ENV["EPB_AUTH_CLIENT_SECRET"] = "test.client.secret"

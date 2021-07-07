@@ -8,6 +8,8 @@ require "i18n"
 require "helpers"
 require "zeitwerk"
 require "capybara/rspec"
+require "rack/attack"
+require "active_support"
 
 AUTH_URL = "http://test-auth-server.gov.uk"
 
@@ -62,7 +64,10 @@ module RSpecFrontendServiceMixin
   include Rack::Test::Methods
 
   def app
-    FrontendService
+    Rack::Builder.new do
+      use Rack::Attack
+      run FrontendService
+    end
   end
 end
 
@@ -99,3 +104,6 @@ end
 Capybara.default_driver = :selenium_chrome_headless
 Capybara.javascript_driver = :selenium_chrome_headless
 Capybara.app_host = "http://localhost:9393"
+
+Rack::Attack.cache.store = ActiveSupport::Cache::MemoryStore.new
+Rack::Attack.enabled = false
