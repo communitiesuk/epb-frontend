@@ -11,7 +11,7 @@ describe "Acceptance::Assessor", type: :feature do
 
       it "displays the tab value the same as the main header value" do
         expect(response.body).to include(
-          "<title>What type of property is the certificate for? – Getting an energy certificate – GOV.UK</title>",
+          "<title>What type of property is the certificate for? – Getting a new energy certificate – GOV.UK</title>",
         )
       end
     end
@@ -23,7 +23,7 @@ describe "Acceptance::Assessor", type: :feature do
 
       it "displays the tab value the same as the main header value" do
         expect(response.body).to include(
-          "<title>Error: What type of property is the certificate for? – Getting an energy certificate – GOV.UK</title>",
+          "<title>Error: What type of property is the certificate for? – Getting a new energy certificate – GOV.UK</title>",
         )
       end
 
@@ -50,7 +50,7 @@ describe "Acceptance::Assessor", type: :feature do
       end
 
       it "includes the gov header " do
-        expect(response.body).to have_link "Getting an energy certificate"
+        expect(response.body).to have_link "Getting a new energy certificate"
       end
 
       it "returns status 200" do
@@ -59,7 +59,7 @@ describe "Acceptance::Assessor", type: :feature do
 
       it "displays the find an assessor by postcode tab heading" do
         expect(response.body).to include(
-          "<title>Find an assessor by postcode – Getting an energy certificate – GOV.UK</title>",
+          "<title>Find an assessor by postcode – Getting a new energy certificate – GOV.UK</title>",
         )
       end
 
@@ -93,7 +93,7 @@ describe "Acceptance::Assessor", type: :feature do
 
       it "displays the find an assessor by postcode tab heading" do
         expect(response.body).to include(
-          "<title>Error: Find an assessor by postcode – Getting an energy certificate – GOV.UK</title>",
+          "<title>Error: Find an assessor by postcode – Getting a new energy certificate – GOV.UK</title>",
         )
       end
 
@@ -134,7 +134,7 @@ describe "Acceptance::Assessor", type: :feature do
 
       it "displays the find an assessor by postcode tab heading" do
         expect(response.body).to include(
-          "<title>Error: Find an assessor by postcode – Getting an energy certificate – GOV.UK</title>",
+          "<title>Error: Find an assessor by postcode – Getting a new energy certificate – GOV.UK</title>",
         )
       end
 
@@ -175,7 +175,7 @@ describe "Acceptance::Assessor", type: :feature do
 
       it "displays the find an assessor by postcode tab heading" do
         expect(response.body).to include(
-          "<title>Error: Find an assessor by postcode – Getting an energy certificate – GOV.UK</title>",
+          "<title>Error: Find an assessor by postcode – Getting a new energy certificate – GOV.UK</title>",
         )
       end
 
@@ -216,7 +216,7 @@ describe "Acceptance::Assessor", type: :feature do
 
       it "displays the find an assessor by postcode tab heading" do
         expect(response.body).to include(
-          "<title>Error: Find an assessor by postcode – Getting an energy certificate – GOV.UK</title>",
+          "<title>Error: Find an assessor by postcode – Getting a new energy certificate – GOV.UK</title>",
         )
       end
 
@@ -272,7 +272,7 @@ describe "Acceptance::Assessor", type: :feature do
 
         it "displays the Contact an Assessor To Book An Energy Assessment tab heading" do
           expect(response.body).to include(
-            "<title>Contact an assessor to book an energy assessment – Getting an energy certificate – GOV.UK</title>",
+            "<title>Contact an assessor to book an energy assessment – Getting a new energy certificate – GOV.UK</title>",
           )
         end
 
@@ -499,7 +499,7 @@ describe "Acceptance::Assessor", type: :feature do
       end
 
       it "includes the gov header " do
-        expect(response.body).to have_link "Getting an energy certificate"
+        expect(response.body).to have_link "Getting a new energy certificate"
       end
 
       it "returns status 200" do
@@ -508,7 +508,7 @@ describe "Acceptance::Assessor", type: :feature do
 
       it "displays the Find an assessor by name tab heading" do
         expect(response.body).to include(
-          "<title>Find an assessor by name – Getting an energy certificate – GOV.UK</title>",
+          "<title>Find an assessor by name – Getting a new energy certificate – GOV.UK</title>",
         )
       end
 
@@ -542,7 +542,7 @@ describe "Acceptance::Assessor", type: :feature do
 
       it "displays the Find an assessor by name tab heading" do
         expect(response.body).to include(
-          "<title>Error: Find an assessor by name – Getting an energy certificate – GOV.UK</title>",
+          "<title>Error: Find an assessor by name – Getting a new energy certificate – GOV.UK</title>",
         )
       end
 
@@ -613,7 +613,7 @@ describe "Acceptance::Assessor", type: :feature do
 
         it "displays the Contact an assessor to book an energy assessment tab heading" do
           expect(response.body).to include(
-            "<title>Contact an assessor to book an energy assessment – Getting an energy certificate – GOV.UK</title>",
+            "<title>Contact an assessor to book an energy assessment – Getting a new energy certificate – GOV.UK</title>",
           )
         end
 
@@ -703,7 +703,7 @@ describe "Acceptance::Assessor", type: :feature do
 
         it "displays the Contact an assessor to book an energy assessment tab heading" do
           expect(response.body).to include(
-            "<title>Contact an assessor to book an energy assessment – Getting an energy certificate – GOV.UK</title>",
+            "<title>Contact an assessor to book an energy assessment – Getting a new energy certificate – GOV.UK</title>",
           )
         end
 

@@ -40,7 +40,7 @@ describe "Journey::FindDomesticCertificate", type: :feature, journey: true do
       expect(page).to have_current_path("/find-a-certificate/search-by-postcode?postcode=SW1A+2AA")
     end
 
-    it "displays the found postcode results and clicks through to Getting an Energy Certificate" do
+    it "displays the found postcode results and clicks through to Getting a new energy certificate" do
       visit "http://find-energy-certificate.local.gov.uk:9393"
       click_on "Start now"
       find("#label-domestic").click
@@ -51,7 +51,7 @@ describe "Journey::FindDomesticCertificate", type: :feature, journey: true do
       expect(page).to have_content "Getting a new energy certificate"
     end
 
-    it "displays no postcode results and clicks through to Getting an Energy Certificate" do
+    it "displays no postcode results and clicks through to Getting a new energy certificate" do
       visit "http://find-energy-certificate.local.gov.uk:9393"
       click_on "Start now"
       find("#label-domestic").click
@@ -257,7 +257,7 @@ describe "Journey::FindDomesticCertificate", type: :feature, journey: true do
       ).to have_content "A certificate was not found at this address."
     end
 
-    it "displays no street search results and clicks through to Getting an Energy Certificate" do
+    it "displays no street search results and clicks through to Getting a new energy certificate" do
       visit "http://find-energy-certificate.local.gov.uk:9393"
       click_on "Start now"
       find("#label-domestic").click

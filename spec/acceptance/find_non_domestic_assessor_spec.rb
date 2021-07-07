@@ -11,7 +11,7 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
 
       it "includes the gov header " do
         expect(response.body).to include(
-          "<a href=\"/\" class=\"govuk-header__link govuk-header__link--service-name\">Getting an energy certificate</a>",
+          "<a href=\"/\" class=\"govuk-header__link govuk-header__link--service-name\">Getting a new energy certificate</a>",
         )
       end
 
@@ -214,7 +214,7 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
 
         it "has a tab content that matches the page heading" do
           expect(response.body).to include(
-            "<title>Contact an assessor to book an energy assessment - Getting an energy certificate - GOV.UK</title>",
+            "<title>Contact an assessor to book an energy assessment - Getting a new energy certificate - GOV.UK</title>",
           )
         end
 
@@ -403,7 +403,7 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
 
         it "has a tab content that matches the page heading" do
           expect(response.body).to include(
-            "<title>Find an assessor by postcode - Getting an energy certificate - GOV.UK</title>",
+            "<title>Find an assessor by postcode - Getting a new energy certificate - GOV.UK</title>",
           )
         end
 
@@ -444,7 +444,7 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
 
         it "has a tab content that matches the page heading" do
           expect(response.body).to include(
-            "<title>Error: Find an assessor by postcode - Getting an energy certificate - GOV.UK</title>",
+            "<title>Error: Find an assessor by postcode - Getting a new energy certificate - GOV.UK</title>",
           )
         end
 
