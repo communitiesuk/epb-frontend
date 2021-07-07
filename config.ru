@@ -10,7 +10,7 @@ loader.push_dir("#{__dir__}/lib/")
 loader.setup
 
 environment = ENV['STAGE']
-unless environment == "development"
+if environment == "integration"
   use Rack::Attack
   redis_url = Helper::RedisConfigurationReader.read_configuration_url("mhclg-epb-redis-ratelimit-#{environment}")
   Rack::Attack.cache.store = ActiveSupport::Cache::RedisCacheStore.new(url: redis_url)
@@ -22,7 +22,9 @@ unless environment == "development"
       req.forwarded_for.first
     end
   end
+end
 
+unless environment == "development"
   Sentry.init
   use Sentry::Rack::CaptureExceptions
 end
