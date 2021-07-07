@@ -278,7 +278,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
           "c",
           "",
           "",
-          postcode: "SW1B 2BB"
+          postcode: "SW1B 2BB",
         )
       end
 

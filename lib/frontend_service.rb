@@ -878,7 +878,7 @@ class FrontendService < Sinatra::Base
   end
 
   def assessment_back_link(assessment)
-    type_fragment = ["RdSAP", "SAP"].include?(assessment[:data][:typeOfAssessment]) ? "find-a-certificate" : "find-a-non-domestic-certificate"
+    type_fragment = %w[RdSAP SAP].include?(assessment[:data][:typeOfAssessment]) ? "find-a-certificate" : "find-a-non-domestic-certificate"
     postcode = assessment.dig(:data, :address, :postcode)
 
     "/#{type_fragment}/search-by-postcode?postcode=#{CGI.escape(postcode)}"

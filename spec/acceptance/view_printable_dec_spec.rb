@@ -16,8 +16,8 @@ describe "Acceptance::PrintableDisplayEnergyCertificate", type: :feature do
     end
 
     it "shows a back link" do
-      expect(response.body).to_not have_link "Back",
-                                         href: "/energy-certificate/0000-0000-0000-0000-1111"
+      expect(response.body).not_to have_link "Back",
+                                             href: "/energy-certificate/0000-0000-0000-0000-1111"
     end
 
     it "shows the page title" do
