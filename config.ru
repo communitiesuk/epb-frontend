@@ -1,9 +1,11 @@
 # frozen_string_literal: true
 
-require 'rack/attack'
-require 'sentry-ruby'
 require 'zeitwerk'
 require 'active_support/cache'
+# Required by rack-attack
+require 'active_support/notifications'
+require 'rack/attack'
+require 'sentry-ruby'
 
 loader = Zeitwerk::Loader.new
 loader.push_dir("#{__dir__}/lib/")

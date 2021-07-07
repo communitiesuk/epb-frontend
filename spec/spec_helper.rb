@@ -8,8 +8,9 @@ require "i18n"
 require "helpers"
 require "zeitwerk"
 require "capybara/rspec"
+require "active_support/cache"
+require "active_support/notifications"
 require "rack/attack"
-require "active_support"
 
 AUTH_URL = "http://test-auth-server.gov.uk"
 
