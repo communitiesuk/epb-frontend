@@ -18,7 +18,7 @@ unless environment == "development"
 
   use Rack::Attack
   Rack::Attack.cache.store = ActiveSupport::Cache::RedisCacheStore.new(url: redis_url)
-  Rack::Attack.throttle('Requests Rate Limit', limit: 200, period: 1.minutes) do |req|
+  Rack::Attack.throttle('Requests Rate Limit', limit: 100, period: 1.minutes) do |req|
     if req.forwarded_for.nil? || req.forwarded_for.empty?
       req.ip
     else
