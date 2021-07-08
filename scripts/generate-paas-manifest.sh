@@ -4,11 +4,16 @@
 APPLICATION_NAME=$1  # e.g. epb-something-api
 STAGE=$2 # i.e. [integration, staging, production]
 
+case "$STAGE" in
+ production) MEMORY="1G" ;;
+ *) MEMORY="256M" ;;
+esac
+
 cat << EOF
 ---
 applications:
 - name: $APPLICATION_NAME
-  memory: 256M
+  memory: $MEMORY
   buildpacks:
   - ruby_buildpack
   health-check-type: http
