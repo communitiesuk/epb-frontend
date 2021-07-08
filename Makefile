@@ -18,7 +18,8 @@ help:
 .PHONY: generate-manifest
 generate-manifest: ## Generate manifest file for PaaS
 	$(if ${DEPLOY_APPNAME},,$(error Must specify DEPLOY_APPNAME))
-	@scripts/generate-paas-manifest.sh ${DEPLOY_APPNAME} ${STAGE} > manifest.yml
+	$(if ${PAAS_SPACE},,$(error Must specify PAAS_SPACE))
+	@scripts/generate-paas-manifest.sh ${DEPLOY_APPNAME} ${PAAS_SPACE} > manifest.yml
 
 .PHONY: frontend-build
 frontend-build: ## Run the frontend build process to compile sass and move asset files to public
