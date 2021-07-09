@@ -84,7 +84,7 @@ GEM
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rainbow (3.0.0)
-    rake (13.0.3)
+    rake (13.0.6)
     redis (4.3.1)
     regexp_parser (2.1.1)
     rexml (3.2.5)
@@ -183,7 +183,7 @@ DEPENDENCIES
   rack-attack (~> 6.5.0)!
   rack-contrib (~> 2.3.0)!
   rack-test (~> 1.1.0)!
-  rake (~> 13.0.3)!
+  rake (~> 13.0.6)!
   redis (~> 4.3.1)!
   rspec (~> 3.10)!
   rubocop-govuk (~> 4.0)!
