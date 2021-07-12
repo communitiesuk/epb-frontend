@@ -11,8 +11,6 @@ loader.setup
 
 WebMock.enable!
 
-TogglesStub.enable "test_integration": true
-
 OauthStub.token
 FindAssessor::ByPostcode::Stub.search_by_postcode(
   "SW1A 2AA",
