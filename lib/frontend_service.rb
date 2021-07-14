@@ -491,8 +491,6 @@ class FrontendService < Sinatra::Base
     erb_template = :find_non_dom_certificate_by_street_name_and_town
     back_link "/find-a-non-domestic-certificate/search-by-postcode"
 
-    @logger.info(sprintf("The toggle test_integration is switched %s.", Helper::Toggles.enabled?("test_integration") ? "on" : "off"))
-
     @page_title =
       "#{t('find_non_dom_certificate_by_street_name_and_town.top_heading')} - #{
         t('services.find_an_energy_certificate')
