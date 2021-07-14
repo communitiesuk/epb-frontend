@@ -301,7 +301,7 @@
     <% unless print_view %>
     <%== erb :component__related_assessments, locals: {
       assessment: assessment,
-      type: 'certificate',
+      type: t('component.related.certificate'),
       assessment_type:  assessment[:typeOfAssessment],
     } %>
     <% end %>

@@ -956,7 +956,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
     it "shows the related certificates section title capitalised" do
       expect(response.body).to have_css(
         "h2",
-        text: "Certificateau eraill ar gyfer yr eiddo hwn",
+        text: "Tystysgrifau eraill ar gyfer yr eiddo hwn",
       )
     end
 

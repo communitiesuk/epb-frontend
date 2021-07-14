@@ -80,7 +80,7 @@
     <% unless print_view %>
     <%== erb :component__related_assessments, locals: {
       assessment: assessment,
-      type: 'report',
+      type: t('component.related.report'),
       assessment_type:  assessment[:typeOfAssessment],
     } %>
     <% end %>
