@@ -1253,8 +1253,4 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       )
     end
   end
-
-
-
-
 end
