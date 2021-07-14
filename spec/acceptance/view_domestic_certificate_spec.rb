@@ -317,7 +317,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
           nil,
           "c",
           "",
-          "0",
+          "0.0",
           postcode: "SW1B 2BB",
         )
       end
