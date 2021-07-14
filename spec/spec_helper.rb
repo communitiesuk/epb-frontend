@@ -67,6 +67,7 @@ module RSpecFrontendServiceMixin
   def app
     Rack::Builder.new do
       use Rack::Attack
+      require_relative "../config/rack_attack_config"
       run FrontendService
     end
   end
@@ -105,6 +106,3 @@ end
 Capybara.default_driver = :selenium_chrome_headless
 Capybara.javascript_driver = :selenium_chrome_headless
 Capybara.app_host = "http://localhost:9393"
-
-Rack::Attack.cache.store = ActiveSupport::Cache::MemoryStore.new
-Rack::Attack.enabled = false
