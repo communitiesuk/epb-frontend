@@ -319,7 +319,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
           "",
           "0",
           postcode: "SW1B 2BB",
-          )
+        )
       end
 
       let(:response) { get "/energy-certificate/123-123" }
@@ -331,7 +331,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
 
         expect(
           total_floor_area.first.parent.css("dd").first.content.strip,
-          ).to eq "Not recorded"
+        ).to eq "Not recorded"
       end
     end
 
