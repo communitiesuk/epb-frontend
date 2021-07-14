@@ -24,8 +24,11 @@ end
 # Excessive requests going to the certificate page or search page will ban an IP
 Rack::Attack.blocklist("Certificate scrapers") do |req|
   Rack::Attack::Allow2Ban.filter(req.source_ip, maxretry: 100, findtime: 1.minute, bantime: 1.hour) do
-    req.get? && (req.path.include?("/find-a-certificate/search-by-postcode") ||
-      req.path.include?("/energy-certificate/"))
+    req.get? && (
+      req.path.include?("/find-a-certificate/search-by-postcode") ||
+      req.path.include?("/find-a-non-domestic-certificate/search-by-postcode") ||
+      req.path.include?("/energy-certificate/")
+    )
   end
 end
 
