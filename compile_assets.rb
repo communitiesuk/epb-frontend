@@ -30,6 +30,9 @@ unless File.directory?("./public/javascript")
 end
 `./node_modules/.bin/babel #{File.realpath("./assets/javascript")} --out-dir #{File.realpath("./public/javascript")}`
 
+puts "Copying gov front end javascript"
+FileUtils.copy_entry "./assets/javascript", "./node_modules/govuk-frontend/govuk/"
+
 puts "Copying robots.txt"
 if ENV["DEPLOY_APPNAME"] && ENV["DEPLOY_APPNAME"].end_with?("production")
   FileUtils.copy_entry "./assets/robots_public.txt", "./public/robots.txt"

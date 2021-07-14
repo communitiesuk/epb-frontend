@@ -20,3 +20,8 @@ function changeTextAndIconAnimation () {
         </span> Copied`
   setTimeout(function () { text.innerHTML = originalText }, 5000)
 }
+
+
+
+
+

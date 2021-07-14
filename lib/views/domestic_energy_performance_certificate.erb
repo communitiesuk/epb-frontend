@@ -1,5 +1,6 @@
 <script type="text/javascript" src="/javascript/certificate.js"></script>
 
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     <div class="govuk-body">
@@ -105,7 +106,7 @@
       <%== erb :component__summary_list, locals: {
         list: {
          dwelling_type: assessment[:dwellingType],
-         total_floor_area: (assessment[:totalFloorArea].nil? || assessment[:totalFloorArea].empty?) ? t('data_missing.not_recorded') : t('domestic_epc.summary.floor_area', total_floor_area: "%g" % assessment[:totalFloorArea]),
+         total_floor_area: (assessment[:totalFloorArea].nil? || assessment[:totalFloorArea].empty? || assessment[:totalFloorArea] == "0") ? t('data_missing.not_recorded') : t('domestic_epc.summary.floor_area', total_floor_area: "%g" % assessment[:totalFloorArea]),
         },
         translation_prefix: 'domestic_epc.sections.breakdown.list.',
         skip_null: true

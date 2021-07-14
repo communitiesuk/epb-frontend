@@ -295,6 +295,46 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       end
     end
 
+    context "when there is no total floor area is 0" do
+      before do
+        FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
+          "123-123",
+          "25",
+          "f",
+          "7.8453",
+          "6.5123",
+          nil,
+          nil,
+          nil,
+          nil,
+          1,
+          nil,
+          989.345346,
+          "RdSAP",
+          76,
+          [],
+          nil,
+          nil,
+          "c",
+          "",
+          "0",
+          postcode: "SW1B 2BB",
+          )
+      end
+
+      let(:response) { get "/energy-certificate/123-123" }
+
+      it "shows not recorded next to the total floor area" do
+        page = Nokogiri.XML(response.body)
+        total_floor_area =
+          page.css ":contains(\"Total floor area\"):not(:has(:contains(\"Total floor area\")))"
+
+        expect(
+          total_floor_area.first.parent.css("dd").first.content.strip,
+          ).to eq "Not recorded"
+      end
+    end
+
     describe "viewing the estimated energy use and potential savings section" do
       context "when there is no information about the impact of insulation" do
         before do
