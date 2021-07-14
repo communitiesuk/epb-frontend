@@ -295,7 +295,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       end
     end
 
-    context "when there is no total floor area is 0" do
+    context "when the total floor area is 0" do
       before do
         FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
           "123-123",
@@ -1253,4 +1253,8 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       )
     end
   end
+
+
+
+
 end
