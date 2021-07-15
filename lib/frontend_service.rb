@@ -26,7 +26,7 @@ class FrontendService < Sinatra::Base
   def initialize
     super
     setup_locales
-    @toggles = Helper::Toggles.new
+    @toggles = Helper::Toggles
 
     @container = Container.new
     @logger = Logger.new($stdout)
