@@ -76,9 +76,6 @@
   <main class="govuk-main-wrapper" id="main-content" role="main">
     <%== yield %>
   </main>
-  <% if @toggles.class.enabled?("test_integration") %>
-    <p>The <i>test_integration</i> feature flag is switched on.</p>
-  <% end %>
 </div>
 
 <footer class="govuk-footer" role="contentinfo">

@@ -491,6 +491,10 @@ class FrontendService < Sinatra::Base
     erb_template = :find_non_dom_certificate_by_street_name_and_town
     back_link "/find-a-non-domestic-certificate/search-by-postcode"
 
+    if Helper::Toggles.enabled?("test-flag")
+      @logger.info("The test-flag feature flag is switched on in this environment.")
+    end
+
     @page_title =
       "#{t('find_non_dom_certificate_by_street_name_and_town.top_heading')} - #{
         t('services.find_an_energy_certificate')
