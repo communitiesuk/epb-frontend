@@ -1,6 +1,5 @@
 let printed
 window.addEventListener('load', (event) => {
-  const header = document.querySelector('h1')
   printed = false
 
   const backUrl = document.referrer
@@ -13,7 +12,7 @@ window.addEventListener('load', (event) => {
   }
 
   const backLink = document.querySelector('a.govuk-back-link')
-  backLink.addEventListener('click', updateHref)
+  backLink.addEventListener('click', () => updateHref(backUrl))
 })
 
 function resetBrowserHistory (window, url) {
@@ -21,7 +20,7 @@ function resetBrowserHistory (window, url) {
   window.history.pushState(null, document.title, url)
 }
 
-function updateHref () {
+function updateHref (backUrl) {
   if (printed === true) {
     this.setAttribute('href', backUrl)
   }
