@@ -9,6 +9,11 @@ require_relative "helpers"
 require_relative "../lib/helper/toggles"
 
 class FrontendService < Sinatra::Base
+  require "better_errors"
+  use BetterErrors::Middleware
+  BetterErrors.editor = :rubymine
+  BetterErrors.application_root = __dir__
+
   helpers Sinatra::FrontendService::Helpers
   attr_reader :toggles
 
@@ -328,6 +333,7 @@ class FrontendService < Sinatra::Base
 
   find_a_certificate_property_type =
     lambda do
+      Time.nonexistent
       query = params.map { |key, value| "#{key}=#{value}" }.join("&")
       @errors = {}
       @page_title =
@@ -372,6 +378,7 @@ class FrontendService < Sinatra::Base
     locals = {}
     erb_template = :find_certificate_by_postcode
     back_link "/find-a-certificate/type-of-property"
+    Time.nonexistent
 
     @page_title =
       "#{t('find_certificate_by_postcode.top_heading')} - #{

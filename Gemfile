@@ -5,6 +5,8 @@ ruby "2.7.3"
 source "https://rubygems.org" do
   group :development do
     gem "sinatra-contrib"
+    gem "better_errors"
+    gem "binding_of_caller"
   end
 
   group :test do
