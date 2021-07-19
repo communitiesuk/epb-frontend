@@ -100,6 +100,8 @@ class FrontendService < Sinatra::Base
       host_name: /#{find_energy_certificate_host_name}/ do
     @errors = {}
     locals = {}
+
+
     erb_template = :find_non_dom_certificate_by_postcode
     back_link "/find-a-certificate/type-of-property"
 
@@ -276,6 +278,9 @@ class FrontendService < Sinatra::Base
       host_name: /#{getting_new_energy_certificate_host_name}/ do
     @errors = {}
     locals = {}
+
+    raise Error::UriTooLong if status.to_s == "414"
+
     erb_template = :find_assessor_by_name
     back_link "/find-an-assessor/search-by-postcode"
 
@@ -632,6 +637,9 @@ class FrontendService < Sinatra::Base
       host_name: /#{find_energy_certificate_host_name}/ do
     @errors = {}
     locals = {}
+    raise Error::UriTooLong if status.to_s == "414"
+
+
     erb_template = :find_certificate_by_street_name_and_town
     back_link "/find-a-certificate/search-by-postcode"
 
@@ -671,6 +679,19 @@ class FrontendService < Sinatra::Base
             }"
           @errors[:street_name] = t("validation_errors.street_name_missing")
           @errors[:town] = t("validation_errors.town_missing")
+
+        when Errors::UriTooLong
+          status 400
+          @page_title =
+            "#{t('error.error')}#{
+              t('find_certificate_by_street_name_and_town.top_heading')
+            } - #{t('services.find_an_energy_certificate')} - #{
+              t('layout.body.govuk')
+            }"
+          if params["street_name"].length > 2042
+            @errors[:street_name] = t("validation_errors.street_name_missing")
+          end
+
         when Errors::StreetNameMissing
           status 400
           @page_title =
@@ -705,6 +726,8 @@ class FrontendService < Sinatra::Base
                 set_subdomain_url(getting_new_energy_certificate_host_name),
               ),
           }
+
+
         else
           return server_error(e)
         end
@@ -849,6 +872,8 @@ class FrontendService < Sinatra::Base
     status 404
     erb :error_page_404 unless @errors
   end
+
+
 
   def server_error(exception)
     Sentry.capture_exception(exception) if defined?(Sentry)

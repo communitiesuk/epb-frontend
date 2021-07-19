@@ -60,4 +60,9 @@ module Errors
 
   class ResponseNotPresentError < ApiError
   end
+
+  class UriTooLong < RuntimeError
+  end
+
+
 end

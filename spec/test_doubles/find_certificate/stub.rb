@@ -156,6 +156,7 @@ module FindCertificate
         )
     end
 
+
     def self.search_by_street_name_and_town(
       street_name,
       town,
