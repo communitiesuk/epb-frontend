@@ -101,7 +101,6 @@ class FrontendService < Sinatra::Base
     @errors = {}
     locals = {}
 
-
     erb_template = :find_non_dom_certificate_by_postcode
     back_link "/find-a-certificate/type-of-property"
 
@@ -639,7 +638,6 @@ class FrontendService < Sinatra::Base
     locals = {}
     raise Error::UriTooLong if status.to_s == "414"
 
-
     erb_template = :find_certificate_by_street_name_and_town
     back_link "/find-a-certificate/search-by-postcode"
 
@@ -726,7 +724,6 @@ class FrontendService < Sinatra::Base
                 set_subdomain_url(getting_new_energy_certificate_host_name),
               ),
           }
-
 
         else
           return server_error(e)
@@ -872,8 +869,6 @@ class FrontendService < Sinatra::Base
     status 404
     erb :error_page_404 unless @errors
   end
-
-
 
   def server_error(exception)
     Sentry.capture_exception(exception) if defined?(Sentry)

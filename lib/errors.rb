@@ -63,6 +63,4 @@ module Errors
 
   class UriTooLong < RuntimeError
   end
-
-
 end

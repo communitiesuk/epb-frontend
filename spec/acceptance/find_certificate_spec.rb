@@ -775,28 +775,26 @@ describe "Acceptance::Certificate" do
     end
 
     context "when street name entered is many characters" do
-
       before do
         FindCertificate::Stub.search_by_street_name_and_town(
           "1 Makeup Street",
           "Beauty Town",
-          )
+        )
       end
 
-      let(:input){
+      let(:input) do
         max_number_of_character = 2084
         str = "a"
         max_number_of_character.times do
-          str+= "a"
+          str += "a"
         end
         str
-      }
+      end
       let(:response) do
         get "http://find-energy-certificate.local.gov.uk/find-a-certificate/search-by-street-name-and-town?street_name=1%20Makeup%20Street&town=Beauty%20Town"
       end
 
-
-      it 'does not raise an error when the input is too long' do
+      it "does not raise an error when the input is too long" do
         expect(response.status).to eq(200)
       end
     end
