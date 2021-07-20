@@ -7,6 +7,8 @@ runtime-versions:
 env:
   variables:
     DEPLOY_APPNAME: "mhclg-epb-frontend-ui-integration"
+    GTM_PROPERTY_FINDING: "GTM-PFPRVK5"
+    GTM_PROPERTY_GETTING: "GTM-PFPRVK5"
 
   parameter-store:
     PAAS_LOGIN: "epbr-govpaas-integration-login"
