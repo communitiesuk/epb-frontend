@@ -29,8 +29,4 @@ class TogglesStub
           ),
       )
   end
-
-  def self.disable
-    WebMock.reset!
-  end
 end

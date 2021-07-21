@@ -8,7 +8,6 @@ describe "Integration::ToggleService" do
 
   after(:all) do
     Helper::Toggles.shutdown!
-    TogglesStub.disable
     loader_enable_override "helper/toggles"
   end
 
