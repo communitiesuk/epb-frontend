@@ -65,11 +65,13 @@ You can add these to your hosts file automatically by running `$ sudo make hosts
 You can check what hosts you already have by typing `$ cat /etc/hosts` in the 
 frontend directory.
 
+Don't forget to ensure bundle and npm dependencies are up to date
+
 ### Test suites
 
 To run the respective test suites:
 
-* RSpec tests: `$ make test`
+* All tests: `$ make test`
 * User-journey tests: `$ make journey`
 
 ## Usage
