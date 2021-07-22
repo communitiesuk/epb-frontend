@@ -28,7 +28,7 @@ puts "Compiling and copying JavaScript"
 unless File.directory?("./public/javascript")
   FileUtils.mkdir("./public/javascript")
 end
-`./node_modules/.bin/babel #{File.realpath("./assets/javascript")} --ignore #{File.realpath("./assets/javascript/__tests__")} --out-dir #{File.realpath("./public/javascript")} --no-comments`
+`./node_modules/.bin/babel #{File.realpath("./assets/javascript")} --out-dir #{File.realpath("./public/javascript")}`
 
 puts "Copying robots.txt"
 if ENV["DEPLOY_APPNAME"] && ENV["DEPLOY_APPNAME"].end_with?("production")
