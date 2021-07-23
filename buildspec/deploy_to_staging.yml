@@ -7,6 +7,8 @@ runtime-versions:
 env:
   variables:
     DEPLOY_APPNAME: "mhclg-epb-frontend-ui-staging"
+    STATIC_START_PAGE_FINDING: "https://mhclg-epb-static-start-pages-staging.london.cloudapps.digital/find-an-energy-certificate.html"
+    STATIC_START_PAGE_GETTING: "https://mhclg-epb-static-start-pages-staging.london.cloudapps.digital/getting-a-new-energy-certificate.html"
 
   parameter-store:
     PAAS_LOGIN: "epbr-govpaas-staging-login"

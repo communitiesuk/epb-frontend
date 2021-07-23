@@ -9,6 +9,8 @@ env:
     DEPLOY_APPNAME: "mhclg-epb-frontend-ui-integration"
     GTM_PROPERTY_FINDING: "GTM-PFPRVK5"
     GTM_PROPERTY_GETTING: "GTM-PFPRVK5"
+    STATIC_START_PAGE_FINDING: "https://mhclg-epb-static-start-pages-integration.london.cloudapps.digital/find-an-energy-certificate.html"
+    STATIC_START_PAGE_GETTING: "https://mhclg-epb-static-start-pages-integration.london.cloudapps.digital/getting-a-new-energy-certificate.html"
 
   parameter-store:
     PAAS_LOGIN: "epbr-govpaas-integration-login"

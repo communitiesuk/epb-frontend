@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
 describe "Journey::FindAssessor", type: :feature, journey: true do
+  let(:getting_domain) do
+    "http://getting-new-energy-certificate.local.gov.uk:9393"
+  end
+
   before(:all) do
     process =
       IO.popen(
@@ -23,7 +27,7 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
   after(:all) { Process.kill("KILL", @process_id) }
 
   it "finds a domestic assessor by postcode" do
-    visit "http://getting-new-energy-certificate.local.gov.uk:9393"
+    visit getting_domain
     click_on "Start now"
     find("#label-domestic").click
     click_on "Continue"
@@ -32,7 +36,7 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
   end
 
   it "displays an error message when entering an empty postcode" do
-    visit "http://getting-new-energy-certificate.local.gov.uk:9393"
+    visit getting_domain
     click_on "Start now"
     find("#label-domestic").click
     click_on "Continue"
@@ -44,7 +48,7 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
   end
 
   it "displays an error message when you don't select a property type" do
-    visit "http://getting-new-energy-certificate.local.gov.uk:9393"
+    visit getting_domain
     click_on "Start now"
     click_on "Continue"
     expect(page).to have_content "Select a type of property"
@@ -53,7 +57,7 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
   end
 
   it "displays an error message when entering an invalid postcode" do
-    visit "http://getting-new-energy-certificate.local.gov.uk:9393"
+    visit getting_domain
     click_on "Start now"
     find("#label-domestic").click
     click_on "Continue"
@@ -64,9 +68,17 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
     expect(page).to have_link "Enter a real postcode"
   end
 
+  context "when a static app for the root page is not configured" do
+    it "displays a back link to the root page" do
+      visit getting_domain
+      click_on "Start now"
+      expect(find(".govuk-back-link")[:href]).to eq "#{getting_domain}/"
+    end
+  end
+
   context "when entering a valid postcode" do
     it "displays the find an assessor page heading" do
-      visit "http://getting-new-energy-certificate.local.gov.uk:9393"
+      visit getting_domain
       click_on "Start now"
       find("#label-domestic").click
       click_on "Continue"
@@ -78,7 +90,7 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
     end
 
     it "displays to search again, enter the postcode of the property" do
-      visit "http://getting-new-energy-certificate.local.gov.uk:9393"
+      visit getting_domain
       click_on "Start now"
       find("#label-domestic").click
       click_on "Continue"
@@ -90,7 +102,7 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
     end
 
     it "displays accreditation scheme contact details for the first assessor" do
-      visit "http://getting-new-energy-certificate.local.gov.uk:9393"
+      visit getting_domain
       click_on "Start now"
       find("#label-domestic").click
       click_on "Continue"
@@ -105,7 +117,7 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
     end
 
     it "displays no longer accredited text for unaccredited scheme" do
-      visit "http://getting-new-energy-certificate.local.gov.uk:9393"
+      visit getting_domain
       click_on "Start now"
       find("#label-domestic").click
       click_on "Continue"
@@ -117,7 +129,7 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
   end
 
   it "displays an error message when entering an empty name" do
-    visit "http://getting-new-energy-certificate.local.gov.uk:9393"
+    visit getting_domain
     click_on "Start now"
     find("#label-domestic").click
     click_on "Continue"
@@ -127,7 +139,7 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
   end
 
   it "displays an assessor when searched for one that does exist" do
-    visit "http://getting-new-energy-certificate.local.gov.uk:9393"
+    visit getting_domain
     click_on "Start now"
     find("#label-domestic").click
     click_on "Continue"
@@ -138,7 +150,7 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
   end
 
   it "displays 'Not Supplied' when an assessor has not supplied an email address or phone number" do
-    visit "http://getting-new-energy-certificate.local.gov.uk:9393"
+    visit getting_domain
     click_on "Start now"
     find("#label-domestic").click
     click_on "Continue"
@@ -150,7 +162,7 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
   end
 
   it "displays an assessor when searched for one that does exist" do
-    visit "http://getting-new-energy-certificate.local.gov.uk:9393"
+    visit getting_domain
     click_on "Start now"
     find("#label-domestic").click
     click_on "Continue"
@@ -161,7 +173,7 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
   end
 
   it "displays accreditation scheme contact details for an existing assessor by name" do
-    visit "http://getting-new-energy-certificate.local.gov.uk:9393"
+    visit getting_domain
     click_on "Start now"
     expect(page).to have_content "What type of property is the certificate for?"
     find("#label-domestic").click
@@ -176,7 +188,7 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
   end
 
   it "will allow a user to go back to the getting-new-energy-certificate page" do
-    visit "http://getting-new-energy-certificate.local.gov.uk:9393"
+    visit getting_domain
     click_on "Start now"
     expect(page).to have_content "What type of property is the certificate for?"
     click_link "Back"
@@ -185,7 +197,7 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
 
   context "when finding a non-domestic assessor by postcode" do
     it "finds a non-domestic assessor" do
-      visit "http://getting-new-energy-certificate.local.gov.uk:9393/find-an-assessor/type-of-property"
+      visit "#{getting_domain}/find-an-assessor/type-of-property"
       find("#label-non-domestic").click
       click_on "Continue"
       fill_in "postcode", with: "SW1A 2AA"
@@ -193,7 +205,7 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
     end
 
     it "displays an error message when entering an empty postcode" do
-      visit "http://getting-new-energy-certificate.local.gov.uk:9393/find-an-assessor/type-of-property"
+      visit "#{getting_domain}/find-an-assessor/type-of-property"
       find("#label-non-domestic").click
       click_on "Continue"
       fill_in "postcode", with: ""
@@ -204,7 +216,7 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
     end
 
     it "displays an error message when entering an invalid postcode" do
-      visit "http://getting-new-energy-certificate.local.gov.uk:9393/find-an-assessor/type-of-property"
+      visit "#{getting_domain}/find-an-assessor/type-of-property"
       find("#label-non-domestic").click
       click_on "Continue"
       fill_in "postcode", with: "NOT A POSTCODE"
@@ -215,7 +227,7 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
     end
 
     it "displays to search again, enter the postcode of the property" do
-      visit "http://getting-new-energy-certificate.local.gov.uk:9393/find-an-assessor/type-of-property"
+      visit "#{getting_domain}/find-an-assessor/type-of-property"
       find("#label-non-domestic").click
       click_on "Continue"
       fill_in "postcode", with: "SW1A 2AA"
@@ -226,7 +238,7 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
     end
 
     it "displays the find a non domestic assessor page heading when entering a valid postcode " do
-      visit "http://getting-new-energy-certificate.local.gov.uk:9393/find-an-assessor/type-of-property"
+      visit "#{getting_domain}/find-an-assessor/type-of-property"
       find("#label-non-domestic").click
       click_on "Continue"
       fill_in "postcode", with: "SW1A 2AA"
@@ -237,7 +249,7 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
     end
 
     it "displays accreditation scheme contact details for the first assessor" do
-      visit "http://getting-new-energy-certificate.local.gov.uk:9393/find-an-assessor/type-of-property"
+      visit "#{getting_domain}/find-an-assessor/type-of-property"
       find("#label-non-domestic").click
       click_on "Continue"
       fill_in "postcode", with: "SW1A 2AA"
@@ -251,7 +263,7 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
     end
 
     it "displays no longer accredited text for unaccredited scheme" do
-      visit "http://getting-new-energy-certificate.local.gov.uk:9393/find-an-assessor/type-of-property"
+      visit "#{getting_domain}/find-an-assessor/type-of-property"
       find("#label-non-domestic").click
       click_on "Continue"
       fill_in "postcode", with: "SW1A 2AA"
@@ -263,7 +275,7 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
 
   context "when finding a domestic assessor by name" do
     it "displays an error message when entering in an empty name" do
-      visit "http://getting-new-energy-certificate.local.gov.uk:9393/find-an-assessor/search-by-name"
+      visit "#{getting_domain}/find-an-assessor/search-by-name"
       click_on "Search"
       expect(
         page,
@@ -273,7 +285,7 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
     end
 
     it "displays an error message when entering in just a first name" do
-      visit "http://getting-new-energy-certificate.local.gov.uk:9393/find-an-assessor/search-by-name"
+      visit "#{getting_domain}/find-an-assessor/search-by-name"
       fill_in "name", with: "Bella"
       click_on "Search"
       expect(

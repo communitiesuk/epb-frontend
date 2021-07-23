@@ -66,7 +66,7 @@ class FrontendService < Sinatra::Base
         "#{t('find_an_assessor.property_type.question_title')} – #{
           t('services.getting_an_energy_certificate')
         } – #{t('layout.body.govuk')}"
-      back_link "/"
+      back_link root_page_url
 
       if params["property_type"] == "domestic"
         redirect localised_url("/find-an-assessor/search-by-postcode?#{query}")
@@ -338,7 +338,7 @@ class FrontendService < Sinatra::Base
         "#{t('find_a_certificate.property_type.question_title')} – #{
           t('services.find_an_energy_certificate')
         } – #{t('layout.body.govuk')}"
-      back_link "/"
+      back_link root_page_url
 
       if params["property_type"] == "domestic"
         redirect localised_url(

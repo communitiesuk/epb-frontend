@@ -317,8 +317,20 @@ module Sinatra
         ]
       end
 
-      def uses_service_hostname?
-        request.hostname.match?(/\.service\./)
+      def static_start_page?
+        !static_start_page.nil? && !static_start_page.empty?
+      end
+
+      def static_start_page
+        request.hostname.start_with?("get") ? ENV["STATIC_START_PAGE_GETTING"] : ENV["STATIC_START_PAGE_FINDING"]
+      end
+
+      def root_page_url
+        if static_start_page?
+          static_start_page
+        else
+          "/"
+        end
       end
     end
   end
