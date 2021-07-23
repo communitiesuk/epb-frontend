@@ -316,6 +316,10 @@ module Sinatra
           end,
         ]
       end
+
+      def uses_service_hostname?
+        request.hostname.match?(/\.service\./)
+      end
     end
   end
 end
