@@ -299,6 +299,24 @@ module Sinatra
         end
       end
 
+      def gtm_data
+        uses_finding_hostname = request.hostname.start_with? "find"
+        use_gtm = toggles.enabled? "use-gtm"
+        [
+          use_gtm,
+          case [uses_finding_hostname, use_gtm]
+          when [true, true]
+            ENV["GTM_PROPERTY_FINDING"]
+          when [true, false]
+            ENV["GA_PROPERTY_FINDING"]
+          when [false, true]
+            ENV["GTM_PROPERTY_GETTING"]
+          else
+            ENV["GA_PROPERTY_GETTING"]
+          end,
+        ]
+      end
+
       def uses_service_hostname?
         request.hostname.match?(/\.service\./)
       end
