@@ -1,0 +1,39 @@
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      <%= t('find_assessor_by_name_results.top_heading') %>
+    </h1>
+
+    <form method="GET" action="<%=localised_url('/find-a-non-domestic-assessor/search-by-name')%>" >
+      <% if I18n.locale != I18n.available_locales[0] %>
+        <input type="hidden" name="lang" value="<%= I18n.locale.to_s %>">
+      <% end %>
+      <fieldset class="epc-search-fieldset">
+        <div class="epc-search-bar-holder">
+          <input id="name" name="name" type="text"
+                 class="govuk-input epc-search-bar"
+                 spellcheck="false"
+                 value="<%= params['name'] %>"
+            />
+        </div>
+        <button class="epc-search-button" data-module="govuk-button" aria-label="<%= t('find_assessor_by_name.button_text') %>"></button>
+      </fieldset>
+    </form>
+
+    <h2 class="govuk-heading-m"><%= t((meta[:looseMatch] ? 'find_assessor_by_name_results.results.results_like' : 'find_assessor_by_name_results.results.results'), :quantity=>results.length, :name=>params['name']) %></h2>
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+    <% if results.size > 0 %>
+      <ul class="govuk-list">
+        <% results.each do |result| %>
+          <%== erb :find_non_domestic_assessor_list_assessor, locals: {
+              assessor: result } %>
+        <% end %>
+      </ul>
+    <% else %>
+      <p class="govuk-body">
+        <%= t('find_assessor_by_name_results.no_assessors') %>
+      </p>
+    <% end %>
+  </div>
+</div>
