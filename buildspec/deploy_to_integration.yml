@@ -7,8 +7,8 @@ runtime-versions:
 env:
   variables:
     DEPLOY_APPNAME: "mhclg-epb-frontend-ui-integration"
-    GTM_PROPERTY_FINDING: "GTM-PFPRVK5"
-    GTM_PROPERTY_GETTING: "GTM-PFPRVK5"
+    GTM_PROPERTY_FINDING: "GTM-5CVJ2P9"
+    GTM_PROPERTY_GETTING: "GTM-5CVJ2P9"
     STATIC_START_PAGE_FINDING: "https://mhclg-epb-static-start-pages-integration.london.cloudapps.digital/find-an-energy-certificate.html"
     STATIC_START_PAGE_GETTING: "https://mhclg-epb-static-start-pages-integration.london.cloudapps.digital/getting-a-new-energy-certificate.html"
 
