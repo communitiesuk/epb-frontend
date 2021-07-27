@@ -39,6 +39,7 @@ class FrontendService < Sinatra::Base
   find_energy_certificate_host_name = "find-energy-certificate"
 
   get "/", host_name: /#{getting_new_energy_certificate_host_name}/ do
+    redirect(static_start_page, 301) if static_start_page?
     @page_title =
       "#{t('find_an_assessor.top_heading')} – #{
         t('services.getting_an_energy_certificate')
@@ -49,6 +50,7 @@ class FrontendService < Sinatra::Base
   end
 
   get "/", host_name: /#{find_energy_certificate_host_name}/ do
+    redirect(static_start_page, 301) if static_start_page?
     @page_title =
       "#{t('find_a_certificate.top_heading')} – #{
         t('services.find_an_energy_certificate')
