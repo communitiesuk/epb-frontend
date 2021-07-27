@@ -605,7 +605,6 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
         end
 
         it "returns status 200" do
-          pp response
           expect(response.status).to eq(200)
         end
 

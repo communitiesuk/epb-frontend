@@ -29,6 +29,9 @@ module FindAssessor
                       "telephoneNumber": "string",
                       "email": "UPPERCASE_EMAIL@eXaMpLe.com",
                     },
+                    "qualifications": {
+                      "nonDomesticSp3": "ACTIVE",
+                    },
                     "searchResultsComparisonPostcode": "SW1A 1AA",
                     "registeredBy": {
                       "schemeId": "432",
@@ -42,6 +45,9 @@ module FindAssessor
                     "contactDetails": {
                       "telephoneNumber": "string",
                       "email": "user@example.com",
+                    },
+                    "qualifications": {
+                      "nonDomesticSp3": "ACTIVE",
                     },
                     "searchResultsComparisonPostcode": "SW1A 1AA",
                     "registeredBy": {
@@ -57,6 +63,9 @@ module FindAssessor
                       "telephoneNumber": "string",
                       "email": "User@eXample.com",
                     },
+                    "qualifications": {
+                      "nonDomesticSp3": "ACTIVE",
+                    },
                     "searchResultsComparisonPostcode": "SW1A 1AA",
                     "registeredBy": {
                       "schemeId": "472",
@@ -70,6 +79,9 @@ module FindAssessor
                     "contactDetails": {
                       "telephoneNumber": "string",
                       "email": "john@example.com",
+                    },
+                    "qualifications": {
+                      "nonDomesticSp3": "ACTIVE",
                     },
                     "searchResultsComparisonPostcode": "SW1A 1AA",
                     "registeredBy": {
@@ -85,6 +97,9 @@ module FindAssessor
                       "telephoneNumber": "07921 021 368",
                       "email": "user@example.com",
                     },
+                    "qualifications": {
+                      "nonDomesticSp3": "ACTIVE",
+                    },
                     "searchResultsComparisonPostcode": "SW1A 1AA",
                     "registeredBy": {
                       "schemeId": "432",
@@ -99,6 +114,9 @@ module FindAssessor
                       "telephoneNumber": "string",
                       "email": "user@example.com",
                     },
+                    "qualifications": {
+                      "nonDomesticSp3": "ACTIVE",
+                    },
                     "searchResultsComparisonPostcode": "SW1A 1AA",
                     "registeredBy": {
                       "schemeId": "432",
@@ -112,6 +130,9 @@ module FindAssessor
                     "contactDetails": {
                       "telephoneNumber": "string",
                       "email": "mark@example.com",
+                    },
+                    "qualifications": {
+                      "nonDomesticSp3": "ACTIVE",
                     },
                     "searchResultsComparisonPostcode": "SW1A 1AA",
                     "registeredBy": {
@@ -128,6 +149,9 @@ module FindAssessor
                     "registeredBy": {
                       "schemeId": "1222",
                       "name": "Elmhurst Energy",
+                    },
+                    "qualifications": {
+                      "nonDomesticSp3": "ACTIVE",
                     },
                     "schemeAssessorId": "Elmhurst12349876",
                   },

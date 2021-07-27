@@ -148,6 +148,7 @@ describe Gateway::AssessorsGateway do
           :searchResultsComparisonPostcode,
           :registeredBy,
           :schemeAssessorId,
+          :qualifications,
         )
       end
 
