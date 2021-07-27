@@ -331,7 +331,7 @@ class FrontendService < Sinatra::Base
     erb_template = :find_non_domestic_assessor_by_name
     back_link "/find-a-non-domestic-assessor/search-by-postcode"
 
-    response = @container.get_object(:find_assessor_by_name_use_case)
+    response = @container.get_object(:find_non_domestic_assessor_by_name_use_case)
 
     @page_title =
       "#{t('find_assessor_by_name.top_heading')} – #{
