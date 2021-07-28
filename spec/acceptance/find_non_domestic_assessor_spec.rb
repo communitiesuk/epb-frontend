@@ -488,4 +488,257 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
       end
     end
   end
+
+  describe ".get /find-a-non-domestic-assessor/search-by-name" do
+    context "when search page rendered" do
+      let(:response) do
+        get "http://getting-new-energy-certificate.local.gov.uk/find-a-non-domestic-assessor/search-by-name"
+      end
+
+      it "includes the gov header " do
+        expect(response.body).to have_link "Getting a new energy certificate"
+      end
+
+      it "returns status 200" do
+        expect(response.status).to eq(200)
+      end
+
+      it "displays the Find an assessor by name tab heading" do
+        expect(response.body).to include(
+                                   "<title>Find an assessor by name – Getting a new energy certificate – GOV.UK</title>",
+                                   )
+      end
+
+      it "displays the Find an assessor by name page heading" do
+        expect(response.body).to have_css "h1", text: "Find an assessor by name"
+      end
+
+      it "has a postcode input field" do
+        expect(response.body).to include('<input id="name" name="name"')
+      end
+
+      it "has a Search button" do
+        expect(response.body).to include(
+                                   '<button class="govuk-button" data-module="govuk-button">Search</button>',
+                                   )
+      end
+
+      it "does not display an error message" do
+        expect(response.body).not_to include("govuk-error-message")
+      end
+    end
+
+    context "when entering an empty name" do
+      let(:response) do
+        get "http://getting-new-energy-certificate.local.gov.uk/find-a-non-domestic-assessor/search-by-name?name="
+      end
+
+      it "returns status 400" do
+        expect(response.status).to eq(400)
+      end
+
+      it "displays the Find an assessor by name tab heading" do
+        expect(response.body).to include(
+                                   "<title>Error: Find an assessor by name – Getting a new energy certificate – GOV.UK</title>",
+                                   )
+      end
+
+      it "displays the Find an assessor by name page heading" do
+        expect(response.body).to have_css "h1", text: "Find an assessor by name"
+      end
+
+      it "displays an error message" do
+        expect(response.body).to have_css "span",
+                                          text: "Enter the first and last name of the assessor"
+      end
+
+      it "contains the required GDS error summary" do
+        expect(
+          response.body,
+          ).to have_css "div.govuk-error-summary h2.govuk-error-summary__title",
+                        text: "There is a problem"
+        expect(
+          response.body,
+          ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
+                        text: "Enter the first and last name of the assessor"
+        expect(
+          response.body,
+          ).to have_link "Enter the first and last name of the assessor",
+                         href: "#name"
+        expect(response.body).to have_css "#name"
+      end
+    end
+
+    context "when entering a single name" do
+      let(:response) do
+        get "http://getting-new-energy-certificate.local.gov.uk/find-a-non-domestic-assessor/search-by-name?name=bob"
+      end
+
+      it "displays an error message" do
+        expect(response.body).to have_css "span",
+                                          text: "Enter the first and last name of the assessor"
+      end
+
+      it "contains the required GDS error summary" do
+        expect(
+          response.body,
+          ).to have_css "div.govuk-error-summary h2.govuk-error-summary__title",
+                        text: "There is a problem"
+        expect(
+          response.body,
+          ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
+                        text: "Enter the first and last name of the assessor"
+        expect(
+          response.body,
+          ).to have_link "Enter the first and last name of the assessor",
+                         href: "#name"
+        expect(response.body).to have_css "#name"
+      end
+    end
+
+    context "when entering a name" do
+      context "which has exact matches" do
+        before { FindAssessor::ByName::Stub.search_by_name("Ronald McDonald") }
+
+        let(:response) do
+          get "http://getting-new-energy-certificate.local.gov.uk/find-a-non-domestic-assessor/search-by-name?name=Ronald%20McDonald"
+        end
+
+        it "returns status 200" do
+          expect(response.status).to eq(200)
+        end
+
+        it "displays the Contact an assessor to book an energy assessment tab heading" do
+          expect(response.body).to include(
+                                     "<title>Contact an assessor to book an energy assessment – Getting a new energy certificate – GOV.UK</title>",
+                                     )
+        end
+
+        it "displays the Contact an assessor to book an energy assessment page heading" do
+          expect(response.body).to have_css "h1",
+                                            text: "Contact an assessor to book an energy assessment"
+        end
+
+        it "has a name input field" do
+          expect(response.body).to include('<input id="name" name="name"')
+        end
+
+        it "has a Search button" do
+          expect(response.body).to include(
+                                     '<button class="epc-search-button" data-module="govuk-button" aria-label="Search"></button>',
+                                     )
+        end
+
+        it "shows the name of an entry" do
+          expect(response.body).to include("Supercommon Name")
+        end
+
+        it "shows the assessor ID of an entry" do
+          expect(response.body).to include("Stroma9999990")
+        end
+
+        it "shows the email of an entry" do
+          expect(response.body).to include("user@example.com")
+        end
+
+        it "shows a clickable email" do
+          expect(response.body).to include("mailto:user@example.com")
+        end
+
+        it "downcases the email of an entry" do
+          expect(response.body).not_to include("UPPERCASE_EMAIL@eXaMpLe.com")
+          expect(response.body).to include("uppercase_email@example.com")
+        end
+
+        it "shows a downcased clickable email" do
+          expect(response.body).not_to include(
+                                         "mailto:UPPERCASE_EMAIL@eXaMpLe.com",
+                                         )
+          expect(response.body).to include("mailto:uppercase_email@example.com")
+        end
+
+        it "shows a phone number of an entry" do
+          expect(response.body).to include("07921 021 368")
+        end
+
+        it "does not show that they are loose matches" do
+          expect(response.body).not_to include("similar to")
+        end
+      end
+
+      context "which has similar matches" do
+        before do
+          FindAssessor::ByName::Stub.search_by_name(
+            "Ronald McDonald",
+            loose_match: true,
+            )
+        end
+
+        let(:response) do
+          get "http://getting-new-energy-certificate.local.gov.uk/find-a-non-domestic-assessor/search-by-name?name=R%20McDonald"
+        end
+
+        it "does show that they are loose matches" do
+          expect(response.body).to include("similar to")
+        end
+      end
+
+      context "where no assessors have that name" do
+        before do
+          FindAssessor::ByName::NoAssessorsStub.search_by_name(
+            "Nonexistent Person",
+            )
+        end
+
+        let(:response) do
+          get "http://getting-new-energy-certificate.local.gov.uk/find-a-non-domestic-assessor/search-by-name?name=Nonexistent%20Person"
+        end
+
+        it "returns status 200" do
+          expect(response.status).to eq(200)
+        end
+
+        it "displays the Contact an assessor to book an energy assessment tab heading" do
+          expect(response.body).to include(
+                                     "<title>Contact an assessor to book an energy assessment – Getting a new energy certificate – GOV.UK</title>",
+                                     )
+        end
+
+        it "displays the Contact an assessor to book an energy assessment page heading" do
+          expect(response.body).to have_css "h1",
+                                            text: "Contact an assessor to book an energy assessment"
+        end
+
+        it "explains that no assessors by that name" do
+          expect(response.body).to include(
+                                     "There are no assessors with this name.",
+                                     )
+        end
+      end
+
+      context "when there is no connection" do
+        before do
+          FindAssessor::ByName::NoNetworkStub.search_by_name("Breaking Person")
+        end
+
+        let(:response) do
+          get "http://getting-new-energy-certificate.local.gov.uk/find-a-non-domestic-assessor/search-by-name?name=Breaking%20Person"
+        end
+
+        it "returns status 500" do
+          expect(response.status).to eq(500)
+        end
+
+        it "displays the 500 error page heading" do
+          expect(response.body).to include("Try again later.")
+        end
+
+        it "displays error page body" do
+          expect(response.body).to include(
+                                     "Sorry, there is a problem with the service",
+                                     )
+        end
+      end
+    end
+  end
 end

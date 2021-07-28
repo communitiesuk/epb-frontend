@@ -321,6 +321,54 @@ class FrontendService < Sinatra::Base
     show(erb_template, locals)
   end
 
+  get "/find-a-non-domestic-assessor/search-by-name",
+      host_name: /#{getting_new_energy_certificate_host_name}/ do
+    @errors = {}
+    locals = {}
+
+    raise Error::UriTooLong if status.to_s == "414"
+
+    erb_template = :find_non_domestic_assessor_by_name
+    back_link "/find-a-non-domestic-assessor/search-by-postcode"
+
+    response = @container.get_object(:find_non_domestic_assessor_by_name_use_case)
+
+    @page_title =
+      "#{t('find_assessor_by_name.top_heading')} – #{
+        t('services.getting_an_energy_certificate')
+      } – #{t('layout.body.govuk')}"
+
+    if params["name"]
+      begin
+        response = response.execute(params["name"])
+
+        locals[:results] = response[:data][:assessors]
+        locals[:meta] = response[:meta]
+
+        @page_title =
+          "#{t('find_assessor_by_name_results.top_heading')} – #{
+            t('services.getting_an_energy_certificate')
+          } – #{t('layout.body.govuk')}"
+        erb_template = :find_non_domestic_assessor_by_name_results
+        back_link "/find-a-non-domestic-assessor/search-by-name"
+      rescue StandardError => e
+        case e
+        when Errors::InvalidName
+          status 400
+          @page_title =
+            "#{t('error.error')}#{t('find_assessor_by_name.top_heading')} – #{
+              t('services.getting_an_energy_certificate')
+            } – #{t('layout.body.govuk')}"
+          @errors[:name] = t("validation_errors.assessor_name_error")
+        else
+          return server_error(e)
+        end
+      end
+    end
+
+    show(erb_template, locals)
+  end
+
   get "/schemes" do
     @page_title = "#{t('schemes.top_heading')} - #{t('layout.body.govuk')}"
     erb :schemes, layout: :layout
