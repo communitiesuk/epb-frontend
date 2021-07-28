@@ -505,8 +505,8 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
 
       it "displays the Find an assessor by name tab heading" do
         expect(response.body).to include(
-                                   "<title>Find an assessor by name – Getting a new energy certificate – GOV.UK</title>",
-                                   )
+          "<title>Find an assessor by name – Getting a new energy certificate – GOV.UK</title>",
+        )
       end
 
       it "displays the Find an assessor by name page heading" do
@@ -519,8 +519,8 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
 
       it "has a Search button" do
         expect(response.body).to include(
-                                   '<button class="govuk-button" data-module="govuk-button">Search</button>',
-                                   )
+          '<button class="govuk-button" data-module="govuk-button">Search</button>',
+        )
       end
 
       it "does not display an error message" do
@@ -539,8 +539,8 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
 
       it "displays the Find an assessor by name tab heading" do
         expect(response.body).to include(
-                                   "<title>Error: Find an assessor by name – Getting a new energy certificate – GOV.UK</title>",
-                                   )
+          "<title>Error: Find an assessor by name – Getting a new energy certificate – GOV.UK</title>",
+        )
       end
 
       it "displays the Find an assessor by name page heading" do
@@ -555,16 +555,16 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
       it "contains the required GDS error summary" do
         expect(
           response.body,
-          ).to have_css "div.govuk-error-summary h2.govuk-error-summary__title",
-                        text: "There is a problem"
+        ).to have_css "div.govuk-error-summary h2.govuk-error-summary__title",
+                      text: "There is a problem"
         expect(
           response.body,
-          ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
-                        text: "Enter the first and last name of the assessor"
+        ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
+                      text: "Enter the first and last name of the assessor"
         expect(
           response.body,
-          ).to have_link "Enter the first and last name of the assessor",
-                         href: "#name"
+        ).to have_link "Enter the first and last name of the assessor",
+                       href: "#name"
         expect(response.body).to have_css "#name"
       end
     end
@@ -582,16 +582,16 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
       it "contains the required GDS error summary" do
         expect(
           response.body,
-          ).to have_css "div.govuk-error-summary h2.govuk-error-summary__title",
-                        text: "There is a problem"
+        ).to have_css "div.govuk-error-summary h2.govuk-error-summary__title",
+                      text: "There is a problem"
         expect(
           response.body,
-          ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
-                        text: "Enter the first and last name of the assessor"
+        ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
+                      text: "Enter the first and last name of the assessor"
         expect(
           response.body,
-          ).to have_link "Enter the first and last name of the assessor",
-                         href: "#name"
+        ).to have_link "Enter the first and last name of the assessor",
+                       href: "#name"
         expect(response.body).to have_css "#name"
       end
     end
@@ -610,8 +610,8 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
 
         it "displays the Contact an assessor to book an energy assessment tab heading" do
           expect(response.body).to include(
-                                     "<title>Contact an assessor to book an energy assessment – Getting a new energy certificate – GOV.UK</title>",
-                                     )
+            "<title>Contact an assessor to book an energy assessment – Getting a new energy certificate – GOV.UK</title>",
+          )
         end
 
         it "displays the Contact an assessor to book an energy assessment page heading" do
@@ -625,8 +625,8 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
 
         it "has a Search button" do
           expect(response.body).to include(
-                                     '<button class="epc-search-button" data-module="govuk-button" aria-label="Search"></button>',
-                                     )
+            '<button class="epc-search-button" data-module="govuk-button" aria-label="Search"></button>',
+          )
         end
 
         it "shows the name of an entry" do
@@ -652,8 +652,8 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
 
         it "shows a downcased clickable email" do
           expect(response.body).not_to include(
-                                         "mailto:UPPERCASE_EMAIL@eXaMpLe.com",
-                                         )
+            "mailto:UPPERCASE_EMAIL@eXaMpLe.com",
+          )
           expect(response.body).to include("mailto:uppercase_email@example.com")
         end
 
@@ -671,7 +671,7 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
           FindAssessor::ByName::Stub.search_by_name(
             "Ronald McDonald",
             loose_match: true,
-            )
+          )
         end
 
         let(:response) do
@@ -687,7 +687,7 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
         before do
           FindAssessor::ByName::NoAssessorsStub.search_by_name(
             "Nonexistent Person",
-            )
+          )
         end
 
         let(:response) do
@@ -700,8 +700,8 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
 
         it "displays the Contact an assessor to book an energy assessment tab heading" do
           expect(response.body).to include(
-                                     "<title>Contact an assessor to book an energy assessment – Getting a new energy certificate – GOV.UK</title>",
-                                     )
+            "<title>Contact an assessor to book an energy assessment – Getting a new energy certificate – GOV.UK</title>",
+          )
         end
 
         it "displays the Contact an assessor to book an energy assessment page heading" do
@@ -711,8 +711,8 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
 
         it "explains that no assessors by that name" do
           expect(response.body).to include(
-                                     "There are no assessors with this name.",
-                                     )
+            "There are no assessors with this name.",
+          )
         end
       end
 
@@ -735,8 +735,8 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
 
         it "displays error page body" do
           expect(response.body).to include(
-                                     "Sorry, there is a problem with the service",
-                                     )
+            "Sorry, there is a problem with the service",
+          )
         end
       end
     end
