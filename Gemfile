@@ -23,7 +23,7 @@ source "https://rubygems.org" do
   gem "rack-attack", "~> 6.5.0"
   gem "rack-contrib", "~> 2.3.0"
   gem "rake", "~> 13.0.6"
-  gem "redis", "~> 4.3.1"
+  gem "redis", "~> 4.4.0"
   gem "rubocop-govuk", "~> 4.0"
   gem "rubocop-rspec", "~> 2.3"
   gem "sassc", "~> 2.4"
