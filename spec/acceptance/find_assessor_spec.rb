@@ -601,7 +601,7 @@ describe "Acceptance::Assessor", type: :feature do
 
     context "when entering a name" do
       context "which has exact matches" do
-        before { FindAssessor::ByName::Stub.search_by_name("Ronald McDonald") }
+        before { FindAssessor::ByName::Stub.search_by_name("Ronald McDonald", "domestic") }
 
         let(:response) do
           get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/search-by-name?name=Ronald%20McDonald"
@@ -690,6 +690,7 @@ describe "Acceptance::Assessor", type: :feature do
         before do
           FindAssessor::ByName::NoAssessorsStub.search_by_name(
             "Nonexistent Person",
+            "domestic",
           )
         end
 

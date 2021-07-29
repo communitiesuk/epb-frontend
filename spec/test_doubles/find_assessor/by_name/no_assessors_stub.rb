@@ -3,11 +3,11 @@
 module FindAssessor
   module ByName
     class NoAssessorsStub
-      def self.search_by_name(name)
+      def self.search_by_name(name, qualification_type = "")
         WebMock
           .stub_request(
             :get,
-            "http://test-api.gov.uk/api/assessors?name=#{name}",
+            "http://test-api.gov.uk/api/assessors?name=#{name}&qualificationType=#{qualification_type}",
           )
           .to_return(
             status: 200,

@@ -43,7 +43,7 @@ module AssessorsGateway
       }
     end
 
-    def search_by_name(name)
+    def search_by_name(name, qualification_type)
       {
         data: {
           assessors: [
@@ -54,6 +54,7 @@ module AssessorsGateway
                 "telephoneNumber": "0792 102 1368",
                 "email": "epbassessor@epb.com",
               },
+              "qualifications": qualifications(qualification_type),
               "searchResultsComparisonPostcode": "SW1A 1AA",
               "registeredBy": {
                 "schemeId": "432",
@@ -68,6 +69,7 @@ module AssessorsGateway
                 "telephoneNumber": "0792 102 1368",
                 "email": "epbassessor@epb.com",
               },
+              "qualifications": qualifications(qualification_type),
               "searchResultsComparisonPostcode": "SW1A 1AA",
               "registeredBy": {
                 "schemeId": "432",
@@ -83,6 +85,24 @@ module AssessorsGateway
           "looseMatch": false,
         },
       }
+    end
+
+    def qualifications(type)
+      if type == "domestic"
+        {
+          "domesticRdSap": "ACTIVE",
+          "domesticSap": "ACTIVE",
+        }
+      else
+        {
+          "nonDomesticDec": "ACTIVE",
+          "nonDomesticNos3": "ACTIVE",
+          "nonDomesticNos4": "ACTIVE",
+          "nonDomesticNos5": "ACTIVE",
+          "nonDomesticSp3": "ACTIVE",
+          "nonDomesticCc4": "ACTIVE",
+        }
+      end
     end
   end
 end

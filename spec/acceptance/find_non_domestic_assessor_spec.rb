@@ -598,7 +598,7 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
 
     context "when entering a name" do
       context "which has exact matches" do
-        before { FindAssessor::ByName::Stub.search_by_name("Ronald McDonald") }
+        before { FindAssessor::ByName::Stub.search_by_name("Ronald McDonald", "nonDomestic") }
 
         let(:response) do
           get "http://getting-new-energy-certificate.local.gov.uk/find-a-non-domestic-assessor/search-by-name?name=Ronald%20McDonald"
@@ -631,6 +631,15 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
 
         it "shows the name of an entry" do
           expect(response.body).to include("Supercommon Name")
+        end
+
+        it "shows qualifications" do
+          expect(response.body).to include("Air Conditioning Simple Packaged (Level 3)")
+          expect(response.body).to include("Air Conditioning Complexed Central (Level 4)")
+          expect(response.body).to include("Display Energy Certificate (DEC)")
+          expect(response.body).to include("Non-Domestic Energy Assessor (Level 3)")
+          expect(response.body).to include("Non-Domestic Energy Assessor (Level 4)")
+          expect(response.body).to include("Non-Domestic Energy Assessor (Level 5)")
         end
 
         it "shows the assessor ID of an entry" do
@@ -687,6 +696,7 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
         before do
           FindAssessor::ByName::NoAssessorsStub.search_by_name(
             "Nonexistent Person",
+            "nonDomestic",
           )
         end
 

@@ -19,8 +19,6 @@ class Container
       UseCase::FindNonDomesticAssessorByPostcode.new(assessors_gateway)
     find_assessor_by_name_use_case =
       UseCase::FindAssessorByName.new(assessors_gateway)
-    find_non_domestic_assessor_by_name_use_case =
-      UseCase::FindNonDomesticAssessorByName.new(assessors_gateway)
     find_certificate_by_postcode_use_case =
       UseCase::FindCertificateByPostcode.new(certificates_gateway)
     find_certificate_by_id_use_case =
@@ -38,7 +36,6 @@ class Container
       find_non_domestic_assessor_by_postcode_use_case:
         find_non_domestic_assessor_by_postcode_use_case,
       find_assessor_by_name_use_case: find_assessor_by_name_use_case,
-      find_non_domestic_assessor_by_name_use_case: find_non_domestic_assessor_by_name_use_case,
       fetch_certificate_use_case: fetch_certificate_use_case,
       find_certificate_by_postcode_use_case:
         find_certificate_by_postcode_use_case,

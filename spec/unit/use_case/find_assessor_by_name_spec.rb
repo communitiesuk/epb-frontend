@@ -6,7 +6,7 @@ describe UseCase::FindAssessorByName do
     let(:find_assessor) { described_class.new(assessors_gateway) }
 
     it "returns empty array" do
-      expect(find_assessor.execute("Uncommon Name")[:data][:assessors]).to eq(
+      expect(find_assessor.execute("Uncommon Name", "domestic")[:data][:assessors]).to eq(
         [],
       )
     end
@@ -22,6 +22,7 @@ describe UseCase::FindAssessorByName do
             "telephoneNumber": "0792 102 1368",
             "email": "epbassessor@epb.com",
           },
+          "qualifications": { "domesticRdSap": "ACTIVE", "domesticSap": "ACTIVE" },
           "searchResultsComparisonPostcode": "SW1A 1AA",
           "registeredBy": {
             "schemeId": "432",
@@ -36,6 +37,7 @@ describe UseCase::FindAssessorByName do
             "telephoneNumber": "0792 102 1368",
             "email": "epbassessor@epb.com",
           },
+          "qualifications": { "domesticRdSap": "ACTIVE", "domesticSap": "ACTIVE" },
           "searchResultsComparisonPostcode": "SW1A 1AA",
           "registeredBy": {
             "schemeId": "432",
@@ -51,13 +53,13 @@ describe UseCase::FindAssessorByName do
 
     it "returns list of assessors" do
       expect(
-        find_assessor.execute("Somewhatcommon Name")[:data][:assessors],
+        find_assessor.execute("Somewhatcommon Name", "domestic")[:data][:assessors],
       ).to eq(valid_assessors)
     end
 
     it "returns list of assessors when the name includes leading or trailing whitespaces" do
       expect(
-        find_assessor.execute(" Somewhatcommon   Name ")[:data][:assessors],
+        find_assessor.execute(" Somewhatcommon   Name ", "domestic")[:data][:assessors],
       ).to eq(valid_assessors)
     end
   end

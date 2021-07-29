@@ -3,11 +3,11 @@
 module FindAssessor
   module ByName
     class Stub
-      def self.search_by_name(name, loose_match: false)
+      def self.search_by_name(name, qualification_type = "", loose_match: false)
         WebMock
           .stub_request(
             :get,
-            "http://test-api.gov.uk/api/assessors?name=#{name}",
+            "http://test-api.gov.uk/api/assessors?name=#{name}&qualificationType=#{qualification_type}",
           )
           .with(
             headers: {
@@ -29,9 +29,7 @@ module FindAssessor
                       "telephoneNumber": "string",
                       "email": "UPPERCASE_EMAIL@eXaMpLe.com",
                     },
-                    "qualifications": {
-                      "nonDomesticSp3": "ACTIVE",
-                    },
+                    "qualifications": qualifications(qualification_type),
                     "searchResultsComparisonPostcode": "SW1A 1AA",
                     "registeredBy": {
                       "schemeId": "432",
@@ -46,9 +44,7 @@ module FindAssessor
                       "telephoneNumber": "string",
                       "email": "user@example.com",
                     },
-                    "qualifications": {
-                      "nonDomesticSp3": "ACTIVE",
-                    },
+                    "qualifications": qualifications(qualification_type),
                     "searchResultsComparisonPostcode": "SW1A 1AA",
                     "registeredBy": {
                       "schemeId": "444",
@@ -63,9 +59,7 @@ module FindAssessor
                       "telephoneNumber": "string",
                       "email": "User@eXample.com",
                     },
-                    "qualifications": {
-                      "nonDomesticSp3": "ACTIVE",
-                    },
+                    "qualifications": qualifications(qualification_type),
                     "searchResultsComparisonPostcode": "SW1A 1AA",
                     "registeredBy": {
                       "schemeId": "472",
@@ -80,9 +74,7 @@ module FindAssessor
                       "telephoneNumber": "string",
                       "email": "john@example.com",
                     },
-                    "qualifications": {
-                      "nonDomesticSp3": "ACTIVE",
-                    },
+                    "qualifications": qualifications(qualification_type),
                     "searchResultsComparisonPostcode": "SW1A 1AA",
                     "registeredBy": {
                       "schemeId": "332",
@@ -97,9 +89,7 @@ module FindAssessor
                       "telephoneNumber": "07921 021 368",
                       "email": "user@example.com",
                     },
-                    "qualifications": {
-                      "nonDomesticSp3": "ACTIVE",
-                    },
+                    "qualifications": qualifications(qualification_type),
                     "searchResultsComparisonPostcode": "SW1A 1AA",
                     "registeredBy": {
                       "schemeId": "432",
@@ -114,9 +104,7 @@ module FindAssessor
                       "telephoneNumber": "string",
                       "email": "user@example.com",
                     },
-                    "qualifications": {
-                      "nonDomesticSp3": "ACTIVE",
-                    },
+                    "qualifications": qualifications(qualification_type),
                     "searchResultsComparisonPostcode": "SW1A 1AA",
                     "registeredBy": {
                       "schemeId": "432",
@@ -131,9 +119,7 @@ module FindAssessor
                       "telephoneNumber": "string",
                       "email": "mark@example.com",
                     },
-                    "qualifications": {
-                      "nonDomesticSp3": "ACTIVE",
-                    },
+                    "qualifications": qualifications(qualification_type),
                     "searchResultsComparisonPostcode": "SW1A 1AA",
                     "registeredBy": {
                       "schemeId": "1222",
@@ -150,9 +136,7 @@ module FindAssessor
                       "schemeId": "1222",
                       "name": "Elmhurst Energy",
                     },
-                    "qualifications": {
-                      "nonDomesticSp3": "ACTIVE",
-                    },
+                    "qualifications": qualifications(qualification_type),
                     "schemeAssessorId": "Elmhurst12349876",
                   },
                 ],
@@ -163,6 +147,24 @@ module FindAssessor
               },
             }.to_json,
           )
+      end
+
+      def self.qualifications(type)
+        if type == "domestic"
+          {
+            "domesticRdSap": "ACTIVE",
+            "domesticSap": "ACTIVE",
+          }
+        else
+          {
+            "nonDomesticDec": "ACTIVE",
+            "nonDomesticNos3": "ACTIVE",
+            "nonDomesticNos4": "ACTIVE",
+            "nonDomesticNos5": "ACTIVE",
+            "nonDomesticSp3": "ACTIVE",
+            "nonDomesticCc4": "ACTIVE",
+          }
+        end
       end
     end
   end
