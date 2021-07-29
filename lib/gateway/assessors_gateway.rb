@@ -20,8 +20,9 @@ module Gateway
       JSON.parse(response.body, symbolize_names: true)
     end
 
-    def search_by_name(name)
-      route = "/api/assessors?name=#{name}"
+    def search_by_name(name, qualification_type = "")
+      route = "/api/assessors?name=#{name}&qualificationType=#{
+        CGI.escape(qualification_type)}"
       response =
         Helper::Response.ensure_good { @internal_api_client.get(route) }
 

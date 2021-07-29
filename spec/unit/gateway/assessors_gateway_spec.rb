@@ -165,6 +165,12 @@ describe Gateway::AssessorsGateway do
           :schemeId,
         )
       end
+
+      it "allows to specify qualification type" do
+        FindAssessor::ByName::Stub.search_by_name("Some Name", "domestic")
+
+        expect { gateway.search_by_name("Some Name", "domestic") }.not_to raise_error
+      end
     end
 
     context "when an assessor doesnt exist" do
