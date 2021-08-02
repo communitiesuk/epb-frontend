@@ -27,6 +27,12 @@ FindAssessor::ByName::Stub.search_by_name(
   "domestic",
   loose_match: true,
 )
+FindAssessor::ByName::Stub.search_by_name("Supercommon Name", "nonDomestic")
+FindAssessor::ByName::Stub.search_by_name(
+  "Somewhatcommon Name",
+  "nonDomestic",
+  loose_match: true,
+)
 
 FetchAssessmentSummary::GoneAssessmentStub.fetch("0000-0000-0000-0000-0666")
 

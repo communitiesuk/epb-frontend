@@ -273,6 +273,44 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
     end
   end
 
+  context "when finding a non-domestic assessor by name" do
+    it "displays an error message when entering in an empty name" do
+      visit "#{getting_domain}/find-a-non-domestic-assessor/search-by-name"
+      click_on "Search"
+      expect(
+        page,
+      ).to have_content "Enter the first and last name of the assessor"
+      expect(page).to have_content "There is a problem"
+      expect(page).to have_link "Enter the first and last name of the assessor"
+    end
+
+    it "displays an error message when entering in just a first name" do
+      visit "#{getting_domain}/find-a-non-domestic-assessor/search-by-name"
+      fill_in "name", with: "John"
+      click_on "Search"
+      expect(
+        page,
+      ).to have_content "Enter the first and last name of the assessor"
+      expect(page).to have_content "There is a problem"
+      expect(page).to have_link "Enter the first and last name of the assessor"
+    end
+
+    it "displays the results including assessors qualifications" do
+      visit "#{getting_domain}/find-a-non-domestic-assessor/search-by-name"
+      fill_in "name", with: "Supercommon Name"
+      click_on "Search"
+      expect(page).to have_link("Back", href: /find-a-non-domestic-assessor\/search-by-name/)
+      expect(page).to have_content("8 results for the name Supercommon Name")
+      expect(page).to have_content("Qualifications")
+      expect(page).to have_content("Air Conditioning Simple Packaged (Level 3)")
+      expect(page).to have_content("Air Conditioning Complexed Central (Level 4)")
+      expect(page).to have_content("Display Energy Certificate (DEC)")
+      expect(page).to have_content("Non-Domestic Energy Assessor (Level 3)")
+      expect(page).to have_content("Non-Domestic Energy Assessor (Level 4)")
+      expect(page).to have_content("Non-Domestic Energy Assessor (Level 5)")
+    end
+  end
+
   context "when finding a domestic assessor by name" do
     it "displays an error message when entering in an empty name" do
       visit "#{getting_domain}/find-an-assessor/search-by-name"
