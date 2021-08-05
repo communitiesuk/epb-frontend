@@ -14,7 +14,7 @@ source "https://rubygems.org" do
     gem "rspec", "~>3.10"
     gem "selenium-webdriver", "~> 3.142.7"
     gem "webdrivers", "~> 4.6.0"
-    gem "webmock", "~> 3.13"
+    gem "webmock", "~> 3.14"
   end
 
   gem "epb-auth-tools", "~> 1.0.8"
