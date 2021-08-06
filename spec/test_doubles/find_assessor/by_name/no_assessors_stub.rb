@@ -7,7 +7,7 @@ module FindAssessor
         WebMock
           .stub_request(
             :get,
-            "http://test-api.gov.uk/api/assessors?name=#{name}&qualificationType=#{qualification_type}",
+            "http://test-api.gov.uk/api/assessors?name=#{CGI.escape(name)}&qualificationType=#{CGI.escape(qualification_type)}",
           )
           .to_return(
             status: 200,

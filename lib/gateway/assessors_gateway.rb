@@ -21,7 +21,7 @@ module Gateway
     end
 
     def search_by_name(name, qualification_type = "")
-      route = "/api/assessors?name=#{name}&qualificationType=#{
+      route = "/api/assessors?name=#{CGI.escape(name)}&qualificationType=#{
         CGI.escape(qualification_type)}"
       response =
         Helper::Response.ensure_good { @internal_api_client.get(route) }

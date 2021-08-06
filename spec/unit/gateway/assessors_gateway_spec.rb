@@ -174,21 +174,34 @@ describe Gateway::AssessorsGateway do
     end
 
     context "when an assessor doesnt exist" do
-      let(:response) { gateway.search_by_name("Some Nonexistent-name") }
-
       before do
         FindAssessor::ByName::NoAssessorsStub.search_by_name(
           "Some Nonexistent-name",
         )
+        FindAssessor::ByName::NoAssessorsStub.search_by_name(
+          "Mats Söderlund",
+        )
       end
 
       it "returns empty results" do
+        name = "Some Nonexistent-name"
+        response = gateway.search_by_name(name)
+        expect_empty(response, name)
+      end
+
+      it "returns empty results for name containing non ASCII characters" do
+        name = "Mats Söderlund"
+        response = gateway.search_by_name(name)
+        expect_empty(response, name)
+      end
+
+      def expect_empty(response, search_name)
         expect(response).to eq(
           data: {
             assessors: [],
           },
           meta: {
-            searchName: "Some Nonexistent-name",
+            searchName: search_name,
             looseMatch: false,
           },
         )
@@ -196,3 +209,4 @@ describe Gateway::AssessorsGateway do
     end
   end
 end
+
