@@ -7,24 +7,20 @@ describe "Rack::Attack" do
     let(:over_limit) { limit + 1 }
     let(:certificate_id) { "0000-0000-0000-0000-0000" }
 
-    before_block = lambda do |_|
-      Rack::Attack.enabled = true
+    before do
+      # The first time this is called it initialises Rack (RSpecFrontendServiceMixin)
       header "X_FORWARDED_FOR", "127.0.0.1, 8.8.8.8"
+      # This why we should only activate Rack::Attack after
+      Rack::Attack.enabled = true
       FetchAssessmentSummary::AssessmentStub.fetch_rdsap(certificate_id)
     end
-    after_block = lambda do |_|
-      Rack::Attack.reset!
+
+    after do
       Rack::Attack.enabled = false
+      Rack::Attack.reset!
     end
 
-    preamble = lambda {
-      before(&before_block)
-      after(&after_block)
-    }
-
     context "when the number of requests is under or at the throttle limit" do
-      preamble.call
-
       it "returns a 200 response status under the limit" do
         under_limit.times do
           get "/healthcheck"
@@ -41,8 +37,6 @@ describe "Rack::Attack" do
     end
 
     context "when the number of requests is over the throttle limit" do
-      preamble.call
-
       it "returns a 429 response status" do
         over_limit.times do
           get "/healthcheck"
@@ -52,8 +46,6 @@ describe "Rack::Attack" do
     end
 
     context "when the number of requests is under or at the ban limit" do
-      preamble.call
-
       it "returns a 200 response status under the limit" do
         under_limit.times do
           get "/energy-certificate/#{certificate_id}"
@@ -70,8 +62,6 @@ describe "Rack::Attack" do
     end
 
     context "when the number of requests is over the ban limit" do
-      preamble.call
-
       it "returns a 403 response status" do
         over_limit.times do
           get "/energy-certificate/#{certificate_id}"
