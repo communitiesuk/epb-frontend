@@ -2,7 +2,7 @@ require "rspec"
 require "json"
 
 describe UseCase::FilterLatestCertificates do
-  before { @usecase = UseCase::FilterLatestCertificates.new(nil) }
+  before { @usecase = described_class.new(nil) }
 
   context "when processing a response from domestic assessment search by postcode" do
     let(:json_response) do

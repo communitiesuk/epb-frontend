@@ -209,4 +209,3 @@ describe Gateway::AssessorsGateway do
     end
   end
 end
-
