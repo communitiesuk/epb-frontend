@@ -1,12 +1,12 @@
 describe "Integration::ToggleService" do
-  before(:all) do
+  before do
     TogglesStub.enable "test-enabled-feature": true,
                        "test-disabled-feature": false
 
     loader_enable_original "helper/toggles"
   end
 
-  after(:all) do
+  after do
     Helper::Toggles.shutdown!
     loader_enable_override "helper/toggles"
   end

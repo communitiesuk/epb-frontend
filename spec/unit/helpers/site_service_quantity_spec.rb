@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-describe Helpers do
+describe "Helpers.site_service_quantity", type: :helper do
   context "with site services" do
     let(:frontend_service_helpers) do
       Class.new { extend Helpers }

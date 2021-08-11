@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-describe Helpers do
+describe "Helpers.number_to_currency", type: :helper do
   let(:frontend_service_helpers) do
     Class.new { extend Helpers }
   end

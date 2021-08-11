@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 describe "Journey::FindNonDomesticCertificate", type: :feature, journey: true do
+  process_id = nil
+
   before(:all) do
     process =
       IO.popen(
@@ -15,12 +17,12 @@ describe "Journey::FindNonDomesticCertificate", type: :feature, journey: true do
           { err: %i[child out] },
         ],
       )
-    @process_id = process.pid
+    process_id = process.pid
 
     nil unless process.readline.include?("port=9393")
   end
 
-  after(:all) { Process.kill("KILL", @process_id) }
+  after(:all) { Process.kill("KILL", process_id) if process_id }
 
   describe "when searching for a non-domestic certificate by postcode" do
     it "finds a certificate by postcode" do

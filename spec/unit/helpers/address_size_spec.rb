@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-describe Helpers do
+describe "Helpers.address_size", type: :helper do
   let(:frontend_service_helpers) do
     Class.new { extend Helpers }
   end
@@ -42,19 +42,19 @@ describe Helpers do
       }
     end
 
-    it "show the number of lines" do
+    it "returns expected DOM classes including specifying small font for long address" do
       expect(
         frontend_service_helpers.address_size(long_address),
       ).to eq "govuk-body address-small-font"
     end
 
-    it "show the number of lines" do
+    it "returns expected DOM classes without specifying small font for short address" do
       expect(
         frontend_service_helpers.address_size(short_address),
       ).to eq "govuk-body"
     end
 
-    it "show the number of lines" do
+    it "returns expected DOM classes including specifying small font for long lined address" do
       expect(
         frontend_service_helpers.address_size(long_line_address),
       ).to eq "govuk-body address-small-font"

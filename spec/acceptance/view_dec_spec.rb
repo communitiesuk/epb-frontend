@@ -57,8 +57,8 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
     it "shows the share certificate section" do
       expect(response.body).to have_css "h2", text: "Share this certificate"
       expect(response.body).to have_link "Email"
-      expect(response.body).to have_button "Copy link", visible: false
-      expect(response.body).to have_link "Print", visible: false
+      expect(response.body).to have_button "Copy link", visible: :visible
+      expect(response.body).to have_link "Print", visible: :visible
     end
 
     it "shows the summary box" do

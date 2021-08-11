@@ -2,7 +2,7 @@ class HelpersStub
   include Helpers
 end
 
-describe Helpers do
+describe "Helpers.recommendation_header", type: :helper do
   context "given a recommendation with no improvement code" do
     title = "This is the title for the improvement"
     description = "and this is the description"

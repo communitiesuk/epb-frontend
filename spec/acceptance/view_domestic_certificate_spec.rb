@@ -29,8 +29,8 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
     it "shows the share certificate section" do
       expect(response.body).to have_css "h2", text: "Share this certificate"
       expect(response.body).to have_link "Email"
-      expect(response.body).to have_button "Copy link", visible: false
-      expect(response.body).to have_link "Print", visible: false
+      expect(response.body).to have_button "Copy link", visible: :all
+      expect(response.body).to have_link "Print", visible: :all
     end
 
     it "shows the address summary" do
@@ -359,7 +359,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
         end
       end
 
-      context "when there is no information about the impact of insulation" do
+      context "when there is information about the impact of insulation" do
         before do
           FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
             "123-123",

@@ -1,4 +1,4 @@
-describe Helper::Response do
+describe Helper::Response, type: :helper do
   context "when a block containing an internal API call is passed to ensure_good" do
     it "passes the response through if the status is 200" do
       response = OpenStruct.new(status: 200, body: { data: [] }.to_json)

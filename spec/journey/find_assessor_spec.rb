@@ -5,6 +5,8 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
     "http://getting-new-energy-certificate.local.gov.uk:9393"
   end
 
+  process_id = nil
+
   before(:all) do
     process =
       IO.popen(
@@ -19,12 +21,12 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
           { err: %i[child out] },
         ],
       )
-    @process_id = process.pid
+    process_id = process.pid
 
     nil unless process.readline.include?("port=9393")
   end
 
-  after(:all) { Process.kill("KILL", @process_id) }
+  after(:all) { Process.kill("KILL", process_id) if process_id }
 
   it "finds a domestic assessor by postcode" do
     visit getting_domain
@@ -138,7 +140,7 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
     expect(page).to have_content "Enter the first and last name of the assessor"
   end
 
-  it "displays an assessor when searched for one that does exist" do
+  it "errors when searching for an assessor using only one name" do
     visit getting_domain
     click_on "Start now"
     find("#label-domestic").click

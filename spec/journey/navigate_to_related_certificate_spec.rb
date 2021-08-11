@@ -3,6 +3,8 @@
 describe "Journey::NavigateToRelatedCertificate",
          type: :feature,
          journey: true do
+  process_id = nil
+
   before(:all) do
     process =
       IO.popen(
@@ -17,12 +19,12 @@ describe "Journey::NavigateToRelatedCertificate",
           { err: %i[child out] },
         ],
       )
-    @process_id = process.pid
+    process_id = process.pid
 
     nil unless process.readline.include?("port=9393")
   end
 
-  after(:all) { Process.kill("KILL", @process_id) }
+  after(:all) { Process.kill("KILL", process_id) if process_id }
 
   before do
     FetchAssessmentSummary::AssessmentStub.fetch_rdsap(

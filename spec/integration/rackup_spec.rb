@@ -3,6 +3,8 @@
 require "net/http"
 
 describe "Integration::Rackup" do
+  process_id = nil
+
   before(:all) do
     process =
       IO.popen(
@@ -17,12 +19,12 @@ describe "Integration::Rackup" do
           { err: %i[child out] },
         ],
       )
-    @process_id = process.pid
+    process_id = process.pid
 
     nil unless process.readline.include?("port=9393")
   end
 
-  after(:all) { Process.kill("KILL", @process_id) }
+  after(:all) { Process.kill("KILL", process_id) if process_id }
 
   let(:request_assessor) do
     Net::HTTP.new("getting-new-energy-certificate.local.gov.uk", 9_393)

@@ -80,8 +80,8 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
       it "shows the share certificate section" do
         expect(response.body).to have_css "h2", text: "Share this certificate"
         expect(response.body).to have_link "Email"
-        expect(response.body).to have_button "Copy link", visible: false
-        expect(response.body).to have_link "Print", visible: false
+        expect(response.body).to have_button "Copy link", visible: :all
+        expect(response.body).to have_link "Print", visible: :all
       end
 
       it "shows the property type" do
@@ -119,58 +119,58 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
           '<p class="govuk-body">You can read <a class="govuk-link" href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/824018/Non-Dom_Private_Rented_Property_Minimum_Standard_-_Landlord_Guidance.pdf">guidance for landlords on the regulations and exemptions</a>.</p>',
         )
       end
+    end
 
-      context "with an energy rating of F/G" do
-        before do
-          FetchAssessmentSummary::AssessmentStub.fetch_cepc assessment_id:
-                                                              "1234-5678-1234-5678-1234",
-                                                            energy_efficiency_band:
-                                                              "g"
-        end
-
-        it "shows the letting info warning text" do
-          expect(response.body).to include(
-            '<strong class="govuk-warning-text__text"><span class="govuk-warning-text__assistive">Warning</span>You may not be able to let this property.</strong>',
-          )
-        end
-
-        it "shows the letting info text" do
-          expect(response.body).to include(
-            '<p class="govuk-body">This property has an energy rating of G. The landlord cannot grant a tenancy to new or existing tenants, unless an exemption has been registered.</p>',
-          )
-
-          expect(response.body).to include(
-            '<p class="govuk-body">From 1 April 2023, landlords will not be allowed to continue letting a non-domestic property on an existing lease if that property has an energy rating of F or G.</p>',
-          )
-        end
-
-        it "shows the guidance for landlords link" do
-          expect(response.body).to include(
-            '<p class="govuk-body">You can read <a class="govuk-link" href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/824018/Non-Dom_Private_Rented_Property_Minimum_Standard_-_Landlord_Guidance.pdf">guidance for landlords on the regulations and exemptions</a>.</p>',
-          )
-        end
-
-        it "shows the recommendation text" do
-          expect(response.body).to include(
-            '<p class="govuk-body">Properties can be let if they have an energy rating from A+ to E. The <a class="govuk-link" href="#related_report">recommendation report</a> sets out changes you can make to improve the property’s rating.</p>',
-          )
-        end
+    context "when the property has an energy rating of F/G" do
+      before do
+        FetchAssessmentSummary::AssessmentStub.fetch_cepc assessment_id:
+                                                            "1234-5678-1234-5678-1234",
+                                                          energy_efficiency_band:
+                                                            "g"
       end
 
-      context "with the property is in Northern Ireland" do
-        before do
-          FetchAssessmentSummary::AssessmentStub.fetch_cepc assessment_id:
-                                                              "1234-5678-1234-5678-1234",
-                                                            energy_efficiency_band:
-                                                              "g",
-                                                            postcode: "BT4 3WS"
-        end
+      it "shows the letting info warning text" do
+        expect(response.body).to include(
+          '<strong class="govuk-warning-text__text"><span class="govuk-warning-text__assistive">Warning</span>You may not be able to let this property.</strong>',
+        )
+      end
 
-        it "shows the letting info warning text" do
-          expect(response.body).not_to include(
-            '<h2 class="govuk-heading-l">Rules on letting this property</h2>',
-          )
-        end
+      it "shows the letting info text" do
+        expect(response.body).to include(
+          '<p class="govuk-body">This property has an energy rating of G. The landlord cannot grant a tenancy to new or existing tenants, unless an exemption has been registered.</p>',
+        )
+
+        expect(response.body).to include(
+          '<p class="govuk-body">From 1 April 2023, landlords will not be allowed to continue letting a non-domestic property on an existing lease if that property has an energy rating of F or G.</p>',
+        )
+      end
+
+      it "shows the guidance for landlords link" do
+        expect(response.body).to include(
+          '<p class="govuk-body">You can read <a class="govuk-link" href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/824018/Non-Dom_Private_Rented_Property_Minimum_Standard_-_Landlord_Guidance.pdf">guidance for landlords on the regulations and exemptions</a>.</p>',
+        )
+      end
+
+      it "shows the recommendation text" do
+        expect(response.body).to include(
+          '<p class="govuk-body">Properties can be let if they have an energy rating from A+ to E. The <a class="govuk-link" href="#related_report">recommendation report</a> sets out changes you can make to improve the property’s rating.</p>',
+        )
+      end
+    end
+
+    context "when the property is in Northern Ireland and has an energy rating of F/G" do
+      before do
+        FetchAssessmentSummary::AssessmentStub.fetch_cepc assessment_id:
+                                                            "1234-5678-1234-5678-1234",
+                                                          energy_efficiency_band:
+                                                            "g",
+                                                          postcode: "BT4 3WS"
+      end
+
+      it "shows the letting info warning text" do
+        expect(response.body).not_to include(
+          '<h2 class="govuk-heading-l">Rules on letting this property</h2>',
+        )
       end
     end
 

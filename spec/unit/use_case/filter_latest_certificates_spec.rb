@@ -2,14 +2,14 @@ require "rspec"
 require "json"
 
 describe UseCase::FilterLatestCertificates do
-  before { @usecase = described_class.new(nil) }
+  let(:usecase) { described_class.new(nil) }
 
   context "when processing a response from domestic assessment search by postcode" do
     let(:json_response) do
       JSON.parse(get_domestic_search_by_postcode, symbolize_names: true)
     end
 
-    let(:result) { @usecase.execute(json_response) }
+    let(:result) { usecase.execute(json_response) }
 
     it "returns the address with the most recent certificate of any domestic type" do
       certificates = result[:"UPRN-000000000000"][:certificates]
@@ -26,7 +26,7 @@ describe UseCase::FilterLatestCertificates do
     let(:json_response) do
       JSON.parse(get_non_domestic_search_by_postcode, symbolize_names: true)
     end
-    let(:result) { @usecase.execute(json_response) }
+    let(:result) { usecase.execute(json_response) }
 
     it "returns the address with the most recent certificate for each type" do
       certificates = result[:"UPRN-123456789012"][:certificates]

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-describe "Acceptance::Non Domestic Certificate" do
+describe "Acceptance::NonDomesticCertificate" do
   include RSpecFrontendServiceMixin
 
   describe ".get find-energy-certificate/find-a-non-domestic-certificate/search-by-postcode",

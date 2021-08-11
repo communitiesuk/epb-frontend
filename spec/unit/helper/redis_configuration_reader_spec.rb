@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 describe Helper::RedisConfigurationReader do
-  subject { described_class }
+  subject(:reader) { described_class }
 
   context "Given VCAP_SERVICES has a redis configuation" do
     let(:instance_name) { "mhclg-epb-redis-ratelimit-integration" }
@@ -12,7 +12,7 @@ describe Helper::RedisConfigurationReader do
         "redis": [
           {
             "credentials": {
-              "uri": "rediss://:my_password@localhost:6379"
+              "uri": "redis://:my_password@localhost:6379"
             },
             "instance_name": "#{instance_name}"
           }
@@ -23,12 +23,12 @@ describe Helper::RedisConfigurationReader do
     end
 
     it "returns the redis configuration URL if the instance name exists" do
-      redis_config_url = subject.read_configuration_url(instance_name)
-      expect(redis_config_url).to eq("rediss://:my_password@localhost:6379")
+      redis_config_url = reader.read_configuration_url(instance_name)
+      expect(redis_config_url).to eq("redis://:my_password@localhost:6379")
     end
 
     it "raises a configuration error" do
-      expect { subject.read_configuration_url("missing_name") }.to raise_error(
+      expect { reader.read_configuration_url("missing_name") }.to raise_error(
         Errors::ConfigurationError,
         "missing_name is not a valid redis instance",
       )
@@ -40,7 +40,7 @@ describe Helper::RedisConfigurationReader do
 
     it "raises a configuration error" do
       expect {
-        subject.read_configuration_url("my_instance_name")
+        reader.read_configuration_url("my_instance_name")
       }.to raise_error(
         Errors::ConfigurationError,
         "No Redis configuration found in VCAP_SERVICES",

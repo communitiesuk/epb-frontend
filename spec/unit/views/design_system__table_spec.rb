@@ -1,4 +1,4 @@
-describe "design_system__table" do
+describe "design_system__table", type: :view do
   it "can have additional classes" do
     expect(
       table("classes")[:class].split.include?("custom-class-goes-here"),

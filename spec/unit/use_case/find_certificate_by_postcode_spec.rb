@@ -95,7 +95,7 @@ describe UseCase::FindCertificateByPostcode do
       ).to eq(valid_certificates)
     end
 
-    it "returns list of certificates" do
+    it "returns list of certificates when input has surrounding whitespace" do
       expect(
         find_certificate_by_postcode.execute(" SW1A 2AB ")[:data][:assessments],
       ).to eq(valid_certificates)

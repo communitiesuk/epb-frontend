@@ -7,3 +7,6 @@ inherit_gem:
 
 Metrics/BlockLength:
   IgnoredMethods: ['get']
+
+RSpec/ExampleLength:
+  CountAsOne: ['array', 'hash']

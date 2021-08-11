@@ -48,8 +48,8 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
     it "shows the share certificate section" do
       expect(response.body).to have_css "h2", text: "Share this report"
       expect(response.body).to have_link "Email"
-      expect(response.body).to have_button "Copy link", visible: false
-      expect(response.body).to have_link "Print", visible: false
+      expect(response.body).to have_button "Copy link", visible: :all
+      expect(response.body).to have_link "Print", visible: :all
     end
 
     it "Shows the top summary box" do
@@ -194,7 +194,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
     end
   end
 
-  context "when the assessment exists" do
+  context "when the assessment exists but has expired" do
     before do
       FetchAssessmentSummary::AssessmentStub.fetch_cepc_rr(
         assessment_id: "1234-5678-1234-5678-1234",
@@ -208,7 +208,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
     end
   end
 
-  context "When a non domestic report is both NI and opted out" do
+  context "when a non domestic report is both NI and opted out" do
     before do
       FetchAssessmentSummary::AssessmentStub.fetch_cepc_rr(
         assessment_id: "1234-5678-1234-5678-1234",

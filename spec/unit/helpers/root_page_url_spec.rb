@@ -1,4 +1,4 @@
-describe Helpers do
+describe "Helpers.root_page_url", type: :helper do
   let(:frontend_service_helpers) do
     Class.new { extend Helpers }
   end
