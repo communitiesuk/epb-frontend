@@ -640,6 +640,7 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
           expect(response.body).to include("Non-Domestic Energy Assessor (Level 3)")
           expect(response.body).to include("Non-Domestic Energy Assessor (Level 4)")
           expect(response.body).to include("Non-Domestic Energy Assessor (Level 5)")
+          expect(response.body).not_to include("Green Deal Assessor")
         end
 
         it "shows the assessor ID of an entry" do

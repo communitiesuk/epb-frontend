@@ -163,6 +163,7 @@ module FindAssessor
             "nonDomesticNos5": "ACTIVE",
             "nonDomesticSp3": "ACTIVE",
             "nonDomesticCc4": "ACTIVE",
+            "gda": "ACTIVE",
           }
         end
       end

@@ -10,7 +10,7 @@
             <%
               qualifications = []
               assessor[:qualifications].each do |qualification, qualification_status|
-                if qualification_status == 'ACTIVE'
+                if qualification_status == 'ACTIVE' && qualification != :gda
                   qualifications.push(t('find_non_domestic_assessor_by_postcode_results.qualification.' + qualification.to_s))
                 end
               end
