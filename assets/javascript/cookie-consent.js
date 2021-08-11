@@ -172,7 +172,7 @@ const cookieConsent = (useGtm, tagId, _, gtag, resolvers) => {
       const cookies = document.cookie.split('; ')
 
       for (let i = 0; i < cookies.length; i++) {
-        if (cookies[i].startsWith('_ga')) {
+        if (cookies[i].startsWith('_ga') || cookies[i].startsWith('cookie_consent')) {
           const expDate = new Date()
           const name = cookies[i].split('=')[0] + '='
           const value = cookies[i].split('=')[1] + ';'
