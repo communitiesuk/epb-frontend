@@ -237,7 +237,6 @@ cy:
       nonDomesticNos3: "Asesydd Ynni Annomestig (Lefel 3)"
       nonDomesticNos4: "Asesydd Ynni Annomestig (Lefel 4)"
       nonDomesticNos5: "Asesydd Ynni Annomestig (Lefel 5)"
-      gda: "Asesydd Bargen Werdd"
 
   find_assessor_by_postcode_results:
     top_heading: "Cysylltwch ag asesydd i drefnu asesiad ynni"

@@ -237,7 +237,6 @@ en:
       nonDomesticNos3: 'Non-Domestic Energy Assessor (Level 3)'
       nonDomesticNos4: 'Non-Domestic Energy Assessor (Level 4)'
       nonDomesticNos5: 'Non-Domestic Energy Assessor (Level 5)'
-      gda: 'Green Deal Assessor'
 
   find_assessor_by_postcode_results:
     top_heading: 'Contact an assessor to book an energy assessment'
