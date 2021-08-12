@@ -5,11 +5,10 @@ require "i18n"
 require "i18n/backend/fallbacks"
 require "sinatra/base"
 require_relative "container"
-require_relative "helpers"
 require_relative "../lib/helper/toggles"
 
 class FrontendService < Sinatra::Base
-  helpers Sinatra::FrontendService::Helpers
+  helpers Helpers
   attr_reader :toggles
 
   @toggles = nil

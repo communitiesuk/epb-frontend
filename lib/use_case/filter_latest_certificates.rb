@@ -48,7 +48,7 @@ module UseCase
       found_matching_type = false
       address_certificates.each do |prev_certificate|
         if !(
-             Sinatra::FrontendService::Helpers.domestic_certificate_type? certificate[
+             Helpers.domestic_certificate_type? certificate[
                                                                             :typeOfAssessment
                                                                           ]
            ) && !same_assessment_type?(prev_certificate, certificate)

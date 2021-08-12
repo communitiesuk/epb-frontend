@@ -1,8 +1,8 @@
 class HelpersStub
-  include Sinatra::FrontendService::Helpers
+  include Helpers
 end
 
-describe Sinatra::FrontendService::Helpers do
+describe Helpers do
   context "given a recommendation with no improvement code" do
     title = "This is the title for the improvement"
     description = "and this is the description"

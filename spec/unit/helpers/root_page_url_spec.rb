@@ -1,6 +1,6 @@
-describe Sinatra::FrontendService::Helpers do
+describe Helpers do
   let(:frontend_service_helpers) do
-    Class.new { extend Sinatra::FrontendService::Helpers }
+    Class.new { extend Helpers }
   end
 
   before do

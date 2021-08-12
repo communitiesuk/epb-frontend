@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-describe Sinatra::FrontendService::Helpers do
+describe Helpers do
   context "with site services" do
     let(:frontend_service_helpers) do
-      Class.new { extend Sinatra::FrontendService::Helpers }
+      Class.new { extend Helpers }
     end
 
     let(:assessment) do
