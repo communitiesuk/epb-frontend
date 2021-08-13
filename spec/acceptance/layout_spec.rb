@@ -27,8 +27,12 @@ describe "Acceptance::AccessibilityStatement", type: :feature do
         )
       end
 
-      it "includes the gov header " do
+      it "includes the gov header" do
         expect(response.body).to have_link "Getting a new energy certificate"
+      end
+
+      it "allows indexing the start page by Google Search but does not allow to follow the links" do
+        expect(response.body).to include("<meta name=\"robots\" content=\"nofollow\">")
       end
     end
   end
@@ -43,9 +47,21 @@ describe "Acceptance::AccessibilityStatement", type: :feature do
         )
       end
 
-      it "includes the gov header " do
+      it "includes the gov header" do
         expect(response.body).to have_link "Find an energy certificate"
       end
+
+      it "allows indexing the start page by Google Search but does not allow to follow the links" do
+        expect(response.body).to include("<meta name=\"robots\" content=\"nofollow\">")
+      end
+    end
+  end
+
+  describe "non start pages" do
+    let(:response) { get "http://find-energy-certificate.local.gov.uk/find-a-certificate/type-of-property" }
+
+    it "does not allow indexing and following by Google Search" do
+      expect(response.body).to include("<meta name=\"robots\" content=\"noindex, nofollow\">")
     end
   end
 end
