@@ -19,7 +19,6 @@ module FindCertificate
             :Accept => "*/*",
             "Accept-Encoding" => "gzip;q=1.0,deflate;q=0.6,identity;q=0.3",
             :Authorization => "Bearer abc",
-            "User-Agent" => "Faraday v1.5.0",
           },
         )
         .to_return(
@@ -121,7 +120,6 @@ module FindCertificate
             :Accept => "*/*",
             "Accept-Encoding" => "gzip;q=1.0,deflate;q=0.6,identity;q=0.3",
             :Authorization => "Bearer abc",
-            "User-Agent" => "Faraday v1.5.0",
           },
         )
         .to_return(
@@ -175,7 +173,6 @@ module FindCertificate
             :Accept => "*/*",
             "Accept-Encoding" => "gzip;q=1.0,deflate;q=0.6,identity;q=0.3",
             :Authorization => "Bearer abc",
-            "User-Agent" => "Faraday v1.5.0",
           },
         )
         .to_return(
