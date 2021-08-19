@@ -22,7 +22,7 @@ describe "Helpers.compact_address_without_occupier", type: :helper do
           town,
           postcode,
           occupier,
-          )
+        )
       end
 
       it "shows the address when the occupier is duplicated in the address" do
