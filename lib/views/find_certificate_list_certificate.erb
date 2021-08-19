@@ -14,11 +14,15 @@
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">
             <a class="govuk-link" href="<%= localised_url("/energy-certificate/" + result[:assessmentId]) %>">
-              <% address_lines = [results[:addressLine1], results[:addressLine2]]
-                 address_lines << results[:addressLine3] if results[:addressLine2].empty?
+              <% present_address_lines = [
+                   results[:addressLine1],
+                   results[:addressLine2],
+                   results[:addressLine3],
+                   results[:addressLine4]]
+                 .compact.reject(&:empty?)
               %>
               <%= compact_address(
-                    address_lines,
+                    present_address_lines.take(2),
                     results[:town],
                     results[:postcode]
                   ).join(", ")
