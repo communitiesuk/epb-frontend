@@ -168,6 +168,7 @@ describe "Journey::FindDomesticCertificate", type: :feature, journey: true do
       find("#label-domestic").click
       click_on "Continue"
       click_on "find an EPC by using its certificate number"
+      fill_in "reference_number", with: "4567-6789-4567-6789-4567-1234"
       click_on "Find"
       expect(page).to have_content "Enter a 20-digit certificate number"
       expect(page).to have_content "There is a problem"
