@@ -195,7 +195,7 @@ describe "Acceptance::NonDomesticCertificate" do
         end
 
         it "shows the report certificate number of an entry" do
-          expect(response.body).to include("1234-5678-9101-1122-1234")
+          expect(response.body).to include("1234-5678-9101-1122-5678")
         end
 
         it "shows the report type of an entry" do
@@ -204,7 +204,7 @@ describe "Acceptance::NonDomesticCertificate" do
 
         it "shows a clickable entry" do
           expect(response.body).to include(
-            '<a class="govuk-link" href="/energy-certificate/1234-5678-9101-1122-1234"',
+            '<a class="govuk-link" href="/energy-certificate/1234-5678-9101-1122-5678"',
           )
         end
 

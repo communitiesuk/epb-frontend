@@ -59,6 +59,12 @@ FindCertificate::Stub.search_by_street_name_and_town(
   "Beauty Town",
 )
 FindCertificate::Stub.search_by_street_name_and_town(
+  "1 Makeup Street",
+  "Beauty Town",
+  %w[DEC DEC-RR CEPC CEPC-RR AC-REPORT AC-CERT],
+  "CEPC",
+)
+FindCertificate::Stub.search_by_street_name_and_town(
   "1 Commercial Street",
   "Industry Town",
   %w[DEC DEC-RR CEPC CEPC-RR AC-REPORT AC-CERT],
@@ -68,6 +74,11 @@ FindCertificate::Stub.search_by_street_name_and_town(
 FindCertificate::NoCertificatesStub.search_by_street_name_and_town(
   "Madeup Street",
   "Madeup Town",
+)
+FindCertificate::NoCertificatesStub.search_by_street_name_and_town(
+  "Madeup Street",
+  "Madeup Town",
+  %w[DEC DEC-RR CEPC CEPC-RR AC-REPORT AC-CERT],
 )
 
 FindCertificate::NoCertificatesStub.search_by_street_name_and_town(
@@ -117,6 +128,13 @@ FetchAssessmentSummary::AssessmentStub.fetch_cepc assessment_id:
                                                   energy_efficiency_band: "b",
                                                   related_rrn:
                                                     "1234-5678-1234-5678-0000"
+
+FetchAssessmentSummary::AssessmentStub.fetch_cepc assessment_id:
+                                                    "1234-5678-9101-1122-5678",
+                                                  energy_efficiency_band: "b",
+                                                  related_rrn:
+                                                    "1234-5678-1234-5678-0000",
+                                                  postcode: "SW1A 2AA"
 
 FetchAssessmentSummary::AssessmentStub.fetch_cepc_rr assessment_id:
                                                        "1234-5678-1234-5678-0000"

@@ -49,7 +49,7 @@ module FindCertificate
                   dateOfRegistration: "2020-01-03",
                   dateOfExpiry: "2030-01-01",
                   typeOfAssessment: type,
-                  assessmentId: "1234-5678-9101-1122-1234",
+                  assessmentId: type != "CEPC" ? "1234-5678-9101-1122-1234" : "1234-5678-9101-1122-5678",
                   currentEnergyEfficiencyRating: 90,
                   currentEnergyEfficiencyBand: "b",
                   optOut: false,
