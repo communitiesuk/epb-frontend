@@ -75,8 +75,15 @@ module UseCase
     end
 
     def newer_assessment?(prev_certificate, certificate)
-      Date.parse(prev_certificate[:dateOfRegistration]) <
-        Date.parse(certificate[:dateOfRegistration])
+      unless Date.parse(prev_certificate[:dateOfRegistration]) == Date.parse(certificate[:dateOfRegistration])
+        return Date.parse(prev_certificate[:dateOfRegistration]) <
+            Date.parse(certificate[:dateOfRegistration])
+      end
+
+      if both_created_at_present?(prev_certificate, certificate)
+        Time.parse(prev_certificate[:createdAt]) <
+          Time.parse(certificate[:createdAt])
+      end
     end
 
     def same_assessment_later_registration?(prev_certificate, certificate)
@@ -104,6 +111,11 @@ module UseCase
       else
         certificate[:addressId]
       end.to_sym
+    end
+
+    def both_created_at_present?(prev_certificate, certificate)
+      !(prev_certificate[:createdAt].nil? || prev_certificate[:createdAt].empty?) &&
+        !(certificate[:createdAt].nil? || certificate[:createdAt].empty?)
     end
   end
 end

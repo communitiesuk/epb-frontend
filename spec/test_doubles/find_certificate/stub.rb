@@ -197,6 +197,7 @@ module FindCertificate
                   town: town,
                   postcode: "SW1B 2BB",
                   status: "ENTERED",
+                  createdAt: nil,
                 },
                 {
                   dateOfAssessment: "2020-01-01",
@@ -215,6 +216,7 @@ module FindCertificate
                   town: town,
                   postcode: "SW1B 2BB",
                   status: "ENTERED",
+                  createdAt: nil,
                 },
                 {
                   dateOfAssessment: "2020-01-01",
@@ -233,6 +235,7 @@ module FindCertificate
                   town: town,
                   postcode: "SW1B 2BB",
                   status: "ENTERED",
+                  createdAt: nil,
                 },
               ],
             },
