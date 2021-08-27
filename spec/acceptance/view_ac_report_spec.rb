@@ -386,7 +386,7 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
     end
   end
 
-  context "CEPC 6.0 AC report" do
+  describe "CEPC 6.0 AC report" do
     before do
       FetchAssessmentSummary::AssessmentStub.fetch_ac_report(
         assessment_id: "0000-0000-0000-0000-9999",

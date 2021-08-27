@@ -170,7 +170,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       )
     end
 
-    context "When a related party disclosure code is not included" do
+    context "when a related party disclosure code is not included" do
       before do
         FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
           "1111-1111-1111-1111-1112",
@@ -184,7 +184,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       end
     end
 
-    context "When a relate party disclosure code is not valid" do
+    context "when a relate party disclosure code is not valid" do
       before do
         FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
           "123-123",
@@ -209,7 +209,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       end
     end
 
-    context "When a related party disclosure code and text are nil" do
+    context "when a related party disclosure code and text are nil" do
       before do
         FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
           "123-123",
@@ -232,7 +232,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       end
     end
 
-    context "When a related party disclosure code is nil and text is whitespace" do
+    context "when a related party disclosure code is nil and text is whitespace" do
       before do
         FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
           "123-123",
@@ -289,9 +289,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
         total_floor_area =
           page.css ":contains(\"Total floor area\"):not(:has(:contains(\"Total floor area\")))"
 
-        expect(
-          total_floor_area.first.parent.css("dd").first.content.strip,
-        ).to eq "Not recorded"
+        expect(total_floor_area.first.parent.css("dd").first.content.strip).to eq "Not recorded"
       end
     end
 
@@ -517,7 +515,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       end
     end
 
-    context "property is in Northern Ireland" do
+    context "when property is in Northern Ireland" do
       before do
         FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
           "123-123",
@@ -631,20 +629,14 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
         end
       end
 
-      it "shows the primary energy use section" do
-        expect(response.body).to include(
-          '<h2 class="govuk-heading-m">Primary energy use</h2>',
-        )
-        expect(response.body).to include(
-          '<p class="govuk-body">The primary energy use for this property per year is 989 kilowatt hours per square metre (kWh/m2).</p>',
-        )
-        expect(response.body).to include(
-          '<span class="govuk-details__summary-text">What is primary energy use?</span>',
-        )
+      it "shows the primary energy use section", :aggregate_failures do
+        expect(response.body).to include('<h2 class="govuk-heading-m">Primary energy use</h2>')
+        expect(response.body).to include('<p class="govuk-body">The primary energy use for this property per year is 989 kilowatt hours per square metre (kWh/m2).</p>')
+        expect(response.body).to include('<span class="govuk-details__summary-text">What is primary energy use?</span>')
       end
 
       context "when there is a property summary key" do
-        it "shows all of the property summary elements" do
+        it "shows all of the property summary elements", :aggregate_failures do
           expect(response.body).to include("Wall")
           expect(response.body).to include("Many walls")
           expect(response.body).to include("Poor")
@@ -672,13 +664,9 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
 
         let(:response) { get "/energy-certificate/1111-1111-1111-1111-1112" }
 
-        it "will not show the property summary elements" do
-          expect(response.body).not_to include(
-            '<td class="govuk-table__cell">Secondary heating</td>',
-          )
-          expect(response.body).not_to include(
-            '<td class="govuk-table__cell govuk-!-font-weight-bold">Very good</td>',
-          )
+        it "will not show the property summary elements", :aggregate_failures do
+          expect(response.body).not_to include('<td class="govuk-table__cell">Secondary heating</td>')
+          expect(response.body).not_to include('<td class="govuk-table__cell govuk-!-font-weight-bold">Very good</td>')
         end
       end
 
@@ -695,17 +683,11 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
 
         let(:response) { get "/energy-certificate/1111-1111-1111-1111-1112" }
 
-        it "shows Addditional information section with all details" do
-          expect(response.body).to include(
-            '<h2 class="govuk-heading-m">Additional information</h2>',
-          )
-          expect(response.body).to have_css "li",
-                                            text: "Dwelling has a swimming pool"
-          expect(response.body).to include(
-            '<p class="govuk-hint">The energy assessment for the dwelling does not include energy used to heat the swimming pool.</p>',
-          )
-          expect(response.body).to have_css "li",
-                                            text: "Stone walls present, not insulated"
+        it "shows Addditional information section with all details", :aggregate_failures do
+          expect(response.body).to include('<h2 class="govuk-heading-m">Additional information</h2>')
+          expect(response.body).to have_css "li", text: "Dwelling has a swimming pool"
+          expect(response.body).to include('<p class="govuk-hint">The energy assessment for the dwelling does not include energy used to heat the swimming pool.</p>')
+          expect(response.body).to have_css "li", text: "Stone walls present, not insulated"
         end
       end
 
@@ -777,7 +759,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
         )
       end
 
-      context "but there are no provider contact details" do
+      context "without provider contact details" do
         before do
           FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
             "1234-5678-1234-5678-1235",
@@ -903,7 +885,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
         )
       end
 
-      it "shows the related SAP and RdSAP certificates" do
+      it "shows the related SAP and RdSAP certificates", :aggregate_failures do
         expect(response.body).to have_link "9025-0000-0000-0000-0000",
                                            href: "/energy-certificate/9025-0000-0000-0000-0000"
         expect(response.body).to have_link "9026-0000-0000-0000-0000",
@@ -960,7 +942,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       )
     end
 
-    it "shows the date in Welsh" do
+    it "shows the date in Welsh", :aggregate_failures do
       expect(response.body).to have_css "label", text: "Dilys tan"
       expect(response.body).to have_css("p", text: "5 Ionawr 2030")
     end
@@ -1084,16 +1066,14 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
 
       let(:response) { get "/energy-certificate/1111-1111-1111-1111-1112" }
 
-      it "displays the improvementTitle and improvementDescription instead" do
+      it "displays the improvementTitle and improvementDescription instead", :aggregate_failures do
         expect(response.body).to include("Recommendation 1: Fix the boiler")
-        expect(response.body).to include(
-          "An informative description of how to fix the boiler",
-        )
+        expect(response.body).to include("An informative description of how to fix the boiler")
       end
     end
   end
 
-  context "where the assessment exists with no recommendations" do
+  context "when the assessment exists with no recommendations" do
     before do
       FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
         "122-456",

@@ -162,7 +162,7 @@ describe "Acceptance::NonDomesticCertificate" do
         end
       end
 
-      context "shows page" do
+      context "when showing the page" do
         before { FindCertificate::Stub.search_by_postcode("SW1A 2AA", "CEPC") }
 
         let(:response) do
@@ -213,7 +213,7 @@ describe "Acceptance::NonDomesticCertificate" do
         end
       end
 
-      context "where no certificates are present" do
+      context "with no certificates present" do
         before do
           FindCertificate::NoCertificatesStub.search_by_postcode(
             "E1 4FF",
@@ -330,7 +330,7 @@ describe "Acceptance::NonDomesticCertificate" do
     end
 
     context "when entering a valid street name and town" do
-      context "shows page" do
+      context "with a street and town that have associated certificates" do
         before do
           FindCertificate::Stub.search_by_street_name_and_town(
             "1 Makeup Street",
@@ -548,7 +548,7 @@ describe "Acceptance::NonDomesticCertificate" do
         end
       end
 
-      context "where no certificates are present" do
+      context "when no certificates are present" do
         before do
           FindCertificate::NoCertificatesStub.search_by_street_name_and_town(
             "3 Alien Street",
@@ -722,7 +722,7 @@ describe "Acceptance::NonDomesticCertificate" do
     end
 
     context "when entering a valid certificate number" do
-      context "that exists in the register" do
+      context "when the number exists in the register" do
         before do
           FindCertificate::Stub.search_by_id("1234-5678-9101-1121-3141", "CEPC")
         end
@@ -740,25 +740,29 @@ describe "Acceptance::NonDomesticCertificate" do
             "/energy-certificate/1234-5678-9101-1121-3141",
           )
         end
+      end
 
-        context "when viewing the page in welsh" do
-          let(:response) do
-            get "http://find-energy-certificate.local.gov.uk/find-a-non-domestic-certificate/search-by-reference-number?lang=cy&reference_number=1234-5678-9101-1121-3141"
-          end
+      context "when the number exists in the register and the site is being viewed in Welsh" do
+        before do
+          FindCertificate::Stub.search_by_id("1234-5678-9101-1121-3141", "CEPC")
+        end
 
-          it "returns status 303" do
-            expect(response.status).to eq(303)
-          end
+        let(:response) do
+          get "http://find-energy-certificate.local.gov.uk/find-a-non-domestic-certificate/search-by-reference-number?lang=cy&reference_number=1234-5678-9101-1121-3141"
+        end
 
-          it "redirects to the URL to view the requested certificate" do
-            expect(response.location).to end_with(
-              "/energy-certificate/1234-5678-9101-1121-3141?lang=cy",
-            )
-          end
+        it "returns status 303" do
+          expect(response.status).to eq(303)
+        end
+
+        it "redirects to the URL to view the requested certificate" do
+          expect(response.location).to end_with(
+            "/energy-certificate/1234-5678-9101-1121-3141?lang=cy",
+          )
         end
       end
 
-      context "where no certificates are present" do
+      context "when no certificates are present" do
         before do
           FindCertificate::NoCertificatesStub.search_by_id(
             "1234-5678-9101-1120-1234",

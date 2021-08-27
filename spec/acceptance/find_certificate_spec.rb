@@ -222,7 +222,7 @@ describe "Acceptance::Certificate" do
         end
       end
 
-      context "shows page" do
+      context "when showing the page" do
         before { FindCertificate::Stub.search_by_postcode("SW1A 2AA") }
 
         let(:response) do
@@ -278,7 +278,7 @@ describe "Acceptance::Certificate" do
         end
       end
 
-      context "where no certificates are present" do
+      context "when no certificates are present" do
         before do
           FindCertificate::NoCertificatesStub.search_by_postcode("E1 4FF")
         end
@@ -442,7 +442,7 @@ describe "Acceptance::Certificate" do
     end
 
     context "when entering a valid certificate number" do
-      context "redirects to certificate page when the param has hyphens" do
+      context "when the param has hyphens" do
         before do
           FindCertificate::Stub.search_by_id("1234-5678-9101-1121-3141")
         end
@@ -460,25 +460,29 @@ describe "Acceptance::Certificate" do
             "/energy-certificate/1234-5678-9101-1121-3141",
           )
         end
+      end
 
-        context "when viewing the page in welsh" do
-          let(:response) do
-            get "http://find-energy-certificate.local.gov.uk/find-a-certificate/search-by-reference-number?lang=cy&reference_number=1234-5678-9101-1121-3141"
-          end
+      context "when the param has hyphens and the site is being viewed in Welsh" do
+        before do
+          FindCertificate::Stub.search_by_id("1234-5678-9101-1121-3141")
+        end
 
-          it "returns status 303" do
-            expect(response.status).to eq(303)
-          end
+        let(:response) do
+          get "http://find-energy-certificate.local.gov.uk/find-a-certificate/search-by-reference-number?lang=cy&reference_number=1234-5678-9101-1121-3141"
+        end
 
-          it "redirects to the URL to view the requested certificate" do
-            expect(response.location).to end_with(
-              "/energy-certificate/1234-5678-9101-1121-3141?lang=cy",
-            )
-          end
+        it "returns status 303" do
+          expect(response.status).to eq(303)
+        end
+
+        it "redirects to the URL to view the requested certificate" do
+          expect(response.location).to end_with(
+            "/energy-certificate/1234-5678-9101-1121-3141?lang=cy",
+          )
         end
       end
 
-      context "redirects to certificate page when the param has no hyphens" do
+      context "when the param has no hyphens" do
         before do
           FindCertificate::Stub.search_by_id("1234-5678-9101-1121-3141")
         end
@@ -498,7 +502,7 @@ describe "Acceptance::Certificate" do
         end
       end
 
-      context "where no certificates are present" do
+      context "when no certificates are present" do
         before do
           FindCertificate::NoCertificatesStub.search_by_id(
             "1234-5678-9101-1120",
@@ -800,7 +804,7 @@ describe "Acceptance::Certificate" do
     end
 
     context "when entering the street name and town" do
-      context "shows page" do
+      context "when using a street and town with certificates associated" do
         before do
           FindCertificate::Stub.search_by_street_name_and_town(
             "1 Makeup Street",
@@ -860,7 +864,7 @@ describe "Acceptance::Certificate" do
         end
       end
 
-      context "where no certificates are present" do
+      context "when no certificates are present" do
         before do
           FindCertificate::NoCertificatesStub.search_by_street_name_and_town(
             "3 Alien Street",

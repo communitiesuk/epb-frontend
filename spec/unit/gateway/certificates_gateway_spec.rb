@@ -5,7 +5,7 @@ describe Gateway::CertificatesGateway do
 
   let(:gateway) { described_class.new(get_api_client) }
 
-  context "for the search by postcode gateway" do
+  describe "for the search by postcode gateway" do
     context "when a certificate exists" do
       let(:response) { gateway.search_by_postcode("SW1A 2AA", %w[RdSAP SAP]) }
       let(:certificate) { response[:data][:assessments].first }
@@ -17,24 +17,24 @@ describe Gateway::CertificatesGateway do
       end
 
       it "checks the shape of the object passed in the certificate object" do
-        expect(certificate.keys).to contain_exactly(
-          :assessmentId,
-          :addressId,
-          :dateOfAssessment,
-          :dateOfRegistration,
-          :typeOfAssessment,
-          :currentEnergyEfficiencyRating,
-          :currentEnergyEfficiencyBand,
-          :optOut,
-          :dateOfExpiry,
-          :addressLine1,
-          :addressLine2,
-          :addressLine3,
-          :addressLine4,
-          :town,
-          :postcode,
-          :status,
-        )
+        expect(certificate.keys).to match_array %i[
+          assessmentId
+          addressId
+          dateOfAssessment
+          dateOfRegistration
+          typeOfAssessment
+          currentEnergyEfficiencyRating
+          currentEnergyEfficiencyBand
+          optOut
+          dateOfExpiry
+          addressLine1
+          addressLine2
+          addressLine3
+          addressLine4
+          town
+          postcode
+          status
+        ]
       end
     end
 
@@ -56,7 +56,7 @@ describe Gateway::CertificatesGateway do
     end
   end
 
-  context "for the fetch dec summary gateway" do
+  describe "for the fetch dec summary gateway" do
     context "when a certificate is unsupported" do
       let(:response) { gateway.fetch_dec_summary("0000-0000-0000-0000-1111") }
 

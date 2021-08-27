@@ -3,7 +3,7 @@
 describe Helper::RedisConfigurationReader do
   subject(:reader) { described_class }
 
-  context "Given VCAP_SERVICES has a redis configuation" do
+  context "when VCAP_SERVICES has a redis configuration" do
     let(:instance_name) { "mhclg-epb-redis-ratelimit-integration" }
 
     before do
@@ -35,15 +35,12 @@ describe Helper::RedisConfigurationReader do
     end
   end
 
-  context "Given no redis configuration is present in VCAP_SERVICES" do
+  context "when no redis configuration is present in VCAP_SERVICES" do
     before { stub_const("ENV", { "VCAP_SERVICES" => "{}" }) }
 
     it "raises a configuration error" do
-      expect {
-        reader.read_configuration_url("my_instance_name")
-      }.to raise_error(
-        Errors::ConfigurationError,
-        "No Redis configuration found in VCAP_SERVICES",
+      expect { reader.read_configuration_url("my_instance_name") }.to(
+        raise_error(Errors::ConfigurationError, "No Redis configuration found in VCAP_SERVICES"),
       )
     end
   end

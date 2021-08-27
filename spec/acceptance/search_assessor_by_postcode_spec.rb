@@ -7,8 +7,8 @@ describe "Acceptance::Postcodes" do
   let(:assessors_gateway) { Gateway::AssessorsGateway.new(internal_api_client) }
   let(:find_assessor) { UseCase::FindAssessorByPostcode.new(assessors_gateway) }
 
-  context "given valid postcode" do
-    context "where assessors are near" do
+  context "when given a valid postcode" do
+    context "with nearby assessors" do
       let(:response) { find_assessor.execute("SW1A 2AA") }
       let(:assessor) { response[:data][:assessors].first }
 
@@ -50,7 +50,7 @@ describe "Acceptance::Postcodes" do
       end
     end
 
-    context "where no assessors are near" do
+    context "with no nearby assessors" do
       before do
         FindAssessor::ByPostcode::NoNearAssessorsStub.search_by_postcode(
           "BF1 3AA",
@@ -62,7 +62,7 @@ describe "Acceptance::Postcodes" do
       end
     end
 
-    context "where the postcode doesnt exist" do
+    context "when the postcode doesnt exist" do
       before do
         FindAssessor::ByPostcode::UnregisteredPostcodeStub.search_by_postcode(
           "B11 4AA",
@@ -76,7 +76,7 @@ describe "Acceptance::Postcodes" do
       end
     end
 
-    context "where the requested postcode is malformed" do
+    context "when the requested postcode is malformed" do
       before do
         FindAssessor::ByPostcode::InvalidPostcodeStub.search_by_postcode(
           "C11 3FF",

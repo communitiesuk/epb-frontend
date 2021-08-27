@@ -196,7 +196,7 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
         end
       end
 
-      context "shows results page" do
+      context "when showing results page" do
         before do
           FindAssessor::ByPostcode::Stub.search_by_postcode(
             "SW1A 2AA",
@@ -356,7 +356,7 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
         end
       end
 
-      context "where no assessors are near" do
+      context "with no assessors nearby" do
         before do
           FindAssessor::ByPostcode::NoNearAssessorsStub.search_by_postcode(
             "E1 4AA",
@@ -385,7 +385,7 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
         end
       end
 
-      context "where the postcode doesnt exist" do
+      context "with a postcode that doesnt exist" do
         before do
           FindAssessor::ByPostcode::UnregisteredPostcodeStub.search_by_postcode(
             "B11 4FF",
@@ -426,7 +426,7 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
         end
       end
 
-      context "where the requested postcode is malformed" do
+      context "with a malformed postcode" do
         before do
           FindAssessor::ByPostcode::InvalidPostcodeStub.search_by_postcode(
             "C11 4FF",
@@ -597,7 +597,7 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
     end
 
     context "when entering a name" do
-      context "which has exact matches" do
+      context "with exact matches" do
         before { FindAssessor::ByName::Stub.search_by_name("Ronald McDonald", "nonDomestic") }
 
         let(:response) do
@@ -633,7 +633,7 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
           expect(response.body).to include("Supercommon Name")
         end
 
-        it "shows qualifications" do
+        it "shows qualifications", :aggregate_failures do
           expect(response.body).to include("Air Conditioning Simple Packaged (Level 3)")
           expect(response.body).to include("Air Conditioning Complexed Central (Level 4)")
           expect(response.body).to include("Display Energy Certificate (DEC)")
@@ -676,7 +676,7 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
         end
       end
 
-      context "which has similar matches" do
+      context "with similar matches" do
         before do
           FindAssessor::ByName::Stub.search_by_name(
             "Ronald McDonald",
@@ -693,7 +693,7 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
         end
       end
 
-      context "where no assessors have that name" do
+      context "when no assessors have that name" do
         before do
           FindAssessor::ByName::NoAssessorsStub.search_by_name(
             "Nonexistent Person",

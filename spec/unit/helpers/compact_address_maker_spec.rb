@@ -1,5 +1,5 @@
 describe "Helpers.compact_address_without_occupier", type: :helper do
-  let(:frontend_service_helpers) do
+  subject(:frontend_service_helpers) do
     Class.new { extend Helpers }
   end
 

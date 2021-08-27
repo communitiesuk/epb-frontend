@@ -351,7 +351,7 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
     end
   end
 
-  context "When a dec certificate is both NI and opted out" do
+  context "when a dec certificate is both NI and opted out" do
     before do
       FetchAssessmentSummary::AssessmentStub.fetch_dec(
         assessment_id: "0000-0000-0000-0000-1111",

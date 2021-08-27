@@ -259,7 +259,7 @@ describe "Acceptance::Assessor", type: :feature do
         end
       end
 
-      context "show results page" do
+      context "when showing results page" do
         before { FindAssessor::ByPostcode::Stub.search_by_postcode("SW1A 2AA") }
 
         let(:response) do
@@ -317,66 +317,64 @@ describe "Acceptance::Assessor", type: :feature do
           expect(response.body).to include("07921 021 368")
         end
 
-        context "when contacting schemes" do
-          it "has a more information link under scheme name" do
-            expect(response.body).to include("More information")
-          end
+        it "has a more information link under scheme name" do
+          expect(response.body).to include("More information")
+        end
 
-          it "shows CIBSE contact details" do
-            expect(response.body).to include(
-              "Contact details for CIBSE Certification Limited:",
-            )
-            expect(response.body).to include("epc@cibsecertification.org")
-            expect(response.body).to include("020 8772 3649")
-          end
+        it "shows CIBSE contact details" do
+          expect(response.body).to include(
+            "Contact details for CIBSE Certification Limited:",
+          )
+          expect(response.body).to include("epc@cibsecertification.org")
+          expect(response.body).to include("020 8772 3649")
+        end
 
-          it "shows Quidos contact details" do
-            expect(response.body).to include(
-              "Contact details for Quidos Limited:",
-            )
-            expect(response.body).to include("info@quidos.co.uk")
-            expect(response.body).to include("01225 667 570")
-          end
+        it "shows Quidos contact details" do
+          expect(response.body).to include(
+            "Contact details for Quidos Limited:",
+          )
+          expect(response.body).to include("info@quidos.co.uk")
+          expect(response.body).to include("01225 667 570")
+        end
 
-          it "shows unaccredited EPB 4 U scheme" do
-            expect(response.body).to include("EPB 4 U is no longer accredited.")
-          end
+        it "shows unaccredited EPB 4 U scheme" do
+          expect(response.body).to include("EPB 4 U is no longer accredited.")
+        end
 
-          it "shows Stroma contact details" do
-            expect(response.body).to include(
-              "Contact details for Stroma Certification Ltd:",
-            )
-            expect(response.body).to include("certification@stroma.com")
-            expect(response.body).to include("0330 124 9660")
-          end
+        it "shows Stroma contact details" do
+          expect(response.body).to include(
+            "Contact details for Stroma Certification Ltd:",
+          )
+          expect(response.body).to include("certification@stroma.com")
+          expect(response.body).to include("0330 124 9660")
+        end
 
-          it "shows Sterling contact details" do
-            expect(response.body).to include(
-              "Contact details for Sterling Accreditation Ltd:",
-            )
-            expect(response.body).to include("info@sterlingaccreditation.com")
-            expect(response.body).to include("0161 727 4303")
-          end
+        it "shows Sterling contact details" do
+          expect(response.body).to include(
+            "Contact details for Sterling Accreditation Ltd:",
+          )
+          expect(response.body).to include("info@sterlingaccreditation.com")
+          expect(response.body).to include("0161 727 4303")
+        end
 
-          it "shows Elmhurst contact details" do
-            expect(response.body).to include(
-              "Contact details for Elmhurst Energy Systems Ltd:",
-            )
-            expect(response.body).to include("enquiries@elmhurstenergy.co.uk")
-            expect(response.body).to include("01455 883 250")
-          end
+        it "shows Elmhurst contact details" do
+          expect(response.body).to include(
+            "Contact details for Elmhurst Energy Systems Ltd:",
+          )
+          expect(response.body).to include("enquiries@elmhurstenergy.co.uk")
+          expect(response.body).to include("01455 883 250")
+        end
 
-          it "shows ECMK contact details" do
-            expect(response.body).to include(
-              "Contact details for Sterling Accreditation Ltd:",
-            )
-            expect(response.body).to include("info@ecmk.co.uk")
-            expect(response.body).to include("0333 123 1418")
-          end
+        it "shows ECMK contact details" do
+          expect(response.body).to include(
+            "Contact details for Sterling Accreditation Ltd:",
+          )
+          expect(response.body).to include("info@ecmk.co.uk")
+          expect(response.body).to include("0333 123 1418")
         end
       end
 
-      context "where no assessors are near" do
+      context "with no assessors nearby" do
         before do
           FindAssessor::ByPostcode::NoNearAssessorsStub.search_by_postcode(
             "E1 4FF",
@@ -403,7 +401,7 @@ describe "Acceptance::Assessor", type: :feature do
         end
       end
 
-      context "where the postcode doesnt exist" do
+      context "when the postcode doesnt exist" do
         before do
           FindAssessor::ByPostcode::UnregisteredPostcodeStub.search_by_postcode(
             "B11 4FF",
@@ -436,7 +434,7 @@ describe "Acceptance::Assessor", type: :feature do
         end
       end
 
-      context "where the requested postcode is malformed" do
+      context "when the requested postcode is malformed" do
         before do
           FindAssessor::ByPostcode::InvalidPostcodeStub.search_by_postcode(
             "C11 4FF",
@@ -600,7 +598,7 @@ describe "Acceptance::Assessor", type: :feature do
     end
 
     context "when entering a name" do
-      context "which has exact matches" do
+      context "with exact matches" do
         before { FindAssessor::ByName::Stub.search_by_name("Ronald McDonald", "domestic") }
 
         let(:response) do
@@ -669,7 +667,7 @@ describe "Acceptance::Assessor", type: :feature do
         end
       end
 
-      context "which has similar matches" do
+      context "with similar matches" do
         before do
           FindAssessor::ByName::Stub.search_by_name(
             "Ronald McDonald",
@@ -686,7 +684,7 @@ describe "Acceptance::Assessor", type: :feature do
         end
       end
 
-      context "where no assessors have that name" do
+      context "when no assessors have that name" do
         before do
           FindAssessor::ByName::NoAssessorsStub.search_by_name(
             "Nonexistent Person",

@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 describe "Helpers.number_to_currency", type: :helper do
-  let(:frontend_service_helpers) do
+  subject(:frontend_service_helpers) do
     Class.new { extend Helpers }
   end
 
-  context "given valid number" do
+  context "when a valid number is given" do
     it "returns single digit formatted currency" do
       expect(frontend_service_helpers.number_to_currency(0.50)).to eq("£0.50")
     end
@@ -28,7 +28,7 @@ describe "Helpers.number_to_currency", type: :helper do
       )
     end
 
-    context "given valid number in string format" do
+    context "when a valid number is given in string format" do
       it "returns formatted currency" do
         expect(frontend_service_helpers.number_to_currency("123.90")).to eq(
           "£123.90",

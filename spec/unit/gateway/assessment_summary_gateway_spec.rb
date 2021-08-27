@@ -8,7 +8,7 @@ describe Gateway::AssessmentSummaryGateway do
   context "when a user searches for an assessment using the /summary endpoint" do
     let(:response) { gateway.fetch("0000-0000-0000-0000-0666") }
 
-    context "and a certificate exists for the assessment id" do
+    context "with a certificate that exists for the assessment id" do
       let(:certificate) { response[:data] }
 
       before do
@@ -60,7 +60,7 @@ describe Gateway::AssessmentSummaryGateway do
       end
     end
 
-    context "and a certificate does not exist for the assessment id" do
+    context "with a certificate that does not exist for the assessment id" do
       before do
         FetchAssessmentSummary::NoAssessmentStub.fetch(
           "0000-0000-0000-0000-0666",
@@ -74,7 +74,7 @@ describe Gateway::AssessmentSummaryGateway do
       end
     end
 
-    context "and a certificate is marked CANCELLED or NOT_FOR_ISSUE" do
+    context "with a certificate that is marked CANCELLED or NOT_FOR_ISSUE" do
       before do
         FetchAssessmentSummary::GoneAssessmentStub.fetch(
           "0000-0000-0000-0000-0666",

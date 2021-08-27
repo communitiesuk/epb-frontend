@@ -3,7 +3,7 @@ class HelpersStub
 end
 
 describe "Helpers.recommendation_header", type: :helper do
-  context "given a recommendation with no improvement code" do
+  context "when a recommendation has no improvement code" do
     title = "This is the title for the improvement"
     description = "and this is the description"
 
@@ -18,7 +18,7 @@ describe "Helpers.recommendation_header", type: :helper do
     end
   end
 
-  context "given a recommendation with an improvement code" do
+  context "when a recommendation has an improvement code" do
     let(:recommendation) { { improvementCode: 3 } }
 
     it "makes title and description available" do

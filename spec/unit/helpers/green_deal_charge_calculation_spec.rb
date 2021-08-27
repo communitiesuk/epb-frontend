@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 describe "Helpers.calculate_yearly_charges", type: :helper do
-  let(:frontend_service_helpers) do
+  subject(:frontend_service_helpers) do
     Class.new { extend Helpers }
   end
 
@@ -41,7 +41,7 @@ describe "Helpers.calculate_yearly_charges", type: :helper do
     },
   ]
 
-  context "given a green deal with a single charge" do
+  context "when given a green deal with a single charge" do
     charges = [
       {
         "endDate": "2038-05-31 00:00:00.000000",
@@ -61,7 +61,7 @@ describe "Helpers.calculate_yearly_charges", type: :helper do
     end
   end
 
-  context "given a green deal with varying charges over time" do
+  context "when given a green deal with varying charges over time" do
     green_deal_plan = FetchAssessmentSummary::AssessmentStub.generate_green_deal_plan(varying_charges)[0]
 
     before { allow(Date).to receive(:today).and_return Date.new(2021, 0o3, 29) }
@@ -73,7 +73,7 @@ describe "Helpers.calculate_yearly_charges", type: :helper do
     end
   end
 
-  context "given a green deal with decreasing charges over time when current date is in charge #2" do
+  context "when given a green deal with decreasing charges over time when current date is in charge #2" do
     green_deal_plan = FetchAssessmentSummary::AssessmentStub.generate_green_deal_plan(varying_charges)[0]
 
     before do
@@ -87,7 +87,7 @@ describe "Helpers.calculate_yearly_charges", type: :helper do
     end
   end
 
-  context "given a green deal with decreasing charges over time when current date is in charge #3" do
+  context "when given a green deal with decreasing charges over time when current date is in charge #3" do
     green_deal_plan = FetchAssessmentSummary::AssessmentStub.generate_green_deal_plan(varying_charges)[0]
 
     before do
@@ -101,7 +101,7 @@ describe "Helpers.calculate_yearly_charges", type: :helper do
     end
   end
 
-  context "given a green deal with overlapping charges" do
+  context "when given a green deal with overlapping charges" do
     green_deal_plan =
       FetchAssessmentSummary::AssessmentStub.generate_green_deal_plan(overlapping_charges)[0]
 
