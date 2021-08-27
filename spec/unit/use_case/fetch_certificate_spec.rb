@@ -199,7 +199,7 @@ describe UseCase::FetchCertificate do
 
     before do
       FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
-        "0000-0000-0000-0000-0666",
+        assessment_id: "0000-0000-0000-0000-0666",
       )
     end
 

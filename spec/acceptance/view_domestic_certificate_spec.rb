@@ -6,7 +6,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
   context "when the assessment exists" do
     before do
       FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
-        "1234-5678-1234-5678-1234",
+        assessment_id: "1234-5678-1234-5678-1234",
       )
     end
 
@@ -42,25 +42,15 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
 
     it "doesn't show town name twice" do
       FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
-        "1234-5678-1234-5678-1234",
-        90,
-        "b",
-        "2.4",
-        "1.4",
-        -79,
-        -67,
-        -69,
-        nil,
-        1,
-        nil,
-        989.345346,
-        "RdSAP",
-        76,
-        [],
-        nil,
-        nil,
-        "c",
-        "London",
+        assessment_id: "1234-5678-1234-5678-1234",
+        current_rating: 90,
+        current_band: "b",
+        current_carbon_emission: "2.4",
+        potential_carbon_emission: "1.4",
+        impact_of_loft_insulation: -79,
+        impact_of_cavity_insulation: -67,
+        impact_of_solid_wall_insulation: -69,
+        address_line3: "London",
         postcode: "SW1B 2BB",
       )
 
@@ -173,7 +163,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
     context "when a related party disclosure code is not included" do
       before do
         FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
-          "1111-1111-1111-1111-1112",
+          assessment_id: "1111-1111-1111-1111-1112",
         )
       end
 
@@ -187,16 +177,12 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
     context "when a relate party disclosure code is not valid" do
       before do
         FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
-          "123-123",
-          "25",
-          "f",
-          "7.8453",
-          "6.5123",
-          nil,
-          nil,
-          nil,
-          nil,
-          12,
+          assessment_id: "123-123",
+          current_rating: "25",
+          current_band: "f",
+          current_carbon_emission: "7.8453",
+          potential_carbon_emission: "6.5123",
+          related_party_disclosure_number: 12,
         )
       end
 
@@ -212,16 +198,13 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
     context "when a related party disclosure code and text are nil" do
       before do
         FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
-          "123-123",
-          "25",
-          "f",
-          "7.8453",
-          "6.5123",
-          nil,
-          nil,
-          nil,
-          nil,
-          nil,
+          assessment_id: "123-123",
+          current_rating: "25",
+          current_band: "f",
+          current_carbon_emission: "7.8453",
+          potential_carbon_emission: "6.5123",
+          related_party_disclosure_text: nil,
+          related_party_disclosure_number: nil,
         )
       end
 
@@ -235,16 +218,13 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
     context "when a related party disclosure code is nil and text is whitespace" do
       before do
         FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
-          "123-123",
-          "25",
-          "f",
-          "7.8453",
-          "6.5123",
-          nil,
-          nil,
-          nil,
-          "\n        ",
-          nil,
+          assessment_id: "123-123",
+          current_rating: "25",
+          current_band: "f",
+          current_carbon_emission: "7.8453",
+          potential_carbon_emission: "6.5123",
+          related_party_disclosure_text: "\n        ",
+          related_party_disclosure_number: nil,
         )
       end
 
@@ -258,26 +238,12 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
     context "when there is no total floor area present" do
       before do
         FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
-          "123-123",
-          "25",
-          "f",
-          "7.8453",
-          "6.5123",
-          nil,
-          nil,
-          nil,
-          nil,
-          1,
-          nil,
-          989.345346,
-          "RdSAP",
-          76,
-          [],
-          nil,
-          nil,
-          "c",
-          "",
-          "",
+          assessment_id: "123-123",
+          current_rating: "25",
+          current_band: "f",
+          current_carbon_emission: "7.8453",
+          potential_carbon_emission: "6.5123",
+          total_floor_area: "",
           postcode: "SW1B 2BB",
         )
       end
@@ -296,26 +262,12 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
     context "when the total floor area is 0" do
       before do
         FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
-          "123-123",
-          "25",
-          "f",
-          "7.8453",
-          "6.5123",
-          nil,
-          nil,
-          nil,
-          nil,
-          1,
-          nil,
-          989.345346,
-          "RdSAP",
-          76,
-          [],
-          nil,
-          nil,
-          "c",
-          "",
-          "0.0",
+          assessment_id: "123-123",
+          current_rating: "25",
+          current_band: "f",
+          current_carbon_emission: "7.8453",
+          potential_carbon_emission: "6.5123",
+          total_floor_area: "0.0",
           postcode: "SW1B 2BB",
         )
       end
@@ -337,14 +289,14 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       context "when there is no information about the impact of insulation" do
         before do
           FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
-            "123-123",
-            "25",
-            "f",
-            "7.8453",
-            "6.5123",
-            nil,
-            nil,
-            nil,
+            assessment_id: "123-123",
+            current_rating: "25",
+            current_band: "f",
+            current_carbon_emission: "7.8453",
+            potential_carbon_emission: "6.5123",
+            impact_of_loft_insulation: nil,
+            impact_of_cavity_insulation: nil,
+            impact_of_solid_wall_insulation: nil,
           )
         end
 
@@ -360,14 +312,14 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       context "when there is information about the impact of insulation" do
         before do
           FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
-            "123-123",
-            "25",
-            "f",
-            "7.8453",
-            "6.5123",
-            -79,
-            0,
-            nil,
+            assessment_id: "123-123",
+            current_rating: "25",
+            current_band: "f",
+            current_carbon_emission: "7.8453",
+            potential_carbon_emission: "6.5123",
+            impact_of_loft_insulation: -79,
+            impact_of_cavity_insulation: 0,
+            impact_of_solid_wall_insulation: nil,
           )
         end
 
@@ -478,11 +430,11 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       context "with different carbon emissions" do
         before do
           FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
-            "123-654",
-            "25",
-            "f",
-            "7.8453",
-            "6.5123",
+            assessment_id: "123-654",
+            current_rating: "25",
+            current_band: "f",
+            current_carbon_emission: "7.8453",
+            potential_carbon_emission: "6.5123",
           )
         end
 
@@ -503,7 +455,11 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
 
     context "with a poor (f) rating" do
       before do
-        FetchAssessmentSummary::AssessmentStub.fetch_rdsap("123-654", "25", "f")
+        FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
+          assessment_id: "123-654",
+          current_rating: "25",
+          current_band: "f",
+        )
       end
 
       let(:response) { get "/energy-certificate/123-654" }
@@ -518,24 +474,12 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
     context "when property is in Northern Ireland" do
       before do
         FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
-          "123-123",
-          "25",
-          "f",
-          "7.8453",
-          "6.5123",
-          nil,
-          nil,
-          nil,
-          nil,
-          12,
-          nil,
-          989.345346,
-          "RdSAP",
-          76,
-          [],
-          nil,
-          nil,
-          "c",
+          assessment_id: "123-123",
+          current_rating: "25",
+          current_band: "f",
+          current_carbon_emission: "7.8453",
+          potential_carbon_emission: "6.5123",
+          related_party_disclosure_number: 12,
           postcode: "BT1 2BB",
         )
       end
@@ -614,7 +558,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       context "when there is a low and zero carbon energy source on the property" do
         before do
           FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
-            "1111-1111-1111-1111-1112",
+            assessment_id: "1111-1111-1111-1111-1112",
             lzc_energy_sources: [11],
           )
         end
@@ -658,7 +602,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       context "when the property summary key is empty" do
         before do
           FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
-            "1111-1111-1111-1111-1112",
+            assessment_id: "1111-1111-1111-1111-1112",
           )
         end
 
@@ -673,7 +617,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       context "when there is additional information" do
         before do
           FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
-            "1111-1111-1111-1111-1112",
+            assessment_id: "1111-1111-1111-1111-1112",
             addendum: {
               addendumNumber: [4],
               stoneWalls: true,
@@ -762,21 +706,8 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       context "without provider contact details" do
         before do
           FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
-            "1234-5678-1234-5678-1235",
-            90,
-            "b",
-            "2.4",
-            "1.4",
-            -79,
-            -67,
-            -69,
-            nil,
-            1,
-            nil,
-            989.345346,
-            "RdSAP",
-            76,
-            [
+            assessment_id: "1234-5678-1234-5678-1235",
+            green_deal_plan: [
               {
                 greenDealPlanId: "ABC123456DEF",
                 startDate: "2020-01-30",
@@ -842,8 +773,6 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
                 estimatedSavings: 1566,
               },
             ],
-            nil,
-            nil,
           )
         end
 
@@ -858,7 +787,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
     context "when a certificate does not have a Green Deal Plan" do
       before do
         FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
-          "1111-1111-1111-1111-1112",
+          assessment_id: "1111-1111-1111-1111-1112",
         )
       end
 
@@ -904,7 +833,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       context "when there are no related certificates" do
         before do
           FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
-            "1111-1111-1111-1111-1112",
+            assessment_id: "1111-1111-1111-1111-1112",
           )
         end
 
@@ -923,7 +852,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
   context "when the assessment is fetched in Welsh" do
     before do
       FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
-        "1234-5678-1234-5678-1234",
+        assessment_id: "1234-5678-1234-5678-1234",
       )
     end
 
@@ -951,9 +880,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
   context "when the assessment exists with recommendations" do
     before do
       FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
-        "122-456",
-        90,
-        "b",
+        assessment_id: "122-456",
         recommended_improvements: true,
       )
     end
@@ -1014,9 +941,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
     context "when the indicativeCost is empty" do
       before do
         FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
-          "1111-1111-1111-1111-1112",
-          90,
-          "b",
+          assessment_id: "1111-1111-1111-1111-1112",
           recommended_improvements: true,
         )
       end
@@ -1031,19 +956,12 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
     context "when the potential rating improvement  is empty" do
       before do
         FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
-          "1111-1111-1111-1111-1112",
-          "25",
-          "f",
-          7.8453,
-          6.5123,
-          nil,
-          nil,
-          nil,
-          nil,
-          12,
-          nil,
-          nil,
-          nil,
+          assessment_id: "1111-1111-1111-1111-1112",
+          current_rating: "25",
+          current_band: "f",
+          current_carbon_emission: 7.8453,
+          potential_carbon_emission: 6.5123,
+          related_party_disclosure_number: 12,
         )
       end
 
@@ -1057,9 +975,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
     context "when the improvementCode is not present" do
       before do
         FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
-          "1111-1111-1111-1111-1112",
-          90,
-          "b",
+          assessment_id: "1111-1111-1111-1111-1112",
           recommended_improvements: true,
         )
       end
@@ -1076,9 +992,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
   context "when the assessment exists with no recommendations" do
     before do
       FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
-        "122-456",
-        90,
-        "b",
+        assessment_id: "122-456",
         recommended_improvements: false,
       )
     end
@@ -1095,19 +1009,10 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
   context "when the assessment type is SAP" do
     before do
       FetchAssessmentSummary::AssessmentStub.fetch_sap(
-        "1234-5678-1234-5678-1234",
-        90,
-        "b",
-        true,
-        2.4,
-        1.4,
-        79,
-        67,
-        69,
-        nil,
-        1,
-        nil,
-        "SAP",
+        assessment_id: "1234-5678-1234-5678-1234",
+        current_rating: 90,
+        current_band: "b",
+        type_of_assessment: "SAP",
       )
     end
 
@@ -1123,7 +1028,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
   context "when viewing a lodged certificate as returned from the API" do
     before do
       FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
-        "1111-1111-1111-1111-1112",
+        assessment_id: "1111-1111-1111-1111-1112",
       )
     end
 
@@ -1215,7 +1120,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
   context "when the estimated or potential energy cost is missing" do
     before do
       FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
-        "1111-1111-1111-1111-1112",
+        assessment_id: "1111-1111-1111-1111-1112",
       )
     end
 

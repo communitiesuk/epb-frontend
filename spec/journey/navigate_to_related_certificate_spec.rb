@@ -28,7 +28,7 @@ describe "Journey::NavigateToRelatedCertificate",
 
   before do
     FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
-      "0000-0000-0000-0000-0001",
+      assessment_id: "0000-0000-0000-0000-0001",
     )
   end
 

@@ -12,7 +12,7 @@ describe "Rack::Attack" do
       header "X_FORWARDED_FOR", "127.0.0.1, 8.8.8.8"
       # This why we should only activate Rack::Attack after
       Rack::Attack.enabled = true
-      FetchAssessmentSummary::AssessmentStub.fetch_rdsap(certificate_id)
+      FetchAssessmentSummary::AssessmentStub.fetch_rdsap(assessment_id: certificate_id)
     end
 
     after do

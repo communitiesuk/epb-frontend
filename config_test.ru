@@ -87,21 +87,16 @@ FindCertificate::NoCertificatesStub.search_by_street_name_and_town(
   %w[DEC DEC-RR CEPC CEPC-RR AC-REPORT AC-CERT],
 )
 
-FetchAssessmentSummary::AssessmentStub.fetch_rdsap("4567-6789-4567-6789-4567")
-FetchAssessmentSummary::AssessmentStub.fetch_rdsap("0000-0000-0000-0000-0001")
+FetchAssessmentSummary::AssessmentStub.fetch_rdsap(assessment_id: "4567-6789-4567-6789-4567")
+FetchAssessmentSummary::AssessmentStub.fetch_rdsap(assessment_id: "0000-0000-0000-0000-0001")
 
 FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
-  "1234-5678-9101-1122-1234",
-  "25",
-  "f",
-  "7.8254",
-  "6.5123",
-  nil,
-  nil,
-  nil,
-  nil,
-  1,
-  [
+  assessment_id: "1234-5678-9101-1122-1234",
+  current_rating: "25",
+  current_band: "f",
+  current_carbon_emission: "7.8254",
+  potential_carbon_emission: "6.5123",
+  property_summary: [
     { name: "walls", description: "Its a wall", energyEfficiencyRating: 2 },
     {
       name: "secondary_heating",

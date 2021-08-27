@@ -1216,31 +1216,31 @@ module FetchAssessmentSummary
         .to_return(status: 200, body: body.to_json)
     end
 
-    def self.fetch_sap(*args)
-      fetch_rdsap(args)
+    def self.fetch_sap(**args)
+      fetch_rdsap(**args)
     end
 
     def self.fetch_rdsap(
-      assessment_id,
-      current_rating = 90,
-      current_band = "b",
-      current_carbon_emission = "2.4",
-      potential_carbon_emission = "1.4",
-      impact_of_loft_insulation = -79,
-      impact_of_cavity_insulation = -67,
-      impact_of_solid_wall_insulation = -69,
-      related_party_disclosure_text = nil,
-      related_party_disclosure_number = 1,
-      property_summary = nil,
-      primary_energy_use = 989.345346,
-      type_of_assessment = "RdSAP",
-      energy_performance_rating_improvement = 76,
-      green_deal_plan = [],
-      estimated_energy_cost = nil,
-      potential_energy_saving = nil,
-      energy_performance_band_improvement = "c",
-      address_line3 = "",
-      total_floor_area = "150",
+      assessment_id:,
+      current_rating: 90,
+      current_band: "b",
+      current_carbon_emission: "2.4",
+      potential_carbon_emission: "1.4",
+      impact_of_loft_insulation: -79,
+      impact_of_cavity_insulation: -67,
+      impact_of_solid_wall_insulation: -69,
+      related_party_disclosure_text: nil,
+      related_party_disclosure_number: 1,
+      property_summary: nil,
+      primary_energy_use: 989.345346,
+      type_of_assessment: "RdSAP",
+      energy_performance_rating_improvement: 76,
+      green_deal_plan: [],
+      estimated_energy_cost: nil,
+      potential_energy_saving: nil,
+      energy_performance_band_improvement: "c",
+      address_line3: "",
+      total_floor_area: "150",
       postcode: "SW1B 2BB",
       recommended_improvements: false,
       addendum: nil,
