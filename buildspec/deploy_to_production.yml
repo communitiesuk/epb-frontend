@@ -9,8 +9,6 @@ env:
     DEPLOY_APPNAME: "mhclg-epb-frontend-ui-production"
     GTM_PROPERTY_FINDING: "GTM-5CVJ2P9"
     GTM_PROPERTY_GETTING: "GTM-NHXWZF5"
-    GA_PROPERTY_FINDING: "G-ZDCS1W2ZRM"
-    GA_PROPERTY_GETTING: "G-TR7Y5Z1GFY"
 
   parameter-store:
     PAAS_LOGIN: "epbr-govpaas-production-login"

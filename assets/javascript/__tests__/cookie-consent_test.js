@@ -18,10 +18,6 @@ beforeEach(() => {
 })
 
 describe('using GTM (Google Tag Manager)', () => {
-  beforeEach(() => {
-    window.USE_GTM = true
-  })
-
   describe('when cookies have not been accepted or rejected', () => {
     beforeEach(init)
 
@@ -72,48 +68,6 @@ describe('using GTM (Google Tag Manager)', () => {
   })
 })
 
-describe('using GA (Google Analytics)', () => {
-  beforeEach(() => {
-    window.USE_GTM = false
-  })
-
-  describe('when cookies have not been accepted or rejected', () => {
-    beforeEach(init)
-
-    it('does not actively indicate consent status', () => {
-      expect(window.dataLayer).toStrictEqual([])
-    })
-  })
-
-  describe('when cookies have been accepted', () => {
-    beforeEach(() => {
-      Object.defineProperty(window.document, 'cookie', {
-        writable: true,
-        value: 'cookie_consent=true'
-      })
-      init()
-    })
-
-    it('does not actively indicate consent status', () => {
-      expect(window.dataLayer).toStrictEqual([])
-    })
-  })
-
-  describe('when cookies have been rejected', () => {
-    beforeEach(() => {
-      Object.defineProperty(window.document, 'cookie', {
-        writable: true,
-        value: 'cookie_consent=false'
-      })
-      init()
-    })
-
-    it('does not actively indicate consent status', () => {
-      expect(window.dataLayer).toStrictEqual([])
-    })
-  })
-})
-
 function callScript () {
   jest.resetModules()
   const resolvers = {
@@ -127,7 +81,7 @@ function callScript () {
     rejectedConfirmationMessage: () => ({})
   }
   const gtag = (...args) => window.dataLayer.push(args)
-  cookieConsent(window.USE_GTM, window.GOOGLE_PROPERTY, window, gtag, resolvers)
+  cookieConsent(window.GOOGLE_PROPERTY, window, gtag, resolvers)
 }
 
 function expectedDatalayer ({ granted }) {

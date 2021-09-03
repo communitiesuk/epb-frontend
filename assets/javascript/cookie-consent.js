@@ -2,7 +2,7 @@
 /* global resolvers */
 // above is directive for linter (standard.js to ignore the 'resolvers' global var in this file
 
-const cookieConsent = (useGtm, tagId, _, gtag, resolvers) => {
+const cookieConsent = (tagId, _, gtag, resolvers) => {
   _.dataLayer = _.dataLayer || []
 
   const cookies = {
@@ -17,14 +17,7 @@ const cookieConsent = (useGtm, tagId, _, gtag, resolvers) => {
 
       const onCookiePage = location.pathname.indexOf('/cookies') === 0
 
-      // Get Google Analytics going if consented
-      if (!useGtm && cookieValue === 'true') {
-        cookies.analytics()
-      }
-
-      if (useGtm) {
-        cookies.signalGtmConsent(cookieValue === 'true')
-      }
+      cookies.signalGtmConsent(cookieValue === 'true')
 
       if (cookieValue === null && !onCookiePage) {
         // If we don't have consent or rejection, display cookie question
@@ -104,36 +97,11 @@ const cookieConsent = (useGtm, tagId, _, gtag, resolvers) => {
 
       cookies.create('cookie_consent', 'false')
 
-      if (useGtm) {
-        cookies.signalGtmConsent(false)
-      }
+      cookies.signalGtmConsent(false)
     },
 
     enableAnalytics: function () {
-      if (!useGtm) {
-        cookies.analytics()
-      }
-
       cookies.updateGtmConsent(true)
-    },
-
-    analytics: function () {
-      // Add Google Analytics script to page
-      const dataScript = document.createElement('script')
-      dataScript.src = 'https://www.googletagmanager.com/gtag/js?id=' + tagId
-      document.getElementsByTagName('head')[0].appendChild(dataScript)
-
-      // Record visit
-      setTimeout(
-        function () {
-          gtag('js', new Date())
-          gtag('config', tagId, {
-            cookie_domain: document.location.hostname,
-            cookie_expires: 31536000
-          })
-        },
-        100
-      )
     },
 
     signalGtmConsent: function (isGranted = false) {
@@ -205,7 +173,6 @@ export default cookieConsent
 
 if (typeof window !== 'undefined') {
   window.cookies = cookieConsent(
-    window.USE_GTM,
     window.GOOGLE_PROPERTY,
     window,
     window.gtag || function (...args) {

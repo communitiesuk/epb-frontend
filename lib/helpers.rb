@@ -297,22 +297,8 @@ module Helpers
     end
   end
 
-  def gtm_data
-    uses_finding_hostname = request.hostname.start_with? "find"
-    use_gtm = toggles.enabled? "use-gtm"
-    [
-      use_gtm,
-      case [uses_finding_hostname, use_gtm]
-      when [true, true]
-        ENV["GTM_PROPERTY_FINDING"]
-      when [true, false]
-        ENV["GA_PROPERTY_FINDING"]
-      when [false, true]
-        ENV["GTM_PROPERTY_GETTING"]
-      else
-        ENV["GA_PROPERTY_GETTING"]
-      end,
-    ]
+  def google_property
+    request.hostname.start_with?("find") ? ENV["GTM_PROPERTY_FINDING"] : ENV["GTM_PROPERTY_GETTING"]
   end
 
   def static_start_page?

@@ -1,7 +1,4 @@
-<%
-  use_gtm, google_property = gtm_data
-  if use_gtm && google_property
-%>
+<% if google_property %>
 <!-- Google Tag Manager (noscript) -->
 <noscript>
   <iframe src="https://www.googletagmanager.com/ns.html?id=<%= google_property %>"
