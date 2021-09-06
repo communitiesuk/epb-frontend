@@ -12,3 +12,8 @@ RSpec/ExampleLength:
   CountAsOne: ['array', 'hash']
 RSpec/NestedGroups:
   Max: 4
+
+RSpec/BeforeAfterAll:
+  Exclude:
+    - 'spec/integration/rackup_spec.rb'
+    - 'spec/journey/*'
