@@ -70,7 +70,7 @@ run:
 
 .PHONY: format
 format:
-	@bundle exec rubocop --auto-correct --format offenses || true
+	@bundle exec rubocop --auto-correct || true
 
 .PHONY: journey
 journey:
