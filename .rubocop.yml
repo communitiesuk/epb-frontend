@@ -4,6 +4,7 @@ require:
 inherit_gem:
   rubocop-govuk:
     - config/default.yml
+    - config/rspec.yml
 
 Metrics/BlockLength:
   IgnoredMethods: ['get']
