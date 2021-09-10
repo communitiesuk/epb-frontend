@@ -11,8 +11,6 @@ class FrontendService < Sinatra::Base
   helpers Helpers
   attr_reader :toggles
 
-  @toggles = nil
-
   set :erb, escape_html: true
   set :public_folder, (proc { File.join(root, "/../public") })
 
