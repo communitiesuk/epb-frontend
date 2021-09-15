@@ -49,7 +49,7 @@ en:
         hide_message: "Hide this message"
       beta:
         heading: 'beta'
-        description: 'This is a new service – your <a class="govuk-link" href="https://forms.office.com/Pages/ResponsePage.aspx?id=EGg0v32c3kOociSi7zmVqPbdKK1xB5FPizueLd4cs19UQVdISTJKQTNPSUtON0pPUDYzWFMyVEVIWC4u">feedback</a> will help us to improve it.'
+        description: 'This is a new service – your <a class="govuk-link" href="https://forms.office.com/Pages/ResponsePage.aspx?id=EGg0v32c3kOociSi7zmVqHjpWgKFmwZGtrWhJ7I-WptUQzlDR0M5UllHQTI1NjNCNUtKRVdFRU9RUS4u">feedback</a> will help us to improve it.'
       breadcrumb:
         back: 'Back'
       footer:
@@ -1797,7 +1797,7 @@ en:
                          <li>Telephone: 020 3829 0748</li>
                        </ul>'
     reporting_heading: 'Reporting accessibility problems with this website'
-    reporting_paragraph: 'We’re always looking to improve the accessibility of this website. If you find any problems not listed on this page or think we’re not meeting accessibility requirements please <a class="govuk-link" href="https://forms.office.com/Pages/ResponsePage.aspx?id=EGg0v32c3kOociSi7zmVqPbdKK1xB5FPizueLd4cs19UQVdISTJKQTNPSUtON0pPUDYzWFMyVEVIWC4u">give feedback</a>.'
+    reporting_paragraph: 'We’re always looking to improve the accessibility of this website. If you find any problems not listed on this page or think we’re not meeting accessibility requirements please <a class="govuk-link" href="https://forms.office.com/Pages/ResponsePage.aspx?id=EGg0v32c3kOociSi7zmVqHjpWgKFmwZGtrWhJ7I-WptUQzlDR0M5UllHQTI1NjNCNUtKRVdFRU9RUS4u">give feedback</a>.'
     enforcement_heading: 'Enforcement procedure'
     enforcement_paragraph: 'The Equality and Human Rights Commission (EHRC) is responsible for enforcing the Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018 (the ‘accessibility regulations’). If you’re not happy with how we respond to your complaint, <a class="govuk-link" href="https://www.equalityadvisoryservice.com/">contact the Equality Advisory and Support Service (EASS)</a>.'
     technical_heading: 'Technical information about this website’s accessibility'
