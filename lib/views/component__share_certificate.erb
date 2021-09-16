@@ -5,7 +5,7 @@
 
   <ul id="share-list">
     <li>
-      <p gov-body >
+      <p class="govuk-body">
         <a id="email" style="text-decoration: none;"
            href="mailto:?subject= <%= t("#{top_heading}.top_heading")%> <%= t("component.share.email_subject_for")%> <%= find_address_lines_only(assessment)%>&amp;body=<%= t("component.share.email_body_part_1")%> <%= first_word_downcase(t("#{top_heading}.top_heading"))%> <%= t("component.share.email_body_part_2")%> https://find-energy-certificate.digital.communities.gov.uk/energy-certificate/<%= assessment[:assessmentId]%>"
            target="_blank"
@@ -18,8 +18,8 @@
       </p>
     </li>
     <li>
-      <p id="copy-to-clipboard-margin">
-        <button id="copyToClipboardButton" class="govuk-body" onclick="clickHandler()">
+      <p id="copy-to-clipboard-margin" class="govuk-body">
+        <button id="copyToClipboardButton" onclick="clickHandler()">
         <span class="share-icon">
           <img src="/images/copy-link.svg">
         </span>
@@ -29,7 +29,7 @@
       </p>
     </li>
     <li>
-      <p>
+      <p class="govuk-body">
         <a style="text-decoration: none; display: none;" id="link" href="<%= localised_url(request.path_info) + (localised_url(request.path_info).include?("?") ? "&" : "?") %>print=true" class="govuk-link govuk-!-margin-bottom-5" id="link">
         <span class="share-icon">
           <img src="/images/print.svg">

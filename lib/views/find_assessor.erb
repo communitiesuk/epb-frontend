@@ -56,7 +56,7 @@
       </h2>
 
       <p class="govuk-body">
-        <%= t('find_an_assessor.before_you_start.existing_epc.description') %> <a href= <%= localised_url(set_subdomain_url("find-energy-certificate")) %>> <%= t('find_an_assessor.before_you_start.existing_epc.link') %></a>.
+        <%= t('find_an_assessor.before_you_start.existing_epc.description') %> <a class="govuk-link" href="<%= localised_url(set_subdomain_url("find-energy-certificate"))%>"> <%= t('find_an_assessor.before_you_start.existing_epc.link') %></a>.
       </p>
 
       <p class="govuk-body">
@@ -64,7 +64,7 @@
       </p>
 
       <p class="govuk-body">
-        <%== t('find_an_assessor.before_you_start.scotland.description', :link => '<a href="https://www.scottishepcregister.org.uk/">' + t('find_an_assessor.before_you_start.scotland.link') + '</a>') %>
+        <%== t('find_an_assessor.before_you_start.scotland.description', :link => '<a class="govuk-link" href="https://www.scottishepcregister.org.uk/">' + t('find_an_assessor.before_you_start.scotland.link') + '</a>') %>
       </p>
     </div>
     <%== erb :related__content %>

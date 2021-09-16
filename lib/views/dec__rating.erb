@@ -11,5 +11,5 @@
     description: t('dec.sections.rating.chart_description', :energy_efficiency_band => assessment[:currentAssessment][:energyEfficiencyBand].upcase, :energy_efficiency_rating => assessment[:currentAssessment][:energyEfficiencyRating])
   } %>
 
-  <p class="govuk-body"><%== t('dec.sections.rating.guidance_text', :link => '<a href="' + t('dec.sections.rating.url') + '">' + t('dec.sections.rating.cta') + '</a>') %></p>
+  <p class="govuk-body"><%== t('dec.sections.rating.guidance_text', :link => '<a class="govuk-link" href="' + t('dec.sections.rating.url') + '">' + t('dec.sections.rating.cta') + '</a>') %></p>
 </div>
