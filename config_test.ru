@@ -88,6 +88,7 @@ FindCertificate::NoCertificatesStub.search_by_street_name_and_town(
 )
 
 FetchAssessmentSummary::AssessmentStub.fetch_rdsap(assessment_id: "4567-6789-4567-6789-4567")
+FetchAssessmentSummary::AssessmentStub.fetch_rdsap(assessment_id: "4567-6789-4567-6789-4568")
 FetchAssessmentSummary::AssessmentStub.fetch_rdsap(assessment_id: "0000-0000-0000-0000-0001")
 
 FetchAssessmentSummary::AssessmentStub.fetch_rdsap(

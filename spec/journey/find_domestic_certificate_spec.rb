@@ -40,7 +40,7 @@ describe "Journey::FindDomesticCertificate", type: :feature, journey: true do
   context "when accessing a certificate page via a provided link" do
     context "with a certificate that exists" do
       before do
-        visit "http://find-energy-certificate.local.gov.uk:9393/energy-certificate/4567-6789-4567-6789-4567"
+        visit "http://find-energy-certificate.local.gov.uk:9393/energy-certificate/4567-6789-4567-6789-4568"
       end
 
       it "does not display a back link" do
