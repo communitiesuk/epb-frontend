@@ -19,6 +19,19 @@ describe "Integration::ToggleService" do
     it "feature test-disabled-feature is not active" do
       expect(Helper::Toggles.enabled?("test-disabled-feature")).to eq(false)
     end
+
+    context "when a block is passed" do
+      block_executed = nil
+
+      before do
+        block_executed = false
+        Helper::Toggles.enabled?("test-enabled-feature") { block_executed = true }
+      end
+
+      it "executes the block" do
+        expect(block_executed).to be true
+      end
+    end
   end
 
   context "with an unknown feature toggle" do
@@ -30,6 +43,19 @@ describe "Integration::ToggleService" do
       expect(
         Helper::Toggles.enabled?("test-disabled-feature", default: true),
       ).to eq(true)
+    end
+
+    context "when a block is passed" do
+      block_executed = nil
+
+      before do
+        block_executed = false
+        Helper::Toggles.enabled?("test-disabled-feature") { block_executed = true }
+      end
+
+      it "does not execute the block" do
+        expect(block_executed).to be false
+      end
     end
   end
 end
