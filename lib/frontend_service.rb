@@ -793,6 +793,7 @@ class FrontendService < Sinatra::Base
     use_print_view = params["print"] == "true"
     back_link request.referrer ? assessment_back_link(assessment) : nil
 
+    cache_control :public, max_age: 60
     status 200
 
     case assessment[:data][:typeOfAssessment]
