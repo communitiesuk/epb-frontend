@@ -36,6 +36,9 @@
                  spellcheck="false"
                  <% if params['postcode'] %>value="<%= params['postcode'] %>"<% end %>
           >
+          <% if using_recaptcha? %>
+            <%== erb :partial__recaptcha %>
+          <% end %>
         </div>
 
         <button class="govuk-button" data-module="govuk-button"><%= t('find_non_dom_certificate_by_postcode.button_text') %></button>

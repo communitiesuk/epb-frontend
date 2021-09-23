@@ -63,4 +63,7 @@ module Errors
 
   class UriTooLong < RuntimeError
   end
+
+  class BotDetected < RuntimeError
+  end
 end

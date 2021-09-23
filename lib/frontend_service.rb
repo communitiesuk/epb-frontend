@@ -114,6 +114,8 @@ class FrontendService < Sinatra::Base
       params["postcode"].strip!
 
       begin
+        raise Errors::BotDetected if bot_user_agent? && !recaptcha_pass?
+
         locals[:results] =
           @container
             .get_object(:find_certificate_by_postcode_use_case)
@@ -143,6 +145,15 @@ class FrontendService < Sinatra::Base
               t('layout.body.govuk')
             }"
           @errors[:postcode] = t("validation_errors.postcode_error")
+        when Errors::BotDetected
+          status 400
+          @page_title =
+            "#{t('error.error')}#{
+              t('find_certificate_by_postcode.top_heading')
+            } - #{t('services.find_an_energy_certificate')} - #{
+              t('layout.body.govuk')
+            }"
+          @errors[:postcode] = "Possible bot detected. Please try searching again."
         else
           return server_error(e)
         end
@@ -435,6 +446,8 @@ class FrontendService < Sinatra::Base
       params["postcode"].strip!
 
       begin
+        raise Errors::BotDetected if bot_user_agent? && !recaptcha_pass?
+
         locals[:results] =
           @container
             .get_object(:find_certificate_by_postcode_use_case)
@@ -460,6 +473,15 @@ class FrontendService < Sinatra::Base
               t('layout.body.govuk')
             }"
           @errors[:postcode] = t("validation_errors.postcode_error")
+        when Errors::BotDetected
+          status 400
+          @page_title =
+            "#{t('error.error')}#{
+              t('find_certificate_by_postcode.top_heading')
+            } - #{t('services.find_an_energy_certificate')} - #{
+              t('layout.body.govuk')
+            }"
+          @errors[:postcode] = "Possible bot detected. Please try searching again."
         else
           return server_error(e)
         end

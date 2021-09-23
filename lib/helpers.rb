@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require "net/http"
 require "epb-auth-tools"
 
 module Helpers
@@ -324,5 +325,44 @@ module Helpers
     else
       "/"
     end
+  end
+
+  # Whether the REcaptchta feature is switched on and has the right environment variables set
+  def using_recaptcha?
+    [
+      %w[EPB_RECAPTCHA_SITE_KEY EPB_RECAPTCHA_SITE_SECRET].all? { |key| ENV.key? key },
+      Helper::Toggles.enabled?("use-recaptcha"),
+    ].all? { |expr| expr }
+  end
+
+  def recaptcha_pass?
+    return true unless using_recaptcha?
+
+    response_token = params["g-recaptcha-response"]
+    return false if response_token.nil?
+
+    begin
+      recaptcha = Net::HTTP.post_form URI("https://www.google.com/recaptcha/api/siteverify"), {
+        secret: ENV["EPB_RECAPTCHA_SITE_SECRET"],
+        response: response_token,
+      }
+      JSON.parse(recaptcha.body)["success"]
+    rescue StandardError
+      false
+    end
+  end
+
+  def recaptcha_site_key
+    ENV["EPB_RECAPTCHA_SITE_KEY"].to_s
+  end
+
+  def bot_user_agent?
+    suspected_bot_user_agents.include? request.user_agent
+  end
+
+  def suspected_bot_user_agents
+    JSON.parse(ENV["EPB_SUSPECTED_BOT_USER_AGENTS"])
+  rescue StandardError
+    []
   end
 end
