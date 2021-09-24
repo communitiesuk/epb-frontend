@@ -153,7 +153,7 @@ class FrontendService < Sinatra::Base
             } - #{t('services.find_an_energy_certificate')} - #{
               t('layout.body.govuk')
             }"
-          @errors[:postcode] = "Possible bot detected. Please try searching again."
+          @errors[:postcode] = "Please verify that you’re a human and try again."
         else
           return server_error(e)
         end
@@ -481,7 +481,7 @@ class FrontendService < Sinatra::Base
             } - #{t('services.find_an_energy_certificate')} - #{
               t('layout.body.govuk')
             }"
-          @errors[:postcode] = "Possible bot detected. Please try searching again."
+          @errors[:postcode] = "Please verify that you’re a human and try again."
         else
           return server_error(e)
         end
