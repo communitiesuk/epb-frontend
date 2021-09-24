@@ -26,6 +26,9 @@ env:
     EPB_API_URL: "epbr-api-url-integration"
     EPB_UNLEASH_URI: "epbr-unleash-integration-uri"
     EPB_UNLEASH_AUTH_TOKEN: "epbr-unleash-integration-auth-token"
+    EPB_RECAPTCHA_SITE_KEY: "epbr-recaptcha-site-key"
+    EPB_RECAPTCHA_SITE_SECRET: "epbr-recaptcha-secret-key"
+    EPB_SUSPECTED_BOT_USER_AGENTS: "epbr-suspected-bot-user-agents"
     SENTRY_DSN: "epbr-sentry-dsn-frontend"
 
 phases:
