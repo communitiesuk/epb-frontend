@@ -20,7 +20,7 @@ source "https://rubygems.org" do
   gem "epb-auth-tools", "~> 1.0.8"
   gem "erubis", "~> 2.7"
   gem "i18n", "~> 1.8.10"
-  gem 'puma', '~> 5.5'
+  gem "puma", "~> 5.5"
   gem "rack-attack", "~> 6.5.0"
   gem "rack-contrib", "~> 2.3.0"
   gem "rake", "~> 13.0.6"
