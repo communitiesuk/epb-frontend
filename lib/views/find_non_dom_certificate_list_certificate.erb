@@ -8,24 +8,27 @@
   </thead>
   <tbody class="govuk-table__body">
     <% certificate.each do |_address_id, results| %>
+    <% address_lines = compact_address(
+                          [
+                            results[:addressLine1],
+                            results[:addressLine2],
+                            results[:addressLine3],
+                            results[:addressLine4]
+                          ],
+                          results[:town],
+                          results[:postcode]
+                        ).join(", ") %>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header" rowspan="<%= results[:certificates].count %>">
-          <%=
-            compact_address(
-              [
-                results[:addressLine1],
-                results[:addressLine2],
-                results[:addressLine3],
-                results[:addressLine4]
-              ],
-              results[:town],
-              results[:postcode]
-            ).join(", ") %>
+          <%= address_lines %>
         </th>
 
         <% results[:certificates].sort_by { |h| h[:typeOfAssessment] }.each do |result| %>
           <td class="govuk-table__cell govuk-!-border-bottom-none">
-              <a class="govuk-link" href="<%=localised_url("/energy-certificate/" + result[:assessmentId]) %>"><%= result[:typeOfAssessment].upcase %></a><br /><br />
+              <a class="govuk-link" href="<%=localised_url("/energy-certificate/" + result[:assessmentId]) %>">
+                <%= result[:typeOfAssessment].upcase %>
+                <span class="govuk-visually-hidden">for <%= address_lines %></span>
+              </a><br /><br />
           </td>
           <td class="govuk-table__cell">
             <span style="white-space: nowrap;">

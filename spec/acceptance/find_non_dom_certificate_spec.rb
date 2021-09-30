@@ -199,7 +199,11 @@ describe "Acceptance::NonDomesticCertificate" do
         end
 
         it "shows the report type of an entry" do
-          expect(response.body).to include(">CEPC<")
+          expect(response.body).to include("CEPC")
+        end
+
+        it "includes visually hidden information" do
+          expect(response.body).to include("<span class=\"govuk-visually-hidden\">for 2 Marsham Street, London, SW1A 2AA</span>")
         end
 
         it "shows a clickable entry" do
