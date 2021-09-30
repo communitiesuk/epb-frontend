@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
-module FindAssessor
-  module ByPostcode
+my  module ByPostcode
     class NoNetworkStub
       def self.search_by_postcode(
         postcode,

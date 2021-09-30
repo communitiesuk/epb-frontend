@@ -1780,7 +1780,7 @@ cy:
             <li><a class= \"govuk-link\" href=\"https://find-energy-certificate.digital.communities.gov.uk\">find-energy-certificate.digital.communities.gov.uk</a></li>
             <li><a class= \"govuk-link\" href=\"https://getting-new-energy-certificate.digital.communities.gov.uk\">getting-new-energy-certificate.digital.communities.gov.uk</a></li>
           </ul>"
-    paragraph_1: "Mae’r wefan hon yn cael ei rhedeg gan y Weinyddiaeth Tai, Cymunedau a Llywodraeth Leol. Hoffem weld cynifer â phosibl o bobl yn gallu defnyddio’r wefan. Er enghraifft, mae hynny’n golygu y dylech chi allu:
+    paragraph_1: "Mae’r wefan hon yn cael ei rhedeg gan y Adran Codi'r Gwastad, Tai a Chymunedau. Hoffem weld cynifer â phosibl o bobl yn gallu defnyddio’r wefan. Er enghraifft, mae hynny’n golygu y dylech chi allu:
                   <ul class=\"govuk-list govuk-list--bullet\">
                     <li>newid lefelau cyferbyniad lliw a ffontiau</li>
                     <li>chwyddo hyd at 300% heb i’r testun ddiferu oddi ar y sgrin </li>
@@ -1801,24 +1801,21 @@ cy:
     enforcement_heading: "Gweithdrefn orfodi"
     enforcement_paragraph: "Mae’r Comisiwn Cydraddoldeb a Hawliau Dynol (EHRC) yn gyfrifol am orfodi Rheoliadau Hygyrchedd Cyrff y Sector Cyhoeddus (Gwefannau a Chymwysiadau Symudol) (Rhif 2) 2018 (y ‘rheoliadau hygyrchedd’). Os nad ydych yn fodlon ar sut rydyn ni’n ymateb i’ch cwyn, <a class=\"govuk-link\" href=\"https://www.equalityadvisoryservice.com/\">cysylltwch â’r Gwasanaeth Cyngor a Chymorth Cydraddoldeb (EASS)</a>."
     technical_heading: "Gwybodaeth dechnegol am hygyrchedd y wefan hon"
-    technical_paragraph: "Mae’r Weinyddiaeth Gymunedau, Tai a Chymunedau Lleol wedi ymrwymo isicrhau bod ei gwefan yn hygyrch, yn unol â Rheoliadau Hygyrchedd Cyrff y Sector Cyhoeddus (Gwefannau a Chymwysiadau Symudol) (Rhif 2) 2018."
+    technical_paragraph: "Mae’r Adran Codi'r Gwastad, Tai a Chymunedau wedi ymrwymo isicrhau bod ei gwefan yn hygyrch, yn unol â Rheoliadau Hygyrchedd Cyrff y Sector Cyhoeddus (Gwefannau a Chymwysiadau Symudol) (Rhif 2) 2018."
     compliance_heading: "Statws cydymffurfio"
     compliance_paragraph: "Mae’r wefan hon yn cydymffurfio’n rhannol â <a class=\"govuk-link\" href=\"https://www.w3.org/TR/WCAG21/\">safon AA Canllawiau Hygyrchedd Cynnwys y We fersiwn 2.1</a>, oherwydd y diffygion cydymffurfio sydd wedi’u rhestru isod."
     non_accessible_heading: "Cynnwys nad yw’n hygyrch"
     non_accessible_paragraph: "Nid yw’r cynnwys a restrir isod yn hygyrch a hynny am y rhesymau a ganlyn."
     non_compliance_heading: "Methu cydymffurfio â’r rheoliadau hygyrchedd’ "
     non_compliance_paragraph_1: "Mae rhywfaint o’r cynnwys yn dod oddi wrth aseswyr achrededig. Efallai na fydd yr wybodaeth hon wedi’i strwythuro’n gywir ar gyfer y we a’i fod yn anodd ei phori â darllenydd sgrin, yn fwyaf arbennig yn yr Adroddiadau ar Archwiliadau aerdymheru."
-    non_compliance_paragraph_2: "Does gan rai delweddau ddim testun amgen, ac felly nid yw pobl sy’n defnyddio darllenydd sgrin yn gallu cyrchu’r wybodaeth. Mae hyn yn methu maen prawf llwyddiant 1.1.1 WCAG 2.1, (cynnwys annhestunol)"
-    non_compliance_paragraph_3: "Rydym yn bwriadu ychwanegu testun amgen ar gyfer pob delwedd erbyn mis Tachwedd 2020. Pan gyhoeddwn gynnwys newydd fe ofalwn ni fod ein defnydd ar ddelweddau yn bodloni’r safonau hygyrchedd"
-    non_compliance_paragraph_4: "Weithiau, gall pobl sy’n defnyddio darllenydd sgrin glywed label nad yw’n ymddangos ar y tudalen."
-    non_compliance_paragraph_5: "Rydym yn bwriadu cywiro cyfeiriadau sydd wedi’u torri ynglŷn â’r holl gynnwys erbyn mis Tachwedd 2020."
+    non_compliance_paragraph_2: "Mae gan rai tudalennau labeli dyblyg nad ydyn nhw’n ddisgrifiadol. Mae hyn yn golygu na all defnyddwyr darllenwyr sgrin sy'n pori y tu allan i’r cyd-destun ganfod beth mae'r labeli hyn yn ymwneud ag ef. Rydyn ni wrthi’n ychwanegu rhagor o wybodaeth i roi cyd-destun i’r labeli hyn."
     out_of_scope_heading: "Cynnwys nad yw o fewn rhychwant y rheoliadau hygyrchedd"
     out_of_scope_paragraph: "Heb fod yn gymwys"
     what_we_do_heading: "Yr hyn rydyn ni’n ei wneud i wella hygyrchedd"
-    what_we_do_paragraph: "Bydd y gwasanaeth hwn yn cael ei brofi’n allanol o ran cydymffurfio â Chanllawiau Hygyrchedd Cynnwys y We V2.1 lefel A erbyn mis Tachwedd 2020."
+    what_we_do_paragraph: "Bydd archwiliad hygyrchedd arall yn cael ei gynnal erbyn mis Tachwedd 2021. Byddwn yn adrodd ar y canfyddiadau yma, ac yn gweithio i unioni unrhyw faterion ychwanegol a nodir cyn gynted â phosibl."
     preparation_heading: "Paratoi’r datganiad hygyrchedd hwn"
-    preparation_paragraph: "Cafodd y datganiad hwn ei baratoi ar 17 Medi 2020. Y tro diwethaf iddo gael ei adolygu oedd 17 Medi 2020. Gwnaethon ein gwaith profi ein hunain ar 17 Medi 2020."
-    accessibility_audit: "Bydd archwiliad hygyrchedd llawn yn cael ei gyflawni erbyn mis Tachwedd 2020. Byddwn yn cyflwyno adroddiad ar y canfyddiadau yma, gan weithio i gywiro unrhyw faterion ychwanegol a nodir mor gyflym ag y bo modd."
+    preparation_paragraph: "Cafodd y datganiad hwn ei baratoi ar 28 Medi 2021. Y tro diwethaf iddo gael ei adolygu oedd 28 Medi 2021."
+    accessibility_audit: "Y tro diwethaf i'r wefan hon gael ei phrofi oedd 30 Tachwedd 2020. Cafodd y prawf ei gynnal gan y Ganolfan Hygyrchedd Digidol (DAC)"
 
   cookies:
     title: "Cwcis ar ein gwasanaeth ni"

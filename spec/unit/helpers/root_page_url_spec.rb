@@ -74,6 +74,7 @@ describe "Helpers.root_page_url", type: :helper do
         OpenStruct.new(hostname: "getting-energy-certificate.service.gov.uk")
       end
       frontend_service_helpers.set_locale
+
     end
 
     it "resolves to the static start page url" do

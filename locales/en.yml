@@ -1780,7 +1780,7 @@ en:
               <li><a class= "govuk-link" href="https://find-energy-certificate.digital.communities.gov.uk">find-energy-certificate.digital.communities.gov.uk</a></li>
               <li><a class= "govuk-link" href="https://getting-new-energy-certificate.digital.communities.gov.uk">getting-new-energy-certificate.digital.communities.gov.uk</a></li>
             </ul>'
-    paragraph_1: 'This website is run by the Ministry of Housing, Communities and Local Government. We want as many people as possible to be able to use this website. For example, that means you should be able to:
+    paragraph_1: 'This website is run by the Department for Levelling Up, Housing and Communities. We want as many people as possible to be able to use this website. For example, that means you should be able to:
                   <ul class="govuk-list govuk-list--bullet">
                     <li>change colours, contrast levels and fonts</li>
                     <li>zoom in up to 300% without the text spilling off the screen</li>
@@ -1801,24 +1801,21 @@ en:
     enforcement_heading: 'Enforcement procedure'
     enforcement_paragraph: 'The Equality and Human Rights Commission (EHRC) is responsible for enforcing the Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018 (the ‘accessibility regulations’). If you’re not happy with how we respond to your complaint, <a class="govuk-link" href="https://www.equalityadvisoryservice.com/">contact the Equality Advisory and Support Service (EASS)</a>.'
     technical_heading: 'Technical information about this website’s accessibility'
-    technical_paragraph: 'The Ministry of Communities, Housing and Local Communities is committed to making its website accessible, in accordance with the Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018.'
+    technical_paragraph: 'The Department for Levelling Up, Housing and Communities is committed to making its website accessible, in accordance with the Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018.'
     compliance_heading: 'Compliance status'
     compliance_paragraph: 'This website is partially compliant with the <a class="govuk-link" href="https://www.w3.org/TR/WCAG21/">Web Content Accessibility Guidelines version 2.1 AA standard</a>, due to the non-compliances listed below.'
     non_accessible_heading: 'Non-accessible content'
     non_accessible_paragraph: 'The content listed below is non-accessible for the following reasons.'
     non_compliance_heading: 'Non-compliance with the accessibility regulations'
     non_compliance_paragraph_1: 'Some content comes from accredited assessors. This may not be correctly structured for the web and difficult to browse with a screen reader, most notably on the Air Conditioning Inspection Reports.'
-    non_compliance_paragraph_2: 'Some images do not have a text alternative, so people using a screen reader cannot access the information. This fails WCAG 2.1 success criterion 1.1.1 (non-text content).'
-    non_compliance_paragraph_3: 'We plan to add text alternatives for all images by November 2020. When we publish new content we’ll make sure our use of images meets accessibility standards.'
-    non_compliance_paragraph_4: 'In some cases people using a screen reader might hear a label for content that doesn’t appear on the page.'
-    non_compliance_paragraph_5: 'We plan to correct broken references for all content by November 2020.'
+    non_compliance_paragraph_2: 'Some pages have duplicate non-descriptive labels. This means screen reader users browsing out of context cannot identify what these labels relate to. We’re adding more information to give these labels context.'
     out_of_scope_heading: 'Content that’s not within the scope of the accessibility regulations'
     out_of_scope_paragraph: 'Not applicable.'
     what_we_do_heading: 'What we’re doing to improve accessibility'
-    what_we_do_paragraph: 'This service will be externally tested for compliance with Web Content Accessibility Guidelines V2.1 level A by November 2020.'
+    what_we_do_paragraph: 'A further accessibility audit will be carried out by November 2021. We will report the findings here, and work to rectify any additional issues identified as quickly as possible.'
     preparation_heading: 'Preparation of this accessibility statement'
-    preparation_paragraph: 'This statement was prepared on 17 September 2020. It was last reviewed on 17 September 2020. We carried out our own testing on 17 September 2020.'
-    accessibility_audit: 'A full accessibility audit will be carried out by November 2020. We will report the findings here, and work to rectify any additional issues identified as quickly as possible.'
+    preparation_paragraph: 'This statement was prepared on 28 September 2021. It was last reviewed on 28 September 2021.'
+    accessibility_audit: 'This website was last tested on 30 November 2020. The test was carried out by the Digital Accessibility Centre (DAC).'
 
   cookies:
     title: "Cookies on our service"
