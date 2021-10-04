@@ -30,7 +30,7 @@
     </li>
     <li>
       <p class="govuk-body">
-        <a style="text-decoration: none; display: none;" id="link" href="<%= localised_url(request.path_info) + (localised_url(request.path_info).include?("?") ? "&" : "?") %>print=true" class="govuk-link govuk-!-margin-bottom-5" id="link">
+        <a rel="nofollow" style="text-decoration: none; display: none;" id="link" href="<%= localised_url(request.path_info) + (localised_url(request.path_info).include?("?") ? "&" : "?") %>print=true" class="govuk-link govuk-!-margin-bottom-5" id="link">
         <span class="share-icon">
           <img src="/images/print.svg">
         </span>
