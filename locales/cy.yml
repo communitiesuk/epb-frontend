@@ -1788,7 +1788,7 @@ cy:
                     <li>llywio’r rhan fwyaf o’r wefan drwy ddefnyddio meddalwedd adnabod llais</li>
                     <li>gwrando ar y rhan fwyaf o’r wefan drwy ddefnyddio darllenydd sgrin (gan gynnwys fersiynau diweddaraf JAWS, NVDA a VoiceOver)</li>
                   </ul>"
-    paragraph_2: "Rydyn ni hefyd wedi gwneud testun y wefan mor hawdd â phosibl i’w ddeall"
+    paragraph_2: "Rydyn ni hefyd wedi gwneud testun y wefan mor hawdd â phosibl i’w ddeall."
     paragraph_3: "Mae gan <a class=\"govuk-link\" href=\"https://mcmw.abilitynet.org.uk/\">AbilityNet</a> gyngor ar wneud eich dyfais yn haws i’w ddefnyddio os oes gennych anabledd’ have a disability."
     contact_heading: "Gwybodaeth am adborth a chysylltiadau"
     contact_paragraph: "Os oes angen gwybodaeth arnoch chi ar y wefan hon mewn fformat gwahanol fel PDF hygyrch,, print bras, tesun hawdd i’w ddarllen, recordiad sain neu braille:
@@ -1810,12 +1810,12 @@ cy:
     non_compliance_paragraph_1: "Mae rhywfaint o’r cynnwys yn dod oddi wrth aseswyr achrededig. Efallai na fydd yr wybodaeth hon wedi’i strwythuro’n gywir ar gyfer y we a’i fod yn anodd ei phori â darllenydd sgrin, yn fwyaf arbennig yn yr Adroddiadau ar Archwiliadau aerdymheru."
     non_compliance_paragraph_2: "Mae gan rai tudalennau labeli dyblyg nad ydyn nhw’n ddisgrifiadol. Mae hyn yn golygu na all defnyddwyr darllenwyr sgrin sy'n pori y tu allan i’r cyd-destun ganfod beth mae'r labeli hyn yn ymwneud ag ef. Rydyn ni wrthi’n ychwanegu rhagor o wybodaeth i roi cyd-destun i’r labeli hyn."
     out_of_scope_heading: "Cynnwys nad yw o fewn rhychwant y rheoliadau hygyrchedd"
-    out_of_scope_paragraph: "Heb fod yn gymwys"
+    out_of_scope_paragraph: "Heb fod yn gymwys."
     what_we_do_heading: "Yr hyn rydyn ni’n ei wneud i wella hygyrchedd"
     what_we_do_paragraph: "Bydd archwiliad hygyrchedd arall yn cael ei gynnal erbyn mis Tachwedd 2021. Byddwn yn adrodd ar y canfyddiadau yma, ac yn gweithio i unioni unrhyw faterion ychwanegol a nodir cyn gynted â phosibl."
     preparation_heading: "Paratoi’r datganiad hygyrchedd hwn"
     preparation_paragraph: "Cafodd y datganiad hwn ei baratoi ar 28 Medi 2021. Y tro diwethaf iddo gael ei adolygu oedd 28 Medi 2021."
-    accessibility_audit: "Y tro diwethaf i'r wefan hon gael ei phrofi oedd 30 Tachwedd 2020. Cafodd y prawf ei gynnal gan y Ganolfan Hygyrchedd Digidol (DAC)"
+    accessibility_audit: "Y tro diwethaf i'r wefan hon gael ei phrofi oedd 30 Tachwedd 2020. Cafodd y prawf ei gynnal gan y Ganolfan Hygyrchedd Digidol (DAC)."
 
   cookies:
     title: "Cwcis ar ein gwasanaeth ni"
