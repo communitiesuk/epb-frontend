@@ -1809,6 +1809,8 @@ en:
     non_compliance_heading: 'Non-compliance with the accessibility regulations'
     non_compliance_paragraph_1: 'Some content comes from accredited assessors. This may not be correctly structured for the web and difficult to browse with a screen reader, most notably on the Air Conditioning Inspection Reports.'
     non_compliance_paragraph_2: 'Some pages have duplicate non-descriptive labels. This means screen reader users browsing out of context cannot identify what these labels relate to. We’re adding more information to give these labels context.'
+    non_compliance_paragraph_3: 'On certain pages there is ambiguous link text. This makes it difficult for screen reader users to differentiate between the links. We’re adding more information to give these links more context. '
+    non_compliance_paragraph_4: 'Some pages have poor colour contrast. This fails WCAG 2.1 success criterion 1.4.1 (Use of Colour).'
     out_of_scope_heading: 'Content that’s not within the scope of the accessibility regulations'
     out_of_scope_paragraph: 'Not applicable.'
     what_we_do_heading: 'What we’re doing to improve accessibility'
