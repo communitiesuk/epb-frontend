@@ -208,7 +208,7 @@ describe "Acceptance::NonDomesticCertificate" do
 
         it "shows a clickable entry" do
           expect(response.body).to include(
-            '<a class="govuk-link" href="/energy-certificate/1234-5678-9101-1122-5678"',
+            '<a class="govuk-link" rel="nofollow" href="/energy-certificate/1234-5678-9101-1122-5678"',
           )
         end
 
@@ -387,7 +387,7 @@ describe "Acceptance::NonDomesticCertificate" do
 
         it "shows a clickable entry" do
           expect(response.body).to include(
-            '<a class="govuk-link" href="/energy-certificate/1234-5678-9101-1123-1234"',
+            '<a class="govuk-link" rel="nofollow" href="/energy-certificate/1234-5678-9101-1123-1234"',
           )
         end
 
