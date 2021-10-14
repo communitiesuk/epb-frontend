@@ -854,7 +854,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
               estimatedSavings: 1566,
             },
           ],
-          )
+        )
       end
 
       let(:response) { get "/energy-certificate/1234-5678-1234-5678-1235" }
@@ -865,7 +865,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       end
     end
 
-      context "when a certificate does not have a Green Deal Plan" do
+    context "when a certificate does not have a Green Deal Plan" do
       before do
         FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
           assessment_id: "1111-1111-1111-1111-1112",
