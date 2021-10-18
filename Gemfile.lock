@@ -94,7 +94,7 @@ GEM
       rack (>= 1.0, < 3)
     rainbow (3.0.0)
     rake (13.0.6)
-    redis (4.4.0)
+    redis (4.5.1)
     regexp_parser (2.1.1)
     rexml (3.2.5)
     rspec (3.10.0)
@@ -194,7 +194,7 @@ DEPENDENCIES
   rack-contrib (~> 2.3.0)!
   rack-test (~> 1.1.0)!
   rake (~> 13.0.6)!
-  redis (~> 4.4.0)!
+  redis (~> 4.5.1)!
   rspec (~> 3.10)!
   rubocop-govuk (~> 4.1)!
   rubocop-rspec (~> 2.4)!
