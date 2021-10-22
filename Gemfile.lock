@@ -24,7 +24,7 @@ GEM
     capybara-selenium (0.0.6)
       capybara
       selenium-webdriver
-    childprocess (3.0.0)
+    childprocess (4.1.0)
     concurrent-ruby (1.1.9)
     crack (0.4.5)
       rexml
@@ -141,8 +141,9 @@ GEM
     rubyzip (2.3.2)
     sassc (2.4.0)
       ffi (~> 1.9)
-    selenium-webdriver (3.142.7)
-      childprocess (>= 0.5, < 4.0)
+    selenium-webdriver (4.0.3)
+      childprocess (>= 0.5, < 5.0)
+      rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2)
     sentry-ruby (4.7.3)
       concurrent-ruby (~> 1.0, >= 1.0.2)
@@ -199,7 +200,7 @@ DEPENDENCIES
   rubocop-govuk (~> 4.1)!
   rubocop-rspec (~> 2.4)!
   sassc (~> 2.4)!
-  selenium-webdriver (~> 3.142.7)!
+  selenium-webdriver (~> 4.0.3)!
   sentry-ruby (~> 4.7)!
   sinatra (~> 2.0, >= 2.0.7)!
   sinatra-contrib!
