@@ -919,7 +919,13 @@ class FrontendService < Sinatra::Base
   get "/service-performance" do
     @page_title = "Service Performance"
     status 200
-    erb :service_performance
+    erb_template = :service_performance
+    use_case = @container.get_object(:fetch_statistics_use_case)
+    data = use_case.execute
+    show(erb_template, data)
+
+  rescue StandardError => e
+    return server_error(e)
   end
 
   def show(template, locals, layout = :layout)

@@ -29,6 +29,7 @@ class Container
       UseCase::FindCertificateByStreetNameAndTown.new(certificates_gateway)
     fetch_dec_summary_use_case =
       UseCase::FetchDecSummary.new(certificates_gateway)
+    fetch_statistics_use_case = UseCase::FetchStatistics.new(Gateway::StatisticsGateway.new(internal_api_client))
 
     @objects = {
       internal_api_client: internal_api_client,
@@ -43,6 +44,7 @@ class Container
       find_certificate_by_street_name_and_town_use_case:
         find_certificate_by_street_name_and_town_use_case,
       fetch_dec_summary_use_case: fetch_dec_summary_use_case,
+      fetch_statistics_use_case: fetch_statistics_use_case,
     }
   end
 
