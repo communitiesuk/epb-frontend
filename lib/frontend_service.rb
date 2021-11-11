@@ -916,6 +916,12 @@ class FrontendService < Sinatra::Base
     redirect "/"
   end
 
+  get "/service-performance" do
+    @page_title = "Service Performance"
+    status 200
+    erb :service_performance
+  end
+
   def show(template, locals, layout = :layout)
     locals[:errors] = @errors
     erb template, layout: layout, locals: locals
