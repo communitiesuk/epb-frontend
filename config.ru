@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+j# frozen_string_literal: true
 
 require "zeitwerk"
 require "sentry-ruby"
