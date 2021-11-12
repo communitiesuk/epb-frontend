@@ -33,7 +33,7 @@ describe "Acceptance::ServicePerformance", type: :feature do
         expect(response.body).to have_css("table.govuk-table tr>td.month-year", text: row[:monthYear].to_s)
         expect(response.body).to have_css("table.govuk-table tr>td.assessment-type", text: row[:assessmentType].to_s)
         expect(response.body).to have_css("table.govuk-table tr>td.num-assessments", text: row[:numAssessments].to_s)
-        expect(response.body).to have_css("table.govuk-table tr>td.rating-average", text: row[:ratingAverage].to_s)
+        expect(response.body).to have_css("table.govuk-table tr>td.rating-average", text: row[:ratingAverage].round(2).to_s)
       end
     end
   end

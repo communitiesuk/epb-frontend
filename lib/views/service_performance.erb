@@ -18,10 +18,10 @@
         <tbody class="govuk-table__body">
         <% locals[:data].each do |row| -%>
         <tr class="govuk-table__row" >
-          <td class="govuk-table__cell month-year" > <%= row[:monthYear] %></td>
+          <td class="govuk-table__cell month-year" > <%= row[:monthYear].to_s %></td>
           <td class="govuk-table__cell assessment-type"><%= row[:assessmentType] %></td>
           <td class="govuk-table__cell govuk-table__cell--numeric num-assessments"><%= row[:numAssessments] %></td>
-          <td class="govuk-table__cell govuk-table__cell--numeric rating-average"><%= row[:ratingAverage] %></td>
+          <td class="govuk-table__cell govuk-table__cell--numeric rating-average"><%= row[:ratingAverage].round(2) %></td>
         </tr>
         <% end -%>
         </tbody>
