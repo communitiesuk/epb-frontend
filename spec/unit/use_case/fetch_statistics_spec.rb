@@ -12,7 +12,7 @@ describe UseCase::FetchStatistics do
 
     it "calls the gateway method and returns the expected json" do
       expect(results[:data].length).to eq(17)
-      expect(results[:data].first).to match hash_including({ assessmentType: "CEPC", monthYear: "11-2020", numAssessments: 144_533, ratingAverage: 71.85 })
+      expect(results[:data].first).to match hash_including({ assessmentType: "CEPC", month: "11-2020", numAssessments: 144_533, ratingAverage: 71.85 })
     end
   end
 end
