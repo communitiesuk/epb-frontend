@@ -3,9 +3,7 @@
 module UseCase
   class FetchStatistics < UseCase::Base
     def execute
-      results = @gateway.fetch
-      results[:grouped] = results[:data].group_by { |h| h[:assessmentType] }
-      results
+      @gateway.fetch
     end
   end
 end
