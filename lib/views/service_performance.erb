@@ -4,7 +4,37 @@
     <p class="govuk-body"></p>
 
     <div class="govuk-inset-text">
-      <p class="govuk-body"></p>
+      <p class="govuk-body">
+      <table class="govuk-table" id="a">
+        <caption class="govuk-table__caption govuk-table__caption--m">Monthly assessments stats</caption>
+        <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Month/Year</th>
+          <th scope="col" class="govuk-table__header">Type</th>
+          <th scope="col" class="govuk-table__header">Number Lodged</th>
+          <th scope="col" class="govuk-table__header">Average Energy Rating</th>
+        </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+        <% locals[:data].each do |row| -%>
+        <tr class="govuk-table__row" >
+          <td class="govuk-table__cell month-year" > <%= row[:monthYear] %></td>
+          <td class="govuk-table__cell assessment-type"><%= row[:assessmentType] %></td>
+          <td class="govuk-table__cell govuk-table__cell--numeric num-assessments"><%= row[:numAssessments] %></td>
+          <td class="govuk-table__cell govuk-table__cell--numeric rating-average"><%= row[:ratingAverage] %></td>
+        </tr>
+        <% end -%>
+        </tbody>
+      </table>
+
+
+      <ul>
+
+        <% locals.each do |i| %>
+          <li></li>
+        <% end %>
+      </ul>
+      </p>
     </div>
 
 
