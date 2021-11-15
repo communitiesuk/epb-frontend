@@ -28,16 +28,15 @@ describe "Acceptance::ServicePerformance", type: :feature do
     end
 
     it "each table has the expected caption" do
-      grouped_data.keys.each {| key |
+      grouped_data.each_key do |key|
         expect(response.body).to have_css("##{key.downcase} caption", text: "Monthly Assessments Stats #{key}")
-      }
-
+      end
     end
 
     it "the tables have all the relevant cells" do
       ServicePerformance::Stub.body[:data].each do |row|
-        expect(response.body).to have_css("table.govuk-table tr>td.month-year", text: row[:month].to_s)
-        expect(response.body).to have_css("table.govuk-table tr>td.num-assessments", text: row[:numAssessments].to_s)
+        expect(response.body).to have_css("table.govuk-table tr>td.month-year", text: Date.parse("#{row[:month]}-01").strftime("%B %Y"))
+        expect(response.body).to have_css("table.govuk-table tr>td.num-assessments", text: row[:numAssessments].to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse)
       end
     end
 
