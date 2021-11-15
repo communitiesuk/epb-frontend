@@ -924,8 +924,8 @@ class FrontendService < Sinatra::Base
     data = use_case.execute
     show(erb_template, data)
 
-  rescue StandardError => e
-    return server_error(e)
+    # rescue StandardError => e
+    #   return server_error(e)
   end
 
   def show(template, locals, layout = :layout)

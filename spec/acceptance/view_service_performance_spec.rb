@@ -27,19 +27,28 @@ describe "Acceptance::ServicePerformance", type: :feature do
       expect(response.body).to have_css("table.govuk-table", count: number_epcs)
     end
 
-    # it "each table has the expected caption" do
-    #   grouped_data.keys.each {| key |
-    #     expect(response.body).to have_css("div##{key.downcase}.govuk-table caption", text: "Monthly Assessments Stats #{key}")
-    #   }
-    #
-    # end
+    it "each table has the expected caption" do
+      grouped_data.keys.each {| key |
+        expect(response.body).to have_css("##{key.downcase} caption", text: "Monthly Assessments Stats #{key}")
+      }
+
+    end
 
     it "the tables have all the relevant cells" do
       ServicePerformance::Stub.body[:data].each do |row|
         expect(response.body).to have_css("table.govuk-table tr>td.month-year", text: row[:month].to_s)
         expect(response.body).to have_css("table.govuk-table tr>td.num-assessments", text: row[:numAssessments].to_s)
-        expect(response.body).to have_css("table.govuk-table tr>td.rating-average", text: row[:ratingAverage].round(2).to_s)
       end
+    end
+
+    it "has a table for SAP that does have  a column for average rating" do
+      expect(response.body).to have_css("tr>td.rating-average")
+    end
+
+    it "has a table for DEC, AC-CERT that does not have a column for average rating" do
+      expect(response.body).not_to have_css("#ac-cert.table.govuk-table tr>td.rating-average")
+      expect(response.body).not_to have_css("#dec.table.govuk-table tr>td.rating-average")
+      expect(response.body).not_to have_css("#dec-rr.table.govuk-table tr>td.rating-average")
     end
   end
 end
