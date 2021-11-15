@@ -6,9 +6,11 @@ require "active_support/cache"
 require "active_support/notifications"
 require "rack/attack"
 
-loader = Zeitwerk::Loader.new
-loader.push_dir("#{__dir__}/lib/")
-loader.setup
+unless defined? TestLoader
+  loader = Zeitwerk::Loader.new
+  loader.push_dir("#{__dir__}/lib/")
+  loader.setup
+end
 
 use Rack::Attack
 require_relative "./config/rack_attack_config"
