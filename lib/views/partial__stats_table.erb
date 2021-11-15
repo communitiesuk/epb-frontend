@@ -1,4 +1,4 @@
-
+<% unless values.nil? %>
 <div id="<%= assessment_type.downcase %>">
   <table class="govuk-table" >
  <caption class="govuk-table__caption govuk-table__caption--m">Monthly Assessments Stats <%= assessment_type %></caption>
@@ -13,6 +13,7 @@
     </tr>
     </thead>
     <tbody class="govuk-table__body">
+
     <% values.each do |row| -%>
       <tr class="govuk-table__row" >
         <td class="govuk-table__cell month-year" > <%= Date.parse(row[:month].to_s + "-01").strftime("%B %Y") %></td>
@@ -24,3 +25,4 @@
     <%end%>
     </tbody>
   </table>
+<% end %>
