@@ -1,4 +1,3 @@
-
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-l">Service Performance</h1>
@@ -10,9 +9,14 @@
         <%== erb :partial__stats_table, locals: {assessment_type:"DEC", values: locals[:grouped]["DEC"], show_average_rating:false } %>
         <%== erb :partial__stats_table, locals: {assessment_type:"DEC-RR", values: locals[:grouped]["DEC-RR"], show_average_rating:false}  %>
         <%== erb :partial__stats_table, locals: {assessment_type:"AC-CERT", values: locals[:grouped]["AC-CERT"], show_average_rating:false}  %>
-
       </div>
+
+
+    <div class="govuk-body">
+      <a href="service-performance/download-csv" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">Download CSV data</a>
+    </div>
+
     </div>
 
   </div>
-</div>
+

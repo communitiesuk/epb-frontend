@@ -2,6 +2,7 @@
 
 require "net/http"
 require "epb-auth-tools"
+require "csv"
 
 module Helpers
   WELSH_MONTHS = {
@@ -364,5 +365,25 @@ module Helpers
     JSON.parse(ENV["EPB_SUSPECTED_BOT_USER_AGENTS"])
   rescue StandardError
     []
+  end
+
+  def to_csv(view_model_array)
+    return "" if view_model_array.empty?
+
+    columns = view_model_array.first.keys.clone
+    headers = columns.map { |item| item.to_s.upcase.strip }.clone
+
+    CSV.generate do |csv|
+      csv << headers
+      view_model_array.each do |hash|
+        csv << columns.map do |key, _value|
+          if hash[key.to_sym].is_a?(String)
+            (hash[key.to_sym]).to_s
+          else
+            hash[key.to_sym]
+          end
+        end
+      end
+    end
   end
 end

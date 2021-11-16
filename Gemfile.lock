@@ -29,6 +29,7 @@ GEM
     concurrent-ruby (1.1.9)
     crack (0.4.5)
       rexml
+    csv (3.2.1)
     diff-lcs (1.4.4)
     epb-auth-tools (1.0.8)
       jwt (~> 2.2)
@@ -189,6 +190,7 @@ PLATFORMS
 DEPENDENCIES
   capybara (~> 3.36.0)!
   capybara-selenium (~> 0.0.6)!
+  csv (~> 3.2, >= 3.2.1)!
   epb-auth-tools (~> 1.0.8)!
   erubis (~> 2.7)!
   i18n (~> 1.8.10)!

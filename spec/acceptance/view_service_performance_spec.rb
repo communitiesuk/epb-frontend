@@ -49,5 +49,9 @@ describe "Acceptance::ServicePerformance", type: :feature do
       expect(response.body).not_to have_css("#dec.table.govuk-table tr>td.rating-average")
       expect(response.body).not_to have_css("#dec-rr.table.govuk-table tr>td.rating-average")
     end
+
+    it "has the correct download link" do
+      expect(response.body).to have_css("a.govuk-button--secondary", text: "Download CSV data")
+    end
   end
 end
