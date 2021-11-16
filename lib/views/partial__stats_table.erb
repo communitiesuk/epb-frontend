@@ -16,7 +16,7 @@
 
     <% values.each do |row| -%>
       <tr class="govuk-table__row" >
-        <td class="govuk-table__cell month-year" > <%= Date.parse(row[:month].to_s + "-01").strftime("%B %Y") %></td>
+        <th class="govuk-table__cell month-year" > <%= Date.parse(row[:month].to_s + "-01").strftime("%B %Y") %></th>
         <td class="govuk-table__cell govuk-table__cell--numeric num-assessments"><%= row[:numAssessments].to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse %></td>
         <% if show_average_rating %>
          <td class="govuk-table__cell govuk-table__cell--numeric rating-average"><%= row[:ratingAverage].round(2) %></td>
