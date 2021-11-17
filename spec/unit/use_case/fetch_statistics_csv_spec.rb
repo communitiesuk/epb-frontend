@@ -31,8 +31,6 @@ describe UseCase::FetchStatisticsCsv do
     let(:results) { fetch_statistics.execute }
 
     before do
-      # ServicePerformance::Stub.statistics
-      # allow(statistics_gateway).to receive(:new).and_return(get_api_client)
       allow(statistics_gateway).to receive(:fetch).and_return(api_data)
     end
 

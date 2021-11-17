@@ -30,5 +30,33 @@ describe "Acceptance::ServicePerformanceCSV", type: :feature do
     it "has a csv with the correct body" do
       expect(response.body).to match(/Oct-2021,21163,78.41,122394,61.71,8208,67.36,2189,470,1251/)
     end
+
+
+    context "when calling the page with data in a different order" do
+      let(:response) do
+        get "http://find-energy-certificate.epb-frontend/service-performance/download-csv"
+      end
+
+
+      before do
+        stub = ServicePerformance::MonthsStatsDataStub.get_data
+        stub[:data] = stub[:data].sort_by {|hash| hash["month"]}
+
+        WebMock
+          .stub_request(
+            :get,
+            "http://test-api.gov.uk/api/statistics",
+            )
+          .to_return(status: 200, body: stub.to_json)
+      end
+
+      it "has a csv with the headers in the expected order" do
+        expect(response.body).to match(/Month,SAPs Lodged,Average SAP Energy Rating,RdSAPs Lodged,Average RdSAP Energy Rating,CEPCs Lodged,Average CEPC Energy Rating,DECs Lodged,DEC-RRs Lodged,AC-CERTs Lodged/)
+      end
+
+    end
+
   end
+
+
 end
