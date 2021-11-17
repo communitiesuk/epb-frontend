@@ -24,6 +24,7 @@ env:
     EPB_API_URL: "epbr-api-url-staging"
     EPB_UNLEASH_URI: "epbr-unleash-staging-uri"
     EPB_UNLEASH_AUTH_TOKEN: "epbr-unleash-staging-auth-token"
+    PERMANENTLY_BANNED_IP_ADDRESSES: "epbr-permanently-banned-ip-addresses"
     SENTRY_DSN: "epbr-sentry-dsn-frontend"
 
 phases:

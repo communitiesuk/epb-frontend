@@ -20,6 +20,7 @@ ENV["EPB_AUTH_SERVER"] = AUTH_URL
 ENV["EPB_API_URL"] = "http://test-api.gov.uk"
 ENV["STAGE"] = "test"
 ENV["EPB_UNLEASH_URI"] = "https://test-toggle-server/api"
+ENV["PERMANENTLY_BANNED_IP_ADDRESSES"] = '[{"reason":"did a bad thing", "ip_address": "198.51.100.100"}]'
 
 I18n.load_path = Dir[File.join(File.dirname(__FILE__), "/../locales", "*.yml")]
 I18n.enforce_available_locales = true
