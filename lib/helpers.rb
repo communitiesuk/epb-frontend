@@ -372,7 +372,6 @@ module Helpers
 
     columns = view_model_array.first.keys.clone
     headers = columns.map { |item| item.to_s.strip }.clone
-    pp columns.map
 
     CSV.generate do |csv|
       csv << headers
