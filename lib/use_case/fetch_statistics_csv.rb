@@ -11,6 +11,8 @@ module UseCase
         hash = { "Month" => Date.parse("#{month}-01").strftime("%b-%Y") }
         types.each do |type|
           stats_item = results[:data].select { |item| item[:month] == month && item[:assessmentType] == type }.first
+          next if stats_item.nil?
+
           hash["#{type}s Lodged"] = stats_item[:numAssessments]
           if %w[SAP RdSAP CEPC].include?(type)
             hash["Average #{type} Energy Rating"] = stats_item[:ratingAverage]

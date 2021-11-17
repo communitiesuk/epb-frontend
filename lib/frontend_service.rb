@@ -929,10 +929,15 @@ class FrontendService < Sinatra::Base
   end
 
   get "/service-performance/download-csv" do
-    use_case = @container.get_object(:fetch_statistics_use_case)
+    use_case = @container.get_object(:fetch_statistics_csv_use_case)
+
+    data = use_case.execute
     content_type "application/csv"
     attachment "service-performance.csv"
-    Helpers.to_csv(use_case.execute[:data])
+    to_csv(data)
+
+  rescue StandardError => e
+    return server_error(e)
   end
 
   def show(template, locals, layout = :layout)
