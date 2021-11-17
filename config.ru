@@ -16,7 +16,9 @@ use Rack::Attack
 require_relative "./config/rack_attack_config"
 
 unless %w[development test].include? ENV["STAGE"]
-  Sentry.init
+  Sentry.init do |config|
+    config.capture_exception_frame_locals = true
+  end
   use Sentry::Rack::CaptureExceptions
 end
 
