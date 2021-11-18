@@ -15,11 +15,11 @@ describe "Acceptance::ServicePerformance", type: :feature do
     end
 
     it "has the correct title" do
-      expect(response.body).to include("<title>Service Performance</title>")
+      expect(response.body).to include("<title>Service performance</title>")
     end
 
     it "has the correct H1" do
-      expect(response.body).to have_css("h1", text: "Service Performance")
+      expect(response.body).to have_css("h1", text: "Service performance")
     end
 
     it "has the intro text" do
