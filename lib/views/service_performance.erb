@@ -1,20 +1,33 @@
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-full">
     <h1 class="govuk-heading-l">Service Performance</h1>
 
-      <div class="govuk-body">
-        <%== erb :partial__stats_table, locals: {assessment_type:"SAP", values: locals[:grouped]["SAP"],   show_average_rating:true}  %>
-        <%== erb :partial__stats_table, locals: {assessment_type:"RdSAP", values: locals[:grouped]["RdSAP"], show_average_rating:true}  %>
-        <%== erb :partial__stats_table, locals: {assessment_type:"CEPC", values: locals[:grouped]["CEPC"], show_average_rating:true }  %>
-        <%== erb :partial__stats_table, locals: {assessment_type:"DEC", values: locals[:grouped]["DEC"], show_average_rating:false } %>
-        <%== erb :partial__stats_table, locals: {assessment_type:"DEC-RR", values: locals[:grouped]["DEC-RR"], show_average_rating:false}  %>
-        <%== erb :partial__stats_table, locals: {assessment_type:"AC-CERT", values: locals[:grouped]["AC-CERT"], show_average_rating:false}  %>
-      </div>
+    <div class="govuk-body">
+      Use this page to find data on:
+    </div>
 
+    <ul class="govuk-list govuk-list--bullet govuk-!-margin-left-5">
+      <li>the number of energy certificates uploaded to the Energy Performance of Building’s Register </li>
+      <li>the average energy rating for domestic and non-domestic properties </li>
+    </ul>
 
     <div class="govuk-body">
-      <a href="service-performance/download-csv" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button" download>Download CSV data</a>
+      This page is updated each month.
     </div>
+
+    <div class="govuk-body">
+      <a href="service-performance/download-csv"  draggable="false" class="" data-module="govuk-button" download>Download a copy</a> of the service performance data.
+    </div>
+
+      <div class="govuk-body">
+        <%== erb :partial__stats_table, locals: {assessment_type:"SAP", values: locals[:grouped]["SAP"],   show_average_rating:true, header: "Domestic data – new building", }  %>
+        <%== erb :partial__stats_table, locals: {assessment_type:"RdSAP", values: locals[:grouped]["RdSAP"], show_average_rating:true, header: "Domestic data – existing building",}  %>
+        <%== erb :partial__stats_table, locals: {assessment_type:"CEPC", values: locals[:grouped]["CEPC"], show_average_rating:true, header: "Non-domestic data – display energy certificate"}   %>
+        <%== erb :partial__stats_table, locals: {assessment_type:"DEC", values: locals[:grouped]["DEC"], show_average_rating:false , header:  "Non-domestic data – display energy certificate"} %>
+        <%== erb :partial__stats_table, locals: {assessment_type:"DEC-RR", values: locals[:grouped]["DEC-RR"], show_average_rating:false, header: "Non-domestic data – display energy certificate recommendation report"}  %>
+        <%== erb :partial__stats_table, locals: {assessment_type:"AC-CERT", values: locals[:grouped]["AC-CERT"], show_average_rating:false, header: "Non-domestic data – display energy certificate recommendation report"}  %>
+      </div>
+
 
     </div>
 

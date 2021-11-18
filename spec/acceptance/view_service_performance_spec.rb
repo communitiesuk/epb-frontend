@@ -22,20 +22,26 @@ describe "Acceptance::ServicePerformance", type: :feature do
       expect(response.body).to have_css("h1", text: "Service Performance")
     end
 
+    it "has the intro text" do
+      expect(response.body).to have_css("div", text: "Use this page to find data on:")
+      expect(response.body).to have_css("ul.govuk-list li", text: "the number of energy certificates uploaded to the Energy Performance of Building’s Register")
+      expect(response.body).to have_css("ul.govuk-list li", text: "the average energy rating for domestic and non-domestic properties")
+      expect(response.body).to have_css("div", text: "This page is updated each month.")
+    end
+
     it "has a table for each type of assessment" do
       number_epcs = grouped_data.keys.length
       expect(response.body).to have_css("table.govuk-table", count: number_epcs)
     end
 
-    it "each table has the expected caption" do
-      grouped_data.each_key do |key|
-        expect(response.body).to have_css("##{key.downcase} caption", text: "Monthly Assessments Stats #{key}")
-      end
+    it "the table have the expected captions" do
+      expect(response.body).to have_css("div#sap caption", text: "Domestic data – new building (SAP)")
+      expect(response.body).to have_css("div#dec-rr caption", text: "Non-domestic data – display energy certificate recommendation report (DEC-RR)")
     end
 
     it "the tables have all the relevant cells" do
       ServicePerformance::Stub.body[:data].each do |row|
-        expect(response.body).to have_css("table.govuk-table tr>th.month-year", text: Date.parse("#{row[:month]}-01").strftime("%B %Y"))
+        expect(response.body).to have_css("table.govuk-table tr>th.month-year", text: Date.parse("#{row[:month]}-01").strftime("%b %Y"))
         expect(response.body).to have_css("table.govuk-table tr>td.num-assessments", text: row[:numAssessments].to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse)
       end
     end
@@ -50,8 +56,14 @@ describe "Acceptance::ServicePerformance", type: :feature do
       expect(response.body).not_to have_css("#dec-rr.table.govuk-table tr>td.rating-average")
     end
 
+    it "the table has the expected th text" do
+      expect(response.body).to have_css("table.govuk-table th.month", text: "Month")
+      expect(response.body).to have_css("table.govuk-table th.number-uploaded", text: "Number uploaded")
+      expect(response.body).to have_css("table.govuk-table th.average-energy-rating", text: "Average energy rating")
+    end
+
     it "has the correct download link" do
-      expect(response.body).to have_css("a.govuk-button--secondary", text: "Download CSV data")
+      expect(response.body).to have_link("Download a copy", href: "service-performance/download-csv")
     end
   end
 end

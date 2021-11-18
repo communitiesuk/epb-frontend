@@ -2,7 +2,6 @@ describe "Rack::Attack" do
   include RSpecFrontendServiceMixin
 
   describe "block permanently blocked IP addresses" do
-
     after do
       Rack::Attack.enabled = false
       Rack::Attack.reset!
@@ -15,6 +14,7 @@ describe "Rack::Attack" do
         # This why we should only activate Rack::Attack after
         Rack::Attack.enabled = true
       end
+
       it "returns a 403 forbidden response status" do
         get "/healthcheck"
         expect(last_response.status).to eq(403)
@@ -26,6 +26,7 @@ describe "Rack::Attack" do
         header "X_FORWARDED_FOR", "198.51.100.200, 127.0.0.1, 198.51.100.220"
         Rack::Attack.enabled = true
       end
+
       it "returns a 200 OK response status" do
         get "/healthcheck"
         expect(last_response.status).to eq(200)
