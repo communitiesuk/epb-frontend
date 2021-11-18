@@ -63,17 +63,16 @@ describe "Acceptance::ServicePerformanceCSV", type: :feature do
 
       let(:october_data) do
         parsed_data = CSV.parse(response.body, headers: true)
-        parsed_data.select { |row| row["Month"] == "Oct-2021" }.first
+        parsed_data.select { |row| row["Month"] == "Oct-2021" }.first.to_hash
       end
 
-      it "produces a csv with empty cell in the row position for DEC lodged and DEC average rating" do
-        expect(october_data[7]).to eq(nil)
-        expect(october_data[8]).to eq(nil)
+      it "produces a csv with empty cell in the row for DEC lodged " do
+        expect(october_data["DECs Lodged"]).to eq(nil)
       end
 
-      it "produces a csv with filled cells in the row position for CEPC average rating and AC-CERT lodged" do
-        expect(october_data[6]).to eq("67.36")
-        expect(october_data[9]).to eq("470")
+      it "produces a csv with filled cells in the row CEPC average rating and DEC-RR lodged" do
+        expect(october_data["Average CEPC Energy Rating"]).to eq("67.36")
+        expect(october_data["DEC-RRs Lodged"]).to eq("470")
       end
     end
   end

@@ -11,14 +11,9 @@ module UseCase
         hash = { "Month" => Date.parse("#{month}-01").strftime("%b-%Y") }
         types.each do |type|
           stats_item = results[:data].select { |item| item[:month] == month && item[:assessmentType] == type }.first
-          if stats_item.nil?
-            hash["#{type}s Lodged"] = nil
-            hash["Average #{type} Energy Rating"] = nil
-          else
-            hash["#{type}s Lodged"] = stats_item[:numAssessments]
-            if %w[SAP RdSAP CEPC].include?(type)
-              hash["Average #{type} Energy Rating"] = stats_item[:ratingAverage]
-            end
+          hash["#{type}s Lodged"] = !stats_item.nil? && stats_item.key?(:numAssessments) && !stats_item[:numAssessments].nil? ? stats_item[:numAssessments] : nil
+          if %w[SAP RdSAP CEPC].include?(type)
+            hash["Average #{type} Energy Rating"] = stats_item.key?(:ratingAverage) && !stats_item[:ratingAverage].nil? ? stats_item[:ratingAverage].round(2) : nil
           end
         end
         return_array << hash
