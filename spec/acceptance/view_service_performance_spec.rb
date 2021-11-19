@@ -37,7 +37,7 @@ describe "Acceptance::ServicePerformance", type: :feature do
     it "the table have the expected captions" do
       expect(response.body).to have_css("div#sap caption", text: "Domestic data – new building (SAP)")
       expect(response.body).to have_css("div#rdsap caption", text: "Domestic data – existing building (RdSAP)")
-      expect(response.body).to have_css("div#cepc caption", text: "Non-domestic data – display energy certificate (CEPC)")
+      expect(response.body).to have_css("div#cepc caption", text: "Non-domestic data – commercial energy performance certificate (CEPC)")
       expect(response.body).to have_css("div#dec caption", text: "Non-domestic data – display energy certificate (DEC)")
       expect(response.body).to have_css("div#dec-rr caption", text: "Non-domestic data – display energy certificate recommendation report (DEC-RR)")
       expect(response.body).to have_css("div#ac-cert caption", text: "Non-domestic data – air conditioning reports (AC-CERT)")
