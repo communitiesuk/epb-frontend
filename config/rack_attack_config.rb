@@ -37,7 +37,7 @@ Rack::Attack.throttle("Requests Rate Limit", limit: 100, period: 1.minutes, &:so
 
 # Block permanently banned IP addresses; the format of the env var is
 # "[{"reason":"did a bad thing", "ip_address": "198.51.100.100"},{...}]"
-JSON.parse(ENV["PERMANENTLY_BANNED_IP_ADDRESSES"] || []).each do |banned_ip_obj|
+JSON.parse(ENV["PERMANENTLY_BANNED_IP_ADDRESSES"] || "[]").each do |banned_ip_obj|
   Rack::Attack.blocklist("permanently blocked") do |req|
     req.source_ip == banned_ip_obj["ip_address"]
   end
