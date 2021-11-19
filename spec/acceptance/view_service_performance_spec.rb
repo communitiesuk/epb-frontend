@@ -24,7 +24,7 @@ describe "Acceptance::ServicePerformance", type: :feature do
 
     it "has the intro text" do
       expect(response.body).to have_css("div", text: "Use this page to find data on:")
-      expect(response.body).to have_css("ul.govuk-list li", text: "the number of energy certificates uploaded to the Energy Performance of Building’s Register")
+      expect(response.body).to have_css("ul.govuk-list li", text: "the number of energy certificates uploaded to the Energy Performance of Buildings Register")
       expect(response.body).to have_css("ul.govuk-list li", text: "the average energy rating for domestic and non-domestic properties")
       expect(response.body).to have_css("div", text: "This page is updated each month.")
     end
