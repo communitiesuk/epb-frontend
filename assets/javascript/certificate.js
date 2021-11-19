@@ -12,7 +12,9 @@ window.addEventListener('load', (event) => {
   }
 
   const backLink = document.querySelector('a.govuk-back-link')
-  backLink.addEventListener('click', () => updateHref(backUrl))
+  if (backLink) {
+    backLink.addEventListener('click', () => updateHref(backUrl))
+  }
 })
 
 function resetBrowserHistory (window, url) {
