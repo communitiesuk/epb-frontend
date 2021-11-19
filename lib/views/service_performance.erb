@@ -16,7 +16,7 @@
     </div>
 
     <div class="govuk-body">
-      <a href="service-performance/download-csv"  class="gov-link">Download a copy</a> of the service performance data.
+      <a href="service-performance/download-csv" class="gov-link" download>Download a copy</a> of the service performance data.
     </div>
 
       <div class="govuk-body">
@@ -27,7 +27,6 @@
         <%== erb :partial__stats_table, locals: {assessment_type:"DEC-RR", values: locals[:grouped]["DEC-RR"], show_average_rating:false, header: "Non-domestic data – display energy certificate recommendation report"}  %>
         <%== erb :partial__stats_table, locals: {assessment_type:"AC-CERT", values: locals[:grouped]["AC-CERT"], show_average_rating:false, header: "Non-domestic data – air conditioning reports"}  %>
       </div>
-
 
     </div>
 
