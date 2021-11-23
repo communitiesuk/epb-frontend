@@ -1,7 +1,7 @@
 module ServicePerformance
   class MonthsStatsDataStub
     def self.get_data
-      { data:
+      { data: { all:
           [
             {
               "numAssessments": 21_163,
@@ -80,7 +80,7 @@ module ServicePerformance
               "ratingAverage": 0.0,
               "month": "2021-09",
             },
-          ] }
+          ] } }
     end
   end
 end

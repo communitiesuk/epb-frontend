@@ -9,7 +9,7 @@ describe "Acceptance::ServicePerformanceCSV", type: :feature do
     WebMock
       .stub_request(
         :get,
-        "http://test-api.gov.uk/api/statistics",
+        "http://test-api.gov.uk/api/statistics/new",
       )
       .to_return(status: 200, body: body.to_json)
   end
@@ -46,7 +46,7 @@ describe "Acceptance::ServicePerformanceCSV", type: :feature do
     context "when calling the page with data in a different order" do
       before do
         stub = ServicePerformance::MonthsStatsDataStub.get_data
-        stub[:data] = stub[:data].sort_by { |hash| hash["month"] }
+        stub[:data][:all] = stub[:data][:all].sort_by { |hash| hash["month"] }
         stats_web_mock stub
       end
 
