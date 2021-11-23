@@ -12,7 +12,7 @@ source "https://rubygems.org" do
     gem "capybara-selenium", "~> 0.0.6"
     gem "rack-test", "~> 1.1.0"
     gem "rspec", "~>3.10"
-    gem "selenium-webdriver", "~> 4.0.3"
+    gem "selenium-webdriver", "~> 4.1.0"
     gem "webdrivers", "~> 5.0.0"
     gem "webmock", "~> 3.14"
   end
