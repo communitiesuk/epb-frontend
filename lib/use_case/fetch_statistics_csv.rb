@@ -3,7 +3,7 @@
 module UseCase
   class FetchStatisticsCsv < UseCase::Base
     def execute
-      results = @gateway.fetch
+      results = @gateway.fetch(old_url: true)
       return_array = []
       months = results[:data].group_by { |h| h[:month] }.keys
       types = %w[SAP RdSAP CEPC DEC DEC-RR AC-CERT]

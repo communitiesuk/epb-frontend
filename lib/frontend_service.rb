@@ -930,7 +930,6 @@ class FrontendService < Sinatra::Base
 
   get "/service-performance/download-csv" do
     use_case = @container.get_object(:fetch_statistics_csv_use_case)
-
     data = use_case.execute
     content_type "application/csv"
     attachment "service-performance.csv"

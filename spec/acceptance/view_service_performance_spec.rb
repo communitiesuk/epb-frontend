@@ -6,12 +6,16 @@ describe "Acceptance::ServicePerformance", type: :feature do
       get "http://find-energy-certificate.epb-frontend/service-performance"
     end
 
+    let(:body) do
+      ServicePerformance::CountryStatsStub.body[:data][:all]
+    end
+
     let(:grouped_data) do
-      ServicePerformance::Stub.body[:data].group_by { |h| h[:assessmentType] }
+      body.group_by { |h| h[:assessmentType] }
     end
 
     before do
-      ServicePerformance::Stub.statistics
+      ServicePerformance::CountryStatsStub.statistics
     end
 
     it "has the correct title" do
@@ -44,7 +48,7 @@ describe "Acceptance::ServicePerformance", type: :feature do
     end
 
     it "the tables have all the relevant cells" do
-      ServicePerformance::Stub.body[:data].each do |row|
+      body.each do |row|
         expect(response.body).to have_css("table.govuk-table tr>th.month-year", text: Date.parse("#{row[:month]}-01").strftime("%b %Y"))
         expect(response.body).to have_css("table.govuk-table tr>td.num-assessments", text: row[:numAssessments].to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse)
       end
