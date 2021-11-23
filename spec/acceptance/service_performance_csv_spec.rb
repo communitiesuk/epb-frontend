@@ -85,9 +85,9 @@ describe "Acceptance::ServicePerformanceCSV", type: :feature do
     end
   end
 
-  describe "get . find-energy-certificate/service-performance/download-csv?country=eng" do
+  describe "get . find-energy-certificate/service-performance/download-csv?country=england-wales" do
     let(:response) do
-      get "http://find-energy-certificate.epb-frontend/service-performance/download-csv?country=eng"
+      get "http://find-energy-certificate.epb-frontend/service-performance/download-csv?country=england-wales"
     end
 
     let(:parsed_data) do
@@ -107,7 +107,7 @@ describe "Acceptance::ServicePerformanceCSV", type: :feature do
     end
 
     it "the csv file name is correct" do
-      expect(file_name_from_header).to eq("service-performance-eng.csv")
+      expect(file_name_from_header).to eq("service-performance-england-wales.csv")
     end
 
     it "has a csv with the correct headers" do
@@ -123,9 +123,9 @@ describe "Acceptance::ServicePerformanceCSV", type: :feature do
     end
   end
 
-  describe "get . find-energy-certificate/service-performance/download-csv?country=ni" do
+  describe "get . find-energy-certificate/service-performance/download-csv?country=northern-ireland" do
     let(:response) do
-      get "http://find-energy-certificate.epb-frontend/service-performance/download-csv?country=ni"
+      get "http://find-energy-certificate.epb-frontend/service-performance/download-csv?country=northern-ireland"
     end
 
     let(:parsed_data) do
@@ -145,7 +145,7 @@ describe "Acceptance::ServicePerformanceCSV", type: :feature do
     end
 
     it "the csv file name is correct" do
-      expect(file_name_from_header).to eq("service-performance-ni.csv")
+      expect(file_name_from_header).to eq("service-performance-northern-ireland.csv")
     end
 
     it "has a csv with the correct headers" do

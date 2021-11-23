@@ -5,9 +5,9 @@ module UseCase
     def execute(country = "all")
       data = @gateway.fetch[:data]
       results = case country
-                when "eng"
+                when "england-wales"
                   data[:englandWales]
-                when "ni"
+                when "northern-ireland"
                   data[:northernIreland]
                 else
                   data[:all]
