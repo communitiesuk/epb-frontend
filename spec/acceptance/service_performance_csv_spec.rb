@@ -1,10 +1,6 @@
 describe "Acceptance::ServicePerformanceCSV", type: :feature do
   include RSpecFrontendServiceMixin
 
-  let(:response) do
-    get "http://find-energy-certificate.epb-frontend/service-performance/download-csv"
-  end
-
   def stats_web_mock(body)
     WebMock
       .stub_request(
@@ -15,12 +11,16 @@ describe "Acceptance::ServicePerformanceCSV", type: :feature do
   end
 
   describe "get . find-energy-certificate/service-performance/download-csv" do
-    before do
-      stats_web_mock(ServicePerformance::MonthsStatsDataStub.get_data)
+    let(:response) do
+      get "http://find-energy-certificate.epb-frontend/service-performance/download-csv"
     end
 
     let(:parsed_data) do
       CSV.parse(response.body, headers: true)
+    end
+
+    before do
+      stats_web_mock(ServicePerformance::MonthsStatsDataStub.get_data)
     end
 
     it "return a response 200 response" do
@@ -74,6 +74,74 @@ describe "Acceptance::ServicePerformanceCSV", type: :feature do
         expect(october_data["Average CEPC Energy Rating"]).to eq("67.36")
         expect(october_data["DEC-RRs Lodged"]).to eq("470")
       end
+    end
+  end
+
+  describe "get . find-energy-certificate/service-performance/download-csv?country=eng" do
+    let(:response) do
+      get "http://find-energy-certificate.epb-frontend/service-performance/download-csv?country=eng"
+    end
+
+    let(:parsed_data) do
+      CSV.parse(response.body, headers: true)
+    end
+
+    before do
+      stats_web_mock(ServicePerformance::MonthsStatsDataStub.get_data)
+    end
+
+    it "return a response 200 response" do
+      expect(response.status).to eq(200)
+    end
+
+    it "has a content type header for csv" do
+      expect(response.original_headers["Content-Type"]).to eq("application/csv")
+    end
+
+    it "has a csv with the correct headers" do
+      expect(response.body).to match(/Month,SAPs Lodged,Average SAP Energy Rating,RdSAPs Lodged,Average RdSAP Energy Rating,CEPCs Lodged,Average CEPC Energy Rating,DECs Lodged,DEC-RRs Lodged,AC-CERTs Lodged/)
+    end
+
+    it "has a csv with the correct body" do
+      expect(response.body).to match(/Oct-2021,20489,78.4,120045,61.73,8074,67.33,2781,462,1206/)
+    end
+
+    it "produces a data set with correct number of rows" do
+      expect(parsed_data.length).to eq(2)
+    end
+  end
+
+  describe "get . find-energy-certificate/service-performance/download-csv?country=ni" do
+    let(:response) do
+      get "http://find-energy-certificate.epb-frontend/service-performance/download-csv?country=ni"
+    end
+
+    let(:parsed_data) do
+      CSV.parse(response.body, headers: true)
+    end
+
+    before do
+      stats_web_mock(ServicePerformance::MonthsStatsDataStub.get_data)
+    end
+
+    it "return a response 200 response" do
+      expect(response.status).to eq(200)
+    end
+
+    it "has a content type header for csv" do
+      expect(response.original_headers["Content-Type"]).to eq("application/csv")
+    end
+
+    it "has a csv with the correct headers" do
+      expect(response.body).to match(/Month,SAPs Lodged,Average SAP Energy Rating,RdSAPs Lodged,Average RdSAP Energy Rating,CEPCs Lodged,Average CEPC Energy Rating,DECs Lodged,DEC-RRs Lodged,AC-CERTs Lodged/)
+    end
+
+    it "has a csv with the correct body" do
+      expect(response.body).to match(/Oct-2021,674,81.7,2349,61.11,134,90.5,38,8,45/)
+    end
+
+    it "produces a data set with correct number of rows" do
+      expect(parsed_data.length).to eq(2)
     end
   end
 end
