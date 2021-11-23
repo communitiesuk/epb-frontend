@@ -2,8 +2,16 @@
 
 module UseCase
   class FetchStatisticsCsv < UseCase::Base
-    def execute
-      results = @gateway.fetch[:data][:all]
+    def execute(country = "all")
+      data = @gateway.fetch[:data]
+      results = case country
+                when "eng"
+                  data[:englandWales]
+                when "ni"
+                  data[:northernIreland]
+                else
+                  data[:all]
+                end
       return_array = []
       months = results.group_by { |h| h[:month] }.keys
       types = %w[SAP RdSAP CEPC DEC DEC-RR AC-CERT]
