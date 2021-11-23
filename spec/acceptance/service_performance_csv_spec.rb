@@ -36,7 +36,7 @@ describe "Acceptance::ServicePerformanceCSV", type: :feature do
     end
 
     it "the csv file name is correct" do
-      expect(file_name_from_header).to eq("service-performance.csv")
+      expect(file_name_from_header).to eq("service-performance-all-regions.csv")
     end
 
     it "has a csv with the correct headers" do

@@ -933,7 +933,7 @@ class FrontendService < Sinatra::Base
     data = use_case.execute(params["country"])
 
     content_type "application/csv"
-    attachment params["country"] ? "service-performance-#{params['country']}.csv" : "service-performance.csv"
+    attachment params["country"] ? "service-performance-#{params['country']}.csv" : "service-performance-all-regions.csv"
 
     to_csv(data)
 
