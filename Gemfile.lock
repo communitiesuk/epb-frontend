@@ -143,7 +143,7 @@ GEM
     rubyzip (2.3.2)
     sassc (2.4.0)
       ffi (~> 1.9)
-    selenium-webdriver (4.0.3)
+    selenium-webdriver (4.1.0)
       childprocess (>= 0.5, < 5.0)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2)
@@ -203,7 +203,7 @@ DEPENDENCIES
   rubocop-govuk (~> 4.2)!
   rubocop-rspec (~> 2.6)!
   sassc (~> 2.4)!
-  selenium-webdriver (~> 4.0.3)!
+  selenium-webdriver (~> 4.1.0)!
   sentry-ruby (~> 4.8)!
   sinatra (~> 2.0, >= 2.0.7)!
   sinatra-contrib!
