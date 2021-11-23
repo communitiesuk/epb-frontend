@@ -930,9 +930,9 @@ class FrontendService < Sinatra::Base
 
   get "/service-performance/download-csv" do
     use_case = @container.get_object(:fetch_statistics_csv_use_case)
-    data = params["country"] ? use_case.execute(params["country"]) : use_case.execute
+    data = use_case.execute(params["country"])
     content_type "application/csv"
-    attachment "service-performance.csv"
+    attachment "service-performance-#{params["country"]}.csv"
     to_csv(data)
 
   rescue StandardError => e
