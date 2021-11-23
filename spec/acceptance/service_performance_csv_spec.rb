@@ -10,6 +10,10 @@ describe "Acceptance::ServicePerformanceCSV", type: :feature do
       .to_return(status: 200, body: body.to_json)
   end
 
+  def file_name_from_header
+    response.original_headers["Content-Disposition"].match(/filename=("?)(.+)\1/)[2]
+  end
+
   describe "get . find-energy-certificate/service-performance/download-csv" do
     let(:response) do
       get "http://find-energy-certificate.epb-frontend/service-performance/download-csv"
@@ -29,6 +33,10 @@ describe "Acceptance::ServicePerformanceCSV", type: :feature do
 
     it "has a content type header for csv" do
       expect(response.original_headers["Content-Type"]).to eq("application/csv")
+    end
+
+    it "the csv file name is correct" do
+      expect(file_name_from_header).to eq("service-performance.csv")
     end
 
     it "has a csv with the correct headers" do
@@ -98,6 +106,10 @@ describe "Acceptance::ServicePerformanceCSV", type: :feature do
       expect(response.original_headers["Content-Type"]).to eq("application/csv")
     end
 
+    it "the csv file name is correct" do
+      expect(file_name_from_header).to eq("service-performance-eng.csv")
+    end
+
     it "has a csv with the correct headers" do
       expect(response.body).to match(/Month,SAPs Lodged,Average SAP Energy Rating,RdSAPs Lodged,Average RdSAP Energy Rating,CEPCs Lodged,Average CEPC Energy Rating,DECs Lodged,DEC-RRs Lodged,AC-CERTs Lodged/)
     end
@@ -130,6 +142,10 @@ describe "Acceptance::ServicePerformanceCSV", type: :feature do
 
     it "has a content type header for csv" do
       expect(response.original_headers["Content-Type"]).to eq("application/csv")
+    end
+
+    it "the csv file name is correct" do
+      expect(file_name_from_header).to eq("service-performance-ni.csv")
     end
 
     it "has a csv with the correct headers" do
