@@ -12,9 +12,9 @@ describe UseCase::FetchStatistics do
 
     it "calls the gateway method and returns the expected json" do
       expect(results[:data][:all].length).to eq(17)
-      cepc = results[:data][:all].select { |i| i[:assessmentType] == "CEPC" && i[:month] == "11-2020" }
+      cepc = results[:data][:all].select { |i| i[:assessmentType] == "CEPC" && i[:month] == "2020-11" }
 
-      expect(cepc.first).to eq({ assessmentType: "CEPC", month: "11-2020", numAssessments: 144_533, ratingAverage: 71.85 })
+      expect(cepc.first).to eq({ assessmentType: "CEPC", month: "2020-11", numAssessments: 144_533, ratingAverage: 71.85, country: "all" })
     end
 
     it "groups the data by the assessment types for iterating in the erb" do
