@@ -28,6 +28,8 @@ puts "Compiling and copying JavaScript"
 unless File.directory?("./public/javascript")
   FileUtils.mkdir("./public/javascript")
 end
+puts "  Copying and renaming GOVUKFrontend js"
+FileUtils.copy_file("node_modules/govuk-frontend/govuk/all.js", "./public/javascript/govuk.js")
 `./node_modules/.bin/babel #{File.realpath("./assets/javascript")} --ignore #{File.realpath("./assets/javascript/__tests__")} --out-dir #{File.realpath("./public/javascript")} --no-comments`
 
 puts "Copying robots.txt"
