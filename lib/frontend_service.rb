@@ -917,7 +917,7 @@ class FrontendService < Sinatra::Base
   end
 
   get "/service-performance" do
-    @page_title = "Service performance"
+    @page_title = "Check how this service is performing"
     status 200
     erb_template = :service_performance
     use_case = @container.get_object(:fetch_statistics_use_case)
