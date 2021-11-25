@@ -1,29 +1,27 @@
 <% unless values.nil? %>
-<div id="<%= assessment_type.downcase %>">
-  <table class="govuk-table" >
- <caption class="govuk-table__caption govuk-table__caption--m"><%= header %> (<%= assessment_type %>)</caption>
-
-    <thead class="govuk-table__head">
-    <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header month">Month</th>
-      <th scope="col" class="govuk-table__header govuk-table__header--numeric number-uploaded">Number uploaded</th>
-      <% if show_average_rating %>
-        <th scope="col" class="govuk-table__header govuk-table__header--numeric average-energy-rating">Average energy rating</th>
-      <% end %>
-    </tr>
-    </thead>
-    <tbody class="govuk-table__body">
-
-    <% values.each do |row| -%>
-      <tr class="govuk-table__row" >
-        <th class="govuk-table__cell month-year" > <%= Date.parse(row[:month].to_s + "-01").strftime("%b %Y") %></th>
-        <td class="govuk-table__cell govuk-table__cell--numeric num-assessments"><%= row[:numAssessments].to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse %></td>
+  <div id="<%= assessment_type.downcase %>">
+    <table class="govuk-table" >
+      <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header month">Month</th>
+        <th scope="col" class="govuk-table__header govuk-table__header--numeric number-uploaded">Number uploaded</th>
         <% if show_average_rating %>
-         <td class="govuk-table__cell govuk-table__cell--numeric rating-average"><%= row[:ratingAverage].round(2) %></td>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric average-energy-rating">Average energy rating</th>
         <% end %>
       </tr>
-    <%end%>
-    </tbody>
-  </table>
-</div>
+      </thead>
+
+      <tbody class="govuk-table__body">
+      <% values.each do |row| -%>
+        <tr class="govuk-table__row" >
+          <th class="govuk-table__cell month-year" > <%= Date.parse(row[:month].to_s + "-01").strftime("%b %Y") %></th>
+          <td class="govuk-table__cell govuk-table__cell--numeric num-assessments"><%= row[:numAssessments].to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse %></td>
+          <% if show_average_rating %>
+           <td class="govuk-table__cell govuk-table__cell--numeric rating-average"><%= row[:ratingAverage].round(2) %></td>
+          <% end %>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
 <% end %>

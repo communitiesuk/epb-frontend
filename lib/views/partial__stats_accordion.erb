@@ -1,0 +1,10 @@
+<% unless values.nil? %>
+  <h2 class="govuk-heading-l"><%= "#{header} (#{assessment_type})" %></h2>
+
+  <% sections = [
+      { heading: "All regions", content: erb(:partial__stats_table, locals: { assessment_type: assessment_type, values: values["all"], show_average_rating: show_average_rating })},
+      { heading: "England and Wales", content: erb(:partial__stats_table, locals: { assessment_type: assessment_type, values: values["England & Wales"], show_average_rating: show_average_rating })},
+      { heading: "Northern Ireland", content: erb(:partial__stats_table, locals: { assessment_type: assessment_type, values: values["Northern Ireland"], show_average_rating: show_average_rating })},
+  ] %>
+  <%== erb :design_system__accordion, locals: { sections: sections, identifier: assessment_type }  %>
+<% end %>
