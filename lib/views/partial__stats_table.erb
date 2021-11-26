@@ -1,5 +1,5 @@
 <% unless values.nil? %>
-  <div id="<%= assessment_type.downcase %>">
+  <div id="<%= assessment_type.downcase %>" class="govuk-body">
     <table class="govuk-table" >
       <thead class="govuk-table__head">
       <tr class="govuk-table__row">
@@ -23,5 +23,7 @@
       <% end %>
       </tbody>
     </table>
+
+    <a href="service-performance/download-csv?country=<%= country_param %>" class="gov-link" download>Download a copy of the data for <%= region %>.</a>
   </div>
 <% end %>

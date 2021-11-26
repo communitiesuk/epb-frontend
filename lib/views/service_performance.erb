@@ -20,10 +20,6 @@
     </div>
 
     <div class="govuk-body">
-      <a href="service-performance/download-csv" class="gov-link" download>Download a copy</a> of the service performance data.
-    </div>
-
-    <div class="govuk-body">
       <%== erb :partial__stats_accordion, locals: { assessment_type: "SAP", values: locals[:grouped]["SAP"], show_average_rating: true, header: "Domestic data – new building" } %>
       <%== erb :partial__stats_accordion, locals: { assessment_type: "RdSAP", values: locals[:grouped]["RdSAP"], show_average_rating: true, header: "Domestic data – existing building" } %>
       <%== erb :partial__stats_accordion, locals: { assessment_type: "CEPC", values: locals[:grouped]["CEPC"], show_average_rating: true, header: "Non-domestic data – commercial energy performance certificate" } %>

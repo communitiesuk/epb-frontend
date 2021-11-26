@@ -73,8 +73,10 @@ describe "Acceptance::ServicePerformance", type: :feature do
       expect(response.body).to have_css("table.govuk-table th.average-energy-rating", text: "Average energy rating")
     end
 
-    it "has the correct download link" do
-      expect(response.body).to have_link("Download a copy", href: "service-performance/download-csv")
+    it "has the correct download links for each region" do
+      expect(response.body).to have_link("Download a copy of the data for all regions", href: "service-performance/download-csv?country=all")
+      expect(response.body).to have_link("Download a copy of the data for England and Wales", href: "service-performance/download-csv?country=england-wales")
+      expect(response.body).to have_link("Download a copy of the data for Northern Ireland", href: "service-performance/download-csv?country=northern-ireland")
     end
   end
 end
