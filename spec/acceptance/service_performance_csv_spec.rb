@@ -5,7 +5,7 @@ describe "Acceptance::ServicePerformanceCSV", type: :feature do
     WebMock
       .stub_request(
         :get,
-        "http://test-api.gov.uk/api/statistics/new",
+        "http://test-api.gov.uk/api/statistics",
       )
       .to_return(status: 200, body: body.to_json)
   end
@@ -54,7 +54,7 @@ describe "Acceptance::ServicePerformanceCSV", type: :feature do
     context "when calling the page with data in a different order" do
       before do
         stub = ServicePerformance::MonthsStatsDataStub.get_data
-        stub[:data][:all] = stub[:data][:all].sort_by { |hash| hash["month"] }
+        stub[:data][:assessments][:all] = stub[:data][:assessments][:all].sort_by { |hash| hash["month"] }
         stats_web_mock stub
       end
 
@@ -70,6 +70,7 @@ describe "Acceptance::ServicePerformanceCSV", type: :feature do
       end
 
       let(:october_data) do
+        pp response.body
         parsed_data = CSV.parse(response.body, headers: true)
         parsed_data.select { |row| row["Month"] == "Oct-2021" }.first.to_hash
       end

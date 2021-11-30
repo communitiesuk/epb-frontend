@@ -1,7 +1,20 @@
 module ServicePerformance
   class Stub
     def self.body
-      { data: [
+      { data: { assessments: assessments_stats, customer: ServicePerformance::CustomerSatisfactionStub.body } }
+    end
+
+    def self.statistics
+      WebMock
+        .stub_request(
+          :get,
+          "http://test-api.gov.uk/api/statistics",
+        )
+        .to_return(status: 200, body: body.to_json)
+    end
+
+    private_class_method def self.assessments_stats
+      [
         {
           "numAssessments": 144_533,
           "assessmentType": "CEPC",
@@ -104,16 +117,7 @@ module ServicePerformance
           "ratingAverage": 0.0,
           "month": "2021-11",
         },
-      ] }
-    end
-
-    def self.statistics
-      WebMock
-        .stub_request(
-          :get,
-          "http://test-api.gov.uk/api/statistics",
-        )
-        .to_return(status: 200, body: body.to_json)
+      ]
     end
   end
 end

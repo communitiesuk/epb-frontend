@@ -50,7 +50,7 @@ describe "Acceptance::ServicePerformance", type: :feature do
     end
 
     it "the tables have all the relevant cells" do
-      flattened_regions_data = ServicePerformance::CountryStatsStub.body[:data].flatten(2).reject { |e| e.is_a?(Symbol) }
+      flattened_regions_data = ServicePerformance::CountryStatsStub.body[:data][:assessments].flatten(2).reject { |e| e.is_a?(Symbol) }
       flattened_regions_data.each do |row|
         expect(response.body).to have_css("table.govuk-table tr>th.month-year", text: Date.parse("#{row[:month]}-01").strftime("%b %Y"))
         expect(response.body).to have_css("table.govuk-table tr>td.num-assessments", text: row[:numAssessments].to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse)

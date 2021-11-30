@@ -938,6 +938,7 @@ class FrontendService < Sinatra::Base
     to_csv(data)
 
   rescue StandardError => e
+    content_type "text/html"
     return server_error(e)
   end
 

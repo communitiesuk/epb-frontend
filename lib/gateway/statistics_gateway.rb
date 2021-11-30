@@ -4,9 +4,8 @@ module Gateway
       @internal_api_client = api_client
     end
 
-    def fetch(old_url: false)
-      route = old_url ? "/api/statistics" : "/api/statistics/new"
-      response = @internal_api_client.get(route)
+    def fetch
+      response = @internal_api_client.get("/api/statistics")
       JSON.parse(response.body, symbolize_names: true)
     end
   end

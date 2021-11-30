@@ -20,12 +20,12 @@
     </div>
 
     <div class="govuk-body">
-      <%== erb :partial__stats_accordion, locals: { assessment_type: "SAP", values: locals[:grouped]["SAP"], show_average_rating: true, header: "Domestic data – new building" } %>
-      <%== erb :partial__stats_accordion, locals: { assessment_type: "RdSAP", values: locals[:grouped]["RdSAP"], show_average_rating: true, header: "Domestic data – existing building" } %>
-      <%== erb :partial__stats_accordion, locals: { assessment_type: "CEPC", values: locals[:grouped]["CEPC"], show_average_rating: true, header: "Non-domestic data – commercial energy performance certificate" } %>
-      <%== erb :partial__stats_accordion, locals: { assessment_type: "DEC", values: locals[:grouped]["DEC"], show_average_rating: false , header:  "Non-domestic data – display energy certificate" } %>
-      <%== erb :partial__stats_accordion, locals: { assessment_type: "DEC-RR", values: locals[:grouped]["DEC-RR"], show_average_rating: false, header: "Non-domestic data – display energy certificate recommendation report" } %>
-      <%== erb :partial__stats_accordion, locals: { assessment_type: "AC-CERT", values: locals[:grouped]["AC-CERT"], show_average_rating: false, header: "Non-domestic data – air conditioning reports" } %>
+      <%== erb :partial__stats_accordion, locals: { assessment_type: "SAP", values: locals[:assessments][:grouped]["SAP"], show_average_rating: true, header: "Domestic data – new building" } %>
+      <%== erb :partial__stats_accordion, locals: { assessment_type: "RdSAP", values: locals[:assessments][:grouped]["RdSAP"], show_average_rating: true, header: "Domestic data – existing building" } %>
+      <%== erb :partial__stats_accordion, locals: { assessment_type: "CEPC", values: locals[:assessments][:grouped]["CEPC"], show_average_rating: true, header: "Non-domestic data – commercial energy performance certificate" } %>
+      <%== erb :partial__stats_accordion, locals: { assessment_type: "DEC", values: locals[:assessments][:grouped]["DEC"], show_average_rating: false , header:  "Non-domestic data – display energy certificate" } %>
+      <%== erb :partial__stats_accordion, locals: { assessment_type: "DEC-RR", values: locals[:assessments][:grouped]["DEC-RR"], show_average_rating: false, header: "Non-domestic data – display energy certificate recommendation report" } %>
+      <%== erb :partial__stats_accordion, locals: { assessment_type: "AC-CERT", values: locals[:assessments][:grouped]["AC-CERT"], show_average_rating: false, header: "Non-domestic data – air conditioning reports" } %>
     </div>
 
   </div>

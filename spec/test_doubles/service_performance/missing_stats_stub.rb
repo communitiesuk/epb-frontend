@@ -1,7 +1,11 @@
 module ServicePerformance
   class MissingStatsStub
     def self.get_data
-      { data: { all: [
+      { data: { assessments: assessments } }
+    end
+
+    private_class_method def self.assessments
+      { all: [
         {
           "numAssessments": 21_163,
           "assessmentType": "SAP",
@@ -73,7 +77,7 @@ module ServicePerformance
           "ratingAverage": 0.0,
           "month": "2021-09",
         },
-      ] } }
+      ] }
     end
   end
 end
