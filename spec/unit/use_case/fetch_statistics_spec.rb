@@ -11,7 +11,7 @@ describe UseCase::FetchStatistics do
     end
 
     it "calls the gateway method and returns the expected json for assessments and customer satisfaction" do
-      expect(results.keys).to eq(%i[assessments customer_satisfaction])
+      expect(results.keys).to eq(%i[assessments user_satisfaction])
     end
 
     it "contains expected json for assessments" do
@@ -44,7 +44,7 @@ describe UseCase::FetchStatistics do
     end
 
     it "contains the array of customer satisfaction data" do
-      expect(results[:customer_satisfaction].select { |h| h[:month] == "2021-10" }.first).to eq({
+      expect(results[:user_satisfaction].select { |h| h[:month] == "2021-10" }.first).to eq({
         month: "2021-10",
         verySatisfied: 20,
         satisfied: 14,
