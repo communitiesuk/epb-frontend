@@ -193,6 +193,8 @@ describe UseCase::FetchCertificate do
           typeOfAssessment: "RdSAP",
           addendum: nil,
           lzcEnergySources: nil,
+          environmentalImpactCurrent: "76",
+          environmentalImpactPotential: "85",
         },
       }
     end

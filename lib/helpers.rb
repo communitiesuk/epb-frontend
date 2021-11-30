@@ -380,4 +380,23 @@ module Helpers
       end
     end
   end
+
+  def eir_rating_band(number)
+    case number
+    when proc { |n| n <= 20 }
+      "g"
+    when 21..38
+      "f"
+    when 39..54
+      "e"
+    when 55..68
+      "d"
+    when 69..80
+      "c"
+    when 81..91
+      "b"
+    else
+      "a"
+    end
+  end
 end

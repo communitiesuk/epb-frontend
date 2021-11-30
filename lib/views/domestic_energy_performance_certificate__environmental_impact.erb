@@ -1,7 +1,11 @@
 <div class="govuk-body epc-page-break epc-blue-bottom printable-area epc-environmental-impact">
   <a id="energy"></a>
   <h2 class="govuk-heading-l"><%= t('domestic_epc.sections.environmental_impact.title') %></h2>
-  <p class="govuk-body"><%== t('domestic_epc.sections.environmental_impact.summary') %></p>
+  <p class="govuk-body"><%== t('domestic_epc.sections.environmental_impact.eir_rating',
+                               :current_environmental_impact_rating => eir_rating_band(assessment[:environmentalImpactCurrent].to_i).upcase,
+                               :potential_environmental_impact_rating => eir_rating_band(assessment[:environmentalImpactPotential].to_i).upcase) %></p>
+  <p class="govuk-body"><%== t('domestic_epc.sections.environmental_impact.rating_scale') %></p>
+  <p class="govuk-body"><%== t('domestic_epc.sections.environmental_impact.rating_comparision') %></p>
   <dl class="govuk-summary-list">
     <div class="govuk-summary-list__row" id="type">
       <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= t('domestic_epc.sections.environmental_impact.average_household.text') %></dt>

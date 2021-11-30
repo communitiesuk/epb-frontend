@@ -400,7 +400,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
     context "when viewing environmental impact section" do
       it "shows the summary text" do
         expect(response.body).to include(
-          "The energy used for heating, lighting and power in our homes produces over a quarter of the UK’s CO2 emissions.",
+          "This property's current environmental impact rating is C. It has the potential to be B.",
         )
       end
 

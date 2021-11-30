@@ -1324,6 +1324,8 @@ module FetchAssessmentSummary
                 "energyPerformanceRatingImprovement": 60,
                 "energyPerformanceBandImprovement": "e",
                 "environmentalImpactRatingImprovement": 64,
+                "environmentalImpactCurrent": "76",
+                "environmentalImpactPotential": "85",
                 "greenDealCategoryCode": "3",
               },
             ],
@@ -1595,6 +1597,8 @@ module FetchAssessmentSummary
               },
             ],
             lzcEnergySources: lzc_energy_sources,
+            environmentalImpactCurrent: "76",
+            environmentalImpactPotential: "85",
           },
         }
       end
