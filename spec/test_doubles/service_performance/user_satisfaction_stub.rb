@@ -1,5 +1,5 @@
 module ServicePerformance
-  class CustomerSatisfactionStub
+  class UserSatisfactionStub
     def self.body
       [
         {

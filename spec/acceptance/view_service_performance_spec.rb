@@ -116,7 +116,7 @@ describe "Acceptance::ServicePerformance", type: :feature do
     end
 
     it "the user table has all the relevant cells" do
-      ServicePerformance::CountryStatsStub.body[:data][:customer].each do |row|
+      ServicePerformance::CountryStatsStub.body[:data][:user].each do |row|
         expect(response.body).to have_css("div#user-satisfaction > table tr>th.month-year", text: Date.parse("#{row['month']}-01").strftime("%b %Y"))
         expect(response.body).to have_css("div#user-satisfaction > table tr>td.satisfied", text: row["satisfied"])
       end

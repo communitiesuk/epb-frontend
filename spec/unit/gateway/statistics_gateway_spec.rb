@@ -32,8 +32,8 @@ describe Gateway::StatisticsGateway do
     end
 
     it "returns the customer satisfaction data" do
-      expect(response[:data][:customer].length).to eq(3)
-      expect(response[:data][:customer].select { |i| i[:month] == "2021-09" }.first).to match hash_including(month: "2021-09",
+      expect(response[:data][:user].length).to eq(3)
+      expect(response[:data][:user].select { |i| i[:month] == "2021-09" }.first).to match hash_including(month: "2021-09",
                                                                                                              verySatisfied: 21,
                                                                                                              satisfied: 13,
                                                                                                              neither: 7,
