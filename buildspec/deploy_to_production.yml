@@ -9,6 +9,8 @@ env:
     DEPLOY_APPNAME: "mhclg-epb-frontend-ui-production"
     GTM_PROPERTY_FINDING: "GTM-5CVJ2P9"
     GTM_PROPERTY_GETTING: "GTM-NHXWZF5"
+    STATIC_START_PAGE_FINDING_EN: "https://www.gov.uk/find-energy-certificate"
+    STATIC_START_PAGE_GETTING_EN: "https://www.gov.uk/get-new-energy-certificate"
 
   parameter-store:
     PAAS_LOGIN: "epbr-govpaas-production-login"
