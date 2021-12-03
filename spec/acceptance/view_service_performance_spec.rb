@@ -18,12 +18,17 @@ describe "Acceptance::ServicePerformance", type: :feature do
       expect(response.body).to have_css("h1", text: "Check how this service is performing")
     end
 
-    it "has the intro text" do
+    it "has the correct intro text" do
       expect(response.body).to have_css("div", text: "Use this page to find data on:")
       expect(response.body).to have_css("ul.govuk-list li", text: "the number of energy certificates uploaded to the Energy Performance of Buildings Register")
       expect(response.body).to have_css("ul.govuk-list li", text: "the average energy rating for domestic and non-domestic properties")
+      expect(response.body).to have_css("ul.govuk-list li", text: "user satisfaction")
       expect(response.body).to have_css("div", text: "This data covers England and Wales, and Northern Ireland.")
       expect(response.body).to have_css("div", text: "Updated: monthly")
+    end
+
+    it "has the correct intro text inside the user satisfaction tab" do
+      expect(response.body).to have_css("#user-satisfaction-tab > #user-satisfaction div.govuk-body", text: "This data is collected on a monthly basis from our service feedback form")
     end
 
     it "has a header for each type of assessment" do
@@ -45,7 +50,7 @@ describe "Acceptance::ServicePerformance", type: :feature do
       expect(response.body).to have_css("#accordion-ac-cert")
     end
 
-    it "has a table for each region (all, England and Wales, Northern Ireland) and customer satisfaction" do
+    it "has a table for each region (all, England and Wales, Northern Ireland) and user satisfaction" do
       expect(response.body).to have_css("table", count: 19)
     end
 
@@ -86,39 +91,39 @@ describe "Acceptance::ServicePerformance", type: :feature do
     it "has a tab has 2 headers" do
       expect(response.body).to have_css("div.govuk-tabs li", count: 2)
       expect(response.body).to have_link("Energy certificates uploaded", href: "#epc-tab")
-      expect(response.body).to have_link("Customer satisfaction", href: "#customer-satisfaction-tab")
+      expect(response.body).to have_link("User satisfaction", href: "#user-satisfaction-tab")
     end
 
     it "has the epc data inside the correct tab" do
       expect(response.body).to have_css("div.govuk-tabs div#epc-tab")
-      expect(response.body).to have_css("div.govuk-tabs div#customer-satisfaction-tab")
+      expect(response.body).to have_css("div.govuk-tabs div#user-satisfaction-tab")
     end
 
     it "has the epc tab as NOT hidden" do
       expect(response.body).to have_css("div.govuk-tabs div#epc-tab[class=\"govuk-tabs__panel\"]")
     end
 
-    it "has the customer-satisfaction tab as hidden" do
-      expect(response.body).to have_css("div.govuk-tabs div#customer-satisfaction-tab[class=\"govuk-tabs__panel govuk-tabs__panel--hidden\"]")
+    it "has the user-satisfaction tab as hidden" do
+      expect(response.body).to have_css("div.govuk-tabs div#user-satisfaction-tab[class=\"govuk-tabs__panel govuk-tabs__panel--hidden\"]")
     end
 
-    it "has the customer satisfaction table inside the correct tab" do
-      expect(response.body).to have_css("div#customer-satisfaction-tab > div#customer-satisfaction > table")
+    it "has the user satisfaction table inside the correct tab" do
+      expect(response.body).to have_css("div#user-satisfaction-tab > div#user-satisfaction > table")
     end
 
-    it "has a customer satisfaction table with the correct headers" do
-      expect(response.body).to have_css("div#customer-satisfaction > table > thead > tr > th.month", text: "Month")
-      expect(response.body).to have_css("div#customer-satisfaction > table > thead > tr > th.very-satisfied", text: "Very satisfied")
-      expect(response.body).to have_css("div#customer-satisfaction > table > thead > tr > th.satisfied", text: "Satisfied")
-      expect(response.body).to have_css("div#customer-satisfaction > table > thead > tr > th.neither", text: "Neither satisfied nor dissatisfied")
-      expect(response.body).to have_css("div#customer-satisfaction > table > thead > tr > th.dissatisfied", text: "Dissatisfied")
-      expect(response.body).to have_css("div#customer-satisfaction > table > thead > tr > th.very-dissatisfied", text: "Very dissatisfied")
+    it "has a user satisfaction table with the correct headers" do
+      expect(response.body).to have_css("div#user-satisfaction > table > thead > tr > th.month", text: "Month")
+      expect(response.body).to have_css("div#user-satisfaction > table > thead > tr > th.very-satisfied", text: "Very satisfied")
+      expect(response.body).to have_css("div#user-satisfaction > table > thead > tr > th.satisfied", text: "Satisfied")
+      expect(response.body).to have_css("div#user-satisfaction > table > thead > tr > th.neither", text: "Neither satisfied nor dissatisfied")
+      expect(response.body).to have_css("div#user-satisfaction > table > thead > tr > th.dissatisfied", text: "Dissatisfied")
+      expect(response.body).to have_css("div#user-satisfaction > table > thead > tr > th.very-dissatisfied", text: "Very dissatisfied")
     end
 
-    it "the customer table has all the relevant cells" do
-      ServicePerformance::CountryStatsStub.body[:data][:customer].each do |row|
-        expect(response.body).to have_css("div#customer-satisfaction > table tr>th.month-year", text: Date.parse("#{row['month']}-01").strftime("%b %Y"))
-        expect(response.body).to have_css("div#customer-satisfaction > table tr>td.satisfied", text: row["satisfied"])
+    it "the user table has all the relevant cells" do
+      ServicePerformance::CountryStatsStub.body[:data][:user].each do |row|
+        expect(response.body).to have_css("div#user-satisfaction > table tr>th.month-year", text: Date.parse("#{row['month']}-01").strftime("%b %Y"))
+        expect(response.body).to have_css("div#user-satisfaction > table tr>td.satisfied", text: row["satisfied"])
       end
     end
   end

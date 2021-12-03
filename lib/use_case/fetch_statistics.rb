@@ -6,7 +6,7 @@ module UseCase
       api_data = @gateway.fetch[:data]
       results = { assessments: api_data[:assessments] }
       results[:assessments][:grouped] = grouped_by_assessment_type_and_country(results[:assessments])
-      results[:customer_satisfaction] = api_data[:customer]
+      results[:user_satisfaction] = api_data[:user]
       results
     end
 
