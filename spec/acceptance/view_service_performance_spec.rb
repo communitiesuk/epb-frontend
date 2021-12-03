@@ -18,10 +18,11 @@ describe "Acceptance::ServicePerformance", type: :feature do
       expect(response.body).to have_css("h1", text: "Check how this service is performing")
     end
 
-    it "has the intro text" do
+    it "has the correct intro text" do
       expect(response.body).to have_css("div", text: "Use this page to find data on:")
       expect(response.body).to have_css("ul.govuk-list li", text: "the number of energy certificates uploaded to the Energy Performance of Buildings Register")
       expect(response.body).to have_css("ul.govuk-list li", text: "the average energy rating for domestic and non-domestic properties")
+      expect(response.body).to have_css("ul.govuk-list li", text: "user satisfaction")
       expect(response.body).to have_css("div", text: "This data covers England and Wales, and Northern Ireland.")
       expect(response.body).to have_css("div", text: "Updated: monthly")
     end
