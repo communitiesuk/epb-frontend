@@ -27,6 +27,10 @@ describe "Acceptance::ServicePerformance", type: :feature do
       expect(response.body).to have_css("div", text: "Updated: monthly")
     end
 
+    it "has the correct intro text inside the user satisfaction tab" do
+      expect(response.body).to have_css("#user-satisfaction-tab > #user-satisfaction div.govuk-body", text: "This data is collected on a monthly basis from our service feedback form")
+    end
+
     it "has a header for each type of assessment" do
       expect(response.body).to have_css("h2", text: "Domestic data – new building (SAP)")
       expect(response.body).to have_css("h2", text: "Domestic data – existing building (RdSAP)")
