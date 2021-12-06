@@ -2,8 +2,11 @@
 
 module UseCase
   class FindAssessorByPostcode < UseCase::Base
-    def execute(postcode)
-      response = @gateway.search_by_postcode(postcode)
+    def execute(
+      postcode,
+      qualification = "domesticSap,domesticRdSap"
+    )
+      response = @gateway.search_by_postcode(postcode, qualification)
 
       raise_errors_if_exists(response) do |error|
         raise Errors::PostcodeNotRegistered if error[:code] == "NOT_FOUND"

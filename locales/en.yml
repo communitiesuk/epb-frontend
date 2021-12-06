@@ -107,6 +107,15 @@ en:
       cta: "Continue"
       errors:
         no_property_type_selected: "Select a type of property"
+    domestic_property_type:
+      question_title: "Is this property an existing or new building?"
+      options:
+        rdsap:
+          title: "Existing building"
+          hint: "Check if the property already has a valid energy certificate"
+        sap:
+          title: "New building"
+          hint: "A new building is either being built or will be built soon. Some extentions, conversions or change of use dwellings also count as new buildings."
 
   schemes:
     top_heading: 'Contact an energy assessor accreditation scheme'

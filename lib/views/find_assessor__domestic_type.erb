@@ -1,0 +1,46 @@
+<% error_form_ids = ["domesticRdSap"] %>
+<% unless errors.empty? %>
+  <%== erb :error_summary, locals: {errors:errors, error_form_ids:error_form_ids}  %>
+<% end %>
+
+
+<form method="post">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        <%= t('find_an_assessor.domestic_property_type.question_title') %>
+      </h1>
+    </legend>
+    <div class="govuk-form-group<% if errors[:domestic_type] %> govuk-form-group--error<% end %>">
+    <input type="hidden" name="lang" value="<%= I18n.locale.to_s %>" />
+      <% if errors[:domestic_type] %>
+          <span id='domestic_type-error' class="govuk-error-message">
+            <span class="govuk-visually-hidden"><%= t('error.error') %></span><%== errors[:domestic_type] %>
+          </span>
+      <% end %>
+      <div class="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="<%= error_form_ids[0] %>" name="domestic_type" type="radio" value="<%= error_form_ids[0] %>" aria-describedby="RdSAP-item-hint">
+          <label id="label-domesticRdSap" class="govuk-label govuk-radios__label" for="<%= error_form_ids[0] %>">
+            <%= t('find_an_assessor.domestic_property_type.options.rdsap.title') %>
+          </label>
+          <div id="RdSAP-item-hint" class="govuk-hint govuk-radios__hint">
+            <a href="https://www.gov.uk/find-energy-certificate"><%= t('find_an_assessor.domestic_property_type.options.rdsap.hint') %></a>
+          </div>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="SAP" name="domestic_type" type="radio" value="domesticSap" aria-describedby="SAP-item-hint">
+          <label id="label-domesticSap" class="govuk-label govuk-radios__label" for="non_domestic">
+            <%= t('find_an_assessor.domestic_property_type.options.sap.title') %>
+          </label>
+          <div id="SAP-item-hint" class="govuk-hint govuk-radios__hint">
+            <%= t('find_an_assessor.domestic_property_type.options.sap.hint') %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="govuk-button" data-module="govuk-button" type="submit">
+      <%= t('find_an_assessor.property_type.cta') %>
+    </button>
+  </fieldset>
+</form>

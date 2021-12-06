@@ -70,7 +70,7 @@ class FrontendService < Sinatra::Base
       back_link root_page_url
 
       if params["property_type"] == "domestic"
-        redirect localised_url("/find-an-assessor/search-by-postcode?#{query}")
+        redirect localised_url("/find-an-assessor/type-of-domestic-property")
       end
 
       if params["property_type"] == "non_domestic"
@@ -89,6 +89,30 @@ class FrontendService < Sinatra::Base
       show(:find_assessor__property_type, { lang: params[:lang] })
     end
 
+  find_an_assessor_domestic_type =
+    lambda do
+      query = params.map { |key, value| "#{key}=#{value}" }.join("&")
+      @errors = {}
+      @page_title =
+        "What type of domestic property is the certificate for? – Getting a new energy certificate – GOV.UK"
+      back_link root_page_url
+
+      if request.post? && params["domestic_type"].nil?
+        @errors = {
+          domestic_type: t("validation_errors.no_property_type_selected"),
+        }
+        @page_title = "#{t('error.error')}#{@page_title}"
+      end
+
+      if params["domestic_type"]
+        redirect localised_url(
+          "/find-an-assessor/search-by-postcode?#{query}",
+        )
+      end
+
+      show(:find_assessor__domestic_type, { lang: params[:lang] })
+    end
+
   get "/find-an-assessor/type-of-property",
       host_name: /#{getting_new_energy_certificate_host_name}/,
       &find_an_assessor_property_type
@@ -96,6 +120,14 @@ class FrontendService < Sinatra::Base
   post "/find-an-assessor/type-of-property",
        host_name: /#{getting_new_energy_certificate_host_name}/,
        &find_an_assessor_property_type
+
+  get "/find-an-assessor/type-of-domestic-property",
+    host_name: /#{getting_new_energy_certificate_host_name}/,
+      &find_an_assessor_domestic_type
+
+  post "/find-an-assessor/type-of-domestic-property",
+       host_name: /#{getting_new_energy_certificate_host_name}/,
+       &find_an_assessor_domestic_type
 
   get "/find-a-non-domestic-certificate/search-by-postcode",
       host_name: /#{find_energy_certificate_host_name}/ do
@@ -229,7 +261,8 @@ class FrontendService < Sinatra::Base
     @errors = {}
     locals = {}
     erb_template = :find_assessor_by_postcode
-    back_link "/find-an-assessor/type-of-property"
+    back_link "/find-an-assessor/type-of-domestic-property"
+    qualification = params["domestic_type"]
 
     response = @container.get_object(:find_assessor_by_postcode_use_case)
     @page_title =
@@ -242,9 +275,10 @@ class FrontendService < Sinatra::Base
 
       if valid_postcode.match(params["postcode"])
         back_link "/find-an-assessor/search-by-postcode"
+
         begin
           locals[:results] =
-            response.execute(params["postcode"])[:data][:assessors]
+            response.execute(params["postcode"], qualification)[:data][:assessors]
           @page_title =
             "#{t('find_assessor_by_postcode_results.top_heading')} – #{
               t('services.getting_an_energy_certificate')

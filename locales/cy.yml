@@ -107,6 +107,15 @@ cy:
       cta: "Parhau"
       errors:
         no_property_type_selected: "Dewiswch fath o eiddo"
+    domestic_property_type:
+      question_title: "Ydy'r adeilad yn adeilad presennol ynteu'n adeilad newydd?"
+      options:
+        rdsap:
+          title: "Adeilad presennol"
+          hint: "Gwiriwch a oes gan yr eiddo dystysgrif ynni ddilys yn barod"
+        sap:
+          title: "Adeilad newydd"
+          hint: "Mae adeilad newydd naill ai wrthi'n cael ei adeiladu neu am gael ei adeiladu cyn hir. Mae rhai estyniadau, trosiadau neu aneddiadau newid defnydd hefyd yn cyfrif fel adeiladu newydd."
 
   schemes:
     top_heading: "Cysylltwch â chynllun achredu aseswyr ynni"

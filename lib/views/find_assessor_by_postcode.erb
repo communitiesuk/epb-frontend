@@ -8,6 +8,9 @@
       <% if I18n.locale != I18n.available_locales[0] %>
         <input type="hidden" name="lang" value="<%= I18n.locale.to_s %>">
       <% end %>
+      <% if params["domestic_type"]%>
+        <input type="hidden" name="domestic_type" value="<%= params["domestic_type"] %>">
+      <% end %>
       <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
           <h1 class="govuk-heading-xl">

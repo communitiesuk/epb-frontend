@@ -248,10 +248,10 @@ describe "Acceptance::Assessor", type: :feature do
 
     context "when entering a valid postcode" do
       context "with surrounding whitespaces" do
-        before { FindAssessor::ByPostcode::Stub.search_by_postcode("SW1A 2AA") }
+        before { FindAssessor::ByPostcode::Stub.search_by_postcode("SW1A 2AA", "domesticRdSap") }
 
         let(:response) do
-          get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/search-by-postcode?postcode=++SW1A+2AA++"
+          get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/search-by-postcode?domestic_type=domesticRdSap&postcode=++SW1A+2AA++"
         end
 
         it "returns status 200" do
@@ -260,10 +260,10 @@ describe "Acceptance::Assessor", type: :feature do
       end
 
       context "when showing results page" do
-        before { FindAssessor::ByPostcode::Stub.search_by_postcode("SW1A 2AA") }
+        before { FindAssessor::ByPostcode::Stub.search_by_postcode("SW1A 2AA", "domesticRdSap") }
 
         let(:response) do
-          get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/search-by-postcode?postcode=SW1A+2AA"
+          get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/search-by-postcode?domestic_type=domesticRdSap&postcode=SW1A+2AA"
         end
 
         it "returns status 200" do
@@ -378,11 +378,12 @@ describe "Acceptance::Assessor", type: :feature do
         before do
           FindAssessor::ByPostcode::NoNearAssessorsStub.search_by_postcode(
             "E1 4FF",
+            "domesticRdSap",
           )
         end
 
         let(:response) do
-          get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/search-by-postcode?postcode=E1+4FF"
+          get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/search-by-postcode?domestic_type=domesticRdSap&postcode=E1+4FF"
         end
 
         it "returns status 200" do
@@ -405,11 +406,12 @@ describe "Acceptance::Assessor", type: :feature do
         before do
           FindAssessor::ByPostcode::UnregisteredPostcodeStub.search_by_postcode(
             "B11 4FF",
+            "domesticRdSap",
           )
         end
 
         let(:response) do
-          get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/search-by-postcode?postcode=B11+4FF"
+          get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/search-by-postcode?domestic_type=domesticRdSap&postcode=B11+4FF"
         end
 
         it "returns status 200" do
@@ -438,11 +440,12 @@ describe "Acceptance::Assessor", type: :feature do
         before do
           FindAssessor::ByPostcode::InvalidPostcodeStub.search_by_postcode(
             "C11 4FF",
+            "domesticRdSap",
           )
         end
 
         let(:response) do
-          get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/search-by-postcode?postcode=C11+4FF"
+          get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/search-by-postcode?domestic_type=domesticRdSap&postcode=C11+4FF"
         end
 
         it "returns status 400" do
@@ -740,6 +743,46 @@ describe "Acceptance::Assessor", type: :feature do
             "Sorry, there is a problem with the service",
           )
         end
+      end
+    end
+  end
+
+  describe ".get getting-new-energy-certificate/find-an-assessor/type-of-domestic-property" do
+    context "when on page to decide domestic property type" do
+      let(:response) do
+        get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/type-of-domestic-property"
+      end
+
+      it "displays the tab value the same as the main header value" do
+        expect(response.body).to include(
+                                   "<title>What type of domestic property is the certificate for? – Getting a new energy certificate – GOV.UK</title>",
+                                   )
+      end
+    end
+
+    context "when submitting without deciding a property type" do
+      let(:response) do
+        post "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/type-of-domestic-property"
+      end
+
+      it "displays the tab value the same as the main header value" do
+        expect(response.body).to include(
+                                   "<title>Error: What type of domestic property is the certificate for? – Getting a new energy certificate – GOV.UK</title>",
+                                   )
+      end
+
+      it "contains the required GDS error summary" do
+        expect(
+          response.body,
+          ).to have_css "div.govuk-error-summary h2.govuk-error-summary__title",
+                        text: "There is a problem"
+        expect(
+          response.body,
+          ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
+                        text: "Select a type of property"
+        expect(response.body).to have_link "Select a type of property",
+                                           href: "#domesticRdSap"
+        expect(response.body).to have_css "#domesticRdSap"
       end
     end
   end

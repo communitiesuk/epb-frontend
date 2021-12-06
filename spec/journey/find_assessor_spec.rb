@@ -34,6 +34,8 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
       click_on "Start now"
       find("#label-domestic").click
       click_on "Continue"
+      find("#label-domesticRdSap").click
+      click_on "Continue"
     end
 
     context "when searching on a postcode that has known assessors associated" do
@@ -104,6 +106,8 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
       visit getting_domain
       click_on "Start now"
       find("#label-domestic").click
+      click_on "Continue"
+      find("#label-domesticRdSap").click
       click_on "Continue"
       click_on "find an assessor by name"
     end
@@ -276,6 +280,22 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
   end
 
   context "when a property type is not chosen at the property type stage" do
+    before do
+      visit getting_domain
+      click_on "Start now"
+      find("#label-domestic").click
+      click_on "Continue"
+      click_on "Continue"
+    end
+
+    it "displays an error message indicating a property type should be chosen", :aggregate_failures do
+      expect(page).to have_content "Select a type of property"
+      expect(page).to have_content "There is a problem"
+      expect(page).to have_link "Select a type of property"
+    end
+  end
+
+  context "when a property type is not chosen at the domestic property type stage" do
     before do
       visit getting_domain
       click_on "Start now"

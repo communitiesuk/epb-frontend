@@ -7,7 +7,7 @@ describe Gateway::AssessorsGateway do
 
   context "when searching by postcode" do
     context "when an assessor exist" do
-      let(:response) { gateway.search_by_postcode("SW1A 2AA") }
+      let(:response) { gateway.search_by_postcode("SW1A 2AA", "domesticSap,domesticRdSap") }
 
       let(:assessor) { response[:data][:assessors].first }
 
@@ -50,7 +50,7 @@ describe Gateway::AssessorsGateway do
     end
 
     context "when an assessor doesnt exist" do
-      let(:response) { gateway.search_by_postcode("BF1 3AA") }
+      let(:response) { gateway.search_by_postcode("BF1 3AA", "domesticSap,domesticRdSap") }
 
       before { FindAssessor::ByPostcode::NoAssessorsStub.search_by_postcode }
 
@@ -67,7 +67,7 @@ describe Gateway::AssessorsGateway do
     end
 
     context "when the postcode doesnt exist" do
-      let(:response) { gateway.search_by_postcode("AF1 3AA") }
+      let(:response) { gateway.search_by_postcode("AF1 3AA", "domesticSap,domesticRdSap") }
 
       before do
         FindAssessor::ByPostcode::UnregisteredPostcodeStub.search_by_postcode(
@@ -88,7 +88,7 @@ describe Gateway::AssessorsGateway do
     end
 
     context "when the postcode is not valid" do
-      let(:response) { gateway.search_by_postcode("1 3AA") }
+      let(:response) { gateway.search_by_postcode("1 3AA", "domesticSap,domesticRdSap") }
 
       before do
         FindAssessor::ByPostcode::InvalidPostcodeStub.search_by_postcode(
@@ -109,7 +109,7 @@ describe Gateway::AssessorsGateway do
     end
 
     context "when there is no scheme" do
-      let(:response) { gateway.search_by_postcode("1 3AA") }
+      let(:response) { gateway.search_by_postcode("1 3AA", "domesticSap,domesticRdSap") }
 
       before do
         FindAssessor::ByPostcode::NoSchemeStub.search_by_postcode("1 3AA")
