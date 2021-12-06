@@ -115,7 +115,7 @@ describe "Acceptance::ServicePerformance", type: :feature do
       expect(response.body).to have_css("div#user-satisfaction > table > thead > tr > th.month", text: "Month")
       expect(response.body).to have_css("div#user-satisfaction > table > thead > tr > th.very-satisfied", text: "Very satisfied")
       expect(response.body).to have_css("div#user-satisfaction > table > thead > tr > th.satisfied", text: "Satisfied")
-      expect(response.body).to have_css("div#user-satisfaction > table > thead > tr > th.neither", text: "Neither satisfied nor dissatisfied")
+      expect(response.body).to have_css("div#user-satisfaction > table > thead > tr > th.neither", text: "Neutral")
       expect(response.body).to have_css("div#user-satisfaction > table > thead > tr > th.dissatisfied", text: "Dissatisfied")
       expect(response.body).to have_css("div#user-satisfaction > table > thead > tr > th.very-dissatisfied", text: "Very dissatisfied")
     end
