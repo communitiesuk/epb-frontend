@@ -124,7 +124,7 @@ class FrontendService < Sinatra::Base
        &find_an_assessor_property_type
 
   get "/find-an-assessor/type-of-domestic-property",
-    host_name: /#{getting_new_energy_certificate_host_name}/,
+      host_name: /#{getting_new_energy_certificate_host_name}/,
       &find_an_assessor_domestic_type
 
   post "/find-an-assessor/type-of-domestic-property",
@@ -276,7 +276,11 @@ class FrontendService < Sinatra::Base
       params["postcode"].strip!
 
       if valid_postcode.match(params["postcode"])
-        back_link "/find-an-assessor/search-by-postcode"
+        if params["domestic_type"]
+          back_link "/find-an-assessor/search-by-postcode?domestic_type=#{params['domestic_type']}}"
+        else
+          back_link "/find-an-assessor/search-by-postcode"
+        end
 
         begin
           locals[:results] =
