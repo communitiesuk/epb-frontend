@@ -20,6 +20,7 @@ FindAssessor::ByPostcode::Stub.search_by_postcode(
 )
 FindAssessor::ByPostcode::Stub.search_by_postcode("SW1A 2AA", "domesticSap")
 FindAssessor::ByPostcode::Stub.search_by_postcode("SW1A 2AA", "domesticRdSap")
+FindAssessor::ByPostcode::Stub.search_by_postcode("SW1A 2AA", "domesticRdSap,domesticSap")
 FindAssessor::ByPostcode::InvalidPostcodeStub.search_by_postcode("C11 4FF")
 
 FindAssessor::ByName::Stub.search_by_name("Supercommon Name", "domestic")

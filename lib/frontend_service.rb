@@ -94,7 +94,9 @@ class FrontendService < Sinatra::Base
       query = params.map { |key, value| "#{key}=#{value}" }.join("&")
       @errors = {}
       @page_title =
-        "What type of domestic property is the certificate for? – Getting a new energy certificate – GOV.UK"
+        "#{t('find_an_assessor.domestic_property_type.question_title')} – #{
+          t('services.getting_an_energy_certificate')
+        } – #{t('layout.body.govuk')}"
       back_link root_page_url
 
       if request.post? && params["domestic_type"].nil?
@@ -262,7 +264,7 @@ class FrontendService < Sinatra::Base
     locals = {}
     erb_template = :find_assessor_by_postcode
     back_link "/find-an-assessor/type-of-domestic-property"
-    qualification = params["domestic_type"]
+    qualification = params["domestic_type"] || "domesticRdSap,domesticSap"
 
     response = @container.get_object(:find_assessor_by_postcode_use_case)
     @page_title =

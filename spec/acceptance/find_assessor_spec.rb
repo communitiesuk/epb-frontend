@@ -467,7 +467,7 @@ describe "Acceptance::Assessor", type: :feature do
 
       context "when there is no connection" do
         before do
-          FindAssessor::ByPostcode::NoNetworkStub.search_by_postcode("D11 4FF")
+          FindAssessor::ByPostcode::NoNetworkStub.search_by_postcode("D11 4FF", "domesticRdSap,domesticSap")
         end
 
         let(:response) do
@@ -755,7 +755,7 @@ describe "Acceptance::Assessor", type: :feature do
 
       it "displays the tab value the same as the main header value" do
         expect(response.body).to include(
-                                   "<title>What type of domestic property is the certificate for? – Getting a new energy certificate – GOV.UK</title>",
+                                 "<title>Is this property an existing or new building? – Getting a new energy certificate – GOV.UK</title>",
                                    )
       end
     end
@@ -767,7 +767,7 @@ describe "Acceptance::Assessor", type: :feature do
 
       it "displays the tab value the same as the main header value" do
         expect(response.body).to include(
-                                   "<title>Error: What type of domestic property is the certificate for? – Getting a new energy certificate – GOV.UK</title>",
+                                   "<title>Error: Is this property an existing or new building? – Getting a new energy certificate – GOV.UK</title>",
                                    )
       end
 
