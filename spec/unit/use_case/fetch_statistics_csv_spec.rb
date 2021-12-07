@@ -104,7 +104,6 @@ describe UseCase::FetchStatisticsCsv do
     end
 
     it "groups the data by months " do
-      pp results
       expect(results).to eq(expectation)
     end
   end

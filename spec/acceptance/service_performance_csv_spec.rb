@@ -70,7 +70,6 @@ describe "Acceptance::ServicePerformanceCSV", type: :feature do
       end
 
       let(:october_data) do
-        pp response.body
         parsed_data = CSV.parse(response.body, headers: true)
         parsed_data.select { |row| row["Month"] == "Oct-2021" }.first.to_hash
       end
