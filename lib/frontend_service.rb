@@ -277,7 +277,7 @@ class FrontendService < Sinatra::Base
 
       if valid_postcode.match(params["postcode"])
         if params["domestic_type"]
-          back_link "/find-an-assessor/search-by-postcode?domestic_type=#{params['domestic_type']}}"
+          back_link "/find-an-assessor/search-by-postcode?domestic_type=#{params['domestic_type']}"
         else
           back_link "/find-an-assessor/search-by-postcode"
         end
