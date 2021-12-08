@@ -1789,8 +1789,8 @@ cy:
     top_heading: "Datganiad ar hygyrchedd"
     intro: "Mae’r datganiad hwn yn gymwys i gynnwys a gyhoeddir ar:
           <ul class=\"govuk-list govuk-list--bullet\">
-            <li><a class= \"govuk-link\" href=\"https://find-energy-certificate.digital.communities.gov.uk\">find-energy-certificate.digital.communities.gov.uk</a></li>
-            <li><a class= \"govuk-link\" href=\"https://getting-new-energy-certificate.digital.communities.gov.uk\">getting-new-energy-certificate.digital.communities.gov.uk</a></li>
+            <li><a class= \"govuk-link\" href=\"https://find-energy-certificate.service.gov.uk\">find-energy-certificate.service.gov.uk</a></li>
+            <li><a class= \"govuk-link\" href=\"https://getting-new-energy-certificate.service.gov.uk\">getting-new-energy-certificate.service.gov.uk</a></li>
           </ul>"
     paragraph_1: "Mae’r wefan hon yn cael ei rhedeg gan y Adran Codi'r Gwastad, Tai a Chymunedau. Hoffem weld cynifer â phosibl o bobl yn gallu defnyddio’r wefan. Er enghraifft, mae hynny’n golygu y dylech chi allu:
                   <ul class=\"govuk-list govuk-list--bullet\">

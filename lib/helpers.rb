@@ -40,7 +40,7 @@ module Helpers
     elsif current_url.include? "staging"
       "https://#{subdomain}-staging.digital.communities.gov.uk"
     else
-      "https://#{subdomain}.digital.communities.gov.uk"
+      "https://#{subdomain}.service.gov.uk"
     end
   end
 
