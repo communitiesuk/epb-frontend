@@ -1,23 +1,23 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <h1 class="govuk-heading-xl">Check how this service is performing</h1>
+    <h1 class="govuk-heading-xl"><%= t('service_performance.heading') %></h1>
 
     <div class="govuk-body">
-      Use this page to find data on:
+     <%= t('service_performance.intro') %>
     </div>
 
     <ul class="govuk-list govuk-list--bullet govuk-!-margin-left-5">
-      <li>the number of energy certificates uploaded to the Energy Performance of Buildings Register </li>
-      <li>the average energy rating for domestic and non-domestic properties </li>
-      <li>user satisfaction </li>
+      <li><%= t('service_performance.intro_list_item_one') %></li>
+      <li><%= t('service_performance.intro_list_item_two') %> </li>
+      <li><%= t('service_performance.intro_list_item_three') %>  </li>
     </ul>
 
     <div class="govuk-body">
-      This data covers England and Wales, and Northern Ireland.
+      <%= t('service_performance.covering_statement') %>
     </div>
 
     <div class="govuk-body">
-      Updated: monthly
+      <%= t('service_performance.updated_statement') %>
     </div>
 
     <div class="govuk-tabs" data-module="govuk-tabs">
@@ -29,27 +29,27 @@
       <ul class="govuk-tabs__list">
         <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
           <a class="govuk-tabs__tab" href="#epc-tab">
-            Energy certificates uploaded
+            <%= t('service_performance.contents.epcs_upload.title') %>
           </a>
         </li>
         <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
           <a class="govuk-tabs__tab" href="#user-satisfaction-tab">
-            User satisfaction
+            <%= t('service_performance.contents.user_satisfaction.title') %>
           </a>
         </li>
       </ul>
 
       <div class="govuk-tabs__panel" id="epc-tab">
-        <h2 class="govuk-heading-l">Energy certificates uploaded</h2>
+        <h2 class="govuk-heading-l">  <%= t('service_performance.contents.epcs_upload.title') %></h2>
         <div class="govuk-body">
           <div class="govuk-grid-row">
             <div class="govuk-grid-column-full">
-          <%== erb :partial__stats_accordion, locals: { assessment_type: "SAP", values: locals[:assessments][:grouped]["SAP"], show_average_rating: true, header: "Domestic data – new building" } %>
-          <%== erb :partial__stats_accordion, locals: { assessment_type: "RdSAP", values: locals[:assessments][:grouped]["RdSAP"], show_average_rating: true, header: "Domestic data – existing building" } %>
-          <%== erb :partial__stats_accordion, locals: { assessment_type: "CEPC", values: locals[:assessments][:grouped]["CEPC"], show_average_rating: true, header: "Non-domestic data – commercial energy performance certificate" } %>
-          <%== erb :partial__stats_accordion, locals: { assessment_type: "DEC", values: locals[:assessments][:grouped]["DEC"], show_average_rating: false , header:  "Non-domestic data – display energy certificate" } %>
-          <%== erb :partial__stats_accordion, locals: { assessment_type: "DEC-RR", values: locals[:assessments][:grouped]["DEC-RR"], show_average_rating: false, header: "Non-domestic data – display energy certificate recommendation report" } %>
-          <%== erb :partial__stats_accordion, locals: { assessment_type: "AC-CERT", values: locals[:assessments][:grouped]["AC-CERT"], show_average_rating: false, header: "Non-domestic data – air conditioning reports" } %>
+          <%== erb :partial__stats_accordion, locals: { assessment_type: "SAP", values: locals[:assessments][:grouped]["SAP"], show_average_rating: true, header: t('service_performance.contents.epcs_upload.assessment_types.sap') } %>
+          <%== erb :partial__stats_accordion, locals: { assessment_type: "RdSAP", values: locals[:assessments][:grouped]["RdSAP"], show_average_rating: true, header: t('service_performance.contents.epcs_upload.assessment_types.rdsap') } %>
+          <%== erb :partial__stats_accordion, locals: { assessment_type: "CEPC", values: locals[:assessments][:grouped]["CEPC"], show_average_rating: true, header: t('service_performance.contents.epcs_upload.assessment_types.cepc') } %>
+          <%== erb :partial__stats_accordion, locals: { assessment_type: "DEC", values: locals[:assessments][:grouped]["DEC"], show_average_rating: false , header:  t('service_performance.contents.epcs_upload.assessment_types.dec') } %>
+          <%== erb :partial__stats_accordion, locals: { assessment_type: "DEC-RR", values: locals[:assessments][:grouped]["DEC-RR"], show_average_rating: false, header: t('service_performance.contents.epcs_upload.assessment_types.dec_rr')} %>
+          <%== erb :partial__stats_accordion, locals: { assessment_type: "AC-CERT", values: locals[:assessments][:grouped]["AC-CERT"], show_average_rating: false, header: t('service_performance.contents.epcs_upload.assessment_types.ac_rr') } %>
             </div>
           </div>
 
@@ -58,10 +58,12 @@
 
       <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="user-satisfaction-tab">
 
-        <h2 class="govuk-heading-l"> User satisfaction </h2>
+        <h2 class="govuk-heading-l"> <%= t('service_performance.contents.user_satisfaction.title') %> </h2>
         <%== erb :partial__user_satisfaction, locals: {values: locals[:user_satisfaction] } %>
 
       </div>
+
+
 
 
 
