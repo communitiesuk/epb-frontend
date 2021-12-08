@@ -3,21 +3,22 @@
   <%== erb :error_summary, locals: {errors:errors, error_form_ids:error_form_ids}  %>
 <% end %>
 
-
 <form method="post">
-  <fieldset class="govuk-fieldset">
-    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-      <h1 class="govuk-fieldset__heading">
-        <%= t('find_an_assessor.domestic_property_type.question_title') %>
-      </h1>
-    </legend>
-    <div class="govuk-form-group<% if errors[:domestic_type] %> govuk-form-group--error<% end %>">
-    <input type="hidden" name="lang" value="<%= I18n.locale.to_s %>" />
+  <div class="govuk-form-group<% if errors[:domestic_type] %> govuk-form-group--error<% end %>">
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+          <%= t('find_an_assessor.domestic_property_type.question_title') %>
+        </h1>
+      </legend>
+
+      <input type="hidden" name="lang" value="<%= I18n.locale.to_s %>" />
       <% if errors[:domestic_type] %>
           <span id='domestic_type-error' class="govuk-error-message">
             <span class="govuk-visually-hidden"><%= t('error.error') %></span><%== errors[:domestic_type] %>
           </span>
       <% end %>
+
       <div class="govuk-radios">
         <div class="govuk-radios__item">
           <input class="govuk-radios__input" id="<%= error_form_ids[0] %>" name="domestic_type" type="radio" value="<%= error_form_ids[0] %>" aria-describedby="RdSAP-item-hint">
@@ -38,9 +39,10 @@
           </div>
         </div>
       </div>
-    </div>
-    <button class="govuk-button" data-module="govuk-button" type="submit">
-      <%= t('find_an_assessor.property_type.cta') %>
-    </button>
-  </fieldset>
+    </fieldset>
+  </div>
+
+  <button class="govuk-button" data-module="govuk-button" type="submit">
+    <%= t('find_an_assessor.property_type.cta') %>
+  </button>
 </form>
