@@ -755,8 +755,8 @@ describe "Acceptance::Assessor", type: :feature do
 
       it "displays the tab value the same as the main header value" do
         expect(response.body).to include(
-                                 "<title>Is this property an existing or new building? – Getting a new energy certificate – GOV.UK</title>",
-                                   )
+          "<title>Is this property an existing or new building? – Getting a new energy certificate – GOV.UK</title>",
+        )
       end
     end
 
@@ -767,19 +767,19 @@ describe "Acceptance::Assessor", type: :feature do
 
       it "displays the tab value the same as the main header value" do
         expect(response.body).to include(
-                                   "<title>Error: Is this property an existing or new building? – Getting a new energy certificate – GOV.UK</title>",
-                                   )
+          "<title>Error: Is this property an existing or new building? – Getting a new energy certificate – GOV.UK</title>",
+        )
       end
 
       it "contains the required GDS error summary" do
         expect(
           response.body,
-          ).to have_css "div.govuk-error-summary h2.govuk-error-summary__title",
-                        text: "There is a problem"
+        ).to have_css "div.govuk-error-summary h2.govuk-error-summary__title",
+                      text: "There is a problem"
         expect(
           response.body,
-          ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
-                        text: "Select a type of property"
+        ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
+                      text: "Select a type of property"
         expect(response.body).to have_link "Select a type of property",
                                            href: "#domesticRdSap"
         expect(response.body).to have_css "#domesticRdSap"
