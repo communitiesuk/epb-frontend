@@ -127,4 +127,22 @@ describe "Acceptance::ServicePerformance", type: :feature do
       end
     end
   end
+
+  describe "get . find-energy-certificate/service-performance?lang=cy " do
+    let(:response) do
+      get "http://find-energy-certificate.epb-frontend/service-performance?lang=cy"
+    end
+
+    before do
+      ServicePerformance::CountryStatsStub.statistics
+    end
+
+    it "has the correct Welsh title" do
+      expect(response.body).to include("<title>Gwirio sut mae'r gwasanaeth hwn yn perfformio</title>")
+    end
+
+    it "has the correct Welsh H1" do
+      expect(response.body).to have_css("h1", text: "Gwirio sut mae'r gwasanaeth hwn yn perfformio")
+    end
+  end
 end

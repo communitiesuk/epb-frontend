@@ -497,6 +497,44 @@ en:
     no_certificates: 'There are no certificates or reports matching that certificate number.'
     list: '%{length} certificates and reports for %{reference_number}'
 
+  service_performance:
+    title: "Service Performance"
+    heading: "Check how this service is performing"
+    intro: "Use this page to find data on:"
+    intro_list_item_one: "the number of energy certificates uploaded to the Energy Performance of Buildings Register"
+    intro_list_item_two: "the average energy rating for domestic and non-domestic properties"
+    intro_list_item_three: "user satisfaction"
+    covering_statement: "This data covers England and Wales, and Northern Ireland."
+    updated_statement: "Updated: monthly"
+    contents:
+      epcs_upload:
+        title: "Energy certificates uploaded"
+        tables:
+          titles:
+            all: "All Regions"
+            england: "England and Wales"
+            ni: "Northern Ireland"
+          headers:
+            month: "Month"
+            num_uploaded: "Number uploaded"
+            avg_rating: "Average energy rating"
+        download_link: "Download a copy of the data for "
+        assessment_types:
+          sap: "Domestic data – new building"
+          rdsap: "Domestic data – existing building"
+          cepc: "Non-domestic data – commercial energy performance certificate"
+          dec: "Non-domestic data – display energy certificate"
+          dec_rr: "Non-domestic data – display energy certificate recommendation report"
+          ac_rr: "Non-domestic data – air conditioning reports"
+      user_satisfaction:
+        title: "User satisfaction"
+        intro: "This data is collected on a monthly basis from our service feedback form."
+        table_headers:
+          - Very satisfied
+          - Satisfied
+          - Neutral
+          - Dissatisfied
+          - Very dissatisfied
   component:
     share:
       share_certificate: "Share this certificate"
@@ -1844,3 +1882,19 @@ en:
       intro: "We use cookies to collect information about how you use this service. This helps us to improve our website and make it work as well as possible."
       positive: "Accept all cookies"
       negative: "Set cookie preferences"
+
+  date:
+    abbr_month_names:
+      -
+      - Jan
+      - Feb
+      - Mar
+      - Apr
+      - May
+      - Jun
+      - Jul
+      - Aug
+      - Sep
+      - Oct
+      - Nov
+      - Dec
