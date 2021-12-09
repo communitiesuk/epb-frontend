@@ -112,6 +112,11 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
       it "has domestic property type pre-selected" do
         expect(find("#domesticRdSap", visible: :all)).to be_checked
       end
+
+      it "goes back from Domestic property type page to Property type page" do
+        click_on "Back"
+        expect(page).to have_content "What type of property is the certificate for?"
+      end
     end
   end
 

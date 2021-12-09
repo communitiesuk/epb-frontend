@@ -97,7 +97,7 @@ class FrontendService < Sinatra::Base
         "#{t('find_an_assessor.domestic_property_type.question_title')} – #{
           t('services.getting_an_energy_certificate')
         } – #{t('layout.body.govuk')}"
-      back_link root_page_url
+      back_link "/find-an-assessor/type-of-property"
 
       if request.post? && params["domestic_type"].nil?
         @errors = {
