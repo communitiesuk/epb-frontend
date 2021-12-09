@@ -21,7 +21,6 @@ describe "Acceptance::AccessibilityStatement", type: :feature do
 
       it "has three links in the footer" do
         expect(response.body).to have_css("footer ul.govuk-footer__inline-list li", count: 3)
-
       end
 
       it "has a link in the footer for the accessibility statement" do

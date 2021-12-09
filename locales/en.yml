@@ -498,7 +498,7 @@ en:
     list: '%{length} certificates and reports for %{reference_number}'
 
   service_performance:
-    title: "Service Performance"
+    title: "Service performance"
     heading: "Check how this service is performing"
     intro: "Use this page to find data on:"
     intro_list_item_one: "the number of energy certificates uploaded to the Energy Performance of Buildings Register"
