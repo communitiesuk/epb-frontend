@@ -21,7 +21,7 @@
 
       <div class="govuk-radios">
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="<%= error_form_ids[0] %>" name="domestic_type" type="radio" value="<%= error_form_ids[0] %>" aria-describedby="RdSAP-item-hint">
+          <input class="govuk-radios__input" id="<%= error_form_ids[0] %>" name="domestic_type" type="radio" value="<%= error_form_ids[0] %>" <%= params[:domestic_type] == "domesticRdSap" ? "checked" : "" %> aria-describedby="RdSAP-item-hint">
           <label id="label-domesticRdSap" class="govuk-label govuk-radios__label" for="<%= error_form_ids[0] %>">
             <%= t('find_an_assessor.domestic_property_type.options.rdsap.title') %>
           </label>
@@ -30,7 +30,7 @@
           </div>
         </div>
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="SAP" name="domestic_type" type="radio" value="domesticSap" aria-describedby="SAP-item-hint">
+          <input class="govuk-radios__input" id="SAP" name="domestic_type" type="radio" value="domesticSap" <%= params[:domestic_type] == "domesticSap" ? "checked" : "" %> aria-describedby="SAP-item-hint">
           <label id="label-domesticSap" class="govuk-label govuk-radios__label" for="SAP">
             <%= t('find_an_assessor.domestic_property_type.options.sap.title') %>
           </label>

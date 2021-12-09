@@ -99,6 +99,20 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
         expect(page).to have_link "Enter a real postcode"
       end
     end
+
+    context "when going back in the flow" do
+      before do
+        click_on "Back"
+      end
+
+      it "goes back from Postcode page to Domestic property type page" do
+        expect(page).to have_content "Is this property an existing or new building?"
+      end
+
+      it "has domestic property type pre-selected" do
+        expect(find("#domesticRdSap", visible: :all)).to be_checked
+      end
+    end
   end
 
   context "when finding a domestic assessor by name" do

@@ -106,10 +106,8 @@ class FrontendService < Sinatra::Base
         @page_title = "#{t('error.error')}#{@page_title}"
       end
 
-      if params["domestic_type"]
-        redirect localised_url(
-          "/find-an-assessor/search-by-postcode?#{query}",
-        )
+      if params["domestic_type"] && (request.referrer && !request.referrer.include?("/find-an-assessor/search-by-postcode"))
+        redirect localised_url("/find-an-assessor/search-by-postcode?#{query}")
       end
 
       show(:find_assessor__domestic_type, { lang: params[:lang] })
@@ -263,7 +261,7 @@ class FrontendService < Sinatra::Base
     @errors = {}
     locals = {}
     erb_template = :find_assessor_by_postcode
-    back_link "/find-an-assessor/type-of-domestic-property"
+    back_link "/find-an-assessor/type-of-domestic-property?domestic_type=#{params['domestic_type']}"
     qualification = params["domestic_type"] || "domesticRdSap,domesticSap"
 
     response = @container.get_object(:find_assessor_by_postcode_use_case)
