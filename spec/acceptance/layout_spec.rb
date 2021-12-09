@@ -15,16 +15,28 @@ describe "Acceptance::AccessibilityStatement", type: :feature do
         )
       end
 
-      it "contains a footer link to the accessibility statement" do
-        expect(response.body).to include(
-          '<a class="govuk-footer__link" href="/accessibility-statement">',
-        )
+      it "has a footer" do
+        expect(response.body).to have_css("footer")
       end
 
-      it "contains a footer link to the cookies page" do
-        expect(response.body).to include(
-          '<a class="govuk-footer__link" href="/cookies">',
-        )
+      it "has three links in the footer" do
+        expect(response.body).to have_css("footer ul.govuk-footer__inline-list li", count: 3)
+
+      end
+
+      it "has a link in the footer for the accessibility statement" do
+        expect(response.body).to have_css("footer ul.govuk-footer__inline-list li:nth-child(1) a", text: "Accessibility statement")
+        expect(response.body).to have_link("Accessibility statement", href: "/accessibility-statement")
+      end
+
+      it "has a link in the footer for the cookies page" do
+        expect(response.body).to have_css("footer ul.govuk-footer__inline-list li:nth-child(2) a", text: "Cookies on our service")
+        expect(response.body).to have_link("Cookies on our service", href: "/cookies")
+      end
+
+      it "has a link in the footer for the service performance" do
+        expect(response.body).to have_css("footer ul.govuk-footer__inline-list li:nth-child(3) a", text: "Service performance")
+        expect(response.body).to have_link("Service performance", href: "/service-performance")
       end
 
       it "includes the gov header" do
