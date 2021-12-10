@@ -13,9 +13,9 @@ class FrontendService < Sinatra::Base
 
   set :erb, escape_html: true
   set :public_folder, (proc { File.join(root, "/../public") })
-  # if ENV["STAGE"] == "test"
-  #   set :show_exceptions, false
-  # end
+  if ENV["STAGE"] == "test"
+    set :show_exceptions, :after_handler
+  end
 
   configure :development do
     require "sinatra/reloader"

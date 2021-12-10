@@ -32,8 +32,8 @@ describe "Acceptance::ServiceUnavailable", type: :feature do
       expect(response.status).to be 200
     end
 
-    # it "returns a service unavailable page on any existing route" do
-    #   expect(response.body).to include("<title>Sorry, the service is unavailable</title>")
-    # end
+    it "returns a service unavailable page on any existing route" do
+      expect(response.body).to include("<title>Sorry, the service is unavailable</title>")
+    end
   end
 end
