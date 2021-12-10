@@ -1,0 +1,11 @@
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl"><%= t('service_unavailable.title') %></h1>
+    <p class="govuk-body">
+      <%= t('service_unavailable.try_later') %>
+    </p>
+    <p class="govuk-body">
+      <%== t('service_unavailable.help_desk.need_support', :link => '<a class="govuk-link" href="' + t('service_unavailable.help_desk.url.url') + '">' + t('service_unavailable.help_desk.link') + '</a>' ) %>
+    </p>
+  </div>
+</div>

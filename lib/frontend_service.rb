@@ -13,6 +13,9 @@ class FrontendService < Sinatra::Base
 
   set :erb, escape_html: true
   set :public_folder, (proc { File.join(root, "/../public") })
+  if ENV["STAGE"] == "test"
+    set :show_exceptions, :after_handler
+  end
 
   configure :development do
     require "sinatra/reloader"
@@ -30,7 +33,10 @@ class FrontendService < Sinatra::Base
     @logger.level = Logger::INFO
   end
 
-  before { set_locale }
+  before do
+    set_locale
+    raise MaintenanceMode if request.path != "/healthcheck" && Helper::Toggles.enabled?("register-api-maintenance-mode")
+  end
 
   getting_new_energy_certificate_host_name = "getting-new-energy-certificate"
   find_energy_certificate_host_name = "find-energy-certificate"
@@ -1004,6 +1010,15 @@ class FrontendService < Sinatra::Base
 
     status 404
     erb :error_page_404 unless @errors
+  end
+
+  class MaintenanceMode < RuntimeError; end
+  error MaintenanceMode do
+    status 503
+    @remove_back_link = true
+    @page_title =
+      "#{t('service_unavailable.title')} - #{t('layout.body.govuk')}"
+    erb :service_unavailable
   end
 
   def server_error(exception)
