@@ -511,7 +511,7 @@ en:
         title: "Energy certificates uploaded"
         tables:
           titles:
-            all: "All Regions"
+            all: "All regions"
             england: "England and Wales"
             ni: "Northern Ireland"
           headers:

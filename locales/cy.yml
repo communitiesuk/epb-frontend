@@ -498,7 +498,7 @@ cy:
     list: "%{length} o dystysgrifau ac adroddiadau ar gyfer %{reference_number}"
 
   service_performance:
-    title: "Perfformiad y Gwasanaeth"
+    title: "Perfformiad y gwasanaeth"
     heading: "Gwirio sut mae'r gwasanaeth hwn yn perfformio"
     intro: "Defnyddiwch y tudalen hwn i ddod o hyd i ddata ar y canlynol:"
     intro_list_item_one: "nifer y tystysgrifau ynni a uwchlwythwyd i'r Gofrestr Perfformiad Ynni Adeiladau"
@@ -1899,4 +1899,3 @@ cy:
       - Hyd
       - Tach
       - Rhag
-
