@@ -13,6 +13,9 @@ class FrontendService < Sinatra::Base
 
   set :erb, escape_html: true
   set :public_folder, (proc { File.join(root, "/../public") })
+  # if ENV["STAGE"] == "test"
+  #   set :show_exceptions, false
+  # end
 
   configure :development do
     require "sinatra/reloader"
@@ -20,7 +23,7 @@ class FrontendService < Sinatra::Base
     also_reload "lib/**/*.rb"
   end
 
-  def initialize
+  def initialize()
     super
     setup_locales
     @toggles = Helper::Toggles
@@ -30,10 +33,33 @@ class FrontendService < Sinatra::Base
     @logger.level = Logger::INFO
   end
 
-  before { set_locale }
+  before do
+    set_locale
+    pp "toggle is on and not health check" if request.path != "/healthcheck" && Helper::Toggles.enabled?("register-api-maintenance-mode")
+    raise MaintenanceMode if (request.path != "/healthcheck" && Helper::Toggles.enabled?("register-api-maintenance-mode"))
+  end
 
   getting_new_energy_certificate_host_name = "getting-new-energy-certificate"
   find_energy_certificate_host_name = "find-energy-certificate"
+
+  # def maintenance_mode
+  #     pp "you have hit inside the method"
+  #     status 503
+  #     @remove_back_link = true
+  #     @page_title =
+  #       "#{t('service_unavailable.title')} - #{t('layout.body.govuk')}"
+  #     erb :service_unavailable, layout: :layout
+  # end
+
+  class MaintenanceMode < RuntimeError; end
+  error MaintenanceMode do
+    pp "you have hit inside the error"
+    status 503
+    @remove_back_link = true
+    @page_title =
+      "#{t('service_unavailable.title')} - #{t('layout.body.govuk')}"
+    erb :service_unavailable
+  end
 
   get "/", host_name: /#{getting_new_energy_certificate_host_name}/ do
     redirect(static_start_page, 301) if static_start_page?

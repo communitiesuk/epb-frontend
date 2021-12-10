@@ -1853,3 +1853,11 @@ en:
       intro: "We use cookies to collect information about how you use this service. This helps us to improve our website and make it work as well as possible."
       positive: "Accept all cookies"
       negative: "Set cookie preferences"
+
+  service_unavailable:
+    title: "Sorry, the service is unavailable"
+    try_later: "You will be able to use the service later."
+    help_desk:
+      need_support: "%{link} if you need support to find an energy certificate or report."
+      link: "Contact our helpdesk"
+      url: "https://design-system.service.gov.uk/patterns/service-unavailable-pages/"

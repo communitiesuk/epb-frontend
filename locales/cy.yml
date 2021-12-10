@@ -1853,3 +1853,8 @@ cy:
       intro: "Rydyn ni’n defnyddio cwcis i gasglu gwybodaeth am sut rydych chi’n defnyddio’r gwasanaeth hwn. Mae hyn yn ein helpu i wella’n gwefan a gwneud iddi weithio cystal â phosibl."
       positive: "Derbyn pob cwci"
       negative: "Gosod dewisiadau cwcis"
+
+  service_unavailable:
+    title: "WELSH Sorry, the service is unavailable"
+    try_later: "WELSH You will be able to use the service later."
+    help_desk: "WELSH Contact our helpdesk if you need support to find an energy certificate or report."
