@@ -2,9 +2,27 @@
   <h2 class="govuk-heading-l"><%= "#{header} (#{assessment_type})" %></h2>
 
   <% sections = [
-      { heading: t('service_performance.contents.epcs_upload.tables.titles.all'), content: erb(:partial__stats_table, locals: { assessment_type: assessment_type, values: values["all"], show_average_rating: show_average_rating, region: t('service_performance.contents.epcs_upload.tables.titles.all').downcase, country_param: "all" })},
-      { heading: t('service_performance.contents.epcs_upload.tables.titles.england'), content: erb(:partial__stats_table, locals: { assessment_type: assessment_type, values: values["England & Wales"], show_average_rating: show_average_rating, region: t('service_performance.contents.epcs_upload.tables.titles.england'), country_param: "england-wales" })},
-      { heading: t('service_performance.contents.epcs_upload.tables.titles.ni'), content: erb(:partial__stats_table, locals: { assessment_type: assessment_type, values: values["Northern Ireland"], show_average_rating: show_average_rating, region:  t('service_performance.contents.epcs_upload.tables.titles.ni'), country_param: "northern-ireland" })},
+      { heading: t('service_performance.contents.epcs_upload.tables.titles.all'),
+        content: erb(:partial__stats_table, locals: {
+          assessment_type: assessment_type,
+          country_key: "all",
+          values: values["all"],
+          show_average_rating: show_average_rating,
+        })},
+      { heading: t('service_performance.contents.epcs_upload.tables.titles.england_wales'),
+        content: erb(:partial__stats_table, locals: {
+          assessment_type: assessment_type,
+          country_key: "england_wales",
+          values: values["England & Wales"],
+          show_average_rating: show_average_rating,
+        })},
+      { heading: t('service_performance.contents.epcs_upload.tables.titles.northern_ireland'),
+        content: erb(:partial__stats_table, locals: {
+          assessment_type: assessment_type,
+          country_key: "northern_ireland",
+          values: values["Northern Ireland"],
+          show_average_rating: show_average_rating,
+        })},
   ] %>
   <%== erb :design_system__accordion, locals: { sections: sections, identifier: assessment_type }  %>
 <% end %>

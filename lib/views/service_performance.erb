@@ -52,23 +52,15 @@
           <%== erb :partial__stats_accordion, locals: { assessment_type: "AC-CERT", values: locals[:assessments][:grouped]["AC-CERT"], show_average_rating: false, header: t('service_performance.contents.epcs_upload.assessment_types.ac_rr') } %>
             </div>
           </div>
-
         </div>
       </div>
 
       <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="user-satisfaction-tab">
-
         <h2 class="govuk-heading-l"> <%= t('service_performance.contents.user_satisfaction.title') %> </h2>
         <%== erb :partial__user_satisfaction, locals: {values: locals[:user_satisfaction] } %>
-
       </div>
 
-
-
-
-
     </div>
-
   </div>
 </div>
 <script src="/javascript/govuk.js"></script>

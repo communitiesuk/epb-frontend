@@ -512,8 +512,8 @@ cy:
         tables:
           titles:
             all: "Pob rhanbarth"
-            england: "Cymru a Lloegr"
-            ni: "Gogledd Iwerddon"
+            england_wales: "Cymru a Lloegr"
+            northern_ireland: "Gogledd Iwerddon"
           headers:
             month: "Mis"
             num_uploaded: "Nifer a uwchlwythwyd"

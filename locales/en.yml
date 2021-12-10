@@ -512,8 +512,8 @@ en:
         tables:
           titles:
             all: "All regions"
-            england: "England and Wales"
-            ni: "Northern Ireland"
+            england_wales: "England and Wales"
+            northern_ireland: "Northern Ireland"
           headers:
             month: "Month"
             num_uploaded: "Number uploaded"
