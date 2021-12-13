@@ -1012,7 +1012,9 @@ class FrontendService < Sinatra::Base
     erb :error_page_404 unless @errors
   end
 
-  class MaintenanceMode < RuntimeError; end
+  class MaintenanceMode < RuntimeError
+    include Errors::DoNotReport
+  end
   error MaintenanceMode do
     status 503
     @remove_back_link = true
