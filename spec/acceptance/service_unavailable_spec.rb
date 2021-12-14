@@ -35,5 +35,9 @@ describe "Acceptance::ServiceUnavailable", type: :feature do
     it "returns a service unavailable page on any existing route" do
       expect(Capybara.string(response.body).title).to include("Sorry, the service is unavailable")
     end
+
+    it "displays an email link for the helpdesk within the copy" do
+      expect(Capybara.string(response.body).find(:css, "p.govuk-body a")[:href]).to include "mailto:"
+    end
   end
 end
