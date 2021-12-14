@@ -1855,8 +1855,8 @@ cy:
       negative: "Gosod dewisiadau cwcis"
 
   service_unavailable:
-    title: "WELSH Sorry, the service is unavailable"
-    try_later: "WELSH You will be able to use the service later."
+    title: "Ymddiheuriadau. Nid yw'r gwasanaeth ar gael."
+    try_later: "Byddwch yn gallu defnyddio'r gwasanaeth yn nes ymlaen."
     help_desk:
-      need_support: "WELSH %{link} if you need support to find an energy certificate or report."
-      link: "WELSH Contact our helpdesk"
+      need_support: "Os oes arnoch angen help i ddod o hyd i dystysgrif ynni neu adroddiad, %{link}."
+      link: "cysylltwch â'n desg gymorth"
