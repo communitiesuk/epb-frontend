@@ -1860,4 +1860,3 @@ en:
     help_desk:
       need_support: "%{link} if you need support to find an energy certificate or report."
       link: "Contact our helpdesk"
-      url: "https://design-system.service.gov.uk/patterns/service-unavailable-pages/"

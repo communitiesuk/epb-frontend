@@ -1857,4 +1857,6 @@ cy:
   service_unavailable:
     title: "WELSH Sorry, the service is unavailable"
     try_later: "WELSH You will be able to use the service later."
-    help_desk: "WELSH Contact our helpdesk if you need support to find an energy certificate or report."
+    help_desk:
+      need_support: "WELSH %{link} if you need support to find an energy certificate or report."
+      link: "WELSH Contact our helpdesk"
