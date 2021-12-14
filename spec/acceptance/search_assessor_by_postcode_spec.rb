@@ -9,7 +9,7 @@ describe "Acceptance::Postcodes" do
 
   context "when given a valid postcode" do
     context "with nearby assessors" do
-      let(:response) { find_assessor.execute("SW1A 2AA") }
+      let(:response) { find_assessor.execute("SW1A 2AA", nil) }
       let(:assessor) { response[:data][:assessors].first }
 
       before { FindAssessor::ByPostcode::Stub.search_by_postcode("SW1A 2AA") }
@@ -58,7 +58,7 @@ describe "Acceptance::Postcodes" do
       end
 
       it "returns empty results" do
-        expect(find_assessor.execute("BF1 3AA")[:data][:assessors]).to eq([])
+        expect(find_assessor.execute("BF1 3AA", nil)[:data][:assessors]).to eq([])
       end
     end
 
@@ -71,7 +71,7 @@ describe "Acceptance::Postcodes" do
 
       it "raises postcode not registered exception" do
         expect {
-          find_assessor.execute("B11 4AA")
+          find_assessor.execute("B11 4AA", nil)
         }.to raise_exception Errors::PostcodeNotRegistered
       end
     end
@@ -85,7 +85,7 @@ describe "Acceptance::Postcodes" do
 
       it "raises postcode not valid exception" do
         expect {
-          find_assessor.execute("C11 3FF")
+          find_assessor.execute("C11 3FF", nil)
         }.to raise_exception Errors::PostcodeNotValid
       end
     end

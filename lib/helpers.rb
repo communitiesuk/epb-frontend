@@ -21,6 +21,7 @@ module Helpers
   }.freeze
 
   DOMESTIC_CERTIFICATE_TYPES = %w[RdSAP SAP].freeze
+  DOMESTIC_TYPE_QUALIFICATION_PARAMS = %w[domesticSap domesticRdSap].freeze
 
   def valid_postcode
     Regexp.new("^[a-zA-Z0-9_ ]{4,10}$", Regexp::IGNORECASE)
@@ -28,6 +29,13 @@ module Helpers
 
   def self.domestic_certificate_type?(type_of_certificate)
     DOMESTIC_CERTIFICATE_TYPES.include? type_of_certificate
+  end
+
+  def self.cleansed_domestic_qualification_type_param(raw_param)
+    return nil if raw_param.nil?
+
+    dom_qual_list = raw_param.split(",").select { |qual| DOMESTIC_TYPE_QUALIFICATION_PARAMS.include? qual }
+    dom_qual_list.empty? ? nil : dom_qual_list.join(",")
   end
 
   def set_subdomain_url(subdomain)

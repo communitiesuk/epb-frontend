@@ -6,7 +6,7 @@ describe UseCase::FindAssessorByPostcode do
       described_class.new(AssessorsGateway::UnregisteredPostcodeStub.new)
 
     expect {
-      find_assessors_without_existing_postcode.execute("E10 3AD")
+      find_assessors_without_existing_postcode.execute("E10 3AD", nil)
     }.to raise_exception Errors::PostcodeNotRegistered
   end
 
@@ -15,7 +15,7 @@ describe UseCase::FindAssessorByPostcode do
       described_class.new(AssessorsGateway::InvalidPostcodesStub.new)
 
     expect {
-      find_assessor_without_valid_postcode.execute("E19 0GL")
+      find_assessor_without_valid_postcode.execute("E19 0GL", nil)
     }.to raise_exception Errors::PostcodeNotValid
   end
 
@@ -24,7 +24,7 @@ describe UseCase::FindAssessorByPostcode do
     let(:find_assessor) { described_class.new(assessors_gateway) }
 
     it "returns empty array" do
-      expect(find_assessor.execute("SW1A+2AA")[:data][:assessors]).to eq([])
+      expect(find_assessor.execute("SW1A+2AA", nil)[:data][:assessors]).to eq([])
     end
   end
 
@@ -66,13 +66,13 @@ describe UseCase::FindAssessorByPostcode do
     let(:find_assessor) { described_class.new(assessors_gateway) }
 
     it "returns list of assessors" do
-      expect(find_assessor.execute("SW1A+2AB")[:data][:assessors]).to eq(
+      expect(find_assessor.execute("SW1A+2AB", nil)[:data][:assessors]).to eq(
         valid_assessors,
       )
     end
 
     it "returns list of assessors when the postcode includes leading or trailing whitespaces" do
-      expect(find_assessor.execute(" SW1A+2AB ")[:data][:assessors]).to eq(
+      expect(find_assessor.execute(" SW1A+2AB ", nil)[:data][:assessors]).to eq(
         valid_assessors,
       )
     end

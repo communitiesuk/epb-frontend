@@ -259,6 +259,31 @@ describe "Acceptance::Assessor", type: :feature do
         end
       end
 
+      context "with missing or invalid invalid domestic_type parameters" do
+        before { FindAssessor::ByPostcode::Stub.search_by_postcode("SW1A 2AA") }
+
+        # The tests in this context rely on the fact that the *only* stubbed API
+        # call has the default "domesticSap,domesticRdSap" domestic_type parameter
+        # so if the test API route is called with any other values for the param
+        # then we will get a 500 response when WebMock rejects it
+
+        let(:response) do
+          get ""
+        end
+
+        it "submits valid values for domestic_type to the API" do
+          urls_with_invalid_domestic_type = %w[
+            http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/search-by-postcode?domestic_type=&postcode=SW1A+2AA
+            http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/search-by-postcode?domestic_type=INVALID_NOT_A_DOMESTIC_TYPE&postcode=SW1A+2AA
+            http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/search-by-postcode?domestic_type=domesticSap,domesticRdSap,NOT_A_DOMESTIC_TYPE&postcode=SW1A+2AA
+          ]
+          urls_with_invalid_domestic_type.each do |bad_url|
+            response = get bad_url
+            expect(response.status).to eq 200
+          end
+        end
+      end
+
       context "when showing results page" do
         before { FindAssessor::ByPostcode::Stub.search_by_postcode("SW1A 2AA", "domesticRdSap") }
 
