@@ -21,6 +21,11 @@ generate-manifest: ## Generate manifest file for PaaS
 	$(if ${PAAS_SPACE},,$(error Must specify PAAS_SPACE))
 	@scripts/generate-paas-manifest.sh ${DEPLOY_APPNAME} ${PAAS_SPACE} > manifest.yml
 
+.PHONY: generate-autoscaling-policy
+generate-autoscaling-policy: ## Generate policy for Cloud Foundry App Auto-Scaler
+	$(if ${PAAS_SPACE},,$(error Must specify PAAS_SPACE))
+	@scripts/generate-autoscaling-policy.sh ${PAAS_SPACE} > autoscaling-policy.json
+
 .PHONY: frontend-build
 frontend-build: ## Run the frontend build process to compile sass and move asset files to public
 	@echo "Building frontend assets..."
@@ -58,6 +63,11 @@ deploy-app: ## Deploys the app to PaaS
 	cf set-env "${DEPLOY_APPNAME}" PERMANENTLY_BANNED_IP_ADDRESSES "${subst ",\",${PERMANENTLY_BANNED_IP_ADDRESSES}}"
 
 	cf push "${DEPLOY_APPNAME}" --strategy rolling
+
+	@if [ ${PAAS_SPACE} = "integration" ]; then\
+		@$(MAKE) generate-autoscaling-policy;\
+		cf attach-autoscaling-policy "${DEPLOY_APPNAME}" autoscaling-policy.json;\
+	fi
 
 .PHONY: test
 test:
