@@ -3,7 +3,6 @@ window.addEventListener("load", function() {
   translate_welsh()
 }, false);
 
-
 function translate_welsh(){
   const lang = getUrlParameter('lang');
   if (lang === 'cy'){
@@ -11,14 +10,20 @@ function translate_welsh(){
   }
 }
 
-
 function updateText(){
-  let buttons =  document.querySelectorAll("button.govuk-accordion__open-all");
+  let buttons = document.querySelectorAll("button.govuk-accordion__open-all");
   buttons.forEach((button) => {
     button.innerText = "Agor pob un";
+    button.addEventListener('click', function() {
+      let is_expanded = this.ariaExpanded;
+
+      let text = "Agor pob un";
+      if (is_expanded == "true") { text = "Cau pob un" };
+
+      this.innerText = text;
+    })
   });
 }
-
 
 function getUrlParameter(name) {
   name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
