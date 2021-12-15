@@ -47,15 +47,13 @@ cy:
         accepted: "Rydych chi wedi derbyn cwcis dadansoddeg. %{change_settings_link}"
         rejected: "Rydych chi wedi gwrthod cwcis dadansoddeg. %{change_settings_link}"
         hide_message: "Cuddio’r neges hon"
-      beta:
-        heading: beta
-        description: 'Gwasanaeth newydd yw hwn a bydd eich <a class="govuk-link" href="https://forms.office.com/Pages/ResponsePage.aspx?id=EGg0v32c3kOociSi7zmVqHjpWgKFmwZGtrWhJ7I-WptUQzlDR0M5UllHQTI1NjNCNUtKRVdFRU9RUS4u">adborth</a> yn ein helpu i’w wella.'
       breadcrumb:
         back: "Yn ôl"
       footer:
         heading: "Dolenni cymorth"
         accessibility_statement: 'Datganiad ar hygyrchedd'
         cookies: 'Cwcis ar ein gwasanaeth ni'
+        feedback: 'WELSH Feedback'
         license: "Mae’r cynnwys i gyd ar gael o dan y <a class=\"govuk-footer__link\" href=\"https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/\" rel=\"license\">Drwydded Llywodraeth Agored v3.0</a>,  ac eithrio lle nodir fel arall."
         copyright: "<a class=\"govuk-footer__link govuk-footer__copyright-logo\" href=\"https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/\">&copy; Crown copyright</a>"
 
