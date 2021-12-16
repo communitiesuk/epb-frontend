@@ -20,4 +20,5 @@ applications:
   health-check-http-endpoint: /healthcheck
   services:
     - mhclg-epb-redis-ratelimit-$STAGE
+    - dluhc-scale-frontend-ui-$STAGE
 EOF

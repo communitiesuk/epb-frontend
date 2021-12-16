@@ -41,6 +41,7 @@ deploy-app: ## Deploys the app to PaaS
 
 	@$(MAKE) frontend-build
 	@$(MAKE) generate-manifest
+	@$(MAKE) generate-autoscaling-policy
 
 	cf apply-manifest -f manifest.yml
 
@@ -63,6 +64,8 @@ deploy-app: ## Deploys the app to PaaS
 	cf set-env "${DEPLOY_APPNAME}" PERMANENTLY_BANNED_IP_ADDRESSES "${subst ",\",${PERMANENTLY_BANNED_IP_ADDRESSES}}"
 
 	cf push "${DEPLOY_APPNAME}" --strategy rolling
+
+	cf attach-autoscaling-policy "${DEPLOY_APPNAME}" autoscaling-policy.json
 
 .PHONY: test
 test:
