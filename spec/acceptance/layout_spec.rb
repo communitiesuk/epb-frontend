@@ -9,6 +9,20 @@ describe "Acceptance::AccessibilityStatement", type: :feature do
         get "http://getting-new-energy-certificate.local.gov.uk/"
       end
 
+      context "when environment is production" do
+        before { stub_const("ENV", { "STAGE" => "production" }) }
+
+        it "doesn't have a banner in production" do
+          page = get "http://getting-new-energy-certificate.local.gov.uk/"
+
+          expect(page.body).not_to have_css("div .govuk-phase-banner", text: "This is a non-production environment")
+        end
+      end
+
+      it "has a banner in non-production environment" do
+        expect(response.body).to have_css("div .govuk-phase-banner", text: "This is a non-production environment")
+      end
+
       it "tab value is the same as the main header value" do
         expect(response.body).to include(
           "<title>Getting a new energy certificate – Getting a new energy certificate – GOV.UK</title>",
