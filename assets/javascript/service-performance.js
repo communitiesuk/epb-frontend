@@ -13,12 +13,12 @@ function translate_welsh(){
 function updateText(){
   let buttons = document.querySelectorAll("button.govuk-accordion__open-all");
   buttons.forEach((button) => {
-    button.innerText = "Agor pob un";
+    button.innerText = "Agor pob adran";
     button.addEventListener('click', function() {
       let is_expanded = this.ariaExpanded;
 
-      let text = "Agor pob un";
-      if (is_expanded == "true") { text = "Cau pob un" };
+      let text = "Agor pob adran";
+      if (is_expanded == "true") { text = "Cau pob adran" };
 
       this.innerText = text;
     })
