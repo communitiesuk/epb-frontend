@@ -19,8 +19,8 @@ describe "Acceptance::AccessibilityStatement", type: :feature do
         expect(response.body).to have_css("footer")
       end
 
-      it "has three links in the footer" do
-        expect(response.body).to have_css("footer ul.govuk-footer__inline-list li", count: 3)
+      it "has four links in the footer" do
+        expect(response.body).to have_css("footer ul.govuk-footer__inline-list li", count: 4)
       end
 
       it "has a link in the footer for the accessibility statement" do
@@ -33,8 +33,13 @@ describe "Acceptance::AccessibilityStatement", type: :feature do
         expect(response.body).to have_link("Cookies on our service", href: "/cookies")
       end
 
+      it "has a link in the footer for the feedback form" do
+        expect(response.body).to have_css("footer ul.govuk-footer__inline-list li:nth-child(3) a", text: "Feedback")
+        expect(response.body).to have_link("Feedback", href: "https://forms.office.com/Pages/ResponsePage.aspx?id=EGg0v32c3kOociSi7zmVqHjpWgKFmwZGtrWhJ7I-WptUQzlDR0M5UllHQTI1NjNCNUtKRVdFRU9RUS4u")
+      end
+
       it "has a link in the footer for the service performance" do
-        expect(response.body).to have_css("footer ul.govuk-footer__inline-list li:nth-child(3) a", text: "Service performance")
+        expect(response.body).to have_css("footer ul.govuk-footer__inline-list li:nth-child(4) a", text: "Service performance")
         expect(response.body).to have_link("Service performance", href: "/service-performance")
       end
 
