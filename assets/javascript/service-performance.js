@@ -1,4 +1,4 @@
-export {translate_welsh, updateText, getUrlParameter}
+export {translate_welsh, getUrlParameter}
 
 
 window.addEventListener("load", function() {
