@@ -17,7 +17,7 @@ source "https://rubygems.org" do
     gem "webmock", "~> 3.14"
   end
 
-  gem "csv", "~> 3.2", ">= 3.2.1"
+  gem "csv", "~> 3.2"
   gem "epb-auth-tools", "~> 1.0.8"
   gem "erubis", "~> 2.7"
   gem "i18n", "~> 1.8.11"
