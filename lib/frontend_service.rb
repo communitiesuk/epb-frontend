@@ -947,11 +947,13 @@ class FrontendService < Sinatra::Base
     status 200
     @page_title =
       "#{t('accessibility_statement.top_heading')} - #{t('layout.body.govuk')}"
+    back_link false
     erb :accessibility_statement
   end
 
   get "/cookies" do
     @page_title = "#{t('cookies.title')} - #{t('layout.body.govuk')}"
+    back_link false
     status 200
     erb :cookies
   end
@@ -963,6 +965,7 @@ class FrontendService < Sinatra::Base
   get "/service-performance" do
     @page_title = t("service_performance.heading")
     status 200
+    back_link false
     erb_template = :service_performance
     use_case = @container.get_object(:fetch_statistics_use_case)
     data = use_case.execute
