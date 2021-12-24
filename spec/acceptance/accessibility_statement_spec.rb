@@ -44,6 +44,10 @@ describe "Acceptance::AccessibilityStatement", type: :feature do
           "The content listed below is non-accessible for the following reasons.",
         )
       end
+
+      it "does not contain a back link" do
+        expect { Capybara.string(response.body).find("a.govuk-back-link") }.to raise_error Capybara::ElementNotFound
+      end
     end
   end
 end
