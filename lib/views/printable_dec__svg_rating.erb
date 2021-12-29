@@ -181,7 +181,7 @@
 
   <svg x="205" y="<%= 30+bands[energy_efficiency_band.chomp("+").to_sym][:position]*50 %>" width="83" height="40">
     <rect width="75" height="40" class="band-<%= energy_efficiency_band.chomp("+") %>" x="25"></rect>
-    <polygon points="0,20 25,40 25,0 0,20" class="band-<%= energy_efficiency_band.chomp("+") %>"></polygon>
+    <polygon points="0,20 25,40 100,40 100,0 25,0 0,20" class="band-<%= energy_efficiency_band.chomp("+") %>"></polygon>
     <text x="60%" y="50%" dominant-baseline="middle" text-anchor="middle" class="current-band">
       <tspan><%= energy_efficiency_rating %> | </tspan>
       <tspan class="govuk-!-font-weight-bold"><%= energy_efficiency_band.upcase %> </tspan>

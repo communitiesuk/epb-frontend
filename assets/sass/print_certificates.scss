@@ -186,7 +186,7 @@ $epc-compare-svg-width: $epc-compare-svg-height * 1.8;
         font-size: 1.3rem;
       }
 
-      rect, polygon {
+      polygon {
         shape-rendering: crispEdges;
       }
     }
