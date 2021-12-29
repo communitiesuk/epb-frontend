@@ -1013,10 +1013,8 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       expect(response.body).to include('<text x="30" y="30">99 | A</text>')
     end
 
-    it "shows typical potential rating in the correct color" do
-      expect(response.body).to include(
-        '<rect width="75" height="50" class=band-c x="25"></rect>',
-      )
+    it "shows typical potential rating (second from end in recommendations list) in the correct color" do
+      expect(Capybara.string(response.body).all("div.epb-recommended-improvements polygon")[-2]["class"]).to eq "band-c"
     end
 
     context "when the indicativeCost is empty" do
