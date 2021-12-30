@@ -126,6 +126,10 @@ describe "Acceptance::ServicePerformance", type: :feature do
         expect(response.body).to have_css("div#user-satisfaction > table tr>td.satisfied", text: row["satisfied"])
       end
     end
+
+    it "does not contain a back link" do
+      expect { Capybara.string(response.body).find("a.govuk-back-link") }.to raise_error Capybara::ElementNotFound
+    end
   end
 
   describe "get . find-energy-certificate/service-performance?lang=cy " do
