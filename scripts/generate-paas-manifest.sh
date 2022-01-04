@@ -16,8 +16,7 @@ applications:
   memory: $MEMORY
   buildpacks:
   - ruby_buildpack
-  health-check-type: http
-  health-check-http-endpoint: /healthcheck
+  health-check-type: process
   services:
     - mhclg-epb-redis-ratelimit-$STAGE
     - dluhc-scale-frontend-ui-$STAGE
