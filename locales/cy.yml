@@ -1898,7 +1898,6 @@ cy:
       link: "cysylltwch â'n desg gymorth"
 
   date:
-    test: "a"
     abbr_month_names:
       -
       - Ion
