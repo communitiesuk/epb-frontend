@@ -16,7 +16,7 @@ beforeEach(() => {
   });
 
   document.body.innerHTML =
-    '<div>' +
+    '<div class="govuk-accordion">' +
     '<button id="button_1" type="button" class="govuk-accordion__open-all" aria-expanded="false" />Open all' +
     '</button>' +
     '<button id="button_2" type="button" class="govuk-accordion__open-all" aria-expanded="false"/>Open all' +
