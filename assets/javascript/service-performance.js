@@ -6,7 +6,10 @@ window.addEventListener("load", function() {
   translate_welsh()
 }, false);
 
-
+const cyTexts = {
+  open: "Agor pob adran",
+  close: "Cau pob adran",
+}
 
 function translate_welsh(){
   const lang = getUrlParameter('lang');
@@ -18,16 +21,17 @@ function translate_welsh(){
 function updateText(){
   let buttons = document.querySelectorAll("button.govuk-accordion__open-all");
   buttons.forEach((button) => {
-    button.innerText = "Agor pob adran";
+    refreshButtonText(button);
     button.addEventListener('click', function() {
-      let is_expanded = this.ariaExpanded;
-
-      let text = "Agor pob adran";
-      if (is_expanded == "true") { text = "Cau pob adran" };
-
-      this.innerText = text;
-    })
+      refreshButtonText(this);
+    });
   });
+}
+
+function refreshButtonText(button) {
+  let isExpanded = button.getAttribute("aria-expanded") === "true";
+
+  button.innerText = isExpanded ? cyTexts.close : cyTexts.open;
 }
 
 function getUrlParameter(name) {
