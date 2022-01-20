@@ -43,9 +43,6 @@ function updateText(){
   let buttons = document.querySelectorAll("button.govuk-accordion__open-all");
   buttons.forEach((button) => {
     refreshButtonText(button);
-    button.addEventListener('click', function() {
-      refreshButtonText(this);
-    });
   });
 }
 
