@@ -29,7 +29,7 @@ source "https://rubygems.org" do
   gem "rubocop-govuk", "~> 4.3"
   gem "rubocop-rspec", "~> 2.7"
   gem "sassc", "~> 2.4"
-  gem "sentry-ruby", "~> 4.8"
+  gem "sentry-ruby", "~> 5.0"
   gem "sinatra", "~> 2.0", ">= 2.0.7"
   gem "unleash", "~> 4.0.0"
   gem "zeitwerk", "~> 2.5.3"
