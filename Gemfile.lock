@@ -59,7 +59,7 @@ GEM
     faraday-retry (1.0.3)
     ffi (1.15.4)
     hashdiff (1.0.1)
-    i18n (1.8.11)
+    i18n (1.9.0)
       concurrent-ruby (~> 1.0)
     jwt (2.2.3)
     matrix (0.4.2)
@@ -193,7 +193,7 @@ DEPENDENCIES
   csv (~> 3.2)!
   epb-auth-tools (~> 1.0.8)!
   erubis (~> 2.7)!
-  i18n (~> 1.8.11)!
+  i18n (~> 1.9.0)!
   puma (~> 5.5)!
   rack-attack (~> 6.5.0)!
   rack-contrib (~> 2.3.0)!
