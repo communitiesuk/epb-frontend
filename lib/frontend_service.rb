@@ -35,7 +35,7 @@ class FrontendService < Sinatra::Base
 
   before do
     set_locale
-    raise MaintenanceMode if request.path != "/healthcheck" && Helper::Toggles.enabled?("register-api-maintenance-mode")
+    raise MaintenanceMode if request.path != "/healthcheck" && Helper::Toggles.enabled?("frontend-maintenance-mode")
   end
 
   getting_new_energy_certificate_host_name = "getting-new-energy-certificate"
@@ -1018,6 +1018,7 @@ class FrontendService < Sinatra::Base
   class MaintenanceMode < RuntimeError
     include Errors::DoNotReport
   end
+
   error MaintenanceMode do
     status 503
     @remove_back_link = true

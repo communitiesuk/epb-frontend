@@ -2,7 +2,7 @@ describe "Acceptance::ServiceUnavailable", type: :feature do
   include RSpecFrontendServiceMixin
 
   context "when service unavailable is off" do
-    before { Helper::Toggles.set_feature("register-api-maintenance-mode", false) }
+    before { Helper::Toggles.set_feature("frontend-maintenance-mode", false) }
 
     let(:response) do
       get "http://find-energy-certificate.epb-frontend"
@@ -14,9 +14,9 @@ describe "Acceptance::ServiceUnavailable", type: :feature do
   end
 
   context "when service unavailable is on" do
-    before { Helper::Toggles.set_feature("register-api-maintenance-mode", true) }
+    before { Helper::Toggles.set_feature("frontend-maintenance-mode", true) }
 
-    after { Helper::Toggles.set_feature("register-api-maintenance-mode", false) }
+    after { Helper::Toggles.set_feature("frontend-maintenance-mode", false) }
 
     let(:response) do
       get "http://find-energy-certificate.epb-frontend"
