@@ -30,6 +30,8 @@
               <summary class="govuk-details__summary">
                 <span class="govuk-details__summary-text">
                   <%= t('find_assessor_by_postcode_results.accreditation_summary_title') %>
+                  <input type="hidden" name="lang" value="<%= I18n.locale.to_s %>" />
+                  <p class="govuk-visually-hidden"><%= t('find_assessor_by_postcode_results.accreditation_conjunction') %><%= assessor[:registeredBy][:name] %></p>
                 </span>
               </summary>
               <div class="govuk-details__text">

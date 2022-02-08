@@ -255,6 +255,7 @@ en:
     no_assessors_2: 'Check the postcode is correct and enter it again, or try searching for another nearby postcode.'
     postcode_finder: 'Find a postcode on Royal Mail’s postcode finder'
     accreditation_summary_title: 'More information'
+    accreditation_conjunction: ' about '
     accreditation_summary_text: 'Accreditation schemes are appointed by the government to ensure that assessors are qualified to carry out EPC assessments.<br /><br />If you are unhappy about an EPC assessment, you can complain to the assessor directly. If you are still unhappy, you should contact your assessor’s accreditation scheme.'
     results: '%{quantity} assessors in order of distance from %{postcode}'
     distance:

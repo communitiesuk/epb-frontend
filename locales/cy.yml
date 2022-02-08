@@ -255,6 +255,7 @@ cy:
     no_assessors_2: "Gwiriwch fod y cod post yn gywir a’i roi unwaith eto, neu rhowch gynnig ar chwilio am god post arall gerllaw"
     postcode_finder: "Chwiliwch am god post ar chwiliwr codau post y Post Brenhinol"
     accreditation_summary_title: "Rhagor o wybodaeth"
+    accreditation_conjunction: ' am '
     accreditation_summary_text: "Mae cynlluniau achredu’n cael eu penodi gan y llywodraeth i sicrhau bod gan aseswyr gymwysterau i wneud asesiadau EPC.<br /><br />Os ydych yn anfodlon ar asesiad EPC, gallwch gwyno i’r asesydd yn uniongyrchol. Os ydych yn dal yn anfodlon, dylech gysylltu â chynllun achredu’ch asesydd."
     results: "%{quantity} aseswyr yn nhrefn eu pellter o %{postcode}"
     distance:
