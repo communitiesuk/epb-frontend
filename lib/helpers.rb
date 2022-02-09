@@ -311,6 +311,47 @@ module Helpers
     request.hostname.start_with?("find") ? ENV["GTM_PROPERTY_FINDING"] : ENV["GTM_PROPERTY_GETTING"]
   end
 
+  def redirect_to_service_start_page?
+    return false if ENV["STAGE"] == "test"
+
+    paths_not_directly_accessible = PARAMS_OF_PATHS_NOT_ACCESSIBLE_DIRECTLY.keys
+    return false unless paths_not_directly_accessible.include?(request.path)
+
+    search_params = params.keys - %w[lang]
+    return false if paths_not_directly_accessible.include?(request.path) && (PARAMS_OF_PATHS_NOT_ACCESSIBLE_DIRECTLY[request.path]&.sort == search_params&.sort)
+
+    referrer_outside_service?
+  end
+
+  def referrer_outside_service?
+    service_urls = [
+      /find-energy-certificate/,
+      /getting-new-energy-certificate/,
+      /get-new-energy-certificate/,
+    ]
+
+    request.referrer.nil? || service_urls.none? { |pattern| pattern.match?(request.referrer) }
+  end
+
+  PARAMS_OF_PATHS_NOT_ACCESSIBLE_DIRECTLY = {
+    "/find-an-assessor/type-of-property" => nil,
+    "/find-an-assessor/type-of-domestic-property" => nil,
+    "/find-a-non-domestic-certificate/search-by-reference-number" => nil,
+    "/find-a-certificate/type-of-property" => nil,
+    "/find-a-certificate/search-by-reference-number" => nil,
+    # Search results pages can be accessed directly, this is
+    # only when the following paths have respective query string params
+    # (those paths cannot be accessed directly without the params):
+    "/find-a-non-domestic-certificate/search-by-postcode" => %w[postcode],
+    "/find-an-assessor/search-by-postcode" => %w[domestic_type postcode],
+    "/find-an-assessor/search-by-name" => %w[name],
+    "/find-a-non-domestic-assessor/search-by-name" => %w[name],
+    "/find-a-certificate/search-by-postcode" => %w[postcode],
+    "/find-a-non-domestic-assessor/search-by-postcode" => %w[postcode],
+    "/find-a-non-domestic-certificate/search-by-street-name-and-town" => %w[street_name town],
+    "/find-a-certificate/search-by-street-name-and-town" => %w[street_name town],
+  }.freeze
+
   def static_start_page?
     !static_start_page.nil? && !static_start_page.empty?
   end
@@ -327,6 +368,8 @@ module Helpers
       ENV["STATIC_START_PAGE_GETTING_CY"]
     end
   end
+
+  def service_start_page; end
 
   def root_page_url
     if static_start_page?
