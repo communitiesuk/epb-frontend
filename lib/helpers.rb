@@ -328,7 +328,6 @@ module Helpers
       /find-energy-certificate/,
       /getting-new-energy-certificate/,
       /get-new-energy-certificate/,
-      /epb-static-start-pages/,
     ]
 
     request.referrer.nil? || service_urls.none? { |pattern| pattern.match?(request.referrer) }
