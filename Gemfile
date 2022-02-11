@@ -31,6 +31,6 @@ source "https://rubygems.org" do
   gem "sassc", "~> 2.4"
   gem "sentry-ruby", "~> 5.0"
   gem "sinatra", "~> 2.0", ">= 2.0.7"
-  gem "unleash", "~> 4.0.0"
+  gem "unleash", "~> 4.1.0"
   gem "zeitwerk", "~> 2.5.4"
 end
