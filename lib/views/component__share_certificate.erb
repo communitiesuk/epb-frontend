@@ -11,7 +11,7 @@
            target="_blank"
            title="Email">
         <span class="share-icon">
-          <img src="/images/email.svg">
+          <img src="/images/email.svg" alt="">
         </span>
           <%= t("component.share.email")%>
         </a>
@@ -21,7 +21,7 @@
       <p id="copy-to-clipboard-margin" class="govuk-body">
         <button id="copyToClipboardButton" class="govuk-body" onclick="clickHandler()">
         <span class="share-icon">
-          <img src="/images/copy-link.svg">
+          <img src="/images/copy-link.svg" alt="">
         </span>
           <%= t("component.share.copy_link")%>
         </button>
@@ -32,7 +32,7 @@
       <p class="govuk-body">
         <a rel="nofollow" style="text-decoration: none; display: none;" id="link" href="<%= localised_url(request.path_info) + (localised_url(request.path_info).include?("?") ? "&" : "?") %>print=true" class="govuk-link govuk-!-margin-bottom-5" id="link">
         <span class="share-icon">
-          <img src="/images/print.svg">
+          <img src="/images/print.svg" alt="">
         </span>
           <%= t("component.share.print_link")%>
         </a>
