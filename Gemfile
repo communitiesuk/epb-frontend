@@ -22,7 +22,7 @@ source "https://rubygems.org" do
   gem "erubis", "~> 2.7"
   gem "i18n", "~> 1.9.1"
   gem "puma", "~> 5.6"
-  gem "rack-attack", "~> 6.5.0"
+  gem "rack-attack", "~> 6.6.0"
   gem "rack-contrib", "~> 2.3.0"
   gem "rake", "~> 13.0.6"
   gem "redis", "~> 4.5.1"
