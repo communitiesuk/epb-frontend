@@ -24,10 +24,11 @@
             <%= t('find_certificate_by_postcode.hint') %>
           </span>
 
-
-          <span id="postcode-error" class="govuk-error-message">
-            <span class="govuk-visually-hidden"><%= t('error.error') %></span><%== errors[:postcode] %>
-          </span>
+          <% if errors[:postcode] %>
+            <span id="postcode-error" class="govuk-error-message">
+              <span class="govuk-visually-hidden"><%= t('error.error') %></span><%== errors[:postcode] %>
+            </span>
+          <% end %>
 
           <input id="postcode" name="postcode" type="text"
                  class="govuk-input govuk-input--width-10<% if errors[:postcode] %> govuk-input--error<% end %>"
