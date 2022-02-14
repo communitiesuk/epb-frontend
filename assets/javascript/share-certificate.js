@@ -1,6 +1,7 @@
 function clickHandler () { // eslint-disable-line no-unused-vars
   copyToClipboard()
   changeTextAndIconAnimation()
+  maintainTabIndexOrder()
 }
 
 function copyToClipboard () {
@@ -19,4 +20,8 @@ function changeTextAndIconAnimation () {
         <img src="/images/check.svg">
         </span> Copied`
   setTimeout(function () { text.innerHTML = originalText }, 5000)
+}
+
+function maintainTabIndexOrder(){
+  document.getElementById("copyToClipboardButton").focus();
 }
