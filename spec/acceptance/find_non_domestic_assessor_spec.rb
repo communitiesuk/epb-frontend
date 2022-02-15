@@ -679,7 +679,8 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
       context "with similar matches" do
         before do
           FindAssessor::ByName::Stub.search_by_name(
-            "Ronald McDonald",
+            "R%20McDonald",
+            "nonDomestic",
             loose_match: true,
           )
         end
