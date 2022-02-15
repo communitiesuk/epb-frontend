@@ -351,11 +351,9 @@ class FrontendService < Sinatra::Base
         locals[:results] = response[:data][:assessors]
         locals[:meta] = response[:meta]
 
-        @page_title =
-          "#{t('find_assessor_by_name_results.top_heading')} – #{
-            t('services.getting_an_energy_certificate')
-          } – #{t('layout.body.govuk')}"
         erb_template = :find_assessor_by_name_results
+        search_results_heading = t((locals[:meta][:looseMatch] ? "#{erb_template}.results.results_like" : "#{erb_template}.results.results"), quantity: locals[:results].length, name: params["name"])
+        @page_title = "#{search_results_heading} - #{t('services.getting_an_energy_certificate')} - #{t('layout.body.govuk')}"
         back_link "/find-an-assessor/search-by-name"
       rescue StandardError => e
         case e
