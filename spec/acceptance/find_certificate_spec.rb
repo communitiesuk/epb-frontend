@@ -608,7 +608,7 @@ describe "Acceptance::Certificate" do
         expect(response.status).to eq 200
       end
 
-      it "has a tab content that matches the page heading" do
+      it "has a title that matches the page heading" do
         expect(response.body).to include(
           "<title>Find an energy performance certificate (EPC) by street and town - Find an energy certificate - GOV.UK</title>",
         )
@@ -832,6 +832,12 @@ describe "Acceptance::Certificate" do
           expect(response.status).to eq(200)
         end
 
+        it "has a title that matches the page heading" do
+          expect(response.body).to include(
+            "<title>1-1 of 1 results matching 1 Makeup Street Beauty Town - Getting a new energy certificate - GOV.UK</title>",
+          )
+        end
+
         it "displays the find a certificate page heading" do
           expect(response.body).to include(
             "Find an energy performance certificate",
@@ -890,6 +896,12 @@ describe "Acceptance::Certificate" do
 
         it "returns status 200" do
           expect(response.status).to eq(200)
+        end
+
+        it "has a title" do
+          expect(response.body).to include(
+            "<title>A certificate was not found at this address - Find an energy certificate - GOV.UK</title>",
+          )
         end
 
         it "displays the find a certificate page heading" do
