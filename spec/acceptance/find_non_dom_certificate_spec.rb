@@ -10,7 +10,7 @@ describe "Acceptance::NonDomesticCertificate" do
         get "http://find-energy-certificate.local.gov.uk/find-a-non-domestic-certificate/search-by-postcode"
       end
 
-      it "includes the gov header " do
+      it "includes the gov header" do
         expect(response.body).to have_link "Find an energy certificate"
       end
 
@@ -173,6 +173,12 @@ describe "Acceptance::NonDomesticCertificate" do
           expect(response.status).to eq(200)
         end
 
+        it "has a correct page title" do
+          expect(response.body).to include(
+            "<title>2 certificates and reports for SW1A 2AA - Find an energy certificate - GOV.UK</title>",
+          )
+        end
+
         it "displays the find a non-domestic certificate results page heading" do
           expect(response.body).to include(
             "Find energy certificates and reports",
@@ -231,6 +237,12 @@ describe "Acceptance::NonDomesticCertificate" do
 
         it "returns status 200" do
           expect(response.status).to eq(200)
+        end
+
+        it "has a correct page title" do
+          expect(response.body).to include(
+            "<title>No results for E1 4FF - Find an energy certificate - GOV.UK</title>",
+          )
         end
 
         it "displays the find a certificate page heading" do
