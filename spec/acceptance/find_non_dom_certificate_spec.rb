@@ -311,7 +311,7 @@ describe "Acceptance::NonDomesticCertificate" do
         get "http://find-energy-certificate.local.gov.uk/find-a-non-domestic-certificate/search-by-street-name-and-town"
       end
 
-      it "includes the gov header " do
+      it "includes the gov header" do
         expect(response.body).to have_link "Find an energy certificate"
       end
 
@@ -319,9 +319,9 @@ describe "Acceptance::NonDomesticCertificate" do
         expect(response.status).to eq 200
       end
 
-      it "has a tab content that matches the page heading" do
+      it "has a title that matches the page heading" do
         expect(response.body).to include(
-          " <title>Find an energy performance certificate (EPC) by street and town - Find an energy certificate - GOV.UK</title>\n",
+          "<title>Find an energy performance certificate (EPC) by street and town - Find an energy certificate - GOV.UK</title>\n",
         )
       end
 
@@ -362,6 +362,12 @@ describe "Acceptance::NonDomesticCertificate" do
 
         it "returns status 200" do
           expect(response.status).to eq(200)
+        end
+
+        it "displays the title" do
+          expect(response.body).to include(
+            "<title>1 certificates and reports for 1 Makeup Street Beauty Town - Getting a new energy certificate - GOV.UK</title>",
+          )
         end
 
         it "displays the find a certificate page heading" do
@@ -415,6 +421,12 @@ describe "Acceptance::NonDomesticCertificate" do
 
         it "returns status 400" do
           expect(response.status).to eq(400)
+        end
+
+        it "has an error title" do
+          expect(response.body).to include(
+            "<title>Error: Find an energy performance certificate (EPC) by street and town - Find an energy certificate - GOV.UK</title>\n",
+          )
         end
 
         it "displays the find a certificate page heading" do
@@ -486,6 +498,12 @@ describe "Acceptance::NonDomesticCertificate" do
           expect(response.status).to eq(400)
         end
 
+        it "has an error title" do
+          expect(response.body).to include(
+            "<title>Error: Find an energy performance certificate (EPC) by street and town - Find an energy certificate - GOV.UK</title>\n",
+          )
+        end
+
         it "displays the find a certificate page heading" do
           expect(response.body).to include(
             "Find an energy performance certificate",
@@ -521,6 +539,12 @@ describe "Acceptance::NonDomesticCertificate" do
 
         it "returns status 400" do
           expect(response.status).to eq(400)
+        end
+
+        it "has an error title" do
+          expect(response.body).to include(
+            "<title>Error: Find an energy performance certificate (EPC) by street and town - Find an energy certificate - GOV.UK</title>\n",
+          )
         end
 
         it "displays the find a certificate page heading" do
@@ -581,9 +605,9 @@ describe "Acceptance::NonDomesticCertificate" do
           expect(response.status).to eq(200)
         end
 
-        it "has a tab content that matches the page heading" do
+        it "has a title indicating no results" do
           expect(response.body).to include(
-            "<title>Find an energy performance certificate (EPC) by street and town - Find an energy certificate - GOV.UK</title>\n",
+            "<title>A certificate was not found at this address - Find an energy certificate - GOV.UK</title>",
           )
         end
 

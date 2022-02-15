@@ -618,15 +618,8 @@ class FrontendService < Sinatra::Base
             :assessments
           ]
 
-        @page_title =
-          "#{
-            t(
-              'find_non_dom_certificate_by_street_name_and_town_results.top_heading',
-            )
-          } - #{t('services.find_an_energy_certificate')} - #{
-            t('layout.body.govuk')
-          }"
         erb_template = :find_non_dom_certificate_by_street_name_and_town_results
+        @page_title = "#{t("#{erb_template}.list", length: count_certificates(locals[:results]), query: "#{params['street_name']} #{params['town']}")} - #{t('services.getting_an_energy_certificate')} - #{t('layout.body.govuk')}"
         back_link "/find-a-non-domestic-certificate/search-by-street-name-and-town"
       rescue StandardError => e
         case e
@@ -661,7 +654,7 @@ class FrontendService < Sinatra::Base
         when Errors::CertificateNotFound
           @page_title =
             "#{
-              t('find_non_dom_certificate_by_street_name_and_town.top_heading')
+              t('find_non_dom_certificate_by_street_name_and_town.no_such_address.error').chomp('.')
             } - #{t('services.find_an_energy_certificate')} - #{
               t('layout.body.govuk')
             }"
