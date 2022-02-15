@@ -509,9 +509,9 @@ describe "Acceptance::Assessor", type: :feature do
           expect(response.status).to eq(500)
         end
 
-        it "displays the 500 error page tab title" do
+        it "displays the 500 error page title" do
           expect(response.body).to include(
-            "<title>Error: Sorry, there is a problem with the service - GOV.UK</title>",
+            "<title>Sorry, there is a problem with the service - GOV.UK</title>",
           )
         end
 

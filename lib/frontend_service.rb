@@ -1017,7 +1017,7 @@ class FrontendService < Sinatra::Base
 
     @logger.error JSON.generate(error)
     @page_title =
-      "#{t('error.error')}#{t('error.500.heading')} - #{t('layout.body.govuk')}"
+      "#{t('error.500.heading')} - #{t('layout.body.govuk')}"
     status 500
     erb :error_page_500
   end
