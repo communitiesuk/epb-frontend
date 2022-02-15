@@ -16,6 +16,10 @@
   cursor: pointer;
 }
 
+#copyToClipboardButton:focus {
+  @include govuk-focused-text;
+}
+
 #copy-to-clipboard-margin {
   margin-bottom: 0px;
 }
