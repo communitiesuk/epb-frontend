@@ -46,9 +46,9 @@ class FrontendService < Sinatra::Base
   get "/", host_name: /#{getting_new_energy_certificate_host_name}/ do
     redirect(static_start_page, 301) if static_start_page?
     @page_title =
-      "#{t('find_an_assessor.top_heading')} – #{
+      "#{t('find_an_assessor.top_heading')} - #{
         t('services.getting_an_energy_certificate')
-      } – #{t('layout.body.govuk')}"
+      } - #{t('layout.body.govuk')}"
     @remove_back_link = true
     @allow_indexing = true
 
@@ -58,9 +58,9 @@ class FrontendService < Sinatra::Base
   get "/", host_name: /#{find_energy_certificate_host_name}/ do
     redirect(static_start_page, 301) if static_start_page?
     @page_title =
-      "#{t('find_a_certificate.top_heading')} – #{
+      "#{t('find_a_certificate.top_heading')} - #{
         t('services.find_an_energy_certificate')
-      } – #{t('layout.body.govuk')}"
+      } - #{t('layout.body.govuk')}"
     @remove_back_link = true
     @allow_indexing = true
 
@@ -72,9 +72,9 @@ class FrontendService < Sinatra::Base
       query = params.map { |key, value| "#{key}=#{value}" }.join("&")
       @errors = {}
       @page_title =
-        "#{t('find_an_assessor.property_type.question_title')} – #{
+        "#{t('find_an_assessor.property_type.question_title')} - #{
           t('services.getting_an_energy_certificate')
-        } – #{t('layout.body.govuk')}"
+        } - #{t('layout.body.govuk')}"
       back_link root_page_url
 
       if params["property_type"] == "domestic"
@@ -102,9 +102,9 @@ class FrontendService < Sinatra::Base
       query = params.map { |key, value| "#{key}=#{value}" }.join("&")
       @errors = {}
       @page_title =
-        "#{t('find_an_assessor.domestic_property_type.question_title')} – #{
+        "#{t('find_an_assessor.domestic_property_type.question_title')} - #{
           t('services.getting_an_energy_certificate')
-        } – #{t('layout.body.govuk')}"
+        } - #{t('layout.body.govuk')}"
       back_link "/find-an-assessor/type-of-property"
 
       if request.post? && params["domestic_type"].nil?
@@ -146,9 +146,9 @@ class FrontendService < Sinatra::Base
     back_link "/find-a-certificate/type-of-property"
 
     @page_title =
-      "#{t('find_non_dom_certificate_by_postcode.top_heading')} – #{
+      "#{t('find_non_dom_certificate_by_postcode.top_heading')} - #{
         t('services.find_an_energy_certificate')
-      } – #{t('layout.body.govuk')}"
+      } - #{t('layout.body.govuk')}"
 
     if params["postcode"]
       params["postcode"].strip!
@@ -179,7 +179,7 @@ class FrontendService < Sinatra::Base
           @page_title =
             "#{t('error.error')}#{
               t('find_non_dom_certificate_by_postcode.top_heading')
-            } – #{t('services.find_an_energy_certificate')} – #{
+            } - #{t('services.find_an_energy_certificate')} - #{
               t('layout.body.govuk')
             }"
           @errors[:postcode] = t("validation_errors.postcode_error")
@@ -208,9 +208,9 @@ class FrontendService < Sinatra::Base
     erb_template = :find_non_dom_certificate_by_reference_number
     back_link "/find-a-non-domestic-certificate/search-by-postcode"
     @page_title =
-      "#{t('find_non_dom_certificate_by_reference_number.top_heading')} – #{
+      "#{t('find_non_dom_certificate_by_reference_number.top_heading')} - #{
         t('services.find_an_energy_certificate')
-      } – #{t('layout.body.govuk')}"
+      } - #{t('layout.body.govuk')}"
 
     if params["reference_number"]
       begin
@@ -237,7 +237,7 @@ class FrontendService < Sinatra::Base
           @page_title =
             "#{t('error.error')}#{
               t('find_non_dom_certificate_by_reference_number.top_heading')
-            } – #{t('services.find_an_energy_certificate')} – #{
+            } - #{t('services.find_an_energy_certificate')} - #{
               t('layout.body.govuk')
             }"
           @errors[:reference_number] =
@@ -246,7 +246,7 @@ class FrontendService < Sinatra::Base
           @page_title =
             "#{t('error.error')}#{
               t('find_non_dom_certificate_by_reference_number.top_heading')
-            } – #{t('services.find_an_energy_certificate')} – #{
+            } - #{t('services.find_an_energy_certificate')} - #{
               t('layout.body.govuk')
             }"
           @errors[:reference_number] =
@@ -272,9 +272,9 @@ class FrontendService < Sinatra::Base
 
     response = @container.get_object(:find_assessor_by_postcode_use_case)
     @page_title =
-      "#{t('find_assessor_by_postcode.top_heading')} – #{
+      "#{t('find_assessor_by_postcode.top_heading')} - #{
         t('services.getting_an_energy_certificate')
-      } – #{t('layout.body.govuk')}"
+      } - #{t('layout.body.govuk')}"
 
     if params["postcode"]
       params["postcode"].strip!
@@ -296,9 +296,9 @@ class FrontendService < Sinatra::Base
           case e
           when Errors::PostcodeNotRegistered
             @page_title =
-              "#{t('find_assessor_by_postcode_results.top_heading')} – #{
+              "#{t('find_assessor_by_postcode_results.top_heading')} - #{
                 t('services.getting_an_energy_certificate')
-              } – #{t('layout.body.govuk')}"
+              } - #{t('layout.body.govuk')}"
             locals[:results] = []
             erb_template = :find_assessor_by_postcode_results
           when Errors::PostcodeNotValid
@@ -306,7 +306,7 @@ class FrontendService < Sinatra::Base
             @page_title =
               "#{t('error.error')}#{
                 t('find_assessor_by_postcode.top_heading')
-              } – #{t('services.getting_an_energy_certificate')} – #{
+              } - #{t('services.getting_an_energy_certificate')} - #{
                 t('layout.body.govuk')
               }"
             @errors[:postcode] = t("validation_errors.postcode_error")
@@ -317,9 +317,9 @@ class FrontendService < Sinatra::Base
       else
         status 400
         @page_title =
-          "#{t('error.error')}#{t('find_assessor_by_postcode.top_heading')} – #{
+          "#{t('error.error')}#{t('find_assessor_by_postcode.top_heading')} - #{
             t('services.getting_an_energy_certificate')
-          } – #{t('layout.body.govuk')}"
+          } - #{t('layout.body.govuk')}"
         @errors[:postcode] = t("validation_errors.postcode_error")
       end
     end
@@ -340,9 +340,9 @@ class FrontendService < Sinatra::Base
     response = @container.get_object(:find_assessor_by_name_use_case)
 
     @page_title =
-      "#{t('find_assessor_by_name.top_heading')} – #{
+      "#{t('find_assessor_by_name.top_heading')} - #{
         t('services.getting_an_energy_certificate')
-      } – #{t('layout.body.govuk')}"
+      } - #{t('layout.body.govuk')}"
 
     if params["name"]
       begin
@@ -360,9 +360,9 @@ class FrontendService < Sinatra::Base
         when Errors::InvalidName
           status 400
           @page_title =
-            "#{t('error.error')}#{t('find_assessor_by_name.top_heading')} – #{
+            "#{t('error.error')}#{t('find_assessor_by_name.top_heading')} - #{
               t('services.getting_an_energy_certificate')
-            } – #{t('layout.body.govuk')}"
+            } - #{t('layout.body.govuk')}"
           @errors[:name] = t("validation_errors.assessor_name_error")
         else
           return server_error(e)
@@ -386,9 +386,9 @@ class FrontendService < Sinatra::Base
     response = @container.get_object(:find_assessor_by_name_use_case)
 
     @page_title =
-      "#{t('find_assessor_by_name.top_heading')} – #{
+      "#{t('find_assessor_by_name.top_heading')} - #{
         t('services.getting_an_energy_certificate')
-      } – #{t('layout.body.govuk')}"
+      } - #{t('layout.body.govuk')}"
 
     if params["name"]
       begin
@@ -406,9 +406,9 @@ class FrontendService < Sinatra::Base
         when Errors::InvalidName
           status 400
           @page_title =
-            "#{t('error.error')}#{t('find_assessor_by_name.top_heading')} – #{
+            "#{t('error.error')}#{t('find_assessor_by_name.top_heading')} - #{
               t('services.getting_an_energy_certificate')
-            } – #{t('layout.body.govuk')}"
+            } - #{t('layout.body.govuk')}"
           @errors[:name] = t("validation_errors.assessor_name_error")
         else
           return server_error(e)
@@ -433,9 +433,9 @@ class FrontendService < Sinatra::Base
       query = params.map { |key, value| "#{key}=#{value}" }.join("&")
       @errors = {}
       @page_title =
-        "#{t('find_a_certificate.property_type.question_title')} – #{
+        "#{t('find_a_certificate.property_type.question_title')} - #{
           t('services.find_an_energy_certificate')
-        } – #{t('layout.body.govuk')}"
+        } - #{t('layout.body.govuk')}"
       back_link root_page_url
 
       if params["property_type"] == "domestic"
@@ -897,7 +897,7 @@ class FrontendService < Sinatra::Base
   rescue StandardError => e
     case e
     when Errors::AssessmentGone
-      @page_title = "#{t('error.410.heading')} – #{t('layout.body.govuk')}"
+      @page_title = "#{t('error.410.heading')} - #{t('layout.body.govuk')}"
       status 410
       erb :error_page_410 unless @errors
     when Errors::AssessmentNotFound

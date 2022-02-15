@@ -82,6 +82,12 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
         expect(response.status).to eq(400)
       end
 
+      it "displays the find an assessor by postcode error title" do
+        expect(response.body).to include(
+          "<title>Error: Find an assessor by postcode - Getting a new energy certificate - GOV.UK</title>",
+        )
+      end
+
       it "displays the find an assessor page heading" do
         expect(response.body).to include("Find an assessor by postcode")
       end
@@ -150,6 +156,12 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
 
       it "returns status 400" do
         expect(response.status).to eq(400)
+      end
+
+      it "displays the find an assessor by postcode error title" do
+        expect(response.body).to include(
+          "<title>Error: Find an assessor by postcode - Getting a new energy certificate - GOV.UK</title>",
+        )
       end
 
       it "displays the find an assessor page heading" do
@@ -505,7 +517,7 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
 
       it "displays the Find an assessor by name title" do
         expect(response.body).to include(
-          "<title>Find an assessor by name – Getting a new energy certificate – GOV.UK</title>",
+          "<title>Find an assessor by name - Getting a new energy certificate - GOV.UK</title>",
         )
       end
 
@@ -539,7 +551,7 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
 
       it "displays the Find an assessor by name title" do
         expect(response.body).to include(
-          "<title>Error: Find an assessor by name – Getting a new energy certificate – GOV.UK</title>",
+          "<title>Error: Find an assessor by name - Getting a new energy certificate - GOV.UK</title>",
         )
       end
 
@@ -576,7 +588,7 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
 
       it "displays the Find an assessor by name error title" do
         expect(response.body).to include(
-          "<title>Error: Find an assessor by name – Getting a new energy certificate – GOV.UK</title>",
+          "<title>Error: Find an assessor by name - Getting a new energy certificate - GOV.UK</title>",
         )
       end
 

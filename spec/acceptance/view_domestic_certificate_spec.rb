@@ -1173,7 +1173,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
 
     it "shows the tag header that matches the page header" do
       expect(response.body).to include(
-        "<title>Certificate not available – GOV.UK</title>",
+        "<title>Certificate not available - GOV.UK</title>",
       )
     end
 

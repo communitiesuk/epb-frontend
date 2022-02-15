@@ -22,7 +22,7 @@ describe "Acceptance::Certificate" do
 
       it "displays the tab value the same as the main header value" do
         expect(response.body).to include(
-          "<title>What type of property is the certificate for? – Find an energy certificate – GOV.UK</title>",
+          "<title>What type of property is the certificate for? - Find an energy certificate - GOV.UK</title>",
         )
       end
 
@@ -38,7 +38,7 @@ describe "Acceptance::Certificate" do
 
       it "displays the tab value the same as the main header value" do
         expect(response.body).to include(
-          "<title>Error: What type of property is the certificate for? – Find an energy certificate – GOV.UK</title>",
+          "<title>Error: What type of property is the certificate for? - Find an energy certificate - GOV.UK</title>",
         )
       end
 

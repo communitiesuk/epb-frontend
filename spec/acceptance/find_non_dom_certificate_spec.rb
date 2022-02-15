@@ -675,7 +675,7 @@ describe "Acceptance::NonDomesticCertificate" do
 
       it "displays the find a non-domestic certificate page tab content" do
         expect(response.body).to include(
-          "<title>Find energy certificates and reports by their number – Find an energy certificate – GOV.UK</title>",
+          "<title>Find energy certificates and reports by their number - Find an energy certificate - GOV.UK</title>",
         )
       end
 
@@ -716,7 +716,7 @@ describe "Acceptance::NonDomesticCertificate" do
 
       it "displays an error in the title" do
         expect(response.body).to include(
-          "<title>Error: Find energy certificates and reports by their number – Find an energy certificate – GOV.UK</title>",
+          "<title>Error: Find energy certificates and reports by their number - Find an energy certificate - GOV.UK</title>",
         )
       end
 
@@ -807,7 +807,7 @@ describe "Acceptance::NonDomesticCertificate" do
 
         it "displays an error in the title" do
           expect(response.body).to include(
-            "<title>Error: Find energy certificates and reports by their number – Find an energy certificate – GOV.UK</title>",
+            "<title>Error: Find energy certificates and reports by their number - Find an energy certificate - GOV.UK</title>",
           )
         end
 
