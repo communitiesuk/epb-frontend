@@ -551,13 +551,9 @@ class FrontendService < Sinatra::Base
           locals[:results] =
             response.execute(params["postcode"])[:data][:assessors]
 
-          @page_title =
-            "#{
-              t('find_non_domestic_assessor_by_postcode_results.top_heading')
-            } - #{t('services.getting_an_energy_certificate')} - #{
-              t('layout.body.govuk')
-            }"
           erb_template = :find_non_domestic_assessor_by_postcode_results
+          search_results_heading = locals[:results].length.positive? ? t("find_assessor_by_postcode_results.results", quantity: locals[:results].length, postcode: params["postcode"].upcase) : t("find_assessor_by_postcode_results.no_assessors_heading", postcode: params["postcode"].upcase)
+          @page_title = "#{search_results_heading} - #{t('services.getting_an_energy_certificate')} - #{t('layout.body.govuk')}"
         rescue StandardError => e
           case e
           when Errors::PostcodeNotRegistered

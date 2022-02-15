@@ -19,6 +19,12 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
         expect(response.status).to eq(200)
       end
 
+      it "displays the find an assessor by postcode title" do
+        expect(response.body).to include(
+          "<title>Find an assessor by postcode - Getting a new energy certificate - GOV.UK</title>",
+        )
+      end
+
       it "displays the find a non-domestic assessor page heading" do
         expect(response.body).to include("Find an assessor by postcode")
       end
@@ -45,6 +51,12 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
 
       it "returns status 400" do
         expect(response.status).to eq(400)
+      end
+
+      it "displays the find an assessor by postcode error title" do
+        expect(response.body).to include(
+          "<title>Error: Find an assessor by postcode - Getting a new energy certificate - GOV.UK</title>",
+        )
       end
 
       it "displays the find a non-domestic assessor page heading" do
@@ -121,6 +133,12 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
 
       it "returns status 400" do
         expect(response.status).to eq(400)
+      end
+
+      it "displays the find an assessor by postcode error title" do
+        expect(response.body).to include(
+          "<title>Error: Find an assessor by postcode - Getting a new energy certificate - GOV.UK</title>",
+        )
       end
 
       it "displays the find an assessor page heading" do
@@ -224,9 +242,9 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
           expect(response.status).to eq(200)
         end
 
-        it "has a tab content that matches the page heading" do
+        it "displays the correct title" do
           expect(response.body).to include(
-            "<title>Contact an assessor to book an energy assessment - Getting a new energy certificate - GOV.UK</title>",
+            "<title>7 assessors in order of distance from SW1A 2AA - Getting a new energy certificate - GOV.UK</title>",
           )
         end
 
@@ -384,6 +402,12 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
           expect(response.status).to eq(200)
         end
 
+        it "displays the correct title" do
+          expect(response.body).to include(
+            "<title>No results for E1 4AA - Getting a new energy certificate - GOV.UK</title>",
+          )
+        end
+
         it "displays the contact assessor page heading" do
           expect(response.body).to include(
             "Contact an assessor to book an energy assessment",
@@ -413,7 +437,7 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
           expect(response.status).to eq(200)
         end
 
-        it "has a tab content that matches the page heading" do
+        it "has a title that matches the page heading" do
           expect(response.body).to include(
             "<title>Find an assessor by postcode - Getting a new energy certificate - GOV.UK</title>",
           )
@@ -454,7 +478,7 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
           expect(response.status).to eq(400)
         end
 
-        it "has a tab content that matches the page heading" do
+        it "has a title that matches the page heading" do
           expect(response.body).to include(
             "<title>Error: Find an assessor by postcode - Getting a new energy certificate - GOV.UK</title>",
           )
