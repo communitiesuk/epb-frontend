@@ -503,7 +503,7 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
         expect(response.status).to eq(200)
       end
 
-      it "displays the Find an assessor by name tab heading" do
+      it "displays the Find an assessor by name title" do
         expect(response.body).to include(
           "<title>Find an assessor by name – Getting a new energy certificate – GOV.UK</title>",
         )
@@ -537,7 +537,7 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
         expect(response.status).to eq(400)
       end
 
-      it "displays the Find an assessor by name tab heading" do
+      it "displays the Find an assessor by name title" do
         expect(response.body).to include(
           "<title>Error: Find an assessor by name – Getting a new energy certificate – GOV.UK</title>",
         )
@@ -574,6 +574,12 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
         get "http://getting-new-energy-certificate.local.gov.uk/find-a-non-domestic-assessor/search-by-name?name=bob"
       end
 
+      it "displays the Find an assessor by name error title" do
+        expect(response.body).to include(
+          "<title>Error: Find an assessor by name – Getting a new energy certificate – GOV.UK</title>",
+        )
+      end
+
       it "displays an error message" do
         expect(response.body).to have_css "span",
                                           text: "Enter the first and last name of the assessor"
@@ -608,9 +614,9 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
           expect(response.status).to eq(200)
         end
 
-        it "displays the Contact an assessor to book an energy assessment tab heading" do
+        it "displays the correct title" do
           expect(response.body).to include(
-            "<title>Contact an assessor to book an energy assessment – Getting a new energy certificate – GOV.UK</title>",
+            "<title>8 results for the name Ronald McDonald - Getting a new energy certificate - GOV.UK</title>",
           )
         end
 
@@ -689,6 +695,12 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
           get "http://getting-new-energy-certificate.local.gov.uk/find-a-non-domestic-assessor/search-by-name?name=R%20McDonald"
         end
 
+        it "displays the correct title" do
+          expect(response.body).to include(
+            "<title>8 results, similar to the name R McDonald - Getting a new energy certificate - GOV.UK</title>",
+          )
+        end
+
         it "does show that they are loose matches" do
           expect(response.body).to include("similar to")
         end
@@ -710,9 +722,9 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
           expect(response.status).to eq(200)
         end
 
-        it "displays the Contact an assessor to book an energy assessment tab heading" do
+        it "displays the correct title" do
           expect(response.body).to include(
-            "<title>Contact an assessor to book an energy assessment – Getting a new energy certificate – GOV.UK</title>",
+            "<title>0 results for the name Nonexistent Person - Getting a new energy certificate - GOV.UK</title>",
           )
         end
 
