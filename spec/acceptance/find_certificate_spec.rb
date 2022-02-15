@@ -383,7 +383,7 @@ describe "Acceptance::Certificate" do
         expect(response.status).to eq 200
       end
 
-      it "has a tab content that matches the page heading" do
+      it "has a title that matches the page heading" do
         expect(response.body).to include(
           "<title>Find an energy performance certificate (EPC) by certificate number - Find an energy certificate - GOV.UK</title>",
         )
@@ -417,6 +417,12 @@ describe "Acceptance::Certificate" do
         expect(response.status).to eq(400)
       end
 
+      it "has an error title" do
+        expect(response.body).to include(
+          "<title>Error: Find an energy performance certificate (EPC) by certificate number - Find an energy certificate - GOV.UK</title>",
+        )
+      end
+
       it "displays the find a certificate page heading" do
         expect(response.body).to include(
           "Find an energy performance certificate",
@@ -428,12 +434,6 @@ describe "Acceptance::Certificate" do
           '<span id="reference_number-error" class="govuk-error-message">',
         )
         expect(response.body).to include("Enter a 20-digit certificate number")
-      end
-
-      it "displays an error in the title" do
-        expect(response.body).to include(
-          "<title>Error: Find an energy performance certificate (EPC) by certificate number - Find an energy certificate - GOV.UK</title>",
-        )
       end
 
       it "contains the required GDS error summary" do
@@ -529,6 +529,12 @@ describe "Acceptance::Certificate" do
           expect(response.status).to eq(200)
         end
 
+        it "displays an error in the title" do
+          expect(response.body).to include(
+            "<title>Error: Find an energy performance certificate (EPC) by certificate number - Find an energy certificate - GOV.UK</title>",
+          )
+        end
+
         it "displays the find a certificate page heading" do
           expect(response.body).to include(
             "Find an energy performance certificate (EPC) by certificate number",
@@ -538,12 +544,6 @@ describe "Acceptance::Certificate" do
         it "explains that no certificates are present" do
           expect(response.body).to include(
             "A certificate was not found with this certificate number",
-          )
-        end
-
-        it "displays an error in the title" do
-          expect(response.body).to include(
-            "<title>Error: Find an energy performance certificate (EPC) by certificate number - Find an energy certificate - GOV.UK</title>",
           )
         end
 
@@ -600,7 +600,7 @@ describe "Acceptance::Certificate" do
         get "http://find-energy-certificate.local.gov.uk/find-a-certificate/search-by-street-name-and-town"
       end
 
-      it "includes the gov header " do
+      it "includes the gov header" do
         expect(response.body).to have_link "Find an energy certificate"
       end
 

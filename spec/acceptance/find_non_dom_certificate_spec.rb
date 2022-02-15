@@ -660,7 +660,7 @@ describe "Acceptance::NonDomesticCertificate" do
         get "http://find-energy-certificate.local.gov.uk/find-a-non-domestic-certificate/search-by-reference-number"
       end
 
-      it "includes the gov header " do
+      it "includes the gov header" do
         expect(response.body).to have_link "Find an energy certificate"
       end
 
@@ -668,15 +668,15 @@ describe "Acceptance::NonDomesticCertificate" do
         expect(response.status).to eq 200
       end
 
-      it "displays the find a non-domestic certificate page heading" do
-        expect(response.body).to have_css "h1",
-                                          text: "Find energy certificates and reports by their number"
-      end
-
-      it "displays the find a non-domestic certificate page tab content" do
+      it "displays the title" do
         expect(response.body).to include(
           "<title>Find energy certificates and reports by their number - Find an energy certificate - GOV.UK</title>",
         )
+      end
+
+      it "displays the find a non-domestic certificate page heading" do
+        expect(response.body).to have_css "h1",
+                                          text: "Find energy certificates and reports by their number"
       end
 
       it "has an input field" do
@@ -701,6 +701,12 @@ describe "Acceptance::NonDomesticCertificate" do
         expect(response.status).to eq(400)
       end
 
+      it "displays an error in the title" do
+        expect(response.body).to include(
+          "<title>Error: Find energy certificates and reports by their number - Find an energy certificate - GOV.UK</title>",
+        )
+      end
+
       it "displays the find a non-domestic certificate page heading" do
         expect(response.body).to include(
           "Find energy certificates and reports by their number",
@@ -712,12 +718,6 @@ describe "Acceptance::NonDomesticCertificate" do
           '<span id="reference_number-error" class="govuk-error-message">',
         )
         expect(response.body).to include("Enter a 20-digit certificate number")
-      end
-
-      it "displays an error in the title" do
-        expect(response.body).to include(
-          "<title>Error: Find energy certificates and reports by their number - Find an energy certificate - GOV.UK</title>",
-        )
       end
 
       it "contains the required GDS error summary" do
