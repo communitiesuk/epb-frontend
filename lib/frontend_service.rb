@@ -169,7 +169,7 @@ class FrontendService < Sinatra::Base
           ]
 
         erb_template = :find_non_dom_certificate_by_postcode_results
-        search_results_heading = locals[:results].length > 0 ? t("#{erb_template}.list", length: count_certificates(locals[:results]), postcode: CGI.escapeHTML(params["postcode"].upcase)) : t("find_certificate_by_postcode_results.no_results.no_postcode", postcode: CGI.escapeHTML(params["postcode"].upcase))
+        search_results_heading = locals[:results].length.positive? ? t("#{erb_template}.list", length: count_certificates(locals[:results]), postcode: CGI.escapeHTML(params["postcode"].upcase)) : t("find_certificate_by_postcode_results.no_results.no_postcode", postcode: CGI.escapeHTML(params["postcode"].upcase))
         @page_title = "#{search_results_heading} - #{t('services.find_an_energy_certificate')} - #{t('layout.body.govuk')}"
         back_link "/find-a-non-domestic-certificate/search-by-postcode"
       rescue StandardError => e
@@ -500,11 +500,9 @@ class FrontendService < Sinatra::Base
           ][
             :assessments
           ]
-        @page_title =
-          "#{t('find_certificate_by_postcode_results.top_heading')} - #{
-            t('services.find_an_energy_certificate')
-          } - #{t('layout.body.govuk')}"
         erb_template = :find_certificate_by_postcode_results
+        search_results_heading = locals[:results].size.positive? ? t("#{erb_template}.list", length: count_certificates(locals[:results]), postcode: CGI.escapeHTML(params["postcode"].upcase)) : t("#{erb_template}.no_results.no_postcode", postcode: CGI.escapeHTML(params["postcode"].upcase))
+        @page_title = "#{search_results_heading} - #{t('services.find_an_energy_certificate')} - #{t('layout.body.govuk')}"
         back_link "/find-a-certificate/search-by-postcode"
       rescue StandardError => e
         case e

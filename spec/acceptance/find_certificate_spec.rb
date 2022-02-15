@@ -233,6 +233,12 @@ describe "Acceptance::Certificate" do
           expect(response.status).to eq(200)
         end
 
+        it "has a correct page title" do
+          expect(response.body).to include(
+            "<title>2 EPCs for SW1A 2AA - Find an energy certificate - GOV.UK</title>",
+          )
+        end
+
         it "displays the find a certificate page heading" do
           expect(response.body).to include(
             "Find an energy performance certificate",
@@ -289,6 +295,12 @@ describe "Acceptance::Certificate" do
 
         it "returns status 200" do
           expect(response.status).to eq(200)
+        end
+
+        it "has a correct page title" do
+          expect(response.body).to include(
+            "<title>No results for E1 4FF - Find an energy certificate - GOV.UK</title>",
+          )
         end
 
         it "displays the find a certificate page heading" do
