@@ -551,7 +551,7 @@ cy:
       email_subject_for: "ar gyfer"
       email_body_part_1: "Fe welwch chi’ch"
       email_body_part_2: "yn"
-      copy_link: "Copïo’r ddolen"
+      copy_link: "Copïo'r ddolen i'r clipfwrdd"
       print_link: "Argraffu"
     print:
       certificate:

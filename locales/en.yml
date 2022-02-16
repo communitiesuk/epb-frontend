@@ -551,7 +551,7 @@ en:
       email_subject_for: "for"
       email_body_part_1: "Please find your"
       email_body_part_2: "at"
-      copy_link: "Copy link"
+      copy_link: "Copy link to clipboard"
       print_link: "Print"
     print:
       certificate:
