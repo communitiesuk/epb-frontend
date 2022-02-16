@@ -11,7 +11,7 @@ describe "Acceptance::ServicePerformance", type: :feature do
     end
 
     it "has the correct title" do
-      expect(response.body).to include("<title>Check how this service is performing</title>")
+      expect(response.body).to include("<title>Check how this service is performing - GOV.UK</title>")
     end
 
     it "has the correct H1" do
@@ -142,7 +142,7 @@ describe "Acceptance::ServicePerformance", type: :feature do
     end
 
     it "has the correct Welsh title" do
-      expect(response.body).to include("<title>Gwirio sut mae'r gwasanaeth hwn yn perfformio</title>")
+      expect(response.body).to include("<title>Gwirio sut mae'r gwasanaeth hwn yn perfformio - GOV.UK</title>")
     end
 
     it "has the correct Welsh H1" do

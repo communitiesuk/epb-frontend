@@ -939,7 +939,7 @@ class FrontendService < Sinatra::Base
   end
 
   get "/service-performance" do
-    @page_title = t("service_performance.heading")
+    @page_title = "#{t('service_performance.heading')} - #{t('layout.body.govuk')}"
     status 200
     back_link false
     erb_template = :service_performance
