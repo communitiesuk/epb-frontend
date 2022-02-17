@@ -25,9 +25,9 @@
       <p class="govuk-body">
         <%= t('find_certificate_by_postcode_results.no_results.search_again.text') %>
         <ul class="govuk-list govuk-list--bullet govuk-!-margin-left-6">
-          <li><a class="govuk-link" href="<%=localised_url('/find-a-certificate/search-by-postcode')%>"><%= t('find_certificate_by_postcode_results.no_results.search_again.postcode') %></a></li>
-          <li><a class="govuk-link" href="<%=localised_url('/find-a-certificate/search-by-street-name-and-town')%>"><%= t('find_certificate_by_postcode_results.no_results.search_again.street_and_town') %></a></li>
-          <li><a class="govuk-link" href="<%=localised_url('/find-a-certificate/search-by-reference-number')%>"><%= t('find_certificate_by_postcode_results.no_results.search_again.certificate_number') %></a></li>
+          <li><a class="govuk-link" href="<%=localised_url('/find-a-certificate/search-by-postcode')%>"><span class="govuk-visually-hidden"><%= t('find_certificate_by_postcode_results.no_results.search_again.visually_hidden') %></span> <%= t('find_certificate_by_postcode_results.no_results.search_again.postcode') %></a></li>
+          <li><a class="govuk-link" href="<%=localised_url('/find-a-certificate/search-by-street-name-and-town')%>"><span class="govuk-visually-hidden"><%= t('find_certificate_by_postcode_results.no_results.search_again.visually_hidden') %></span> <%= t('find_certificate_by_postcode_results.no_results.search_again.street_and_town') %></a></li>
+          <li><a class="govuk-link" href="<%=localised_url('/find-a-certificate/search-by-reference-number')%>"><span class="govuk-visually-hidden"><%= t('find_certificate_by_postcode_results.no_results.search_again.visually_hidden') %></span> <%= t('find_certificate_by_postcode_results.no_results.search_again.certificate_number') %></a></li>
         </ul>
       </p>
 

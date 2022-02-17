@@ -263,6 +263,7 @@ describe "Acceptance::NonDomesticCertificate" do
 
         it "shows the options to search again" do
           expect(response.body).to include("You can search again by:")
+          expect(response.body).to have_css("span", class: "govuk-visually-hidden", text: "Search again using a")
           expect(response.body).to have_css "a", text: "postcode"
           expect(response.body).to have_css "a", text: "street and town"
           expect(response.body).to have_css "a", text: "certificate number"

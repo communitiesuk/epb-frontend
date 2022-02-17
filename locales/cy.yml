@@ -378,6 +378,7 @@ cy:
     no_results:
       search_again:
         text: "Gallwch chwilio eto, yn ôl y canlynol:"
+        visually_hidden: "Chwilio eto gan ddefnyddio"
         postcode: "cod post"
         street_and_town: "stryd a thref"
         certificate_number: "rhif tystysgrif"

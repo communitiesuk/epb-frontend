@@ -378,6 +378,7 @@ en:
     no_results:
       search_again:
         text: "You can search again by:"
+        visually_hidden: "Search again using a"
         postcode: "postcode"
         street_and_town: "street and town"
         certificate_number: "certificate number"
