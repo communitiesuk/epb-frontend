@@ -366,7 +366,7 @@ describe "Acceptance::NonDomesticCertificate" do
 
         it "displays the title" do
           expect(response.body).to include(
-            "<title>1 certificates and reports for 1 Makeup Street Beauty Town - Getting a new energy certificate - GOV.UK</title>",
+            "<title>1 certificates and reports for 1 Makeup Street Beauty Town - Find an energy certificate - GOV.UK</title>",
           )
         end
 

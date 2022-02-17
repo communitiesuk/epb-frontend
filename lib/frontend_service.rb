@@ -619,7 +619,7 @@ class FrontendService < Sinatra::Base
           ]
 
         erb_template = :find_non_dom_certificate_by_street_name_and_town_results
-        @page_title = "#{t("#{erb_template}.list", length: count_certificates(locals[:results]), query: "#{params['street_name']} #{params['town']}")} - #{t('services.getting_an_energy_certificate')} - #{t('layout.body.govuk')}"
+        @page_title = "#{t("#{erb_template}.list", length: count_certificates(locals[:results]), query: "#{params['street_name']} #{params['town']}")} - #{t('services.find_an_energy_certificate')} - #{t('layout.body.govuk')}"
         back_link "/find-a-non-domestic-certificate/search-by-street-name-and-town"
       rescue StandardError => e
         case e
@@ -754,7 +754,7 @@ class FrontendService < Sinatra::Base
           ]
 
         erb_template = :find_certificate_by_street_name_and_town_results
-        @page_title = "#{t("#{erb_template}.list", length: count_certificates(locals[:results]), query: "#{params['street_name']} #{params['town']}")} - #{t('services.getting_an_energy_certificate')} - #{t('layout.body.govuk')}"
+        @page_title = "#{t("#{erb_template}.list", length: count_certificates(locals[:results]), query: "#{params['street_name']} #{params['town']}")} - #{t('services.find_an_energy_certificate')} - #{t('layout.body.govuk')}"
         back_link "/find-a-certificate/search-by-street-name-and-town"
       rescue StandardError => e
         case e

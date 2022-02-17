@@ -834,7 +834,7 @@ describe "Acceptance::Certificate" do
 
         it "has a title that matches the page heading" do
           expect(response.body).to include(
-            "<title>1-1 of 1 results matching 1 Makeup Street Beauty Town - Getting a new energy certificate - GOV.UK</title>",
+            "<title>1-1 of 1 results matching 1 Makeup Street Beauty Town - Find an energy certificate - GOV.UK</title>",
           )
         end
 
