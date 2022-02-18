@@ -985,6 +985,7 @@ en:
             date_of_assessment: 'Date of assessment'
             date_of_certificate: 'Date of certificate'
             type_of_assessment: 'Type of assessment'
+            hidden_text_details_of_drop_down: 'Show information about the '
             sap_description_first_part: 'SAP (Standard Assessment Procedure) is a method used to assess and compare the energy and environmental performance of properties in the UK. It uses detailed information about the property’s construction to calculate energy performance.'
             sap_description_second_part: 'This type of assessment must be carried out on all new properties built after 1 April 2008 in England and Wales, and 30 September 2008 in Northern Ireland.'
             rdsap_description_first_part: 'RdSAP (Reduced data Standard Assessment Procedure) is a method used to assess and compare the energy and environmental performance of properties in the UK. It uses a site visit and survey of the property to calculate energy performance.'

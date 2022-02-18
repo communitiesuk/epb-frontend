@@ -985,6 +985,7 @@ cy:
             date_of_assessment: "Dyddiad yr asesiad"
             date_of_certificate: "Dyddiad y dystysgrif"
             type_of_assessment: "Math o asesiad"
+            hidden_text_details_of_drop_down: 'Dangos gwybodaeth am yr '
             sap_description_first_part: "Mae SAP (Gweithdrefn Asesu Safonol) yn ddull a ddefnyddir i asesu a chymharu perfformiad ynni a pherfformiad amgylcheddol eiddo yn y Deyrnas Unedig. Mae’n defnyddio gwybodaeth fanwl am adeiledd yr adeilad i gyfrifo’i berfformiad ynni."
             sap_description_second_part: "Rhaid i’r math hwn o asesiad gael ei gyflawni ar bob eiddo newydd a godwyd ar ôl 1 Ebrill yng Nghymru a Lloegr, a 30 Medi 2008 yng Ngogledd Iwerddon."
             rdsap_description_first_part: "Mae RdSAP (Gweithdrefn Asesu Safonol â Llai o Ddata) yn ddull a ddefnyddir i asesu a chymharu perfformiad ynni a pherfformiad amgylcheddol eiddo yn y Deyrnas Unedig. Mae’n defnyddio ymweliad â’r safle ac arolwg o’r eiddo i gyfrifo’i berfformiad ynni."
