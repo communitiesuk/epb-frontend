@@ -75,9 +75,8 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
     end
 
     it "shows the type of assessment" do
-      expect(response.body).to include(
-        '<span class="govuk-details__summary-text">RdSAP</span>',
-      )
+      expect(response.body).to have_selector("span.govuk-visually-hidden", text: "Show information about the ")
+      expect(response.body).to have_selector("span.govuk-details__summary-text", text: "RdSAP")
     end
 
     it "shows the type of assessment description" do

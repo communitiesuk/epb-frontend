@@ -42,8 +42,9 @@
             %>
               <details class="govuk-details" data-module="govuk-details">
                 <summary class="govuk-details__summary">
-                  <span class="govuk-visually-hidden"><%= t('domestic_epc.sections.information.certificate.list.hidden_text_details_of_drop_down') %></span>
-                  <span class="govuk-details__summary-text"><%= value %></span>
+                  <span class="govuk-details__summary-text">
+                    <span class="govuk-visually-hidden"><%= t('domestic_epc.sections.information.certificate.list.hidden_text_details_of_drop_down') %></span><%= value %>
+                  </span>
                 </summary>
                 <div class="govuk-details__text" id="description">
                   <%= t("domestic_epc.sections.information.certificate.list.#{value.downcase}_description_first_part") %>
