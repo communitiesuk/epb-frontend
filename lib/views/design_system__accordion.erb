@@ -5,6 +5,9 @@
         <div class="govuk-accordion__section-header">
           <h2 class="govuk-accordion__section-heading">
             <span class="govuk-accordion__section-button" id="accordion-<%= identifier.downcase %>-heading-<%= index %>">
+              <% if defined?(section[:heading_prefix]) %>
+                <span class="govuk-visually-hidden"><%= section[:heading_prefix] %></span>
+              <% end %>
               <%= section[:heading] %>
             </span>
           </h2>

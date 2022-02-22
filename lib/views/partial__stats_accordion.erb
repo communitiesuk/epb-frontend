@@ -3,6 +3,7 @@
 
   <% sections = [
       { heading: t('service_performance.contents.epcs_upload.tables.titles.all'),
+        heading_prefix: t('service_performance.contents.epcs_upload.tables.hidden.certificates_uploaded_all', :assessment_type => assessment_type),
         content: erb(:partial__stats_table, locals: {
           assessment_type: assessment_type,
           country_key: "all",
@@ -10,6 +11,7 @@
           show_average_rating: show_average_rating,
         })},
       { heading: t('service_performance.contents.epcs_upload.tables.titles.england_wales'),
+        heading_prefix: t('service_performance.contents.epcs_upload.tables.hidden.certificates_uploaded_country', :assessment_type => assessment_type),
         content: erb(:partial__stats_table, locals: {
           assessment_type: assessment_type,
           country_key: "england_wales",
@@ -17,6 +19,7 @@
           show_average_rating: show_average_rating,
         })},
       { heading: t('service_performance.contents.epcs_upload.tables.titles.northern_ireland'),
+        heading_prefix: t('service_performance.contents.epcs_upload.tables.hidden.certificates_uploaded_country', :assessment_type => assessment_type),
         content: erb(:partial__stats_table, locals: {
           assessment_type: assessment_type,
           country_key: "northern_ireland",

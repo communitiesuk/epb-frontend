@@ -523,6 +523,9 @@ cy:
             all: "Pob rhanbarth"
             england_wales: "Cymru a Lloegr"
             northern_ireland: "Gogledd Iwerddon"
+          hidden:
+            certificates_uploaded_all: 'Tystysgrifau %{assessment_type} a uwchlwythwyd ym '
+            certificates_uploaded_country: 'Tystysgrifau %{assessment_type} a uwchlwythwyd yng '
           headers:
             month: "Mis"
             num_uploaded: "Nifer a uwchlwythwyd"

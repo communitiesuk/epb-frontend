@@ -523,6 +523,9 @@ en:
             all: "All regions"
             england_wales: "England and Wales"
             northern_ireland: "Northern Ireland"
+          hidden:
+            certificates_uploaded_all: '%{assessment_type} certificates uploaded in '
+            certificates_uploaded_country: '%{assessment_type} certificates uploaded in '
           headers:
             month: "Month"
             num_uploaded: "Number uploaded"

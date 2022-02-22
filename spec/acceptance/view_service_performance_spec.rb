@@ -49,6 +49,9 @@ describe "Acceptance::ServicePerformance", type: :feature do
       expect(response.body).to have_css("#accordion-dec-rr")
       expect(response.body).to have_css("#accordion-ac-cert")
     end
+    it "has hidden text on the accordion headings for screen readers" do
+      expect(response.body).to have_css("span", text: "SAP certificates uploaded in ")
+    end
 
     it "has a table for each region (all, England and Wales, Northern Ireland) and user satisfaction" do
       expect(response.body).to have_css("table", count: 19)
