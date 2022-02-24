@@ -168,13 +168,13 @@
     <%=t("rating.potential") %>
   </text>
 
-  <svg role="presentation" aria-hidden="true" x="415" y="<%= 25+bands[current_energy_efficiency_band.to_sym][:position]*50 %>" width="90" height="50" class="rating-current">
+  <svg role="img" aria-hidden="true" x="415" y="<%= 25+bands[current_energy_efficiency_band.to_sym][:position]*50 %>" width="90" height="50" class="rating-current">
     <polygon points="0,25 25,50 100,50 100,0 25,0 0,25" class="band-<%= current_energy_efficiency_band %>"></polygon>
     <text x="18" y="32" class="current-potential-number"><%= current_energy_efficiency_rating %> |</text>
     <text x="67" y="32" class="small-letter"><%= current_energy_efficiency_band.upcase %></text>
   </svg>
 
-  <svg role="presentation" aria-hidden="true" x="515" y="<%= 25+bands[potential_energy_efficiency_band.to_sym][:position]*50 %>" width="90" height="50" class="rating-potential">
+  <svg role="img" aria-hidden="true" x="515" y="<%= 25+bands[potential_energy_efficiency_band.to_sym][:position]*50 %>" width="90" height="50" class="rating-potential">
     <polygon points="0,25 25,50 100,50 100,0 25,0 0,25" class="band-<%= potential_energy_efficiency_band %>"></polygon>
     <text x="18" y="32" class="current-potential-number"><%= potential_energy_efficiency_rating %> |</text>
     <text x="67" y="32" class="small-letter"><%= potential_energy_efficiency_band.upcase %></text>
