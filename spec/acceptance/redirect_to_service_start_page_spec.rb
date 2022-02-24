@@ -6,7 +6,6 @@ RSpec.describe "Redirect to service start page" do
   paths = FrontendService.routes["GET"].map { |route| route.first.to_s } - %w[/]
 
   directly_accessible_paths = %w[
-    /schemes
     /healthcheck
     /energy-certificate/:assessment_id
     /energy-certificate/:assessment_id/dec_summary

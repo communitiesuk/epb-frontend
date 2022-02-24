@@ -419,11 +419,6 @@ class FrontendService < Sinatra::Base
     show(erb_template, locals)
   end
 
-  get "/schemes" do
-    @page_title = "#{t('schemes.top_heading')} – #{t('layout.body.govuk')}"
-    erb :schemes, layout: :layout
-  end
-
   get "/healthcheck" do
     status 200
   end

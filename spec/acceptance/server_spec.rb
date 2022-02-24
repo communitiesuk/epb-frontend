@@ -36,16 +36,6 @@ describe "Acceptance::Server" do
     end
   end
 
-  describe ".get /schemes" do
-    let(:response) { get "/schemes" }
-
-    it "displays the schemes page title" do
-      expect(response.body).to include(
-        "Contact an energy assessor accreditation scheme",
-      )
-    end
-  end
-
   describe ".get a non-existent page" do
     let(:response) { get "/this-page-does-not-exist" }
 

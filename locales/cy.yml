@@ -116,9 +116,6 @@ cy:
           hint: "Mae adeilad newydd naill ai wrthi'n cael ei adeiladu neu am gael ei adeiladu cyn hir. Mae rhai estyniadau, trosiadau neu aneddiadau newid defnydd hefyd yn cyfrif fel adeiladu newydd."
 
   schemes:
-    top_heading: "Cysylltwch â chynllun achredu aseswyr ynni"
-    description: "Mae’r cynlluniau a ganlyn yn trwyddedu aseswyr ynni i asesu eiddo a chreu tystysgrifau ynni"
-    contact: "Dylech gysylltu â chynllun os oes angen ichi gysylltu â rhywun ynghylch asesydd"
     unaccredited: "heb ei achredu mwyach"
     contact_details:
       text: "Manylion cysylltu ar gyfer %{scheme_name}:"

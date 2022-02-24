@@ -116,9 +116,6 @@ en:
           hint: "A new building is either being built or will be built soon. Some extentions, conversions or change of use dwellings also count as new buildings."
 
   schemes:
-    top_heading: 'Contact an energy assessor accreditation scheme'
-    description: 'The following schemes license energy assessors to assess properties and create energy certificates'
-    contact: 'You should contact a scheme if you need to contact someone about an assessor'
     unaccredited: 'is no longer accredited.'
     contact_details:
       text: 'Contact details for %{scheme_name}:'
