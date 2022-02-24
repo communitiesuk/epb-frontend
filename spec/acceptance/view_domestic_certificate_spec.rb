@@ -22,7 +22,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
 
     it "has a tab content that shows the page title" do
       expect(response.body).to include(
-        " <title>Energy performance certificate (EPC) - Find an energy certificate - GOV.UK</title>",
+        " <title>Energy performance certificate (EPC) – Find an energy certificate – GOV.UK</title>",
       )
     end
 
@@ -1172,7 +1172,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
 
     it "shows the tag header that matches the page header" do
       expect(response.body).to include(
-        "<title>Certificate not available - GOV.UK</title>",
+        "<title>Certificate not available – GOV.UK</title>",
       )
     end
 

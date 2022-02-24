@@ -22,7 +22,7 @@ describe "Acceptance::Certificate" do
 
       it "displays the tab value the same as the main header value" do
         expect(response.body).to include(
-          "<title>What type of property is the certificate for? - Find an energy certificate - GOV.UK</title>",
+          "<title>What type of property is the certificate for? – Find an energy certificate – GOV.UK</title>",
         )
       end
 
@@ -38,7 +38,7 @@ describe "Acceptance::Certificate" do
 
       it "displays the tab value the same as the main header value" do
         expect(response.body).to include(
-          "<title>Error: What type of property is the certificate for? - Find an energy certificate - GOV.UK</title>",
+          "<title>Error: What type of property is the certificate for? – Find an energy certificate – GOV.UK</title>",
         )
       end
 
@@ -103,7 +103,7 @@ describe "Acceptance::Certificate" do
 
       it "has a tab content that matches the page heading" do
         expect(response.body).to include(
-          " <title>Error: Find an energy performance certificate (EPC) by postcode - Find an energy certificate - GOV.UK</title>",
+          " <title>Error: Find an energy performance certificate (EPC) by postcode – Find an energy certificate – GOV.UK</title>",
         )
       end
 
@@ -235,7 +235,7 @@ describe "Acceptance::Certificate" do
 
         it "has a correct page title" do
           expect(response.body).to include(
-            "<title>2 EPCs for SW1A 2AA - Find an energy certificate - GOV.UK</title>",
+            "<title>2 EPCs for SW1A 2AA – Find an energy certificate – GOV.UK</title>",
           )
         end
 
@@ -299,7 +299,7 @@ describe "Acceptance::Certificate" do
 
         it "has a correct page title" do
           expect(response.body).to include(
-            "<title>No results for E1 4FF - Find an energy certificate - GOV.UK</title>",
+            "<title>No results for E1 4FF – Find an energy certificate – GOV.UK</title>",
           )
         end
 
@@ -386,7 +386,7 @@ describe "Acceptance::Certificate" do
 
       it "has a title that matches the page heading" do
         expect(response.body).to include(
-          "<title>Find an energy performance certificate (EPC) by certificate number - Find an energy certificate - GOV.UK</title>",
+          "<title>Find an energy performance certificate (EPC) by certificate number – Find an energy certificate – GOV.UK</title>",
         )
       end
 
@@ -420,7 +420,7 @@ describe "Acceptance::Certificate" do
 
       it "has an error title" do
         expect(response.body).to include(
-          "<title>Error: Find an energy performance certificate (EPC) by certificate number - Find an energy certificate - GOV.UK</title>",
+          "<title>Error: Find an energy performance certificate (EPC) by certificate number – Find an energy certificate – GOV.UK</title>",
         )
       end
 
@@ -532,7 +532,7 @@ describe "Acceptance::Certificate" do
 
         it "displays an error in the title" do
           expect(response.body).to include(
-            "<title>Error: Find an energy performance certificate (EPC) by certificate number - Find an energy certificate - GOV.UK</title>",
+            "<title>Error: Find an energy performance certificate (EPC) by certificate number – Find an energy certificate – GOV.UK</title>",
           )
         end
 
@@ -611,7 +611,7 @@ describe "Acceptance::Certificate" do
 
       it "has a title that matches the page heading" do
         expect(response.body).to include(
-          "<title>Find an energy performance certificate (EPC) by street and town - Find an energy certificate - GOV.UK</title>",
+          "<title>Find an energy performance certificate (EPC) by street and town – Find an energy certificate – GOV.UK</title>",
         )
       end
 
@@ -835,7 +835,7 @@ describe "Acceptance::Certificate" do
 
         it "has a title that matches the page heading" do
           expect(response.body).to include(
-            "<title>1-1 of 1 results matching 1 Makeup Street Beauty Town - Find an energy certificate - GOV.UK</title>",
+            "<title>1-1 of 1 results matching 1 Makeup Street Beauty Town – Find an energy certificate – GOV.UK</title>",
           )
         end
 
@@ -901,7 +901,7 @@ describe "Acceptance::Certificate" do
 
         it "has a title" do
           expect(response.body).to include(
-            "<title>A certificate was not found at this address - Find an energy certificate - GOV.UK</title>",
+            "<title>A certificate was not found at this address – Find an energy certificate – GOV.UK</title>",
           )
         end
 

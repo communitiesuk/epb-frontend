@@ -26,7 +26,7 @@ describe "Acceptance::PrintableDisplayEnergyCertificate", type: :feature do
 
     it "has a tab content that shows the page title" do
       expect(response.body).to include(
-        " <title>Display energy certificate (DEC) - Find an energy certificate - GOV.UK</title>",
+        " <title>Display energy certificate (DEC) – Find an energy certificate – GOV.UK</title>",
       )
     end
 

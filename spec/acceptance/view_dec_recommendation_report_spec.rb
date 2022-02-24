@@ -37,7 +37,7 @@ describe "Acceptance::DecRecommendationReport", type: :feature do
 
     it "has a tab content that shows" do
       expect(response.body).to include(
-        " <title>Recommendation report - Find an energy certificate - GOV.UK</title>",
+        " <title>Recommendation report – Find an energy certificate – GOV.UK</title>",
       )
     end
 
