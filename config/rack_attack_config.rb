@@ -25,7 +25,7 @@ end
   white_listed_ips = JSON.parse(
     ENV["WHITELISTED_IP_ADDRESSES"] || "[]",
   ).map { |item|
-    item["ip_addresses"]
+    item["ip_address"]
   }.flatten.uniq
 
   white_listed_ips.each do |ip_address|
