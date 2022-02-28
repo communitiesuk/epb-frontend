@@ -27,6 +27,7 @@ env:
     EPB_RECAPTCHA_SITE_SECRET: "epbr-recaptcha-secret-key"
     EPB_SUSPECTED_BOT_USER_AGENTS: "epbr-suspected-bot-user-agents"
     PERMANENTLY_BANNED_IP_ADDRESSES: "epbr-permanently-banned-ip-addresses"
+    WHITELISTED_IP_ADDRESSES: "epbr-whitelisted-ip-addresses"
     SENTRY_DSN: "epbr-sentry-dsn-frontend"
 
 phases:
