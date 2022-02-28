@@ -21,19 +21,19 @@ class Rack::Attack::Request < ::Rack::Request
   end
 end
 
+# Whitelist IP addresses that ignore throttling limit; format of the env var is
+# "[{"reason":"pen testers", "ip_address": "198.51.100.111"},{...}]"
+white_listed_ips = JSON.parse(
+  ENV["WHITELISTED_IP_ADDRESSES"] || "[]",
+).map { |item|
+  item["ip_address"]
+}.flatten.uniq
 
-  white_listed_ips = JSON.parse(
-    ENV["WHITELISTED_IP_ADDRESSES"] || "[]",
-  ).map { |item|
-    item["ip_address"]
-  }.flatten.uniq
-
-  white_listed_ips.each do |ip_address|
-    Rack::Attack.safelist("white_listed") do |req|
-      req.source_ip == ip_address
-    end
+white_listed_ips.each do |ip_address|
+  Rack::Attack.safelist("white_listed") do |req|
+    req.source_ip == ip_address
   end
-
+end
 
 # Excessive requests going to the certificate page or search page will ban an IP
 Rack::Attack.blocklist("Certificate scrapers") do |req|
