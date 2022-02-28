@@ -21,9 +21,19 @@ class Rack::Attack::Request < ::Rack::Request
   end
 end
 
-JSON.parse(ENV["WHITELISTED_IP_ADDRESSES"] || "[]").each do |_c, _e|
-  Rack::Attack.safelist(banned_ip_obj["ip_address"])
-end
+
+  white_listed_ips = JSON.parse(
+    ENV["WHITELISTED_IP_ADDRESSES"] || "[]",
+  ).map { |item|
+    item["ip_addresses"]
+  }.flatten.uniq
+
+  white_listed_ips.each do |ip_address|
+    Rack::Attack.safelist("white_listed") do |req|
+      req.source_ip == ip_address
+    end
+  end
+
 
 # Excessive requests going to the certificate page or search page will ban an IP
 Rack::Attack.blocklist("Certificate scrapers") do |req|
