@@ -9,10 +9,6 @@ describe "Acceptance::AccessibilityStatement", type: :feature do
         get "http://getting-new-energy-certificate.local.gov.uk/accessibility-statement"
       end
 
-      it "returns status 200" do
-        expect(response.status).to eq(200)
-      end
-
       it "displays the accessibility statement page heading" do
         expect(response.body).to include("Accessibility statement")
       end
