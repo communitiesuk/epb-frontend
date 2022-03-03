@@ -22,7 +22,7 @@ ENV["EPB_API_URL"] = "http://test-api.gov.uk"
 ENV["STAGE"] = "test"
 ENV["EPB_UNLEASH_URI"] = "https://test-toggle-server/api"
 ENV["PERMANENTLY_BANNED_IP_ADDRESSES"] = '[{"reason":"did a bad thing", "ip_address": "198.51.100.100"}]'
-ENV["WHITELISTED_IP_ADDRESSES"] = '[{"reason":"pen testers", "ip_address": "198.51.100.111"}]'
+ENV["WHITELISTED_IP_ADDRESSES"] = '[{"reason":"pen testers", "ip_address": "198.51.100.111"},{"reason":"pen testers", "ip_address": "198.52.101.113"}]'
 
 I18n.load_path = Dir[File.join(File.dirname(__FILE__), "/../locales", "*.yml")]
 I18n.enforce_available_locales = true

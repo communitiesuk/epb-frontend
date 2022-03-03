@@ -29,10 +29,8 @@ white_listed_ips = JSON.parse(
   item["ip_address"]
 }.flatten.uniq
 
-white_listed_ips.each do |ip_address|
-  Rack::Attack.safelist("white_listed") do |req|
-    req.source_ip == ip_address
-  end
+Rack::Attack.safelist do |req|
+  white_listed_ips.include? req.source_ip
 end
 
 # Excessive requests going to the certificate page or search page will ban an IP
