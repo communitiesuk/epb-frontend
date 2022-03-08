@@ -147,10 +147,10 @@ GEM
       childprocess (>= 0.5, < 5.0)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2)
-    sentry-ruby (5.1.1)
+    sentry-ruby (5.2.0)
       concurrent-ruby (~> 1.0, >= 1.0.2)
-      sentry-ruby-core (= 5.1.1)
-    sentry-ruby-core (5.1.1)
+      sentry-ruby-core (= 5.2.0)
+    sentry-ruby-core (5.2.0)
       concurrent-ruby
     sinatra (2.2.0)
       mustermann (~> 1.0)
@@ -202,7 +202,7 @@ DEPENDENCIES
   rubocop-rspec (~> 2.7)
   sassc (~> 2.4)
   selenium-webdriver (~> 4.1.0)
-  sentry-ruby (~> 5.1)
+  sentry-ruby (~> 5.2)
   sinatra (~> 2.2)
   sinatra-contrib
   unleash (~> 4.1.0)
