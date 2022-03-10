@@ -29,6 +29,7 @@ unless %w[development test].include? environment
         event
       end
     end
+    config.traces_sample_rate = 0.1
   end
   use Sentry::Rack::CaptureExceptions
 end
