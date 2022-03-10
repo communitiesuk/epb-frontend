@@ -4,17 +4,6 @@ runtime-versions:
   ruby: 2.7
   nodejs: 14
 
-env:
-  variables:
-    DEPLOY_APPNAME: "mhclg-epb-frontend-ui-integration"
-
-  parameter-store:
-    PAAS_LOGIN_INTEGRATION: "epbr-govpaas-integration-login"
-    PAAS_PW_INTEGRATION: "epbr-govpaas-integration-pw"
-    PAAS_SPACE_INTEGRATION: "epbr-govpaas-integration-space"
-    PAAS_API: "epbr-govpaas-api"
-    PAAS_ORG: "epbr-govpaas-orgname"
-
 phases:
   install:
     runtime-versions:
