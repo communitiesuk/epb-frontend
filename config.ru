@@ -29,7 +29,30 @@ unless %w[development test].include? environment
         event
       end
     end
-    config.traces_sample_rate = 0.1
+    config.traces_sampler = lambda do |sampling_context|
+      transaction_context = sampling_context[:transaction_context]
+
+      op = transaction_context[:op]
+      transaction_name = transaction_context[:name]
+
+      case op
+      when /request/
+        case transaction_name
+        when /images/
+          0.0
+        when /javascript/
+          0.0
+        when /css/
+          0.0
+        when /font/
+          0.0
+        else
+          0.05
+        end
+      else
+        0.05
+      end
+    end
   end
   use Sentry::Rack::CaptureExceptions
 end
