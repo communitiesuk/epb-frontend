@@ -47,10 +47,10 @@ unless %w[development test].include? environment
         when /font/
           0.0
         else
-          0.05
+          0.0001
         end
       else
-        0.05
+        0.0001
       end
     end
   end
