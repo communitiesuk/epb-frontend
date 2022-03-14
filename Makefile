@@ -39,6 +39,7 @@ deploy-app: ## Deploys the app to PaaS
 	$(call check_space)
 	$(if ${DEPLOY_APPNAME},,$(error Must specify DEPLOY_APPNAME))
 
+	@$(MAKE) assets-version
 	@$(MAKE) frontend-build
 	@$(MAKE) generate-manifest
 	@$(MAKE) generate-autoscaling-policy

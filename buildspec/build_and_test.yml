@@ -15,6 +15,5 @@ phases:
       - make hosts
   build:
     commands:
-      - make assets-version
       - make frontend-build
       - make test
