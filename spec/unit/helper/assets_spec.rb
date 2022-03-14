@@ -18,7 +18,7 @@ describe Helper::Assets do
       app = class_double FrontendService
       allow(app).to receive(:set)
       described_class.setup_cache_control app
-      expect(app).to have_received(:set).with(:static_cache_control, [:public, { s_max_age: 604_800 }])
+      expect(app).to have_received(:set).with(:static_cache_control, [:public, { max_age: 604_800 }])
     end
   end
 
