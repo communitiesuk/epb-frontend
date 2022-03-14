@@ -13,6 +13,7 @@ phases:
       - bundle install
       - npm install
       - make hosts
+      - make assets-version
   build:
     commands:
       - make frontend-build

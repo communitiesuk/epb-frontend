@@ -77,6 +77,10 @@ test:
 hosts:
 	@scripts/configure-tests-hosts.sh
 
+.PHONY: assets-version
+assets-version:
+	@scripts/write-assets-version.sh
+
 .PHONY: run
 run:
 	@bundle exec rackup -p 9292 ${ARGS}
