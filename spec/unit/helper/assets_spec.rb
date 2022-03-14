@@ -11,7 +11,7 @@ describe Helper::Assets do
     end
 
     it "uses the assets version in an asset path when calling #path" do
-      expect(described_class.path("/app.css")).to eq "/assets/deadbeef/app.css"
+      expect(described_class.path("/app.css")).to eq "/static/deadbeef/app.css"
     end
 
     it "sets up static cache control with an s-max-age of a week when #setup_cache_control is invoked" do

@@ -5,7 +5,7 @@ module Helper
         return default_path
       end
 
-      "/assets/#{ENV['ASSETS_VERSION']}#{default_path}"
+      "/static/#{ENV['ASSETS_VERSION']}#{default_path}"
     end
 
     def self.setup_cache_control(context)

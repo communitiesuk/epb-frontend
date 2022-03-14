@@ -19,7 +19,7 @@ def public_target(default)
     return default
   end
 
-  default.gsub "/public", "/public/assets/#{ENV['ASSETS_VERSION']}"
+  default.gsub "/public", "/public/static/#{ENV['ASSETS_VERSION']}"
 end
 
 unless File.directory?(public_target("./public"))
