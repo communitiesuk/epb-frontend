@@ -18,6 +18,10 @@ require_relative "./config/rack_attack_config"
 
 environment = ENV["STAGE"]
 
+if ENV['ASSETS_VERSION'].nil? && File.exist?('./ASSETS_VERSION')
+  ENV['ASSETS_VERSION'] = File.read('./ASSETS_VERSION').chomp
+end
+
 unless %w[development test].include? environment
   Sentry.init do |config|
     config.capture_exception_frame_locals = true

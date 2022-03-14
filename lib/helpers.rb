@@ -135,6 +135,10 @@ module Helpers
     url
   end
 
+  def assets_path(path)
+    Helper::Assets.path path
+  end
+
   def recommendation_header(recommendation)
     if recommendation[:improvementCode] &&
         !recommendation[:improvementCode].to_s.empty?

@@ -17,6 +17,8 @@ class FrontendService < Sinatra::Base
     set :show_exceptions, :after_handler
   end
 
+  Helper::Assets.setup_cache_control(self)
+
   configure :development do
     require "sinatra/reloader"
     register Sinatra::Reloader
