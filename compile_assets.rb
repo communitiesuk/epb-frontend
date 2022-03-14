@@ -23,7 +23,6 @@ def public_target(default)
 end
 
 unless File.directory?(public_target("./public"))
-  FileUtils.mkdir("./public/assets")
   FileUtils.mkdir_p(public_target("./public"))
 end
 
