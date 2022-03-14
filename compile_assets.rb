@@ -22,13 +22,9 @@ def public_target(default)
   default.gsub "/public", "/public/assets/#{ENV['ASSETS_VERSION']}"
 end
 
-puts "target directory: #{public_target("./public")}"
-
 unless File.directory?(public_target("./public"))
   FileUtils.mkdir_p(public_target("./public"))
 end
-
-puts "directory is #{File.directory?(public_target("./public")) ? '' : ' not'} present"
 
 puts "Building Application SASS files"
 build_sass "./assets/sass/application.scss", public_target("./public/application.css")
