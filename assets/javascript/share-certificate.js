@@ -17,7 +17,7 @@ function changeTextAndIconAnimation () {
   const originalText = text.innerHTML
 
   text.innerHTML = `<span style="padding-top: 5px; padding-right: 5px; padding-bottom: 5px;">
-        <img src="/images/check.svg">
+        <img src="${text.dataset.clickedImageSrc}">
         </span> Copied`
   setTimeout(function () { text.innerHTML = originalText }, 5000)
 }
