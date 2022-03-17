@@ -139,6 +139,14 @@ module Helpers
     Helper::Assets.path path
   end
 
+  def inline_svg(path)
+    Helper::Assets.inline_svg path
+  end
+
+  def data_uri_svg(path)
+    Helper::Assets.data_uri_svg path
+  end
+
   def recommendation_header(recommendation)
     if recommendation[:improvementCode] &&
         !recommendation[:improvementCode].to_s.empty?

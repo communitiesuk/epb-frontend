@@ -11,7 +11,7 @@
            target="_blank"
            title="Email">
         <span class="share-icon">
-          <img src="<%= assets_path('/images/email.svg') %>" alt="">
+          <%== inline_svg('/images/email.svg') %>
         </span>
           <%= t("component.share.email")%>
         </a>
@@ -19,9 +19,9 @@
     </li>
     <li>
       <p id="copy-to-clipboard-margin" class="govuk-body">
-        <button id="copyToClipboardButton" class="govuk-body" onclick="clickHandler()" data-clicked-image-src="<%= assets_path('/images/check.svg') %>">
+        <button id="copyToClipboardButton" class="govuk-body" onclick="clickHandler()" data-clicked-image-src="<%= data_uri_svg('/images/check.svg') %>">
         <span class="share-icon">
-          <img src="<%= assets_path('/images/copy-link.svg') %>" alt="">
+          <%== inline_svg('/images/copy-link.svg') %>
         </span>
           <%= t("component.share.copy_link")%>
         </button>
@@ -32,7 +32,7 @@
       <p class="govuk-body">
         <a rel="nofollow" style="text-decoration: none; display: none;" id="link" href="<%= localised_url(request.path_info) + (localised_url(request.path_info).include?("?") ? "&" : "?") %>print=true" class="govuk-link govuk-!-margin-bottom-5" id="link">
         <span class="share-icon">
-          <img src="<%= assets_path('/images/print.svg') %>" alt="">
+          <%== inline_svg('/images/print.svg') %>
         </span>
           <%= t("component.share.print_link")%>
         </a>

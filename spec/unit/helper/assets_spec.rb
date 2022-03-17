@@ -20,6 +20,32 @@ describe Helper::Assets do
       described_class.setup_cache_control app
       expect(app).to have_received(:set).with(:static_cache_control, [:public, { max_age: 604_800 }])
     end
+
+    context "when inlining the content of an SVG asset using #inline_svg" do
+      asset_content = "i am an asset"
+
+      before do
+        allow(File).to receive(:read).and_return(asset_content)
+        allow(File).to receive(:exist?).and_return(true)
+      end
+
+      it "returns the content of the referenced asset" do
+        expect(described_class.inline_svg("/images/an_svg.svg")).to eq asset_content
+      end
+    end
+
+    context "when inlining the content of an SVG asset using #data_uri_svg" do
+      svg_content = '<svg alt="i am an svg" fill="#123456"></svg>'
+
+      before do
+        allow(File).to receive(:read).and_return(svg_content)
+        allow(File).to receive(:exist?).and_return(true)
+      end
+
+      it "returns a data URI for the SVG" do
+        expect(described_class.data_uri_svg("/images/an_svg.svg")).to eq "data:image/svg+xml;utf8,<svg alt='i am an svg' fill='%23123456'></svg>"
+      end
+    end
   end
 
   context "when the assets version environment variable is not set" do
