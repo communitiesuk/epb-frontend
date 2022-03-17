@@ -9,7 +9,7 @@ module Helper
     end
 
     def self.inline_svg(path)
-      file_path = File.expand_path(File.join(__dir__, "/../../assets", path))
+      file_path = File.expand_path(File.join(__dir__, "/../../public", path(path)))
       if File.exist?(file_path)
         File.read(file_path)
       end
