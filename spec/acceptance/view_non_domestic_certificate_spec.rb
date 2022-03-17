@@ -367,7 +367,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
                                         text: "Other certificates for this property"
       expect(response.body).to have_css "p",
                                         text:
-                                          "If you are aware of previous certificates for this property and they are not listed here, please contact us at mhclg.digital-services@communities.gov.uk or call our helpdesk on 020 3829 0748."
+                                          "If you are aware of previous certificates for this property and they are not listed here, please contact us at dluhc.digital-services@levellingup.gov.uk or call our helpdesk on 020 3829 0748."
       expect(response.body).to have_css "dt", text: "Certificate number"
       expect(response.body).to have_link "0000-0000-0000-0000-0001",
                                          href: "/energy-certificate/0000-0000-0000-0000-0001"
