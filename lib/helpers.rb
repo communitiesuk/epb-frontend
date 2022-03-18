@@ -392,12 +392,10 @@ module Helpers
     end
   end
 
-  # Whether the REcaptchta feature is switched on and has the right environment variables set
+  # Use reCAPTCHA only if the appropriate environment variables are set
+  # To disable reCAPTCHA remove these ENV variables from the deployed app
   def using_recaptcha?
-    [
-      %w[EPB_RECAPTCHA_SITE_KEY EPB_RECAPTCHA_SITE_SECRET].all? { |key| ENV.key? key },
-      Helper::Toggles.enabled?("use-recaptcha"),
-    ].all? { |expr| expr }
+    %w[EPB_RECAPTCHA_SITE_KEY EPB_RECAPTCHA_SITE_SECRET].all? { |key| ENV.key? key }
   end
 
   def recaptcha_pass?
