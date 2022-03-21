@@ -147,10 +147,10 @@ GEM
       childprocess (>= 0.5, < 5.0)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2)
-    sentry-ruby (5.2.0)
+    sentry-ruby (5.2.1)
       concurrent-ruby (~> 1.0, >= 1.0.2)
-      sentry-ruby-core (= 5.2.0)
-    sentry-ruby-core (5.2.0)
+      sentry-ruby-core (= 5.2.1)
+    sentry-ruby-core (5.2.1)
       concurrent-ruby
     sinatra (2.2.0)
       mustermann (~> 1.0)
