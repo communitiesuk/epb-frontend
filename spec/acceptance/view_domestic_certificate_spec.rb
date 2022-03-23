@@ -511,12 +511,6 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
         ).not_to have_link "Simple Energy Advice has guidance on improving a property’s energy use.",
                            href: "https://www.simpleenergyadvice.org.uk/"
       end
-
-      it "does not show the RHI text" do
-        expect(response.body).not_to have_css "p",
-                                              text:
-                                                "You might be able to receive Renewable Heat Incentive payments. This will help to reduce carbon emissions by replacing your existing heating system with one that generates renewable heat. The estimated energy required for space and water heating will form the basis of the payments."
-      end
     end
 
     context "when there were no recommendations made" do

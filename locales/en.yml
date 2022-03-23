@@ -959,10 +959,6 @@ en:
         loft_insulation: 'Loft insulation'
         cavity_insulation: 'Cavity wall insulation'
         solid_wall_insulation: 'Solid wall insulation'
-        renewable_heat_incentive:
-          body: 'You might be able to receive %{link}. This will help to reduce carbon emissions by replacing your existing heating system with one that generates renewable heat. The estimated energy required for space and water heating will form the basis of the payments.'
-          url: 'https://www.gov.uk/domestic-renewable-heat-incentive'
-          cta: 'Renewable Heat Incentive payments'
         not_applicable: 'Not applicable'
       information:
         title: 'Contacting the assessor and accreditation scheme'

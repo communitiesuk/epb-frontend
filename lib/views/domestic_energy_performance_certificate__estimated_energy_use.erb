@@ -92,10 +92,4 @@
       </tbody>
     </table>
   <% end %>
-
-  <% unless Helper::Toggles.enabled?('hide-rhi-link') || assessment[:postcode][0..1] == "BT" %>
-    <p class="govuk-body"><%==
-      t('domestic_epc.sections.heat_demand.renewable_heat_incentive.body', :link=>'<a class="govuk-link" href="' + t('domestic_epc.sections.heat_demand.renewable_heat_incentive.url') + '">' + t('domestic_epc.sections.heat_demand.renewable_heat_incentive.cta') + '</a>')
-    %></p>
-  <% end %>
 </div>

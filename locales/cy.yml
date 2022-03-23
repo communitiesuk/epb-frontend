@@ -959,10 +959,6 @@ cy:
         loft_insulation: "Inswleiddio’r croglofft"
         cavity_insulation: "Inswleiddio waliau ceudod"
         solid_wall_insulation: "Inswleiddio waliau solet"
-        renewable_heat_incentive:
-          body: "Efallai y gallwch gael %{link}. Bydd hynny’n helpu i leihau allyriadau carbon drwy osod system wresogi sy’n creu gwres adnewyddadwy yn lle’ch system bresennol. Yr amcangyfrif o’r ynni y mae ei angen ar gyfer gwresogi lle a chynhesu dŵr"
-          url: "https://www.gov.uk/domestic-renewable-heat-incentive"
-          cta: "taliadau’r Cymhelliant Gwres Adnewyddadwy"
         not_applicable: "Heb fod yn gymwys"
       information:
         title: "Cysylltu â’r asesydd a’r cynllun achredu"
