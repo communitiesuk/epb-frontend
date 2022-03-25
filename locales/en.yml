@@ -1888,6 +1888,11 @@ en:
       intro: "We use cookies to collect information about how you use this service. This helps us to improve our website and make it work as well as possible."
       positive: "Accept all cookies"
       negative: "Set cookie preferences"
+    notification:
+      title: "Success"
+      success: "You've set your cookie preferences"
+      link_back_to_find_service: "Go back to Find an energy certificate"
+      link_back_to_get_service: "Go back to Get a new energy certificate"
 
   service_unavailable:
     title: "Sorry, the service is unavailable"

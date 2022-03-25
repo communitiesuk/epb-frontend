@@ -84,6 +84,10 @@ module Helpers
     I18n.t(*args)
   end
 
+  def h(str)
+    CGI.h str
+  end
+
   def scheme_details(assessor, property)
     t(
       "schemes.list.#{assessor[:registeredBy][:name].split.first.downcase}.#{property}",
@@ -320,7 +324,11 @@ module Helpers
   end
 
   def google_property
-    request.hostname.start_with?("find") ? ENV["GTM_PROPERTY_FINDING"] : ENV["GTM_PROPERTY_GETTING"]
+    in_find_service? ? ENV["GTM_PROPERTY_FINDING"] : ENV["GTM_PROPERTY_GETTING"]
+  end
+
+  def in_find_service?
+    request.hostname.start_with?("find")
   end
 
   def redirect_to_service_start_page?
@@ -388,7 +396,7 @@ module Helpers
     if static_start_page?
       static_start_page
     else
-      "/"
+      localised_url "/"
     end
   end
 

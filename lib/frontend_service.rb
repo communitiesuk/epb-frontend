@@ -928,11 +928,11 @@ class FrontendService < Sinatra::Base
     @page_title = "#{t('cookies.title')} – #{t('layout.body.govuk')}"
     back_link false
     status 200
-    erb :cookies
+    erb :cookies, locals: { is_success: params[:success] == "true" }
   end
 
   post "/cookies" do
-    redirect "/"
+    redirect localised_url("/cookies?success=true")
   end
 
   get "/service-performance" do

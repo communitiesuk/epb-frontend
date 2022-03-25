@@ -1888,6 +1888,11 @@ cy:
       intro: "Rydyn ni’n defnyddio cwcis i gasglu gwybodaeth am sut rydych chi’n defnyddio’r gwasanaeth hwn. Mae hyn yn ein helpu i wella’n gwefan a gwneud iddi weithio cystal â phosibl."
       positive: "Derbyn pob cwci"
       negative: "Gosod dewisiadau cwcis"
+    notification:
+      title: "Llwyddiant"
+      success: "Rydych chi wedi gosod eich dewisiadau cwcis"
+      link_back_to_find_service: "Ewch yn ôl i Dod o hyd i dystysgrif ynni"
+      link_back_to_get_service: "Ewch yn ôl i Cael tystysgrif ynni newydd"
 
   service_unavailable:
     title: "Ymddiheuriadau. Nid yw'r gwasanaeth ar gael."
