@@ -388,7 +388,7 @@ module Helpers
     if static_start_page?
       static_start_page
     else
-      "/"
+      "/monkeys"
     end
   end
 
