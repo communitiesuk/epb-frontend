@@ -50,7 +50,7 @@ describe "Integration::ToggleService" do
 
       before do
         block_executed = false
-        Helper::Toggles.enabled?("test-disabled-feature") { block_executed = true }
+        Helper::Toggles.enabled?("test-unknown-feature") { block_executed = true }
       end
 
       it "does not execute the block" do
