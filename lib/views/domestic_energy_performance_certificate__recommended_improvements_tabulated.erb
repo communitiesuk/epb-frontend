@@ -12,7 +12,7 @@
         header = recommendation_header(recommendation)
         [
           "%s. %s" % [index + 1, header.description],
-          recommendation[:indicativeCost] ? remove_special_characters(recommendation[:indicativeCost]) : t('domestic_epc.sections.recommendations.list.information_unavailable'),
+          recommendation[:indicativeCost] ? resolve_bad_encoding_chars(recommendation[:indicativeCost]) : t('domestic_epc.sections.recommendations.list.information_unavailable'),
           recommendation[:typicalSaving] ? number_to_currency(recommendation[:typicalSaving]) : t('domestic_epc.sections.recommendations.list.na'),
         ].each_with_index.map { |cell, index| { text: cell, format: index > 0 ? 'numeric' : nil } }
       end,

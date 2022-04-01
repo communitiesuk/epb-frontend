@@ -60,9 +60,10 @@ module Helpers
     end
   end
 
-  def remove_special_characters(input)
-    input.gsub!("?", "£")
+  def resolve_bad_encoding_chars(input)
     input
+      .gsub("?", "£")
+      .gsub("Â£", "£")
   end
 
   def setup_locales
