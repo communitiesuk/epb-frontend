@@ -554,16 +554,6 @@ en:
       email_body_part_2: "at"
       copy_link: "Copy link to clipboard"
       print_link: "Print"
-    print:
-      certificate:
-        label: 'Print this certificate'
-        noscript_text: 'To print this certificate, press CMD/CTRL + P on your keyboard'
-      report:
-        label: 'Print this report'
-        noscript_text: 'To print this report, press CMD/CTRL + P on your keyboard'
-      type:
-        report: 'report'
-        certificate: 'certificate'
     administrative_information:
       title: "Administrative information"
       assessor:
@@ -750,8 +740,6 @@ en:
       certificate_id: 'Certificate number'
       energy_rating_title: 'Energy rating'
       floor_area: '%{total_floor_area} square metres'
-      print_certificate: 'Print this certificate'
-      print_certificate_noscript : 'To print this certificate, press CMD/CTRL + P on your keyboard'
     sidebar:
       title: 'Certificate contents'
       sections:
@@ -1425,11 +1413,6 @@ en:
         title: "Recommendation report"
         cta: "recommendation report"
         text: "Guidance on improving the energy performance operational rating of this building can be found in the %{link}."
-      print_certificate:
-        title: 'Print this certificate'
-        description: 'Public authorities must display their DEC in a prominent place that is clearly visible to the public, such as near the building’s entrance. They can be fined £500 if they do not.'
-        a3: 'This certificate should be printed no smaller than A3 size.'
-        open_print_version: 'Open the print version of this certificate'
       previous_energy_ratings:
         energy_rating: "Operational rating"
         date: "Date"

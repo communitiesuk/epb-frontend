@@ -554,16 +554,6 @@ cy:
       email_body_part_2: "yn"
       copy_link: "Copïo'r ddolen i'r clipfwrdd"
       print_link: "Argraffu"
-    print:
-      certificate:
-        label: "Argraffwch y dystysgrif hon"
-        noscript_text: "I argraffu’r dystysgrif hon, pwyswch CMD/CTRL + P ar eich bysellfwrdd"
-      report:
-        label: "Argraffwch yr adroddiad hwn"
-        noscript_text: "I argraffu’r adroddiad hwn pwyswch CMD/CTRL + P ar eich bysellfwrdd"
-      type:
-        report: "adroddiad"
-        certificate: "dystysgrif"
     administrative_information:
       title: "Gwybodaeth weinyddol"
       assessor:
@@ -750,8 +740,6 @@ cy:
       certificate_id: "Rhif y dystysgrif"
       energy_rating_title: "Cyfraddiad ynni"
       floor_area: "Cyfanswm arwynebedd yr eiddo yw %{total_floor_area} o fetrau sgwâr."
-      print_certificate: "Argraffwch y dystysgrif hon"
-      print_certificate_noscript: "I argraffu’r dystysgrif hon, pwyswch CMD/CTRL + P ar eich bysellfwrdd"
     sidebar:
       title: "Cynnwys y dystysgrif"
       sections:
@@ -1425,11 +1413,6 @@ cy:
         title: "Adroddiad ar argymhellion"
         cta: "adroddiad ar argymhellion"
         text: "Mae canllawiau ar wella cyfraddiad gweithredol perfformiad ynni’r adeilad hwn ar gael yn y %{link}."
-      print_certificate:
-        title: "Argraffwch y dystysgrif hon"
-        description: "Rhaid i awdurdodau cyhoeddus arddangos eu DEC mewn man amlwg sy’n amlwg yn weladwy i’r cyhoedd, megis yn agos i fynedfa’r adeilad. Os na wnân nhw hyn, gallant gael dirwy o Â£500."
-        a3: "Dylai’r dystysgrif hon gael ei hargraffu ar faint A3 o leiaf"
-        open_print_version: "Agorwch fersiwn brint y dystysgrif"
       previous_energy_ratings:
         energy_rating: "Cyfraddiad gweithredol"
         date: "Dyddiad"
