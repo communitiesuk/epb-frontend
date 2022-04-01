@@ -68,12 +68,6 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
       expect(response.body).to have_css "p", text: "A"
     end
 
-    it "does not show the print link from EPC summary" do
-      expect(response.body).not_to have_css "noscript p",
-                                            text:
-                                              "To print this certificate, press CMD/CTRL + P on your keyboard"
-    end
-
     it "shows the rating section" do
       expect(response.body).to have_css "h2",
                                         text: "Energy performance operational rating"
