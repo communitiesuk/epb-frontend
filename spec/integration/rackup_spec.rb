@@ -38,7 +38,7 @@ describe "Integration::Rackup" do
       req = Net::HTTP::Get.new("/")
       response = request_assessor.request(req)
       expect(response.code).to eq("200")
-      expect(response.body).to include("Getting a new energy certificate")
+      expect(response.body).to include("Get a new energy certificate")
     end
   end
 

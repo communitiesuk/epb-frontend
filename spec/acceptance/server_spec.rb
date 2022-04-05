@@ -12,7 +12,7 @@ describe "Acceptance::Server" do
 
     it "includes the index page title" do
       expect(response.body).to have_css "h1",
-                                        text: "Getting a new energy certificate"
+                                        text: "Get a new energy certificate"
     end
   end
 

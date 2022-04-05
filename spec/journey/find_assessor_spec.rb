@@ -335,8 +335,8 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
       click_link "Back"
     end
 
-    it "shows the getting a new energy certificate start page" do
-      expect(page.find("h1")).to have_content "Getting a new energy certificate"
+    it "shows the Get a new energy certificate start page" do
+      expect(page.find("h1")).to have_content "Get a new energy certificate"
     end
   end
 

@@ -14,7 +14,7 @@ en:
 
   services:
     find_an_energy_certificate: 'Find an energy certificate'
-    getting_an_energy_certificate: 'Getting a new energy certificate'
+    getting_an_energy_certificate: 'Get a new energy certificate'
 
   related_content:
     title: 'Related content'
@@ -61,7 +61,7 @@ en:
     help_desk_number: '020 3829 0748'
 
   find_an_assessor:
-    top_heading: 'Getting a new energy certificate'
+    top_heading: 'Get a new energy certificate'
     introduction:
       what_you_need: 'You need to book a property assessment to get a new:'
       epc: 'energy performance certificate (EPC)'
@@ -1851,8 +1851,8 @@ en:
 
   cookies:
     title: "Cookies on our service"
-    intro: "Cookies are files saved on your phone, tablet or computer when you visit a website. The ´Find an energy certificate´ and ´Getting a new energy certificate´ services uses cookies in order to understand how you use the services so we can update and improve them."
-    dont_worry: "The cookies we use don’t identify you personally. You can still use the ´Find an energy certificate´ or ´Getting a new energy certificate´ services if you don’t accept cookies that measure website use."
+    intro: "Cookies are files saved on your phone, tablet or computer when you visit a website. The ´Find an energy certificate´ and ´Get a new energy certificate´ services uses cookies in order to understand how you use the services so we can update and improve them."
+    dont_worry: "The cookies we use don’t identify you personally. You can still use the ´Find an energy certificate´ or ´Get a new energy certificate´ services if you don’t accept cookies that measure website use."
     measure:
       title: "Cookies that measure website use"
       analytics: "We use Google Analytics to collect information about how you use this service. This helps us check it’s meeting your needs and make improvements."

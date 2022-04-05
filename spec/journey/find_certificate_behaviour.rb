@@ -1,6 +1,6 @@
-shared_examples "shows the getting a new energy certificate start page" do
-  it "shows the getting a new energy certificate page" do
-    expect(page.find("h1")).to have_content "Getting a new energy certificate"
+shared_examples "shows the Get a new energy certificate start page" do
+  it "shows the Get a new energy certificate page" do
+    expect(page.find("h1")).to have_content "Get a new energy certificate"
   end
 end
 
@@ -49,7 +49,7 @@ shared_examples "a certificate search function" do |certificate_type:, property_
           click_on "get a new energy certificate"
         end
 
-        include_examples "shows the getting a new energy certificate start page"
+        include_examples "shows the Get a new energy certificate start page"
       end
     end
 
@@ -64,7 +64,7 @@ shared_examples "a certificate search function" do |certificate_type:, property_
           click_link "get a new energy certificate"
         end
 
-        include_examples "shows the getting a new energy certificate start page"
+        include_examples "shows the Get a new energy certificate start page"
       end
 
       context "when clicking on the link to perform a search by postcode" do
@@ -248,7 +248,7 @@ shared_examples "a certificate search function" do |certificate_type:, property_
           click_on "get a new energy certificate"
         end
 
-        include_examples "shows the getting a new energy certificate start page"
+        include_examples "shows the Get a new energy certificate start page"
       end
     end
   end

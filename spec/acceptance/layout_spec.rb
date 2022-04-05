@@ -25,7 +25,7 @@ describe "Acceptance::AccessibilityStatement", type: :feature do
 
       it "tab value is the same as the main header value" do
         expect(response.body).to include(
-          "<title>Getting a new energy certificate – Getting a new energy certificate – GOV.UK</title>",
+          "<title>Get a new energy certificate – Get a new energy certificate – GOV.UK</title>",
         )
       end
 
@@ -58,7 +58,7 @@ describe "Acceptance::AccessibilityStatement", type: :feature do
       end
 
       it "includes the gov header" do
-        expect(response.body).to have_link "Getting a new energy certificate"
+        expect(response.body).to have_link "Get a new energy certificate"
       end
 
       it "allows indexing the start page by Google Search but does not allow to follow the links" do

@@ -251,7 +251,7 @@ describe "Acceptance::Certificate" do
           )
         end
 
-        it "show the text for the getting a new energy certificate link" do
+        it "show the text for the Get a new energy certificate link" do
           expect(response.body).to have_css "a",
                                             text: "get a new energy certificate"
         end
@@ -339,7 +339,7 @@ describe "Acceptance::Certificate" do
           )
         end
 
-        it "shows the text for the getting a new energy certificate link" do
+        it "shows the text for the Get a new energy certificate link" do
           expect(response.body).to have_css "a",
                                             text: "get a new energy certificate"
         end
