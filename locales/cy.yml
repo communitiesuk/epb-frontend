@@ -1874,8 +1874,9 @@ cy:
     notification:
       title: "Llwyddiant"
       success: "Rydych chi wedi gosod eich dewisiadau cwcis"
-      link_back_to_find_service: "Ewch yn ôl i Dod o hyd i dystysgrif ynni"
-      link_back_to_get_service: "Ewch yn ôl i Cael tystysgrif ynni newydd"
+      go_back: "Ewch yn ôl i"
+      find_service_name: "Dod o hyd i dystysgrif ynni"
+      get_service_name: "Cael tystysgrif ynni newydd"
 
   service_unavailable:
     title: "Ymddiheuriadau. Nid yw'r gwasanaeth ar gael."

@@ -2,7 +2,11 @@
   <div class="govuk-grid-column-two-thirds">
     <% if defined?(is_success) && is_success %>
     <%== erb :design_system__notification_banner, locals: {
-      html: "<p class=\"govuk-notification-banner__heading\">#{h(t('cookies.notification.success'))}. <a href=\"#{root_page_url}\">#{h(t(in_find_service? ? 'cookies.notification.link_back_to_find_service' : 'cookies.notification.link_back_to_get_service'))}</a>.</p>",
+      html: "<h3 class=\"govuk-notification-banner__heading\">#{h(t('cookies.notification.success'))}</h3>
+             <p class=\"govuk-body\">
+               #{t('cookies.notification.go_back')}
+               <a href=\"#{root_page_url}\">#{h(t(in_find_service? ? 'cookies.notification.find_service_name' : 'cookies.notification.get_service_name'))}</a>.
+             </p>",
       titleText: h(t('cookies.notification.title')),
       type: "success"
     } %>

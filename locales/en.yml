@@ -880,7 +880,7 @@ en:
             details: 'The dwelling has a special energy saving feature which is recognised in the assessment, but its impact on the savings shown for improvement measures is ignored.'
       environmental_impact:
         title: "Environmental impact of this property"
-        eir_rating: "This property's current environmental impact rating is %{current_environmental_impact_rating}. It has the potential to be %{potential_environmental_impact_rating}."
+        eir_rating: "This property’s current environmental impact rating is %{current_environmental_impact_rating}. It has the potential to be %{potential_environmental_impact_rating}."
         rating_scale: "Properties are rated in a scale from A to G based on how much carbon dioxide (CO2) they produce."
         rating_comparision: "Properties with an A rating produce less CO2 than G rated properties."
         summary: "One of the biggest contributors to climate change is carbon dioxide (CO2). The energy used for heating, lighting and power in our homes produces over a quarter of the UK’s CO2 emissions."
@@ -1873,9 +1873,10 @@ en:
       negative: "Set cookie preferences"
     notification:
       title: "Success"
-      success: "You've set your cookie preferences"
-      link_back_to_find_service: "Go back to Find an energy certificate"
-      link_back_to_get_service: "Go back to Get a new energy certificate"
+      success: "You’ve set your cookie preferences"
+      go_back: "Go back to"
+      find_service_name: "Find an energy certificate"
+      get_service_name: "Get a new energy certificate"
 
   service_unavailable:
     title: "Sorry, the service is unavailable"

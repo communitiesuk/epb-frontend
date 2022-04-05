@@ -399,7 +399,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
     context "when viewing environmental impact section" do
       it "shows the summary text" do
         expect(response.body).to include(
-          "This property's current environmental impact rating is C. It has the potential to be B.",
+          "This property’s current environmental impact rating is C. It has the potential to be B.",
         )
       end
 
