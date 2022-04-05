@@ -1875,8 +1875,6 @@ en:
       title: "Success"
       success: "You’ve set your cookie preferences"
       go_back: "Go back to"
-      find_service_name: "Find an energy certificate"
-      get_service_name: "Get a new energy certificate"
 
   service_unavailable:
     title: "Sorry, the service is unavailable"
