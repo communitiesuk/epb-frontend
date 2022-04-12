@@ -64,6 +64,10 @@
   <div class="govuk-grid-column-two-thirds">
     <hr class="epc-blue-top" />
 
+    <%== erb :component_epc_superseded, locals: {
+      assessment: assessment,
+    } %>
+
     <%== erb :component__epc_summary, locals: {
       energy_efficiency_band: assessment[:currentEnergyEfficiencyBand],
       address: assessment[:address],
