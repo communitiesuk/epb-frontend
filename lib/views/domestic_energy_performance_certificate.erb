@@ -63,6 +63,12 @@
   </div>
   <div class="govuk-grid-column-two-thirds epc-domestic-sections">
     <hr class="epc-blue-top" />
+
+    <%== erb :component_epc_superseded, locals: {
+      assessment: assessment,
+    } %>
+
+
     <div class="govuk-body epc-blue-bottom printable-area epc-box-container">
       <div class="epc-box<% unless print_view %> govuk-!-margin-bottom-5<% end %>">
         <div class="epc-rating-box">
