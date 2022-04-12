@@ -473,11 +473,12 @@ module Helpers
 
   def assessment_superseded?(assessment_summary)
     return false if assessment_summary[:relatedAssessments].count.zero?
-    return true if assessment_summary[:relatedAssessments].sort { |a, b| DateTime.parse(b[:assessmentExpiryDate]) <=> DateTime.parse(a[:assessmentExpiryDate]) }.first[:assessmentStatus] == "ENTERED"
+    return true if assessment_summary[:relatedAssessments].min { |a, b| Time.parse(b[:assessmentExpiryDate]) <=> Time.parse(a[:assessmentExpiryDate]) }[:assessmentStatus] == "ENTERED"
+
     false
   end
 
   def get_superseded_assessment_id(assessment_summary)
-    assessment_summary[:relatedAssessments].sort { |a, b| DateTime.parse(b[:assessmentExpiryDate]) <=> DateTime.parse(a[:assessmentExpiryDate]) }.select{| i | i[:assessmentStatus] == 'ENTERED'}.first[:assessmentId]
+    assessment_summary[:relatedAssessments].sort { |a, b| Time.parse(b[:assessmentExpiryDate]) <=> Time.parse(a[:assessmentExpiryDate]) }.select { |i| i[:assessmentStatus] == "ENTERED" }.first[:assessmentId]
   end
 end
