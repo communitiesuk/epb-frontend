@@ -6,6 +6,12 @@
   </div>
 
   <div class="govuk-grid-column-one-third">
+
+    <%== erb :component_epc_superseded, locals: {
+      assessment: assessment,
+    } %>
+
+
     <hr class="epc-blue-top" />
     <%== erb :component__contents, locals: {
       title: t("dec.sections.contents.title"),
