@@ -470,4 +470,11 @@ module Helpers
       "a"
     end
   end
+
+  def assessment_superseded?(assessment_summary)
+    return false if assessment_summary[:relatedAssessments].count.zero?
+    return true if assessment_summary[:relatedAssessments].sort! { |a| DateTime.parse(a[:assessmentExpiryDate]) }.first[:assessmentStatus] == "ENTERED"
+
+    false
+  end
 end
