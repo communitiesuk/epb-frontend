@@ -211,6 +211,7 @@ describe "Acceptance::AirConditioningInspectionCertificate", type: :feature do
                                          href: "/energy-certificate/0000-0000-0000-0000-8888"
     end
 
+
     context "when viewing the related certificates section" do
       it "shows the section title" do
         expect(response.body).to have_css(
