@@ -1012,6 +1012,11 @@ en:
           AC-CERT: 'Air conditioning inspection certificate'
           DEC: 'Display energy certificate'
           DEC-RR: 'Display energy certificate recommendation report'
+      superseded:
+        title: 'Warning'
+        message:  'A new certificate has replaced this one'
+        link: 'See the new certificate'
+
 
   assessment_types:
     CEPC: 'Commercial energy performance certificate'

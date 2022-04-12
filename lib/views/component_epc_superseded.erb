@@ -2,8 +2,8 @@
   <div class="govuk-warning-text">
     <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
     <strong class="govuk-warning-text__text">
-      <span class="govuk-warning-text__assistive">Warning</span>
-      A new certificate has replaced this one. <a class="govuk-link" href="<%= localised_url('/energy-certificate/' + get_superseded_assessment_id(assessment)) %>">See the new certificate</a>.
+      <span class="govuk-warning-text__assistive"><%= t("domestic_epc.sections.superseded.title")%></span>
+      <%= t("domestic_epc.sections.superseded.message")%>. <a class="govuk-link" href="<%= localised_url('/energy-certificate/' + get_superseded_assessment_id(assessment)) %>"> <%= t("domestic_epc.sections.superseded.link")%></a>.
     </strong>
   </div>
 <% end %>

@@ -1012,6 +1012,10 @@ cy:
           "AC-CERT": "Tystysgrif archwiliad aerdymheru"
           DEC: "Tystysgrif ynni i’w harddangos"
           "DEC-RR": "Adroddiad ar argymhellion tystysgrif ynni i’w harddangos"
+      superseded:
+        title: 'Rhybudd'
+        message: 'Mae tystysgrif newydd wedi disodli hon'
+        link: 'Gweler y dystysgrif newydd'
 
   assessment_types:
     CEPC: "Tystysgrif perfformiad ynni masnachol"
