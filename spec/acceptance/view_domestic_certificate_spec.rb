@@ -159,6 +159,16 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       )
     end
 
+    it "all ids are unique" do
+      div_ids = Capybara.string(response.body).all("div").map{ |d| d["id"] }.compact
+      dd_ids = Capybara.string(response.body).all("dd").map{ |d| d["id"] }.compact
+      spans_ids = Capybara.string(response.body).all("span").map{ |d| d["id"] }.compact
+      ids = div_ids + dd_ids + spans_ids
+      ids.each do |id|
+        expect(response.body).to have_css("##{id}", :count =>1)
+      end
+    end
+
     context "when a related party disclosure code is not included" do
       before do
         FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
