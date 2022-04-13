@@ -267,8 +267,6 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
       expect(response.body).not_to have_css "dd", text: "4 May 2019 (Expired)"
     end
 
-
-
     context "when there are no related assessments" do
       before do
         FetchAssessmentSummary::AssessmentStub.fetch_dec(
@@ -286,7 +284,6 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
         expect(response.body).to have_css "p",
                                           text: "There are no related certificates for this property."
       end
-
     end
 
     context "when there is no Asset Rating" do
