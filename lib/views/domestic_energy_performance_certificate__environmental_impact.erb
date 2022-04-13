@@ -7,17 +7,17 @@
   <p class="govuk-body"><%== t('domestic_epc.sections.environmental_impact.rating_scale') %></p>
   <p class="govuk-body"><%== t('domestic_epc.sections.environmental_impact.rating_comparision') %></p>
   <dl class="govuk-summary-list">
-    <div class="govuk-summary-list__row" id="type">
+    <div class="govuk-summary-list__row" >
       <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= t('domestic_epc.sections.environmental_impact.average_household.text') %></dt>
-      <dd class="govuk-summary-list__value" id="average-household-produces" style="text-align: right"><%= t('domestic_epc.sections.environmental_impact.average_household.carbon') %><%== t('domestic_epc.sections.environmental_impact.tonnes_of_carbon_emission', carbon: 'CO2') %></dd>
+      <dd class="govuk-summary-list__value" id="eir-average-household-produces" style="text-align: right"><%= t('domestic_epc.sections.environmental_impact.average_household.carbon') %><%== t('domestic_epc.sections.environmental_impact.tonnes_of_carbon_emission', carbon: 'CO2') %></dd>
     </div>
-    <div class="govuk-summary-list__row" id="type">
+    <div class="govuk-summary-list__row" >
       <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= t('domestic_epc.sections.environmental_impact.property_produces') %></dt>
-      <dd class="govuk-summary-list__value" id="property-produces" style="text-align: right"><%= BigDecimal(assessment[:currentCarbonEmission]).to_f.round(1) %><%== t('domestic_epc.sections.environmental_impact.tonnes_of_carbon_emission', carbon: 'CO2') %></dd>
+      <dd class="govuk-summary-list__value" id="eir-property-produces" style="text-align: right"><%= BigDecimal(assessment[:currentCarbonEmission]).to_f.round(1) %><%== t('domestic_epc.sections.environmental_impact.tonnes_of_carbon_emission', carbon: 'CO2') %></dd>
     </div>
-    <div class="govuk-summary-list__row" id="type">
+    <div class="govuk-summary-list__row" >
       <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= t('domestic_epc.sections.environmental_impact.potential') %></dt>
-      <dd class="govuk-summary-list__value" id="potential-production" style="text-align: right"><%= BigDecimal(assessment[:potentialCarbonEmission]).to_f.round(1) %><%== t('domestic_epc.sections.environmental_impact.tonnes_of_carbon_emission', carbon: 'CO2') %></dd>
+      <dd class="govuk-summary-list__value" id="eir-potential-production" style="text-align: right"><%= BigDecimal(assessment[:potentialCarbonEmission]).to_f.round(1) %><%== t('domestic_epc.sections.environmental_impact.tonnes_of_carbon_emission', carbon: 'CO2') %></dd>
     </div>
   </dl>
   <p class="govuk-body">
