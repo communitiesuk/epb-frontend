@@ -1,9 +1,12 @@
-<% if assessment_superseded?(assessment) %>
+<% unless assessment[:supersededBy].nil? %>
   <div class="govuk-warning-text">
     <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
     <strong class="govuk-warning-text__text">
-      <span class="govuk-warning-text__assistive"><%= t("domestic_epc.sections.superseded.title")%></span>
-      <%= t("domestic_epc.sections.superseded.message")%>. <a class="govuk-link" href="<%= localised_url('/energy-certificate/' + get_superseded_assessment_id(assessment)) %>"> <%= t("domestic_epc.sections.superseded.link")%></a>.
+      <span class="govuk-warning-text__assistive">
+        <%= t('domestic_epc.superseded.title') %></span>
+     <%= t('domestic_epc.superseded.message') %>.
+      <a class="govuk-link" href="<%= localised_url('/energy-certificate/' + assessment[:supersededBy]) %>">
+        <%= t('domestic_epc.superseded.link') %></a>.
     </strong>
   </div>
 <% end %>

@@ -752,6 +752,10 @@ en:
         information: 'Contacting the assessor and accreditation scheme'
         green_deal: 'Green deal plan'
         previous: 'Other certificates for this property'
+    superseded:
+      title: 'Warning'
+      message: 'A new certificate has replaced this one'
+      link: 'See the new certificate'
     sections:
       renting:
         title: 'Rules on letting this property'
@@ -1012,10 +1016,6 @@ en:
           AC-CERT: 'Air conditioning inspection certificate'
           DEC: 'Display energy certificate'
           DEC-RR: 'Display energy certificate recommendation report'
-      superseded:
-        title: 'Warning'
-        message:  'A new certificate has replaced this one'
-        link: 'See the new certificate'
 
 
   assessment_types:
