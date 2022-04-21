@@ -238,8 +238,12 @@ $epc-compare-svg-width: $epc-compare-svg-height * 1.8;
   break-after: avoid;
 }
 
-.epc-recommendations .epc-rating-box {
+.epc-recommendations .epc-rating-box .epc-superseded-warning {
   display: none;
+}
+
+.epc-superseded-warning{
+  visibility: hidden !important;
 }
 
 .epc-contact-assessor details {
