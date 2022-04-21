@@ -1220,4 +1220,31 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       )
     end
   end
+
+  context "when the certificate has been superseded" do
+    before do
+      FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
+        assessment_id: "1234-5678-1234-5678-1234",
+      )
+    end
+
+    let(:response) { get "/energy-certificate/1234-5678-1234-5678-1234" }
+
+    it "shows the superseded warning message" do
+      expect(response.body).to have_css("div.govuk-warning-text", text: /Warning/)
+      expect(response.body).to have_css("div.govuk-warning-text", text: /A new certificate has replaced this one/)
+    end
+
+    it "shows the superseded link" do
+      expect(response.body).to have_link("See the new certificate", href: "/energy-certificate/9025-0000-0000-0000-0000")
+    end
+
+    context "when the certificate is being viewed for print" do
+      let(:response) { get "/energy-certificate/1111-1111-1111-1111-1112?printview=true" }
+
+      it "does not show the superseded warning message" do
+        expect(response.body).not_to have_css("div.govuk-warning-text", text: " A new certificate has replaced this one. See the new certificate")
+      end
+    end
+  end
 end

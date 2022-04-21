@@ -154,6 +154,7 @@ describe UseCase::FetchCertificate do
             },
           ],
           recommendedImprovements: [],
+          supersededBy: "9025-0000-0000-0000-0000",
           relatedAssessments: [
             {
               assessmentExpiryDate: "2006-05-04",
