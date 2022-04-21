@@ -58,6 +58,7 @@ describe Gateway::AssessmentSummaryGateway do
           :lzcEnergySources,
           :environmentalImpactCurrent,
           :environmentalImpactPotential,
+          :supersededBy,
         )
       end
     end

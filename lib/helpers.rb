@@ -470,5 +470,4 @@ module Helpers
       "a"
     end
   end
-
 end

@@ -1564,6 +1564,7 @@ module FetchAssessmentSummary
             propertySummary: property_summary,
             greenDealPlan: green_deal_plan,
             addendum: addendum,
+            supersededBy: "9025-0000-0000-0000-0000",
             relatedAssessments: [
               {
                 assessmentExpiryDate: "2006-05-04",
