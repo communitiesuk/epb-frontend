@@ -933,7 +933,7 @@ cy:
         costs_and_savings: "Mae’r amcangyfrif o’r gost yn dangos faint y byddai’r aelwyd gyfartalog yn ei wario yn yr eiddo hwn ar gyfer gwresogi, golau a dŵr poeth. Nid yw’n cael ei seilio ar sut mae ynni’n cael ei ddefnyddio gan y bobl sy’n byw yn yr eiddo."
         based_on: "Mae’r amcangyfrif o’r arbedion wedi’i seilio ar gyflawni pob un o’r argymhellion yn %{link}."
         based_on_cta: "sut i wella perfformiad ynni’r eiddo hwn"
-        based_on_url: "#argymhellion"
+        based_on_url: "#recommendations"
         more_advice: "I gael cyngor ar sut i leihau’ch biliau ynni, ewch i %{link}."
         more_advice_cta: "Simple Energy Advice"
         more_advice_url: "https://www.simpleenergyadvice.org.uk/"
