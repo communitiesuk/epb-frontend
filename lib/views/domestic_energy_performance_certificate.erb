@@ -6,6 +6,9 @@
       <h1 class="govuk-heading-xl printable-area">
         <%= t('domestic_epc.top_heading') %>
       </h1>
+
+
+
     </div>
   </div>
 
@@ -63,10 +66,11 @@
   </div>
   <div class="govuk-grid-column-two-thirds epc-domestic-sections">
 
+    <% unless print_view %>
     <%== erb :component_epc_superseded, locals: {
       assessment: assessment,
     } %>
-
+    <% end %>
     <hr class="epc-blue-top" />
 
     <div class="govuk-body epc-blue-bottom printable-area epc-box-container">

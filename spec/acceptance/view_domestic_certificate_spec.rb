@@ -905,13 +905,6 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
                                            href: "/energy-certificate/9026-0000-0000-0000-0000"
       end
 
-      context "when the certificate has been superseded" do
-        it "shows the superseded warning message" do
-          expect(response.body).to have_css("div.govuk-warning-text", text: " A new certificate has replaced this one. See the new certificate")
-          expect(response.body).to have_link("See the new certificate", href: "/energy-certificate/9026-0000-0000-0000-0000")
-        end
-      end
-
       context "when there are CANCELLED related certificates" do
         it "does not show cancelled related certificates" do
           expect(response.body).not_to have_css(
