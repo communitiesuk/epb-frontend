@@ -136,9 +136,9 @@ describe "Acceptance::ServicePerformance", type: :feature do
     end
 
     it "ensure all ids are unique" do
-      div_ids = Capybara.string(response.body).all("div").map{ |d| d["id"] }.compact
+      div_ids = Capybara.string(response.body).all("div").map { |d| d["id"] }.compact
       div_ids.each do |id|
-        expect(response.body).to have_css("div##{id}", :count =>1)
+        expect(response.body).to have_css("div##{id}", count: 1)
       end
     end
   end
