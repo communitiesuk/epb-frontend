@@ -979,9 +979,9 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       expect(response.status).to eq(200)
     end
 
-    it "shows making any of the recommended changes will improve this property’s energy efficiency text" do
+    it "shows following our step by step recommendations text" do
       expect(response.body).to include(
-        "Making any of the recommended changes will improve this property’s energy efficiency.",
+        "By following our step by step recommendations you could reduce this property’s energy use and potentially save money.",
       )
     end
 
@@ -993,7 +993,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
 
     it "shows recommendation title" do
       expect(response.body).to include(
-        "Recommendation 2: Double glazed windows",
+        "Step 2: Double glazed windows",
       )
     end
 
@@ -1015,7 +1015,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
 
     it "shows typical potential rating" do
       expect(response.body).to include(
-        ">Potential rating after carrying out recommendations 1&nbsp;to&nbsp;11</dt>",
+        ">Potential rating after completing steps 1&nbsp;to&nbsp;11</dt>",
       )
       expect(response.body).to include('<text x="30" y="30">99 | A</text>')
     end
@@ -1069,7 +1069,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       let(:response) { get "/energy-certificate/1111-1111-1111-1111-1112" }
 
       it "displays the improvementTitle and improvementDescription instead", :aggregate_failures do
-        expect(response.body).to include("Recommendation 1: Fix the boiler")
+        expect(response.body).to include("Step 1: Fix the boiler")
         expect(response.body).to include("An informative description of how to fix the boiler")
       end
     end

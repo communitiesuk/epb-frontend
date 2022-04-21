@@ -747,7 +747,7 @@ en:
         epc: 'Energy performance rating for this property'
         summary: "Breakdown of property’s energy performance"
         energy: 'Environmental impact of this property'
-        recommendations: 'How to improve this property’s energy performance'
+        recommendations: "Improve this property’s energy performance"
         heat_demand: 'Estimated energy use and potential savings'
         information: 'Contacting the assessor and accreditation scheme'
         green_deal: 'Green deal plan'
@@ -899,29 +899,28 @@ en:
         potential: "This property’s potential production"
         tonnes_of_carbon_emission: " tonnes of %{carbon}"
       recommendations:
-        title: 'How to improve this property’s energy performance'
+        title: "Improve this property’s energy performance"
         summary:
-          make_changes_text: 'Making any of the recommended changes will improve this property’s energy efficiency.'
-          improve_rating_text: 'If you make all of the recommended changes, this will improve the property’s energy rating and score from %{current_energy_efficiency_band} (%{current_energy_efficiency_rating}) to %{potential_energy_efficiency_band} (%{potential_energy_efficiency_rating}).'
-          what_is_energy_rating: 'What is an energy rating?'
-          energy_rating_description1: 'An energy rating shows a property’s energy efficiency.'
-          energy_rating_description2: 'Properties are given a rating from A (most efficient) to G (least efficient).'
-          energy_rating_description3: 'Properties are also given a score. The higher this number, the lower your CO2 emissions are likely to be.'
+          following_recommendations_text: "By following our step by step recommendations you could reduce this property’s energy use and potentially save money."
+          improve_rating_text: 'Carrying out these changes in order will improve the property’s energy rating and score from %{current_energy_efficiency_band} (%{current_energy_efficiency_rating}) to %{potential_energy_efficiency_band} (%{potential_energy_efficiency_rating}).'
+          steps_in_order_question: 'Do I need to follow these steps in order?'
+          steps_in_order_answer1: 'Yes. Each step builds on the one before it so you can save the most energy.'
+          steps_in_order_answer2: "For example, it’s more energy efficient to insulate your home before you buy a new boiler. A well insulated home will lose less heat so you do not have to run your boiler as often."
           no_recommendations_summary: 'The assessor did not make any recommendations for this property.'
           simple_energy_text: 'Simple Energy Advice has guidance on improving a property’s energy use.'
           simple_energy_link: 'https://www.simpleenergyadvice.org.uk/'
         box:
           energy_rating_title: 'Potential energy rating'
         list:
-          title: 'Recommendation'
+          title: 'Step'
           installation_cost: 'Typical installation cost'
           yearly_saving: 'Typical yearly saving'
           na: 'Not applicable'
           costs_savings: ' costs and savings'
           information_unavailable: 'Information unavailable'
-          potential_rating_1: 'Potential rating after carrying out recommendation 1'
-          potential_rating_2: 'Potential rating after carrying out recommendations 1&nbsp;and&nbsp;2'
-          potential_rating_3: 'Potential rating after carrying out recommendations 1&nbsp;to'
+          potential_rating_1: 'Potential rating after completing step 1'
+          potential_rating_2: 'Potential rating after completing steps 1&nbsp;and&nbsp;2'
+          potential_rating_3: 'Potential rating after completing steps 1&nbsp;to'
         paying_for_energy_improvements:
           title: 'Paying for energy improvements'
           text: 'Find energy grants and ways to save energy in your home.'
@@ -931,8 +930,8 @@ en:
         estimated_cost: 'Estimated yearly energy cost for this property'
         three_year_saving: 'Potential saving'
         costs_and_savings: 'The estimated cost shows how much the average household would spend in this property for heating, lighting and hot water. It is not based on how energy is used by the people living at the property.'
-        based_on: 'The estimated saving is based on making all of the recommendations in %{link}.'
-        based_on_cta: 'how to improve this property’s energy performance'
+        based_on: 'The potential saving shows how much money you could save if you %{link}.'
+        based_on_cta: 'complete each recommended step in order'
         based_on_url: '#recommendations'
         more_advice: 'For advice on how to reduce your energy bills visit %{link}.'
         more_advice_cta: 'Simple Energy Advice'

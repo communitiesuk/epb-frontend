@@ -8,19 +8,19 @@ describe "Helpers.potential_rating_text", type: :helper do
   context "when provided with the recommendation numerical index" do
     it "number 1" do
       expect(frontend_service_helpers.potential_rating_text(1)).to eq(
-        "Potential rating after carrying out recommendation 1",
+        "Potential rating after completing step 1",
       )
     end
 
     it "number 2" do
       expect(frontend_service_helpers.potential_rating_text(2)).to eq(
-        "Potential rating after carrying out recommendations 1&nbsp;and&nbsp;2",
+        "Potential rating after completing steps 1&nbsp;and&nbsp;2",
       )
     end
 
     it "number 3 to 9" do
       expect(frontend_service_helpers.potential_rating_text(3)).to eq(
-        "Potential rating after carrying out recommendations 1&nbsp;to&nbsp;3",
+        "Potential rating after completing steps 1&nbsp;to&nbsp;3",
       )
     end
   end
