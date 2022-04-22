@@ -1239,6 +1239,10 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       expect(response.body).to have_css("div.govuk-warning-text", text: /A new certificate has replaced this one/)
     end
 
+    it "the warning is hidden for print using the existing css definition" do
+      expect(response.body).to include('<div class="govuk-warning-text govuk-!-display-none-print"')
+    end
+
     it "shows the superseded link" do
       expect(response.body).to have_link("See the new certificate", href: "/energy-certificate/9025-0000-0000-0000-0000")
     end
