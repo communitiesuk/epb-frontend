@@ -5,7 +5,7 @@ APPLICATION_NAME=$1  # e.g. epb-something-api
 STAGE=$2 # i.e. [integration, staging, production]
 
 case "$STAGE" in
- production) MEMORY="1G" ;;
+ production) MEMORY="2G" ;;
  *) MEMORY="256M" ;;
 esac
 
