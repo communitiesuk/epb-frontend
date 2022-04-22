@@ -29,26 +29,37 @@
 
   <h3 class="govuk-heading-m"><%= t('domestic_epc.sections.heat_demand.heating_in_property') %></h3>
   <p class="govuk-body"><%= t('domestic_epc.sections.heat_demand.energy_costs') %></p>
+  <h4 class="govuk-heading-s"><%= t('domestic_epc.sections.heat_demand.estimated_energy') %></h4>
 
   <% unless assessment[:heatDemand][:currentWaterHeatingDemand].nil? && assessment[:heatDemand][:currentSpaceHeatingDemand].nil? %>
-    <h4 class="govuk-heading-s"><%= t('domestic_epc.sections.heat_demand.estimated_energy') %></h4>
-    <%== erb :component__summary_list, locals: {
-      list: {
-        "space_heating": {
-          numerical: true,
-          value: assessment[:heatDemand][:currentSpaceHeatingDemand],
-          suffix: " " + t('domestic_epc.sections.heat_demand.kwh_per_year'),
-        },
-        "water_heating": {
-          numerical: true,
-          value: assessment[:heatDemand][:currentWaterHeatingDemand],
-          suffix: " " + t('domestic_epc.sections.heat_demand.kwh_per_year'),
-        }
-      },
-      translation_prefix: 'domestic_epc.sections.heat_demand.',
-      skip_null: true,
-    } %>
-  <% end %>
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header">Type of heating</th>
+        <th scope="col" class="govuk-table__header">Estimated energy used</th>
+      </tr>
+      </thead>
+
+      <% if assessment[:heatDemand][:currentSpaceHeatingDemand] && assessment[:heatDemand][:currentSpaceHeatingDemand] > 0 %>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><%= t('domestic_epc.sections.heat_demand.space_heating') %></th>
+          <td class="govuk-table__cell" id="loft-insulation">
+            <%= assessment[:heatDemand][:currentSpaceHeatingDemand].abs %> <%= t('domestic_epc.sections.heat_demand.kwh_per_year') %>
+          </td>
+        </tr>
+      <% end %>
+
+      <% if assessment[:heatDemand][:currentWaterHeatingDemand] && assessment[:heatDemand][:currentWaterHeatingDemand] > 0 %>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><%= t('domestic_epc.sections.heat_demand.water_heating') %></th>
+          <td class="govuk-table__cell" id="loft-insulation">
+            <%= assessment[:heatDemand][:currentWaterHeatingDemand].abs %> <%= t('domestic_epc.sections.heat_demand.kwh_per_year') %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+<% end %>
+
 
   <% if assessment[:heatDemand][:impactOfLoftInsulation].nil? && assessment[:heatDemand][:impactOfCavityInsulation].nil? && assessment[:heatDemand][:impactOfSolidWallInsulation].nil? %>
     <h4 class="govuk-heading-s"><%= t('domestic_epc.sections.heat_demand.potential_saving') %></h4>
