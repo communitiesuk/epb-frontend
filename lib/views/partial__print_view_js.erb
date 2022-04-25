@@ -1,0 +1,10 @@
+<script>
+  window.onload = function() {
+    window.print();
+  }
+  window.onafterprint = function() {
+    window.onfocus = function() {
+      window.location.replace("<%= filter_query_params(localised_url(request.url), :print) %>");
+    }
+  }
+</script>

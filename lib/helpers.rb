@@ -3,6 +3,7 @@
 require "net/http"
 require "epb-auth-tools"
 require "csv"
+require "uri"
 
 module Helpers
   WELSH_MONTHS = {
@@ -138,6 +139,20 @@ module Helpers
     end
 
     url
+  end
+
+  def filter_query_params(url, *filtered_params)
+    uri = URI.parse url
+    filtered_query_params = if uri.query
+                              uri.query.split("&").each_with_object({}) do |pair, hash|
+                                key, val = pair.split("=")
+                                hash[key.to_sym] = val unless filtered_params.include?(key.to_sym)
+                              end
+                            else
+                              {}
+                            end
+    uri.query = filtered_query_params.length.zero? ? nil : URI.encode_www_form(filtered_query_params)
+    uri.to_s
   end
 
   def assets_path(path)
