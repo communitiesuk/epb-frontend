@@ -22,7 +22,7 @@
      <%- if defined?(disableAutoFocus) && disableAutoFocus %> data-disable-auto-focus="true"<% end -%>
      <%- unless !defined?(attributes) || attributes.nil? || attributes.empty? %> <%= attributes.map { |attr, val| '%s="%s"' % [attr, CGI.escape_html(val)] }.join(' ') %><% end %>>
     <div class="govuk-notification-banner__header">
-      <h<%= headingLevel %> class="govuk-notification-banner__title" id="<%= (defined?(titleId) && titleId) ? titleId : 'govuk-notification-banner-title' %>">
+      <h<%= headingLevel %> id="<%= (defined?(titleId) && titleId) ? titleId : 'govuk-notification-banner-title' %>" class="govuk-notification-banner__title">
         <%= title %>
       </h<%= headingLevel %>>
     </div>

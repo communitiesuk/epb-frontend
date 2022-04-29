@@ -39,7 +39,7 @@
         </li>
       </ul>
 
-      <div class="govuk-tabs__panel" id="epc-tab">
+      <div id="epc-tab" class="govuk-tabs__panel">
         <h2 class="govuk-heading-l">  <%= t('service_performance.contents.epcs_upload.title') %></h2>
         <div class="govuk-body">
           <div class="govuk-grid-row">
@@ -55,7 +55,7 @@
         </div>
       </div>
 
-      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="user-satisfaction-tab">
+      <div id="user-satisfaction-tab" class="govuk-tabs__panel govuk-tabs__panel--hidden">
         <h2 class="govuk-heading-l"> <%= t('service_performance.contents.user_satisfaction.title') %> </h2>
         <%== erb :partial__user_satisfaction, locals: {values: locals[:user_satisfaction] } %>
       </div>
