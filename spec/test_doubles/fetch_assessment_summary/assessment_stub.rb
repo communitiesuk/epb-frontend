@@ -777,6 +777,7 @@ module FetchAssessmentSummary
       primary_energy_use: "413.22264873648762",
       related_rrn: "4192-1535-8427-8844-6702",
       related_party_disclosure: 1,
+
       related_assessments: [
         {
           assessmentExpiryDate: "2026-05-04",
@@ -845,6 +846,7 @@ module FetchAssessmentSummary
           relatedPartyDisclosure: related_party_disclosure,
           propertyType: "B1 Offices and Workshop businesses",
           relatedAssessments: related_assessments,
+          supersededBy: "0000-0000-0000-0000-0001",
         },
       }
 
@@ -953,6 +955,7 @@ module FetchAssessmentSummary
           relatedPartyDisclosure: related_party,
           energyBandFromRelatedCertificate: related_energy_band,
           optOut: opt_out,
+          supersededBy: "0000-0000-0000-0000-5555",
         },
       }
       WebMock

@@ -6,6 +6,7 @@
   </div>
 
   <div class="govuk-grid-column-one-third">
+
     <hr class="epc-blue-top" />
     <% content_sections = [
       {
@@ -43,6 +44,11 @@
     } %>
   </div>
   <div class="govuk-grid-column-two-thirds epc-cepc-rr-sections">
+
+    <%== erb :component__epc_superseded, locals: {
+      assessment: assessment,
+    } %>
+
     <hr class="epc-blue-top" />
       <%== erb :component__epc_summary_compact, locals: {
         assessment: assessment,

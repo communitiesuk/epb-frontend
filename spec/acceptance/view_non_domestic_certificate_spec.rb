@@ -398,6 +398,10 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
         expect(response.body).to have_css "p",
                                           text: "There are no related certificates for this property."
       end
+
+      it "does not show the superseded warning message" do
+        expect(response.body).not_to have_css("div.govuk-warning-text", text: " A new certificate has replaced this one. See the new certificate")
+      end
     end
   end
 
@@ -444,6 +448,31 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
       expect(response.body).not_to include(
         "Lloyds House, 18 Lloyd Street, Manchester, M2 5WA",
       )
+    end
+  end
+
+  context "when the certificate has been superseded" do
+    before do
+      FetchAssessmentSummary::AssessmentStub.fetch_cepc(
+        assessment_id: "1234-5678-1234-5678-1234",
+        energy_efficiency_band:
+          "b",
+      )
+    end
+
+    let(:response) { get "/energy-certificate/1234-5678-1234-5678-1234" }
+
+    it "shows the superseded warning message" do
+      expect(response.body).to have_css("div.govuk-warning-text", text: /Warning/)
+      expect(response.body).to have_css("div.govuk-warning-text", text: /A new certificate has replaced this one/)
+    end
+
+    it "the warning is hidden for print using the existing css definition" do
+      expect(response.body).to include('<div class="govuk-warning-text govuk-!-display-none-print"')
+    end
+
+    it "shows the superseded link" do
+      expect(response.body).to have_link("See the new certificate", href: "/energy-certificate/0000-0000-0000-0000-0001")
     end
   end
 end
