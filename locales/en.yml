@@ -951,6 +951,8 @@ en:
         cavity_insulation: 'Cavity wall insulation'
         solid_wall_insulation: 'Solid wall insulation'
         not_applicable: 'Not applicable'
+        type_of_heating: 'Type of heating'
+        estimated_energy_used: 'Estimated energy used'
       information:
         title: 'Contacting the assessor and accreditation scheme'
         intro: 'This EPC was created by a qualified energy assessor.<br /><br />If you are unhappy about your property’s energy assessment or certificate, you can complain to the assessor directly.<br /><br />If you are still unhappy after contacting the assessor, you should contact the assessor’s accreditation scheme.<br /><br />Accreditation schemes are appointed by the government to ensure that assessors are qualified to carry out EPC assessments.'

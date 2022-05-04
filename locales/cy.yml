@@ -951,6 +951,8 @@ cy:
         cavity_insulation: "Inswleiddio waliau ceudod"
         solid_wall_insulation: "Inswleiddio waliau solet"
         not_applicable: "Heb fod yn gymwys"
+        type_of_heating: "Y math o wres"
+        estimated_energy_used: "Amcangyfrif o'r ynni a ddefnyddir"
       information:
         title: "Cysylltu â’r asesydd a’r cynllun achredu"
         intro: "Cafodd yr EPC hon ei chreu gan asesydd ynni cymwysedig.<br /><br />Os ydych yn anfodlon ar asesiad neu dystysgrif ynni’ch eiddo, gallwch gwyno i’r asesydd yn uniongyrchol.<br /><br />Os ydych yn dal yn anfodlon ar ôl cysylltu â’r asesydd, dylech gysylltu â chynllun achredu’r asesydd.<br /><br />Mae cynlluniau achredu’n cael eu penodi gan y llywodraeth i sicrhau bod gan aseswyr gymwysterau i gyflawni asesiadau EPC."
