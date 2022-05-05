@@ -43,7 +43,7 @@
       <% if assessment[:heatDemand][:currentSpaceHeatingDemand] && assessment[:heatDemand][:currentSpaceHeatingDemand] > 0 %>
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header"><%= t('domestic_epc.sections.heat_demand.space_heating') %></th>
-          <td class="govuk-table__cell" id="loft-insulation">
+          <td class="govuk-table__cell" id="current-space-heating-demand">
             <%= assessment[:heatDemand][:currentSpaceHeatingDemand].abs %> <%= t('domestic_epc.sections.heat_demand.kwh_per_year') %>
           </td>
         </tr>
@@ -52,7 +52,7 @@
       <% if assessment[:heatDemand][:currentWaterHeatingDemand] && assessment[:heatDemand][:currentWaterHeatingDemand] > 0 %>
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header"><%= t('domestic_epc.sections.heat_demand.water_heating') %></th>
-          <td class="govuk-table__cell" id="loft-insulation">
+          <td class="govuk-table__cell" id="current-water-heating-demand">
             <%= assessment[:heatDemand][:currentWaterHeatingDemand].abs %> <%= t('domestic_epc.sections.heat_demand.kwh_per_year') %>
           </td>
         </tr>
