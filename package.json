@@ -30,6 +30,13 @@
     "test": "jest"
   },
   "standard": {
-    "parser": "@babel/eslint-parser"
+    "parser": "@babel/eslint-parser",
+    "ignore": [
+      "all.js"
+    ],
+    "globals": [
+      "location",
+      "MutationObserver"
+    ]
   }
 }

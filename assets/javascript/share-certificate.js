@@ -22,6 +22,6 @@ function changeTextAndIconAnimation () {
   setTimeout(function () { text.innerHTML = originalText }, 5000)
 }
 
-function maintainTabIndexOrder(){
-  document.getElementById("copyToClipboardButton").focus();
+function maintainTabIndexOrder () {
+  document.getElementById('copyToClipboardButton').focus()
 }
