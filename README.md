@@ -3,6 +3,8 @@
 Frontend for the Energy Performance of Buildings Register:
 <https://mhclg-epb-frontend-ui-production.london.cloudapps.digital>
 
+[![Frontend smoke tests](https://github.com/communitiesuk/epb-frontend-smoke-tests/actions/workflows/main.yml/badge.svg)](https://github.com/communitiesuk/epb-frontend-smoke-tests/actions/workflows/main.yml)
+
 ## Getting Started
 
 Make sure you have the following installed:
