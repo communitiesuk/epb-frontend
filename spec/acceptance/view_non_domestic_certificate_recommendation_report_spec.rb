@@ -258,7 +258,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
     end
 
     it "shows the superseded link" do
-      expect(response.body).to have_link("See the new certificate", href: "/energy-certificate/0000-0000-0000-0000-5555")
+      expect(response.body).to have_link("See the new report", href: "/energy-certificate/0000-0000-0000-0000-5555")
     end
   end
 end

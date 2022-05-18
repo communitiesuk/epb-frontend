@@ -6,7 +6,7 @@
         <%= t('domestic_epc.superseded.title') %></span>
      <%= t("domestic_epc.superseded.#{defined?(type) ? type : 'certificate'}_message") %>.
       <a class="govuk-link" href="<%= localised_url('/energy-certificate/' + assessment[:supersededBy]) %>">
-        <%= t('domestic_epc.superseded.link') %></a>.
+        <%= t("domestic_epc.superseded.#{defined?(type) ? type : 'certificate'}_link") %></a>.
     </strong>
   </div>
 <% end %>

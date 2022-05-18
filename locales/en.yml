@@ -756,7 +756,8 @@ en:
       title: 'Warning'
       certificate_message: 'A new certificate has replaced this one'
       report_message: 'A new report has replaced this one'
-      link: 'See the new certificate'
+      certificate_link: 'See the new certificate'
+      report_link: 'See the new report'
     sections:
       renting:
         title: 'Rules on letting this property'

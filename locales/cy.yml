@@ -756,7 +756,8 @@ cy:
       title: 'Rhybudd'
       certificate_message: 'Mae tystysgrif newydd wedi disodli hon'
       report_message: 'Mae adroddiad newydd wedi disodli hon'
-      link: 'Gweler y dystysgrif newydd'
+      certificate_link: 'Gweler y dystysgrif newydd'
+      report_link: 'Gweler yr adroddiad newydd'
     sections:
       renting:
         title: "Rheolau ar osod yr eiddo hwn"
