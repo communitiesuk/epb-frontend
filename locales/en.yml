@@ -696,7 +696,7 @@ en:
       explanation: "Properties similar to this one could have ratings:"
       if_newly_built: "If newly built"
       if_typical_existing_stock: "If typical of the existing stock"
-    energy_peformance_breakdown:
+    energy_performance_breakdown:
       heading: "Breakdown of this property’s energy performance"
       main_heating_fuel: "Main heating fuel"
       building_environment: "Building environment"

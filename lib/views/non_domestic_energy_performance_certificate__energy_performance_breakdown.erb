@@ -1,7 +1,7 @@
 <div class="govuk-body epc-blue-bottom printable-area epc-energy-perf-breakdown">
-  <a id="energy_peformance_breakdown"></a>
+  <a id="energy_performance_breakdown"></a>
   <h2 class="govuk-heading-l"><%=
-    t('non_domestic_epc.energy_peformance_breakdown.heading')
+    t('non_domestic_epc.energy_performance_breakdown.heading')
   %></h2>
 
   <%== erb :component__summary_list, locals: {
@@ -12,7 +12,7 @@
       "emission_rate": { value: emission_rate },
       "primary_energy_use": { value: (primary_energy_use.nil? ? nil : primary_energy_use.to_f.round.to_s)},
     },
-    translation_prefix: 'non_domestic_epc.energy_peformance_breakdown.',
+    translation_prefix: 'non_domestic_epc.energy_performance_breakdown.',
     skip_null: true
   } %>
 

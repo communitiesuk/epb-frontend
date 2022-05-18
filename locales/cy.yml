@@ -696,7 +696,7 @@ cy:
       explanation: "Gallai eiddo sy’n debyg i’r eiddo hwn fod â chyfraddiadau:"
       if_newly_built: "Os ydyn nhw newydd gael eu hadeiladu"
       if_typical_existing_stock: "Os ydyn nhw’n nodweddiadol o’r stoc bresennol"
-    energy_peformance_breakdown:
+    energy_performance_breakdown:
       heading: "Dadansoddiad o berfformiad ynni’r eiddo hwn"
       main_heating_fuel: "Y prif danwydd at wresogi"
       building_environment: "Amgylchedd yr adeilad"

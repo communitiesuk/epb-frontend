@@ -338,7 +338,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
           '<p class="govuk-body"><a class="govuk-link" href="#how_this_building_compares">How this property compares to others</a></p>',
         )
         expect(response.body).to include(
-          '<p class="govuk-body"><a class="govuk-link" href="#energy_peformance_breakdown">Breakdown of this property’s energy performance</a></p>',
+          '<p class="govuk-body"><a class="govuk-link" href="#energy_performance_breakdown">Breakdown of this property’s energy performance</a></p>',
         )
         expect(response.body).to include(
           '<p class="govuk-body"><a class="govuk-link" href="#related_report">Recommendation report</a></p>',
@@ -355,7 +355,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
         expect(response.body).to include('id="renting"')
         expect(response.body).to include('id="energy_rating_section"')
         expect(response.body).to include('id="how_this_building_compares"')
-        expect(response.body).to include('id="energy_peformance_breakdown"')
+        expect(response.body).to include('id="energy_performance_breakdown"')
         expect(response.body).to include('id="related_report"')
         expect(response.body).to include('id="contact"')
         expect(response.body).to include('id="other_certificates_and_reports"')
