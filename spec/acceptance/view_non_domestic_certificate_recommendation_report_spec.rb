@@ -194,7 +194,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
     end
 
     it "does not show the superseded warning message" do
-      expect(response.body).not_to have_css("div.govuk-warning-text", text: " A new certificate has replaced this one. See the new certificate")
+      expect(response.body).not_to have_css("div.govuk-warning-text", text: " A new report has replaced this one. See the new certificate")
     end
   end
 
@@ -250,7 +250,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
 
     it "shows the superseded warning message" do
       expect(response.body).to have_css("div.govuk-warning-text", text: /Warning/)
-      expect(response.body).to have_css("div.govuk-warning-text", text: /A new certificate has replaced this one/)
+      expect(response.body).to have_css("div.govuk-warning-text", text: /A new report has replaced this one/)
     end
 
     it "the warning is hidden for print using the existing css definition" do

@@ -754,7 +754,8 @@ cy:
         previous: "Tystysgrifau eraill ar gyfer yr eiddo hwn"
     superseded:
       title: 'Rhybudd'
-      message: 'Mae tystysgrif newydd wedi disodli hon'
+      certificate_message: 'Mae tystysgrif newydd wedi disodli hon'
+      report_message: 'Mae adroddiad newydd wedi disodli hon'
       link: 'Gweler y dystysgrif newydd'
     sections:
       renting:

@@ -754,7 +754,8 @@ en:
         previous: 'Other certificates for this property'
     superseded:
       title: 'Warning'
-      message: 'A new certificate has replaced this one'
+      certificate_message: 'A new certificate has replaced this one'
+      report_message: 'A new report has replaced this one'
       link: 'See the new certificate'
     sections:
       renting:

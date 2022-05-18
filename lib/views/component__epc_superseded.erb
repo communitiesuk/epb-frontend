@@ -4,7 +4,7 @@
     <strong class="govuk-warning-text__text">
       <span class="govuk-warning-text__assistive">
         <%= t('domestic_epc.superseded.title') %></span>
-     <%= t('domestic_epc.superseded.message') %>.
+     <%= t("domestic_epc.superseded.#{defined?(type) ? type : 'certificate'}_message") %>.
       <a class="govuk-link" href="<%= localised_url('/energy-certificate/' + assessment[:supersededBy]) %>">
         <%= t('domestic_epc.superseded.link') %></a>.
     </strong>
