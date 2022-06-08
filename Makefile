@@ -91,7 +91,7 @@ run:
 
 .PHONY: format
 format:
-	@bundle exec rubocop --auto-correct || true
+	@bundle exec rubocop --autocorrect || true
 
 .PHONY: journey
 journey:
