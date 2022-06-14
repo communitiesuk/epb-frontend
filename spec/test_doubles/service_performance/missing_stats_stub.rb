@@ -1,7 +1,7 @@
 module ServicePerformance
   class MissingStatsStub
     def self.get_data
-      { data: { assessments: assessments } }
+      { data: { assessments: } }
     end
 
     private_class_method def self.assessments

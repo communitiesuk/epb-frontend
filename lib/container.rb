@@ -33,20 +33,17 @@ class Container
     fetch_statistics_csv_use_case = UseCase::FetchStatisticsCsv.new(Gateway::StatisticsGateway.new(internal_api_client))
 
     @objects = {
-      internal_api_client: internal_api_client,
-      find_assessor_by_postcode_use_case: find_assessor_by_postcode_use_case,
-      find_non_domestic_assessor_by_postcode_use_case:
-        find_non_domestic_assessor_by_postcode_use_case,
-      find_assessor_by_name_use_case: find_assessor_by_name_use_case,
-      fetch_certificate_use_case: fetch_certificate_use_case,
-      find_certificate_by_postcode_use_case:
-        find_certificate_by_postcode_use_case,
-      find_certificate_by_id_use_case: find_certificate_by_id_use_case,
-      find_certificate_by_street_name_and_town_use_case:
-        find_certificate_by_street_name_and_town_use_case,
-      fetch_dec_summary_use_case: fetch_dec_summary_use_case,
-      fetch_statistics_use_case: fetch_statistics_use_case,
-      fetch_statistics_csv_use_case: fetch_statistics_csv_use_case,
+      internal_api_client:,
+      find_assessor_by_postcode_use_case:,
+      find_non_domestic_assessor_by_postcode_use_case:,
+      find_assessor_by_name_use_case:,
+      fetch_certificate_use_case:,
+      find_certificate_by_postcode_use_case:,
+      find_certificate_by_id_use_case:,
+      find_certificate_by_street_name_and_town_use_case:,
+      fetch_dec_summary_use_case:,
+      fetch_statistics_use_case:,
+      fetch_statistics_csv_use_case:,
     }
   end
 

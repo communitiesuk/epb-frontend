@@ -623,7 +623,7 @@ module FetchAssessmentSummary
             addressLine3: "49-51 Northumberland Street",
             addressLine4: "",
             town: "NEWCASTLE UPON TYNE",
-            postcode: postcode,
+            postcode:,
           },
           relatedPartyDisclosure: "1",
           relatedRrn: "0000-0000-0000-0003",
@@ -702,7 +702,7 @@ module FetchAssessmentSummary
             addressLine3: nil,
             addressLine4: nil,
             town: "London",
-            postcode: postcode,
+            postcode:,
           },
           technicalInformation: {
             dateOfAssessment: "2019-09-22",
@@ -810,7 +810,7 @@ module FetchAssessmentSummary
             addressLine3: nil,
             addressLine4: nil,
             town: "London",
-            postcode: postcode,
+            postcode:,
           },
           technicalInformation: {
             mainHeatingFuel: "Natural Gas",
@@ -901,7 +901,7 @@ module FetchAssessmentSummary
             addressLine3: nil,
             addressLine4: nil,
             town: "Post-Town0",
-            postcode: postcode,
+            postcode:,
           },
           assessor: {
             schemeAssessorId: "SPEC000000",
@@ -1005,7 +1005,7 @@ module FetchAssessmentSummary
             addressLine3: "Something road",
             addressLine4: "Post-Town1",
             town: "Post-Town1",
-            postcode: postcode,
+            postcode:,
           },
           currentAssessment: {
             date: "2020-01-01",
@@ -1137,7 +1137,7 @@ module FetchAssessmentSummary
             addressLine3: nil,
             addressLine4: nil,
             town: "Post-Town0",
-            postcode: postcode,
+            postcode:,
           },
           assessor: {
             name: "John Howard",
@@ -1536,7 +1536,7 @@ module FetchAssessmentSummary
             potentialCarbonEmission: potential_carbon_emission,
             potentialEnergyEfficiencyRating: 99,
             potentialEnergyEfficiencyBand: "a",
-            postcode: postcode,
+            postcode:,
             primaryEnergyUse: primary_energy_use,
             addressLine1: "Flat 33",
             addressLine2: "2 Marsham Street",
@@ -1544,7 +1544,7 @@ module FetchAssessmentSummary
             addressLine4: "",
             town: "London",
             "address": {
-              postcode: postcode,
+              postcode:,
               addressLine1: "Flat 33",
               addressLine2: "2 Marsham Street",
               addressLine3: address_line3,
@@ -1566,7 +1566,7 @@ module FetchAssessmentSummary
             relatedPartyDisclosureNumber: related_party_disclosure_number,
             propertySummary: property_summary,
             greenDealPlan: green_deal_plan,
-            addendum: addendum,
+            addendum:,
             supersededBy: "9025-0000-0000-0000-0000",
             relatedAssessments: [
               {
@@ -1665,7 +1665,7 @@ module FetchAssessmentSummary
               product: "Not applicable",
             },
           ],
-          charges: charges,
+          charges:,
           savings: [
             { fuelCode: "39", fuelSaving: 23_253, standingChargeFraction: 0 },
             { fuelCode: "40", fuelSaving: -6331, standingChargeFraction: -0.9 },

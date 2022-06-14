@@ -964,7 +964,7 @@ class FrontendService < Sinatra::Base
 
   def show(template, locals, layout = :layout)
     locals[:errors] = @errors
-    erb template, layout: layout, locals: locals
+    erb template, layout:, locals:
   end
 
   def show_with_print_option(
@@ -1006,7 +1006,7 @@ class FrontendService < Sinatra::Base
     message =
       exception.methods.include?(:message) ? exception.message : exception
 
-    error = { type: exception.class.name, message: message }
+    error = { type: exception.class.name, message: }
 
     if exception.methods.include? :backtrace
       error[:backtrace] = exception.backtrace

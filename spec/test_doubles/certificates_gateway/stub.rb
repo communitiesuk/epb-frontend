@@ -200,7 +200,7 @@ module CertificatesGateway
               postcode: "SW1B 2BB",
               dateOfExpiry: "2030-01-01",
               addressLine1: street_name,
-              town: town,
+              town:,
               relatedPartyDisclosureText: "Financial interest in the property",
               relatedPartyDisclosureNumber: nil,
               heatDemand: {
@@ -225,7 +225,7 @@ module CertificatesGateway
               postcode: "SW1B 2BB",
               dateOfExpiry: "2030-01-01",
               addressLine1: street_name,
-              town: town,
+              town:,
               relatedPartyDisclosureText: "No related party",
               relatedPartyDisclosureNumber: nil,
               heatDemand: {
@@ -250,7 +250,7 @@ module CertificatesGateway
               postcode: "SW1B 2BB",
               dateOfExpiry: "2032-01-01",
               addressLine1: street_name,
-              town: town,
+              town:,
               relatedPartyDisclosureText: nil,
               relatedPartyDisclosureNumber: 1,
               heatDemand: {

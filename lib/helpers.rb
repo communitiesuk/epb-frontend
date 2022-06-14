@@ -82,8 +82,8 @@ module Helpers
       end
   end
 
-  def t(*args)
-    I18n.t(*args)
+  def t(key, **options)
+    I18n.t(key, **options)
   end
 
   def h(str)
