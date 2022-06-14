@@ -40,6 +40,7 @@ phases:
       nodejs: 14
     commands:
       - npm install
+      - bundle install
   pre_build:
     commands:
       - echo ">>>>>>>> DEPLOY TO INTEGRATION ENV"
