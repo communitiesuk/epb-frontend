@@ -33,6 +33,10 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       expect(response.body).to have_link "Print", visible: :all
     end
 
+    it "URL encodes the mailto link appropriately" do
+      expect(response.body).to include "mailto:?subject=Energy%20performance%20certificate%20%28EPC%29%20for%20Flat%2033%2C%202%20Marsham%20Street&amp;body=Please%20find%20your%20energy%20performance%20certificate%20%28EPC%29%20at%20https%3A%2F%2Ffind-energy-certificate.service.gov.uk%2Fenergy-certificate%2F1234-5678-1234-5678-1234"
+    end
+
     it "shows the address summary" do
       expect(response.body).to include("Flat 33")
       expect(response.body).to include("2 Marsham Street")

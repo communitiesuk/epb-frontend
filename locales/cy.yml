@@ -82,7 +82,7 @@ cy:
         url: "?lang=en"
       contact:
         text: "Os oes arnoch angen rhagor o gymorth i ddod o hyd i asesydd, cysylltwch â ni ar %{link}, neu ffoniwch ein desg gymorth ar 020 3829 0748 (dydd Llun i ddydd Gwener, 9am - 5pm)."
-        link: "mailto:dluhc.digital-services@levellingup.gov.uk?subject=EPB - "
+        link: "mailto:dluhc.digital-services@levellingup.gov.uk?subject=EPB%20-%20"
         cta: "dluhc.digital-services@levellingup.gov.uk"
       scotland:
         description: "Ar gyfer eiddo yn yr Alban, defnyddiwch %{link}."
@@ -316,7 +316,7 @@ cy:
       call_center: "Os oes arnoch angen rhagor o gymorth i chwilio am dystysgrif ynni neu adroddiad, ffoniwch ein desg gymorth ar 020 3829 0748 (dydd Llun i ddydd Gwener, 9am - 5pm)."
       contact:
         text: "Os oes arnoch angen rhagor o gymorth i chwilio am dystysgrif ynni neu adroddiad, cysylltwch â ni ar %{link}, neu ffoniwch ein desg gymorth ar 020 3829 0748 (dydd Llun i ddydd Gwener, 9am - 5pm)."
-        link: "mailto:dluhc.digital-services@levellingup.gov.uk?subject=EPB - "
+        link: "mailto:dluhc.digital-services@levellingup.gov.uk?subject=EPB%20-%20"
         cta: "dluhc.digital-services@levellingup.gov.uk"
 
     property_type:
@@ -606,7 +606,7 @@ cy:
       valid_until: "Dilys tan"
       expired: "Wedi dod i ben"
       expired_on: "Wedi dod i ben ar"
-      link: "mailto:dluhc.digital-services@levellingup.gov.uk?subject=EPB - "
+      link: "mailto:dluhc.digital-services@levellingup.gov.uk?subject=EPB%20-%20"
       cta: "dluhc.digital-services@levellingup.gov.uk"
       certificates:
         title: "Tystysgrifau eraill ar gyfer yr eiddo hwn"
@@ -1789,7 +1789,7 @@ cy:
       recommendations: "Gwnaeth yr asesydd y nodiadau a’r argymhellion a ganlyn:"
     detailed_inspection_unavailable:
       text: "Nid yw nodiadau manwl yr archwiliad o’r adroddiad hwn ar gael ar-lein mwyach. Os oes arnoch angen nodiau manwl yr archwiliad, cysylltwch â ni yn %{link}"
-      link: "mailto:dluhc.digital-services@levellingup.gov.uk?subject=EPB - "
+      link: "mailto:dluhc.digital-services@levellingup.gov.uk?subject=EPB%20-%20"
       cta: "dluhc.digital-services@levellingup.gov.uk"
       title: "Nodiadau manwl ar yr archwiliad"
 
@@ -1831,7 +1831,7 @@ cy:
     contact_heading: "Gwybodaeth am adborth a chysylltiadau"
     contact_paragraph: "Os oes angen gwybodaeth arnoch chi ar y wefan hon mewn fformat gwahanol fel PDF hygyrch, print bras, tesun hawdd i’w ddarllen, recordiad sain neu braille:
                         <ul class=\"govuk-list govuk-list--bullet\">
-                          <li>anfonwch neges ebost at: <a href=\"mailto:dluhc.digital-services@levellingup.gov.uk?subject=EPB - \">dluhc.digital-services@levellingup.gov.uk</a></li>
+                          <li>anfonwch neges ebost at: <a href=\"mailto:dluhc.digital-services@levellingup.gov.uk?subject=EPB%20-%20\">dluhc.digital-services@levellingup.gov.uk</a></li>
                           <li>Ffôn: 020 3829 0748</li>
                         </ul>"
     reporting_heading: "Rhoi gwybod am broblemau hygyrchedd gyda’r wefan hon"
