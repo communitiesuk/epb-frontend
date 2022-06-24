@@ -13,7 +13,7 @@ group :test do
   gem "capybara-selenium", "~> 0.0.6"
   gem "rack-test", "~> 1.1.0"
   gem "rspec", "~>3.11"
-  gem "selenium-webdriver", "~> 4.2.1"
+  gem "selenium-webdriver", "~> 4.3.0"
   gem "webdrivers", "~> 5.0.0"
   gem "webmock", "~> 3.14"
 end
