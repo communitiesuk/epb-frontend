@@ -11,7 +11,7 @@ end
 group :test do
   gem "capybara", "~> 3.37.1"
   gem "capybara-selenium", "~> 0.0.6"
-  gem "rack-test", "~> 2.0.0"
+  gem "rack-test", "~> 2.0.1"
   gem "rspec", "~>3.11"
   gem "selenium-webdriver", "~> 4.3.0"
   gem "webdrivers", "~> 5.0.0"
