@@ -218,7 +218,7 @@ cy:
       body: "Os ydych yn gwybod enw asesydd a’ch bod chi am wirio’i fanylion, gallwch chi %{link}."
       cta: "chwilio am asesydd yn ôl enw"
     question: "Rhowch god post yr eiddo"
-    hint: "Er enghraifft SW1A 2AA"
+    hint: "Er enghraifft CF10 1EP"
     button_text: Chwiliwch
     scheme_not_found:
       heading: "Y cynllun achredu heb ei ganfod"
@@ -230,7 +230,7 @@ cy:
   find_non_domestic_assessor_by_postcode_results:
     top_heading: "Cysylltwch ag asesydd i drefnu asesiad ynni"
     question: "I chwilio eto rhowch god post yr eiddo"
-    hint: "Er enghraifft SW1A 2AA"
+    hint: "Er enghraifft CF10 1EP"
     qualification:
       title: "Cymwysterau"
       domesticSap: "Gweithdrefn Asesu Safonol (SAP)"
@@ -245,7 +245,7 @@ cy:
   find_assessor_by_postcode_results:
     top_heading: "Cysylltwch ag asesydd i drefnu asesiad ynni"
     question: "I chwilio eto rhowch god post yr eiddo"
-    hint: "Er enghraifft SW1A 2AA"
+    hint: "Er enghraifft CF10 1EP"
     description: "Cysylltwch ag asesydd sydd wedi’i restru isod i drefnu asesiad ynni."
     no_assessors_heading: "Dim canlyniadau ar gyfer %{postcode}"
     no_assessors_1: "Rydyn ni heb ganfod aseswyr ar gyfer %{postcode}"
@@ -334,7 +334,7 @@ cy:
     top_heading: "Chwiliwch am dystysgrif perfformiad ynni yn ôl cod post"
     question: "Rhowch god post yr eiddo"
     button_text: "Chwiliwch"
-    hint: "Er enghraifft SW1A 2AA"
+    hint: "Er enghraifft CF10 1EP"
     certificate_by_street_name_and_town:
       heading: "Chwiliwch yn ôl y stryd a’r dref"
       body: "Os nad ydych yn gwybod cod post yr eiddo, %{link}"
@@ -459,7 +459,7 @@ cy:
     top_heading: "Chwiliwch am dystysgrifau ynni ac adroddiadau yn ôl cod post"
     question: "Rhowch god post yr eiddo"
     button_text: "Chwiliwch"
-    hint: "Er enghraifft SW1A 2AA"
+    hint: "Er enghraifft CF10 1EP"
     no_network:
       heading: "Cysylltiad â’r rhwydwaith wedi methu"
       body: "Mae yna wall rhwydwaith mewnol"
