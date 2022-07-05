@@ -652,7 +652,7 @@ cy:
           summary: "O 1 Ebrill 2023, ni fydd landlordiaid yn cael parhau i osod eiddo annomestig ar brydles bresennol os yw cyfraddiad ynni’r eiddo hwnnw’n F neu G."
           guidance_text: "Gallwch ddarllen %{link}."
           cta: "canllawiau i landlordiaid ar y rheoliadau ac esemptiadau"
-          url: "https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/824018/Non-Dom_Private_Rented_Property_Minimum_Standard_-_Landlord_Guidance.pdf"
+          url: "https://www.gov.uk/government/publications/non-domestic-private-rented-property-minimum-energy-efficiency-standard-landlord-guidance"
         warning:
           assistive_text: "Rhybudd"
           text: "Efallai na chewch chi osod yr eiddo hwn"
