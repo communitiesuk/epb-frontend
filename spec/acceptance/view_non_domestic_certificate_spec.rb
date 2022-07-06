@@ -116,7 +116,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
 
       it "shows the guidance for landlords link" do
         expect(response.body).to include(
-          '<p class="govuk-body">You can read <a class="govuk-link" href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/824018/Non-Dom_Private_Rented_Property_Minimum_Standard_-_Landlord_Guidance.pdf">guidance for landlords on the regulations and exemptions</a>.</p>',
+          '<p class="govuk-body">You can read <a class="govuk-link" href="https://www.gov.uk/government/publications/non-domestic-private-rented-property-minimum-energy-efficiency-standard-landlord-guidance">guidance for landlords on the regulations and exemptions</a>.</p>',
         )
       end
     end
@@ -147,7 +147,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
 
       it "shows the guidance for landlords link" do
         expect(response.body).to include(
-          '<p class="govuk-body">You can read <a class="govuk-link" href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/824018/Non-Dom_Private_Rented_Property_Minimum_Standard_-_Landlord_Guidance.pdf">guidance for landlords on the regulations and exemptions</a>.</p>',
+          '<p class="govuk-body">You can read <a class="govuk-link" href="https://www.gov.uk/government/publications/non-domestic-private-rented-property-minimum-energy-efficiency-standard-landlord-guidance">guidance for landlords on the regulations and exemptions</a>.</p>',
         )
       end
 
