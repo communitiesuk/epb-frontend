@@ -21,7 +21,7 @@ end
 gem "csv", "~> 3.2"
 gem "epb-auth-tools", "~> 1.0.8"
 gem "erubis", "~> 2.7"
-gem "i18n", "~> 1.10.0"
+gem "i18n", "~> 1.11.0"
 gem "puma", "~> 5.6"
 gem "rack-attack", "~> 6.6.1"
 gem "rack-contrib", "~> 2.3.0"
