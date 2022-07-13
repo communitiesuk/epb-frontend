@@ -1134,7 +1134,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       before do
         FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
           assessment_id: "1111-1111-1111-1111-1112",
-          energy_performance_rating_improvement: "0",
+          energy_performance_rating_improvement: 0,
         )
       end
 

@@ -32,13 +32,13 @@
       potential_rating_text(index + 1)
     %></dt>
     <dd class="govuk-summary-list__value govuk-!-width-one-half" style="text-align: right"><%
-        if recommendation[:energyPerformanceRatingImprovement] && recommendation[:energyPerformanceRatingImprovement] != '0'
+        if recommendation[:energyPerformanceRatingImprovement] && recommendation[:energyPerformanceRatingImprovement].to_i > 0
           %><svg width="90" height="50" style="vertical-align: middle">
               <% band = "band-#{recommendation[:energyPerformanceBandImprovement]}" %>
               <polygon points="0,25 25,50 100,50 100,0 25,0 0,25" class="<%= band %>"></polygon>
               <text x="30" y="30"><%= recommendation[:energyPerformanceRatingImprovement] %> | <%= recommendation[:energyPerformanceBandImprovement].upcase %></text>
             </svg><%
-        elsif recommendation[:energyPerformanceRatingImprovement] == '0'
+        elsif recommendation[:energyPerformanceRatingImprovement].to_i == 0
       %><%=
         t('domestic_epc.sections.recommendations.list.information_unavailable')
       %><%
