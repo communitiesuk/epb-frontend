@@ -1043,7 +1043,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       end
     end
 
-    context "when the potential rating improvement  is empty" do
+    context "when the potential rating improvement is empty" do
       before do
         FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
           assessment_id: "1111-1111-1111-1111-1112",
@@ -1116,17 +1116,33 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
   end
 
   context "when viewing a lodged certificate as returned from the API" do
-    before do
-      FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
-        assessment_id: "1111-1111-1111-1111-1112",
-      )
-    end
-
-    let(:response) { get "/energy-certificate/1111-1111-1111-1111-1112" }
-
     context "with an invalid typical saving" do
+      before do
+        FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
+          assessment_id: "1111-1111-1111-1111-1112",
+        )
+      end
+
+      let(:response) { get "/energy-certificate/1111-1111-1111-1111-1112" }
+
       it "displays N/A on the page" do
         expect(response.body).to include("Not applicable")
+      end
+    end
+
+    context "with an energy performance rating improvement given as 0" do
+      before do
+        FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
+          assessment_id: "1111-1111-1111-1111-1112",
+          energy_performance_rating_improvement: "0",
+        )
+      end
+
+      let(:response) { get "/energy-certificate/1111-1111-1111-1111-1112" }
+
+      it "displays 'Information unavailable' on the page" do
+        rating_node = Capybara.string(response.body).find("dt", text: "Potential rating after completing step 1", match: :prefer_exact).sibling("dd")
+        expect(rating_node.text).to eq "Information unavailable"
       end
     end
   end
