@@ -65,7 +65,7 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
 
       it "displays an error message" do
         expect(response.body).to include(
-          '<span id="postcode-error" class="govuk-error-message">',
+          '<p id="postcode-error" class="govuk-error-message">',
         )
         expect(response.body).to include("Enter a real postcode")
       end
@@ -106,7 +106,7 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
 
       it "displays an error message" do
         expect(response.body).to include(
-          '<span id="postcode-error" class="govuk-error-message">',
+          '<p id="postcode-error" class="govuk-error-message">',
         )
         expect(response.body).to include("Enter a real postcode")
       end
@@ -147,7 +147,7 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
 
       it "displays an error message" do
         expect(response.body).to include(
-          '<span id="postcode-error" class="govuk-error-message">',
+          '<p id="postcode-error" class="govuk-error-message">',
         )
         expect(response.body).to include("Enter a real postcode")
       end
@@ -188,7 +188,7 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
 
       it "displays an error message" do
         expect(response.body).to include(
-          '<span id="postcode-error" class="govuk-error-message">',
+          '<p id="postcode-error" class="govuk-error-message">',
         )
         expect(response.body).to include("Enter a real postcode")
       end
@@ -490,7 +490,7 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
 
         it "displays an error message" do
           expect(response.body).to include(
-            '<span id="postcode-error" class="govuk-error-message">',
+            '<p id="postcode-error" class="govuk-error-message">',
           )
           expect(response.body).to include("Enter a real postcode")
         end
@@ -584,7 +584,7 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
       end
 
       it "displays an error message" do
-        expect(response.body).to have_css "span",
+        expect(response.body).to have_css ".govuk-error-message",
                                           text: "Enter the first and last name of the assessor"
       end
 
@@ -617,7 +617,7 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
       end
 
       it "displays an error message" do
-        expect(response.body).to have_css "span",
+        expect(response.body).to have_css ".govuk-error-message",
                                           text: "Enter the first and last name of the assessor"
       end
 

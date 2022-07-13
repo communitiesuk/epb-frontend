@@ -23,13 +23,13 @@
           <label class="govuk-label" for="street_name">
             <%= t('find_certificate_by_street_name_and_town.street_name_question') %>
           </label>
-          <span id="street-name-hint" class="govuk-hint">
+          <div id="street-name-hint" class="govuk-hint">
             <%= t('find_certificate_by_street_name_and_town.street_name_hint') %>
-          </span>
+          </div>
           <% if errors[:street_name] %>
-          <span id="street_name-error" class="govuk-error-message">
+          <p id="street_name-error" class="govuk-error-message">
             <span class="govuk-visually-hidden"><%= t('error.error') %></span><%== errors[:street_name] %>
-          </span>
+          </p>
           <% end %>
           <input id="street_name" name="street_name" type="text"
                  class="govuk-input<% if errors[:street_name] %> govuk-input--error<% end %>"
@@ -43,13 +43,13 @@
           <label class="govuk-label" for="town">
             <%= t('find_certificate_by_street_name_and_town.town_question') %>
           </label>
-          <span id="town-hint" class="govuk-hint">
+          <div id="town-hint" class="govuk-hint">
             <%= t('find_certificate_by_street_name_and_town.town_hint') %>
-          </span>
+          </div>
           <% if errors[:town] %>
-          <span id="town-error" class="govuk-error-message">
+          <p id="town-error" class="govuk-error-message">
             <span class="govuk-visually-hidden"><%= t('error.error') %></span><%== errors[:town] %>
-          </span>
+          </p>
           <% end %>
           <input id="town" name="town" type="text"
                  class="govuk-input<% if errors[:town] %> govuk-input--error<% end %>"
@@ -63,9 +63,9 @@
       </fieldset>
 
       <% if errors[:generic] %>
-          <span class="govuk-error-message govuk-!-margin-top-9">
+          <p class="govuk-error-message govuk-!-margin-top-9">
             <span class="govuk-visually-hidden"><%= t('error.error') %></span><%== t(errors[:generic][:error]) %>
-          </span>
+          </p>
 
         <p class="govuk-body">
           <%= t('find_certificate_by_street_name_and_town.no_such_address.get_a_new_one_no_results') %>

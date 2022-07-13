@@ -8,8 +8,8 @@
         <h2 class="govuk-cookie-banner__heading govuk-heading-m"><%= header %></h2>
 
         <div class="govuk-cookie-banner__content">
-          <p><%= t('layout.body.cookie_banner.intro_essential') %></p>
-          <p><%= t('layout.body.cookie_banner.intro_analytics') %></p>
+          <p class="govuk-body"><%= t('layout.body.cookie_banner.intro_essential') %></p>
+          <p class="govuk-body"><%= t('layout.body.cookie_banner.intro_analytics') %></p>
         </div>
       </div>
     </div>
@@ -34,8 +34,8 @@
 
           <% link = '<a class="govuk-link" href="' + localised_url('/cookies') + '">' +
             t('layout.body.cookie_banner.change_settings') + '</a>' %>
-          <p id="accepted-confirmation" hidden><%== t('layout.body.cookie_banner.accepted', change_settings_link: link) %></p>
-          <p id="rejected-confirmation" hidden><%== t('layout.body.cookie_banner.rejected', change_settings_link: link) %></p>
+          <p class="govuk-body" id="accepted-confirmation" hidden><%== t('layout.body.cookie_banner.accepted', change_settings_link: link) %></p>
+          <p class="govuk-body" id="rejected-confirmation" hidden><%== t('layout.body.cookie_banner.rejected', change_settings_link: link) %></p>
         </div>
 
       </div>

@@ -14,9 +14,9 @@
     <div class="govuk-form-group<% if errors[:property_type] %> govuk-form-group--error<% end %>">
     <input type="hidden" name="lang" value="<%= I18n.locale.to_s %>" />
       <% if errors[:property_type] %>
-          <span id='property_type-error' class="govuk-error-message">
+          <p id="property_type-error" class="govuk-error-message">
             <span class="govuk-visually-hidden"><%= t('error.error') %></span><%== errors[:property_type] %>
-          </span>
+          </p>
       <% end %>
       <div class="govuk-radios">
         <div class="govuk-radios__item">

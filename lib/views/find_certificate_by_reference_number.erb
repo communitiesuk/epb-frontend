@@ -21,13 +21,13 @@
           <label class="govuk-label" for="reference_number">
             <%= t('find_certificate_by_reference_number.question') %>
           </label>
-          <span id="reference-number-hint" class="govuk-hint">
+          <div id="reference-number-hint" class="govuk-hint">
             <%= t('find_certificate_by_reference_number.hint') %>
-          </span>
+          </div>
           <% if errors[:reference_number] %>
-            <span id="reference_number-error" class="govuk-error-message">
+            <p id="reference_number-error" class="govuk-error-message">
               <span class="govuk-visually-hidden"><%= t('error.error') %></span><%= errors[:reference_number] %>
-            </span>
+            </p>
           <% end %>
           <input id="reference_number" name="reference_number" type="text"
                  class="govuk-input<% if errors[:reference_number] %> govuk-input--error<% end %>"

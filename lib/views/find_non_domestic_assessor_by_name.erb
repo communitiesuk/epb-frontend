@@ -19,13 +19,13 @@
           <label class="govuk-label" for="name">
             <%= t('find_assessor_by_name.question') %>
           </label>
-          <span id="name-hint" class="govuk-hint">
+          <div id="name-hint" class="govuk-hint">
             <%= t('find_assessor_by_name.hint') %>
-          </span>
+          </div>
           <% if errors[:name] %>
-          <span id="name-error" class="govuk-error-message">
+          <p id="name-error" class="govuk-error-message">
             <span class="govuk-visually-hidden"><%= t('error.error') %></span><%= errors[:name] %>
-          </span>
+          </p>
           <% end %>
           <input id="name" name="name" type="text"
                  class="govuk-input<% if errors[:name] %> govuk-input--error<% end %>"

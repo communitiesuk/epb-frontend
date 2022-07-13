@@ -29,7 +29,7 @@
 </head>
 
 <body class="govuk-template__body">
-<a href="#main-content" class="govuk-skip-link"><%=t('layout.body.skip')%></a>
+<a href="#main-content" class="govuk-skip-link" data-module="govuk-skip-link"><%=t('layout.body.skip')%></a>
 
 <header class="govuk-header govuk-!-display-none-print" role="banner" data-module="header">
   <div class="govuk-header__container govuk-width-container">
@@ -108,5 +108,7 @@
     </div>
   </div>
 </footer>
+<script src="<%= assets_path('/javascript/govuk.js') %>"></script>
+<script>window.GOVUKFrontend.initAll()</script>
 </body>
 </html>

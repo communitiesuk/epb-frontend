@@ -19,13 +19,13 @@
           <label class="govuk-label" for="postcode">
             <%= t('find_assessor_by_postcode.question') %>
           </label>
-          <span id="postcode-hint" class="govuk-hint">
+          <div id="postcode-hint" class="govuk-hint">
             <%= t('find_assessor_by_postcode.hint') %>
-          </span>
+          </div>
           <% if errors[:postcode] %>
-          <span id="postcode-error" class="govuk-error-message">
+          <p id="postcode-error" class="govuk-error-message">
             <span class="govuk-visually-hidden"><%= t('error.error') %></span><%== errors[:postcode] %>
-          </span>
+          </p>
           <% end %>
           <input id="postcode" name="postcode" type="text"
                  class="govuk-input govuk-input--width-10<% if errors[:postcode] %> govuk-input--error<% end %>"

@@ -129,7 +129,7 @@ describe "Acceptance::Certificate" do
 
       it "displays an error message" do
         expect(response.body).to include(
-          '<span id="postcode-error" class="govuk-error-message">',
+          '<p id="postcode-error" class="govuk-error-message">',
         )
         expect(response.body).to include("Enter a real postcode")
       end
@@ -152,7 +152,7 @@ describe "Acceptance::Certificate" do
 
       it "displays an error message" do
         expect(response.body).to include(
-          '<span id="postcode-error" class="govuk-error-message">',
+          '<p id="postcode-error" class="govuk-error-message">',
         )
         expect(response.body).to include("Enter a real postcode")
       end
@@ -189,7 +189,7 @@ describe "Acceptance::Certificate" do
 
       it "displays an error message" do
         expect(response.body).to include(
-          '<span id="postcode-error" class="govuk-error-message">',
+          '<p id="postcode-error" class="govuk-error-message">',
         )
         expect(response.body).to include("Enter a real postcode")
       end
@@ -432,7 +432,7 @@ describe "Acceptance::Certificate" do
 
       it "displays an error message" do
         expect(response.body).to include(
-          '<span id="reference_number-error" class="govuk-error-message">',
+          '<p id="reference_number-error" class="govuk-error-message">',
         )
         expect(response.body).to include("Enter a 20-digit certificate number")
       end
@@ -652,7 +652,7 @@ describe "Acceptance::Certificate" do
 
       it "displays an error message" do
         expect(response.body).to include(
-          '<span id="street_name-error" class="govuk-error-message">',
+          '<p id="street_name-error" class="govuk-error-message">',
         )
         expect(response.body).to include("Enter the street name")
       end
@@ -683,9 +683,9 @@ describe "Acceptance::Certificate" do
 
       it "displays the correct error message" do
         expect(response.body).to include(
-          '<span id="street_name-error" class="govuk-error-message">
+          '<p id="street_name-error" class="govuk-error-message">
             <span class="govuk-visually-hidden">Error: </span>Enter the street name
-          </span>',
+          </p>',
         )
       end
 
@@ -721,7 +721,7 @@ describe "Acceptance::Certificate" do
 
       it "displays an error message" do
         expect(response.body).to include(
-          '<span id="town-error" class="govuk-error-message">',
+          '<p id="town-error" class="govuk-error-message">',
         )
         expect(response.body).to include("Enter the town")
       end
@@ -758,11 +758,11 @@ describe "Acceptance::Certificate" do
 
       it "displays an error message" do
         expect(response.body).to include(
-          '<span id="town-error" class="govuk-error-message">',
+          '<p id="town-error" class="govuk-error-message">',
         )
         expect(response.body).to include("Enter the town")
         expect(response.body).to include(
-          '<span id="street_name-error" class="govuk-error-message">',
+          '<p id="street_name-error" class="govuk-error-message">',
         )
         expect(response.body).to include("Enter the street name")
       end
