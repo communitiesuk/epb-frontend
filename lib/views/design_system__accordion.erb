@@ -1,21 +1,30 @@
-<% if defined?(sections) %>
-  <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-<%= identifier.downcase %>">
-    <% sections.each_with_index do |section, index| %>
-      <div class="govuk-accordion__section">
+<%# port of nunjucks macro to ERB for the gov.uk design system accordion component, @see https://design-system.service.gov.uk/components/accordion/ %>
+<%# NB. there is an additional supported parameter defined here: a heading on an item can have a `prefix` %>
+<% headingLevel ||= 2 %>
+<% items ||= [] %>
+<div class="<%= ['govuk-accordion', defined?(classes) ? h(classes) : nil].compact.join(' ') %>" data-module="govuk-accordion" id="<%= h(id) %>"
+<% if defined?(attributes) %>
+  <%= attributes.map { |attr, val| '%s="%s"' % [attr, h(val)] }.join(' ') %>
+<% end %>
+>
+  <% items.each_with_index do |item, index| %><% if item %>
+      <div class="<%= ['govuk-accordion__section', item[:expanded] ? 'govuk-accordion__section--expanded' : nil].compact.join(' ') %>">
         <div class="govuk-accordion__section-header">
-          <h2 class="govuk-accordion__section-heading">
-            <span class="govuk-accordion__section-button" id="accordion-<%= identifier.downcase %>-heading-<%= index %>">
-              <% if defined?(section[:heading_prefix]) %>
-                <span class="govuk-visually-hidden"><%= section[:heading_prefix] %></span>
-              <% end %>
-              <%= section[:heading] %>
+          <h<%= headingLevel %> class="govuk-accordion__section-heading">
+            <span class="govuk-accordion__section-button" id="<%= h(id) %>-heading-<%= index %>">
+              <% if item[:heading][:prefix] %><span class="govuk-visually-hidden"><%= item[:heading][:prefix] %></span><% end %>
+              <% if item[:heading][:html] %><%== item[:heading][:html] %><% else %><%= item[:heading][:text] ? h(item[:heading][:text]) : '' %><% end %>
             </span>
-          </h2>
+          </h<%= headingLevel %>>
+          <% if item[:summary] && (item[:summary][:html] || item[:summary][:text]) %>
+          <div class="govuk-accordion__section-summary govuk-body" id="<%= h(id) %>-summary-<%= index %>">
+            <% if item[:summary][:html] %><%== item[:summary][:html] %><% else %><%= h(item[:summary][:text]) %><% end %>
+          </div>
+          <% end %>
         </div>
-        <div id="accordion-<%= identifier.downcase %>-content-<%= index %>" class="govuk-accordion__section-content">
-          <p class='govuk-body'><%== section[:content] %></p>
+        <div id="<%= h(id) %>-content-<%= index %>" class="govuk-accordion__section-content" aria-labelledby="<%= h(id) %>-heading-<%= index %>">
+          <% if item[:content] %><% if item[:content][:html] %><%== item[:content][:html] %><% else %><%= item[:content][:text] ? h(item[:content][:text]) : '' %><% end %><% end %>
         </div>
       </div>
-    <% end %>
-  </div>
-<% end %>
+  <% end %><% end %>
+</div>
