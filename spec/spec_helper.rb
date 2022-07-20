@@ -6,6 +6,8 @@ require "webmock/rspec"
 require "epb-auth-tools"
 require "i18n"
 require "helpers"
+require "nokogiri"
+require "compare-xml"
 require "zeitwerk"
 require "capybara/rspec"
 require "active_support"
@@ -103,6 +105,25 @@ RSpec::Matchers.define(:redirect_to) do |path|
   match do |response|
     uri = URI.parse(response.headers["Location"])
     response.status.to_s[0] == "3" && uri.path == path
+  end
+end
+
+RSpec::Matchers.define :match_html do |expected_html, **options|
+  match do |actual_html|
+    expected_doc = Nokogiri::HTML5.fragment(expected_html)
+    actual_doc = Nokogiri::HTML5.fragment(actual_html)
+
+    # Options documented here: https://github.com/vkononov/compare-xml
+    default_options = {
+      collapse_whitespace: true,
+      ignore_attr_order: true,
+      ignore_comments: true,
+    }
+
+    options = default_options.merge(options).merge(verbose: true)
+
+    diff = CompareXML.equivalent?(expected_doc, actual_doc, **options)
+    diff.blank?
   end
 end
 

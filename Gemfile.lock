@@ -22,6 +22,8 @@ GEM
       capybara
       selenium-webdriver
     childprocess (4.1.0)
+    compare-xml (0.66)
+      nokogiri (~> 1.8)
     concurrent-ruby (1.1.10)
     crack (0.4.5)
       rexml
@@ -169,6 +171,7 @@ PLATFORMS
 DEPENDENCIES
   capybara (~> 3.37.1)
   capybara-selenium (~> 0.0.6)
+  compare-xml (~> 0.66)
   csv (~> 3.2)
   epb-auth-tools (~> 1.0.8)
   erubis (~> 2.7)
