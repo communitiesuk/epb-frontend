@@ -1,11 +1,11 @@
 <%# port of nunjucks macro to ERB for the gov.uk design system table component, @see https://design-system.service.gov.uk/components/table/ %>
-<table class="<%= ['govuk-table', defined?(classes) ? CGI.escape_html(classes) : nil].compact.join(' ') %>"
+<table class="<%= ['govuk-table', defined?(classes) ? h(classes) : nil].compact.join(' ') %>"
 <% if defined?(attributes) %>
-  <%== attributes.map { |attr, val| '%s="%s"' % [attr, CGI.escape_html(val)] }.join(' ') %>
+  <%== attributes.map { |attr, val| '%s="%s"' % [attr, h(val)] }.join(' ') %>
 <% end %>
 >
   <% if defined?(caption) %>
-  <caption class="<%= ['govuk-table__caption', defined?(captionClasses) ? CGI.escape_html(captionClasses) : nil].compact.join(' ') %>"><%= caption %></caption>
+  <caption class="<%= ['govuk-table__caption', defined?(captionClasses) ? h(captionClasses) : nil].compact.join(' ') %>"><%= caption %></caption>
   <% end %>
   <% if defined?(head) %>
   <thead class="govuk-table__head">
@@ -13,7 +13,7 @@
       <% head.each do |header| %>
       <th scope="col" class="<%= ['govuk-table__header', header[:format] ? "govuk-table__header--#{header[:format]}" : nil, header[:classes]].compact.join(' ') %>"<% if header[:colspan] %> colspan="<%= header[:colspan] %>"<% end %><% if header[:rowspan] %> rowspan="<%= header[:rowspan] %>"<% end %>
         <% unless header[:attributes].nil? || header[:attributes].empty? %>
-        <%== header[:attributes].map { |attr, val| '%s="%s"' % [attr, CGI.escape_html(val)] }.join(' ') %>
+        <%== header[:attributes].map { |attr, val| '%s="%s"' % [attr, h(val)] }.join(' ') %>
         <% end %>
       ><% if header[:html] %><%== header[:html] %><% else %><%= header[:text] %><% end %></th>
       <% end %>
@@ -25,11 +25,11 @@
   <% if row %>
     <tr class="govuk-table__row">
     <% row.each_with_index do |cell, index| %>
-    <% common_attrs = [cell[:colspan] ? 'colspan="%s"' % [CGI.escape_html(cell[:colspan].to_s)] : nil, cell[:rowspan] ? 'rowspan="%s"' % [CGI.escape_html(cell[:rowspan].to_s)] : nil, cell[:attributes] ? cell[:attributes].map { |attr, val| '%s="%s"' % [attr, CGI.escape_html(val)] }.join(' ') : nil].compact.join(' ') %>
+    <% common_attrs = [cell[:colspan] ? 'colspan="%s"' % [h(cell[:colspan].to_s)] : nil, cell[:rowspan] ? 'rowspan="%s"' % [h(cell[:rowspan].to_s)] : nil, cell[:attributes] ? cell[:attributes].map { |attr, val| '%s="%s"' % [attr, h(val)] }.join(' ') : nil].compact.join(' ') %>
     <% if index == 0 && defined?(firstCellIsHeader) && firstCellIsHeader %>
-      <th scope="row" class="<%= ['govuk-table__header', cell[:classes] ? CGI.escape_html(cell[:classes]) : nil].compact.join(' ') %>" <%== common_attrs %>><% if cell[:html] %><%== cell[:html] %><% else %><%= cell[:text] %><% end %></th>
+      <th scope="row" class="<%= ['govuk-table__header', cell[:classes] ? h(cell[:classes]) : nil].compact.join(' ') %>" <%== common_attrs %>><% if cell[:html] %><%== cell[:html] %><% else %><%= cell[:text] %><% end %></th>
     <% else %>
-      <td class="<%= ['govuk-table__cell', cell[:format] ? 'govuk-table__cell--%s' % [CGI.escape_html(cell[:format])] : nil, cell[:classes] ? CGI.escape_html(cell[:classes]) : nil].compact.join(' ') %>" <%== common_attrs %>><% if cell[:html] %><%== cell[:html] %><% else %><%= cell[:text] %><% end %></td>
+      <td class="<%= ['govuk-table__cell', cell[:format] ? 'govuk-table__cell--%s' % [h(cell[:format])] : nil, cell[:classes] ? h(cell[:classes]) : nil].compact.join(' ') %>" <%== common_attrs %>><% if cell[:html] %><%== cell[:html] %><% else %><%= cell[:text] %><% end %></td>
     <% end %>
     <% end %>
     </tr>
