@@ -2,7 +2,7 @@ version: 0.2
 
 runtime-versions:
   ruby: 3.1
-  nodejs: 14
+  nodejs: 16
 
 env:
   variables:
@@ -32,7 +32,7 @@ phases:
   install:
     runtime-versions:
       ruby: 3.1
-      nodejs: 14
+      nodejs: 16
     commands:
       - npm install
       - bundle install
