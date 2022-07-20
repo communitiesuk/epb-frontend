@@ -1,10 +1,10 @@
 <% successBanner = defined?(type) && type == 'success' -%>
 <% typeClass = successBanner ? "govuk-notification-banner--#{type}" : nil -%>
-<% role = if defined?(role) && role
-            role
-          else
-            successBanner ? 'alert' : 'region'
-          end -%>
+<% resolved_role =  if defined?(role) && role
+                      role
+                    else
+                      successBanner ? 'alert' : 'region'
+                    end -%>
 <% title = if defined?(titleHtml) && titleHtml
              titleHtml
            elsif defined?(titleText) && titleText
@@ -13,17 +13,18 @@
              successBanner ? 'Success' : 'Important'
            end
 -%>
+<% titleAsText = !(defined?(titleHtml) && titleHtml) && defined?(titleText) && titleText %>
 <% headingLevel = (defined?(titleHeadingLevel) && titleHeadingLevel) ? titleHeadingLevel.to_s : '2'
 -%>
 
-<div class="govuk-notification-banner<% if typeClass %> <%= typeClass %><% end %><% if defined?(classes) && classes %> <%= classes %><% end %>" role="<%= role %>"
+<div class="govuk-notification-banner<% if typeClass %> <%= typeClass %><% end %><% if defined?(classes) && classes %> <%= classes %><% end %>" role="<%= resolved_role %>"
      aria-labelledby="<%= (defined?(titleId) && titleId) ? titleId : 'govuk-notification-banner-title' %>"
      data-module="govuk-notification-banner"
      <%- if defined?(disableAutoFocus) && disableAutoFocus %> data-disable-auto-focus="true"<% end -%>
-     <%- unless !defined?(attributes) || attributes.nil? || attributes.empty? %> <%= attributes.map { |attr, val| '%s="%s"' % [attr, CGI.escape_html(val)] }.join(' ') %><% end %>>
+     <%- unless !defined?(attributes) || attributes.nil? || attributes.empty? %> <%== attributes.map { |attr, val| '%s="%s"' % [attr, CGI.escape_html(val.to_s)] }.join(' ') %><% end %>>
     <div class="govuk-notification-banner__header">
       <h<%= headingLevel %> id="<%= (defined?(titleId) && titleId) ? titleId : 'govuk-notification-banner-title' %>" class="govuk-notification-banner__title">
-        <%= title %>
+        <% if titleAsText %><%= title %><% else %><%== title %><% end %>
       </h<%= headingLevel %>>
     </div>
     <div class="govuk-notification-banner__content">

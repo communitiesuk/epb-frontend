@@ -1,3 +1,5 @@
+require "erubis"
+
 describe "design_system__table", type: :view do
   it "can have additional classes" do
     expect(
@@ -209,9 +211,9 @@ describe "design_system__table", type: :view do
   end
 
   def render(example_name)
-    ERB
+    Erubis::EscapedEruby
       .new(template)
-      .result_with_hash(symbolize_keys(example(example_name)["data"]))
+      .result(create_binding(symbolize_keys(example(example_name)["data"])))
   end
 
   def mount(example_name)
@@ -224,6 +226,19 @@ describe "design_system__table", type: :view do
 
   def template
     File.read("lib/views/#{self.class.top_level_description}.erb")
+  end
+
+  def create_binding(hash)
+    context = OpenStruct.new(**hash)
+    class << context
+      include ERB::Util
+      include Helpers
+
+      def get_binding
+        binding
+      end
+    end
+    context.get_binding
   end
 
   def symbolize_keys(hash)
