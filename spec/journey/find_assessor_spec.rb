@@ -87,6 +87,19 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
       end
     end
 
+    context "when attempting to search using a postcode with assessors, but with an SQL injection attempt" do
+      before do
+        fill_in "postcode", with: "SW1A 2AA'; DROP TABLE assessors;"
+        click_on "Find"
+        fill_in "postcode", with: "SW1A 2AA"
+        click_on "Find"
+      end
+
+      it "shows a list of assessors as the SQL injection attempt has not worked" do
+        expect(page).to have_content "7 assessors in order of distance from SW1A 2AA"
+      end
+    end
+
     context "when entering an invalid postcode" do
       before do
         fill_in "postcode", with: "NOT A POSTCODE"
