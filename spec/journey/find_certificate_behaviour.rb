@@ -124,8 +124,8 @@ shared_examples "a certificate search function" do |certificate_type:, property_
 
     context "with a postcode followed by an SQL injection attempt" do
       before do
-        visit "http://find-energy-certificate.local.gov.uk/#{url_fragment}/search-by-postcode?postcode=A0+0AA%27%3B+DROP+TABLE+assessments%3B"
-        visit "http://find-energy-certificate.local.gov.uk/#{url_fragment}/search-by-postcode?postcode=SW1A+2AA"
+        visit "http://find-energy-certificate.local.gov.uk:9393/#{url_fragment}/search-by-postcode?postcode=A0+0AA%27%3B+DROP+TABLE+assessments%3B"
+        visit "http://find-energy-certificate.local.gov.uk:9393/#{url_fragment}/search-by-postcode?postcode=SW1A+2AA"
       end
 
       it "shows assessments in a list of links to demonstrate that the SQL injection attempt has not worked" do

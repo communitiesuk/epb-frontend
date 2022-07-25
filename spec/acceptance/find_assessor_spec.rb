@@ -207,7 +207,7 @@ describe "Acceptance::Assessor", type: :feature do
 
     context "when entering an invalid postcode" do
       let(:response) do
-        get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/search-by-postcode?postcode=NOT+A+POSTCODE"
+        get "http://getting-new-energy-certificate.local.gov.uk:9393/find-an-assessor/search-by-postcode?postcode=NOT+A+POSTCODE"
       end
 
       it "returns status 400" do
