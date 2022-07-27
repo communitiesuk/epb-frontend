@@ -71,6 +71,4 @@ use Rack::Protection::ContentSecurityPolicy,
     style_src: "'unsafe-inline' 'self'",
     img_src: "'self' data:"
 
-ENV["GTM_PROPERTY_FINDING"] = 'G-5555555555'
-
 run FrontendService.new
