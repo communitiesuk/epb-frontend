@@ -69,6 +69,7 @@ ENV['SCRIPT_NONCE'] = SecureRandom.random_number(16**10).to_s(16).rjust(10, "0")
 use Rack::Protection::ContentSecurityPolicy,
     script_src: "'nonce-#{ENV['SCRIPT_NONCE']}'",
     style_src: "'unsafe-inline' 'self'",
-    img_src: "'self' data:"
+    img_src: "'self' data:",
+    report_only: true
 
 run FrontendService.new
