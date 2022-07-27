@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require_relative "./content_security_policy_behaviour"
+
 describe "Acceptance::EnergyPerformanceCertificate", type: :feature do
   include RSpecFrontendServiceMixin
 
@@ -15,6 +17,9 @@ describe "Acceptance::EnergyPerformanceCertificate", type: :feature do
     it "has cache control headers set to 60 seconds" do
       expect(response.headers["Cache-Control"]).to eq("public, max-age=60")
     end
+
+    it_behaves_like "all script elements have nonce attributes"
+    it_behaves_like "all style elements have nonce attributes"
   end
 
   context "when an energy certificate does not exist" do

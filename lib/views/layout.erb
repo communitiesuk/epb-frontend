@@ -32,7 +32,7 @@
 </head>
 
 <body class="govuk-template__body no-js">
-<script>
+<script nonce="<%= script_nonce %>">
   document.body.classList.remove("no-js");
   document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');
 </script>
@@ -134,7 +134,7 @@
     </div>
   </div>
 </footer>
-<script src="<%= assets_path('/javascript/govuk.js') %>"></script>
-<script>window.GOVUKFrontend.initAll()</script>
+<script src="<%= assets_path('/javascript/govuk.js') %>" nonce="<%= script_nonce %>"></script>
+<script nonce="<%= script_nonce %>">window.GOVUKFrontend.initAll()</script>
 </body>
 </html>

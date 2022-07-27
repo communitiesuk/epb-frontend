@@ -34,27 +34,27 @@ const cookieConsent = (tagId, _, gtag, resolvers) => {
       cookies.showCookieBanner()
 
       const acceptButton = resolvers.acceptButton()
-      acceptButton.onclick = function () {
+      acceptButton.addEventListener('click', () => {
         cookies.grantCookieConsent()
 
         cookies.hideCookieQuestion()
 
         cookies.displayConfirmation(true)
-      }
+      })
 
       const rejectButton = resolvers.rejectButton()
-      rejectButton.onclick = function () {
+      rejectButton.addEventListener('click', () => {
         cookies.rejectCookieConsent()
 
         cookies.hideCookieQuestion()
 
         cookies.displayConfirmation(false)
-      }
+      })
 
       const hideCookieMessageButton = resolvers.hideCookieMessageButton()
-      hideCookieMessageButton.onclick = function () {
+      hideCookieMessageButton.addEventListener('click', () => {
         cookies.hideCookieBanner()
-      }
+      })
     },
 
     showCookieBanner: function () {

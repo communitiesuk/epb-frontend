@@ -6,6 +6,8 @@ require "active_support"
 require "active_support/cache"
 require "active_support/notifications"
 require "rack/attack"
+require "rack/protection/content_security_policy"
+require "securerandom"
 
 unless defined? TestLoader
   loader = Zeitwerk::Loader.new
@@ -60,5 +62,15 @@ unless %w[development test].include? environment
   end
   use Sentry::Rack::CaptureExceptions
 end
+
+# setting Content-Security-Policy header
+ENV['SCRIPT_NONCE'] = SecureRandom.random_number(16**10).to_s(16).rjust(10, "0") if ENV['SCRIPT_NONCE'].nil?
+
+use Rack::Protection::ContentSecurityPolicy,
+    script_src: "'nonce-#{ENV['SCRIPT_NONCE']}'",
+    style_src: "'unsafe-inline' 'self'",
+    img_src: "'self' data:"
+
+ENV["GTM_PROPERTY_FINDING"] = 'G-5555555555'
 
 run FrontendService.new

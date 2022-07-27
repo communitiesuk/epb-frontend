@@ -108,7 +108,7 @@
     </div>
   </div>
 </footer>
-<script src="<%= assets_path('/javascript/govuk.js') %>"></script>
-<script>window.GOVUKFrontend.initAll()</script>
+<script src="<%= assets_path('/javascript/govuk.js') %>" nonce="<%= script_nonce %>"></script>
+<script nonce="<%= script_nonce %>">window.GOVUKFrontend.initAll()</script>
 </body>
 </html>

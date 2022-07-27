@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require_relative "./content_security_policy_behaviour"
+
 describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
          type: :feature do
   include RSpecFrontendServiceMixin
@@ -45,6 +47,9 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
       heading = dom.find("h1")
       expect(heading.text).to eq "Energy performance certificate (EPC)"
     end
+
+    it_behaves_like "all script elements have nonce attributes"
+    it_behaves_like "all style elements have nonce attributes"
 
     describe "viewing the summary section" do
       it "shows the address summary" do

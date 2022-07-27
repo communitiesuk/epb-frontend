@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require_relative "./content_security_policy_behaviour"
+
 describe "Acceptance::DisplayEnergyCertificate", type: :feature do
   include RSpecFrontendServiceMixin
 
@@ -180,6 +182,9 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
       expect(response.body).to have_css "td", text: "15%"
       expect(response.body).to have_css "td", text: "16%"
     end
+
+    it_behaves_like "all script elements have nonce attributes"
+    it_behaves_like "all style elements have nonce attributes"
 
     describe "viewing the Administrative information section" do
       it "shows the section heading" do

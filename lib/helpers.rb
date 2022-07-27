@@ -90,6 +90,10 @@ module Helpers
     CGI.h str
   end
 
+  def script_nonce
+    ENV["SCRIPT_NONCE"]
+  end
+
   def scheme_details(assessor, property)
     t(
       "schemes.list.#{assessor[:registeredBy][:name].split.first.downcase}.#{property}",

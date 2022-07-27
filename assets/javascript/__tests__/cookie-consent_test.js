@@ -5,7 +5,7 @@
 
 import cookieConsent from '../cookie-consent'
 
-const acceptButton = {}
+const acceptButton = document.createElement('button')
 
 const init = () => {
   callScript()
@@ -57,7 +57,8 @@ describe('using GTM (Google Tag Manager)', () => {
   describe('when cookies have not been accepted or rejected, but are accepted from user clicking acceptance', () => {
     beforeEach(() => {
       init()
-      acceptButton.onclick.call()
+      const clickEvent = new MouseEvent('click', { view: window, bubbles: true, cancelable: false })
+      acceptButton.dispatchEvent(clickEvent)
     })
 
     it('has actively denied consent, but additionally actively grants it', () => {
@@ -75,8 +76,8 @@ function callScript () {
     cookieMessage: () => ({}),
     cookieConfirmation: () => ({}),
     acceptButton: () => (acceptButton),
-    rejectButton: () => ({}),
-    hideCookieMessageButton: () => ({}),
+    rejectButton: () => (document.createElement('button')),
+    hideCookieMessageButton: () => (document.createElement('button')),
     acceptedConfirmationMessage: () => ({}),
     rejectedConfirmationMessage: () => ({})
   }
