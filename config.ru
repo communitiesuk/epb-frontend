@@ -63,7 +63,7 @@ unless %w[development test].include? environment
   use Sentry::Rack::CaptureExceptions
 end
 
-# setting Content-Security-Policy header
+# setting Content-Security-Policy header (@see https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP)
 ENV['SCRIPT_NONCE'] = SecureRandom.random_number(16**10).to_s(16).rjust(10, "0") if ENV['SCRIPT_NONCE'].nil?
 
 csp_options = {
@@ -74,6 +74,6 @@ csp_options = {
   # report_uri: Sentry.csp_report_uri
 }.delete_if { |_, value| value.nil? || value=='' }
 
-use Rack::Protection::ContentSecurityPolicy, **csp_options
+use Rack::Protection::ContentSecurityPolicy, **Helper::GoogleCsp.add_options_for_google_analytics(csp_options)
 
 run FrontendService.new
