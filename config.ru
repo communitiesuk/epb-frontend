@@ -71,7 +71,7 @@ csp_options = {
   style_src: "'unsafe-inline' 'self'",
   img_src: "'self' data:",
   report_only: true,
-  report_uri: Sentry.csp_report_uri
+  # report_uri: Sentry.csp_report_uri
 }.delete_if { |_, value| value.nil? || value=='' }
 
 use Rack::Protection::ContentSecurityPolicy, **csp_options
