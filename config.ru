@@ -66,10 +66,14 @@ end
 # setting Content-Security-Policy header
 ENV['SCRIPT_NONCE'] = SecureRandom.random_number(16**10).to_s(16).rjust(10, "0") if ENV['SCRIPT_NONCE'].nil?
 
-use Rack::Protection::ContentSecurityPolicy,
-    script_src: "'nonce-#{ENV['SCRIPT_NONCE']}'",
-    style_src: "'unsafe-inline' 'self'",
-    img_src: "'self' data:",
-    report_only: true
+csp_options = {
+  script_src: "'nonce-#{ENV['SCRIPT_NONCE']}'",
+  style_src: "'unsafe-inline' 'self'",
+  img_src: "'self' data:",
+  report_only: true,
+  report_uri: Sentry.csp_report_uri
+}.delete_if { |_, value| value.nil? || value=='' }
+
+use Rack::Protection::ContentSecurityPolicy, **csp_options
 
 run FrontendService.new
