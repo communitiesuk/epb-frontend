@@ -6,7 +6,6 @@ require "active_support"
 require "active_support/cache"
 require "active_support/notifications"
 require "rack/attack"
-require "rack/protection/content_security_policy"
 require "securerandom"
 
 unless defined? TestLoader
@@ -70,10 +69,10 @@ csp_options = {
   script_src: "'nonce-#{ENV['SCRIPT_NONCE']}'",
   style_src: "'unsafe-inline' 'self'",
   img_src: "'self' data:",
-  report_only: true,
-  # report_uri: Sentry.csp_report_uri
+  report_uri: Sentry.csp_report_uri,
+  report_ratio: 0.1
 }.delete_if { |_, value| value.nil? || value=='' }
 
-use Rack::Protection::ContentSecurityPolicy, **Helper::GoogleCsp.add_options_for_google_analytics(csp_options)
+use Middleware::ContentSecurityPolicy, **Helper::GoogleCsp.add_options_for_google_analytics(csp_options)
 
 run FrontendService.new
