@@ -31,7 +31,7 @@ module Helper
     def self.add_options_for_google_analytics(base_options)
       return base_options unless ENV["GTM_PROPERTY_FINDING"] || ENV["GTM_PROPERTY_GETTING"]
 
-      DIRECTIVES.values.each do |directive_group|
+      DIRECTIVES.each_value do |directive_group|
         directive_group.each do |directive, policy|
           base_options[directive] = if base_options[directive]
                                       [base_options[directive], policy].join(" ")
