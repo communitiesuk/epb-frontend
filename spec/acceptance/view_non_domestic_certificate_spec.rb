@@ -105,16 +105,16 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
         )
       end
 
-      it "shows the letting info text" do
+      it "shows the letting info text", aggregate_failures: true do
         expect(response.body).to include(
           '<p class="govuk-body">Properties can be let if they have an energy rating from A+ to E.</p>',
         )
 
-        expect(response.body).to include(
+        expect(response.body).not_to include(
           '<p class="govuk-body">If a property has an energy rating of F or G, the landlord cannot grant a tenancy to new or existing tenants, unless an exemption has been registered.</p>',
         )
 
-        expect(response.body).to include(
+        expect(response.body).not_to include(
           '<p class="govuk-body">From 1 April 2023, landlords will not be allowed to continue letting a non-domestic property on an existing lease if that property has an energy rating of F or G.</p>',
         )
       end

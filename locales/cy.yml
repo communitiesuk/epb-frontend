@@ -651,7 +651,6 @@ cy:
         title: "Rheolau ar osod yr eiddo hwn"
         rental_info:
           body_1: "Gall eiddo gael ei osod os yw ei gyfraddiad ynni rhwng A+ ac E."
-          body_2: "Os yw cyfraddiad ynni yn F neu G, nid yw’r landlord yn cael rhoi tenantiaeth i denantiaid newydd na’r tenantiaid presennol oni bai bod esemptiad wedi’i gofrestru."
           summary: "O 1 Ebrill 2023, ni fydd landlordiaid yn cael parhau i osod eiddo annomestig ar brydles bresennol os yw cyfraddiad ynni’r eiddo hwnnw’n F neu G."
           guidance_text: "Gallwch ddarllen %{link}."
           cta: "canllawiau i landlordiaid ar y rheoliadau ac esemptiadau"
@@ -775,8 +774,7 @@ cy:
             recommendations_cta: "adran argymhellion"
             recommendations_url: "#argymhellion"
         rental_info:
-          body_1: "Caniateir i eiddo gael ei rentu os yw ei gyfraddiad ynni rhwng A ac E."
-          body_2: "Os yw cyfraddiad yr eiddo yn F neu G, ni chaniateir ei osod oni bai bod esemptiad wedi’i gofrestru"
+          body_1: "Gall eiddo gael ei osod os yw ei gyfraddiad ynni rhwng A ac E."
           guidance_text: "Gallwch ddarllen %{link}."
           cta: "canllawiau i landlordiaid ar y rheoliadau ac esemptiadau"
           url: "https://www.gov.uk/guidance/domestic-private-rented-property-minimum-energy-efficiency-standard-landlord-guidance"

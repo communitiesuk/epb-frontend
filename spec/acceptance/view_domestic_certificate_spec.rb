@@ -159,7 +159,13 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
 
     it "does not show the warning to landlords that it cannot be rented out" do
       expect(response.body).not_to include(
-        "The owner of this property may not be able to let it",
+        "You may not be able to let this property",
+      )
+    end
+
+    it "does not show information about rules on letting F-G properties" do
+      expect(response.body).not_to include(
+        "If the property is rated F or G,",
       )
     end
 
@@ -170,6 +176,22 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       ids = div_ids + dd_ids + spans_ids
       ids.each do |id|
         expect(response.body).to have_css("##{id}", count: 1)
+      end
+    end
+
+    context "when a EER rating is F-G" do
+      before do
+        FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
+          assessment_id: "1111-1111-1111-1111-1119",
+          current_rating: "25",
+          current_band: "f",
+        )
+      end
+
+      let(:response) { get "/energy-certificate/1111-1111-1111-1111-1119" }
+
+      it "shows content informing the user they are not able to let the property" do
+        expect(response.body).to include("It cannot be let, unless an exemption has been registered.")
       end
     end
 

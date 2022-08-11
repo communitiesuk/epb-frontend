@@ -89,11 +89,10 @@
             <strong class="govuk-warning-text__text"><span class="govuk-warning-text__assistive"><%= t('non_domestic_epc.sections.renting.warning.assistive_text') %></span><%= t('non_domestic_epc.sections.renting.warning.text') %></strong>
           </div>
           <p class="govuk-body"><%== t('non_domestic_epc.sections.renting.warning.body', current_energy_efficiency_band: assessment[:currentEnergyEfficiencyBand].upcase) %></p>
+          <p class="govuk-body"><%== t('non_domestic_epc.sections.renting.rental_info.summary') %></p>
         <% else %>
           <p class="govuk-body"><%== t('non_domestic_epc.sections.renting.rental_info.body_1') %></p>
-          <p class="govuk-body"><%== t('non_domestic_epc.sections.renting.rental_info.body_2') %></p>
         <% end %>
-        <p class="govuk-body"><%== t('non_domestic_epc.sections.renting.rental_info.summary') %></p>
         <% unless defined?(print_view) && print_view %>
         <p class="govuk-body"><%== t('non_domestic_epc.sections.renting.rental_info.guidance_text', :link => '<a class="govuk-link" href="' + t('non_domestic_epc.sections.renting.rental_info.url') + '">' + t('non_domestic_epc.sections.renting.rental_info.cta') + '</a>') %></p>
         <% end %>
