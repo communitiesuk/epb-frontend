@@ -22,6 +22,12 @@ module Errors
   class PostcodeNotValid < RuntimeError
   end
 
+  class PostcodeWrongFormat < RuntimeError
+  end
+
+  class PostcodeIncomplete < RuntimeError
+  end
+
   class ReferenceNumberNotValid < RuntimeError
   end
 

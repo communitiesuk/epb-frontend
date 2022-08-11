@@ -176,15 +176,33 @@ class FrontendService < Sinatra::Base
         back_link "/find-a-non-domestic-certificate/search-by-postcode"
       rescue StandardError => e
         case e
+        when Errors::PostcodeIncomplete
+          status 400
+          @page_title =
+            "#{t('error.error')}#{
+              t('find_certificate_by_postcode.top_heading')
+            } – #{t('services.find_an_energy_certificate')} – #{
+              t('layout.body.govuk')
+            }"
+          @errors[:postcode] = t("validation_errors.postcode_incomplete")
+        when Errors::PostcodeWrongFormat
+          status 400
+          @page_title =
+            "#{t('error.error')}#{
+              t('find_certificate_by_postcode.top_heading')
+            } – #{t('services.find_an_energy_certificate')} – #{
+              t('layout.body.govuk')
+            }"
+          @errors[:postcode] = t("validation_errors.postcode_wrong_format")
         when Errors::PostcodeNotValid
           status 400
           @page_title =
             "#{t('error.error')}#{
-              t('find_non_dom_certificate_by_postcode.top_heading')
+              t('find_certificate_by_postcode.top_heading')
             } – #{t('services.find_an_energy_certificate')} – #{
               t('layout.body.govuk')
             }"
-          @errors[:postcode] = t("validation_errors.postcode_error")
+          @errors[:postcode] = t("validation_errors.postcode_invalid")
         when Errors::BotDetected
           status 400
           @page_title =
@@ -497,6 +515,24 @@ class FrontendService < Sinatra::Base
         back_link "/find-a-certificate/search-by-postcode"
       rescue StandardError => e
         case e
+        when Errors::PostcodeIncomplete
+          status 400
+          @page_title =
+            "#{t('error.error')}#{
+              t('find_certificate_by_postcode.top_heading')
+            } – #{t('services.find_an_energy_certificate')} – #{
+              t('layout.body.govuk')
+            }"
+          @errors[:postcode] = t("validation_errors.postcode_incomplete")
+        when Errors::PostcodeWrongFormat
+          status 400
+          @page_title =
+            "#{t('error.error')}#{
+              t('find_certificate_by_postcode.top_heading')
+            } – #{t('services.find_an_energy_certificate')} – #{
+              t('layout.body.govuk')
+            }"
+          @errors[:postcode] = t("validation_errors.postcode_wrong_format")
         when Errors::PostcodeNotValid
           status 400
           @page_title =
@@ -505,7 +541,7 @@ class FrontendService < Sinatra::Base
             } – #{t('services.find_an_energy_certificate')} – #{
               t('layout.body.govuk')
             }"
-          @errors[:postcode] = t("validation_errors.postcode_error")
+          @errors[:postcode] = t("validation_errors.postcode_invalid")
         when Errors::BotDetected
           status 400
           @page_title =

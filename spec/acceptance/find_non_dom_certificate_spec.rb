@@ -61,7 +61,7 @@ describe "Acceptance::NonDomesticCertificate" do
         expect(response.body).to include(
           '<p id="postcode-error" class="govuk-error-message">',
         )
-        expect(response.body).to include("Enter a real postcode")
+        expect(response.body).to include("Enter a full UK postcode in the format LS1 4AP")
       end
 
       it "contains the required GDS error summary" do
@@ -72,8 +72,8 @@ describe "Acceptance::NonDomesticCertificate" do
         expect(
           response.body,
         ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
-                      text: "Enter a real postcode"
-        expect(response.body).to have_link "Enter a real postcode",
+                      text: "Enter a full UK postcode in the format LS1 4AP"
+        expect(response.body).to have_link "Enter a full UK postcode in the format LS1 4AP",
                                            href: "#postcode"
         expect(response.body).to have_css "#postcode"
       end
@@ -96,7 +96,7 @@ describe "Acceptance::NonDomesticCertificate" do
         expect(response.body).to include(
           '<p id="postcode-error" class="govuk-error-message">',
         )
-        expect(response.body).to include("Enter a real postcode")
+        expect(response.body).to include("Enter a valid UK postcode in the format LS1 4AP")
       end
 
       it "contains the required GDS error summary" do
@@ -107,8 +107,8 @@ describe "Acceptance::NonDomesticCertificate" do
         expect(
           response.body,
         ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
-                      text: "Enter a real postcode"
-        expect(response.body).to have_link "Enter a real postcode",
+                      text: "Enter a valid UK postcode in the format LS1 4AP"
+        expect(response.body).to have_link "Enter a valid UK postcode in the format LS1 4AP",
                                            href: "#postcode"
         expect(response.body).to have_css "#postcode"
       end
@@ -131,7 +131,7 @@ describe "Acceptance::NonDomesticCertificate" do
         expect(response.body).to include(
           '<p id="postcode-error" class="govuk-error-message">',
         )
-        expect(response.body).to include("Enter a real postcode")
+        expect(response.body).to include("Enter a full UK postcode in the format LS1 4AP")
       end
 
       it "contains the required GDS error summary" do
@@ -142,8 +142,8 @@ describe "Acceptance::NonDomesticCertificate" do
         expect(
           response.body,
         ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
-                      text: "Enter a real postcode"
-        expect(response.body).to have_link "Enter a real postcode",
+                      text: "Enter a full UK postcode in the format LS1 4AP"
+        expect(response.body).to have_link "Enter a full UK postcode in the format LS1 4AP",
                                            href: "#postcode"
         expect(response.body).to have_css "#postcode"
       end

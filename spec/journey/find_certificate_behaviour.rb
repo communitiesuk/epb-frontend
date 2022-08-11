@@ -105,20 +105,42 @@ shared_examples "a certificate search function" do |certificate_type:, property_
       end
 
       it "shows an error page with validation including a link to the form element", :aggregate_failures do
-        expect(page).to have_content "Enter a real postcode"
+        expect(page).to have_content "Enter a full UK postcode in the format LS1 4AP"
         expect(page).to have_content "There is a problem"
-        expect(page).to have_link "Enter a real postcode"
+        expect(page).to have_link "Enter a full UK postcode in the format LS1 4AP"
       end
     end
 
     context "with an invalid postcode" do
+      before do
+        fill_in "postcode", with: "SW%1 0AA"
+        click_on "Find"
+      end
+
+      it "shows an appropriate error message to enter a valid postcode" do
+        expect(page).to have_content "Enter a valid UK postcode using only letters and numbers in the format LS1 4AP"
+      end
+    end
+
+    context "with a postcode that is too longer" do
       before do
         fill_in "postcode", with: "NOT A POSTCODE"
         click_on "Find"
       end
 
       it "shows an appropriate error message to enter a valid postcode" do
-        expect(page).to have_content "Enter a real postcode"
+        expect(page).to have_content "Enter a valid UK postcode in the format LS1 4AP"
+      end
+    end
+
+    context "with an incomplete postcode" do
+      before do
+        fill_in "postcode", with: "SW1"
+        click_on "Find"
+      end
+
+      it "shows an appropriate error message to enter a valid postcode" do
+        expect(page).to have_content "Enter a full UK postcode in the format LS1 4AP"
       end
     end
 

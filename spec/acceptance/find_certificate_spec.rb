@@ -121,8 +121,8 @@ describe "Acceptance::Certificate" do
         expect(
           response.body,
         ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
-                      text: "Enter a real postcode"
-        expect(response.body).to have_link "Enter a real postcode",
+                      text: "Enter a full UK postcode in the format LS1 4AP"
+        expect(response.body).to have_link "Enter a full UK postcode in the format LS1 4AP",
                                            href: "#postcode"
         expect(response.body).to have_css "#postcode"
       end
@@ -131,7 +131,7 @@ describe "Acceptance::Certificate" do
         expect(response.body).to include(
           '<p id="postcode-error" class="govuk-error-message">',
         )
-        expect(response.body).to include("Enter a real postcode")
+        expect(response.body).to include("Enter a full UK postcode in the format LS1 4AP")
       end
     end
 
@@ -154,7 +154,7 @@ describe "Acceptance::Certificate" do
         expect(response.body).to include(
           '<p id="postcode-error" class="govuk-error-message">',
         )
-        expect(response.body).to include("Enter a real postcode")
+        expect(response.body).to include("Enter a valid UK postcode in the format LS1 4AP")
       end
 
       it "contains the required GDS error summary" do
@@ -165,8 +165,8 @@ describe "Acceptance::Certificate" do
         expect(
           response.body,
         ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
-                      text: "Enter a real postcode"
-        expect(response.body).to have_link "Enter a real postcode",
+                      text: "Enter a valid UK postcode in the format LS1 4AP"
+        expect(response.body).to have_link "Enter a valid UK postcode in the format LS1 4AP",
                                            href: "#postcode"
         expect(response.body).to have_css "#postcode"
       end
@@ -191,7 +191,7 @@ describe "Acceptance::Certificate" do
         expect(response.body).to include(
           '<p id="postcode-error" class="govuk-error-message">',
         )
-        expect(response.body).to include("Enter a real postcode")
+        expect(response.body).to include("Enter a full UK postcode in the format LS1 4AP")
       end
 
       it "contains the required GDS error summary" do
@@ -202,8 +202,8 @@ describe "Acceptance::Certificate" do
         expect(
           response.body,
         ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
-                      text: "Enter a real postcode"
-        expect(response.body).to have_link "Enter a real postcode",
+                      text: "Enter a full UK postcode in the format LS1 4AP"
+        expect(response.body).to have_link "Enter a full UK postcode in the format LS1 4AP",
                                            href: "#postcode"
         expect(response.body).to have_css "#postcode"
       end
@@ -365,6 +365,59 @@ describe "Acceptance::Certificate" do
             "Sorry, there is a problem with the service",
           )
         end
+      end
+    end
+
+    context "when entering a postcode that is invalid" do
+      let(:response) do
+        get "http://find-energy-certificate.local.gov.uk/find-a-certificate/search-by-postcode?&postcode=$$$$"
+      end
+
+      it "displays an error message" do
+        expect(response.body).to include("Enter a valid UK postcode using only letters and numbers in the format LS1 4AP")
+      end
+    end
+  end
+
+  describe ".get find-energy-certificate/find-a-certificate/search-by-postcode?lang=cy",
+           type: :feature do
+    context "when entering an empty postcode" do
+      let(:response) do
+        get "http://find-energy-certificate.local.gov.uk/find-a-certificate/search-by-postcode?lang=cy&postcode="
+      end
+
+      it "displays the Welsh error message" do
+        expect(response.body).to include("Rhowch god post llawn yn y DU yn y ffurf CF10 1EP")
+      end
+    end
+
+    context "when entering a postcode that is over 10 characters" do
+      let(:response) do
+        get "http://find-energy-certificate.local.gov.uk/find-a-certificate/search-by-postcode?lang=cy&postcode=++SW1A+2AA7A8++"
+      end
+
+      it "displays a Welsh error message" do
+        expect(response.body).to include("Rhowch god post dilys yn y DU yn y ffurf CF10 1EP")
+      end
+    end
+
+    context "when entering a postcode that is less than 4 characters" do
+      let(:response) do
+        get "http://find-energy-certificate.local.gov.uk/find-a-certificate/search-by-postcode?lang=cy&postcode=HEL"
+      end
+
+      it "displays a Welsh error message" do
+        expect(response.body).to include("Rhowch god post llawn yn y DU yn y ffurf CF10 1EP")
+      end
+    end
+
+    context "when entering a postcode that is invalid" do
+      let(:response) do
+        get "http://find-energy-certificate.local.gov.uk/find-a-certificate/search-by-postcode?lang=cy&postcode=$$$$"
+      end
+
+      it "displays a Welsh error message" do
+        expect(response.body).to include("Rhowch god post dilys yn y DU gan ddefnyddio llythrennau a rhifau yn unig yn y ffurf CF10 1EP")
       end
     end
   end
