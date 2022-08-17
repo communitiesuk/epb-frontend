@@ -132,7 +132,7 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
-    sentry-ruby (5.4.1)
+    sentry-ruby (5.4.2)
       concurrent-ruby (~> 1.0, >= 1.0.2)
     sinatra (2.2.2)
       mustermann (~> 2.0)
