@@ -6,10 +6,9 @@ inherit_gem:
     - config/default.yml
     - config/rspec.yml
 
-Metrics/BlockLength:
-  IgnoredMethods: ['get']
 RSpec/ExampleLength:
   CountAsOne: ['array', 'hash']
+
 RSpec/NestedGroups:
   Max: 4
 
