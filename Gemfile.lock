@@ -27,7 +27,7 @@ GEM
     concurrent-ruby (1.1.10)
     crack (0.4.5)
       rexml
-    csv (3.2.3)
+    csv (3.2.4)
     diff-lcs (1.5.0)
     epb-auth-tools (1.0.9)
       jwt (~> 2.3)
