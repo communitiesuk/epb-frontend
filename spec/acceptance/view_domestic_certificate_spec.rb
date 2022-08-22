@@ -924,6 +924,14 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
         )
       end
 
+      it "shows contact details" do
+        expect(response.body).to have_css(
+          "p",
+          text:
+            "If you are aware of previous certificates for this property and they are not listed here, please contact us at dluhc.digital-services@levellingup.gov.uk or call our helpdesk on 020 3829 0748 (Monday to Friday, 9am to 5pm).",
+        )
+      end
+
       it "shows the related SAP and RdSAP certificates", :aggregate_failures do
         expect(response.body).to have_link "9025-0000-0000-0000-0000",
                                            href: "/energy-certificate/9025-0000-0000-0000-0000"

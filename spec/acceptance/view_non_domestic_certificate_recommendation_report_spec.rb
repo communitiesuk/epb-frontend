@@ -117,7 +117,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
                                         text: "Other reports for this property"
       expect(response.body).to have_css "p",
                                         text:
-                                          "If you are aware of previous reports for this property and they are not listed here, please contact us at dluhc.digital-services@levellingup.gov.uk or call our helpdesk on 020 3829 0748."
+                                          "If you are aware of previous reports for this property and they are not listed here, please contact us at dluhc.digital-services@levellingup.gov.uk or call our helpdesk on 020 3829 0748 (Monday to Friday, 9am to 5pm)."
       expect(response.body).to have_css "dt", text: "Certificate number"
       expect(response.body).to have_link "9457-0000-0000-0000-2000",
                                          href: "/energy-certificate/9457-0000-0000-0000-2000"

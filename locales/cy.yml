@@ -603,7 +603,7 @@ cy:
       title: "%{type}au eraill ar gyfer yr eiddo hwn"
       certificate: "tystysgrif"
       report: "adroddiad"
-      message: 'Os ydych yn ymwybodol bod yna %{type}au blaenorol ar gyfer yr eiddo hwn ac nad ydyn nhw wedi’u rhestru yma, cysylltwch â ni yn %{link} neu ffoniwch ein desg gymorth ar <span style="white-space: nowrap;">020 3829 0748.</span>'
+      message: 'Os ydych yn ymwybodol bod yna %{type}au blaenorol ar gyfer yr eiddo hwn ac nad ydyn nhw wedi’u rhestru yma, cysylltwch â ni yn %{link} neu ffoniwch ein desg gymorth ar <span style="white-space: nowrap;">020 3829 0748</span> (Dydd Llun i ddydd Gwener, 9am i 5pm).'
       no_related: "Does dim %{type}au perthynol ar gyfer yr eiddo hwn."
       reference_number: "Rhif y dystysgrif"
       valid_until: "Dilys tan"
