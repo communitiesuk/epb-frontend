@@ -164,9 +164,9 @@ describe "Acceptance::Assessor", type: :feature do
       end
     end
 
-    context "when entering a postcode that is less than 4 characters" do
+    context "when entering a postcode that is less than 5 characters" do
       let(:response) do
-        get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/search-by-postcode?postcode=ETC"
+        get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/search-by-postcode?postcode=OX29"
       end
 
       it "returns status 400" do
