@@ -3,6 +3,8 @@
 module UseCase
   class FindNonDomesticAssessorByPostcode < UseCase::Base
     def execute(postcode)
+      Helper::PostcodeValidator.validate postcode
+
       response =
         @gateway.search_by_postcode(
           postcode,

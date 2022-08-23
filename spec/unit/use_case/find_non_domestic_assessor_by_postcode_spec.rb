@@ -10,13 +10,49 @@ describe UseCase::FindNonDomesticAssessorByPostcode do
     }.to raise_exception Errors::PostcodeNotRegistered
   end
 
-  it "returns an error when the postcode is not valid" do
+  it "returns an error when the API returns that the postcode is not valid" do
     find_non_domestic_assessors_without_valid_postcode =
       described_class.new(AssessorsGateway::InvalidPostcodesStub.new)
 
     expect {
-      find_non_domestic_assessors_without_valid_postcode.execute("E19 0GL")
+      find_non_domestic_assessors_without_valid_postcode.execute("H0H H0H")
     }.to raise_exception Errors::PostcodeNotValid
+  end
+
+  context "when is invalid in a manner handled by frontend validation" do
+    let(:use_case) { described_class.new assessors_gateway }
+    let(:assessors_gateway) do
+      gateway = instance_double Gateway::AssessorsGateway
+      allow(gateway).to receive :search_by_postcode
+      gateway
+    end
+
+    context "with the postcode incomplete" do
+      it "raises a postcode incomplete error without calling on the gateway" do
+        expect {
+          use_case.execute("OX4")
+        }.to raise_exception Errors::PostcodeIncomplete
+        expect(assessors_gateway).not_to have_received :search_by_postcode
+      end
+    end
+
+    context "with the postcode in the wrong format" do
+      it "raises a postcode wrong format error without calling on the gateway" do
+        expect {
+          use_case.execute("SW1A 2AAA")
+        }.to raise_exception Errors::PostcodeWrongFormat
+        expect(assessors_gateway).not_to have_received :search_by_postcode
+      end
+    end
+
+    context "with the postcode in an invalid format" do
+      it "raises a postcode not valid error without calling on the gateway" do
+        expect {
+          use_case.execute("SW1% 2AA")
+        }.to raise_exception Errors::PostcodeNotValid
+        expect(assessors_gateway).not_to have_received :search_by_postcode
+      end
+    end
   end
 
   context "when there are no assessors matched by the postcode" do
@@ -25,7 +61,7 @@ describe UseCase::FindNonDomesticAssessorByPostcode do
 
     it "returns empty array" do
       expect(
-        find_non_domestic_assessor.execute("SW1A+2AA")[:data][:assessors],
+        find_non_domestic_assessor.execute("SW1A 2AA")[:data][:assessors],
       ).to eq([])
     end
   end
@@ -75,13 +111,13 @@ describe UseCase::FindNonDomesticAssessorByPostcode do
 
     it "returns list of non domestic assessors" do
       expect(
-        find_non_domestic_assessor.execute("SW1A+2AB")[:data][:assessors],
+        find_non_domestic_assessor.execute("SW1A 2AB")[:data][:assessors],
       ).to eq(valid_assessors)
     end
 
     it "returns list of non domestic assessors when the postcode includes leading or trailing whitespaces" do
       expect(
-        find_non_domestic_assessor.execute(" SW1A+2AB ")[:data][:assessors],
+        find_non_domestic_assessor.execute(" SW1A 2AB ")[:data][:assessors],
       ).to eq(valid_assessors)
     end
   end

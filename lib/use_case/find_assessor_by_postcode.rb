@@ -6,6 +6,8 @@ module UseCase
       postcode,
       qualification
     )
+      Helper::PostcodeValidator.validate postcode
+
       qualification = Helpers.cleansed_domestic_qualification_type_param(qualification) || "domesticSap,domesticRdSap"
       response = @gateway.search_by_postcode(postcode, qualification)
 

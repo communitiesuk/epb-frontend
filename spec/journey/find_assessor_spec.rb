@@ -80,10 +80,10 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
         click_on "Find"
       end
 
-      it "shows an error message indicating a valid postcode should be entered", :aggregate_failures do
-        expect(page).to have_content "Enter a real postcode"
+      it "shows an error message indicating a full postcode should be entered", :aggregate_failures do
+        expect(page).to have_content "Enter a full UK postcode in the format LS1 4AP"
         expect(page).to have_content "There is a problem"
-        expect(page).to have_link "Enter a real postcode"
+        expect(page).to have_link "Enter a full UK postcode in the format LS1 4AP"
       end
     end
 
@@ -107,9 +107,9 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
       end
 
       it "shows an error message indicating a valid postcode should be entered", :aggregate_failures do
-        expect(page).to have_content "Enter a real postcode"
+        expect(page).to have_content "Enter a valid UK postcode in the format LS1 4AP"
         expect(page).to have_content "There is a problem"
-        expect(page).to have_link "Enter a real postcode"
+        expect(page).to have_link "Enter a valid UK postcode in the format LS1 4AP"
       end
     end
 
@@ -207,10 +207,10 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
         click_on "Find"
       end
 
-      it "displays an error message that a valid postcode should be used to search", :aggregate_failures do
-        expect(page).to have_content "Enter a real postcode"
+      it "displays an error message that a full postcode should be used to search", :aggregate_failures do
+        expect(page).to have_content "Enter a full UK postcode in the format LS1 4AP"
         expect(page).to have_content "There is a problem"
-        expect(page).to have_link "Enter a real postcode"
+        expect(page).to have_link "Enter a full UK postcode in the format LS1 4AP"
       end
     end
 
@@ -221,9 +221,9 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
       end
 
       it "displays an error message that a valid postcode should be used to search", :aggregate_failures do
-        expect(page).to have_content "Enter a real postcode"
+        expect(page).to have_content "Enter a valid UK postcode in the format LS1 4AP"
         expect(page).to have_content "There is a problem"
-        expect(page).to have_link "Enter a real postcode"
+        expect(page).to have_link "Enter a valid UK postcode in the format LS1 4AP"
       end
     end
 

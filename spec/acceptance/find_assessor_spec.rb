@@ -105,7 +105,7 @@ describe "Acceptance::Assessor", type: :feature do
         expect(response.body).to include(
           '<p id="postcode-error" class="govuk-error-message">',
         )
-        expect(response.body).to include("Enter a real postcode")
+        expect(response.body).to include("Enter a full UK postcode in the format LS1 4AP")
       end
 
       it "contains the required GDS error summary" do
@@ -116,8 +116,8 @@ describe "Acceptance::Assessor", type: :feature do
         expect(
           response.body,
         ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
-                      text: "Enter a real postcode"
-        expect(response.body).to have_link "Enter a real postcode",
+                      text: "Enter a full UK postcode in the format LS1 4AP"
+        expect(response.body).to have_link "Enter a full UK postcode in the format LS1 4AP",
                                            href: "#postcode"
         expect(response.body).to have_css "#postcode"
       end
@@ -146,7 +146,7 @@ describe "Acceptance::Assessor", type: :feature do
         expect(response.body).to include(
           '<p id="postcode-error" class="govuk-error-message">',
         )
-        expect(response.body).to include("Enter a real postcode")
+        expect(response.body).to include("Enter a valid UK postcode in the format LS1 4AP")
       end
 
       it "contains the required GDS error summary" do
@@ -157,8 +157,8 @@ describe "Acceptance::Assessor", type: :feature do
         expect(
           response.body,
         ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
-                      text: "Enter a real postcode"
-        expect(response.body).to have_link "Enter a real postcode",
+                      text: "Enter a valid UK postcode in the format LS1 4AP"
+        expect(response.body).to have_link "Enter a valid UK postcode in the format LS1 4AP",
                                            href: "#postcode"
         expect(response.body).to have_css "#postcode"
       end
@@ -187,7 +187,7 @@ describe "Acceptance::Assessor", type: :feature do
         expect(response.body).to include(
           '<p id="postcode-error" class="govuk-error-message">',
         )
-        expect(response.body).to include("Enter a real postcode")
+        expect(response.body).to include("Enter a full UK postcode in the format LS1 4AP")
       end
 
       it "contains the required GDS error summary" do
@@ -198,8 +198,8 @@ describe "Acceptance::Assessor", type: :feature do
         expect(
           response.body,
         ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
-                      text: "Enter a real postcode"
-        expect(response.body).to have_link "Enter a real postcode",
+                      text: "Enter a full UK postcode in the format LS1 4AP"
+        expect(response.body).to have_link "Enter a full UK postcode in the format LS1 4AP",
                                            href: "#postcode"
         expect(response.body).to have_css "#postcode"
       end
@@ -228,7 +228,7 @@ describe "Acceptance::Assessor", type: :feature do
         expect(response.body).to include(
           '<p id="postcode-error" class="govuk-error-message">',
         )
-        expect(response.body).to include("Enter a real postcode")
+        expect(response.body).to include("Enter a valid UK postcode in the format LS1 4AP")
       end
 
       it "contains the required GDS error summary" do
@@ -239,8 +239,8 @@ describe "Acceptance::Assessor", type: :feature do
         expect(
           response.body,
         ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
-                      text: "Enter a real postcode"
-        expect(response.body).to have_link "Enter a real postcode",
+                      text: "Enter a valid UK postcode in the format LS1 4AP"
+        expect(response.body).to have_link "Enter a valid UK postcode in the format LS1 4AP",
                                            href: "#postcode"
         expect(response.body).to have_css "#postcode"
       end
@@ -470,13 +470,13 @@ describe "Acceptance::Assessor", type: :feature do
       context "when the requested postcode is malformed" do
         before do
           FindAssessor::ByPostcode::InvalidPostcodeStub.search_by_postcode(
-            "C11 4FF",
+            "H0H 0H0",
             "domesticRdSap",
           )
         end
 
         let(:response) do
-          get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/search-by-postcode?domestic_type=domesticRdSap&postcode=C11+4FF"
+          get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/search-by-postcode?domestic_type=domesticRdSap&postcode=H0H+0H0"
         end
 
         it "returns status 400" do
@@ -492,7 +492,7 @@ describe "Acceptance::Assessor", type: :feature do
           expect(response.body).to include(
             '<p id="postcode-error" class="govuk-error-message">',
           )
-          expect(response.body).to include("Enter a real postcode")
+          expect(response.body).to include("Enter a valid UK postcode using only letters and numbers in the format LS1 4AP")
         end
       end
 

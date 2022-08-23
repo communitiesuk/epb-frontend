@@ -21,6 +21,7 @@ describe Helper::PostcodeValidator do
       expect { helper.validate("SW") }.to raise_error Errors::PostcodeIncomplete
       expect { helper.validate("SW1 ") }.to raise_error Errors::PostcodeIncomplete
       expect { helper.validate("SW1") }.to raise_error Errors::PostcodeIncomplete
+      expect { helper.validate("OX29") }.to raise_error Errors::PostcodeIncomplete
     end
   end
 

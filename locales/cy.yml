@@ -2,7 +2,6 @@ cy:
   validation_errors:
     assessor_name_error: "Rhowch enw cyntaf ac enw olaf yr asesydd"
     no_property_type_selected: "Dewiswch fath o eiddo"
-    postcode_error: "Rhowch god post go iawn"
     postcode_invalid: "Rhowch god post dilys yn y DU gan ddefnyddio llythrennau a rhifau yn unig yn y ffurf CF10 1EP"
     postcode_incomplete: "Rhowch god post llawn yn y DU yn y ffurf CF10 1EP"
     postcode_wrong_format: "Rhowch god post dilys yn y DU yn y ffurf CF10 1EP"

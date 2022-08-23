@@ -8,7 +8,7 @@ module Helper
       raise Errors::PostcodeWrongFormat if stripped.match?(alpha_numeric_pattern) && stripped.length > 8
 
       unless Regexp
-               .new("^[a-zA-Z0-9_ ]{4,10}$", Regexp::IGNORECASE)
+               .new("^[a-zA-Z0-9_ ]{5,10}$", Regexp::IGNORECASE)
                .match(stripped)
         raise Errors::PostcodeNotValid
       end

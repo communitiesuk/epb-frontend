@@ -2,7 +2,6 @@ en:
   validation_errors:
     assessor_name_error: 'Enter the first and last name of the assessor'
     no_property_type_selected: "Select a type of property"
-    postcode_error: 'Enter a real postcode'
     postcode_invalid: 'Enter a valid UK postcode using only letters and numbers in the format LS1 4AP'
     postcode_incomplete: 'Enter a full UK postcode in the format LS1 4AP'
     postcode_wrong_format: "Enter a valid UK postcode in the format LS1 4AP"
