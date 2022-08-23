@@ -25,7 +25,7 @@ module Helpers
   DOMESTIC_TYPE_QUALIFICATION_PARAMS = %w[domesticSap domesticRdSap].freeze
 
   def valid_postcode
-    Regexp.new("^[a-zA-Z0-9_ ]{4,10}$", Regexp::IGNORECASE)
+    Regexp.new("^[a-zA-Z0-9_ ]{5,10}$", Regexp::IGNORECASE)
   end
 
   def self.domestic_certificate_type?(type_of_certificate)
