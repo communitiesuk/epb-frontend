@@ -20,7 +20,7 @@ group :test do
 end
 
 gem "csv", "~> 3.2"
-gem "epb-auth-tools", "~> 1.0.8"
+gem "epb-auth-tools", "~> 1.0.11"
 gem "erubis", "~> 2.7"
 gem "i18n", "~> 1.12.0"
 gem "puma", "~> 5.6"
