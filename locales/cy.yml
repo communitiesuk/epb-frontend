@@ -769,7 +769,7 @@ cy:
           energy_rating_title: "Cyfraddiad ynni"
           body:
             text: "Cyfraddiad ynni’r eiddo hwn yw %{current_energy_efficiency_band}. Ni chaniateir ei osod oni bai bod esemptiad wedi’i gofrestru."
-            text_2: "Caniateir i eiddo gael ei rentu os yw ei gyfraddiad ynni rhwng A ac E."
+            text_2: "Gall eiddo gael ei osod os yw ei gyfraddiad ynni rhwng A ac E."
             recommendations_text: "Mae’r %{recommendations_link} yn nodi newidiadau y gallwch eu gwneud er mwyn gwella cyfraddiad yr eiddo."
             recommendations_cta: "adran argymhellion"
             recommendations_url: "#argymhellion"

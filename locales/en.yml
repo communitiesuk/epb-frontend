@@ -769,7 +769,7 @@ en:
           energy_rating_title: 'Energy rating'
           body:
             text: 'This property has an energy rating of %{current_energy_efficiency_band}. It cannot be let, unless an exemption has been registered.'
-            text_2: 'Properties can be rented if they have an energy rating from A to E.'
+            text_2: 'Properties can be let if they have an energy rating from A to E.'
             recommendations_text: 'The %{recommendations_link} sets out changes you can make to improve the property’s rating.'
             recommendations_cta: 'recommendations section'
             recommendations_url: '#recommendations'

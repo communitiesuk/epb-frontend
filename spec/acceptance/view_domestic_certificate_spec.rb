@@ -192,6 +192,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
 
       it "shows content informing the user they are not able to let the property" do
         expect(response.body).to include("It cannot be let, unless an exemption has been registered.")
+        expect(response.body).to include("Properties can be let if they have an energy rating from A to E.")
       end
     end
 
