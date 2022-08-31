@@ -25,6 +25,7 @@ GEM
     compare-xml (0.66)
       nokogiri (~> 1.8)
     concurrent-ruby (1.1.10)
+    connection_pool (2.2.5)
     crack (0.4.5)
       rexml
     csv (3.2.4)
@@ -84,7 +85,10 @@ GEM
     rake (13.0.6)
     rash_alt (0.4.12)
       hashie (>= 3.4)
-    redis (4.7.1)
+    redis (5.0.2)
+      redis-client (~> 0.7)
+    redis-client (0.7.1)
+      connection_pool
     regexp_parser (2.5.0)
     rexml (3.2.5)
     rspec (3.11.0)
@@ -185,7 +189,7 @@ DEPENDENCIES
   rack-contrib (~> 2.3.0)
   rack-test (~> 2.0.2)
   rake (~> 13.0.6)
-  redis (~> 4.7.1)
+  redis (~> 5.0.2)
   rspec (~> 3.11)
   rubocop-govuk (~> 4.7)
   rubocop-rspec (~> 2.12)
