@@ -937,7 +937,7 @@ en:
         based_on_url: '#recommendations'
         more_advice: 'For advice on how to reduce your energy bills visit %{link}.'
         more_advice_cta: 'Simple Energy Advice'
-        more_advice_url: 'https://www.simpleenergyadvice.org.uk/'
+        more_advice_url: 'https://www.gov.uk/improve-energy-efficiency'
         heating_in_property: 'Heating use in this property'
         energy_costs: 'Heating a property usually makes up the majority of energy costs.'
         estimated_energy: 'Estimated energy used to heat this property'

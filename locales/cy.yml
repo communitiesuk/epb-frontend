@@ -937,7 +937,7 @@ cy:
         based_on_url: "#recommendations"
         more_advice: "I gael cyngor ar sut i leihau’ch biliau ynni, ewch i %{link}."
         more_advice_cta: "Simple Energy Advice"
-        more_advice_url: "https://www.simpleenergyadvice.org.uk/"
+        more_advice_url: "https://www.gov.uk/improve-energy-efficiency"
         heating_in_property: "Defnydd gwres yn yr eiddo hwn"
         energy_costs: "Gwresogi eiddo sydd fel arfer yn creu’r rhan fwyaf o’ch costau ynni."
         estimated_energy: "Amcangyfrif o’r ynni a ddefnyddir i wresogi’r eiddo hwn"
