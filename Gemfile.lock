@@ -28,7 +28,7 @@ GEM
     connection_pool (2.2.5)
     crack (0.4.5)
       rexml
-    csv (3.2.4)
+    csv (3.2.5)
     diff-lcs (1.5.0)
     epb-auth-tools (1.0.11)
       jwt (~> 2.3)
