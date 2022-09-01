@@ -1,0 +1,16 @@
+<% if print_view && !assessment[:supersededBy].nil? %>
+  <div class="govuk-body epc-blue-bottom printable-area">
+    <div class="govuk-warning-text" >
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-warning-text__assistive"><%= t("domestic_epc.superseded.title") %></span>
+          <%= t("domestic_epc.superseded_print_version.#{defined?(type) ? type : 'certificate'}_title") %>
+        <p class="govuk-body govuk-!-margin-top-6"><%= t("domestic_epc.superseded_print_version.#{defined?(type) ? type : 'certificate'}_link_text") %></p>
+        <p class="govuk-body govuk-!-font-weight-bold"><%= t("domestic_epc.superseded_print_version.#{defined?(type) ? type : 'certificate'}_get_help_text") %></p>
+        <p class="govuk-body"><%= t("domestic_epc.superseded_print_version.#{defined?(type) ? type : 'certificate'}_contact_text") %></p>
+        <p class="govuk-body"><%= t("domestic_epc.superseded_print_version.email") %> <br>
+          <%= t("domestic_epc.superseded_print_version.telephone") %> <%= t("domestic_epc.superseded_print_version.telephone_number") %></p><br>
+      </strong>
+    </div>
+  </div>
+<% end %>

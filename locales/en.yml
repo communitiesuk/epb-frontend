@@ -759,6 +759,18 @@ en:
       report_message: 'A new report has replaced this one'
       certificate_link: 'See the new certificate'
       report_link: 'See the new report'
+    superseded_print_version:
+      certificate_title: 'This certificate is not valid. A new certificate has replaced this one.'
+      report_title: 'This report is not valid. A new report has replaced this one.'
+      certificate_link_text: 'See the new certificate by visiting www.gov.uk/find-energy-certificate'
+      certificate_get_help_text: 'Get help with certificates for this property'
+      certificate_contact_text: 'If you need help finding the new certificate or if you know of other certificates for this property that are not listed here, contact the Department for Levelling Up, Housing and Communities (DLUHC).'
+      report_link_text: 'See the new report by visiting www.gov.uk/find-energy-certificate'
+      report_get_help_text: 'Get help with reports for this property'
+      report_contact_text: 'If you need help finding the new report or if you know of other reports for this property that are not listed here, contact the Department for Levelling Up, Housing and Communities (DLUHC).'
+      email: 'dluhc.digital-services@levellingup.gov.uk'
+      telephone: 'Telephone: '
+      telephone_number: '020 3829 0748'
     sections:
       renting:
         title: 'Rules on letting this property'
