@@ -56,10 +56,10 @@
       print_view: print_view,
     } %>
 
-      <%== erb :component__epc_summary_compact, locals: {
-        assessment: assessment,
-        type: 'report'
-      } %>
+    <%== erb :component__epc_summary_compact, locals: {
+      assessment: assessment,
+      type: 'report'
+    } %>
 
     <% if assessment[:relatedCertificate] && assessment[:energyBandFromRelatedCertificate] %>
       <%== erb :non_domestic_energy_performance_certificate_recommendation_report__rating,

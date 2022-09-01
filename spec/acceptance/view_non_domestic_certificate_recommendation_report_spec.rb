@@ -249,6 +249,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
     let(:response) { get "/energy-certificate/1234-5678-1234-5678-1234" }
 
     it "shows the superseded warning message" do
+      pp response.body
       expect(response.body).to have_css("div.govuk-warning-text", text: /Warning/)
       expect(response.body).to have_css("div.govuk-warning-text", text: /A new report has replaced this one/)
     end
