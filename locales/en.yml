@@ -394,15 +394,6 @@ en:
       heading: 'Network connection failed'
       body: 'There is an internal network error'
 
-  find_certificate_by_reference_number_results:
-    top_heading: 'Find an energy performance certificate (EPC)'
-    list: '1-%{length} of %{length} results matching %{reference_number}'
-    table:
-      address: 'Address'
-      rating: 'Energy rating'
-      expiry: 'Valid until'
-    no_certificates: 'There are no certificates matching that EPC certificate number.'
-
   find_certificate_by_street_name_and_town:
     top_heading: 'Find an energy performance certificate (EPC) by street and town'
     no_such_address:
@@ -438,7 +429,9 @@ en:
     no_epc:
       get_a_new_one_with_results: "If your property does not have a valid EPC, you can"
       get_a_new_one_link: "get a new energy certificate"
-    list: '1-%{length} of %{length} results matching %{query}'
+    list:
+      one_result: '%{length} result matching %{query}'
+      more_than_one_result: '%{length} results matching %{query}'
     table:
       address: 'Address'
       rating: 'Energy rating'

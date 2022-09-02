@@ -349,7 +349,7 @@ describe "Acceptance::NonDomesticCertificate" do
     context "when entering a valid street name and town" do
       context "with a street and town that have associated certificates" do
         before do
-          FindCertificate::Stub.search_by_street_name_and_town(
+          FindCertificate::Stub.search_by_street_name_and_town_one_result(
             "1 Makeup Street",
             "Beauty Town",
             %w[AC-CERT AC-REPORT DEC DEC-RR CEPC CEPC-RR],

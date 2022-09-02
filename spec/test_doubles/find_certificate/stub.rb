@@ -154,7 +154,7 @@ module FindCertificate
         )
     end
 
-    def self.search_by_street_name_and_town(
+    def self.search_by_street_name_and_town_one_result(
       street_name,
       town,
       assessment_types = %w[RdSAP SAP],
@@ -228,6 +228,79 @@ module FindCertificate
                   currentEnergyEfficiencyBand: "b",
                   optOut: false,
                   addressId: "RRN-1234-5678-9101-1122-1234",
+                  addressLine1: street_name,
+                  addressLine2: "",
+                  addressLine3: "",
+                  addressLine4: "",
+                  town:,
+                  postcode: "SW1B 2BB",
+                  status: "ENTERED",
+                  createdAt: nil,
+                },
+              ],
+            },
+            "meta": {
+              "searchReferenceNumber": [street_name, town],
+            },
+          }.to_json,
+        )
+    end
+
+    def self.search_by_street_name_and_town_multiple_results(
+      street_name,
+      town,
+      assessment_types = %w[RdSAP SAP],
+      returned_type = "RdSAP"
+    )
+      route =
+        "http://test-api.gov.uk/api/assessments/search?street_name=#{
+          street_name
+        }&town=#{town}"
+      assessment_types.each { |type| route += "&assessment_type[]=#{type}" }
+
+      WebMock
+        .stub_request(:get, route)
+        .with(
+          headers: {
+            :Accept => "*/*",
+            "Accept-Encoding" => "gzip;q=1.0,deflate;q=0.6,identity;q=0.3",
+            :Authorization => "Bearer abc",
+          },
+        )
+        .to_return(
+          status: 200,
+          body: {
+            "data": {
+              "assessments": [
+                {
+                  dateOfAssessment: "2020-01-01",
+                  dateOfRegistration: "2020-01-02",
+                  dateOfExpiry: "2019-01-01",
+                  typeOfAssessment: returned_type,
+                  assessmentId: "1234-5678-9101-1121-3155",
+                  currentEnergyEfficiencyRating: 90,
+                  currentEnergyEfficiencyBand: "b",
+                  optOut: false,
+                  addressId: "RRN-1234-5678-9101-1122-1255",
+                  addressLine1: street_name,
+                  addressLine2: "",
+                  addressLine3: "",
+                  addressLine4: "",
+                  town:,
+                  postcode: "SW1B 2BB",
+                  status: "ENTERED",
+                  createdAt: nil,
+                },
+                {
+                  dateOfAssessment: "2020-01-01",
+                  dateOfRegistration: "2020-01-02",
+                  dateOfExpiry: "2030-01-01",
+                  typeOfAssessment: returned_type,
+                  assessmentId: "1234-5678-9101-1122-1256",
+                  currentEnergyEfficiencyRating: 90,
+                  currentEnergyEfficiencyBand: "b",
+                  optOut: false,
+                  addressId: "RRN-1234-5678-9101-1122-1256",
                   addressLine1: street_name,
                   addressLine2: "",
                   addressLine3: "",

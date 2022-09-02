@@ -56,17 +56,17 @@ FindCertificate::Stub.search_by_id("0000-0000-0000-0000-5555", "AC-REPORT")
 FindCertificate::NoCertificatesStub.search_by_id("9900-0000-0000-0000-0099")
 FindCertificate::ErrorsStub.search_by_invalid_id("4567-6789-4567-6789-4567-1234")
 
-FindCertificate::Stub.search_by_street_name_and_town(
+FindCertificate::Stub.search_by_street_name_and_town_one_result(
   "1 Makeup Street",
   "Beauty Town",
 )
-FindCertificate::Stub.search_by_street_name_and_town(
+FindCertificate::Stub.search_by_street_name_and_town_one_result(
   "1 Makeup Street",
   "Beauty Town",
   %w[DEC DEC-RR CEPC CEPC-RR AC-REPORT AC-CERT],
   "CEPC",
 )
-FindCertificate::Stub.search_by_street_name_and_town(
+FindCertificate::Stub.search_by_street_name_and_town_one_result(
   "1 Commercial Street",
   "Industry Town",
   %w[DEC DEC-RR CEPC CEPC-RR AC-REPORT AC-CERT],

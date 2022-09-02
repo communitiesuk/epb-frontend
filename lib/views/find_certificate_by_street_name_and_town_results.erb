@@ -11,7 +11,8 @@
     </p>
 
     <% if results.size > 0 %>
-      <h2 class="govuk-heading-m"><%= t('find_certificate_by_street_name_and_town_results.list', :length => count_certificates(results), :query => params['street_name'] + ', ' + params['town'] ) %></h2>
+      <% result_content = results.size == 1 ? 'find_certificate_by_street_name_and_town_results.list.one_result' : 'find_certificate_by_street_name_and_town_results.list.more_than_one_result' %>
+      <h2 class="govuk-heading-m"><%= t(result_content,:length => count_certificates(results), :query => params['street_name'] + ', ' + params['town'] ) %></h2>
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
       <%== erb :find_certificate_list_certificate, locals: {

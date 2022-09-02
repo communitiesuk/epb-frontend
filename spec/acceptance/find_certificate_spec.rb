@@ -846,7 +846,7 @@ describe "Acceptance::Certificate" do
 
     context "when street name entered is many characters" do
       before do
-        FindCertificate::Stub.search_by_street_name_and_town(
+        FindCertificate::Stub.search_by_street_name_and_town_one_result(
           "1 Makeup Street",
           "Beauty Town",
         )
@@ -870,9 +870,9 @@ describe "Acceptance::Certificate" do
     end
 
     context "when entering the street name and town" do
-      context "when using a street and town with certificates associated" do
+      context "when using a street and town with one match, with certificates associated" do
         before do
-          FindCertificate::Stub.search_by_street_name_and_town(
+          FindCertificate::Stub.search_by_street_name_and_town_one_result(
             "1 Makeup Street",
             "Beauty Town",
           )
@@ -888,7 +888,7 @@ describe "Acceptance::Certificate" do
 
         it "has a title that matches the page heading" do
           expect(response.body).to include(
-            "<title>1-1 of 1 results matching 1 Makeup Street Beauty Town – Find an energy certificate – GOV.UK</title>",
+            "<title>1 result matching 1 Makeup Street Beauty Town – Find an energy certificate – GOV.UK</title>",
           )
         end
 
@@ -933,6 +933,25 @@ describe "Acceptance::Certificate" do
 
         it "shows the expiry date of an entry" do
           expect(response.body).to include("1 January 2032")
+        end
+      end
+
+      context "when more than 1 result matches the street and town name" do
+        before do
+          FindCertificate::Stub.search_by_street_name_and_town_multiple_results(
+            "Makeup Street",
+            "Beauty Town",
+          )
+        end
+
+        let(:response) do
+          get "http://find-energy-certificate.local.gov.uk/find-a-certificate/search-by-street-name-and-town?street_name=Makeup%20Street&town=Beauty%20Town"
+        end
+
+        it "has a title that matches the page heading" do
+          expect(response.body).to include(
+            "<title>2 results matching Makeup Street Beauty Town – Find an energy certificate – GOV.UK</title>",
+          )
         end
       end
 

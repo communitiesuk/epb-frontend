@@ -394,15 +394,6 @@ cy:
       heading: "Cysylltiad â’r rhwydwaith wedi methu"
       body: "Mae yna wall rhwydwaith mewnol"
 
-  find_certificate_by_reference_number_results:
-    top_heading: "Chwiliwch am dystysgrif perfformiad ynni (EPC)"
-    list: "1-%{length} o %{length} o ganlyniadau yn cyfateb i %{reference_number}"
-    table:
-      address: Cyfeiriad
-      rating: "Cyfraddiad ynni"
-      expiry: "Dilys tan"
-    no_certificates: "Does dim tystysgrifau’n cyfateb i’r rhif tystysgrif EPC hwnnw"
-
   find_certificate_by_street_name_and_town:
     top_heading: "Chwiliwch am dystysgrif perfformiad ynni (EPC) yn ôl y stryd a’r dref"
     no_such_address:
@@ -438,7 +429,9 @@ cy:
     no_epc:
       get_a_new_one_with_results: "Os nad oes gan eich eiddo EPC ddilys, gallwch"
       get_a_new_one_link: "cael tystysgrif ynni newydd"
-    list: "1-%{length} o %{length} o ganlyniadau yn cyfateb i %{query}"
+    list:
+      one_result: "%{length} canlyniad yn cyfateb i %{query}"
+      more_than_one_result: "%{length} o ganlyniadau yn cyfateb i %{query}"
     table:
       address: "Cyfeiriad"
       rating: "Cyfraddiad ynni"

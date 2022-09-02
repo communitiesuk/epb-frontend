@@ -72,7 +72,7 @@ RSpec.describe "Redirect to service start page" do
     end
 
     it "returns status 200 for a search results page with 2 params" do
-      FindCertificate::Stub.search_by_street_name_and_town(
+      FindCertificate::Stub.search_by_street_name_and_town_one_result(
         "1 Makeup Street",
         "Beauty Town",
         %w[AC-CERT AC-REPORT DEC DEC-RR CEPC CEPC-RR],
@@ -84,7 +84,7 @@ RSpec.describe "Redirect to service start page" do
     end
 
     it "returns status 200 for a search results page with 2 params and lang param" do
-      FindCertificate::Stub.search_by_street_name_and_town(
+      FindCertificate::Stub.search_by_street_name_and_town_one_result(
         "1 Makeup Street",
         "Beauty Town",
         %w[AC-CERT AC-REPORT DEC DEC-RR CEPC CEPC-RR],
