@@ -248,7 +248,10 @@
     <div class="govuk-body epc-blue-bottom allow-break printable-area">
       <h3 class="govuk-heading-m"><%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.title') %></h3>
       <p class="govuk-body">
-        <a class="govuk-link" href="<%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.link') %>"><%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.text') %></a>
+        <%== t('domestic_epc.sections.recommendations.paying_for_energy_improvements.bus_text', :link => '<a class="govuk-link" href="' + t('domestic_epc.sections.recommendations.paying_for_energy_improvements.bus_url') + '">' + t('domestic_epc.sections.recommendations.paying_for_energy_improvements.bus_link_text') + '</a>' ) %>
+      </p>
+      <p class="govuk-body">
+        <a class="govuk-link" href="<%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.grants_link') %>"><%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.grants_text') %></a>.
       </p>
     </div>
 

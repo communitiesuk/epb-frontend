@@ -930,8 +930,11 @@ cy:
           potential_rating_3: "Cyfraddiad posibl ar ôl cwblhau camau 1&nbsp;i"
         paying_for_energy_improvements:
           title: "Talu am welliannau ynni"
-          text: "Chwiliwch am grantiau ynni a ffyrdd i arbed ynni yn eich cartref."
-          link: "https://www.gov.uk/improve-energy-efficiency"
+          bus_text: 'Efallai y gallwch gael grant gan y %{link}. Bydd hyn yn eich helpu i brynu system wresogi carbon isel, fwy effeithlon ar gyfer yr eiddo hwn.'
+          bus_link_text: 'Cynllun Uwchraddio Boeleri'
+          bus_url: 'https://www.gov.uk/guidance/check-if-you-may-be-eligible-for-the-boiler-upgrade-scheme-from-april-2022'
+          grants_text: "Chwiliwch am grantiau ynni a ffyrdd i arbed ynni yn eich cartref"
+          grants_link: "https://www.gov.uk/improve-energy-efficiency"
       heat_demand:
         title: "Amcangyfrif o’r defnydd ynni a’r arbedion posibl"
         estimated_cost: "Amcangyfrif o gost flynyddol yr ynni ar gyfer yr eiddo hwn"
