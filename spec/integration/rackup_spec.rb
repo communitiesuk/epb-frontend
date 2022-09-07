@@ -21,7 +21,7 @@ describe "Integration::Rackup" do
       )
     process_id = process.pid
 
-    nil unless process.readline.include?("port=9393")
+    process.readline # wait for initial output from server; ensures it's started
   end
 
   after(:all) { Process.kill("KILL", process_id) if process_id }
