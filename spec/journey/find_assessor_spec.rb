@@ -172,8 +172,8 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
       end
 
       it "displays error messages that both email and telephone have not been supplied", :aggregate_failures do
-        expect(page).to have_content "Email Not Supplied"
-        expect(page).to have_content "Telephone Not Supplied"
+        expect(page).to have_content "Email Not Supplied", normalize_ws: true
+        expect(page).to have_content "Telephone Not Supplied", normalize_ws: true
       end
 
       it "displays search results for the assessor" do
