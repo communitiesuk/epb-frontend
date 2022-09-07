@@ -4,7 +4,7 @@ describe "Rack::Attack" do
   describe "throttle excessive requests by IP address" do
     let(:limit) { 100 }
     let(:under_limit) { limit / 2 }
-    let(:over_limit) { limit + 1 }
+    let(:over_limit) { limit + 10 }
     let(:certificate_id) { "0000-0000-0000-0000-0000" }
 
     before do
