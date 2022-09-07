@@ -1291,7 +1291,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
     end
 
     it "the warning is hidden for print using the existing css definition" do
-      expect(response.body).to include('<div class="govuk-warning-text govuk-!-display-none-print"')
+      expect(response.body).to include('<div class="govuk-warning-text"')
     end
 
     it "shows the superseded link" do
