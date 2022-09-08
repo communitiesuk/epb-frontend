@@ -29,6 +29,7 @@ describe "Journey::FindDomesticCertificate", type: :feature, journey: true do
   it_behaves_like "a certificate search function", certificate_type: "domestic",
                                                    property_type_label_element: "label-domestic",
                                                    url_fragment: "find-a-certificate",
+                                                   find_a_postcode_text: "find a postcode on Royal Mail’s postcode finder",
                                                    find_by_street_and_town_text: "find an EPC using the street name and town",
                                                    find_by_certificate_number_text: "find an EPC by using its certificate number",
                                                    search_by_postcode_header: "Find an energy performance certificate (EPC) by postcode",

@@ -29,6 +29,7 @@ describe "Journey::FindNonDomesticCertificate", type: :feature, journey: true do
   it_behaves_like "a certificate search function", certificate_type: "non-domestic",
                                                    property_type_label_element: "label-non-domestic",
                                                    url_fragment: "find-a-non-domestic-certificate",
+                                                   find_a_postcode_text: "find a postcode on Royal Mail’s postcode finder",
                                                    find_by_street_and_town_text: "find energy certificates and reports using the street name and town",
                                                    find_by_certificate_number_text: "find a certificate by using its certificate number",
                                                    search_by_postcode_header: "Find energy certificates and reports by postcode",

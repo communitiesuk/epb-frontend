@@ -337,10 +337,12 @@ en:
     question: 'Enter the postcode of the property'
     button_text: 'Find'
     hint: 'For example LS1 4AP'
-    certificate_by_street_name_and_town:
-      heading: 'Search by street and town'
-      body: "If you do not know the property’s postcode, %{link}."
-      cta: 'find an EPC using the street name and town'
+    postcode_not_known:
+      heading: 'If you do not know the postcode'
+      body_find_postcode: "You can %{link}."
+      cta_find_postcode: "find a postcode on Royal Mail’s postcode finder"
+      body_street_and_town: "Or %{link}"
+      cta_street_and_town: "find an EPC using the street name and town."
     certificate_by_reference_number:
       heading: 'Search by certificate number'
       body: "You can %{link}."
@@ -458,10 +460,12 @@ en:
     no_network:
       heading: 'Network connection failed'
       body: 'There is an internal network error'
-    certificate_by_street_name_and_town:
-      heading: 'Search by street and town'
-      body: "If you do not know the property’s postcode, %{link}."
-      cta: 'find energy certificates and reports using the street name and town'
+    postcode_not_known:
+      heading: 'If you do not know the postcode'
+      body_find_postcode: "You can %{link}."
+      cta_find_postcode: "find a postcode on Royal Mail’s postcode finder"
+      body_street_and_town: "Or %{link}"
+      cta_street_and_town: "find energy certificates and reports using the street name and town."
     certificate_by_reference_number:
       heading: 'Search by certificate number'
       body: "You can %{link}."
