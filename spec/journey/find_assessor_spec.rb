@@ -38,6 +38,10 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
       click_on "Continue"
     end
 
+    it "shows a link to find your postcode if you don't know it" do
+      expect(page.find_link("Find a postcode on Royal Mail’s postcode finder", href: "https://www.royalmail.com/find-a-postcode")).to be_truthy
+    end
+
     context "when searching on a postcode that has known assessors associated" do
       before do
         fill_in "postcode", with: "SW1A 2AA"

@@ -87,6 +87,12 @@ describe "Acceptance::Certificate" do
         expect(response.body).to have_css "button", text: "Find"
       end
 
+      it "has a link to find the postcode if you don't know it" do
+        expect(response.body).to include(
+          '<a class="govuk-link" href="https://www.royalmail.com/find-a-postcode">find a postcode on Royal Mail’s postcode finder</a>',
+        )
+      end
+
       it "does not display an error message" do
         expect(response.body).not_to have_text "govuk-error-message"
       end

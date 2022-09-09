@@ -41,6 +41,11 @@
         <button class="govuk-button" data-module="govuk-button"><%= t('find_assessor_by_postcode.button_text') %></button>
       </fieldset>
     </form>
+
+    <p class="govuk-body">
+      <a class="govuk-link" href="https://www.royalmail.com/find-a-postcode"><%= t('find_assessor_by_postcode.postcode_not_known') %></a>
+    </p>
+
     <h2 class="govuk-heading-l govuk-!-margin-top-2"><%= t('find_assessor_by_postcode.assessor_by_name.title') %></h2>
     <p class="govuk-body">
       <%== t('find_assessor_by_postcode.assessor_by_name.body', :link=>'<a class="govuk-link" href="'+localised_url('/find-an-assessor/search-by-name')+'">'+t('find_assessor_by_postcode.assessor_by_name.cta')+'</a>') %>

@@ -222,6 +222,7 @@ cy:
     question: "Rhowch god post yr eiddo"
     hint: "Er enghraifft CF10 1EP"
     button_text: Chwiliwch
+    postcode_not_known: "Dod o hyd i god post ar Chwiliwr Cod Post y Post Brenhinol"
     scheme_not_found:
       heading: "Y cynllun achredu heb ei ganfod"
       body: "Does dim cynllun ar gyfer yr asesydd y gofynnwyd amdano"

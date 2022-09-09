@@ -77,6 +77,12 @@ describe "Acceptance::Assessor", type: :feature do
         )
       end
 
+      it "has a link to find the postcode if you don't know it" do
+        expect(response.body).to include(
+          '<a class="govuk-link" href="https://www.royalmail.com/find-a-postcode">Find a postcode on Royal Mail’s postcode finder</a>',
+        )
+      end
+
       it "does not display an error message" do
         expect(response.body).not_to include("govuk-error-message")
       end

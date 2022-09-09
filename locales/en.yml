@@ -222,6 +222,7 @@ en:
     question: 'Enter the postcode of the property'
     hint: 'For example LS1 4AP'
     button_text: 'Find'
+    postcode_not_known: "Find a postcode on Royal Mail’s postcode finder"
     scheme_not_found:
       heading: 'Accreditation scheme not found'
       body: 'There is no scheme for one of the requested assessor'
