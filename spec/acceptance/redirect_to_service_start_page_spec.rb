@@ -99,5 +99,22 @@ RSpec.describe "Redirect to service start page" do
 
       expect(response.status).to eq(200)
     end
+
+    context "when frontend-suppress-redirect-to-service-start feature flag is enabled" do
+      before do
+        Helper::Toggles.set_feature("frontend-suppress-redirect-to-service-start", true)
+      end
+
+      after do
+        Helper::Toggles.set_feature("frontend-suppress-redirect-to-service-start", false)
+      end
+
+      it "returns status 200 when a referrer is outside of the service" do
+        env "HTTP_REFERER", "http://example.com"
+        response = get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/type-of-property"
+
+        expect(response.status).to eq(200)
+      end
+    end
   end
 end

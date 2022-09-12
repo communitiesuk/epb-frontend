@@ -348,6 +348,8 @@ module Helpers
   end
 
   def redirect_to_service_start_page?
+    return false if Helper::Toggles.enabled?("frontend-suppress-redirect-to-service-start")
+
     return false if ENV["STAGE"] == "test"
 
     paths_not_directly_accessible = PARAMS_OF_PATHS_NOT_ACCESSIBLE_DIRECTLY.keys
