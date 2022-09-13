@@ -15,6 +15,10 @@ RSpec.describe "Redirect to service start page" do
     /service-performance/download-csv
   ].freeze
 
+  # rubocop:disable RSpec/BeforeAfterAll
+  before(:all) { get "/" }
+  # rubocop:enable RSpec/BeforeAfterAll
+
   context "when testing redirecting" do
     before do
       stub_const("ENV", { "STAGE" => "redirect-test" })
