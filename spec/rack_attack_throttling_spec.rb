@@ -69,5 +69,24 @@ describe "Rack::Attack" do
         expect(last_response.status).to eq(403)
       end
     end
+
+    context "when the feature flag to disable rack attack throttling is switched on" do
+      before do
+        Helper::Toggles.set_feature("frontend-disable-request-throttling", true)
+      end
+
+      after do
+        Helper::Toggles.set_feature("frontend-disable-request-throttling", false)
+      end
+
+      context "when the number of requests is over the throttle limit" do
+        it "returns a 200 response status reflecting no throttling" do
+          over_limit.times do
+            get "/healthcheck"
+          end
+          expect(last_response.status).to eq(200)
+        end
+      end
+    end
   end
 end

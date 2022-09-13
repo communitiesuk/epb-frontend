@@ -45,7 +45,9 @@ Rack::Attack.blocklist("Certificate scrapers") do |req|
 end
 
 # Throttle requests to any endpoint if we receive more than X requests per min
-Rack::Attack.throttle("Requests Rate Limit", limit: 100, period: 1.minutes, &:source_ip)
+Rack::Attack.throttle("Requests Rate Limit", limit: 100, period: 1.minutes) do |request|
+  !Helper::Toggles.enabled?("frontend-disable-request-throttling") ? request.source_ip : nil
+end
 
 # Block permanently banned IP addresses; the format of the env var is
 # "[{"reason":"did a bad thing", "ip_address": "198.51.100.100"},{...}]"
