@@ -16,7 +16,7 @@ RSpec.describe "Redirect to service start page" do
   ].freeze
 
   # rubocop:disable RSpec/BeforeAfterAll
-  before(:all) { get "/" }
+  before(:all) { get "/" } # a simple request to ensure the environment is set up before running tests, to enable this file to be run in isolation
   # rubocop:enable RSpec/BeforeAfterAll
 
   context "when testing redirecting" do
