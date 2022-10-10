@@ -14,6 +14,8 @@ unless defined? TestLoader
   loader.setup
 end
 
+use Rack::Deflater, include: %w[text/html text/css application/javascript image/svg+xml]
+
 use Rack::Attack
 require_relative "./config/rack_attack_config"
 
