@@ -211,7 +211,7 @@ class FrontendService < Sinatra::Base
             } – #{t('services.find_an_energy_certificate')} – #{
               t('layout.body.govuk')
             }"
-          @errors[:postcode] = "Please verify that you’re a human and try again."
+          @errors[:postcode] = t("validation_errors.captcha_error")
         else
           return server_error(e)
         end

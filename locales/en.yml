@@ -8,6 +8,7 @@ en:
     reference_number_not_valid: 'Enter a 20-digit certificate number'
     street_name_missing: 'Enter the street name'
     town_missing: 'Enter the town or city'
+    captcha_error: 'Please verify that you’re a human and try again.'
 
   data_missing:
     not_recorded: "Not recorded"

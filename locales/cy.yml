@@ -8,6 +8,7 @@ cy:
     reference_number_not_valid: "Rhowch rif tystysgrif 20-digid"
     street_name_missing: "Rhowch enw’r stryd"
     town_missing: "Rhowch y dref neu’r ddinas"
+    captcha_error: "Profwch mai rhywun dynol sydd yna a rhoi cynnig arall arni"
 
   data_missing:
     not_recorded: "Heb eu cofnodi"
