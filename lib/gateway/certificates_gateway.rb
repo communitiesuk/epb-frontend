@@ -9,7 +9,9 @@ module Gateway
     def search_by_postcode(postcode, types)
       route = "/api/assessments/search?postcode=#{CGI.escape(postcode)}"
 
-      types.each { |type| route += "&assessment_type[]=#{type}" }
+      unless types.empty?
+        route += "&assessmentTypes=#{types.sort.join(',')}"
+      end
 
       response = ensure_good { @internal_api_client.get(route) }
 
@@ -29,7 +31,10 @@ module Gateway
         "/api/assessments/search?street_name=#{CGI.escape(street_name)}&town=#{
           CGI.escape(town)
         }"
-      assessment_types.each { |type| route += "&assessment_type[]=#{type}" }
+
+      unless assessment_types.empty?
+        route += "&assessmentTypes=#{assessment_types.sort.join(',')}"
+      end
 
       response = ensure_good { @internal_api_client.get(route) }
 

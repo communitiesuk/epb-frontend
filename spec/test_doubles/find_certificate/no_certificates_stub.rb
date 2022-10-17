@@ -5,12 +5,9 @@ module FindCertificate
     def self.search_by_postcode(postcode = "BF1 3AA", type = "RdSAP")
       uri = "http://test-api.gov.uk/api/assessments/search?postcode=#{postcode}"
 
-      uri +=
-        if type == "CEPC"
-          "&assessment_type[]=AC-CERT&assessment_type[]=AC-REPORT&assessment_type[]=CEPC&assessment_type[]=DEC&assessment_type[]=DEC-RR&assessment_type[]=CEPC-RR"
-        else
-          "&assessment_type[]=SAP&assessment_type[]=RdSAP"
-        end
+      assessment_types = type == "CEPC" ? %w[AC-CERT AC-REPORT CEPC CEPC-RR DEC DEC-RR] : %w[RdSAP SAP]
+
+      uri += "&assessmentTypes=#{assessment_types.sort.join(',')}"
 
       WebMock
         .stub_request(:get, uri)
@@ -57,7 +54,9 @@ module FindCertificate
         "http://test-api.gov.uk/api/assessments/search?street_name=#{
           street_name
         }&town=#{town}"
-      assessment_types.each { |type| route += "&assessment_type[]=#{type}" }
+      unless assessment_types.empty?
+        route += "&assessmentTypes=#{assessment_types.sort.join(',')}"
+      end
 
       WebMock
         .stub_request(:get, route)
