@@ -20,7 +20,7 @@ module Gateway
 
     def search_by_id(certificate_id)
       route =
-        "/api/assessments/search?assessment_id=#{CGI.escape(certificate_id)}"
+        "/api/assessments/search?assessmentId=#{CGI.escape(certificate_id)}"
       response = ensure_good { @internal_api_client.get(route) }
 
       JSON.parse(response.body, symbolize_names: true)

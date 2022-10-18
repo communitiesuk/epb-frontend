@@ -28,7 +28,7 @@ module FindCertificate
       WebMock
         .stub_request(
           :get,
-          "http://test-api.gov.uk/api/assessments/search?assessment_id=#{
+          "http://test-api.gov.uk/api/assessments/search?assessmentId=#{
             reference_number
           }",
         )
