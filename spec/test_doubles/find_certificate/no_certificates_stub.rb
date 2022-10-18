@@ -51,7 +51,7 @@ module FindCertificate
       assessment_types = %w[RdSAP SAP]
     )
       route =
-        "http://test-api.gov.uk/api/assessments/search?street_name=#{
+        "http://test-api.gov.uk/api/assessments/search?street=#{
           street_name
         }&town=#{town}"
       unless assessment_types.empty?

@@ -158,7 +158,7 @@ module FindCertificate
       returned_type = "RdSAP"
     )
       route =
-        "http://test-api.gov.uk/api/assessments/search?street_name=#{
+        "http://test-api.gov.uk/api/assessments/search?street=#{
           street_name
         }&town=#{town}"
       unless assessment_types.empty?
@@ -252,7 +252,7 @@ module FindCertificate
       returned_type = "RdSAP"
     )
       route =
-        "http://test-api.gov.uk/api/assessments/search?street_name=#{
+        "http://test-api.gov.uk/api/assessments/search?street=#{
           street_name
         }&town=#{town}"
       unless assessment_types.empty?

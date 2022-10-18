@@ -28,7 +28,7 @@ module Gateway
 
     def search_by_street_name_and_town(street_name, town, assessment_types)
       route =
-        "/api/assessments/search?street_name=#{CGI.escape(street_name)}&town=#{
+        "/api/assessments/search?street=#{CGI.escape(street_name)}&town=#{
           CGI.escape(town)
         }"
 

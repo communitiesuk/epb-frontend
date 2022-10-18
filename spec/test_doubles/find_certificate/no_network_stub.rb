@@ -26,7 +26,7 @@ module FindCertificate
       WebMock
         .stub_request(
           :get,
-          "http://test-api.gov.uk/api/assessments/search?street_name=#{
+          "http://test-api.gov.uk/api/assessments/search?street=#{
             street_name
           }&town=#{town}",
         )
