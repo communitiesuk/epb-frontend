@@ -71,7 +71,7 @@ describe "Acceptance::DecRecommendationReport", type: :feature do
       expect(response.body).to have_css "span", text: "1 January 2030"
     end
 
-    it "shows the rating section" do
+    it "shows the rating section", :aggregate_failures do
       expect(response.body).to have_css "h2", text: "Operational rating and DEC"
       expect(response.body).to have_css "p",
                                         text: "This building’s operational rating is A."
@@ -193,12 +193,18 @@ describe "Acceptance::DecRecommendationReport", type: :feature do
         assessment_id: "1234-5678-1234-5678-1234",
         date_of_expiry: "2030-01-01",
         related_assessments: [],
+        related_rrn: nil,
       )
     end
 
     it "shows the no related reports text" do
       expect(response.body).to have_css "p",
                                         text: "There are no related reports for this property."
+    end
+
+    it "hides the Operational rating and DEC link" do
+      expect(response.body).not_to have_link "Operational rating and DEC",
+                                             href: "#rating"
     end
   end
 

@@ -5,6 +5,7 @@
     </div>
   </div>
 
+
   <div class="govuk-grid-column-one-third govuk-!-display-none-print">
     <hr class="epc-blue-top" />
     <%== erb :component__contents, locals: {
@@ -12,7 +13,8 @@
       sections: [
         {
           link: '#rating',
-          text: 'dec_rr.sections.rating.title'
+          text: 'dec_rr.sections.rating.title',
+          hidden: assessment[:relatedRrn].nil? || assessment[:relatedRrn].empty?
         },
         {
           link: '#recommendations',

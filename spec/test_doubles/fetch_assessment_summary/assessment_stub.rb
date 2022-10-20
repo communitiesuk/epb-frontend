@@ -1121,8 +1121,10 @@ module FetchAssessmentSummary
         },
       ],
       postcode: "A0 0AA",
-      opt_out: false
+      opt_out: false,
+      related_rrn: "0000-0000-0000-0000-1111"
     )
+
       body = {
         data: {
           optOut: opt_out,
@@ -1185,7 +1187,7 @@ module FetchAssessmentSummary
             { code: "5", text: "Add a big wind turbine.", cO2Impact: "HIGH" },
           ],
           energyBandFromRelatedCertificate: "a",
-          relatedRrn: "0000-0000-0000-0000-1111",
+          relatedRrn: related_rrn,
           technicalInformation: {
             occupier: "City Council",
             propertyType: "University campus",
@@ -1211,6 +1213,7 @@ module FetchAssessmentSummary
           },
         },
       }
+
       WebMock
         .stub_request(
           :get,
