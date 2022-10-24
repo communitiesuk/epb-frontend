@@ -187,7 +187,7 @@ describe "Acceptance::NonDomesticCertificate" do
 
         it "displays the find a non-domestic certificate results page heading" do
           expect(response.body).to include(
-            "Find energy certificates and reports",
+            "2 certificates and reports for SW1A 2AA",
           )
         end
 
