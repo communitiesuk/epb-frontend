@@ -251,13 +251,7 @@ describe "Acceptance::NonDomesticCertificate" do
           )
         end
 
-        it "displays the find a certificate page heading" do
-          expect(response.body).to include(
-            "Find energy certificates and reports",
-          )
-        end
-
-        it "dynamically shows that there are no certificates for that postcode" do
+        it "dynamically shows the title that there are no certificates for that postcode" do
           expect(response.body).to include("No results for E1 4FF")
         end
 
