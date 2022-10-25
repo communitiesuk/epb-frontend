@@ -445,14 +445,14 @@ describe "Acceptance::Certificate" do
 
       it "has a title that matches the page heading" do
         expect(response.body).to include(
-          "<title>Find an energy performance certificate (EPC) by certificate number – Find an energy certificate – GOV.UK</title>",
+          "<title>What is the certificate number? – Find an energy certificate – GOV.UK</title>",
         )
       end
 
       it "displays the find a certificate page heading" do
         expect(response.body).to have_css "h1",
                                           text:
-                                            "Find an energy performance certificate (EPC) by certificate number"
+                                            "What is the certificate number?"
       end
 
       it "has an input field" do
@@ -479,13 +479,13 @@ describe "Acceptance::Certificate" do
 
       it "has an error title" do
         expect(response.body).to include(
-          "<title>Error: Find an energy performance certificate (EPC) by certificate number – Find an energy certificate – GOV.UK</title>",
+          "<title>Error: What is the certificate number? – Find an energy certificate – GOV.UK</title>",
         )
       end
 
       it "displays the find a certificate page heading" do
         expect(response.body).to include(
-          "Find an energy performance certificate",
+          "What is the certificate number?",
         )
       end
 
@@ -591,13 +591,13 @@ describe "Acceptance::Certificate" do
 
         it "displays an error in the title" do
           expect(response.body).to include(
-            "<title>Error: Find an energy performance certificate (EPC) by certificate number – Find an energy certificate – GOV.UK</title>",
+            "<title>Error: What is the certificate number? – Find an energy certificate – GOV.UK</title>",
           )
         end
 
         it "displays the find a certificate page heading" do
           expect(response.body).to include(
-            "Find an energy performance certificate (EPC) by certificate number",
+            "What is the certificate number?",
           )
         end
 

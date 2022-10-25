@@ -389,7 +389,7 @@ cy:
       no_certificates: "Does dim tystysgrifau’n cyfateb i’r cod post hwnnw."
 
   find_certificate_by_reference_number:
-    top_heading: "Chwiliwch am dystysgrif perfformiad ynni (EPC) yn ôl rhif y dystysgrif"
+    top_heading: "Beth yw rhif y dystysgrif?"
     question: "Rhowch rif tystysgrif"
     reference_number_not_registered: "Does dim tystysgrif wedi’i chanfod â’r rhif tystysgrif hwn"
     button_text: Chwiliwch

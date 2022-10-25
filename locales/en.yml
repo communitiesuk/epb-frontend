@@ -389,7 +389,7 @@ en:
       no_certificates: "There are no certificates for this postcode."
 
   find_certificate_by_reference_number:
-    top_heading: 'Find an energy performance certificate (EPC) by certificate number'
+    top_heading: 'What is the certificate number?'
     question: 'Enter a certificate number'
     reference_number_not_registered: 'A certificate was not found with this certificate number'
     button_text: 'Find'

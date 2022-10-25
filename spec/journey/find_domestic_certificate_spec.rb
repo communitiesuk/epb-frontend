@@ -33,7 +33,7 @@ describe "Journey::FindDomesticCertificate", type: :feature, journey: true do
                                                    find_by_street_and_town_text: "find an EPC using the street name and town",
                                                    find_by_certificate_number_text: "find an EPC by using its certificate number",
                                                    search_by_postcode_header: "Find an energy performance certificate (EPC) by postcode",
-                                                   search_by_certificate_number_header: "Find an energy performance certificate (EPC) by certificate number",
+                                                   search_by_certificate_number_header: "What is the certificate number?",
                                                    certificates_text_in_result_count: "EPCs",
                                                    text_in_street_and_town_results: "result matching",
                                                    link_text_in_postcode_search_results: "2 Marsham Street, London, SW1A 2AA"
