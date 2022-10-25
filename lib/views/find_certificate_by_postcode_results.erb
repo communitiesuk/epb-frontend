@@ -13,11 +13,7 @@
       <%== erb :find_certificate_list_certificate, locals: {
         certificate: results } %>
     <% else %>
-      <h1 class="govuk-heading-xl">
-        <%= t('find_certificate_by_postcode_results.top_heading') %>
-      </h1>
-
-      <h2 class="govuk-heading-l"><%= t('find_certificate_by_postcode_results.no_results.no_postcode', :postcode => CGI.escapeHTML(params['postcode'].upcase) ) %></h2>
+      <h1 class="govuk-heading-xl"><%= t('find_certificate_by_postcode_results.no_results.no_postcode', :postcode => CGI.escapeHTML(params['postcode'].upcase) ) %></h1>
 
       <p class="govuk-body">
         <%= t('find_certificate_by_postcode_results.no_results.no_certificates') %>
