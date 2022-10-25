@@ -693,13 +693,13 @@ describe "Acceptance::NonDomesticCertificate" do
 
       it "displays the title" do
         expect(response.body).to include(
-          "<title>Find energy certificates and reports by their number – Find an energy certificate – GOV.UK</title>",
+          "<title>What is the certificate or report number? – Find an energy certificate – GOV.UK</title>",
         )
       end
 
       it "displays the find a non-domestic certificate page heading" do
         expect(response.body).to have_css "h1",
-                                          text: "Find energy certificates and reports by their number"
+                                          text: "What is the certificate or report number?"
       end
 
       it "has an input field" do
@@ -726,13 +726,13 @@ describe "Acceptance::NonDomesticCertificate" do
 
       it "displays an error in the title" do
         expect(response.body).to include(
-          "<title>Error: Find energy certificates and reports by their number – Find an energy certificate – GOV.UK</title>",
+          "<title>Error: What is the certificate or report number? – Find an energy certificate – GOV.UK</title>",
         )
       end
 
       it "displays the find a non-domestic certificate page heading" do
         expect(response.body).to include(
-          "Find energy certificates and reports by their number",
+          "What is the certificate or report number?",
         )
       end
 
@@ -818,7 +818,7 @@ describe "Acceptance::NonDomesticCertificate" do
 
         it "displays the find a certificate page heading" do
           expect(response.body).to include(
-            "Find energy certificates and reports by their number",
+            "What is the certificate or report number?",
           )
         end
 
@@ -830,7 +830,7 @@ describe "Acceptance::NonDomesticCertificate" do
 
         it "displays an error in the title" do
           expect(response.body).to include(
-            "<title>Error: Find energy certificates and reports by their number – Find an energy certificate – GOV.UK</title>",
+            "<title>Error: What is the certificate or report number? – Find an energy certificate – GOV.UK</title>",
           )
         end
 

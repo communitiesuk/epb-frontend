@@ -33,7 +33,7 @@ describe "Journey::FindNonDomesticCertificate", type: :feature, journey: true do
                                                    find_by_street_and_town_text: "find energy certificates and reports using the street name and town",
                                                    find_by_certificate_number_text: "find a certificate by using its certificate number",
                                                    search_by_postcode_header: "Find energy certificates and reports by postcode",
-                                                   search_by_certificate_number_header: "Find energy certificates and reports by their number",
+                                                   search_by_certificate_number_header: "What is the certificate or report number?",
                                                    certificates_text_in_result_count: "certificates and reports",
                                                    text_in_street_and_town_results: "certificates and reports for",
                                                    link_text_in_postcode_search_results: "CEPC"

@@ -490,7 +490,7 @@ cy:
     list: "%{length} o dystysgrifau ac adroddiadau ar gyfer %{postcode}"
 
   find_non_dom_certificate_by_reference_number:
-    top_heading: "Chwiliwch am dystysgrifau ynni ac adroddiadau yn ôl eu rhif"
+    top_heading: "Beth yw rhif y dystysgrif neu’r adroddiad?"
     question: "Rhowch rif tystysgrif neu adroddiad"
     reference_number_not_registered: "Methwyd â dod o hyd i dystysgrif â’r rhif hwn"
     button_text: "Chwiliwch"

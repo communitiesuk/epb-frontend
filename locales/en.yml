@@ -490,7 +490,7 @@ en:
     list: '%{length} certificates and reports for %{postcode}'
 
   find_non_dom_certificate_by_reference_number:
-    top_heading: 'Find energy certificates and reports by their number'
+    top_heading: 'What is the certificate or report number?'
     question: 'Enter a certificate or report number'
     reference_number_not_registered: 'A certificate was not found with this certificate number'
     button_text: 'Find'
