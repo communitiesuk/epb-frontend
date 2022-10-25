@@ -372,9 +372,7 @@ describe "Acceptance::NonDomesticCertificate" do
         end
 
         it "displays the find a certificate page heading" do
-          expect(response.body).to include(
-            "Find energy certificates and reports",
-          )
+          expect(response.body).to have_css("h1", text: "1 certificates and reports for 1 Makeup Street Beauty Town")
         end
 
         it "displays the text if user does not have a valid EPC" do
