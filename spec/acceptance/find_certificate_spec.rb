@@ -76,7 +76,7 @@ describe "Acceptance::Certificate" do
       it "displays the find a certificate page heading" do
         expect(response.body).to have_css "h1",
                                           text:
-                                            "Find an energy performance certificate (EPC) by postcode"
+                                            "What is the postcode?"
       end
 
       it "has an input field" do
@@ -109,13 +109,13 @@ describe "Acceptance::Certificate" do
 
       it "has a tab content that matches the page heading" do
         expect(response.body).to include(
-          " <title>Error: Find an energy performance certificate (EPC) by postcode – Find an energy certificate – GOV.UK</title>",
+          " <title>Error: What is the postcode? – Find an energy certificate – GOV.UK</title>",
         )
       end
 
       it "displays the find a certificate page heading" do
         expect(response.body).to include(
-          "Find an energy performance certificate (EPC) by postcode",
+          "What is the postcode?",
         )
       end
 
@@ -152,7 +152,7 @@ describe "Acceptance::Certificate" do
 
       it "displays the find a certificate page heading" do
         expect(response.body).to include(
-          "Find an energy performance certificate (EPC) by postcode",
+          "What is the postcode?",
         )
       end
 
@@ -189,7 +189,7 @@ describe "Acceptance::Certificate" do
 
       it "displays the find a certificate page heading" do
         expect(response.body).to include(
-          "Find an energy performance certificate",
+          "What is the postcode?",
         )
       end
 

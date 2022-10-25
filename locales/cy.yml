@@ -335,8 +335,8 @@ cy:
       cta: "Parhau"
 
   find_certificate_by_postcode:
-    top_heading: "Chwiliwch am dystysgrif perfformiad ynni yn ôl cod post"
-    question: "Rhowch god post yr eiddo"
+    top_heading: "Beth yw'r cod post?"
+    question: "Rhowch y cod post"
     button_text: "Chwiliwch"
     hint: "Er enghraifft CF10 1EP"
     postcode_not_known:
