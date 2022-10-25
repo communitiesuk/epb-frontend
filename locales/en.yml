@@ -373,7 +373,9 @@ en:
       get_a_new_one_with_results: "If your property does not have a valid EPC, you can"
       get_a_new_one_no_results: "If your property does not have an EPC, you can"
       get_a_new_one_link: "get a new energy certificate"
-    list: '%{length} EPCs for %{postcode}'
+    list:
+      one: '%{count} EPC for %{postcode}'
+      other: '%{count} EPCs for %{postcode}'
     table:
       address: 'Address'
       rating: 'Energy rating'
