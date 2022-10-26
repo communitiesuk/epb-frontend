@@ -457,8 +457,8 @@ en:
     no_certificates: 'There are no certificates matching that address.'
 
   find_non_dom_certificate_by_postcode:
-    top_heading: 'Find energy certificates and reports by postcode'
-    question: 'Enter the postcode of the property'
+    top_heading: 'What is the postcode?'
+    question: 'Enter the postcode'
     button_text: 'Find'
     hint: 'For example LS1 4AP'
     no_network:

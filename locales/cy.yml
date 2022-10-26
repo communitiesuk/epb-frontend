@@ -457,8 +457,8 @@ cy:
     no_certificates: "Does dim tystysgrifau’n cyfateb i’r cyfeiriad hwnnw"
 
   find_non_dom_certificate_by_postcode:
-    top_heading: "Chwiliwch am dystysgrifau ynni ac adroddiadau yn ôl cod post"
-    question: "Rhowch god post yr eiddo"
+    top_heading: "Beth yw'r cod post?"
+    question: "Rhowch god post"
     button_text: "Chwiliwch"
     hint: "Er enghraifft CF10 1EP"
     no_network:

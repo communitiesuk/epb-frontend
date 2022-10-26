@@ -10,6 +10,10 @@ describe "Acceptance::NonDomesticCertificate" do
         get "http://find-energy-certificate.local.gov.uk/find-a-non-domestic-certificate/search-by-postcode"
       end
 
+      it "has the correct page title" do
+        expect(response.body).to have_title "What is the postcode? – Find an energy certificate – GOV.UK"
+      end
+
       it "includes the gov header" do
         expect(response.body).to have_link "Find an energy certificate"
       end
@@ -20,11 +24,15 @@ describe "Acceptance::NonDomesticCertificate" do
 
       it "displays the find a non-domestic certificate page heading" do
         expect(response.body).to have_css "h1",
-                                          text: "Find energy certificates and reports by postcode"
+                                          text: "What is the postcode?"
       end
 
       it "has an input field" do
         expect(response.body).to have_css "input#postcode"
+      end
+
+      it "has an input label for the input" do
+        expect(response.body).to have_css 'label[for="postcode"]', text:'Enter the postcode'
       end
 
       it "has a Find button" do
@@ -59,8 +67,9 @@ describe "Acceptance::NonDomesticCertificate" do
         expect(response.status).to eq(400)
       end
 
-      it "displays the find a certificate page heading" do
-        expect(response.body).to include("Find energy certificates and reports")
+      it "displays the find a non-domestic certificate page heading" do
+        expect(response.body).to have_css "h1",
+                                          text: "What is the postcode?"
       end
 
       it "displays an error message" do
@@ -94,8 +103,9 @@ describe "Acceptance::NonDomesticCertificate" do
         expect(response.status).to eq(400)
       end
 
-      it "displays the find a certificate page heading" do
-        expect(response.body).to include("Find energy certificates and reports")
+      it "displays the find a non-domestic certificate page heading" do
+        expect(response.body).to have_css "h1",
+                                          text: "What is the postcode?"
       end
 
       it "displays an error message" do
@@ -129,8 +139,9 @@ describe "Acceptance::NonDomesticCertificate" do
         expect(response.status).to eq(400)
       end
 
-      it "displays the find a certificate page heading" do
-        expect(response.body).to include("Find energy certificates and reports")
+      it "displays the find a non-domestic certificate page heading" do
+        expect(response.body).to have_css "h1",
+                                          text: "What is the postcode?"
       end
 
       it "displays an error message" do
