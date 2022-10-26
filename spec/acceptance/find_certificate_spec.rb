@@ -303,12 +303,6 @@ describe "Acceptance::Certificate" do
           )
         end
 
-        it "displays the find a certificate page heading" do
-          expect(response.body).to include(
-            "Find an energy performance certificate",
-          )
-        end
-
         it "dynamically shows that there are no certificates for that postcode" do
           expect(response.body).to include("No results for E1 4FF")
         end
