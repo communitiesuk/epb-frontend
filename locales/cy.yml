@@ -109,7 +109,7 @@ cy:
       errors:
         no_property_type_selected: "Dewiswch fath o eiddo"
     domestic_property_type:
-      question_title: "Ydy'r adeilad yn adeilad presennol ynteu'n adeilad newydd?"
+      question_title: "Ai adeilad presennol ynteu adeilad newydd yw hwn?"
       options:
         rdsap:
           title: "Adeilad presennol"

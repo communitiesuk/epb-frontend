@@ -109,7 +109,7 @@ en:
       errors:
         no_property_type_selected: "Select a type of property"
     domestic_property_type:
-      question_title: "Is this property an existing or new building?"
+      question_title: "Is this an existing or new building?"
       options:
         rdsap:
           title: "Existing building"

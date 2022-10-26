@@ -805,7 +805,7 @@ describe "Acceptance::Assessor", type: :feature do
 
       it "displays the title the same as the main header value" do
         expect(response.body).to include(
-          "<title>Is this property an existing or new building? – Get a new energy certificate – GOV.UK</title>",
+          "<title>Is this an existing or new building? – Get a new energy certificate – GOV.UK</title>",
         )
       end
     end
@@ -817,7 +817,7 @@ describe "Acceptance::Assessor", type: :feature do
 
       it "displays the title the same as the main header value" do
         expect(response.body).to include(
-          "<title>Error: Is this property an existing or new building? – Get a new energy certificate – GOV.UK</title>",
+          "<title>Error: Is this an existing or new building? – Get a new energy certificate – GOV.UK</title>",
         )
       end
 

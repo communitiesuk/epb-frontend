@@ -123,7 +123,7 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
       end
 
       it "goes back from Postcode page to Domestic property type page" do
-        expect(page).to have_content "Is this property an existing or new building?"
+        expect(page).to have_content "Is this an existing or new building?"
       end
 
       it "has domestic property type pre-selected" do
