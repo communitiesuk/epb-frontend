@@ -79,6 +79,18 @@ describe "Acceptance::Assessor", type: :feature do
         )
       end
 
+      it "has an h2 for finding an assessor by name" do
+        expect(response.body).to have_css("h2", text: "Check an assessor is registered")
+      end
+
+      it "has an link for finding an assessor by name" do
+        expect(response.body).to have_link("find an assessor by name", href: "/find-an-assessor/search-by-name")
+      end
+
+      it "has text for finding an assessor by name" do
+        expect(response.body).to include("If you know an assessor’s name and want to check their details, you can")
+      end
+
       it "does not display an error message" do
         expect(response.body).not_to include("govuk-error-message")
       end

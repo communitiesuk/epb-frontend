@@ -217,8 +217,8 @@ cy:
   find_assessor_by_postcode:
     top_heading: "Beth yw cod post yr eiddo?"
     assessor_by_name:
-      title: "Chwiliwch yn ôl enw’r asesydd"
-      body: "Os ydych yn gwybod enw asesydd a’ch bod chi am wirio’i fanylion, gallwch chi %{link}."
+      title: "Gwirio bod asesydd wedi'i gofrestru"
+      body: "Os ydych chi'n gwybod enw asesydd a’ch bod chi eisiau gwirio’u manylion, gallwch chi %{link}."
       cta: "chwilio am asesydd yn ôl enw"
     question: "Rhowch yw god post"
     hint: "Er enghraifft CF10 1EP"
