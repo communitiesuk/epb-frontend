@@ -215,12 +215,12 @@ en:
         url: 'https://www.elmhurstenergy.co.uk'
 
   find_assessor_by_postcode:
-    top_heading: 'Find an assessor by postcode'
+    top_heading: 'What is the property’s postcode?'
     assessor_by_name:
       title: 'Search by assessor’s name'
       body: 'If you know the name of an assessor and want to check their details, you can %{link}.'
       cta: 'find an assessor by name'
-    question: 'Enter the postcode of the property'
+    question: 'Enter the postcode'
     hint: 'For example LS1 4AP'
     button_text: 'Find'
     postcode_not_known: "Find a postcode on Royal Mail’s postcode finder"

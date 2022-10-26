@@ -31,8 +31,8 @@ describe "Acceptance::NonDomesticCertificate" do
         expect(response.body).to have_css "input#postcode"
       end
 
-      it "has an input label for the input" do
-        expect(response.body).to have_css 'label[for="postcode"]', text:'Enter the postcode'
+      it "has an label for the postcode" do
+        expect(response.body).to have_css 'label[for="postcode"]', text: "Enter the postcode"
       end
 
       it "has a Find button" do

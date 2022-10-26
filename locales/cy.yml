@@ -215,12 +215,12 @@ cy:
         url: "https://www.elmhurstenergy.co.uk"
 
   find_assessor_by_postcode:
-    top_heading: "Chwiliwch am asesydd yn ôl cod post"
+    top_heading: "Beth yw cod post yr eiddo?"
     assessor_by_name:
       title: "Chwiliwch yn ôl enw’r asesydd"
       body: "Os ydych yn gwybod enw asesydd a’ch bod chi am wirio’i fanylion, gallwch chi %{link}."
       cta: "chwilio am asesydd yn ôl enw"
-    question: "Rhowch god post yr eiddo"
+    question: "Rhowch yw god post"
     hint: "Er enghraifft CF10 1EP"
     button_text: Chwiliwch
     postcode_not_known: "Dod o hyd i god post ar Chwiliwr Cod Post y Post Brenhinol"

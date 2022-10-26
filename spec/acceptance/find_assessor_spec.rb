@@ -10,9 +10,7 @@ describe "Acceptance::Assessor", type: :feature do
       end
 
       it "displays the title the same as the main header value" do
-        expect(response.body).to include(
-          "<title>What type of property is the certificate for? – Get a new energy certificate – GOV.UK</title>",
-        )
+        expect(response.body).to have_title "What type of property is the certificate for? – Get a new energy certificate – GOV.UK"
       end
     end
 
@@ -58,13 +56,11 @@ describe "Acceptance::Assessor", type: :feature do
       end
 
       it "displays the find an assessor by postcode title" do
-        expect(response.body).to include(
-          "<title>Find an assessor by postcode – Get a new energy certificate – GOV.UK</title>",
-        )
+        expect(response.body).to have_title "What is the property’s postcode? – Get a new energy certificate – GOV.UK"
       end
 
       it "displays the find an assessor by postcode page heading" do
-        expect(response.body).to include("Find an assessor by postcode")
+        expect(response.body).to have_css("h1", text: "What is the property’s postcode?")
       end
 
       it "has a postcode input field" do
@@ -98,13 +94,11 @@ describe "Acceptance::Assessor", type: :feature do
       end
 
       it "displays the find an assessor by postcode title" do
-        expect(response.body).to include(
-          "<title>Error: Find an assessor by postcode – Get a new energy certificate – GOV.UK</title>",
-        )
+        expect(response.body).to have_title "Error: What is the property’s postcode? – Get a new energy certificate – GOV.UK"
       end
 
       it "displays the find an assessor by postcode page heading" do
-        expect(response.body).to include("Find an assessor by postcode")
+        expect(response.body).to have_css("h1", text: "What is the property’s postcode?")
       end
 
       it "displays an error message" do
@@ -139,13 +133,11 @@ describe "Acceptance::Assessor", type: :feature do
       end
 
       it "displays the find an assessor by postcode title" do
-        expect(response.body).to include(
-          "<title>Error: Find an assessor by postcode – Get a new energy certificate – GOV.UK</title>",
-        )
+        expect(response.body).to have_title "Error: What is the property’s postcode? – Get a new energy certificate – GOV.UK"
       end
 
       it "displays the find an assessor by postcode page heading" do
-        expect(response.body).to include("Find an assessor by postcode")
+        expect(response.body).to have_css("h1", text: "What is the property’s postcode?")
       end
 
       it "displays an error message" do
@@ -180,13 +172,11 @@ describe "Acceptance::Assessor", type: :feature do
       end
 
       it "displays the find an assessor by postcode error title" do
-        expect(response.body).to include(
-          "<title>Error: Find an assessor by postcode – Get a new energy certificate – GOV.UK</title>",
-        )
+        expect(response.body).to have_title "Error: What is the property’s postcode? – Get a new energy certificate – GOV.UK"
       end
 
       it "displays the find an assessor by postcode page heading" do
-        expect(response.body).to include("Find an assessor by postcode")
+        expect(response.body).to have_css("h1", text: "What is the property’s postcode?")
       end
 
       it "displays an error message" do
@@ -221,13 +211,15 @@ describe "Acceptance::Assessor", type: :feature do
       end
 
       it "displays the find an assessor by postcode title" do
-        expect(response.body).to include(
-          "<title>Error: Find an assessor by postcode – Get a new energy certificate – GOV.UK</title>",
-        )
+        expect(response.body).to have_title "Error: What is the property’s postcode? – Get a new energy certificate – GOV.UK"
       end
 
       it "displays the find an assessor by postcode page heading" do
-        expect(response.body).to include("Find an assessor by postcode")
+        expect(response.body).to have_css("h1", text: "What is the property’s postcode?")
+      end
+
+      it "displays the postcode label" do
+        expect(response.body).to have_css 'label[for="postcode"]', text: "Enter the postcode"
       end
 
       it "displays an error message" do
@@ -491,7 +483,7 @@ describe "Acceptance::Assessor", type: :feature do
 
         it "displays the Contact an assessor page heading" do
           expect(response.body).to have_css "h1",
-                                            text: "Find an assessor by postcode"
+                                            text: "What is the property’s postcode?"
         end
 
         it "displays an error message" do
