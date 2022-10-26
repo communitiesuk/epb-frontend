@@ -368,7 +368,6 @@ en:
     expired: 'expired'
 
   find_certificate_by_postcode_results:
-    top_heading: 'Find an energy performance certificate (EPC)'
     no_epc:
       get_a_new_one_with_results: "If your property does not have a valid EPC, you can"
       get_a_new_one_no_results: "If your property does not have an EPC, you can"
