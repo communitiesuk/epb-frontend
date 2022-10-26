@@ -373,7 +373,9 @@ cy:
       get_a_new_one_with_results: "Os nad oes gan eich eiddo EPC ddilys, gallwch"
       get_a_new_one_no_results: "Os nad oes EPC gan eich eiddo, gallwch"
       get_a_new_one_link: "cael tystysgrif ynni newydd"
-    list: "%{length} EPCs ar gyfer %{postcode}"
+    list:
+      one: "%{count} EPC ar gyfer %{postcode}"
+      other: "%{count} EPCs ar gyfer %{postcode}"
     table:
       address: Cyfeiriad
       rating: "Cyfraddiad ynni"

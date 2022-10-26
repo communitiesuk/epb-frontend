@@ -245,12 +245,6 @@ describe "Acceptance::Certificate" do
           )
         end
 
-        it "displays the find a certificate page heading" do
-          expect(response.body).to include(
-            "Find an energy performance certificate",
-          )
-        end
-
         it "shows the information regarding getting a new EPC" do
           expect(response.body).to include(
             "If your property does not have a valid EPC, you can",
