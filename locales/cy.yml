@@ -273,8 +273,8 @@ cy:
       missing_detail: Heb eu darparu
 
   find_assessor_by_name:
-    top_heading: "Chwiliwch am asesydd yn ôl enw"
-    question: "Rhowch enw cyntaf ac enw olaf yr asesydd"
+    top_heading: "Beth yw enw'r asesydd?"
+    question: "Rhowch enw llawn yr asesydd"
     hint: "Er enghraifft Matt Anderson"
     button_text: "Chwiliwch"
     too_many_results: "Mae gormod o ganlyniadau ar gyfer yr enw hwnnw. Chwiliwch yn fwy cul."

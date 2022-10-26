@@ -273,8 +273,8 @@ en:
       missing_detail: Not Supplied
 
   find_assessor_by_name:
-    top_heading: 'Find an assessor by name'
-    question: 'Enter the assessor’s first and last names'
+    top_heading: 'What is the assessor’s name?'
+    question: 'Enter the assessor’s full name'
     hint: 'For example Matt Anderson'
     button_text: 'Search'
     too_many_results: 'There are too many results for that name. Please narrow your search term.'

@@ -547,12 +547,12 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
 
       it "displays the Find an assessor by name title" do
         expect(response.body).to include(
-          "<title>Find an assessor by name – Get a new energy certificate – GOV.UK</title>",
+          "<title>What is the assessor’s name? – Get a new energy certificate – GOV.UK</title>",
         )
       end
 
       it "displays the Find an assessor by name page heading" do
-        expect(response.body).to have_css "h1", text: "Find an assessor by name"
+        expect(response.body).to have_css "h1", text: "What is the assessor’s name?"
       end
 
       it "has a postcode input field" do
@@ -581,12 +581,12 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
 
       it "displays the Find an assessor by name title" do
         expect(response.body).to include(
-          "<title>Error: Find an assessor by name – Get a new energy certificate – GOV.UK</title>",
+          "<title>Error: What is the assessor’s name? – Get a new energy certificate – GOV.UK</title>",
         )
       end
 
       it "displays the Find an assessor by name page heading" do
-        expect(response.body).to have_css "h1", text: "Find an assessor by name"
+        expect(response.body).to have_css "h1", text: "What is the assessor’s name?"
       end
 
       it "displays an error message" do
@@ -618,7 +618,7 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
 
       it "displays the Find an assessor by name error title" do
         expect(response.body).to include(
-          "<title>Error: Find an assessor by name – Get a new energy certificate – GOV.UK</title>",
+          "<title>Error: What is the assessor’s name? – Get a new energy certificate – GOV.UK</title>",
         )
       end
 
