@@ -21,12 +21,12 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
 
       it "displays the find an assessor by postcode title" do
         expect(response.body).to include(
-          "<title>Find an assessor by postcode – Get a new energy certificate – GOV.UK</title>",
+          "<title>What is the property's postcode? – Get a new energy certificate – GOV.UK</title>",
         )
       end
 
       it "displays the find a non-domestic assessor page heading" do
-        expect(response.body).to include("Find an assessor by postcode")
+        expect(response.body).to include("What is the property's postcode?")
       end
 
       it "has a postcode input field" do
@@ -61,12 +61,12 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
 
       it "displays the find an assessor by postcode error title" do
         expect(response.body).to include(
-          "<title>Error: Find an assessor by postcode – Get a new energy certificate – GOV.UK</title>",
+          "<title>Error: What is the property's postcode? – Get a new energy certificate – GOV.UK</title>",
         )
       end
 
       it "displays the find a non-domestic assessor page heading" do
-        expect(response.body).to include("Find an assessor by postcode")
+        expect(response.body).to include("What is the property's postcode?")
       end
 
       it "displays an error message" do
@@ -102,12 +102,12 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
 
       it "displays the find an assessor by postcode error title" do
         expect(response.body).to include(
-          "<title>Error: Find an assessor by postcode – Get a new energy certificate – GOV.UK</title>",
+          "<title>Error: What is the property's postcode? – Get a new energy certificate – GOV.UK</title>",
         )
       end
 
       it "displays the find an assessor page heading" do
-        expect(response.body).to include("Find an assessor by postcode")
+        expect(response.body).to include("What is the property's postcode?")
       end
 
       it "displays an error message" do
@@ -143,12 +143,12 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
 
       it "displays the find an assessor by postcode error title" do
         expect(response.body).to include(
-          "<title>Error: Find an assessor by postcode – Get a new energy certificate – GOV.UK</title>",
+          "<title>Error: What is the property's postcode? – Get a new energy certificate – GOV.UK</title>",
         )
       end
 
       it "displays the find an assessor page heading" do
-        expect(response.body).to include("Find an assessor by postcode")
+        expect(response.body).to include("What is the property's postcode?")
       end
 
       it "displays an error message" do
@@ -184,12 +184,12 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
 
       it "displays the find an assessor by postcode error title" do
         expect(response.body).to include(
-          "<title>Error: Find an assessor by postcode – Get a new energy certificate – GOV.UK</title>",
+          "<title>Error: What is the property's postcode? – Get a new energy certificate – GOV.UK</title>",
         )
       end
 
       it "displays the find an assessor page heading" do
-        expect(response.body).to include("Find an assessor by postcode")
+        expect(response.body).to include("What is the property's postcode?")
       end
 
       it "displays an error message" do
@@ -445,7 +445,7 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
 
         it "has a title that matches the page heading" do
           expect(response.body).to include(
-            "<title>Find an assessor by postcode – Get a new energy certificate – GOV.UK</title>",
+            "<title>What is the property's postcode? – Get a new energy certificate – GOV.UK</title>",
           )
         end
 
@@ -486,12 +486,12 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
 
         it "has a title that matches the page heading" do
           expect(response.body).to include(
-            "<title>Error: Find an assessor by postcode – Get a new energy certificate – GOV.UK</title>",
+            "<title>Error: What is the property's postcode? – Get a new energy certificate – GOV.UK</title>",
           )
         end
 
         it "displays find a non-domestic assessor page heading" do
-          expect(response.body).to include("Find an assessor by postcode")
+          expect(response.body).to include("What is the property's postcode?")
         end
 
         it "displays an error message" do

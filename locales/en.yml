@@ -229,7 +229,7 @@ en:
       body: 'There is no scheme for one of the requested assessor'
 
   find_non_domestic_assessor_by_postcode:
-    top_heading: 'Find an assessor by postcode'
+    top_heading: "What is the property's postcode?"
 
   find_non_domestic_assessor_by_postcode_results:
     top_heading: 'Contact an assessor to book an energy assessment'

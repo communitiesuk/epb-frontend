@@ -229,7 +229,7 @@ cy:
       body: "Does dim cynllun ar gyfer yr asesydd y gofynnwyd amdano"
 
   find_non_domestic_assessor_by_postcode:
-    top_heading: "Chwiliwch am asesydd yn ôl cod post"
+    top_heading: "Beth yw cod post yr eiddo?"
 
   find_non_domestic_assessor_by_postcode_results:
     top_heading: "Cysylltwch ag asesydd i drefnu asesiad ynni"
