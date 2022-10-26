@@ -658,14 +658,14 @@ describe "Acceptance::Certificate" do
 
       it "has a title that matches the page heading" do
         expect(response.body).to include(
-          "<title>Find an energy performance certificate (EPC) by street and town – Find an energy certificate – GOV.UK</title>",
+          "<title>What is the address? – Find an energy certificate – GOV.UK</title>",
         )
       end
 
       it "displays the find a certificate page heading" do
         expect(response.body).to have_css "h1",
                                           text:
-                                            "Find an energy performance certificate (EPC) by street and town"
+                                            "What is the address?"
       end
 
       it "has two input fields" do
@@ -693,7 +693,7 @@ describe "Acceptance::Certificate" do
 
       it "displays the find a certificate page heading" do
         expect(response.body).to include(
-          "Find an energy performance certificate",
+          "What is the address?",
         )
       end
 
@@ -762,7 +762,7 @@ describe "Acceptance::Certificate" do
 
       it "displays the find a certificate page heading" do
         expect(response.body).to include(
-          "Find an energy performance certificate",
+          "What is the address?",
         )
       end
 
@@ -799,7 +799,7 @@ describe "Acceptance::Certificate" do
 
       it "displays the find a certificate page heading" do
         expect(response.body).to include(
-          "Find an energy performance certificate",
+          "What is the address?",
         )
       end
 
@@ -973,7 +973,7 @@ describe "Acceptance::Certificate" do
 
         it "displays the find a certificate page heading" do
           expect(response.body).to include(
-            "Find an energy performance certificate",
+            "What is the address?",
           )
         end
 

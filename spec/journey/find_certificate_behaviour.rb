@@ -4,7 +4,7 @@ shared_examples "shows the Get a new energy certificate start page" do
   end
 end
 
-shared_examples "a certificate search function" do |certificate_type:, property_type_label_element:, url_fragment:, find_a_postcode_text:, find_by_street_and_town_text:, find_by_certificate_number_text:, search_by_postcode_header:, certificates_text_in_result_count:, text_in_street_and_town_results:, search_by_certificate_number_header:, link_text_in_postcode_search_results:|
+shared_examples "a certificate search function" do |certificate_type:, property_type_label_element:, url_fragment:, find_a_postcode_text:, find_by_street_and_town_text:, find_by_street_and_town_header:, find_by_certificate_number_text:, search_by_postcode_header:, certificates_text_in_result_count:, text_in_street_and_town_results:, search_by_certificate_number_header:, link_text_in_postcode_search_results:|
   context "when searching for a #{certificate_type} certificate" do
     before do
       visit "http://find-energy-certificate.local.gov.uk:9393"
@@ -87,7 +87,7 @@ shared_examples "a certificate search function" do |certificate_type:, property_
         end
 
         it "shows the find EPC by street and town page" do
-          expect(page.find("h1")).to have_content "Find an energy performance certificate (EPC) by street and town"
+          expect(page.find("h1")).to have_content find_by_street_and_town_header
         end
       end
 

@@ -401,7 +401,7 @@ en:
       body: 'There is an internal network error'
 
   find_certificate_by_street_name_and_town:
-    top_heading: 'Find an energy performance certificate (EPC) by street and town'
+    top_heading: 'What is the address?'
     no_such_address:
       get_a_new_one_no_results: "If your property does not have an EPC, you can"
       get_a_new_one_link: "get a new energy certificate"

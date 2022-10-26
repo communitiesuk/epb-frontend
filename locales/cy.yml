@@ -401,7 +401,7 @@ cy:
       body: "Mae yna wall rhwydwaith mewnol"
 
   find_certificate_by_street_name_and_town:
-    top_heading: "Chwiliwch am dystysgrif perfformiad ynni (EPC) yn ôl y stryd a’r dref"
+    top_heading: "Beth yw'r cyfeiriad?"
     no_such_address:
       get_a_new_one_no_results: "Os nad oes EPC gan eich eiddo, gallwch"
       get_a_new_one_link: "cael tystysgrif ynni newydd"
