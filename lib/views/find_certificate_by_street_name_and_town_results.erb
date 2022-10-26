@@ -1,26 +1,21 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-xl">
-      <%= t('find_certificate_by_street_name_and_town_results.top_heading') %>
-    </h1>
-
-    <p class="govuk-body">
-      <%= t('find_certificate_by_street_name_and_town_results.no_epc.get_a_new_one_with_results') %>
-        <a class="govuk-link" href="<%=localised_url(set_subdomain_url("getting-new-energy-certificate"))%>">
-               <%= t('find_certificate_by_street_name_and_town_results.no_epc.get_a_new_one_link') %></a>.
-    </p>
-
     <% if results.size > 0 %>
       <% result_content = results.size == 1 ? 'find_certificate_by_street_name_and_town_results.list.one_result' : 'find_certificate_by_street_name_and_town_results.list.more_than_one_result' %>
-      <h2 class="govuk-heading-m"><%= t(result_content,:length => count_certificates(results), :query => params['street_name'] + ', ' + params['town'] ) %></h2>
+      <h1 class="govuk-heading-xl"><%= t(result_content,:length => count_certificates(results), :query => params['street_name'] + ', ' + params['town'] ) %></h1>
+      <p class="govuk-body">
+        <%= t('find_certificate_by_street_name_and_town_results.no_epc.get_a_new_one_with_results') %>
+        <a class="govuk-link" href="<%=localised_url(set_subdomain_url("getting-new-energy-certificate"))%>">
+          <%= t('find_certificate_by_street_name_and_town_results.no_epc.get_a_new_one_link') %></a>.
+      </p>
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
       <%== erb :find_certificate_list_certificate, locals: {
         certificate: results } %>
     <% else %>
-      <p class="govuk-body">
+      <h1 class="govuk-body">
         <%= t('find_certificate_by_street_name_and_town_results.no_certificates') %>
-      </p>
+      </h1>
     <% end %>
   </div>
 </div>

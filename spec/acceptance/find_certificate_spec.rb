@@ -888,7 +888,7 @@ describe "Acceptance::Certificate" do
 
         it "displays the find a certificate page heading" do
           expect(response.body).to include(
-            "Find an energy performance certificate",
+            "1 result matching 1 Makeup Street, Beauty Town",
           )
         end
 
