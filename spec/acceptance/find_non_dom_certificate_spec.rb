@@ -333,14 +333,14 @@ describe "Acceptance::NonDomesticCertificate" do
 
       it "has a title that matches the page heading" do
         expect(response.body).to include(
-          "<title>Find an energy performance certificate (EPC) by street and town – Find an energy certificate – GOV.UK</title>\n",
+          "<title>What is the address? – Find an energy certificate – GOV.UK</title>\n",
         )
       end
 
       it "displays the find a non-domestic certificate page heading" do
         expect(response.body).to have_css "h1",
                                           text:
-                                            "Find an energy performance certificate (EPC) by street and town"
+                                            "What is the address?"
       end
 
       it "has two input fields" do
@@ -435,13 +435,13 @@ describe "Acceptance::NonDomesticCertificate" do
 
         it "has an error title" do
           expect(response.body).to include(
-            "<title>Error: Find an energy performance certificate (EPC) by street and town – Find an energy certificate – GOV.UK</title>\n",
+            "<title>Error: What is the address? – Find an energy certificate – GOV.UK</title>\n",
           )
         end
 
         it "displays the find a certificate page heading" do
           expect(response.body).to include(
-            "Find an energy performance certificate",
+            "What is the address",
           )
         end
 
@@ -510,13 +510,13 @@ describe "Acceptance::NonDomesticCertificate" do
 
         it "has an error title" do
           expect(response.body).to include(
-            "<title>Error: Find an energy performance certificate (EPC) by street and town – Find an energy certificate – GOV.UK</title>\n",
+            "<title>Error: What is the address? – Find an energy certificate – GOV.UK</title>\n",
           )
         end
 
         it "displays the find a certificate page heading" do
           expect(response.body).to include(
-            "Find an energy performance certificate",
+            "What is the address",
           )
         end
 
@@ -553,13 +553,13 @@ describe "Acceptance::NonDomesticCertificate" do
 
         it "has an error title" do
           expect(response.body).to include(
-            "<title>Error: Find an energy performance certificate (EPC) by street and town – Find an energy certificate – GOV.UK</title>\n",
+            "<title>Error: What is the address? – Find an energy certificate – GOV.UK</title>\n",
           )
         end
 
         it "displays the find a certificate page heading" do
           expect(response.body).to include(
-            "Find an energy performance certificate",
+            "What is the address",
           )
         end
 
@@ -623,7 +623,7 @@ describe "Acceptance::NonDomesticCertificate" do
 
         it "displays the find a certificate page heading" do
           expect(response.body).to include(
-            "Find an energy performance certificate (EPC) by street and town",
+            "What is the address?",
           )
         end
 
