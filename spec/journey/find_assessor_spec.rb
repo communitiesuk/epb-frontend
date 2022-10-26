@@ -53,7 +53,7 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
       end
 
       it "display a link to search again" do
-        expect(page).to have_content "To search again, enter the postcode of the property"
+        expect(page).to have_content "Enter a postcode to search again"
       end
 
       context "when clicking the 'more information' link for the first assessor in the results" do
@@ -238,7 +238,7 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
       end
 
       it "displays text suggesting that the user can search again by entering the postcode of the property" do
-        expect(page).to have_content "To search again, enter the postcode of the property"
+        expect(page).to have_content "Enter a postcode to search again"
       end
 
       it "displays search results" do

@@ -233,7 +233,7 @@ cy:
 
   find_non_domestic_assessor_by_postcode_results:
     top_heading: "Cysylltwch ag asesydd i drefnu asesiad ynni"
-    question: "I chwilio eto rhowch god post yr eiddo"
+    question: "Rhowch god post er mwyn chwilio eto"
     hint: "Er enghraifft CF10 1EP"
     qualification:
       title: "Cymwysterau"
@@ -248,7 +248,7 @@ cy:
 
   find_assessor_by_postcode_results:
     top_heading: "Cysylltwch ag asesydd i drefnu asesiad ynni"
-    question: "I chwilio eto rhowch god post yr eiddo"
+    question: "Rhowch god post er mwyn chwilio eto"
     hint: "Er enghraifft CF10 1EP"
     description: "Cysylltwch ag asesydd sydd wedi’i restru isod i drefnu asesiad ynni."
     no_assessors_heading: "Dim canlyniadau ar gyfer %{postcode}"
@@ -258,7 +258,9 @@ cy:
     accreditation_summary_title: "Rhagor o wybodaeth"
     accreditation_conjunction: ' am '
     accreditation_summary_text: "Mae cynlluniau achredu’n cael eu penodi gan y llywodraeth i sicrhau bod gan aseswyr gymwysterau i wneud asesiadau EPC.<br /><br />Os ydych yn anfodlon ar asesiad EPC, gallwch gwyno i’r asesydd yn uniongyrchol. Os ydych yn dal yn anfodlon, dylech gysylltu â chynllun achredu’ch asesydd."
-    results: "%{quantity} aseswyr yn nhrefn eu pellter o %{postcode}"
+    results:
+      one: "%{count} aseswyr yn nhrefn eu pellter o %{postcode}"
+      other: "%{count} aseswyr yn nhrefn eu pellter o %{postcode}"
     distance:
       heading: "Pellter"
       default_miles_away_text: "Llai na milltir i fwrdd"

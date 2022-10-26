@@ -313,11 +313,11 @@ describe "Acceptance::Assessor", type: :feature do
 
         it "displays the Contact an assessor to book an energy assessment page heading" do
           expect(response.body).to have_css "h1",
-                                            text: "Contact an assessor to book an energy assessment"
+                                            text: "7 assessors in order of distance from SW1A 2AA"
         end
 
         it "displays the to search again by postcode message" do
-          expect(response.body).to include("To search again")
+          expect(response.body).to include("Enter a postcode to search again")
         end
 
         it "has a postcode input field" do

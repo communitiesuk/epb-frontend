@@ -308,7 +308,7 @@ class FrontendService < Sinatra::Base
           back_link "/find-an-assessor/search-by-postcode"
         end
         erb_template = :find_assessor_by_postcode_results
-        search_results_heading = locals[:results].length.positive? ? t("#{erb_template}.results", quantity: locals[:results].length, postcode: params["postcode"].upcase) : t("#{erb_template}.no_assessors_heading", postcode: params["postcode"].upcase)
+        search_results_heading = locals[:results].length.positive? ? t("#{erb_template}.results", count: locals[:results].length, postcode: params["postcode"].upcase) : t("#{erb_template}.no_assessors_heading", postcode: params["postcode"].upcase)
         @page_title = "#{search_results_heading} – #{t('services.getting_an_energy_certificate')} – #{t('layout.body.govuk')}"
       rescue StandardError => e
         case e
@@ -592,7 +592,7 @@ class FrontendService < Sinatra::Base
         back_link "/find-a-non-domestic-assessor/search-by-postcode"
 
         erb_template = :find_non_domestic_assessor_by_postcode_results
-        search_results_heading = locals[:results].length.positive? ? t("find_assessor_by_postcode_results.results", quantity: locals[:results].length, postcode: params["postcode"].upcase) : t("find_assessor_by_postcode_results.no_assessors_heading", postcode: params["postcode"].upcase)
+        search_results_heading = locals[:results].length.positive? ? t("find_assessor_by_postcode_results.results", count: locals[:results].length, postcode: params["postcode"].upcase) : t("find_assessor_by_postcode_results.no_assessors_heading", postcode: params["postcode"].upcase)
         @page_title = "#{search_results_heading} – #{t('services.getting_an_energy_certificate')} – #{t('layout.body.govuk')}"
       rescue StandardError => e
         case e

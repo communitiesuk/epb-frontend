@@ -233,7 +233,7 @@ en:
 
   find_non_domestic_assessor_by_postcode_results:
     top_heading: 'Contact an assessor to book an energy assessment'
-    question: 'To search again, enter the postcode of the property'
+    question: 'Enter a postcode to search again'
     hint: 'For example LS1 4AP'
     qualification:
       title: 'Qualifications'
@@ -248,7 +248,7 @@ en:
 
   find_assessor_by_postcode_results:
     top_heading: 'Contact an assessor to book an energy assessment'
-    question: 'To search again, enter the postcode of the property'
+    question: 'Enter a postcode to search again'
     hint: 'For example LS1 4AP'
     description: 'Contact an assessor listed below to book an energy assessment.'
     no_assessors_heading: 'No results for %{postcode}'
@@ -258,7 +258,9 @@ en:
     accreditation_summary_title: 'More information'
     accreditation_conjunction: ' about '
     accreditation_summary_text: 'Accreditation schemes are appointed by the government to ensure that assessors are qualified to carry out EPC assessments.<br /><br />If you are unhappy about an EPC assessment, you can complain to the assessor directly. If you are still unhappy, you should contact your assessor’s accreditation scheme.'
-    results: '%{quantity} assessors in order of distance from %{postcode}'
+    results:
+      one: '%{count} assessor in order of distance from %{postcode}'
+      other: '%{count} assessors in order of distance from %{postcode}'
     distance:
       heading: 'Distance'
       default_miles_away_text: 'Less than 1 mile away'
