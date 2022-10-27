@@ -380,7 +380,7 @@ class FrontendService < Sinatra::Base
         locals[:meta] = response[:meta]
 
         erb_template = :find_assessor_by_name_results
-        search_results_heading = t((locals[:meta][:looseMatch] ? "#{erb_template}.results.results_like" : "#{erb_template}.results.results"), quantity: locals[:results].length, name: params["name"])
+        search_results_heading = t((locals[:meta][:looseMatch] ? "#{erb_template}.results.results_like" : "#{erb_template}.results.results"), count: locals[:results].length, name: params["name"])
         @page_title = "#{search_results_heading} – #{t('services.getting_an_energy_certificate')} – #{t('layout.body.govuk')}"
         back_link "/find-an-assessor/search-by-name"
       rescue StandardError => e
@@ -426,7 +426,7 @@ class FrontendService < Sinatra::Base
         locals[:meta] = response[:meta]
 
         erb_template = :find_non_domestic_assessor_by_name_results
-        search_results_heading = t((locals[:meta][:looseMatch] ? "find_assessor_by_name_results.results.results_like" : "find_assessor_by_name_results.results.results"), quantity: locals[:results].length, name: params["name"])
+        search_results_heading = t((locals[:meta][:looseMatch] ? "find_assessor_by_name_results.results.results_like" : "find_assessor_by_name_results.results.results"), count: locals[:results].length, name: params["name"])
         @page_title = "#{search_results_heading} – #{t('services.getting_an_energy_certificate')} – #{t('layout.body.govuk')}"
         back_link "/find-a-non-domestic-assessor/search-by-name"
       rescue StandardError => e

@@ -284,12 +284,18 @@ cy:
   find_assessor_by_name_results:
     top_heading: "Cysylltwch ag asesydd i drefnu asesiad ynni"
     description: "Gweld pa aseswyr sydd wedi’u hachredu o dan yr enw rydych chi’n chwilio amdano"
-    no_assessors: "Does dim aseswyr â’r enw hwnnw"
+    no_assessors: "Does dim aseswyr â’r enw hwnnw."
     accreditation_summary_title: "Cynlluniau achredu a chwynion"
     accreditation_summary_text: "Mae cynlluniau achredu’n cael eu penodi gan y llywodraeth i sicrhau bod gan aseswyr gymwysterau i wneud asesiadau EPC.<br /><br />Os ydych yn anfodlon ar asesiad EPC, gallwch gwyno i’r asesydd yn uniongyrchol. Os ydych yn dal yn anfodlon, dylech gysylltu â chynllun achredu’ch asesydd."
     results:
-      results: "%{quantity} canlyniadau ar gyfer yr enw %{name}"
-      results_like: "%{quantity} canlyniadau, yn debyg i’r enw %{name}"
+      results:
+        zero: "Dim canlyniadau ar gyfer yr enw %{name}"
+        one: "%{count} canlyniad ar gyfer yr enw %{name}"
+        other: "%{count} canlyniad ar gyfer yr enw %{name}"
+      results_like:
+        zero: "Dim canlyniadau, yn debyg i’r enw %{name}"
+        one: "%{count} canlyniad, yn debyg i’r enw %{name}"
+        other: "%{count} canlyniad, yn debyg i’r enw %{name}"
     contact_details_text: "Manylion cysylltu"
     accredited_by_text: "Cynllun achredu"
     assessor_id_text: "ID yr asesydd"

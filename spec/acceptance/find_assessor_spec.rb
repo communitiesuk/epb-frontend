@@ -660,14 +660,14 @@ describe "Acceptance::Assessor", type: :feature do
         end
 
         it "displays the correct title" do
-          expect(response.body).to include(
-            "<title>8 results for the name Ronald McDonald – Get a new energy certificate – GOV.UK</title>",
+          expect(response.body).to have_title(
+            "8 results for the name Ronald McDonald – Get a new energy certificate – GOV.UK",
           )
         end
 
-        it "displays the Contact an assessor to book an energy assessment page heading" do
+        it "displays the results count as the main heading" do
           expect(response.body).to have_css "h1",
-                                            text: "Contact an assessor to book an energy assessment"
+                                            text: "8 results for the name Ronald McDonald"
         end
 
         it "has a name input field" do
@@ -732,7 +732,7 @@ describe "Acceptance::Assessor", type: :feature do
 
         it "displays the correct title" do
           expect(response.body).to include(
-            "<title>8 results, similar to the name R McDonald – Get a new energy certificate – GOV.UK</title>",
+            "<title>8 results similar to the name R McDonald – Get a new energy certificate – GOV.UK</title>",
           )
         end
 
@@ -758,14 +758,14 @@ describe "Acceptance::Assessor", type: :feature do
         end
 
         it "displays the correct title" do
-          expect(response.body).to include(
-            "<title>0 results for the name Nonexistent Person – Get a new energy certificate – GOV.UK</title>",
+          expect(response.body).to have_title(
+            "No results for the name Nonexistent Person – Get a new energy certificate – GOV.UK",
           )
         end
 
-        it "displays the Contact an assessor to book an energy assessment page heading" do
+        it "displays the heading as the result count" do
           expect(response.body).to have_css "h1",
-                                            text: "Contact an assessor to book an energy assessment"
+                                            text: "No results for the name Nonexistent Person"
         end
 
         it "explains that no assessors by that name" do
