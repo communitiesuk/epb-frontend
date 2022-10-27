@@ -779,6 +779,10 @@ cy:
       email: 'dluhc.digital-services@levellingup.gov.uk'
       telephone: 'Ffôn: '
       telephone_number: '020 3829 0748'
+    expired_warning:
+      title: 'Rhybudd'
+      message: "Mae'r dystysgrif hon wedi dod i ben. Gallwch chi"
+      link_text: "gael tystysgrif newydd"
     sections:
       renting:
         title: "Rheolau ar osod yr eiddo hwn"

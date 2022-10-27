@@ -11,6 +11,7 @@
 
   <div class="govuk-grid-column-one-third govuk-!-display-none-print">
     <hr class="epc-blue-top" />
+
     <%== erb :component__contents, locals: {
       title: t("domestic_epc.sidebar.title"),
       sections: [
@@ -63,6 +64,11 @@
   </div>
   <div class="govuk-grid-column-two-thirds epc-domestic-sections">
     <hr class="epc-blue-top" />
+
+    <%== erb :component__epc_expired, locals: {
+      assessment: assessment,
+      print_view: print_view,
+    } %>
 
     <%== erb :component__epc_superseded, locals: {
       assessment: assessment,

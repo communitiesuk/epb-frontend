@@ -779,6 +779,10 @@ en:
       email: 'dluhc.digital-services@levellingup.gov.uk'
       telephone: 'Telephone: '
       telephone_number: '020 3829 0748'
+    expired_warning:
+      title: 'Warning'
+      message: "This certificate has expired. You can"
+      link_text: "get a new certificate"
     sections:
       renting:
         title: 'Rules on letting this property'
