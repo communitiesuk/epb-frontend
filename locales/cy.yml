@@ -220,7 +220,7 @@ cy:
       title: "Gwirio bod asesydd wedi'i gofrestru"
       body: "Os ydych chi'n gwybod enw asesydd a’ch bod chi eisiau gwirio’u manylion, gallwch chi %{link}."
       cta: "chwilio am asesydd yn ôl enw"
-    question: "Rhowch yw god post"
+    question: "Rhowch y cod post"
     hint: "Er enghraifft CF10 1EP"
     button_text: Chwiliwch
     postcode_not_known: "Dod o hyd i god post ar Chwiliwr Cod Post y Post Brenhinol"
