@@ -594,7 +594,7 @@ describe "Acceptance::Assessor", type: :feature do
 
       it "displays an error message" do
         expect(response.body).to have_css ".govuk-error-message",
-                                          text: "Enter the first and last name of the assessor"
+                                          text: "Enter a first name and last name"
       end
 
       it "contains the required GDS error summary" do
@@ -605,10 +605,10 @@ describe "Acceptance::Assessor", type: :feature do
         expect(
           response.body,
         ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
-                      text: "Enter the first and last name of the assessor"
+                      text: "Enter a first name and last name"
         expect(
           response.body,
-        ).to have_link "Enter the first and last name of the assessor",
+        ).to have_link "Enter a first name and last name",
                        href: "#name"
         expect(response.body).to have_css "#name"
       end
@@ -627,7 +627,7 @@ describe "Acceptance::Assessor", type: :feature do
 
       it "displays an error message" do
         expect(response.body).to have_css ".govuk-error-message",
-                                          text: "Enter the first and last name of the assessor"
+                                          text: "Enter a first name and last name"
       end
 
       it "contains the required GDS error summary" do
@@ -638,10 +638,10 @@ describe "Acceptance::Assessor", type: :feature do
         expect(
           response.body,
         ).to have_css "div.govuk-error-summary__body ul.govuk-list li:first a",
-                      text: "Enter the first and last name of the assessor"
+                      text: "Enter a first name and last name"
         expect(
           response.body,
-        ).to have_link "Enter the first and last name of the assessor",
+        ).to have_link "Enter a first name and last name",
                        href: "#name"
         expect(response.body).to have_css "#name"
       end

@@ -154,7 +154,7 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
       end
 
       it "shows an error message that the full name being searched should be entered" do
-        expect(page).to have_content "Enter the first and last name of the assessor"
+        expect(page).to have_content "Enter a first name and last name"
       end
     end
 
@@ -165,7 +165,7 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
       end
 
       it "shows an error message that the full name being searched should be entered" do
-        expect(page).to have_content "Enter the first and last name of the assessor"
+        expect(page).to have_content "Enter a first name and last name"
       end
     end
 
@@ -280,9 +280,9 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
       end
 
       it "shows an error message that the full name of the search assessor should be used for search", :aggregate_failures do
-        expect(page).to have_content "Enter the first and last name of the assessor"
+        expect(page).to have_content "Enter a first name and last name"
         expect(page).to have_content "There is a problem"
-        expect(page).to have_link "Enter the first and last name of the assessor"
+        expect(page).to have_link "Enter a first name and last name"
       end
     end
 
@@ -293,9 +293,9 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
       end
 
       it "shows an error message that the full name of the search assessor should be used for search", :aggregate_failures do
-        expect(page).to have_content "Enter the first and last name of the assessor"
+        expect(page).to have_content "Enter a first name and last name"
         expect(page).to have_content "There is a problem"
-        expect(page).to have_link "Enter the first and last name of the assessor"
+        expect(page).to have_link "Enter a first name and last name"
       end
     end
 
