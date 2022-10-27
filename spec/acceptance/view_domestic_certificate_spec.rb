@@ -1304,4 +1304,50 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       expect(response.body).to have_link("See the new certificate", href: "/energy-certificate/9025-0000-0000-0000-0000")
     end
   end
+
+  context "when the certificate has expired" do
+    before do
+      FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
+        assessment_id: "1111-1111-1111-1111-1119",
+        expiry_date: "2010-01-05",
+        superseded_by: nil,
+      )
+    end
+
+    let(:response) { get "/energy-certificate/1111-1111-1111-1111-1119" }
+
+    it "shows the expired on message in the epc blue box" do
+      expect(response.body).to have_css(".epc-extra-box label", text: "This certificate expired on")
+    end
+
+    it "shows the expired date in the epc blue box" do
+      expect(response.body).to have_css(".epc-extra-box b", text: "5 January 2010")
+    end
+
+    it "shows an expired warning message" do
+      expect(response.body).to have_css(".govuk-warning-text", text: "This certificate has expired.")
+    end
+
+    it "shows a link to get the get service within the warning message" do
+      expect(response.body).to have_css(".govuk-warning-text a")
+      expect(response.body).to have_link("get a new certificate", href: "http://getting-new-energy-certificate.epb-frontend")
+    end
+
+    context "when the expired epc has been superseded" do
+      before do
+        FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
+          assessment_id: "1111-1111-1111-1111-1119",
+          expiry_date: "2010-01-05",
+        )
+      end
+
+      it "shows an superseded warning message" do
+        expect(response.body).to have_css(".govuk-warning-text", text: "A new certificate has replaced this one")
+      end
+
+      it "does not shows an expired warning message" do
+        expect(response.body).not_to have_css(".govuk-warning-text", text: "This certificate has expired")
+      end
+    end
+  end
 end

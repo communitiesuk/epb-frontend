@@ -1250,7 +1250,9 @@ module FetchAssessmentSummary
       postcode: "SW1B 2BB",
       recommended_improvements: false,
       addendum: nil,
-      lzc_energy_sources: nil
+      lzc_energy_sources: nil,
+      expiry_date: "2030-01-05",
+      superseded_by: "9025-0000-0000-0000-0000"
     )
       FetchAssessmentSummary::AssessmentSummaryErrorStub.fetch(assessment_id)
       property_summary ||= generate_property_summary
@@ -1270,7 +1272,7 @@ module FetchAssessmentSummary
             "currentCarbonEmission": "4.4",
             "potentialCarbonEmission": "3.4",
             "postcode": "A0 0AA",
-            "dateOfExpiry": "2030-05-04",
+            "dateOfExpiry": expiry_date,
             "addressLine1": "1 Some Street",
             "addressLine2": "",
             "addressLine3": address_line3,
@@ -1528,7 +1530,7 @@ module FetchAssessmentSummary
             },
             assessmentId: assessment_id,
             dateRegistered: "2020-01-05",
-            dateOfExpiry: "2030-01-05",
+            dateOfExpiry: expiry_date,
             dateOfAssessment: "2020-01-02",
             dwellingType: "Top floor flat",
             typeOfAssessment: type_of_assessment,
@@ -1570,7 +1572,7 @@ module FetchAssessmentSummary
             propertySummary: property_summary,
             greenDealPlan: green_deal_plan,
             addendum:,
-            supersededBy: "9025-0000-0000-0000-0000",
+            supersededBy: superseded_by,
             relatedAssessments: [
               {
                 assessmentExpiryDate: "2006-05-04",

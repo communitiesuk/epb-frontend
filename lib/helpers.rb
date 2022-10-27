@@ -38,7 +38,7 @@ module Helpers
   def set_subdomain_url(subdomain)
     current_url = request.url
 
-    return "http://#{subdomain}.local.gov.uk:9393" if settings.development?
+    return "http://getting-new-energy-certificate.epb-frontend" if settings.development?
 
     if current_url.include? "integration"
       "https://#{subdomain}-integration.digital.communities.gov.uk"
