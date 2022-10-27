@@ -4,7 +4,7 @@
       <% if results.size > 0 %>
         <%= t('find_assessor_by_postcode_results.results', count: results.length, postcode: params['postcode'].upcase) %>
       <% else %>
-        <%= t('find_assessor_by_postcode_results.top_heading') %>
+        <%= t('find_assessor_by_postcode_results.no_assessors_heading', :postcode=>params['postcode'].upcase) %>
       <% end %>
     </h1>
 
@@ -42,7 +42,6 @@
           <% end %>
       </ul>
     <% else %>
-      <h2 class="govuk-heading-m"><%= t('find_assessor_by_postcode_results.no_assessors_heading', :postcode=>params['postcode'].upcase) %></h2>
       <p class="govuk-body">
         <%= t('find_assessor_by_postcode_results.no_assessors_1', :postcode=>params['postcode'].upcase) %>
       </p>

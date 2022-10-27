@@ -431,9 +431,9 @@ describe "Acceptance::Assessor", type: :feature do
           )
         end
 
-        it "displays the find an assessor page heading" do
+        it "displays the no results page heading" do
           expect(response.body).to have_css "h1",
-                                            text: "Contact an assessor to book an energy assessment"
+                                            text: "No results for E1 4FF"
         end
 
         it "explains that no assessors are nearby" do
@@ -459,9 +459,9 @@ describe "Acceptance::Assessor", type: :feature do
           expect(response.status).to eq(200)
         end
 
-        it "displays the find an assessor page heading" do
+        it "displays the no results page heading" do
           expect(response.body).to have_css "h1",
-                                            text: "Contact an assessor to book an energy assessment"
+                                            text: "No results for B11 4FF"
         end
 
         it "displays the no results found message" do

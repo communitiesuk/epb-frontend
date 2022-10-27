@@ -414,9 +414,9 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
           )
         end
 
-        it "displays the contact assessor page heading" do
+        it "displays the no results page heading" do
           expect(response.body).to include(
-            "Contact an assessor to book an energy assessment",
+            "No results for E1 4AA",
           )
         end
 
@@ -445,13 +445,13 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
 
         it "has a title that matches the page heading" do
           expect(response.body).to include(
-            "<title>What is the property's postcode? – Get a new energy certificate – GOV.UK</title>",
+            "<title>No results for B11 4FF – Get a new energy certificate – GOV.UK</title>",
           )
         end
 
-        it "displays the contact assessor page heading" do
+        it "displays the no results page heading" do
           expect(response.body).to include(
-            "Contact an assessor to book an energy assessment",
+            "No results for B11 4FF",
           )
         end
 

@@ -314,7 +314,7 @@ class FrontendService < Sinatra::Base
         case e
         when Errors::PostcodeNotRegistered
           @page_title =
-            "#{t('find_assessor_by_postcode_results.top_heading')} – #{
+            "#{t('find_assessor_by_postcode_results.no_assessors_heading', postcode: params['postcode'].upcase)} – #{
                 t('services.getting_an_energy_certificate')
               } – #{t('layout.body.govuk')}"
           locals[:results] = []
@@ -598,9 +598,9 @@ class FrontendService < Sinatra::Base
         case e
         when Errors::PostcodeNotRegistered
           @page_title =
-            "#{t('find_non_domestic_assessor_by_postcode.top_heading')} – #{
-                t('services.getting_an_energy_certificate')
-              } – #{t('layout.body.govuk')}"
+            "#{t('find_assessor_by_postcode_results.no_assessors_heading', postcode: params['postcode'].upcase)} – #{
+              t('services.getting_an_energy_certificate')
+            } – #{t('layout.body.govuk')}"
           locals[:results] = []
           erb_template = :find_non_domestic_assessor_by_postcode_results
         when Errors::PostcodeIncomplete
