@@ -663,7 +663,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
 
         let(:response) { get "/energy-certificate/1111-1111-1111-1111-1112" }
 
-        it "shows Addditional information section with all details", :aggregate_failures do
+        it "shows Additional information section with all details", :aggregate_failures do
           expect(response.body).to include('<h2 class="govuk-heading-m">Additional information</h2>')
           expect(response.body).to have_css "li", text: "Dwelling has a swimming pool"
           expect(response.body).to include('<p class="govuk-hint">The energy assessment for the dwelling does not include energy used to heat the swimming pool.</p>')
@@ -672,7 +672,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       end
 
       context "when there is no additional information" do
-        it "does not show Addditional information section" do
+        it "does not show Additional information section" do
           expect(response.body).not_to include(
             '<h2 class="govuk-heading-m">Additional information</h2>',
           )
