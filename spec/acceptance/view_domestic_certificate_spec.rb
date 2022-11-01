@@ -1303,5 +1303,13 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
     it "shows the superseded link" do
       expect(response.body).to have_link("See the new certificate", href: "/energy-certificate/9025-0000-0000-0000-0000")
     end
+
+    context "when showing the print view of the certificate" do
+      let(:print_response) { get "/energy-certificate/1234-5678-1234-5678-1234?print=true" }
+
+      it "shows the warning text within a printable area" do
+        expect(print_response.body).to have_css(".printable-area div.govuk-warning-text")
+      end
+    end
   end
 end
