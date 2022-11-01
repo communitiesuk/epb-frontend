@@ -285,10 +285,10 @@
         list: {
           "scheme.list.name": assessment[:assessor][:registeredBy][:name],
           "scheme.list.scheme_assessor_id": assessment[:assessor][:schemeAssessorId],
-          "assessor.list.telephone": scheme_details(assessment[:assessor], 'phone').include?('missing') ? nil : scheme_details(assessment[:assessor], "phone"),
+          "assessor.list.telephone": scheme_details(assessment[:assessor], 'phone').nil? ? nil : scheme_details(assessment[:assessor], "phone"),
           "assessor.list.email": {
             "type": "email",
-            "value": scheme_details(assessment[:assessor], 'email').include?('missing') ? nil : scheme_details(assessment[:assessor], 'email') }
+            "value": scheme_details(assessment[:assessor], 'email').nil? ? nil : scheme_details(assessment[:assessor], 'email') }
         },
         translation_prefix: 'domestic_epc.sections.information.',
         skip_null: true

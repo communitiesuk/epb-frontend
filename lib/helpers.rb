@@ -93,7 +93,10 @@ module Helpers
   def scheme_details(assessor, property)
     t(
       "schemes.list.#{assessor[:registeredBy][:name].split.first.downcase}.#{property}",
+      raise: true,
     )
+  rescue I18n::MissingTranslationData
+    nil
   end
 
   def party_disclosure(
@@ -102,8 +105,13 @@ module Helpers
     code_prefix = "disclosure_code",
     _certificate_prefix = "domestic_epc"
   )
-    text = t(code_prefix + ".#{code}.relation")
-    if text.include?("missing")
+    translation_errored = false
+    begin
+      text = t(code_prefix + ".#{code}.relation", raise: true)
+    rescue I18n::MissingTranslationData
+      translation_errored = true
+    end
+    if translation_errored
       text = string
       if text.nil? || text.strip.empty?
         text =

@@ -8,7 +8,7 @@ describe "helpers util methods", type: :helper do
     translation = "I am the translation"
 
     before do
-      allow(I18n).to receive(:t).with(str).and_return(translation)
+      allow(I18n).to receive(:t).with(str, any_args).and_return(translation)
     end
 
     it "delegates to I18n.t" do

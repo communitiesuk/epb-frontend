@@ -30,6 +30,13 @@ I18n.load_path = Dir[File.join(File.dirname(__FILE__), "/../locales", "*.yml")]
 I18n.enforce_available_locales = true
 I18n.available_locales = %w[en cy]
 
+# override the `t` helper so that it raises on missing translations when running tests
+module Helpers
+  def t(*args, **kwargs, &block)
+    I18n.t(*args, raise: true, **kwargs, &block)
+  end
+end
+
 class TestLoader
   def self.setup
     @loader = Zeitwerk::Loader.new
