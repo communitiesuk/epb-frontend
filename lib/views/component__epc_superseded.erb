@@ -3,10 +3,10 @@
     <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
     <strong class="govuk-warning-text__text">
       <span class="govuk-warning-text__assistive">
-        <%= t('domestic_epc.superseded.title') %></span>
-     <%= t("domestic_epc.superseded.#{defined?(type) ? type : 'certificate'}_message") %>.
+        <%= t('component.superseded.title') %></span>
+     <%= t("component.superseded.#{defined?(type) ? type : 'certificate'}_message") %>.
       <span class="govuk-!-display-none-print"><a class="govuk-link" href="<%= localised_url('/energy-certificate/' + assessment[:supersededBy]) %>">
-        <%= t("domestic_epc.superseded.#{defined?(type) ? type : 'certificate'}_link") %></a>.</span>
+        <%= t("component.superseded.#{defined?(type) ? type : 'certificate'}_link") %></a>.</span>
     </strong>
   </div>
 <% end %>

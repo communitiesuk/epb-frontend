@@ -634,6 +634,29 @@ cy:
         additional_heading: "Argymhellion ychwanegol"
         recommendation_heading: "Argymhelliad"
         potential_impact_heading: "Effaith bosibl"
+    superseded:
+      title: 'Rhybudd'
+      certificate_message: 'Mae tystysgrif newydd wedi disodli hon'
+      report_message: 'Mae adroddiad newydd wedi disodli hon'
+      certificate_link: 'Gweler y dystysgrif newydd'
+      report_link: 'Gweler yr adroddiad newydd'
+    superseded_print_version:
+      certificate_title: "Nid yw'r dystysgrif hon yn ddilys. Mae tystysgrif newydd wedi disodli hon."
+      report_title: "Nid yw'r adroddiad hwn yn ddilys. Mae adroddiad newydd wedi disodli hon."
+      certificate_link_text: 'Gweld y dystysgrif newydd drwy ymweld â www.gov.uk/find-energy-certificate'
+      certificate_get_help_text: 'Cael help gyda thystysgrifau ar gyfer yr eiddo hwn '
+      certificate_contact_text: "Os oes arnoch chi angen help i ddod o hyd i'r dystysgrif newydd neu os ydych chi'n gwybod am dystysgrifau eraill ar gyfer yr eiddo hwn sydd heb eu rhestru yma, cysylltwch â'r Adran Codi'r Gwastad, Tai a Chymunedau (DLUHC)"
+      report_link_text: 'Gweld yr adroddiad newydd drwy fynd i https://www.gov.uk/dod-o-hyd-i-dystysgrif-ynni'
+      report_get_help_text: 'Cael help gydag adroddiadau ar gyfer yr eiddo hwn'
+      report_contact_text: "Os oes arnoch chi angen help i ddod o hyd i'r adroddiad newydd neu os ydych chi'n gwybod am adroddiadau eraill ar gyfer yr eiddo hwn sydd heb eu rhestru yma, cysylltwch â'r Adran Ffyniant Bro, Tai a Chymunedau (DLUHC)."
+      email: 'dluhc.digital-services@levellingup.gov.uk'
+      telephone: 'Ffôn: '
+      telephone_number: '020 3829 0748'
+    expired_warning:
+      title: 'Rhybudd'
+      message: "Mae'r dystysgrif hon wedi dod i ben."
+      link_prelude: "Gallwch chi"
+      link_text: "gael tystysgrif newydd"
 
   unit:
     kilogram: "kg"
@@ -761,29 +784,6 @@ cy:
         information: "Cysylltu â’r asesydd a’r cynllun achredu"
         green_deal: "Cynllun y Fargen Werdd"
         previous: "Tystysgrifau eraill ar gyfer yr eiddo hwn"
-    superseded:
-      title: 'Rhybudd'
-      certificate_message: 'Mae tystysgrif newydd wedi disodli hon'
-      report_message: 'Mae adroddiad newydd wedi disodli hon'
-      certificate_link: 'Gweler y dystysgrif newydd'
-      report_link: 'Gweler yr adroddiad newydd'
-    superseded_print_version:
-      certificate_title: "Nid yw'r dystysgrif hon yn ddilys. Mae tystysgrif newydd wedi disodli hon."
-      report_title: "Nid yw'r adroddiad hwn yn ddilys. Mae adroddiad newydd wedi disodli hon."
-      certificate_link_text: 'Gweld y dystysgrif newydd drwy ymweld â www.gov.uk/find-energy-certificate'
-      certificate_get_help_text: 'Cael help gyda thystysgrifau ar gyfer yr eiddo hwn '
-      certificate_contact_text: "Os oes arnoch chi angen help i ddod o hyd i'r dystysgrif newydd neu os ydych chi'n gwybod am dystysgrifau eraill ar gyfer yr eiddo hwn sydd heb eu rhestru yma, cysylltwch â'r Adran Codi'r Gwastad, Tai a Chymunedau (DLUHC)"
-      report_link_text: 'Gweld yr adroddiad newydd drwy fynd i https://www.gov.uk/dod-o-hyd-i-dystysgrif-ynni'
-      report_get_help_text: 'Cael help gydag adroddiadau ar gyfer yr eiddo hwn'
-      report_contact_text: "Os oes arnoch chi angen help i ddod o hyd i'r adroddiad newydd neu os ydych chi'n gwybod am adroddiadau eraill ar gyfer yr eiddo hwn sydd heb eu rhestru yma, cysylltwch â'r Adran Ffyniant Bro, Tai a Chymunedau (DLUHC)."
-      email: 'dluhc.digital-services@levellingup.gov.uk'
-      telephone: 'Ffôn: '
-      telephone_number: '020 3829 0748'
-    expired_warning:
-      title: 'Rhybudd'
-      message: "Mae'r dystysgrif hon wedi dod i ben."
-      link_prelude: "Gallwch chi"
-      link_text: "gael tystysgrif newydd"
     sections:
       renting:
         title: "Rheolau ar osod yr eiddo hwn"
