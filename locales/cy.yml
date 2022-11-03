@@ -654,9 +654,14 @@ cy:
       telephone_number: '020 3829 0748'
     expired_warning:
       title: 'Rhybudd'
-      message: "Mae'r dystysgrif hon wedi dod i ben."
-      link_prelude: "Gallwch chi"
-      link_text: "gael tystysgrif newydd"
+      certificate:
+        message: "Mae'r dystysgrif hon wedi dod i ben."
+        link_prelude: "Gallwch chi"
+        link_text: "gael tystysgrif newydd"
+      report:
+        message: "Mae'r adroddiad hwn wedi dod i ben."
+        link_prelude: "Gallwch chi"
+        link_text: "gael tystysgrif ac adroddiad newydd"
 
   unit:
     kilogram: "kg"

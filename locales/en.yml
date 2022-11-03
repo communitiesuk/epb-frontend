@@ -654,9 +654,15 @@ en:
       telephone_number: '020 3829 0748'
     expired_warning:
       title: 'Warning'
-      message: "This certificate has expired."
-      link_prelude: "You can"
-      link_text: "get a new certificate"
+      certificate:
+        message: "This certificate has expired."
+        link_prelude: "You can"
+        link_text: "get a new certificate"
+      report:
+        message: "This report has expired."
+        link_prelude: "You can"
+        link_text: "get a new certificate and report"
+
 
   unit:
     kilogram: 'kg'

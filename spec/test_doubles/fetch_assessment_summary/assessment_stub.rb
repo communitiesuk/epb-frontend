@@ -777,7 +777,6 @@ module FetchAssessmentSummary
       primary_energy_use: "413.22264873648762",
       related_rrn: "4192-1535-8427-8844-6702",
       related_party_disclosure: 1,
-
       related_assessments: [
         {
           assessmentExpiryDate: "2026-05-04",
@@ -792,14 +791,16 @@ module FetchAssessmentSummary
           assessmentType: "CEPC-RR",
         },
       ],
+      expiry_date: "2030-01-05",
       postcode: "SW1B 2BB",
-      opt_out: false
+      opt_out: false,
+      superseded_by: "0000-0000-0000-0000-0001"
     )
       body = {
         data: {
           optOut: opt_out,
           assessmentId: assessment_id,
-          dateOfExpiry: "2030-01-05",
+          dateOfExpiry: expiry_date,
           dateOfAssessment: "2020-01-04",
           dateOfRegistration: "2020-01-05",
           reportType: "3",
@@ -846,7 +847,7 @@ module FetchAssessmentSummary
           relatedPartyDisclosure: related_party_disclosure,
           propertyType: "B1 Offices and Workshop businesses",
           relatedAssessments: related_assessments,
-          supersededBy: "0000-0000-0000-0000-0001",
+          supersededBy: superseded_by,
         },
       }
 
@@ -883,7 +884,8 @@ module FetchAssessmentSummary
         address: "123 My Street, My City, AB3 4CD",
       },
       postcode: "A0 0AA",
-      opt_out: false
+      opt_out: false,
+      superseded_by: "0000-0000-0000-0000-5555"
     )
       body = {
         data: {
@@ -955,7 +957,7 @@ module FetchAssessmentSummary
           relatedPartyDisclosure: related_party,
           energyBandFromRelatedCertificate: related_energy_band,
           optOut: opt_out,
-          supersededBy: "0000-0000-0000-0000-5555",
+          supersededBy: superseded_by,
         },
       }
       WebMock

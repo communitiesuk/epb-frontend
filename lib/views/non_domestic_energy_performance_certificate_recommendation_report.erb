@@ -46,6 +46,12 @@
   <div class="govuk-grid-column-two-thirds epc-cepc-rr-sections">
     <hr class="epc-blue-top" />
 
+    <%== erb :component__epc_expired, locals: {
+      assessment: assessment,
+      print_view: print_view,
+      type: "report",
+    } %>
+
     <%== erb :component__epc_superseded, locals: {
       assessment: assessment,
       print_view: print_view,

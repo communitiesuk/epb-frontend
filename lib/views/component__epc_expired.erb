@@ -4,9 +4,9 @@
     <strong class="govuk-warning-text__text">
       <span class="govuk-warning-text__assistive">
         <%= t('component.expired_warning.title') %></span>
-     <%= t('component.expired_warning.message')%>
-      <span class="govuk-!-display-none-print"><%= t('component.expired_warning.link_prelude') %> <a class="govuk-link" href="<%=localised_url(set_subdomain_url("getting-new-energy-certificate"))%>">
-        <%= t('component.expired_warning.link_text') %></a>.</span>
+     <%= t("component.expired_warning.#{defined?(type) ? type : 'certificate'}.message")%>
+      <span class="govuk-!-display-none-print"><%= t("component.expired_warning.#{defined?(type) ? type : 'certificate'}.link_prelude") %> <a class="govuk-link" href="<%=localised_url(set_subdomain_url("getting-new-energy-certificate"))%>">
+        <%= t("component.expired_warning.#{defined?(type) ? type : 'certificate'}.link_text") %></a>.</span>
     </strong>
   </div>
 <% end %>
