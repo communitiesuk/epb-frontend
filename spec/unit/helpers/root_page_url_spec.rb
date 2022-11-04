@@ -80,4 +80,24 @@ describe "Helpers.root_page_url", type: :helper do
       expect(frontend_service_helpers.root_page_url).to eq static_url
     end
   end
+
+  context "when calling #get_service_root_page_url" do
+    static_url = "https://www.gov.uk/fy-ngwasanaeth-hyfryd-am-gael"
+
+    before do
+      stub_const "ENV", { "STATIC_START_PAGE_GETTING_CY" => static_url }
+      def frontend_service_helpers.params
+        { "lang" => "cy" }
+      end
+
+      def frontend_service_helpers.request
+        OpenStruct.new(hostname: "find-energy-certificate.service.gov.uk")
+      end
+      frontend_service_helpers.set_locale
+    end
+
+    it "resolves to the getting service root page url in the correct language" do
+      expect(frontend_service_helpers.get_service_root_page_url).to eq static_url
+    end
+  end
 end

@@ -404,7 +404,13 @@ module Helpers
   end
 
   def static_start_page
-    case [request.hostname.start_with?("get"), I18n.locale == :cy]
+    static_start_page_for_service is_finding_service: !request.hostname.start_with?("get"),
+                                  lang: I18n.locale.to_s
+  end
+
+  def static_start_page_for_service(is_finding_service: true, lang: nil)
+    lang ||= I18n.locale.to_s
+    case [!is_finding_service, lang == "cy"]
     when [false, false]
       ENV["STATIC_START_PAGE_FINDING_EN"]
     when [false, true]
@@ -422,6 +428,11 @@ module Helpers
     else
       localised_url "/"
     end
+  end
+
+  def get_service_root_page_url
+    root_url = static_start_page_for_service is_finding_service: false
+    !root_url.nil? && !root_url.empty? ? root_url : localised_url("/")
   end
 
   # Use reCAPTCHA only if the appropriate environment variables are set
