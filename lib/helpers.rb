@@ -432,7 +432,7 @@ module Helpers
 
   def get_service_root_page_url
     root_url = static_start_page_for_service is_finding_service: false
-    !root_url.nil? && !root_url.empty? ? root_url : localised_url("/")
+    !root_url.nil? && !root_url.empty? ? root_url : localised_url("#{set_subdomain_url('getting-new-energy-certificate')}/")
   end
 
   # Use reCAPTCHA only if the appropriate environment variables are set
