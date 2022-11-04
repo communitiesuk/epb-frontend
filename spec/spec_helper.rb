@@ -14,6 +14,7 @@ require "active_support"
 require "active_support/cache"
 require "active_support/notifications"
 require "rack/attack"
+require "rake"
 
 AUTH_URL = "http://test-auth-server.gov.uk"
 
@@ -58,6 +59,13 @@ end
 
 def loader_enable_original(lib_name)
   TestLoader.override "#{__dir__}/../lib/#{lib_name}.rb"
+end
+
+def get_task(name)
+  rake = Rake::Application.new
+  Rake.application = rake
+  rake.load_rakefile
+  rake.tasks.find { |task| task.to_s == name }
 end
 
 loader_enable_override "helper/toggles"

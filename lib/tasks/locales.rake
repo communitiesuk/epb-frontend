@@ -1,6 +1,6 @@
 require "yaml"
 
-desc "Get missing strings in Welsh"
+desc "Get and flatten translation keys"
 
 def flatten_keys(hash, prefix = "")
   keys = []
@@ -15,15 +15,15 @@ def flatten_keys(hash, prefix = "")
   prefix == "" ? keys.flatten : keys
 end
 
+welsh = YAML.safe_load(File.open(File.expand_path("locales/cy.yml")))
+english = YAML.safe_load(File.open(File.expand_path("locales/en.yml")))
+
+welsh_keys = flatten_keys(welsh[welsh.keys.first])
+english_keys = flatten_keys(english[english.keys.first])
+
 desc "Identifies missing Welsh translations"
 
 task :identify_missing_welsh_translations do
-  welsh = YAML.safe_load(File.open(File.expand_path("locales/cy.yml")))
-  english = YAML.safe_load(File.open(File.expand_path("locales/en.yml")))
-
-  welsh_keys = flatten_keys(welsh[welsh.keys.first])
-  english_keys = flatten_keys(english[english.keys.first])
-
   missing = english_keys - welsh_keys
   if missing.any?
     puts "Missing from Welsh:"
@@ -31,6 +31,22 @@ task :identify_missing_welsh_translations do
       array = %w[en] + key.split(".")
 
       puts "#{key}: #{english.dig(*array)}"
+    end
+  else
+    puts "Nothing missing from #{file}."
+  end
+end
+
+desc "Identifies missing English translations"
+
+task :identify_missing_english_translations do
+  missing = welsh_keys - english_keys
+  if missing.any?
+    puts "Missing from English:"
+    missing.each do |key|
+      array = %w[cy] + key.split(".")
+
+      puts "#{key}: #{welsh.dig(*array)}"
     end
   else
     puts "Nothing missing from #{file}."
