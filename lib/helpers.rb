@@ -416,8 +416,6 @@ module Helpers
     end
   end
 
-  def service_start_page; end
-
   def root_page_url
     if static_start_page?
       static_start_page
