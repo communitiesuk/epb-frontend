@@ -1038,6 +1038,23 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       )
     end
 
+    it "shows recommendation description when different from the title" do
+      recommendation_title = Capybara.string(response.body).find("h3", text: "Step 2: Double glazed windows")
+      expect(recommendation_title.find("+p").text).to include("Replace single glazed windows with low-E double glazed windows")
+    end
+
+    it "doesn't show recommendation description when description is the same as the title" do
+      recommendation_title = Capybara.string(response.body).find("h3", text: "Step 4: Hot water cylinder thermostat")
+      # If the description was shown, it would just be "Hot water cylinder thermostat" again
+      expect { recommendation_title.find("+p") }.to raise_error Capybara::ElementNotFound
+    end
+
+    it "doesn't show recommendation description when description is a substring of the title" do
+      recommendation_title = Capybara.string(response.body).find("h3", text: "Step 5: Solar photovoltaic panels, 2.5 kWp")
+      # If the description was shown, it would just be "Solar photovoltaic panels" which adds no extra information to the title
+      expect { recommendation_title.find("+p") }.to raise_error Capybara::ElementNotFound
+    end
+
     it "shows recommendation description" do
       expect(response.body).to include(
         "Replace single glazed windows with low-E double glazed windows",

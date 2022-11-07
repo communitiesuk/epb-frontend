@@ -1,6 +1,8 @@
 <% header = recommendation_header(recommendation) %>
 <h3 class="govuk-heading-m"><%= t('domestic_epc.sections.recommendations.list.title')%> <%= index + 1 %>: <%= header.title %></h3>
-<p class="govuk-body"><%= header.description %></p>
+<% unless header.title.downcase.include? header.description.downcase %>
+<p class="govuk-body"><%=  header.description  %></p>
+<%  end %>
 
 <dl class="govuk-summary-list">
   <div class="govuk-summary-list__row">
