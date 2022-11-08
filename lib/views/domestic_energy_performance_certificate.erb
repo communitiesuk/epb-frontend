@@ -1,3 +1,11 @@
+<% should_display_green_deal = assessment.has_key?(:greenDealPlan) &&
+   !assessment[:greenDealPlan].empty? &&
+   (!request.referrer ||
+     (request.referrer &&
+      !@exclude_green_deal_referrer_paths.any? { |path| request.referrer.include?(path) }
+     )
+   )
+%>
 <script type="text/javascript" src="<%= assets_path('/javascript/certificate.js') %>" nonce="<%= script_nonce %>"></script>
 
 <div class="govuk-grid-row">
@@ -47,7 +55,7 @@
         {
           link: '#green_deal',
           text: 'domestic_epc.sidebar.sections.green_deal',
-          hidden: (true unless assessment.has_key?(:greenDealPlan) && !assessment[:greenDealPlan].empty?)
+          hidden: (true unless should_display_green_deal)
         },
         {
           link: '#other_certificates_and_reports',
@@ -309,7 +317,7 @@
       } %>
     </div>
 
-    <% if assessment.has_key?(:greenDealPlan) %>
+    <% if should_display_green_deal %>
       <% assessment[:greenDealPlan].each do |plan| %>
         <%== erb :domestic_energy_performance_certificate__green_deal_plan, locals: { assessment: assessment, green_deal_plan: plan } %>
       <% end %>

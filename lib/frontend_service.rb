@@ -45,6 +45,11 @@ class FrontendService < Sinatra::Base
   getting_new_energy_certificate_host_name = "getting-new-energy-certificate"
   find_energy_certificate_host_name = "find-energy-certificate"
 
+  exclude_green_deal_referrer_paths = %w[
+    /find-a-certificate/search-by-postcode
+    /find-a-certificate/search-by-street-name-and-town
+  ]
+
   get "/", host_name: /#{getting_new_energy_certificate_host_name}/ do
     redirect(static_start_page, 301) if static_start_page?
     @page_title =
@@ -924,6 +929,7 @@ class FrontendService < Sinatra::Base
                              use_print_view
     else
       @page_title = "#{t('domestic_epc.top_heading')}#{@page_title}"
+      @exclude_green_deal_referrer_paths = exclude_green_deal_referrer_paths
       show_with_print_option :domestic_energy_performance_certificate,
                              { assessment: assessment[:data] },
                              use_print_view
