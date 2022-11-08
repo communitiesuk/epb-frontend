@@ -42,15 +42,15 @@ class FrontendService < Sinatra::Base
     redirect(static_start_page, 303) if redirect_to_service_start_page?
   end
 
-  getting_new_energy_certificate_host_name = "getting-new-energy-certificate"
-  find_energy_certificate_host_name = "find-energy-certificate"
+  GETTING_NEW_ENERGY_CERTIFICATE_HOST_NAME = "getting-new-energy-certificate"
+  FIND_ENERGY_CERTIFICATE_HOST_NAME = "find-energy-certificate"
 
-  exclude_green_deal_referrer_paths = %w[
+  EXCLUDE_GREEN_DEAL_REFERRER_PATHS = %w[
     /find-a-certificate/search-by-postcode
     /find-a-certificate/search-by-street-name-and-town
-  ]
+  ].freeze
 
-  get "/", host_name: /#{getting_new_energy_certificate_host_name}/ do
+  get "/", host_name: /#{GETTING_NEW_ENERGY_CERTIFICATE_HOST_NAME}/ do
     redirect(static_start_page, 301) if static_start_page?
     @page_title =
       "#{t('find_an_assessor.top_heading')} – #{
@@ -62,7 +62,7 @@ class FrontendService < Sinatra::Base
     erb :find_assessor, layout: :layout
   end
 
-  get "/", host_name: /#{find_energy_certificate_host_name}/ do
+  get "/", host_name: /#{FIND_ENERGY_CERTIFICATE_HOST_NAME}/ do
     redirect(static_start_page, 301) if static_start_page?
     @page_title =
       "#{t('find_a_certificate.top_heading')} – #{
@@ -129,23 +129,23 @@ class FrontendService < Sinatra::Base
     end
 
   get "/find-an-assessor/type-of-property",
-      host_name: /#{getting_new_energy_certificate_host_name}/,
+      host_name: /#{GETTING_NEW_ENERGY_CERTIFICATE_HOST_NAME}/,
       &find_an_assessor_property_type
 
   post "/find-an-assessor/type-of-property",
-       host_name: /#{getting_new_energy_certificate_host_name}/,
+       host_name: /#{GETTING_NEW_ENERGY_CERTIFICATE_HOST_NAME}/,
        &find_an_assessor_property_type
 
   get "/find-an-assessor/type-of-domestic-property",
-      host_name: /#{getting_new_energy_certificate_host_name}/,
+      host_name: /#{GETTING_NEW_ENERGY_CERTIFICATE_HOST_NAME}/,
       &find_an_assessor_domestic_type
 
   post "/find-an-assessor/type-of-domestic-property",
-       host_name: /#{getting_new_energy_certificate_host_name}/,
+       host_name: /#{GETTING_NEW_ENERGY_CERTIFICATE_HOST_NAME}/,
        &find_an_assessor_domestic_type
 
   get "/find-a-non-domestic-certificate/search-by-postcode",
-      host_name: /#{find_energy_certificate_host_name}/ do
+      host_name: /#{FIND_ENERGY_CERTIFICATE_HOST_NAME}/ do
     @errors = {}
     locals = {}
 
@@ -227,7 +227,7 @@ class FrontendService < Sinatra::Base
   end
 
   get "/find-a-non-domestic-certificate/search-by-reference-number",
-      host_name: /#{find_energy_certificate_host_name}/ do
+      host_name: /#{FIND_ENERGY_CERTIFICATE_HOST_NAME}/ do
     @errors = {}
     locals = {}
     erb_template = :find_non_dom_certificate_by_reference_number
@@ -288,7 +288,7 @@ class FrontendService < Sinatra::Base
   end
 
   get "/find-an-assessor/search-by-postcode",
-      host_name: /#{getting_new_energy_certificate_host_name}/ do
+      host_name: /#{GETTING_NEW_ENERGY_CERTIFICATE_HOST_NAME}/ do
     @errors = {}
     locals = {}
     erb_template = :find_assessor_by_postcode
@@ -361,7 +361,7 @@ class FrontendService < Sinatra::Base
   end
 
   get "/find-an-assessor/search-by-name",
-      host_name: /#{getting_new_energy_certificate_host_name}/ do
+      host_name: /#{GETTING_NEW_ENERGY_CERTIFICATE_HOST_NAME}/ do
     @errors = {}
     locals = {}
 
@@ -407,7 +407,7 @@ class FrontendService < Sinatra::Base
   end
 
   get "/find-a-non-domestic-assessor/search-by-name",
-      host_name: /#{getting_new_energy_certificate_host_name}/ do
+      host_name: /#{GETTING_NEW_ENERGY_CERTIFICATE_HOST_NAME}/ do
     @errors = {}
     locals = {}
 
@@ -490,14 +490,14 @@ class FrontendService < Sinatra::Base
     end
 
   get "/find-a-certificate/type-of-property",
-      host_name: /#{find_energy_certificate_host_name}/,
+      host_name: /#{FIND_ENERGY_CERTIFICATE_HOST_NAME}/,
       &find_a_certificate_property_type
   post "/find-a-certificate/type-of-property",
-       host_name: /#{find_energy_certificate_host_name}/,
+       host_name: /#{FIND_ENERGY_CERTIFICATE_HOST_NAME}/,
        &find_a_certificate_property_type
 
   get "/find-a-certificate/search-by-postcode",
-      host_name: /#{find_energy_certificate_host_name}/ do
+      host_name: /#{FIND_ENERGY_CERTIFICATE_HOST_NAME}/ do
     @errors = {}
     locals = {}
     erb_template = :find_certificate_by_postcode
@@ -574,7 +574,7 @@ class FrontendService < Sinatra::Base
   end
 
   get "/find-a-non-domestic-assessor/search-by-postcode",
-      host_name: /#{getting_new_energy_certificate_host_name}/ do
+      host_name: /#{GETTING_NEW_ENERGY_CERTIFICATE_HOST_NAME}/ do
     @errors = {}
     locals = {}
     erb_template = :find_non_domestic_assessor_by_postcode
@@ -645,7 +645,7 @@ class FrontendService < Sinatra::Base
   end
 
   get "/find-a-non-domestic-certificate/search-by-street-name-and-town",
-      host_name: /#{find_energy_certificate_host_name}/ do
+      host_name: /#{FIND_ENERGY_CERTIFICATE_HOST_NAME}/ do
     @errors = {}
     locals = {}
     erb_template = :find_non_dom_certificate_by_street_name_and_town
@@ -720,7 +720,7 @@ class FrontendService < Sinatra::Base
               "find_non_dom_certificate_by_street_name_and_town.no_such_address.cta",
             url:
               localised_url(
-                set_subdomain_url(getting_new_energy_certificate_host_name),
+                set_subdomain_url(GETTING_NEW_ENERGY_CERTIFICATE_HOST_NAME),
               ),
           }
         else
@@ -733,7 +733,7 @@ class FrontendService < Sinatra::Base
   end
 
   get "/find-a-certificate/search-by-reference-number",
-      host_name: /#{find_energy_certificate_host_name}/ do
+      host_name: /#{FIND_ENERGY_CERTIFICATE_HOST_NAME}/ do
     @errors = {}
     locals = {}
     erb_template = :find_certificate_by_reference_number
@@ -782,7 +782,7 @@ class FrontendService < Sinatra::Base
   end
 
   get "/find-a-certificate/search-by-street-name-and-town",
-      host_name: /#{find_energy_certificate_host_name}/ do
+      host_name: /#{FIND_ENERGY_CERTIFICATE_HOST_NAME}/ do
     @errors = {}
     locals = {}
     raise Error::UriTooLong if status.to_s == "414"
@@ -867,7 +867,7 @@ class FrontendService < Sinatra::Base
             cta: "find_certificate_by_street_name_and_town.no_such_address.cta",
             url:
               localised_url(
-                set_subdomain_url(getting_new_energy_certificate_host_name),
+                set_subdomain_url(GETTING_NEW_ENERGY_CERTIFICATE_HOST_NAME),
               ),
           }
 
@@ -929,7 +929,7 @@ class FrontendService < Sinatra::Base
                              use_print_view
     else
       @page_title = "#{t('domestic_epc.top_heading')}#{@page_title}"
-      @exclude_green_deal_referrer_paths = exclude_green_deal_referrer_paths
+      @exclude_green_deal_referrer_paths = EXCLUDE_GREEN_DEAL_REFERRER_PATHS
       show_with_print_option :domestic_energy_performance_certificate,
                              { assessment: assessment[:data] },
                              use_print_view
