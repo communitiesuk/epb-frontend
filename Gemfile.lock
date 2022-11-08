@@ -138,7 +138,7 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
-    sentry-ruby (5.5.0)
+    sentry-ruby (5.6.0)
       concurrent-ruby (~> 1.0, >= 1.0.2)
     sinatra (3.0.2)
       mustermann (~> 3.0)
@@ -196,7 +196,7 @@ DEPENDENCIES
   rubocop-rspec (~> 2.12)
   sassc (~> 2.4)
   selenium-webdriver (~> 4.6.1)
-  sentry-ruby (~> 5.5)
+  sentry-ruby (~> 5.6)
   sinatra (~> 3.0)
   sinatra-contrib
   unleash (~> 4.4.0)
