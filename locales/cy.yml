@@ -662,6 +662,18 @@ cy:
         message: "Mae'r adroddiad hwn wedi dod i ben."
         link_prelude: "Gallwch chi"
         link_text: "gael tystysgrif ac adroddiad newydd"
+    expired_print_version:
+      certificate_title: "Mae'r dystysgrif hon wedi dod i ben."
+      report_title: "Mae'r adroddiad hwn wedi dod i ben."
+      certificate_link_text: 'Gallwch gael tystysgrif newydd drwy fynd i www.gov.uk/cael-tystysgrif-ynni-newydd'
+      certificate_get_help_text: 'Cael help gyda thystysgrifau ar gyfer yr eiddo hwn  '
+      certificate_contact_text: "Os oes arnoch angen help i gael tystysgrif newydd neu os ydych chi’n gwybod am dystysgrifau eraill ar gyfer yr eiddo hwn sydd heb eu rhestru yma, cysylltwch â'r Adran Codi'r Gwastad, Tai a Chymunedau (DLUHC)."
+      report_link_text: 'Gallwch gael tystysgrif ac adroddiad newydd drwy fynd i www.gov.uk/cael-tystysgrif-ynni-newydd'
+      report_get_help_text: 'Cael help gydag adroddiadau ar gyfer yr eiddo hwn  '
+      report_contact_text: "Os oes arnoch angen help i gael adroddiad newydd neu os ydych chi’n gwybod am adroddiadau eraill ar gyfer yr eiddo hwn sydd heb eu rhestru yma, cysylltwch â'r Adran Codi'r Gwastad, Tai a Chymunedau (DLUHC)."
+      email: 'dluhc.digital-services@levellingup.gov.uk'
+      telephone: 'Ffôn: '
+      telephone_number: '020 3829 0748'
 
   unit:
     kilogram: "kg"

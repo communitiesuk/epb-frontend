@@ -662,6 +662,18 @@ en:
         message: "This report has expired."
         link_prelude: "You can"
         link_text: "get a new certificate and report"
+    expired_print_version:
+      certificate_title: 'This certificate has expired.'
+      report_title: 'This report has expired.'
+      certificate_link_text: 'You can get a new certificate by visiting www.gov.uk/get-new-energy-certificate'
+      certificate_get_help_text: 'Get help with certificates for this property'
+      certificate_contact_text: 'If you need help getting a new certificate or if you know of other certificates for this property that are not listed here, contact the Department for Levelling Up, Housing and Communities (DLUHC).'
+      report_link_text: 'You can get a new certificate and report by visiting www.gov.uk/get-new-energy-certificate'
+      report_get_help_text: 'Get help with reports for this property'
+      report_contact_text: 'If you need help getting a new report or if you know of other reports for this property that are not listed here, contact the Department for Levelling Up, Housing and Communities (DLUHC).'
+      email: 'dluhc.digital-services@levellingup.gov.uk'
+      telephone: 'Telephone: '
+      telephone_number: '020 3829 0748'
 
 
   unit:
