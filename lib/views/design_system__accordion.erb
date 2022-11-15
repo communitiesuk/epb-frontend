@@ -1,9 +1,27 @@
 <%# port of nunjucks macro to ERB for the gov.uk design system accordion component, @see https://design-system.service.gov.uk/components/accordion/ %>
 <%# NB. there is an additional supported parameter defined here: a heading on an item can have a `prefix` %>
 <div class="<%= ['govuk-accordion', defined?(classes) ? h(classes) : nil].compact.join(' ') %>" data-module="govuk-accordion" id="<%= h(id) %>"
+<% if defined?(hideAllSectionsText) %>
+  data-i18n.hide-all-sections="<%= h(hideAllSectionsText) %>"
+<% end -%>
+<% if defined?(hideSectionText) %>
+  data-i18n.hide-section="<%= h(hideSectionText) %>"
+<% end -%>
+<% if defined?(hideSectionAriaLabelText) %>
+  data-i18n.hide-section-aria-label="<%= h(hideSectionAriaLabelText) %>"
+<% end -%>
+<% if defined?(showAllSectionsText) %>
+  data-i18n.show-all-sections="<%= h(showAllSectionsText) %>"
+<% end -%>
+<% if defined?(showSectionText) %>
+  data-i18n.show-section="<%= h(showSectionText) %>"
+<% end -%>
+<% if defined?(showSectionAriaLabelText) %>
+  data-i18n.show-section-aria-label="<%= h(showSectionAriaLabelText) %>"
+<% end -%>
 <% if defined?(attributes) %>
   <%== attributes.map { |attr, val| '%s="%s"' % [attr, h(val)] }.join(' ') %>
-<% end %>
+<% end -%>
 >
 <% items.each_with_index do |item, index| %><% if item && item.to_s.length > 1 %>
     <div class="<%= ['govuk-accordion__section', item[:expanded] ? 'govuk-accordion__section--expanded' : nil].compact.join(' ') %>">

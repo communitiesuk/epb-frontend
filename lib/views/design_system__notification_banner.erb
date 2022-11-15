@@ -20,7 +20,7 @@
 <div class="govuk-notification-banner<% if typeClass %> <%= typeClass %><% end %><% if defined?(classes) && classes %> <%= classes %><% end %>" role="<%= resolved_role %>"
      aria-labelledby="<%= (defined?(titleId) && titleId) ? titleId : 'govuk-notification-banner-title' %>"
      data-module="govuk-notification-banner"
-     <%- if defined?(disableAutoFocus) && disableAutoFocus %> data-disable-auto-focus="true"<% end -%>
+     <%- if defined?(disableAutoFocus) %> data-disable-auto-focus="<%= disableAutoFocus ? 'true' : 'false' %>"<% end -%>
      <%- unless !defined?(attributes) || attributes.nil? || attributes.empty? %> <%== attributes.map { |attr, val| '%s="%s"' % [attr, CGI.escape_html(val.to_s)] }.join(' ') %><% end %>>
     <div class="govuk-notification-banner__header">
       <h<%= headingLevel %> id="<%= (defined?(titleId) && titleId) ? titleId : 'govuk-notification-banner-title' %>" class="govuk-notification-banner__title">
