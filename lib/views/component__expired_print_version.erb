@@ -4,7 +4,7 @@
       <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
       <strong class="govuk-warning-text__text">
         <span class="govuk-warning-text__assistive"><%= t("component.expired_warning.title") %></span>
-          <%= t("component.expired_print_version.#{defined?(type) ? type : 'certificate'}_title") %>
+        <p class="govuk-body"> <%= t("component.expired_print_version.#{defined?(type) ? type : 'certificate'}_title") %></p>
         <p class="govuk-body govuk-!-margin-top-6"><%= t("component.expired_print_version.#{defined?(type) ? type : 'certificate'}_link_text") %></p>
         <p class="govuk-body govuk-!-font-weight-bold"><%= t("component.expired_print_version.#{defined?(type) ? type : 'certificate'}_get_help_text") %></p>
         <p class="govuk-body"><%= t("component.expired_print_version.#{defined?(type) ? type : 'certificate'}_contact_text") %></p>

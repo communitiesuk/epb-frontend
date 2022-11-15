@@ -9,6 +9,13 @@ describe "Helpers.root_page_url", type: :helper do
     end
   end
 
+  after do
+    def frontend_service_helpers.params
+      { "lang" => "en" }
+    end
+    frontend_service_helpers.set_locale
+  end
+
   context "when a static start page is not configured" do
     it "resolves the root page url as '/'" do
       expect(frontend_service_helpers.root_page_url).to eq "/"
