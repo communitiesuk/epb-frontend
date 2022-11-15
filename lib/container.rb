@@ -7,7 +7,8 @@ class Container
                            ENV["EPB_AUTH_CLIENT_SECRET"],
                            ENV["EPB_AUTH_SERVER"],
                            ENV["EPB_API_URL"],
-                           OAuth2::Client
+                           OAuth2::Client,
+                           faraday_connection_opts: { request: { timeout: 8 } }
 
     assessors_gateway = Gateway::AssessorsGateway.new(internal_api_client)
     certificates_gateway = Gateway::CertificatesGateway.new(internal_api_client)

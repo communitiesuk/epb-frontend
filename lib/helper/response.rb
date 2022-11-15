@@ -3,7 +3,15 @@ module Helper
     def self.ensure_good(&block)
       begin
         response = yield block
-      rescue Auth::Errors::NetworkConnectionFailed, Faraday::TimeoutError
+      rescue Faraday::TimeoutError => e
+        # raise a timeout error straight away
+        raise Errors::RequestTimeoutError,
+              sprintf(
+                "API request timed out. Message from %s: \"%s\"",
+                e.class,
+                e.message,
+              )
+      rescue Auth::Errors::NetworkConnectionFailed
         # try once again on a possibly transient network error
         begin
           response = yield block

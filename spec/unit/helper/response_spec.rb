@@ -60,7 +60,7 @@ describe Helper::Response, type: :helper do
       expect(described_class.ensure_good(&make_request)).to eq good_response
     end
 
-    it "retries a request if it throws a Faraday::TimeoutError on first try" do
+    it "does not retry a request if it throws a Faraday::TimeoutError on first try" do
       try_count = 0
       good_response = OpenStruct.new(status: 200, body: { data: [] }.to_json)
       make_request =
@@ -73,7 +73,7 @@ describe Helper::Response, type: :helper do
             good_response
           end
         end
-      expect(described_class.ensure_good(&make_request)).to eq good_response
+      expect { described_class.ensure_good(&make_request) }.to raise_error Errors::RequestTimeoutError
     end
 
     it "raises a connection error if raised on retry" do
@@ -82,6 +82,14 @@ describe Helper::Response, type: :helper do
           raise Auth::Errors::NetworkConnectionFailed
         end
       }.to raise_error Errors::ConnectionApiError
+    end
+
+    it "raises a timeout error if timeout received from Faraday" do
+      expect {
+        described_class.ensure_good do
+          raise Faraday::TimeoutError
+        end
+      }.to raise_error Errors::RequestTimeoutError
     end
 
     it "raises a response not present error if block does not return something response-ish" do

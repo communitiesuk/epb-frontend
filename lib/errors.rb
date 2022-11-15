@@ -64,6 +64,9 @@ module Errors
   class ConnectionApiError < ApiError
   end
 
+  class RequestTimeoutError < ConnectionApiError
+  end
+
   class ResponseNotPresentError < ApiError
   end
 
