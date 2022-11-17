@@ -527,13 +527,5 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
         expect(response.body).not_to have_css(".govuk-warning-text", text: "This certificate has expired")
       end
     end
-
-    context "when showing the print view" do
-      let(:print_response) { get "/energy-certificate/1234-5678-1234-5678-1234?print=true" }
-
-      it "does not show warning text for expiry" do
-        expect(print_response.body).not_to have_css(".govuk-warning-text", text: "This certificate has expired")
-      end
-    end
   end
 end

@@ -17,7 +17,7 @@ describe "expired_print_version_component", type: :view do
   it "does not display report text for certificates" do
     expect(
       expired_print_version("certificate").find(".govuk-warning-text__text").text,
-      ).to_not include "report"
+    ).not_to include "report"
   end
 
   it "displays report text for reports" do
@@ -25,7 +25,6 @@ describe "expired_print_version_component", type: :view do
       expired_print_version("report").find(".govuk-warning-text__text").first(".govuk-body").text,
     ).to eq " This report has expired."
   end
-
 
   def render(type)
     Erubis::EscapedEruby
