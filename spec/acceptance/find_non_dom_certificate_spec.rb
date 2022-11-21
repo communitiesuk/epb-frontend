@@ -888,6 +888,28 @@ describe "Acceptance::NonDomesticCertificate" do
             )
           end
         end
+
+        context "when the search on the API times out" do
+          before do
+            FindCertificate::TimeoutStub.search_by_street_name_and_town(
+              "Doesnt Matter",
+              "Nothing",
+              assessment_types: %w[AC-CERT AC-REPORT CEPC CEPC-RR DEC DEC-RR],
+            )
+          end
+
+          let(:response) do
+            get "http://find-energy-certificate.local.gov.uk/find-a-non-domestic-certificate/search-by-street-name-and-town?street_name=Doesnt%20Matter&town=Nothing"
+          end
+
+          it "returns status 504 (gateway timeout)" do
+            expect(response.status).to eq(504)
+          end
+
+          it "displays the search area too big page heading" do
+            expect(response.body).to include("Sorry, this area is too big to search")
+          end
+        end
       end
     end
   end

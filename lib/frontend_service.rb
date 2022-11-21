@@ -723,6 +723,10 @@ class FrontendService < Sinatra::Base
                 set_subdomain_url(GETTING_NEW_ENERGY_CERTIFICATE_HOST_NAME),
               ),
           }
+        when Errors::RequestTimeoutError
+          status 504
+          erb_template = :search_by_street_name_and_town__timeout
+          locals[:search_by_postcode_url] = "/find-a-non-domestic-certificate/search-by-postcode"
         else
           return server_error(e)
         end
@@ -870,7 +874,10 @@ class FrontendService < Sinatra::Base
                 set_subdomain_url(GETTING_NEW_ENERGY_CERTIFICATE_HOST_NAME),
               ),
           }
-
+        when Errors::RequestTimeoutError
+          status 504
+          erb_template = :search_by_street_name_and_town__timeout
+          locals[:search_by_postcode_url] = "/find-a-certificate/search-by-postcode"
         else
           return server_error(e)
         end

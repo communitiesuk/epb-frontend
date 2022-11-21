@@ -463,6 +463,19 @@ cy:
       expiry: "Dilys tan"
     no_certificates: "Does dim tystysgrifau’n cyfateb i’r cyfeiriad hwnnw"
 
+  find_by_street_name_and_town_results_timeout:
+    heading: 'Ymddiheuriadau, mae’r ardal hon yn rhy fawr i’w chwilio'
+    alternate_search_cta: 'Chwiliwch yn ôl y cod post'
+    royal_mail_link:
+      lead_in: 'Gallwch'
+      cta: 'ddod o hyd i god post ar chwiliwr cod post y Post Brenhinol'
+    further_help: 'Os oes arnoch angen help i ddod o hyd i dystysgrif neu adroddiad ynni, cysylltwch â’r Adran Codi’r Gwastad, Tai a Chymunedau (DLUHC).'
+    contact:
+      telephone_line: 'Ffôn: 020 3829 0748'
+      opening_hours_line: 'Dydd Llun i ddydd Gwener, 9am i 5pm'
+      find_out_about_call_charges: 'Gwybodaeth am daliadau am alwadau'
+      call_charges_url: 'https://www.gov.uk/costau-galwadau'
+
   find_non_dom_certificate_by_postcode:
     top_heading: "Beth yw'r cod post?"
     question: "Rhowch god post"

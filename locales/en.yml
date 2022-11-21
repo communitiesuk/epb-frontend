@@ -463,6 +463,19 @@ en:
       expiry: 'Valid until'
     no_certificates: 'There are no certificates matching that address.'
 
+  find_by_street_name_and_town_results_timeout:
+    heading: 'Sorry, this area is too big to search'
+    alternate_search_cta: 'Search by postcode instead'
+    royal_mail_link:
+      lead_in: 'You can'
+      cta: 'get the postcode from Royal Mail’s postcode finder'
+    further_help: 'If you need help finding an energy certificate or report, contact the Department for Levelling Up, Housing and Communities (DLUHC).'
+    contact:
+      telephone_line: 'Telephone: 020 3829 0748'
+      opening_hours_line: 'Monday to Friday, 9am to 5pm'
+      find_out_about_call_charges: 'Find out more about call charges'
+      call_charges_url: 'https://www.gov.uk/call-charges'
+
   find_non_dom_certificate_by_postcode:
     top_heading: 'What is the postcode?'
     question: 'Enter the postcode'
