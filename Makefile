@@ -91,7 +91,7 @@ run:
 
 .PHONY: format
 format:
-	@bundle exec rubocop --autocorrect || true
+	@bundle exec rubocop --autocorrect || true && npm run fmt || true
 
 .PHONY: journey
 journey:

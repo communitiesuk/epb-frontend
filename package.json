@@ -34,7 +34,8 @@
     "parser": "@babel/eslint-parser",
     "globals": [
       "location",
-      "MutationObserver"
+      "MutationObserver",
+      "MouseEvent"
     ]
   }
 }
