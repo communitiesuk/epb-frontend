@@ -8,7 +8,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificatePrintView", type: :
         expiry_date: "2010-01-05",
         energy_efficiency_band: "b",
         superseded_by: nil,
-        )
+      )
     end
 
     let(:print_response) { get "/energy-certificate/1234-5678-1234-5678-1234?print=true" }
