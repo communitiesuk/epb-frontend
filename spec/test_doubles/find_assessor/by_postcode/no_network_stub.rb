@@ -5,7 +5,7 @@ module FindAssessor
     class NoNetworkStub
       def self.search_by_postcode(
         postcode,
-        qualification_type = "domesticSap,domesticRdSap"
+        qualification_type: "domesticSap,domesticRdSap"
       )
         WebMock
           .stub_request(

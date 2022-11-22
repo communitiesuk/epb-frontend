@@ -24,7 +24,7 @@ describe "Acceptance::EnergyPerformanceCertificate", type: :feature do
 
   context "when an energy certificate does not exist" do
     before do
-      FetchAssessmentSummary::NoAssessmentStub.fetch(assessment_id: "1234-5678-1234-5678-1234")
+      FetchAssessmentSummary::NoAssessmentStub.fetch("1234-5678-1234-5678-1234")
     end
 
     it "has no cache control header set" do

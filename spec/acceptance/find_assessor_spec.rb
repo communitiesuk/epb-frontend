@@ -508,7 +508,7 @@ describe "Acceptance::Assessor", type: :feature do
 
       context "when there is no connection" do
         before do
-          FindAssessor::ByPostcode::NoNetworkStub.search_by_postcode("D11 4FF", "domesticRdSap,domesticSap")
+          FindAssessor::ByPostcode::NoNetworkStub.search_by_postcode("D11 4FF", qualification_type: "domesticRdSap,domesticSap")
         end
 
         let(:response) do
@@ -777,7 +777,7 @@ describe "Acceptance::Assessor", type: :feature do
 
       context "when there is no connection" do
         before do
-          FindAssessor::ByName::NoNetworkStub.search_by_name("Breaking Person")
+          FindAssessor::ByName::NoNetworkStub.search_by_name("Breaking Person", qualification_type: "domestic")
         end
 
         let(:response) do

@@ -178,6 +178,8 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
   end
 
   context "when there is no information about the related CEPC" do
+    let(:response) { get "/energy-certificate/1234-5678-1234-5678-9999" }
+
     before do
       FetchAssessmentSummary::AssessmentStub.fetch_cepc_rr(
         assessment_id: "1234-5678-1234-5678-9999",

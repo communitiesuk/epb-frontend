@@ -3,7 +3,7 @@
 module FindAssessor
   module ByName
     class NoNetworkStub
-      def self.search_by_name(name, qualification_type = "")
+      def self.search_by_name(name, qualification_type: "")
         WebMock
           .stub_request(
             :get,

@@ -340,7 +340,7 @@ describe "Acceptance::Certificate" do
       end
 
       context "when there is no connection" do
-        before { FindCertificate::NoNetworkStub.search_by_postcode("D11 4FF") }
+        before { FindCertificate::NoNetworkStub.search_by_postcode("D11 4FF", assessment_types: %w[RdSAP SAP]) }
 
         let(:response) do
           get "http://find-energy-certificate.local.gov.uk/find-a-certificate/search-by-postcode?postcode=D11+4FF"
@@ -1013,6 +1013,7 @@ describe "Acceptance::Certificate" do
           FindCertificate::NoNetworkStub.search_by_street_name_and_town(
             "Doesnt Matter",
             "Nothing",
+            assessment_types: %w[RdSAP SAP],
           )
         end
 

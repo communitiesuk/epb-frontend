@@ -506,7 +506,7 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
         before do
           FindAssessor::ByPostcode::NoNetworkStub.search_by_postcode(
             "D11 4FF",
-            "nonDomesticSp3,nonDomesticCc4",
+            qualification_type: "nonDomesticSp3,nonDomesticCc4,nonDomesticDec,nonDomesticNos3,nonDomesticNos4,nonDomesticNos5",
           )
         end
 
@@ -784,7 +784,7 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
 
       context "when there is no connection" do
         before do
-          FindAssessor::ByName::NoNetworkStub.search_by_name("Breaking Person")
+          FindAssessor::ByName::NoNetworkStub.search_by_name("Breaking Person", qualification_type: "nonDomestic")
         end
 
         let(:response) do

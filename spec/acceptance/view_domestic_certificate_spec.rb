@@ -1157,7 +1157,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
   context "when the assessment exists with no recommendations" do
     before do
       FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
-        assessment_id: "122-456",
+        assessment_id: "789-012",
         recommended_improvements: false,
       )
     end
@@ -1166,7 +1166,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
 
     it "shows there aren’t any recommendations for this property text" do
       expect(response.body).to include(
-        "There aren’t any recommendations for this property.",
+        "The assessor did not make any recommendations for this property.",
       )
     end
   end
