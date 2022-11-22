@@ -990,7 +990,8 @@ module FetchAssessmentSummary
       asset_rating: "1",
       schema_version: 8.0,
       postcode: "A0 0AA",
-      opt_out: false
+      opt_out: false,
+      superseded_by: "0000-0000-0000-0000-0001"
     )
       body = {
         data: {
@@ -1069,6 +1070,7 @@ module FetchAssessmentSummary
             },
           },
           relatedAssessments: related_assessments,
+          supersededBy: superseded_by,
         },
       }
       WebMock

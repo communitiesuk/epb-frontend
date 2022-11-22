@@ -398,4 +398,33 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
                                          href: "/energy-certificate/0000-0000-0000-0000-1111/dec_summary"
     end
   end
+
+  context "when a dec certificate has expired" do
+    before do
+      FetchAssessmentSummary::AssessmentStub.fetch_dec(
+        assessment_id: "0000-0000-0000-0000-1111",
+        date_of_expiry: "2012-02-21",
+        superseded_by: nil,
+      )
+    end
+
+    let(:response) { get "/energy-certificate/0000-0000-0000-0000-1111" }
+
+    it "shows the expired on message in the epc blue box" do
+      expect(response.body).to have_css(".epc-extra-box label", text: "This certificate expired on")
+    end
+
+    it "shows the expired date in the epc blue box" do
+      expect(response.body).to have_css(".epc-extra-box b", text: "21 February 2012")
+    end
+
+    it "shows an expired warning message" do
+      expect(response.body).to have_css(".govuk-warning-text", text: "This certificate has expired.")
+    end
+
+    it "shows a link to get the get service within the warning message" do
+      expect(response.body).to have_css(".govuk-warning-text a")
+      expect(response.body).to have_link("get a new certificate", href: "http://getting-new-energy-certificate.local.gov.uk:9393/")
+    end
+  end
 end
