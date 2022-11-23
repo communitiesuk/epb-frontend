@@ -59,6 +59,11 @@
       print_view: print_view,
     } %>
 
+    <%== erb :component__epc_superseded, locals: {
+      assessment: assessment,
+      print_view: print_view,
+    } %>
+
     <%== erb :component__epc_summary, locals: {
       energy_efficiency_band: assessment[:currentAssessment][:energyEfficiencyBand],
       occupier: assessment[:technicalInformation][:occupier],
