@@ -439,7 +439,7 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
 
     let(:response) { get "/energy-certificate/0000-0000-0000-0000-1111" }
 
-    it "shows an expired warning message" do
+    it "shows an superseded warning message" do
       expect(response.body).to have_css(".govuk-warning-text", text: "A new certificate has replaced this one.")
     end
 
