@@ -1126,7 +1126,8 @@ module FetchAssessmentSummary
       ],
       postcode: "A0 0AA",
       opt_out: false,
-      related_rrn: "0000-0000-0000-0000-1111"
+      related_rrn: "0000-0000-0000-0000-1111",
+      superseded_by: nil
     )
 
       body = {
@@ -1158,6 +1159,7 @@ module FetchAssessmentSummary
             },
           },
           relatedAssessments: related_assessments,
+          supersededBy: superseded_by,
           shortPaybackRecommendations: [
             {
               code: "1",

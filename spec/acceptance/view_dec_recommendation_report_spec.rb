@@ -275,6 +275,7 @@ describe "Acceptance::DecRecommendationReport", type: :feature do
       FetchAssessmentSummary::AssessmentStub.fetch_dec_rr(
         assessment_id: "0000-0000-0000-0000-1111",
         date_of_expiry: "2012-02-21",
+        superseded_by: nil,
       )
     end
 
@@ -295,6 +296,27 @@ describe "Acceptance::DecRecommendationReport", type: :feature do
     it "shows a link to get the get service within the warning message" do
       expect(response.body).to have_css(".govuk-warning-text a")
       expect(response.body).to have_link("get a new certificate and report", href: "http://getting-new-energy-certificate.local.gov.uk:9393/")
+    end
+  end
+
+  context "when a dec certificate has been superseded" do
+    before do
+      FetchAssessmentSummary::AssessmentStub.fetch_dec_rr(
+        assessment_id: "0000-0000-0000-0000-1111",
+        date_of_expiry: "2012-02-21",
+        superseded_by: "0000-0111-1222-2333-3444",
+      )
+    end
+
+    let(:response) { get "/energy-certificate/0000-0000-0000-0000-1111" }
+
+    it "shows an superseded warning message" do
+      expect(response.body).to have_css(".govuk-warning-text", text: "A new report has replaced this one.")
+    end
+
+    it "shows a link to get the get service within the warning message" do
+      expect(response.body).to have_css(".govuk-warning-text a")
+      expect(response.body).to have_link("See the new report", href: "/energy-certificate/0000-0111-1222-2333-3444")
     end
   end
 end
