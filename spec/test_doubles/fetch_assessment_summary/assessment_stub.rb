@@ -609,6 +609,7 @@ module FetchAssessmentSummary
       ],
       date_of_expiry: "2025-02-06",
       opt_out: false,
+      superseded_by: nil,
       postcode: "NE1 7AF"
     )
       body = {
@@ -627,6 +628,7 @@ module FetchAssessmentSummary
           },
           relatedPartyDisclosure: "1",
           relatedRrn: "0000-0000-0000-0003",
+          supersededBy: superseded_by,
           assessor: {
             name: "TEST NAME BOI",
             schemeAssessorId: "SPEC000000",
