@@ -50,6 +50,12 @@
       type: "report"
     } %>
 
+    <%== erb :component__expired_print_version, locals: {
+      type: 'report',
+      assessment: assessment,
+      print_view: print_view,
+    } %>
+
     <%== erb :component__epc_superseded, locals: {
       assessment: assessment,
       print_view: print_view,
