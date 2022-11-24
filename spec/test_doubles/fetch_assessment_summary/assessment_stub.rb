@@ -688,7 +688,8 @@ module FetchAssessmentSummary
       related_party_disclosure: "1",
       date_of_expiry: "2024-09-21",
       postcode: "SW1B 2BB",
-      opt_out: false
+      opt_out: false,
+      superseded_by: nil
     )
       body = {
         data: {
@@ -717,6 +718,7 @@ module FetchAssessmentSummary
           },
           relatedPartyDisclosure: related_party_disclosure,
           relatedRrn: "0000-0000-0000-0000-8888",
+          supersededBy: superseded_by,
           subsystems: [
             {
               number:
