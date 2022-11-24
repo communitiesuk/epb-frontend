@@ -471,6 +471,10 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
       expect(response.body).to have_css "label", text: "This report expired on"
       expect(response.body).to have_css "span", text: "24 March 2010"
     end
+
+    it "shows an expired warning message" do
+      expect(response.body).to have_css(".govuk-warning-text", text: "This report has expired.")
+    end
   end
 
   context "when an ac report is both NI and opted out" do
