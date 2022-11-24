@@ -907,7 +907,11 @@ describe "Acceptance::NonDomesticCertificate" do
           end
 
           it "displays the search area too big page heading" do
-            expect(response.body).to include("Sorry, this area is too big to search")
+            expect(response.body).to have_css("h1", text: "Sorry, this area is too big to search")
+          end
+
+          it "displays a link to the non domestic search by postcode" do
+            expect(response.body).to have_link("Search by postcode instead", href: "/find-a-non-domestic-certificate/search-by-postcode")
           end
         end
       end
