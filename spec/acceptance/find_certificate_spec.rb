@@ -1054,7 +1054,13 @@ describe "Acceptance::Certificate" do
         end
 
         it "displays the search area too big page heading" do
-          expect(response.body).to include("Sorry, this area is too big to search")
+          expect(response.body).to have_css("h1", text: "Sorry, this area is too big to search")
+        end
+
+        it "displays the search area too big page content", aggregate_failures: true do
+          expect(response.body).to have_link("Search by postcode instead", href: "/find-a-certificate/search-by-postcode")
+          expect(response.body).to have_link("get the postcode from Royal Mail’s postcode finder", href: "https://www.royalmail.com/find-a-postcode")
+          expect(response.body).to have_css("div.govuk-grid-column-two-thirds p.govuk-body", text: /If you need help finding an energy certificate or report/)
         end
       end
     end
