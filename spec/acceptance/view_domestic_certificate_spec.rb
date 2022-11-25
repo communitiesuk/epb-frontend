@@ -1388,4 +1388,16 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       end
     end
   end
+
+  context "when the API request for the certificate summary times out" do
+    before do
+      FetchAssessmentSummary::TimeoutAssessmentFetchStub.fetch(assessment_id: "0000-1111-2222-3333-4444")
+    end
+
+    let(:response) { get "/energy-certificate/0000-1111-2222-3333-4444" }
+
+    it "returns a 504 response" do
+      expect(response.status).to eq 504
+    end
+  end
 end

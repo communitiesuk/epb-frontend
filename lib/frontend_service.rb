@@ -1067,7 +1067,8 @@ class FrontendService < Sinatra::Base
   end
 
   def server_error(exception)
-    Sentry.capture_exception(exception) if defined?(Sentry)
+    was_timeout = exception.is_a?(Errors::RequestTimeoutError)
+    Sentry.capture_exception(exception) if defined?(Sentry) && !was_timeout
 
     message =
       exception.methods.include?(:message) ? exception.message : exception
@@ -1081,7 +1082,7 @@ class FrontendService < Sinatra::Base
     @logger.error JSON.generate(error)
     @page_title =
       "#{t('error.500.heading')} – #{t('layout.body.govuk')}"
-    status 500
+    status(was_timeout ? 504 : 500)
     erb :error_page_500
   end
 
