@@ -1,4 +1,4 @@
-describe "Acceptance::AirConditioningRecommendationReport", type: :feature do
+describe "Acceptance::PrintableAirConditioningRecommendationReport", type: :feature do
   include RSpecFrontendServiceMixin
 
   context "when the report is superseded" do
