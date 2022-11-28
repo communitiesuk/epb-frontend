@@ -1,0 +1,112 @@
+<% if (assessment[:dateOfExpiry] < Date.today && assessment[:supersededBy].nil?) && print_view%>
+
+<style>
+  .superseded {
+    margin-top: 25px;
+  }
+
+
+  .govuk-warning-text__icon {
+  margin-top: -5px;
+  }
+
+  .govuk-warning-text__assistive {
+    display: none;
+  }
+
+  .govuk-warning-text__text {
+    font-family: "GDS Transport",arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 700;
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.25;
+    color: #0b0c0c;
+    display: block;
+    padding-left: 45px;
+    font-size: 1.1875rem;
+    line-height: 1.3157894737;
+  }
+
+  .govuk-warning-text__icon {
+  font-family: "GDS Transport",arial,sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 700;
+  box-sizing: border-box;
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  min-width: 35px;
+  min-height: 35px;
+  margin-top: -7px;
+  border: 3px solid #0b0c0c;
+  border-radius: 50%;
+  color: #fff;
+  background: #0b0c0c;
+  font-size: 30px;
+  line-height: 29px;
+  text-align: center;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  forced-color-adjust: none;
+  }
+
+  .superseded p, .superseded.govuk-body, .superseded.govuk-body-m {
+    color: #0b0c0c;
+    font-family: "GDS Transport",arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.25;
+    margin-top: 0;
+    margin-bottom: 15px;
+  }
+
+  .superseded.govuk-body,  .superseded.govuk-body-m {
+    margin-bottom: 20px;
+    font-size: 1.1875rem;
+    line-height: 1.3157894737;
+    color: #0b0c0c;
+  }
+
+  .margin-top {
+    margin-top: 25px !important;
+  }
+
+  .font-weight-bold {
+    font-weight: 700 !important;
+  }
+</style>
+
+  <tr>
+    <td>
+      <table class="superseded">
+        <tbody>
+        <tr>
+          <td style="vertical-align: middle">
+            <div class="govuk-body epc-blue-bottom">
+              <div class="govuk-warning-text" >
+                <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                <strong class="govuk-warning-text__text">
+                  <span class="govuk-warning-text__assistive"><%= t("component.expired_warning.title") %></span>
+                   <%= t("component.expired_print_version.#{defined?(type) ? type : 'certificate'}_title") %>
+                  <p class="govuk-body margin-top"><%= t("component.expired_print_version.#{defined?(type) ? type : 'certificate'}_link_text") %></p>
+                  <p class="govuk-body font-weight-bold"><%= t("component.expired_print_version.#{defined?(type) ? type : 'certificate'}_get_help_text") %></p>
+                  <p class="govuk-body"><%= t("component.expired_print_version.#{defined?(type) ? type : 'certificate'}_contact_text") %></p>
+                  <p class="govuk-body"><%= t("component.expired_print_version.email") %> <br>
+                    <%= t("component.expired_print_version.telephone") %> <%= t("component.expired_print_version.telephone_number") %></p><br>
+                </strong>
+              </div>
+            </div>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </td>
+  </tr>
+<% end %>
