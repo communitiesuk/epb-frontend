@@ -171,7 +171,7 @@ describe "Acceptance::PrintableDisplayEnergyCertificate", type: :feature do
           assessment_id: "1234-5678-1234-5678-1234",
           date_of_expiry: "2020-01-01",
           superseded_by: nil,
-          )
+        )
       end
 
       let(:print_response) { get "/energy-certificate/1234-5678-1234-5678-1234?print=true" }

@@ -16,7 +16,7 @@ describe "ported design system components (in ERB) against govuk-frontend fixtur
 
   implemented_components =
     Dir["#{__dir__}/../../../lib/views/design_system__*.erb"].map do |file|
-      file.scan(/design_system__([\w\-]+)\.erb/).first.first
+      file.scan(/design_system__([\w-]+)\.erb/).first.first
     end
 
   fixtures =
