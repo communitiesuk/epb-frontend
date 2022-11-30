@@ -1,7 +1,7 @@
 <% if (assessment[:dateOfExpiry] < Date.today && assessment[:supersededBy].nil?) && print_view%>
 
 <style>
-  .superseded {
+  .certificate-print-warning {
     margin-top: 25px;
   }
 
@@ -54,7 +54,7 @@
   forced-color-adjust: none;
   }
 
-  .superseded p, .superseded.govuk-body, .superseded.govuk-body-m {
+  .certificate-print-warning p, .certificate-print-warning.govuk-body, .certificate-print-warning.govuk-body-m {
     color: #0b0c0c;
     font-family: "GDS Transport",arial,sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -67,7 +67,7 @@
     margin-bottom: 15px;
   }
 
-  .superseded.govuk-body,  .superseded.govuk-body-m {
+  .certificate-print-warning.govuk-body,  .certificate-print-warning.govuk-body-m {
     margin-bottom: 20px;
     font-size: 1.1875rem;
     line-height: 1.3157894737;
@@ -85,7 +85,7 @@
 
   <tr>
     <td>
-      <table class="superseded">
+      <table class="certificate-print-warning">
         <tbody>
         <tr>
           <td style="vertical-align: middle">
