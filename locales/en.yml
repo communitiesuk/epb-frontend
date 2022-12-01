@@ -535,6 +535,13 @@ en:
     intro_list_item_three: "user satisfaction"
     covering_statement: "This data covers England and Wales, and Northern Ireland."
     updated_statement: "Updated: monthly"
+    accordion_controls:
+      show_all_sections: "Show all sections"
+      show_section: "Show"
+      show_section_expanded: "Show this section"
+      hide_all_sections: "Hide all sections"
+      hide_section: "Hide"
+      hide_section_expanded: "Hide this section"
     contents:
       epcs_upload:
         title: "Energy certificates uploaded"

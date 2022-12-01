@@ -39,5 +39,14 @@
           })
         }},
   ] %>
-  <%== erb :design_system__accordion, locals: { items: sections, id: "accordion-#{assessment_type.downcase}" }  %>
+  <%== erb :design_system__accordion, locals: {
+    items: sections,
+    id: "accordion-#{assessment_type.downcase}",
+    hideAllSectionsText: t("service_performance.accordion_controls.hide_all_sections"),
+    hideSectionText: t("service_performance.accordion_controls.hide_section"),
+    hideSectionAriaLabelText: t("service_performance.accordion_controls.hide_section_expanded"),
+    showAllSectionsText: t("service_performance.accordion_controls.show_all_sections"),
+    showSectionText: t("service_performance.accordion_controls.show_section"),
+    showSectionAriaLabelText: t("service_performance.accordion_controls.show_section_expanded"),
+  } %>
 <% end %>

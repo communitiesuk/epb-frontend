@@ -6,22 +6,10 @@ window.addEventListener('load', function () {
 
 const texts = {
   en: {
-    showAllSections: 'Show all sections',
-    show: 'Show',
-    hideAllSections: 'Hide all sections',
-    hide: 'Hide',
-    relation: 'related to',
-    thisSectionForShow: ' this section',
-    thisSectionForHide: ' this section'
+    relation: 'related to'
   },
   cy: {
-    showAllSections: 'Dangos pob adran',
-    show: 'Dangos',
-    hideAllSections: 'Cuddio pob adran',
-    hide: 'Cuddio',
-    relation: 'sy’n ymwneud â',
-    thisSectionForShow: ' yr adran hon',
-    thisSectionForHide: '’r adran hon'
+    relation: 'sy’n ymwneud â'
   }
 }
 
@@ -31,7 +19,6 @@ function initButtons () {
 
   const openButtonObserver = new MutationObserver((mutationsList, observer) => {
     let shouldUpdateAllSectionLinks = false
-    let sectionButtonToUpdate
     const processedAccordions = new Set()
     for (const mutation of mutationsList) {
       const mutationAccordion = mutation.target.closest('.govuk-accordion')
@@ -41,9 +28,7 @@ function initButtons () {
       let shouldClearAccordion = true
       if (mutation.target.closest('.govuk-accordion__show-all')) {
         shouldUpdateAllSectionLinks = true
-      } else if (mutation.target.closest('.govuk-accordion__section-button')) {
-        sectionButtonToUpdate = mutation.target.closest('button')
-      } else {
+      } else if (!mutation.target.closest('.govuk-accordion__section-button')) {
         shouldClearAccordion = false
       }
       if (shouldClearAccordion) {
@@ -52,9 +37,6 @@ function initButtons () {
     }
     if (shouldUpdateAllSectionLinks) {
       processedAccordions.forEach(updateTextsForAccordion)
-    }
-    if (sectionButtonToUpdate) {
-      refreshSectionButtonText(sectionButtonToUpdate)
     }
     processedAccordions.forEach(clearUnprocessedClick)
   })
@@ -68,34 +50,21 @@ function updateAllSectionsText () {
 }
 
 function updateTextsForAccordion (accordion) {
-  Array.from(accordion.getElementsByClassName('govuk-accordion__section-button')).forEach(refreshSectionButtonText)
-  refreshSectionButtonText(accordion.getElementsByClassName('govuk-accordion__show-all')[0])
   Array.from(accordion.getElementsByClassName('govuk-accordion__show-all')).forEach(refreshAllSectionsButtonText)
 }
 
 function refreshAllSectionsButtonText (button) {
   const lang = currentLanguage()
-  const isExpanded = button.getAttribute('aria-expanded') === 'true'
   const sectionHeading = button.closest('div.govuk-accordion').previousElementSibling?.innerHTML
   const showAllTextSpan = button.querySelector('.govuk-accordion__show-all-text')
+
+  const oldInnerHtml = showAllTextSpan.innerHTML
 
   if (!showAllTextSpan) {
     return
   }
 
-  showAllTextSpan.innerHTML = `${isExpanded ? texts[lang].hideAllSections : texts[lang].showAllSections} <span class="govuk-visually-hidden">${texts[lang].relation} ${sectionHeading}</span>`
-}
-
-function refreshSectionButtonText (button) {
-  const lang = currentLanguage()
-  const isExpanded = button.getAttribute('aria-expanded') === 'true'
-  const showTextSpan = button.querySelector('.govuk-accordion__section-toggle-text')
-
-  if (!showTextSpan) {
-    return
-  }
-
-  showTextSpan.innerHTML = `${isExpanded ? texts[lang].hide : texts[lang].show} <span class="govuk-visually-hidden">${texts[lang][isExpanded ? 'thisSectionForHide' : 'thisSectionForShow']}</span>`
+  showAllTextSpan.innerHTML = `${oldInnerHtml} <span class="govuk-visually-hidden">${texts[lang].relation} ${sectionHeading}</span>`
 }
 
 function currentLanguage () {

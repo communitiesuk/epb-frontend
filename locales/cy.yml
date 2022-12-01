@@ -535,6 +535,13 @@ cy:
     intro_list_item_three: "boddhad defnyddwyr"
     covering_statement: "Mae'r data hwn yn cwmpasu Cymru a Lloegr, a Gogledd Iwerddon."
     updated_statement: "Yn cael ei ddiweddaru: yn fisol"
+    accordion_controls:
+      show_all_sections: "Dangos pob adran"
+      show_section: "Dangos"
+      show_section_expanded: "Dangos yr adran hon"
+      hide_all_sections: "Cuddio pob adran"
+      hide_section: "Cuddio"
+      hide_section_expanded: "Cuddio ’r adran hon"
     contents:
       epcs_upload:
         title: "Tystysgrifau ynni wedi'u huwchlwytho"

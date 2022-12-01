@@ -20,7 +20,7 @@ describe('when rendering service performance in Welsh', () => {
       '<div class="govuk-accordion" data-module="govuk-accordion" id="accordion-rdsap">' +
       '  <div class="govuk-accordion__controls">' +
       '    <button id="button_1" type="button" class="govuk-accordion__show-all" aria-expanded="false">' +
-      '      <span class="govuk-accordion-nav__chevron"></span><span class="govuk-accordion__show-all-text">Show all sections</span>' +
+      '      <span class="govuk-accordion-nav__chevron"></span><span class="govuk-accordion__show-all-text">Dangos pob adran</span>' +
       '    </button>' +
       '  </div>' +
       '  <div class="govuk-accordion__section">' +
@@ -35,7 +35,7 @@ describe('when rendering service performance in Welsh', () => {
       '            <span class="govuk-accordion__section-toggle-focus">' +
       '              <span class="govuk-accordion-nav__chevron govuk-accordion-nav__chevron--down"></span>' +
       '              <span class="govuk-accordion__section-toggle-text">' +
-      '                Show<span class="govuk-visually-hidden"> this section</span>' +
+      '                Dangos<span class="govuk-visually-hidden"> yr adran hon</span>' +
       '              </span>' +
       '            </span>' +
       '          </span>' +
@@ -55,7 +55,7 @@ describe('when rendering service performance in Welsh', () => {
       '<div class="govuk-accordion" data-module="govuk-accordion" id="accordion-sap">' +
       '  <div class="govuk-accordion__controls">' +
       '    <button id="button_2" type="button" class="govuk-accordion__show-all" aria-expanded="false">' +
-      '      <span class="govuk-accordion-nav__chevron"></span><span class="govuk-accordion__show-all-text">Show all sections</span>' +
+      '      <span class="govuk-accordion-nav__chevron"></span><span class="govuk-accordion__show-all-text">Dangos pob adran</span>' +
       '    </button>' +
       '  </div>' +
       '  <div class="govuk-accordion__section">' +
@@ -70,7 +70,7 @@ describe('when rendering service performance in Welsh', () => {
       '            <span class="govuk-accordion__section-toggle-focus">' +
       '              <span class="govuk-accordion-nav__chevron govuk-accordion-nav__chevron--down"></span>' +
       '              <span class="govuk-accordion__section-toggle-text">' +
-      '                Show<span class="govuk-visually-hidden"> this section</span>' +
+      '                Dangos<span class="govuk-visually-hidden"> yr adran hon</span>' +
       '              </span>' +
       '            </span>' +
       '          </span>' +
