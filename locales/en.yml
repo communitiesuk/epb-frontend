@@ -1459,11 +1459,9 @@ en:
       intro: 'If you typed the web address, check it is correct.'
       body: 'If you pasted the web address, check you copied the entire address.'
     410:
-      heading: 'Certificate not available'
-      intro: 'The certificate that you are looking for is no longer available.'
-      body: 'There may be more up-to-date certificates for this property. Use the '
-      service_link: 'Find an energy certificate'
-      body_continued: ' service to search for your property.'
+      heading: 'This certificate has been cancelled'
+      body: 'A new certificate may have replaced it. You can '
+      service_link: 'check if there is new certificate.'
     error_summary_header: "There is a problem"
 
   dec:

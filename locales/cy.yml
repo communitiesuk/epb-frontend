@@ -1458,11 +1458,9 @@ cy:
       intro: "Os gwnaethoch chi deipio’r cyfeiriad gwe, gwiriwch ei fod yn gywir."
       body: "Os gwnaethoch chi ludo’r cyfeiriad gwe, gwiriwch ei fod yn gywir."
     410:
-      heading: "Nid yw’r dystysgrif ar gael"
-      intro: "Nid yw'r dystysgrif rydych chi’n chwilio amdani ar gael mwyach."
-      body: "Efallai fod yna dystysgrifau mwy diweddar ar gyfer yr eiddo hwn. Defnyddiwch y gwasanaeth "
-      service_link: "Chwilio am dystysgrif ynni"
-      body_continued: " i chwilio am eich eiddo."
+      heading: "Mae’r dystysgrif hon wedi’i chanslo"
+      body: "Efallai ei bod wedi’i disodli gan dystysgrif newydd. Gallwch "
+      service_link: "wirio a oes tystysgrif newydd."
     error_summary_header: "Mae yna broblem"
 
   dec:
