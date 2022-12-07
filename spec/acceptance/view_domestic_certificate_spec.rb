@@ -1275,26 +1275,21 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
 
     it "shows the tag header that matches the page header" do
       expect(response.body).to include(
-        "<title>Certificate not available – GOV.UK</title>",
+        "<title>This certificate has been cancelled – GOV.UK</title>",
       )
     end
 
     it "shows the error header" do
       expect(response.body).to include(
-        '<h1 class="govuk-heading-xl">Certificate not available</h1>',
+        '<h1 class="govuk-heading-xl">This certificate has been cancelled</h1>',
       )
     end
 
     it "shows the error page text" do
       expect(response.body).to have_css "p",
                                         text:
-                                          "The certificate that you are looking for is no longer available."
-      expect(response.body).to have_css "p",
-                                        text:
-                                          "There may be more up-to-date certificates for this property. Use the "
-      expect(response.body).to have_css "a", text: "Find an energy certificate"
-      expect(response.body).to have_css "p",
-                                        text: " service to search for your property."
+                                          "A new certificate may have replaced it. You can "
+      expect(response.body).to have_css "a", text: "check if there is new certificate."
     end
   end
 
