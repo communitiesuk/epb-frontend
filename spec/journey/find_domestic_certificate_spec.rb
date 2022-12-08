@@ -56,8 +56,8 @@ describe "Journey::FindDomesticCertificate", type: :feature, journey: true do
       end
 
       it "shows a page that links to the find an energy certificate page", :aggregate_failures do
-        expect(page).to have_link "check if there is new certificate."
-        within("main") { click_link "check if there is new certificate." }
+        expect(page).to have_link "check if there is a new certificate."
+        within("main") { click_link "check if there is a new certificate." }
         expect(page).to have_content "Find an energy certificate"
       end
     end
