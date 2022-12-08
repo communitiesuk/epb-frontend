@@ -1461,7 +1461,7 @@ en:
     410:
       heading: 'This certificate has been cancelled'
       body: 'A new certificate may have replaced it. You can '
-      service_link: 'check if there is new certificate.'
+      service_link: 'check if there is a new certificate.'
     error_summary_header: "There is a problem"
 
   dec:
