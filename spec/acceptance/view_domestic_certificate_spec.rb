@@ -424,9 +424,6 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
         expect(response.body).to include(
           'You might be able to get a grant from the <a class="govuk-link" href="https://www.gov.uk/guidance/check-if-you-may-be-eligible-for-the-boiler-upgrade-scheme-from-april-2022">Boiler Upgrade Scheme</a>. This will help you buy a more efficient, low carbon heating system for this property.',
         )
-        expect(response.body).to include(
-          "Find energy grants and ways to save energy in your home",
-        )
       end
 
       it "shows the link" do

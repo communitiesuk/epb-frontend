@@ -991,8 +991,6 @@ en:
           bus_text: 'You might be able to get a grant from the %{link}. This will help you buy a more efficient, low carbon heating system for this property.'
           bus_link_text: 'Boiler Upgrade Scheme'
           bus_url: 'https://www.gov.uk/guidance/check-if-you-may-be-eligible-for-the-boiler-upgrade-scheme-from-april-2022'
-          grants_text: 'Find energy grants and ways to save energy in your home'
-          grants_link: 'https://www.gov.uk/improve-energy-efficiency'
       heat_demand:
         title: 'Estimated energy use and potential savings'
         estimated_cost: 'Estimated yearly energy cost for this property'
