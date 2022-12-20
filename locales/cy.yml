@@ -998,7 +998,7 @@ cy:
         based_on: "Mae’r arbedion posibl yn dangos faint o arian y gallech ei arbed pe baech chi’n %{link}."
         based_on_cta: "cwblhau pob cam yn ei drefn"
         based_on_url: "#recommendations"
-        more_advice_cta: "Chwiliwch am ffyrdd i arbed ynni gartref."
+        more_advice_cta: "Chwiliwch am ffyrdd i arbed ynni gartref"
         more_advice_url: "https://www.gov.uk/improve-energy-efficiency"
         heating_in_property: "Defnydd gwres yn yr eiddo hwn"
         energy_costs: "Gwresogi eiddo sydd fel arfer yn creu’r rhan fwyaf o’ch costau ynni."
