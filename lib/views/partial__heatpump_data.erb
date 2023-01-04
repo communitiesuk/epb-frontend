@@ -1,0 +1,35 @@
+<% unless values.nil? %>
+  <div id="heatpump_data" class="govuk-body">
+
+    <div class="govuk-body">
+    <%= t('service_performance.contents.heatpump_data.intro') %>
+    </div>
+
+
+    <table class="govuk-table" >
+      <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header govuk-table__header--numeric month-year"> <%= t('service_performance.contents.heatpump_data.table_headers')[0] %></th>
+        <th scope="col" class="govuk-table__header govuk-table__header--numeric number-of-epcs"><%= t('service_performance.contents.heatpump_data.table_headers')[1] %></th>
+      </tr>
+      </thead>
+
+      <tbody class="govuk-table__body">
+      <% values.each do |row| -%>
+        <tr class="govuk-table__row" >
+          <th class="govuk-table__cell month-year" ><%= row[:monthYear] %></th>
+          <td class="govuk-table__cell govuk-table__cell--numeric number-of-epcs"><%= row[:numEpcs] %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+<% else %>
+  <div class="govuk-warning-text">
+    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+    <strong class="govuk-warning-text__text">
+      <span class="govuk-warning-text__assistive">Warning</span>
+      Resources are being built, please check back later
+    </strong>
+  </div>
+<% end %>

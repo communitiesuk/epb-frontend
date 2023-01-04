@@ -37,6 +37,13 @@
             <%= t('service_performance.contents.user_satisfaction.title') %>
           </a>
         </li>
+        <% if Helper::Toggles.enabled?("frontend-interesting-numbers") %>
+          <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+            <a class="govuk-tabs__tab" href="#heatpump_data-tab">
+              <%= t('service_performance.contents.heatpump_data.title') %>
+            </a>
+          </li>
+        <% end %>
       </ul>
 
       <div id="epc-tab" class="govuk-tabs__panel">
@@ -59,6 +66,13 @@
         <h2 class="govuk-heading-l"> <%= t('service_performance.contents.user_satisfaction.title') %> </h2>
         <%== erb :partial__user_satisfaction, locals: {values: locals[:user_satisfaction] } %>
       </div>
+
+      <% if Helper::Toggles.enabled?("frontend-interesting-numbers")%>
+        <div id="heatpump_data-tab" class="govuk-tabs__panel govuk-tabs__panel--hidden">
+          <h2 class="govuk-heading-l"> <%= t('service_performance.contents.heatpump_data.title') %> </h2>
+          <%== erb :partial__heatpump_data, locals: {values: locals[:heatpump_data] } %>
+        </div>
+      <% end %>
 
     </div>
   </div>

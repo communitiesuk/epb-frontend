@@ -574,6 +574,12 @@ en:
           - Neutral
           - Dissatisfied
           - Very dissatisfied
+      heatpump_data:
+        title: 'Heatpump data'
+        intro: "Data about how many EPCs have heatpumps each month"
+        table_headers:
+          - Month
+          - Number of EPCs
   component:
     share:
       share_certificate: "Share this certificate"

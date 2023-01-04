@@ -8,6 +8,7 @@ describe "Acceptance::ServicePerformance", type: :feature do
 
     before do
       ServicePerformance::CountryStatsStub.statistics
+      Reporting::InterestingNumbersStub.fetch
     end
 
     it "has the correct title" do
@@ -98,6 +99,37 @@ describe "Acceptance::ServicePerformance", type: :feature do
       expect(response.body).to have_link("User satisfaction", href: "#user-satisfaction-tab")
     end
 
+    context "when the interesting number feature flag is enabled" do
+      before { Helper::Toggles.set_feature("frontend-interesting-numbers", true) }
+
+      it "has a tab has 3 headers" do
+        expect(response.body).to have_css("div.govuk-tabs li", count: 3)
+        expect(response.body).to have_link("Energy certificates uploaded", href: "#epc-tab")
+        expect(response.body).to have_link("User satisfaction", href: "#user-satisfaction-tab")
+        expect(response.body).to have_link("Heatpump data", href: "#heatpump_data-tab")
+      end
+
+      it "has the interesting-numbers tab as hidden" do
+        expect(response.body).to have_css("div.govuk-tabs div#heatpump_data-tab[class=\"govuk-tabs__panel govuk-tabs__panel--hidden\"]")
+      end
+
+      it "has the user satisfaction table inside the correct tab" do
+        expect(response.body).to have_css("div#heatpump_data-tab > div#heatpump_data > table")
+      end
+
+      it "has a heat pump data table with the correct headers" do
+        expect(response.body).to have_css("div#heatpump_data > table > thead > tr > th.month-year", text: "Month")
+        expect(response.body).to have_css("div#heatpump_data > table > thead > tr > th.number-of-epcs", text: "Number of EPCs")
+      end
+
+      it "the user table has all the relevant cells" do
+        Reporting::InterestingNumbersStub.body[:data][0][:data].each do |row|
+          expect(response.body).to have_css("div#heatpump_data > table tr>th.month-year", text: row[:monthYear])
+          expect(response.body).to have_css("div#heatpump_data > table tr>td.number-of-epcs", text: row[:numEpcs].to_s)
+        end
+      end
+    end
+
     it "has the epc data inside the correct tab" do
       expect(response.body).to have_css("div.govuk-tabs div#epc-tab")
       expect(response.body).to have_css("div.govuk-tabs div#user-satisfaction-tab")
@@ -150,6 +182,7 @@ describe "Acceptance::ServicePerformance", type: :feature do
 
     before do
       ServicePerformance::CountryStatsStub.statistics
+      Reporting::InterestingNumbersStub.fetch
     end
 
     it "has the correct Welsh title" do

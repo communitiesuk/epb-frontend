@@ -9,7 +9,6 @@ module Gateway
       raise Errors::ReportIncomplete if response.status == 202
 
       JSON.parse(response.body, symbolize_names: true)
-
     end
   end
 end

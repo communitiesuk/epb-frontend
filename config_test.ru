@@ -219,6 +219,8 @@ FetchAssessmentSummary::AssessmentStub.fetch_ac_report(
 
 ServicePerformance::CountryStatsStub.statistics
 
+Reporting::InterestingNumbersStub.fetch
+
 ENV["EPB_AUTH_CLIENT_ID"] = "test.id"
 ENV["EPB_AUTH_CLIENT_SECRET"] = "test.client.secret"
 ENV["EPB_AUTH_SERVER"] = "http://test-auth-server.gov.uk"

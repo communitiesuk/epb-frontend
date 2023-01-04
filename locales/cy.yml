@@ -574,6 +574,12 @@ cy:
           - Niwtral
           - Anfodlon
           - Anfodlon iawn
+      heatpump_data:
+        title: 'Heatpump data'
+        intro: "Data about how many EPCs have heatpumps each month"
+        table_headers:
+          - Month
+          - Number of EPCs
   component:
     share:
       share_certificate: " Rhannu’r dystysgrif hon"
