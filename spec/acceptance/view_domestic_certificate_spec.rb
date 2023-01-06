@@ -377,6 +377,12 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
         )
       end
 
+      it "shows the clarification about energy costs" do
+        expect(response.body).to include(
+          "Based on average energy costs when this EPC was created:",
+        )
+      end
+
       it "shows the estimated energy cost for a year" do
         expect(response.body).to include(
           "Estimated yearly energy cost for this property",

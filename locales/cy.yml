@@ -998,6 +998,7 @@ cy:
           bus_url: 'https://www.gov.uk/guidance/check-if-you-may-be-eligible-for-the-boiler-upgrade-scheme-from-april-2022'
       heat_demand:
         title: "Amcangyfrif o’r defnydd ynni a’r arbedion posibl"
+        clarify_energy_costs: 'Ar sail y costau ynni cyfartalog pan gafodd yr EPC hon ei chreu:'
         estimated_cost: "Amcangyfrif o gost flynyddol yr ynni ar gyfer yr eiddo hwn"
         three_year_saving: "Arbediad posibl"
         costs_and_savings: "Mae’r amcangyfrif o’r gost yn dangos faint y byddai’r aelwyd gyfartalog yn ei wario yn yr eiddo hwn ar gyfer gwresogi, golau a dŵr poeth. Nid yw’n cael ei seilio ar sut mae ynni’n cael ei ddefnyddio gan y bobl sy’n byw yn yr eiddo."

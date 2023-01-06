@@ -999,6 +999,7 @@ en:
           bus_url: 'https://www.gov.uk/guidance/check-if-you-may-be-eligible-for-the-boiler-upgrade-scheme-from-april-2022'
       heat_demand:
         title: 'Estimated energy use and potential savings'
+        clarify_energy_costs: 'Based on average energy costs when this EPC was created:'
         estimated_cost: 'Estimated yearly energy cost for this property'
         three_year_saving: 'Potential saving'
         costs_and_savings: 'The estimated cost shows how much the average household would spend in this property for heating, lighting and hot water. It is not based on how energy is used by the people living at the property.'
