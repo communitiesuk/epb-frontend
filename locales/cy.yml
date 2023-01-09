@@ -556,17 +556,15 @@ cy:
               rdsap: 'Tystysgrifau R.D.SAP a uwchlwythwyd ym '
               cepc: 'Tystysgrifau C.E.P.C a uwchlwythwyd ym '
               dec: 'Tystysgrifau DEC a uwchlwythwyd ym '
-              dec_rr: 'Tystysgrifau DEC.R.R a uwchlwythwyd ym '
-              ac_rr: 'Tystysgrifau A.C.R.R a uwchlwythwyd ym '
-              ac: 'Tystysgrifau A.C a uwchlwythwyd ym '
+              dec-rr: 'Tystysgrifau DEC.R.R a uwchlwythwyd ym '
+              ac-rr: 'Tystysgrifau A.C.R.R a uwchlwythwyd ym '
             certificates_uploaded_country:
               sap: 'Tystysgrifau SAP a uwchlwythwyd yng '
               rdsap: 'Tystysgrifau R.D.SAP a uwchlwythwyd yng '
               cepc: 'Tystysgrifau C.E.C.P a uwchlwythwyd yng '
               dec: 'Tystysgrifau DEC a uwchlwythwyd yng '
-              dec_rr: 'Tystysgrifau DEC.R.R a uwchlwythwyd yng '
-              ac_rr: 'Tystysgrifau A.C.R.R a uwchlwythwyd yng '
-              ac: 'Tystysgrifau A.C a uwchlwythwyd yng '
+              dec-rr: 'Tystysgrifau DEC.R.R a uwchlwythwyd yng '
+              ac-rr: 'Tystysgrifau A.C.R.R a uwchlwythwyd yng '
           headers:
             month: "Mis"
             num_uploaded: "Nifer a uwchlwythwyd"
