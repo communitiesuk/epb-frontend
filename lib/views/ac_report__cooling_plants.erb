@@ -31,7 +31,7 @@
       translation_prefix: 'ac_report.sections.cooling_plants.cooling_plant.equipment.details.',
       skip_null: true
     } %>
-    <% unless cooling_plant[:equipment][:discrepancyNote].nil? %>
+    <% unless cooling_plant[:equipment][:discrepancyNote].nil? || cooling_plant[:equipment][:discrepancyNote].empty? %>
       <h5 class="govuk-heading-s"><%= t('ac_report.sections.cooling_plants.cooling_plant.equipment.details.discrepancy_note') %></h5>
       <p class="govuk-body"><%= cooling_plant[:equipment][:discrepancyNote] %></p>
     <% end %>
