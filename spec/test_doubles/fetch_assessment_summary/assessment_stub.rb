@@ -202,6 +202,7 @@ module FetchAssessmentSummary
             meteringInstalled: {
               note: "987654321",
               state: true,
+              guidance: "Separate energy metering for AC systems monitors energy use of air conditioning/comfort cooling systems.",
             },
             usageRecords: {
               note:

@@ -338,6 +338,9 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
       expect(response.body).to have_css "p",
                                         text: "Recorded meter reading: 987654321",
                                         exact_text: true
+      expect(response.body).to have_css "p",
+                                        text: "Separate energy metering for AC systems monitors energy use of air conditioning/comfort cooling systems.",
+                                        exact_text: true
       expect(response.body).to have_css "h5",
                                         text: "Is the energy consumption or hours of use excessive?"
       expect(response.body).to have_css "p",

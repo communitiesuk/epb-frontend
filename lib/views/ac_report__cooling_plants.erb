@@ -137,8 +137,11 @@
     <% cooling_plant[:metering].each do |inspection_key, inspection_data| %>
       <h5 class="govuk-heading-s govuk-!-margin-bottom-0"><%= t('ac_report.sections.cooling_plants.cooling_plant.metering.' + inspection_key.to_s) %></h5>
       <p class="govuk-body"><%= t('ac_report.sections.cooling_plants.cooling_plant.inspection.' + (inspection_data[:state] ? "positive": "negative")) %></p>
-      <% unless inspection_data[:note].nil? %>
+      <% unless inspection_data[:note].nil? || inspection_data[:note].empty? %>
         <p class="govuk-body"><% if inspection_key.to_s == 'meteringInstalled' -%><%= t("ac_report.sections.cooling_plants.cooling_plant.metering.reading", meter_reading: inspection_data[:note]) %><% else %><%= inspection_data[:note] %><% end %></p>
+      <% end %>
+      <% unless inspection_data[:guidance].nil? || inspection_data[:guidance].empty? %>
+        <p class="govuk-body"><%= inspection_data[:guidance] %><p>
       <% end %>
     <% end %>
 
