@@ -551,8 +551,22 @@ en:
             england_wales: "England and Wales"
             northern_ireland: "Northern Ireland"
           hidden:
-            certificates_uploaded_all: '%{assessment_type} certificates uploaded in '
-            certificates_uploaded_country: '%{assessment_type} certificates uploaded in '
+            certificates_uploaded_all:
+              sap: 'SAP certificates uploaded in '
+              rdsap: 'R.D.SAP certificates uploaded in '
+              cepc: 'C.E.P.C certificates uploaded in '
+              dec: 'DEC certificates uploaded in '
+              dec_rr: 'DEC.R.R certificates uploaded in '
+              ac_rr: 'A.C.R.R certificates uploaded in '
+              ac: 'A.C. certificates uploaded in '
+            certificates_uploaded_country:
+              sap: 'SAP certificates uploaded in '
+              rdsap: 'R.D.SAP certificates uploaded in '
+              cepc: 'C.E.P.C certificates uploaded in '
+              dec: 'DEC certificates uploaded in '
+              dec_rr: 'DEC.R.R certificates uploaded in '
+              ac_rr: 'A.C.R.R certificates uploaded in '
+              ac: 'A.C. certificates uploaded in '
           headers:
             month: "Month"
             num_uploaded: "Number uploaded"

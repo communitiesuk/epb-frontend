@@ -4,7 +4,7 @@
   <% sections = [
       { heading: {
           text: t('service_performance.contents.epcs_upload.tables.titles.all'),
-          prefix: t('service_performance.contents.epcs_upload.tables.hidden.certificates_uploaded_all', :assessment_type => assessment_type),
+          prefix: t("service_performance.contents.epcs_upload.tables.hidden.certificates_uploaded_all.#{assessment_type.downcase}"),
         },
         content: {
           html: erb(:partial__stats_table, locals: {
@@ -16,7 +16,7 @@
         }},
       { heading: {
           text:  t('service_performance.contents.epcs_upload.tables.titles.england_wales'),
-          prefix: t('service_performance.contents.epcs_upload.tables.hidden.certificates_uploaded_country', :assessment_type => assessment_type),
+          prefix: t("service_performance.contents.epcs_upload.tables.hidden.certificates_uploaded_country.#{assessment_type.downcase}"),
         },
         content: {
           html: erb(:partial__stats_table, locals: {
@@ -28,7 +28,7 @@
         }},
       { heading: {
           text:  t('service_performance.contents.epcs_upload.tables.titles.northern_ireland'),
-          prefix: t('service_performance.contents.epcs_upload.tables.hidden.certificates_uploaded_country', :assessment_type => assessment_type),
+          prefix: t("service_performance.contents.epcs_upload.tables.hidden.certificates_uploaded_country.#{assessment_type.downcase}"),
         },
         content: {
           html: erb(:partial__stats_table, locals: {
