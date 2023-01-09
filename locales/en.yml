@@ -557,14 +557,14 @@ en:
               cepc: 'C.E.P.C certificates uploaded in '
               dec: 'DEC certificates uploaded in '
               dec-rr: 'DEC.R.R certificates uploaded in '
-              ac-rr: 'A.C.R.R certificates uploaded in '
+              ac-cert: 'A.C certificates uploaded in '
             certificates_uploaded_country:
               sap: 'SAP certificates uploaded in '
               rdsap: 'R.D.SAP certificates uploaded in '
               cepc: 'C.E.P.C certificates uploaded in '
               dec: 'DEC certificates uploaded in '
               dec-rr: 'DEC.R.R certificates uploaded in '
-              ac-rr: 'A.C.R.R certificates uploaded in '
+              ac-cert: 'A.C certificates uploaded in '
           headers:
             month: "Month"
             num_uploaded: "Number uploaded"
