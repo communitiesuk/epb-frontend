@@ -576,7 +576,7 @@ cy:
           cepc: "Data annomestig – tystysgrif perfformiad ynni masnachol"
           dec: "Data annomestig – tystysgrif ynni i’w harddangos"
           dec_rr: "Data annomestig – adroddiad argymhellion tystysgrif ynni i’w harddangos"
-          ac_rr: "Data annomestig – adroddiadau aerdymheru"
+          ac_rr: "Data annomestig – tystysgrif archwilio system aerdymheru"
       user_satisfaction:
         title: "Boddhad defnyddwyr"
         intro: "Cesglir y data hwn yn fisol o'n ffurflen adborth gwasanaeth."

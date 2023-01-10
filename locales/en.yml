@@ -576,7 +576,7 @@ en:
           cepc: "Non-domestic data – commercial energy performance certificate"
           dec: "Non-domestic data – display energy certificate"
           dec_rr: "Non-domestic data – display energy certificate recommendation report"
-          ac_rr: "Non-domestic data – air conditioning reports"
+          ac_rr: "Non-domestic data – air conditioning inspection certificate"
       user_satisfaction:
         title: "User satisfaction"
         intro: "This data is collected on a monthly basis from our service feedback form."
