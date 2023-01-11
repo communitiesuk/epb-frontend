@@ -1012,11 +1012,8 @@ cy:
         title: "Amcangyfrif o’r defnydd ynni a’r arbedion posibl"
         clarify_energy_costs: 'Ar sail y costau ynni cyfartalog pan gafodd yr EPC hon ei chreu:'
         estimated_cost: "Amcangyfrif o gost flynyddol yr ynni ar gyfer yr eiddo hwn"
-        three_year_saving: "Arbediad posibl"
+        three_year_saving: "Arbediad posibl os byddwch yn cwblhau pob cam yn ei drefn"
         costs_and_savings: "Mae’r amcangyfrif o’r gost yn dangos faint y byddai’r aelwyd gyfartalog yn ei wario yn yr eiddo hwn ar gyfer gwresogi, golau a dŵr poeth. Nid yw’n cael ei seilio ar sut mae ynni’n cael ei ddefnyddio gan y bobl sy’n byw yn yr eiddo."
-        based_on: "Mae’r arbedion posibl yn dangos faint o arian y gallech ei arbed pe baech chi’n %{link}."
-        based_on_cta: "cwblhau pob cam yn ei drefn"
-        based_on_url: "#recommendations"
         more_advice_cta: "Chwiliwch am ffyrdd i arbed ynni gartref"
         more_advice_url: "https://www.gov.uk/improve-energy-efficiency"
         heating_in_property: "Defnydd gwres yn yr eiddo hwn"
