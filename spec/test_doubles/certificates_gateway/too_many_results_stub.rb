@@ -8,7 +8,7 @@ module CertificatesGateway
           CGI.escape(town)}",
         )
         .to_return(
-          status: 200,
+          status: 413,
           body: {
             "errors": [
               {
