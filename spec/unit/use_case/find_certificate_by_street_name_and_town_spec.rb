@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 describe UseCase::FindCertificateByStreetNameAndTown do
+  include RSpecUnitMixin
+
   context "when there are missing parameters" do
     let(:certificates_gateway) { CertificatesGateway::EmptyStub.new }
     let(:find_certificate) { described_class.new(certificates_gateway) }
@@ -159,6 +161,20 @@ describe UseCase::FindCertificateByStreetNameAndTown do
       expect(
         find_certificate.execute(" Marsham Street", " London ", %w[RdSAP SAP])[:data][:assessments],
       ).to eq(valid_certificates)
+    end
+  end
+
+  context "when there are too many results" do
+    let(:internal_api_client) { get_api_client }
+    let(:gateway) { Gateway::CertificatesGateway.new(internal_api_client) }
+    let(:use_case) { described_class.new(gateway) }
+
+    before do
+      CertificatesGateway::TooManyResultsStub.search_by_street_name_and_town("1", "London", assessment_types: %w[RdSAP SAP])
+    end
+
+    it "raises a too many results error" do
+      expect { use_case.execute("1", "London", %w[RdSAP SAP]) }.to raise_error Errors::TooManyResults
     end
   end
 end

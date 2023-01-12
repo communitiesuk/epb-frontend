@@ -658,6 +658,24 @@ describe "Acceptance::NonDomesticCertificate" do
         end
       end
 
+      context "when there are too many certificates present" do
+        before do
+          CertificatesGateway::TooManyResultsStub.search_by_street_name_and_town("1", "London", assessment_types: %w[AC-CERT AC-REPORT CEPC CEPC-RR DEC DEC-RR])
+        end
+
+        let(:response) do
+          get "http://find-energy-certificate.local.gov.uk/find-a-non-domestic-certificate/search-by-street-name-and-town?street_name=1&town=London"
+        end
+
+        it "returns a 200 response" do
+          expect(response.status).to eq(200)
+        end
+
+        it "displays the link to the domestic postcode" do
+          expect(response.body).to have_link("Search by postcode instead.", href: "/find-a-non-domestic-certificate/search-by-postcode")
+        end
+      end
+
       context "when there is no connection" do
         before do
           FindCertificate::NoNetworkStub.search_by_street_name_and_town(

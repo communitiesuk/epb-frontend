@@ -1063,6 +1063,41 @@ describe "Acceptance::Certificate" do
           expect(response.body).to have_css("div.govuk-grid-column-two-thirds p.govuk-body", text: /If you need help finding an energy certificate or report/)
         end
       end
+
+      context "when the search returns too many results" do
+        before do
+          CertificatesGateway::TooManyResultsStub.search_by_street_name_and_town(
+            "1",
+            "London",
+            assessment_types: %w[RdSAP SAP],
+          )
+        end
+
+        let(:response) do
+          get "http://find-energy-certificate.local.gov.uk/find-a-certificate/search-by-street-name-and-town?street_name=1&town=London"
+        end
+
+        it "returns a 200 status" do
+          expect(response.status).to eq(200)
+        end
+
+        it "returns the 413 error page" do
+          expect(response.body).to have_css("h1", text: "Too many results for this address")
+        end
+
+        it "has the correct body" do
+          expect(response.body).to have_css("p", text: "There are too many results.")
+        end
+
+        it "has the correct postcode search link" do
+          expect(response.body).to have_link("Search by postcode instead", href: "/find-a-certificate/search-by-postcode")
+        end
+
+        it "has the correct royal mail link", aggregate_failures: true do
+          expect(response.body).to have_css("p", text: "You can")
+          expect(response.body).to have_link("find a postcode on Royal Mail's postcode finder.", href: "https://www.royalmail.com/find-a-postcode")
+        end
+      end
     end
   end
 end

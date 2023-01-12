@@ -13,6 +13,9 @@ module UseCase
         if error[:code] == "Auth::Errors::TokenMissing"
           raise Errors::AuthTokenMissing
         end
+        if error[:code] == "PAYLOAD_TOO_LARGE"
+          raise Errors::TooManyResults
+        end
 
         yield(error) if block_given?
       end

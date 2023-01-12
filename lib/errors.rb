@@ -79,6 +79,9 @@ module Errors
   class ReportIncomplete < ApiError
   end
 
+  class TooManyResults < ApiError
+  end
+
   # a module to include in an error class when errors of that type should not be reported to e.g. Sentry
   module DoNotReport
   end
