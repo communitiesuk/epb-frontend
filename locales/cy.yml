@@ -1014,6 +1014,7 @@ cy:
         estimated_cost: "Amcangyfrif o gost flynyddol yr ynni ar gyfer yr eiddo hwn"
         three_year_saving: "Arbediad posibl os byddwch yn cwblhau pob cam yn ei drefn"
         costs_and_savings: "Mae’r amcangyfrif o’r gost yn dangos faint y byddai’r aelwyd gyfartalog yn ei wario yn yr eiddo hwn ar gyfer gwresogi, golau a dŵr poeth. Nid yw’n cael ei seilio ar sut mae ynni’n cael ei ddefnyddio gan y bobl sy’n byw yn yr eiddo."
+        more_advice_heading: 'Arbed ynni yn yr eiddo hwn'
         more_advice_cta: "Chwiliwch am ffyrdd i arbed ynni gartref"
         more_advice_url: "https://www.gov.uk/improve-energy-efficiency"
         heating_in_property: "Defnydd gwres yn yr eiddo hwn"

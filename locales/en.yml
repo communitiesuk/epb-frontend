@@ -1015,6 +1015,7 @@ en:
         estimated_cost: 'Estimated yearly energy cost for this property'
         three_year_saving: 'Potential saving if you complete every step in order'
         costs_and_savings: 'The estimated cost shows how much the average household would spend in this property for heating, lighting and hot water. It is not based on how energy is used by the people living at the property.'
+        more_advice_heading: 'Saving energy in this property'
         more_advice_cta: 'Find ways to save energy in your home'
         more_advice_url: 'https://www.gov.uk/improve-energy-efficiency'
         heating_in_property: 'Heating use in this property'
