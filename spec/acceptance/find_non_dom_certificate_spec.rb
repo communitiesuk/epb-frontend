@@ -672,7 +672,7 @@ describe "Acceptance::NonDomesticCertificate" do
         end
 
         it "displays the link to the domestic postcode" do
-          expect(response.body).to have_link("Search by postcode instead.", href: "/find-a-non-domestic-certificate/search-by-postcode")
+          expect(response.body).to have_link("Search by postcode instead", href: "/find-a-non-domestic-certificate/search-by-postcode")
         end
       end
 

@@ -1480,9 +1480,9 @@ en:
     413:
       heading: 'Too many results for this address'
       body: 'There are too many results. %{link}.'
-      cta_search_by_postcode: "Search by postcode instead."
+      cta_search_by_postcode: "Search by postcode instead"
       royal_mail_link: "You can %{link}."
-      cta_royal_mail: "find a postcode on Royal Mail's postcode finder."
+      cta_royal_mail: "find a postcode on Royal Mail's postcode finder"
 
   dec:
     top_heading: "Display energy certificate (DEC)"
