@@ -12,7 +12,7 @@
         <% next if related_assessment[:assessmentStatus] == "CANCELLED" || related_assessment[:assessmentStatus] == "NOT_FOR_ISSUE" %>
           <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
             <dt class="govuk-summary-list__key govuk-!-width-one-half">
-              <% if  type == 'report' || type == 'adroddiad'%>
+              <% if type == 'report' %>
                 <%= t('component.related.reference_number_report') %>
                 <% else %>
                 <%= t('component.related.reference_number_certificate') %>
