@@ -12,7 +12,11 @@
         <% next if related_assessment[:assessmentStatus] == "CANCELLED" || related_assessment[:assessmentStatus] == "NOT_FOR_ISSUE" %>
           <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
             <dt class="govuk-summary-list__key govuk-!-width-one-half">
-              <%= t('component.related.reference_number') %>
+              <% if  type == 'report' || type == 'adroddiad'%>
+                <%= t('component.related.reference_number_report') %>
+                <% else %>
+                <%= t('component.related.reference_number_certificate') %>
+              <% end %>
             </dt>
             <dd class="govuk-summary-list__value govuk-!-width-one-half">
               <a class="govuk-link" href="<%= localised_url('/energy-certificate/' + related_assessment[:assessmentId]) %>"><%= related_assessment[:assessmentId] %></a>
