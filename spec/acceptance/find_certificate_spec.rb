@@ -1100,4 +1100,42 @@ describe "Acceptance::Certificate" do
       end
     end
   end
+
+  describe ".get find-energy-certificate/find-a-certificate/search-by-street-name-and-town?lang=cy",
+           type: :feature do
+    context "when there are too many results" do
+      before do
+        CertificatesGateway::TooManyResultsStub.search_by_street_name_and_town(
+          "1",
+          "London",
+          assessment_types: %w[RdSAP SAP],
+        )
+      end
+
+      let(:response) do
+        get "http://find-energy-certificate.local.gov.uk/find-a-certificate/search-by-street-name-and-town?lang=cy&street_name=1&town=London"
+      end
+
+      it "returns a 200 status" do
+        expect(response.status).to eq(200)
+      end
+
+      it "has the correct header" do
+        expect(response.body).to have_css("h1", text: "Gormod o ganlyniadau ar gyfer y cyfeiriad hwn")
+      end
+
+      it "has the correct body" do
+        expect(response.body).to have_css("p", text: "Mae gormod o ganlyniadau.")
+      end
+
+      it "has the correct postcode search link" do
+        expect(response.body).to have_link("Chwiliwch yn ôl y cod post", href: "/find-a-certificate/search-by-postcode?lang=cy")
+      end
+
+      it "has the correct royal mail postcode search link" do
+        expect(response.body).to have_css("p", text: "Gallwch")
+        expect(response.body).to have_link("ddod o hyd i god post ar chwiliwr cod post y Post Brenhinol", href: "https://www.royalmail.com/find-a-postcode")
+      end
+    end
+  end
 end
