@@ -1018,6 +1018,8 @@ cy:
         more_advice_heading: 'Arbed ynni yn yr eiddo hwn'
         more_advice_cta: "Chwiliwch am ffyrdd i arbed ynni gartref"
         more_advice_url: "https://www.gov.uk/improve-energy-efficiency"
+        more_advice_cta_print: 'Chwiliwch am ffyrdd i arbed ynni yn eich cartref drwy edrych ar '
+        more_advice_url_print: 'www.gov.uk/improve-energy-efficiency'
         heating_in_property: "Defnydd gwres yn yr eiddo hwn"
         energy_costs: "Gwresogi eiddo sydd fel arfer yn creu’r rhan fwyaf o’ch costau ynni."
         estimated_energy: "Amcangyfrif o’r ynni a ddefnyddir i wresogi’r eiddo hwn"

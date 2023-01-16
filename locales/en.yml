@@ -1019,6 +1019,8 @@ en:
         more_advice_heading: 'Saving energy in this property'
         more_advice_cta: 'Find ways to save energy in your home'
         more_advice_url: 'https://www.gov.uk/improve-energy-efficiency'
+        more_advice_cta_print: 'Find ways to save energy in your home by visiting '
+        more_advice_url_print: 'www.gov.uk/improve-energy-efficiency'
         heating_in_property: 'Heating use in this property'
         energy_costs: 'Heating a property usually makes up the majority of energy costs.'
         estimated_energy: 'Estimated energy used to heat this property'

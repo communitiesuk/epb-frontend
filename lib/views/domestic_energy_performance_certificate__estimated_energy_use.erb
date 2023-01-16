@@ -56,7 +56,7 @@
       <% end %>
       </tbody>
     </table>
-<% end %>
+  <% end %>
 
 
   <% if assessment[:heatDemand][:impactOfLoftInsulation].nil? && assessment[:heatDemand][:impactOfCavityInsulation].nil? && assessment[:heatDemand][:impactOfSolidWallInsulation].nil? %>
@@ -104,6 +104,10 @@
 
   <% unless assessment[:postcode][0..1] == "BT" %>
     <h3 class="govuk-heading-m"><%= t('domestic_epc.sections.heat_demand.more_advice_heading') %></h3>
-    <p class="govuk-body"><a class="govuk-link" href=" <%= t('domestic_epc.sections.heat_demand.more_advice_url') %>"><%= t('domestic_epc.sections.heat_demand.more_advice_cta') %></a>.</p>
+    <% if print_view %>
+      <p class="govuk-body"><%= t('domestic_epc.sections.heat_demand.more_advice_cta_print') %><a class="govuk-link" href=" <%= t('domestic_epc.sections.heat_demand.more_advice_url') %>"><%= t('domestic_epc.sections.heat_demand.more_advice_url_print') %></a>.</p>
+    <% else %>
+      <p class="govuk-body"><a class="govuk-link" href=" <%= t('domestic_epc.sections.heat_demand.more_advice_url') %>"><%= t('domestic_epc.sections.heat_demand.more_advice_cta') %></a>.</p>
+    <% end %>
   <% end %>
 </div>
