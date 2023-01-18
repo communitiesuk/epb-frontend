@@ -1479,7 +1479,7 @@ cy:
       body: "Efallai ei bod wedi’i disodli gan dystysgrif newydd. Gallwch "
       service_link: "wirio a oes tystysgrif newydd."
     error_summary_header: "Mae yna broblem"
-    413:
+    too_many_results:
       heading: 'Gormod o ganlyniadau ar gyfer y cyfeiriad hwn'
       body: 'Mae gormod o ganlyniadau. %{link}.'
       cta_search_by_postcode: "Chwiliwch yn ôl y cod post"

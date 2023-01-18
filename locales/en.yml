@@ -1480,7 +1480,7 @@ en:
       body: 'A new certificate may have replaced it. You can '
       service_link: 'check if there is a new certificate.'
     error_summary_header: "There is a problem"
-    413:
+    too_many_results:
       heading: 'Too many results for this address'
       body: 'There are too many results. %{link}.'
       cta_search_by_postcode: "Search by postcode instead"

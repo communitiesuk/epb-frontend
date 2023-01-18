@@ -729,7 +729,7 @@ class FrontendService < Sinatra::Base
           locals[:search_by_postcode_url] = "/find-a-non-domestic-certificate/search-by-postcode"
         when Errors::TooManyResults
           status 200
-          erb_template = :error_page_413
+          erb_template = :error_page_too_many_results
           locals[:search_by_postcode_url] = "/find-a-non-domestic-certificate/search-by-postcode"
         else
           return server_error(e)
@@ -884,7 +884,7 @@ class FrontendService < Sinatra::Base
           locals[:search_by_postcode_url] = "/find-a-certificate/search-by-postcode"
         when Errors::TooManyResults
           status 200
-          erb_template = :error_page_413
+          erb_template = :error_page_too_many_results
           locals[:search_by_postcode_url] = "/find-a-certificate/search-by-postcode"
         else
           return server_error(e)
