@@ -33,12 +33,12 @@ describe "Acceptance::ServicePerformance", type: :feature do
     end
 
     it "has a header for each type of assessment" do
-      expect(response.body).to have_css("h2", text: "Domestic data – new building (SAP)")
-      expect(response.body).to have_css("h2", text: "Domestic data – existing building (RdSAP)")
-      expect(response.body).to have_css("h2", text: "Non-domestic data – commercial energy performance certificate (CEPC)")
-      expect(response.body).to have_css("h2", text: "Non-domestic data – display energy certificate (DEC)")
-      expect(response.body).to have_css("h2", text: "Non-domestic data – display energy certificate recommendation report (DEC-RR)")
-      expect(response.body).to have_css("h2", text: "Non-domestic data – air conditioning inspection certificate (AC-CERT)")
+      expect(response.body).to have_css("h3", text: "Domestic data – new building (SAP)")
+      expect(response.body).to have_css("h3", text: "Domestic data – existing building (RdSAP)")
+      expect(response.body).to have_css("h3", text: "Non-domestic data – commercial energy performance certificate (CEPC)")
+      expect(response.body).to have_css("h3", text: "Non-domestic data – display energy certificate (DEC)")
+      expect(response.body).to have_css("h3", text: "Non-domestic data – display energy certificate recommendation report (DEC-RR)")
+      expect(response.body).to have_css("h3", text: "Non-domestic data – air conditioning inspection certificate (AC-CERT)")
     end
 
     it "has an accordion for each type of assessment" do
