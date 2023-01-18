@@ -1,7 +1,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl"><%= t('error.too_many_results.heading') %></h1>
-    <p class="govuk-body"> <%== t('error.too_many_results.body', :link=>'<a class="govuk-link" href="'+localised_url(locals[:search_by_postcode_url])+'" >'+t('error.too_many_results.cta_search_by_postcode')+'</a>') %>
+    <p class="govuk-body"> <%== t('error.too_many_results.body', link: '<a class="govuk-link" href="'+localised_url(locals[:search_by_postcode_url])+'" >'+t('error.too_many_results.cta_search_by_postcode')+'</a>') %>
     <p class="govuk-body">
       <%== t('error.too_many_results.royal_mail_link',
              link: '<a class="govuk-link" href="https://www.royalmail.com/find-a-postcode">'+t('error.too_many_results.cta_royal_mail')+'</a>') %>
