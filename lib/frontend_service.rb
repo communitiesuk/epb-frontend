@@ -804,6 +804,7 @@ class FrontendService < Sinatra::Base
       } – #{t('layout.body.govuk')}"
 
     if params.key?("town") || params.key?("street_name")
+      back_link "/find-a-certificate/search-by-street-name-and-town"
       begin
         locals[:results] =
           @container
@@ -818,7 +819,6 @@ class FrontendService < Sinatra::Base
         number_of_results = count_certificates(locals[:results])
         result_content = number_of_results == 1 ? "list.one_result" : "list.more_than_one_result"
         @page_title = "#{t("#{erb_template}.#{result_content}", length: number_of_results, query: "#{params['street_name']} #{params['town']}")} – #{t('services.find_an_energy_certificate')} – #{t('layout.body.govuk')}"
-        back_link "/find-a-certificate/search-by-street-name-and-town"
       rescue StandardError => e
         case e
         when Errors::AllParamsMissing
