@@ -729,6 +729,11 @@ class FrontendService < Sinatra::Base
           locals[:search_by_postcode_url] = "/find-a-non-domestic-certificate/search-by-postcode"
         when Errors::TooManyResults
           status 200
+          @page_title =
+            "#{t('error.too_many_results.heading')} – #{
+              t('services.find_an_energy_certificate')} – #{
+              t('layout.body.govuk')
+            }"
           erb_template = :error_page_too_many_results
           locals[:search_by_postcode_url] = "/find-a-non-domestic-certificate/search-by-postcode"
         else
@@ -884,6 +889,11 @@ class FrontendService < Sinatra::Base
           locals[:search_by_postcode_url] = "/find-a-certificate/search-by-postcode"
         when Errors::TooManyResults
           status 200
+          @page_title =
+            "#{t('error.too_many_results.heading')} – #{
+              t('services.find_an_energy_certificate')} – #{
+              t('layout.body.govuk')
+            }"
           erb_template = :error_page_too_many_results
           locals[:search_by_postcode_url] = "/find-a-certificate/search-by-postcode"
         else
