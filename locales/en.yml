@@ -714,7 +714,6 @@ en:
       telephone: 'Telephone: '
       telephone_number: '020 3829 0748'
 
-
   unit:
     kilogram: 'kg'
     kilowatt: 'kW'
@@ -1065,7 +1064,7 @@ en:
             rdsap_description_first_part: 'RdSAP (Reduced data Standard Assessment Procedure) is a method used to assess and compare the energy and environmental performance of properties in the UK. It uses a site visit and survey of the property to calculate energy performance.'
             rdsap_description_second_part: 'This type of assessment can be carried out on properties built before 1 April 2008 in England and Wales, and 30 September 2008 in Northern Ireland. It can also be used for newer properties, as long as they have a previous SAP assessment, which uses detailed information about the property’s construction to calculate energy performance.'
       green_deal:
-        title: 'Green Deal Plan'
+        title: 'Green deal plan'
         info: 'Energy efficiency improvements were made to this property by a %{link}.'
         url: 'https://www.gov.uk/green-deal-energy-saving-measures/moving-into-a-property-with-a-green-deal'
         copy_of_plan: 'Before buying or renting this property, you should ask the property’s owner for a copy of the plan. You can also get a copy of the plan from the plan’s provider with the owner’s consent.'

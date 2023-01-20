@@ -838,7 +838,7 @@ cy:
         recommendations: "Gwella perfformiad ynni’r eiddo hwn"
         heat_demand: "Amcangyfrif o’r ynni a ddefnyddir a’r arbedion posibl"
         information: "Cysylltu â’r asesydd a’r cynllun achredu"
-        green_deal: "Cynllun y Fargen Werdd"
+        green_deal: "Cynllun y fargen werdd"
         previous: "Tystysgrifau eraill ar gyfer yr eiddo hwn"
     sections:
       renting:
@@ -1064,7 +1064,7 @@ cy:
             rdsap_description_first_part: "Mae RdSAP (Gweithdrefn Asesu Safonol â Llai o Ddata) yn ddull a ddefnyddir i asesu a chymharu perfformiad ynni a pherfformiad amgylcheddol eiddo yn y Deyrnas Unedig. Mae’n defnyddio ymweliad â’r safle ac arolwg o’r eiddo i gyfrifo’i berfformiad ynni."
             rdsap_description_second_part: "Gall y math hwn o asesiad gael ei gyflawni ar eiddo a godwyd cyn 1 Ebrill 2008 yng Nghymru a Lloegr, a 30 Medi 2008 yng Ngogledd. Gall gael ei ddefnyddio hefyd ar eiddo mwy diweddar cyhyd â bod gan yr eiddo asesiad SAP blaenorol sy’n defnyddio gwybodaeth fanwl am adeiladwaith yr eiddo i gyfrifo’r perfformiad ynni."
       green_deal:
-        title: "Cynllun y Fargen Werdd"
+        title: "Cynllun y fargen werdd"
         info: "Cafodd gwelliannau effeithlonrwydd ynni eu gwneid i’r eiddo hwn gan %{link}."
         url: "https://www.gov.uk/green-deal-energy-saving-measures/moving-into-a-property-with-a-green-deal"
         copy_of_plan: "Cyn prynu neu rentu’r eiddo hwn, dylech ofyn i berchennog yr eiddo am gopi o’r cynllun. Gallach gael copi o’r cynllun hefyd oddi wrth ddarparwr y cynllun gyda chydsyniad y perchennog."

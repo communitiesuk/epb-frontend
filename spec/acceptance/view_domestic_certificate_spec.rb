@@ -686,28 +686,28 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
     context "when a certificate has a Green Deal Plan" do
       it "shows the green deal plan title when referrer is nil" do
         expect(response.body).to include(
-          '<h2 class="govuk-heading-l">Green Deal Plan</h2>',
+          '<h2 class="govuk-heading-l">Green deal plan</h2>',
         )
       end
 
       it "shows the green deal plan title when referred from RRN search" do
         env "HTTP_REFERER", "http://example.com/find-a-certificate/search-by-reference-number"
         expect(response.body).to include(
-          '<h2 class="govuk-heading-l">Green Deal Plan</h2>',
+          '<h2 class="govuk-heading-l">Green deal plan</h2>',
         )
       end
 
       it "does not show the green deal plan title when referred from postcode search" do
         env "HTTP_REFERER", "http://example.com/find-a-certificate/search-by-postcode"
         expect(response.body).not_to include(
-          '<h2 class="govuk-heading-l">Green Deal Plan</h2>',
+          '<h2 class="govuk-heading-l">Green deal plan</h2>',
         )
       end
 
       it "does not show the green deal plan title when referred from street and town search" do
         env "HTTP_REFERER", "http://example.com/find-a-certificate/search-by-street-name-and-town"
         expect(response.body).not_to include(
-          '<h2 class="govuk-heading-l">Green Deal Plan</h2>',
+          '<h2 class="govuk-heading-l">Green deal plan</h2>',
         )
       end
 
