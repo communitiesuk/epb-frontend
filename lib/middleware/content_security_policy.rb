@@ -2,11 +2,8 @@ require "rack/protection/content_security_policy"
 
 module Middleware
   ##
-  # A custom Rack middleware that wraps the ContentSecurityPolicy middleware from the Rack::Protection module and adds:
-  #
-  # 1. the ability to switch on enforcement of a content security policy within browsers (using the Content-Security-Policy
-  # header rather than Content-Security-Policy-Report-Only) using the feature flag "frontend-enforce-content-security-policy"
-  # 2. the additional option `report_ratio`, which takes a number of between 0 and 1. This makes the CSP policy only include
+  # A custom Rack middleware that wraps the ContentSecurityPolicy middleware from the Rack::Protection module and adds
+  # the additional option `report_ratio`, which takes a number of between 0 and 1. This makes the CSP policy only include
   # a report-uri directive in the given ratio of request/response cycles - i.e. a ratio of 0.1 should only send a report-uri
   # on average once every ten responses. This is in order to limit the number of reports that are sent to Sentry (as long-tail
   # cases are not of interest as they represent the CSP doing its job, and could use up Sentry quotas unnecessarily - we'd want
@@ -21,11 +18,7 @@ module Middleware
     def call(env)
       status, headers, body = @csp_middleware.call(env)
 
-      if !Helper::Toggles.enabled?("frontend-enforce-content-security-policy") && headers.key?("Content-Security-Policy")
-        headers["Content-Security-Policy-Report-Only"] = headers.delete("Content-Security-Policy")
-      end
-
-      strip_report_uri(headers) unless should_report?
+      headers = strip_report_uri(headers.clone) unless should_report?
 
       [status, headers.compact, body]
     end
@@ -47,7 +40,7 @@ module Middleware
       ].each do |header|
         next unless headers.key?(header)
 
-        headers[header].gsub!(/;\sreport-uri\s[^\s;]+/, "")
+        headers[header] = headers[header].gsub(/;\sreport-uri\s[^\s;]+/, "")
       end
       headers
     end
