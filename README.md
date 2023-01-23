@@ -136,3 +136,45 @@ This will:
 * Run the frontend build to generate assets
 * Generate a manifest file suitable for the current space
 * Push the local app to the target application
+
+## Docker image
+
+### Build
+
+To rebuild the Docker image locally, run
+
+`docker build . --tag epb-frontend`
+
+### Run
+
+#### Docker Desktop
+
+You can run the created image in Docker Desktop by going to **Images** and pressing **Run** in the *Actions* column.
+This will create a persistent deployment and has an interface to provide multiple useful options.
+
+#### CLI
+
+To run the docker image with CLI
+
+`docker run -p {host_port}:80 --name test-epb-frontend epb-frontend`
+
+Where *host_port* is a free port you want to use on your host machine to make calls to the API.
+
+If you want docker to communicate with a containarized instance of PostgreSQL, or another container in general, you will need to link them.
+
+`docker run -p {host_port}:80 --link {linked_container_id} --name test-epb-frontend epb-frontend`
+
+Where *linked_container_id* is the name or ID of the container you want to access.
+
+#### Note: 
+When running the container, you may find that `http://localhost:{host_port}` and 
+other frontend pages such as `http://localhost:{host_port}/find-an-assessor/type-of-property` 
+all redirect and show the **Page not found** page
+
+This is due to the changes made to the hosts file as part of the epb-dev-tools 
+setup [here](../epb-dev-tools/README.md), and is a step specifically outlined in the 
+manual install instructions [here](../epb-dev-tools/MANUAL_INSTALL.md)
+
+Instead, you should use the frontend service urls that were mapped to the 
+loopback IP address in the host files instead 
+e.g. `http://find-energy-certificate.epb-frontend/` and `http://getting-new-energy-certificate.epb-frontend/`
