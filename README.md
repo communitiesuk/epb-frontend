@@ -156,25 +156,21 @@ This will create a persistent deployment and has an interface to provide multipl
 
 To run the docker image with CLI
 
-`docker run -p {host_port}:80 --name test-epb-frontend epb-frontend`
-
-Where *host_port* is a free port you want to use on your host machine to make calls to the API.
+`docker run -p 80:80 --name test-epb-frontend epb-frontend`
 
 If you want docker to communicate with a containarized instance of PostgreSQL, or another container in general, you will need to link them.
 
-`docker run -p {host_port}:80 --link {linked_container_id} --name test-epb-frontend epb-frontend`
+`docker run -p 80:80 --link {linked_container_id} --name test-epb-frontend epb-frontend`
 
 Where *linked_container_id* is the name or ID of the container you want to access.
 
-#### Note: 
-When running the container, you may find that `http://localhost:{host_port}` and 
-other frontend pages such as `http://localhost:{host_port}/find-an-assessor/type-of-property` 
+#### hosts file
+
+When running the container, you may find that `http://localhost` and 
+other frontend pages such as `http://localhost/find-an-assessor/type-of-property` 
 all redirect and show the **Page not found** page
 
-This is due to the changes made to the hosts file as part of the epb-dev-tools 
-setup [here](../epb-dev-tools/README.md), and is a step specifically outlined in the 
-manual install instructions [here](../epb-dev-tools/MANUAL_INSTALL.md)
+Add the following line to your hosts file (/etc/hosts for macOS and most linux distros):
+`127.0.0.1 getting-new-energy-certificate.epb-frontend find-energy-certificate.epb-frontend getting-new-energy-certificate.local.gov.uk find-energy-certificate.local.gov.uk epb-frontend epb-register-api epb-auth-server epb-feature-flag`
 
-Instead, you should use the frontend service urls that were mapped to the 
-loopback IP address in the host files instead 
-e.g. `http://find-energy-certificate.epb-frontend/` and `http://getting-new-energy-certificate.epb-frontend/`
+You then should be able to access the locally deployed website via `http://find-energy-certificate.epb-frontend/` and `http://getting-new-energy-certificate.epb-frontend/`
