@@ -10,21 +10,14 @@ ENV JWT_ISSUER=epb-auth-server
 ENV JWT_SECRET=test-jwt-secret
 ENV STAGE=development
 
-
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
-RUN curl -sL https://deb.nodesource.com/setup_16.x | bash -; \
-    apt-get update -qq && apt-get install -qq --no-install-recommends nodejs && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
-
-RUN gem install bundler -v '2.3.22' && \
-    gem install rerun
 
 COPY . /app
+WORKDIR /app
 
-RUN cd /app && bundle install
+RUN bundle install
 
 EXPOSE 80
 
-ENTRYPOINT bash -c 'cd /app && bundle exec rackup -p 80 -o 0.0.0.0'
+ENTRYPOINT ["bundle", "exec", "rackup", "-p", "80", "-o", "0.0.0.0"]

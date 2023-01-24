@@ -156,11 +156,11 @@ This will create a persistent deployment and has an interface to provide multipl
 
 To run the docker image with CLI
 
-`docker run -p 80:80 --name test-epb-frontend epb-frontend`
+`docker run -p 80:80 -p 443:443 --name test-epb-frontend epb-frontend`
 
 If you want docker to communicate with a containarized instance of PostgreSQL, or another container in general, you will need to link them.
 
-`docker run -p 80:80 --link {linked_container_id} --name test-epb-frontend epb-frontend`
+`docker run -p 80:80 -p 443:443 --link {linked_container_id} --name test-epb-frontend epb-frontend`
 
 Where *linked_container_id* is the name or ID of the container you want to access.
 
