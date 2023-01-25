@@ -72,11 +72,11 @@ describe "Rack::Attack" do
 
     context "when the feature flag to disable rack attack throttling is switched on" do
       before do
-        Helper::Toggles.set_feature("frontend-disable-request-throttling", true)
+        ENV["SUPPRESS_REQUEST_THROTTLING"] = "true"
       end
 
       after do
-        Helper::Toggles.set_feature("frontend-disable-request-throttling", false)
+        ENV["SUPPRESS_REQUEST_THROTTLING"] = nil
       end
 
       context "when the number of requests is over the throttle limit" do

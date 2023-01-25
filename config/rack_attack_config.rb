@@ -36,7 +36,7 @@ end
 # Excessive requests going to the certificate page or search page will ban an IP
 Rack::Attack.blocklist("Certificate scrapers") do |req|
   Rack::Attack::Allow2Ban.filter(req.source_ip, maxretry: 100, findtime: 1.minute, bantime: 1.hour) do
-    !Helper::Toggles.enabled?("frontend-disable-request-throttling") &&
+    ENV["SUPPRESS_REQUEST_THROTTLING"] != "true" &&
       req.get? && (
       req.path.include?("/find-a-certificate/search-by-postcode") ||
       req.path.include?("/find-a-non-domestic-certificate/search-by-postcode") ||
@@ -47,7 +47,7 @@ end
 
 # Throttle requests to any endpoint if we receive more than X requests per min
 Rack::Attack.throttle("Requests Rate Limit", limit: 100, period: 1.minutes) do |request|
-  !Helper::Toggles.enabled?("frontend-disable-request-throttling") ? request.source_ip : nil
+  ENV["SUPPRESS_REQUEST_THROTTLING"] != "true" ? request.source_ip : nil
 end
 
 # Block permanently banned IP addresses; the format of the env var is
