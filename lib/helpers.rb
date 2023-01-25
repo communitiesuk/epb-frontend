@@ -356,7 +356,7 @@ module Helpers
   end
 
   def redirect_to_service_start_page?
-    return false if Helper::Toggles.enabled?("frontend-suppress-redirect-to-service-start")
+    return false if ENV["SUPPRESS_REDIRECT_TO_SERVICE_START"] == "true"
 
     return false if ENV["STAGE"] == "test"
 

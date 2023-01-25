@@ -103,11 +103,7 @@ RSpec.describe "Redirect to service start page" do
 
     context "when frontend-suppress-redirect-to-service-start feature flag is enabled" do
       before do
-        Helper::Toggles.set_feature("frontend-suppress-redirect-to-service-start", true)
-      end
-
-      after do
-        Helper::Toggles.set_feature("frontend-suppress-redirect-to-service-start", false)
+        stub_const("ENV", ENV.merge({ "SUPPRESS_REDIRECT_TO_SERVICE_START" => "true" }))
       end
 
       it "returns status 200 when a referrer is outside of the service" do
