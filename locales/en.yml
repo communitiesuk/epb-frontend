@@ -1008,7 +1008,7 @@ en:
           title: 'Paying for energy improvements'
           bus_text: 'You might be able to get a grant from the %{link}. This will help you buy a more efficient, low carbon heating system for this property.'
           bus_link_text: 'Boiler Upgrade Scheme'
-          bus_url: 'https://www.gov.uk/guidance/check-if-you-may-be-eligible-for-the-boiler-upgrade-scheme-from-april-2022'
+          bus_url: 'https://www.gov.uk/apply-boiler-upgrade-scheme'
       heat_demand:
         title: 'Estimated energy use and potential savings'
         clarify_energy_costs: 'Based on average energy costs when this EPC was created:'

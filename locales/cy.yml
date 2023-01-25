@@ -1008,7 +1008,7 @@ cy:
           title: "Talu am welliannau ynni"
           bus_text: 'Efallai y gallwch gael grant gan y %{link}. Bydd hyn yn eich helpu i brynu system wresogi carbon isel, fwy effeithlon ar gyfer yr eiddo hwn.'
           bus_link_text: 'Cynllun Uwchraddio Boeleri'
-          bus_url: 'https://www.gov.uk/guidance/check-if-you-may-be-eligible-for-the-boiler-upgrade-scheme-from-april-2022'
+          bus_url: 'https://www.gov.uk/apply-boiler-upgrade-scheme'
       heat_demand:
         title: "Amcangyfrif o’r defnydd ynni a’r arbedion posibl"
         clarify_energy_costs: 'Ar sail y costau ynni cyfartalog pan gafodd yr EPC hon ei chreu:'
