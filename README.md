@@ -158,13 +158,17 @@ To run the docker image with CLI
 
 `docker run -p 80:80 -p 443:443 --name test-epb-frontend epb-frontend`
 
-If you want docker to communicate with a containarized instance of PostgreSQL, or another container in general, you will need to link them.
+If you want docker to communicate with a containerized instance of PostgreSQL, or another container in general,
+you will need to use a bridge network and connect any containers that need to communicate with each other to it
 
-`docker run -p 80:80 -p 443:443 --link {linked_container_id} --name test-epb-frontend epb-frontend`
+You can set up a bridge network using
+`docker network create {network_name}`
 
-Where *linked_container_id* is the name or ID of the container you want to access.
+And then connect the containers to the network when going to run them e.g.
 
-#### hosts file
+`docker run -p 80:80 -p 443:443 --network {network_name} --name test-epb-frontend epb-frontend`
+
+#### Hosts file
 
 When running the container, you may find that `http://localhost` and 
 other frontend pages such as `http://localhost/find-an-assessor/type-of-property` 
