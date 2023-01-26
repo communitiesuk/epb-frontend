@@ -1,4 +1,4 @@
-FROM ruby:3.1.2
+FROM ruby:3.1.3
 
 ENV LANG=en_GB.UTF-8
 ENV EPB_API_URL=http://epb-register-api
