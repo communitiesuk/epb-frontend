@@ -12,6 +12,9 @@
     "url": "https://github.com/communitiesuk/epb-frontend/issues"
   },
   "homepage": "https://github.com/communitiesuk/epb-frontend#readme",
+  "engines": {
+    "node": "~18"
+  },
   "dependencies": {
     "govuk-frontend": "^4.4.1"
   },
