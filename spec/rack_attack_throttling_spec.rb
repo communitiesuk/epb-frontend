@@ -70,7 +70,7 @@ describe "Rack::Attack" do
       end
     end
 
-    context "when the feature flag to disable rack attack throttling is switched on" do
+    context "when SUPPRESS_REQUEST_THROTTLING environment variable is set to true" do
       before do
         ENV["SUPPRESS_REQUEST_THROTTLING"] = "true"
       end

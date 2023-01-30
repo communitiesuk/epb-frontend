@@ -101,7 +101,7 @@ RSpec.describe "Redirect to service start page" do
       expect(response.status).to eq(200)
     end
 
-    context "when frontend-suppress-redirect-to-service-start feature flag is enabled" do
+    context "when SUPPRESS_REDIRECT_TO_SERVICE_START environment variable is set to true" do
       before do
         stub_const("ENV", ENV.merge({ "SUPPRESS_REDIRECT_TO_SERVICE_START" => "true" }))
       end
