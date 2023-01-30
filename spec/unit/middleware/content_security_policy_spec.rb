@@ -15,7 +15,7 @@ describe Middleware::ContentSecurityPolicy do
     }
   end
 
-  context "when no flags are enabled and no reporting ratio set" do
+  context "when no reporting ratio set" do
     it "calls down onto the underlying app object with CSP headers" do
       _, headers, = middleware.call(nil)
       expect(headers.key?("Content-Security-Policy")).to be true
