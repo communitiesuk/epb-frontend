@@ -395,7 +395,7 @@ cy:
         street_and_town: "stryd a thref"
         certificate_number: "rhif tystysgrif"
       no_postcode: "Dim canlyniadau ar gyfer %{postcode}"
-      no_certificates: "Does dim tystysgrifau’n cyfateb i’r cod post hwnnw."
+      no_certificates: "Dim ond eiddo ag EPCs sy’n cael eu rhestru. Does dim canlyniadau ar gyfer y cod post hwn."
 
   find_certificate_by_reference_number:
     top_heading: "Beth yw rhif y dystysgrif?"

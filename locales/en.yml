@@ -395,7 +395,7 @@ en:
         street_and_town: "street and town"
         certificate_number: "certificate number"
       no_postcode: "No results for %{postcode}"
-      no_certificates: "There are no certificates for this postcode."
+      no_certificates: "We only list properties with EPCs. There are no results for this postcode."
 
   find_certificate_by_reference_number:
     top_heading: 'What is the certificate number?'

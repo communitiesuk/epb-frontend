@@ -309,7 +309,7 @@ describe "Acceptance::Certificate" do
 
         it "explains that no certificates are present" do
           expect(response.body).to include(
-            "There are no certificates for this postcode.",
+            "We only list properties with EPCs. There are no results for this postcode.",
           )
         end
 
@@ -412,6 +412,22 @@ describe "Acceptance::Certificate" do
 
       it "displays a Welsh error message" do
         expect(response.body).to include("Rhowch god post dilys yn y DU gan ddefnyddio llythrennau a rhifau yn unig yn y ffurf CF10 1EP")
+      end
+    end
+
+    context "when entering a postcode with no results" do
+      before do
+        FindCertificate::NoCertificatesStub.search_by_postcode("E1 4FF")
+      end
+
+      let(:response) do
+        get "http://find-energy-certificate.local.gov.uk/find-a-certificate/search-by-postcode?lang=cy&postcode=E1+4FF"
+      end
+
+      it "explains that no certificates are present" do
+        expect(response.body).to include(
+          "Dim ond eiddo ag EPCs sy’n cael eu rhestru. Does dim canlyniadau ar gyfer y cod post hwn.",
+        )
       end
     end
   end
