@@ -159,7 +159,7 @@ module Helpers
                             else
                               {}
                             end
-    uri.query = filtered_query_params.length.zero? ? nil : URI.encode_www_form(filtered_query_params)
+    uri.query = filtered_query_params.empty? ? nil : URI.encode_www_form(filtered_query_params)
     uri.to_s
   end
 
