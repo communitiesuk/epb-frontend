@@ -376,6 +376,7 @@ cy:
     expired: "wedi dod i ben"
 
   find_certificate_by_postcode_results:
+    explanation: "Dim ond eiddo ag EPCs sy’n cael eu rhestru"
     no_epc:
       get_a_new_one_with_results: "Os nad oes gan eich eiddo EPC ddilys, gallwch"
       get_a_new_one_no_results: "Os nad oes EPC gan eich eiddo, gallwch"
@@ -395,7 +396,7 @@ cy:
         street_and_town: "stryd a thref"
         certificate_number: "rhif tystysgrif"
       no_postcode: "Dim canlyniadau ar gyfer %{postcode}"
-      no_certificates: "Dim ond eiddo ag EPCs sy’n cael eu rhestru. Does dim canlyniadau ar gyfer y cod post hwn."
+      no_certificates: "Does dim canlyniadau ar gyfer y cod post hwn."
 
   find_certificate_by_reference_number:
     top_heading: "Beth yw rhif y dystysgrif?"

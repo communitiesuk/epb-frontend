@@ -4,6 +4,10 @@
       <h1 class="govuk-heading-xl"><%= t('find_certificate_by_postcode_results.list', :count => count_certificates(results), :postcode => CGI.escapeHTML(params['postcode'].upcase)) %></h1>
 
       <p class="govuk-body">
+        <%= t('find_certificate_by_postcode_results.explanation') %>.
+      </p>
+
+      <p class="govuk-body">
         <%= t('find_certificate_by_postcode_results.no_epc.get_a_new_one_with_results') %>
         <a class="govuk-link" href="<%=localised_url(set_subdomain_url("getting-new-energy-certificate"))%>"><%= t('find_certificate_by_postcode_results.no_epc.get_a_new_one_link') %></a>.
       </p>
@@ -16,7 +20,7 @@
       <h1 class="govuk-heading-xl"><%= t('find_certificate_by_postcode_results.no_results.no_postcode', :postcode => CGI.escapeHTML(params['postcode'].upcase) ) %></h1>
 
       <p class="govuk-body">
-        <%= t('find_certificate_by_postcode_results.no_results.no_certificates') %>
+        <%= t('find_certificate_by_postcode_results.explanation')%>. <%= t('find_certificate_by_postcode_results.no_results.no_certificates') %>
       </p>
 
       <p class="govuk-body">

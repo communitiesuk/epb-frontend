@@ -282,6 +282,10 @@ describe "Acceptance::Certificate" do
           expect(response.body).to include "1234-5678-9101-1123-1234"
           expect(response.body).not_to include "9876-5678-9101-1123-9876"
         end
+
+        it "has a property listing explanation" do
+          expect(response.body).to have_css "p", text: "We only list properties with EPCs."
+        end
       end
 
       context "when no certificates are present" do

@@ -368,6 +368,7 @@ en:
       expiry: 'Valid until'
     expired: 'expired'
 
+
   find_non_dom_certificate_results:
     table:
       address: 'Address'
@@ -376,6 +377,7 @@ en:
     expired: 'expired'
 
   find_certificate_by_postcode_results:
+    explanation: "We only list properties with EPCs"
     no_epc:
       get_a_new_one_with_results: "If your property does not have a valid EPC, you can"
       get_a_new_one_no_results: "If your property does not have an EPC, you can"
@@ -395,7 +397,7 @@ en:
         street_and_town: "street and town"
         certificate_number: "certificate number"
       no_postcode: "No results for %{postcode}"
-      no_certificates: "We only list properties with EPCs. There are no results for this postcode."
+      no_certificates: "There are no results for this postcode."
 
   find_certificate_by_reference_number:
     top_heading: 'What is the certificate number?'
