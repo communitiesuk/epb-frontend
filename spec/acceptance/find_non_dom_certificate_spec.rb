@@ -204,6 +204,12 @@ describe "Acceptance::NonDomesticCertificate" do
 
         it "shows the information regarding getting a new EPC" do
           expect(response.body).to include(
+            "We only list properties with EPCs.",
+          )
+        end
+
+        it "shows the information regarding getting a new EPC" do
+          expect(response.body).to include(
             "If your property does not have a valid EPC, you can",
           )
         end
