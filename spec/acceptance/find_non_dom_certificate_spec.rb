@@ -274,7 +274,7 @@ describe "Acceptance::NonDomesticCertificate" do
 
         it "explains that no certificates or reports are present" do
           expect(response.body).to include(
-            "There are no certificates for this postcode.",
+            "We only list properties with EPCs. There are no results for this postcode.",
           )
         end
 

@@ -510,7 +510,7 @@ cy:
         street_and_town: "stryd a thref"
         certificate_number: "rhif tystysgrif"
       no_postcode: "Dim canlyniadau ar gyfer %{postcode}"
-      no_certificates: "Does dim tystysgrifau’n cyfateb i’r cod post hwnnw."
+      no_certificates: "Does dim canlyniadau ar gyfer y cod post hwn."
     list: "%{length} o dystysgrifau ac adroddiadau ar gyfer %{postcode}"
 
   find_non_dom_certificate_by_reference_number:

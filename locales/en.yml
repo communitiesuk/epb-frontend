@@ -511,7 +511,7 @@ en:
         street_and_town: "street and town"
         certificate_number: "certificate number"
       no_postcode: "No results for %{postcode}"
-      no_certificates: "There are no certificates for this postcode."
+      no_certificates: "There are no results for this postcode."
     list: '%{length} certificates and reports for %{postcode}'
 
   find_non_dom_certificate_by_reference_number:
