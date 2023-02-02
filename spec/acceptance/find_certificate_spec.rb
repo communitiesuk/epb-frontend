@@ -912,6 +912,10 @@ describe "Acceptance::Certificate" do
           )
         end
 
+        it "displays the text explaining that only EPCs are listed rather than all addresses" do
+          expect(response.body).to include "We only list properties with EPCs"
+        end
+
         it "displays the text if user does not have a valid EPC" do
           expect(response.body).to include(
             "If your property does not have a valid EPC, you can",

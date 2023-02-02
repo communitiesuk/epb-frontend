@@ -442,6 +442,7 @@ cy:
   find_certificate_by_street_name_and_town_results:
     top_heading: "Chwiliwch am dystysgrif perfformiad ynni (EPC)"
     no_epc:
+      explanation: "Dim ond eiddo ag EPCs sy’n cael eu rhestru."
       get_a_new_one_with_results: "Os nad oes gan eich eiddo EPC ddilys, gallwch"
       get_a_new_one_link: "cael tystysgrif ynni newydd"
     list:

@@ -443,6 +443,7 @@ en:
   find_certificate_by_street_name_and_town_results:
     top_heading: 'Find an energy performance certificate (EPC)'
     no_epc:
+      explanation: "We only list properties with EPCs."
       get_a_new_one_with_results: "If your property does not have a valid EPC, you can"
       get_a_new_one_link: "get a new energy certificate"
     list:
