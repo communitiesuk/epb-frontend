@@ -1007,7 +1007,7 @@ describe "Acceptance::Certificate" do
           )
         end
 
-        it "displays the text if user does not have an EPC" do
+        it "explains only properties with EPCs are listed" do
           expect(response.body).to include(
             "We only list properties with EPCs.",
           )

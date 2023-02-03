@@ -202,7 +202,7 @@ describe "Acceptance::NonDomesticCertificate" do
           )
         end
 
-        it "shows the information regarding getting a new EPC" do
+        it "explains only properties with EPCs are listed" do
           expect(response.body).to include(
             "We only list properties with EPCs.",
           )
@@ -390,6 +390,10 @@ describe "Acceptance::NonDomesticCertificate" do
 
         it "displays the find a certificate page heading" do
           expect(response.body).to have_css("h1", text: "1 certificates and reports for 1 Makeup Street Beauty Town")
+        end
+
+        it "explains only properties with EPCs are listed" do
+          expect(response.body).to have_css("p", text: "We only list properties with EPCs.")
         end
 
         it "displays the text if user does not have a valid EPC" do
@@ -639,7 +643,7 @@ describe "Acceptance::NonDomesticCertificate" do
           )
         end
 
-        it "displays the text if user does not have an EPC" do
+        it "explains only properties with EPCs are listed" do
           expect(response.body).to include(
             "We only list properties with EPCs",
           )
