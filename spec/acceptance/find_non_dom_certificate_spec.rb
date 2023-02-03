@@ -641,6 +641,12 @@ describe "Acceptance::NonDomesticCertificate" do
 
         it "displays the text if user does not have an EPC" do
           expect(response.body).to include(
+            "We only list properties with EPCs",
+          )
+        end
+
+        it "displays the text if user does not have an EPC" do
+          expect(response.body).to include(
             "If your property does not have an EPC, you can",
           )
         end

@@ -65,6 +65,11 @@
           <p class="govuk-error-message govuk-!-margin-top-9">
             <span class="govuk-visually-hidden"><%= t('error.error') %></span><%== t(errors[:generic][:error]) %>
           </p>
+
+        <p class="govuk-body">
+          <%= t('find_certificate_by_street_name_and_town.no_such_address.epcs_only') %>
+        </p>
+
         <p class="govuk-body">
           <%= t('find_non_dom_certificate_by_street_name_and_town.no_such_address.get_a_new_one_no_results') %>
           <a class="govuk-link" href="<%=localised_url(set_subdomain_url("getting-new-energy-certificate"))%>"><%= t('find_non_dom_certificate_by_street_name_and_town.no_such_address.get_a_new_one_link') %></a>.
