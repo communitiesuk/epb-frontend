@@ -4,7 +4,7 @@
       <h1 class="govuk-heading-xl"><%= t('find_certificate_by_postcode_results.list', :count => count_certificates(results), :postcode => CGI.escapeHTML(params['postcode'].upcase)) %></h1>
 
       <p class="govuk-body">
-        <%= t('find_certificate_by_postcode_results.explanation') %>.
+        <%= t('find_certificate_by_postcode_results.epcs_only') %>.
       </p>
 
       <p class="govuk-body">
@@ -20,7 +20,7 @@
       <h1 class="govuk-heading-xl"><%= t('find_certificate_by_postcode_results.no_results.no_postcode', :postcode => CGI.escapeHTML(params['postcode'].upcase) ) %></h1>
 
       <p class="govuk-body">
-        <%= t('find_certificate_by_postcode_results.explanation')%>. <%= t('find_certificate_by_postcode_results.no_results.no_certificates') %>
+        <%= t('find_certificate_by_postcode_results.epcs_only')%>. <%= t('find_certificate_by_postcode_results.no_results.no_certificates') %>
       </p>
 
       <p class="govuk-body">

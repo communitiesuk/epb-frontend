@@ -4,7 +4,7 @@
       <% result_content = results.size == 1 ? 'find_certificate_by_street_name_and_town_results.list.one_result' : 'find_certificate_by_street_name_and_town_results.list.more_than_one_result' %>
       <h1 class="govuk-heading-xl"><%= t(result_content,:length => count_certificates(results), :query => params['street_name'] + ', ' + params['town'] ) %></h1>
       <p class="govuk-body">
-        <%= t('find_certificate_by_street_name_and_town_results.no_epc.explanation') %>
+        <%= t('find_certificate_by_street_name_and_town_results.epcs_only') %>.
       </p>
       <p class="govuk-body">
         <%= t('find_certificate_by_street_name_and_town_results.no_epc.get_a_new_one_with_results') %>
