@@ -144,8 +144,7 @@
     </div>
 
     <% unless assessment[:postcode][0..1] == "BT" %>
-      <div class="govuk-body epc-blue-bottom printable-area">
-        <a id="renting"></a>
+      <div id="renting" class="govuk-body epc-blue-bottom printable-area">
         <h2 class="govuk-heading-l"><%= t('domestic_epc.sections.renting.title') %></h2>
         <% minimum_energy_rating_for_rentals = 'e' %>
         <% if assessment[:currentEnergyEfficiencyBand] > minimum_energy_rating_for_rentals %>
@@ -179,8 +178,7 @@
       </div>
     <% end %>
 
-    <div class="govuk-body epc-blue-bottom printable-area epc-rating-graph-section">
-      <a id="epc"></a>
+    <div id="epc" class="govuk-body epc-blue-bottom printable-area epc-rating-graph-section">
       <h2 class="govuk-heading-l"><%= t('domestic_epc.sections.epc.title') %></h2>
       <p class="govuk-body govuk-!-margin-bottom-6">
         <%== t('domestic_epc.sections.epc.intro.text', :current_energy_efficiency_band => assessment[:currentEnergyEfficiencyBand].upcase, :potential_energy_efficiency_band => assessment[:potentialEnergyEfficiencyBand].upcase) %>
@@ -223,8 +221,7 @@
       assessment: assessment }
     %>
 
-    <div class="govuk-body printable-area epc-recommendations">
-      <a id="recommendations"></a>
+    <div id="recommendations" class="govuk-body printable-area epc-recommendations">
       <h2 class="govuk-heading-l"><%= t('domestic_epc.sections.recommendations.title') %></h2>
       <div class="allow-break <%= assessment[:recommendedImprovements].empty? ? 'epc-blue-bottom' : ''%>">
         <div class="epc-rating-box">
@@ -275,8 +272,7 @@
 
     <%== erb :domestic_energy_performance_certificate__estimated_energy_use, locals: { assessment: assessment, print_view: print_view } %>
 
-    <div class="govuk-body epc-blue-bottom printable-area epc-contact-assessor">
-      <a id="information"></a>
+    <div id="information" class="govuk-body epc-blue-bottom printable-area epc-contact-assessor">
       <h2 class="govuk-heading-l"><%= t('domestic_epc.sections.information.title') %></h2>
       <p class="govuk-body"><%== t('domestic_epc.sections.information.intro') %></p>
       <h3 class="govuk-heading-m"><%= t('domestic_epc.sections.information.assessor.title') %></h3>

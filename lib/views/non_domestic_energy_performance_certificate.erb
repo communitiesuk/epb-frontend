@@ -96,8 +96,7 @@
     } %>
 
     <% unless assessment[:address][:postcode][0..1] == "BT" %>
-      <div class="govuk-body epc-blue-bottom printable-area">
-        <a id="renting"></a>
+      <div id="renting" class="govuk-body epc-blue-bottom printable-area">
         <h2 class="govuk-heading-l"><%= t('non_domestic_epc.sections.renting.title') %></h2>
         <% minimum_energy_band = 'e' %>
         <% if assessment[:currentEnergyEfficiencyBand] > minimum_energy_band %>
@@ -119,9 +118,8 @@
       </div>
     <% end %>
 
-    <div class="epc-section epc-rating-graph-section epc-blue-bottom printable-area">
+    <div id="energy_rating_section" class="epc-section epc-rating-graph-section epc-blue-bottom printable-area">
     <div class="govuk-body epc-blue-bottom">
-      <a id="energy_rating_section"></a>
       <h2 class="govuk-heading-l"><%= t('non_domestic_epc.energy_rating_section.title') %></h2>
       <p class="govuk-body"><%== t('non_domestic_epc.energy_rating_section.current_rating_text', :current_energy_efficiency_band => assessment[:currentEnergyEfficiencyBand].upcase) %></p>
       <%== erb :non_domestic_energy_rating, locals: {

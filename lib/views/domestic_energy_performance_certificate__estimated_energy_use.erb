@@ -1,5 +1,4 @@
-<div class="govuk-body epc-blue-bottom printable-area epc-estimated-energy-use">
-  <a id="heat-demand"></a>
+<div id="heat-demand" class="govuk-body epc-blue-bottom printable-area epc-estimated-energy-use">
   <h2 class="govuk-heading-l"><%= t('domestic_epc.sections.heat_demand.title') %></h2>
   <% unless assessment[:estimatedEnergyCost].nil? && assessment[:potentialEnergySaving].nil? %>
     <p class="govuk-body"><%= t('domestic_epc.sections.heat_demand.clarify_energy_costs') %></p>

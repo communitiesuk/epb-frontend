@@ -1,5 +1,4 @@
-<div class="govuk-body epc-page-break epc-blue-bottom printable-area epc-environmental-impact">
-  <a id="energy"></a>
+<div id="energy" class="govuk-body epc-page-break epc-blue-bottom printable-area epc-environmental-impact">
   <h2 class="govuk-heading-l"><%= t('domestic_epc.sections.environmental_impact.title') %></h2>
   <p class="govuk-body"><%== t('domestic_epc.sections.environmental_impact.eir_rating',
                                :current_environmental_impact_rating => eir_rating_band(assessment[:environmentalImpactCurrent].to_i).upcase,
