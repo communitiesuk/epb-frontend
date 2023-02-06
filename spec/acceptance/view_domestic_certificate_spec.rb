@@ -606,14 +606,14 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
 
         it "shows Low and zero carbon energy sources section and the details" do
           expect(response.body).to include(
-            '<h2 class="govuk-heading-m">Low and zero carbon energy sources</h2>',
+            '<h3 class="govuk-heading-m">Low and zero carbon energy sources</h3>',
           )
           expect(response.body).to have_css "li", text: "Solar photovoltaics"
         end
       end
 
       it "shows the primary energy use section", :aggregate_failures do
-        expect(response.body).to include('<h2 class="govuk-heading-m">Primary energy use</h2>')
+        expect(response.body).to include('<h3 class="govuk-heading-m">Primary energy use</h3>')
         expect(response.body).to include('<p class="govuk-body">The primary energy use for this property per year is 989 kilowatt hours per square metre (kWh/m2).</p>')
         expect(response.body).to include('<span class="govuk-details__summary-text">What is primary energy use?</span>')
       end
@@ -667,7 +667,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
         let(:response) { get "/energy-certificate/1111-1111-1111-1111-1112" }
 
         it "shows Additional information section with all details", :aggregate_failures do
-          expect(response.body).to include('<h2 class="govuk-heading-m">Additional information</h2>')
+          expect(response.body).to include('<h3 class="govuk-heading-m">Additional information</h3>')
           expect(response.body).to have_css "li", text: "Dwelling has a swimming pool"
           expect(response.body).to include('<p class="govuk-hint">The energy assessment for the dwelling does not include energy used to heat the swimming pool.</p>')
           expect(response.body).to have_css "li", text: "Stone walls present, not insulated"

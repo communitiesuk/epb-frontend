@@ -43,7 +43,7 @@
   </table>
 
   <% unless assessment[:lzcEnergySources].nil?%>
-    <h2 class="govuk-heading-m"><%= t('domestic_epc.sections.breakdown.low_zero_carbon_energy_sources.title') %></h2>
+    <h3 class="govuk-heading-m"><%= t('domestic_epc.sections.breakdown.low_zero_carbon_energy_sources.title') %></h3>
     <p class="govuk-body">
       <%= t('domestic_epc.sections.breakdown.low_zero_carbon_energy_sources.summary') %>
     </p>
@@ -57,7 +57,7 @@
     </ul>
   <% end %>
 
-  <h2 class="govuk-heading-m"><%= t('domestic_epc.sections.breakdown.primary_energy_use') %></h2>
+  <h3 class="govuk-heading-m"><%= t('domestic_epc.sections.breakdown.primary_energy_use') %></h3>
   <p class="govuk-body"><%= t('domestic_epc.sections.breakdown.primary_energy_use_description', :primary_energy => (assessment[:primaryEnergyUse].nil? ? nil : assessment[:primaryEnergyUse].to_f.round.to_s)) %></p>
   <%== erb :__primary_energy_use_dropdown %>
 
