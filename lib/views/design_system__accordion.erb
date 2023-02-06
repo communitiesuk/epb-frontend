@@ -39,7 +39,7 @@
         <% end %>
       </div>
       <div id="<%= h(id) %>-content-<%= index+1 %>" class="govuk-accordion__section-content" aria-labelledby="<%= h(id) %>-heading-<%= index+1 %>">
-        <% if item[:content] %><% if item[:content][:html] %><%== item[:content][:html] %><% else %><%= item[:content][:text] ? h(item[:content][:text]) : '' %><% end %><% end %>
+        <% if item[:content] %><% if item[:content][:html] %><%== item[:content][:html] %><% else %><%== item[:content][:text] ? "<p class=\"govuk-body\">#{h(item[:content][:text])}</p>" : '' %><% end %><% end %>
       </div>
     </div>
 <% end %><% end %>
