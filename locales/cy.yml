@@ -49,7 +49,7 @@ cy:
         change_settings: "Gallwch newid eich gosodiadau cwcis ar unrhyw adeg."
         accepted: "Rydych chi wedi derbyn cwcis dadansoddeg. %{change_settings_link}"
         rejected: "Rydych chi wedi gwrthod cwcis dadansoddeg. %{change_settings_link}"
-        hide_message: "Cuddio’r neges hon"
+        hide_message: "Cuddio’r neges ynghylch cwcis"
       breadcrumb:
         back: "Yn ôl"
       footer:
