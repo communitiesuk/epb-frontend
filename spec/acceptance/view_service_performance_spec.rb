@@ -106,7 +106,7 @@ describe "Acceptance::ServicePerformance", type: :feature do
         expect(response.body).to have_css("div.govuk-tabs li", count: 3)
         expect(response.body).to have_link("Energy certificates uploaded", href: "#epc-tab")
         expect(response.body).to have_link("User satisfaction", href: "#user-satisfaction-tab")
-        expect(response.body).to have_link("Heatpump data", href: "#heatpump_data-tab")
+        expect(response.body).to have_link("Heat pump data", href: "#heatpump_data-tab")
       end
 
       it "has the interesting-numbers tab as hidden" do
