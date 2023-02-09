@@ -11,7 +11,7 @@ describe UseCase::FetchInterestingNumbers do
     expect(use_case.execute[:data].length).to eq(2)
   end
 
-  it "fetches the heatpump data" do
+  it "fetches the heat pump data" do
     data = use_case.execute("heat_pump_count_for_sap")
     expect(data.length).to eq(12)
     expect(data).to match a_hash_including({ monthYear: "2022-04", numEpcs: 1 })

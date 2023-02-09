@@ -593,8 +593,8 @@ cy:
           - Anfodlon
           - Anfodlon iawn
       heatpump_data:
-        title: 'Heatpump data'
-        intro: "Data about how many EPCs have heatpumps each month"
+        title: 'Heat pump data'
+        intro: "Data about how many EPCs have heat pumps each month"
         table_headers:
           - Month
           - Number of EPCs
