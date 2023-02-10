@@ -130,12 +130,20 @@
   padding: 0;
   overflow: hidden;
   margin-bottom: 0.6rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 
   @include black-bg-if-monochrome;
 
   .epc-address {
     padding-left: 30px;
     padding-top: 30px;
+    flex-grow: 4;
+  }
+
+  .epc-extra-boxes {
+    width: 100%;
   }
 
   .epc-extra-box {
@@ -190,8 +198,14 @@ $epc-box-gutter: 2px;
     padding-right: 1rem;
     font-size: $epc-box-print-base-font-size;
 
+    .epc-address {
+      flex-shrink: 0;
+      width: 35%;
+      padding-top: 1rem;
+      padding-left: 0;
+      font-size: $epc-box-print-base-font-size;
+    }
     .epc-rating-box {
-      order: 2;
       flex-shrink: 0;
       width: 15%;
       border: none;
@@ -212,16 +226,7 @@ $epc-box-gutter: 2px;
         line-height: 3.5rem;
       }
     }
-    .epc-address {
-      order: 1;
-      flex-shrink: 0;
-      width: 35%;
-      padding-top: 1rem;
-      padding-left: 0;
-      font-size: $epc-box-print-base-font-size;
-    }
     .epc-extra-boxes {
-      order: 3;
       flex-shrink: 0;
       width: 50%;
       border-left: $epc-box-gutter solid #fff;

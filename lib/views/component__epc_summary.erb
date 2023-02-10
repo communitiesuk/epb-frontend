@@ -1,14 +1,5 @@
 <div class="govuk-body epc-blue-bottom printable-area epc-box-container">
   <div class="epc-box govuk-!-margin-bottom-5">
-    <div class="epc-rating-box">
-      <% if defined?(rating_type) %>
-        <p class="epc-rating-title govuk-body"><%= rating_type %></p>
-      <% else %>
-        <p class="epc-rating-title govuk-body"><%= t('component.epc_summary.title') %></p>
-      <% end  %>
-      <p class="epc-rating-result govuk-body"><%= energy_efficiency_band.upcase %></p>
-    </div>
-
     <p class="epc-address govuk-body"><% unless occupier.nil? || occupier.strip.empty? %><%= occupier %><br /><% end %><%==
       compact_address_without_occupier(
         [
@@ -21,6 +12,14 @@
         address[:postcode],
         occupier,
       ).map{|e| CGI.escapeHTML(e)}.join('<br />') %></p>
+    <div class="epc-rating-box">
+      <% if defined?(rating_type) %>
+        <p class="epc-rating-title govuk-body"><%= rating_type %></p>
+      <% else %>
+        <p class="epc-rating-title govuk-body"><%= t('component.epc_summary.title') %></p>
+      <% end  %>
+      <p class="epc-rating-result govuk-body"><%= energy_efficiency_band.upcase %></p>
+    </div>
     <div class="epc-extra-boxes">
       <p class="govuk-body epc-extra-box">
         <label>
