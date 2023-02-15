@@ -146,7 +146,7 @@ describe UseCase::FilterLatestCertificates do
     end
   end
 
-  context "when two certificates for the same property were lodge on the same day" do
+  context "when two certificates for the same property were lodged on the same day" do
     let(:response) do
       response = '{
         "data": {
@@ -225,7 +225,7 @@ describe UseCase::FilterLatestCertificates do
       expect(certificates).to contain_exactly(latest_registered_rdsap)
     end
 
-    context "when createdAt is null" do
+    context "when createdAt is null and the dates of assessment match" do
       let(:response) do
         response = '{
           "data": {
@@ -279,6 +279,63 @@ describe UseCase::FilterLatestCertificates do
         certificates = usecase.execute(response)[:"UPRN-000000000000"][:certificates]
 
         expect(certificates.first[:assessmentId]).to eq("0000-0000-0000-0000-0001")
+      end
+    end
+
+    context "when createdAt is null and the dates of assessment do not match" do
+      let(:response) do
+        response = '{
+          "data": {
+            "assessments": [
+                {
+                    "dateOfAssessment": "2010-12-30",
+                    "dateOfRegistration": "2011-01-01",
+                    "typeOfAssessment": "RdSAP",
+                    "assessmentId": "0000-0000-0000-0000-0001",
+                    "currentEnergyEfficiencyRating": 67,
+                    "optOut": false,
+                    "postcode": "SW1W 8ED",
+                    "dateOfExpiry": "2021-01-01",
+                    "addressId": "UPRN-000000000000",
+                    "addressLine1": "A1-L1",
+                    "addressLine2": "A1-L2",
+                    "addressLine3": "A1-L3",
+                    "addressLine4": "",
+                    "town": "LONDON",
+                    "currentEnergyEfficiencyBand": "f",
+                    "status": "ENTERED",
+                    "createdAt": null
+                },
+                {
+                    "dateOfAssessment": "2011-01-01",
+                    "dateOfRegistration": "2011-01-01",
+                    "typeOfAssessment": "RdSAP",
+                    "assessmentId": "0000-0000-0000-0000-0002",
+                    "currentEnergyEfficiencyRating": 68,
+                    "optOut": false,
+                    "postcode": "SW1W 8ED",
+                    "dateOfExpiry": "2021-02-01",
+                    "addressId": "UPRN-000000000000",
+                    "addressLine1": "A2-L1",
+                    "addressLine2": "A2-L2",
+                    "addressLine3": "A2-L3",
+                    "addressLine4": "",
+                    "town": "LONDON",
+                    "currentEnergyEfficiencyBand": "d",
+                    "status": "ENTERED",
+                    "createdAt": null
+                  }
+                ]
+              },
+              "meta": { "searchQuery": "SW1W 8ED" }
+          }'
+        JSON.parse(response, symbolize_names: true)
+      end
+
+      it "returns the certificate with the most recent date of assessment in the response" do
+        certificates = usecase.execute(response)[:"UPRN-000000000000"][:certificates]
+
+        expect(certificates.first[:assessmentId]).to eq("0000-0000-0000-0000-0002")
       end
     end
   end

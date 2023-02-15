@@ -81,9 +81,11 @@ module UseCase
       end
 
       if both_created_at_present?(prev_certificate, certificate)
-        Time.parse(prev_certificate[:createdAt]) <
-          Time.parse(certificate[:createdAt])
+        return Time.parse(prev_certificate[:createdAt]) <
+            Time.parse(certificate[:createdAt])
       end
+
+      Date.parse(prev_certificate[:dateOfAssessment]) < Date.parse(certificate[:dateOfAssessment])
     end
 
     def same_assessment_later_registration?(prev_certificate, certificate)
