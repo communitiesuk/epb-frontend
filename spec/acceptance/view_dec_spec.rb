@@ -415,7 +415,7 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
     end
 
     it "shows the expired date in the epc blue box" do
-      expect(response.body).to have_css(".epc-extra-box b", text: "21 February 2012")
+      expect(response.body).to have_css(".epc-extra-box p", text: "21 February 2012")
     end
 
     it "shows an expired warning message" do

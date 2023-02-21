@@ -153,18 +153,16 @@
     margin: 0;
     padding: 0;
     text-align: center;
-    font-weight: bold;
     float: left;
     width: 50%;
 
     label {
       display: block;
-      font-weight: normal;
     }
 
-    b {
+    p {
       display: block;
-      margin-top: -30px;
+      margin-top: -0.9rem;
     }
 
     +.epc-extra-box {
@@ -241,7 +239,6 @@ $epc-box-gutter: 2px;
       width: auto;
       display: flex;
       flex-direction: row;
-      padding-bottom: $epc-box-print-base-font-size - 0.2rem;
       margin-bottom: 0 !important;
       line-height: inherit;
 
@@ -249,10 +246,10 @@ $epc-box-gutter: 2px;
         float: none;
         border-left: none;
         border-top: 1px solid #fff;
-        padding-top: $epc-box-print-base-font-size - 0.2rem;
+        padding-top: $epc-box-print-base-font-size + 0.4rem;
       }
 
-      label, b {
+      label, p {
         font-size: $epc-box-print-base-font-size;
         text-align: left;
         margin-top: 0;
@@ -263,7 +260,7 @@ $epc-box-gutter: 2px;
         max-width: 100px;
       }
 
-      b {
+      p {
         flex: 3;
       }
 

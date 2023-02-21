@@ -79,7 +79,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
       end
 
       it "shows the certificate number" do
-        expect(response.body).to include("<b>1234-5678-1234-5678-1234</b>")
+        expect(response.body).to include('<p class="govuk-body govuk-!-font-weight-bold">1234-5678-1234-5678-1234</p>')
       end
 
       it "shows the share certificate section" do
@@ -498,7 +498,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
     end
 
     it "shows the expired date in the epc blue box" do
-      expect(response.body).to have_css(".epc-extra-box b", text: "5 January 2010")
+      expect(response.body).to have_css(".epc-extra-box p", text: "5 January 2010")
     end
 
     it "shows an expired warning message" do

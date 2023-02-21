@@ -118,18 +118,18 @@
           </p>
         </div>
         <div class="epc-extra-boxes">
-          <p class="govuk-body epc-extra-box">
+          <div class="epc-extra-box">
             <label>
               <%= assessment[:dateOfExpiry] < Date.today ?
                     t('component.epc_summary_compact.certificate.expired') :
                     t('component.epc_summary_compact.certificate.valid_until')
               %></label>
-            <b><%= date(assessment[:dateOfExpiry]) %></b>
-          </p>
-          <p class="govuk-body epc-extra-box">
+            <p class="govuk-body govuk-!-font-weight-bold"><%= date(assessment[:dateOfExpiry]) %></p>
+          </div>
+          <div class="epc-extra-box">
             <label><%= t('domestic_epc.summary.certificate_id') %></label>
-            <b><%= assessment[:assessmentId] %></b>
-          </p>
+            <p class="govuk-body govuk-!-font-weight-bold"><%= assessment[:assessmentId] %></p>
+          </div>
         </div>
       </div>
 
