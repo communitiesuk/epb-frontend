@@ -989,10 +989,9 @@ en:
         potential: "This property’s potential production"
         tonnes_of_carbon_emission: " tonnes of %{carbon}"
       recommendations:
-        title: "Improve this property’s energy performance"
+        title: "Improve this property's energy rating"
         summary:
-          following_recommendations_text: "By following our step by step recommendations you could reduce this property’s energy use and potentially save money."
-          improve_rating_text: 'Carrying out these changes in order will improve the property’s energy rating and score from %{current_energy_efficiency_band} (%{current_energy_efficiency_rating}) to %{potential_energy_efficiency_band} (%{potential_energy_efficiency_rating}).'
+          following_recommendations_text: "Follow these steps to improve the energy rating and score."
           steps_in_order_question: 'Do I need to follow these steps in order?'
           steps_in_order_answer1: 'Yes. Each step builds on the one before it so you can save the most energy.'
           steps_in_order_answer2: "For example, it’s more energy efficient to insulate your home before you buy a new boiler. A well insulated home will lose less heat so you do not have to run your boiler as often."

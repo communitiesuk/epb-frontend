@@ -223,40 +223,25 @@
 
     <div id="recommendations" class="govuk-body printable-area epc-recommendations">
       <h2 class="govuk-heading-l"><%= t('domestic_epc.sections.recommendations.title') %></h2>
-      <div class="allow-break govuk-grid-row <%= assessment[:recommendedImprovements].empty? ? 'epc-blue-bottom' : ''%>">
-        <div class="recommendations-box">
-          <div class="recommendations-text">
-          <% if assessment[:recommendedImprovements].empty? %>
-            <p class="govuk-body "><%= t('domestic_epc.sections.recommendations.summary.no_recommendations_summary') %></p>
+      <div class="allow-break <%= assessment[:recommendedImprovements].empty? ? 'epc-blue-bottom' : ''%>">
+        <% if assessment[:recommendedImprovements].empty? %>
+          <p class="govuk-body "><%= t('domestic_epc.sections.recommendations.summary.no_recommendations_summary') %></p>
 
-            <% unless assessment[:postcode][0..1] == "BT" %>
-              <a class="govuk-link" href="<%= t('domestic_epc.sections.recommendations.summary.simple_energy_link') %>"><%= t('domestic_epc.sections.recommendations.summary.simple_energy_text') %></a>
-            <% end %>
-          <% else %>
-            <p class="govuk-body"><%= t('domestic_epc.sections.recommendations.summary.following_recommendations_text') %></p>
-            <p class="govuk-body">
-              <%= t('domestic_epc.sections.recommendations.summary.improve_rating_text', :current_energy_efficiency_band => assessment[:currentEnergyEfficiencyBand].upcase, :current_energy_efficiency_rating => assessment[:currentEnergyEfficiencyRating], :potential_energy_efficiency_band => assessment[:potentialEnergyEfficiencyBand].upcase, :potential_energy_efficiency_rating => assessment[:potentialEnergyEfficiencyRating] ) %>
-            </p>
-            <details class="govuk-details" data-module="govuk-details">
-              <summary class="govuk-details__summary">
-                <span class="govuk-details__summary-text"><%= t('domestic_epc.sections.recommendations.summary.steps_in_order_question') %></span>
-              </summary>
-              <div class="govuk-details__text">
-                <p><%= t('domestic_epc.sections.recommendations.summary.steps_in_order_answer1') %></p>
-                <p><%= t('domestic_epc.sections.recommendations.summary.steps_in_order_answer2') %></p>
-              </div>
-            </details>
+          <% unless assessment[:postcode][0..1] == "BT" %>
+            <a class="govuk-link" href="<%= t('domestic_epc.sections.recommendations.summary.simple_energy_link') %>"><%= t('domestic_epc.sections.recommendations.summary.simple_energy_text') %></a>
           <% end %>
-          </div>
-          <div class="epc-rating-box">
-            <p class="epc-rating-title govuk-body">
-              <%= t('domestic_epc.sections.recommendations.box.energy_rating_title') %>
-            </p>
-            <p class="epc-rating-result govuk-body">
-              <%= assessment[:potentialEnergyEfficiencyBand].upcase %>
-            </p>
-          </div>
-        </div>
+        <% else %>
+          <p class="govuk-body"><%= t('domestic_epc.sections.recommendations.summary.following_recommendations_text') %></p>
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text"><%= t('domestic_epc.sections.recommendations.summary.steps_in_order_question') %></span>
+            </summary>
+            <div class="govuk-details__text">
+              <p><%= t('domestic_epc.sections.recommendations.summary.steps_in_order_answer1') %></p>
+              <p><%= t('domestic_epc.sections.recommendations.summary.steps_in_order_answer2') %></p>
+            </div>
+          </details>
+        <% end %>
       </div>
     </div>
 

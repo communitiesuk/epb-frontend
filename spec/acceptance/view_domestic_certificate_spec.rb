@@ -1046,7 +1046,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
 
     it "shows following our step by step recommendations text" do
       expect(response.body).to include(
-        "By following our step by step recommendations you could reduce this property’s energy use and potentially save money.",
+        "Follow these steps to improve the energy rating and score.",
       )
     end
 

@@ -988,10 +988,9 @@ cy:
         potential: "Mae gan yr eiddo hwn y potensial i gynhyrchu"
         tonnes_of_carbon_emission: " o dunelli o %{carbon}"
       recommendations:
-        title: "Gwella perfformiad ynni’r eiddo hwn"
+        title: "Gwella cyfraddiad ynni'r eiddo hwn"
         summary:
-          following_recommendations_text: "Drwy ddilyn ein hargymhellion gam wrth gam fe allech chi leihau defnydd ynni’r eiddo hwn ac o bosibl arbed arian."
-          improve_rating_text: "Bydd gwneud y newidiadau hyn yn eu trefn yn gwella cyfraddaid ynni’r eiddo a’i sgôr o %{current_energy_efficiency_band} (%{current_energy_efficiency_rating}) i %{potential_energy_efficiency_band} (%{potential_energy_efficiency_rating})."
+          following_recommendations_text: "Dilynwch y camau hyn i wella'r cyfraddiad a’r sgôr ynni."
           steps_in_order_question: "Oes angen imi ddilyn y camau hyn yn eu trefn?"
           steps_in_order_answer1: "Oes. Mae pob cam yn adeiladu ar y cam blaenorol er mwyn ichi arbed yr ynni mwyaf posibl."
           steps_in_order_answer2: "Er enghraifft, mae’n fwy effeithlon o ran ynni ichi inswleiddio’ch cartref cyn prynu bwyler newydd. Bydd cartref sydd wedi’i inswleiddio’n dda yn colli llai o wres fel nad oes rhaid ichi ddefnyddio’ch bwyler mor aml."
