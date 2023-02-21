@@ -56,7 +56,7 @@ cy:
         heading: "Dolenni cymorth"
         accessibility_statement: 'Datganiad ar hygyrchedd'
         cookies: 'Cwcis ar ein gwasanaeth ni'
-        feedback: 'Adborth'
+        feedback: 'Rhoi adborth'
         license: "Mae’r cynnwys i gyd ar gael o dan y <a class=\"govuk-footer__link\" href=\"https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/\" rel=\"license\">Drwydded Llywodraeth Agored v3.0</a>,  ac eithrio lle nodir fel arall."
         copyright: "<a class=\"govuk-footer__link govuk-footer__copyright-logo\" href=\"https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/\">&copy; Crown copyright</a>"
 

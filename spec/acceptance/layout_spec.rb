@@ -48,8 +48,8 @@ describe "Acceptance::AccessibilityStatement", type: :feature do
       end
 
       it "has a link in the footer for the feedback form" do
-        expect(response.body).to have_css("footer ul.govuk-footer__inline-list li:nth-child(3) a", text: "Feedback")
-        expect(response.body).to have_link("Feedback", href: "https://forms.office.com/Pages/ResponsePage.aspx?id=EGg0v32c3kOociSi7zmVqHjpWgKFmwZGtrWhJ7I-WptUQzlDR0M5UllHQTI1NjNCNUtKRVdFRU9RUS4u")
+        expect(response.body).to have_css("footer ul.govuk-footer__inline-list li:nth-child(3) a", text: "Give feedback")
+        expect(response.body).to have_link("Give feedback", href: "https://forms.office.com/e/hUnC3Xq1T4")
       end
 
       it "has a link in the footer for the service performance" do
