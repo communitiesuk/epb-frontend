@@ -1125,7 +1125,7 @@ describe "Acceptance::Certificate" do
 
         it "has the correct royal mail link", aggregate_failures: true do
           expect(response.body).to have_css("p", text: "You can")
-          expect(response.body).to have_link("find a postcode on Royal Mail's postcode finder", href: "https://www.royalmail.com/find-a-postcode")
+          expect(response.body).to have_link("find a postcode on Royal Mail’s postcode finder", href: "https://www.royalmail.com/find-a-postcode")
         end
       end
     end

@@ -1,44 +1,44 @@
 en:
   validation_errors:
-    assessor_name_error: 'Enter a first name and last name'
+    assessor_name_error: "Enter a first name and last name"
     no_property_type_selected: "Select a type of property"
-    postcode_invalid: 'Enter a valid UK postcode using only letters and numbers in the format LS1 4AP'
-    postcode_incomplete: 'Enter a full UK postcode in the format LS1 4AP'
+    postcode_invalid: "Enter a valid UK postcode using only letters and numbers in the format LS1 4AP"
+    postcode_incomplete: "Enter a full UK postcode in the format LS1 4AP"
     postcode_wrong_format: "Enter a valid UK postcode in the format LS1 4AP"
-    reference_number_not_valid: 'Enter a 20-digit certificate number'
-    street_name_missing: 'Enter the street name'
-    town_missing: 'Enter the town or city'
-    captcha_error: 'Please verify that you’re a human and try again.'
+    reference_number_not_valid: "Enter a 20-digit certificate number"
+    street_name_missing: "Enter the street name"
+    town_missing: "Enter the town or city"
+    captcha_error: "Please verify that you’re a human and try again."
 
   data_missing:
     not_recorded: "Not recorded"
-    no_disclosure: 'No assessor’s declaration provided'
-    disclosure_number_not_valid: 'The disclosure code provided is not valid'
+    no_disclosure: "No assessor’s declaration provided"
+    disclosure_number_not_valid: "The disclosure code provided is not valid"
 
   services:
-    find_an_energy_certificate: 'Find an energy certificate'
-    getting_an_energy_certificate: 'Get a new energy certificate'
+    find_an_energy_certificate: "Find an energy certificate"
+    getting_an_energy_certificate: "Get a new energy certificate"
 
   related_content:
-    title: 'Related content'
+    title: "Related content"
     guidance_on_epc:
-      title: 'Guidance on EPCs when buying or selling your home'
-      url: 'https://www.gov.uk/buy-sell-your-home/energy-performance-certificates'
+      title: "Guidance on EPCs when buying or selling your home"
+      url: "https://www.gov.uk/buy-sell-your-home/energy-performance-certificates"
     epc_exemptions:
-      title: 'EPC exemptions for business properties'
-      url: 'https://www.gov.uk/energy-performance-certificate-commercial-property/exemptions'
+      title: "EPC exemptions for business properties"
+      url: "https://www.gov.uk/energy-performance-certificate-commercial-property/exemptions"
     what_need_decs:
-      title: 'Guidance on which properties need a DEC'
-      url: 'https://www.gov.uk/check-energy-performance-public-building'
+      title: "Guidance on which properties need a DEC"
+      url: "https://www.gov.uk/check-energy-performance-public-building"
     air_con_required:
-      title: 'When air conditioning system inspections are required'
-      url: 'https://www.gov.uk/get-your-air-conditioning-system-inspected'
+      title: "When air conditioning system inspections are required"
+      url: "https://www.gov.uk/get-your-air-conditioning-system-inspected"
   layout:
     head:
-      title: 'Energy performance of buildings register'
+      title: "Energy performance of buildings register"
     body:
-      skip: 'Skip to main content'
-      govuk: 'GOV.UK'
+      skip: "Skip to main content"
+      govuk: "GOV.UK"
       cookie_banner:
         title: "Cookies on "
         intro_essential: "We use some essential cookies to make this service work."
@@ -51,51 +51,51 @@ en:
         rejected: "You’ve rejected analytics cookies. You can %{change_settings_link} at any time."
         hide_message: "Hide cookie message"
       breadcrumb:
-        back: 'Back'
+        back: "Back"
       footer:
-        heading: 'Support links'
-        accessibility_statement: 'Accessibility statement'
-        cookies: 'Cookies on our service'
-        feedback: 'Give feedback'
-        license: 'All content is available under the <a class="govuk-footer__link" href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated'
-        copyright: '<a class="govuk-footer__link govuk-footer__copyright-logo" href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/">&copy; Crown copyright</a>'
+        heading: "Support links"
+        accessibility_statement: "Accessibility statement"
+        cookies: "Cookies on our service"
+        feedback: "Give feedback"
+        license: "All content is available under the <a class=\"govuk-footer__link\" href=\"https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/\" rel=\"license\">Open Government Licence v3.0</a>, except where otherwise stated"
+        copyright: "<a class=\"govuk-footer__link govuk-footer__copyright-logo\" href=\"https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/\">&copy; Crown copyright</a>"
 
   contact:
-    help_desk_number: '020 3829 0748'
+    help_desk_number: "020 3829 0748"
 
   find_an_assessor:
-    top_heading: 'Get a new energy certificate'
+    top_heading: "Get a new energy certificate"
     introduction:
-      what_you_need: 'You need to book a property assessment to get a new:'
-      epc: 'energy performance certificate (EPC)'
-      dec: 'display energy certificate (DEC) for a public building'
-      ac: 'air conditioning inspection certificate and report'
-      england_wales_northern_ireland: 'Use this service to find a qualified assessor in England, Wales or Northern Ireland.'
-      cost: 'The cost of an assessment varies by assessor and the size of the property.'
+      what_you_need: "You need to book a property assessment to get a new:"
+      epc: "energy performance certificate (EPC)"
+      dec: "display energy certificate (DEC) for a public building"
+      ac: "air conditioning inspection certificate and report"
+      england_wales_northern_ireland: "Use this service to find a qualified assessor in England, Wales or Northern Ireland."
+      cost: "The cost of an assessment varies by assessor and the size of the property."
     buildings_not_epc:
-      cta: 'Buildings that don’t need an EPC'
-      intro: 'Properties do not need an EPC if they are:'
-      list: 'places of worship|temporary buildings that will be used for less than 2 years|stand-alone buildings with total useful floor space of less than 50 square metres|industrial sites, workshops and non-residential agricultural buildings that don’t use a lot of energy|some buildings that are due to be demolished|holiday accommodation that’s rented out for less than 4 months a year or is let under a licence to occupy|listed buildings - you should get advice from your local authority conservation officer if the work would alter the building’s character|residential buildings intended to be used less than 4 months a year'
-    cta: 'Start now'
+      cta: "Buildings that don’t need an EPC"
+      intro: "Properties do not need an EPC if they are:"
+      list: "places of worship|temporary buildings that will be used for less than 2 years|stand-alone buildings with total useful floor space of less than 50 square metres|industrial sites, workshops and non-residential agricultural buildings that don’t use a lot of energy|some buildings that are due to be demolished|holiday accommodation that’s rented out for less than 4 months a year or is let under a licence to occupy|listed buildings - you should get advice from your local authority conservation officer if the work would alter the building’s character|residential buildings intended to be used less than 4 months a year"
+    cta: "Start now"
     before_you_start:
-      heading: 'Before you start'
+      heading: "Before you start"
       switch_language:
-        description: 'This service is also available in %{link}.'
-        link: 'Welsh (Cymraeg)'
-        url: '?lang=cy'
+        description: "This service is also available in %{link}."
+        link: "Welsh (Cymraeg)"
+        url: "?lang=cy"
       contact:
         text: "If you need additional support to find an assessor, contact us on %{link}, or call our helpdesk on 020 3829 0748 (Monday to Friday, 9am - 5pm)."
         link: "mailto:dluhc.digital-services@levellingup.gov.uk?subject=EPB%20-%20"
         cta: "dluhc.digital-services@levellingup.gov.uk"
       scotland:
-        description: 'For properties in Scotland, use the %{link}.'
-        link: 'Scottish energy certificate service'
+        description: "For properties in Scotland, use the %{link}."
+        link: "Scottish energy certificate service"
       commercial:
-        description: 'For commercial or public buildings, use the %{link} service.'
-        link: 'find a non domestic assessor'
+        description: "For commercial or public buildings, use the %{link} service."
+        link: "find a non domestic assessor"
       existing_epc:
-        description: 'You can'
-        link: 'check if the property already has a valid energy certificate'
+        description: "You can"
+        link: "check if the property already has a valid energy certificate"
     property_type:
       question_title: "What type of property is the certificate for?"
       options:
@@ -119,213 +119,213 @@ en:
           hint: "A new building is either being built or will be built soon. Some extentions, conversions or change of use dwellings also count as new buildings."
 
   schemes:
-    unaccredited: 'is no longer accredited.'
+    unaccredited: "is no longer accredited."
     contact_details:
-      text: 'Contact details for %{scheme_name}:'
-      email: 'Email:'
-      telephone: 'Telephone:'
+      text: "Contact details for %{scheme_name}:"
+      email: "Email:"
+      telephone: "Telephone:"
     list:
-      heading: 'Energy assessment accreditation schemes'
-      cta: 'Go to website'
-      commercial: 'Commercial <br />properties only'
+      heading: "Energy assessment accreditation schemes"
+      cta: "Go to website"
+      commercial: "Commercial <br />properties only"
       cibse:
-        name: 'CIBSE Certification Limited'
-        phone: '020 8772 3649'
-        email: 'epc@cibsecertification.org'
-        url: 'https://www.cibsecertification.co.uk'
+        name: "CIBSE Certification Limited"
+        phone: "020 8772 3649"
+        email: "epc@cibsecertification.org"
+        url: "https://www.cibsecertification.co.uk"
       ecmk:
-        name: 'ECMK'
-        phone: '0333 123 1418'
-        email: 'info@ecmk.co.uk'
-        url: 'https://www.ecmk.co.uk'
+        name: "ECMK"
+        phone: "0333 123 1418"
+        email: "info@ecmk.co.uk"
+        url: "https://www.ecmk.co.uk"
       elmhurst:
-        name: 'Elmhurst Energy Systems Ltd'
-        phone: '01455 883 250'
-        email: 'enquiries@elmhurstenergy.co.uk'
-        url: 'https://www.elmhurstenergy.co.uk'
+        name: "Elmhurst Energy Systems Ltd"
+        phone: "01455 883 250"
+        email: "enquiries@elmhurstenergy.co.uk"
+        url: "https://www.elmhurstenergy.co.uk"
       sterling:
-        name: 'Sterling Accreditation Ltd'
-        phone: '0161 727 4303'
-        email: 'info@sterlingaccreditation.com'
-        url: 'http://www.sterlingaccreditation.com'
+        name: "Sterling Accreditation Ltd"
+        phone: "0161 727 4303"
+        email: "info@sterlingaccreditation.com"
+        url: "http://www.sterlingaccreditation.com"
       stroma:
-        name: 'Stroma Certification Ltd'
-        phone: '0330 124 9660'
-        email: 'certification@stroma.com'
-        url: 'https://www.stroma.com/certification'
+        name: "Stroma Certification Ltd"
+        phone: "0330 124 9660"
+        email: "certification@stroma.com"
+        url: "https://www.stroma.com/certification"
       quidos:
-        name: 'Quidos Limited'
-        phone: '01225 667 570'
-        email: 'info@quidos.co.uk'
-        url: 'https://quidos.co.uk'
+        name: "Quidos Limited"
+        phone: "01225 667 570"
+        email: "info@quidos.co.uk"
+        url: "https://quidos.co.uk"
       bre:
-        name: 'BRE'
-        phone: '01455 883 250'
-        email: 'enquiries@elmhurstenergy.co.uk'
-        url: 'https://www.elmhurstenergy.co.uk'
+        name: "BRE"
+        phone: "01455 883 250"
+        email: "enquiries@elmhurstenergy.co.uk"
+        url: "https://www.elmhurstenergy.co.uk"
       besca:
-        name: 'BESCA'
-        phone: '020 3829 0748'
-        email: 'dluhc.digital-services@levellingup.gov.uk'
-        url: ''
+        name: "BESCA"
+        phone: "020 3829 0748"
+        email: "dluhc.digital-services@levellingup.gov.uk"
+        url: ""
       ciat:
-        name: 'CIAT'
-        phone: '020 3829 0748'
-        email: 'dluhc.digital-services@levellingup.gov.uk'
-        url: ''
+        name: "CIAT"
+        phone: "020 3829 0748"
+        email: "dluhc.digital-services@levellingup.gov.uk"
+        url: ""
       hvca:
-        name: 'HVCA'
-        phone: '020 3829 0748'
-        email: 'dluhc.digital-services@levellingup.gov.uk'
-        url: ''
+        name: "HVCA"
+        phone: "020 3829 0748"
+        email: "dluhc.digital-services@levellingup.gov.uk"
+        url: ""
       knauf:
-        name: 'Knauf Insulation'
-        phone: '020 3829 0748'
-        email: 'dluhc.digital-services@levellingup.gov.uk'
-        url: ''
+        name: "Knauf Insulation"
+        phone: "020 3829 0748"
+        email: "dluhc.digital-services@levellingup.gov.uk"
+        url: ""
       napit:
-        name: 'NAPIT'
-        phone: '020 3829 0748'
-        email: 'dluhc.digital-services@levellingup.gov.uk'
-        url: ''
+        name: "NAPIT"
+        phone: "020 3829 0748"
+        email: "dluhc.digital-services@levellingup.gov.uk"
+        url: ""
       nher:
-        name: 'NHER'
-        phone: '01455 883 250'
-        email: 'enquiries@elmhurstenergy.co.uk'
-        url: 'https://www.elmhurstenergy.co.uk'
+        name: "NHER"
+        phone: "01455 883 250"
+        email: "enquiries@elmhurstenergy.co.uk"
+        url: "https://www.elmhurstenergy.co.uk"
       national:
-        name: 'National Energy Services'
-        phone: '01455 883 250'
-        email: 'enquiries@elmhurstenergy.co.uk'
-        url: 'https://www.elmhurstenergy.co.uk'
+        name: "National Energy Services"
+        phone: "01455 883 250"
+        email: "enquiries@elmhurstenergy.co.uk"
+        url: "https://www.elmhurstenergy.co.uk"
       northgate:
-        name: 'Northgate'
-        phone: '01455 883 250'
-        email: 'enquiries@elmhurstenergy.co.uk'
-        url: 'https://www.elmhurstenergy.co.uk'
+        name: "Northgate"
+        phone: "01455 883 250"
+        email: "enquiries@elmhurstenergy.co.uk"
+        url: "https://www.elmhurstenergy.co.uk"
       rics:
-        name: 'RICS'
-        phone: '020 3829 0748'
-        email: 'dluhc.digital-services@levellingup.gov.uk'
-        url: ''
+        name: "RICS"
+        phone: "020 3829 0748"
+        email: "dluhc.digital-services@levellingup.gov.uk"
+        url: ""
       sava:
-        name: 'SAVA'
-        phone: '01455 883 250'
-        email: 'enquiries@elmhurstenergy.co.uk'
-        url: 'https://www.elmhurstenergy.co.uk'
+        name: "SAVA"
+        phone: "01455 883 250"
+        email: "enquiries@elmhurstenergy.co.uk"
+        url: "https://www.elmhurstenergy.co.uk"
 
   find_assessor_by_postcode:
-    top_heading: 'What is the property’s postcode?'
+    top_heading: "What is the property’s postcode?"
     assessor_by_name:
-      title: 'Check an assessor is registered'
-      body: 'If you know an assessor’s name and want to check their details, you can %{link}.'
-      cta: 'find an assessor by name'
-    question: 'Enter the postcode'
-    hint: 'For example LS1 4AP'
-    button_text: 'Find'
+      title: "Check an assessor is registered"
+      body: "If you know an assessor’s name and want to check their details, you can %{link}."
+      cta: "find an assessor by name"
+    question: "Enter the postcode"
+    hint: "For example LS1 4AP"
+    button_text: "Find"
     postcode_not_known: "Find a postcode on Royal Mail’s postcode finder"
     scheme_not_found:
-      heading: 'Accreditation scheme not found'
-      body: 'There is no scheme for one of the requested assessor'
+      heading: "Accreditation scheme not found"
+      body: "There is no scheme for one of the requested assessor"
 
   find_non_domestic_assessor_by_postcode:
-    top_heading: "What is the property's postcode?"
+    top_heading: "What is the property’s postcode?"
 
   find_non_domestic_assessor_by_postcode_results:
-    top_heading: 'Contact an assessor to book an energy assessment'
-    question: 'Enter a postcode to search again'
-    hint: 'For example LS1 4AP'
+    top_heading: "Contact an assessor to book an energy assessment"
+    question: "Enter a postcode to search again"
+    hint: "For example LS1 4AP"
     qualification:
-      title: 'Qualifications'
-      domesticSap: 'Standard Assessment Procedure (SAP)'
-      domesticRdSap: 'Reduced Data Standard Assessment Procedure (RdSAP)'
-      nonDomesticSp3: 'Air Conditioning Simple Packaged (Level 3)'
-      nonDomesticCc4: 'Air Conditioning Complexed Central (Level 4)'
-      nonDomesticDec: 'Display Energy Certificate (DEC)'
-      nonDomesticNos3: 'Non-Domestic Energy Assessor (Level 3)'
-      nonDomesticNos4: 'Non-Domestic Energy Assessor (Level 4)'
-      nonDomesticNos5: 'Non-Domestic Energy Assessor (Level 5)'
+      title: "Qualifications"
+      domesticSap: "Standard Assessment Procedure (SAP)"
+      domesticRdSap: "Reduced Data Standard Assessment Procedure (RdSAP)"
+      nonDomesticSp3: "Air Conditioning Simple Packaged (Level 3)"
+      nonDomesticCc4: "Air Conditioning Complexed Central (Level 4)"
+      nonDomesticDec: "Display Energy Certificate (DEC)"
+      nonDomesticNos3: "Non-Domestic Energy Assessor (Level 3)"
+      nonDomesticNos4: "Non-Domestic Energy Assessor (Level 4)"
+      nonDomesticNos5: "Non-Domestic Energy Assessor (Level 5)"
 
   find_assessor_by_postcode_results:
-    top_heading: 'Contact an assessor to book an energy assessment'
-    question: 'Enter a postcode to search again'
-    hint: 'For example LS1 4AP'
-    description: 'Contact an assessor listed below to book an energy assessment.'
-    no_assessors_heading: 'No results for %{postcode}'
-    no_assessors_1: 'We did not find any assessors for %{postcode}.'
-    no_assessors_2: 'Check the postcode is correct and enter it again, or try searching for another nearby postcode.'
-    postcode_finder: 'Find a postcode on Royal Mail’s postcode finder'
-    accreditation_summary_title: 'More information'
-    accreditation_conjunction: ' about '
-    accreditation_summary_text: 'Accreditation schemes are appointed by the government to ensure that assessors are qualified to carry out EPC assessments.<br /><br />If you are unhappy about an EPC assessment, you can complain to the assessor directly. If you are still unhappy, you should contact your assessor’s accreditation scheme.'
+    top_heading: "Contact an assessor to book an energy assessment"
+    question: "Enter a postcode to search again"
+    hint: "For example LS1 4AP"
+    description: "Contact an assessor listed below to book an energy assessment."
+    no_assessors_heading: "No results for %{postcode}"
+    no_assessors_1: "We did not find any assessors for %{postcode}."
+    no_assessors_2: "Check the postcode is correct and enter it again, or try searching for another nearby postcode."
+    postcode_finder: "Find a postcode on Royal Mail’s postcode finder"
+    accreditation_summary_title: "More information"
+    accreditation_conjunction: " about "
+    accreditation_summary_text: "Accreditation schemes are appointed by the government to ensure that assessors are qualified to carry out EPC assessments.<br /><br />If you are unhappy about an EPC assessment, you can complain to the assessor directly. If you are still unhappy, you should contact your assessor’s accreditation scheme."
     results:
-      one: '%{count} assessor in order of distance from %{postcode}'
-      other: '%{count} assessors in order of distance from %{postcode}'
+      one: "%{count} assessor in order of distance from %{postcode}"
+      other: "%{count} assessors in order of distance from %{postcode}"
     distance:
-      heading: 'Distance'
-      default_miles_away_text: 'Less than 1 mile away'
-      miles_away_text: 'miles away'
+      heading: "Distance"
+      default_miles_away_text: "Less than 1 mile away"
+      miles_away_text: "miles away"
     contact_details:
-      email: 'Email'
-      telephone: 'Telephone'
-    accredited_id: 'Assessor ID'
-    accredited_scheme: 'Accreditation scheme'
-    assessor_id_text: 'assessor ID'
+      email: "Email"
+      telephone: "Telephone"
+    accredited_id: "Assessor ID"
+    accredited_scheme: "Accreditation scheme"
+    assessor_id_text: "assessor ID"
     errors:
       missing_detail: Not Supplied
 
   find_assessor_by_name:
-    top_heading: 'What is the assessor’s name?'
-    question: 'Enter the assessor’s full name'
-    hint: 'For example Matt Anderson'
-    button_text: 'Search'
-    too_many_results: 'There are too many results for that name. Please narrow your search term.'
+    top_heading: "What is the assessor’s name?"
+    question: "Enter the assessor’s full name"
+    hint: "For example Matt Anderson"
+    button_text: "Search"
+    too_many_results: "There are too many results for that name. Please narrow your search term."
 
   find_assessor_by_name_results:
-    top_heading: 'Contact an assessor to book an energy assessment'
-    description: 'See what assessors are accredited by the name you searched for.'
-    no_assessors: 'There are no assessors with this name.'
-    accreditation_summary_title: 'Accreditation schemes and complaints'
-    accreditation_summary_text: 'Accreditation schemes are appointed by the government to ensure that assessors are qualified to carry out energy assessments and to create EPCs.<br /><br />If you’re unhappy about an energy assessment or EPC, you can complain to the assessor directly. If you’re still unhappy, you should contact your assessor’s accreditation scheme.'
+    top_heading: "Contact an assessor to book an energy assessment"
+    description: "See what assessors are accredited by the name you searched for."
+    no_assessors: "There are no assessors with this name."
+    accreditation_summary_title: "Accreditation schemes and complaints"
+    accreditation_summary_text: "Accreditation schemes are appointed by the government to ensure that assessors are qualified to carry out energy assessments and to create EPCs.<br /><br />If you’re unhappy about an energy assessment or EPC, you can complain to the assessor directly. If you’re still unhappy, you should contact your assessor’s accreditation scheme."
     results:
       results:
-        zero: 'No results for the name %{name}'
-        one: '%{count} result for the name %{name}'
-        other: '%{count} results for the name %{name}'
+        zero: "No results for the name %{name}"
+        one: "%{count} result for the name %{name}"
+        other: "%{count} results for the name %{name}"
       results_like:
-        zero: 'No results similar to the name %{name}'
-        one: '%{count} result similar to the name %{name}'
-        other: '%{count} results similar to the name %{name}'
-    contact_details_text: 'Contact details'
-    accredited_by_text: 'Accreditation scheme'
-    assessor_id_text: 'assessor ID'
+        zero: "No results similar to the name %{name}"
+        one: "%{count} result similar to the name %{name}"
+        other: "%{count} results similar to the name %{name}"
+    contact_details_text: "Contact details"
+    accredited_by_text: "Accreditation scheme"
+    assessor_id_text: "assessor ID"
 
   find_a_certificate:
-    top_heading: 'Find an energy certificate'
+    top_heading: "Find an energy certificate"
     service:
-      introduction: 'Use this service to find energy certificates and recommendation reports for properties in England, Wales and Northern Ireland.'
-      this_includes: 'This includes:'
-      epc: 'energy performance certificates (EPCs)'
-      dec: 'display energy certificates (DECs) for public buildings'
-      air_con_cert_report: 'air conditioning inspection certificates and reports'
-    cta: 'Start now'
+      introduction: "Use this service to find energy certificates and recommendation reports for properties in England, Wales and Northern Ireland."
+      this_includes: "This includes:"
+      epc: "energy performance certificates (EPCs)"
+      dec: "display energy certificates (DECs) for public buildings"
+      air_con_cert_report: "air conditioning inspection certificates and reports"
+    cta: "Start now"
     before_you_start:
-      title: 'Before you start'
+      title: "Before you start"
       switch_language:
-        description: 'This service is also available in %{link}.'
-        link: 'Welsh (Cymraeg)'
-        url: '?lang=cy'
+        description: "This service is also available in %{link}."
+        link: "Welsh (Cymraeg)"
+        url: "?lang=cy"
       scotland:
-        text: 'For properties in Scotland, use the %{link}.'
+        text: "For properties in Scotland, use the %{link}."
         cta: "Scottish energy certificate service"
       property_guidance:
-        description: 'If your property does not have an energy certificate or the certificate is expired, you can'
-        link: 'get a new energy certificate.'
-        url:  '/find-an-assessor'
+        description: "If your property does not have an energy certificate or the certificate is expired, you can"
+        link: "get a new energy certificate."
+        url: "/find-an-assessor"
       commercial:
-        url: '/find-a-non-domestic-certificate'
-        cta: 'find a non-domestic EPC'
-      call_center: 'If you need additional support to find an energy certificate or report, call our helpdesk on 020 3829 0748 (Monday to Friday, 9am - 5pm).'
+        url: "/find-a-non-domestic-certificate"
+        cta: "find a non-domestic EPC"
+      call_center: "If you need additional support to find an energy certificate or report, call our helpdesk on 020 3829 0748 (Monday to Friday, 9am - 5pm)."
       contact:
         text: "If you need additional support to find an energy certificate or report, contact us on %{link}, or call our helpdesk on 020 3829 0748 (Monday to Friday, 9am - 5pm)."
         link: "mailto:dluhc.digital-services@levellingup.gov.uk?subject=EPB%20-%20"
@@ -343,37 +343,37 @@ en:
       cta: "Continue"
 
   find_certificate_by_postcode:
-    top_heading: 'What is the postcode?'
-    question: 'Enter the postcode'
-    button_text: 'Find'
-    hint: 'For example LS1 4AP'
+    top_heading: "What is the postcode?"
+    question: "Enter the postcode"
+    button_text: "Find"
+    hint: "For example LS1 4AP"
     postcode_not_known:
-      heading: 'If you do not know the postcode'
+      heading: "If you do not know the postcode"
       body_find_postcode: "You can %{link}."
       cta_find_postcode: "find a postcode on Royal Mail’s postcode finder"
       body_street_and_town: "Or %{link}"
       cta_street_and_town: "find an EPC using the street name and town."
     certificate_by_reference_number:
-      heading: 'Search by certificate number'
+      heading: "Search by certificate number"
       body: "You can %{link}."
-      cta: 'find an EPC by using its certificate number'
+      cta: "find an EPC by using its certificate number"
     no_network:
-      heading: 'Network connection failed'
-      body: 'There is an internal network error'
+      heading: "Network connection failed"
+      body: "There is an internal network error"
 
   find_certificate_results:
     table:
-      address: 'Address'
-      rating: 'Energy rating'
-      expiry: 'Valid until'
-    expired: 'expired'
+      address: "Address"
+      rating: "Energy rating"
+      expiry: "Valid until"
+    expired: "expired"
 
   find_non_dom_certificate_results:
     table:
-      address: 'Address'
-      type: 'Certificate and report type'
-      expiry: 'Valid until'
-    expired: 'expired'
+      address: "Address"
+      type: "Certificate and report type"
+      expiry: "Valid until"
+    expired: "expired"
 
   find_certificate_by_postcode_results:
     epcs_only: "We only list properties with EPCs"
@@ -382,12 +382,12 @@ en:
       get_a_new_one_no_results: "If your property does not have an EPC, you can"
       get_a_new_one_link: "get a new energy certificate"
     list:
-      one: '%{count} EPC for %{postcode}'
-      other: '%{count} EPCs for %{postcode}'
+      one: "%{count} EPC for %{postcode}"
+      other: "%{count} EPCs for %{postcode}"
     table:
-      address: 'Address'
-      rating: 'Energy rating'
-      expiry: 'Valid until'
+      address: "Address"
+      rating: "Energy rating"
+      expiry: "Valid until"
     no_results:
       search_again:
         text: "You can search again by:"
@@ -399,109 +399,109 @@ en:
       no_certificates: "There are no results for this postcode."
 
   find_certificate_by_reference_number:
-    top_heading: 'What is the certificate number?'
-    question: 'Enter a certificate number'
-    reference_number_not_registered: 'A certificate was not found with this certificate number'
-    button_text: 'Find'
-    hint: 'For example 9002-3775-9101-5482-3149'
+    top_heading: "What is the certificate number?"
+    question: "Enter a certificate number"
+    reference_number_not_registered: "A certificate was not found with this certificate number"
+    button_text: "Find"
+    hint: "For example 9002-3775-9101-5482-3149"
     no_network:
-      heading: 'Network connection failed'
-      body: 'There is an internal network error'
+      heading: "Network connection failed"
+      body: "There is an internal network error"
 
   find_certificate_by_street_name_and_town:
-    top_heading: 'What is the address?'
+    top_heading: "What is the address?"
     no_such_address:
       epcs_only: "We only list properties with EPCs"
       get_a_new_one_no_results: "If your property does not have an EPC, you can"
       get_a_new_one_link: "get a new energy certificate"
-      error: 'A certificate was not found at this address.'
-    button_text: 'Find'
-    street_name_question: 'Enter the street'
-    street_name_hint: 'For example Primrose Street'
-    town_question: 'Enter the town or city'
-    town_hint: 'For example Bournemouth'
+      error: "A certificate was not found at this address."
+    button_text: "Find"
+    street_name_question: "Enter the street"
+    street_name_hint: "For example Primrose Street"
+    town_question: "Enter the town or city"
+    town_hint: "For example Bournemouth"
     no_network:
-      heading: 'Network connection failed'
-      body: 'There is an internal network error'
+      heading: "Network connection failed"
+      body: "There is an internal network error"
 
   find_non_dom_certificate_by_street_name_and_town:
-    top_heading: 'What is the address?'
+    top_heading: "What is the address?"
     no_such_address:
       epcs_only: "We only list properties with EPCs"
       get_a_new_one_no_results: "If your property does not have an EPC, you can"
       get_a_new_one_link: "get a new energy certificate"
-      error: 'A certificate was not found at this address.'
-    button_text: 'Find'
-    street_name_question: 'Enter the street'
-    street_name_hint: 'For example Primrose Street'
-    town_question: 'Enter the town or city'
-    town_hint: 'For example Bournemouth'
+      error: "A certificate was not found at this address."
+    button_text: "Find"
+    street_name_question: "Enter the street"
+    street_name_hint: "For example Primrose Street"
+    town_question: "Enter the town or city"
+    town_hint: "For example Bournemouth"
     no_network:
-      heading: 'Network connection failed'
-      body: 'There is an internal network error'
+      heading: "Network connection failed"
+      body: "There is an internal network error"
 
   find_certificate_by_street_name_and_town_results:
-    top_heading: 'Find an energy performance certificate (EPC)'
+    top_heading: "Find an energy performance certificate (EPC)"
     epcs_only: "We only list properties with EPCs"
     no_epc:
       get_a_new_one_with_results: "If your property does not have a valid EPC, you can"
       get_a_new_one_link: "get a new energy certificate"
     list:
-      one_result: '%{length} result matching %{query}'
-      more_than_one_result: '%{length} results matching %{query}'
+      one_result: "%{length} result matching %{query}"
+      more_than_one_result: "%{length} results matching %{query}"
     table:
-      address: 'Address'
-      rating: 'Energy rating'
-      expiry: 'Valid until'
-    no_certificates: 'There are no certificates matching that EPC certificate number.'
+      address: "Address"
+      rating: "Energy rating"
+      expiry: "Valid until"
+    no_certificates: "There are no certificates matching that EPC certificate number."
 
   find_non_dom_certificate_by_street_name_and_town_results:
-    top_heading: 'Find energy certificates and reports'
+    top_heading: "Find energy certificates and reports"
     epcs_only: "We only list properties with EPCs"
     no_epc:
       get_a_new_one_with_results: "If your property does not have a valid EPC, you can"
       get_a_new_one_link: "get a new energy certificate"
-    list: '%{length} certificates and reports for %{query}'
+    list: "%{length} certificates and reports for %{query}"
     table:
-      address: 'Address'
-      rating: 'Energy rating'
-      expiry: 'Valid until'
-    no_certificates: 'There are no certificates matching that address.'
+      address: "Address"
+      rating: "Energy rating"
+      expiry: "Valid until"
+    no_certificates: "There are no certificates matching that address."
 
   find_by_street_name_and_town_results_timeout:
-    heading: 'Sorry, this area is too big to search'
-    alternate_search_cta: 'Search by postcode instead'
+    heading: "Sorry, this area is too big to search"
+    alternate_search_cta: "Search by postcode instead"
     royal_mail_link:
-      lead_in: 'You can'
-      cta: 'get the postcode from Royal Mail’s postcode finder'
-    further_help: 'If you need help finding an energy certificate or report, contact the Department for Levelling Up, Housing and Communities (DLUHC).'
+      lead_in: "You can"
+      cta: "get the postcode from Royal Mail’s postcode finder"
+    further_help: "If you need help finding an energy certificate or report, contact the Department for Levelling Up, Housing and Communities (DLUHC)."
     contact:
-      telephone_line: 'Telephone: 020 3829 0748'
-      opening_hours_line: 'Monday to Friday, 9am to 5pm'
-      find_out_about_call_charges: 'Find out more about call charges'
-      call_charges_url: 'https://www.gov.uk/call-charges'
+      telephone_line: "Telephone: 020 3829 0748"
+      opening_hours_line: "Monday to Friday, 9am to 5pm"
+      find_out_about_call_charges: "Find out more about call charges"
+      call_charges_url: "https://www.gov.uk/call-charges"
 
   find_non_dom_certificate_by_postcode:
-    top_heading: 'What is the postcode?'
-    question: 'Enter the postcode'
-    button_text: 'Find'
-    hint: 'For example LS1 4AP'
+    top_heading: "What is the postcode?"
+    question: "Enter the postcode"
+    button_text: "Find"
+    hint: "For example LS1 4AP"
     no_network:
-      heading: 'Network connection failed'
-      body: 'There is an internal network error'
+      heading: "Network connection failed"
+      body: "There is an internal network error"
     postcode_not_known:
-      heading: 'If you do not know the postcode'
+      heading: "If you do not know the postcode"
       body_find_postcode: "You can %{link}."
       cta_find_postcode: "find a postcode on Royal Mail’s postcode finder"
       body_street_and_town: "Or %{link}"
       cta_street_and_town: "find energy certificates and reports using the street name and town."
     certificate_by_reference_number:
-      heading: 'Search by certificate number'
+      heading: "Search by certificate number"
       body: "You can %{link}."
-      cta: 'find a certificate by using its certificate number'
+      cta: "find a certificate by using its certificate number"
 
   find_non_dom_certificate_by_postcode_results:
-    top_heading: 'Find energy certificates and reports'
+    top_heading: "Find energy certificates and reports"
     epcs_only: "We only list properties with EPCs"
     no_epc:
       get_a_new_one_with_results: "If your property does not have a valid EPC, you can"
@@ -515,22 +515,22 @@ en:
         certificate_number: "certificate number"
       no_postcode: "No results for %{postcode}"
       no_certificates: "There are no results for this postcode."
-    list: '%{length} certificates and reports for %{postcode}'
+    list: "%{length} certificates and reports for %{postcode}"
 
   find_non_dom_certificate_by_reference_number:
-    top_heading: 'What is the certificate or report number?'
-    question: 'Enter a certificate or report number'
-    reference_number_not_registered: 'A certificate was not found with this certificate number'
-    button_text: 'Find'
-    hint: 'For example 9002-3775-9101-5482-3149'
+    top_heading: "What is the certificate or report number?"
+    question: "Enter a certificate or report number"
+    reference_number_not_registered: "A certificate was not found with this certificate number"
+    button_text: "Find"
+    hint: "For example 9002-3775-9101-5482-3149"
     no_network:
-      heading: 'Network connection failed'
-      body: 'There is an internal network error'
+      heading: "Network connection failed"
+      body: "There is an internal network error"
 
   find_non_dom_certificate_by_reference_number_results:
-    top_heading: 'Find energy certificates and reports'
-    no_certificates: 'There are no certificates or reports matching that certificate number.'
-    list: '%{length} certificates and reports for %{reference_number}'
+    top_heading: "Find energy certificates and reports"
+    no_certificates: "There are no certificates or reports matching that certificate number."
+    list: "%{length} certificates and reports for %{reference_number}"
 
   service_performance:
     title: "Service performance"
@@ -558,19 +558,19 @@ en:
             northern_ireland: "Northern Ireland"
           hidden:
             certificates_uploaded_all:
-              sap: 'SAP certificates uploaded in '
-              rdsap: 'R.D.SAP certificates uploaded in '
-              cepc: 'C.E.P.C certificates uploaded in '
-              dec: 'DEC certificates uploaded in '
-              dec-rr: 'DEC.R.R certificates uploaded in '
-              ac-cert: 'A.C certificates uploaded in '
+              sap: "SAP certificates uploaded in "
+              rdsap: "R.D.SAP certificates uploaded in "
+              cepc: "C.E.P.C certificates uploaded in "
+              dec: "DEC certificates uploaded in "
+              dec-rr: "DEC.R.R certificates uploaded in "
+              ac-cert: "A.C certificates uploaded in "
             certificates_uploaded_country:
-              sap: 'SAP certificates uploaded in '
-              rdsap: 'R.D.SAP certificates uploaded in '
-              cepc: 'C.E.P.C certificates uploaded in '
-              dec: 'DEC certificates uploaded in '
-              dec-rr: 'DEC.R.R certificates uploaded in '
-              ac-cert: 'A.C certificates uploaded in '
+              sap: "SAP certificates uploaded in "
+              rdsap: "R.D.SAP certificates uploaded in "
+              cepc: "C.E.P.C certificates uploaded in "
+              dec: "DEC certificates uploaded in "
+              dec-rr: "DEC.R.R certificates uploaded in "
+              ac-cert: "A.C certificates uploaded in "
           headers:
             month: "Month"
             num_uploaded: "Number uploaded"
@@ -593,7 +593,7 @@ en:
           - Dissatisfied
           - Very dissatisfied
       heatpump_data:
-        title: 'Heat pump data'
+        title: "Heat pump data"
         intro: "Data about how many EPCs have heat pumps each month"
         table_headers:
           - Month
@@ -612,55 +612,55 @@ en:
       title: "Administrative information"
       assessor:
         list:
-          name: 'Assessor’s name'
-          number: 'Assessor ID'
-          telephone: 'Telephone'
-          email: 'Email'
+          name: "Assessor’s name"
+          number: "Assessor ID"
+          telephone: "Telephone"
+          email: "Email"
       scheme:
         name: "Accreditation scheme"
         phone: "Accreditation scheme telephone"
         email: "Accreditation scheme email"
-      company_name: 'Employer/Trading name'
-      company_address: 'Employer/Trading address'
+      company_name: "Employer/Trading name"
+      company_address: "Employer/Trading address"
     assessor_details:
       title: "Assessor’s details"
       assessor:
         list:
-          name: 'Assessor’s name'
-          number: 'Assessor ID'
-          telephone: 'Telephone'
-          email: 'Email'
+          name: "Assessor’s name"
+          number: "Assessor ID"
+          telephone: "Telephone"
+          email: "Email"
       scheme:
         name: "Accreditation scheme"
         phone: "Accreditation scheme telephone"
         email: "Accreditation scheme email"
-      company_name: 'Employer/Trading name'
-      company_address: 'Employer/Trading address'
+      company_name: "Employer/Trading name"
+      company_address: "Employer/Trading address"
     epc_summary:
       title: "Energy rating"
       date_of_expiry: "Valid until %{date_of_expiry}"
       certificate_id: "Certificate number"
-      floor_area: '%{total_floor_area} square metres'
+      floor_area: "%{total_floor_area} square metres"
     epc_summary_compact:
       certificate:
-        valid_until: 'Valid until'
-        expired: 'This certificate expired on'
-        identifier: 'Certificate number'
+        valid_until: "Valid until"
+        expired: "This certificate expired on"
+        identifier: "Certificate number"
       report:
-        valid_until: 'Valid until'
-        expired: 'This report expired on'
-        identifier: 'Report number'
+        valid_until: "Valid until"
+        expired: "This report expired on"
+        identifier: "Report number"
     related:
-      title: 'Other %{type}s for this property'
-      certificate: 'certificate'
-      report: 'report'
-      message: 'If you are aware of previous %{type}s for this property and they are not listed here, please contact us at %{link} or call our helpdesk on <span style="white-space: nowrap;">020 3829 0748</span> (Monday to Friday, 9am to 5pm).'
-      no_related: 'There are no related %{type}s for this property.'
-      reference_number_certificate: 'Certificate number'
-      reference_number_report: 'Report number'
-      valid_until: 'Valid until'
-      expired: 'Expired'
-      expired_on: 'Expired on'
+      title: "Other %{type}s for this property"
+      certificate: "certificate"
+      report: "report"
+      message: "If you are aware of previous %{type}s for this property and they are not listed here, please contact us at %{link} or call our helpdesk on <span style=\"white-space: nowrap;\">020 3829 0748</span> (Monday to Friday, 9am to 5pm)."
+      no_related: "There are no related %{type}s for this property."
+      reference_number_certificate: "Certificate number"
+      reference_number_report: "Report number"
+      valid_until: "Valid until"
+      expired: "Expired"
+      expired_on: "Expired on"
       link: "mailto:dluhc.digital-services@levellingup.gov.uk?subject=EPB%20-%20"
       cta: "dluhc.digital-services@levellingup.gov.uk"
       certificates:
@@ -668,37 +668,37 @@ en:
       reports:
         title: "Other reports for this property"
     recommendations:
-      title: 'Recommendations'
-      text: 'Make these changes to improve the property’s energy efficiency.'
-      recommended_improvements_text: 'Recommended improvements are grouped by the estimated time it would take for the change to pay for itself. The assessor may also make additional recommendations.'
-      description: 'Each recommendation is marked as low, medium or high. This shows the potential impact of the change on reducing the property’s carbon emissions.'
+      title: "Recommendations"
+      text: "Make these changes to improve the property’s energy efficiency."
+      recommended_improvements_text: "Recommended improvements are grouped by the estimated time it would take for the change to pay for itself. The assessor may also make additional recommendations."
+      description: "Each recommendation is marked as low, medium or high. This shows the potential impact of the change on reducing the property’s carbon emissions."
       table:
-        three_years_heading: 'Changes that pay for themselves within 3 years'
-        three_to_seven_years_heading: 'Changes that pay for themselves within 3 to 7 years'
-        more_than_seven_years_heading: 'Changes that pay for themselves in more than 7 years'
-        additional_heading: 'Additional recommendations'
-        recommendation_heading: 'Recommendation'
-        potential_impact_heading: 'Potential impact'
+        three_years_heading: "Changes that pay for themselves within 3 years"
+        three_to_seven_years_heading: "Changes that pay for themselves within 3 to 7 years"
+        more_than_seven_years_heading: "Changes that pay for themselves in more than 7 years"
+        additional_heading: "Additional recommendations"
+        recommendation_heading: "Recommendation"
+        potential_impact_heading: "Potential impact"
     superseded:
-      title: 'Warning'
-      certificate_message: 'A new certificate has replaced this one'
-      report_message: 'A new report has replaced this one'
-      certificate_link: 'See the new certificate'
-      report_link: 'See the new report'
+      title: "Warning"
+      certificate_message: "A new certificate has replaced this one"
+      report_message: "A new report has replaced this one"
+      certificate_link: "See the new certificate"
+      report_link: "See the new report"
     superseded_print_version:
-      certificate_title: 'This certificate is not valid. A new certificate has replaced this one.'
-      report_title: 'This report is not valid. A new report has replaced this one.'
-      certificate_link_text: 'See the new certificate by visiting www.gov.uk/find-energy-certificate'
-      certificate_get_help_text: 'Get help with certificates for this property'
-      certificate_contact_text: 'If you need help finding the new certificate or if you know of other certificates for this property that are not listed here, contact the Department for Levelling Up, Housing and Communities (DLUHC).'
-      report_link_text: 'See the new report by visiting www.gov.uk/find-energy-certificate'
-      report_get_help_text: 'Get help with reports for this property'
-      report_contact_text: 'If you need help finding the new report or if you know of other reports for this property that are not listed here, contact the Department for Levelling Up, Housing and Communities (DLUHC).'
-      email: 'dluhc.digital-services@levellingup.gov.uk'
-      telephone: 'Telephone: '
-      telephone_number: '020 3829 0748'
+      certificate_title: "This certificate is not valid. A new certificate has replaced this one."
+      report_title: "This report is not valid. A new report has replaced this one."
+      certificate_link_text: "See the new certificate by visiting www.gov.uk/find-energy-certificate"
+      certificate_get_help_text: "Get help with certificates for this property"
+      certificate_contact_text: "If you need help finding the new certificate or if you know of other certificates for this property that are not listed here, contact the Department for Levelling Up, Housing and Communities (DLUHC)."
+      report_link_text: "See the new report by visiting www.gov.uk/find-energy-certificate"
+      report_get_help_text: "Get help with reports for this property"
+      report_contact_text: "If you need help finding the new report or if you know of other reports for this property that are not listed here, contact the Department for Levelling Up, Housing and Communities (DLUHC)."
+      email: "dluhc.digital-services@levellingup.gov.uk"
+      telephone: "Telephone: "
+      telephone_number: "020 3829 0748"
     expired_warning:
-      title: 'Warning'
+      title: "Warning"
       certificate:
         message: "This certificate has expired."
         link_prelude: "You can"
@@ -708,83 +708,83 @@ en:
         link_prelude: "You can"
         link_text: "get a new certificate and report"
     expired_print_version:
-      certificate_title: 'This certificate has expired.'
-      report_title: 'This report has expired.'
-      certificate_link_text: 'You can get a new certificate by visiting www.gov.uk/get-new-energy-certificate'
-      certificate_get_help_text: 'Get help with certificates for this property'
-      certificate_contact_text: 'If you need help getting a new certificate or if you know of other certificates for this property that are not listed here, contact the Department for Levelling Up, Housing and Communities (DLUHC).'
-      report_link_text: 'You can get a new certificate and report by visiting www.gov.uk/get-new-energy-certificate'
-      report_get_help_text: 'Get help with reports for this property'
-      report_contact_text: 'If you need help getting a new report or if you know of other reports for this property that are not listed here, contact the Department for Levelling Up, Housing and Communities (DLUHC).'
-      email: 'dluhc.digital-services@levellingup.gov.uk'
-      telephone: 'Telephone: '
-      telephone_number: '020 3829 0748'
+      certificate_title: "This certificate has expired."
+      report_title: "This report has expired."
+      certificate_link_text: "You can get a new certificate by visiting www.gov.uk/get-new-energy-certificate"
+      certificate_get_help_text: "Get help with certificates for this property"
+      certificate_contact_text: "If you need help getting a new certificate or if you know of other certificates for this property that are not listed here, contact the Department for Levelling Up, Housing and Communities (DLUHC)."
+      report_link_text: "You can get a new certificate and report by visiting www.gov.uk/get-new-energy-certificate"
+      report_get_help_text: "Get help with reports for this property"
+      report_contact_text: "If you need help getting a new report or if you know of other reports for this property that are not listed here, contact the Department for Levelling Up, Housing and Communities (DLUHC)."
+      email: "dluhc.digital-services@levellingup.gov.uk"
+      telephone: "Telephone: "
+      telephone_number: "020 3829 0748"
 
   unit:
-    kilogram: 'kg'
-    kilowatt: 'kW'
-    kilowatt_hour: 'kW h'
-    square_metres: 'square metres'
+    kilogram: "kg"
+    kilowatt: "kW"
+    kilowatt_hour: "kW h"
+    square_metres: "square metres"
 
   non_domestic_epc:
-    top_heading: 'Energy performance certificate (EPC)'
+    top_heading: "Energy performance certificate (EPC)"
     contents:
-      title: 'Certificate contents'
+      title: "Certificate contents"
     energy_rating_section:
-      title: 'Energy efficiency rating for this property'
-      current_rating_text: 'This property’s current energy rating is %{current_energy_efficiency_band}.'
-      rating_desc: 'Properties are given a rating from A+ (most efficient) to G (least efficient).'
-      score_desc: 'Properties are also given a score. The larger the number, the more carbon dioxide (CO2) your property is likely to emit.'
+      title: "Energy efficiency rating for this property"
+      current_rating_text: "This property’s current energy rating is %{current_energy_efficiency_band}."
+      rating_desc: "Properties are given a rating from A+ (most efficient) to G (least efficient)."
+      score_desc: "Properties are also given a score. The larger the number, the more carbon dioxide (CO2) your property is likely to emit."
       svg:
         chart_title: "Energy efficiency chart"
         chart_description: "This property’s current energy rating is %{current_energy_efficiency_band} with a score of %{current_energy_efficiency_rating}."
     sections:
       renting:
-        title: 'Rules on letting this property'
+        title: "Rules on letting this property"
         rental_info:
-          body_1: 'Properties can be let if they have an energy rating from A+ to E.'
-          summary: 'From 1 April 2023, landlords will not be allowed to continue letting a non-domestic property on an existing lease if that property has an energy rating of F or G.'
-          guidance_text: 'You can read %{link}.'
-          cta: 'guidance for landlords on the regulations and exemptions'
-          url: 'https://www.gov.uk/government/publications/non-domestic-private-rented-property-minimum-energy-efficiency-standard-landlord-guidance'
+          body_1: "Properties can be let if they have an energy rating from A+ to E."
+          summary: "From 1 April 2023, landlords will not be allowed to continue letting a non-domestic property on an existing lease if that property has an energy rating of F or G."
+          guidance_text: "You can read %{link}."
+          cta: "guidance for landlords on the regulations and exemptions"
+          url: "https://www.gov.uk/government/publications/non-domestic-private-rented-property-minimum-energy-efficiency-standard-landlord-guidance"
         warning:
-          assistive_text:  'Warning'
-          text: 'You may not be able to let this property.'
-          body: 'This property has an energy rating of %{current_energy_efficiency_band}. The landlord cannot grant a tenancy to new or existing tenants, unless an exemption has been registered.'
-        recommendation: 'Properties can be let if they have an energy rating from A+ to E. The %{link} sets out changes you can make to improve the property’s rating.'
-        cta: 'recommendation report'
-        url: '#related_report'
+          assistive_text: "Warning"
+          text: "You may not be able to let this property."
+          body: "This property has an energy rating of %{current_energy_efficiency_band}. The landlord cannot grant a tenancy to new or existing tenants, unless an exemption has been registered."
+        recommendation: "Properties can be let if they have an energy rating from A+ to E. The %{link} sets out changes you can make to improve the property’s rating."
+        cta: "recommendation report"
+        url: "#related_report"
       other_reports:
-        title: 'Other certificates for this property'
-        certificate_reference: 'Reference number'
-        valid_until: 'Valid until'
-        expired: 'Expired'
-        no_related: 'There are no related certificates for the property.'
+        title: "Other certificates for this property"
+        certificate_reference: "Reference number"
+        valid_until: "Valid until"
+        expired: "Expired"
+        no_related: "There are no related certificates for the property."
     rr:
-      top_heading: 'Energy performance certificate (EPC) recommendation report'
+      top_heading: "Energy performance certificate (EPC) recommendation report"
       contents:
-        title: 'Report contents'
+        title: "Report contents"
       rating:
-        title: 'Energy rating and EPC'
-        current_energy_rating: 'This property’s current energy rating is %{band}.'
-        more_info: 'For more information on the property’s energy performance, %{link}.'
-        cta: 'see the EPC for this property'
+        title: "Energy rating and EPC"
+        current_energy_rating: "This property’s current energy rating is %{band}."
+        more_info: "For more information on the property’s energy performance, %{link}."
+        cta: "see the EPC for this property"
       property_details:
-        title: 'Property and report details'
-        issued_on: 'Report issued on'
-        floor_area: 'Total useful floor area'
-        environment: 'Building environment'
-        tool: 'Calculation tool'
+        title: "Property and report details"
+        issued_on: "Report issued on"
+        floor_area: "Total useful floor area"
+        environment: "Building environment"
+        tool: "Calculation tool"
       assessor_details:
-        title: 'Assessor’s details'
-        name: 'Assessor’s name'
+        title: "Assessor’s details"
+        name: "Assessor’s name"
         phone: "Telephone"
         email: "Email"
-        employer_name: 'Employer’s name'
-        employer_address: 'Employer’s address'
-        number: 'Assessor ID'
-        scheme: 'Accreditation scheme'
-        declaration: 'Assessor’s declaration'
+        employer_name: "Employer’s name"
+        employer_address: "Employer’s address"
+        number: "Assessor ID"
+        scheme: "Accreditation scheme"
+        declaration: "Assessor’s declaration"
     how_this_building_compares:
       heading: "How this property compares to others"
       explanation: "Properties similar to this one could have ratings:"
@@ -828,78 +828,78 @@ en:
       text: "Guidance on improving the energy performance of this property can be found in the %{link}."
 
   domestic_epc:
-    top_heading: 'Energy performance certificate (EPC)'
+    top_heading: "Energy performance certificate (EPC)"
     summary:
-      date_of_expiry: 'Valid until %{date_of_expiry}'
-      certificate_id: 'Certificate number'
-      energy_rating_title: 'Energy rating'
-      floor_area: '%{total_floor_area} square metres'
+      date_of_expiry: "Valid until %{date_of_expiry}"
+      certificate_id: "Certificate number"
+      energy_rating_title: "Energy rating"
+      floor_area: "%{total_floor_area} square metres"
     sidebar:
-      title: 'Certificate contents'
+      title: "Certificate contents"
       sections:
-        renting: 'Rules on letting this property'
-        epc: 'Energy performance rating for this property'
+        renting: "Rules on letting this property"
+        epc: "Energy performance rating for this property"
         summary: "Breakdown of property’s energy performance"
-        energy: 'Environmental impact of this property'
+        energy: "Environmental impact of this property"
         recommendations: "Improve this property’s energy performance"
-        heat_demand: 'Estimated energy use and potential savings'
-        information: 'Contacting the assessor and accreditation scheme'
-        green_deal: 'Green deal plan'
-        previous: 'Other certificates for this property'
+        heat_demand: "Estimated energy use and potential savings"
+        information: "Contacting the assessor and accreditation scheme"
+        green_deal: "Green deal plan"
+        previous: "Other certificates for this property"
     sections:
       renting:
-        title: 'Rules on letting this property'
+        title: "Rules on letting this property"
         landlord_warning:
-          hidden_text: 'Warning'
-          subtitle: 'You may not be able to let this property'
-          energy_rating_title: 'Energy rating'
+          hidden_text: "Warning"
+          subtitle: "You may not be able to let this property"
+          energy_rating_title: "Energy rating"
           body:
-            text: 'This property has an energy rating of %{current_energy_efficiency_band}. It cannot be let, unless an exemption has been registered.'
-            text_2: 'Properties can be let if they have an energy rating from A to E.'
-            recommendations_text: 'The %{recommendations_link} sets out changes you can make to improve the property’s rating.'
-            recommendations_cta: 'recommendations section'
-            recommendations_url: '#recommendations'
+            text: "This property has an energy rating of %{current_energy_efficiency_band}. It cannot be let, unless an exemption has been registered."
+            text_2: "Properties can be let if they have an energy rating from A to E."
+            recommendations_text: "The %{recommendations_link} sets out changes you can make to improve the property’s rating."
+            recommendations_cta: "recommendations section"
+            recommendations_url: "#recommendations"
         rental_info:
-          body_1: 'Properties can be let if they have an energy rating from A to E.'
-          guidance_text: ' You can read %{link}.'
-          cta: 'guidance for landlords on the regulations and exemptions'
-          url: 'https://www.gov.uk/guidance/domestic-private-rented-property-minimum-energy-efficiency-standard-landlord-guidance'
+          body_1: "Properties can be let if they have an energy rating from A to E."
+          guidance_text: " You can read %{link}."
+          cta: "guidance for landlords on the regulations and exemptions"
+          url: "https://www.gov.uk/guidance/domestic-private-rented-property-minimum-energy-efficiency-standard-landlord-guidance"
       epc:
-        title: 'Energy efficiency rating for this property'
+        title: "Energy efficiency rating for this property"
         intro:
-          text: 'This property’s current energy rating is  %{current_energy_efficiency_band}. It has the potential to be %{potential_energy_efficiency_band}.'
-          cta: 'See how to improve this property’s energy performance.'
-          url: '#recommendations'
-        chart_title: 'Energy efficiency chart'
+          text: "This property’s current energy rating is  %{current_energy_efficiency_band}. It has the potential to be %{potential_energy_efficiency_band}."
+          cta: "See how to improve this property’s energy performance."
+          url: "#recommendations"
+        chart_title: "Energy efficiency chart"
         chart_description: "This property’s current energy rating is %{current_energy_efficiency_band} with a score of %{current_energy_efficiency_rating}. It has a potential energy rating of %{potential_energy_efficiency_band} with a score of %{potential_energy_efficiency_rating}."
-        body1: 'The graph shows this property’s current and potential energy efficiency.'
-        body2: 'Properties are given a rating from A (most efficient) to G (least efficient).'
-        body3: 'Properties are also given a score. The higher the number the lower your fuel bills are likely to be.'
-        body4: 'For properties in England and Wales:'
-        body5: 'the average energy rating is D'
-        body6: 'the average energy score is 60'
-        ni_average_rating: 'For properties in Northern Ireland:'
+        body1: "The graph shows this property’s current and potential energy efficiency."
+        body2: "Properties are given a rating from A (most efficient) to G (least efficient)."
+        body3: "Properties are also given a score. The higher the number the lower your fuel bills are likely to be."
+        body4: "For properties in England and Wales:"
+        body5: "the average energy rating is D"
+        body6: "the average energy score is 60"
+        ni_average_rating: "For properties in Northern Ireland:"
       breakdown:
         title: "Breakdown of property’s energy performance"
         intro: "This section shows the energy performance for features of this property. The assessment does not consider the condition of a feature and how well it is working."
-        assessment_rating_explanation: 'Each feature is assessed as one of the following:'
-        heading_feature: 'Feature'
-        heading_description: 'Description'
-        heading_rating: 'Rating'
+        assessment_rating_explanation: "Each feature is assessed as one of the following:"
+        heading_feature: "Feature"
+        heading_description: "Description"
+        heading_rating: "Rating"
         assessment_ratings:
-          very_poor: 'very poor (least efficient)'
-          poor: 'poor'
-          average: 'average'
-          good: 'good'
-          very_good: 'very good (most efficient)'
+          very_poor: "very poor (least efficient)"
+          poor: "poor"
+          average: "average"
+          good: "good"
+          very_good: "very good (most efficient)"
         not_inspected: "When the description says “assumed”, it means that the feature could not be inspected and an assumption has been made based on the property’s age and type."
         energy_performance: "energy performance"
-        primary_energy_use: 'Primary energy use'
-        primary_energy_use_description: 'The primary energy use for this property per year is %{primary_energy} kilowatt hours per square metre (kWh/m2).'
+        primary_energy_use: "Primary energy use"
+        primary_energy_use_description: "The primary energy use for this property per year is %{primary_energy} kilowatt hours per square metre (kWh/m2)."
         list:
-          total_floor_area: 'Total floor area'
-          meters_squared: 'meters squared'
-          dwelling_type: 'Property type'
+          total_floor_area: "Total floor area"
+          meters_squared: "meters squared"
+          dwelling_type: "Property type"
         low_zero_carbon_energy_sources:
           title: "Low and zero carbon energy sources"
           summary: "Low and zero carbon energy sources release very little or no CO2. Installing these sources may help reduce energy bills as well as cutting carbon emissions. The following low or zero carbon energy sources are installed in this property:"
@@ -921,8 +921,8 @@ en:
           lzc_energy_source_16: "Exhaust air heat pump"
           lzc_energy_source_17: "Solar-assisted heat pump"
         additional_information:
-          title: 'Additional information'
-          intro: 'Additional information about this property:'
+          title: "Additional information"
+          intro: "Additional information about this property:"
           cavity_fill_recommended: Cavity fill is recommended
           stone_walls: Stone walls present, not insulated
           system_build: System build present
@@ -930,47 +930,47 @@ en:
           high_exposure: Dwelling may be exposed to wind-driven rain
           narrow_cavities: Dwelling may have narrow cavities
           addendum_number_1:
-            title: 'Wall type does not correspond to options available in RdSAP'
+            title: "Wall type does not correspond to options available in RdSAP"
             details: The dwelling has a type of wall that is not included in the available options. The nearest equivalent type was used for the assessment.
           addendum_number_2:
-            title: 'Room heater specified for water heating instead of a range cooker'
-            details: 'The water heating in this property is from a range cooker. A room heater using the same fuel, which gives similar ratings, was used for the assessment.'
+            title: "Room heater specified for water heating instead of a range cooker"
+            details: "The water heating in this property is from a range cooker. A room heater using the same fuel, which gives similar ratings, was used for the assessment."
           addendum_number_3:
-            title: 'Space heating from individual system and water heating from community system'
-            details: 'The water heating for this property is supplied from a community system. A multipoint gas heater, which gives similar ratings, was used for the assessment.'
+            title: "Space heating from individual system and water heating from community system"
+            details: "The water heating for this property is supplied from a community system. A multipoint gas heater, which gives similar ratings, was used for the assessment."
           addendum_number_4:
-            title: 'Dwelling has a swimming pool'
-            details: 'The energy assessment for the dwelling does not include energy used to heat the swimming pool.'
+            title: "Dwelling has a swimming pool"
+            details: "The energy assessment for the dwelling does not include energy used to heat the swimming pool."
           addendum_number_5:
-            title: 'Dwelling has micro-CHP not found in database'
-            details: 'The performance characteristics of the micro-CHP system in this dwelling are not known and default values were used for the assessment.'
+            title: "Dwelling has micro-CHP not found in database"
+            details: "The performance characteristics of the micro-CHP system in this dwelling are not known and default values were used for the assessment."
           addendum_number_6:
-            title: 'Storage heater or dual immersion, and single electric meter'
-            details: 'A dual rate appliance(s) is present with a single-rate supply. A single-rate appliance has been used for the assessment. Changing the electricity tariff to an off-peak (dual rate) supply is likely to reduce fuel costs and improve the energy rating.'
+            title: "Storage heater or dual immersion, and single electric meter"
+            details: "A dual rate appliance(s) is present with a single-rate supply. A single-rate appliance has been used for the assessment. Changing the electricity tariff to an off-peak (dual rate) supply is likely to reduce fuel costs and improve the energy rating."
           addendum_number_7:
-            title: 'Heating controlled by TRVs only'
-            details: 'It has been noted that the heating is controlled by TRVs only, which is not one of the currently available options. The recommendation on heating controls should be understood as adding a programmer and room thermostat alongside the existing TRVs.'
+            title: "Heating controlled by TRVs only"
+            details: "It has been noted that the heating is controlled by TRVs only, which is not one of the currently available options. The recommendation on heating controls should be understood as adding a programmer and room thermostat alongside the existing TRVs."
           addendum_number_8:
-            title: 'PVs or wind turbine present on the property (England, Wales or Scotland)'
-            details: 'The assessment does not include any feed-in tariffs that may be applicable to this property.'
+            title: "PVs or wind turbine present on the property (England, Wales or Scotland)"
+            details: "The assessment does not include any feed-in tariffs that may be applicable to this property."
           addendum_number_9:
-            title: 'Two main heating systems and heating system upgrade is recommended'
-            details: 'As there is more than one heating system, you should seek professional advice on the most cost-effective option for upgrading the systems.'
+            title: "Two main heating systems and heating system upgrade is recommended"
+            details: "As there is more than one heating system, you should seek professional advice on the most cost-effective option for upgrading the systems."
           addendum_number_10:
-            title: 'Dual electricity meter selected but there is also an electricity meter for standard tariff'
-            details: 'The assessment has been done on the basis of an off-peak electricity tariff. However some heating or hot water appliances may be on the standard domestic tariff.'
+            title: "Dual electricity meter selected but there is also an electricity meter for standard tariff"
+            details: "The assessment has been done on the basis of an off-peak electricity tariff. However some heating or hot water appliances may be on the standard domestic tariff."
           addendum_number_11:
-            title: 'Single electricity meter selected but there is also an electricity meter for an off-peak tariff'
-            details: 'The assessment has been done on the basis of the standard domestic electricity tariff. However some heating or hot water appliances may be on an off-peak tariff.'
+            title: "Single electricity meter selected but there is also an electricity meter for an off-peak tariff"
+            details: "The assessment has been done on the basis of the standard domestic electricity tariff. However some heating or hot water appliances may be on an off-peak tariff."
           addendum_number_12:
-            title: 'Dwelling is using a biomass fuel that is not in the RdSAP fuel options'
-            details: 'The dwelling uses a type of fuel that is not included in the available options. The nearest equivalent fuel type was used for the assessment.'
+            title: "Dwelling is using a biomass fuel that is not in the RdSAP fuel options"
+            details: "The dwelling uses a type of fuel that is not included in the available options. The nearest equivalent fuel type was used for the assessment."
           addendum_number_13:
-            title: 'Dwelling is a Park Home'
-            details: 'This dwelling is a Park Home.'
+            title: "Dwelling is a Park Home"
+            details: "This dwelling is a Park Home."
           addendum_number_14:
-            title: 'Dwelling has a special energy saving feature'
-            details: 'The dwelling has a special energy saving feature which is recognised in the assessment, but its impact on the savings shown for improvement measures is ignored.'
+            title: "Dwelling has a special energy saving feature"
+            details: "The dwelling has a special energy saving feature which is recognised in the assessment, but its impact on the savings shown for improvement measures is ignored."
       environmental_impact:
         title: "Environmental impact of this property"
         eir_rating: "This property’s current environmental impact rating is %{current_environmental_impact_rating}. It has the potential to be %{potential_environmental_impact_rating}."
@@ -978,8 +978,8 @@ en:
         rating_comparision: "Properties with an A rating produce less CO2 than G rated properties."
         summary: "One of the biggest contributors to climate change is carbon dioxide (CO2). The energy used for heating, lighting and power in our homes produces over a quarter of the UK’s CO2 emissions."
         making_changes: "By making the %{link}, you could reduce this property’s CO2 emissions by %{reduction} tonnes per year. This will help to protect the environment."
-        making_changes_cta: 'recommended changes'
-        making_changes_url: '#recommendations'
+        making_changes_cta: "recommended changes"
+        making_changes_url: "#recommendations"
         environmental_impact_rating: "Environmental impact ratings are based on assumptions about average occupancy and energy use. They may not reflect how energy is consumed by the people living at the property."
         average_household:
           text: "An average household produces"
@@ -991,135 +991,135 @@ en:
         title: "Improve this property’s energy rating"
         summary:
           following_recommendations_text: "Follow these steps to improve the energy rating and score."
-          steps_in_order_question: 'Do I need to follow these steps in order?'
-          steps_in_order_answer1: 'Yes. Each step builds on the one before it so you can save the most energy.'
+          steps_in_order_question: "Do I need to follow these steps in order?"
+          steps_in_order_answer1: "Yes. Each step builds on the one before it so you can save the most energy."
           steps_in_order_answer2: "For example, it’s more energy efficient to insulate your home before you buy a new boiler. A well insulated home will lose less heat so you do not have to run your boiler as often."
-          no_recommendations_summary: 'The assessor did not make any recommendations for this property.'
-          simple_energy_text: 'Simple Energy Advice has guidance on improving a property’s energy use.'
-          simple_energy_link: 'https://www.simpleenergyadvice.org.uk/'
+          no_recommendations_summary: "The assessor did not make any recommendations for this property."
+          simple_energy_text: "Simple Energy Advice has guidance on improving a property’s energy use."
+          simple_energy_link: "https://www.simpleenergyadvice.org.uk/"
         box:
-          energy_rating_title: 'Potential energy rating'
+          energy_rating_title: "Potential energy rating"
         list:
-          title: 'Step'
-          installation_cost: 'Typical installation cost'
-          yearly_saving: 'Typical yearly saving'
-          na: 'Not applicable'
-          costs_savings: ' costs and savings'
-          information_unavailable: 'Information unavailable'
-          potential_rating_1: 'Potential rating after completing step 1'
-          potential_rating_2: 'Potential rating after completing steps 1&nbsp;and&nbsp;2'
-          potential_rating_3: 'Potential rating after completing steps 1&nbsp;to'
+          title: "Step"
+          installation_cost: "Typical installation cost"
+          yearly_saving: "Typical yearly saving"
+          na: "Not applicable"
+          costs_savings: " costs and savings"
+          information_unavailable: "Information unavailable"
+          potential_rating_1: "Potential rating after completing step 1"
+          potential_rating_2: "Potential rating after completing steps 1&nbsp;and&nbsp;2"
+          potential_rating_3: "Potential rating after completing steps 1&nbsp;to"
         paying_for_energy_improvements:
-          title: 'Paying for energy improvements'
-          bus_text: 'You might be able to get a grant from the %{link}. This will help you buy a more efficient, low carbon heating system for this property.'
-          bus_link_text: 'Boiler Upgrade Scheme'
-          bus_url: 'https://www.gov.uk/apply-boiler-upgrade-scheme'
+          title: "Paying for energy improvements"
+          bus_text: "You might be able to get a grant from the %{link}. This will help you buy a more efficient, low carbon heating system for this property."
+          bus_link_text: "Boiler Upgrade Scheme"
+          bus_url: "https://www.gov.uk/apply-boiler-upgrade-scheme"
       heat_demand:
-        title: 'Estimated energy use and potential savings'
-        clarify_energy_costs: 'Based on average energy costs when this EPC was created:'
-        estimated_cost: 'Estimated yearly energy cost for this property'
-        three_year_saving: 'Potential saving if you complete every step in order'
-        costs_and_savings: 'The estimated cost shows how much the average household would spend in this property for heating, lighting and hot water. It is not based on how energy is used by the people living at the property.'
-        more_advice_heading: 'Saving energy in this property'
-        more_advice_cta: 'Find ways to save energy in your home'
-        more_advice_url: 'https://www.gov.uk/improve-energy-efficiency'
-        more_advice_cta_print: 'Find ways to save energy in your home by visiting '
-        more_advice_url_print: 'www.gov.uk/improve-energy-efficiency'
-        heating_in_property: 'Heating use in this property'
-        energy_costs: 'Heating a property usually makes up the majority of energy costs.'
-        estimated_energy: 'Estimated energy used to heat this property'
-        space_heating: 'Space heating'
-        kwh_per_year: 'kWh per year'
-        water_heating: 'Water heating'
-        estimated_use: 'Estimated energy use'
-        potential_saving: 'Potential energy savings by installing insulation'
-        no_potential_saving: 'The assessor did not find any opportunities to save energy by installing insulation in this property.'
-        type_of_insulation: 'Type of insulation'
-        amount_saved: 'Amount of energy saved'
-        loft_insulation: 'Loft insulation'
-        cavity_insulation: 'Cavity wall insulation'
-        solid_wall_insulation: 'Solid wall insulation'
-        not_applicable: 'Not applicable'
-        type_of_heating: 'Type of heating'
-        estimated_energy_used: 'Estimated energy used'
+        title: "Estimated energy use and potential savings"
+        clarify_energy_costs: "Based on average energy costs when this EPC was created:"
+        estimated_cost: "Estimated yearly energy cost for this property"
+        three_year_saving: "Potential saving if you complete every step in order"
+        costs_and_savings: "The estimated cost shows how much the average household would spend in this property for heating, lighting and hot water. It is not based on how energy is used by the people living at the property."
+        more_advice_heading: "Saving energy in this property"
+        more_advice_cta: "Find ways to save energy in your home"
+        more_advice_url: "https://www.gov.uk/improve-energy-efficiency"
+        more_advice_cta_print: "Find ways to save energy in your home by visiting "
+        more_advice_url_print: "www.gov.uk/improve-energy-efficiency"
+        heating_in_property: "Heating use in this property"
+        energy_costs: "Heating a property usually makes up the majority of energy costs."
+        estimated_energy: "Estimated energy used to heat this property"
+        space_heating: "Space heating"
+        kwh_per_year: "kWh per year"
+        water_heating: "Water heating"
+        estimated_use: "Estimated energy use"
+        potential_saving: "Potential energy savings by installing insulation"
+        no_potential_saving: "The assessor did not find any opportunities to save energy by installing insulation in this property."
+        type_of_insulation: "Type of insulation"
+        amount_saved: "Amount of energy saved"
+        loft_insulation: "Loft insulation"
+        cavity_insulation: "Cavity wall insulation"
+        solid_wall_insulation: "Solid wall insulation"
+        not_applicable: "Not applicable"
+        type_of_heating: "Type of heating"
+        estimated_energy_used: "Estimated energy used"
       information:
-        title: 'Contacting the assessor and accreditation scheme'
-        intro: 'This EPC was created by a qualified energy assessor.<br /><br />If you are unhappy about your property’s energy assessment or certificate, you can complain to the assessor directly.<br /><br />If you are still unhappy after contacting the assessor, you should contact the assessor’s accreditation scheme.<br /><br />Accreditation schemes are appointed by the government to ensure that assessors are qualified to carry out EPC assessments.'
+        title: "Contacting the assessor and accreditation scheme"
+        intro: "This EPC was created by a qualified energy assessor.<br /><br />If you are unhappy about your property’s energy assessment or certificate, you can complain to the assessor directly.<br /><br />If you are still unhappy after contacting the assessor, you should contact the assessor’s accreditation scheme.<br /><br />Accreditation schemes are appointed by the government to ensure that assessors are qualified to carry out EPC assessments."
         assessor:
-          title: 'Assessor contact details'
+          title: "Assessor contact details"
           list:
-            telephone: 'Telephone'
-            email: 'Email'
+            telephone: "Telephone"
+            email: "Email"
             name: "Assessor’s name"
         scheme:
-          title: 'Accreditation scheme contact details'
+          title: "Accreditation scheme contact details"
           list:
-            name: 'Accreditation scheme'
+            name: "Accreditation scheme"
             scheme_assessor_id: "Assessor ID"
         certificate:
-          title: 'Assessment details'
+          title: "Assessment details"
           list:
-            disclosure: 'Assessor’s declaration'
-            date_of_assessment: 'Date of assessment'
-            date_of_certificate: 'Date of certificate'
-            type_of_assessment: 'Type of assessment'
-            hidden_text_details_of_drop_down: 'Show information about the '
-            sap_description_first_part: 'SAP (Standard Assessment Procedure) is a method used to assess and compare the energy and environmental performance of properties in the UK. It uses detailed information about the property’s construction to calculate energy performance.'
-            sap_description_second_part: 'This type of assessment must be carried out on all new properties built after 1 April 2008 in England and Wales, and 30 September 2008 in Northern Ireland.'
-            rdsap_description_first_part: 'RdSAP (Reduced data Standard Assessment Procedure) is a method used to assess and compare the energy and environmental performance of properties in the UK. It uses a site visit and survey of the property to calculate energy performance.'
-            rdsap_description_second_part: 'This type of assessment can be carried out on properties built before 1 April 2008 in England and Wales, and 30 September 2008 in Northern Ireland. It can also be used for newer properties, as long as they have a previous SAP assessment, which uses detailed information about the property’s construction to calculate energy performance.'
+            disclosure: "Assessor’s declaration"
+            date_of_assessment: "Date of assessment"
+            date_of_certificate: "Date of certificate"
+            type_of_assessment: "Type of assessment"
+            hidden_text_details_of_drop_down: "Show information about the "
+            sap_description_first_part: "SAP (Standard Assessment Procedure) is a method used to assess and compare the energy and environmental performance of properties in the UK. It uses detailed information about the property’s construction to calculate energy performance."
+            sap_description_second_part: "This type of assessment must be carried out on all new properties built after 1 April 2008 in England and Wales, and 30 September 2008 in Northern Ireland."
+            rdsap_description_first_part: "RdSAP (Reduced data Standard Assessment Procedure) is a method used to assess and compare the energy and environmental performance of properties in the UK. It uses a site visit and survey of the property to calculate energy performance."
+            rdsap_description_second_part: "This type of assessment can be carried out on properties built before 1 April 2008 in England and Wales, and 30 September 2008 in Northern Ireland. It can also be used for newer properties, as long as they have a previous SAP assessment, which uses detailed information about the property’s construction to calculate energy performance."
       green_deal:
-        title: 'Green deal plan'
-        info: 'Energy efficiency improvements were made to this property by a %{link}.'
-        url: 'https://www.gov.uk/green-deal-energy-saving-measures/moving-into-a-property-with-a-green-deal'
-        copy_of_plan: 'Before buying or renting this property, you should ask the property’s owner for a copy of the plan. You can also get a copy of the plan from the plan’s provider with the owner’s consent.'
-        cost_of_plan: 'Cost of the plan'
+        title: "Green deal plan"
+        info: "Energy efficiency improvements were made to this property by a %{link}."
+        url: "https://www.gov.uk/green-deal-energy-saving-measures/moving-into-a-property-with-a-green-deal"
+        copy_of_plan: "Before buying or renting this property, you should ask the property’s owner for a copy of the plan. You can also get a copy of the plan from the plan’s provider with the owner’s consent."
+        cost_of_plan: "Cost of the plan"
         plan_charges:
-          title: 'Plan charges:'
-          point_one: 'are payable as part of the electricity bill'
-          point_two: 'reduce as each improvement is paid off'
-        current_charge: 'Current charge'
-        estimated_saving: 'Estimated saving'
-        payment_period_start: 'Payment period start'
-        payment_period_end: 'Payment period end'
-        interest_rate_payable: 'Interest rate payable'
-        charge_overtime: 'This is the current charge, but the charge can change over time depending on the details of the plan. The plan can be paid off early, although extra costs may apply.'
+          title: "Plan charges:"
+          point_one: "are payable as part of the electricity bill"
+          point_two: "reduce as each improvement is paid off"
+        current_charge: "Current charge"
+        estimated_saving: "Estimated saving"
+        payment_period_start: "Payment period start"
+        payment_period_end: "Payment period end"
+        interest_rate_payable: "Interest rate payable"
+        charge_overtime: "This is the current charge, but the charge can change over time depending on the details of the plan. The plan can be paid off early, although extra costs may apply."
         estimated_savings:
-          title: 'The estimated saving is based on:'
-          assessment: 'the original Green Deal assessment'
-          improvements_made: 'the improvements made by the plan'
-          typical_energy_use: 'typical energy use for this type of property, using current energy prices'
-        improvements_header: 'Improvements'
-        paid_off_header: 'Paid off'
-        plan_and_provider_details: 'Plan and provider details'
-        plan_number: 'Plan number'
-        provider_name: 'Provider'
-        provider_telephone: 'Telephone'
-        provider_email: 'Email'
+          title: "The estimated saving is based on:"
+          assessment: "the original Green Deal assessment"
+          improvements_made: "the improvements made by the plan"
+          typical_energy_use: "typical energy use for this type of property, using current energy prices"
+        improvements_header: "Improvements"
+        paid_off_header: "Paid off"
+        plan_and_provider_details: "Plan and provider details"
+        plan_number: "Plan number"
+        provider_name: "Provider"
+        provider_telephone: "Telephone"
+        provider_email: "Email"
 
         type:
-          CEPC: 'Commercial energy performance certificate'
-          CEPC-RR: 'Commercial energy performance certificate recommendation report'
-          RdSAP: 'Energy performance certificate'
-          SAP: 'Energy performance certificate'
-          AC-REPORT: 'Air conditioning inspection report'
-          AC-CERT: 'Air conditioning inspection certificate'
-          DEC: 'Display energy certificate'
-          DEC-RR: 'Display energy certificate recommendation report'
+          CEPC: "Commercial energy performance certificate"
+          CEPC-RR: "Commercial energy performance certificate recommendation report"
+          RdSAP: "Energy performance certificate"
+          SAP: "Energy performance certificate"
+          AC-REPORT: "Air conditioning inspection report"
+          AC-CERT: "Air conditioning inspection certificate"
+          DEC: "Display energy certificate"
+          DEC-RR: "Display energy certificate recommendation report"
 
 
   assessment_types:
-    CEPC: 'Commercial energy performance certificate'
-    CEPC-RR: 'Commercial energy performance certificate recommendation report'
-    RdSAP: 'Energy performance certificate'
-    SAP: 'Energy performance certificate'
-    AC-REPORT: 'Air conditioning inspection report'
-    AC-CERT: 'Air conditioning inspection certificate'
-    DEC: 'Display energy certificate'
-    DEC-RR: 'Display energy certificate recommendation report'
+    CEPC: "Commercial energy performance certificate"
+    CEPC-RR: "Commercial energy performance certificate recommendation report"
+    RdSAP: "Energy performance certificate"
+    SAP: "Energy performance certificate"
+    AC-REPORT: "Air conditioning inspection report"
+    AC-CERT: "Air conditioning inspection certificate"
+    DEC: "Display energy certificate"
+    DEC-RR: "Display energy certificate recommendation report"
 
-  expired: 'Expired'
-  valid_until: 'Valid until'
+  expired: "Expired"
+  valid_until: "Valid until"
 
   energy_performance_rating:
     "0":
@@ -1378,19 +1378,19 @@ en:
 
   disclosure_code:
     1:
-      relation: 'No related party'
+      relation: "No related party"
     2:
-      relation: 'Relative of homeowner or of occupier of the property'
+      relation: "Relative of homeowner or of occupier of the property"
     3:
-      relation: 'Residing at the property'
+      relation: "Residing at the property"
     4:
-      relation: 'Financial interest in the property'
+      relation: "Financial interest in the property"
     5:
-      relation: 'Owner or Director of the organisation dealing with the property transaction'
+      relation: "Owner or Director of the organisation dealing with the property transaction"
     6:
-      relation: 'Employed by the professional dealing with the property transaction'
+      relation: "Employed by the professional dealing with the property transaction"
     7:
-      relation: 'Relative of the professional dealing with the property transaction'
+      relation: "Relative of the professional dealing with the property transaction"
   non_domestic_disclosure_code:
     1:
       relation: "The assessor is not related to the owner of the property."
@@ -1457,57 +1457,57 @@ en:
 
   property_summary:
     type:
-      air_tightness: 'Air tightness'
-      floor: 'Floor'
-      hot_water: 'Hot water'
-      lighting: 'Lighting'
-      main_heating: 'Main heating'
-      main_heating_controls: 'Main heating control'
-      roof: 'Roof'
-      secondary_heating: 'Secondary heating'
-      wall: 'Wall'
-      walls: 'Walls'
-      window: 'Window'
-      windows: 'Windows'
+      air_tightness: "Air tightness"
+      floor: "Floor"
+      hot_water: "Hot water"
+      lighting: "Lighting"
+      main_heating: "Main heating"
+      main_heating_controls: "Main heating control"
+      roof: "Roof"
+      secondary_heating: "Secondary heating"
+      wall: "Wall"
+      walls: "Walls"
+      window: "Window"
+      windows: "Windows"
 
   error:
-    error: 'Error: '
+    error: "Error: "
     500:
-      heading: 'Sorry, there is a problem with the service'
-      body: 'Try again later.'
+      heading: "Sorry, there is a problem with the service"
+      body: "Try again later."
     404:
-      heading: 'Page not found'
-      intro: 'If you typed the web address, check it is correct.'
-      body: 'If you pasted the web address, check you copied the entire address.'
+      heading: "Page not found"
+      intro: "If you typed the web address, check it is correct."
+      body: "If you pasted the web address, check you copied the entire address."
     410:
-      heading: 'This certificate has been cancelled'
-      body: 'A new certificate may have replaced it. You can '
-      service_link: 'check if there is a new certificate'
+      heading: "This certificate has been cancelled"
+      body: "A new certificate may have replaced it. You can "
+      service_link: "check if there is a new certificate"
     error_summary_header: "There is a problem"
     too_many_results:
-      heading: 'Too many results for this address'
-      body: 'There are too many results. %{link}.'
+      heading: "Too many results for this address"
+      body: "There are too many results. %{link}."
       cta_search_by_postcode: "Search by postcode instead"
       royal_mail_link: "You can %{link}."
-      cta_royal_mail: "find a postcode on Royal Mail's postcode finder"
+      cta_royal_mail: "find a postcode on Royal Mail’s postcode finder"
 
   dec:
     top_heading: "Display energy certificate (DEC)"
     tagline: "how energy efficient is this building?"
     sections:
       contents:
-        title: 'Certificate contents'
-        certificate_number: 'Certificate number'
+        title: "Certificate contents"
+        certificate_number: "Certificate number"
       rating:
-        title: 'Energy performance operational rating'
-        emissions_text: 'The building’s energy performance operational rating is based on its carbon dioxide (CO2) emissions for the last year.'
-        text: 'It is given a score and an operational rating on a scale from A (lowest emissions) to G (highest emissions).'
-        typical_text: 'The typical score for a public building is 100. This typical score gives an operational rating of D.'
-        chart_title: 'Operational energy efficiency chart'
-        chart_description: 'This building’s operational energy rating is %{energy_efficiency_band} with a score of %{energy_efficiency_rating}.'
-        guidance_text: 'You can read %{link}.'
-        cta: 'guidance on DECs and advisory reports for public buildings'
-        url: 'https://www.gov.uk/government/publications/display-energy-certificates-and-advisory-reports-for-public-buildings'
+        title: "Energy performance operational rating"
+        emissions_text: "The building’s energy performance operational rating is based on its carbon dioxide (CO2) emissions for the last year."
+        text: "It is given a score and an operational rating on a scale from A (lowest emissions) to G (highest emissions)."
+        typical_text: "The typical score for a public building is 100. This typical score gives an operational rating of D."
+        chart_title: "Operational energy efficiency chart"
+        chart_description: "This building’s operational energy rating is %{energy_efficiency_band} with a score of %{energy_efficiency_rating}."
+        guidance_text: "You can read %{link}."
+        cta: "guidance on DECs and advisory reports for public buildings"
+        url: "https://www.gov.uk/government/publications/display-energy-certificates-and-advisory-reports-for-public-buildings"
       recommendation_report:
         title: "Recommendation report"
         cta: "recommendation report"
@@ -1527,41 +1527,41 @@ en:
           renewables: "Renewables"
         no_value: "N/A"
       technical_information:
-        title: 'This building’s energy use'
-        print_title: 'This building’s energy use'
-        heating_fuel: 'Main heating fuel'
-        building_environment: 'Building environment'
-        floor_area: 'Total useful floor area'
-        asset_rating: 'Asset rating'
-        energy_use: 'Energy use'
-        electricity: 'Electricity'
-        other_fuels: 'Other fuels'
-        annual_energy_use: 'Annual energy use (kWh/m2/year)'
-        typical_energy_use: 'Typical energy use (kWh/m2/year)'
-        energy_from_renewables: 'Energy from renewables'
+        title: "This building’s energy use"
+        print_title: "This building’s energy use"
+        heating_fuel: "Main heating fuel"
+        building_environment: "Building environment"
+        floor_area: "Total useful floor area"
+        asset_rating: "Asset rating"
+        energy_use: "Energy use"
+        electricity: "Electricity"
+        other_fuels: "Other fuels"
+        annual_energy_use: "Annual energy use (kWh/m2/year)"
+        typical_energy_use: "Typical energy use (kWh/m2/year)"
+        energy_from_renewables: "Energy from renewables"
         na: "Not applicable"
       administrative_information:
-        title: 'Administrative information'
-        print_title: 'Assessment details'
-        assessment_software: 'Assessment software'
-        property_reference: 'Property reference'
-        assessor_name: 'Assessor’s name'
-        assessor_number: 'Assessor ID'
-        scheme_name: 'Accreditation scheme'
-        company_name: 'Employer/Trading name'
-        company_address: 'Employer/Trading address'
-        issue_date: 'Issue date'
-        nominated_date: 'Nominated date'
-        valid_until: 'Valid until'
-        related_party_disclosure: 'Assessor’s declaration'
-        download_xml: 'Summary XML'
-        download_xml_cta: 'Download summary XML'
+        title: "Administrative information"
+        print_title: "Assessment details"
+        assessment_software: "Assessment software"
+        property_reference: "Property reference"
+        assessor_name: "Assessor’s name"
+        assessor_number: "Assessor ID"
+        scheme_name: "Accreditation scheme"
+        company_name: "Employer/Trading name"
+        company_address: "Employer/Trading address"
+        issue_date: "Issue date"
+        nominated_date: "Nominated date"
+        valid_until: "Valid until"
+        related_party_disclosure: "Assessor’s declaration"
+        download_xml: "Summary XML"
+        download_xml_cta: "Download summary XML"
         assessor:
           list:
-            name: 'Assessor’s name'
-            number: 'Assessor ID'
-            telephone: 'Telephone'
-            email: 'Email'
+            name: "Assessor’s name"
+            number: "Assessor ID"
+            telephone: "Telephone"
+            email: "Email"
         scheme:
           name: "Accreditation scheme"
           phone: "Accreditation scheme telephone"
@@ -1571,67 +1571,67 @@ en:
     top_heading: "Display energy certificate (DEC) recommendation report"
     sections:
       contents:
-        title: 'Report contents'
+        title: "Report contents"
       rating:
-        title: 'Operational rating and DEC'
-        text: 'This building’s operational rating is %{band}.'
-        dec: 'For more information on the building’s energy performance, %{cta}.'
-        cta: 'see the DEC for this building'
+        title: "Operational rating and DEC"
+        text: "This building’s operational rating is %{band}."
+        dec: "For more information on the building’s energy performance, %{cta}."
+        cta: "see the DEC for this building"
       building:
-        title: 'Building and report details'
-        occupier: 'Building occupier'
-        building_type: 'Building type'
-        building_environment: 'Building environment'
-        renewable: 'On-site renewable energy sources'
-        discount: 'Separable energy uses discounted'
-        floor_area: 'Total useful floor area'
-        building_reference: 'Building reference'
-        issue_date: 'Report issued on'
-        calculation_tool: 'Calculation tool'
-        inspection_type: 'Type of inspection'
-        electricity_used: 'Electricity used'
-        gas_used: 'Gas used'
+        title: "Building and report details"
+        occupier: "Building occupier"
+        building_type: "Building type"
+        building_environment: "Building environment"
+        renewable: "On-site renewable energy sources"
+        discount: "Separable energy uses discounted"
+        floor_area: "Total useful floor area"
+        building_reference: "Building reference"
+        issue_date: "Report issued on"
+        calculation_tool: "Calculation tool"
+        inspection_type: "Type of inspection"
+        electricity_used: "Electricity used"
+        gas_used: "Gas used"
       assessor:
-        title: 'Assessor’s details'
-        name: 'Assessor’s name'
-        email: 'Email'
-        phone: 'Telephone'
-        employer_name: 'Employer’s name'
-        employer_address: 'Employer’s address'
-        number: 'Assessor ID'
-        scheme: 'Accreditation scheme'
+        title: "Assessor’s details"
+        name: "Assessor’s name"
+        email: "Email"
+        phone: "Telephone"
+        employer_name: "Employer’s name"
+        employer_address: "Employer’s address"
+        number: "Assessor ID"
+        scheme: "Accreditation scheme"
 
   ac_cert:
-    top_heading: 'Air conditioning inspection certificate'
+    top_heading: "Air conditioning inspection certificate"
     sections:
       assessment:
-        title: 'Assessment details'
-        inspection_date: 'Inspection date'
-        inspection_level: 'Inspection level'
-        assessment_software: 'Assessment software'
-        declaration: 'Assessor’s declaration'
-        f_gas_compliant_date: 'F-Gas compliant date'
-        total_effective_rated_output: 'Total effective rated output'
-        system_sampling: 'System sampling'
-        treated_floor_area: 'Treated floor area'
-        subsystems_metered: 'Subsystems metered'
-        refrigerant_charge: 'Total estimated refrigerant charge'
+        title: "Assessment details"
+        inspection_date: "Inspection date"
+        inspection_level: "Inspection level"
+        assessment_software: "Assessment software"
+        declaration: "Assessor’s declaration"
+        f_gas_compliant_date: "F-Gas compliant date"
+        total_effective_rated_output: "Total effective rated output"
+        system_sampling: "System sampling"
+        treated_floor_area: "Treated floor area"
+        subsystems_metered: "Subsystems metered"
+        refrigerant_charge: "Total estimated refrigerant charge"
         flags:
-          "0": 'Yes'
-          "1": 'No'
-          "2": 'In part'
-          Y: 'Yes'
-          N: 'No'
+          "0": "Yes"
+          "1": "No"
+          "2": "In part"
+          Y: "Yes"
+          N: "No"
       inspection:
-        title: 'Inspection report'
-        text: 'For the assessor’s recommendations, %{link}.'
-        cta: 'see the inspection report'
+        title: "Inspection report"
+        text: "For the assessor’s recommendations, %{link}."
+        cta: "see the inspection report"
       subsystems:
-        title: 'Subsystems inspected'
-        number: 'Subsystem ID'
-        description: 'Description'
-        refrigerant_type: 'Refrigerant type'
-        age: 'Age of main components'
+        title: "Subsystems inspected"
+        number: "Subsystem ID"
+        description: "Description"
+        refrigerant_type: "Refrigerant type"
+        age: "Age of main components"
 
   ac_report:
     top_heading: "Air conditioning inspection report"
@@ -1729,7 +1729,7 @@ en:
           energy_conservation: "Identify whether the systems have any energy conservation facilities, e.g. heat recovery, free cooling sequence, and check for evidence that such facilities are/have been functioning."
         air_leakage:
           title: "CS6.9 Air leakage"
-          condition: "Observe the air handling plant and visible air containment including ductwork, floor or ceiling plenums and builders' work shafts for signs of excessive leakage and energy loss."
+          condition: "Observe the air handling plant and visible air containment including ductwork, floor or ceiling plenums and builders’ work shafts for signs of excessive leakage and energy loss."
         outdoor_inlets:
           title: "CS 7.1, CS7.2 Outdoor air inlets"
           condition: "Locate the inlets for outdoor air. Note any significant obstructions or blockages to inlet grilles, screens and pre- filters. Note where inlets may be affected by proximity to local sources of heat, or to air exhausts."
@@ -1782,7 +1782,7 @@ en:
         sensors:
           question: "CS8.4 Identify and assess zone heating and cooling temperature control sensors. Are the sensor types and locations appropriate in relation to heating and cooling emitters, heat flows or likely temperature distributions in the zone or space?"
         dead_band:
-          question: "CS8.6 Note whether a 'dead band' is, or can be, set between heating and cooling."
+          question: "CS8.6 Note whether a ‘dead band’ is, or can be, set between heating and cooling."
         capacity:
           question: "CS8.7 Do the sub system controls integrate effectively with the overall system control strategy?"
         airflow:
@@ -1885,68 +1885,68 @@ en:
       title: "Detailed inspection notes"
 
   primary_energy_use_dropdown:
-    what_is_primary_energy_use_title: 'What is primary energy use?'
-    what_is_primary_energy_use_details: 'Primary energy use is a measure of the energy required for lighting, heating and hot water in a property. The calculation includes:'
-    efficiency_of_heating: 'the efficiency of the property’s heating system'
-    efficiency_of_electricity: 'power station efficiency for electricity'
-    fuel_for_property: 'the energy used to produce the fuel and deliver it to the property'
+    what_is_primary_energy_use_title: "What is primary energy use?"
+    what_is_primary_energy_use_details: "Primary energy use is a measure of the energy required for lighting, heating and hot water in a property. The calculation includes:"
+    efficiency_of_heating: "the efficiency of the property’s heating system"
+    efficiency_of_electricity: "power station efficiency for electricity"
+    fuel_for_property: "the energy used to produce the fuel and deliver it to the property"
 
   rating:
-    score: 'Score'
-    operational_rating: 'Operational rating'
-    this_building: 'This building'
-    typical: 'Typical'
-    energy_rating: 'Energy rating'
-    current: 'Current'
-    potential: 'Potential'
-    net_zero_co2: 'Net zero CO2'
-    under_zero: 'Under 0'
+    score: "Score"
+    operational_rating: "Operational rating"
+    this_building: "This building"
+    typical: "Typical"
+    energy_rating: "Energy rating"
+    current: "Current"
+    potential: "Potential"
+    net_zero_co2: "Net zero CO2"
+    under_zero: "Under 0"
 
   accessibility_statement:
-    top_heading: 'Accessibility statement'
-    intro: 'This statement applies to content published on:
-            <ul class="govuk-list govuk-list--bullet">
-              <li><a class= "govuk-link" href="https://find-energy-certificate.digital.communities.gov.uk">find-energy-certificate.digital.communities.gov.uk</a></li>
-              <li><a class= "govuk-link" href="https://getting-new-energy-certificate.digital.communities.gov.uk">getting-new-energy-certificate.digital.communities.gov.uk</a></li>
-            </ul>'
-    paragraph_1: 'This website is run by the Department for Levelling Up, Housing and Communities. We want as many people as possible to be able to use this website. For example, that means you should be able to:
-                  <ul class="govuk-list govuk-list--bullet">
+    top_heading: "Accessibility statement"
+    intro: "This statement applies to content published on:
+            <ul class=\"govuk-list govuk-list--bullet\">
+              <li><a class= \"govuk-link\" href=\"https://find-energy-certificate.digital.communities.gov.uk\">find-energy-certificate.digital.communities.gov.uk</a></li>
+              <li><a class= \"govuk-link\" href=\"https://getting-new-energy-certificate.digital.communities.gov.uk\">getting-new-energy-certificate.digital.communities.gov.uk</a></li>
+            </ul>"
+    paragraph_1: "This website is run by the Department for Levelling Up, Housing and Communities. We want as many people as possible to be able to use this website. For example, that means you should be able to:
+                  <ul class=\"govuk-list govuk-list--bullet\">
                     <li>change colours, contrast levels and fonts</li>
                     <li>zoom in up to 300% without the text spilling off the screen</li>
                     <li>navigate most of the website using just a keyboard</li>
                     <li>navigate most of the website using speech recognition software</li>
                     <li>listen to most of the website using a screen reader (including the most recent versions of JAWS, NVDA and VoiceOver)</li>
-                  </ul>'
-    paragraph_2: 'We’ve also made the website text as simple as possible to understand.'
-    paragraph_3: '<a class="govuk-link" href="https://mcmw.abilitynet.org.uk/">AbilityNet</a> has advice on making your device easier to use if you have a disability.'
-    contact_heading: 'Feedback and contact information'
-    contact_paragraph: 'If you need information on this website in a different format like accessible PDF, large print, easy read, audio recording or braille:
-                       <ul class="govuk-list govuk-list--bullet">
-                         <li>Email: <a href="mailto:dluhc.digital-services@levellingup.gov.uk?subject=EPB%20-%20">dluhc.digital-services@levellingup.gov.uk</a></li>
+                  </ul>"
+    paragraph_2: "We’ve also made the website text as simple as possible to understand."
+    paragraph_3: "<a class=\"govuk-link\" href=\"https://mcmw.abilitynet.org.uk/\">AbilityNet</a> has advice on making your device easier to use if you have a disability."
+    contact_heading: "Feedback and contact information"
+    contact_paragraph: "If you need information on this website in a different format like accessible PDF, large print, easy read, audio recording or braille:
+                       <ul class=\"govuk-list govuk-list--bullet\">
+                         <li>Email: <a href=\"mailto:dluhc.digital-services@levellingup.gov.uk?subject=EPB%20-%20\">dluhc.digital-services@levellingup.gov.uk</a></li>
                          <li>Telephone: 020 3829 0748</li>
-                       </ul>'
-    reporting_heading: 'Reporting accessibility problems with this website'
-    reporting_paragraph: 'We’re always looking to improve the accessibility of this website. If you find any problems not listed on this page or think we’re not meeting accessibility requirements please <a class="govuk-link" href="https://forms.office.com/Pages/ResponsePage.aspx?id=EGg0v32c3kOociSi7zmVqHjpWgKFmwZGtrWhJ7I-WptUQzlDR0M5UllHQTI1NjNCNUtKRVdFRU9RUS4u">give feedback</a>.'
-    enforcement_heading: 'Enforcement procedure'
-    enforcement_paragraph: 'The Equality and Human Rights Commission (EHRC) is responsible for enforcing the Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018 (the ‘accessibility regulations’). If you’re not happy with how we respond to your complaint, <a class="govuk-link" href="https://www.equalityadvisoryservice.com/">contact the Equality Advisory and Support Service (EASS)</a>.'
-    technical_heading: 'Technical information about this website’s accessibility'
-    technical_paragraph: 'The Department for Levelling Up, Housing and Communities is committed to making its website accessible, in accordance with the Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018.'
-    compliance_heading: 'Compliance status'
-    compliance_paragraph: 'This website is partially compliant with the <a class="govuk-link" href="https://www.w3.org/TR/WCAG21/">Web Content Accessibility Guidelines version 2.1 AA standard</a>, due to the non-compliances listed below.'
-    non_accessible_heading: 'Non-accessible content'
-    non_accessible_paragraph: 'The content listed below is non-accessible for the following reasons.'
-    non_compliance_heading: 'Non-compliance with the accessibility regulations'
-    non_compliance_paragraph_1: 'Some content comes from accredited assessors. This may not be correctly structured for the web and difficult to browse with a screen reader, most notably on the Air Conditioning Inspection Reports.'
-    non_compliance_paragraph_2: 'Some pages have duplicate non-descriptive labels. This means screen reader users browsing out of context cannot identify what these labels relate to. We’re adding more information to give these labels context.'
-    non_compliance_paragraph_3: 'On certain pages there is ambiguous link text. This makes it difficult for screen reader users to differentiate between the links. We’re adding more information to give these links more context. '
-    non_compliance_paragraph_4: 'Some pages have poor colour contrast. This fails WCAG 2.1 success criterion 1.4.1 (Use of Colour).'
-    out_of_scope_heading: 'Content that’s not within the scope of the accessibility regulations'
-    out_of_scope_paragraph: 'Not applicable.'
-    what_we_do_heading: 'What we’re doing to improve accessibility'
-    what_we_do_paragraph: 'A further accessibility audit will be carried out by March 2023. We will report the findings here, and work to rectify any additional issues identified as quickly as possible.'
-    preparation_heading: 'Preparation of this accessibility statement'
-    preparation_paragraph: 'This statement was prepared on 28 September 2021. It was last reviewed on 9 November 2022.'
-    accessibility_audit: 'This website was last tested on 30 November 2020. The test was carried out by the Digital Accessibility Centre (DAC).'
+                       </ul>"
+    reporting_heading: "Reporting accessibility problems with this website"
+    reporting_paragraph: "We’re always looking to improve the accessibility of this website. If you find any problems not listed on this page or think we’re not meeting accessibility requirements please <a class=\"govuk-link\" href=\"https://forms.office.com/Pages/ResponsePage.aspx?id=EGg0v32c3kOociSi7zmVqHjpWgKFmwZGtrWhJ7I-WptUQzlDR0M5UllHQTI1NjNCNUtKRVdFRU9RUS4u\">give feedback</a>."
+    enforcement_heading: "Enforcement procedure"
+    enforcement_paragraph: "The Equality and Human Rights Commission (EHRC) is responsible for enforcing the Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018 (the ‘accessibility regulations’). If you’re not happy with how we respond to your complaint, <a class=\"govuk-link\" href=\"https://www.equalityadvisoryservice.com/\">contact the Equality Advisory and Support Service (EASS)</a>."
+    technical_heading: "Technical information about this website’s accessibility"
+    technical_paragraph: "The Department for Levelling Up, Housing and Communities is committed to making its website accessible, in accordance with the Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018."
+    compliance_heading: "Compliance status"
+    compliance_paragraph: "This website is partially compliant with the <a class=\"govuk-link\" href=\"https://www.w3.org/TR/WCAG21/\">Web Content Accessibility Guidelines version 2.1 AA standard</a>, due to the non-compliances listed below."
+    non_accessible_heading: "Non-accessible content"
+    non_accessible_paragraph: "The content listed below is non-accessible for the following reasons."
+    non_compliance_heading: "Non-compliance with the accessibility regulations"
+    non_compliance_paragraph_1: "Some content comes from accredited assessors. This may not be correctly structured for the web and difficult to browse with a screen reader, most notably on the Air Conditioning Inspection Reports."
+    non_compliance_paragraph_2: "Some pages have duplicate non-descriptive labels. This means screen reader users browsing out of context cannot identify what these labels relate to. We’re adding more information to give these labels context."
+    non_compliance_paragraph_3: "On certain pages there is ambiguous link text. This makes it difficult for screen reader users to differentiate between the links. We’re adding more information to give these links more context. "
+    non_compliance_paragraph_4: "Some pages have poor colour contrast. This fails WCAG 2.1 success criterion 1.4.1 (Use of Colour)."
+    out_of_scope_heading: "Content that’s not within the scope of the accessibility regulations"
+    out_of_scope_paragraph: "Not applicable."
+    what_we_do_heading: "What we’re doing to improve accessibility"
+    what_we_do_paragraph: "A further accessibility audit will be carried out by March 2023. We will report the findings here, and work to rectify any additional issues identified as quickly as possible."
+    preparation_heading: "Preparation of this accessibility statement"
+    preparation_paragraph: "This statement was prepared on 28 September 2021. It was last reviewed on 9 November 2022."
+    accessibility_audit: "This website was last tested on 30 November 2020. The test was carried out by the Digital Accessibility Centre (DAC)."
 
   cookies:
     title: "Cookies on our service"
