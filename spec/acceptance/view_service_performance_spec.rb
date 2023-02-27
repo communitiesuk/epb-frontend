@@ -186,11 +186,11 @@ describe "Acceptance::ServicePerformance", type: :feature do
     end
 
     it "has the correct Welsh title" do
-      expect(response.body).to include("<title>Gwirio sut mae'r gwasanaeth hwn yn perfformio – GOV.UK</title>")
+      expect(response.body).to include("<title>Gwirio sut mae’r gwasanaeth hwn yn perfformio – GOV.UK</title>")
     end
 
     it "has the correct Welsh H1" do
-      expect(response.body).to have_css("h1", text: "Gwirio sut mae'r gwasanaeth hwn yn perfformio")
+      expect(response.body).to have_css("h1", text: "Gwirio sut mae’r gwasanaeth hwn yn perfformio")
     end
   end
 end

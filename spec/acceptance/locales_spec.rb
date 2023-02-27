@@ -12,7 +12,7 @@ describe "Acceptance::Locales" do
     end
 
     it "does not show Welsh: when lang=en" do
-      expect(response_english.body).not_to include("Sgipiwch i'r prif gynnwys")
+      expect(response_english.body).not_to include("Sgipiwch i’r prif gynnwys")
     end
   end
 end
