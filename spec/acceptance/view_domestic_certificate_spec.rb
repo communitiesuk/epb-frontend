@@ -1292,7 +1292,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       expect(response.body).to have_css "p",
                                         text:
                                           "A new certificate may have replaced it. You can "
-      expect(response.body).to have_css "a", text: "check if there is a new certificate."
+      expect(response.body).to have_css "a", text: "check if there is a new certificate"
     end
   end
 

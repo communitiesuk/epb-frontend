@@ -1482,7 +1482,7 @@ cy:
     410:
       heading: "Mae’r dystysgrif hon wedi’i chanslo"
       body: "Efallai ei bod wedi’i disodli gan dystysgrif newydd. Gallwch "
-      service_link: "wirio a oes tystysgrif newydd."
+      service_link: "wirio a oes tystysgrif newydd"
     error_summary_header: "Mae yna broblem"
     too_many_results:
       heading: 'Gormod o ganlyniadau ar gyfer y cyfeiriad hwn'
