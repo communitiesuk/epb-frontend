@@ -451,7 +451,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
 
       it "shows the making changes text with the correct reduction value" do
         expect(response.body).to include(
-          'By making the <a class="govuk-link" href="#recommendations">recommended changes</a>, you could reduce this property’s CO2 emissions by 1.0 tonnes per year.',
+          "You could improve this property’s CO2 emissions by making the suggested changes. This will help to protect the environment.",
         )
       end
 
@@ -485,9 +485,9 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
 
         let(:response) { get "/energy-certificate/123-654" }
 
-        it "shows the making changes text with the correct reduction value" do
+        it "shows the making changes text" do
           expect(response.body).to include(
-            'By making the <a class="govuk-link" href="#recommendations">recommended changes</a>, you could reduce this property’s CO2 emissions by 1.33 tonnes per year.',
+            "You could improve this property’s CO2 emissions by making the suggested changes. This will help to protect the environment.",
           )
         end
 

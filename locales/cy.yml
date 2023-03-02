@@ -974,12 +974,9 @@ cy:
       environmental_impact:
         title: "Effaith amgylcheddol yr eiddo hwn"
         eir_rating: "Cyfraddiad effaith amgylcheddol yr eiddo hwn ar hyn o bryd yw %{current_environmental_impact_rating}. Mae gan yr eiddo y potensial i fod yn %{potential_environmental_impact_rating}."
-        rating_scale: "Mae eiddo’n cael ei sgorio ar raddfa o A i G ar sail faint o garbon deuocsid (CO2) y mae’n ei gynhyrchu."
-        rating_comparision: "Mae eiddo sydd â chyfraddiad A yn cynhyrchu llai o CO2 nag eiddo sydd â chyfraddiad G."
+        rating_scale: "Mae eiddo’n cael cyfraddiad rhwng A (y gorau) ac G (y gwaethaf) ar sail faint o garbon deuocsid (CO2) maen nhw’n ei gynhyrchu bob blwyddyn. Mae CO2 yn niweidio’r amgylchedd."
         summary: "Un o’r cyfranwyr mwyaf at newid yr hinsawdd yw carbon deuocsid (CO2). Yr ynni a ddefnyddir i wresogi, goleuo a phweru’n cartrefi sy’n cynhyrchu mwy na chwarter allyriadau CO2 y Deyrnas Unedig."
-        making_changes: "Drwy gyflawni’r %{link}, fe allech chi ostwng allyriadau CO2 yr eiddo hwn yn ôl %{reduction} tunnell y flwyddyn. Bydd hynny’n helpu i ddiogelu’r amgylchedd."
-        making_changes_cta: "newidiadau a argymhellir"
-        making_changes_url: "#argymhellion"
+        making_changes: "Gallech wella allyriadau CO2 yr eiddo hwn drwy wneud y newidiadau sydd wedi’u hawgrymu. Bydd hynny’n helpu i ddiogelu’r amgylchedd."
         environmental_impact_rating: "Mae cyfraddiadau effaith amgylcheddol yn cael eu seilio ar dybiaethau ynghylch y feddiannaeth gyfartalog a’r defnydd ynni cyfartalog. Mae’n bosibl nad ydyn nhw’n adlewyrchu sut mae ynni’n cael ei ddefnyddio gan y bobl sy’n byw yn yr eiddo."
         average_household:
           text: "Mae’r aelwyd gyfartalog yn cynhyrchu"

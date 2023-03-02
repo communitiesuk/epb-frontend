@@ -4,7 +4,6 @@
                                :current_environmental_impact_rating => eir_rating_band(assessment[:environmentalImpactCurrent].to_i).upcase,
                                :potential_environmental_impact_rating => eir_rating_band(assessment[:environmentalImpactPotential].to_i).upcase) %></p>
   <p class="govuk-body"><%== t('domestic_epc.sections.environmental_impact.rating_scale') %></p>
-  <p class="govuk-body"><%== t('domestic_epc.sections.environmental_impact.rating_comparision') %></p>
   <dl class="govuk-summary-list">
     <div class="govuk-summary-list__row" >
       <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= t('domestic_epc.sections.environmental_impact.average_household.text') %></dt>
@@ -19,8 +18,6 @@
       <dd id="eir-potential-production" class="govuk-summary-list__value" style="text-align: right"><%= BigDecimal(assessment[:potentialCarbonEmission]).to_f.round(1) %><%== t('domestic_epc.sections.environmental_impact.tonnes_of_carbon_emission', carbon: 'CO2') %></dd>
     </div>
   </dl>
-  <p class="govuk-body">
-    <%== t('domestic_epc.sections.environmental_impact.making_changes', reduction: (BigDecimal(assessment[:currentCarbonEmission]).to_f - BigDecimal(assessment[:potentialCarbonEmission])).to_f.round(2), :link => '<a class="govuk-link" href="' + t('domestic_epc.sections.environmental_impact.making_changes_url') + '">' + t('domestic_epc.sections.environmental_impact.making_changes_cta') + '</a>') %>
-  </p>
+  <p class="govuk-body"><%== t('domestic_epc.sections.environmental_impact.making_changes') %></p>
   <p class="govuk-body"><%== t('domestic_epc.sections.environmental_impact.environmental_impact_rating') %></p>
 </div>
