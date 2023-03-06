@@ -29,7 +29,7 @@ generate-autoscaling-policy: ## Generate policy for Cloud Foundry App Auto-Scale
 .PHONY: frontend-build
 frontend-build: ## Run the frontend build process to compile sass and move asset files to public
 	@echo "Building frontend assets..."
-	STAGE=${DEPLOY_APPNAME} ruby ./compile_assets.rb
+	STAGE=${DEPLOY_APPNAME} ruby ./build/compile_assets.rb
 
 frontend-build-watch:
 	@$(SHELL) ./scripts/frontend-build-watch.sh

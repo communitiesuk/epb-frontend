@@ -45,7 +45,7 @@ unless File.directory?(public_target("./public/javascript"))
   FileUtils.mkdir(public_target("./public/javascript"))
 end
 puts "  Copying and renaming GOVUKFrontend js"
-FileUtils.copy_file("node_modules/govuk-frontend/govuk/all.js", public_target("./public/javascript/govuk.js"))
+`npm run copy-without-comments #{File.realpath("./node_modules/govuk-frontend/govuk/all.js")} #{File.realpath(public_target("./public/javascript"))}/govuk.js`
 `./node_modules/.bin/babel #{File.realpath("./assets/javascript")} --ignore #{File.realpath("./assets/javascript/__tests__")} --out-dir #{File.realpath(public_target("./public/javascript"))} --no-comments`
 
 puts "Copying robots.txt"

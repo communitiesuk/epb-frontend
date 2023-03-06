@@ -23,6 +23,7 @@
     "@babel/core": "^7.21.0",
     "@babel/eslint-parser": "^7.18.9",
     "@babel/preset-env": "^7.20.2",
+    "decomment": "^0.9.5",
     "jest": "^29.4.3",
     "jest-environment-jsdom": "^29.4.3",
     "standard": "^17.0.0"
@@ -31,7 +32,8 @@
     "fmt": "npm run lint-fix",
     "lint": "standard \"assets/javascript/**/*.js\"",
     "lint-fix": "standard --fix \"assets/javascript/**/*.js\"",
-    "test": "jest"
+    "test": "jest",
+    "copy-without-comments": "node ./build/copy-without-comments.js"
   },
   "standard": {
     "parser": "@babel/eslint-parser",
