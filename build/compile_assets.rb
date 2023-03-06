@@ -10,8 +10,9 @@ def build_sass(source, destination)
   File.write(destination, css)
 end
 
-if ENV["ASSETS_VERSION"].nil? && File.exist?(File.join(__dir__, "ASSETS_VERSION"))
-  ENV["ASSETS_VERSION"] = File.read(File.join(__dir__, "ASSETS_VERSION")).chomp
+assets_version_file = File.join(__dir__, "../ASSETS_VERSION")
+if ENV["ASSETS_VERSION"].nil? && File.exist?(assets_version_file)
+  ENV["ASSETS_VERSION"] = File.read(assets_version_file).chomp
 end
 
 def public_target(default)
