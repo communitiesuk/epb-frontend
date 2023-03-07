@@ -2,12 +2,12 @@
 
 environment = ENV["STAGE"]
 
-if %w[development test].include? environment
-  Rack::Attack.cache.store = ActiveSupport::Cache::MemoryStore.new
-  Rack::Attack.enabled = false
-else
+if Helper::Platform.is_paas?
   redis_url = Helper::RedisConfigurationReader.read_configuration_url("mhclg-epb-redis-ratelimit-#{environment}")
   Rack::Attack.cache.store = ActiveSupport::Cache::RedisCacheStore.new(url: redis_url)
+else
+  Rack::Attack.cache.store = ActiveSupport::Cache::MemoryStore.new
+  Rack::Attack.enabled = false
 end
 
 # Monkey patch to have access to the first client IP in X_FORWARDED_FOR header
