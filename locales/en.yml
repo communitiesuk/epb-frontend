@@ -352,7 +352,7 @@ en:
       body_find_postcode: "You can %{link}."
       cta_find_postcode: "find a postcode on Royal Mail’s postcode finder"
       body_street_and_town: "Or %{link}"
-      cta_street_and_town: "find an EPC using the street name and town."
+      cta_street_and_town: "find an EPC using the street name and town"
     certificate_by_reference_number:
       heading: "Search by certificate number"
       body: "You can %{link}."
@@ -494,7 +494,7 @@ en:
       body_find_postcode: "You can %{link}."
       cta_find_postcode: "find a postcode on Royal Mail’s postcode finder"
       body_street_and_town: "Or %{link}"
-      cta_street_and_town: "find energy certificates and reports using the street name and town."
+      cta_street_and_town: "find energy certificates and reports using the street name and town"
     certificate_by_reference_number:
       heading: "Search by certificate number"
       body: "You can %{link}."
@@ -868,7 +868,7 @@ en:
         title: "Energy efficiency rating for this property"
         intro:
           text: "This property’s current energy rating is  %{current_energy_efficiency_band}. It has the potential to be %{potential_energy_efficiency_band}."
-          cta: "See how to improve this property’s energy performance."
+          cta: "See how to improve this property’s energy performance"
           url: "#recommendations"
         chart_title: "Energy efficiency chart"
         chart_description: "This property’s current energy rating is %{current_energy_efficiency_band} with a score of %{current_energy_efficiency_rating}. It has a potential energy rating of %{potential_energy_efficiency_band} with a score of %{potential_energy_efficiency_rating}."

@@ -352,7 +352,7 @@ cy:
       body_find_postcode: "Gallwch %{link}."
       cta_find_postcode: "ddod o hyd i god post ar Chwiliwr Cod Post y Post Brenhinol"
       body_street_and_town: "Neu %{link}"
-      cta_street_and_town: "chwiliwch am EPC drwy ddefnyddio enw’r stryd a’r dref."
+      cta_street_and_town: "chwiliwch am EPC drwy ddefnyddio enw’r stryd a’r dref"
     certificate_by_reference_number:
       heading: "Chwiliwch yn ôl rhif y dystysgrif"
       body: "Fe allwch chi %{link}"
@@ -494,7 +494,7 @@ cy:
       body_find_postcode: "Gallwch %{link}."
       cta_find_postcode: "ddod o hyd i god post ar Chwiliwr Cod Post y Post Brenhinol"
       body_street_and_town: "Neu %{link}"
-      cta_street_and_town: "chwiliwch am dystysgrifau perfformiad ynni drwy ddefnyddio enw’r stryd a’r dref."
+      cta_street_and_town: "chwiliwch am dystysgrifau perfformiad ynni drwy ddefnyddio enw’r stryd a’r dref"
     certificate_by_reference_number:
       heading: "Chwiliwch yn ôl rhif y dystysgrif"
       body: "Fe allwch chi %{link}."
@@ -868,7 +868,7 @@ cy:
         title: "Cyfraddiad effeithlonrwydd ynni’r eiddo hwn"
         intro:
           text: "Cyfraddiad effeithlonrwydd ynni presennol yr eiddo hwn yw %{current_energy_efficiency_band}. Mae ganddo’r potensial i fod yn %{potential_energy_efficiency_band}."
-          cta: "Gweld sut i wella perfformiad ynni’r eiddo hwn."
+          cta: "Gweld sut i wella perfformiad ynni’r eiddo hwn"
           url: "#argymhellion"
         chart_title: "Siart effeithlonrwydd ynni"
         chart_description: "Cyfraddiad ynni cyfredol yr eiddo hwn yw %{current_energy_efficiency_band} gyda sgôr o %{current_energy_efficiency_rating}. Mae ganddo gyfraddiad ynni posibl o %{potential_energy_efficiency_band} gyda sgôr o %{potential_energy_efficiency_rating}."
