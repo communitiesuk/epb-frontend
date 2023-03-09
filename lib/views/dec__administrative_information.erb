@@ -30,7 +30,12 @@
         }.merge(admin_list)
         end
        if assessment[:schemaVersion] > 6
-         admin_list["download_xml"] = {type: "link", value: t("dec.sections.administrative_information.download_xml_cta"), link: localised_url("/energy-certificate/" + assessment[:assessmentId] + "/dec_summary")}
+         admin_list["download_xml"] = {
+           type: "link_with_post_link_text",
+           value: t("dec.sections.administrative_information.download_xml_cta"),
+           link: localised_url("/energy-certificate/" + assessment[:assessmentId] + "/dec_summary"),
+           post_link_text: t("dec.sections.administrative_information.download_xml_type_and_size"),
+         }
        end
     %>
 

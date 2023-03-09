@@ -576,6 +576,7 @@ cy:
             num_uploaded: "Nifer a uwchlwythwyd"
             avg_rating: "Sgôr ynni gyfartalog"
         download_link: "Lawrlwytho copi o’r data ar "
+        file_type_and_size: " (CSV, 4KB)"
         assessment_types:
           sap: "Data domestig – adeilad newydd"
           rdsap: "Data domestig – adeilad presennol"
@@ -1551,7 +1552,8 @@ cy:
         valid_until: "Dilys tan"
         related_party_disclosure: "Datganiad yr asesydd"
         download_xml: "Crynodeb XML"
-        download_xml_cta: "Lawrlwytho Crynodeb XML"
+        download_xml_cta: "Lawrlwytho Crynodeb (XML, 4KB)"
+        download_xml_type_and_size: " (XML, 4KB)"
         assessor:
           list:
             name: "Enw’r asesydd"

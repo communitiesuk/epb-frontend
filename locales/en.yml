@@ -576,6 +576,7 @@ en:
             num_uploaded: "Number uploaded"
             avg_rating: "Average energy rating"
         download_link: "Download a copy of the data for "
+        file_type_and_size: " (CSV, 4KB)"
         assessment_types:
           sap: "Domestic data – new building"
           rdsap: "Domestic data – existing building"
@@ -1551,7 +1552,8 @@ en:
         valid_until: "Valid until"
         related_party_disclosure: "Assessor’s declaration"
         download_xml: "Summary XML"
-        download_xml_cta: "Download summary XML"
+        download_xml_cta: "Download summary"
+        download_xml_type_and_size: " (XML, 4KB)"
         assessor:
           list:
             name: "Assessor’s name"

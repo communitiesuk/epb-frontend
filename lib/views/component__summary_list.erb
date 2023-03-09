@@ -8,8 +8,10 @@
       link = ""
       prefix = nil
       suffix = nil
+      post_link_text = ""
 
       if value.class == Hash
+        post_link_text = value[:post_link_text]
         type = value[:type]
         print = value.key?(:print) ? value[:print] : true
         link = value[:link]
@@ -54,9 +56,13 @@
               </details>
             <%
           when "link"
-              %>
-                <a class="govuk-link" href="<%= link %>"><%= value %></a>
-              <%
+            %>
+              <a class="govuk-link" href="<%= link %>"><%= value %></a>
+            <%
+          when "link_with_post_link_text"
+            %>
+              <a class="govuk-link" href="<%= link %>"><%= value %></a><%= post_link_text %>
+            <%
           else
             %>
               <%= value %>

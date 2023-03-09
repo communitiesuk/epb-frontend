@@ -48,6 +48,7 @@ describe "Acceptance::ServicePerformance", type: :feature do
       expect(response.body).to have_css("#accordion-cepc")
       expect(response.body).to have_css("#accordion-dec")
       expect(response.body).to have_css("#accordion-dec-rr")
+      expect(response.body).to have_css("#accordion-dec-rr")
       expect(response.body).to have_css("#accordion-ac-cert")
     end
 

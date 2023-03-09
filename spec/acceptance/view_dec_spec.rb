@@ -222,9 +222,10 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
                                           text:
                                             "The assessor has not indicated whether they have a relation to this property."
         expect(response.body).to have_css "dt", text: "Summary XML"
-        expect(response.body).to have_link "Download summary XML",
+        expect(response.body).to have_link "Download summary",
                                            href:
                                              "/energy-certificate/0000-0000-0000-0000-1111/dec_summary"
+        expect(response.body).to have_css "dd", text: "(XML, 4KB)"
       end
     end
 
@@ -321,7 +322,7 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
       end
 
       it "does not have summary download link" do
-        expect(response.body).not_to have_link "Download summary XML"
+        expect(response.body).not_to have_link "Download summary"
       end
     end
   end
@@ -394,8 +395,9 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
                                             text:
                                               "The assessor has not indicated whether they have a relation to this property."
       expect(response.body).to have_css "dt", text: "Summary XML"
-      expect(response.body).to have_link "Download summary XML",
+      expect(response.body).to have_link "Download summary",
                                          href: "/energy-certificate/0000-0000-0000-0000-1111/dec_summary"
+      expect(response.body).to have_css "dd", text: "(XML, 4KB)"
     end
   end
 
