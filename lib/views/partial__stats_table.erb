@@ -25,13 +25,11 @@
     </table>
 
     <a href="service-performance/download-csv?country=<%= country_key.gsub("_", '-') %>" class="gov-link" download>
-      <%= t('service_performance.contents.epcs_upload.download_link')%> <%=
+      <%= t('service_performance.contents.epcs_upload.download_link')%><%=
         if country_key == "all"
           t("service_performance.contents.epcs_upload.tables.titles.#{country_key}").downcase
         else
           t("service_performance.contents.epcs_upload.tables.titles.#{country_key}")
-        end
-      %>
-    </a><%= t('service_performance.contents.epcs_upload.file_type_and_size')%>
+        end %></a> <%= t('service_performance.contents.epcs_upload.file_type_and_size')%>
   </div>
 <% end %>
