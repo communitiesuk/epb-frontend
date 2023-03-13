@@ -1,6 +1,6 @@
 <dl class="govuk-summary-list">
 
-  <% list.each do |key, value| %>
+  <% list.each do |key, v| %>
     <%
       type = "string"
       print = true
@@ -10,20 +10,23 @@
       suffix = nil
       post_link_text = ""
 
-      if value.class == Hash
-        post_link_text = value[:post_link_text]
-        type = value[:type]
-        print = value.key?(:print) ? value[:print] : true
-        link = value[:link]
-        numerical = value[:numerical]
-        prefix = value[:prefix]
-        suffix = value[:suffix]
-        value = value[:value]
+      if v.class == Hash
+        post_link_text = v[:post_link_text]
+        type = v[:type]
+        print = v.key?(:print) ? v[:print] : true
+        link = v[:link]
+        numerical = v[:numerical]
+        prefix = v[:prefix]
+        suffix = v[:suffix]
+        value = v[:value]
+      else
+        value = v
       end
 
       if value.nil? && skip_null
         next
       end
+
       value = prefix + value.to_s unless prefix.nil?
       value = value.to_s + suffix unless suffix.nil?
     %>
