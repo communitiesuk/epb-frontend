@@ -35,7 +35,7 @@ module Helpers
     dom_qual_list.empty? ? nil : dom_qual_list.join(",")
   end
 
-  def set_subdomain_url(subdomain)
+  def get_subdomain_host(subdomain)
     current_url = request.url
 
     return "http://#{subdomain}.local.gov.uk:9393" if settings.development?
@@ -432,7 +432,7 @@ module Helpers
 
   def get_service_root_page_url
     root_url = static_start_page_for_service is_finding_service: false
-    !root_url.nil? && !root_url.empty? ? root_url : localised_url("#{set_subdomain_url('getting-new-energy-certificate')}/")
+    !root_url.nil? && !root_url.empty? ? root_url : localised_url("#{get_subdomain_host('getting-new-energy-certificate')}/")
   end
 
   # Use reCAPTCHA only if the appropriate environment variables are set

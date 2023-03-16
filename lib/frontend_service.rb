@@ -720,7 +720,7 @@ class FrontendService < Sinatra::Base
               "find_non_dom_certificate_by_street_name_and_town.no_such_address.cta",
             url:
               localised_url(
-                set_subdomain_url(GETTING_NEW_ENERGY_CERTIFICATE_HOST_NAME),
+                get_subdomain_host(GETTING_NEW_ENERGY_CERTIFICATE_HOST_NAME),
               ),
           }
         when Errors::RequestTimeoutError
@@ -880,7 +880,7 @@ class FrontendService < Sinatra::Base
             cta: "find_certificate_by_street_name_and_town.no_such_address.cta",
             url:
               localised_url(
-                set_subdomain_url(GETTING_NEW_ENERGY_CERTIFICATE_HOST_NAME),
+                get_subdomain_host(GETTING_NEW_ENERGY_CERTIFICATE_HOST_NAME),
               ),
           }
         when Errors::RequestTimeoutError

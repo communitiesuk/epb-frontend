@@ -12,7 +12,7 @@
 
       <p class="govuk-body">
         <%= t('find_non_dom_certificate_by_postcode_results.no_epc.get_a_new_one_with_results') %>
-        <a class="govuk-link" href="<%=localised_url(set_subdomain_url("getting-new-energy-certificate"))%>">
+        <a class="govuk-link" href="<%=localised_url(get_subdomain_host("getting-new-energy-certificate"))%>">
           <%= t('find_non_dom_certificate_by_postcode_results.no_epc.get_a_new_one_link') %></a>.
       </p>
 
@@ -38,7 +38,7 @@
 
       <p class="govuk-body">
         <%= t('find_non_dom_certificate_by_postcode_results.no_epc.get_a_new_one_no_results') %>
-        <a class="govuk-link" href="<%=localised_url(set_subdomain_url("getting-new-energy-certificate"))%>">
+        <a class="govuk-link" href="<%=localised_url(get_subdomain_host("getting-new-energy-certificate"))%>">
           <%= t('find_non_dom_certificate_by_postcode_results.no_epc.get_a_new_one_link') %></a>.
       </p>
     <% end %>
