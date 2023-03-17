@@ -25,4 +25,4 @@ RUN cd /app && npm install && make frontend-build
 
 EXPOSE 80 443
 
-ENTRYPOINT ["bundle", "exec", "rackup", "-p", "80", "-o", "0.0.0.0"]
+ENTRYPOINT ["bundle", "exec", "rackup", "-p", "80", "-o", "0.0.0.0", "-E", "production"]
