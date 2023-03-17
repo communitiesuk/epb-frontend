@@ -27,7 +27,7 @@ end
 
 unless %w[development test].include? environment
   Sentry.init do |config|
-    config.capture_exception_frame_locals = true
+    config.include_local_variables = true
     config.environment = environment
     config.before_send = lambda do |event, hint|
       if hint[:exception].class.include?(Errors::DoNotReport)
