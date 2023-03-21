@@ -95,7 +95,7 @@ FetchAssessmentSummary::AssessmentStub.fetch_rdsap(assessment_id: "0000-0000-000
 
 FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
   assessment_id: "1234-5678-9101-1122-1234",
-  current_rating: "25",
+  current_rating: 25,
   current_band: "f",
   current_carbon_emission: "7.8254",
   potential_carbon_emission: "6.5123",

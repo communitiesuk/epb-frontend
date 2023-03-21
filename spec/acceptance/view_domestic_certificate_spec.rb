@@ -183,7 +183,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       before do
         FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
           assessment_id: "1111-1111-1111-1111-1119",
-          current_rating: "25",
+          current_rating: 25,
           current_band: "f",
         )
       end
@@ -214,7 +214,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       before do
         FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
           assessment_id: "123-123",
-          current_rating: "25",
+          current_rating: 25,
           current_band: "f",
           current_carbon_emission: "7.8453",
           potential_carbon_emission: "6.5123",
@@ -235,7 +235,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       before do
         FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
           assessment_id: "123-123",
-          current_rating: "25",
+          current_rating: 25,
           current_band: "f",
           current_carbon_emission: "7.8453",
           potential_carbon_emission: "6.5123",
@@ -255,7 +255,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       before do
         FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
           assessment_id: "123-123",
-          current_rating: "25",
+          current_rating: 25,
           current_band: "f",
           current_carbon_emission: "7.8453",
           potential_carbon_emission: "6.5123",
@@ -275,7 +275,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       before do
         FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
           assessment_id: "123-123",
-          current_rating: "25",
+          current_rating: 25,
           current_band: "f",
           current_carbon_emission: "7.8453",
           potential_carbon_emission: "6.5123",
@@ -299,7 +299,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       before do
         FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
           assessment_id: "123-123",
-          current_rating: "25",
+          current_rating: 25,
           current_band: "f",
           current_carbon_emission: "7.8453",
           potential_carbon_emission: "6.5123",
@@ -326,7 +326,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
         before do
           FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
             assessment_id: "123-123",
-            current_rating: "25",
+            current_rating: 25,
             current_band: "f",
             current_carbon_emission: "7.8453",
             potential_carbon_emission: "6.5123",
@@ -349,7 +349,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
         before do
           FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
             assessment_id: "123-123",
-            current_rating: "25",
+            current_rating: 25,
             current_band: "f",
             current_carbon_emission: "7.8453",
             potential_carbon_emission: "6.5123",
@@ -476,7 +476,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
         before do
           FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
             assessment_id: "123-654",
-            current_rating: "25",
+            current_rating: 25,
             current_band: "f",
             current_carbon_emission: "7.8453",
             potential_carbon_emission: "6.5123",
@@ -502,7 +502,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       before do
         FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
           assessment_id: "123-654",
-          current_rating: "25",
+          current_rating: 25,
           current_band: "f",
         )
       end
@@ -520,7 +520,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       before do
         FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
           assessment_id: "123-123",
-          current_rating: "25",
+          current_rating: 25,
           current_band: "f",
           current_carbon_emission: "7.8453",
           potential_carbon_emission: "6.5123",
@@ -1099,7 +1099,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       expect(response.body).to include(
         ">Potential rating after completing steps 1&nbsp;to&nbsp;11</dt>",
       )
-      expect(response.body).to include('<text x="30" y="30" aria-hidden="true">99 | A</text>')
+      expect(response.body).to include('<text x="30" y="30" aria-hidden="true" class="tag-content">99 | A</text>')
     end
 
     it "shows typical potential rating (second from end in recommendations list) in the correct color" do
@@ -1125,7 +1125,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       before do
         FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
           assessment_id: "1111-1111-1111-1111-1112",
-          current_rating: "25",
+          current_rating: 25,
           current_band: "f",
           current_carbon_emission: 7.8453,
           potential_carbon_emission: 6.5123,

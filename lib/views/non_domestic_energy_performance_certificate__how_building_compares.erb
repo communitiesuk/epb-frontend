@@ -13,7 +13,7 @@
       <dd class="govuk-summary-list__value govuk-!-width-one-half" style="text-align: right">
         <svg width="90" height="50" viewBox="0 0 90 50" style="vertical-align: middle">
           <polygon points="0,25 25,50 100,50 100,0 25,0 0,25" class="band-<%= new_build_band %>"></polygon>
-          <text x="30" y="30" aria-hidden="true"><%= new_build_rating %> | <%= new_build_band.upcase %></text>
+          <text x="30" y="30" aria-hidden="true" class="tag-content"><%= new_build_rating %> | <%= new_build_band.upcase %></text>
           <text class="govuk-visually-hidden" x="30" y="30"><%= new_build_rating %> <%= new_build_band.upcase %></text>
         </svg>
      </dd>
@@ -25,7 +25,7 @@
       <dd class="govuk-summary-list__value govuk-!-width-one-half" style="text-align: right">
         <svg width="90" height="50" viewBox="0 0 90 50" style="vertical-align: middle">
           <polygon points="0,25 25,50 100,50 100,0 25,0 0,25" class="band-<%= existing_build_band %>"></polygon>
-          <text x="30" y="30" aria-hidden="true"><%= existing_build_rating %> | <%= existing_build_band.upcase %></text>
+          <text x="30" y="30" aria-hidden="true" class="tag-content"><%= existing_build_rating %> | <%= existing_build_band.upcase %></text>
           <text class="govuk-visually-hidden" x="30" y="30"><%= existing_build_rating %> <%= existing_build_band.upcase %></text>
         </svg>
       </dd>
