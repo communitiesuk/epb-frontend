@@ -6,7 +6,6 @@ $govuk-assets-path: '';
 @import "./node_modules/govuk-frontend/govuk/all";
 @import "./assets/components/_print";
 @import "./assets/components/epc-box";
-@import "./assets/components/tags";
 
 //hack to target safari (10.1+) ONLY as print rendering significantly different
 //see https://browserstrangeness.bitbucket.io/css_hacks.html#safari
