@@ -90,15 +90,6 @@
       font-weight: bold;
     }
 
-    .current-potential-number {
-      font-size: 22px;
-      font-family: sans-serif;
-      fill: #000;
-      line-height: 50px;
-      font-weight: bold;
-      margin-top: 100px;
-    }
-
     .small {
       font-size: 16px;
       font-family: sans-serif;
@@ -163,6 +154,6 @@
 
   <svg aria-hidden="true" x="415" y="<%= 25 + bands[current_energy_efficiency_band.to_sym][:position] * 50 %>" width="110" height="50">
     <polygon points="0,25 25,50 100,50 100,0 25,0 0,25" class="band-<%= current_energy_efficiency_band %>"></polygon>
-    <text x="25" y="32" class="current-potential-number"><%= current_energy_efficiency_rating %> | <%= current_energy_efficiency_band.upcase %></text>
+    <text x="30" y="32" class="govuk-!-font-weight-bold"><%= current_energy_efficiency_rating %> | <%= current_energy_efficiency_band.upcase %></text>
   </svg>
 </svg>

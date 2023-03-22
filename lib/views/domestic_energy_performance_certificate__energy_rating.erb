@@ -82,15 +82,6 @@
       font-weight: bold;
     }
 
-    .current-potential-number {
-      font-size: 22px;
-      font-family: sans-serif;
-      fill: #000;
-      line-height: 50px;
-      font-weight: bold;
-      margin-top: 100px;
-    }
-
     .small {
       font-size: 20px;
       font-family: sans-serif;
@@ -163,11 +154,11 @@
 
   <svg aria-hidden="true" x="415" y="<%= 25+bands[current_energy_efficiency_band.to_sym][:position]*50 %>" width="90" height="50" class="rating-current">
     <polygon points="0,25 25,50 100,50 100,0 25,0 0,25" class="band-<%= current_energy_efficiency_band %>"></polygon>
-    <text x="<%= current_energy_efficiency_rating < 10 ? 26 : 20 %>" y="32" class="current-potential-number"><%= current_energy_efficiency_rating %> | <%= current_energy_efficiency_band.upcase %></text>
+    <text x="<%= current_energy_efficiency_rating < 10 ? 30 : 24 %>" y="32" class="govuk-!-font-weight-bold"><%= current_energy_efficiency_rating %> | <%= current_energy_efficiency_band.upcase %></text>
   </svg>
 
   <svg aria-hidden="true" x="515" y="<%= 25+bands[potential_energy_efficiency_band.to_sym][:position]*50 %>" width="90" height="50" class="rating-potential">
     <polygon points="0,25 25,50 100,50 100,0 25,0 0,25" class="band-<%= potential_energy_efficiency_band %>"></polygon>
-    <text x="<%= potential_energy_efficiency_rating < 10 ? 26 : 20 %>" y="32" class="current-potential-number"><%= potential_energy_efficiency_rating %> | <%= potential_energy_efficiency_band.upcase %></text>
+    <text x="<%= potential_energy_efficiency_rating < 10 ? 30 : 24 %>" y="32" class="govuk-!-font-weight-bold"><%= potential_energy_efficiency_rating %> | <%= potential_energy_efficiency_band.upcase %></text>
   </svg>
 </svg>
