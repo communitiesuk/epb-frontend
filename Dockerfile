@@ -9,7 +9,7 @@ ENV EPB_UNLEASH_URI=http://epb-feature-flag/api
 ENV JWT_ISSUER=epb-auth-server
 ENV JWT_SECRET=test-jwt-secret
 ENV STAGE=development
-ENV RACK_ENV=production
+ENV RACK_ENV=development
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
