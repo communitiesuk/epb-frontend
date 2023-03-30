@@ -135,7 +135,7 @@ GEM
     rubyzip (2.3.2)
     sassc (2.4.0)
       ffi (~> 1.9)
-    selenium-webdriver (4.8.3)
+    selenium-webdriver (4.8.6)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
@@ -196,7 +196,7 @@ DEPENDENCIES
   rubocop-govuk (~> 4.10)
   rubocop-rspec (~> 2.12)
   sassc (~> 2.4)
-  selenium-webdriver (~> 4.8.3)
+  selenium-webdriver (~> 4.8.6)
   sentry-ruby (~> 5.8)
   sinatra (~> 3.0)
   sinatra-contrib
