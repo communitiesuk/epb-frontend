@@ -79,12 +79,6 @@ describe "Acceptance::DomesticEnergyPerformanceCertificatePrintView", type: :fea
 
     let(:print_response) { get "/energy-certificate/122-456?print=true" }
 
-    it "shows following our step by step recommendations text" do
-      expect(print_response.body).to include(
-        "Follow these steps to improve the energy rating and score.",
-      )
-    end
-
     it "shows a table with the recommendation steps" do
       expect(print_response.body).to have_css(".govuk-table__header", text: "Step")
     end

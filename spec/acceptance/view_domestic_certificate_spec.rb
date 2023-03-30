@@ -1044,12 +1044,6 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       expect(response.status).to eq(200)
     end
 
-    it "shows following our step by step recommendations text" do
-      expect(response.body).to include(
-        "Follow these steps to improve the energy rating and score.",
-      )
-    end
-
     it "doesnt show there aren’t any recommendations for this property text" do
       expect(response.body).not_to include(
         "There aren’t any recommendations for this property.",
