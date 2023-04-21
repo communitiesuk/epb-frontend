@@ -10,11 +10,9 @@ $govuk-assets-path: '';
 //hack to target safari (10.1+) ONLY as print rendering significantly different
 //see https://browserstrangeness.bitbucket.io/css_hacks.html#safari
 @mixin target-safari {
-  @media not all and (min-resolution:.001dpcm) {
-    @supports (-webkit-appearance:none) {
+    @supports (-webkit-hyphens:none) {
       @content;
     }
-  }
 }
 
 @include target-safari {

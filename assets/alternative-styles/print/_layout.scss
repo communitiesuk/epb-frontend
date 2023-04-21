@@ -171,8 +171,7 @@ table.border-bottom h3, table.border-bottom p {
   }
 }
 
-@media not all and (min-resolution:.001dpcm) {
-  @media {
+  @supports (-webkit-hyphens:none) {
     p.govuk-body {
       margin-bottom: 0.5rem;
     }
@@ -193,4 +192,3 @@ table.border-bottom h3, table.border-bottom p {
       padding: 5px;
     }
   }
-}

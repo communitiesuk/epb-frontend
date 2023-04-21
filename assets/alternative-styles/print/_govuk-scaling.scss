@@ -14,8 +14,7 @@
   }
 }
 
-@media not all and (min-resolution:.001dpcm) {
-  @media {
+  @supports (-webkit-hyphens:none) {
     p.govuk-body {
       margin-bottom: 0.5rem;
     }
@@ -36,4 +35,3 @@
       padding: 5px;
     }
   }
-}
