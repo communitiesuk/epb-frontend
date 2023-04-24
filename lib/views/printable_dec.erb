@@ -60,6 +60,12 @@
     line-height: 2rem;
   }
 
+  @supports (-webkit-hyphens:none) {
+    table.header {
+      margin-top: 20px;
+    }
+  }
+
   table.header h1.govuk-heading-m {
     color: #fff;
     margin: 0;
