@@ -19,6 +19,9 @@
 <% if defined?(showSectionAriaLabelText) %>
   data-i18n.show-section-aria-label="<%= h(showSectionAriaLabelText) %>"
 <% end -%>
+<% if defined?(rememberExpanded) %>
+  data-remember-expanded="<%= rememberExpanded ? "true" : "false" %>"
+<% end -%>
 <% if defined?(attributes) %>
   <%== attributes.map { |attr, val| '%s="%s"' % [attr, h(val)] }.join(' ') %>
 <% end -%>
