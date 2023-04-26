@@ -6,7 +6,7 @@
   <ul id="share-list">
     <li>
       <p class="govuk-body">
-        <a id="email" style="text-decoration: none;"
+        <a id="email"
            href="mailto:?subject=<%="#{ERB::Util.url_encode("#{t("#{top_heading}.top_heading")} #{t("component.share.email_subject_for")} #{find_address_lines_only(assessment)}")}&body=#{ERB::Util.url_encode("#{t("component.share.email_body_part_1")} #{first_word_downcase(t("#{top_heading}.top_heading"))} #{t("component.share.email_body_part_2")} https://find-energy-certificate.service.gov.uk/energy-certificate/#{assessment[:assessmentId]}")}"%>"
            target="_blank"
            title="Email">
@@ -27,21 +27,21 @@
         </button>
         <script nonce="<%= script_nonce %>">
           var copyButton = document.getElementById('copyToClipboardButton');
-          copyButton.style.display = 'inline';
+          copyButton.classList.add('display-inline');
           copyButton.addEventListener("click", clickHandler)
         </script>
       </p>
     </li>
     <li>
       <p class="govuk-body">
-        <a id="link" rel="nofollow" style="text-decoration: none; display: none;" href="<%= localised_url(request.path_info) + (localised_url(request.path_info).include?("?") ? "&" : "?") %>print=true" class="govuk-link govuk-!-margin-bottom-5">
+        <a id="link" rel="nofollow" class="display-none" href="<%= localised_url(request.path_info) + (localised_url(request.path_info).include?("?") ? "&" : "?") %>print=true" class="govuk-link govuk-!-margin-bottom-5">
         <span class="share-icon">
           <%== inline_svg('/images/print.svg') %>
         </span>
           <%= t("component.share.print_link")%>
         </a>
         <script nonce="<%= script_nonce %>">
-          document.getElementById('link').style.display = 'inline';
+          document.getElementById('link').classList.remove('display-none');
         </script>
       </p>
     </li>

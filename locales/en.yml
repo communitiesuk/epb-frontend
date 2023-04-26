@@ -655,7 +655,7 @@ en:
       title: "Other %{type}s for this property"
       certificate: "certificate"
       report: "report"
-      message: "If you are aware of previous %{type}s for this property and they are not listed here, please contact us at %{link} or call our helpdesk on <span style=\"white-space: nowrap;\">020 3829 0748</span> (Monday to Friday, 9am to 5pm)."
+      message: "If you are aware of previous %{type}s for this property and they are not listed here, please contact us at %{link} or call our helpdesk on <span class=\"tel\">020 3829 0748</span> (Monday to Friday, 9am to 5pm)."
       no_related: "There are no related %{type}s for this property."
       reference_number_certificate: "Certificate number"
       reference_number_report: "Report number"

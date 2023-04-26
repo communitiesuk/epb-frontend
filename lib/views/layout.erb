@@ -66,9 +66,9 @@
 
 <div class="govuk-width-container">
   <% unless ENV["STAGE"] == "production" %>
-    <div class="govuk-phase-banner">
+    <div class="govuk-phase-banner non-production">
       <p class="govuk-phase-banner__content">
-        <strong class="govuk-tag govuk-phase-banner__content__tag" style="background-color:#d53880;">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
           <%= ENV["STAGE"] %>
         </strong>
         <span class="govuk-phase-banner__text">

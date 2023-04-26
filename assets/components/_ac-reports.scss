@@ -1,0 +1,13 @@
+div.epc-ac-report-sections {
+  div#executive_summary pre {
+    white-space: pre-wrap;
+  }
+
+  div#terminal_units,
+  div#air_handling_systems,
+  div#cooling_plants {
+    hr {
+      border-bottom-width: 3px;
+    }
+  }
+}

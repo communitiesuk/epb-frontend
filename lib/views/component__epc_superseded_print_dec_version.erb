@@ -1,6 +1,6 @@
 <% if print_view && !assessment[:supersededBy].nil? %>
 
-<style>
+<style nonce="<%= script_nonce %>">
   .certificate-print-warning {
     margin-top: 25px;
   }
@@ -74,6 +74,10 @@
     color: #0b0c0c;
   }
 
+  table.certificate-print-warning > tbody > tr > td {
+    vertical-align: middle;
+  }
+
   .margin-top {
     margin-top: 25px !important;
   }
@@ -88,7 +92,7 @@
       <table class="certificate-print-warning">
         <tbody>
         <tr>
-          <td style="vertical-align: middle">
+          <td>
             <div class="govuk-body epc-blue-bottom">
               <div class="govuk-warning-text" >
                 <span class="govuk-warning-text__icon" aria-hidden="true">!</span>

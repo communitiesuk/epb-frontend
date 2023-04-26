@@ -69,7 +69,7 @@ ENV['SCRIPT_NONCE'] = SecureRandom.random_number(16**10).to_s(16).rjust(10, "0")
 
 csp_options = {
   script_src: "'nonce-#{ENV['SCRIPT_NONCE']}'",
-  style_src: "'unsafe-inline' 'self'",
+  style_src: "'nonce-#{ENV['SCRIPT_NONCE']}' 'self'",
   img_src: "'self' data:",
   report_uri: Sentry.csp_report_uri,
   report_ratio: 0.01

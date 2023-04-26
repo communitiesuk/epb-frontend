@@ -1,4 +1,4 @@
-<style>
+<style nonce="<%= script_nonce %>">
   table {
     width: 100%;
     border-collapse: collapse;
@@ -68,10 +68,14 @@
 
   table.header h1.govuk-heading-m {
     color: #fff;
-    margin: 0;
-    padding: 0;
+    margin: 10px;
+    padding: 0 0 0 15px;
     line-height: 3rem;
     font-size: 1.8rem;
+  }
+
+  table.header td.crest-cell {
+    vertical-align: middle;
   }
 
   table.accentuate p.govuk-body {
@@ -87,9 +91,14 @@
     border-left: none;
   }
 
+  table.accentuate td.address-cell {
+    vertical-align: middle;
+  }
+
   td.giant-letter {
     text-align: center;
     vertical-align: middle;
+    white-space: nowrap;
   }
 
   td.giant-letter span {
@@ -133,9 +142,18 @@
     margin-bottom: 0;
   }
 
+  table.accentuate table.border-bottom {
+    white-space: nowrap;
+  }
+
   table.border-bottom h3, table.border-bottom p {
     margin: 0!important;
     padding: 0!important;
+  }
+
+  table.border-bottom th.align-right,
+  table.border-bottom td.align-right{
+    text-align: right;
   }
 
   .energy-rating-chart-printable-dec {
@@ -157,6 +175,11 @@
   .carbon-emissions-tr {
     line-height: 0.6rem;
   }
+
+  svg.dec-arrow,
+  svg.dec-rating{
+    max-width: 100%;
+  }
 </style>
 
 <table class="printable-area">
@@ -167,11 +190,11 @@
         <tbody>
           <tr>
             <td>
-              <h1 class="govuk-heading-m" style="padding-left: 15px; margin: 10px">
+              <h1 class="govuk-heading-m">
                 <%= t('dec.top_heading') %>
               </h1>
             </td>
-            <td style="vertical-align: middle">
+            <td class="crest-cell">
               <img src="<%= assets_path('/images/hm-gov-and-crest.svg') %>" class="hm-gov-crest" alt="HM Government">
             </td>
           </tr>
@@ -198,7 +221,7 @@
       <table class="accentuate">
         <tbody>
           <tr>
-            <td style="vertical-align: middle">
+            <td class="address-cell">
               <p class="<%= address_size(assessment[:address]) %>"><%
                 unless assessment[:technicalInformation][:occupier].nil? %><%=
                   assessment[:technicalInformation][:occupier] %><br /><%
@@ -215,12 +238,12 @@
                 ).join('<br />') %>
               </p>
             </td>
-            <td class="giant-letter" style="white-space: nowrap">
+            <td class="giant-letter">
               <%= t('dec.sections.previous_energy_ratings.energy_rating') %><br />
               <span><%= assessment[:currentAssessment][:energyEfficiencyBand].upcase %></span>
             </td>
             <td>
-              <table class="border-bottom" style="white-space: nowrap;">
+              <table class="border-bottom">
                 <tbody>
                   <tr>
                     <th><%= t('dec.sections.contents.certificate_number') %>:</th>
@@ -337,7 +360,7 @@
                       <thead>
                         <tr>
                           <th><%= t('dec.sections.previous_energy_ratings.date') %></th>
-                          <th class="govuk-table__header--numeric" style="text-align: right"><%= t('dec.sections.previous_energy_ratings.energy_rating') %></th>
+                          <th class="govuk-table__header--numeric align-right"><%= t('dec.sections.previous_energy_ratings.energy_rating') %></th>
                         </tr>
                       </thead>
                       <tbody>
@@ -347,7 +370,7 @@
                             <th class="govuk-!-padding-top-2">
                               <%=date(previous_rating[:date])[2..-1]%>
                             </th>
-                            <td style="text-align: right">
+                            <td class="align-right">
                               <img
                                 class="energy-rating-arrow"
                                 src="data:image/svg+xml;base64,<%== Base64.encode64(erb :printable_dec__svg_arrow, locals: {

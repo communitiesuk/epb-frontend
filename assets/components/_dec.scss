@@ -1,0 +1,18 @@
+div.epc-dec-sections {
+  #rating svg {
+    max-width: 100%;
+  }
+
+  #previous_energy_ratings {
+    dt {
+      vertical-align: top;
+    }
+    dd {
+      text-align: right;
+
+      svg {
+        vertical-align: middle;
+      }
+    }
+  }
+}

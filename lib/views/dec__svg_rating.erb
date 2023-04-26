@@ -2,7 +2,6 @@
      height="386"
      viewBox="0 0 615 386"
      xmlns="http://www.w3.org/2000/svg"
-     style="max-width: 100%;"
      aria-labelledby="svg-title svg-desc"
      role="img"
      class="govuk-!-margin-bottom-5">
@@ -81,7 +80,7 @@
 
   %>
 
-  <style>
+  <style nonce="<%= script_nonce %>">
     .letter {
       font-size: 40px;
       font-family: sans-serif;
@@ -108,17 +107,27 @@
       fill: <%= settings[:color] %>
     }
     <% end %>
+
+    line.inner-border {
+      stroke: #b1b4b6;
+      stroke-width: 1
+    }
+
+    line.score-threshold {
+      stroke: #000;
+      stroke-width: 2;
+    }
   </style>
 
-  <line x1="72" y1="0" x2="72" y2="386" style="stroke:#b1b4b6;stroke-width:1"></line>
-  <line x1="410" y1="0" x2="410" y2="386" style="stroke:#b1b4b6;stroke-width:1"></line>
-  <line x1="530" y1="0" x2="530" y2="386" style="stroke:#b1b4b6;stroke-width:1"></line>
-  <line x1="0" y1="25" x2="615" y2="25" style="stroke:#b1b4b6;stroke-width:1"></line>
-  <line x1="0" y1="0" x2="615" y2="0" style="stroke:#b1b4b6;stroke-width:1"></line>
+  <line x1="72" y1="0" x2="72" y2="386" class="inner-border"></line>
+  <line x1="410" y1="0" x2="410" y2="386" class="inner-border"></line>
+  <line x1="530" y1="0" x2="530" y2="386" class="inner-border"></line>
+  <line x1="0" y1="25" x2="615" y2="25" class="inner-border"></line>
+  <line x1="0" y1="0" x2="615" y2="0" class="inner-border"></line>
 
-  <line x1="0" y1="0" x2="0" y2="386" style="stroke:#b1b4b6;stroke-width:1"></line>
-  <line x1="615" y1="386" x2="615" y2="0" style="stroke:#b1b4b6;stroke-width:1"></line>
-  <line x1="615" y1="386" x2="0" y2="386" style="stroke:#b1b4b6;stroke-width:1"></line>
+  <line x1="0" y1="0" x2="0" y2="386" class="inner-border"></line>
+  <line x1="615" y1="386" x2="615" y2="0" class="inner-border"></line>
+  <line x1="615" y1="386" x2="0" y2="386" class="inner-border"></line>
 
   <% bands.each do |key, settings| %>
     <rect width="<%= 78+settings[:position]*40 %>" height="50" x="72" y="<%= 25+settings[:position]*50%>" class="band-<%= key %>">
@@ -150,8 +159,8 @@
 
   <text role="presentation" aria-hidden="true" x="570" y="15" class="small" text-anchor="middle" dominant-baseline="middle"><%= t("rating.typical") %></text>
 
-  <line x1="0" y1="235" x2="558" y2="235" stroke-dasharray="3,3" style="stroke:black;stroke-width:2;"></line>
-  <line x1="625" y1="235" x2="598" y2="235" stroke-dasharray="3,3" style="stroke:black;stroke-width:2;"></line>
+  <line x1="0" y1="235" x2="558" y2="235" stroke-dasharray="3,3" class="score-threshold"></line>
+  <line x1="625" y1="235" x2="598" y2="235" stroke-dasharray="3,3" class="score-threshold"></line>
   <text role="presentation" aria-hidden="true" x="0" y="0" class="typical">
     <tspan x="560" y="240">100</tspan>
   </text>

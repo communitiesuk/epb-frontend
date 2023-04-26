@@ -1,6 +1,6 @@
 <% if (assessment[:dateOfExpiry] < Date.today && assessment[:supersededBy].nil?) && print_view%>
 
-<style>
+<style nonce="<%= script_nonce %>">
   .certificate-print-warning {
     margin-top: 25px;
   }
@@ -67,6 +67,10 @@
     margin-bottom: 15px;
   }
 
+  .certificate-print-warning td {
+    vertical-align: middle;
+  }
+
   .certificate-print-warning.govuk-body,  .certificate-print-warning.govuk-body-m {
     margin-bottom: 20px;
     font-size: 1.1875rem;
@@ -88,7 +92,7 @@
       <table class="certificate-print-warning">
         <tbody>
         <tr>
-          <td style="vertical-align: middle">
+          <td>
             <div class="govuk-body epc-blue-bottom">
               <div class="govuk-warning-text" >
                 <span class="govuk-warning-text__icon" aria-hidden="true">!</span>

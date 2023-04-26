@@ -1,4 +1,4 @@
-<svg width="615" height="376" viewBox="0 0 615 376" xmlns="http://www.w3.org/2000/svg" style="max-width: 100%;" aria-labelledby="svg-title svg-desc" role="img" class="epc-energy-rating-graph">
+<svg width="615" height="376" viewBox="0 0 615 376" xmlns="http://www.w3.org/2000/svg" aria-labelledby="svg-title svg-desc" role="img" class="epc-energy-rating-graph">
   <title id="svg-title"><%= title %></title>
   <desc id="svg-desc"><%= description %></desc>
   <%
@@ -74,7 +74,7 @@
 
   %>
 
-  <style>
+  <style nonce="<%= script_nonce %>">
     .letter {
       font-size: 40px;
       font-family: sans-serif;
@@ -101,18 +101,28 @@
       fill: <%= settings[:color] %>
     }
     <% end %>
+
+    line.inner-border {
+      stroke: #b1b4b6;
+      stroke-width: 1
+    }
+
+    line.score-threshold {
+      stroke: #000;
+      stroke-width: 2;
+    }
   </style>
 
-  <line x1="72" y1="0" x2="72" y2="376" style="stroke:#b1b4b6;stroke-width:1"></line>
-  <line x1="410" y1="0" x2="410" y2="376" style="stroke:#b1b4b6;stroke-width:1"></line>
-  <line x1="510" y1="0" x2="510" y2="376" style="stroke:#b1b4b6;stroke-width:1"></line>
-  <line x1="0" y1="25" x2="615" y2="25" style="stroke:#b1b4b6;stroke-width:1"></line>
-  <line x1="0" y1="0" x2="615" y2="0" style="stroke:#b1b4b6;stroke-width:1"></line>
+  <line x1="72" y1="0" x2="72" y2="376" class="inner-border"></line>
+  <line x1="410" y1="0" x2="410" y2="376" class="inner-border"></line>
+  <line x1="510" y1="0" x2="510" y2="376" class="inner-border"></line>
+  <line x1="0" y1="25" x2="615" y2="25" class="inner-border"></line>
+  <line x1="0" y1="0" x2="615" y2="0" class="inner-border"></line>
 
-  <line x1="0" y1="0" x2="615" y2="0" style="stroke:#b1b4b6;stroke-width:1"></line>
-  <line x1="0" y1="0" x2="0" y2="376" style="stroke:#b1b4b6;stroke-width:1"></line>
-  <line x1="615" y1="376" x2="615" y2="0" style="stroke:#b1b4b6;stroke-width:1"></line>
-  <line x1="615" y1="376" x2="0" y2="376" style="stroke:#b1b4b6;stroke-width:1"></line>
+  <line x1="0" y1="0" x2="615" y2="0" class="inner-border"></line>
+  <line x1="0" y1="0" x2="0" y2="376" class="inner-border"></line>
+  <line x1="615" y1="376" x2="615" y2="0" class="inner-border"></line>
+  <line x1="615" y1="376" x2="0" y2="376" class="inner-border"></line>
 
   <% bands.each do |key, settings| %>
     <rect width="<%= 78+settings[:position]*40 %>" height="50" x="72" y="<%= 25+settings[:position]*50%>" class="band-<%= key %>">

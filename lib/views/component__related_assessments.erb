@@ -1,7 +1,7 @@
 <div id="other_certificates_and_reports" class="epc-blue-bottom printable-area govuk-body">
   <h2 class="govuk-heading-l"><%= t('component.related.title', type: type).capitalize %></h2>
   <p class="govuk-body">
-    <%== t('component.related.message', type: type, link: '<span style="white-space: nowrap;"><a class="govuk-link" href="' + t('component.related.link') + '">' + t('component.related.cta') + "</a></span>") %>
+    <%== t('component.related.message', type: type, link: '<span class="whitespace-nowrap"><a class="govuk-link" href="' + t('component.related.link') + '">' + t('component.related.cta') + "</a></span>") %>
   </p>
   <% if related_assessments(assessment, assessment_type).empty? %>
     <p class="govuk-body"><%= t('component.related.no_related', type: type) %></p>

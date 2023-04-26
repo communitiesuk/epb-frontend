@@ -3,18 +3,37 @@
   padding: 0;
   margin: 0;
 
+  a:link, a:active, a:visited, a:hover {
+    text-decoration: none;
+  }
+
+  span.copied {
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+  }
+
+  // tailwind style class
+  .display-none {
+    display: none;
+  }
 }
 
 #copyToClipboardButton {
   text-decoration: none;
   text-align: left;
   border: none;
-  padding: 0px;
+  padding: 0;
   outline: none;
   color: #1d70b8;
   background-color: white;
   display: none;
   cursor: pointer;
+
+  //tailwind style class
+  &.display-inline {
+    display: inline;
+  }
 }
 
 #copyToClipboardButton:focus {
@@ -22,7 +41,7 @@
 }
 
 #copy-to-clipboard-margin {
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
 .share-icon {

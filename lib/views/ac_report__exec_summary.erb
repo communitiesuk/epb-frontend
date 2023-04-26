@@ -2,5 +2,5 @@
   <h2 class="govuk-heading-l">
     <%= t('ac_report.sections.exec_summary.title') %>
   </h2>
-  <pre class="govuk-body" style="white-space: pre-wrap;"><%== assessment[:executiveSummary].respond_to?(:strip) ? assessment[:executiveSummary].strip : assessment[:executiveSummary] %></pre>
+  <pre class="govuk-body"><%== assessment[:executiveSummary].respond_to?(:strip) ? assessment[:executiveSummary].strip : assessment[:executiveSummary] %></pre>
 </div>
