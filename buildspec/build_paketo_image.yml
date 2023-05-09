@@ -1,12 +1,24 @@
 version: 0.2
 
 phases:
+  install:
+    runtime-versions:
+      ruby: 3.2
+      nodejs: 18
+
+  env:
+    variables:
+      DEPLOY_APPNAME: "epbr-frontend-integration"
+
   pre_build:
     commands:
       - sudo add-apt-repository ppa:cncf-buildpacks/pack-cli
       - sudo apt-get update
       - sudo apt-get install pack-cli
       - mv AWS-Procfile Procfile
+      - npm install
+      - bundle install
+      - ruby ./build/compile_assets.rb
 
   build:
     commands:
