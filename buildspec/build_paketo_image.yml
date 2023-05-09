@@ -1,0 +1,27 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      docker: 19
+  pre_build:
+    commands:
+      - sudo add-apt-repository ppa:cncf-buildpacks/pack-cli
+      - sudo apt-get update
+      - sudo apt-get install pack-cli
+      - mv AWS-Procfile Procfile
+
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Building the Paketo image...
+      - pack build ebpr-frontend-image --buildpack paketo-buildpacks/ruby --builder paketobuildpacks/builder:base
+
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - docker save -o ebpr-frontend-image.tar ebpr-frontend-image:latest
+
+artifacts:
+  files:
+    - '**/*'
