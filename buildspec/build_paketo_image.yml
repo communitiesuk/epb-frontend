@@ -1,8 +1,6 @@
 version: 0.2
 
 phases:
-  install:
-    runtime-versions:
   pre_build:
     commands:
       - sudo add-apt-repository ppa:cncf-buildpacks/pack-cli
