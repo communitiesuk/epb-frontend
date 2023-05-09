@@ -1,14 +1,14 @@
 version: 0.2
 
+env:
+  variables:
+    DEPLOY_APPNAME: "epbr-frontend-integration"
+
 phases:
   install:
     runtime-versions:
       ruby: 3.2
       nodejs: 18
-
-  env:
-    variables:
-      DEPLOY_APPNAME: "epbr-frontend-integration"
 
   pre_build:
     commands:
