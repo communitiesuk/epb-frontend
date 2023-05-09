@@ -7,7 +7,7 @@ env:
 phases:
   install:
     runtime-versions:
-      ruby: 3.x
+      ruby: 3.1
 
   pre_build:
     commands:
@@ -19,6 +19,7 @@ phases:
       - sudo apt-get install -qq --no-install-recommends nodejs
       - sudo apt-get clean
       - sudo rm -rf /var/lib/apt/lists/*
+      - reset
       - mv AWS-Procfile Procfile
       - npm install
       - bundle install
