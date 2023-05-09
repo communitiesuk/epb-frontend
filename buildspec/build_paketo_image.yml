@@ -7,7 +7,6 @@ env:
 phases:
   install:
     runtime-versions:
-      ruby: 3.1.3
       nodejs: 18
 
   pre_build:
@@ -15,6 +14,7 @@ phases:
       - sudo add-apt-repository ppa:cncf-buildpacks/pack-cli
       - sudo apt-get update
       - sudo apt-get install pack-cli
+      - sudo apt-get install ruby-3.1.3
       - mv AWS-Procfile Procfile
       - npm install
       - bundle install
