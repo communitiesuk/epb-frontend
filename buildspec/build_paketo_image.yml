@@ -14,12 +14,7 @@ phases:
       - sudo add-apt-repository ppa:cncf-buildpacks/pack-cli
       - sudo apt-get update
       - sudo apt-get install pack-cli
-      - curl -sL https://deb.nodesource.com/setup_18.x | bash -;
-      - sudo apt-get update -qq
-      - sudo apt-get install -qq --no-install-recommends nodejs
-      - sudo apt-get clean
-      - sudo rm -rf /var/lib/apt/lists/*
-      - reset
+      - curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - && sudo apt-get install -y nodejs
       - mv AWS-Procfile Procfile
       - npm install
       - bundle install
