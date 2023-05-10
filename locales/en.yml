@@ -839,7 +839,7 @@ en:
       title: "Certificate contents"
       sections:
         renting: "Rules on letting this property"
-        epc: "Energy performance rating for this property"
+        epc: "Energy rating and score"
         summary: "Breakdown of property’s energy performance"
         energy: "Environmental impact of this property"
         recommendations: "Improve this property’s energy performance"
@@ -866,15 +866,16 @@ en:
           cta: "guidance for landlords on the regulations and exemptions"
           url: "https://www.gov.uk/guidance/domestic-private-rented-property-minimum-energy-efficiency-standard-landlord-guidance"
       epc:
-        title: "Energy efficiency rating for this property"
+        title: "Energy rating and score"
         intro:
           text: "This property’s current energy rating is  %{current_energy_efficiency_band}. It has the potential to be %{potential_energy_efficiency_band}."
-          cta: "See how to improve this property’s energy performance"
+          cta: "See how to improve this property’s energy efficiency"
           url: "#recommendations"
         chart_title: "Energy efficiency chart"
         chart_description: "This property’s current energy rating is %{current_energy_efficiency_band} with a score of %{current_energy_efficiency_rating}. It has a potential energy rating of %{potential_energy_efficiency_band} with a score of %{potential_energy_efficiency_rating}."
         body1: "The graph shows this property’s current and potential energy rating."
-        body2: "Properties get a rating from A (best) to G (worst) and a score. The better the rating and score, the lower your energy bills are likely to be."
+        body2: "Properties get a rating from A (best) to G (worst) and a score."
+        body3: "The better the rating and score, the lower your energy bills are likely to be."
         body4: "For properties in England and Wales:"
         body5: "the average energy rating is D"
         body6: "the average energy score is 60"

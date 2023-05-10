@@ -839,7 +839,7 @@ cy:
       title: "Cynnwys y dystysgrif"
       sections:
         renting: "Rheolau ar osod yr eiddo hwn"
-        epc: "Cyfraddiad perfformiad ynni’r eiddo hwn"
+        epc: "Cyfraddiad a sgôr ynni"
         summary: "Ddadansoddiad o berfformiad ynni’r eiddo"
         energy: "Effaith amgylcheddol yr eiddo hwn."
         recommendations: "Gwella perfformiad ynni’r eiddo hwn"
@@ -866,15 +866,16 @@ cy:
           cta: "canllawiau i landlordiaid ar y rheoliadau ac esemptiadau"
           url: "https://www.gov.uk/guidance/domestic-private-rented-property-minimum-energy-efficiency-standard-landlord-guidance"
       epc:
-        title: "Cyfraddiad effeithlonrwydd ynni’r eiddo hwn"
+        title: "Cyfraddiad a sgôr ynni"
         intro:
           text: "Cyfraddiad effeithlonrwydd ynni presennol yr eiddo hwn yw %{current_energy_efficiency_band}. Mae ganddo’r potensial i fod yn %{potential_energy_efficiency_band}."
-          cta: "Gweld sut i wella perfformiad ynni’r eiddo hwn"
+          cta: "Gweld sut i wella effeithlonrwydd ynni'r eiddo hwn"
           url: "#argymhellion"
         chart_title: "Siart effeithlonrwydd ynni"
         chart_description: "Cyfraddiad ynni cyfredol yr eiddo hwn yw %{current_energy_efficiency_band} gyda sgôr o %{current_energy_efficiency_rating}. Mae ganddo gyfraddiad ynni posibl o %{potential_energy_efficiency_band} gyda sgôr o %{potential_energy_efficiency_rating}."
         body1: "Mae’r graff yn dangos cyfraddiad ynni cyfredol a chyfraddiad ynni posibl yr eiddo hwn."
-        body2: "Mae eiddo’n cael cyfraddiad rhwng A (y gorau) ac G (y gwaethaf) a sgôr. Gorau i gyd yw’r cyfraddiad a’r sgôr, isaf i gyd mae’ch biliau ynni yn debygol o fod."
+        body2: "Mae eiddo’n cael cyfraddiad rhwng A (y gorau) ac G (y gwaethaf) a sgôr."
+        body3: "Gorau i gyd yw’r cyfraddiad a’r sgôr, isaf i gyd mae’ch biliau ynni yn debygol o fod."
         body4: "Ar gyfer eiddo yng Nghymru a Lloegr:"
         body5: "y cyfraddiad ynni cyfartalog yw D"
         body6: "y sgôr ynni gyfartalog yw 60"
