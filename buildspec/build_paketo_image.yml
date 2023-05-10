@@ -11,7 +11,7 @@ phases:
       - sudo apt-get update
       - sudo apt-get install pack-cli
       - mv AWS-Procfile Procfile
-      - RUN n $NODE_18_VERSION
+      - n $NODE_18_VERSION
       - npm install
       - bundle install
       - ruby ./build/compile_assets.rb
