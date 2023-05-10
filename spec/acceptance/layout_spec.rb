@@ -61,8 +61,8 @@ describe "Acceptance::AccessibilityStatement", type: :feature do
         expect(response.body).to have_link "Get a new energy certificate"
       end
 
-      it "allows indexing the start page by Google Search but does not allow to follow the links" do
-        expect(response.body).to include("<meta name=\"robots\" content=\"nofollow\">")
+      it "does not allow indexing or following by crawlers" do
+        expect(response.body).to include("<meta name=\"robots\" content=\"noindex, nofollow\">")
       end
     end
   end
@@ -81,8 +81,8 @@ describe "Acceptance::AccessibilityStatement", type: :feature do
         expect(response.body).to have_link "Find an energy certificate"
       end
 
-      it "allows indexing the start page by Google Search but does not allow to follow the links" do
-        expect(response.body).to include("<meta name=\"robots\" content=\"nofollow\">")
+      it "does not allow indexing or following by crawlers" do
+        expect(response.body).to include("<meta name=\"robots\" content=\"noindex, nofollow\">")
       end
     end
   end
@@ -90,7 +90,7 @@ describe "Acceptance::AccessibilityStatement", type: :feature do
   describe "non start pages" do
     let(:response) { get "http://find-energy-certificate.local.gov.uk/find-a-certificate/type-of-property" }
 
-    it "does not allow indexing and following by Google Search" do
+    it "does not allow indexing or following by crawlers" do
       expect(response.body).to include("<meta name=\"robots\" content=\"noindex, nofollow\">")
     end
   end

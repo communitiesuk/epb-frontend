@@ -57,7 +57,6 @@ class FrontendService < Sinatra::Base
         t('services.getting_an_energy_certificate')
       } – #{t('layout.body.govuk')}"
     @remove_back_link = true
-    @allow_indexing = true
 
     erb :find_assessor, layout: :layout
   end
@@ -69,7 +68,6 @@ class FrontendService < Sinatra::Base
         t('services.find_an_energy_certificate')
       } – #{t('layout.body.govuk')}"
     @remove_back_link = true
-    @allow_indexing = true
 
     erb :find_certificate, layout: :layout
   end
