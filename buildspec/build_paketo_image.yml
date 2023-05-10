@@ -11,9 +11,6 @@ phases:
       - timeout 15 sh -c "until docker info; do echo .; sleep 1; done"
   pre_build:
     commands:
-      - add-apt-repository ppa:cncf-buildpacks/pack-cli
-      - apt-get update
-      - apt-get install pack-cli
       - mv AWS-Procfile Procfile
       - n $NODE_18_VERSION
       - npm install
