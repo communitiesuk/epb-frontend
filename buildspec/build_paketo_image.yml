@@ -3,23 +3,15 @@ version: 0.2
 env:
   variables:
     DEPLOY_APPNAME: "epbr-frontend-integration"
-  shell:
-    bash
 
 phases:
-  install:
-    runtime-versions:
-      ruby: 3.1
-
   pre_build:
     commands:
       - sudo add-apt-repository ppa:cncf-buildpacks/pack-cli
       - sudo apt-get update
       - sudo apt-get install pack-cli
-      - curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - && sudo apt-get install -y nodejs
       - mv AWS-Procfile Procfile
-      - echo $0
-      - source ~/.bashrc
+      - RUN n $NODE_18_VERSION
       - npm install
       - bundle install
       - ruby ./build/compile_assets.rb
