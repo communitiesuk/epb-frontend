@@ -7,9 +7,9 @@ env:
 phases:
   pre_build:
     commands:
-      - sudo add-apt-repository ppa:cncf-buildpacks/pack-cli
-      - sudo apt-get update
-      - sudo apt-get install pack-cli
+      - add-apt-repository ppa:cncf-buildpacks/pack-cli
+      - apt-get update
+      - apt-get install pack-cli
       - mv AWS-Procfile Procfile
       - n $NODE_18_VERSION
       - npm install
