@@ -196,8 +196,7 @@
     <polygon points="0,20 25,40 100,40 100,0 25,0 0,20" class="band-<%= energy_efficiency_band.chomp("+") %>"></polygon>
     <g class="move-sixty-percent">
       <text dy="0.1em" text-anchor="middle" class="current-band">
-        <tspan><%= energy_efficiency_rating %> | </tspan>
-        <tspan class="govuk-!-font-weight-bold"><%= energy_efficiency_band.upcase %> </tspan>
+        <tspan><%= energy_efficiency_rating %> <%= energy_efficiency_band.upcase %></tspan>
       </text>
     </g>
   </svg>

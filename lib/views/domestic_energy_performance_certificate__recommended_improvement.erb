@@ -38,8 +38,7 @@
           %><svg width="90" height="50">
               <% band = "band-#{recommendation[:energyPerformanceBandImprovement]}" %>
               <polygon points="0,25 25,50 100,50 100,0 25,0 0,25" class="<%= band %>"></polygon>
-              <text x="30" y="30" aria-hidden="true" class="govuk-!-font-weight-bold"><%= recommendation[:energyPerformanceRatingImprovement] %> | <%= recommendation[:energyPerformanceBandImprovement].upcase %></text>
-              <text x="30" y="30" class="govuk-visually-hidden"><%= recommendation[:energyPerformanceRatingImprovement] %> <%= recommendation[:energyPerformanceBandImprovement].upcase %></text>
+              <text x="30" y="31" class="govuk-!-font-weight-bold"><%= recommendation[:energyPerformanceRatingImprovement] %> <%= recommendation[:energyPerformanceBandImprovement].upcase %></text>
             </svg><%
         elsif recommendation[:energyPerformanceRatingImprovement].to_i == 0
       %><%=

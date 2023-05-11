@@ -230,8 +230,8 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
 
       it "shows the how this property compares to others section" do
         expect(response.body).to include("How this property compares to others")
-        expect(response.body).to include("28 | B")
-        expect(response.body).to include("81 | D")
+        expect(response.body).to include("28 B")
+        expect(response.body).to include("81 D")
       end
 
       it "shows the breakdown of this buildings energy performance section" do

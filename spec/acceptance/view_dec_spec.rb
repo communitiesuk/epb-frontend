@@ -82,7 +82,7 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
       expect(response.body).to have_css "p",
                                         text:
                                           "The typical score for a public building is 100. This typical score gives an operational rating of D."
-      expect(response.body).to have_css "text", text: "1 | A"
+      expect(response.body).to have_css "text", text: "1 A"
       expect(response.body).to have_css "p",
                                         text:
                                           "You can read guidance on DECs and advisory reports for public buildings."
@@ -109,11 +109,11 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
       expect(response.body).to have_css "h2",
                                         text: "Previous operational ratings"
       expect(response.body).to have_css "dt", text: "January 2020"
-      expect(response.body).to have_css "dd", text: "1 | A"
+      expect(response.body).to have_css "dd", text: "1 A"
       expect(response.body).to have_css "dt", text: "January 2019"
-      expect(response.body).to have_css "dd", text: "24 | A"
+      expect(response.body).to have_css "dd", text: "24 A"
       expect(response.body).to have_css "dt", text: "January 2018"
-      expect(response.body).to have_css "dd", text: "40 | B"
+      expect(response.body).to have_css "dd", text: "40 B"
     end
 
     it "show the recommendation report link " do
