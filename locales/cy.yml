@@ -882,18 +882,12 @@ cy:
         ni_average_rating: "Ar gyfer eiddo yng Ngogledd Iwerddon:"
       breakdown:
         title: "Dadansoddiad o berfformiad ynni’r eiddo hwn"
-        intro: "Mae’r adran hon yn dangos perfformiad ynni nodweddiadol yr eiddo. Nid yw’r asesiad yn ystyried cyflwr nodwedd na pha mor dda y mae’n gweithio."
-        assessment_rating_explanation: "Asesir pob nodwedd fel un o’r canlynol:"
+        sub_heading: "Nodweddion yn yr eiddo hwn"
+        intro: "Mae nodweddion yn cael cyfraddiad rhwng da iawn a gwael iawn, ar sail pa mor effeithlon o ran ynni ydyn nhw. Nid yw’r cyfraddiad yn cael ei seilio ar ba mor dda mae nodweddion yn gweithio na’u cyflwr."
+        assessment_rating_explanation: "Mae cyfraddiadau tybiedig yn cael eu seilio ar oedran a math yr eiddo. Maen nhw’n cael eu defnyddio ar gyfer nodweddion na allai'r asesydd eu harchwilio."
         heading_feature: "Nodwedd"
         heading_description: "Disgrifiad"
         heading_rating: "Cyfraddiad"
-        assessment_ratings:
-          very_poor: "gwael iawn (lleiaf effeithlon)"
-          poor: gwael
-          average: gweddol
-          good: da
-          very_good: "da iawn (mwyaf effeithlon)"
-        not_inspected: "Pan fo’r disgrifiad yn dweud “assumed”, mae’n golygu nad oedd modd asesu’r nodwedd a bod tybiaeth wedi’i gwneud a hynny ar sail oedran a math yr eiddo."
         energy_performance: "perfformiad ynni"
         primary_energy_use: "Prif ddefnydd ynni"
         primary_energy_use_description: "Prif ddefnydd ynni’r eiddo hwn y flwyddyn yw %{primary_energy} o gilowat oriau am bob metr sgwâr (kWh/m2)."

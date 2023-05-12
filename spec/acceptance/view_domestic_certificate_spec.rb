@@ -582,7 +582,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
 
       it "shows the section texts" do
         expect(response.body).to include(
-          '<p class="govuk-body">This section shows the energy performance for features of this property. The assessment does not consider the condition of a feature and how well it is working.</p>',
+          '<p class="govuk-body">Features get a rating from very good to very poor, based on how energy efficient they are. Ratings are not based on how well features work or their condition.</p>',
         )
       end
 
