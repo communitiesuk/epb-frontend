@@ -842,7 +842,7 @@ cy:
         epc: "Cyfraddiad a sgôr ynni"
         summary: "Ddadansoddiad o berfformiad ynni’r eiddo"
         energy: "Effaith amgylcheddol yr eiddo hwn."
-        recommendations: "Gwella perfformiad ynni’r eiddo hwn"
+        recommendations: "Newidiadau y gallech eu gwneud"
         heat_demand: "Amcangyfrif o’r ynni a ddefnyddir a’r arbedion posibl"
         information: "Cysylltu â’r asesydd a’r cynllun achredu"
         green_deal: "Cynllun y fargen werdd"
@@ -986,7 +986,7 @@ cy:
         potential: "Mae gan yr eiddo hwn y potensial i gynhyrchu"
         tonnes_of_carbon_emission: " o dunelli o %{carbon}"
       recommendations:
-        title: "Gwella cyfraddiad ynni’r eiddo hwn"
+        title: "Newidiadau y gallech eu gwneud"
         summary:
           steps_in_order_question: "Oes angen imi ddilyn y camau hyn yn eu trefn?"
           steps_in_order_answer1: "Oes. Mae pob cam yn adeiladu ar y cam blaenorol er mwyn ichi arbed yr ynni mwyaf posibl."

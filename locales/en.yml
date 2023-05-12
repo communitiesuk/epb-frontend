@@ -842,7 +842,7 @@ en:
         epc: "Energy rating and score"
         summary: "Breakdown of property’s energy performance"
         energy: "Environmental impact of this property"
-        recommendations: "Improve this property’s energy performance"
+        recommendations: "Changes you could make"
         heat_demand: "Estimated energy use and potential savings"
         information: "Contacting the assessor and accreditation scheme"
         green_deal: "Green deal plan"
@@ -986,7 +986,7 @@ en:
         potential: "This property’s potential production"
         tonnes_of_carbon_emission: " tonnes of %{carbon}"
       recommendations:
-        title: "Improve this property’s energy rating"
+        title: "Changes you could make"
         summary:
           steps_in_order_question: "Do I need to follow these steps in order?"
           steps_in_order_answer1: "Yes. Each step builds on the one before it so you can save the most energy."
