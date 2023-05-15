@@ -9,6 +9,7 @@ $govuk-assets-path: '';
 @import "./assets/components/eer-graph";
 @import "./assets/components/environmental-impact";
 @import "./assets/components/how-building-compares";
+@import "./assets/components/rating-label";
 @import "./assets/components/recommended-improvements";
 
 //hack to target safari (10.1+) ONLY as print rendering significantly different

@@ -11,9 +11,9 @@
         t('non_domestic_epc.how_this_building_compares.if_newly_built')
       %></dt>
       <dd class="govuk-summary-list__value govuk-!-width-one-half">
-        <svg width="90" height="50" viewBox="0 0 90 50">
+        <svg width="90" height="50" viewBox="0 0 90 50" class="rating-label">
           <polygon points="0,25 25,50 100,50 100,0 25,0 0,25" class="band-<%= new_build_band %>"></polygon>
-          <text x="30" y="31" class="govuk-!-font-weight-bold"><%= new_build_rating %> <%= new_build_band.upcase %></text>
+          <text x="75" y="31" class="govuk-!-font-weight-bold"><%= new_build_rating %> <%= new_build_band.upcase %></text>
         </svg>
       </dd>
     </div>
@@ -22,9 +22,9 @@
         t('non_domestic_epc.how_this_building_compares.if_typical_existing_stock')
       %></dt>
       <dd class="govuk-summary-list__value govuk-!-width-one-half">
-        <svg width="90" height="50" viewBox="0 0 90 50">
+        <svg width="90" height="50" viewBox="0 0 90 50" class="rating-label">
           <polygon points="0,25 25,50 100,50 100,0 25,0 0,25" class="band-<%= existing_build_band %>"></polygon>
-          <text x="30" y="31" class="govuk-!-font-weight-bold"><%= existing_build_rating %> <%= existing_build_band.upcase %></text>
+          <text x="75" y="31" class="govuk-!-font-weight-bold"><%= existing_build_rating %> <%= existing_build_band.upcase %></text>
         </svg>
       </dd>
     </div>

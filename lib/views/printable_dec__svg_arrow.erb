@@ -97,17 +97,14 @@
     }
     <% end %>
 
-    g.move-sixty-percent {
-      transform: translate(60%, 60%);
+    svg.rating-label text {
+      word-spacing: 6px;
+      text-anchor: end;
     }
   </style>
 
-  <svg x="0" y="0" width="100" height="40">
+  <svg x="0" y="0" width="100" height="40" class="rating-label">
     <polygon points="0,20 25,40 125,40 125,0 25,0 0,20" class="band-<%= energy_efficiency_band.chomp("+") %>"></polygon>
-    <g class="move-sixty-percent">
-      <text dy="0.1em" text-anchor="middle" class="current-band">
-        <tspan><%= energy_efficiency_rating %> <%= energy_efficiency_band.upcase %></tspan>
-      </text>
-    </g>
+    <text x="85" y="27" class="current-band"><%= energy_efficiency_rating %> <%= energy_efficiency_band.upcase %></text>
   </svg>
 </svg>
