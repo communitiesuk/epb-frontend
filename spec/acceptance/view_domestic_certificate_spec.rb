@@ -1093,7 +1093,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       expect(response.body).to include(
         ">Potential rating after completing steps 1&nbsp;to&nbsp;11</dt>",
       )
-      expect(response.body).to include('<text x="30" y="31" class="govuk-!-font-weight-bold">99 A</text>')
+      expect(response.body).to include('<text x="75" y="31" class="govuk-!-font-weight-bold">99 A</text>')
     end
 
     it "shows typical potential rating (second from end in recommendations list) in the correct color" do
