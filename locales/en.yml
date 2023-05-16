@@ -754,7 +754,6 @@ en:
           body: "This property has an energy rating of %{current_energy_efficiency_band}. The landlord cannot grant a tenancy to new or existing tenants, unless an exemption has been registered."
         recommendation: "Properties can be let if they have an energy rating from A+ to E. The %{link} sets out changes you can make to improve the property’s rating."
         cta: "recommendation report"
-        url: "#related_report"
       other_reports:
         title: "Other certificates for this property"
         certificate_reference: "Reference number"
@@ -859,7 +858,6 @@ en:
             text_2: "Properties can be let if they have an energy rating from A to E."
             recommendations_text: "The %{recommendations_link} sets out changes you can make to improve the property’s rating."
             recommendations_cta: "recommendations section"
-            recommendations_url: "#recommendations"
         rental_info:
           body_1: "Properties can be let if they have an energy rating from A to E."
           guidance_text: " You can read %{link}."
@@ -870,7 +868,6 @@ en:
         intro:
           text: "This property’s current energy rating is  %{current_energy_efficiency_band}. It has the potential to be %{potential_energy_efficiency_band}."
           cta: "See how to improve this property’s energy efficiency"
-          url: "#recommendations"
         chart_title: "Energy efficiency chart"
         chart_description: "This property’s current energy rating is %{current_energy_efficiency_band} with a score of %{current_energy_efficiency_rating}. It has a potential energy rating of %{potential_energy_efficiency_band} with a score of %{potential_energy_efficiency_rating}."
         body1: "The graph shows this property’s current and potential energy rating."

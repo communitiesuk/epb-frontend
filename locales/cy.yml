@@ -754,7 +754,6 @@ cy:
           body: "Cyfraddiad ynni yr eiddo hwn yw %{current_energy_efficiency_band}. Ni chaiff y landlord roi tenantiaeth i denantiaid newydd na thenantiaid presennol oni bai bod esemptiad wedi’i gofrestru."
         recommendation: "Caniateir i eiddo gael ei osod os yw ei gyfraddiad ynni rhwng A+ ac E. Mae %{link} yn nodi’r newidiadau y gallwch eu gwneud i wella cyfraddiad yr eiddo"
         cta: "adroddiad ar argymhellion"
-        url: "#related_report"
       other_reports:
         title: "Tystysgrifau eraill ar gyfer yr eiddo hwn"
         certificate_reference: "Rhif cyfeirnod"
@@ -859,7 +858,6 @@ cy:
             text_2: "Gall eiddo gael ei osod os yw ei gyfraddiad ynni rhwng A ac E."
             recommendations_text: "Mae’r %{recommendations_link} yn nodi newidiadau y gallwch eu gwneud er mwyn gwella cyfraddiad yr eiddo."
             recommendations_cta: "adran argymhellion"
-            recommendations_url: "#argymhellion"
         rental_info:
           body_1: "Gall eiddo gael ei osod os yw ei gyfraddiad ynni rhwng A ac E."
           guidance_text: "Gallwch ddarllen %{link}."
@@ -870,7 +868,6 @@ cy:
         intro:
           text: "Cyfraddiad effeithlonrwydd ynni presennol yr eiddo hwn yw %{current_energy_efficiency_band}. Mae ganddo’r potensial i fod yn %{potential_energy_efficiency_band}."
           cta: "Gweld sut i wella effeithlonrwydd ynni'r eiddo hwn"
-          url: "#argymhellion"
         chart_title: "Siart effeithlonrwydd ynni"
         chart_description: "Cyfraddiad ynni cyfredol yr eiddo hwn yw %{current_energy_efficiency_band} gyda sgôr o %{current_energy_efficiency_rating}. Mae ganddo gyfraddiad ynni posibl o %{potential_energy_efficiency_band} gyda sgôr o %{potential_energy_efficiency_rating}."
         body1: "Mae’r graff yn dangos cyfraddiad ynni cyfredol a chyfraddiad ynni posibl yr eiddo hwn."

@@ -113,7 +113,7 @@
         <p class="govuk-body"><%== t('non_domestic_epc.sections.renting.rental_info.guidance_text', :link => '<a class="govuk-link" href="' + t('non_domestic_epc.sections.renting.rental_info.url') + '">' + t('non_domestic_epc.sections.renting.rental_info.cta') + '</a>') %></p>
         <% end %>
         <% if assessment[:currentEnergyEfficiencyBand] > minimum_energy_band %>
-          <p class="govuk-body"><%== t('non_domestic_epc.sections.renting.recommendation', link: '<a class="govuk-link" href="' + t('non_domestic_epc.sections.renting.url') + '">' + t('non_domestic_epc.sections.renting.cta') + '</a>') %></p>
+          <p class="govuk-body"><%== t('non_domestic_epc.sections.renting.recommendation', link: '<a class="govuk-link" href="#related_report">' + t('non_domestic_epc.sections.renting.cta') + '</a>') %></p>
         <% end %>
       </div>
     <% end %>
