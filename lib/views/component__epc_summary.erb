@@ -40,7 +40,7 @@
     <%== erb :component__summary_list, locals: {
       list: {
         dwelling_type: property_type,
-        total_floor_area: t('domestic_epc.summary.floor_area', total_floor_area: "%g" % floor_area) ,
+        total_floor_area: t('domestic_epc.summary.floor_area', total_floor_area: number_to_delimited("%g" % floor_area)) ,
       },
       translation_prefix: 'domestic_epc.sections.breakdown.list.',
       skip_null: true

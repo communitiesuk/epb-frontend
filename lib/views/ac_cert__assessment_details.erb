@@ -17,7 +17,7 @@
       ),
       "system_sampling": t("ac_cert.sections.assessment.flags.#{assessment[:technicalInformation][:randomSampling]}"),
       "treated_floor_area": (
-        assessment[:technicalInformation][:treatedFloorArea].nil? ? nil : [assessment[:technicalInformation][:treatedFloorArea], t('unit.square_metres')].join(" ")
+        assessment[:technicalInformation][:treatedFloorArea].nil? ? nil : [number_to_delimited(assessment[:technicalInformation][:treatedFloorArea]), t('unit.square_metres')].join(" ")
       ),
       "subsystems_metered": t("ac_cert.sections.assessment.flags.#{assessment[:technicalInformation][:acSystemMetered]}"),
       "refrigerant_charge": (

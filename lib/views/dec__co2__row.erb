@@ -3,15 +3,15 @@
     date(year[:date])[2..-1]
   %></th>
     <%== erb :dec__co2__row__value, locals: {
-      value: year[:electricityCo2],
+      value: number_to_delimited(year[:electricityCo2]),
     }
     %>
     <%== erb :dec__co2__row__value, locals: {
-      value: year[:heatingCo2],
+      value: number_to_delimited(year[:heatingCo2]),
     }
     %>
     <%== erb :dec__co2__row__value, locals: {
-      value: year[:renewablesCo2],
+      value: number_to_delimited(year[:renewablesCo2]),
     }
     %>
 </tr>

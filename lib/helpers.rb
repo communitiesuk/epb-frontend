@@ -62,6 +62,10 @@ module Helpers
     end
   end
 
+  def number_to_delimited(number)
+    ActiveSupport::NumberHelper.number_to_delimited(number)
+  end
+
   def resolve_bad_encoding_chars(input)
     input
       .gsub("?", "£")

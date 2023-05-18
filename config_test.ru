@@ -3,6 +3,7 @@
 require "net/http"
 require "zeitwerk"
 require "webmock"
+require "active_support"
 
 loader = Zeitwerk::Loader.new
 loader.push_dir("#{__dir__}/lib/")
