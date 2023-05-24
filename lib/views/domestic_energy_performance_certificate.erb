@@ -17,6 +17,27 @@
     </div>
   </div>
 
+  <%
+    hide_bills_text = assessment[:heatingCostCurrent] == 0 ||
+      assessment[:heatingCostCurrent].nil? ||
+      assessment[:heatingCostPotential] == 0 ||
+      assessment[:heatingCostPotential].nil? ||
+      assessment[:hotWaterCostCurrent] == 0 ||
+      assessment[:hotWaterCostCurrent].nil? ||
+      assessment[:hotWaterCostPotential] == 0 ||
+      assessment[:hotWaterCostPotential].nil? ||
+      assessment[:lightingCostCurrent] == 0 ||
+      assessment[:lightingCostCurrent].nil? ||
+      assessment[:lightingCostPotential] == 0 ||
+      assessment[:lightingCostPotential].nil? ||
+      assessment[:estimatedEnergyCost].nil? ||
+      assessment[:potentialEnergySaving].nil?
+
+    hide_heating_demand = (assessment[:heatDemand][:currentWaterHeatingDemand].nil? && assessment[:heatDemand][:currentSpaceHeatingDemand].nil?)
+
+    hide_insulation_impact = (assessment[:heatDemand][:impactOfLoftInsulation].nil? && assessment[:heatDemand][:impactOfCavityInsulation].nil? && assessment[:heatDemand][:impactOfSolidWallInsulation].nil?)
+  %>
+
   <div class="govuk-grid-column-one-third govuk-!-display-none-print">
     <hr class="epc-blue-top" />
 
@@ -37,16 +58,17 @@
           text: 'domestic_epc.sidebar.sections.summary'
         },
         {
+          link: '#bills-affected',
+          text: 'domestic_epc.sidebar.sections.bills_affected',
+          hidden: (hide_bills_text && hide_heating_demand && hide_insulation_impact)
+        },
+        {
           link: '#energy',
           text: 'domestic_epc.sidebar.sections.energy'
         },
         {
           link: '#recommendations',
           text: 'domestic_epc.sidebar.sections.recommendations'
-        },
-        {
-          link: '#heat-demand',
-          text: 'domestic_epc.sidebar.sections.heat_demand'
         },
         {
           link: '#information',
@@ -216,6 +238,12 @@
       assessment: assessment
     } %>
 
+    <% unless hide_bills_text && hide_heating_demand && hide_insulation_impact%>
+      <%== erb :domestic_energy_performance_certificate__effect_on_bills, locals: {
+        assessment: assessment, print_view: print_view, hide_bills_text: hide_bills_text, hide_heating_demand: hide_heating_demand, hide_insulation_impact: hide_insulation_impact
+      } %>
+    <% end %>
+
     <%== erb :domestic_energy_performance_certificate__environmental_impact, locals: {
       assessment: assessment }
     %>
@@ -256,8 +284,6 @@
       </p>
 
     </div>
-
-    <%== erb :domestic_energy_performance_certificate__estimated_energy_use, locals: { assessment: assessment, print_view: print_view } %>
 
     <div id="information" class="govuk-body epc-blue-bottom printable-area epc-contact-assessor">
       <h2 class="govuk-heading-l"><%= t('domestic_epc.sections.information.title') %></h2>

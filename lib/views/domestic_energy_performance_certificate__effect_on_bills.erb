@@ -1,0 +1,44 @@
+<div id="bills-affected" class="govuk-body epc-blue-bottom printable-area epc-bills-affected">
+  <h2 class="govuk-heading-l"><%= t('domestic_epc.sections.effect_on_bills.title') %></h2>
+
+  <% unless hide_bills_text%>
+    <p class="govuk-body"><%= t('domestic_epc.sections.effect_on_bills.average_household.body1') %> <span class="govuk-!-font-weight-bold"><%= t('domestic_epc.sections.effect_on_bills.average_household.body2' , :yearly_energy_cost => number_to_delimited(assessment[:estimatedEnergyCost].chomp(".00"))) %></span> <%= t('domestic_epc.sections.effect_on_bills.average_household.body3') %></p>
+    <p class="govuk-body"><%= t('domestic_epc.sections.effect_on_bills.potential_savings.body1') %> <span class="govuk-!-font-weight-bold"><%= t('domestic_epc.sections.effect_on_bills.potential_savings.body2' , :potential_saving => number_to_delimited(assessment[:potentialEnergySaving].chomp(".00"))) %></span> <%= t('domestic_epc.sections.effect_on_bills.potential_savings.body3') %></p>
+    <p class="govuk-body"><%= t('domestic_epc.sections.effect_on_bills.based_on_year.body1') %> <span class="govuk-!-font-weight-bold"><%= t('domestic_epc.sections.effect_on_bills.based_on_year.body2' , :year_epc_created => assessment[:dateRegistered].strftime("%Y") )%></span> <%= t('domestic_epc.sections.effect_on_bills.based_on_year.body3') %></p>
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+  <% end %>
+
+  <% unless hide_heating_demand %>
+    <h3 class="govuk-heading-m"><%= t('domestic_epc.sections.effect_on_bills.heating.heading') %></h3>
+    <p class="govuk-body"><%= t('domestic_epc.sections.effect_on_bills.heating.summary') %></p>
+    <ul class="govuk-list--bullet govuk-!-margin-left-6">
+      <li><%= t('domestic_epc.sections.effect_on_bills.heating.heating', :space_heating => number_to_delimited(assessment[:heatDemand][:currentSpaceHeatingDemand].abs)) %></li>
+      <li><%= t('domestic_epc.sections.effect_on_bills.heating.hot_water', :water_heating => number_to_delimited(assessment[:heatDemand][:currentWaterHeatingDemand].abs)) %></li>
+    </ul>
+  <% end %>
+
+  <% unless hide_insulation_impact %>
+    <h3 class="govuk-heading-m"><%= t('domestic_epc.sections.effect_on_bills.saving_energy.heading') %></h3>
+      <p class="govuk-body"><%= t('domestic_epc.sections.effect_on_bills.saving_energy.summary') %></p>
+      <ul class="govuk-list--bullet govuk-!-margin-left-6">
+        <% if assessment[:heatDemand][:impactOfLoftInsulation] && assessment[:heatDemand][:impactOfLoftInsulation] < 0 %>
+          <li><%= t('domestic_epc.sections.effect_on_bills.saving_energy.insulation', :saving => number_to_delimited(assessment[:heatDemand][:impactOfLoftInsulation].abs)) %> <%= t('domestic_epc.sections.effect_on_bills.saving_energy.loft_insulation') %></li>
+        <% end %>
+        <% if assessment[:heatDemand][:impactOfCavityInsulation] && assessment[:heatDemand][:impactOfCavityInsulation] < 0  %>
+          <li><%= t('domestic_epc.sections.effect_on_bills.saving_energy.insulation', :saving => number_to_delimited(assessment[:heatDemand][:impactOfCavityInsulation].abs)) %> <%= t('domestic_epc.sections.effect_on_bills.saving_energy.cavity_insulation') %></li>
+        <% end %>
+        <% if assessment[:heatDemand][:impactOfSolidWallInsulation] && assessment[:heatDemand][:impactOfSolidWallInsulation] < 0  %>
+          <li><%= t('domestic_epc.sections.effect_on_bills.saving_energy.insulation', :saving => number_to_delimited(assessment[:heatDemand][:impactOfSolidWallInsulation].abs)) %> <%= t('domestic_epc.sections.effect_on_bills.saving_energy.solid_wall_insulation') %></li>
+        <% end %>
+      </ul>
+  <% end %>
+
+  <% unless assessment[:postcode][0..1] == "BT" %>
+    <h3 class="govuk-heading-m"><%= t('domestic_epc.sections.effect_on_bills.more_ways_to_save.heading') %></h3>
+    <% if print_view %>
+      <p class="govuk-body"><%= t('domestic_epc.sections.effect_on_bills.more_ways_to_save.cta_print') %> <a class="govuk-link" href=" <%= t('domestic_epc.sections.effect_on_bills.more_ways_to_save.url') %>"><%= t('domestic_epc.sections.effect_on_bills.more_ways_to_save.url_print') %></a>.</p>
+    <% else %>
+      <p class="govuk-body"><a class="govuk-link" href=" <%= t('domestic_epc.sections.effect_on_bills.more_ways_to_save.url') %>"><%= t('domestic_epc.sections.effect_on_bills.more_ways_to_save.cta') %></a>.</p>
+    <% end %>
+  <% end %>
+</div>

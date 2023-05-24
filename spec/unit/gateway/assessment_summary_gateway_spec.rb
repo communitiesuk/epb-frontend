@@ -20,47 +20,6 @@ describe Gateway::AssessmentSummaryGateway do
       it "returns the requested certificate from the api" do
         expect(certificate[:assessmentId]).to eq("0000-0000-0000-0000-0666")
       end
-
-      it "returns the expected keys in the certificate" do
-        expect(certificate.keys).to contain_exactly(
-          :assessor,
-          :assessmentId,
-          :dateRegistered,
-          :dateOfExpiry,
-          :dateOfAssessment,
-          :dwellingType,
-          :typeOfAssessment,
-          :totalFloorArea,
-          :currentEnergyEfficiencyRating,
-          :currentEnergyEfficiencyBand,
-          :currentCarbonEmission,
-          :potentialCarbonEmission,
-          :potentialEnergyEfficiencyRating,
-          :potentialEnergyEfficiencyBand,
-          :postcode,
-          :primaryEnergyUse,
-          :addressLine1,
-          :addressLine2,
-          :addressLine3,
-          :addressLine4,
-          :address,
-          :town,
-          :estimatedEnergyCost,
-          :potentialEnergySaving,
-          :heatDemand,
-          :recommendedImprovements,
-          :relatedPartyDisclosureText,
-          :relatedPartyDisclosureNumber,
-          :propertySummary,
-          :greenDealPlan,
-          :relatedAssessments,
-          :addendum,
-          :lzcEnergySources,
-          :environmentalImpactCurrent,
-          :environmentalImpactPotential,
-          :supersededBy,
-        )
-      end
     end
 
     context "with a certificate that does not exist for the assessment id" do

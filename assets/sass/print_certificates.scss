@@ -230,12 +230,16 @@ $epc-compare-svg-width: $epc-compare-svg-height * 1.8;
   margin-bottom: 0;
 }
 
+.epc-bills-affected ul {
+  margin-bottom: 1rem;
+}
+
 .epc-energy-perf-breakdown .govuk-table__cell {
   padding-top: 2px;
   padding-bottom: 2px;
 }
 
-.epc-environmental-impact, .epc-estimated-energy-use {
+.epc-environmental-impact {
   @include split-into-columns;
 }
 

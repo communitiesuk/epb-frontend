@@ -321,7 +321,70 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       end
     end
 
-    describe "viewing the estimated energy use and potential savings section" do
+    describe "viewing the how this affects your energy bills section" do
+      context "when there is no information about estimated spending, heating, or insulation" do
+        before do
+          FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
+            assessment_id: "123-123",
+            estimated_energy_cost: nil,
+            current_space_heating_demand: nil,
+            current_water_heating_demand: nil,
+            impact_of_loft_insulation: nil,
+            impact_of_cavity_insulation: nil,
+            impact_of_solid_wall_insulation: nil,
+          )
+        end
+
+        let(:response) { get "/energy-certificate/123-123" }
+
+        it "does not show the entire section on how energy bills are affected" do
+          expect(response.body).not_to have_css "h2",
+                                                text:
+                                                  "How this affects your energy bills"
+        end
+
+        it "does not show the link to the energy bill section in the certificate contents" do
+          expect(response.body).not_to have_css "a",
+                                                text:
+                                                  "How this affects your energy bills"
+        end
+      end
+
+      context "when there is no information about estimated spending" do
+        before do
+          FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
+            assessment_id: "123-123",
+            estimated_energy_cost: nil,
+          )
+        end
+
+        let(:response) { get "/energy-certificate/123-123" }
+
+        it "does not show the information about the effect on bills" do
+          expect(response.body).not_to have_css "p",
+                                                text:
+                                                  "An average household would need to spend"
+        end
+      end
+
+      context "when there is no information about the impact of heating" do
+        before do
+          FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
+            assessment_id: "123-123",
+            current_space_heating_demand: nil,
+            current_water_heating_demand: nil,
+          )
+        end
+
+        let(:response) { get "/energy-certificate/123-123" }
+
+        it "does not show the heating section" do
+          expect(response.body).not_to have_css "h3",
+                                                text:
+                                                  "Heating this property"
+        end
+      end
+
       context "when there is no information about the impact of insulation" do
         before do
           FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
@@ -338,14 +401,14 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
 
         let(:response) { get "/energy-certificate/123-123" }
 
-        it "shows text instead of the potential space heating energy savings table" do
-          expect(response.body).to have_css "p",
-                                            text:
-                                              "The assessor did not find any opportunities to save energy by installing insulation in this property."
+        it "does not show the insulation section" do
+          expect(response.body).not_to have_css "h3",
+                                                text:
+                                                  "Saving energy by installing insulation"
         end
       end
 
-      context "when there is information about the impact of insulation" do
+      context "when there is information only about the impact of loft insulation" do
         before do
           FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
             assessment_id: "123-123",
@@ -361,63 +424,59 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
 
         let(:response) { get "/energy-certificate/123-123" }
 
-        it "does not show the potential space heating energy savings table" do
-          expect(response.body).to have_css "th", text: "Loft insulation"
-          expect(response.body).to have_css "td", text: "79 kWh per year"
-          expect(response.body).not_to have_css "th",
-                                                text: "Cavity wall insulation"
-          expect(response.body).not_to have_css "th",
-                                                text: "Solid wall insulation"
+        it "only shows the information for loft insulation" do
+          expect(response.body).to include("79 kWh per year from loft insulation")
+          expect(response.body).not_to include("kWh per year from cavity wall insulation")
+          expect(response.body).not_to include("kWh per year from solid wall insulation")
         end
       end
 
       it "shows the section heading" do
-        expect(response.body).to include(
-          ">Estimated energy use and potential savings</h2>",
-        )
+        expect(response.body).to have_css "h2",
+                                          text:
+                                            "How this affects your energy bills"
       end
 
-      it "shows the clarification about energy costs" do
+      it "shows the link to the energy bill section in the certificate contents" do
+        expect(response.body).to have_css "a",
+                                          text:
+                                            "How this affects your energy bills"
+      end
+
+      it "shows the date the energy costs are based on" do
         expect(response.body).to include(
-          "Based on average energy costs when this EPC was created:",
+          'This is <span class="govuk-!-font-weight-bold">based on average costs in 2020</span>',
         )
       end
 
       it "shows the estimated energy cost for a year" do
         expect(response.body).to include(
-          "Estimated yearly energy cost for this property",
+          'An average household would need to spend <span class="govuk-!-font-weight-bold">£689.83 per year on heating, hot water and lighting</span> in this property.',
         )
-        expect(response.body).to include("£689.83")
       end
 
       it "shows the potential energy cost saving for a year" do
-        expect(response.body).to include("Potential saving")
-        expect(response.body).to include("£174")
+        expect(response.body).to include('You could <span class="govuk-!-font-weight-bold">save £174 per year</span> if you complete the suggested steps for improving this property’s energy rating.')
       end
 
       it "shows the current space heat demand" do
-        expect(response.body).to include(">Space heating</")
-        expect(response.body).to include("222 kWh per year")
+        expect(response.body).to include("222 kWh per year for heating")
       end
 
       it "shows the current water heat demand" do
-        expect(response.body).to include(">Water heating</")
-        expect(response.body).to include("321 kWh per year")
+        expect(response.body).to include("321 kWh per year for hot water")
       end
 
       it "shows possible energy saving with loft insulation" do
-        expect(response.body).to have_css "th", text: "Loft insulation"
-        expect(response.body).to have_css "td", text: "79 kWh per year"
+        expect(response.body).to include("79 kWh per year from loft insulation")
       end
 
       it "shows possible energy saving with cavity wall insulation" do
-        expect(response.body).to have_css "th", text: "Cavity wall insulation"
-        expect(response.body).to have_css "td", text: "67 kWh per year"
+        expect(response.body).to include("67 kWh per year from cavity wall insulation")
       end
 
       it "shows possible energy saving with solid wall insulation" do
-        expect(response.body).to have_css "th", text: "Solid wall insulation"
-        expect(response.body).to have_css "td", text: "69 kWh per year"
+        expect(response.body).to include("69 kWh per year from solid wall insulation")
       end
     end
 

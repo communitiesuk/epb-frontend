@@ -842,7 +842,7 @@ cy:
         summary: "Ddadansoddiad o berfformiad ynni’r eiddo"
         energy: "Effaith amgylcheddol yr eiddo hwn."
         recommendations: "Newidiadau y gallech eu gwneud"
-        heat_demand: "Amcangyfrif o’r ynni a ddefnyddir a’r arbedion posibl"
+        bills_affected: "Sut mae hyn yn effeithio ar eich biliau ynni"
         information: "Cysylltu â’r asesydd a’r cynllun achredu"
         green_deal: "Cynllun y fargen werdd"
         previous: "Tystysgrifau eraill ar gyfer yr eiddo hwn"
@@ -963,6 +963,38 @@ cy:
           access_issues: Mae gan yr annedd broblemau mynediad ar gyfer inswleiddio waliau ceudod
           high_exposure: Gallai’r annedd fod yn agored i law sy’n cael ei yrru gan y gwynt
           narrow_cavities: Gall fod gan yr annedd geudodau cul
+      effect_on_bills:
+        title: "Sut mae hyn yn effeithio ar eich biliau ynni"
+        average_household:
+          body1: "Byddai angen i aelwyd gyffredin wario"
+          body2: "£%{yearly_energy_cost} y flwyddyn ar wres, dŵr poeth a golau"
+          body3: "yn yr eiddo hwn. Y costau hyn fel arfer yw’r rhan fwyaf o’ch biliau ynni."
+        potential_savings:
+          body1: "Fe allech chi"
+          body2: "arbed £%{potential_saving} y flwyddyn"
+          body3: "pe baech chi’n cwblhau’r camau a awgrymir er mwyn gwella cyfraddiad ynni’r eiddo hwn."
+        based_on_year:
+          body1: "Mae hyn wedi’i"
+          body2: "seilio ar y costau cyfartalog yn %{year_epc_created}"
+          body3: "pan gafodd yr EPC hon ei chreu. Gall pobl sy’n byw yn yr eiddo ddefnyddio gwahanol symiau o wres, dŵr poeth a golau."
+        heating:
+          heading: "Gwresogi’r eiddo hwn"
+          summary: "Yr amcangyfrif o ynni angenrheidiol yr eiddo hwn yw:"
+          heating: "%{space_heating} kWh y flwyddyn ar gyfer gwres"
+          hot_water: "%{water_heating} kWh y flwyddyn ar gyfer dŵr poeth"
+        saving_energy:
+          heading: "Arbed ynni drwy osod insiwleiddio"
+          summary: "Ynni y gallech ei arbed:"
+          insulation: "%{saving} kWh y flwyddyn drwy"
+          loft_insulation: "inswleiddio’r croglofft"
+          cavity_insulation: "inswleiddio waliau ceudod"
+          solid_wall_insulation: "inswleiddio waliau solet"
+        more_ways_to_save:
+          heading: "Rhagor o ffyrdd i arbed ynni"
+          cta: "Chwiliwch am ffyrdd i arbed ynni gartref"
+          cta_print: "Chwiliwch am ffyrdd i arbed ynni yn eich cartref drwy edrych ar"
+          url: "https://www.gov.uk/improve-energy-efficiency"
+          url_print: "www.gov.uk/improve-energy-efficiency"
       environmental_impact:
         title: "Effaith amgylcheddol yr eiddo hwn"
         eir_rating: "Cyfraddiad effaith amgylcheddol yr eiddo hwn ar hyn o bryd yw %{current_environmental_impact_rating}. Mae gan yr eiddo y potensial i fod yn %{potential_environmental_impact_rating}."
@@ -1002,34 +1034,6 @@ cy:
           bus_text: "Efallai y gallwch gael grant gan y %{link}. Bydd hyn yn eich helpu i brynu system wresogi carbon isel, fwy effeithlon ar gyfer yr eiddo hwn."
           bus_link_text: "Cynllun Uwchraddio Boeleri"
           bus_url: "https://www.gov.uk/apply-boiler-upgrade-scheme"
-      heat_demand:
-        title: "Amcangyfrif o’r defnydd ynni a’r arbedion posibl"
-        clarify_energy_costs: "Ar sail y costau ynni cyfartalog pan gafodd yr EPC hon ei chreu:"
-        estimated_cost: "Amcangyfrif o gost flynyddol yr ynni ar gyfer yr eiddo hwn"
-        three_year_saving: "Arbediad posibl os byddwch yn cwblhau pob cam yn ei drefn"
-        costs_and_savings: "Mae’r amcangyfrif o’r gost yn dangos faint y byddai’r aelwyd gyfartalog yn ei wario yn yr eiddo hwn ar gyfer gwresogi, golau a dŵr poeth. Nid yw’n cael ei seilio ar sut mae ynni’n cael ei ddefnyddio gan y bobl sy’n byw yn yr eiddo."
-        more_advice_heading: "Arbed ynni yn yr eiddo hwn"
-        more_advice_cta: "Chwiliwch am ffyrdd i arbed ynni gartref"
-        more_advice_url: "https://www.gov.uk/improve-energy-efficiency"
-        more_advice_cta_print: "Chwiliwch am ffyrdd i arbed ynni yn eich cartref drwy edrych ar "
-        more_advice_url_print: "www.gov.uk/improve-energy-efficiency"
-        heating_in_property: "Defnydd gwres yn yr eiddo hwn"
-        energy_costs: "Gwresogi eiddo sydd fel arfer yn creu’r rhan fwyaf o’ch costau ynni."
-        estimated_energy: "Amcangyfrif o’r ynni a ddefnyddir i wresogi’r eiddo hwn"
-        space_heating: "Gwresogi lle"
-        kwh_per_year: "kWh y flwyddyn"
-        water_heating: "Cynhesu dŵr"
-        estimated_use: "Amcangyfrif o’r ynni a ddefnyddir"
-        potential_saving: "Arbedion ynni posibl drwy osod inswleiddiad"
-        no_potential_saving: "Welodd yr asesydd ddim cyfleoedd i arbed ynni drwy osod inswleiddiad yn yr eiddo hwn."
-        type_of_insulation: "Math o inswleiddiad"
-        amount_saved: "Faint o ynni a arbedir"
-        loft_insulation: "Inswleiddio’r croglofft"
-        cavity_insulation: "Inswleiddio waliau ceudod"
-        solid_wall_insulation: "Inswleiddio waliau solet"
-        not_applicable: "Heb fod yn gymwys"
-        type_of_heating: "Y math o wres"
-        estimated_energy_used: "Amcangyfrif o’r ynni a ddefnyddir"
       information:
         title: "Cysylltu â’r asesydd a’r cynllun achredu"
         intro: "Cafodd yr EPC hon ei chreu gan asesydd ynni cymwysedig.<br /><br />Os ydych yn anfodlon ar asesiad neu dystysgrif ynni’ch eiddo, gallwch gwyno i’r asesydd yn uniongyrchol.<br /><br />Os ydych yn dal yn anfodlon ar ôl cysylltu â’r asesydd, dylech gysylltu â chynllun achredu’r asesydd.<br /><br />Mae cynlluniau achredu’n cael eu penodi gan y llywodraeth i sicrhau bod gan aseswyr gymwysterau i gyflawni asesiadau EPC."
