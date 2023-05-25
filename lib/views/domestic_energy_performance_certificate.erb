@@ -18,24 +18,9 @@
   </div>
 
   <%
-    hide_bills_text = assessment[:heatingCostCurrent] == 0 ||
-      assessment[:heatingCostCurrent].nil? ||
-      assessment[:heatingCostPotential].chomp(".00") == "0" ||
-      assessment[:heatingCostPotential].nil? ||
-      assessment[:hotWaterCostCurrent].chomp(".00") == "0" ||
-      assessment[:hotWaterCostCurrent].nil? ||
-      assessment[:hotWaterCostPotential].chomp(".00") == "0" ||
-      assessment[:hotWaterCostPotential].nil? ||
-      assessment[:lightingCostCurrent].chomp(".00") == "0" ||
-      assessment[:lightingCostCurrent].nil? ||
-      assessment[:lightingCostPotential].chomp(".00") == "0" ||
-      assessment[:lightingCostPotential].nil? ||
-      assessment[:estimatedEnergyCost].nil? ||
-      assessment[:potentialEnergySaving].nil?
-
-    hide_heating_demand = (assessment[:heatDemand][:currentWaterHeatingDemand].nil? && assessment[:heatDemand][:currentSpaceHeatingDemand].nil?)
-
-    hide_insulation_impact = (assessment[:heatDemand][:impactOfLoftInsulation].nil? && assessment[:heatDemand][:impactOfCavityInsulation].nil? && assessment[:heatDemand][:impactOfSolidWallInsulation].nil?)
+    hide_bills_text = Helper::Certificate.hide_bills_text?(assessment)
+    hide_heating_demand = Helper::Certificate.hide_heating_demand?(assessment)
+    hide_insulation_impact = Helper::Certificate.hide_insulation_impact?(assessment)
   %>
 
   <div class="govuk-grid-column-one-third govuk-!-display-none-print">
