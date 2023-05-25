@@ -20,15 +20,15 @@
   <%
     hide_bills_text = assessment[:heatingCostCurrent] == 0 ||
       assessment[:heatingCostCurrent].nil? ||
-      assessment[:heatingCostPotential] == 0 ||
+      assessment[:heatingCostPotential].chomp(".00") == "0" ||
       assessment[:heatingCostPotential].nil? ||
-      assessment[:hotWaterCostCurrent] == 0 ||
+      assessment[:hotWaterCostCurrent].chomp(".00") == "0" ||
       assessment[:hotWaterCostCurrent].nil? ||
-      assessment[:hotWaterCostPotential] == 0 ||
+      assessment[:hotWaterCostPotential].chomp(".00") == "0" ||
       assessment[:hotWaterCostPotential].nil? ||
-      assessment[:lightingCostCurrent] == 0 ||
+      assessment[:lightingCostCurrent].chomp(".00") == "0" ||
       assessment[:lightingCostCurrent].nil? ||
-      assessment[:lightingCostPotential] == 0 ||
+      assessment[:lightingCostPotential].chomp(".00") == "0" ||
       assessment[:lightingCostPotential].nil? ||
       assessment[:estimatedEnergyCost].nil? ||
       assessment[:potentialEnergySaving].nil?

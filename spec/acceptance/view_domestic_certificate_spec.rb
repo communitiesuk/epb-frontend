@@ -367,6 +367,23 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
         end
       end
 
+      context "when one of the costs that make up the estimated energy cost is missing" do
+        before do
+          FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
+            assessment_id: "123-123",
+            hot_water_cost_current: "0.00",
+          )
+        end
+
+        let(:response) { get "/energy-certificate/123-123" }
+
+        it "does not show the information about the effect on bills" do
+          expect(response.body).not_to have_css "p",
+                                                text:
+                                                  "An average household would need to spend"
+        end
+      end
+
       context "when there is no information about the impact of heating" do
         before do
           FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
