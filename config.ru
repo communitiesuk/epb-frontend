@@ -76,5 +76,6 @@ csp_options = {
 }.delete_if { |_, value| value.nil? || value=='' }
 
 use Middleware::ContentSecurityPolicy, **Helper::GoogleCsp.add_options_for_google_analytics(csp_options)
+use Middleware::PermissionsPolicy
 
 run FrontendService.new
