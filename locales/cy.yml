@@ -799,24 +799,22 @@ cy:
       emission_rate: "Cyfraddiad allyriadau’r adeilad (kgCO2/m2 y flwyddyn)"
       primary_energy_use: "Prif ddefnydd ynni (kWh/m2 y flwyddyn)"
     contact:
-      heading: "Cysylltu â’r asesydd a’ch cynllun achredu"
-      p1: "Cafodd yr EPC hon ei chreu gan asesydd ynni cymwysedig."
-      p2: "Os ydych yn anfodlon ar asesiad neu dystysgrif ynni’ch eiddo, gallwch gwyno i’r asesydd dyn uniongyrchol."
-      p3: "Os ydych yn dal yn anfodlon ar ôl cysylltu â’r asesydd, dylech gysylltu â chynllun achredu’r asesydd."
-      p4: "Mae cynlluniau achredu’n cael eu penodi gan y llywodraeth i sicrhau bod gan aseswyr y cymwysterau i gyflawni asesiadau EPC."
+      heading: "Pwy dylech chi gysylltu â nhw ynglŷn â’r dystysgrif hon"
       assessor:
-        heading: "Manylion cysylltu’r asesydd"
+        heading: "Cysylltu â’r asesydd"
+        intro: "Os ydych yn anfodlon ynglŷn ag asesiad neu dystysgrif ynni eich eiddo, gallwch gwyno i’r asesydd a’i creodd."
         name: "Enw’r asesydd"
         phone: "Ffôn"
         email: "Ebost"
         id: "ID yr asesydd"
       scheme:
-        heading: "Manylion cysylltu’r cynllun achredu"
+        heading: "Cysylltu â’r cynllun achredu"
+        intro: "Os ydych yn dal yn anfodlon ar ôl cysylltu â’r asesydd, dylech gysylltu â chynllun achredu’r asesydd."
         name: "Cynllun achredu"
         phone: "Ffôn"
         email: "Ebost"
       assessment:
-        heading: "Manylion yr asesiad"
+        heading: "Ynglŷn â’r asesiad hwn"
         date_assessed: "Dyddiad yr asesiad"
         date_certificate: "Dyddiad y dystysgrif"
         employer: "Cyflogwr"
@@ -1035,21 +1033,22 @@ cy:
           bus_link_text: "Cynllun Uwchraddio Boeleri"
           bus_url: "https://www.gov.uk/apply-boiler-upgrade-scheme"
       information:
-        title: "Cysylltu â’r asesydd a’r cynllun achredu"
-        intro: "Cafodd yr EPC hon ei chreu gan asesydd ynni cymwysedig.<br /><br />Os ydych yn anfodlon ar asesiad neu dystysgrif ynni’ch eiddo, gallwch gwyno i’r asesydd yn uniongyrchol.<br /><br />Os ydych yn dal yn anfodlon ar ôl cysylltu â’r asesydd, dylech gysylltu â chynllun achredu’r asesydd.<br /><br />Mae cynlluniau achredu’n cael eu penodi gan y llywodraeth i sicrhau bod gan aseswyr gymwysterau i gyflawni asesiadau EPC."
+        title: "Pwy dylech chi gysylltu â nhw ynglŷn â’r dystysgrif hon"
         assessor:
-          title: "Manylion cysylltu’r asesydd"
+          title: "Cysylltu â’r asesydd"
+          intro: "Os ydych yn anfodlon ynglŷn ag asesiad neu dystysgrif ynni eich eiddo, gallwch gwyno i’r asesydd a’i creodd."
           list:
             telephone: "Ffôn"
             email: "Ebost"
             name: "Enw’r asesydd"
         scheme:
-          title: "Manylion cysylltu’r cynllun achredu"
+          title: "Cysylltu â’r cynllun achredu"
+          intro: "Os ydych yn dal yn anfodlon ar ôl cysylltu â’r asesydd, dylech gysylltu â chynllun achredu’r asesydd."
           list:
             name: "Cynllun achredu"
             scheme_assessor_id: "ID yr asesydd"
         certificate:
-          title: "Manylion yr asesiad"
+          title: "Ynglŷn â’r asesiad hwn"
           list:
             disclosure: "Datganiad yr asesydd"
             date_of_assessment: "Dyddiad yr asesiad"

@@ -3,33 +3,24 @@
     t('non_domestic_epc.contact.heading')
   %></h2>
 
-  <p class="govuk-body"><%= t('non_domestic_epc.contact.p1') %></p>
-  <p class="govuk-body"><%= t('non_domestic_epc.contact.p2') %></p>
-  <p class="govuk-body"><%= t('non_domestic_epc.contact.p3') %></p>
-  <p class="govuk-body"><%= t('non_domestic_epc.contact.p4') %></p>
+  <% unless opt_out == true && postcode.start_with?("BT") %>
+    <h3 class="govuk-heading-m"><%== t('non_domestic_epc.contact.assessor.heading') %></h3>
+    <p class="govuk-body"><%= t('non_domestic_epc.contact.assessor.intro') %></p>
 
-  <h3 class="govuk-heading-m"><%==
-    unless opt_out == true && postcode.start_with?("BT")
-      t('non_domestic_epc.contact.assessor.heading')
-    end
-  %></h3>
+    <%==
+       erb :component__summary_list, locals: {
+      list: {
+        "name": assessor[:name],
+        "phone": assessor[:contactDetails][:telephone],
+        "email": { type: "email", value: assessor[:contactDetails][:email] },
+      },
+      translation_prefix: 'non_domestic_epc.contact.assessor.',
+      skip_null: true
+    } %>
+  <% end %>
 
-  <%== unless opt_out == true && postcode.start_with?("BT")
-     erb :component__summary_list, locals: {
-    list: {
-      "name": assessor[:name],
-      "phone": assessor[:contactDetails][:telephone],
-      "email": { type: "email", value: assessor[:contactDetails][:email] },
-    },
-    translation_prefix: 'non_domestic_epc.contact.assessor.',
-    skip_null: true
-  }
-  end %>
-
-  <h3 class="govuk-heading-m"><%=
-    t('non_domestic_epc.contact.scheme.heading')
-  %></h3>
-
+  <h3 class="govuk-heading-m"><%= t('non_domestic_epc.contact.scheme.heading') %></h3>
+  <p class="govuk-body"><%= t('non_domestic_epc.contact.scheme.intro') %></p>
   <%== erb :component__summary_list, locals: {
     list: {
       "scheme.name": scheme_details(assessor, 'name'),

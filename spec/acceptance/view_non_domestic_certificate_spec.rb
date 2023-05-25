@@ -251,9 +251,9 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
 
       it "shows the contact section" do
         expect(response.body).to include(
-          ">Contacting the assessor and accreditation scheme</h2>",
+          ">Who to contact about this certificate</h2>",
         )
-        expect(response.body).to include(">Assessor contact details</h3>")
+        expect(response.body).to include(">Contacting the assessor</h3>")
         expect(response.body).to include("TEST NAME BOI")
         expect(response.body).to include("012345")
         expect(response.body).to include("test@testscheme.com")
@@ -264,7 +264,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
       end
 
       it "shows the assessment details" do
-        expect(response.body).to include(">Assessment details</h3>")
+        expect(response.body).to include(">About this assessment</h3>")
         expect(response.body).to include("4 January 2020")
         expect(response.body).to include("5 January 2020")
         expect(response.body).to include("Joe Bloggs Ltd")
@@ -349,7 +349,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
           '<p class="govuk-body"><a class="govuk-link" href="#related_report">Recommendation report</a></p>',
         )
         expect(response.body).to include(
-          '<p class="govuk-body"><a class="govuk-link" href="#contact">Contacting the assessor and accreditation scheme</a></p>',
+          '<p class="govuk-body"><a class="govuk-link" href="#contact">Who to contact about this certificate</a></p>',
         )
         expect(response.body).to include(
           '<p class="govuk-body"><a class="govuk-link" href="#other_certificates_and_reports">Other certificates for this property</a></p>',
@@ -436,9 +436,9 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
 
     it "removes assessor contact details" do
       expect(response.body).to include(
-        ">Contacting the assessor and accreditation scheme</h2>",
+        ">Who to contact about this certificate</h2>",
       )
-      expect(response.body).not_to include(">Assessor contact details</h3>")
+      expect(response.body).not_to include(">Contacting the assessor</h3>")
       expect(response.body).not_to include("TEST NAME BOI")
       expect(response.body).not_to include("012345")
       expect(response.body).not_to include("test@testscheme.com")
@@ -446,7 +446,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
       expect(response.body).to include("SPEC000000")
       expect(response.body).to include("01225 667 570")
       expect(response.body).to include("info@quidos.co.uk")
-      expect(response.body).to include(">Assessment details</h3>")
+      expect(response.body).to include(">About this assessment</h3>")
       expect(response.body).to include("4 January 2020")
       expect(response.body).to include("5 January 2020")
       expect(response.body).not_to include("Joe Bloggs Ltd")

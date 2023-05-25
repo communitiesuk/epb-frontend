@@ -285,50 +285,7 @@
 
     </div>
 
-    <div id="information" class="govuk-body epc-blue-bottom printable-area epc-contact-assessor">
-      <h2 class="govuk-heading-l"><%= t('domestic_epc.sections.information.title') %></h2>
-      <p class="govuk-body"><%== t('domestic_epc.sections.information.intro') %></p>
-      <h3 class="govuk-heading-m"><%= t('domestic_epc.sections.information.assessor.title') %></h3>
-
-      <%== erb :component__summary_list, locals: {
-        list: {
-          "name": assessment[:assessor][:firstName] + " " + assessment[:assessor][:lastName],
-          "telephone": assessment[:assessor][:contactDetails][:telephoneNumber],
-          "email": {"type": "email", "value": assessment[:assessor][:contactDetails][:email]}
-        },
-        translation_prefix: 'domestic_epc.sections.information.assessor.list.',
-        skip_null: true
-      } %>
-
-      <h3 class="govuk-heading-m<% unless print_view %> govuk-!-margin-top-9<% end %>"><%= t('domestic_epc.sections.information.scheme.title') %></h3>
-
-      <%== erb :component__summary_list, locals: {
-        list: {
-          "scheme.list.name": assessment[:assessor][:registeredBy][:name],
-          "scheme.list.scheme_assessor_id": assessment[:assessor][:schemeAssessorId],
-          "assessor.list.telephone": scheme_details(assessment[:assessor], 'phone').nil? ? nil : scheme_details(assessment[:assessor], "phone"),
-          "assessor.list.email": {
-            "type": "email",
-            "value": scheme_details(assessment[:assessor], 'email').nil? ? nil : scheme_details(assessment[:assessor], 'email') }
-        },
-        translation_prefix: 'domestic_epc.sections.information.',
-        skip_null: true
-      } %>
-
-      <h3 class="govuk-heading-m<% unless print_view %> govuk-!-margin-top-9<% end %>"><%= t('domestic_epc.sections.information.certificate.title') %></h3>
-
-      <%== erb :component__summary_list, locals: {
-        list: {
-          "disclosure": party_disclosure(assessment[:relatedPartyDisclosureNumber], assessment[:relatedPartyDisclosureText]),
-          "date_of_assessment": date(assessment[:dateOfAssessment]),
-          "date_of_certificate": date(assessment[:dateRegistered]),
-          "type_of_assessment": { type: "details", value: assessment[:typeOfAssessment] }
-        },
-        translation_prefix: 'domestic_epc.sections.information.certificate.list.',
-        skip_null: true,
-        print_view: print_view
-      } %>
-    </div>
+    <%== erb :domestic_energy_performance_certificate__assessor_information, locals: { assessment: assessment , print_view: print_view} %>
 
     <% if should_display_green_deal %>
       <% assessment[:greenDealPlan].each do |plan| %>

@@ -799,24 +799,22 @@ en:
       emission_rate: "Building emission rate (kgCO2/m2 per year)"
       primary_energy_use: "Primary energy use (kWh/m2 per year)"
     contact:
-      heading: "Contacting the assessor and accreditation scheme"
-      p1: "This EPC was created by a qualified energy assessor."
-      p2: "If you are unhappy about your property’s energy assessment or certificate, you can complain to the assessor directly."
-      p3: "If you are still unhappy after contacting the assessor, you should contact the assessor’s accreditation scheme."
-      p4: "Accreditation schemes are appointed by the government to ensure that assessors are qualified to carry out EPC assessments."
+      heading: "Who to contact about this certificate"
       assessor:
-        heading: "Assessor contact details"
+        heading: "Contacting the assessor"
+        intro: "If you’re unhappy about your property’s energy assessment or certificate, you can complain to the assessor who created it."
         name: "Assessor’s name"
         phone: "Telephone"
         email: "Email"
-        id: "Assessor ID"
+        id: "Assessor’s ID"
       scheme:
-        heading: "Accreditation scheme contact details"
+        heading: "Contacting the accreditation scheme"
+        intro: "If you're still unhappy after contacting the assessor, you should contact the assessor’s accreditation scheme."
         name: "Accreditation scheme"
         phone: "Telephone"
         email: "Email"
       assessment:
-        heading: "Assessment details"
+        heading: "About this assessment"
         date_assessed: "Date of assessment"
         date_certificate: "Date of certificate"
         employer: "Employer"
@@ -843,7 +841,7 @@ en:
         energy: "Environmental impact of this property"
         recommendations: "Changes you could make"
         bills_affected: "How this affects your energy bills"
-        information: "Contacting the assessor and accreditation scheme"
+        information: "Who to contact about this certificate"
         green_deal: "Green deal plan"
         previous: "Other certificates for this property"
     sections:
@@ -1035,21 +1033,22 @@ en:
           bus_link_text: "Boiler Upgrade Scheme"
           bus_url: "https://www.gov.uk/apply-boiler-upgrade-scheme"
       information:
-        title: "Contacting the assessor and accreditation scheme"
-        intro: "This EPC was created by a qualified energy assessor.<br /><br />If you are unhappy about your property’s energy assessment or certificate, you can complain to the assessor directly.<br /><br />If you are still unhappy after contacting the assessor, you should contact the assessor’s accreditation scheme.<br /><br />Accreditation schemes are appointed by the government to ensure that assessors are qualified to carry out EPC assessments."
+        title: "Who to contact about this certificate"
         assessor:
-          title: "Assessor contact details"
+          title: "Contacting the assessor"
+          intro: "If you’re unhappy about your property’s energy assessment or certificate, you can complain to the assessor who created it."
           list:
             telephone: "Telephone"
             email: "Email"
             name: "Assessor’s name"
         scheme:
-          title: "Accreditation scheme contact details"
+          title: "Contacting the accreditation scheme"
+          intro: "If you're still unhappy after contacting the assessor, you should contact the assessor’s accreditation scheme."
           list:
             name: "Accreditation scheme"
-            scheme_assessor_id: "Assessor ID"
+            scheme_assessor_id: "Assessor’s ID"
         certificate:
-          title: "Assessment details"
+          title: "About this assessment"
           list:
             disclosure: "Assessor’s declaration"
             date_of_assessment: "Date of assessment"
