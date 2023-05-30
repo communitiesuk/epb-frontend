@@ -525,6 +525,10 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
         )
       end
 
+      it "shows the carbon emission section" do
+        expect(response.body).to include('<h3 class="govuk-heading-m">Carbon emissions</h3>')
+      end
+
       it "shows the making changes text with the correct reduction value" do
         expect(response.body).to include(
           "You could improve this property’s CO2 emissions by making the suggested changes. This will help to protect the environment.",
@@ -533,7 +537,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
 
       it "shows the environmental impact rating text" do
         expect(response.body).to include(
-          "Environmental impact ratings are based on assumptions about average occupancy and energy use.",
+          "These ratings are based on assumptions about average occupancy and energy use. People living at the property may use different amounts of energy.",
         )
       end
 

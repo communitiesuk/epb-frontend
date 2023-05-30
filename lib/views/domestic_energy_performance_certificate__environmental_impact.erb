@@ -4,6 +4,7 @@
                                :current_environmental_impact_rating => eir_rating_band(assessment[:environmentalImpactCurrent].to_i).upcase,
                                :potential_environmental_impact_rating => eir_rating_band(assessment[:environmentalImpactPotential].to_i).upcase) %></p>
   <p class="govuk-body"><%== t('domestic_epc.sections.environmental_impact.rating_scale') %></p>
+  <h3 class="govuk-heading-m"><%= t('domestic_epc.sections.environmental_impact.heading') %></h3>
   <dl class="govuk-summary-list">
     <div class="govuk-summary-list__row" >
       <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= t('domestic_epc.sections.environmental_impact.average_household.text') %></dt>

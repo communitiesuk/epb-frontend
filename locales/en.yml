@@ -997,9 +997,10 @@ en:
         title: "Environmental impact of this property"
         eir_rating: "This property’s current environmental impact rating is %{current_environmental_impact_rating}. It has the potential to be %{potential_environmental_impact_rating}."
         rating_scale: "Properties get a rating from A (best) to G (worst) on how much carbon dioxide (CO2) they produce each year. CO2 harms the environment."
+        heading: "Carbon emissions"
         summary: "One of the biggest contributors to climate change is carbon dioxide (CO2). The energy used for heating, lighting and power in our homes produces over a quarter of the UK’s CO2 emissions."
         making_changes: "You could improve this property’s CO2 emissions by making the suggested changes. This will help to protect the environment."
-        environmental_impact_rating: "Environmental impact ratings are based on assumptions about average occupancy and energy use. They may not reflect how energy is consumed by the people living at the property."
+        environmental_impact_rating: "These ratings are based on assumptions about average occupancy and energy use. People living at the property may use different amounts of energy."
         average_household:
           text: "An average household produces"
           carbon: "6"
