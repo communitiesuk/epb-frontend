@@ -118,8 +118,7 @@
       </div>
     <% end %>
 
-    <div id="energy_rating_section" class="epc-section epc-rating-graph-section epc-blue-bottom printable-area">
-    <div class="govuk-body epc-blue-bottom">
+    <div id="energy_rating_section" class="govuk-body epc-blue-bottom printable-area epc-rating-graph-section ">
       <h2 class="govuk-heading-l"><%= t('non_domestic_epc.energy_rating_section.title') %></h2>
       <p class="govuk-body"><%== t('non_domestic_epc.energy_rating_section.current_rating_text', :current_energy_efficiency_band => assessment[:currentEnergyEfficiencyBand].upcase) %></p>
       <%== erb :non_domestic_energy_rating, locals: {
@@ -138,7 +137,7 @@
       new_build_rating: assessment[:newBuildRating],
       new_build_band: assessment[:newBuildBand],
     } %>
-    </div>
+
 
     <%== erb :non_domestic_energy_performance_certificate__energy_performance_breakdown, locals: {
       main_heating_fuel: assessment[:technicalInformation][:mainHeatingFuel],
