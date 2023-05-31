@@ -10,7 +10,7 @@ module Middleware
 
     def call(env)
       status, headers, body = @app.call(env)
-      headers["Permissions-Policy"] = SITE_POLICY if html? headers
+      headers["Permissions-Policy"] = SITE_POLICY if html?(headers) || javascript?(headers)
       [status, headers, body]
     end
 
@@ -20,6 +20,12 @@ module Middleware
       return false unless (header = headers.detect { |k, _v| k.downcase == "content-type" })
 
       %w[text/html application/xhtml text/xml application/xml].include? header.last[%r{^\w+/\w+}]
+    end
+
+    def javascript?(headers)
+      return false unless (header = headers.detect { |k, _v| k.downcase == "content-type" })
+
+      %w[text/javascript application/javascript].include? header.last[%r{^\w+/\w+}]
     end
   end
 end
