@@ -1029,7 +1029,7 @@ cy:
           potential_rating_2: "Cyfraddiad posibl ar ôl cwblhau camau 1&nbsp;a&nbsp;2"
           potential_rating_3: "Cyfraddiad posibl ar ôl cwblhau camau 1&nbsp;i"
         paying_for_energy_improvements:
-          title: "Talu am welliannau ynni"
+          title: "Help i dalu am welliannau ynni"
           bus_text: "Efallai y gallwch gael grant gan y %{link}. Bydd hyn yn eich helpu i brynu system wresogi carbon isel, fwy effeithlon ar gyfer yr eiddo hwn."
           bus_link_text: "Cynllun Uwchraddio Boeleri"
           bus_url: "https://www.gov.uk/apply-boiler-upgrade-scheme"

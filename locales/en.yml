@@ -1029,7 +1029,7 @@ en:
           potential_rating_2: "Potential rating after completing steps 1&nbsp;and&nbsp;2"
           potential_rating_3: "Potential rating after completing steps 1&nbsp;to"
         paying_for_energy_improvements:
-          title: "Paying for energy improvements"
+          title: "Help paying for energy improvements"
           bus_text: "You might be able to get a grant from the %{link}. This will help you buy a more efficient, low carbon heating system for this property."
           bus_link_text: "Boiler Upgrade Scheme"
           bus_url: "https://www.gov.uk/apply-boiler-upgrade-scheme"

@@ -499,7 +499,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
 
     context "when viewing find ways to pay for recommendations section" do
       it "shows the heading" do
-        expect(response.body).to include("Paying for energy improvements")
+        expect(response.body).to include("Help paying for energy improvements")
       end
 
       it "shows the text" do
