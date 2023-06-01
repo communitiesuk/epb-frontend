@@ -1878,8 +1878,8 @@ cy:
       title: "Nodiadau manwl ar yr archwiliad"
 
   primary_energy_use_dropdown:
-    what_is_primary_energy_use_title: "Beth yw prif ddefnydd ynni?"
-    what_is_primary_energy_use_details: "mae prif ddefnydd ynni yn fesur o’r ynni y mae ei angen ar gyfer golau, gwres a dŵr poeth mewn eiddo. Mae’r cyfrifiad yn cynnwys:"
+    what_is_primary_energy_use_title: "Ynghylch y prif ddefnydd ynni"
+    what_is_primary_energy_use_details: "Mae prif ddefnydd ynni yn fesur o’r ynni y mae ei angen ar gyfer golau, gwres a dŵr poeth mewn eiddo. Mae’r cyfrifiad yn cynnwys:"
     efficiency_of_heating: "effeithlonrwydd system wresogi’r eiddo"
     efficiency_of_electricity: "effeithlonrwydd gorsaf gynhyrchu ar gyfer trydan"
     fuel_for_property: "yr ynni a ddefnyddir i gynhyrchu’r tanwydd a’i ddosbarthu i’r eiddo"

@@ -246,7 +246,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
       end
 
       it "shows the primary energy use explanation" do
-        expect(response.body).to include("What is primary energy use?")
+        expect(response.body).to include("About primary energy use")
       end
 
       it "shows the contact section" do
@@ -420,7 +420,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
     end
 
     it "hides the primary energy use explanation" do
-      expect(response.body).not_to include("What is primary energy use?")
+      expect(response.body).not_to include("About primary energy use")
     end
   end
 

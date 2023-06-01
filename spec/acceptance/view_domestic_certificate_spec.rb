@@ -695,7 +695,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       it "shows the primary energy use section", :aggregate_failures do
         expect(response.body).to include('<h3 class="govuk-heading-m">Primary energy use</h3>')
         expect(response.body).to include('<p class="govuk-body">The primary energy use for this property per year is 989 kilowatt hours per square metre (kWh/m2).</p>')
-        expect(response.body).to include('<span class="govuk-details__summary-text">What is primary energy use?</span>')
+        expect(response.body).to include('<span class="govuk-details__summary-text">About primary energy use</span>')
       end
 
       context "when there is a property summary key" do

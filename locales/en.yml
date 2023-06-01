@@ -1878,7 +1878,7 @@ en:
       title: "Detailed inspection notes"
 
   primary_energy_use_dropdown:
-    what_is_primary_energy_use_title: "What is primary energy use?"
+    what_is_primary_energy_use_title: "About primary energy use"
     what_is_primary_energy_use_details: "Primary energy use is a measure of the energy required for lighting, heating and hot water in a property. The calculation includes:"
     efficiency_of_heating: "the efficiency of the property’s heating system"
     efficiency_of_electricity: "power station efficiency for electricity"
