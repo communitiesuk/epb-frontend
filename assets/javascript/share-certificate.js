@@ -1,3 +1,5 @@
+export { copyToClipboard }
+
 function clickHandler () { // eslint-disable-line no-unused-vars
   copyToClipboard()
   changeTextAndIconAnimation()
@@ -9,15 +11,20 @@ function copyToClipboard () {
   input.value = window.location.href
   input.select()
 
-  navigator.permissions.query({ name: 'clipboard-write' }).then((result) => {
-    if (result.state === 'granted' || result.state === 'prompt') {
-      navigator.clipboard.writeText(input.value)
-    } else {
-      document.execCommand('copy')
-    }
-  })
+  document.execCommand('copy')
 
-  input.parentNode.removeChild(input)
+  navigator.permissions.query({ name: 'clipboard-write' })
+    .then((result) => {
+      if (result.state === 'granted' || result.state === 'prompt') {
+        navigator.clipboard.writeText(input.value)
+      }
+    })
+    .catch(e => {
+      // do nothing - we've already tried using execCommand
+    })
+    .finally(() => {
+      input.parentNode.removeChild(input)
+    })
 }
 
 function changeTextAndIconAnimation () {
