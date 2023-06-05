@@ -974,7 +974,7 @@ en:
         based_on_year:
           body1: "This is"
           body2: "based on average costs in %{year_epc_created}"
-          body3: "when this EPC was created. People living at the property may use different amounts of heating, hot water and lighting."
+          body3: "when this EPC was created. People living at the property may use different amounts of energy for heating, hot water and lighting."
         heating:
           heading: "Heating this property"
           summary: "Estimated energy needed in this property is:"
