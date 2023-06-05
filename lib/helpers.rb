@@ -379,7 +379,7 @@ module Helpers
   end
 
   def referrer_outside_service?
-    return false if request.referrer.nil?
+    return false if request.referrer.nil? || request.referrer.empty?
 
     service_urls = [
       /www.gov.uk/,

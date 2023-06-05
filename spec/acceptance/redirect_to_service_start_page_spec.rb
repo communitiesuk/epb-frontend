@@ -41,6 +41,13 @@ RSpec.describe "Redirect to service start page" do
       expect(response.status).to eq(200)
     end
 
+    it "returns status 200 when a referrer is empty" do
+      env "HTTP_REFERER", ""
+      response = get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/type-of-property"
+
+      expect(response.status).to eq(200)
+    end
+
     it "returns status 303 when a referrer is outside of the service" do
       env "HTTP_REFERER", "http://example.com"
       response = get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/type-of-property"
