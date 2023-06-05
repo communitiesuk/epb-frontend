@@ -379,6 +379,8 @@ module Helpers
   end
 
   def referrer_outside_service?
+    return false if request.referrer.nil?
+
     service_urls = [
       /www.gov.uk/,
       /find-energy-certificate/,
@@ -386,7 +388,7 @@ module Helpers
       /epb-static-start-pages/,
     ]
 
-    request.referrer.nil? || service_urls.none? { |pattern| pattern.match?(request.referrer) }
+    service_urls.none? { |pattern| pattern.match?(request.referrer) }
   end
 
   PARAMS_OF_PATHS_NOT_ACCESSIBLE_DIRECTLY = {

@@ -3,8 +3,6 @@ RSpec.describe "Redirect to service start page" do
 
   let(:host_name) { "http://find-an-energy-certificate.local.gov.uk" }
 
-  paths = FrontendService.routes["GET"].map { |route| route.first.to_s } - %w[/]
-
   directly_accessible_paths = %w[
     /healthcheck
     /energy-certificate/:assessment_id
@@ -37,12 +35,10 @@ RSpec.describe "Redirect to service start page" do
       end
     end
 
-    (paths - directly_accessible_paths).each do |path|
-      it "returns status 303 for #{path} when a referrer is nil" do
-        response = get host_name + path
+    it "returns status 200 when a referrer is nil" do
+      response = get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/type-of-property"
 
-        expect(response.status).to eq(303)
-      end
+      expect(response.status).to eq(200)
     end
 
     it "returns status 303 when a referrer is outside of the service" do
@@ -59,7 +55,7 @@ RSpec.describe "Redirect to service start page" do
       expect(response.status).to eq(200)
     end
 
-    it "returns status 200 when a referrer is withing the services" do
+    it "returns status 200 when a referrer is within the services" do
       env "HTTP_REFERER", "https://getting-new-energy-certificate.service.gov.uk/find-an-assessor/type-of-domestic-property"
       response = get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/type-of-property"
 
