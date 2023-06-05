@@ -11,7 +11,9 @@ function copyToClipboard () {
   input.value = window.location.href
   input.select()
 
-  document.execCommand('copy')
+  if (typeof document.execCommand !== 'undefined' && (typeof document.queryCommandEnabled === 'undefined' || document.queryCommandEnabled('copy'))) {
+    document.execCommand('copy')
+  }
 
   navigator.permissions.query({ name: 'clipboard-write' })
     .then((result) => {
