@@ -974,7 +974,7 @@ cy:
         based_on_year:
           body1: "Mae hyn wedi’i"
           body2: "seilio ar y costau cyfartalog yn %{year_epc_created}"
-          body3: "pan gafodd yr EPC hon ei chreu. Gallai pobl sy'n byw yn yr eiddo ddefnyddio gwahanol symiau o ynni ar gyfer gwresogi, dŵr poeth a goleuadau."
+          body3: "pan gafodd yr EPC hon ei chreu. Gallai pobl sy’n byw yn yr eiddo ddefnyddio gwahanol symiau o ynni ar gyfer gwresogi, dŵr poeth a goleuadau."
         heating:
           heading: "Gwresogi’r eiddo hwn"
           summary: "Yr amcangyfrif o ynni angenrheidiol yr eiddo hwn yw:"
