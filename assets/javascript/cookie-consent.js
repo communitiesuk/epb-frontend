@@ -1,4 +1,3 @@
-
 /* global resolvers */
 // above is directive for linter (standard.js to ignore the 'resolvers' global var in this file
 
