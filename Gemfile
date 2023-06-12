@@ -9,7 +9,7 @@ group :development do
 end
 
 group :test do
-  gem "capybara", "~> 3.39.1"
+  gem "capybara", "~> 3.39.2"
   gem "capybara-selenium", "~> 0.0.6"
   gem "compare-xml", "~>0.66"
   gem "rack-test", "~> 2.1.0"
