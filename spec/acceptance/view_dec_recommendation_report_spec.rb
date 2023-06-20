@@ -19,6 +19,10 @@ describe "Acceptance::DecRecommendationReport", type: :feature do
         '<h1 class="govuk-heading-xl">Page not found</h1>',
       )
     end
+
+    it "does not display a back link" do
+      expect(response.body).not_to include('Back',)
+    end
   end
 
   context "when the assessment exists" do

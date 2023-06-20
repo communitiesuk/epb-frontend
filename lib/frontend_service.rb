@@ -1074,7 +1074,7 @@ class FrontendService < Sinatra::Base
 
   not_found do
     @page_title = "#{t('error.404.heading')} – #{t('layout.body.govuk')}"
-
+    @remove_back_link = true
     status 404
     erb :error_page_404 unless @errors
   end
