@@ -24,6 +24,9 @@ RUN curl -sL https://deb.nodesource.com/setup_18.x | bash -; \
     rm -rf /var/lib/apt/lists/*
 RUN cd /app && npm install && make frontend-build
 
+RUN adduser --system --no-create-home nonroot
+USER nonroot
+
 EXPOSE 80 443
 
 ENTRYPOINT ["bundle", "exec", "rackup", "-p", "80", "-o", "0.0.0.0"]
