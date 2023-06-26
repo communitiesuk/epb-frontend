@@ -267,8 +267,16 @@
       <p class="govuk-body">
         <%== t('domestic_epc.sections.recommendations.paying_for_energy_improvements.bus_text', :link => '<a class="govuk-link" href="' + t('domestic_epc.sections.recommendations.paying_for_energy_improvements.bus_url') + '">' + t('domestic_epc.sections.recommendations.paying_for_energy_improvements.bus_link_text') + '</a>' ) %>
       </p>
-
     </div>
+
+    <% unless assessment[:postcode][0..1] == "BT" %>
+      <h3 class="govuk-heading-m"><%= t('domestic_epc.sections.effect_on_bills.more_ways_to_save.heading') %></h3>
+      <% if print_view %>
+        <p class="govuk-body"><%= t('domestic_epc.sections.effect_on_bills.more_ways_to_save.cta_print') %> <a class="govuk-link" href=" <%= t('domestic_epc.sections.effect_on_bills.more_ways_to_save.url') %>"><%= t('domestic_epc.sections.effect_on_bills.more_ways_to_save.url_print') %></a>.</p>
+      <% else %>
+        <p class="govuk-body"><a class="govuk-link" href=" <%= t('domestic_epc.sections.effect_on_bills.more_ways_to_save.url') %>"><%= t('domestic_epc.sections.effect_on_bills.more_ways_to_save.cta') %></a>.</p>
+      <% end %>
+    <% end %>
 
     <%== erb :domestic_energy_performance_certificate__assessor_information, locals: { assessment: assessment , print_view: print_view} %>
 
