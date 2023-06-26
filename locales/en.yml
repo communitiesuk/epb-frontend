@@ -732,10 +732,10 @@ en:
     contents:
       title: "Certificate contents"
     energy_rating_section:
-      title: "Energy efficiency rating for this property"
+      title: "Energy rating and score"
       current_rating_text: "This property’s current energy rating is %{current_energy_efficiency_band}."
-      rating_desc: "Properties are given a rating from A+ (most efficient) to G (least efficient)."
-      score_desc: "Properties are also given a score. The larger the number, the more carbon dioxide (CO2) your property is likely to emit."
+      rating_desc: "Properties get a rating from A+ (best) to G (worst) and a score."
+      score_desc: "The better the rating and score, the lower your property's carbon emissions are likely to be."
       svg:
         chart_title: "Energy efficiency chart"
         chart_description: "This property’s current energy rating is %{current_energy_efficiency_band} with a score of %{current_energy_efficiency_rating}."

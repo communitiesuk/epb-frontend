@@ -732,10 +732,10 @@ cy:
     contents:
       title: "Cynnwys y dystysgrif"
     energy_rating_section:
-      title: "Cyfraddiad effeithlonrwydd ynni yr eiddo hwn"
+      title: "Cyfraddiad a sgôr ynni"
       current_rating_text: "Cyfraddiad effeithlonrwydd ynni presennol yr eiddo hwn yw %{current_energy_efficiency_band}."
-      rating_desc: "Mae cyfraddiad yn cael ei roi i bob eiddo, gan amrywio rhwng A+ (y mwyaf effeithlon) ac G (y lleiaf effeithlon)."
-      score_desc: "Mae pob eiddo’n cael sgôr hefyd. Uchaf i gyd yw’r rhif, mwyaf i gyd o garbon deuocsid (CO2) mae’ch eiddo’n debygol o’i allyrru."
+      rating_desc: "Mae eiddo’n cael cyfraddiad rhwng A (y gorau) ac G (y gwaethaf) a sgôr."
+      score_desc: "Gorau i gyd yw’r cyfraddiad a’r sgôr, isaf i gyd y mae allyriadau carbon yr eiddo yn debygol o fod."
       svg:
         chart_title: "Siart effeithlonrwydd ynni"
         chart_description: "Cyfraddiad ynni cyfredol yr eiddo hwn yw %{current_energy_efficiency_band} gyda sgôr o %{current_energy_efficiency_rating}."
