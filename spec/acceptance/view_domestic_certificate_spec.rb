@@ -1327,7 +1327,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
     end
 
     it "does not display a back link" do
-      expect(response.body).not_to include('Back',)
+      expect(response.body).not_to include("Back")
     end
   end
 
