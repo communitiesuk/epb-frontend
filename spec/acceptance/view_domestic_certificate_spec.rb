@@ -519,6 +519,16 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
     end
 
     context "when viewing environmental impact section" do
+      it "shows the impact title" do
+        expect(response.body).to include('<h2 class="govuk-heading-l">Impact on the environment</h2>')
+      end
+
+      it "shows the link to the environmental impact section in the certificate contents" do
+        expect(response.body).to have_css "a",
+                                          text:
+                                            "Impact on the environment"
+      end
+
       it "shows the summary text" do
         expect(response.body).to include(
           "This property’s current environmental impact rating is C. It has the potential to be B.",

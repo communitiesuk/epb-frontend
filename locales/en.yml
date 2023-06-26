@@ -838,7 +838,7 @@ en:
         renting: "Rules on letting this property"
         epc: "Energy rating and score"
         summary: "Breakdown of property’s energy performance"
-        energy: "Environmental impact of this property"
+        energy: "Impact on the environment"
         recommendations: "Changes you could make"
         bills_affected: "How this affects your energy bills"
         information: "Who to contact about this certificate"
@@ -994,7 +994,7 @@ en:
           url: "https://www.gov.uk/improve-energy-efficiency"
           url_print: "www.gov.uk/improve-energy-efficiency"
       environmental_impact:
-        title: "Environmental impact of this property"
+        title: "Impact on the environment"
         eir_rating: "This property’s current environmental impact rating is %{current_environmental_impact_rating}. It has the potential to be %{potential_environmental_impact_rating}."
         rating_scale: "Properties get a rating from A (best) to G (worst) on how much carbon dioxide (CO2) they produce each year. CO2 harms the environment."
         heading: "Carbon emissions"

@@ -838,7 +838,7 @@ cy:
         renting: "Rheolau ar osod yr eiddo hwn"
         epc: "Cyfraddiad a sgôr ynni"
         summary: "Ddadansoddiad o berfformiad ynni’r eiddo"
-        energy: "Effaith amgylcheddol yr eiddo hwn."
+        energy: "Effaith ar yr amgylchedd"
         recommendations: "Newidiadau y gallech eu gwneud"
         bills_affected: "Sut mae hyn yn effeithio ar eich biliau ynni"
         information: "Cysylltu â’r asesydd a’r cynllun achredu"
@@ -994,7 +994,7 @@ cy:
           url: "https://www.gov.uk/improve-energy-efficiency"
           url_print: "www.gov.uk/improve-energy-efficiency"
       environmental_impact:
-        title: "Effaith amgylcheddol yr eiddo hwn"
+        title: "Effaith ar yr amgylchedd"
         eir_rating: "Cyfraddiad effaith amgylcheddol yr eiddo hwn ar hyn o bryd yw %{current_environmental_impact_rating}. Mae gan yr eiddo y potensial i fod yn %{potential_environmental_impact_rating}."
         rating_scale: "Mae eiddo’n cael cyfraddiad rhwng A (y gorau) ac G (y gwaethaf) ar sail faint o garbon deuocsid (CO2) maen nhw’n ei gynhyrchu bob blwyddyn. Mae CO2 yn niweidio’r amgylchedd."
         heading: "Allyriadau carbon"
