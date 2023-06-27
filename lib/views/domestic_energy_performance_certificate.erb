@@ -20,7 +20,6 @@
   <%
     hide_bills_text = Helper::Certificate.hide_bills_text?(assessment)
     hide_heating_demand = Helper::Certificate.hide_heating_demand?(assessment)
-    hide_insulation_impact = Helper::Certificate.hide_insulation_impact?(assessment)
   %>
 
   <div class="govuk-grid-column-one-third govuk-!-display-none-print">
@@ -45,7 +44,7 @@
         {
           link: '#bills-affected',
           text: 'domestic_epc.sidebar.sections.bills_affected',
-          hidden: (hide_bills_text && hide_heating_demand && hide_insulation_impact)
+          hidden: (hide_bills_text && hide_heating_demand)
         },
         {
           link: '#energy',

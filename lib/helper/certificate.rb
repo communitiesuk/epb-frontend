@@ -16,11 +16,5 @@ module Helper
 
       (assessment[:heatDemand][:currentWaterHeatingDemand].nil? && assessment[:heatDemand][:currentSpaceHeatingDemand].nil?)
     end
-
-    def self.hide_insulation_impact?(assessment)
-      return true if assessment[:heatDemand].nil?
-
-      (assessment[:heatDemand][:impactOfLoftInsulation].nil? && assessment[:heatDemand][:impactOfCavityInsulation].nil? && assessment[:heatDemand][:impactOfSolidWallInsulation].nil?)
-    end
   end
 end

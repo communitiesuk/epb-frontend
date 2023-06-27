@@ -67,34 +67,4 @@ describe Helper::Certificate do
       end
     end
   end
-
-  describe "#hide_insulation_impact?" do
-    context "when all the attributes are null or empty" do
-      let(:assessment) do
-        {
-          heatDemand: { impactOfLoftInsulation: nil, impactOfCavityInsulation: nil, impactOfSolidWallInsulation: nil  },
-        }
-      end
-
-      it "returns false" do
-        expect(helper.hide_insulation_impact?(assessment)).to eq true
-        assessment[:impactOfLoftInsulation] = "5"
-        expect(helper.hide_heating_demand?(assessment)).to eq true
-        assessment[:heatDemand] = nil
-        expect(helper.hide_insulation_impact?(assessment)).to eq true
-      end
-    end
-
-    context "when the attributes have positive values" do
-      let(:assessment) do
-        {
-          heatDemand: { impactOfLoftInsulation: "1", impactOfCavityInsulation: "6", impactOfSolidWallInsulation: "4"  },
-        }
-      end
-
-      it "returns false" do
-        expect(helper.hide_insulation_impact?(assessment)).to eq false
-      end
-    end
-  end
 end

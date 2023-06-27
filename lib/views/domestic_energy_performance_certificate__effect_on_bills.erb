@@ -7,7 +7,7 @@
     <p class="govuk-body"><%= t('domestic_epc.sections.effect_on_bills.based_on_year.body1') %> <span class="govuk-!-font-weight-bold"><%= t('domestic_epc.sections.effect_on_bills.based_on_year.body2' , :year_epc_created => assessment[:dateRegistered].strftime("%Y") )%></span> <%= t('domestic_epc.sections.effect_on_bills.based_on_year.body3') %></p>
   <% end %>
 
-  <% unless hide_bills_text || (hide_heating_demand && hide_insulation_impact) %>
+  <% unless hide_bills_text || (hide_heating_demand) %>
     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
   <% end %>
 
