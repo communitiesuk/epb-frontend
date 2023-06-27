@@ -19,20 +19,4 @@
       <li><%= t('domestic_epc.sections.effect_on_bills.heating.hot_water', :water_heating => number_to_delimited(assessment[:heatDemand][:currentWaterHeatingDemand].abs)) %></li>
     </ul>
   <% end %>
-
-  <% unless hide_insulation_impact %>
-    <h3 class="govuk-heading-m"><%= t('domestic_epc.sections.effect_on_bills.saving_energy.heading') %></h3>
-      <p class="govuk-body"><%= t('domestic_epc.sections.effect_on_bills.saving_energy.summary') %></p>
-      <ul class="govuk-list--bullet govuk-!-margin-left-6">
-        <% if assessment[:heatDemand][:impactOfLoftInsulation] && assessment[:heatDemand][:impactOfLoftInsulation] < 0 %>
-          <li><%= t('domestic_epc.sections.effect_on_bills.saving_energy.insulation', :saving => number_to_delimited(assessment[:heatDemand][:impactOfLoftInsulation].abs)) %> <%= t('domestic_epc.sections.effect_on_bills.saving_energy.loft_insulation') %></li>
-        <% end %>
-        <% if assessment[:heatDemand][:impactOfCavityInsulation] && assessment[:heatDemand][:impactOfCavityInsulation] < 0  %>
-          <li><%= t('domestic_epc.sections.effect_on_bills.saving_energy.insulation', :saving => number_to_delimited(assessment[:heatDemand][:impactOfCavityInsulation].abs)) %> <%= t('domestic_epc.sections.effect_on_bills.saving_energy.cavity_insulation') %></li>
-        <% end %>
-        <% if assessment[:heatDemand][:impactOfSolidWallInsulation] && assessment[:heatDemand][:impactOfSolidWallInsulation] < 0  %>
-          <li><%= t('domestic_epc.sections.effect_on_bills.saving_energy.insulation', :saving => number_to_delimited(assessment[:heatDemand][:impactOfSolidWallInsulation].abs)) %> <%= t('domestic_epc.sections.effect_on_bills.saving_energy.solid_wall_insulation') %></li>
-        <% end %>
-      </ul>
-  <% end %>
 </div>

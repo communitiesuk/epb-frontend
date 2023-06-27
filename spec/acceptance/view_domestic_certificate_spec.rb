@@ -425,29 +425,6 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
         end
       end
 
-      context "when there is information only about the impact of loft insulation" do
-        before do
-          FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
-            assessment_id: "123-123",
-            current_rating: 25,
-            current_band: "f",
-            current_carbon_emission: "7.8453",
-            potential_carbon_emission: "6.5123",
-            impact_of_loft_insulation: -79,
-            impact_of_cavity_insulation: 0,
-            impact_of_solid_wall_insulation: nil,
-          )
-        end
-
-        let(:response) { get "/energy-certificate/123-123" }
-
-        it "only shows the information for loft insulation" do
-          expect(response.body).to include("79 kWh per year from loft insulation")
-          expect(response.body).not_to include("kWh per year from cavity wall insulation")
-          expect(response.body).not_to include("kWh per year from solid wall insulation")
-        end
-      end
-
       it "shows the section heading" do
         expect(response.body).to have_css "h2",
                                           text:
@@ -482,18 +459,6 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
 
       it "shows the current water heat demand" do
         expect(response.body).to include("321 kWh per year for hot water")
-      end
-
-      it "shows possible energy saving with loft insulation" do
-        expect(response.body).to include("79 kWh per year from loft insulation")
-      end
-
-      it "shows possible energy saving with cavity wall insulation" do
-        expect(response.body).to include("67 kWh per year from cavity wall insulation")
-      end
-
-      it "shows possible energy saving with solid wall insulation" do
-        expect(response.body).to include("69 kWh per year from solid wall insulation")
       end
     end
 

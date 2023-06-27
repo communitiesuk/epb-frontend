@@ -223,9 +223,9 @@
       assessment: assessment
     } %>
 
-    <% unless hide_bills_text && hide_heating_demand && hide_insulation_impact%>
+    <% unless hide_bills_text && hide_heating_demand%>
       <%== erb :domestic_energy_performance_certificate__effect_on_bills, locals: {
-        assessment: assessment, print_view: print_view, hide_bills_text: hide_bills_text, hide_heating_demand: hide_heating_demand, hide_insulation_impact: hide_insulation_impact
+        assessment: assessment, print_view: print_view, hide_bills_text: hide_bills_text, hide_heating_demand: hide_heating_demand
       } %>
     <% end %>
 
@@ -277,7 +277,7 @@
         <% end %>
       <% end %>
     </div>
-    
+
     <%== erb :domestic_energy_performance_certificate__assessor_information, locals: { assessment: assessment , print_view: print_view} %>
 
     <% if should_display_green_deal %>
