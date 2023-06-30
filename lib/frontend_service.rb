@@ -1030,11 +1030,9 @@ class FrontendService < Sinatra::Base
       data[:heatpump_data] = heatpump_data
     end
     show(erb_template, data)
-
   rescue Errors::ReportIncomplete
     data[:heatpump_data] = nil
     show(erb_template, data)
-
   rescue StandardError => e
     return server_error(e)
   end
@@ -1047,7 +1045,6 @@ class FrontendService < Sinatra::Base
     attachment params["country"] ? "service-performance-#{params['country']}.csv" : "service-performance-all-regions.csv"
 
     to_csv(data)
-
   rescue StandardError => e
     content_type "text/html"
     return server_error(e)
