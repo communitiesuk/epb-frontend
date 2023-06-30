@@ -27,4 +27,10 @@ describe "Helpers.filter_query_params", type: :helper do
       expect(frontend_service_helpers.filter_query_params("https://domain.com/fragment?remove=true&keep=true&delete=1", :remove, :delete)).to eq "https://domain.com/fragment?keep=true"
     end
   end
+
+  context "when URL contains non-ASCII" do
+    it "just removes query parameters as fallback" do
+      expect(frontend_service_helpers.filter_query_params("https://domain.com/energy-certificate/8531-6920-6699-5122-7906?print=true&_sm_au_=iVVsLpFrZJ6fRpnHFcVTvKQkc\xE2\x80\xA6", :print)).to eq "https://domain.com/energy-certificate/8531-6920-6699-5122-7906"
+    end
+  end
 end

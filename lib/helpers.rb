@@ -159,7 +159,11 @@ module Helpers
   end
 
   def filter_query_params(url, *filtered_params)
-    uri = URI.parse url
+    begin
+      uri = URI.parse url
+    rescue URI::InvalidURIError
+      return url.split("?").first # chances are it isn't important to retain query params that we aren't choosing to filter out
+    end
     filtered_query_params = if uri.query
                               uri.query.split("&").each_with_object({}) do |pair, hash|
                                 key, val = pair.split("=")
