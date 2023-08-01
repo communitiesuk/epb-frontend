@@ -1941,6 +1941,19 @@ en:
     preparation_paragraph: "This statement was prepared on 28 September 2021. It was last reviewed on 9 November 2022."
     accessibility_audit: "This website was last tested on 30 November 2020. The test was carried out by the Digital Accessibility Centre (DAC)."
 
+  help_page:
+    tel: "Telephone"
+    opening_times: "Monday to Friday, 9am to 5pm"
+    find_out_more: "Find out more about call charges"
+
+  find_service_help:
+    top_heading: "Get help finding an energy certificate"
+    intro: "If you need help finding an energy certificate or report, contact the Department for Levelling Up, Housing and Communities (DLUHC)."
+
+  get_service_help:
+    top_heading: "Get help finding an energy assessor"
+    intro: "For help finding an assessor, contact the Department for Levelling Up, Housing and Communities (DLUHC)."
+
   cookies:
     title: "Cookies on our service"
     intro: "Cookies are files saved on your phone, tablet or computer when you visit a website. The ´Find an energy certificate´ and ´Get a new energy certificate´ services uses cookies in order to understand how you use the services so we can update and improve them."

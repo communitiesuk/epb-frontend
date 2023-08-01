@@ -1050,6 +1050,22 @@ class FrontendService < Sinatra::Base
     return server_error(e)
   end
 
+  get "/help", host_name: /#{FIND_ENERGY_CERTIFICATE_HOST_NAME}/ do
+    @page_title =
+      "#{t('find_service_help.top_heading')} – #{t('layout.body.govuk')}"
+    erb_template = :help_page
+    data = { locals_node: "find_service_help" }
+    show(erb_template, data)
+  end
+
+  get "/help", host_name: /#{GETTING_NEW_ENERGY_CERTIFICATE_HOST_NAME}/ do
+    @page_title =
+      "#{t('get_service_help.top_heading')} – #{t('layout.body.govuk')}"
+    erb_template = :help_page
+    data = { locals_node: "get_service_help" }
+    show(erb_template, data)
+  end
+
   def show(template, locals, layout = :layout)
     locals[:errors] = @errors
     erb template, layout:, locals:

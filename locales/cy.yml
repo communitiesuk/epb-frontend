@@ -1941,6 +1941,20 @@ cy:
     preparation_paragraph: "Cafodd y datganiad hwn ei baratoi ar 28 Medi 2021. Y tro diwethaf iddo gael ei adolygu oedd 9 Tachwedd 2022."
     accessibility_audit: "Y tro diwethaf i’r wefan hon gael ei phrofi oedd 30 Tachwedd 2020. Cafodd y prawf ei gynnal gan y Ganolfan Hygyrchedd Digidol (DAC)."
 
+
+  help_page:
+    tel: "Ffôn"
+    opening_times: "Dydd Llun i ddydd Gwener, 9am i 5pm"
+    find_out_more: "Gwybodaeth am daliadau am alwadau"
+
+  find_service_help:
+    top_heading: "Cael help i ddod o hyd i dystysgrif ynni"
+    intro: "Os oes arnoch angen help i ddod o hyd i dystysgrif neu adroddiad ynni, cysylltwch â’r Adran Codi’r Gwastad, Tai a Chymunedau (DLUHC)."
+
+  get_service_help:
+    top_heading: "Cael help i ddod o hyd i asesydd ynni"
+    intro: "I gael help i ddod o hyd i asesydd, cysylltwch â’r Adran Codi’r Gwastad, Tai a Chymunedau (DLUHC)."
+
   cookies:
     title: "Cwcis ar ein gwasanaeth ni"
     intro: "Mae cwcis yn ffeiliau sy’n cael eu cadw ar eich ffôn, eich tabled neu’ch cyfrifiadur wrth ichi ymweld â gwefan. Mae’r gwasanaethau ‘Dod o hyd i dystysgrif ynni’ a ‘Cael tystysgrif ynni newydd’ yn defnyddio cwcis er mwyn deall sut rydych chi’n defnyddio’r gwasanaethau er mwyn inni allu eu diweddaru a’u gwella."
