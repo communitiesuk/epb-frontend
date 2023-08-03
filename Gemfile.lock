@@ -179,7 +179,7 @@ GEM
     websocket (1.2.9)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    zeitwerk (2.6.8)
+    zeitwerk (2.6.11)
 
 PLATFORMS
   ruby
@@ -209,7 +209,7 @@ DEPENDENCIES
   unleash (~> 4.4.3)
   webdrivers (~> 5.2.0)
   webmock (~> 3.18)
-  zeitwerk (~> 2.6.8)
+  zeitwerk (~> 2.6.11)
 
 RUBY VERSION
    ruby 3.1.3p185
