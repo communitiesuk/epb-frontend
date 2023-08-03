@@ -33,27 +33,32 @@ describe "Acceptance::AccessibilityStatement", type: :feature do
         expect(response.body).to have_css("footer")
       end
 
-      it "has four links in the footer" do
-        expect(response.body).to have_css("footer ul.govuk-footer__inline-list li", count: 4)
+      it "has five links in the footer" do
+        expect(response.body).to have_css("footer ul.govuk-footer__inline-list li", count: 5)
+      end
+
+      it "has a link in the footer for the help page" do
+        expect(response.body).to have_css("footer ul.govuk-footer__inline-list li:nth-child(1) a", text: "Help")
+        expect(response.body).to have_link("Help", href: "/help")
       end
 
       it "has a link in the footer for the accessibility statement" do
-        expect(response.body).to have_css("footer ul.govuk-footer__inline-list li:nth-child(1) a", text: "Accessibility statement")
-        expect(response.body).to have_link("Accessibility statement", href: "/accessibility-statement")
+        expect(response.body).to have_css("footer ul.govuk-footer__inline-list li:nth-child(2) a", text: "Accessibility")
+        expect(response.body).to have_link("Accessibility", href: "/accessibility-statement")
       end
 
       it "has a link in the footer for the cookies page" do
-        expect(response.body).to have_css("footer ul.govuk-footer__inline-list li:nth-child(2) a", text: "Cookies on our service")
-        expect(response.body).to have_link("Cookies on our service", href: "/cookies")
+        expect(response.body).to have_css("footer ul.govuk-footer__inline-list li:nth-child(3) a", text: "Cookies")
+        expect(response.body).to have_link("Cookies", href: "/cookies")
       end
 
       it "has a link in the footer for the feedback form" do
-        expect(response.body).to have_css("footer ul.govuk-footer__inline-list li:nth-child(3) a", text: "Give feedback")
+        expect(response.body).to have_css("footer ul.govuk-footer__inline-list li:nth-child(4) a", text: "Give feedback")
         expect(response.body).to have_link("Give feedback", href: "https://forms.office.com/e/hUnC3Xq1T4")
       end
 
       it "has a link in the footer for the service performance" do
-        expect(response.body).to have_css("footer ul.govuk-footer__inline-list li:nth-child(4) a", text: "Service performance")
+        expect(response.body).to have_css("footer ul.govuk-footer__inline-list li:nth-child(5) a", text: "Service performance")
         expect(response.body).to have_link("Service performance", href: "/service-performance")
       end
 

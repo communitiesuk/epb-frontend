@@ -94,6 +94,11 @@
         <h2 class="govuk-visually-hidden"><%=t('layout.body.footer.heading')%></h2>
         <ul class="govuk-footer__inline-list">
           <li class="govuk-footer__inline-list-item">
+            <a class="govuk-footer__link" href="<%= localised_url('/help')%>">
+              <%=t('layout.body.footer.help')%>
+            </a>
+          </li>
+          <li class="govuk-footer__inline-list-item">
             <a class="govuk-footer__link" href="<%= localised_url('/accessibility-statement')%>">
               <%=t('layout.body.footer.accessibility_statement')%>
             </a>
