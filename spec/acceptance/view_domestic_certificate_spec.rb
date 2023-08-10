@@ -620,12 +620,6 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
           "The assessor did not make any recommendations for this property.",
         )
       end
-
-      it "shows the link to the simple energy advice service" do
-        expect(response.body).to include(
-          "Simple Energy Advice has guidance on improving a property’s energy use.",
-        )
-      end
     end
 
     context "when viewing the breakdown of property’s energy performance section" do

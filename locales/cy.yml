@@ -1015,8 +1015,6 @@ cy:
           steps_in_order_answer1: "Oes. Mae pob cam yn adeiladu ar y cam blaenorol er mwyn ichi arbed yr ynni mwyaf posibl."
           steps_in_order_answer2: "Er enghraifft, mae’n fwy effeithlon o ran ynni ichi inswleiddio’ch cartref cyn prynu bwyler newydd. Bydd cartref sydd wedi’i inswleiddio’n dda yn colli llai o wres fel nad oes rhaid ichi ddefnyddio’ch bwyler mor aml."
           no_recommendations_summary: "Chafodd dim argymhellion eu gwneud gan yr asesydd ar gyfer yr eiddo hwn"
-          simple_energy_text: "Mae gan Simple Energy Advice ganllawiau ar wella’r defnydd ynni mewn eiddo"
-          simple_energy_link: "https://www.simpleenergyadvice.org.uk/"
         box:
           energy_rating_title: "Cyfraddiad ynni posibl"
         list:

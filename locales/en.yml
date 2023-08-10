@@ -1015,8 +1015,6 @@ en:
           steps_in_order_answer1: "Yes. Each step builds on the one before it so you can save the most energy."
           steps_in_order_answer2: "For example, it’s more energy efficient to insulate your home before you buy a new boiler. A well insulated home will lose less heat so you do not have to run your boiler as often."
           no_recommendations_summary: "The assessor did not make any recommendations for this property."
-          simple_energy_text: "Simple Energy Advice has guidance on improving a property’s energy use."
-          simple_energy_link: "https://www.simpleenergyadvice.org.uk/"
         box:
           energy_rating_title: "Potential energy rating"
         list:

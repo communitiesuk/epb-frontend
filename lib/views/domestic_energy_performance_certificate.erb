@@ -237,10 +237,6 @@
       <div class="allow-break <%= assessment[:recommendedImprovements].empty? ? 'epc-blue-bottom' : ''%>">
         <% if assessment[:recommendedImprovements].empty? %>
           <p class="govuk-body "><%= t('domestic_epc.sections.recommendations.summary.no_recommendations_summary') %></p>
-
-          <% unless assessment[:postcode][0..1] == "BT" %>
-            <a class="govuk-link" href="<%= t('domestic_epc.sections.recommendations.summary.simple_energy_link') %>"><%= t('domestic_epc.sections.recommendations.summary.simple_energy_text') %></a>
-          <% end %>
         <% else %>
           <details class="govuk-details" data-module="govuk-details">
             <summary class="govuk-details__summary">
