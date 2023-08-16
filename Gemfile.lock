@@ -144,7 +144,7 @@ GEM
     sass-embedded (1.64.2)
       google-protobuf (~> 3.23)
       rake (>= 13.0.0)
-    selenium-webdriver (4.10.0)
+    selenium-webdriver (4.11.0)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
@@ -205,7 +205,7 @@ DEPENDENCIES
   rspec (~> 3.12)
   rubocop-govuk (~> 4.12)
   rubocop-rspec (~> 2.22)
-  selenium-webdriver (~> 4.10.0)
+  selenium-webdriver (~> 4.11.0)
   sentry-ruby (~> 5.9)
   sinatra (~> 3.0)
   sinatra-contrib
