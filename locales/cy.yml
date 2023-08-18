@@ -379,7 +379,8 @@ cy:
   find_certificate_by_postcode_results:
     epcs_only: "Dim ond eiddo ag EPCs sy’n cael eu rhestru"
     no_epc:
-      get_a_new_one_with_results: "Os nad oes gan eich eiddo EPC ddilys, gallwch"
+      get_a_new_one_with_results_1: "Os yw’ch cyfeiriad heb ei restru neu os yw’ch EPC wedi dod i ben, "
+      get_a_new_one_with_results_2: ""
       get_a_new_one_no_results: "Os nad oes EPC gan eich eiddo, gallwch"
       get_a_new_one_link: "cael tystysgrif ynni newydd"
     list:
@@ -445,7 +446,8 @@ cy:
     top_heading: "Chwiliwch am dystysgrif perfformiad ynni (EPC)"
     epcs_only: "Dim ond eiddo ag EPCs sy’n cael eu rhestru"
     no_epc:
-      get_a_new_one_with_results: "Os nad oes gan eich eiddo EPC ddilys, gallwch"
+      get_a_new_one_with_results_1: "Os yw’ch cyfeiriad heb ei restru neu os yw’ch EPC wedi dod i ben, "
+      get_a_new_one_with_results_2: ""
       get_a_new_one_link: "cael tystysgrif ynni newydd"
     list:
       one_result: "%{length} canlyniad yn cyfateb i %{query}"
@@ -460,7 +462,8 @@ cy:
     top_heading: "Chwiliwch am dystysgrifau ynni ac adroddiadau"
     epcs_only: "Dim ond eiddo ag EPCs sy’n cael eu rhestru"
     no_epc:
-      get_a_new_one_with_results: "Os nad oes gan eich eiddo EPC ddilys, gallwch"
+      get_a_new_one_with_results_1: "Os yw’ch cyfeiriad heb ei restru neu os yw’ch EPC wedi dod i ben, "
+      get_a_new_one_with_results_2: ""
       get_a_new_one_link: "cael tystysgrif ynni newydd"
     list: "%{length} o dystysgrifau ac adroddiadau ar gyfer %{query}"
     table:
@@ -505,7 +508,8 @@ cy:
     top_heading: "Chwiliwch am dystysgrifau ynni ac adroddiadau"
     epcs_only: "Dim ond eiddo ag EPCs sy’n cael eu rhestru"
     no_epc:
-      get_a_new_one_with_results: "Os nad oes gan eich eiddo dystysgrif ynni ddilys, gallwch"
+      get_a_new_one_with_results_1: "Os yw’ch cyfeiriad heb ei restru neu os yw’ch EPC wedi dod i ben, "
+      get_a_new_one_with_results_2: ""
       get_a_new_one_no_results: "Os nad oes EPC gan eich eiddo, gallwch"
       get_a_new_one_link: "cael tystysgrif ynni newydd"
     no_results:

@@ -247,7 +247,7 @@ describe "Acceptance::Certificate" do
 
         it "shows the information regarding getting a new EPC" do
           expect(response.body).to include(
-            "If your property does not have a valid EPC, you can",
+            "If your address is not listed or your EPC has expired,",
           )
         end
 
@@ -918,7 +918,7 @@ describe "Acceptance::Certificate" do
 
         it "displays the text if user does not have a valid EPC" do
           expect(response.body).to include(
-            "If your property does not have a valid EPC, you can",
+            "If your address is not listed or your EPC has expired",
           )
         end
 
