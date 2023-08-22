@@ -380,7 +380,7 @@ cy:
     epcs_only: "Dim ond eiddo ag EPCs sy’n cael eu rhestru"
     no_epc:
       get_a_new_one_with_results_1: "Os yw’ch cyfeiriad heb ei restru neu os yw’ch EPC wedi dod i ben, "
-      get_a_new_one_with_results_2: ""
+      get_a_new_one_with_results_2: "gallwch"
       get_a_new_one_no_results: "Os nad oes EPC gan eich eiddo, gallwch"
       get_a_new_one_link: "cael tystysgrif ynni newydd"
     list:
@@ -447,7 +447,7 @@ cy:
     epcs_only: "Dim ond eiddo ag EPCs sy’n cael eu rhestru"
     no_epc:
       get_a_new_one_with_results_1: "Os yw’ch cyfeiriad heb ei restru neu os yw’ch EPC wedi dod i ben, "
-      get_a_new_one_with_results_2: ""
+      get_a_new_one_with_results_2: "gallwch"
       get_a_new_one_link: "cael tystysgrif ynni newydd"
     list:
       one_result: "%{length} canlyniad yn cyfateb i %{query}"
@@ -463,7 +463,7 @@ cy:
     epcs_only: "Dim ond eiddo ag EPCs sy’n cael eu rhestru"
     no_epc:
       get_a_new_one_with_results_1: "Os yw’ch cyfeiriad heb ei restru neu os yw’ch EPC wedi dod i ben, "
-      get_a_new_one_with_results_2: ""
+      get_a_new_one_with_results_2: "gallwch"
       get_a_new_one_link: "cael tystysgrif ynni newydd"
     list: "%{length} o dystysgrifau ac adroddiadau ar gyfer %{query}"
     table:
@@ -509,7 +509,7 @@ cy:
     epcs_only: "Dim ond eiddo ag EPCs sy’n cael eu rhestru"
     no_epc:
       get_a_new_one_with_results_1: "Os yw’ch cyfeiriad heb ei restru neu os yw’ch EPC wedi dod i ben, "
-      get_a_new_one_with_results_2: ""
+      get_a_new_one_with_results_2: "gallwch"
       get_a_new_one_no_results: "Os nad oes EPC gan eich eiddo, gallwch"
       get_a_new_one_link: "cael tystysgrif ynni newydd"
     no_results:

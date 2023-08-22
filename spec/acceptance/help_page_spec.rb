@@ -8,7 +8,7 @@ describe "Acceptance::HelpPage", type: :feature do
       end
 
       it "displays the help page title" do
-        expect(response.body).to have_title  "Get help finding an energy certificate – GOV.UK"
+        expect(response.body).to have_title "Get help finding an energy certificate – GOV.UK"
       end
 
       it "displays the help page heading" do
@@ -44,7 +44,7 @@ describe "Acceptance::HelpPage", type: :feature do
       end
 
       it "displays the help page title" do
-        expect(response.body).to have_title  "Get help finding an energy assessor – GOV.UK"
+        expect(response.body).to have_title "Get help finding an energy assessor – GOV.UK"
       end
 
       it "displays the help page heading" do

@@ -20,7 +20,7 @@ group :test do
 end
 
 gem "csv", "~> 3.2"
-gem 'dartsass-ruby', '~> 3.0', '>= 3.0.1'
+gem "dartsass-ruby", "~> 3.0", ">= 3.0.1"
 gem "epb-auth-tools", "~> 1.1.0"
 gem "erubis", "~> 2.7"
 gem "i18n", "~> 1.14.1"
