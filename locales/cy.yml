@@ -1902,9 +1902,9 @@ cy:
     top_heading: "Datganiad ar hygyrchedd"
     intro: "Mae’r datganiad hwn yn gymwys i gynnwys a gyhoeddir ar:
           <ul class=\"govuk-list govuk-list--bullet\">
-            <li><a class= \"govuk-link\" href=\"https://find-energy-certificate.service.gov.uk\">find-energy-certificate.service.gov.uk</a></li>
-            <li><a class= \"govuk-link\" href=\"https://getting-new-energy-certificate.service.gov.uk\">getting-new-energy-certificate.service.gov.uk</a></li>
-          </ul>"
+              <li><a class= \"govuk-link\" href=\"https://www.gov.uk/dod-o-hyd-i-dystysgrif-ynni\">www.gov.uk/dod-o-hyd-i-dystysgrif-ynni</a></li>
+              <li><a class= \"govuk-link\" href=\"https://www.gov.uk/cael-tystysgrif-ynni-newydd\">www.gov.uk/cael-tystysgrif-ynni-newydd</a></li>
+            </ul>"
     paragraph_1: "Mae’r wefan hon yn cael ei rhedeg gan y Adran Codi’r Gwastad, Tai a Chymunedau. Hoffem weld cynifer â phosibl o bobl yn gallu defnyddio’r wefan. Er enghraifft, mae hynny’n golygu y dylech chi allu:
                   <ul class=\"govuk-list govuk-list--bullet\">
                     <li>newid lefelau cyferbyniad lliw a ffontiau</li>
@@ -1922,7 +1922,7 @@ cy:
                           <li>Ffôn: 020 3829 0748</li>
                         </ul>"
     reporting_heading: "Rhoi gwybod am broblemau hygyrchedd gyda’r wefan hon"
-    reporting_paragraph: "Rydyn ni bob amser yn chwilio am ffyrdd i wella hygyrchedd y wefan hon. Os gwelwch chi unrhyw broblemau sydd heb eu rhestru ar y tudalen hwn neu os nad ydych yn credu ein bod yn bodloni’r gofynion ynglŷn â hygyrchedd, <a class=\"govuk-link\" href=\"https://forms.office.com/Pages/ResponsePage.aspx?id=EGg0v32c3kOociSi7zmVqHjpWgKFmwZGtrWhJ7I-WptUQzlDR0M5UllHQTI1NjNCNUtKRVdFRU9RUS4u\">rhowch  adborth</a>."
+    reporting_paragraph: "Rydyn ni bob amser yn chwilio am ffyrdd i wella hygyrchedd y wefan hon. Os gwelwch chi unrhyw broblemau sydd heb eu rhestru ar y tudalen hwn neu os nad ydych yn credu ein bod yn bodloni’r gofynion ynglŷn â hygyrchedd, <a class=\"govuk-link\" href=\"https://forms.office.com/e/hUnC3Xq1T4\">rhowch  adborth</a>."
     enforcement_heading: "Gweithdrefn orfodi"
     enforcement_paragraph: "Mae’r Comisiwn Cydraddoldeb a Hawliau Dynol (EHRC) yn gyfrifol am orfodi Rheoliadau Hygyrchedd Cyrff y Sector Cyhoeddus (Gwefannau a Chymwysiadau Symudol) (Rhif 2) 2018 (y ‘rheoliadau hygyrchedd’). Os nad ydych yn fodlon ar sut rydyn ni’n ymateb i’ch cwyn, <a class=\"govuk-link\" href=\"https://www.equalityadvisoryservice.com/\">cysylltwch â’r Gwasanaeth Cyngor a Chymorth Cydraddoldeb (EASS)</a>."
     technical_heading: "Gwybodaeth dechnegol am hygyrchedd y wefan hon"
@@ -1933,16 +1933,13 @@ cy:
     non_accessible_paragraph: "Nid yw’r cynnwys a restrir isod yn hygyrch a hynny am y rhesymau a ganlyn."
     non_compliance_heading: "Methu cydymffurfio â’r rheoliadau hygyrchedd"
     non_compliance_paragraph_1: "Mae rhywfaint o’r cynnwys yn dod oddi wrth aseswyr achrededig. Efallai na fydd yr wybodaeth hon wedi’i strwythuro’n gywir ar gyfer y we a’i fod yn anodd ei phori â darllenydd sgrin, yn fwyaf arbennig yn yr Adroddiadau ar Archwiliadau aerdymheru."
-    non_compliance_paragraph_2: "Mae gan rai tudalennau labeli dyblyg nad ydyn nhw’n ddisgrifiadol. Mae hyn yn golygu na all defnyddwyr darllenwyr sgrin sy’n pori y tu allan i’r cyd-destun ganfod beth mae’r labeli hyn yn ymwneud ag ef. Rydyn ni wrthi’n ychwanegu rhagor o wybodaeth i roi cyd-destun i’r labeli hyn."
-    non_compliance_paragraph_3: "Ar rai tudalennau ceir testun dolenni amwys. Mae hyn yn ei gwneud yn anodd i ddefnyddwyr darllenwyr sgrin wahaniaethu rhwng y dolenni. Rydyn ni wrthi’n ychwanegu rhagor o wybodaeth i roi mwy o gyd-destun i’r dolenni hyn."
-    non_compliance_paragraph_4: "Mae gan rai tudalennau gyferbyniad lliw gwael. Mae hyn yn methu maen prawf llwyddiant n1.4.1 WCAG 2.1 (Defnyddio Lliw)."
     out_of_scope_heading: "Cynnwys nad yw o fewn rhychwant y rheoliadau hygyrchedd"
     out_of_scope_paragraph: "Heb fod yn gymwys."
     what_we_do_heading: "Yr hyn rydyn ni’n ei wneud i wella hygyrchedd"
-    what_we_do_paragraph: "Bydd archwiliad hygyrchedd arall yn cael ei gynnal erbyn mis Mawrth 2023. Byddwn yn adrodd ar y canfyddiadau yma, ac yn gweithio i unioni unrhyw faterion ychwanegol a nodir cyn gynted â phosibl."
+    what_we_do_paragraph: "Cafodd archwiliad hygyrchedd arall ei gynnal ym mis Ionawr 2023. Byddwn yn adrodd ar y canfyddiadau yma, ac yn gweithio i unioni unrhyw faterion ychwanegol a nodir cyn gynted â phosibl."
     preparation_heading: "Paratoi’r datganiad hygyrchedd hwn"
-    preparation_paragraph: "Cafodd y datganiad hwn ei baratoi ar 28 Medi 2021. Y tro diwethaf iddo gael ei adolygu oedd 9 Tachwedd 2022."
-    accessibility_audit: "Y tro diwethaf i’r wefan hon gael ei phrofi oedd 30 Tachwedd 2020. Cafodd y prawf ei gynnal gan y Ganolfan Hygyrchedd Digidol (DAC)."
+    preparation_paragraph: "Cafodd y datganiad hwn ei baratoi ar 28 Medi 2021. Y tro diwethaf iddo gael ei adolygu oedd 25 Gorffennaf 2023."
+    accessibility_audit: "Y tro diwethaf i’r wefan hon gael ei phrofi oedd 3 Ionawr 2023. Cafodd y prawf ei gynnal gan y Ganolfan Hygyrchedd Digidol (DAC)."
 
 
   help_page:

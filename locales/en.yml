@@ -1902,8 +1902,8 @@ en:
     top_heading: "Accessibility statement"
     intro: "This statement applies to content published on:
             <ul class=\"govuk-list govuk-list--bullet\">
-              <li><a class= \"govuk-link\" href=\"https://find-energy-certificate.digital.communities.gov.uk\">find-energy-certificate.digital.communities.gov.uk</a></li>
-              <li><a class= \"govuk-link\" href=\"https://getting-new-energy-certificate.digital.communities.gov.uk\">getting-new-energy-certificate.digital.communities.gov.uk</a></li>
+              <li><a class= \"govuk-link\" href=\"https://gov.uk/find-energy-certificate\">www.gov.uk/find-energy-certificate</a></li>
+              <li><a class= \"govuk-link\" href=\"https://gov.uk/get-new-energy-certificate\">www.gov.uk/get-new-energy-certificate</a></li>
             </ul>"
     paragraph_1: "This website is run by the Department for Levelling Up, Housing and Communities. We want as many people as possible to be able to use this website. For example, that means you should be able to:
                   <ul class=\"govuk-list govuk-list--bullet\">
@@ -1922,7 +1922,7 @@ en:
                          <li>Telephone: 020 3829 0748</li>
                        </ul>"
     reporting_heading: "Reporting accessibility problems with this website"
-    reporting_paragraph: "We’re always looking to improve the accessibility of this website. If you find any problems not listed on this page or think we’re not meeting accessibility requirements please <a class=\"govuk-link\" href=\"https://forms.office.com/Pages/ResponsePage.aspx?id=EGg0v32c3kOociSi7zmVqHjpWgKFmwZGtrWhJ7I-WptUQzlDR0M5UllHQTI1NjNCNUtKRVdFRU9RUS4u\">give feedback</a>."
+    reporting_paragraph: "We’re always looking to improve the accessibility of this website. If you find any problems not listed on this page or think we’re not meeting accessibility requirements please <a class=\"govuk-link\" href=\"https://forms.office.com/e/hUnC3Xq1T4\">give feedback</a>."
     enforcement_heading: "Enforcement procedure"
     enforcement_paragraph: "The Equality and Human Rights Commission (EHRC) is responsible for enforcing the Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018 (the ‘accessibility regulations’). If you’re not happy with how we respond to your complaint, <a class=\"govuk-link\" href=\"https://www.equalityadvisoryservice.com/\">contact the Equality Advisory and Support Service (EASS)</a>."
     technical_heading: "Technical information about this website’s accessibility"
@@ -1933,16 +1933,13 @@ en:
     non_accessible_paragraph: "The content listed below is non-accessible for the following reasons."
     non_compliance_heading: "Non-compliance with the accessibility regulations"
     non_compliance_paragraph_1: "Some content comes from accredited assessors. This may not be correctly structured for the web and difficult to browse with a screen reader, most notably on the Air Conditioning Inspection Reports."
-    non_compliance_paragraph_2: "Some pages have duplicate non-descriptive labels. This means screen reader users browsing out of context cannot identify what these labels relate to. We’re adding more information to give these labels context."
-    non_compliance_paragraph_3: "On certain pages there is ambiguous link text. This makes it difficult for screen reader users to differentiate between the links. We’re adding more information to give these links more context. "
-    non_compliance_paragraph_4: "Some pages have poor colour contrast. This fails WCAG 2.1 success criterion 1.4.1 (Use of Colour)."
     out_of_scope_heading: "Content that’s not within the scope of the accessibility regulations"
     out_of_scope_paragraph: "Not applicable."
     what_we_do_heading: "What we’re doing to improve accessibility"
-    what_we_do_paragraph: "A further accessibility audit will be carried out by March 2023. We will report the findings here, and work to rectify any additional issues identified as quickly as possible."
+    what_we_do_paragraph: "A further accessibility audit was carried out in January 2023. We will report the findings here, and work to rectify any additional issues identified as quickly as possible."
     preparation_heading: "Preparation of this accessibility statement"
-    preparation_paragraph: "This statement was prepared on 28 September 2021. It was last reviewed on 9 November 2022."
-    accessibility_audit: "This website was last tested on 30 November 2020. The test was carried out by the Digital Accessibility Centre (DAC)."
+    preparation_paragraph: "This statement was prepared on 28 September 2021. It was last reviewed on 25 July 2023."
+    accessibility_audit: "This website was last tested on 3 January 2023. The test was carried out by the Digital Accessibility Centre (DAC)."
 
   help_page:
     tel: "Telephone"
