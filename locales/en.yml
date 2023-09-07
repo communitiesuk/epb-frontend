@@ -278,7 +278,7 @@ en:
     accredited_scheme: "Accreditation scheme"
     assessor_id_text: "assessor ID"
     errors:
-      missing_detail: Not Supplied
+      missing_detail: "Not Supplied"
 
   find_assessor_by_name:
     top_heading: "What is the assessor’s name?"
@@ -923,15 +923,15 @@ en:
         additional_information:
           title: "Additional information"
           intro: "Additional information about this property:"
-          cavity_fill_recommended: Cavity fill is recommended
-          stone_walls: Stone walls present, not insulated
-          system_build: System build present
-          access_issues: Dwelling has access issues for cavity wall insulation
-          high_exposure: Dwelling may be exposed to wind-driven rain
-          narrow_cavities: Dwelling may have narrow cavities
+          cavity_fill_recommended: "Cavity fill is recommended"
+          stone_walls: "Stone walls present, not insulated"
+          system_build: "System build present"
+          access_issues: "Dwelling has access issues for cavity wall insulation"
+          high_exposure: "Dwelling may be exposed to wind-driven rain"
+          narrow_cavities: "Dwelling may have narrow cavities"
           addendum_number_1:
             title: "Wall type does not correspond to options available in RdSAP"
-            details: The dwelling has a type of wall that is not included in the available options. The nearest equivalent type was used for the assessment.
+            details: "The dwelling has a type of wall that is not included in the available options. The nearest equivalent type was used for the assessment."
           addendum_number_2:
             title: "Room heater specified for water heating instead of a range cooker"
             details: "The water heating in this property is from a range cooker. A room heater using the same fuel, which gives similar ratings, was used for the assessment."
@@ -1123,258 +1123,258 @@ en:
 
   energy_performance_rating:
     "0":
-      energy_performance: N/A
+      energy_performance: "N/A"
     "1":
-      energy_performance: Very poor
+      energy_performance: "Very poor"
     "2":
-      energy_performance: Poor
+      energy_performance: "Poor"
     "3":
-      energy_performance: Average
+      energy_performance: "Average"
     "4":
-      energy_performance: Good
+      energy_performance: "Good"
     "5":
-      energy_performance: Very good
+      energy_performance: "Very good"
 
   improvement_code:
     1:
-      title: Hot water cylinder insulation
-      description: Insulate hot water cylinder with 80 mm jacket
+      title: "Hot water cylinder insulation"
+      description: "Insulate hot water cylinder with 80 mm jacket"
 
     2:
-      title: Hot water cylinder insulation
-      description: Increase hot water cylinder insulation
+      title: "Hot water cylinder insulation"
+      description: "Increase hot water cylinder insulation"
 
     3:
-      title: Hot water cylinder insulation
-      description: Add additional 80 mm jacket to hot water cylinder
+      title: "Hot water cylinder insulation"
+      description: "Add additional 80 mm jacket to hot water cylinder"
 
     4:
-      title: Hot water cylinder thermostat
-      description: Hot water cylinder thermostat
+      title: "Hot water cylinder thermostat"
+      description: "Hot water cylinder thermostat"
 
     5:
-      title: Increase loft insulation to 270 mm
-      description: Increase loft insulation to 270 mm
+      title: "Increase loft insulation to 270 mm"
+      description: "Increase loft insulation to 270 mm"
 
     6:
-      title: Cavity wall insulation
-      description: Cavity wall insulation
+      title: "Cavity wall insulation"
+      description: "Cavity wall insulation"
 
     7:
-      title: Internal or external wall insulation
-      description: Internal or external wall insulation
+      title: "Internal or external wall insulation"
+      description: "Internal or external wall insulation"
 
     8:
-      title: Double glazed windows
-      description: Replace single glazed windows with low-E double glazed windows
+      title: "Double glazed windows"
+      description: "Replace single glazed windows with low-E double glazed windows"
 
     9:
-      title: Secondary glazing
-      description: Secondary glazing to single glazed windows
+      title: "Secondary glazing"
+      description: "Secondary glazing to single glazed windows"
 
     10:
-      title: Draught proofing
-      description: Draught proofing
+      title: "Draught proofing"
+      description: "Draught proofing"
 
     11:
-      title: Heating controls (programmer, room thermostat and TRVs)
-      description: Heating controls (programmer, thermostat, TRVs)
+      title: "Heating controls (programmer, room thermostat and TRVs)"
+      description: "Heating controls (programmer, thermostat, TRVs)"
 
     12:
-      title: Heating controls (room thermostat and TRVs)
-      description: Heating controls (room thermostat and TRVs)
+      title: "Heating controls (room thermostat and TRVs)"
+      description: "Heating controls (room thermostat and TRVs)"
 
     13:
-      title: Heating controls (thermostatic radiator valves)
-      description: Heating controls (TRVs)
+      title: "Heating controls (thermostatic radiator valves)"
+      description: "Heating controls (TRVs)"
 
     14:
-      title: Heating controls (room thermostat)
-      description: Heating controls (room thermostat)
+      title: "Heating controls (room thermostat)"
+      description: "Heating controls (room thermostat)"
 
     15:
-      title: Heating controls (programmer and TRVs)
-      description: Heating controls (programmer and TRVs)
+      title: "Heating controls (programmer and TRVs)"
+      description: "Heating controls (programmer and TRVs)"
 
     16:
-      title: Heating controls (time and temperature zone control)
-      description: Heating controls (zone control)
+      title: "Heating controls (time and temperature zone control)"
+      description: "Heating controls (zone control)"
 
     17:
-      title: Heating controls (programmer and room thermostat)
-      description: Heating controls (programmer and thermostat)
+      title: "Heating controls (programmer and room thermostat)"
+      description: "Heating controls (programmer and thermostat)"
 
     18:
-      title: Heating controls (room thermostat)
-      description: Heating controls (room thermostat)
+      title: "Heating controls (room thermostat)"
+      description: "Heating controls (room thermostat)"
 
     19:
-      title: Solar water heating
-      description: Solar water heating
+      title: "Solar water heating"
+      description: "Solar water heating"
 
     20:
-      title: Replace boiler with new condensing boiler
-      description: Condensing boiler
+      title: "Replace boiler with new condensing boiler"
+      description: "Condensing boiler"
 
     21:
-      title: Replace boiler with new condensing boiler
-      description: Replace boiler with new condensing boiler
+      title: "Replace boiler with new condensing boiler"
+      description: "Replace boiler with new condensing boiler"
 
     22:
-      title: Replace boiler with biomass boiler
-      description: Biomass boiler
+      title: "Replace boiler with biomass boiler"
+      description: "Biomass boiler"
 
     23:
-      title: Biomass stove with boiler
-      description: Biomass stove with boiler
+      title: "Biomass stove with boiler"
+      description: "Biomass stove with boiler"
 
     24:
-      title: Fan assisted storage heaters and dual immersion cylinder
-      description: Fan assisted storage heaters and dual immersion cylinder
+      title: "Fan assisted storage heaters and dual immersion cylinder"
+      description: "Fan assisted storage heaters and dual immersion cylinder"
 
     25:
-      title: Fan assisted storage heaters
-      description: Fan assisted storage heaters
+      title: "Fan assisted storage heaters"
+      description: "Fan assisted storage heaters"
 
     26:
-      title: Replacement warm air unit
-      description: Replacement warm air unit
+      title: "Replacement warm air unit"
+      description: "Replacement warm air unit"
 
     27:
-      title: Change heating to gas condensing boiler
-      description: Gas condensing boiler
+      title: "Change heating to gas condensing boiler"
+      description: "Gas condensing boiler"
 
     28:
-      title: Condensing oil boiler with radiators
-      description: Condensing oil boiler
+      title: "Condensing oil boiler with radiators"
+      description: "Condensing oil boiler"
 
     29:
-      title: Gas condensing boiler
-      description: Gas condensing boiler
+      title: "Gas condensing boiler"
+      description: "Gas condensing boiler"
 
     30:
-      title: Fan assisted storage heaters and dual immersion cylinder
-      description: Fan assisted storage heaters and dual immersion cylinder
+      title: "Fan assisted storage heaters and dual immersion cylinder"
+      description: "Fan assisted storage heaters and dual immersion cylinder"
 
     31:
-      title: Fan-assisted storage heaters
-      description: Fan-assisted storage heaters
+      title: "Fan-assisted storage heaters"
+      description: "Fan-assisted storage heaters"
 
     32:
-      title: Change heating to gas condensing boiler
-      description: Change heating to gas condensing boiler
+      title: "Change heating to gas condensing boiler"
+      description: "Change heating to gas condensing boiler"
 
     34:
-      title: Solar photovoltaic panels, 2.5 kWp
-      description: Solar photovoltaic panels
+      title: "Solar photovoltaic panels, 2.5 kWp"
+      description: "Solar photovoltaic panels"
 
     35:
-      title: Low energy lighting
-      description: Low energy lighting
+      title: "Low energy lighting"
+      description: "Low energy lighting"
 
     36:
-      title: Condensing heating unit
-      description: Condensing heating unit
+      title: "Condensing heating unit"
+      description: "Condensing heating unit"
 
     37:
-      title: Condensing boiler (separate from the range cooker)
-      description: Condensing boiler
+      title: "Condensing boiler (separate from the range cooker)"
+      description: "Condensing boiler"
 
     38:
-      title: Condensing boiler (separate from the range cooker)
-      description: Condensing boiler
+      title: "Condensing boiler (separate from the range cooker)"
+      description: "Condensing boiler"
 
     39:
-      title: Biomass stove with boiler
-      description: Biomass stove with boiler
+      title: "Biomass stove with boiler"
+      description: "Biomass stove with boiler"
 
     40:
-      title: Change room heaters to condensing boiler
-      description: Condensing boiler
+      title: "Change room heaters to condensing boiler"
+      description: "Condensing boiler"
 
     42:
-      title: Mains gas condensing heating unit
-      description: Mains gas condensing heating unit
+      title: "Mains gas condensing heating unit"
+      description: "Mains gas condensing heating unit"
 
     44:
-      title: Wind turbine
-      description: Wind turbine
+      title: "Wind turbine"
+      description: "Wind turbine"
 
     45:
-      title: Flat roof or sloping ceiling insulation
-      description: Flat roof or sloping ceiling insulation
+      title: "Flat roof or sloping ceiling insulation"
+      description: "Flat roof or sloping ceiling insulation"
 
     46:
-      title: Room-in-roof insulation
-      description: Room-in-roof insulation
+      title: "Room-in-roof insulation"
+      description: "Room-in-roof insulation"
 
     47:
-      title: Floor insulation
-      description: Floor insulation
+      title: "Floor insulation"
+      description: "Floor insulation"
 
     48:
-      title: High performance external doors
-      description: High performance external doors
+      title: "High performance external doors"
+      description: "High performance external doors"
 
     49:
-      title: Heat recovery system for mixer showers
-      description: Heat recovery system for mixer showers
+      title: "Heat recovery system for mixer showers"
+      description: "Heat recovery system for mixer showers"
 
     50:
-      title: Flue gas heat recovery device in conjunction with boiler
-      description: Flue gas heat recovery
+      title: "Flue gas heat recovery device in conjunction with boiler"
+      description: "Flue gas heat recovery"
 
     51:
-      title: Air or ground source heat pump
-      description: ..
+      title: "Air or ground source heat pump"
+      description: ".."
 
     52:
-      title: Air or ground source heat pump with underfloor heating
-      description: ..
+      title: "Air or ground source heat pump with underfloor heating"
+      description: ".."
 
     53:
-      title: Micro CHP
-      description: ..
+      title: "Micro CHP"
+      description: ".."
 
     54:
-      title: Biomass boiler (Exempted Appliance if in Smoke Control Area)
-      description: ..
+      title: "Biomass boiler (Exempted Appliance if in Smoke Control Area)"
+      description: ".."
 
     55:
-      title: External and cavity wall insulation
-      description: ..
+      title: "External and cavity wall insulation"
+      description: ".."
 
     56:
-      title: Replacement glazing units
-      description: Replacement glazing units
+      title: "Replacement glazing units"
+      description: "Replacement glazing units"
 
     57:
-      title: Floor insulation (suspended floor)
-      description: Floor insulation (suspended floor)
+      title: "Floor insulation (suspended floor)"
+      description: "Floor insulation (suspended floor)"
 
     58:
-      title: Floor insulation (solid floor)
-      description: Floor insulation (solid floor)
+      title: "Floor insulation (solid floor)"
+      description: "Floor insulation (solid floor)"
 
     59:
-      title: High heat retention storage heaters
-      description: High heat retention storage heaters
+      title: "High heat retention storage heaters"
+      description: "High heat retention storage heaters"
 
     60:
-      title: High heat retention storage heaters
-      description: High heat retention storage heaters
+      title: "High heat retention storage heaters"
+      description: "High heat retention storage heaters"
 
     61:
-      title: High heat retention storage heaters
-      description: High heat retention storage heaters
+      title: "High heat retention storage heaters"
+      description: "High heat retention storage heaters"
 
     62:
-      title: High heat retention storage heaters
-      description: High heat retention storage heaters
+      title: "High heat retention storage heaters"
+      description: "High heat retention storage heaters"
 
     63:
-      title: Party wall insulation
-      description: Party wall insulation
+      title: "Party wall insulation"
+      description: "Party wall insulation"
 
   disclosure_code:
     1:

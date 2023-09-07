@@ -135,7 +135,7 @@ cy:
         email: "epc@cibsecertification.org"
         url: "https://www.cibsecertification.co.uk"
       ecmk:
-        name: ECMK
+        name: "ECMK"
         phone: "0333 123 1418"
         email: "info@ecmk.co.uk"
         url: "https://www.ecmk.co.uk"
@@ -160,22 +160,22 @@ cy:
         email: "info@quidos.co.uk"
         url: "https://quidos.co.uk"
       bre:
-        name: BRE
+        name: "BRE"
         phone: "01455 883 250"
         email: "enquiries@elmhurstenergy.co.uk"
         url: "https://www.elmhurstenergy.co.uk"
       besca:
-        name: BESCA
+        name: "BESCA"
         phone: "020 3829 0748"
         email: "dluhc.digital-services@levellingup.gov.uk"
         url: ""
       ciat:
-        name: CIAT
+        name: "CIAT"
         phone: "020 3829 0748"
         email: "dluhc.digital-services@levellingup.gov.uk"
         url: ""
       hvca:
-        name: HVCA
+        name: "HVCA"
         phone: "020 3829 0748"
         email: "dluhc.digital-services@levellingup.gov.uk"
         url: ""
@@ -185,12 +185,12 @@ cy:
         email: "dluhc.digital-services@levellingup.gov.uk"
         url: ""
       napit:
-        name: NAPIT
+        name: "NAPIT"
         phone: "020 3829 0748"
         email: "dluhc.digital-services@levellingup.gov.uk"
         url: ""
       nher:
-        name: NHER
+        name: "NHER"
         phone: "01455 883 250"
         email: "enquiries@elmhurstenergy.co.uk"
         url: "https://www.elmhurstenergy.co.uk"
@@ -200,17 +200,17 @@ cy:
         email: "enquiries@elmhurstenergy.co.uk"
         url: "https://www.elmhurstenergy.co.uk"
       northgate:
-        name: Northgate
+        name: "Northgate"
         phone: "01455 883 250"
         email: "enquiries@elmhurstenergy.co.uk"
         url: "https://www.elmhurstenergy.co.uk"
       rics:
-        name: RICS
+        name: "RICS"
         phone: "020 3829 0748"
         email: "dluhc.digital-services@levellingup.gov.uk"
         url: ""
       sava:
-        name: SAVA
+        name: "SAVA"
         phone: "01455 883 250"
         email: "enquiries@elmhurstenergy.co.uk"
         url: "https://www.elmhurstenergy.co.uk"
@@ -228,7 +228,7 @@ cy:
       cta: "chwilio am asesydd yn ôl enw"
     question: "Rhowch y cod post"
     hint: "Er enghraifft CF10 1EP"
-    button_text: Chwiliwch
+    button_text: "Chwiliwch"
     postcode_not_known: "Dod o hyd i god post ar Chwiliwr Cod Post y Post Brenhinol"
     scheme_not_found:
       heading: "Y cynllun achredu heb ei ganfod"
@@ -278,7 +278,7 @@ cy:
     accredited_scheme: "Cynllun achredu"
     assessor_id_text: "ID yr Asesydd"
     errors:
-      missing_detail: Heb eu darparu
+      missing_detail: "Heb eu darparu"
 
   find_assessor_by_name:
     top_heading: "Beth yw enw’r asesydd?"
@@ -376,7 +376,7 @@ cy:
 
   find_non_dom_certificate_results:
     table:
-      address: Cyfeiriad
+      address: "Cyfeiriad"
       type: "Y math o dystysgrif ac adroddiad"
       expiry: "Dilys tan"
     expired: "wedi dod i ben"
@@ -392,7 +392,7 @@ cy:
       one: "%{count} EPC ar gyfer %{postcode}"
       other: "%{count} EPCs ar gyfer %{postcode}"
     table:
-      address: Cyfeiriad
+      address: "Cyfeiriad"
       rating: "Cyfraddiad ynni"
       expiry: "Dilys tan"
     no_results:
@@ -409,7 +409,7 @@ cy:
     top_heading: "Beth yw rhif y dystysgrif?"
     question: "Rhowch rif tystysgrif"
     reference_number_not_registered: "Does dim tystysgrif wedi’i chanfod â’r rhif tystysgrif hwn"
-    button_text: Chwiliwch
+    button_text: "Chwiliwch"
     hint: "Er enghraifft 9002-3775-9101-5482-3149"
     no_network:
       heading: "Cysylltiad â’r rhwydwaith wedi methu"
@@ -422,7 +422,7 @@ cy:
       get_a_new_one_no_results: "Os nad oes EPC gan eich eiddo, gallwch"
       get_a_new_one_link: "cael tystysgrif ynni newydd"
       error: "Methwyd â dod o hyd i dystysgrif yn y cyfeiriad hwn"
-    button_text: Chwiliwch
+    button_text: "Chwiliwch"
     street_name_question: "Rhowch y stryd"
     street_name_hint: "Er enghraifft Primrose Street"
     town_question: "Rhowch y dref neu’r ddinas"
@@ -923,54 +923,54 @@ cy:
         additional_information:
           title: "Gwybodaeth ychwanegol"
           intro: "Gwybodaeth ychwanegol am yr eiddo hwn"
+          cavity_fill_recommended: "Argymhellir llenwi’r ceudodau"
+          stone_walls: "Waliau cerrig yn bresennol, hebeu hinswleiddio"
+          system_build: "Adeiladwaith system yn bresennol"
+          access_issues: "Mae gan yr annedd broblemau mynediad ar gyfer inswleiddio waliau ceudod"
+          high_exposure: "Gallai’r annedd fod yn agored i law sy’n cael ei yrru gan y gwynt"
+          narrow_cavities: "Gall fod gan yr annedd geudodau cul"
           addendum_number_1:
-            title: Nid yw’r math o wal yn cyfateb i’r opsiynau sydd ar gael yn yr RdSAP
-            details: Mae gan yr annedd fath o wal sydd heb ei gynnwys yn yr opsiynau sydd ar gael. Defnyddiwyd y math cyfatebol agosaf ar gyfer yr asesiad.
+            title: "Nid yw’r math o wal yn cyfateb i’r opsiynau sydd ar gael yn yr RdSAP"
+            details: "Mae gan yr annedd fath o wal sydd heb ei gynnwys yn yr opsiynau sydd ar gael. Defnyddiwyd y math cyfatebol agosaf ar gyfer yr asesiad."
           addendum_number_2:
-            title: Gwresogydd ystafell wedi’i bennu ar gyfer gwresogi dŵr ynhytrach na phopty estynedig
-            details: Ffwrn sy’n gwresogi dŵr yr eiddo hwn. Defnyddiwyd twymwr ystafell sy’n arfer yr un tanwydd ac yn rhoi cyfraddiadau cyffelyb, ar gyfer yr asesiad.
+            title: "Gwresogydd ystafell wedi’i bennu ar gyfer gwresogi dŵr ynhytrach na phopty estynedig"
+            details: "Ffwrn sy’n gwresogi dŵr yr eiddo hwn. Defnyddiwyd twymwr ystafell sy’n arfer yr un tanwydd ac yn rhoi cyfraddiadau cyffelyb, ar gyfer yr asesiad."
           addendum_number_3:
-            title: Gwresogi gofod o system unigola gwresogi dŵr o system gymunedol
-            details: System gymuned sy’n gwresogi dŵr yr eiddo hwn. Gwresogydd nwy aml-bwynt, sy’n rhoi cyfraddiadau cyffelyb, a ddefnyddiwyd ar gyfer yr asesiad.
+            title: "Gwresogi gofod o system unigola gwresogi dŵr o system gymunedol"
+            details: "System gymuned sy’n gwresogi dŵr yr eiddo hwn. Gwresogydd nwy aml-bwynt, sy’n rhoi cyfraddiadau cyffelyb, a ddefnyddiwyd ar gyfer yr asesiad."
           addendum_number_4:
-            title: Mae gan yr annedd bwll nofio
-            details: Dydy asesiad ynni’r annedd ddim yn cynnwys yr ynni a gaiff ei ddefnyddio i wresogi’r pwll nofio.
+            title: "Mae gan yr annedd bwll nofio"
+            details: "Dydy asesiad ynni’r annedd ddim yn cynnwys yr ynni a gaiff ei ddefnyddio i wresogi’r pwll nofio."
           addendum_number_5:
-            title: Mae gan yr annedd CHP meicro nad yw ar gael yn y gronfa ddata
-            details: Nid yw nodweddion perfformiad y system CHP meicro yn yr annedd hon yn hysbys a chafodd gwerthoedd diofyn eu defnyddio at yr asesiad.
+            title: "Mae gan yr annedd CHP meicro nad yw ar gael yn y gronfa ddata"
+            details: "Nid yw nodweddion perfformiad y system CHP meicro yn yr annedd hon yn hysbys a chafodd gwerthoedd diofyn eu defnyddio at yr asesiad."
           addendum_number_6:
-            title: Gwresogydd storio neu dau dwymydd tanddwr, a mesuryddtrydan sengl
-            details: Mae yma gyfarpar cyfradd ddeuol a chyflenwad cyfradd sengl. At ddibenion yr asesiad, cyfarpar cyfradd sengl sydd wedi’i ddefnyddio. Mae’n debyg y byddai newid y tariff trydan i gyflenwad heblaw’r cyflenwad oriau brig (cyfradd ddeuol) yn lleihau costau tanwydd ac yn gwella’r cyfraddiad ynni.
+            title: "Gwresogydd storio neu dau dwymydd tanddwr, a mesuryddtrydan sengl"
+            details: "Mae yma gyfarpar cyfradd ddeuol a chyflenwad cyfradd sengl. At ddibenion yr asesiad, cyfarpar cyfradd sengl sydd wedi’i ddefnyddio. Mae’n debyg y byddai newid y tariff trydan i gyflenwad heblaw’r cyflenwad oriau brig (cyfradd ddeuol) yn lleihau costau tanwydd ac yn gwella’r cyfraddiad ynni."
           addendum_number_7:
-            title: Gwres yn cael ei reoli gan TRVs yn unig
-            details: Nodwyd bod y gwres yn cael ei reoli â TRVs yn unig, nad yw’n un o’r opsiynau sydd ar gael ar hyn o bryd. Dylid deall bod yr argymhelliad ynghylch rheoli’r gwres yn golygu ychwanegu rhaglennydd a thermostat ystafell ochr yn ochr â’r TRVs sydd ar gael eisoes.
+            title: "Gwres yn cael ei reoli gan TRVs yn unig"
+            details: "Nodwyd bod y gwres yn cael ei reoli â TRVs yn unig, nad yw’n un o’r opsiynau sydd ar gael ar hyn o bryd. Dylid deall bod yr argymhelliad ynghylch rheoli’r gwres yn golygu ychwanegu rhaglennydd a thermostat ystafell ochr yn ochr â’r TRVs sydd ar gael eisoes."
           addendum_number_8:
-            title: PVs neu dyrbin gwynt yn bresennol ar yr eiddo (Cymru, Lloegr neu’r Alban)
-            details: Dydy’r asesiad ddim yn cynnwys unrhyw dariff dechreuol a allai fod yn gymwys ar gyfer yr eiddo hwn.
+            title: "PVs neu dyrbin gwynt yn bresennol ar yr eiddo (Cymru, Lloegr neu’r Alban)"
+            details: "Dydy’r asesiad ddim yn cynnwys unrhyw dariff dechreuol a allai fod yn gymwys ar gyfer yr eiddo hwn."
           addendum_number_9:
-            title: Dwy brif system wresogi ac argymhellir uwchraddio’r system wresogi
-            details: Gan fod mwy nag un system wresogi, dylech ofyn am gyngor proffesiynol am y dewis mwyaf cost-effeithiol i uwchraddio’r systemau.
+            title: "Dwy brif system wresogi ac argymhellir uwchraddio’r system wresogi"
+            details: "Gan fod mwy nag un system wresogi, dylech ofyn am gyngor proffesiynol am y dewis mwyaf cost-effeithiol i uwchraddio’r systemau."
           addendum_number_10:
-            title: Mesurydd trydan deuol wedi’i ddewis ond mae mesurydd trydan hefyd ar gyfer tariff safonol
-            details: Cyflawnwyd yr asesiad ar sail y tariff trydan am gyfnodau tawel. Fodd bynnag, gall rhai mathau o offer gwresogi neu ddwr poeth fod ar y tariff domestig safonol.
+            title: "Mesurydd trydan deuol wedi’i ddewis ond mae mesurydd trydan hefyd ar gyfer tariff safonol"
+            details: "Cyflawnwyd yr asesiad ar sail y tariff trydan am gyfnodau tawel. Fodd bynnag, gall rhai mathau o offer gwresogi neu ddwr poeth fod ar y tariff domestig safonol."
           addendum_number_11:
-            title: Mesurydd trydan sengl wedi’i ddewis ond mae mesurydd trydan hefyd ar gyfer tariff adegau tawel
-            details: Cyflawnwyd yr asesiad ar sail y tariff trydan domestig safonol. Fodd bynnag, gall rhai mathau o offer gwresogi neu ddwr poeth fod ar y tariff am gyfnodau tawel.
+            title: "Mesurydd trydan sengl wedi’i ddewis ond mae mesurydd trydan hefyd ar gyfer tariff adegau tawel"
+            details: "Cyflawnwyd yr asesiad ar sail y tariff trydan domestig safonol. Fodd bynnag, gall rhai mathau o offer gwresogi neu ddwr poeth fod ar y tariff am gyfnodau tawel."
           addendum_number_12:
-            title: Mae’r annedd yn defnyddio tanwydd biomas nad yw ar gaelyn yr opsiynau tanwydd yn yr RdSAP
-            details: Nid yw’r math o danwydd y mae’r anheddiad yn ei ddefnyddio wedi ei restru yn yr opsiynau sydd ar gael. Defnyddiwyd y math cyfatebol tebycaf o danwydd ar gyfer yr asesiad.
+            title: "Mae’r annedd yn defnyddio tanwydd biomas nad yw ar gaelyn yr opsiynau tanwydd yn yr RdSAP"
+            details: "Nid yw’r math o danwydd y mae’r anheddiad yn ei ddefnyddio wedi ei restru yn yr opsiynau sydd ar gael. Defnyddiwyd y math cyfatebol tebycaf o danwydd ar gyfer yr asesiad."
           addendum_number_13:
-            title: Cartref mewn Parc yw’r annedd
-            details: Mae’r annedd yn Home Park.
+            title: "Cartref mewn Parc yw’r annedd"
+            details: "Mae’r annedd yn Home Park."
           addendum_number_14:
-            title: Mae gan yr annedd nodwedd arbed ynni arbennig
-            details: Mae gan yr annedd nodwedd arbed ynni arbennig sy’n cael ei chydnabod yn yr asesiad, ond mae ei heffaith ar yr arbedion a ddangosir ar gyfer mesurau gwella wedi’i hanwybyddu.
-          cavity_fill_recommended: Argymhellir llenwi’r ceudodau
-          stone_walls: Waliau cerrig yn bresennol, hebeu hinswleiddio
-          system_build: Adeiladwaith system yn bresennol
-          access_issues: Mae gan yr annedd broblemau mynediad ar gyfer inswleiddio waliau ceudod
-          high_exposure: Gallai’r annedd fod yn agored i law sy’n cael ei yrru gan y gwynt
-          narrow_cavities: Gall fod gan yr annedd geudodau cul
+            title: "Mae gan yr annedd nodwedd arbed ynni arbennig"
+            details: "Mae gan yr annedd nodwedd arbed ynni arbennig sy’n cael ei chydnabod yn yr asesiad, ond mae ei heffaith ar yr arbedion a ddangosir ar gyfer mesurau gwella wedi’i hanwybyddu."
       effect_on_bills:
         title: "Sut mae hyn yn effeithio ar eich biliau ynni"
         average_household:
@@ -1618,11 +1618,11 @@ cy:
         subsystems_metered: "Is-systemau â mesurydd"
         refrigerant_charge: "Amcangyfrif o gyfanswm y tâl am oerydd"
         flags:
-          "0": Ie
-          "1": Na
+          "0": "Ie"
+          "1": "Na"
           "2": "Yn rhannol"
-          Y: Ie
-          N: Na
+          Y: "Ie"
+          N: "Na"
       inspection:
         title: "Adroddiad ar yr archwiliad"
         text: "I gael argymhellion yr asesydd, %{link}."
@@ -1704,7 +1704,7 @@ cy:
           areasServed: "Mannau neu systemau a wasanaethir"
           discrepancy: "Anghysondebau a nodwyd"
           location: "Lleoliad yr offer"
-          manufacturer: Gweithgynhyrchydd
+          manufacturer: "Gweithgynhyrchydd"
           systemsServed: "Systemau a wasanaethir o offer oeri"
           yearInstalled: "Y flwyddyn y’i gosodwyd "
         filters:
@@ -1747,7 +1747,7 @@ cy:
           component: "Cydran"
           description: "Disgrifiad o’r uned"
           coolingPlant: "Offer oeri sy’n gwasanaethu’r uned derfynell"
-          manufacturer: Gweithgynhyrchydd
+          manufacturer: "Gweithgynhyrchydd"
           yearInstalled: "Y flwyddyn y’i gosodwyd"
           areaServed: "Man a wasanaethir"
           discrepancy: "Anghysondebau a nodwyd"
@@ -1864,7 +1864,7 @@ cy:
             excessiveUse: "Ydy’r defnydd ynni neu’r oriau defnydd yn ormodol?"
             meteringInstalled: "Oes mesuryddion wedi’u gosod i ganiatáu i’r ynni a ddefnyddir gan yr offer oeri gael ei fonitro?"
             usageRecords: "Oes cofnodion ar gyfer yr offer o ddefnydd yr offer aerdymheru neu o ddefnyddio ynni ar is-fesurydd gyda nifer yr oriau y disgwylir eu defnyddio bob blwyddyn?"
-            reading: "Darlleniad mesurydd a gofnodwyd %{meter_reading}"
+            reading: "Darlleniad mesurydd a gofnodwyd: %{meter_reading}"
           chillers:
             title: "Oeryddion a Oerir gan Ddŵr (Tyrau Oeri a Chyddwysyddion Anweddu)"
             waterCooled: "Ydy llif y dŵr drwy dyrau oeri neu oeryddion anweddu yn gyson ac yn effeithlon, a hynny heb golli dŵr? "
@@ -1945,7 +1945,6 @@ cy:
     preparation_heading: "Paratoi’r datganiad hygyrchedd hwn"
     preparation_paragraph: "Cafodd y datganiad hwn ei baratoi ar 28 Medi 2021. Y tro diwethaf iddo gael ei adolygu oedd 25 Gorffennaf 2023."
     accessibility_audit: "Y tro diwethaf i’r wefan hon gael ei phrofi oedd 3 Ionawr 2023. Cafodd y prawf ei gynnal gan y Ganolfan Hygyrchedd Digidol (DAC)."
-
 
   help_page:
     tel: "Ffôn"
