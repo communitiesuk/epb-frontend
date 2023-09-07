@@ -214,6 +214,11 @@ en:
         phone: "01455 883 250"
         email: "enquiries@elmhurstenergy.co.uk"
         url: "https://www.elmhurstenergy.co.uk"
+      kaizen:
+        name: "Kaizen Certification Ltd"
+        phone: "0330 223 6278"
+        email: "certification@kaizencertification.co.uk"
+        url: "https://kaizencertification.co.uk/"
 
   find_assessor_by_postcode:
     top_heading: "What is the property’s postcode?"
