@@ -37,17 +37,6 @@ shared_examples "a certificate search function" do |certificate_type:, property_
         end
       end
 
-      context "when selecting a certificate and then clicking on the back link" do
-        before do
-          click_on link_text_in_postcode_search_results, match: :first
-          click_on "Back"
-        end
-
-        it "shows the postcode's search results page again" do
-          expect(page).to have_current_path("/#{url_fragment}/search-by-postcode?postcode=SW1A+2AA")
-        end
-      end
-
       context "when selecting to get a new energy certificate" do
         before do
           click_on "get a new energy certificate"
@@ -174,10 +163,6 @@ shared_examples "a certificate search function" do |certificate_type:, property_
           expect(page).to have_content "2 Marsham Street"
           expect(page).to have_content "Valid until"
           expect(page).to have_content "5 January 2030"
-        end
-
-        it "displays a backlink on the page" do
-          expect(page).to have_content "Back"
         end
       end
 

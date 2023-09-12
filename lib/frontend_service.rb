@@ -56,7 +56,6 @@ class FrontendService < Sinatra::Base
       "#{t('find_an_assessor.top_heading')} – #{
         t('services.getting_an_energy_certificate')
       } – #{t('layout.body.govuk')}"
-    @remove_back_link = true
 
     erb :find_assessor, layout: :layout
   end
@@ -67,7 +66,6 @@ class FrontendService < Sinatra::Base
       "#{t('find_a_certificate.top_heading')} – #{
         t('services.find_an_energy_certificate')
       } – #{t('layout.body.govuk')}"
-    @remove_back_link = true
 
     erb :find_certificate, layout: :layout
   end
@@ -80,7 +78,6 @@ class FrontendService < Sinatra::Base
         "#{t('find_an_assessor.property_type.question_title')} – #{
           t('services.getting_an_energy_certificate')
         } – #{t('layout.body.govuk')}"
-      back_link root_page_url
 
       if params["property_type"] == "domestic"
         redirect localised_url("/find-an-assessor/type-of-domestic-property")
@@ -110,7 +107,6 @@ class FrontendService < Sinatra::Base
         "#{t('find_an_assessor.domestic_property_type.question_title')} – #{
           t('services.getting_an_energy_certificate')
         } – #{t('layout.body.govuk')}"
-      back_link "/find-an-assessor/type-of-property"
 
       if request.post? && params["domestic_type"].nil?
         @errors = {
@@ -148,7 +144,6 @@ class FrontendService < Sinatra::Base
     locals = {}
 
     erb_template = :find_non_dom_certificate_by_postcode
-    back_link "/find-a-certificate/type-of-property"
 
     @page_title =
       "#{t('find_non_dom_certificate_by_postcode.top_heading')} – #{
@@ -176,7 +171,6 @@ class FrontendService < Sinatra::Base
         erb_template = :find_non_dom_certificate_by_postcode_results
         search_results_heading = locals[:results].length.positive? ? t("#{erb_template}.list", length: count_certificates(locals[:results]), postcode: CGI.escapeHTML(params["postcode"].upcase)) : t("find_certificate_by_postcode_results.no_results.no_postcode", postcode: CGI.escapeHTML(params["postcode"].upcase))
         @page_title = "#{search_results_heading} – #{t('services.find_an_energy_certificate')} – #{t('layout.body.govuk')}"
-        back_link "/find-a-non-domestic-certificate/search-by-postcode"
       rescue StandardError => e
         case e
         when Errors::PostcodeIncomplete
@@ -229,7 +223,6 @@ class FrontendService < Sinatra::Base
     @errors = {}
     locals = {}
     erb_template = :find_non_dom_certificate_by_reference_number
-    back_link "/find-a-non-domestic-certificate/search-by-postcode"
     @page_title =
       "#{t('find_non_dom_certificate_by_reference_number.top_heading')} – #{
         t('services.find_an_energy_certificate')
@@ -290,7 +283,6 @@ class FrontendService < Sinatra::Base
     @errors = {}
     locals = {}
     erb_template = :find_assessor_by_postcode
-    back_link "/find-an-assessor/type-of-domestic-property?domestic_type=#{params['domestic_type']}"
     qualification = params["domestic_type"] || "domesticRdSap,domesticSap"
 
     find_assessor_use_case = @container.get_object(:find_assessor_by_postcode_use_case)
@@ -305,11 +297,6 @@ class FrontendService < Sinatra::Base
       begin
         locals[:results] =
           find_assessor_use_case.execute(params["postcode"], qualification)[:data][:assessors]
-        if params["domestic_type"]
-          back_link "/find-an-assessor/search-by-postcode?domestic_type=#{params['domestic_type']}"
-        else
-          back_link "/find-an-assessor/search-by-postcode"
-        end
         erb_template = :find_assessor_by_postcode_results
         search_results_heading = locals[:results].length.positive? ? t("#{erb_template}.results", count: locals[:results].length, postcode: params["postcode"].upcase) : t("#{erb_template}.no_assessors_heading", postcode: params["postcode"].upcase)
         @page_title = "#{search_results_heading} – #{t('services.getting_an_energy_certificate')} – #{t('layout.body.govuk')}"
@@ -366,7 +353,6 @@ class FrontendService < Sinatra::Base
     raise Error::UriTooLong if status.to_s == "414"
 
     erb_template = :find_assessor_by_name
-    back_link "/find-an-assessor/search-by-postcode"
 
     response = @container.get_object(:find_assessor_by_name_use_case)
 
@@ -385,7 +371,6 @@ class FrontendService < Sinatra::Base
         erb_template = :find_assessor_by_name_results
         search_results_heading = t((locals[:meta][:looseMatch] ? "#{erb_template}.results.results_like" : "#{erb_template}.results.results"), count: locals[:results].length, name: params["name"])
         @page_title = "#{search_results_heading} – #{t('services.getting_an_energy_certificate')} – #{t('layout.body.govuk')}"
-        back_link "/find-an-assessor/search-by-name"
       rescue StandardError => e
         case e
         when Errors::InvalidName
@@ -412,7 +397,6 @@ class FrontendService < Sinatra::Base
     raise Error::UriTooLong if status.to_s == "414"
 
     erb_template = :find_non_domestic_assessor_by_name
-    back_link "/find-a-non-domestic-assessor/search-by-postcode"
 
     response = @container.get_object(:find_assessor_by_name_use_case)
 
@@ -431,7 +415,6 @@ class FrontendService < Sinatra::Base
         erb_template = :find_non_domestic_assessor_by_name_results
         search_results_heading = t((locals[:meta][:looseMatch] ? "find_assessor_by_name_results.results.results_like" : "find_assessor_by_name_results.results.results"), count: locals[:results].length, name: params["name"])
         @page_title = "#{search_results_heading} – #{t('services.getting_an_energy_certificate')} – #{t('layout.body.govuk')}"
-        back_link "/find-a-non-domestic-assessor/search-by-name"
       rescue StandardError => e
         case e
         when Errors::InvalidName
@@ -462,7 +445,6 @@ class FrontendService < Sinatra::Base
         "#{t('find_a_certificate.property_type.question_title')} – #{
           t('services.find_an_energy_certificate')
         } – #{t('layout.body.govuk')}"
-      back_link root_page_url
 
       if params["property_type"] == "domestic"
         redirect localised_url(
@@ -499,7 +481,6 @@ class FrontendService < Sinatra::Base
     @errors = {}
     locals = {}
     erb_template = :find_certificate_by_postcode
-    back_link "/find-a-certificate/type-of-property"
 
     @page_title =
       "#{t('find_certificate_by_postcode.top_heading')} – #{
@@ -523,7 +504,6 @@ class FrontendService < Sinatra::Base
         erb_template = :find_certificate_by_postcode_results
         search_results_heading = locals[:results].size.positive? ? t("#{erb_template}.list", count: count_certificates(locals[:results]), postcode: CGI.escapeHTML(params["postcode"].upcase)) : t("#{erb_template}.no_results.no_postcode", postcode: CGI.escapeHTML(params["postcode"].upcase))
         @page_title = "#{search_results_heading} – #{t('services.find_an_energy_certificate')} – #{t('layout.body.govuk')}"
-        back_link "/find-a-certificate/search-by-postcode"
       rescue StandardError => e
         case e
         when Errors::PostcodeIncomplete
@@ -576,7 +556,6 @@ class FrontendService < Sinatra::Base
     @errors = {}
     locals = {}
     erb_template = :find_non_domestic_assessor_by_postcode
-    back_link "/find-an-assessor/type-of-property"
 
     response =
       @container.get_object(:find_non_domestic_assessor_by_postcode_use_case)
@@ -592,7 +571,6 @@ class FrontendService < Sinatra::Base
       begin
         locals[:results] =
           response.execute(params["postcode"])[:data][:assessors]
-        back_link "/find-a-non-domestic-assessor/search-by-postcode"
 
         erb_template = :find_non_domestic_assessor_by_postcode_results
         search_results_heading = locals[:results].length.positive? ? t("find_assessor_by_postcode_results.results", count: locals[:results].length, postcode: params["postcode"].upcase) : t("find_assessor_by_postcode_results.no_assessors_heading", postcode: params["postcode"].upcase)
@@ -647,7 +625,6 @@ class FrontendService < Sinatra::Base
     @errors = {}
     locals = {}
     erb_template = :find_non_dom_certificate_by_street_name_and_town
-    back_link "/find-a-non-domestic-certificate/search-by-postcode"
 
     @page_title =
       "#{t('find_non_dom_certificate_by_street_name_and_town.top_heading')} – #{
@@ -655,7 +632,6 @@ class FrontendService < Sinatra::Base
       } – #{t('layout.body.govuk')}"
 
     if params.key?("town") || params.key?("street_name")
-      back_link "/find-a-non-domestic-certificate/search-by-street-name-and-town"
       begin
         locals[:results] =
           @container
@@ -748,7 +724,6 @@ class FrontendService < Sinatra::Base
     @errors = {}
     locals = {}
     erb_template = :find_certificate_by_reference_number
-    back_link "/find-a-certificate/search-by-postcode"
     @page_title =
       "#{t('find_certificate_by_reference_number.top_heading')} – #{
         t('services.find_an_energy_certificate')
@@ -799,7 +774,6 @@ class FrontendService < Sinatra::Base
     raise Error::UriTooLong if status.to_s == "414"
 
     erb_template = :find_certificate_by_street_name_and_town
-    back_link "/find-a-certificate/search-by-postcode"
 
     @page_title =
       "#{t('find_certificate_by_street_name_and_town.top_heading')} – #{
@@ -807,7 +781,6 @@ class FrontendService < Sinatra::Base
       } – #{t('layout.body.govuk')}"
 
     if params.key?("town") || params.key?("street_name")
-      back_link "/find-a-certificate/search-by-street-name-and-town"
       begin
         locals[:results] =
           @container
@@ -911,7 +884,6 @@ class FrontendService < Sinatra::Base
         t('layout.body.govuk')
       }"
     use_print_view = params["print"] == "true"
-    back_link request.referrer ? assessment_back_link(assessment) : nil
 
     cache_control :public, max_age: 60
     status 200
@@ -1002,13 +974,11 @@ class FrontendService < Sinatra::Base
     status 200
     @page_title =
       "#{t('accessibility_statement.top_heading')} – #{t('layout.body.govuk')}"
-    back_link false
     erb :accessibility_statement
   end
 
   get "/cookies" do
     @page_title = "#{t('cookies.title')} – #{t('layout.body.govuk')}"
-    back_link false
     status 200
     erb :cookies, locals: { is_success: params[:success] == "true" }
   end
@@ -1020,7 +990,6 @@ class FrontendService < Sinatra::Base
   get "/service-performance" do
     @page_title = "#{t('service_performance.heading')} – #{t('layout.body.govuk')}"
     status 200
-    back_link false
     erb_template = :service_performance
     use_case = @container.get_object(:fetch_statistics_use_case)
     data = use_case.execute
@@ -1053,7 +1022,6 @@ class FrontendService < Sinatra::Base
   get "/help", host_name: /#{FIND_ENERGY_CERTIFICATE_HOST_NAME}/ do
     @page_title =
       "#{t('find_service_help.top_heading')} – #{t('layout.body.govuk')}"
-    back_link false
     erb_template = :help_page
     data = { locals_node: "find_service_help" }
     show(erb_template, data)
@@ -1062,7 +1030,6 @@ class FrontendService < Sinatra::Base
   get "/help", host_name: /#{GETTING_NEW_ENERGY_CERTIFICATE_HOST_NAME}/ do
     @page_title =
       "#{t('get_service_help.top_heading')} – #{t('layout.body.govuk')}"
-    back_link false
     erb_template = :help_page
     data = { locals_node: "get_service_help" }
     show(erb_template, data)
@@ -1089,7 +1056,6 @@ class FrontendService < Sinatra::Base
 
   not_found do
     @page_title = "#{t('error.404.heading')} – #{t('layout.body.govuk')}"
-    @remove_back_link = true
     status 404
     erb :error_page_404 unless @errors
   end
@@ -1100,7 +1066,6 @@ class FrontendService < Sinatra::Base
 
   error MaintenanceMode do
     status 503
-    @remove_back_link = true
     @page_title =
       "#{t('service_unavailable.title')} – #{t('layout.body.govuk')}"
     erb :service_unavailable
@@ -1124,20 +1089,5 @@ class FrontendService < Sinatra::Base
       "#{t('error.500.heading')} – #{t('layout.body.govuk')}"
     status(was_timeout ? 504 : 500)
     erb :error_page_500
-  end
-
-  def back_link(url)
-    if url
-      @back_url = url
-    else
-      @remove_back_link = true
-    end
-  end
-
-  def assessment_back_link(assessment)
-    type_fragment = %w[RdSAP SAP].include?(assessment[:data][:typeOfAssessment]) ? "find-a-certificate" : "find-a-non-domestic-certificate"
-    postcode = assessment.dig(:data, :address, :postcode)
-
-    "/#{type_fragment}/search-by-postcode?postcode=#{CGI.escape(postcode)}"
   end
 end

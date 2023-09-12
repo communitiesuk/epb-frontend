@@ -116,25 +116,6 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
         expect(page).to have_link "Enter a valid UK postcode in the format LS1 4AP"
       end
     end
-
-    context "when going back in the flow" do
-      before do
-        click_on "Back"
-      end
-
-      it "goes back from Postcode page to Domestic property type page" do
-        expect(page).to have_content "Is this an existing or new building?"
-      end
-
-      it "has domestic property type pre-selected" do
-        expect(find("#domesticRdSap", visible: :all)).to be_checked
-      end
-
-      it "goes back from Domestic property type page to Property type page" do
-        click_on "Back"
-        expect(page).to have_content "What type of property is the certificate for?"
-      end
-    end
   end
 
   context "when finding a domestic assessor by name" do
@@ -305,10 +286,6 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
         click_on "Search"
       end
 
-      it "shows a back link to the non-domestic search by name form" do
-        expect(page).to have_link("Back", href: /find-a-non-domestic-assessor\/search-by-name/)
-      end
-
       it "displays search results" do
         expect(page).to have_content("8 results for the name Supercommon Name")
       end
@@ -342,26 +319,6 @@ describe "Journey::FindAssessor", type: :feature, journey: true do
       expect(page).to have_content "Select a type of property"
       expect(page).to have_content "There is a problem"
       expect(page).to have_link "Select a type of property"
-    end
-  end
-
-  context "when the back link on the type of property step is clicked" do
-    before do
-      visit getting_domain
-      click_on "Start now"
-      click_link "Back"
-    end
-
-    it "shows the Get a new energy certificate start page" do
-      expect(page.find("h1")).to have_content "Get a new energy certificate"
-    end
-  end
-
-  context "when a static app for the root page is not configured" do
-    it "displays a back link to the root page" do
-      visit getting_domain
-      click_on "Start now"
-      expect(find(".govuk-back-link")[:href]).to eq "#{getting_domain}/"
     end
   end
 end

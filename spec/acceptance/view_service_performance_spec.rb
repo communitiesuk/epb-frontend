@@ -164,10 +164,6 @@ describe "Acceptance::ServicePerformance", type: :feature do
       end
     end
 
-    it "does not contain a back link" do
-      expect { Capybara.string(response.body).find("a.govuk-back-link") }.to raise_error Capybara::ElementNotFound
-    end
-
     it "ensure all ids are unique" do
       div_ids = Capybara.string(response.body).all("div").map { |d| d["id"] }.compact
       div_ids.each do |id|

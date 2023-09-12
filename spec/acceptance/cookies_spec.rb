@@ -42,10 +42,6 @@ describe "cookies page", type: :feature do
           "Cookies that measure website use",
         )
       end
-
-      it "does not contain a back link" do
-        expect { Capybara.string(response.body).find("a.govuk-back-link") }.to raise_error Capybara::ElementNotFound
-      end
     end
   end
 end

@@ -5,16 +5,6 @@ describe "Acceptance::Certificate" do
 
   describe ".get getting-new-energy-certificate/find-a-certificate/type-of-property",
            type: :feature do
-    context "when on start page" do
-      let(:response) do
-        get "http://find-energy-certificate.local.gov.uk/"
-      end
-
-      it "does not display a back link" do
-        expect { Capybara.string(response.body).find("a.govuk-back-link") }.to raise_error Capybara::ElementNotFound
-      end
-    end
-
     context "when on page to decide property type" do
       let(:response) do
         get "http://find-energy-certificate.local.gov.uk/find-a-certificate/type-of-property"
@@ -24,10 +14,6 @@ describe "Acceptance::Certificate" do
         expect(response.body).to include(
           "<title>What type of property is the certificate for? – Find an energy certificate – GOV.UK</title>",
         )
-      end
-
-      it "displays a back link" do
-        expect(Capybara.string(response.body).find("a.govuk-back-link")).not_to be nil
       end
     end
 
