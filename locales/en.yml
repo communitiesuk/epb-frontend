@@ -50,8 +50,6 @@ en:
         accepted: "You’ve accepted analytics cookies. You can %{change_settings_link} at any time."
         rejected: "You’ve rejected analytics cookies. You can %{change_settings_link} at any time."
         hide_message: "Hide cookie message"
-      breadcrumb:
-        back: "Back"
       footer:
         heading: "Support links"
         accessibility_statement: "Accessibility"

@@ -50,8 +50,6 @@ cy:
         accepted: "Rydych chi wedi derbyn cwcis dadansoddeg. %{change_settings_link}"
         rejected: "Rydych chi wedi gwrthod cwcis dadansoddeg. %{change_settings_link}"
         hide_message: "Cuddio’r neges ynghylch cwcis"
-      breadcrumb:
-        back: "Yn ôl"
       footer:
         heading: "Dolenni cymorth"
         accessibility_statement: "Hygyrchedd"
