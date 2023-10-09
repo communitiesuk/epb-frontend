@@ -39,7 +39,10 @@ class FrontendService < Sinatra::Base
     set_locale
     raise MaintenanceMode if request.path != "/healthcheck" && Helper::Toggles.enabled?("frontend-maintenance-mode")
 
-    redirect(static_start_page, 303) if redirect_to_service_start_page?
+    if redirect_to_service_start_page?
+      cache_control :no_cache, :no_store
+      redirect(static_start_page, 303)
+    end
   end
 
   GETTING_NEW_ENERGY_CERTIFICATE_HOST_NAME = "getting-new-energy-certificate"

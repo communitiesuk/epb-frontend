@@ -55,6 +55,13 @@ RSpec.describe "Redirect to service start page" do
       expect(response.status).to eq(303)
     end
 
+    it "returns a response that specifies no cache and no store if the referrer is outside of the service" do
+      env "HTTP_REFERER", "http://example.com"
+      response = get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/type-of-property"
+
+      expect(response.headers["Cache-Control"]).to eq "no-cache, no-store"
+    end
+
     it "returns status 200 when a referrer is GOV.UK start page" do
       env "HTTP_REFERER", "https://www.gov.uk/find-energy-certificate"
       response = get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/type-of-property"
