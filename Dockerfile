@@ -24,6 +24,8 @@ RUN curl -sL https://deb.nodesource.com/setup_18.x | bash -; \
     rm -rf /var/lib/apt/lists/*
 RUN cd /app && npm install && make assets-version && make frontend-build
 
+COPY ASSETS_VERSION /app
+
 RUN adduser --system --no-create-home nonroot
 USER nonroot
 
