@@ -22,7 +22,7 @@ RUN curl -sL https://deb.nodesource.com/setup_18.x | bash -; \
     apt-get update -qq && apt-get install -y -qq --no-install-recommends nodejs && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
-RUN cd /app && npm install && make frontend-build
+RUN cd /app && npm install && make assets-version && make frontend-build
 
 RUN adduser --system --no-create-home nonroot
 USER nonroot
