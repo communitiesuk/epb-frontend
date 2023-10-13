@@ -1935,7 +1935,7 @@ cy:
     non_accessible_heading: "Cynnwys nad yw’n hygyrch"
     non_accessible_paragraph: "Nid yw’r cynnwys a restrir isod yn hygyrch a hynny am y rhesymau a ganlyn."
     non_compliance_heading: "Methu cydymffurfio â’r rheoliadau hygyrchedd"
-    non_compliance_paragraph_1: "Nid yw teitlau’t tudalennau a’r penawdau H1 yn cyfateb i’w gilydd ar rai adroddiadau argymhellion, sy’n ei gwneud yn anodd i’w hadnabod â darllenydd sgrin. Mae hyn yn methu maen prawf llwyddiant WCAG 2.4.2 (Mae gan y tudalen deitl)."
+    non_compliance_paragraph_1: "Nid yw teitlau’t tudalennau a’r penawdau H1 yn cyfateb i’w gilydd ar rai adroddiadau argymhellion, sy’n ei gwneud yn anodd i’w hadnabod â darllenydd sgrin. Mae hyn yn methu maen prawf llwyddiant 2.4.2 WCAG 2.1 (Mae gan y tudalen deitl)."
     non_compliance_paragraph_2: "Mae rhywfaint o wybodaeth ar goll o’r testun amgen ar gynnwys nad yw’n destun. Er enghraifft, rydyn ni wedi cynnwys y cyfraddiad a’r sgôr ynni cyfredol ond nid yr ystodau sgorio gwahanol. Mae hyn yn methu maen prawf llwyddiant 1.1.1 WCAG 2.1 (Cynnwys nad yw’n destun)."
     non_compliance_paragraph_3: "Mae rhywfaint o’r cynnwys yn dod oddi wrth aseswyr achrededig. Efallai fod yr wybodaeth hon wedi’i strwythuro’n anghywir ar gyfer y we a’i fod yn anodd ei phori â darllenydd sgrin, yn fwyaf arbennig yn yr Adroddiadau ar Archwiliadau Aerdymheru."
     out_of_scope_heading: "Cynnwys nad yw o fewn rhychwant y rheoliadau hygyrchedd"

@@ -1935,7 +1935,7 @@ en:
     non_accessible_heading: "Non-accessible content"
     non_accessible_paragraph: "The content listed below is non-accessible for the following reasons."
     non_compliance_heading: "Non-compliance with the accessibility regulations"
-    non_compliance_paragraph_1: "Page titles and H1 headings do not match on some recommendation reports, making them difficult to identify with a screen reader. This fails WCAG 2.4.2 success criterion (Page Titled)."
+    non_compliance_paragraph_1: "Page titles and H1 headings do not match on some recommendation reports, making them difficult to identify with a screen reader. This fails WCAG 2.1 success criterion 2.4.2 (Page Titled)."
     non_compliance_paragraph_2: "Some information is missing from alternative text on non-text content. For example, we have included the current energy rating and score but not the different scoring ranges. This fails WCAG 2.1 success criterion 1.1.1 (Non-text Content)."
     non_compliance_paragraph_3: "Some content comes from accredited assessors. This may be incorrectly structured for the web and difficult to browse with a screen reader, most notably on the Air Conditioning Inspection Reports."
     out_of_scope_heading: "Content that’s not within the scope of the accessibility regulations"
