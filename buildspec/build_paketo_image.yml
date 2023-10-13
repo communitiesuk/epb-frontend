@@ -16,7 +16,8 @@ phases:
       - n $NODE_18_VERSION
       - npm install
       - bundle install
-      - ruby ./build/compile_assets.rb
+      - make assets-version
+      - make frontend-build
 
   build:
     commands:
