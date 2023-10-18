@@ -481,6 +481,10 @@ module Helpers
     suspected_bot_user_agents.include? request.user_agent
   end
 
+  def should_show_recaptcha?
+    using_recaptcha? && bot_user_agent?
+  end
+
   def suspected_bot_user_agents
     JSON.parse(ENV["EPB_SUSPECTED_BOT_USER_AGENTS"])
   rescue StandardError

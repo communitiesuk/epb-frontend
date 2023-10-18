@@ -207,6 +207,7 @@ class FrontendService < Sinatra::Base
           @errors[:postcode] = t("validation_errors.postcode_invalid")
         when Errors::BotDetected
           status 400
+          cache_control :no_cache, :no_store
           @page_title =
             "#{t('error.error')}#{
               t('find_certificate_by_postcode.top_heading')
@@ -218,6 +219,10 @@ class FrontendService < Sinatra::Base
           return server_error(e)
         end
       end
+    end
+
+    if should_show_recaptcha?
+      cache_control :no_cache, :no_store
     end
 
     show(erb_template, locals)
@@ -540,6 +545,7 @@ class FrontendService < Sinatra::Base
           @errors[:postcode] = t("validation_errors.postcode_invalid")
         when Errors::BotDetected
           status 400
+          cache_control :no_cache, :no_store
           @page_title =
             "#{t('error.error')}#{
               t('find_certificate_by_postcode.top_heading')
@@ -551,6 +557,10 @@ class FrontendService < Sinatra::Base
           return server_error(e)
         end
       end
+    end
+
+    if should_show_recaptcha?
+      cache_control :no_cache, :no_store
     end
 
     show(erb_template, locals)

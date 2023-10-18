@@ -1,4 +1,2 @@
-<% if bot_user_agent? %>
 <script src="https://www.google.com/recaptcha/api.js" async defer nonce="<%= script_nonce %>"></script>
 <div class="g-recaptcha" data-sitekey="<%= recaptcha_site_key %>"></div>
-<% end %>

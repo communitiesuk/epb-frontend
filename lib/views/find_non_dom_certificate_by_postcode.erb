@@ -36,7 +36,7 @@
                  spellcheck="false"
                  <% if params['postcode'] %>value="<%= params['postcode'] %>"<% end %>
           >
-          <% if using_recaptcha? %>
+          <% if should_show_recaptcha? %>
             <%== erb :partial__recaptcha %>
           <% end %>
         </div>
