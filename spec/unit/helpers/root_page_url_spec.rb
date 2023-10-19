@@ -4,6 +4,7 @@ describe "Helpers.root_page_url", type: :helper do
   end
 
   before do
+    I18n.locale = I18n.default_locale
     def frontend_service_helpers.request
       OpenStruct.new(hostname: "find-energy-certificate.service.gov.uk")
     end

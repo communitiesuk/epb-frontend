@@ -3,6 +3,10 @@ class HelpersStub
 end
 
 describe "Helpers.recommendation_header", type: :helper do
+  before do
+    I18n.locale = I18n.default_locale
+  end
+
   context "when a recommendation has no improvement code" do
     title = "This is the title for the improvement"
     description = "and this is the description"

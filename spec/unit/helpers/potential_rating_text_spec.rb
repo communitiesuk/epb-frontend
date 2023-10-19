@@ -5,6 +5,10 @@ describe "Helpers.potential_rating_text", type: :helper do
     Class.new { extend Helpers }
   end
 
+  before do
+    I18n.locale = I18n.default_locale
+  end
+
   context "when provided with the recommendation numerical index" do
     it "number 1" do
       expect(frontend_service_helpers.potential_rating_text(1)).to eq(
