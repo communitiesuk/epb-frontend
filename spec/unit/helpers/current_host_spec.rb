@@ -21,7 +21,7 @@ describe "Helpers.get_subdomain_host" do
     settings
   end
 
-  context "when platform is PaaS and current URL includes integration" do
+  context "when the current URL includes integration" do
     let(:request) do
       req = OpenStruct.new
       req.url = "https://find-energy-certificate-integration.somehost.com/"
@@ -32,7 +32,6 @@ describe "Helpers.get_subdomain_host" do
 
     before do
       frontend_service_helpers.request = request
-      allow(Helper::Platform).to receive(:is_paas?).and_return true
     end
 
     it "returns the integration subdomain for digital.communities.gov.uk" do
@@ -40,7 +39,7 @@ describe "Helpers.get_subdomain_host" do
     end
   end
 
-  context "when platform is not PaaS and current URL includes staging" do
+  context "when the current URL includes staging" do
     let(:request) do
       req = OpenStruct.new
       req.url = "https://find-energy-certificate-staging.somehost.com/"
@@ -51,11 +50,10 @@ describe "Helpers.get_subdomain_host" do
 
     before do
       frontend_service_helpers.request = request
-      allow(Helper::Platform).to receive(:is_paas?).and_return false
     end
 
-    it "returns the staging subdomain for centraldatastore.net" do
-      expect(frontend_service_helpers.get_subdomain_host(subdomain)).to eq "https://find-energy-certificate-staging.centraldatastore.net"
+    it "returns the staging subdomain for digital.communities.gov.uk" do
+      expect(frontend_service_helpers.get_subdomain_host(subdomain)).to eq "https://find-energy-certificate-staging.digital.communities.gov.uk"
     end
   end
 

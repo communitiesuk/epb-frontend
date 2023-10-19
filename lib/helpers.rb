@@ -40,15 +40,10 @@ module Helpers
 
     return "http://#{subdomain}.local.gov.uk:9393" if settings.development?
 
-    case [Helper::Platform.is_paas?]
-    in [true] if current_url.include?("integration")
+    if current_url.include?("integration")
       "https://#{subdomain}-integration.digital.communities.gov.uk"
-    in [true] if current_url.include?("staging")
+    elsif current_url.include?("staging")
       "https://#{subdomain}-staging.digital.communities.gov.uk"
-    in [false] if current_url.include? "integration"
-      "https://#{subdomain}-integration.centraldatastore.net"
-    in [false] if current_url.include? "staging"
-      "https://#{subdomain}-staging.centraldatastore.net"
     else
       "https://#{subdomain}.service.gov.uk"
     end
