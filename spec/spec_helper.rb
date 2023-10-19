@@ -13,7 +13,6 @@ require "capybara/rspec"
 require "active_support"
 require "active_support/cache"
 require "active_support/notifications"
-require "rack/attack"
 require "rake"
 
 AUTH_URL = "http://test-auth-server.gov.uk"
@@ -24,8 +23,6 @@ ENV["EPB_AUTH_SERVER"] = AUTH_URL
 ENV["EPB_API_URL"] = "http://test-api.gov.uk"
 ENV["STAGE"] = "test"
 ENV["EPB_UNLEASH_URI"] = "https://test-toggle-server/api"
-ENV["PERMANENTLY_BANNED_IP_ADDRESSES"] = '[{"reason":"did a bad thing", "ip_address": "198.51.100.100"},{"reason":"did another bad thing", "ip_address": "198.53.120.110"}]'
-ENV["WHITELISTED_IP_ADDRESSES"] = '[{"reason":"pen testers", "ip_address": "198.51.100.111"},{"reason":"pen testers", "ip_address": "198.52.101.113"}]'
 
 I18n.load_path = Dir[File.join(File.dirname(__FILE__), "/../locales", "*.yml")]
 I18n.enforce_available_locales = true
@@ -86,8 +83,6 @@ module RSpecFrontendServiceMixin
 
   def app
     Rack::Builder.new do
-      use Rack::Attack
-      require_relative "../config/rack_attack_config"
       run FrontendService
     end
   end

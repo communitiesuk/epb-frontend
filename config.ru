@@ -5,7 +5,6 @@ require "sentry-ruby"
 require "active_support"
 require "active_support/cache"
 require "active_support/notifications"
-require "rack/attack"
 require "securerandom"
 
 unless defined? TestLoader
@@ -15,9 +14,6 @@ unless defined? TestLoader
 end
 
 use Rack::Deflater, include: %w[text/html text/css application/javascript image/svg+xml]
-
-use Rack::Attack
-require_relative "./config/rack_attack_config"
 
 environment = ENV["STAGE"]
 
