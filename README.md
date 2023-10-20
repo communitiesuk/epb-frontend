@@ -110,33 +110,6 @@ EPB_API_URL=<url-of-epb-api>
 2. Then access the frontend at <http://getting-new-energy-certificate.epb-frontend>
    or <http://find-energy-certificate.epb-frontend> (without the specified ports).
 
-## Deploy
-
-To deploy to GOV.UK PaaS you will need to be logged in to your CloudFoundry
-account, and set the correct space as target, e.g.:
-
-```bash
-cf target -o mhclg-energy-performance -s integration
-```
-
-Set the variables `APPLICATION_NAME` and `STAGE` to relevant values, e.g.:
-
-```bash
-export APPLICATION_NAME=epb-frontend-ui
-export STAGE=integration
-```
-
-_Note_: The `STAGE` should generally match the name of the current CloudFoundry
-space.
-
-Run the following command to deploy the application: `$ make deploy-app`
-
-This will:
-* Check that your current target space is active
-* Run the frontend build to generate assets
-* Generate a manifest file suitable for the current space
-* Push the local app to the target application
-
 ## Docker image
 
 ### Build
