@@ -678,16 +678,13 @@ en:
         title: "Other reports for this property"
     recommendations:
       title: "Recommendations"
-      text: "Make these changes to improve the property’s energy efficiency."
-      recommended_improvements_text: "Recommended improvements are grouped by the estimated time it would take for the change to pay for itself. The assessor may also make additional recommendations."
-      description: "Each recommendation is marked as low, medium or high. This shows the potential impact of the change on reducing the property’s carbon emissions."
       table:
-        three_years_heading: "Changes that pay for themselves within 3 years"
-        three_to_seven_years_heading: "Changes that pay for themselves within 3 to 7 years"
-        more_than_seven_years_heading: "Changes that pay for themselves in more than 7 years"
+        three_years_heading: "Changes that may pay for themselves within 3 years"
+        three_to_seven_years_heading: "Changes that may pay for themselves within 3 to 7 years"
+        more_than_seven_years_heading: "Changes that may pay for themselves in more than 7 years"
         additional_heading: "Additional recommendations"
         recommendation_heading: "Recommendation"
-        potential_impact_heading: "Potential impact"
+        potential_impact_heading: "Potential impact on carbon emissions"
     superseded:
       title: "Warning"
       certificate_message: "A new certificate has replaced this one"

@@ -678,16 +678,13 @@ cy:
         title: "Adroddiadau eraill ar gyfer yr eiddo hwn"
     recommendations:
       title: "Argymhellion"
-      text: "Gwnewch y newidiadau hyn er mwyn gwella effeithlonrwydd ynni’r eiddo."
-      recommended_improvements_text: "Mae’r gwelliannau sy’n cael eu hargymell wedi’u gosod mewn grwpiau yn ôl amcangyfrif o’r amser a gymerai i’r newid dalu amdano’i hun. Gall yr asesydd wneud argymhellion ychwanegol hefyd."
-      description: "Mae pob argymhelliad wedi ei farcio fel isel, canolig neu uchel. Mae hyn yn dangos effaith bosibl y newid ar leihau allyriadau carbon yr eiddo.’carbon emissions."
       table:
-        three_years_heading: "Newidiadau sy’n talu amdanynt eu hunain o fewn 3 blynedd"
-        three_to_seven_years_heading: "Newidiadau sy’n talu amdanynt eu hunain o fewn 3 i 7 mlynedd"
-        more_than_seven_years_heading: "Newidiadau sy’n talu amdanynt eu hunain mewn mwy na 7 mlynedd"
+        three_years_heading: "Newidiadau a allai dalu amdanynt eu hunain o fewn 3 blynedd"
+        three_to_seven_years_heading: "Newidiadau a allai dalu amdanynt eu hunain o fewn 3 i 7 mlynedd"
+        more_than_seven_years_heading: "Newidiadau a allai dalu amdanynt eu hunain mewn mwy na 7 mlynedd"
         additional_heading: "Argymhellion ychwanegol"
         recommendation_heading: "Argymhelliad"
-        potential_impact_heading: "Effaith bosibl"
+        potential_impact_heading: "Effaith bosibl ar allyriadau carbon"
     superseded:
       title: "Rhybudd"
       certificate_message: "Mae tystysgrif newydd wedi disodli hon"

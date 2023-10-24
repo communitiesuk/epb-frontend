@@ -1,14 +1,5 @@
 <div id="recommendations" class="govuk-body epc-blue-bottom printable-area">
   <h2 class="govuk-heading-l"><%= t('component.recommendations.title') %></h2>
-  <p class="govuk-body"><%=
-    t('component.recommendations.text')
-  %></p>
-  <p class="govuk-body"><%=
-    t('component.recommendations.recommended_improvements_text')
-  %></p>
-  <p class="govuk-body"><%=
-    t('component.recommendations.description')
-  %></p>
   <% if assessment[:shortPaybackRecommendations].size > 0 %>
     <table class="govuk-table">
       <caption class="govuk-table__caption"><%= t('component.recommendations.table.three_years_heading') %></caption>

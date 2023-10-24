@@ -87,19 +87,9 @@ describe "Acceptance::DecRecommendationReport", type: :feature do
 
     it "shows the Recommendations section" do
       expect(response.body).to have_css "h2", text: "Recommendations"
-      expect(response.body).to have_css "p",
-                                        text:
-                                          "Make these changes to improve the property’s energy efficiency."
-      expect(response.body).to have_css "p",
-                                        text:
-                                          "Recommended improvements are grouped by the estimated time it would take for the change to pay for itself. The assessor may also make additional recommendations."
-      expect(response.body).to have_css "p",
-                                        text:
-                                          "Each recommendation is marked as low, medium or high. This shows the potential impact of the change on reducing the property’s carbon emissions."
-      expect(response.body).to have_css "th", text: "Recommendation"
-      expect(response.body).to have_css "th", text: "Potential impact"
+      expect(response.body).to have_css "th", text: "Potential impact on carbon emissions"
       expect(response.body).to have_css "caption",
-                                        text: "Changes that pay for themselves within 3 years"
+                                        text: "Changes that may pay for themselves within 3 years"
       expect(response.body).to have_css "th",
                                         text:
                                           "Consider thinking about maybe possibly getting a solar panel but only one."
@@ -109,13 +99,13 @@ describe "Acceptance::DecRecommendationReport", type: :feature do
                                           "Consider introducing variable speed drives (VSD) for fans, pumps and compressors."
       expect(response.body).to have_css "td", text: "Low"
       expect(response.body).to have_css "caption",
-                                        text: "Changes that pay for themselves within 3 to 7 years"
+                                        text: "Changes that may pay for themselves within 3 to 7 years"
       expect(response.body).to have_css "th",
                                         text:
                                           "Engage experts to propose specific measures to reduce hot waterwastage and plan to carry this out."
       expect(response.body).to have_css "td", text: "Low"
       expect(response.body).to have_css "caption",
-                                        text: "Changes that pay for themselves in more than 7 years"
+                                        text: "Changes that may pay for themselves in more than 7 years"
       expect(response.body).to have_css "th",
                                         text: "Consider replacing or improving glazing."
       expect(response.body).to have_css "td", text: "Low"
