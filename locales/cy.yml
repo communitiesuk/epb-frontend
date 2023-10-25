@@ -859,8 +859,8 @@ cy:
           body:
             text: "Cyfraddiad ynni’r eiddo hwn yw %{current_energy_efficiency_band}. Ni chaniateir ei osod oni bai bod esemptiad wedi’i gofrestru."
             text_2: "Gall eiddo gael ei osod os yw ei gyfraddiad ynni rhwng A ac E."
-            recommendations_text: "Mae’r %{recommendations_link} yn nodi newidiadau y gallwch eu gwneud er mwyn gwella cyfraddiad yr eiddo."
-            recommendations_cta: "adran argymhellion"
+            recommendations_text: "Gallech wneud newidiadau er mwyn %{recommendations_link}."
+            recommendations_cta: "gwella cyfraddiad ynni’r eiddo hwn"
         rental_info:
           body_1: "Gall eiddo gael ei osod os yw ei gyfraddiad ynni rhwng A ac E."
           guidance_text: "Gallwch ddarllen %{link}."

@@ -859,8 +859,8 @@ en:
           body:
             text: "This property has an energy rating of %{current_energy_efficiency_band}. It cannot be let, unless an exemption has been registered."
             text_2: "Properties can be let if they have an energy rating from A to E."
-            recommendations_text: "The %{recommendations_link} sets out changes you can make to improve the property’s rating."
-            recommendations_cta: "recommendations section"
+            recommendations_text: "You could make changes to %{recommendations_link}."
+            recommendations_cta: "improve this property’s energy rating"
         rental_info:
           body_1: "Properties can be let if they have an energy rating from A to E."
           guidance_text: " You can read %{link}."
