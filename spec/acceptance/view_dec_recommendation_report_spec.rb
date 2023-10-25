@@ -105,7 +105,7 @@ describe "Acceptance::DecRecommendationReport", type: :feature do
                                           "Engage experts to propose specific measures to reduce hot waterwastage and plan to carry this out."
       expect(response.body).to have_css "td", text: "Low"
       expect(response.body).to have_css "caption",
-                                        text: "Changes that may pay for themselves in more than 7 years"
+                                        text: "Changes that may pay for themselves in over 7 years"
       expect(response.body).to have_css "th",
                                         text: "Consider replacing or improving glazing."
       expect(response.body).to have_css "td", text: "Low"
