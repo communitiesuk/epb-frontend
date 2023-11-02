@@ -910,7 +910,7 @@ class FrontendService < Sinatra::Base
                              { assessment: assessment[:data] },
                              use_print_view
     when "CEPC-RR"
-      @page_title = "#{t('non_domestic_epc.top_heading')}#{@page_title}"
+      @page_title = "#{t('non_domestic_epc.rr.top_heading')}#{@page_title}"
       show_with_print_option :non_domestic_energy_performance_certificate_recommendation_report,
                              { assessment: assessment[:data] },
                              use_print_view
