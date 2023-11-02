@@ -923,7 +923,7 @@ class FrontendService < Sinatra::Base
                              skip_custom_css: true
     when "DEC-RR"
       @page_title =
-        "#{t('dec.sections.recommendation_report.title')}#{@page_title}"
+        "#{t('dec_rr.top_heading')}#{@page_title}"
       show_with_print_option :dec_recommendation_report,
                              { assessment: assessment[:data] },
                              use_print_view
