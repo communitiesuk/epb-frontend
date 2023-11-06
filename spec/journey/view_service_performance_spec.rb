@@ -30,7 +30,7 @@ describe "view Service Performance page", type: :feature, journey: true do
     end
 
     it "shows six accordions" do
-      expect(page.all("#epc-tab .govuk-accordion").length).to eq 6
+      expect(page.all(".govuk-accordion").length).to eq 6
     end
   end
 
@@ -43,7 +43,7 @@ describe "view Service Performance page", type: :feature, journey: true do
     end
 
     it "shows six accordions" do
-      expect(page.all("#epc-tab .govuk-accordion").length).to eq 6
+      expect(page.all(".govuk-accordion").length).to eq 6
     end
   end
 end

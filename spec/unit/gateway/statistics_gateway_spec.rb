@@ -31,14 +31,5 @@ describe Gateway::StatisticsGateway do
                                                                                                                                            ratingAverage: 59.1234156 })
     end
 
-    it "returns the user satisfaction data" do
-      expect(response[:data][:user].length).to eq(3)
-      expect(response[:data][:user].select { |i| i[:month] == "2021-09" }.first).to match hash_including(month: "2021-09",
-                                                                                                         verySatisfied: 21,
-                                                                                                         satisfied: 13,
-                                                                                                         neither: 7,
-                                                                                                         dissatisfied: 20,
-                                                                                                         veryDissatisfied: 44)
-    end
   end
 end

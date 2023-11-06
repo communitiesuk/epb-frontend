@@ -23,7 +23,6 @@ RSpec.describe "Redirect to service start page" do
       FetchAssessmentSummary::AssessmentStub.fetch_rdsap(assessment_id: "0000-0000-0000-0000-0001")
       FetchAssessmentSummary::AssessmentStub.fetch_dec_summary(assessment_id: "0000-0000-0000-0000-0001")
       ServicePerformance::CountryStatsStub.statistics
-      Reporting::InterestingNumbersStub.fetch
     end
 
     directly_accessible_paths.each do |path|

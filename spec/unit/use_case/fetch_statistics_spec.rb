@@ -10,8 +10,8 @@ describe UseCase::FetchStatistics do
       ServicePerformance::CountryStatsStub.statistics
     end
 
-    it "calls the gateway method and returns the expected json for assessments and user satisfaction" do
-      expect(results.keys).to eq(%i[assessments user_satisfaction])
+    it "calls the gateway method and returns the expected json for assessments" do
+      expect(results.keys).to eq(%i[assessments])
     end
 
     it "contains expected json for assessments" do
@@ -40,17 +40,6 @@ describe UseCase::FetchStatistics do
           { assessmentType: "CEPC", country: "all", month: "2021-11", numAssessments: 2837, ratingAverage: 66.24 },
           { assessmentType: "CEPC", country: "all", month: "2021-02", numAssessments: 6514, ratingAverage: 72.843537414966 },
         ],
-      })
-    end
-
-    it "contains the array of user satisfaction data" do
-      expect(results[:user_satisfaction].select { |h| h[:month] == "2021-10" }.first).to eq({
-        month: "2021-10",
-        verySatisfied: 20,
-        satisfied: 14,
-        neither: 10,
-        dissatisfied: 21,
-        veryDissatisfied: 32,
       })
     end
   end

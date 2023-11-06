@@ -32,7 +32,6 @@ class Container
       UseCase::FetchDecSummary.new(certificates_gateway)
     fetch_statistics_use_case = UseCase::FetchStatistics.new(Gateway::StatisticsGateway.new(internal_api_client))
     fetch_statistics_csv_use_case = UseCase::FetchStatisticsCsv.new(Gateway::StatisticsGateway.new(internal_api_client))
-    fetch_interesting_numbers_use_case = UseCase::FetchInterestingNumbers.new(Gateway::InterestingNumbersGateway.new(internal_api_client))
 
     @objects = {
       internal_api_client:,
@@ -46,7 +45,6 @@ class Container
       fetch_dec_summary_use_case:,
       fetch_statistics_use_case:,
       fetch_statistics_csv_use_case:,
-      fetch_interesting_numbers_use_case:,
     }
   end
 

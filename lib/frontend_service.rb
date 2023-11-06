@@ -1008,14 +1008,6 @@ class FrontendService < Sinatra::Base
     erb_template = :service_performance
     use_case = @container.get_object(:fetch_statistics_use_case)
     data = use_case.execute
-    if Helper::Toggles.enabled?("frontend-interesting-numbers")
-      interesting_numbers_use_case = @container.get_object(:fetch_interesting_numbers_use_case)
-      heatpump_data = interesting_numbers_use_case.execute("heat_pump_count_for_sap")
-      data[:heatpump_data] = heatpump_data
-    end
-    show(erb_template, data)
-  rescue Errors::ReportIncomplete
-    data[:heatpump_data] = nil
     show(erb_template, data)
   rescue StandardError => e
     return server_error(e)

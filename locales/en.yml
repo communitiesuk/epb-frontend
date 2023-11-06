@@ -546,7 +546,6 @@ en:
     intro: "Use this page to find data on:"
     intro_list_item_one: "the number of energy certificates uploaded to the Energy Performance of Buildings Register"
     intro_list_item_two: "the average energy rating for domestic and non-domestic properties"
-    intro_list_item_three: "user satisfaction"
     covering_statement: "This data covers England and Wales, and Northern Ireland."
     updated_statement: "Updated: monthly"
     accordion_controls:
@@ -592,21 +591,6 @@ en:
           dec: "Non-domestic data – display energy certificate"
           dec_rr: "Non-domestic data – display energy certificate recommendation report"
           ac_rr: "Non-domestic data – air conditioning inspection certificate"
-      user_satisfaction:
-        title: "User satisfaction"
-        intro: "This data is collected on a monthly basis from our service feedback form."
-        table_headers:
-          - Very satisfied
-          - Satisfied
-          - Neutral
-          - Dissatisfied
-          - Very dissatisfied
-      heatpump_data:
-        title: "Heat pump data"
-        intro: "Data about how many EPCs have heat pumps each month"
-        table_headers:
-          - Month
-          - Number of EPCs
   component:
     share:
       share_certificate: "Share this certificate"

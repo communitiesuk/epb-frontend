@@ -1,7 +1,7 @@
 module ServicePerformance
   class CountryStatsStub
     def self.body
-      { data: { assessments: assessments_stats, user: ServicePerformance::UserSatisfactionStub.body } }
+      { data: { assessments: assessments_stats } }
     end
 
     def self.statistics
