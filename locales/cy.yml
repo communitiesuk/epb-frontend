@@ -985,7 +985,7 @@ cy:
       environmental_impact:
         title: "Effaith ar yr amgylchedd"
         eir_rating: "Cyfraddiad effaith amgylcheddol yr eiddo hwn ar hyn o bryd yw %{current_environmental_impact_rating}. Mae gan yr eiddo y potensial i fod yn %{potential_environmental_impact_rating}."
-        rating_scale: "Mae eiddo’n cael cyfraddiad rhwng A (y gorau) ac G (y gwaethaf) ar sail faint o garbon deuocsid (CO2) maen nhw’n ei gynhyrchu bob blwyddyn. Mae CO2 yn niweidio’r amgylchedd."
+        rating_scale: "Mae eiddo’n cael cyfraddiad rhwng A (y gorau) ac G (y gwaethaf) ar sail faint o garbon deuocsid (CO2) maen nhw’n ei gynhyrchu bob blwyddyn."
         heading: "Allyriadau carbon"
         summary: "Un o’r cyfranwyr mwyaf at newid yr hinsawdd yw carbon deuocsid (CO2). Yr ynni a ddefnyddir i wresogi, goleuo a phweru’n cartrefi sy’n cynhyrchu mwy na chwarter allyriadau CO2 y Deyrnas Unedig."
         making_changes: "Gallech wella allyriadau CO2 yr eiddo hwn drwy wneud y newidiadau sydd wedi’u hawgrymu. Bydd hynny’n helpu i ddiogelu’r amgylchedd."
