@@ -557,7 +557,6 @@ cy:
       hide_section_expanded: "Cuddio ’r adran hon"
     contents:
       epcs_upload:
-        title: "Tystysgrifau ynni wedi’u huwchlwytho"
         tables:
           titles:
             all: "Pob rhanbarth"
@@ -580,7 +579,8 @@ cy:
               ac-cert: "Tystysgrifau A.C a uwchlwythwyd yng "
           headers:
             month: "Mis"
-            num_uploaded: "Nifer a uwchlwythwyd"
+            reps_uploaded: "Adroddiadau a uwchlwythwyd"
+            certs_uploaded: "Tystysgrifau a uwchlwythwyd"
             avg_rating: "Sgôr ynni gyfartalog"
         download_link: "Lawrlwytho copi o’r data ar "
         file_type_and_size: " (CSV, 4KB)"

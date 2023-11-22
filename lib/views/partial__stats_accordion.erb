@@ -1,5 +1,5 @@
 <% unless values.nil? %>
-  <h3 class="govuk-heading-l"><%= "#{header} (#{assessment_type})" %></h3>
+  <h2 class="govuk-heading-l"><%= "#{header} (#{assessment_type})" %></h2>
 
   <% sections = [
       { heading: {
@@ -48,6 +48,6 @@
     showAllSectionsText: t("service_performance.accordion_controls.show_all_sections"),
     showSectionText: t("service_performance.accordion_controls.show_section"),
     showSectionAriaLabelText: t("service_performance.accordion_controls.show_section_expanded"),
-    headingLevel: "4"
+    headingLevel: "3"
   } %>
 <% end %>

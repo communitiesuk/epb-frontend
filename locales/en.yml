@@ -557,7 +557,6 @@ en:
       hide_section_expanded: "Hide this section"
     contents:
       epcs_upload:
-        title: "Energy certificates uploaded"
         tables:
           titles:
             all: "All regions"
@@ -580,7 +579,8 @@ en:
               ac-cert: "A.C certificates uploaded in "
           headers:
             month: "Month"
-            num_uploaded: "Number uploaded"
+            reps_uploaded: "Reports uploaded"
+            certs_uploaded: "Certificates uploaded"
             avg_rating: "Average energy rating"
         download_link: "Download a copy of the data for "
         file_type_and_size: " (CSV, 4KB)"

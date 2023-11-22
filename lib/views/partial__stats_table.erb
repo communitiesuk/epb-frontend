@@ -4,7 +4,7 @@
       <thead class="govuk-table__head">
       <tr class="govuk-table__row">
         <th scope="col" class="govuk-table__header month"><%= t('service_performance.contents.epcs_upload.tables.headers.month') %> </th>
-        <th scope="col" class="govuk-table__header govuk-table__header--numeric number-uploaded"><%= t('service_performance.contents.epcs_upload.tables.headers.num_uploaded') %></th>
+        <th scope="col" class="govuk-table__header govuk-table__header--numeric number-uploaded"><%= t(assessment_type.downcase == "dec-rr" ? 'service_performance.contents.epcs_upload.tables.headers.reps_uploaded' : 'service_performance.contents.epcs_upload.tables.headers.certs_uploaded') %></th>
         <% if show_average_rating %>
           <th scope="col" class="govuk-table__header govuk-table__header--numeric average-energy-rating"><%= t('service_performance.contents.epcs_upload.tables.headers.avg_rating') %></th>
         <% end %>

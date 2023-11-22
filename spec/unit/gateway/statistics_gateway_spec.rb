@@ -30,6 +30,5 @@ describe Gateway::StatisticsGateway do
                                                                                                                                            numAssessments: 5779,
                                                                                                                                            ratingAverage: 59.1234156 })
     end
-
   end
 end
