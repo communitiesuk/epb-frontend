@@ -8,8 +8,7 @@
       <p class="govuk-body">
         <a id="email"
            href="mailto:?subject=<%="#{ERB::Util.url_encode("#{t("#{top_heading}.top_heading")} #{t("component.share.email_subject_for")} #{find_address_lines_only(assessment)}")}&body=#{ERB::Util.url_encode("#{t("component.share.email_body_part_1")} #{first_word_downcase(t("#{top_heading}.top_heading"))} #{t("component.share.email_body_part_2")} https://find-energy-certificate.service.gov.uk/energy-certificate/#{assessment[:assessmentId]}")}"%>"
-           target="_blank"
-           title="Email">
+           target="_blank">
         <span class="share-icon">
           <%== inline_svg('/images/email.svg') %>
         </span>
