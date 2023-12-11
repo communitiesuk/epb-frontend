@@ -1,0 +1,27 @@
+<% if I18n.locale.to_s == "cy" %>
+  <nav aria-label="Language toggle">
+    <ul class="language-toggle__list">
+      <li lang="en" class="language-toggle__list-item">
+        <span class="govuk-visually-hidden">Change the language to English</span>
+        <a href="?en" class="govuk-link">English</a>
+      </li>
+      <li class="language-toggle__list-item">
+        Cymraeg
+      </li>
+    </ul>
+  </nav>
+<% else %>
+  <nav aria-label="Language toggle">
+    <ul class="language-toggle__list">
+      <li class="language-toggle__list-item">
+        English
+      </li>
+      <li lang="cy" class="language-toggle__list-item">
+        <span class="govuk-visually-hidden">Newid yr iaith ir Gymraeg</span>
+        <a href="?lang=cy" class="govuk-link">Cymraeg</a>
+      </li>
+    </ul>
+  </nav>
+<% end %>
+
+

@@ -898,6 +898,7 @@ class FrontendService < Sinatra::Base
       " – #{t('services.find_an_energy_certificate')} – #{
         t('layout.body.govuk')
       }"
+    @display_language_toggle = true
     use_print_view = params["print"] == "true"
 
     cache_control :public, max_age: 60

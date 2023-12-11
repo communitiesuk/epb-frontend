@@ -39,6 +39,20 @@ describe "Acceptance::DecRecommendationReport", type: :feature do
       )
     end
 
+    it "does not show the language toggle" do
+      Helper::Toggles.set_feature("frontend-language-toggle", false)
+
+      expect(response.body).not_to have_css "ul.language-toggle__list"
+    end
+
+    it "shows the language toggle" do
+      Helper::Toggles.set_feature("frontend-language-toggle", true)
+
+      expect(response.body).to have_css "ul.language-toggle__list"
+      expect(response.body).to have_link "Cymraeg"
+      expect(response.body).not_to have_link "English"
+    end
+
     it "has a tab content that shows" do
       expect(response.body).to include(
         " <title>Display energy certificate (DEC) recommendation report – Find an energy certificate – GOV.UK</title>",
@@ -178,6 +192,27 @@ describe "Acceptance::DecRecommendationReport", type: :feature do
                                          href: "/energy-certificate/9457-0000-0000-0000-2001"
       expect(response.body).to have_css "dt", text: "Valid until"
       expect(response.body).to have_css "dd", text: "4 May 2019"
+    end
+  end
+
+  context "when the assessment is fetched in Welsh" do
+    before do
+      FetchAssessmentSummary::AssessmentStub.fetch_dec_rr(
+        assessment_id: "1234-5678-1234-5678-1234",
+        date_of_expiry: "2030-01-01",
+      )
+    end
+
+    let(:response) do
+      get "/energy-certificate/1234-5678-1234-5678-1234?lang=cy"
+    end
+
+    it "shows the language toggle" do
+      Helper::Toggles.set_feature("frontend-language-toggle", true)
+
+      expect(response.body).to have_css "ul.language-toggle__list"
+      expect(response.body).to have_link "English"
+      expect(response.body).not_to have_link "Cymraeg"
     end
   end
 

@@ -20,6 +20,20 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       expect(response.body).to include("Energy performance certificate")
     end
 
+    it "does not show the language toggle" do
+      Helper::Toggles.set_feature("frontend-language-toggle", false)
+
+      expect(response.body).not_to have_css "ul.language-toggle__list"
+    end
+
+    it "shows the language toggle" do
+      Helper::Toggles.set_feature("frontend-language-toggle", true)
+
+      expect(response.body).to have_css "ul.language-toggle__list"
+      expect(response.body).to have_link "Cymraeg"
+      expect(response.body).not_to have_link "English"
+    end
+
     it "has a tab content that shows the page title" do
       expect(response.body).to include(
         " <title>Energy performance certificate (EPC) – Find an energy certificate – GOV.UK</title>",
@@ -1076,6 +1090,14 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
     it "shows the date in Welsh", :aggregate_failures do
       expect(response.body).to have_css "label", text: "Dilys tan"
       expect(response.body).to have_css("p", text: "5 Ionawr 2030")
+    end
+
+    it "shows the language toggle" do
+      Helper::Toggles.set_feature("frontend-language-toggle", true)
+
+      expect(response.body).to have_css "ul.language-toggle__list"
+      expect(response.body).to have_link "English"
+      expect(response.body).not_to have_link "Cymraeg"
     end
   end
 

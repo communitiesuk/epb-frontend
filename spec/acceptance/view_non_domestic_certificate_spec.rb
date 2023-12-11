@@ -51,6 +51,20 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
     it_behaves_like "all script elements have nonce attributes"
     it_behaves_like "all style elements have nonce attributes"
 
+    it "does not show the language toggle" do
+      Helper::Toggles.set_feature("frontend-language-toggle", false)
+
+      expect(response.body).not_to have_css "ul.language-toggle__list"
+    end
+
+    it "shows the language toggle" do
+      Helper::Toggles.set_feature("frontend-language-toggle", true)
+
+      expect(response.body).to have_css "ul.language-toggle__list"
+      expect(response.body).to have_link "Cymraeg"
+      expect(response.body).not_to have_link "English"
+    end
+
     describe "viewing the summary section" do
       it "shows the address summary" do
         expect(response.body).to have_css "p.epc-address",
@@ -407,6 +421,27 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
       it "does not show the superseded warning message" do
         expect(response.body).not_to have_css("div.govuk-warning-text", text: " A new certificate has replaced this one. See the new certificate")
       end
+    end
+  end
+
+  context "when the assessment is fetched in Welsh" do
+    before do
+      FetchAssessmentSummary::AssessmentStub.fetch_cepc assessment_id:
+                                                          "1234-5678-1234-5678-1234",
+                                                        energy_efficiency_band:
+                                                          "b"
+    end
+
+    let(:response) do
+      get "/energy-certificate/1234-5678-1234-5678-1234?lang=cy"
+    end
+
+    it "shows the language toggle" do
+      Helper::Toggles.set_feature("frontend-language-toggle", true)
+
+      expect(response.body).to have_css "ul.language-toggle__list"
+      expect(response.body).to have_link "English"
+      expect(response.body).not_to have_link "Cymraeg"
     end
   end
 

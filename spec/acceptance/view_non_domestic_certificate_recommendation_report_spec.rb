@@ -43,6 +43,20 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
       )
     end
 
+    it "does not show the language toggle" do
+      Helper::Toggles.set_feature("frontend-language-toggle", false)
+
+      expect(response.body).not_to have_css "ul.language-toggle__list"
+    end
+
+    it "shows the language toggle" do
+      Helper::Toggles.set_feature("frontend-language-toggle", true)
+
+      expect(response.body).to have_css "ul.language-toggle__list"
+      expect(response.body).to have_link "Cymraeg"
+      expect(response.body).not_to have_link "English"
+    end
+
     it "has a tab content that shows the page title" do
       expect(response.body).to include(
         " <title>Energy performance certificate (EPC) recommendation report – Find an energy certificate – GOV.UK</title>",
@@ -129,6 +143,30 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
       expect(response.body).to have_css "dd", text: "4 May 2026"
       expect(response.body).not_to have_link "0000-0000-0000-0000-5555",
                                              href: "/energy-certificate/0000-0000-0000-0000-5555"
+    end
+  end
+
+  context "when the assessment is fetched in Welsh" do
+    before do
+      FetchAssessmentSummary::AssessmentStub.fetch_cepc_rr(
+        assessment_id: "1234-5678-1234-5678-1234",
+        date_of_expiry: "2030-01-01",
+        linked_to_cepc: "0000-0000-0000-0000-0000",
+        related_party: nil,
+        related_energy_band: "d",
+      )
+    end
+
+    let(:response) do
+      get "/energy-certificate/1234-5678-1234-5678-1234?lang=cy"
+    end
+
+    it "shows the language toggle" do
+      Helper::Toggles.set_feature("frontend-language-toggle", true)
+
+      expect(response.body).to have_css "ul.language-toggle__list"
+      expect(response.body).to have_link "English"
+      expect(response.body).not_to have_link "Cymraeg"
     end
   end
 

@@ -17,6 +17,20 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
                                         text: "Air conditioning inspection report"
     end
 
+    it "does not show the language toggle" do
+      Helper::Toggles.set_feature("frontend-language-toggle", false)
+
+      expect(response.body).not_to have_css "ul.language-toggle__list"
+    end
+
+    it "shows the language toggle" do
+      Helper::Toggles.set_feature("frontend-language-toggle", true)
+
+      expect(response.body).to have_css "ul.language-toggle__list"
+      expect(response.body).to have_link "Cymraeg"
+      expect(response.body).not_to have_link "English"
+    end
+
     it "has a tab content that shows the page title" do
       expect(response.body).to include(
         " <title>Air conditioning inspection report – Find an energy certificate – GOV.UK</title>",
@@ -386,6 +400,26 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
         expect(response.body).to have_link "0000-0000-0000-0000-0002",
                                            href: "/energy-certificate/0000-0000-0000-0000-0002"
       end
+    end
+  end
+
+  context "when the assessment is fetched in Welsh" do
+    before do
+      FetchAssessmentSummary::AssessmentStub.fetch_ac_report(
+        assessment_id: "0000-0000-0000-0000-9999",
+      )
+    end
+
+    let(:response) do
+      get "/energy-certificate/0000-0000-0000-0000-9999?lang=cy"
+    end
+
+    it "shows the language toggle" do
+      Helper::Toggles.set_feature("frontend-language-toggle", true)
+
+      expect(response.body).to have_css "ul.language-toggle__list"
+      expect(response.body).to have_link "English"
+      expect(response.body).not_to have_link "Cymraeg"
     end
   end
 

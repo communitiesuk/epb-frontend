@@ -60,7 +60,7 @@
   </div>
 </header>
 
-<div class="govuk-width-container">
+<div class="govuk-width-container govuk-body">
   <% unless ENV["STAGE"] == "production" %>
     <div class="govuk-phase-banner non-production">
       <p class="govuk-phase-banner__content">
@@ -72,6 +72,12 @@
     </span>
       </p>
     </div>
+  <% end %>
+
+  <% if Helper::Toggles.enabled?("frontend-language-toggle") %>
+    <% if @display_language_toggle %>
+      <%== erb :_toggle_to_welsh %>
+    <% end %>
   <% end %>
 
   <main id="main-content" class="govuk-main-wrapper" role="main">
