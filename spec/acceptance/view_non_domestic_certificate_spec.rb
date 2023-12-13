@@ -201,9 +201,8 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
       end
 
       it "shows the current energy rating text" do
-        expect(response.body).to include(
-          '<p class="govuk-body">This property’s current energy rating is B.</p>',
-        )
+        expect(response.body).to have_css "p",
+                                          text: "This property’s energy rating is B."
       end
 
       it "shows the SVG alternate text title" do

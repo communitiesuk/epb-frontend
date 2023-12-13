@@ -81,9 +81,8 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
     end
 
     it "Shows the efficiency band from the related cepc" do
-      expect(response.body).to include(
-        "This property’s current energy rating is D.",
-      )
+      expect(response.body).to have_css "p",
+                                        text: "This property’s energy rating is D."
     end
 
     it "Shows a link to the related CEPC" do

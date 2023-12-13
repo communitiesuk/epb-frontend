@@ -119,6 +119,11 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       )
     end
 
+    it "shows the EPC rating text" do
+      expect(response.body).to have_css "p",
+                                        text: "This property’s energy rating is B."
+    end
+
     it "shows the SVG with energy ratings" do
       expect(response.body).to include('<svg width="615" height="376"')
     end
@@ -509,9 +514,8 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       end
 
       it "shows the summary text" do
-        expect(response.body).to include(
-          "This property’s current environmental impact rating is C. It has the potential to be B.",
-        )
+        expect(response.body).to have_css "p",
+                                          text: "This property’s environmental impact rating is C. It has the potential to be B."
       end
 
       it "shows the carbon emission section" do

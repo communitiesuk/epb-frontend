@@ -722,7 +722,7 @@ cy:
       title: "Cynnwys y dystysgrif"
     energy_rating_section:
       title: "Cyfraddiad a sgôr ynni"
-      current_rating_text: "Cyfraddiad effeithlonrwydd ynni presennol yr eiddo hwn yw %{current_energy_efficiency_band}."
+      current_rating_text: "Cyfraddiad ynni’r eiddo hwn yw %{current_energy_efficiency_band}."
       rating_desc: "Mae eiddo’n cael cyfraddiad rhwng A (y gorau) ac G (y gwaethaf) a sgôr."
       score_desc: "Gorau i gyd yw’r cyfraddiad a’r sgôr, isaf i gyd y mae allyriadau carbon yr eiddo yn debygol o fod."
       svg:
@@ -755,7 +755,7 @@ cy:
         title: "Cynnwys yr adroddiad"
       rating:
         title: "Cyfraddiad ynni ac EPC"
-        current_energy_rating: "Cyfraddiad ynni presennol yr eiddo hwn yw %{band}."
+        current_energy_rating: "Cyfraddiad ynni’r eiddo hwn yw %{band}."
         more_info: "I gael rhagor o wybodaeth am berfformiad ynni’r eiddo, %{link}."
         cta: "gweler EPC yr eiddo"
       property_details:
@@ -853,7 +853,7 @@ cy:
       epc:
         title: "Cyfraddiad a sgôr ynni"
         intro:
-          text: "Cyfraddiad effeithlonrwydd ynni presennol yr eiddo hwn yw %{current_energy_efficiency_band}. Mae ganddo’r potensial i fod yn %{potential_energy_efficiency_band}."
+          text: "Cyfraddiad ynni’r eiddo hwn yw %{current_energy_efficiency_band}. Mae ganddo’r potensial i fod yn %{potential_energy_efficiency_band}."
           cta: "Gweld sut i wella effeithlonrwydd ynni'r eiddo hwn"
         chart_title: "Siart effeithlonrwydd ynni"
         chart_description: "Cyfraddiad ynni cyfredol yr eiddo hwn yw %{current_energy_efficiency_band} gyda sgôr o %{current_energy_efficiency_rating}. Mae ganddo gyfraddiad ynni posibl o %{potential_energy_efficiency_band} gyda sgôr o %{potential_energy_efficiency_rating}."
@@ -984,7 +984,7 @@ cy:
           url_print: "www.gov.uk/improve-energy-efficiency"
       environmental_impact:
         title: "Effaith ar yr amgylchedd"
-        eir_rating: "Cyfraddiad effaith amgylcheddol yr eiddo hwn ar hyn o bryd yw %{current_environmental_impact_rating}. Mae gan yr eiddo y potensial i fod yn %{potential_environmental_impact_rating}."
+        eir_rating: "Cyfraddiad effaith amgylcheddol yr eiddo hwn yw %{current_environmental_impact_rating}. Mae gan yr eiddo y potensial i fod yn %{potential_environmental_impact_rating}."
         rating_scale: "Mae eiddo’n cael cyfraddiad rhwng A (y gorau) ac G (y gwaethaf) ar sail faint o garbon deuocsid (CO2) maen nhw’n ei gynhyrchu bob blwyddyn."
         heading: "Allyriadau carbon"
         summary: "Un o’r cyfranwyr mwyaf at newid yr hinsawdd yw carbon deuocsid (CO2). Yr ynni a ddefnyddir i wresogi, goleuo a phweru’n cartrefi sy’n cynhyrchu mwy na chwarter allyriadau CO2 y Deyrnas Unedig."
