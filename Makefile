@@ -30,10 +30,15 @@ assets-version:
 run:
 	@bundle exec rackup -p 9292 ${ARGS}
 
-.PHONY: format
+.PHONY: formatmak
 format:
 	@bundle exec rubocop --autocorrect || true && npm run fmt || true
 
 .PHONY: journey
 journey:
 	@bundle exec rspec --tag journey
+
+.PHONY: run-docker
+run-docker:
+	docker build . --tag epb-frontend
+	docker run -p 80:80 -p 443:443 --name test-epb-frontend epb-frontend

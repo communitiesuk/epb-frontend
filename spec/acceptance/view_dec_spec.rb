@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require_relative "./shared_language_toggle"
 require_relative "./content_security_policy_behaviour"
 
 describe "Acceptance::DisplayEnergyCertificate", type: :feature do
@@ -19,19 +20,9 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
       expect(response.body).to include("Display energy certificate")
     end
 
-    it "does not show the language toggle" do
-      Helper::Toggles.set_feature("frontend-language-toggle", false)
+    include_examples "does not show language toggle"
 
-      expect(response.body).not_to have_css "ul.language-toggle__list"
-    end
-
-    it "shows the language toggle" do
-      Helper::Toggles.set_feature("frontend-language-toggle", true)
-
-      expect(response.body).to have_css "ul.language-toggle__list"
-      expect(response.body).to have_link "Cymraeg"
-      expect(response.body).not_to have_link "English"
-    end
+    include_examples "show language toggle"
 
     it "has a tab content that shows" do
       expect(response.body).to include(
