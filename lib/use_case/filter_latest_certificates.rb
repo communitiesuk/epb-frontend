@@ -24,7 +24,7 @@ module UseCase
   private
 
     def update_address_lines(certs_by_address)
-      certs_by_address.each do |_, address|
+      certs_by_address.each_value do |address|
         recent_certificate = nil
         address[:certificates].each do |certificate|
           if recent_certificate.nil? ||

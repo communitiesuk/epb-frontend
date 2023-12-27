@@ -14,7 +14,7 @@ module Helper
     def self.hide_heating_demand?(assessment)
       return true if assessment[:heatDemand].nil?
 
-      (assessment[:heatDemand][:currentWaterHeatingDemand].nil? && assessment[:heatDemand][:currentSpaceHeatingDemand].nil?)
+      assessment[:heatDemand][:currentWaterHeatingDemand].nil? && assessment[:heatDemand][:currentSpaceHeatingDemand].nil?
     end
   end
 end

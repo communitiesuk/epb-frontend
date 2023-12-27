@@ -12,7 +12,7 @@ class FrontendService < Sinatra::Base
   attr_reader :toggles
 
   set :erb, escape_html: true
-  set :public_folder, (proc { File.join(root, "/../public") })
+  set :public_folder, proc { File.join(root, "/../public") }
   set :static_cache_control, [:public, { max_age: 60 * 60 * 24 * 7 }] if ENV["ASSETS_VERSION"]
 
   if ENV["STAGE"] == "test"
