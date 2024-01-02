@@ -4,7 +4,7 @@ require "nokogiri"
 require "ostruct"
 
 describe "ported design system components (in ERB) against govuk-frontend fixtures (see https://frontend.design-system.service.gov.uk/testing-your-html/#test-if-your-html-matches-gov-uk-frontend)", type: :view do
-  should_skip = !Dir.exist?("#{__dir__}/../../../node_modules/govuk-frontend/govuk/components")
+  should_skip = !Dir.exist?("#{__dir__}/../../../node_modules/govuk-frontend/dist/govuk/components")
 
   if should_skip
     it "tries to test the ported design system components (in ERB) against govuk-frontend fixtures" do
@@ -21,7 +21,7 @@ describe "ported design system components (in ERB) against govuk-frontend fixtur
 
   fixtures =
     implemented_components.each_with_object({}) do |component, fixtures_hash|
-      fixtures_hash[component.to_sym] = YAML.safe_load(File.open(File.expand_path("#{__dir__}/../../../node_modules/govuk-frontend/govuk/components/#{component.gsub('_', '-')}/fixtures.json")), symbolize_names: true)
+      fixtures_hash[component.to_sym] = YAML.safe_load(File.open(File.expand_path("#{__dir__}/../../../node_modules/govuk-frontend/dist/govuk/components/#{component.gsub('_', '-')}/fixtures.json")), symbolize_names: true)
     end
 
   fixtures.each do |component, component_fixtures|

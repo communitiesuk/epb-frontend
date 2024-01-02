@@ -2,7 +2,7 @@
   <div class="govuk-warning-text" >
     <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
     <strong class="govuk-warning-text__text">
-      <span class="govuk-warning-text__assistive">
+      <span class="govuk-visually-hidden">
         <%= t('component.expired_warning.title') %></span>
      <%= t("component.expired_warning.#{defined?(type) ? type : 'certificate'}.message")%>
       <span class="govuk-!-display-none-print"><%= t("component.expired_warning.#{defined?(type) ? type : 'certificate'}.link_prelude") %> <a class="govuk-link" href="<%= get_service_root_page_url %>">

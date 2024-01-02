@@ -100,7 +100,7 @@
         <% if assessment[:currentEnergyEfficiencyBand] > minimum_energy_band %>
           <div class="govuk-warning-text">
             <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-            <strong class="govuk-warning-text__text"><span class="govuk-warning-text__assistive"><%= t('non_domestic_epc.sections.renting.warning.assistive_text') %></span><%= t('non_domestic_epc.sections.renting.warning.text') %></strong>
+            <strong class="govuk-warning-text__text"><span class="govuk-visually-hidden"><%= t('non_domestic_epc.sections.renting.warning.assistive_text') %></span><%= t('non_domestic_epc.sections.renting.warning.text') %></strong>
           </div>
           <p class="govuk-body"><%== t('non_domestic_epc.sections.renting.warning.body', current_energy_efficiency_band: assessment[:currentEnergyEfficiencyBand].upcase) %></p>
           <p class="govuk-body"><%== t('non_domestic_epc.sections.renting.rental_info.summary') %></p>

@@ -156,7 +156,7 @@
           <div class="govuk-warning-text">
             <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
             <div class="govuk-warning-text__text">
-              <span class="govuk-warning-text__assistive"><%= t('domestic_epc.sections.renting.landlord_warning.hidden_text') %></span>
+              <span class="govuk-visually-hidden"><%= t('domestic_epc.sections.renting.landlord_warning.hidden_text') %></span>
               <h2 id="error-summary-title" class="govuk-error-summary__title">
                 <%= t('domestic_epc.sections.renting.landlord_warning.subtitle') %>
               </h2>
@@ -237,7 +237,7 @@
         <% if assessment[:recommendedImprovements].empty? %>
           <p class="govuk-body "><%= t('domestic_epc.sections.recommendations.summary.no_recommendations_summary') %></p>
         <% else %>
-          <details class="govuk-details" data-module="govuk-details">
+          <details class="govuk-details">
             <summary class="govuk-details__summary">
               <span class="govuk-details__summary-text"><%= t('domestic_epc.sections.recommendations.summary.steps_in_order_question') %></span>
             </summary>

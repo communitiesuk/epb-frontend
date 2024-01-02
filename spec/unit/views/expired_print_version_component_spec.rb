@@ -4,7 +4,7 @@ require "date"
 describe "expired_print_version_component", type: :view do
   it "displays a warning title" do
     expect(
-      expired_print_version("certificate").find(".govuk-warning-text__assistive").text,
+      expired_print_version("certificate").find(".govuk-visually-hidden").text,
     ).to eq "Warning"
   end
 

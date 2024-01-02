@@ -11,7 +11,7 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
 
       it "includes the gov header " do
         expect(response.body).to include(
-          "<a href=\"/\" class=\"govuk-header__link govuk-header__link--service-name\">Get a new energy certificate</a>",
+          "<a href=\"/\" class=\"govuk-header__link govuk-header__service-name\">Get a new energy certificate</a>",
         )
       end
 

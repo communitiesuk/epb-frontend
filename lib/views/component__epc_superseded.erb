@@ -2,7 +2,7 @@
   <div class="govuk-warning-text" >
     <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
     <strong class="govuk-warning-text__text">
-      <span class="govuk-warning-text__assistive">
+      <span class="govuk-visually-hidden">
         <%= t('component.superseded.title') %></span>
      <%= t("component.superseded.#{defined?(type) ? type : 'certificate'}_message") %>.
       <span class="govuk-!-display-none-print"><a class="govuk-link" href="<%= localised_url('/energy-certificate/' + assessment[:supersededBy]) %>">

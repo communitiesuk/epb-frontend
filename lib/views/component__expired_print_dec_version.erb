@@ -10,7 +10,7 @@
   margin-top: -5px;
   }
 
-  .govuk-warning-text__assistive {
+  .govuk-visually-hidden {
     display: none;
   }
 
@@ -97,7 +97,7 @@
               <div class="govuk-warning-text" >
                 <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
                 <strong class="govuk-warning-text__text">
-                  <span class="govuk-warning-text__assistive"><%= t("component.expired_warning.title") %></span>
+                  <span class="govuk-visually-hidden"><%= t("component.expired_warning.title") %></span>
                    <%= t("component.expired_print_version.#{defined?(type) ? type : 'certificate'}_title") %>
                   <p class="govuk-body margin-top"><%= t("component.expired_print_version.#{defined?(type) ? type : 'certificate'}_link_text") %></p>
                   <p class="govuk-body font-weight-bold"><%= t("component.expired_print_version.#{defined?(type) ? type : 'certificate'}_get_help_text") %></p>

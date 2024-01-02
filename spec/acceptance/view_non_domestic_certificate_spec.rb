@@ -141,7 +141,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
 
       it "shows the letting info warning text" do
         expect(response.body).to include(
-          '<strong class="govuk-warning-text__text"><span class="govuk-warning-text__assistive">Warning</span>You may not be able to let this property.</strong>',
+          '<strong class="govuk-warning-text__text"><span class="govuk-visually-hidden">Warning</span>You may not be able to let this property.</strong>',
         )
       end
 
