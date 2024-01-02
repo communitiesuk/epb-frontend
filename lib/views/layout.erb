@@ -134,7 +134,7 @@
     </div>
   </div>
 </footer>
-<script src="<%= assets_path('/javascript/govuk.js') %>" nonce="<%= script_nonce %>"></script>
+<script type="module" src="<%= assets_path('/javascript/govuk.js') %>" nonce="<%= script_nonce %>"></script>
 <script type="module" nonce="<%= script_nonce %>">
   import { initAll } from '<%= assets_path('/javascript/govuk.js') %>'
   initAll()
