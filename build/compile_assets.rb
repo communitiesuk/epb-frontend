@@ -35,20 +35,26 @@ build_sass "./assets/sass/printable.scss", public_target("./public/printable.css
 build_sass "./assets/sass/print_certificates.scss",
            public_target("./public/print-certificates.css")
 
-puts "Copying fonts"
-FileUtils.copy_entry "./assets/fonts", public_target("./public/fonts")
+puts "Copying GOVUKFrontend fonts"
+FileUtils.copy_entry "./node_modules/govuk-frontend/dist/govuk/assets/fonts", public_target("./public/fonts")
 
 puts "Copying images"
 FileUtils.copy_entry "./assets/images", public_target("./public/images")
+
+puts "Copying GOVUKFrontend images"
+FileUtils.copy_entry "./node_modules/govuk-frontend/dist/govuk/assets/images", public_target("./public/images")
+
+puts "Copying GOVUKFrontend manifest"
+FileUtils.copy_entry "./node_modules/govuk-frontend/dist/govuk/assets/manifest.json", public_target("./public/manifest.json")
 
 puts "Compiling and copying JavaScript"
 unless File.directory?(public_target("./public/javascript"))
   FileUtils.mkdir(public_target("./public/javascript"))
 end
+`./node_modules/.bin/babel #{File.realpath("./assets/javascript")} --ignore #{File.realpath("./assets/javascript/__tests__")} --out-dir #{File.realpath(public_target("./public/javascript"))} --no-comments`
 
 puts "  Copying and renaming GOVUKFrontend js"
 `npm run copy-without-comments #{File.realpath("./node_modules/govuk-frontend/dist/govuk/govuk-frontend.min.js")} #{File.realpath(public_target("./public/javascript"))}/govuk.js`
-`./node_modules/.bin/babel #{File.realpath("./assets/javascript")} --ignore #{File.realpath("./assets/javascript/__tests__")} --out-dir #{File.realpath(public_target("./public/javascript"))} --no-comments`
 
 puts "Copying robots.txt"
 FileUtils.copy_entry "./assets/robots.txt", "./public/robots.txt"
