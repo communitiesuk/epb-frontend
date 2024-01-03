@@ -37,8 +37,3 @@ format:
 .PHONY: journey
 journey:
 	@bundle exec rspec --tag journey
-
-.PHONY: run-docker
-run-docker:
-	docker build . --tag epb-frontend
-	docker run -p 80:80 -p 443:443 --name test-epb-frontend epb-frontend

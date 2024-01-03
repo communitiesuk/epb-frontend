@@ -12,7 +12,6 @@ phases:
 
   pre_build:
     commands:
-      - mv AWS-Procfile Procfile
       - n $NODE_18_VERSION
       - npm install
       - bundle install
