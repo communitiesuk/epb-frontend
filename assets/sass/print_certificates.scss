@@ -258,6 +258,10 @@ $epc-compare-svg-width: $epc-compare-svg-height * 1.8;
       display: none;
     }
   }
+
+  .govuk-details__summary-text {
+    font-size: 1rem;
+  }
 }
 
 .epc-contact-assessor {
