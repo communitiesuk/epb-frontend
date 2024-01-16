@@ -198,7 +198,7 @@
         current_energy_efficiency_band: assessment[:currentEnergyEfficiencyBand],
         potential_energy_efficiency_band: assessment[:potentialEnergyEfficiencyBand],
         title: t('domestic_epc.sections.epc.chart_title'),
-        description: t('domestic_epc.sections.epc.chart_description', :current_energy_efficiency_band => assessment[:currentEnergyEfficiencyBand].upcase, :current_energy_efficiency_rating => assessment[:currentEnergyEfficiencyRating], :potential_energy_efficiency_band => assessment[:potentialEnergyEfficiencyBand].upcase, :potential_energy_efficiency_rating => assessment[:potentialEnergyEfficiencyRating] )} %>
+        description: t('domestic_epc.sections.epc.chart_description', :current_energy_efficiency_band => assessment[:currentEnergyEfficiencyBand].upcase, :current_energy_efficiency_rating => assessment[:currentEnergyEfficiencyRating], :potential_energy_efficiency_band => assessment[:potentialEnergyEfficiencyBand].upcase, :potential_energy_efficiency_rating => assessment[:potentialEnergyEfficiencyRating], :rating_explanation => t('domestic_epc.sections.epc.rating_explanation_'+assessment[:currentEnergyEfficiencyBand].upcase) )} %>
       <p class="govuk-body govuk-!-margin-top-6"><%= t('domestic_epc.sections.epc.body1') %></p>
       <p class="govuk-body govuk-!-margin-top-6"><span class="govuk-!-font-weight-bold"><%= t('domestic_epc.sections.epc.body2') %></span> <%= t('domestic_epc.sections.epc.body3') %></p>
 
