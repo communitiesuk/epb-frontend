@@ -727,7 +727,15 @@ en:
       score_desc: "The better the rating and score, the lower your property's carbon emissions are likely to be."
       svg:
         chart_title: "Energy efficiency chart"
-        chart_description: "This property’s current energy rating is %{current_energy_efficiency_band} with a score of %{current_energy_efficiency_rating}."
+        chart_description: "This property’s energy rating is %{current_energy_efficiency_band} with a score of %{current_energy_efficiency_rating}. Properties get a rating from A+ to G and a score. %{rating_explanation}. The ratings and scores are as follows from best to worst. Rating A+ is for a score below zero. Rating A is for a score of zero to 25. Rating B is for a score of 26 to 50. Rating C is for a score of 51 to 75. Rating D is for a score of 76 to 100. Rating E is for a score of 101 to 125. Rating F is for a score of 126 to 150. Rating G is for a score over 150."
+        rating_explanation_A+: "Rating A+ is for a score below zero"
+        rating_explanation_A: "Rating A is for a score of zero to 25"
+        rating_explanation_B: "Rating B is for a score of 26 to 50"
+        rating_explanation_C: "Rating C is for a score of 51 to 75"
+        rating_explanation_D: "Rating D is for a score of 76 to 100"
+        rating_explanation_E: "Rating E is for a score of 101 to 125"
+        rating_explanation_F: "Rating F is for a score of 126 to 150"
+        rating_explanation_G: "Rating G is for a score over 150"
     sections:
       renting:
         title: "Rules on letting this property"
@@ -856,7 +864,7 @@ en:
           text: "This property’s energy rating is %{current_energy_efficiency_band}. It has the potential to be %{potential_energy_efficiency_band}."
           cta: "See how to improve this property’s energy efficiency"
         chart_title: "Energy efficiency chart"
-        chart_description: "This property’s current energy rating is %{current_energy_efficiency_band} with a score of %{current_energy_efficiency_rating}. It has a potential energy rating of %{potential_energy_efficiency_band} with a score of %{potential_energy_efficiency_rating}. Properties get a rating from A to G and a score. %{rating_explanation}. The ratings and scores are as follows from best to worst. Rating A is for a score of 92 or more. Rating B is for a score of 81 to 91. Rating C is for a score of 69 to 80. Rating D is for a score of 55 to 68. Rating E is for a score of 39 to 54. Rating F is for a score of 21 to 38. Rating G is for a score of 1 to 20."
+        chart_description: "This property’s energy rating is %{current_energy_efficiency_band} with a score of %{current_energy_efficiency_rating}. It has a potential energy rating of %{potential_energy_efficiency_band} with a score of %{potential_energy_efficiency_rating}. Properties get a rating from A to G and a score. %{rating_explanation}. The ratings and scores are as follows from best to worst. Rating A is for a score of 92 or more. Rating B is for a score of 81 to 91. Rating C is for a score of 69 to 80. Rating D is for a score of 55 to 68. Rating E is for a score of 39 to 54. Rating F is for a score of 21 to 38. Rating G is for a score of 1 to 20."
         rating_explanation_A: "Rating A is for a score of 92 or more"
         rating_explanation_B: "Rating B is for a score of 81 to 91"
         rating_explanation_C: "Rating C is for a score of 69 to 80"

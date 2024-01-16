@@ -204,7 +204,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
 
       it "shows the SVG alternate text description" do
         expect(response.body).to include(
-          '<desc id="svg-desc">This property’s current energy rating is B with a score of 35.</desc>',
+          '<desc id="svg-desc">This property’s energy rating is B with a score of 35. Properties get a rating from A+ to G and a score. Rating B is for a score of 26 to 50. The ratings and scores are as follows from best to worst. Rating A+ is for a score below zero. Rating A is for a score of zero to 25. Rating B is for a score of 26 to 50. Rating C is for a score of 51 to 75. Rating D is for a score of 76 to 100. Rating E is for a score of 101 to 125. Rating F is for a score of 126 to 150. Rating G is for a score over 150.</desc>',
         )
       end
 
