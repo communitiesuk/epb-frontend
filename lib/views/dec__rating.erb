@@ -8,7 +8,7 @@
     energy_efficiency_band: assessment[:currentAssessment][:energyEfficiencyBand],
     energy_efficiency_rating: assessment[:currentAssessment][:energyEfficiencyRating],
     title: t('dec.sections.rating.chart_title'),
-    description: t('dec.sections.rating.chart_description', :energy_efficiency_band => assessment[:currentAssessment][:energyEfficiencyBand].upcase, :energy_efficiency_rating => assessment[:currentAssessment][:energyEfficiencyRating])
+    description: t('dec.sections.rating.chart_description', :energy_efficiency_band => assessment[:currentAssessment][:energyEfficiencyBand].upcase, :energy_efficiency_rating => assessment[:currentAssessment][:energyEfficiencyRating], :rating_explanation => t('dec.sections.rating.rating_explanation_' + assessment[:currentAssessment][:energyEfficiencyBand].upcase))
   } %>
 
   <p class="govuk-body"><%== t('dec.sections.rating.guidance_text', :link => '<a class="govuk-link" href="' + t('dec.sections.rating.url') + '">' + t('dec.sections.rating.cta') + '</a>') %></p>
