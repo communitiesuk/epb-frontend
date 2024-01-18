@@ -1,7 +1,9 @@
 # Energy Performance of Buildings Register
 
 Frontend for the Energy Performance of Buildings Register:
-<https://mhclg-epb-frontend-ui-production.london.cloudapps.digital>
+
+* <https://find-energy-certificate.service.gov.uk>
+* <https://getting-new-energy-certificate.service.gov.uk>
 
 [![Frontend smoke tests](https://github.com/communitiesuk/epb-frontend-smoke-tests/actions/workflows/main.yml/badge.svg)](https://github.com/communitiesuk/epb-frontend-smoke-tests/actions/workflows/main.yml)
 
