@@ -1498,7 +1498,7 @@ cy:
         text: "Mae sgôr a chyfraddiad gweithredol yn cael eu rhoi i’r eiddo ar raddfa rhwng A (yr allyriadau isaf) i G (yr allyriadau uchaf)"
         typical_text: "Sgôr nodweddiadol adeilad cyhoeddus yw 100. Mae’r sgôr nodweddiadol hon yn rhoi cyfraddiad gweithredol o D."
         chart_title: "Siart effeithlonrwydd ynni gweithredol"
-        chart_description: "Cyfraddiad ynni cyfredol yr adeilad hwn yw %{energy_efficiency_band} gyda sgôr o %{energy_efficiency_rating}. Mae adeiladau’n cael cyfraddiad rhwng A ac G a sgôr.%{rating_explanation} Mae’r cyfraddiadau a’r sgoriau fel a ganlyn o’r gorau i’r gwaethaf."
+        chart_description: "Cyfraddiad ynni gweithredol yr adeilad hwn yw %{energy_efficiency_band} gyda sgôr o %{energy_efficiency_rating}. Mae adeiladau’n cael cyfraddiad rhwng A ac G a sgôr.%{rating_explanation} Mae’r cyfraddiadau a’r sgoriau fel a ganlyn o’r gorau i’r gwaethaf."
         rating_explanation_A: " Mae cyfraddiad A yn dynodi sgôr o sero i 25."
         rating_explanation_B: " Mae cyfraddiad B yn dynodi sgôr o 26 i 50."
         rating_explanation_C: " Mae cyfraddiad C yn dynodi sgôr o 51 i 75."
