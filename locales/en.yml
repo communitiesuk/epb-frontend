@@ -1938,15 +1938,14 @@ en:
     non_accessible_heading: "Non-accessible content"
     non_accessible_paragraph: "The content listed below is non-accessible for the following reasons."
     non_compliance_heading: "Non-compliance with the accessibility regulations"
-    non_compliance_paragraph_1: "Some information is missing from alternative text on non-text content. For example, we have included the current energy rating and score but not the different scoring ranges. This fails WCAG 2.1 success criterion 1.1.1 (Non-text Content)."
-    non_compliance_paragraph_2: "Some content comes from accredited assessors. This may be incorrectly structured for the web and difficult to browse with a screen reader, most notably on the Air Conditioning Inspection Reports."
+    non_compliance_paragraph_1: "Some content comes from accredited assessors. This may be incorrectly structured for the web and difficult to browse with a screen reader, most notably on the Air Conditioning Inspection Reports."
     out_of_scope_heading: "Content that’s not within the scope of the accessibility regulations"
     out_of_scope_paragraph: "Not applicable."
     what_we_do_heading: "What we’re doing to improve accessibility"
     what_we_do_paragraph_1: "We are currently working to fix the issues mentioned."
     what_we_do_paragraph_2: "We will continue to monitor the accessibility of our services. We will update this page when we find and fix any further issues."
     preparation_heading: "Preparation of this accessibility statement"
-    preparation_paragraph: "This statement was prepared on 20 September 2020. It was last reviewed on 3 November 2023."
+    preparation_paragraph: "This statement was prepared on 20 September 2020. It was last reviewed on 17 January 2024."
     accessibility_audit: "This website was last tested on 3 January 2023. The test was carried out by the Digital Accessibility Centre (DAC), an independent accessibility audit company. They tested a range of journeys through the service. The team included disabled testers."
 
   help_page:
