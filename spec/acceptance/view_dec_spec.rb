@@ -106,7 +106,7 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
 
     it "shows the SVG alternative text description" do
       expect(response.body).to include(
-        '<desc id="svg-desc">This building’s operational energy rating is A with a score of 1. Buildings get a rating from A to G and a score. Rating A is for a score of zero to 25. The ratings and scores are as follows from best to worst. A is for a score of zero to 25. Rating B is for a score of 26 to 50. Rating C is for a score of 51 to 75. Rating D is for a score of 76 to 100. Rating E is for a score of 101 to 125. Rating F is for a score of 126 to 150. Rating G is for a score over 150.</desc>',
+        '<desc id="svg-desc">This building’s operational energy rating is A with a score of 1. Buildings get a rating from A to G and a score. Rating A is for a score of zero to 25. The ratings and scores are as follows from best to worst. Rating A is for a score of zero to 25. Rating B is for a score of 26 to 50. Rating C is for a score of 51 to 75. Rating D is for a score of 76 to 100. Rating E is for a score of 101 to 125. Rating F is for a score of 126 to 150. Rating G is for a score over 150.</desc>',
       )
     end
 

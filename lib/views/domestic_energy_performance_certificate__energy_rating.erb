@@ -1,6 +1,6 @@
 <svg width="615" height="376" viewBox="0 0 615 376" xmlns="http://www.w3.org/2000/svg" aria-labelledby="svg-title svg-desc" role="img" class="epc-energy-rating-graph">
   <title id="svg-title"><%= title %></title>
-  <desc id="svg-desc"><%= description %></desc>
+  <desc id="svg-desc"><%= description + t('domestic_epc.sections.epc.rating_explanation_A') + t('domestic_epc.sections.epc.rating_explanation_B')+ t('domestic_epc.sections.epc.rating_explanation_C')+ t('domestic_epc.sections.epc.rating_explanation_D')+ t('domestic_epc.sections.epc.rating_explanation_E') + t('domestic_epc.sections.epc.rating_explanation_F') + t('domestic_epc.sections.epc.rating_explanation_G')%></desc>
   <%
 
     bands = {
