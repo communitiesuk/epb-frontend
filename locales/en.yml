@@ -724,7 +724,7 @@ en:
       title: "Energy rating and score"
       current_rating_text: "This property’s energy rating is %{current_energy_efficiency_band}."
       rating_desc: "Properties get a rating from A+ (best) to G (worst) and a score."
-      score_desc: "The better the rating and score, the lower your property's carbon emissions are likely to be."
+      score_desc: "The better the rating and score, the lower your property’s carbon emissions are likely to be."
       svg:
         chart_title: "Energy efficiency chart"
         chart_description: "This property’s energy rating is %{current_energy_efficiency_band} with a score of %{current_energy_efficiency_rating}. Properties get a rating from A+ to G and a score.%{rating_explanation} The ratings and scores are as follows from best to worst."
@@ -806,7 +806,7 @@ en:
         id: "Assessor’s ID"
       scheme:
         heading: "Contacting the accreditation scheme"
-        intro: "If you're still unhappy after contacting the assessor, you should contact the assessor’s accreditation scheme."
+        intro: "If you’re still unhappy after contacting the assessor, you should contact the assessor’s accreditation scheme."
         name: "Accreditation scheme"
         phone: "Telephone"
         email: "Email"
@@ -883,7 +883,7 @@ en:
         title: "Breakdown of property’s energy performance"
         sub_heading: "Features in this property"
         intro: "Features get a rating from very good to very poor, based on how energy efficient they are. Ratings are not based on how well features work or their condition."
-        assessment_rating_explanation: "Assumed ratings are based on the property's age and type. They are used for features the assessor could not inspect."
+        assessment_rating_explanation: "Assumed ratings are based on the property’s age and type. They are used for features the assessor could not inspect."
         heading_feature: "Feature"
         heading_description: "Description"
         heading_rating: "Rating"
@@ -1046,7 +1046,7 @@ en:
             name: "Assessor’s name"
         scheme:
           title: "Contacting the accreditation scheme"
-          intro: "If you're still unhappy after contacting the assessor, you should contact the assessor’s accreditation scheme."
+          intro: "If you’re still unhappy after contacting the assessor, you should contact the assessor’s accreditation scheme."
           list:
             name: "Accreditation scheme"
             scheme_assessor_id: "Assessor’s ID"

@@ -226,7 +226,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
 
       it "shows the energy rating score description" do
         expect(response.body).to include(
-          "The better the rating and score, the lower your property's carbon emissions are likely to be.",
+          "The better the rating and score, the lower your property’s carbon emissions are likely to be.",
         )
       end
 
