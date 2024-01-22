@@ -18,8 +18,6 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
                                         text: "Air conditioning inspection report"
     end
 
-    include_examples "does not show language toggle"
-
     include_examples "show language toggle"
 
     it "has a tab content that shows the page title" do
@@ -406,8 +404,6 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
     end
 
     it "shows the language toggle" do
-      Helper::Toggles.set_feature("frontend-language-toggle", true)
-
       expect(response.body).to have_css "ul.language-toggle__list"
       expect(response.body).to have_link "English"
       expect(response.body).not_to have_link "Cymraeg"

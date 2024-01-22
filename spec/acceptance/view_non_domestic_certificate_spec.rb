@@ -52,8 +52,6 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
     it_behaves_like "all script elements have nonce attributes"
     it_behaves_like "all style elements have nonce attributes"
 
-    include_examples "does not show language toggle"
-
     include_examples "show language toggle"
 
     describe "viewing the summary section" do
@@ -427,8 +425,6 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
     end
 
     it "shows the language toggle" do
-      Helper::Toggles.set_feature("frontend-language-toggle", true)
-
       expect(response.body).to have_css "ul.language-toggle__list"
       expect(response.body).to have_link "English"
       expect(response.body).not_to have_link "Cymraeg"

@@ -74,10 +74,8 @@
     </div>
   <% end %>
 
-  <% if Helper::Toggles.enabled?("frontend-language-toggle") %>
-    <% if @display_language_toggle %>
-      <%== erb :_toggle_to_welsh %>
-    <% end %>
+  <% if @display_language_toggle %>
+    <%== erb :_toggle_to_welsh %>
   <% end %>
 
   <main id="main-content" class="govuk-main-wrapper" role="main">
