@@ -49,6 +49,10 @@ describe "Partial include analytics", type: :feature do
     it "includes the partial no script in the layout" do
       expect(response.body).to include("https://www.googletagmanager.com/ns.html?id")
     end
+
+    it "include the gtag script" do
+      expect(response.body).to include("gtag()")
+    end
   end
 
   context "when the cookie_consent cookie is false " do
@@ -67,6 +71,10 @@ describe "Partial include analytics", type: :feature do
 
     it "does not include the partial no script in the layout" do
       expect(response.body).not_to include("https://www.googletagmanager.com/ns.html?id")
+    end
+
+    it "include the gtag script" do
+      expect(response.body).not_to include("gtag()")
     end
   end
 

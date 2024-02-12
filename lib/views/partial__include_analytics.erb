@@ -13,6 +13,7 @@
 GOOGLE_PROPERTY = '<%= google_property %>';
 </script>
 <% end %>
+<% if cookie_consent? %>
 <script nonce="<%= script_nonce %>">
 exports = {};
 function gtag() {
@@ -20,4 +21,5 @@ function gtag() {
   window.dataLayer.push(arguments);
 }
 </script>
+<% end %>
 <script async src="<%= assets_path('/javascript/cookie-consent.js') %>" nonce="<%= script_nonce %>"></script>
