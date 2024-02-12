@@ -5,7 +5,7 @@ ruby "3.1.3"
 source "https://rubygems.org"
 
 group :development do
-  gem "sinatra-contrib"
+  # gem "sinatra-contrib"
 end
 
 group :test do
@@ -31,5 +31,6 @@ gem "rubocop-govuk", "~> 4.13"
 gem "rubocop-rspec", "~> 2.25"
 gem "sentry-ruby", "~> 5.15"
 gem "sinatra", "~> 3.0"
+gem "sinatra-contrib"
 gem "unleash", "~> 5.0.0"
 gem "zeitwerk", "~> 2.6.12"

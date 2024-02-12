@@ -518,4 +518,8 @@ module Helpers
       "a"
     end
   end
+
+  def cookie_consent?
+    request.cookies["cookie_consent"].nil? || request.cookies["cookie_consent"] == "true"
+  end
 end

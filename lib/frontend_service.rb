@@ -4,6 +4,7 @@ require "erubis"
 require "i18n"
 require "i18n/backend/fallbacks"
 require "sinatra/base"
+require "sinatra/cookies"
 require_relative "container"
 require_relative "../lib/helper/toggles"
 
