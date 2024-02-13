@@ -139,19 +139,20 @@ const cookieConsent = (tagId, _, gtag, resolvers) => {
       const cookies = document.cookie.split('; ')
 
       for (let i = 0; i < cookies.length; i++) {
-        if (cookies[i].startsWith('_ga') || cookies[i].startsWith('cookie_consent')) {
+        if (cookies[i].startsWith('_ga')) {
           const expDate = new Date()
           const name = cookies[i].split('=')[0] + '='
           const value = cookies[i].split('=')[1] + ';'
 
           const expires = ' expires=' + expDate.toUTCString() + ';'
           const path = ' path=/;'
-          const domain = ' domain=' + document.domain.split('.').slice(-3).join('.') + ';'
-
+          let domain
+          if (document.domain.includes('communities')) {
+            domain = ' domain=' + document.domain.split('.').slice(-3).join('.') + ';'
+          } else { domain = ' domain=' + '.' + document.domain + ';' }
           document.cookie = name + value + expires + path + domain
         }
       }
-      document.cookie = 'cookie_consent=false;'
     },
 
     eraseOnPageChange: function () {
