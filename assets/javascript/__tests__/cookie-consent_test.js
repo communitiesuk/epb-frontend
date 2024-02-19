@@ -54,7 +54,6 @@ describe('using GTM (Google Tag Manager)', () => {
     })
   })
 
-
   describe('when cookies have not been accepted or rejected, but are accepted from user clicking acceptance', () => {
     beforeEach(() => {
       init()
@@ -68,12 +67,10 @@ describe('using GTM (Google Tag Manager)', () => {
       )
     })
   })
-
 })
 
 describe('when calling the reject cookie function to remove _ga* cookies  ', () => {
   beforeEach(() => {
-
     Object.defineProperty(window.document, 'cookie', {
       writable: true,
       value: '_ga=12345; ga_123458=458489489'
@@ -99,7 +96,6 @@ describe('when calling the reject cookie function to remove _ga* cookies  ', () 
   it('set the cookie_consent cookie to false', () => {
     expect(window.document.cookie).toContain('cookie_consent=false')
   })
-
 })
 
 function callScript () {
