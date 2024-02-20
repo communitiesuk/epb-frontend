@@ -1004,8 +1004,6 @@ class FrontendService < Sinatra::Base
     cookie_value = params[:cookies_setting].nil? ? "true" : params[:cookies_setting]
     response.set_cookie("cookie_consent", { value: cookie_value, path: "/" })
 
-    request.cookies.select { |k, _v| k.match(/^_ga/) }.each_key { |k| request.cookies.delete k } if cookie_value == "false"
-
     redirect localised_url("/cookies?success=true")
   end
 
