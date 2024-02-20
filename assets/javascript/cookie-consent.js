@@ -26,6 +26,7 @@ const cookieConsent = (tagId, _, gtag, resolvers) => {
       // If we're on the cookie page, let's present which option is selected (opt-in style)
       if (onCookiePage) {
         document.getElementById('cookies-setting' + (cookieValue === 'true' ? '' : '-false')).checked = true
+        cookies.cookieFormHandler()
       }
     },
 
@@ -161,6 +162,14 @@ const cookieConsent = (tagId, _, gtag, resolvers) => {
           cookies.erase()
         }
       })
+    },
+
+    cookieFormHandler: function () {
+      document.getElementById('cookies-consent-form').addEventListener('submit', cookies.cookieFormOnSubmit)
+    },
+
+    cookieFormOnSubmit: function () {
+      if (document.getElementById('cookies-setting').checked === true) { cookies.create('cookie_consent', 'true') } else { cookies.rejectCookieConsent() } return true
     }
   }
 

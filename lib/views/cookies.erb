@@ -30,20 +30,20 @@
 
     <p class="govuk-body"><%= t("cookies.dont_worry_again") %></p>
 
-    <form id="cookies-consent-form" action="" method="post" onsubmit="if(document.getElementById('cookies-setting').checked === true) {cookies.create('cookie_consent',  'true');} else {cookies.eraseOnPageChange();} return true;">
+    <form id="cookies-consent-form" action="" method="post">
       <input type="hidden" name="lang" value="<%= I18n.locale.to_s %>" />
       <div class="govuk-form-group">
         <fieldset id="cookies-setting-fieldset" class="govuk-fieldset" aria-required="true">
           <legend class="govuk-fieldset__legend govuk-visually-hidden"><%= t("cookies.form_title") %></legend>
           <div class="govuk-radios">
             <div class="govuk-radios__item">
-              <input id="cookies-setting" class="govuk-radios__input" name="cookies-setting" type="radio" value="true" />
-              <label id="cookies-setting-true-label" class="govuk-label govuk-radios__label" for="cookies-setting">
+              <input id="cookies-setting" class="govuk-radios__input" name="cookies_setting" type="radio" value="true" />
+              <label id="cookies-setting-true-label" class="govuk-label govuk-radios__label" for="cookies_setting">
                 <%= t("cookies.form_yes") %>
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input id="cookies-setting-false" class="govuk-radios__input" name="cookies-setting" type="radio" value="false" />
+              <input id="cookies-setting-false" class="govuk-radios__input" name="cookies_setting" type="radio" value="false" />
               <label id="cookies-setting-false-label" class="govuk-label govuk-radios__label" for="cookies-setting-false">
                 <%= t("cookies.form_no") %>
               </label>
