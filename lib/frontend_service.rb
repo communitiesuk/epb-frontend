@@ -714,7 +714,7 @@ class FrontendService < Sinatra::Base
               ),
           }
         when Errors::RequestTimeoutError
-          status 504
+          status 200
           erb_template = :search_by_street_name_and_town__timeout
           locals[:search_by_postcode_url] = "/find-a-non-domestic-certificate/search-by-postcode"
         when Errors::TooManyResults

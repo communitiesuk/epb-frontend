@@ -936,8 +936,8 @@ describe "Acceptance::NonDomesticCertificate" do
             get "http://find-energy-certificate.local.gov.uk/find-a-non-domestic-certificate/search-by-street-name-and-town?street_name=Doesnt%20Matter&town=Nothing"
           end
 
-          it "returns status 504 (gateway timeout)" do
-            expect(response.status).to eq(504)
+          it "returns status 200" do
+            expect(response.status).to eq(200)
           end
 
           it "displays the search area too big page heading" do
