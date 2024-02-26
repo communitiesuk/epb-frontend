@@ -1991,8 +1991,8 @@ cy:
     title: "Ymddiheuriadau. Nid yw’r gwasanaeth ar gael."
     try_later: "Byddwch yn gallu defnyddio’r gwasanaeth yn nes ymlaen."
     help_desk:
-      need_support: "Os oes arnoch angen help i ddod o hyd i dystysgrif ynni neu adroddiad, %{link}."
-      link: "cysylltwch â’n desg gymorth"
+      need_support: "%{link} os oes arnoch chi angen cymorth i ddod o hyd i dystysgrif neu adroddiad ynni."
+      link: "Cysylltwch â'n desg gymorth"
 
   date:
     abbr_month_names:
