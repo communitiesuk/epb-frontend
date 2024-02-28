@@ -19,6 +19,7 @@
   <%
     hide_bills_text = Helper::Certificate.hide_bills_text?(assessment)
     hide_heating_demand = Helper::Certificate.hide_heating_demand?(assessment)
+    hide_smart_meters = Helper::Certificate.hide_smart_meters?(assessment)
   %>
 
   <div class="govuk-grid-column-one-third govuk-!-display-none-print">
@@ -39,6 +40,11 @@
         {
           link: '#summary',
           text: 'domestic_epc.sidebar.sections.summary'
+        },
+        {
+          link: '#smart-meters',
+          text: 'domestic_epc.sidebar.sections.smart_meters',
+          hidden: hide_smart_meters
         },
         {
           link: '#bills-affected',
@@ -220,6 +226,10 @@
     <%== erb :domestic_energy_performance_certificate__energy_performance_breakdown, locals: {
       assessment: assessment
     } %>
+
+    <% unless hide_smart_meters %>
+      <%== erb :domestic_energy_performance_certificate__smart_meters, locals: { assessment: assessment } %>
+    <% end %>
 
     <% unless hide_bills_text && hide_heating_demand%>
       <%== erb :domestic_energy_performance_certificate__effect_on_bills, locals: {

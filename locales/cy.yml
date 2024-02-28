@@ -837,6 +837,7 @@ cy:
         summary: "Ddadansoddiad o berfformiad ynni’r eiddo"
         energy: "Effaith ar yr amgylchedd"
         recommendations: "Newidiadau y gallech eu gwneud"
+        smart_meters: "Mesuryddion clyfar"
         bills_affected: "Sut mae hyn yn effeithio ar eich biliau ynni"
         information: "Cysylltu â’r asesydd a’r cynllun achredu"
         green_deal: "Cynllun y fargen werdd"
@@ -965,6 +966,20 @@ cy:
           addendum_number_14:
             title: "Mae gan yr annedd nodwedd arbed ynni arbennig"
             details: "Mae gan yr annedd nodwedd arbed ynni arbennig sy’n cael ei chydnabod yn yr asesiad, ond mae ei heffaith ar yr arbedion a ddangosir ar gyfer mesurau gwella wedi’i hanwybyddu."
+      smart_meters:
+        title: "Mesuryddion clyfar"
+        smart_meter_presence:
+          body1: "Roedd gan yr eiddo yma "
+          gas_and_electricity: "fesuryddion clyfar ar gyfer nwy a thrydan"
+          gas_only: "fesurydd clyfar ar gyfer nwy"
+          electricity_only: "fesurydd clyfar ar gyfer trydan"
+          neither: "ddim mesuryddion clyfar"
+          body2: " pan gafodd ei asesu."
+        text: "Mae mesuryddion clyfar yn eich helpu i ddeall eich defnydd ynni a sut gallech chi arbed arian. Efallai y byddan nhw’n eich helpu i gael gafael ar fargeinion ynni gwell."
+        url_link_text: "Rhagor o wybodaeth am ddefnyddio’ch mesurydd clyfar"
+        url_link: "https://www.smartenergygb.org/using-your-smart-meter"
+        no_meters_url_link_text: "Rhagor o wybodaeth am sut i gael mesurydd clyfar"
+        no_meters_url_link: "https://www.smartenergygb.org/"
       effect_on_bills:
         title: "Sut mae hyn yn effeithio ar eich biliau ynni"
         average_household:

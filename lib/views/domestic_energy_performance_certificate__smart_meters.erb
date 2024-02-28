@@ -1,0 +1,33 @@
+<div id="smart-meters" class="govuk-body epc-blue-bottom printable-area" >
+  <h2 class="govuk-heading-l" ><%= t('domestic_epc.sections.smart_meters.title') %></h2>
+  <p class="govuk-body" >
+    <%= t('domestic_epc.sections.smart_meters.smart_meter_presence.body1') %>
+    <span class="govuk-!-font-weight-bold">
+      <% if assessment[:gasSmartMeterPresent] && assessment[:electricitySmartMeterPresent]%>
+          <%= t('domestic_epc.sections.smart_meters.smart_meter_presence.gas_and_electricity') %>
+      <% elsif assessment[:gasSmartMeterPresent]%>
+          <%= t('domestic_epc.sections.smart_meters.smart_meter_presence.gas_only') %>
+      <% elsif assessment[:electricitySmartMeterPresent]%>
+          <%= t('domestic_epc.sections.smart_meters.smart_meter_presence.electricity_only') %>
+      <% else %>
+          <%= t('domestic_epc.sections.smart_meters.smart_meter_presence.neither') %>
+      <% end %>
+    </span>
+    <%= t('domestic_epc.sections.smart_meters.smart_meter_presence.body2') %>
+  </p>
+  <p class="govuk-body" >
+    <%= t('domestic_epc.sections.smart_meters.text') %>
+  </p>
+  <p class="govuk-body">
+    <% if !assessment[:gasSmartMeterPresent] && !assessment[:electricitySmartMeterPresent]%>
+      <a href="<%= t('domestic_epc.sections.smart_meters.no_meters_url_link') %>">
+        <%= t('domestic_epc.sections.smart_meters.no_meters_url_link_text') %>
+      </a>
+    <% else %>
+      <a href="<%= t('domestic_epc.sections.smart_meters.url_link') %>">
+        <%= t('domestic_epc.sections.smart_meters.url_link_text') %>
+      </a>
+    <% end %>
+  </p>
+</div>
+

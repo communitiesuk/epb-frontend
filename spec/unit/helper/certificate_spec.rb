@@ -67,4 +67,32 @@ describe Helper::Certificate do
       end
     end
   end
+
+  describe "#hide_smart_meters?" do
+    context "when both gas and electric smart meters are set to nil" do
+      let(:assessment) do
+        {
+          gasSmartMeterPresent: nil,
+          electricitySmartMeterPresent: nil,
+        }
+      end
+
+      it "returns true" do
+        expect(helper.hide_smart_meters?(assessment)).to eq true
+      end
+    end
+
+    context "when both gas and electric smart meters are not set to nil" do
+      let(:assessment) do
+        {
+          gasSmartMeterPresent: true,
+          electricitySmartMeterPresent: false,
+        }
+      end
+
+      it "returns false" do
+        expect(helper.hide_smart_meters?(assessment)).to eq false
+      end
+    end
+  end
 end

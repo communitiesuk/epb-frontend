@@ -837,6 +837,7 @@ en:
         summary: "Breakdown of property’s energy performance"
         energy: "Impact on the environment"
         recommendations: "Changes you could make"
+        smart_meters: "Smart meters"
         bills_affected: "How this affects your energy bills"
         information: "Who to contact about this certificate"
         green_deal: "Green deal plan"
@@ -965,6 +966,21 @@ en:
           addendum_number_14:
             title: "Dwelling has a special energy saving feature"
             details: "The dwelling has a special energy saving feature which is recognised in the assessment, but its impact on the savings shown for improvement measures is ignored."
+      smart_meters:
+        title: "Smart meters"
+        smart_meter_presence:
+          body1: "This property had "
+          gas_and_electricity: "smart meters for gas and electricity"
+          gas_only: "a smart meter for gas"
+          electricity_only: "a smart meter for electricity"
+          neither: "no smart meters"
+          body2: " when it was assessed."
+        text: "Smart meters help you understand your energy use and how you could save money. They may help you access better energy deals."
+        url_link_text: "Find out about using your smart meter"
+        url_link: "https://www.smartenergygb.org/using-your-smart-meter"
+        no_meters_url_link_text: "Find out how to get a smart meter"
+        no_meters_url_link: "https://www.smartenergygb.org/"
+
       effect_on_bills:
         title: "How this affects your energy bills"
         average_household:

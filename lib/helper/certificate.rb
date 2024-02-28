@@ -16,5 +16,9 @@ module Helper
 
       assessment[:heatDemand][:currentWaterHeatingDemand].nil? && assessment[:heatDemand][:currentSpaceHeatingDemand].nil?
     end
+
+    def self.hide_smart_meters?(assessment)
+      assessment[:gasSmartMeterPresent].nil? || assessment[:electricitySmartMeterPresent].nil? ? true : false
+    end
   end
 end

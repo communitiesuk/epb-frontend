@@ -202,6 +202,8 @@ describe UseCase::FetchCertificate do
           lzcEnergySources: nil,
           environmentalImpactCurrent: "76",
           environmentalImpactPotential: "85",
+          gasSmartMeterPresent: nil,
+          electricitySmartMeterPresent: nil,
         },
       }
     end

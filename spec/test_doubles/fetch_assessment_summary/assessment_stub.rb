@@ -1266,7 +1266,9 @@ module FetchAssessmentSummary
       addendum: nil,
       lzc_energy_sources: nil,
       expiry_date: "2030-01-05",
-      superseded_by: "9025-0000-0000-0000-0000"
+      superseded_by: "9025-0000-0000-0000-0000",
+      gas_smart_meter_present: nil,
+      electricity_smart_meter_present: nil
     )
       FetchAssessmentSummary::AssessmentSummaryErrorStub.fetch(assessment_id)
       property_summary ||= generate_property_summary
@@ -1378,6 +1380,8 @@ module FetchAssessmentSummary
             },
             "addendum": addendum,
             "lzcEnergySources": lzc_energy_sources,
+            "gas_smart_meter_present": gas_smart_meter_present,
+            "electricity_smart_meter_present": electricity_smart_meter_present,
           },
           "meta": {},
         }
@@ -1628,6 +1632,8 @@ module FetchAssessmentSummary
             lzcEnergySources: lzc_energy_sources,
             environmentalImpactCurrent: "76",
             environmentalImpactPotential: "85",
+            gasSmartMeterPresent: gas_smart_meter_present,
+            electricitySmartMeterPresent: electricity_smart_meter_present,
           },
         }
       end
