@@ -39,8 +39,7 @@ GEM
     dartsass-ruby (3.0.2)
       sass-embedded (~> 1.54, < 1.67)
     diff-lcs (1.5.1)
-    drb (2.2.0)
-      ruby2_keywords
+    drb (2.2.1)
     epb-auth-tools (1.1.0)
       jwt (~> 2.3)
       oauth2 (>= 1.4, < 3.0)
@@ -55,7 +54,7 @@ GEM
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
     json (2.7.1)
-    jwt (2.8.0)
+    jwt (2.8.1)
       base64
     language_server-protocol (3.17.0.3)
     matrix (0.4.2)
