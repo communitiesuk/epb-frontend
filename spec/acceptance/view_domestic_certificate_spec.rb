@@ -703,7 +703,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
 
         let(:response) { get "/energy-certificate/1111-1111-1111-1111-1112" }
 
-        it "will not show the property summary elements", :aggregate_failures do
+        it "does not show the property summary elements", :aggregate_failures do
           expect(response.body).not_to include('<td class="govuk-table__cell">Secondary heating</td>')
           expect(response.body).not_to include('<td class="govuk-table__cell govuk-!-font-weight-bold">Very good</td>')
         end
@@ -1172,7 +1172,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
 
       let(:response) { get "/energy-certificate/1111-1111-1111-1111-1112" }
 
-      it "will show information unavailable instead" do
+      it "shows information unavailable instead" do
         expect(response.body).to include("Information unavailable")
       end
     end
@@ -1191,7 +1191,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
 
       let(:response) { get "/energy-certificate/1111-1111-1111-1111-1112" }
 
-      it "will show information unavailable instead" do
+      it "shows information unavailable instead" do
         expect(response.body).to include("Not applicable")
       end
     end

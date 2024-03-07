@@ -1,7 +1,11 @@
 <div id="smart-meters" class="govuk-body epc-blue-bottom printable-area" >
   <h2 class="govuk-heading-l" ><%= t('domestic_epc.sections.smart_meters.title') %></h2>
   <p class="govuk-body" >
+    <% if assessment[:gasSmartMeterPresent] || assessment[:electricitySmartMeterPresent]%>
     <%= t('domestic_epc.sections.smart_meters.smart_meter_presence.body1') %>
+    <% else %>
+    <%= t('domestic_epc.sections.smart_meters.smart_meter_presence.body1_neither') %>
+    <% end %>
     <span class="govuk-!-font-weight-bold">
       <% if assessment[:gasSmartMeterPresent] && assessment[:electricitySmartMeterPresent]%>
           <%= t('domestic_epc.sections.smart_meters.smart_meter_presence.gas_and_electricity') %>

@@ -81,7 +81,7 @@ describe "Helpers.find_address_lines_only", type: :helper do
   end
 
   context "when compacting address for email subject line in share component" do
-    it "will return the first address lines that aren't empty & isn't a duplicate occupier value" do
+    it "returns the first address lines that aren't empty & isn't a duplicate occupier value" do
       result = frontend_service_helpers.find_address_lines_only(assessment.default)
       expect(result).to eq("20 - 22 Upping Street, Another Address Line")
     end

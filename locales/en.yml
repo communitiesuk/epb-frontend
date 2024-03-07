@@ -970,6 +970,7 @@ en:
         title: "Smart meters"
         smart_meter_presence:
           body1: "This property had "
+          body1_neither: "This property had "
           gas_and_electricity: "smart meters for gas and electricity"
           gas_only: "a smart meter for gas"
           electricity_only: "a smart meter for electricity"

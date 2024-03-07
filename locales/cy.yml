@@ -970,6 +970,7 @@ cy:
         title: "Mesuryddion clyfar"
         smart_meter_presence:
           body1: "Roedd gan yr eiddo yma "
+          body1_neither: "Doedd gan yr eiddo yma "
           gas_and_electricity: "fesuryddion clyfar ar gyfer nwy a thrydan"
           gas_only: "fesurydd clyfar ar gyfer nwy"
           electricity_only: "fesurydd clyfar ar gyfer trydan"
