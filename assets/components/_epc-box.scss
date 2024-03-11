@@ -104,7 +104,7 @@
   text-align: center;
   float: right;
   border: 2px solid #fff;
-  margin: 10px;
+  margin: 1rem;
 
   @include black-bg-if-monochrome;
 
@@ -138,19 +138,19 @@
   @include black-bg-if-monochrome;
 
   .epc-address {
-    padding-left: 30px;
-    padding-top: 30px;
+    margin: 1.5rem;
     flex: 4 1 0;
   }
 
   .epc-extra-boxes {
     width: 100%;
+    display: flex;
+    align-items: stretch;
   }
 
   .epc-extra-box {
     border-top: 2px solid #fff;
     clear: both;
-    line-height: 60px;
     margin: 0;
     padding: 0;
     text-align: center;
@@ -159,11 +159,12 @@
 
     label {
       display: block;
+      margin: 1rem;
     }
 
     p {
       display: block;
-      margin-top: -0.9rem;
+      margin: 1rem;
     }
 
     +.epc-extra-box {
