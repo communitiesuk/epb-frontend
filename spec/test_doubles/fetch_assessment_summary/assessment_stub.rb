@@ -53,7 +53,7 @@ module FetchAssessmentSummary
             location: "Externally on roof",
             manufacturer: "Mitsubishi",
             modelReference: "FDC100VN",
-            refrigerantCharge: "3",
+            refrigerantCharge: 3,
             refrigerantType: {
               ecfgasregulation: nil,
               ecozoneregulation: nil,
@@ -235,7 +235,7 @@ module FetchAssessmentSummary
             location: "Externally on roof",
             manufacturer: "Mitsubishi",
             modelReference: "FDC100VN",
-            refrigerantCharge: "3",
+            refrigerantCharge: 3,
             refrigerantType: {
               ecfgasregulation: nil,
               ecozoneregulation: nil,
@@ -364,7 +364,7 @@ module FetchAssessmentSummary
                 note:
                   "Originally changed on an annual basis but now upgraded to six monthly.",
                 recommendations: [
-                  { sequence: "0", text: "Change this more frequently" },
+                  { sequence: 0, text: "Change this more frequently" },
                 ],
               },
               differentialPressureGauge: {
@@ -523,7 +523,7 @@ module FetchAssessmentSummary
                 "Local Controller\n\n            Zoning is considered satisfactory as systems are linked to single controller.",
               recommendations: [
                 {
-                  sequence: "1",
+                  sequence: 1,
                   text:
                     "Where an area/room has more than one AC system installed that have separate controllers; it should be ensured that AC systems are set to the same set point temperature and mode (heating/cooling/auto).",
                 },
@@ -534,26 +534,26 @@ module FetchAssessmentSummary
               note:
                 "Time/date on the local controller is not used as Central controller timeclock controls the units.",
               recommendations: [
-                { sequence: "1", text: "No recommendation required." },
+                { sequence: 1, text: "No recommendation required." },
               ],
             },
             setOnPeriod: {
               note: "N/A Central controller timeclock controls the units.",
               recommendations: [
-                { sequence: "1", text: "No recommendation required" },
+                { sequence: 1, text: "No recommendation required" },
               ],
             },
             timerShortfall: {
               note: "There is no shortfall in controller capabilities.",
               recommendations: [
-                { sequence: "1", text: "No recommendation required." },
+                { sequence: 1, text: "No recommendation required." },
               ],
               flag: false,
             },
             sensors: {
               note: "Sensors are considered satisfactory.",
               recommendations: [
-                { sequence: "1", text: "No recommendation required." },
+                { sequence: 1, text: "No recommendation required." },
               ],
               flag: true,
             },
@@ -561,7 +561,7 @@ module FetchAssessmentSummary
               note: "The set temperature on local controller; 18 deg C",
               recommendations: [
                 {
-                  sequence: "1",
+                  sequence: 1,
                   text:
                     "Ensure staff are educated to run AC systems for comfort and efficiency by setting the AC system temperature to circa 22 deg C +/- 1 deg C.",
                 },
@@ -572,7 +572,7 @@ module FetchAssessmentSummary
                 "System dead-bands for the indoor unit are set at manufacture stage, these are considered satisfactory.",
               recommendations: [
                 {
-                  sequence: "1",
+                  sequence: 1,
                   text:
                     "There were LPHW ceiling heaters within the same zones as AC systems and it was unclear from the BMS panel whether interlocks were provided between the systems to prevent both operating simultaneously. This should be investigated at head office were the BMS is set from and ensure that the AC systems do not operate at the same time as the heating and that adequate dead-bands are configured between the systems.",
                 },
@@ -581,7 +581,7 @@ module FetchAssessmentSummary
             capacity: {
               note: "",
               recommendations: [
-                { sequence: "1", text: "No recommendation required." },
+                { sequence: 1, text: "No recommendation required." },
               ],
               flag: true,
             },
@@ -589,7 +589,7 @@ module FetchAssessmentSummary
               note: "N/A Unit is not ducted type",
               recommendations: [
                 {
-                  sequence: "1",
+                  sequence: 1,
                   text: "Considered satisfactory, no recommendation required.",
                 },
               ],
@@ -598,7 +598,7 @@ module FetchAssessmentSummary
               note: "Provision of Guidance notices would be useful.",
               recommendations: [
                 {
-                  sequence: "1",
+                  sequence: 1,
                   text:
                     "Consider providing ‘Good Practise Guideline’ notices (laminated sheet adjacent each AC controller) including ‘simple step’ recommendations on how to operate the systems efficiently.",
                 },
@@ -649,12 +649,12 @@ module FetchAssessmentSummary
           executiveSummary: executive_summary,
           keyRecommendations: {
             efficiency: [
-              { sequence: "0", text: "A way to improve your efficiency" },
-              { sequence: "1", text: "A second way to improve efficiency" },
+              { sequence: 0, text: "A way to improve your efficiency" },
+              { sequence: 1, text: "A second way to improve efficiency" },
             ],
-            maintenance: [{ sequence: "0", text: "Text2" }],
-            control: [{ sequence: "0", text: "Text4" }],
-            management: [{ sequence: "0", text: "Text6" }],
+            maintenance: [{ sequence: 0, text: "Text2" }],
+            control: [{ sequence: 0, text: "Text4" }],
+            management: [{ sequence: 0, text: "Text6" }],
           },
           subSystems: sub_systems,
           preInspectionChecklist: pre_inspection_checklist,
@@ -713,11 +713,11 @@ module FetchAssessmentSummary
             buildingComplexity: "Level 3",
             calculationTool: "CLG, ACReport, v2.0",
             fGasCompliantDate: f_gas_compliant_date,
-            acRatedOutput: "106",
+            acRatedOutput: 106,
             randomSampling: system_sampling,
-            treatedFloorArea: "410",
+            treatedFloorArea: 410,
             acSystemMetered: subsystems_metered,
-            refrigerantCharge: "73",
+            refrigerantCharge: 73,
           },
           relatedPartyDisclosure: related_party_disclosure,
           relatedRrn: "0000-0000-0000-0000-8888",
@@ -822,16 +822,16 @@ module FetchAssessmentSummary
             mainHeatingFuel: "Natural Gas",
             buildingEnvironment: "Air Conditioning",
             floorArea: "403",
-            buildingLevel: "3",
+            buildingLevel: 3,
           },
           buildingEmissionRate: "67.09",
           primaryEnergyUse: primary_energy_use,
           relatedRrn: related_rrn,
-          newBuildRating: "28",
+          newBuildRating: 28,
           newBuildBand: "b",
-          existingBuildRating: "81",
+          existingBuildRating: 81,
           existingBuildBand: "d",
-          energyEfficiencyRating: "35",
+          energyEfficiencyRating: 35,
           currentEnergyEfficiencyBand: energy_efficiency_band,
           assessor: {
             name: "TEST NAME BOI",
@@ -992,7 +992,7 @@ module FetchAssessmentSummary
       ],
       related_party: nil,
       related_rrn: "4192-1535-8427-8844-6702",
-      asset_rating: "1",
+      asset_rating: 1,
       schema_version: 8.0,
       postcode: "A0 0AA",
       opt_out: false,
@@ -1017,27 +1017,27 @@ module FetchAssessmentSummary
           },
           currentAssessment: {
             date: "2020-01-01",
-            energyEfficiencyRating: "1",
+            energyEfficiencyRating: 1,
             energyEfficiencyBand: "a",
-            heatingCo2: "3",
-            electricityCo2: "7",
-            renewablesCo2: "0",
+            heatingCo2: 3,
+            electricityCo2: 7,
+            renewablesCo2: 0,
           },
           year1Assessment: {
             date: "2019-01-01",
-            energyEfficiencyRating: "24",
+            energyEfficiencyRating: 24,
             energyEfficiencyBand: "a",
-            heatingCo2: "5",
-            electricityCo2: "10",
-            renewablesCo2: "1",
+            heatingCo2: 5,
+            electricityCo2: 10,
+            renewablesCo2: 1,
           },
           year2Assessment: {
             date: "2018-01-01",
-            energyEfficiencyRating: "40",
+            energyEfficiencyRating: 40,
             energyEfficiencyBand: "b",
-            heatingCo2: "10",
-            electricityCo2: "15",
-            renewablesCo2: "2",
+            heatingCo2: 10,
+            electricityCo2: 15,
+            renewablesCo2: 2,
           },
           technicalInformation: {
             mainHeatingFuel: "Natural Gas",
@@ -1630,8 +1630,8 @@ module FetchAssessmentSummary
               },
             ],
             lzcEnergySources: lzc_energy_sources,
-            environmentalImpactCurrent: "76",
-            environmentalImpactPotential: "85",
+            environmentalImpactCurrent: 76,
+            environmentalImpactPotential: 85,
             gasSmartMeterPresent: gas_smart_meter_present,
             electricitySmartMeterPresent: electricity_smart_meter_present,
           },
