@@ -18,7 +18,7 @@
       <% else %>
         <p class="epc-rating-title govuk-body"><%= t('component.epc_summary.title') %></p>
       <% end  %>
-      <p class="epc-rating-result govuk-body"><%= energy_efficiency_band.upcase %></p>
+      <p class="epc-rating-result govuk-body"><%= energy_efficiency_band&.upcase %></p>
     </div>
     <div class="epc-extra-boxes">
       <div class="epc-extra-box">
