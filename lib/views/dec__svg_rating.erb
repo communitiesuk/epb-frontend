@@ -165,8 +165,8 @@
     <tspan x="560" y="240">100</tspan>
   </text>
 
-  <svg aria-hidden="true" x="420" y="<%= 25+bands[energy_efficiency_band&.chomp("+")&.to_sym][:position]*50 %>" width="90" height="50" class="rating-label">
+  <svg aria-hidden="true" x="420" y="<%= 25+bands[energy_efficiency_band.chomp("+").to_sym][:position]*50 %>" width="90" height="50" class="rating-label">
     <polygon points="0,25 25,50 100,50 100,0 25,0 0,25" class="band-<%= energy_efficiency_band.chomp("+") %>"></polygon>
-    <text x="75" y="50%" dominant-baseline="middle" class="govuk-!-font-weight-bold"><%= energy_efficiency_rating %> <%= energy_efficiency_band&.upcase %></text>
+    <text x="75" y="50%" dominant-baseline="middle" class="govuk-!-font-weight-bold"><%= energy_efficiency_rating %> <%= energy_efficiency_band.upcase %></text>
   </svg>
 </svg>
