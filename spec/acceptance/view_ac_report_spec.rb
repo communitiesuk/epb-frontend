@@ -316,7 +316,8 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
       expect(response.body).to have_css "p",
                                         text:
                                           "There were no visible signs of a leak observed during the inspection."
-
+      expect(response.body).to have_css "p",
+                                        text: "R22 is an ODS (Ozone Depleting Substance)"
       expect(response.body).to have_css "p",
                                         text:
                                           "Maintenance contract advised as being in place and would appear satisfactory due to unit condition."

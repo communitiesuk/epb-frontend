@@ -152,6 +152,7 @@ module FetchAssessmentSummary
               note:
                 "The system operated using refrigerant which is not banned.",
               state: true,
+              guidance: "R22 is an ODS (Ozone Depleting Substance)",
             },
             guidance: [
               {
@@ -279,6 +280,7 @@ module FetchAssessmentSummary
               note:
                 "The system operated using refrigerant which is not banned.",
               state: true,
+              guidance: "R22 is an ODS (Ozone Depleting Substance)",
             },
             guidance: [
               {
