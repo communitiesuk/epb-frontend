@@ -19,7 +19,7 @@ group :test do
   gem "webmock", "~> 3.18"
 end
 
-gem "csv", "~> 3.2"
+gem "csv", "~> 3.3"
 gem "dartsass-ruby", "~> 3.0"
 gem "epb-auth-tools", "~> 1.1.0"
 gem "erubis", "~> 2.7"
