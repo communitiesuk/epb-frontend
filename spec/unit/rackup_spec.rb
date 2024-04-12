@@ -11,7 +11,7 @@ describe "config.ru" do
   end
 
   it "starts the frontend service" do
-    Rack::Builder.parse_file("#{__dir__}/../../config.ru").first
+    Rack::Builder.parse_file("#{__dir__}/../../config.ru")
     expect(rack_builder).to have_received(:run).at_least(1).times
   end
 end

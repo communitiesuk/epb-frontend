@@ -18,12 +18,12 @@ describe Middleware::ContentSecurityPolicy do
   context "when no reporting ratio set" do
     it "calls down onto the underlying app object with CSP headers" do
       _, headers, = middleware.call(nil)
-      expect(headers.key?("Content-Security-Policy")).to be true
+      expect(headers.key?("content-security-policy")).to be true
     end
 
     it "calls down onto the underlying app object with report_uri still set" do
       _, headers, = middleware.call(nil)
-      expect(headers["Content-Security-Policy"]).to include "report-uri https:"
+      expect(headers["content-security-policy"]).to include "report-uri https:"
     end
   end
 
@@ -41,7 +41,7 @@ describe Middleware::ContentSecurityPolicy do
         ratioed_middleware = middleware_with_ratio.call(ratio)
         expect(
           1.upto(100).reduce(0) do |count|
-            count += 1 if ratioed_middleware.call(nil)[1]["Content-Security-Policy"]&.include?("report-uri https:")
+            count += 1 if ratioed_middleware.call(nil)[1]["content-security-policy"]&.include?("report-uri https:")
             count
           end,
         ).to eq 0
@@ -56,7 +56,7 @@ describe Middleware::ContentSecurityPolicy do
         expect(
           1.upto(100).reduce(0) do |count|
             headers = ratioed_middleware.call(nil)[1]
-            count += 1 if headers["Content-Security-Policy"]&.include?("report-uri https:")
+            count += 1 if headers["content-security-policy"]&.include?("report-uri https:")
             count
           end,
         ).to eq 100
@@ -70,7 +70,7 @@ describe Middleware::ContentSecurityPolicy do
         ratioed_middleware = middleware_with_ratio.call(ratio)
         expect(
           1.upto(100).reduce(0) do |count|
-            count += 1 if ratioed_middleware.call(nil)[1]["Content-Security-Policy"]&.include?("report-uri https:")
+            count += 1 if ratioed_middleware.call(nil)[1]["content-security-policy"]&.include?("report-uri https:")
             count
           end,
         ).to be_between 1, 75
