@@ -44,4 +44,62 @@ describe "cookies page", type: :feature do
       end
     end
   end
+
+  describe ".post find-energy-certificate/cookies" do
+    context "when cookie options are submitted opting out" do
+      let(:response) do
+        post "http://find-energy-certificate.local.gov.uk/cookies", { cookies_setting: "false" }
+      end
+
+      it "returns status 302" do
+        expect(response.status).to eq(302)
+      end
+
+      it "sets the cookie_consent cookie to false" do
+        expect(response.cookies["cookie_consent"].first).to eq("false")
+      end
+    end
+
+    context "when cookie options are submitted opting in" do
+      let(:response) do
+        post "http://find-energy-certificate.local.gov.uk/cookies", { cookies_setting: "true" }
+      end
+
+      it "returns status 302" do
+        expect(response.status).to eq(302)
+      end
+
+      it "sets the cookie_consent cookie to true" do
+        expect(response.cookies["cookie_consent"].first).to eq("true")
+      end
+    end
+
+    context "when no values are submitted" do
+      let(:response) do
+        post "http://find-energy-certificate.local.gov.uk/cookies", { cookies_setting: nil }
+      end
+
+      it "returns status 302" do
+        expect(response.status).to eq(302)
+      end
+
+      it "sets the cookie_consent cookie to true" do
+        expect(response.cookies["cookie_consent"].first).to eq("true")
+      end
+    end
+
+    context "when someone hijacks the cookie_setting values and submits" do
+      let(:response) do
+        post "http://find-energy-certificate.local.gov.uk/cookies", { cookies_setting: "potentiallydodgyvalue" }
+      end
+
+      it "returns status 302" do
+        expect(response.status).to eq(302)
+      end
+
+      it "sets the cookie_consent cookie to true" do
+        expect(response.cookies["cookie_consent"].first).to eq("true")
+      end
+    end
+  end
 end

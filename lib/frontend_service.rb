@@ -1001,8 +1001,8 @@ class FrontendService < Sinatra::Base
   end
 
   post "/cookies" do
-    cookie_value = params[:cookies_setting].nil? ? "true" : params[:cookies_setting]
-    response.set_cookie("cookie_consent", { value: cookie_value, path: "/" })
+    cookie_value = params[:cookies_setting] == "false" ? "false" : "true"
+    response.set_cookie("cookie_consent", { value: cookie_value, path: "/", same_site: :strict })
 
     redirect localised_url("/cookies?success=true")
   end

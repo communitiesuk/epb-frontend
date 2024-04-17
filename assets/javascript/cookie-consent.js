@@ -122,7 +122,7 @@ const cookieConsent = (tagId, _, gtag, resolvers) => {
       const date = new Date()
       date.setTime(date.getTime() + yearInMilliseconds)
       const expires = '; expires=' + date.toUTCString()
-      document.cookie = name + '=' + value + expires + '; path=/'
+      document.cookie = name + '=' + value + expires + '; path=/ ; SameSite=Strict; '
     },
 
     read: function (name) {
