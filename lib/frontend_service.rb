@@ -1008,9 +1008,12 @@ class FrontendService < Sinatra::Base
   end
 
   get "/heat-pump-counts" do
-    status 404 unless Helper::Toggles.enabled?("frontend-show-heat-pump-counts")
-    use_case = @container.get_object(:fetch_heat_pump_counts_by_floor_area)
-    use_case.execute
+    if Helper::Toggles.enabled?("frontend-show-heat-pump-counts")
+      use_case = @container.get_object(:fetch_heat_pump_counts_by_floor_area)
+      use_case.execute
+    else
+      status 404
+    end
   end
 
   get "/service-performance" do
