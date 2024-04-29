@@ -21,6 +21,7 @@ ENV["EPB_AUTH_CLIENT_ID"] = "test.id"
 ENV["EPB_AUTH_CLIENT_SECRET"] = "test.client.secret"
 ENV["EPB_AUTH_SERVER"] = AUTH_URL
 ENV["EPB_API_URL"] = "http://test-api.gov.uk"
+ENV["EPB_DATA_WAREHOUSE_API_URL"] = "http://test-data-warehouse-api.gov.uk"
 ENV["STAGE"] = "test"
 ENV["EPB_UNLEASH_URI"] = "https://test-toggle-server/api"
 
@@ -68,12 +69,13 @@ end
 loader_enable_override "helper/toggles"
 
 module RSpecUnitMixin
-  def get_api_client
+  def get_api_client(api_url = nil)
+    url = api_url.nil? ? ENV["EPB_API_URL"] : api_url
     @get_api_client ||=
       Auth::HttpClient.new ENV["EPB_AUTH_CLIENT_ID"],
                            ENV["EPB_AUTH_CLIENT_SECRET"],
                            ENV["EPB_AUTH_SERVER"],
-                           ENV["EPB_API_URL"],
+                           url,
                            OAuth2::Client
   end
 end

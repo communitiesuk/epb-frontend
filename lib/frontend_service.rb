@@ -1007,6 +1007,12 @@ class FrontendService < Sinatra::Base
     redirect localised_url("/cookies?success=true")
   end
 
+  get "/heat-pump-counts" do
+    status 404 unless Helper::Toggles.enabled?("frontend-show-heat-pump-counts")
+    use_case = @container.get_object(:fetch_heat_pump_counts_by_floor_area)
+    use_case.execute
+  end
+
   get "/service-performance" do
     @page_title = "#{t('service_performance.heading')} – #{t('layout.body.govuk')}"
     status 200
