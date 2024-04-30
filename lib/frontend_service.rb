@@ -1010,11 +1010,12 @@ class FrontendService < Sinatra::Base
   get "/heat-pump-counts" do
     if Helper::Toggles.enabled?("frontend-show-heat-pump-counts")
       # moved from container to ensure prod task deploys without the EPB_DATA_WAREHOUSE_API_URL being in the ENV
+      api_url =  ENV["EPB_DATA_WAREHOUSE_API_URL"] || ENV["EPB_API_URL"]
       api_client =
         Auth::HttpClient.new ENV["EPB_AUTH_CLIENT_ID"],
                              ENV["EPB_AUTH_CLIENT_SECRET"],
                              ENV["EPB_AUTH_SERVER"],
-                             ENV["EPB_DATA_WAREHOUSE_API_URL"],
+                             api_url,
                              OAuth2::Client,
                              faraday_connection_opts: { request: { timeout: 8 } }
 
