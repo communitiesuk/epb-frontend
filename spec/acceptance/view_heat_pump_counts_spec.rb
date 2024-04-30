@@ -48,7 +48,7 @@ describe "Acceptance::HeatPumpCounts " do
           .stub_request(
             :get,
             "http://test-data-warehouse-api.gov.uk/api/heat-pump-counts/floor-area",
-            )
+          )
           .to_return(status: 200, body: HeatPumpGateway::Stub.api_data)
         expect(response.status).to eq 404
       end
@@ -59,7 +59,7 @@ describe "Acceptance::HeatPumpCounts " do
             .stub_request(
               :get,
               "http://test-data-warehouse-api.gov.uk/api/heat-pump-counts/floor-area",
-              )
+            )
             .to_return(status: 500, body: HeatPumpGateway::Stub.api_data)
           expect(response.status).to eq 404
         end

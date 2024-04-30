@@ -1009,7 +1009,17 @@ class FrontendService < Sinatra::Base
 
   get "/heat-pump-counts" do
     if Helper::Toggles.enabled?("frontend-show-heat-pump-counts")
-      use_case = @container.get_object(:fetch_heat_pump_counts_by_floor_area)
+      # moved from container to ensure prod task deploys without the EPB_DATA_WAREHOUSE_API_URL being in the ENV
+      api_client =
+        Auth::HttpClient.new ENV["EPB_AUTH_CLIENT_ID"],
+                             ENV["EPB_AUTH_CLIENT_SECRET"],
+                             ENV["EPB_AUTH_SERVER"],
+                             ENV["EPB_DATA_WAREHOUSE_API_URL"],
+                             OAuth2::Client,
+                             faraday_connection_opts: { request: { timeout: 8 } }
+
+      use_case = UseCase::FetchHeatPumpCountsByFloorArea.new(Gateway::HeatPumpGateway.new(api_client))
+
       use_case.execute
     else
       status 404

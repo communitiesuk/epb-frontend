@@ -40,7 +40,6 @@ class Container
       UseCase::FetchDecSummary.new(certificates_gateway)
     fetch_statistics_use_case = UseCase::FetchStatistics.new(Gateway::StatisticsGateway.new(internal_api_client))
     fetch_statistics_csv_use_case = UseCase::FetchStatisticsCsv.new(Gateway::StatisticsGateway.new(internal_api_client))
-    fetch_heat_pump_counts_by_floor_area = UseCase::FetchHeatPumpCountsByFloorArea.new(Gateway::HeatPumpGateway.new(internal_data_warehouse_api_client))
 
     @objects = {
       internal_api_client:,
@@ -55,7 +54,6 @@ class Container
       fetch_dec_summary_use_case:,
       fetch_statistics_use_case:,
       fetch_statistics_csv_use_case:,
-      fetch_heat_pump_counts_by_floor_area:,
     }
   end
 
