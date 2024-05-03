@@ -157,6 +157,9 @@ class FrontendService < Sinatra::Base
       } – #{t('layout.body.govuk')}"
 
     if params["postcode"]
+
+      raise PostcodeWrongFormat if params["postcode"].is_a?(Array)
+
       params["postcode"].strip!
 
       begin
@@ -303,9 +306,11 @@ class FrontendService < Sinatra::Base
       } – #{t('layout.body.govuk')}"
 
     if params["postcode"]
-      params["postcode"].strip!
 
       begin
+        raise Errors::PostcodeWrongFormat if params["postcode"].is_a?(Array)
+
+        params["postcode"].strip!
         locals[:results] =
           find_assessor_use_case.execute(params["postcode"], qualification)[:data][:assessors]
         erb_template = :find_assessor_by_postcode_results
