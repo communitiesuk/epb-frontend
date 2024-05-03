@@ -158,11 +158,11 @@ class FrontendService < Sinatra::Base
 
     if params["postcode"]
 
-      raise PostcodeWrongFormat if params["postcode"].is_a?(Array)
-
-      params["postcode"].strip!
-
       begin
+        raise Errors::PostcodeWrongFormat if params["postcode"].is_a?(Array)
+
+        params["postcode"].strip!
+
         raise Errors::BotDetected if bot_user_agent? && !recaptcha_pass?
 
         locals[:results] =
@@ -504,9 +504,12 @@ class FrontendService < Sinatra::Base
       } – #{t('layout.body.govuk')}"
 
     if params["postcode"]
-      params["postcode"].strip!
 
       begin
+        raise Errors::PostcodeWrongFormat if params["postcode"].is_a?(Array)
+
+        params["postcode"].strip!
+
         raise Errors::BotDetected if bot_user_agent? && !recaptcha_pass?
 
         locals[:results] =
@@ -587,9 +590,12 @@ class FrontendService < Sinatra::Base
       } – #{t('layout.body.govuk')}"
 
     if params["postcode"]
-      params["postcode"].strip!
 
       begin
+        raise Errors::PostcodeWrongFormat if params["postcode"].is_a?(Array)
+
+        params["postcode"].strip!
+
         locals[:results] =
           response.execute(params["postcode"])[:data][:assessors]
 

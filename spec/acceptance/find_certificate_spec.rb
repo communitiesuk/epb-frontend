@@ -352,6 +352,16 @@ describe "Acceptance::Certificate" do
       end
     end
 
+    context "when entering a postcode as an array" do
+      let(:response) do
+        get "http://find-energy-certificate.local.gov.uk/find-a-certificate/search-by-postcode?postcode[]=E39GG"
+      end
+
+      it "returns status 400" do
+        expect(response.status).to eq(400)
+      end
+    end
+
     context "when entering a postcode that is invalid" do
       let(:response) do
         get "http://find-energy-certificate.local.gov.uk/find-a-certificate/search-by-postcode?&postcode=$$$$"

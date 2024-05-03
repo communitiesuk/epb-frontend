@@ -166,6 +166,16 @@ describe "Acceptance::NonDomesticCertificate" do
       end
     end
 
+    context "when entering a postcode as an array" do
+      let(:response) do
+        get "http://find-energy-certificate.local.gov.uk/find-a-non-domestic-certificate/search-by-postcode?postcode[]=E39GG"
+      end
+
+      it "returns status 400" do
+        expect(response.status).to eq(400)
+      end
+    end
+
     context "when entering a valid postcode" do
       context "with surrounding whitespaces" do
         before { FindCertificate::Stub.search_by_postcode("SW1A 2AA", "CEPC") }
