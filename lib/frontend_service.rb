@@ -1038,28 +1038,6 @@ class FrontendService < Sinatra::Base
     end
   end
 
-  get "/test-dwh-api" do
-    if Helper::Toggles.enabled?("frontend-show-heat-pump-counts")
-
-      pp ENV["EPB_DATA_WAREHOUSE_API_URL"]
-      # moved from container to ensure prod task deploys without the EPB_DATA_WAREHOUSE_API_URL being in the ENV
-      api_client =
-        Auth::HttpClient.new ENV["EPB_AUTH_CLIENT_ID"],
-                             ENV["EPB_AUTH_CLIENT_SECRET"],
-                             ENV["EPB_AUTH_SERVER"],
-                             ENV["EPB_DATA_WAREHOUSE_API_URL"],
-                             OAuth2::Client,
-                             faraday_connection_opts: { request: { timeout: 8 } }
-      route = "/healthcheck"
-
-      response = api_client.get(route)
-      # pp response
-      response.status
-    else
-      status 404
-    end
-  end
-
   get "/service-performance" do
     @page_title = "#{t('service_performance.heading')} – #{t('layout.body.govuk')}"
     status 200

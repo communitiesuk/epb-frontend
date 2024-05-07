@@ -67,26 +67,4 @@ describe "Acceptance::HeatPumpCounts " do
     end
   end
 
-  describe "get . find-energy-certificate/test-dwh-api" do
-    let(:response) { get "http://find-energy-certificate.epb-frontend/test-dwh-api" }
-
-    context "when the feature flag is on" do
-      before { Helper::Toggles.set_feature("frontend-show-heat-pump-counts", true) }
-
-      context "and the data warehouse api returns a status from the healthcheck" do
-        before do
-          WebMock
-            .stub_request(
-              :get,
-              "http://test-data-warehouse-api.gov.uk/healthcheck",
-            )
-            .to_return(status: 319, body: "")
-        end
-
-        it "returns a 319 status" do
-          expect(response.status).to eq(319)
-        end
-      end
-    end
-  end
 end
