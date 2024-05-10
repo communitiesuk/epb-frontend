@@ -1028,7 +1028,7 @@ class FrontendService < Sinatra::Base
                              ENV["EPB_AUTH_SERVER"],
                              api_url,
                              OAuth2::Client,
-                             faraday_connection_opts: { request: { timeout: 8 } }
+                             faraday_connection_opts: { request: { timeout: 60 } }
 
       use_case = UseCase::FetchHeatPumpCountsByFloorArea.new(Gateway::HeatPumpGateway.new(api_client))
 
