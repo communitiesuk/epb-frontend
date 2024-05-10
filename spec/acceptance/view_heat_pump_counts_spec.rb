@@ -66,5 +66,4 @@ describe "Acceptance::HeatPumpCounts " do
       end
     end
   end
-
 end
