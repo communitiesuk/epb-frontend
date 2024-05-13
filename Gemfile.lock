@@ -59,7 +59,7 @@ GEM
     language_server-protocol (3.17.0.3)
     matrix (0.4.2)
     mini_mime (1.1.5)
-    mini_portile2 (2.8.5)
+    mini_portile2 (2.8.6)
     minitest (5.22.3)
     multi_json (1.15.0)
     multi_xml (0.6.0)
@@ -70,7 +70,7 @@ GEM
     net-http (0.4.1)
       uri
     nio4r (2.7.1)
-    nokogiri (1.16.3)
+    nokogiri (1.16.5)
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
     oauth2 (2.0.9)
