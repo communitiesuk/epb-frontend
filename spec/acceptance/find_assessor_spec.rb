@@ -808,6 +808,18 @@ describe "Acceptance::Assessor", type: :feature do
           )
         end
       end
+
+      context "when entering a name in an array" do
+        before { FindAssessor::ByName::Stub.search_by_name("Ronald McDonald", "domestic") }
+
+        let(:response) do
+          get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/search-by-name?name[]=Ronald%20McDonald"
+        end
+
+        it "returns status 400" do
+          expect(response.status).to eq(400)
+        end
+      end
     end
   end
 

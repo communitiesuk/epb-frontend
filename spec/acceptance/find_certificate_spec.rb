@@ -655,6 +655,16 @@ describe "Acceptance::Certificate" do
         end
       end
     end
+
+    context "when entering a certificate number as an array" do
+      let(:response) do
+        get "http://find-energy-certificate.local.gov.uk/find-a-certificate/search-by-reference-number?reference_number[]=1234-5678-9101-1121-3141"
+      end
+
+      it "returns status 400" do
+        expect(response.status).to eq(400)
+      end
+    end
   end
 
   describe ".get find-energy-certificate/find-a-certificate/search-by-street-name-and-town",
@@ -876,6 +886,26 @@ describe "Acceptance::Certificate" do
 
       it "does not raise an error when the input is too long" do
         expect(response.status).to eq(200)
+      end
+    end
+
+    context "when town entered is an array" do
+      let(:response) do
+        get "http://find-energy-certificate.local.gov.uk/find-a-certificate/search-by-street-name-and-town?lang=cy&street_name=1&town[]=London"
+      end
+
+      it "returns a 400 status" do
+        expect(response.status).to eq(400)
+      end
+    end
+
+    context "when street name entered is an array" do
+      let(:response) do
+        get "http://find-energy-certificate.local.gov.uk/find-a-certificate/search-by-street-name-and-town?lang=cy&street_name[]=1&town=London"
+      end
+
+      it "returns a 400 status" do
+        expect(response.status).to eq(400)
       end
     end
 

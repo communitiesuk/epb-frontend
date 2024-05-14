@@ -730,6 +730,16 @@ describe "Acceptance::NonDomesticCertificate" do
         end
       end
     end
+
+    context "when entering a street name and town as an array" do
+      let(:response) do
+        get "http://find-energy-certificate.local.gov.uk/find-a-non-domestic-certificate/search-by-street-name-and-town?street_name[]=1%20Makeup%20Street&town[]=Beauty%20Town"
+      end
+
+      it "returns status 400" do
+        expect(response.status).to eq(400)
+      end
+    end
   end
 
   describe ".get find-energy-certificate.local.gov.uk/find-a-non-domestic-certificate/search-by-reference-number",
@@ -958,6 +968,16 @@ describe "Acceptance::NonDomesticCertificate" do
             expect(response.body).to have_link("Search by postcode instead", href: "/find-a-non-domestic-certificate/search-by-postcode")
           end
         end
+      end
+    end
+
+    context "when entering the reference number as an array" do
+      let(:response) do
+        get "http://find-energy-certificate.local.gov.uk/find-a-non-domestic-certificate/search-by-reference-number?reference_number[]=1234-5678-9101-1121-3141"
+      end
+
+      it "returns status 400" do
+        expect(response.status).to eq(400)
       end
     end
   end

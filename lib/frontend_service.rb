@@ -244,6 +244,8 @@ class FrontendService < Sinatra::Base
 
     if params["reference_number"]
       begin
+        raise Errors::ReferenceNumberNotValid if params["reference_number"].is_a?(Array)
+
         # If we can find the assessment then we redirect directly to it
         fetched_assessment_id =
           @container
@@ -379,6 +381,8 @@ class FrontendService < Sinatra::Base
 
     if params["name"]
       begin
+        raise Errors::InvalidName if params["name"].is_a?(Array)
+
         response = response.execute(params["name"], "domestic")
 
         locals[:results] = response[:data][:assessors]
@@ -423,6 +427,8 @@ class FrontendService < Sinatra::Base
 
     if params["name"]
       begin
+        raise Errors::InvalidName if params["name"].is_a?(Array)
+
         response = response.execute(params["name"], "nonDomestic")
 
         locals[:results] = response[:data][:assessors]
@@ -660,6 +666,9 @@ class FrontendService < Sinatra::Base
 
     if params.key?("town") || params.key?("street_name")
       begin
+        raise Errors::AllParamsMissing if params["town"].is_a?(Array)
+        raise Errors::AllParamsMissing if params["street_name"].is_a?(Array)
+
         locals[:results] =
           @container
             .get_object(:find_certificate_by_street_name_and_town_use_case)
@@ -758,6 +767,8 @@ class FrontendService < Sinatra::Base
 
     if params["reference_number"]
       begin
+        raise Errors::ReferenceNumberNotValid if params["reference_number"].is_a?(Array)
+
         # If we can find the assessment then we redirect directly to it
         fetched_assessment_id =
           @container
@@ -809,6 +820,9 @@ class FrontendService < Sinatra::Base
 
     if params.key?("town") || params.key?("street_name")
       begin
+        raise Errors::AllParamsMissing if params["town"].is_a?(Array)
+        raise Errors::AllParamsMissing if params["street_name"].is_a?(Array)
+
         locals[:results] =
           @container
             .get_object(:find_certificate_by_street_name_and_town_use_case)
