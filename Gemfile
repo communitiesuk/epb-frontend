@@ -16,7 +16,7 @@ group :test do
   gem "rspec", "~>3.13"
   gem "selenium-webdriver", "~> 4.21.1"
   gem "webdrivers", "~> 5.2.0"
-  gem "webmock", "~> 3.18"
+  gem "webmock", "~> 3.23"
 end
 
 gem "csv", "~> 3.3"
