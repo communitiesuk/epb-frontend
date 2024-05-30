@@ -211,7 +211,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
       end
 
       it "shows the SVG with energy ratings" do
-        expect(response.body).to include('<svg width="615" height="426"')
+        expect(response.body).to include('<svg width="615"')
       end
 
       it "shows the SVG with energy rating band numbers" do

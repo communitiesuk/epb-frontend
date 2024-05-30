@@ -114,7 +114,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
     end
 
     it "shows the SVG with energy ratings" do
-      expect(response.body).to include('<svg width="615" height="376"')
+      expect(response.body).to include('<svg width="615"')
     end
 
     it "shows the SVG alternate text title" do

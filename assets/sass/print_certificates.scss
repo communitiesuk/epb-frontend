@@ -156,7 +156,6 @@ $epc-compare-svg-width: $epc-compare-svg-height * 1.8;
   @include split-into-columns;
 
   svg.epc-energy-rating-graph {
-    margin: -90px 0;
     break-after: avoid-column;
 
     @include target-safari {
