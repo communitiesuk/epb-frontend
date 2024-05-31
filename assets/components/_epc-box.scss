@@ -195,15 +195,17 @@ $epc-box-gutter: 2px;
     display: flex;
     flex-direction: row;
     padding-left: 1rem;
-    padding-right: 1rem;
     font-size: $epc-box-print-base-font-size;
+    align-items: stretch;
 
     .epc-address {
       flex-shrink: 0;
       width: 35%;
       padding-top: 1rem;
+      padding-bottom: 1rem;
       padding-left: 0;
       font-size: $epc-box-print-base-font-size;
+      margin: 0;
     }
     .epc-rating-box {
       flex-shrink: 0;
@@ -232,9 +234,6 @@ $epc-box-gutter: 2px;
       border-left: $epc-box-gutter solid #fff;
       display: flex;
       flex-direction: column;
-      padding-top: 1rem;
-      padding-left: 1rem;
-      padding-right: 1rem;
     }
     .epc-extra-box {
       border-top: none;
@@ -243,11 +242,13 @@ $epc-box-gutter: 2px;
       flex-direction: row;
       margin-bottom: 0 !important;
       line-height: inherit;
+      padding-top: $epc-box-print-base-font-size + 0.4rem;
+      height: 50%;
 
       & + .epc-extra-box {
         float: none;
         border-left: none;
-        border-top: 1px solid #fff;
+        border-top: $epc-box-gutter solid #fff;
         padding-top: $epc-box-print-base-font-size + 0.4rem;
       }
 
