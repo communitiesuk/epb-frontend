@@ -19,7 +19,7 @@
     "govuk-frontend": "^5.4.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.24.6",
+    "@babel/cli": "^7.24.7",
     "@babel/core": "^7.24.6",
     "@babel/eslint-parser": "^7.24.6",
     "@babel/preset-env": "^7.24.6",
