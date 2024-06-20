@@ -76,8 +76,10 @@ describe "Acceptance::ServicePerformance", type: :feature do
 
     it "has the correct download links for each region" do
       expect(response.body).to have_link("Download a copy of the data for all regions", href: "service-performance/download-csv?country=all")
-      expect(response.body).to have_link("Download a copy of the data for England and Wales", href: "service-performance/download-csv?country=england-wales")
+      expect(response.body).to have_link("Download a copy of the data for England", href: "service-performance/download-csv?country=england")
       expect(response.body).to have_link("Download a copy of the data for Northern Ireland", href: "service-performance/download-csv?country=northern-ireland")
+      expect(response.body).to have_link("Download a copy of the data for Wales", href: "service-performance/download-csv?country=wales")
+      expect(response.body).to have_link("Download a copy of the data for Other", href: "service-performance/download-csv?country=other")
     end
 
     it "ensure all ids are unique" do

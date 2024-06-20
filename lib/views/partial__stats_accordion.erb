@@ -15,17 +15,30 @@
           })
         }},
       { heading: {
-          text:  t('service_performance.contents.epcs_upload.tables.titles.england_wales'),
+          text:  t('service_performance.contents.epcs_upload.tables.titles.england'),
           prefix: t("service_performance.contents.epcs_upload.tables.hidden.certificates_uploaded_country.#{assessment_type.downcase}"),
         },
         content: {
           html: erb(:partial__stats_table, locals: {
             assessment_type: assessment_type,
-            country_key: "england_wales",
-            values: values["England & Wales"],
+            country_key: "england",
+            values: values["England"],
             show_average_rating: show_average_rating,
           })
         }},
+      { heading: {
+        text:  t('service_performance.contents.epcs_upload.tables.titles.wales'),
+        prefix: t("service_performance.contents.epcs_upload.tables.hidden.certificates_uploaded_country.#{assessment_type.downcase}"),
+      },
+        content: {
+          html: erb(:partial__stats_table, locals: {
+            assessment_type: assessment_type,
+            country_key: "wales",
+            values: values["Wales"],
+            show_average_rating: show_average_rating,
+          })
+        }},
+
       { heading: {
           text:  t('service_performance.contents.epcs_upload.tables.titles.northern_ireland'),
           prefix: t("service_performance.contents.epcs_upload.tables.hidden.certificates_uploaded_country.#{assessment_type.downcase}"),
@@ -38,7 +51,21 @@
             show_average_rating: show_average_rating,
           })
         }},
+      { heading: {
+        text:  t('service_performance.contents.epcs_upload.tables.titles.other'),
+        prefix: t("service_performance.contents.epcs_upload.tables.hidden.certificates_uploaded_country.#{assessment_type.downcase}"),
+      },
+        content: {
+          html: erb(:partial__stats_table, locals: {
+            assessment_type: assessment_type,
+            country_key: "other",
+            values: values["Other"],
+            show_average_rating: show_average_rating,
+          })
+        }}
   ] %>
+
+
   <%== erb :design_system__accordion, locals: {
     items: sections,
     id: "accordion-#{assessment_type.downcase}",

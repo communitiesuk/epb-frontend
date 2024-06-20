@@ -16,24 +16,30 @@ describe UseCase::FetchStatistics do
 
     it "contains expected json for assessments" do
       expect(results[:assessments][:all].length).to eq(17)
-      expect(results[:assessments][:englandWales].length).to eq(6)
+      expect(results[:assessments][:england].length).to eq(6)
       expect(results[:assessments][:northernIreland].length).to eq(6)
       cepc = results[:assessments][:all].select { |i| i[:assessmentType] == "CEPC" && i[:month] == "2020-11" }
 
       expect(cepc.first).to eq({ assessmentType: "CEPC", month: "2020-11", numAssessments: 144_533, ratingAverage: 71.85, country: "all" })
     end
 
-    it "groups the assessments data by the assessment types and country" do
+    it "groups the assessments data by the assessment types and country", :aggregate_failures do
       assessment_types = %w[SAP RdSAP CEPC DEC AC-CERT DEC-RR]
       expect(results[:assessments][:grouped].length).to eq(assessment_types.length)
       expect(results[:assessments][:grouped].keys - assessment_types).to eq([])
 
       expect(results[:assessments][:grouped]["CEPC"]).to eq({
-        "England & Wales" => [
-          { assessmentType: "CEPC", country: "England & Wales", month: "2021-09", numAssessments: 92_124, ratingAverage: 47.7122807017544 },
+        "England" => [
+          { assessmentType: "CEPC", country: "England", month: "2021-09", numAssessments: 92_124, ratingAverage: 47.7122807017544 },
+        ],
+        "Wales" => [
+          { assessmentType: "CEPC", country: "Wales", month: "2021-09", numAssessments: 874, ratingAverage: 47.7122807017544 },
         ],
         "Northern Ireland" => [
           { assessmentType: "CEPC", country: "Northern Ireland", month: "2021-09", numAssessments: 874, ratingAverage: 47.7122807017544 },
+        ],
+        "Other" => [
+          { assessmentType: "CEPC", country: "Other", month: "2021-09", numAssessments: 26, ratingAverage: 61.7122807017544 },
         ],
         "all" => [
           { assessmentType: "CEPC", country: "all", month: "2020-11", numAssessments: 144_533, ratingAverage: 71.85 },

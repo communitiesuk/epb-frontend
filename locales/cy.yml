@@ -560,8 +560,10 @@ cy:
         tables:
           titles:
             all: "Pob rhanbarth"
-            england_wales: "Cymru a Lloegr"
             northern_ireland: "Gogledd Iwerddon"
+            england: "Lloegr"
+            wales: "Cymru"
+            other: "Arall"
           hidden:
             certificates_uploaded_all:
               sap: "Tystysgrifau SAP a uwchlwythwyd ym "

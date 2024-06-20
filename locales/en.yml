@@ -560,8 +560,10 @@ en:
         tables:
           titles:
             all: "All regions"
-            england_wales: "England and Wales"
             northern_ireland: "Northern Ireland"
+            england: "England"
+            wales: "Wales"
+            other: "Other"
           hidden:
             certificates_uploaded_all:
               sap: "SAP certificates uploaded in "
