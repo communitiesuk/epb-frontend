@@ -356,11 +356,11 @@ cy:
       body_find_postcode: "Gallwch %{link}."
       cta_find_postcode: "ddod o hyd i god post ar Chwiliwr Cod Post y Post Brenhinol"
       body_street_and_town: "Neu %{link}"
-      cta_street_and_town: "chwiliwch am EPC drwy ddefnyddio enw’r stryd a’r dref"
+      cta_street_and_town: "chwiliwch am dystysgrif ynni drwy ddefnyddio enw’r stryd a’r dref"
     certificate_by_reference_number:
       heading: "Chwiliwch yn ôl rhif y dystysgrif"
       body: "Fe allwch chi %{link}"
-      cta: "chwilio am EPC drwy ddefnyddio rhif y dystysgrif"
+      cta: "chwilio am dystysgrif ynni drwy ddefnyddio rhif y dystysgrif"
     no_network:
       heading: "Cysylltiad â’r rhwydwaith wedi methu"
       body: "Mae yna wall rhwydwaith mewnol"

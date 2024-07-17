@@ -356,11 +356,11 @@ en:
       body_find_postcode: "You can %{link}."
       cta_find_postcode: "find a postcode on Royal Mail’s postcode finder"
       body_street_and_town: "Or %{link}"
-      cta_street_and_town: "find an EPC using the street name and town"
+      cta_street_and_town: "find an energy certificate using the street name and town"
     certificate_by_reference_number:
       heading: "Search by certificate number"
       body: "You can %{link}."
-      cta: "find an EPC by using its certificate number"
+      cta: "find an energy certificate by using its certificate number"
     no_network:
       heading: "Network connection failed"
       body: "There is an internal network error"
