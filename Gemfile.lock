@@ -106,7 +106,6 @@ GEM
     rake (13.2.1)
     regexp_parser (2.9.2)
     rexml (3.2.8)
-      strscan (>= 3.0.9)
     rspec (3.13.0)
       rspec-core (~> 3.13.0)
       rspec-expectations (~> 3.13.0)
@@ -186,7 +185,6 @@ GEM
     snaky_hash (2.0.1)
       hashie
       version_gem (~> 1.1, >= 1.1.1)
-    strscan (3.1.0)
     tilt (2.3.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
@@ -239,7 +237,7 @@ DEPENDENCIES
   zeitwerk (~> 2.6.15)
 
 RUBY VERSION
-   ruby 3.3.2p78
+   ruby 3.3.4p94
 
 BUNDLED WITH
    2.3.22
