@@ -4,6 +4,7 @@ require "net/http"
 require "epb-auth-tools"
 require "csv"
 require "uri"
+require "ostruct"
 
 module Helpers
   WELSH_MONTHS = {
