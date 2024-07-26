@@ -359,7 +359,7 @@ cy:
       cta_street_and_town: "dod o hyd i dystysgrif ynni drwy ddefnyddio enw’r stryd a’r dref"
     certificate_by_reference_number:
       heading: "Chwiliwch yn ôl rhif y dystysgrif"
-      body: "Fe allwch chi %{link}"
+      body: "Gallwch chi %{link}"
       cta: "ddod o hyd i dystysgrif ynni drwy ddefnyddio rhif y dystysgrif"
     no_network:
       heading: "Cysylltiad â’r rhwydwaith wedi methu"
@@ -499,13 +499,13 @@ cy:
     postcode_not_known:
       heading: "Os nad ydych chi’n gwybod y cod post"
       body_find_postcode: "Gallwch %{link}."
-      cta_find_postcode: "ddod o hyd i god post ar Chwiliwr Cod Post y Post Brenhinol"
+      cta_find_postcode: "dod o hyd i dystysgrif ynni drwy ddefnyddio enw’r stryd a’r dref"
       body_street_and_town: "Neu %{link}"
       cta_street_and_town: "chwiliwch am dystysgrifau perfformiad ynni drwy ddefnyddio enw’r stryd a’r dref"
     certificate_by_reference_number:
       heading: "Chwiliwch yn ôl rhif y dystysgrif"
-      body: "Fe allwch chi %{link}."
-      cta: "chwilio am dystysgrif drwy ddefnyddio’i rhif tystysgrif"
+      body: "Gallwch chi %{link}."
+      cta: "ddod o hyd i dystysgrif ynni drwy ddefnyddio rhif y dystysgrif"
 
   find_non_dom_certificate_by_postcode_results:
     top_heading: "Chwiliwch am dystysgrifau ynni ac adroddiadau"
