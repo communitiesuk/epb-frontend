@@ -221,7 +221,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
     context "when a relate party disclosure code is not valid" do
       before do
         FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
-          assessment_id: "123-123",
+          assessment_id: "1234-1234-1234-1234-1234",
           current_rating: 25,
           current_band: "f",
           current_carbon_emission: "7.8453",
@@ -230,7 +230,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
         )
       end
 
-      let(:response) { get "/energy-certificate/123-123" }
+      let(:response) { get "/energy-certificate/1234-1234-1234-1234-1234" }
 
       it "shows related party disclosure code is not valid" do
         expect(response.body).to include(
@@ -242,7 +242,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
     context "when a related party disclosure code and text are nil" do
       before do
         FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
-          assessment_id: "123-123",
+          assessment_id: "1234-1234-1234-1234-1234",
           current_rating: 25,
           current_band: "f",
           current_carbon_emission: "7.8453",
@@ -252,7 +252,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
         )
       end
 
-      let(:response) { get "/energy-certificate/123-123" }
+      let(:response) { get "/energy-certificate/1234-1234-1234-1234-1234" }
 
       it "shows related party disclosure text and code not present" do
         expect(response.body).to include("No assessor’s declaration provided")
@@ -262,7 +262,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
     context "when a related party disclosure code is nil and text is whitespace" do
       before do
         FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
-          assessment_id: "123-123",
+          assessment_id: "1234-1234-1234-1234-1234",
           current_rating: 25,
           current_band: "f",
           current_carbon_emission: "7.8453",
@@ -272,7 +272,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
         )
       end
 
-      let(:response) { get "/energy-certificate/123-123" }
+      let(:response) { get "/energy-certificate/1234-1234-1234-1234-1234" }
 
       it "shows related party disclosure text and code not present" do
         expect(response.body).to include("No assessor’s declaration provided")
@@ -282,7 +282,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
     context "when there is no total floor area present" do
       before do
         FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
-          assessment_id: "123-123",
+          assessment_id: "1234-1234-1234-1234-1234",
           current_rating: 25,
           current_band: "f",
           current_carbon_emission: "7.8453",
@@ -292,7 +292,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
         )
       end
 
-      let(:response) { get "/energy-certificate/123-123" }
+      let(:response) { get "/energy-certificate/1234-1234-1234-1234-1234" }
 
       it "shows not recorded next to the total floor area" do
         page = Nokogiri.XML(response.body)
@@ -306,7 +306,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
     context "when the total floor area is 0" do
       before do
         FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
-          assessment_id: "123-123",
+          assessment_id: "1234-1234-1234-1234-1234",
           current_rating: 25,
           current_band: "f",
           current_carbon_emission: "7.8453",
@@ -316,7 +316,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
         )
       end
 
-      let(:response) { get "/energy-certificate/123-123" }
+      let(:response) { get "/energy-certificate/1234-1234-1234-1234-1234" }
 
       it "shows not recorded next to the total floor area" do
         page = Nokogiri.XML(response.body)
@@ -333,7 +333,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       context "when there is no information about estimated spending, heating, or insulation" do
         before do
           FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
-            assessment_id: "123-123",
+            assessment_id: "1234-1234-1234-1234-1234",
             estimated_energy_cost: nil,
             current_space_heating_demand: nil,
             current_water_heating_demand: nil,
@@ -343,7 +343,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
           )
         end
 
-        let(:response) { get "/energy-certificate/123-123" }
+        let(:response) { get "/energy-certificate/1234-1234-1234-1234-1234" }
 
         it "does not show the entire section on how energy bills are affected" do
           expect(response.body).not_to have_css "h2",
@@ -361,12 +361,12 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       context "when there is no information about estimated spending" do
         before do
           FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
-            assessment_id: "123-123",
+            assessment_id: "1234-1234-1234-1234-1234",
             estimated_energy_cost: nil,
           )
         end
 
-        let(:response) { get "/energy-certificate/123-123" }
+        let(:response) { get "/energy-certificate/1234-1234-1234-1234-1234" }
 
         it "does not show the information about the effect on bills" do
           expect(response.body).not_to have_css "p",
@@ -378,12 +378,12 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       context "when one of the costs that make up the estimated energy cost is missing" do
         before do
           FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
-            assessment_id: "123-123",
+            assessment_id: "1234-1234-1234-1234-1234",
             hot_water_cost_current: "0.00",
           )
         end
 
-        let(:response) { get "/energy-certificate/123-123" }
+        let(:response) { get "/energy-certificate/1234-1234-1234-1234-1234" }
 
         it "does not show the information about the effect on bills" do
           expect(response.body).not_to have_css "p",
@@ -395,13 +395,13 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       context "when there is no information about the impact of heating" do
         before do
           FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
-            assessment_id: "123-123",
+            assessment_id: "1234-1234-1234-1234-1234",
             current_space_heating_demand: nil,
             current_water_heating_demand: nil,
           )
         end
 
-        let(:response) { get "/energy-certificate/123-123" }
+        let(:response) { get "/energy-certificate/1234-1234-1234-1234-1234" }
 
         it "does not show the heating section" do
           expect(response.body).not_to have_css "h3",
@@ -413,7 +413,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       context "when there is no information about the impact of insulation" do
         before do
           FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
-            assessment_id: "123-123",
+            assessment_id: "1234-1234-1234-1234-1234",
             current_rating: 25,
             current_band: "f",
             current_carbon_emission: "7.8453",
@@ -424,7 +424,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
           )
         end
 
-        let(:response) { get "/energy-certificate/123-123" }
+        let(:response) { get "/energy-certificate/1234-1234-1234-1234-1234" }
 
         it "does not show the insulation section" do
           expect(response.body).not_to have_css "h3",
@@ -537,7 +537,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       context "with different carbon emissions" do
         before do
           FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
-            assessment_id: "123-654",
+            assessment_id: "1234-1234-1234-1234-6543",
             current_rating: 25,
             current_band: "f",
             current_carbon_emission: "7.8453",
@@ -545,7 +545,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
           )
         end
 
-        let(:response) { get "/energy-certificate/123-654" }
+        let(:response) { get "/energy-certificate/1234-1234-1234-1234-6543" }
 
         it "shows the making changes text" do
           expect(response.body).to include(
@@ -563,13 +563,13 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
     context "with a poor (f) rating" do
       before do
         FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
-          assessment_id: "123-654",
+          assessment_id: "1234-1234-1234-1234-6543",
           current_rating: 25,
           current_band: "f",
         )
       end
 
-      let(:response) { get "/energy-certificate/123-654" }
+      let(:response) { get "/energy-certificate/1234-1234-1234-1234-6543" }
 
       it "shows a warning text" do
         expect(response.body).to include(
@@ -581,7 +581,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
     context "when property is in Northern Ireland" do
       before do
         FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
-          assessment_id: "123-123",
+          assessment_id: "1234-1234-1234-1234-1234",
           current_rating: 25,
           current_band: "f",
           current_carbon_emission: "7.8453",
@@ -591,7 +591,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
         )
       end
 
-      let(:response) { get "/energy-certificate/123-123" }
+      let(:response) { get "/energy-certificate/1234-1234-1234-1234-1234" }
 
       it "shows a warning text" do
         expect(response.body).not_to include(
@@ -1095,12 +1095,12 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
   context "when the assessment exists with recommendations" do
     before do
       FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
-        assessment_id: "122-456",
+        assessment_id: "1234-1234-1234-1234-4567",
         recommended_improvements: true,
       )
     end
 
-    let(:response) { get "/energy-certificate/122-456" }
+    let(:response) { get "/energy-certificate/1234-1234-1234-1234-4567" }
 
     it "returns status 200" do
       expect(response.status).to eq(200)
@@ -1216,12 +1216,12 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
   context "when the assessment exists with no recommendations" do
     before do
       FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
-        assessment_id: "789-012",
+        assessment_id: "1234-1234-1234-1234-7890",
         recommended_improvements: false,
       )
     end
 
-    let(:response) { get "/energy-certificate/789-012" }
+    let(:response) { get "/energy-certificate/1234-1234-1234-1234-7890" }
 
     it "shows there aren’t any recommendations for this property text" do
       expect(response.body).to include(

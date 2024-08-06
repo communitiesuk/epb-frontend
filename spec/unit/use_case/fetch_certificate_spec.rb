@@ -245,4 +245,23 @@ describe UseCase::FetchCertificate do
       }.to raise_error(Errors::AssessmentGone)
     end
   end
+
+  context "when there is a request with a badly formatted RRN" do
+
+    let(:gateway) { instance_double(Gateway::AssessmentSummaryGateway) }
+    let(:fetch_certificate) { described_class.new(gateway) }
+
+    describe "#execute" do
+      before do
+        allow(gateway).to receive(:fetch).and_return("blah")
+      end
+
+      it "returns a Not Found without calling the gateway" do
+        expect {
+          fetch_certificate.execute("not-an-rrn-12345678")
+        }.to raise_error(Errors::AssessmentNotFound)
+        expect(gateway).not_to have_received :fetch
+      end
+    end
+  end
 end

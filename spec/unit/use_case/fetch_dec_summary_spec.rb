@@ -17,4 +17,24 @@ describe UseCase::FetchDecSummary do
       }.to raise_error(Errors::AssessmentUnsupported)
     end
   end
+
+
+  context "when there is a request with a badly formatted RRN" do
+
+    let(:gateway) { instance_double(Gateway::CertificatesGateway) }
+    let(:fetch_dec) { described_class.new(gateway) }
+
+    describe "#execute" do
+      before do
+        allow(gateway).to receive(:fetch_dec_summary).and_return("blah")
+      end
+
+      it "returns a Not Found without calling the gateway" do
+        expect {
+          fetch_dec.execute("not-an-rrn-12345678")
+        }.to raise_error(Errors::AssessmentNotFound)
+        expect(gateway).not_to have_received :fetch_dec_summary
+      end
+    end
+  end
 end

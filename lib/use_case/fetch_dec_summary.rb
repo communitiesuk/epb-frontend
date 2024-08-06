@@ -3,7 +3,9 @@
 module UseCase
   class FetchDecSummary < UseCase::Base
     def execute(assessment_id)
-      response = @gateway.fetch_dec_summary(assessment_id)
+      raise Errors::AssessmentNotFound if !Helpers.rrn_format?(assessment_id.strip)
+
+      response = @gateway.fetch_dec_summary(assessment_id.strip)
 
       raise_errors_if_exists(response) do |error|
         raise Errors::AssessmentNotFound if error[:code] == "NOT_FOUND"

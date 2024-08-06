@@ -36,6 +36,10 @@ module Helpers
     dom_qual_list.empty? ? nil : dom_qual_list.join(",")
   end
 
+  def self.rrn_format?(test_string)
+    Regexp.new('^\d{20}$').match?(test_string.strip.delete("-"))
+  end
+
   def get_subdomain_host(subdomain)
     current_url = request.url
 

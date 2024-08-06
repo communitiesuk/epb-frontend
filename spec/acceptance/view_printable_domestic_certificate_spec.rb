@@ -72,12 +72,12 @@ describe "Acceptance::DomesticEnergyPerformanceCertificatePrintView", type: :fea
   context "when the assessment exists with recommendations" do
     before do
       FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
-        assessment_id: "122-456",
+        assessment_id: "1234-1234-1234-1234-4567",
         recommended_improvements: true,
       )
     end
 
-    let(:print_response) { get "/energy-certificate/122-456?print=true" }
+    let(:print_response) { get "/energy-certificate/1234-1234-1234-1234-4567?print=true" }
 
     it "shows a table with the recommendation steps" do
       expect(print_response.body).to have_css(".govuk-table__header", text: "Step")
