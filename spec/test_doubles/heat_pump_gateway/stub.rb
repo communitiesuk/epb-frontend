@@ -7,7 +7,7 @@ module HeatPumpGateway
             "Accept" => "*/*",
             "Accept-Encoding" => "gzip;q=1.0,deflate;q=0.6,identity;q=0.3",
             "Authorization" => "Bearer abc",
-            "User-Agent" => "Faraday v2.9.0",
+            "User-Agent" => "Faraday v2.10.1",
           },
         )
         .to_return(status: 200, body: api_data, headers: {})
