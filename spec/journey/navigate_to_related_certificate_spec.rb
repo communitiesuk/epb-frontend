@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
-describe "Journey::NavigateToRelatedCertificate",
-         type: :feature,
-         journey: true do
+describe "Journey::NavigateToRelatedCertificate", :journey, type: :feature do
   process_id = nil
 
   before(:all) do

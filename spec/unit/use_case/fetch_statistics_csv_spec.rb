@@ -35,7 +35,7 @@ describe UseCase::FetchStatisticsCsv do
       allow(statistics_gateway).to receive(:fetch).and_return(api_data)
     end
 
-    it "groups the data by months " do
+    it "groups the data by months" do
       expect(results).to eq(expectation)
     end
   end
@@ -69,7 +69,7 @@ describe UseCase::FetchStatisticsCsv do
       allow(statistics_gateway).to receive(:fetch).and_return(api_data)
     end
 
-    it "groups the data by months " do
+    it "groups the data by months" do
       expect(results).to eq(expectation)
     end
   end
@@ -103,7 +103,7 @@ describe UseCase::FetchStatisticsCsv do
       allow(statistics_gateway).to receive(:fetch).and_return(api_data)
     end
 
-    it "groups the data by months " do
+    it "groups the data by months" do
       expect(results).to eq(expectation)
     end
   end

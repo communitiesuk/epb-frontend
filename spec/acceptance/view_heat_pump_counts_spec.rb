@@ -1,4 +1,4 @@
-describe "Acceptance::HeatPumpCounts " do
+describe "Acceptance::HeatPumpCounts" do
   include RSpecFrontendServiceMixin
 
   let(:response) { get "http://find-energy-certificate.epb-frontend/heat-pump-counts" }

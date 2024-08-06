@@ -18,9 +18,7 @@ describe UseCase::FetchDecSummary do
     end
   end
 
-
   context "when there is a request with a badly formatted RRN" do
-
     let(:gateway) { instance_double(Gateway::CertificatesGateway) }
     let(:fetch_dec) { described_class.new(gateway) }
 

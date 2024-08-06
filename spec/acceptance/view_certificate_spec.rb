@@ -28,7 +28,7 @@ describe "Acceptance::EnergyPerformanceCertificate", type: :feature do
     end
 
     it "has no cache control header set" do
-      expect(response.headers["Cache-Control"]).to be nil
+      expect(response.headers["Cache-Control"]).to be_nil
     end
   end
 end

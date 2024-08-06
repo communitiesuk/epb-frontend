@@ -17,7 +17,7 @@ describe "Acceptance::Certificate" do
       end
     end
 
-    context "when submitting without deciding a property type " do
+    context "when submitting without deciding a property type" do
       let(:response) do
         post "http://find-energy-certificate.local.gov.uk/find-a-certificate/type-of-property"
       end
@@ -51,7 +51,7 @@ describe "Acceptance::Certificate" do
         get "http://find-energy-certificate.local.gov.uk/find-a-certificate/search-by-postcode"
       end
 
-      it "includes the gov header " do
+      it "includes the gov header" do
         expect(response.body).to have_link "Find an energy certificate"
       end
 
@@ -439,7 +439,7 @@ describe "Acceptance::Certificate" do
         get "http://find-energy-certificate.local.gov.uk/find-a-certificate/search-by-reference-number"
       end
 
-      it "includes the gov header " do
+      it "includes the gov header" do
         expect(response.body).to have_link "Find an energy certificate"
       end
 
@@ -1052,7 +1052,7 @@ describe "Acceptance::Certificate" do
           )
         end
 
-        it "does not contain the  GDS error summary" do
+        it "does not contain the GDS error summary" do
           expect(
             response.body,
           ).not_to have_css "div.govuk-error-summary h2.govuk-error-summary__title",
@@ -1113,7 +1113,7 @@ describe "Acceptance::Certificate" do
           expect(response.body).to have_css("h1", text: "Sorry, this area is too big to search")
         end
 
-        it "displays the search area too big page content", aggregate_failures: true do
+        it "displays the search area too big page content", :aggregate_failures do
           expect(response.body).to have_link("Search by postcode instead", href: "/find-a-certificate/search-by-postcode")
           expect(response.body).to have_link("get the postcode from Royal Mail’s postcode finder", href: "https://www.royalmail.com/find-a-postcode")
           expect(response.body).to have_css("div.govuk-grid-column-two-thirds p.govuk-body", text: /If you need help finding an energy certificate or report/)
@@ -1149,7 +1149,7 @@ describe "Acceptance::Certificate" do
           expect(response.body).to have_link("Search by postcode instead", href: "/find-a-certificate/search-by-postcode")
         end
 
-        it "has the correct royal mail link", aggregate_failures: true do
+        it "has the correct royal mail link", :aggregate_failures do
           expect(response.body).to have_css("p", text: "You can")
           expect(response.body).to have_link("find a postcode on Royal Mail’s postcode finder", href: "https://www.royalmail.com/find-a-postcode")
         end

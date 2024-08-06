@@ -672,7 +672,7 @@ describe "Acceptance::NonDomesticCertificate" do
           )
         end
 
-        it "does not contain the  GDS error summary" do
+        it "does not contain the GDS error summary" do
           expect(
             response.body,
           ).not_to have_css "div.govuk-error-summary h2.govuk-error-summary__title",

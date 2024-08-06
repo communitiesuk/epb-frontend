@@ -90,7 +90,7 @@ describe "Acceptance::ServicePerformance", type: :feature do
     end
   end
 
-  describe "get . find-energy-certificate/service-performance?lang=cy " do
+  describe "get . find-energy-certificate/service-performance?lang=cy" do
     let(:response) do
       get "http://find-energy-certificate.epb-frontend/service-performance?lang=cy"
     end

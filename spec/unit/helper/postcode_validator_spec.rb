@@ -2,7 +2,7 @@ describe Helper::PostcodeValidator do
   let(:helper) { described_class }
 
   context "when postcode is valid" do
-    it "does not raise an error", aggregate_failures: true do
+    it "does not raise an error", :aggregate_failures do
       expect { helper.validate("SW1V 0AA") }.not_to raise_error
       expect { helper.validate("sw1 0bb") }.not_to raise_error
       expect { helper.validate("SW1 0AA") }.not_to raise_error
@@ -16,7 +16,7 @@ describe Helper::PostcodeValidator do
   end
 
   context "when postcode is not complete" do
-    it "raise an incomplete error", aggregate_failures: true do
+    it "raise an incomplete error", :aggregate_failures do
       expect { helper.validate("") }.to raise_error Errors::PostcodeIncomplete
       expect { helper.validate("SW") }.to raise_error Errors::PostcodeIncomplete
       expect { helper.validate("SW1 ") }.to raise_error Errors::PostcodeIncomplete
@@ -26,7 +26,7 @@ describe Helper::PostcodeValidator do
   end
 
   context "when postcode is not valid" do
-    it "raise an invalid error", aggregate_failures: true do
+    it "raise an invalid error", :aggregate_failures do
       expect { helper.validate("$$") }.to raise_error Errors::PostcodeNotValid
       expect { helper.validate("SW%1 0AA") }.to raise_error Errors::PostcodeNotValid
       expect { helper.validate("sw$1 0aa") }.to raise_error Errors::PostcodeNotValid
@@ -36,7 +36,7 @@ describe Helper::PostcodeValidator do
   end
 
   context "when a valid postcode is too long" do
-    it "raise an invalid error", aggregate_failures: true do
+    it "raise an invalid error", :aggregate_failures do
       expect { helper.validate("SW1V 0AA9") }.to raise_error Errors::PostcodeWrongFormat
       expect { helper.validate("SW1VA 0AA") }.to raise_error Errors::PostcodeWrongFormat
     end

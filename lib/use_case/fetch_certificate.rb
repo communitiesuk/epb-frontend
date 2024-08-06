@@ -3,7 +3,7 @@
 module UseCase
   class FetchCertificate < UseCase::Base
     def execute(assessment_id)
-      raise Errors::AssessmentNotFound if !Helpers.rrn_format?(assessment_id.strip)
+      raise Errors::AssessmentNotFound unless Helpers.rrn_format?(assessment_id.strip)
 
       response = @gateway.fetch(assessment_id.strip)
 

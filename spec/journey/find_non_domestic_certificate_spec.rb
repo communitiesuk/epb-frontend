@@ -2,7 +2,7 @@
 
 require_relative "./find_certificate_behaviour"
 
-describe "Journey::FindNonDomesticCertificate", type: :feature, journey: true do
+describe "Journey::FindNonDomesticCertificate", :journey, type: :feature do
   process_id = nil
 
   before(:all) do

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-describe "Journey::FindAssessor", type: :feature, journey: true do
+describe "Journey::FindAssessor", :journey, type: :feature do
   let(:getting_domain) do
     "http://getting-new-energy-certificate.local.gov.uk:9393"
   end

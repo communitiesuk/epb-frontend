@@ -14,10 +14,10 @@ describe Helper::Certificate do
       end
 
       it "returns true" do
-        expect(helper.hide_bills_text?(assessment)).to eq true
+        expect(helper.hide_bills_text?(assessment)).to be true
         assessment[:heatingCostCurrent] = nil
         assessment[:estimatedEnergyCost] = nil
-        expect(helper.hide_bills_text?(assessment)).to eq true
+        expect(helper.hide_bills_text?(assessment)).to be true
       end
     end
 
@@ -33,7 +33,7 @@ describe Helper::Certificate do
       end
 
       it "returns false" do
-        expect(helper.hide_bills_text?(assessment)).to eq false
+        expect(helper.hide_bills_text?(assessment)).to be false
       end
     end
   end
@@ -47,11 +47,11 @@ describe Helper::Certificate do
       end
 
       it "returns false" do
-        expect(helper.hide_heating_demand?(assessment)).to eq true
+        expect(helper.hide_heating_demand?(assessment)).to be true
         assessment[:currentSpaceHeatingDemand] = "5"
-        expect(helper.hide_heating_demand?(assessment)).to eq true
+        expect(helper.hide_heating_demand?(assessment)).to be true
         assessment[:heatDemand] = nil
-        expect(helper.hide_heating_demand?(assessment)).to eq true
+        expect(helper.hide_heating_demand?(assessment)).to be true
       end
     end
 
@@ -63,7 +63,7 @@ describe Helper::Certificate do
       end
 
       it "returns false" do
-        expect(helper.hide_heating_demand?(assessment)).to eq false
+        expect(helper.hide_heating_demand?(assessment)).to be false
       end
     end
   end
@@ -78,7 +78,7 @@ describe Helper::Certificate do
       end
 
       it "returns true" do
-        expect(helper.hide_smart_meters?(assessment)).to eq true
+        expect(helper.hide_smart_meters?(assessment)).to be true
       end
     end
 
@@ -91,7 +91,7 @@ describe Helper::Certificate do
       end
 
       it "returns false" do
-        expect(helper.hide_smart_meters?(assessment)).to eq false
+        expect(helper.hide_smart_meters?(assessment)).to be false
       end
     end
   end

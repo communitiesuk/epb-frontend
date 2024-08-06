@@ -41,7 +41,7 @@ describe "Helpers.site_service_quantity", type: :helper do
     it "does not show the value for nonexistent service" do
       expect(
         frontend_service_helpers.site_service_quantity(assessment, "Oil"),
-      ).to eq nil
+      ).to be_nil
     end
   end
 end

@@ -119,7 +119,7 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
       expect(response.body).to have_css "dd", text: "40 B"
     end
 
-    it "show the recommendation report link " do
+    it "show the recommendation report link" do
       expect(response.body).to have_css "h2", text: "Recommendation report"
       expect(response.body).to have_css "p",
                                         text:

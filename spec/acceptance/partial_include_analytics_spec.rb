@@ -15,7 +15,7 @@ describe "Partial include analytics", type: :feature do
     ENV["GTM_PROPERTY_FINDING"] = nil
   end
 
-  context "when the cookie_consent cookie is null " do
+  context "when the cookie_consent cookie is null" do
     before do
       ENV["GTM_PROPERTY_FINDING"] = "GT6666"
     end
@@ -33,7 +33,7 @@ describe "Partial include analytics", type: :feature do
     end
   end
 
-  context "when the cookie_consent cookie is true " do
+  context "when the cookie_consent cookie is true" do
     before do
       ENV["GTM_PROPERTY_FINDING"] = "GT6666"
     end
@@ -55,7 +55,7 @@ describe "Partial include analytics", type: :feature do
     end
   end
 
-  context "when the cookie_consent cookie is false " do
+  context "when the cookie_consent cookie is false" do
     let(:helper) { instance_double(Helpers) }
     let(:response) do
       get url, {}, "HTTP_COOKIE" => "cookie_consent=false"
@@ -78,7 +78,7 @@ describe "Partial include analytics", type: :feature do
     end
   end
 
-  context "when the google_property is false " do
+  context "when the google_property is false" do
     before do
       ENV["GTM_PROPERTY_FINDING"] = nil
     end

@@ -108,7 +108,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
         )
       end
 
-      it "shows the letting info text", aggregate_failures: true do
+      it "shows the letting info text", :aggregate_failures do
         expect(response.body).to include(
           '<p class="govuk-body">Properties can be let if they have an energy rating from A+ to E.</p>',
         )

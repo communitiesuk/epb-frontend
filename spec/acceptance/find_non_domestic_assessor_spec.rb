@@ -9,7 +9,7 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
         get "http://getting-new-energy-certificate.local.gov.uk/find-a-non-domestic-assessor/search-by-postcode"
       end
 
-      it "includes the gov header " do
+      it "includes the gov header" do
         expect(response.body).to include(
           "<a href=\"/\" class=\"govuk-header__link govuk-header__service-name\">Get a new energy certificate</a>",
         )
@@ -547,7 +547,7 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
         get "http://getting-new-energy-certificate.local.gov.uk/find-a-non-domestic-assessor/search-by-name"
       end
 
-      it "includes the gov header " do
+      it "includes the gov header" do
         expect(response.body).to have_link "Get a new energy certificate"
       end
 

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-describe "Journey::CookiesOnOurService", type: :feature, journey: true do
+describe "Journey::CookiesOnOurService", :journey, type: :feature do
   let(:url) do
     "http://find-energy-certificate.local.gov.uk:9393/cookies"
   end
@@ -28,7 +28,7 @@ describe "Journey::CookiesOnOurService", type: :feature, journey: true do
 
   after(:all) { Process.kill("KILL", process_id) if process_id }
 
-  context "when selecting to not use cookies " do
+  context "when selecting to not use cookies" do
     before do
       visit url
       find("#cookies-setting-false-label").click
@@ -53,7 +53,7 @@ describe "Journey::CookiesOnOurService", type: :feature, journey: true do
     end
   end
 
-  context "when selecting to use cookies " do
+  context "when selecting to use cookies" do
     before do
       visit url
       find("#cookies-setting-true-label").click

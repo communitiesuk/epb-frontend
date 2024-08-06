@@ -25,8 +25,7 @@ describe Helper::Assets do
       asset_content = "i am an asset"
 
       before do
-        allow(File).to receive(:read).and_return(asset_content)
-        allow(File).to receive(:exist?).and_return(true)
+        allow(File).to receive_messages(read: asset_content, exist?: true)
       end
 
       it "returns the content of the referenced asset" do
@@ -38,8 +37,7 @@ describe Helper::Assets do
       svg_content = '<svg alt="i am an svg" fill="#123456"></svg>'
 
       before do
-        allow(File).to receive(:read).and_return(svg_content)
-        allow(File).to receive(:exist?).and_return(true)
+        allow(File).to receive_messages(read: svg_content, exist?: true)
       end
 
       it "returns a data URI for the SVG" do

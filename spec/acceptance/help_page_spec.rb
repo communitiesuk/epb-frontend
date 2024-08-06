@@ -15,23 +15,23 @@ describe "Acceptance::HelpPage", type: :feature do
         expect(response.body).to have_css "h1", text: "Get help finding an energy certificate"
       end
 
-      it "displays the intro " do
+      it "displays the intro" do
         expect(response.body).to have_css "p.govuk-body", text: "If you need help finding an energy certificate or report, contact the Department for Levelling Up, Housing and Communities (DLUHC)."
       end
 
-      it "displays the tel " do
+      it "displays the tel" do
         expect(response.body).to have_css "div.govuk-body", text: "Telephone: 020 3829 0748"
       end
 
-      it "displays the email " do
+      it "displays the email" do
         expect(response.body).to have_link "dluhc.digital-services@levellingup.gov.uk", href: "mailto:dluhc.digital-services@levellingup.gov.uk"
       end
 
-      it "displays the opening hours " do
+      it "displays the opening hours" do
         expect(response.body).to have_css "div.govuk-body", text: "Monday to Friday, 9am to 5pm"
       end
 
-      it "has a link to the found out more " do
+      it "has a link to the found out more" do
         expect(response.body).to have_link("Find out more about call charges", href: "https://www.gov.uk/call-charges")
       end
     end
@@ -51,7 +51,7 @@ describe "Acceptance::HelpPage", type: :feature do
         expect(response.body).to have_css "h1", text: "Get help finding an energy assessor"
       end
 
-      it "displays the intro " do
+      it "displays the intro" do
         expect(response.body).to have_css "p.govuk-body", text: "For help finding an assessor, contact the Department for Levelling Up, Housing and Communities (DLUHC)."
       end
     end

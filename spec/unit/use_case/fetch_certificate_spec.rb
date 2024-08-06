@@ -247,7 +247,6 @@ describe UseCase::FetchCertificate do
   end
 
   context "when there is a request with a badly formatted RRN" do
-
     let(:gateway) { instance_double(Gateway::AssessmentSummaryGateway) }
     let(:fetch_certificate) { described_class.new(gateway) }
 

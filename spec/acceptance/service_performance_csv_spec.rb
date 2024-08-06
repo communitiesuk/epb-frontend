@@ -74,8 +74,8 @@ describe "Acceptance::ServicePerformanceCSV", type: :feature do
         parsed_data.select { |row| row["Month"] == "Oct-2021" }.first.to_hash
       end
 
-      it "produces a csv with empty cell in the row for DEC lodged " do
-        expect(october_data["DECs Lodged"]).to eq(nil)
+      it "produces a csv with empty cell in the row for DEC lodged" do
+        expect(october_data["DECs Lodged"]).to be_nil
       end
 
       it "produces a csv with filled cells in the row CEPC average rating and DEC-RR lodged" do

@@ -1,4 +1,4 @@
-describe "view Service Performance page", type: :feature, journey: true do
+describe "view Service Performance page", :journey, type: :feature do
   process_id = nil
 
   before(:all) do
