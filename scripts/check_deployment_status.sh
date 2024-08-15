@@ -1,11 +1,12 @@
 #!/bin/bash
 
-CLUSTER_NAME=$1
-SERVICE_NAME=$2
+PROFILE=$1
+CLUSTER_NAME=$2
+SERVICE_NAME=$3
 
 
 #
-STATUS=$(aws ecs describe-services --services $SERVICE_NAME --cluster $CLUSTER_NAME | jq -rc '.services[0].deployments[0].rolloutState' )
+STATUS=$(aws ecs describe-services --services $SERVICE_NAME --cluster $CLUSTER_NAME  --profile $PROFILE | jq -rc '.services[0].deployments[0].rolloutState' )
 ##echo "${STATUS}"
 ##if [[ $STATUS == "COMPLETED" ]]; then
 ##  echo "done"
@@ -13,7 +14,7 @@ STATUS=$(aws ecs describe-services --services $SERVICE_NAME --cluster $CLUSTER_N
 #exit 0
 
 while [[ $STATUS == "IN_PROGRESS" ]]; do
-STATUS=$(aws ecs describe-services --services $SERVICE_NAME --cluster $CLUSTER_NAME | jq -rc '.services[0].deployments[0].rolloutState' )
+STATUS=$(aws ecs describe-services --services $SERVICE_NAME --cluster $CLUSTER_NAME --profile $PROFILE | jq -rc '.services[0].deployments[0].rolloutState' )
 echo "${STATUS} << WAITING FOR RESTART STATUS TO REACH COMPLETED"
 sleep 20
 done
