@@ -24,7 +24,7 @@ describe "Acceptance::HelpPage", type: :feature do
       end
 
       it "displays the email" do
-        expect(response.body).to have_link "dluhc.digital-services@levellingup.gov.uk", href: "mailto:dluhc.digital-services@levellingup.gov.uk"
+        expect(response.body).to have_link "svc-mhclg.digital-services@communities.gov.uk", href: "mailto:svc-mhclg.digital-services@communities.gov.uk"
       end
 
       it "displays the opening hours" do
