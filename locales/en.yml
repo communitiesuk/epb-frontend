@@ -84,8 +84,8 @@ en:
         url: "?lang=cy"
       contact:
         text: "If you need additional support to find an assessor, contact us on %{link}, or call our helpdesk on 020 3829 0748 (Monday to Friday, 9am - 5pm)."
-        link: "mailto:svc-mhclg.digital-services@communities.gov.uk?subject=EPB%20-%20"
-        cta: "svc-mhclg.digital-services@communities.gov.uk"
+        link: "mailto:mhclg.digital-services@communities.gov.uk?subject=EPB%20-%20"
+        cta: "mhclg.digital-services@communities.gov.uk"
       scotland:
         description: "For properties in Scotland, use the %{link}."
         link: "Scottish energy certificate service"
@@ -165,27 +165,27 @@ en:
       besca:
         name: "BESCA"
         phone: "020 3829 0748"
-        email: "svc-mhclg.digital-services@communities.gov.uk"
+        email: "mhclg.digital-services@communities.gov.uk"
         url: ""
       ciat:
         name: "CIAT"
         phone: "020 3829 0748"
-        email: "svc-mhclg.digital-services@communities.gov.uk"
+        email: "mhclg.digital-services@communities.gov.uk"
         url: ""
       hvca:
         name: "HVCA"
         phone: "020 3829 0748"
-        email: "svc-mhclg.digital-services@communities.gov.uk"
+        email: "mhclg.digital-services@communities.gov.uk"
         url: ""
       knauf:
         name: "Knauf Insulation"
         phone: "020 3829 0748"
-        email: "svc-mhclg.digital-services@communities.gov.uk"
+        email: "mhclg.digital-services@communities.gov.uk"
         url: ""
       napit:
         name: "NAPIT"
         phone: "020 3829 0748"
-        email: "svc-mhclg.digital-services@communities.gov.uk"
+        email: "mhclg.digital-services@communities.gov.uk"
         url: ""
       nher:
         name: "NHER"
@@ -205,7 +205,7 @@ en:
       rics:
         name: "RICS"
         phone: "020 3829 0748"
-        email: "svc-mhclg.digital-services@communities.gov.uk"
+        email: "mhclg.digital-services@communities.gov.uk"
         url: ""
       sava:
         name: "SAVA"
@@ -332,8 +332,8 @@ en:
       call_center: "If you need additional support to find an energy certificate or report, call our helpdesk on 020 3829 0748 (Monday to Friday, 9am - 5pm)."
       contact:
         text: "If you need additional support to find an energy certificate or report, contact us on %{link}, or call our helpdesk on 020 3829 0748 (Monday to Friday, 9am - 5pm)."
-        link: "mailto:svc-mhclg.digital-services@communities.gov.uk?subject=EPB%20-%20"
-        cta: "svc-mhclg.digital-services@communities.gov.uk"
+        link: "mailto:mhclg.digital-services@communities.gov.uk?subject=EPB%20-%20"
+        cta: "mhclg.digital-services@communities.gov.uk"
 
     property_type:
       question_title: "What type of property is the certificate for?"
@@ -656,8 +656,8 @@ en:
       valid_until: "Valid until"
       expired: "Expired"
       expired_on: "Expired on"
-      link: "mailto:svc-mhclg.digital-services@communities.gov.uk?subject=EPB%20-%20"
-      cta: "svc-mhclg.digital-services@communities.gov.uk"
+      link: "mailto:mhclg.digital-services@communities.gov.uk?subject=EPB%20-%20"
+      cta: "mhclg.digital-services@communities.gov.uk"
       certificates:
         title: "Other certificates for this property"
       reports:
@@ -686,7 +686,7 @@ en:
       report_link_text: "See the new report by visiting www.gov.uk/find-energy-certificate"
       report_get_help_text: "Get help with reports for this property"
       report_contact_text: "If you need help finding the new report or if you know of other reports for this property that are not listed here, contact the Department for Levelling Up, Housing and Communities (DLUHC)."
-      email: "svc-mhclg.digital-services@communities.gov.uk"
+      email: "mhclg.digital-services@communities.gov.uk"
       telephone: "Telephone: "
       telephone_number: "020 3829 0748"
     expired_warning:
@@ -708,7 +708,7 @@ en:
       report_link_text: "You can get a new certificate and report by visiting www.gov.uk/get-new-energy-certificate"
       report_get_help_text: "Get help with reports for this property"
       report_contact_text: "If you need help getting a new report or if you know of other reports for this property that are not listed here, contact the Department for Levelling Up, Housing and Communities (DLUHC)."
-      email: "svc-mhclg.digital-services@communities.gov.uk"
+      email: "mhclg.digital-services@communities.gov.uk"
       telephone: "Telephone: "
       telephone_number: "020 3829 0748"
 
@@ -1901,8 +1901,8 @@ en:
       recommendations: "The assessor made the following notes and recommendations:"
     detailed_inspection_unavailable:
       text: "The detailed inspection notes from this report are no longer available online. If you require the detailed inspection notes, contact us at %{link}"
-      link: "mailto:svc-mhclg.digital-services@communities.gov.uk?subject=EPB%20-%20"
-      cta: "svc-mhclg.digital-services@communities.gov.uk"
+      link: "mailto:mhclg.digital-services@communities.gov.uk?subject=EPB%20-%20"
+      cta: "mhclg.digital-services@communities.gov.uk"
       title: "Detailed inspection notes"
 
   primary_energy_use_dropdown:
@@ -1943,7 +1943,7 @@ en:
     contact_heading: "Feedback and contact information"
     contact_paragraph: "If you need information on this website in a different format like accessible PDF, large print, easy read, audio recording or braille:
                        <ul class=\"govuk-list govuk-list--bullet\">
-                         <li>Email: <a href=\"mailto:svc-mhclg.digital-services@communities.gov.uk?subject=EPB%20-%20\">svc-mhclg.digital-services@communities.gov.uk</a></li>
+                         <li>Email: <a href=\"mailto:mhclg.digital-services@communities.gov.uk?subject=EPB%20-%20\">mhclg.digital-services@communities.gov.uk</a></li>
                          <li>Telephone: 020 3829 0748</li>
                        </ul>"
     reporting_heading: "Reporting accessibility problems with this website"

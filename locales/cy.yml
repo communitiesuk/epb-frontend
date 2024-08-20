@@ -84,8 +84,8 @@ cy:
         url: "?lang=en"
       contact:
         text: "Os oes arnoch angen rhagor o gymorth i ddod o hyd i asesydd, cysylltwch â ni ar %{link}, neu ffoniwch ein desg gymorth ar 020 3829 0748 (dydd Llun i ddydd Gwener, 9am - 5pm)."
-        link: "mailto:svc-mhclg.digital-services@communities.gov.uk?subject=EPB%20-%20"
-        cta: "svc-mhclg.digital-services@communities.gov.uk"
+        link: "mailto:mhclg.digital-services@communities.gov.uk?subject=EPB%20-%20"
+        cta: "mhclg.digital-services@communities.gov.uk"
       scotland:
         description: "Ar gyfer eiddo yn yr Alban, defnyddiwch %{link}."
         link: "Wasanaeth tystysgrifau ynni yr Alban"
@@ -165,27 +165,27 @@ cy:
       besca:
         name: "BESCA"
         phone: "020 3829 0748"
-        email: "svc-mhclg.digital-services@communities.gov.uk"
+        email: "mhclg.digital-services@communities.gov.uk"
         url: ""
       ciat:
         name: "CIAT"
         phone: "020 3829 0748"
-        email: "svc-mhclg.digital-services@communities.gov.uk"
+        email: "mhclg.digital-services@communities.gov.uk"
         url: ""
       hvca:
         name: "HVCA"
         phone: "020 3829 0748"
-        email: "svc-mhclg.digital-services@communities.gov.uk"
+        email: "mhclg.digital-services@communities.gov.uk"
         url: ""
       knauf:
         name: "Knauf Insulation"
         phone: "020 3829 0748"
-        email: "svc-mhclg.digital-services@communities.gov.uk"
+        email: "mhclg.digital-services@communities.gov.uk"
         url: ""
       napit:
         name: "NAPIT"
         phone: "020 3829 0748"
-        email: "svc-mhclg.digital-services@communities.gov.uk"
+        email: "mhclg.digital-services@communities.gov.uk"
         url: ""
       nher:
         name: "NHER"
@@ -205,7 +205,7 @@ cy:
       rics:
         name: "RICS"
         phone: "020 3829 0748"
-        email: "svc-mhclg.digital-services@communities.gov.uk"
+        email: "mhclg.digital-services@communities.gov.uk"
         url: ""
       sava:
         name: "SAVA"
@@ -332,8 +332,8 @@ cy:
       call_center: "Os oes arnoch angen rhagor o gymorth i chwilio am dystysgrif ynni neu adroddiad, ffoniwch ein desg gymorth ar 020 3829 0748 (dydd Llun i ddydd Gwener, 9am - 5pm)."
       contact:
         text: "Os oes arnoch angen rhagor o gymorth i chwilio am dystysgrif ynni neu adroddiad, cysylltwch â ni ar %{link}, neu ffoniwch ein desg gymorth ar 020 3829 0748 (dydd Llun i ddydd Gwener, 9am - 5pm)."
-        link: "mailto:svc-mhclg.digital-services@communities.gov.uk?subject=EPB%20-%20"
-        cta: "svc-mhclg.digital-services@communities.gov.uk"
+        link: "mailto:mhclg.digital-services@communities.gov.uk?subject=EPB%20-%20"
+        cta: "mhclg.digital-services@communities.gov.uk"
 
     property_type:
       question_title: "Tystysgrif i ba fath o eiddo yw hi?"
@@ -656,8 +656,8 @@ cy:
       valid_until: "Dilys tan"
       expired: "Wedi dod i ben"
       expired_on: "Wedi dod i ben ar"
-      link: "mailto:svc-mhclg.digital-services@communities.gov.uk?subject=EPB%20-%20"
-      cta: "svc-mhclg.digital-services@communities.gov.uk"
+      link: "mailto:mhclg.digital-services@communities.gov.uk?subject=EPB%20-%20"
+      cta: "mhclg.digital-services@communities.gov.uk"
       certificates:
         title: "Tystysgrifau eraill ar gyfer yr eiddo hwn"
       reports:
@@ -686,7 +686,7 @@ cy:
       report_link_text: "Gweld yr adroddiad newydd drwy fynd i https://www.gov.uk/dod-o-hyd-i-dystysgrif-ynni"
       report_get_help_text: "Cael help gydag adroddiadau ar gyfer yr eiddo hwn"
       report_contact_text: "Os oes arnoch chi angen help i ddod o hyd i’r adroddiad newydd neu os ydych chi’n gwybod am adroddiadau eraill ar gyfer yr eiddo hwn sydd heb eu rhestru yma, cysylltwch â’r Adran Codi’r Gwastad, Tai a Chymunedau (DLUHC)."
-      email: "svc-mhclg.digital-services@communities.gov.uk"
+      email: "mhclg.digital-services@communities.gov.uk"
       telephone: "Ffôn: "
       telephone_number: "020 3829 0748"
     expired_warning:
@@ -708,7 +708,7 @@ cy:
       report_link_text: "Gallwch gael tystysgrif ac adroddiad newydd drwy fynd i www.gov.uk/cael-tystysgrif-ynni-newydd"
       report_get_help_text: "Cael help gydag adroddiadau ar gyfer yr eiddo hwn "
       report_contact_text: "Os oes arnoch angen help i gael adroddiad newydd neu os ydych chi’n gwybod am adroddiadau eraill ar gyfer yr eiddo hwn sydd heb eu rhestru yma, cysylltwch â’r Adran Codi’r Gwastad, Tai a Chymunedau (DLUHC)."
-      email: "svc-mhclg.digital-services@communities.gov.uk"
+      email: "mhclg.digital-services@communities.gov.uk"
       telephone: "Ffôn: "
       telephone_number: "020 3829 0748"
 
@@ -1900,8 +1900,8 @@ cy:
       recommendations: "Gwnaeth yr asesydd y nodiadau a’r argymhellion a ganlyn:"
     detailed_inspection_unavailable:
       text: "Nid yw nodiadau manwl yr archwiliad o’r adroddiad hwn ar gael ar-lein mwyach. Os oes arnoch angen nodiau manwl yr archwiliad, cysylltwch â ni yn %{link}"
-      link: "mailto:svc-mhclg.digital-services@communities.gov.uk?subject=EPB%20-%20"
-      cta: "svc-mhclg.digital-services@communities.gov.uk"
+      link: "mailto:mhclg.digital-services@communities.gov.uk?subject=EPB%20-%20"
+      cta: "mhclg.digital-services@communities.gov.uk"
       title: "Nodiadau manwl ar yr archwiliad"
 
   primary_energy_use_dropdown:
@@ -1942,7 +1942,7 @@ cy:
     contact_heading: "Gwybodaeth am adborth a chysylltiadau"
     contact_paragraph: "Os oes angen gwybodaeth arnoch chi ar y wefan hon mewn fformat gwahanol fel PDF hygyrch, print bras, tesun hawdd i’w ddarllen, recordiad sain neu braille:
                         <ul class=\"govuk-list govuk-list--bullet\">
-                          <li>anfonwch neges ebost at: <a href=\"mailto:svc-mhclg.digital-services@communities.gov.uk?subject=EPB%20-%20\">svc-mhclg.digital-services@communities.gov.uk</a></li>
+                          <li>anfonwch neges ebost at: <a href=\"mailto:mhclg.digital-services@communities.gov.uk?subject=EPB%20-%20\">mhclg.digital-services@communities.gov.uk</a></li>
                           <li>Ffôn: 020 3829 0748</li>
                         </ul>"
     reporting_heading: "Rhoi gwybod am broblemau hygyrchedd gyda’r wefan hon"

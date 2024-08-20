@@ -480,7 +480,7 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
     it "Explains that the detailed notes are not available" do
       expect(response.body).to have_css "p",
                                         text:
-                                          "The detailed inspection notes from this report are no longer available online. If you require the detailed inspection notes, contact us at svc-mhclg.digital-services@communities.gov.uk"
+                                          "The detailed inspection notes from this report are no longer available online. If you require the detailed inspection notes, contact us at mhclg.digital-services@communities.gov.uk"
     end
   end
 
