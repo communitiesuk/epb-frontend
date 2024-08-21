@@ -481,7 +481,7 @@ en:
     royal_mail_link:
       lead_in: "You can"
       cta: "get the postcode from Royal Mail’s postcode finder"
-    further_help: "If you need help finding an energy certificate or report, contact the Department for Levelling Up, Housing and Communities (DLUHC)."
+    further_help: "If you need help finding an energy certificate or report, contact the Ministry of Housing, Communities and Local Government (MHCLG)."
     contact:
       telephone_line: "Telephone: 020 3829 0748"
       opening_hours_line: "Monday to Friday, 9am to 5pm"
@@ -682,10 +682,10 @@ en:
       report_title: "This report is not valid. A new report has replaced this one."
       certificate_link_text: "See the new certificate by visiting www.gov.uk/find-energy-certificate"
       certificate_get_help_text: "Get help with certificates for this property"
-      certificate_contact_text: "If you need help finding the new certificate or if you know of other certificates for this property that are not listed here, contact the Department for Levelling Up, Housing and Communities (DLUHC)."
+      certificate_contact_text: "If you need help finding the new certificate or if you know of other certificates for this property that are not listed here, contact the Ministry of Housing, Communities and Local Government (MHCLG)."
       report_link_text: "See the new report by visiting www.gov.uk/find-energy-certificate"
       report_get_help_text: "Get help with reports for this property"
-      report_contact_text: "If you need help finding the new report or if you know of other reports for this property that are not listed here, contact the Department for Levelling Up, Housing and Communities (DLUHC)."
+      report_contact_text: "If you need help finding the new report or if you know of other reports for this property that are not listed here, contact the Ministry of Housing, Communities and Local Government (MHCLG)."
       email: "mhclg.digital-services@communities.gov.uk"
       telephone: "Telephone: "
       telephone_number: "020 3829 0748"
@@ -704,10 +704,10 @@ en:
       report_title: "This report has expired."
       certificate_link_text: "You can get a new certificate by visiting www.gov.uk/get-new-energy-certificate"
       certificate_get_help_text: "Get help with certificates for this property"
-      certificate_contact_text: "If you need help getting a new certificate or if you know of other certificates for this property that are not listed here, contact the Department for Levelling Up, Housing and Communities (DLUHC)."
+      certificate_contact_text: "If you need help getting a new certificate or if you know of other certificates for this property that are not listed here, contact the Ministry of Housing, Communities and Local Government (MHCLG)."
       report_link_text: "You can get a new certificate and report by visiting www.gov.uk/get-new-energy-certificate"
       report_get_help_text: "Get help with reports for this property"
-      report_contact_text: "If you need help getting a new report or if you know of other reports for this property that are not listed here, contact the Department for Levelling Up, Housing and Communities (DLUHC)."
+      report_contact_text: "If you need help getting a new report or if you know of other reports for this property that are not listed here, contact the Ministry of Housing, Communities and Local Government (MHCLG)."
       email: "mhclg.digital-services@communities.gov.uk"
       telephone: "Telephone: "
       telephone_number: "020 3829 0748"
@@ -1930,7 +1930,7 @@ en:
               <li><a class= \"govuk-link\" href=\"https://gov.uk/find-energy-certificate\">www.gov.uk/find-energy-certificate</a></li>
               <li><a class= \"govuk-link\" href=\"https://gov.uk/get-new-energy-certificate\">www.gov.uk/get-new-energy-certificate</a></li>
             </ul>"
-    paragraph_1: "This website is run by the Department for Levelling Up, Housing and Communities. We want as many people as possible to be able to use this website. For example, that means you should be able to:
+    paragraph_1: "This website is run by the Ministry of Housing, Communities and Local Government. We want as many people as possible to be able to use this website. For example, that means you should be able to:
                   <ul class=\"govuk-list govuk-list--bullet\">
                     <li>change colours, contrast levels and fonts</li>
                     <li>zoom in up to 300% without the text spilling off the screen</li>
@@ -1951,7 +1951,7 @@ en:
     enforcement_heading: "Enforcement procedure"
     enforcement_paragraph: "The Equality and Human Rights Commission (EHRC) is responsible for enforcing the Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018 (the ‘accessibility regulations’). If you’re not happy with how we respond to your complaint, <a class=\"govuk-link\" href=\"https://www.equalityadvisoryservice.com/\">contact the Equality Advisory and Support Service (EASS)</a>."
     technical_heading: "Technical information about this website’s accessibility"
-    technical_paragraph: "The Department for Levelling Up, Housing and Communities is committed to making its website accessible, in accordance with the Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018."
+    technical_paragraph: "The Ministry of Housing, Communities and Local Government is committed to making its website accessible, in accordance with the Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018."
     compliance_heading: "Compliance status"
     compliance_paragraph: "This website is partially compliant with the <a class=\"govuk-link\" href=\"https://www.w3.org/TR/WCAG21/\">Web Content Accessibility Guidelines version 2.1 AA standard</a>, due to the non-compliances listed below."
     non_accessible_heading: "Non-accessible content"
@@ -1973,11 +1973,11 @@ en:
 
   find_service_help:
     top_heading: "Get help finding an energy certificate"
-    intro: "If you need help finding an energy certificate or report, contact the Department for Levelling Up, Housing and Communities (DLUHC)."
+    intro: "If you need help finding an energy certificate or report, contact the Ministry of Housing, Communities and Local Government (MHCLG)."
 
   get_service_help:
     top_heading: "Get help finding an energy assessor"
-    intro: "For help finding an assessor, contact the Department for Levelling Up, Housing and Communities (DLUHC)."
+    intro: "For help finding an assessor, contact the Ministry of Housing, Communities and Local Government (MHCLG)."
 
   cookies:
     title: "Cookies on our service"

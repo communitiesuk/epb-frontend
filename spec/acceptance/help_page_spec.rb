@@ -16,7 +16,7 @@ describe "Acceptance::HelpPage", type: :feature do
       end
 
       it "displays the intro" do
-        expect(response.body).to have_css "p.govuk-body", text: "If you need help finding an energy certificate or report, contact the Department for Levelling Up, Housing and Communities (DLUHC)."
+        expect(response.body).to have_css "p.govuk-body", text: "If you need help finding an energy certificate or report, contact the Ministry of Housing, Communities and Local Government (MHCLG)."
       end
 
       it "displays the tel" do
@@ -52,7 +52,7 @@ describe "Acceptance::HelpPage", type: :feature do
       end
 
       it "displays the intro" do
-        expect(response.body).to have_css "p.govuk-body", text: "For help finding an assessor, contact the Department for Levelling Up, Housing and Communities (DLUHC)."
+        expect(response.body).to have_css "p.govuk-body", text: "For help finding an assessor, contact the Ministry of Housing, Communities and Local Government (MHCLG)."
       end
     end
   end

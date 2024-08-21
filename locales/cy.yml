@@ -481,7 +481,7 @@ cy:
     royal_mail_link:
       lead_in: "Gallwch"
       cta: "ddod o hyd i god post ar chwiliwr cod post y Post Brenhinol"
-    further_help: "Os oes arnoch angen help i ddod o hyd i dystysgrif neu adroddiad ynni, cysylltwch â’r Adran Codi’r Gwastad, Tai a Chymunedau (DLUHC)."
+    further_help: "Os oes arnoch angen help i ddod o hyd i dystysgrif neu adroddiad ynni, cysylltwch â’r Weinyddiaeth Dai, Cymunedau a Llywodraeth Leol (MHCLG)."
     contact:
       telephone_line: "Ffôn: 020 3829 0748"
       opening_hours_line: "Dydd Llun i ddydd Gwener, 9am i 5pm"
@@ -682,10 +682,10 @@ cy:
       report_title: "Nid yw’r adroddiad hwn yn ddilys. Mae adroddiad newydd wedi disodli hon."
       certificate_link_text: "Gweld y dystysgrif newydd drwy ymweld â www.gov.uk/find-energy-certificate"
       certificate_get_help_text: "Cael help gyda thystysgrifau ar gyfer yr eiddo hwn "
-      certificate_contact_text: "Os oes arnoch chi angen help i ddod o hyd i’r dystysgrif newydd neu os ydych chi’n gwybod am dystysgrifau eraill ar gyfer yr eiddo hwn sydd heb eu rhestru yma, cysylltwch â’r Adran Codi’r Gwastad, Tai a Chymunedau (DLUHC)"
+      certificate_contact_text: "Os oes arnoch chi angen help i ddod o hyd i’r dystysgrif newydd neu os ydych chi’n gwybod am dystysgrifau eraill ar gyfer yr eiddo hwn sydd heb eu rhestru yma, cysylltwch â’r Weinyddiaeth Dai, Cymunedau a Llywodraeth Leol (MHCLG)"
       report_link_text: "Gweld yr adroddiad newydd drwy fynd i https://www.gov.uk/dod-o-hyd-i-dystysgrif-ynni"
       report_get_help_text: "Cael help gydag adroddiadau ar gyfer yr eiddo hwn"
-      report_contact_text: "Os oes arnoch chi angen help i ddod o hyd i’r adroddiad newydd neu os ydych chi’n gwybod am adroddiadau eraill ar gyfer yr eiddo hwn sydd heb eu rhestru yma, cysylltwch â’r Adran Codi’r Gwastad, Tai a Chymunedau (DLUHC)."
+      report_contact_text: "Os oes arnoch chi angen help i ddod o hyd i’r adroddiad newydd neu os ydych chi’n gwybod am adroddiadau eraill ar gyfer yr eiddo hwn sydd heb eu rhestru yma, cysylltwch â’r Weinyddiaeth Dai, Cymunedau a Llywodraeth Leol (MHCLG)."
       email: "mhclg.digital-services@communities.gov.uk"
       telephone: "Ffôn: "
       telephone_number: "020 3829 0748"
@@ -704,10 +704,10 @@ cy:
       report_title: "Mae’r adroddiad hwn wedi dod i ben."
       certificate_link_text: "Gallwch gael tystysgrif newydd drwy fynd i www.gov.uk/cael-tystysgrif-ynni-newydd"
       certificate_get_help_text: "Cael help gyda thystysgrifau ar gyfer yr eiddo hwn "
-      certificate_contact_text: "Os oes arnoch angen help i gael tystysgrif newydd neu os ydych chi’n gwybod am dystysgrifau eraill ar gyfer yr eiddo hwn sydd heb eu rhestru yma, cysylltwch â’r Adran Codi’r Gwastad, Tai a Chymunedau (DLUHC)."
+      certificate_contact_text: "Os oes arnoch angen help i gael tystysgrif newydd neu os ydych chi’n gwybod am dystysgrifau eraill ar gyfer yr eiddo hwn sydd heb eu rhestru yma, cysylltwch â’r Weinyddiaeth Dai, Cymunedau a Llywodraeth Leol (MHCLG)."
       report_link_text: "Gallwch gael tystysgrif ac adroddiad newydd drwy fynd i www.gov.uk/cael-tystysgrif-ynni-newydd"
       report_get_help_text: "Cael help gydag adroddiadau ar gyfer yr eiddo hwn "
-      report_contact_text: "Os oes arnoch angen help i gael adroddiad newydd neu os ydych chi’n gwybod am adroddiadau eraill ar gyfer yr eiddo hwn sydd heb eu rhestru yma, cysylltwch â’r Adran Codi’r Gwastad, Tai a Chymunedau (DLUHC)."
+      report_contact_text: "Os oes arnoch angen help i gael adroddiad newydd neu os ydych chi’n gwybod am adroddiadau eraill ar gyfer yr eiddo hwn sydd heb eu rhestru yma, cysylltwch â’r Weinyddiaeth Dai, Cymunedau a Llywodraeth Leol (MHCLG)."
       email: "mhclg.digital-services@communities.gov.uk"
       telephone: "Ffôn: "
       telephone_number: "020 3829 0748"
@@ -1929,7 +1929,7 @@ cy:
               <li><a class= \"govuk-link\" href=\"https://www.gov.uk/dod-o-hyd-i-dystysgrif-ynni\">www.gov.uk/dod-o-hyd-i-dystysgrif-ynni</a></li>
               <li><a class= \"govuk-link\" href=\"https://www.gov.uk/cael-tystysgrif-ynni-newydd\">www.gov.uk/cael-tystysgrif-ynni-newydd</a></li>
             </ul>"
-    paragraph_1: "Mae’r wefan hon yn cael ei rhedeg gan y Adran Codi’r Gwastad, Tai a Chymunedau. Hoffem weld cynifer â phosibl o bobl yn gallu defnyddio’r wefan. Er enghraifft, mae hynny’n golygu y dylech chi allu:
+    paragraph_1: "Mae’r wefan hon yn cael ei rhedeg gan y Weinyddiaeth Dai, Cymunedau a Llywodraeth Leol. Hoffem weld cynifer â phosibl o bobl yn gallu defnyddio’r wefan. Er enghraifft, mae hynny’n golygu y dylech chi allu:
                   <ul class=\"govuk-list govuk-list--bullet\">
                     <li>newid lefelau cyferbyniad lliw a ffontiau</li>
                     <li>chwyddo hyd at 300% heb i’r testun ddiferu oddi ar y sgrin </li>
@@ -1950,7 +1950,7 @@ cy:
     enforcement_heading: "Gweithdrefn orfodi"
     enforcement_paragraph: "Mae’r Comisiwn Cydraddoldeb a Hawliau Dynol (EHRC) yn gyfrifol am orfodi Rheoliadau Hygyrchedd Cyrff y Sector Cyhoeddus (Gwefannau a Chymwysiadau Symudol) (Rhif 2) 2018 (y ‘rheoliadau hygyrchedd’). Os nad ydych yn fodlon ar sut rydyn ni’n ymateb i’ch cwyn, <a class=\"govuk-link\" href=\"https://www.equalityadvisoryservice.com/\">cysylltwch â’r Gwasanaeth Cyngor a Chymorth Cydraddoldeb (EASS)</a>."
     technical_heading: "Gwybodaeth dechnegol am hygyrchedd y wefan hon"
-    technical_paragraph: "Mae’r Adran Codi’r Gwastad, Tai a Chymunedau wedi ymrwymo isicrhau bod ei gwefan yn hygyrch, yn unol â Rheoliadau Hygyrchedd Cyrff y Sector Cyhoeddus (Gwefannau a Chymwysiadau Symudol) (Rhif 2) 2018."
+    technical_paragraph: "Mae’r Weinyddiaeth Dai, Cymunedau a Llywodraeth Leol wedi ymrwymo isicrhau bod ei gwefan yn hygyrch, yn unol â Rheoliadau Hygyrchedd Cyrff y Sector Cyhoeddus (Gwefannau a Chymwysiadau Symudol) (Rhif 2) 2018."
     compliance_heading: "Statws cydymffurfio"
     compliance_paragraph: "Mae’r wefan hon yn cydymffurfio’n rhannol â <a class=\"govuk-link\" href=\"https://www.w3.org/TR/WCAG21/\">safon AA Canllawiau Hygyrchedd Cynnwys y We fersiwn 2.1</a>, oherwydd y diffygion cydymffurfio sydd wedi’u rhestru isod."
     non_accessible_heading: "Cynnwys nad yw’n hygyrch"
@@ -1972,11 +1972,11 @@ cy:
 
   find_service_help:
     top_heading: "Cael help i ddod o hyd i dystysgrif ynni"
-    intro: "Os oes arnoch angen help i ddod o hyd i dystysgrif neu adroddiad ynni, cysylltwch â’r Adran Codi’r Gwastad, Tai a Chymunedau (DLUHC)."
+    intro: "Os oes arnoch angen help i ddod o hyd i dystysgrif neu adroddiad ynni, cysylltwch â’r Weinyddiaeth Dai, Cymunedau a Llywodraeth Leol (MHCLG)."
 
   get_service_help:
     top_heading: "Cael help i ddod o hyd i asesydd ynni"
-    intro: "I gael help i ddod o hyd i asesydd, cysylltwch â’r Adran Codi’r Gwastad, Tai a Chymunedau (DLUHC)."
+    intro: "I gael help i ddod o hyd i asesydd, cysylltwch â’r Weinyddiaeth Dai, Cymunedau a Llywodraeth Leol (MHCLG)."
 
   cookies:
     title: "Cwcis ar ein gwasanaeth ni"

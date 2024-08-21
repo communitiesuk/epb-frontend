@@ -15,7 +15,7 @@ describe "Acceptance::AccessibilityStatement", type: :feature do
 
       it "displays the accessibility statement contents" do
         expect(response.body).to include(
-          "The Department for Levelling Up, Housing and Communities is committed to making its website accessible",
+          "The Ministry of Housing, Communities and Local Government is committed to making its website accessible",
         )
       end
     end
