@@ -377,7 +377,7 @@ en:
       address: "Address"
       type: "Certificate and report type"
       expiry: "Valid until"
-    expired: "expired"
+    expired: "Expired"
 
   find_certificate_by_postcode_results:
     epcs_only: "We only list properties with EPCs"

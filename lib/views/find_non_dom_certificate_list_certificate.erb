@@ -35,7 +35,8 @@
                 <%= date(result[:dateOfExpiry]) %>
             </span>
               <% if Date.parse(result[:dateOfExpiry]) < Date.today %>
-                <br /><strong class="govuk-tag--red govuk-!-padding-left-2 govuk-!-padding-right-2"><%= t('find_non_dom_certificate_results.expired').upcase%></strong>
+                <br />
+                <strong class="govuk-tag govuk-tag--red govuk-!-font-weight-bold"><%= t('find_non_dom_certificate_results.expired')%></strong>
               <% end %>
             </td>
         </tr>

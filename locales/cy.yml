@@ -377,7 +377,7 @@ cy:
       address: "Cyfeiriad"
       type: "Y math o dystysgrif ac adroddiad"
       expiry: "Dilys tan"
-    expired: "wedi dod i ben"
+    expired: "Wedi dod i ben"
 
   find_certificate_by_postcode_results:
     epcs_only: "Dim ond eiddo ag EPCs sy’n cael eu rhestru"
