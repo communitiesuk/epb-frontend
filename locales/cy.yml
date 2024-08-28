@@ -370,7 +370,7 @@ cy:
       address: "Cyfeiriad"
       rating: "Cyfraddiad ynni"
       expiry: "Dilys tan"
-    expired: "wedi dod i ben"
+    expired: "Wedi dod i ben"
 
   find_non_dom_certificate_results:
     table:

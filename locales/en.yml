@@ -370,7 +370,7 @@ en:
       address: "Address"
       rating: "Energy rating"
       expiry: "Valid until"
-    expired: "expired"
+    expired: "Expired"
 
   find_non_dom_certificate_results:
     table:
