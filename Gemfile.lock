@@ -188,7 +188,7 @@ GEM
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.5.0)
-    unleash (5.0.5)
+    unleash (5.0.6)
       murmurhash3 (~> 0.1.7)
     uri (0.13.0)
     version_gem (1.1.4)
@@ -230,7 +230,7 @@ DEPENDENCIES
   sentry-ruby (~> 5.19)
   sinatra (~> 4.0)
   sinatra-contrib
-  unleash (~> 5.0.5)
+  unleash (~> 5.0.6)
   webdrivers (~> 5.2.0)
   webmock (~> 3.23)
   zeitwerk (~> 2.6.17)
