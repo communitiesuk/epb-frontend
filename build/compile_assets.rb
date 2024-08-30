@@ -32,7 +32,7 @@ build_sass "./assets/sass/application.scss", public_target("./public/application
 
 puts "Building Print SASS files"
 build_sass "./assets/sass/printable.scss", public_target("./public/printable.css")
-build_sass "./assets/sass/print_certificates.scss",
+build_sass "./assets/sass/print-certificates.scss",
            public_target("./public/print-certificates.css")
 
 puts "Copying GOVUKFrontend fonts"
