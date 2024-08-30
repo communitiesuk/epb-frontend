@@ -838,7 +838,7 @@ en:
         epc: "Energy rating and score"
         summary: "Breakdown of property’s energy performance"
         energy: "Impact on the environment"
-        recommendations: "Changes you could make"
+        recommendations: "Steps you could take to save energy"
         smart_meters: "Smart meters"
         bills_affected: "How this affects your energy bills"
         information: "Who to contact about this certificate"
@@ -1031,7 +1031,7 @@ en:
         potential: "This property’s potential production"
         tonnes_of_carbon_emission: " tonnes of %{carbon}"
       recommendations:
-        title: "Changes you could make"
+        title: "Steps you could take to save energy"
         summary:
           steps_in_order_question: "Do I need to follow these steps in order?"
           steps_in_order_answer1: "Yes. Each step builds on the one before it so you can save the most energy."

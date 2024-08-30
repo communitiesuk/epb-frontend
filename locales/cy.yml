@@ -838,7 +838,7 @@ cy:
         epc: "Cyfraddiad a sgôr ynni"
         summary: "Ddadansoddiad o berfformiad ynni’r eiddo"
         energy: "Effaith ar yr amgylchedd"
-        recommendations: "Newidiadau y gallech eu gwneud"
+        recommendations: "Camau y gallech eu cymryd i arbed ynni"
         smart_meters: "Mesuryddion clyfar"
         bills_affected: "Sut mae hyn yn effeithio ar eich biliau ynni"
         information: "Cysylltu â’r asesydd a’r cynllun achredu"
@@ -1030,7 +1030,7 @@ cy:
         potential: "Mae gan yr eiddo hwn y potensial i gynhyrchu"
         tonnes_of_carbon_emission: " o dunelli o %{carbon}"
       recommendations:
-        title: "Newidiadau y gallech eu gwneud"
+        title: "Camau y gallech eu cymryd i arbed ynni"
         summary:
           steps_in_order_question: "Oes angen imi ddilyn y camau hyn yn eu trefn?"
           steps_in_order_answer1: "Oes. Mae pob cam yn adeiladu ar y cam blaenorol er mwyn ichi arbed yr ynni mwyaf posibl."
