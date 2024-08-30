@@ -8,6 +8,7 @@ $govuk-assets-path: '';
 @import "./assets/components/epc-box";
 @import "./assets/components/eer-graph";
 @import "./assets/components/environmental-impact";
+@import "./assets/components/environment-banner";
 @import "./assets/components/how-building-compares";
 @import "./assets/components/rating-label";
 @import "./assets/components/recommended-improvements";
@@ -36,6 +37,10 @@ $govuk-assets-path: '';
 @mixin split-into-columns {
   columns: 2;
   column-gap: 4rem;
+}
+
+.govuk-phase-banner__text {
+  font-size: 1rem;
 }
 
 h2, h3 {
