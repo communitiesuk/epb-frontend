@@ -20,6 +20,20 @@ describe "Acceptance::PrintableDisplayEnergyCertificate", type: :feature do
                                              href: "/energy-certificate/0000-0000-0000-0000-1111"
     end
 
+    it "has a banner in non-production environment" do
+      expect(response.body).to have_css("div .govuk-phase-banner", text: "This is a test site. The data is not real, and certificates not valid.")
+    end
+
+    context "when environment is production" do
+      before { stub_const("ENV", { "STAGE" => "production" }) }
+
+      it "doesn't have a banner in production" do
+        page = get "http://getting-new-energy-certificate.local.gov.uk/"
+
+        expect(page.body).not_to have_css("div .govuk-phase-banner")
+      end
+    end
+
     it "shows the page title" do
       expect(response.body).to have_text "Display energy certificate"
     end
