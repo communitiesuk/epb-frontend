@@ -21,7 +21,7 @@ describe "Acceptance::PrintableDisplayEnergyCertificate", type: :feature do
     end
 
     it "has a banner in non-production environment" do
-      expect(response.body).to have_css("div .govuk-phase-banner", text: "This is a test site. The data is not real, and certificates not valid.")
+      expect(response.body).to have_css("div .govuk-phase-banner", text: "This is a test site. The data is not real and the certificates are not valid.")
     end
 
     context "when environment is production" do

@@ -50,6 +50,7 @@ cy:
         accepted: "Rydych chi wedi derbyn cwcis dadansoddeg. %{change_settings_link}"
         rejected: "Rydych chi wedi gwrthod cwcis dadansoddeg. %{change_settings_link}"
         hide_message: "Cuddio’r neges ynghylch cwcis"
+      phase_banner: "This is a test site. The data is not real and the certificates are not valid."
       footer:
         heading: "Dolenni cymorth"
         accessibility_statement: "Hygyrchedd"

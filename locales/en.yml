@@ -50,6 +50,7 @@ en:
         accepted: "You’ve accepted analytics cookies. You can %{change_settings_link} at any time."
         rejected: "You’ve rejected analytics cookies. You can %{change_settings_link} at any time."
         hide_message: "Hide cookie message"
+      phase_banner: "This is a test site. The data is not real and the certificates are not valid."
       footer:
         heading: "Support links"
         accessibility_statement: "Accessibility"

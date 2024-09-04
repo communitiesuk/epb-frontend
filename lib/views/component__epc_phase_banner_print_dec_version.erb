@@ -1,0 +1,59 @@
+<% if print_view && environment != "production" %>
+
+<style nonce="<%= script_nonce %>">
+  .govuk-phase-banner-dec {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid  #b1b4b6;
+    margin-bottom: 10px;
+  }
+
+  .govuk-phase-banner__text {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .govuk-phase-banner__content {
+    font-family: "GDS Transport", arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: .875rem;
+    line-height: 1.1428571429;
+    color: #0b0c0c;
+    display: table;
+    margin: 0;
+  }
+
+  .epbr-environment-tag-dec {
+    color: #000;
+    background-color: #8ace00;
+    font-weight: 700;
+    margin-right: 5px;
+    padding: 3px;
+  }
+</style>
+
+  <tr>
+    <td>
+      <table class="certificate-phase-banner">
+        <tbody>
+        <tr>
+          <td>
+            <div class="govuk-phase-banner-dec">
+              <p class="govuk-phase-banner__content">
+                <strong class="epbr-environment-tag-dec">
+                  <%= ENV["STAGE"].capitalize %>
+                </strong>
+                <span class="govuk-phase-banner__text">
+                  <%=t('layout.body.phase_banner')%>
+                </span>
+              </p>
+            </div>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </td>
+  </tr>
+<% end %>
