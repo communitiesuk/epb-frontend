@@ -4,7 +4,7 @@ describe Gateway::AverageCo2EmissionsGateway do
   let(:gateway) { described_class.new(get_api_client(ENV["EPB_DATA_WAREHOUSE_API_URL"])) }
 
   describe "getting the average co2 emissions data" do
-    let(:response) { gateway.get_averages }
+    let(:response) { gateway.fetch }
 
     before { AverageCo2Emissions::Stub.get_averages }
 
