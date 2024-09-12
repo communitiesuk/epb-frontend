@@ -38,7 +38,7 @@ class Container
       UseCase::FindCertificateByStreetNameAndTown.new(certificates_gateway)
     fetch_dec_summary_use_case =
       UseCase::FetchDecSummary.new(certificates_gateway)
-    fetch_statistics_use_case = UseCase::FetchStatistics.new(Gateway::StatisticsGateway.new(internal_api_client))
+    fetch_statistics_use_case = UseCase::FetchStatistics.new(statistics_gateway: Gateway::StatisticsGateway.new(internal_api_client), co2_gateway: Gateway::AverageCo2EmissionsGateway.new(internal_data_warehouse_api_client))
     fetch_statistics_csv_use_case = UseCase::FetchStatisticsCsv.new(Gateway::StatisticsGateway.new(internal_api_client))
 
     @objects = {
