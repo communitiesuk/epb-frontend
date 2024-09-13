@@ -14,26 +14,35 @@ module ServicePerformance
     end
 
     private_class_method def self.assessments_stats
-      [{
-        "average_co2": 15.73676647,
-        "yearMonth": "2021-09",
-        "country": "England",
-      },
-       {
-         "average_co2": 34.345225235,
-         "yearMonth": "2021-09",
-         "country": "Northern Ireland",
-       },
-       {
-         "average_co2": 23.2674765367,
-         "yearMonth": "2021-09",
-         "country": "Wales",
-       },
-       {
-         "average_co2": 21.127637883376,
-         "yearMonth": "2021-09",
-         "country": "Other",
-       }]
+      { all: [{ "avgCo2Emission": 16.23655,
+                "yearMonth": "2021-09",
+                "assessmentType": "SAP" },
+              { "avgCo2Emission": 34.345225235,
+                "yearMonth": "2022-03",
+                "assessmentType": "SAP" },
+              { "avgCo2Emission": 10.883267,
+                "yearMonth": "2021-09",
+                "assessmentType": "RdSAP" }],
+        northernIreland: [{ "avgCo2Emission": 34.345225235,
+                            "country": "Northern Ireland",
+                            "yearMonth": "2022-03",
+                            "assessmentType": "SAP" }],
+        england: [{ "avgCo2Emission": 15.7367,
+                    "country": "England",
+                    "yearMonth": "2021-09",
+                    "assessmentType": "SAP" },
+                  { "avgCo2Emission": 10.883267,
+                    "country": "England",
+                    "yearMonth": "2021-09",
+                    "assessmentType": "RdSAP" }],
+        wales: [{ "avgCo2Emission": 16.7364,
+                  "country": "Wales",
+                  "yearMonth": "2022-05",
+                  "assessmentType": "SAP" }],
+        other: [{ "avgCo2Emission": 10,
+                  "country": "Other",
+                  "yearMonth": "2022-01",
+                  "assessmentType": "SAP" }] }
     end
   end
 end

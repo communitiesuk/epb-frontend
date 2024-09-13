@@ -1,7 +1,7 @@
 describe UseCase::FetchStatistics do
   include RSpecUnitMixin
 
-  context "when extracting statistics data from the API" do
+  context "when extracting statistics data from both APIs" do
     let(:statistics_gateway) { Gateway::StatisticsGateway.new(get_api_client) }
     let(:co2_gateway) { Gateway::AverageCo2EmissionsGateway.new(get_warehouse_api_client) }
     let(:fetch_statistics) { described_class.new(statistics_gateway:, co2_gateway:) }
@@ -33,9 +33,22 @@ describe UseCase::FetchStatistics do
 
     it "expects SAPs to have average CO2 emissions" do
       england_result = results[:assessments][:grouped]["SAP"]["England"]
-      ni_result = results[:assessments][:grouped]["SAP"]["Northern Ireland"]
       expect(england_result.first[:avgCo2Emission]).to eq 15.74
-      expect(ni_result.first[:avgCo2Emission]).to eq 34.35
+    end
+  end
+
+  context "when the data warehouse returns no data" do
+    let(:statistics_gateway) { Gateway::StatisticsGateway.new(get_api_client) }
+    let(:co2_gateway) { Gateway::AverageCo2EmissionsGateway.new(get_warehouse_api_client) }
+    let(:fetch_statistics) { described_class.new(statistics_gateway:, co2_gateway:) }
+
+    before do
+      ServicePerformance::CountryStatsStub.statistics
+      ServicePerformance::EmptyAverageCo2EmissionsStub.statistics
+    end
+
+    it "to not raise error" do
+      expect { fetch_statistics.execute }.not_to raise_error
     end
   end
 end

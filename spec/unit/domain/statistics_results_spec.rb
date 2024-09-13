@@ -4,22 +4,34 @@ describe Domain::StatisticsResults do
   let(:register_data) { ServicePerformance::CountryStatsStub.body[:data][:assessments] }
   let(:warehouse_data) { ServicePerformance::AverageCo2EmissionsStub.body[:data] }
 
-  describe "#match_date_and_country" do
+  describe "#match_with_warehouse" do
     it "returns the matching value from the warehouse data" do
-      expect(domain.match_date_and_country(month: "2021-09", country: :england)).to eq [{ average_co2: 15.73676647, country: "England", yearMonth: "2021-09" }]
-      expect(domain.match_date_and_country(month: "2021-09", country: :northernIreland)).to eq [{ average_co2: 34.345225235, country: "Northern Ireland", yearMonth: "2021-09" }]
+      expect(domain.match_with_warehouse(month: "2021-09", country: :england, assessment_type: "RdSAP")).to eq [{ assessmentType: "RdSAP", avgCo2Emission: 10.883267, country: "England", yearMonth: "2021-09" }]
+      expect(domain.match_with_warehouse(month: "2022-03", country: :northernIreland, assessment_type: "SAP")).to eq [{ assessmentType: "SAP", avgCo2Emission: 34.345225235, country: "Northern Ireland", yearMonth: "2022-03" }]
+    end
+
+    context "when the value of the country key is ':all'" do
+      it "returns the matching value as expected without a country key in the data warehouse item" do
+        expect(domain.match_with_warehouse(month: "2021-09", country: :all, assessment_type: "SAP")).to eq [{ "avgCo2Emission": 16.23655, "yearMonth": "2021-09", "assessmentType": "SAP" }]
+      end
+    end
+
+    context "when a country is passed which is not in the warehouse data" do
+      it "returns an empty array" do
+        expect(domain.match_with_warehouse(month: "2021-09", country: :fakeCountry, assessment_type: "SAP")).to eq []
+      end
     end
   end
 
   describe "#avg_co2" do
-    context "when there is a match" do
-      it "returns the average co2 for the matching date and country" do
-        matched_date_and_country = [{ average_co2: 15.73676647, country: "England", yearMonth: "2021-09" }]
-        expect(domain.avg_co2(matched_date_and_country:)).to eq 15.74
+    context "when there is a match with the warehouse data" do
+      it "returns the average co2 for the matching data" do
+        matched_date_and_country = [{ assessmentType: "SAP", avgCo2Emission: 34.345225235, country: "Northern Ireland", yearMonth: "2022-03" }]
+        expect(domain.avg_co2(matched_date_and_country:)).to eq 34.35
       end
     end
 
-    context "when there is no match" do
+    context "when there is no matching data" do
       it "returns nil" do
         matched_date_and_country = []
         expect(domain.avg_co2(matched_date_and_country:)).to be_nil
@@ -28,28 +40,44 @@ describe Domain::StatisticsResults do
   end
 
   describe "#update" do
-    it "updates the register data with the avg CO2 emission value" do
-      epc_by_country = [{ numAssessments: 20_444, assessmentType: "SAP", ratingAverage: 78.3304347826087, month: "2021-07" },
-                        { numAssessments: 23_866, assessmentType: "SAP", ratingAverage: 76.9909090909091, month: "2021-01" },
-                        { numAssessments: 8422, assessmentType: "SAP", ratingAverage: 79.6190476190476, month: "2021-12" },
-                        { numAssessments: 261_069, assessmentType: "SAP", ratingAverage: 77.2258064516129, month: "2020-10" }]
-      avg_co2 = 13.56
-      date = "2021-07"
-      domain.update(epc_by_country:, avg_co2:, date:)
-      expect(epc_by_country.first[:avgCo2Emission]).to eq(avg_co2)
-      (1..(epc_by_country.length - 1)).each do |i|
-        expect(epc_by_country[i][:avgCo2Emission]).to be_nil
+    context "when there is a CO2 value" do
+      it "updates the register data with the avg CO2 emission value" do
+        reg_data = [{ numAssessments: 20_444, assessmentType: "SAP", ratingAverage: 78.3304347826087, month: "2021-07" }]
+        avg_co2 = 13.56
+        date = "2021-07"
+        assessment_type = "SAP"
+        domain.update(list: reg_data, avg_co2:, date:, assessment_type:)
+        expect(reg_data.first[:avgCo2Emission]).to eq(avg_co2)
+      end
+    end
+
+    context "when the CO2 value is nil" do
+      it "does not update the register data with a avgCo2Emission key" do
+        reg_data = [{ numAssessments: 20_444, assessmentType: "SAP", ratingAverage: 78.3304347826087, month: "2021-07" }]
+        avg_co2 = nil
+        date = "2021-07"
+        assessment_type = "SAP"
+        domain.update(list: reg_data, avg_co2:, date:, assessment_type:)
+        expect(reg_data.first.key?(:avgCo2Emission)).to be false
       end
     end
   end
 
   describe "#set_results" do
-    it "joins the register data with the warehouse data" do
+    before do
       domain.set_results
+    end
+
+    it "matches and joins the expected values" do
       expect(domain.results[:england]).to include({ assessmentType: "SAP", avgCo2Emission: 15.74, country: "England", month: "2021-09", numAssessments: 112_499, ratingAverage: 61.7122807017544 })
-      expect(domain.results[:northernIreland]).to include({ assessmentType: "SAP", avgCo2Emission: 34.35, country: "Northern Ireland", month: "2021-09", numAssessments: 4892, ratingAverage: 61.7122807017544 })
-      expect(domain.results[:wales]).to include({ assessmentType: "SAP", avgCo2Emission: 23.27, country: "Wales", month: "2021-09", numAssessments: 4892, ratingAverage: 61.7122807017544 })
-      expect(domain.results[:other]).to include({ assessmentType: "SAP", avgCo2Emission: 21.13, country: "Other", month: "2021-09", numAssessments: 4892, ratingAverage: 61.7122807017544 })
+      expect(domain.results[:england]).to include({ assessmentType: "RdSAP", avgCo2Emission: 10.88, country: "England", month: "2021-09", numAssessments: 121_499, ratingAverage: 61.7122807017544 })
+      expect(domain.results[:all]).to include({ assessmentType: "RdSAP", avgCo2Emission: 10.88, month: "2021-09", numAssessments: 121_499, ratingAverage: 61.7122807017544 })
+    end
+
+    context "when there is no corresponding result from the warehouse data" do
+      it "does not modify the register data" do
+        expect(domain.results[:wales]).to eq register_data[:wales]
+      end
     end
   end
 
