@@ -5,28 +5,27 @@ module Domain
     def initialize(register_data:, warehouse_data:)
       @register_data = register_data
       @warehouse_data = warehouse_data
-      @results = nil
+      @results = @register_data
     end
 
-    def match_date_and_country(month:, country:)
-      @warehouse_data.select { |i| i[:yearMonth] == month && i[:country] == country.to_s.underscore.titleize }
+    def match_with_warehouse(month:, country:, assessment_type:)
+      @warehouse_data[country].nil? ? [] : @warehouse_data[country].select { |i| i[:yearMonth] == month && i[:assessmentType] == assessment_type }
     end
 
     def avg_co2(matched_date_and_country:)
-      matched_date_and_country.empty? ? nil : matched_date_and_country.first[:average_co2].round(2)
+      matched_date_and_country.empty? ? nil : matched_date_and_country.first[:avgCo2Emission].round(2)
     end
 
-    def update(epc_by_country:, avg_co2:, date:)
-      epc_by_country.select { |row| row[:month] == date }.first[:avgCo2Emission] = avg_co2
+    def update(list:, avg_co2:, date:, assessment_type:)
+      list.select { |row| row[:month] == date && row[:assessmentType] == assessment_type }.first[:avgCo2Emission] = avg_co2 unless avg_co2.nil?
     end
 
     def set_results
-      @results = @register_data
       @results.each do |country, v|
-        epc_by_country = v.select { |i| i[:assessmentType] == "SAP" }
-        epc_by_country.each do |row|
-          matching_value = match_date_and_country(month: row[:month], country:)
-          update(epc_by_country:, avg_co2: avg_co2(matched_date_and_country: matching_value), date: row[:month])
+        list = v.select { |i| i[:assessmentType] == "SAP" || i[:assessmentType] == "RdSAP" }
+        list.each do |row|
+          matching_value = match_with_warehouse(month: row[:month], country:, assessment_type: row[:assessmentType])
+          update(list:, avg_co2: avg_co2(matched_date_and_country: matching_value), date: row[:month], assessment_type: row[:assessmentType])
         end
       end
     end
