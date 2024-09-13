@@ -219,7 +219,6 @@ FetchAssessmentSummary::AssessmentStub.fetch_ac_report(
 )
 
 ServicePerformance::CountryStatsStub.statistics
-ServicePerformance::EmptyAverageCo2EmissionsStub.statistics
 
 ENV["EPB_AUTH_CLIENT_ID"] = "test.id"
 ENV["EPB_AUTH_CLIENT_SECRET"] = "test.client.secret"

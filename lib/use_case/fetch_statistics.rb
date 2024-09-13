@@ -1,41 +1,24 @@
 # frozen_string_literal: true
 
 module UseCase
-  class FetchStatistics
-    def initialize(statistics_gateway:, co2_gateway:)
-      @statistics_gateway = statistics_gateway
-      @co2_gateway = co2_gateway
-    end
-
+  class FetchStatistics < UseCase::Base
     def execute
-      register_data = @statistics_gateway.fetch[:data]
-      warehouse_data = @co2_gateway.fetch[:data]
-      @domain = Domain::StatisticsResults.new(register_data: register_data[:assessments], warehouse_data:)
-      @domain.set_results unless warehouse_data.empty?
-      @domain.get_results
+      api_data = @gateway.fetch[:data]
+      results = { assessments: api_data[:assessments] }
+      results[:assessments][:grouped] = grouped_by_assessment_type_and_country(results[:assessments])
+      results
     end
 
   private
 
-    def raise_errors_if_exists(response)
-      return unless response.include?(:errors)
+    def grouped_by_assessment_type_and_country(results)
+      merged_regions = results.flatten(2).reject { |e| e.is_a?(Symbol) }
+      merged_regions.each { |h| h[:country] = "all" unless h.key?(:country) }
 
-      response[:errors].each do |error|
-        if error[:code] == "Auth::Errors::TokenMissing"
-          raise Errors::AuthTokenMissing
-        end
-        if error[:code] == "PAYLOAD_TOO_LARGE"
-          raise Errors::TooManyResults
-        end
-
-        yield(error) if block_given?
+      grouped_by_assessment_type = merged_regions.group_by { |h| h[:assessmentType] }
+      grouped_by_assessment_type.transform_values do |stats_for_assessment_type|
+        stats_for_assessment_type.group_by { |stats| stats[:country] }
       end
-
-      raise Errors::UnknownErrorResponseError,
-            sprintf(
-              "Unknown error response from internal API; errors sent were: %s",
-              response[:errors].to_s,
-            )
     end
   end
 end

@@ -1,15 +1,13 @@
 describe UseCase::FetchStatistics do
   include RSpecUnitMixin
 
-  context "when extracting statistics data from both APIs" do
+  context "when extracting statistics data from the API" do
     let(:statistics_gateway) { Gateway::StatisticsGateway.new(get_api_client) }
-    let(:co2_gateway) { Gateway::AverageCo2EmissionsGateway.new(get_warehouse_api_client) }
-    let(:fetch_statistics) { described_class.new(statistics_gateway:, co2_gateway:) }
+    let(:fetch_statistics) { described_class.new(statistics_gateway) }
     let(:results) { fetch_statistics.execute }
 
     before do
       ServicePerformance::CountryStatsStub.statistics
-      ServicePerformance::AverageCo2EmissionsStub.statistics
     end
 
     it "calls the gateway method and returns the expected json for assessments" do
@@ -29,26 +27,26 @@ describe UseCase::FetchStatistics do
       assessment_types = %w[SAP RdSAP CEPC DEC AC-CERT DEC-RR]
       expect(results[:assessments][:grouped].length).to eq(assessment_types.length)
       expect(results[:assessments][:grouped].keys - assessment_types).to eq([])
-    end
 
-    it "expects SAPs to have average CO2 emissions" do
-      england_result = results[:assessments][:grouped]["SAP"]["England"]
-      expect(england_result.first[:avgCo2Emission]).to eq 15.74
-    end
-  end
-
-  context "when the data warehouse returns no data" do
-    let(:statistics_gateway) { Gateway::StatisticsGateway.new(get_api_client) }
-    let(:co2_gateway) { Gateway::AverageCo2EmissionsGateway.new(get_warehouse_api_client) }
-    let(:fetch_statistics) { described_class.new(statistics_gateway:, co2_gateway:) }
-
-    before do
-      ServicePerformance::CountryStatsStub.statistics
-      ServicePerformance::EmptyAverageCo2EmissionsStub.statistics
-    end
-
-    it "to not raise error" do
-      expect { fetch_statistics.execute }.not_to raise_error
+      expect(results[:assessments][:grouped]["CEPC"]).to eq({
+        "England" => [
+          { assessmentType: "CEPC", country: "England", month: "2021-09", numAssessments: 92_124, ratingAverage: 47.7122807017544 },
+        ],
+        "Wales" => [
+          { assessmentType: "CEPC", country: "Wales", month: "2021-09", numAssessments: 874, ratingAverage: 47.7122807017544 },
+        ],
+        "Northern Ireland" => [
+          { assessmentType: "CEPC", country: "Northern Ireland", month: "2021-09", numAssessments: 874, ratingAverage: 47.7122807017544 },
+        ],
+        "Other" => [
+          { assessmentType: "CEPC", country: "Other", month: "2021-09", numAssessments: 26, ratingAverage: 61.7122807017544 },
+        ],
+        "all" => [
+          { assessmentType: "CEPC", country: "all", month: "2020-11", numAssessments: 144_533, ratingAverage: 71.85 },
+          { assessmentType: "CEPC", country: "all", month: "2021-11", numAssessments: 2837, ratingAverage: 66.24 },
+          { assessmentType: "CEPC", country: "all", month: "2021-02", numAssessments: 6514, ratingAverage: 72.843537414966 },
+        ],
+      })
     end
   end
 end

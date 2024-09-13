@@ -78,16 +78,6 @@ module RSpecUnitMixin
                            url,
                            OAuth2::Client
   end
-
-  def get_warehouse_api_client(api_url = nil)
-    url = api_url.nil? ? ENV["EPB_DATA_WAREHOUSE_API_URL"] : api_url
-    @get_warehouse_api_client ||=
-      Auth::HttpClient.new ENV["EPB_AUTH_CLIENT_ID"],
-                           ENV["EPB_AUTH_CLIENT_SECRET"],
-                           ENV["EPB_AUTH_SERVER"],
-                           url,
-                           OAuth2::Client
-  end
 end
 
 module RSpecFrontendServiceMixin
