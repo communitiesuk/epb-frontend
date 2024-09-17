@@ -101,6 +101,7 @@ describe "Acceptance::ServicePerformance", type: :feature do
         it "the average CO2 values are output" do
           expect(response.body).to have_css("#sap-england table.govuk-table td.average-co2-value", text: "15.74")
           expect(response.body).to have_css("#rdsap-england table.govuk-table td.average-co2-value", text: "10.88")
+          expect(response.body).to have_css("table.govuk-table td.average-co2-value", text: "n/a")
         end
       end
 

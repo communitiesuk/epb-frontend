@@ -22,8 +22,8 @@
           <% if show_average_rating %>
            <td class="govuk-table__cell govuk-table__cell--numeric rating-average"><%= row[:ratingAverage].round(2) %></td>
           <% end %>
-          <% if show_average_co2 && row.key?(:avgCo2Emission) %>
-            <td class="govuk-table__cell govuk-table__cell--numeric average-co2-value"><%= row[:avgCo2Emission].round(2) %></td>
+          <% if show_average_co2   %>
+            <td class="govuk-table__cell govuk-table__cell--numeric average-co2-value"><%=  row.key?(:avgCo2Emission) ? row[:avgCo2Emission].round(2) : "n/a" %></td>
           <% end %>
         </tr>
       <% end %>
