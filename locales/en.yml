@@ -585,6 +585,7 @@ en:
             reps_uploaded: "Reports uploaded"
             certs_uploaded: "Certificates uploaded"
             avg_rating: "Average energy rating"
+            avg_co2_emission: "Average CO2/sqm emissions"
         download_link: "Download a copy of the data for "
         file_type_and_size: " (CSV, 4KB)"
         assessment_types:

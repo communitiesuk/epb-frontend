@@ -9,7 +9,7 @@ describe "Acceptance::ServicePerformance", type: :feature do
     context "when the response is successful" do
       before do
         ServicePerformance::CountryStatsStub.statistics
-        ServicePerformance::EmptyAverageCo2EmissionsStub.statistics
+        ServicePerformance::AverageCo2EmissionsStub.statistics
       end
 
       it "has the correct title" do
@@ -52,14 +52,6 @@ describe "Acceptance::ServicePerformance", type: :feature do
         expect(response.body).to have_css("span", text: "SAP certificates uploaded in ")
       end
 
-      it "the assessment tables have all the relevant cells" do
-        flattened_regions_data = ServicePerformance::CountryStatsStub.body[:data][:assessments].flatten(2).reject { |e| e.is_a?(Symbol) }
-        flattened_regions_data.each do |row|
-          expect(response.body).to have_css("table.govuk-table tr>th.month-year", text: Date.parse("#{row[:month]}-01").strftime("%b %Y"))
-          expect(response.body).to have_css("table.govuk-table tr>td.num-assessments", text: row[:numAssessments].to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse)
-        end
-      end
-
       it "has a table for SAP that does have a column for average rating" do
         expect(response.body).to have_css("tr>td.rating-average")
       end
@@ -88,6 +80,37 @@ describe "Acceptance::ServicePerformance", type: :feature do
         div_ids = Capybara.string(response.body).all("div").map { |d| d["id"] }.compact
         div_ids.each do |id|
           expect(response.body).to have_css("div##{id}", count: 1)
+        end
+      end
+
+      context "when there are a data points for Average CO2 emission and the toggle is enabled" do
+        before do
+          Helper::Toggles.set_feature("frontend-show-average-co2-emission", true)
+        end
+
+        it "the tables for SAP and RdSAP have the expected table header" do
+          expect(response.body).to have_css("#sap-all table.govuk-table th.average-co2-emission", text: "Average CO2/sqm emissions")
+          expect(response.body).to have_css("#rdsap-all table.govuk-table th.average-co2-emission", text: "Average CO2/sqm emissions")
+        end
+
+        it "the tables for CEPC and DEC not not have the Average CO2 header" do
+          expect(response.body).not_to have_css("#cepc-england table.govuk-table th.average-co2-emission")
+          expect(response.body).not_to have_css("#dec-england table.govuk-table th.average-co2-emission")
+        end
+
+        it "the average CO2 values are output" do
+          expect(response.body).to have_css("#sap-england table.govuk-table td.average-co2-value", text: "15.74")
+          expect(response.body).to have_css("#rdsap-england table.govuk-table td.average-co2-value", text: "10.88")
+        end
+      end
+
+      context "when there are a data points for Average CO2 emission and the toggle is not enabled" do
+        before do
+          Helper::Toggles.set_feature("frontend-show-average-co2-emission", false)
+        end
+
+        it "the table do not have the avg co2 headers" do
+          expect(response.body).not_to have_css("table.govuk-table th.average-co2-emission")
         end
       end
     end

@@ -585,6 +585,7 @@ cy:
             reps_uploaded: "Adroddiadau a uwchlwythwyd"
             certs_uploaded: "Tystysgrifau a uwchlwythwyd"
             avg_rating: "Sgôr ynni gyfartalog"
+            avg_co2_emission: "Allyriadau CO2/metr sgwâr ar gyfartaledd"
         download_link: "Lawrlwytho copi o’r data ar "
         file_type_and_size: " (CSV, 4KB)"
         assessment_types:

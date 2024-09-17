@@ -1058,6 +1058,7 @@ class FrontendService < Sinatra::Base
     erb_template = :service_performance
     use_case = @container.get_object(:fetch_statistics_use_case)
     data = use_case.execute
+    data[:show_avg_co2] = Helper::Toggles.enabled?("frontend-show-average-co2-emission")
     show(erb_template, data)
   rescue StandardError => e
     return server_error(e)
