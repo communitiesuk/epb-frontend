@@ -124,7 +124,7 @@ describe "Acceptance::ServicePerformance", type: :feature do
 
     before do
       ServicePerformance::CountryStatsStub.statistics
-      ServicePerformance::EmptyAverageCo2EmissionsStub.statistics
+      ServicePerformance::AverageCo2EmissionsStub.statistics
     end
 
     it "has the correct Welsh title" do

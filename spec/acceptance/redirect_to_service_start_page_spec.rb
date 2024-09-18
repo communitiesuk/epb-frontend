@@ -20,24 +20,23 @@ RSpec.describe "Redirect to service start page" do
   context "when testing redirecting" do
     before do
       stub_const("ENV", { "STAGE" => "redirect-test" })
+
       FetchAssessmentSummary::AssessmentStub.fetch_rdsap(assessment_id: "0000-0000-0000-0000-0001")
       FetchAssessmentSummary::AssessmentStub.fetch_dec_summary(assessment_id: "0000-0000-0000-0000-0001")
       ServicePerformance::CountryStatsStub.statistics
-      ServicePerformance::EmptyAverageCo2EmissionsStub.statistics
+      ServicePerformance::AverageCo2EmissionsStub.statistics
     end
 
     directly_accessible_paths.each do |path|
       it "returns status 200 for #{path} (page accessible directly) regardless of the referrer" do
         path.sub!(":assessment_id", "0000-0000-0000-0000-0001") if path.include?(":assessment_id")
         response = get host_name + path
-
         expect(response.status).to eq(200)
       end
     end
 
     it "returns status 200 when a referrer is nil" do
       response = get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/type-of-property"
-
       expect(response.status).to eq(200)
     end
 

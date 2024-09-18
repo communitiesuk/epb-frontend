@@ -219,7 +219,7 @@ FetchAssessmentSummary::AssessmentStub.fetch_ac_report(
 )
 
 ServicePerformance::CountryStatsStub.statistics
-ServicePerformance::EmptyAverageCo2EmissionsStub.statistics
+ServicePerformance::AverageCo2EmissionsStub.statistics
 
 ENV["EPB_AUTH_CLIENT_ID"] = "test.id"
 ENV["EPB_AUTH_CLIENT_SECRET"] = "test.client.secret"
@@ -227,5 +227,6 @@ ENV["EPB_AUTH_SERVER"] = "http://test-auth-server.gov.uk"
 ENV["EPB_API_URL"] = "http://test-api.gov.uk"
 ENV["STAGE"] = "test"
 ENV["EPB_UNLEASH_URI"] = "https://test-toggle-server/api"
+ENV["EPB_DATA_WAREHOUSE_API_URL"] = "http://epb-data-warehouse-api"
 
 run FrontendService.new

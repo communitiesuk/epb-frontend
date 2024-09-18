@@ -9,12 +9,7 @@ describe "Acceptance::HeatPumpCounts" do
 
       context "and the data warehouse api returns a 200 status" do
         before do
-          WebMock
-            .stub_request(
-              :get,
-              "http://test-data-warehouse-api.gov.uk/api/heat-pump-counts/floor-area",
-            )
-            .to_return(status: 200, body: HeatPumpGateway::Stub.api_data)
+          HeatPumpGateway::Stub.count_by_floor_area
         end
 
         it "returns a 200 status" do
@@ -24,12 +19,7 @@ describe "Acceptance::HeatPumpCounts" do
 
       context "and the data warehouse api does not return a 200 status" do
         before do
-          WebMock
-            .stub_request(
-              :get,
-              "http://test-data-warehouse-api.gov.uk/api/heat-pump-counts/floor-area",
-            )
-            .to_return(status: 403, body: HeatPumpGateway::Stub.api_data)
+          HeatPumpGateway::Stub.count_by_floor_area(status: 403)
         end
 
         it "returns a 500 status" do
@@ -44,23 +34,13 @@ describe "Acceptance::HeatPumpCounts" do
       end
 
       it "returns a 404 status" do
-        WebMock
-          .stub_request(
-            :get,
-            "http://test-data-warehouse-api.gov.uk/api/heat-pump-counts/floor-area",
-          )
-          .to_return(status: 200, body: HeatPumpGateway::Stub.api_data)
+        HeatPumpGateway::Stub.count_by_floor_area
         expect(response.status).to eq 404
       end
 
       context "when the api is not available" do
         it "does not return a 500" do
-          WebMock
-            .stub_request(
-              :get,
-              "http://test-data-warehouse-api.gov.uk/api/heat-pump-counts/floor-area",
-            )
-            .to_return(status: 500, body: HeatPumpGateway::Stub.api_data)
+          HeatPumpGateway::Stub.count_by_floor_area(status: 500)
           expect(response.status).to eq 404
         end
       end

@@ -21,7 +21,7 @@ ENV["EPB_AUTH_CLIENT_ID"] = "test.id"
 ENV["EPB_AUTH_CLIENT_SECRET"] = "test.client.secret"
 ENV["EPB_AUTH_SERVER"] = AUTH_URL
 ENV["EPB_API_URL"] = "http://test-api.gov.uk"
-ENV["EPB_DATA_WAREHOUSE_API_URL"] = "http://test-data-warehouse-api.gov.uk"
+ENV["EPB_DATA_WAREHOUSE_API_URL"] = "http://epb-data-warehouse-api"
 ENV["STAGE"] = "test"
 ENV["EPB_UNLEASH_URI"] = "https://test-toggle-server/api"
 

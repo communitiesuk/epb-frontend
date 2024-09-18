@@ -1,16 +1,7 @@
 module HeatPumpGateway
   class Stub
-    def self.count_by_floor_area
-      WebMock.stub_request(:get, "http://test-data-warehouse-api.gov.uk/api/heat-pump-counts/floor-area")
-        .with(
-          headers: {
-            "Accept" => "*/*",
-            "Accept-Encoding" => "gzip;q=1.0,deflate;q=0.6,identity;q=0.3",
-            "Authorization" => "Bearer abc",
-            "User-Agent" => "Faraday v2.10.1",
-          },
-        )
-        .to_return(status: 200, body: api_data, headers: {})
+    def self.count_by_floor_area(status: 200)
+      WebMock.stub_request(:get, "http://epb-data-warehouse-api/api/heat-pump-counts/floor-area").to_return(status:, body: api_data, headers: {})
     end
 
     def self.api_data
