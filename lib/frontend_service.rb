@@ -1066,7 +1066,7 @@ class FrontendService < Sinatra::Base
 
   get "/service-performance/download-csv" do
     use_case = @container.get_object(:fetch_statistics_csv_use_case)
-    data = use_case.execute(params["country"])
+    data = params["country"] ? use_case.execute(params["country"]) : use_case.execute
 
     content_type "application/csv"
     attachment params["country"] ? "service-performance-#{params['country']}.csv" : "service-performance-all-regions.csv"

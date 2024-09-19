@@ -4,14 +4,9 @@ module UseCase
   class FetchStatisticsCsv < UseCase::Base
     def execute(country = "all")
       data = @gateway.fetch[:data][:assessments]
-      results = case country
-                when "england-wales"
-                  data[:englandWales]
-                when "northern-ireland"
-                  data[:northernIreland]
-                else
-                  data[:all]
-                end
+      country_key = country == "northern-ireland" ? :northernIreland : country.to_sym
+      results = data.key?(country_key.to_sym) ? data[country_key.to_sym] : data[:all]
+
       return_array = []
       months = results.group_by { |h| h[:month] }.keys
       types = %w[SAP RdSAP CEPC DEC DEC-RR AC-CERT]

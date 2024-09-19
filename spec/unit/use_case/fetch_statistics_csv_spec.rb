@@ -40,8 +40,8 @@ describe UseCase::FetchStatisticsCsv do
     end
   end
 
-  context "when converting stats data for England and Wales into a csv" do
-    let(:results) { fetch_statistics.execute("england-wales") }
+  context "when converting stats data for England into a csv" do
+    let(:results) { fetch_statistics.execute("england") }
     let(:expectation) do
       [{ "Month" => "Oct-2021",
          "SAPs Lodged" => 20_489,
