@@ -8,6 +8,7 @@ describe "Acceptance::AirConditioningInspectionCertificate", type: :feature do
 
   context "when an ac certificate exists" do
     before do
+      Timecop.freeze(Time.utc(2023, 6, 21))
       FetchAssessmentSummary::AssessmentStub.fetch_ac_cert(
         assessment_id: "0000-0000-0000-0000-9999",
       )
@@ -34,14 +35,14 @@ describe "Acceptance::AirConditioningInspectionCertificate", type: :feature do
       expect(response.body).to have_css "p", text: "Assessor’s details"
     end
 
-    it "shows the share certificate section" do
+    it "shows the share certificate section", :aggregate_failures do
       expect(response.body).to have_css "h2", text: "Share this certificate"
       expect(response.body).to have_link "Email"
       expect(response.body).to have_button "Copy link to clipboard", visible: :all
       expect(response.body).to have_link "Print", visible: :all
     end
 
-    it "shows the summary section" do
+    it "shows the summary section", :aggregate_failures do
       expect(response.body).to have_css "span", text: "66 Primrose Hill"
       expect(response.body).to have_css "span", text: "London"
       expect(response.body).to have_css "span", text: "SW1B 2BB"
