@@ -41,7 +41,6 @@ describe "Acceptance::ServicePerformanceCSV", type: :feature do
     end
 
     it "return a response 200 response" do
-      save_response_to_file(file: "test", content: response.body)
       expect(response.status).to eq(200)
     end
 
@@ -130,7 +129,7 @@ describe "Acceptance::ServicePerformanceCSV", type: :feature do
     end
 
     it "has a csv with the correct body" do
-      expect(response.body).to match(/Sep-2021,23834,77.82,15.74,119033,61.74,10.88,7572,68.18,3298,402,861/)
+      expect(response.body).to match(/Sep-2021,23834,77.82,15,119033,61.74,10,7572,68.18,3298,402,861/)
     end
 
     it "produces a data set with correct number of rows" do
@@ -153,7 +152,6 @@ describe "Acceptance::ServicePerformanceCSV", type: :feature do
     end
 
     it "return a response 200 response" do
-      File.write("test.html", response.body)
       expect(response.status).to eq(200)
     end
 

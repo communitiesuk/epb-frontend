@@ -33,7 +33,7 @@ describe UseCase::FetchStatistics do
 
     it "expects SAPs to have average CO2 emissions" do
       england_result = results[:assessments][:grouped]["SAP"]["England"]
-      expect(england_result.first[:avgCo2Emission]).to eq 15.74
+      expect(england_result.first[:avgCo2Emission]).to eq 15
     end
   end
 

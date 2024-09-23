@@ -6,8 +6,8 @@ module AverageCo2Emissions
 
     def self.api_data
       { "data": [
-        { "avgCo2Emission" => 10.0, "country" => "Northern Ireland", "yearMonth" => "2022-03" },
-        { "avgCo2Emission" => 10.0, "country" => "England", "yearMonth" => "2022-05" },
+        { "avgCo2Emission" => 10, "country" => "Northern Ireland", "yearMonth" => "2022-03" },
+        { "avgCo2Emission" => 10, "country" => "England", "yearMonth" => "2022-05" },
       ] }.to_json
     end
   end
