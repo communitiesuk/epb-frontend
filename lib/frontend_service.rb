@@ -1072,9 +1072,6 @@ class FrontendService < Sinatra::Base
     attachment params["country"] ? "service-performance-#{params['country']}.csv" : "service-performance-all-regions.csv"
 
     to_csv(data)
-  rescue StandardError => e
-    content_type "text/html"
-    return server_error(e)
   end
 
   get "/help", host_name: /#{FIND_ENERGY_CERTIFICATE_HOST_NAME}/ do

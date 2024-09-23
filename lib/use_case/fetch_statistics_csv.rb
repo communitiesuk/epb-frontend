@@ -1,27 +1,13 @@
 # frozen_string_literal: true
 
 module UseCase
-  class FetchStatisticsCsv < UseCase::Base
+  class FetchStatisticsCsv < UseCase::FetchStatisticsBase
     def execute(country = "all")
-      data = @gateway.fetch[:data][:assessments]
-      country_key = country == "northern-ireland" ? :northernIreland : country.to_sym
-      results = data.key?(country_key.to_sym) ? data[country_key.to_sym] : data[:all]
-
-      return_array = []
-      months = results.group_by { |h| h[:month] }.keys
-      types = %w[SAP RdSAP CEPC DEC DEC-RR AC-CERT]
-      months.each do |month|
-        hash = { "Month" => Date.parse("#{month}-01").strftime("%b-%Y") }
-        types.each do |type|
-          stats_item = results.select { |item| item[:month] == month && item[:assessmentType] == type }.first
-          hash["#{type}s Lodged"] = !stats_item.nil? && stats_item.key?(:numAssessments) && !stats_item[:numAssessments].nil? ? stats_item[:numAssessments] : nil
-          if %w[SAP RdSAP CEPC].include?(type) && !stats_item.nil?
-            hash["Average #{type} Energy Rating"] = stats_item.key?(:ratingAverage) && !stats_item[:ratingAverage].nil? ? stats_item[:ratingAverage].round(2) : nil
-          end
-        end
-        return_array << hash
-      end
-      return_array
+      register_data = @statistics_gateway.fetch[:data]
+      warehouse_data = @co2_gateway.fetch[:data]
+      @domain = Domain::StatisticsResults.new(register_data: register_data[:assessments], warehouse_data:)
+      @domain.set_results unless warehouse_data.empty?
+      @domain.to_csv_hash(country:)
     end
   end
 end

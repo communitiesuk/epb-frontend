@@ -1,3 +1,5 @@
+require_relative "./shared_statistics"
+
 describe Domain::StatisticsResults do
   subject(:domain) { described_class.new(register_data:, warehouse_data:) }
 
@@ -116,6 +118,75 @@ describe Domain::StatisticsResults do
       domain.set_results
       result = domain.get_results
       expect(result[:assessments][:grouped]).not_to eq []
+    end
+  end
+
+  describe "#get_country_results" do
+    before do
+      domain.set_results
+    end
+
+    context "when passing northern-ireland as the country" do
+      it "returns the items for that the country key" do
+        result = domain.get_country_results(country: "northern-ireland")
+        grouped = result.group_by { |i| i[:country] }.flatten
+        expect(grouped.first).to eq "Northern Ireland"
+        expect(grouped.length).to eq 2
+        expect(grouped.last.length).to eq 6
+      end
+    end
+
+    context "when passing England as the country" do
+      it "returns the items for that the country key" do
+        result = domain.get_country_results(country: "england")
+        grouped = result.group_by { |i| i[:country] }.flatten
+        expect(grouped.first).to eq "England"
+        expect(grouped.length).to eq 2
+        expect(grouped.last.length).to eq 6
+      end
+    end
+  end
+
+  describe "#to_csv_hash" do
+    subject(:domain) do
+      described_class.new(register_data: ServicePerformance::MonthsStatsDataStub.get_data[:data][:assessments],
+                          warehouse_data: ServicePerformance::AverageCo2EmissionsStub.body[:data])
+    end
+
+    before do
+      domain.set_results
+    end
+
+    include_examples "Domain::Statistics"
+
+    context "when filtering for England" do
+      let!(:result) do
+        domain.to_csv_hash(country: "england")
+      end
+
+      it "returns an array of hashes that matches" do
+        expect(result).to eq england
+      end
+    end
+
+    context "when filtering for Northern Ireland" do
+      let!(:result) do
+        domain.to_csv_hash(country: "northern-ireland")
+      end
+
+      it "returns an array of hashes that matches" do
+        expect(result).to eq northern_ireland
+      end
+    end
+
+    context "when filtering all items/countries" do
+      let!(:result) do
+        domain.to_csv_hash(country: "all")
+      end
+
+      it "returns an array of hashes that matches" do
+        expect(result).to eq all_countries
+      end
     end
   end
 end

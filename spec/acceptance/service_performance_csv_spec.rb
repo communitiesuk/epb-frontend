@@ -1,6 +1,4 @@
-describe "Acceptance::ServicePerformanceCSV", type: :feature do
-  include RSpecFrontendServiceMixin
-
+shared_context "when request service performance csv" do
   def stats_web_mock(body)
     WebMock
       .stub_request(
@@ -14,6 +12,20 @@ describe "Acceptance::ServicePerformanceCSV", type: :feature do
     response.original_headers["Content-Disposition"].match(/filename=("?)(.+)\1/)[2]
   end
 
+  def expected_header
+    ["Month", "SAPs Lodged", "Average SAP Energy Rating", "Average SAP CO2/sqm emissions", "RdSAPs Lodged", "Average RdSAP Energy Rating", "Average RdSAP CO2/sqm emissions", "CEPCs Lodged", "Average CEPC Energy Rating", "DECs Lodged", "DEC-RRs Lodged", "AC-CERTs Lodged"]
+  end
+
+  def response_csv_header(body)
+    header = body.split("\n").first
+    header.split(",")
+  end
+end
+
+describe "Acceptance::ServicePerformanceCSV", type: :feature do
+  include RSpecFrontendServiceMixin
+  include_context "when request service performance csv"
+
   describe "get . find-energy-certificate/service-performance/download-csv" do
     let(:response) do
       get "http://find-energy-certificate.epb-frontend/service-performance/download-csv"
@@ -25,9 +37,11 @@ describe "Acceptance::ServicePerformanceCSV", type: :feature do
 
     before do
       stats_web_mock(ServicePerformance::MonthsStatsDataStub.get_data)
+      ServicePerformance::AverageCo2EmissionsStub.statistics
     end
 
     it "return a response 200 response" do
+      save_response_to_file(file: "test", content: response.body)
       expect(response.status).to eq(200)
     end
 
@@ -40,11 +54,11 @@ describe "Acceptance::ServicePerformanceCSV", type: :feature do
     end
 
     it "has a csv with the correct headers" do
-      expect(response.body).to match(/Month,SAPs Lodged,Average SAP Energy Rating,RdSAPs Lodged,Average RdSAP Energy Rating,CEPCs Lodged,Average CEPC Energy Rating,DECs Lodged,DEC-RRs Lodged,AC-CERTs Lodged/)
+      expect(response_csv_header(response.body)).to eq expected_header
     end
 
     it "has a csv with the correct body" do
-      expect(response.body).to match(/Oct-2021,21163,78.41,122394,61.71,8208,67.36,2189,470,1251/)
+      expect(response.body).to match(/Oct-2021,21163,78.41,,122394,61.71,,8208,67.36,2189,470,1251/)
     end
 
     it "produces a data set with correct number of rows" do
@@ -59,7 +73,7 @@ describe "Acceptance::ServicePerformanceCSV", type: :feature do
       end
 
       it "has a csv with the headers in the expected order" do
-        expect(response.body).to match(/Month,SAPs Lodged,Average SAP Energy Rating,RdSAPs Lodged,Average RdSAP Energy Rating,CEPCs Lodged,Average CEPC Energy Rating,DECs Lodged,DEC-RRs Lodged,AC-CERTs Lodged/)
+        expect(response_csv_header(response.body)).to eq expected_header
       end
     end
 
@@ -96,6 +110,7 @@ describe "Acceptance::ServicePerformanceCSV", type: :feature do
 
     before do
       stats_web_mock(ServicePerformance::MonthsStatsDataStub.get_data)
+      ServicePerformance::AverageCo2EmissionsStub.statistics
     end
 
     it "return a response 200 response" do
@@ -111,11 +126,11 @@ describe "Acceptance::ServicePerformanceCSV", type: :feature do
     end
 
     it "has a csv with the correct headers" do
-      expect(response.body).to match(/Month,SAPs Lodged,Average SAP Energy Rating,RdSAPs Lodged,Average RdSAP Energy Rating,CEPCs Lodged,Average CEPC Energy Rating,DECs Lodged,DEC-RRs Lodged,AC-CERTs Lodged/)
+      expect(response_csv_header(response.body)).to eq expected_header
     end
 
     it "has a csv with the correct body" do
-      expect(response.body).to match(/Oct-2021,20489,78.4,120045,61.73,8074,67.33,2781,462,1206/)
+      expect(response.body).to match(/Sep-2021,23834,77.82,15.74,119033,61.74,10.88,7572,68.18,3298,402,861/)
     end
 
     it "produces a data set with correct number of rows" do
@@ -134,9 +149,11 @@ describe "Acceptance::ServicePerformanceCSV", type: :feature do
 
     before do
       stats_web_mock(ServicePerformance::MonthsStatsDataStub.get_data)
+      ServicePerformance::AverageCo2EmissionsStub.statistics
     end
 
     it "return a response 200 response" do
+      File.write("test.html", response.body)
       expect(response.status).to eq(200)
     end
 
@@ -149,11 +166,11 @@ describe "Acceptance::ServicePerformanceCSV", type: :feature do
     end
 
     it "has a csv with the correct headers" do
-      expect(response.body).to match(/Month,SAPs Lodged,Average SAP Energy Rating,RdSAPs Lodged,Average RdSAP Energy Rating,CEPCs Lodged,Average CEPC Energy Rating,DECs Lodged,DEC-RRs Lodged,AC-CERTs Lodged/)
+      expect(response_csv_header(response.body)).to eq expected_header
     end
 
     it "has a csv with the correct body" do
-      expect(response.body).to match(/Oct-2021,674,81.7,2349,61.11,134,90.5,38,8,45/)
+      expect(response.body).to match(/Oct-2021,674,81.7,,2349,61.11,,134,90.5,38,8,45/)
     end
 
     it "produces a data set with correct number of rows" do

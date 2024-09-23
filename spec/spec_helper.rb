@@ -14,6 +14,7 @@ require "active_support"
 require "active_support/cache"
 require "active_support/notifications"
 require "rake"
+require "timecop"
 
 AUTH_URL = "http://test-auth-server.gov.uk"
 
@@ -67,6 +68,10 @@ def get_task(name)
 end
 
 loader_enable_override "helper/toggles"
+
+def save_response_to_file(file:, content:)
+  File.write("#{file}.html", content)
+end
 
 module RSpecUnitMixin
   def get_api_client(api_url = nil)
