@@ -39,9 +39,9 @@ module ServicePerformance
                   "country": "Wales",
                   "yearMonth": "2022-05",
                   "assessmentType": "SAP" }],
-        other: [{ "avgCo2Emission": 10,
+        other: [{ "avgCo2Emission": 20,
                   "country": "Other",
-                  "yearMonth": "2022-01",
+                  "yearMonth": "2020-01",
                   "assessmentType": "SAP" }] }
     end
   end

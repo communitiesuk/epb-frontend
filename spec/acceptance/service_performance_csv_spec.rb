@@ -1,3 +1,5 @@
+require "csv"
+
 shared_context "when request service performance csv" do
   def stats_web_mock(body)
     WebMock
@@ -26,18 +28,18 @@ describe "Acceptance::ServicePerformanceCSV", type: :feature do
   include RSpecFrontendServiceMixin
   include_context "when request service performance csv"
 
+  before do
+    stats_web_mock(ServicePerformance::MonthsStatsDataStub.get_data)
+    ServicePerformance::AverageCo2EmissionsStub.statistics
+  end
+
+  let(:parsed_data) do
+    CSV.parse(response.body, headers: true)
+  end
+
   describe "get . find-energy-certificate/service-performance/download-csv" do
     let(:response) do
       get "http://find-energy-certificate.epb-frontend/service-performance/download-csv"
-    end
-
-    let(:parsed_data) do
-      CSV.parse(response.body, headers: true)
-    end
-
-    before do
-      stats_web_mock(ServicePerformance::MonthsStatsDataStub.get_data)
-      ServicePerformance::AverageCo2EmissionsStub.statistics
     end
 
     it "return a response 200 response" do
@@ -52,16 +54,8 @@ describe "Acceptance::ServicePerformanceCSV", type: :feature do
       expect(file_name_from_header).to eq("service-performance-all-regions.csv")
     end
 
-    it "has a csv with the correct headers" do
-      expect(response_csv_header(response.body)).to eq expected_header
-    end
-
     it "has a csv with the correct body" do
-      expect(response.body).to match(/Oct-2021,21163,78.41,,122394,61.71,,8208,67.36,2189,470,1251/)
-    end
-
-    it "produces a data set with correct number of rows" do
-      expect(parsed_data.length).to eq(2)
+      expect(CSV.parse(response.body)).to eq CSV.parse(ServicePerformance::CsvStub.all_regions.strip!)
     end
 
     context "when calling the page with data in a different order" do
@@ -103,15 +97,6 @@ describe "Acceptance::ServicePerformanceCSV", type: :feature do
       get "http://find-energy-certificate.epb-frontend/service-performance/download-csv?country=england"
     end
 
-    let(:parsed_data) do
-      CSV.parse(response.body, headers: true)
-    end
-
-    before do
-      stats_web_mock(ServicePerformance::MonthsStatsDataStub.get_data)
-      ServicePerformance::AverageCo2EmissionsStub.statistics
-    end
-
     it "return a response 200 response" do
       expect(response.status).to eq(200)
     end
@@ -124,31 +109,14 @@ describe "Acceptance::ServicePerformanceCSV", type: :feature do
       expect(file_name_from_header).to eq("service-performance-england.csv")
     end
 
-    it "has a csv with the correct headers" do
-      expect(response_csv_header(response.body)).to eq expected_header
-    end
-
     it "has a csv with the correct body" do
-      expect(response.body).to match(/Sep-2021,23834,77.82,15,119033,61.74,10,7572,68.18,3298,402,861/)
-    end
-
-    it "produces a data set with correct number of rows" do
-      expect(parsed_data.length).to eq(2)
+      expect(CSV.parse(response.body)).to eq CSV.parse(ServicePerformance::CsvStub.england.strip!)
     end
   end
 
   describe "get . find-energy-certificate/service-performance/download-csv?country=northern-ireland" do
     let(:response) do
       get "http://find-energy-certificate.epb-frontend/service-performance/download-csv?country=northern-ireland"
-    end
-
-    let(:parsed_data) do
-      CSV.parse(response.body, headers: true)
-    end
-
-    before do
-      stats_web_mock(ServicePerformance::MonthsStatsDataStub.get_data)
-      ServicePerformance::AverageCo2EmissionsStub.statistics
     end
 
     it "return a response 200 response" do
@@ -163,16 +131,8 @@ describe "Acceptance::ServicePerformanceCSV", type: :feature do
       expect(file_name_from_header).to eq("service-performance-northern-ireland.csv")
     end
 
-    it "has a csv with the correct headers" do
-      expect(response_csv_header(response.body)).to eq expected_header
-    end
-
     it "has a csv with the correct body" do
-      expect(response.body).to match(/Oct-2021,674,81.7,,2349,61.11,,134,90.5,38,8,45/)
-    end
-
-    it "produces a data set with correct number of rows" do
-      expect(parsed_data.length).to eq(2)
+      expect(CSV.parse(response.body)).to eq CSV.parse(ServicePerformance::CsvStub.northern_ireland.strip!)
     end
   end
 end

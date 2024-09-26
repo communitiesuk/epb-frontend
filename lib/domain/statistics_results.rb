@@ -65,7 +65,7 @@ module Domain
           if %w[SAP RdSAP CEPC].include?(type) && !stats_item.nil?
             hash["Average #{type} Energy Rating"] = stats_item.key?(:ratingAverage) && !stats_item[:ratingAverage].nil? ? stats_item[:ratingAverage].round(2) : nil
           end
-          if %w[SAP RdSAP].include?(type) && !stats_item.nil?
+          if %w[SAP RdSAP].include?(type) && !stats_item.nil? && country != "other"
             hash["Average #{type} CO2/sqm emissions"] = stats_item.key?(:avgCo2Emission) && !stats_item[:avgCo2Emission].nil? ? stats_item[:avgCo2Emission].round(2) : nil
           end
         end

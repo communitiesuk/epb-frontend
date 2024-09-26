@@ -55,19 +55,7 @@
             show_average_co2: show_average_co2,
           })
         }},
-      { heading: {
-        text:  t('service_performance.contents.epcs_upload.tables.titles.other'),
-        prefix: t("service_performance.contents.epcs_upload.tables.hidden.certificates_uploaded_country.#{assessment_type.downcase}"),
-      },
-        content: {
-          html: erb(:partial__stats_table, locals: {
-            assessment_type: assessment_type,
-            country_key: "other",
-            values: values["Other"],
-            show_average_rating: show_average_rating,
-            show_average_co2: show_average_co2,
-          })
-        }}
+
   ] %>
 
 
