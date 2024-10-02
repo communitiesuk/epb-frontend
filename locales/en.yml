@@ -547,6 +547,7 @@ en:
     intro: "Use this page to find data on:"
     intro_list_item_one: "the number of energy certificates uploaded to the Energy Performance of Buildings Register"
     intro_list_item_two: "the average energy rating for domestic and non-domestic properties"
+    intro_list_item_three: "the average CO2 emissions per square metre for domestic properties"
     covering_statement: "This data covers England and Wales, and Northern Ireland."
     updated_statement: "Updated: monthly"
     accordion_controls:

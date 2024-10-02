@@ -547,6 +547,7 @@ cy:
     intro: "Defnyddiwch y tudalen hwn i ddod o hyd i ddata ar y canlynol:"
     intro_list_item_one: "nifer y tystysgrifau ynni a uwchlwythwyd i’r Gofrestr Perfformiad Ynni Adeiladau"
     intro_list_item_two: "y sgôr ynni gyfartalog ar gyfer eiddo domestig ac annomestig"
+    intro_list_item_three: "yr allyriadau CO2 cyfartalog fesul metr sgwâr ar gyfer eiddo domestig"
     covering_statement: "Mae’r data hwn yn cwmpasu Cymru a Lloegr, a Gogledd Iwerddon."
     updated_statement: "Yn cael ei ddiweddaru: yn fisol"
     accordion_controls:
