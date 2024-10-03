@@ -26,7 +26,7 @@
     "decomment": "^0.9.5",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
-    "standard": "^17.1.0"
+    "standard": "^17.1.2"
   },
   "scripts": {
     "fmt": "npm run lint-fix",
