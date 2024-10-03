@@ -12,7 +12,7 @@ phases:
 
   pre_build:
     commands:
-      - n $NODE_18_VERSION
+      - n $NODE_20_VERSION
       - npm install
       - bundle install
       - make assets-version
