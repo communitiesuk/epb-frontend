@@ -54,7 +54,7 @@ describe "Acceptance::AccessibilityStatement", type: :feature do
 
       it "has a link in the footer for the feedback form" do
         expect(response.body).to have_css("footer ul.govuk-footer__inline-list li:nth-child(4) a", text: "Give feedback")
-        expect(response.body).to have_link("Give feedback", href: "https://forms.office.com/e/hUnC3Xq1T4")
+        expect(response.body).to have_link("Give feedback", href: "https://forms.office.com/e/KX25htGMX5")
       end
 
       it "has a link in the footer for the service performance" do
