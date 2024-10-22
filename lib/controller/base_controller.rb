@@ -24,7 +24,6 @@ module Controller
       super
       setup_locales
       @toggles = Helper::Toggles
-
       @container = Container.new
       @logger = Logger.new($stdout)
       @logger.level = Logger::INFO
@@ -47,6 +46,14 @@ module Controller
         redirect(static_start_page, 303)
       end
     end
+
+    FIND_ENERGY_CERTIFICATE_HOST_NAME = "find-energy-certificate".freeze
+    GETTING_NEW_ENERGY_CERTIFICATE_HOST_NAME = "getting-new-energy-certificate".freeze
+
+    EXCLUDE_GREEN_DEAL_REFERRER_PATHS = %w[
+      /find-a-certificate/search-by-postcode
+      /find-a-certificate/search-by-street-name-and-town
+    ].freeze
 
     def show(template, locals, layout = :layout)
       locals[:errors] = @errors

@@ -1,13 +1,5 @@
 module Controller
   class FindEnergyCertificateController < Controller::BaseController
-    FIND_ENERGY_CERTIFICATE_HOST_NAME = "find-energy-certificate".freeze
-    GETTING_NEW_ENERGY_CERTIFICATE_HOST_NAME = "getting-new-energy-certificate".freeze
-
-    EXCLUDE_GREEN_DEAL_REFERRER_PATHS = %w[
-      /find-a-certificate/search-by-postcode
-      /find-a-certificate/search-by-street-name-and-town
-    ].freeze
-
     find_a_certificate_property_type =
       lambda do
         query = params.map { |key, value| "#{key}=#{value}" }.join("&")

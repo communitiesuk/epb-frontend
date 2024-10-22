@@ -1,8 +1,5 @@
 module Controller
   class GettingNewEnergyCertificateController < Controller::BaseController
-    GETTING_NEW_ENERGY_CERTIFICATE_HOST_NAME = "getting-new-energy-certificate".freeze
-    FIND_ENERGY_CERTIFICATE_HOST_NAME = "find-energy-certificate".freeze
-
     find_an_assessor_property_type =
       lambda do
         query = params.map { |key, value| "#{key}=#{value}" }.join("&")
