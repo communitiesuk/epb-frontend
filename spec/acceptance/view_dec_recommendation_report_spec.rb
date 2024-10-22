@@ -203,13 +203,12 @@ describe "Acceptance::DecRecommendationReport", type: :feature do
     end
   end
 
-  context "when there are no related assessments" do
+  context "when there are no previous related assessments" do
     before do
       FetchAssessmentSummary::AssessmentStub.fetch_dec_rr(
         assessment_id: "1234-5678-1234-5678-1234",
         date_of_expiry: "2030-01-01",
         related_assessments: [],
-        related_rrn: nil,
       )
     end
 
@@ -217,10 +216,37 @@ describe "Acceptance::DecRecommendationReport", type: :feature do
       expect(response.body).to have_css "p",
                                         text: "There are no related reports for this property."
     end
+  end
 
-    it "hides the Operational rating and DEC link" do
+  context "when there is no co-lodged DEC" do
+    before do
+      FetchAssessmentSummary::AssessmentStub.fetch_dec_rr(
+        assessment_id: "1234-5678-1234-5678-1234",
+        date_of_expiry: "2030-01-01",
+        related_rrn: nil,
+      )
+    end
+
+    it "hides the Operational rating and DEC link and section", :aggregate_failures do
       expect(response.body).not_to have_link "Operational rating and DEC",
                                              href: "#rating"
+      expect(response.body).not_to have_css "h2", text: "Operational rating and DEC"
+    end
+  end
+
+  context "when there is no rating from a co-lodged DEC" do
+    before do
+      FetchAssessmentSummary::AssessmentStub.fetch_dec_rr(
+        assessment_id: "1234-5678-1234-5678-1234",
+        date_of_expiry: "2030-01-01",
+        energy_band_from_related_certificate: nil,
+      )
+    end
+
+    it "hides the Operational rating and DEC link and section", :aggregate_failures do
+      expect(response.body).not_to have_link "Operational rating and DEC",
+                                             href: "#rating"
+      expect(response.body).not_to have_css "h2", text: "Operational rating and DEC"
     end
   end
 

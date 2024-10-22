@@ -1134,7 +1134,8 @@ module FetchAssessmentSummary
       postcode: "A0 0AA",
       opt_out: false,
       related_rrn: "0000-0000-0000-0000-1111",
-      superseded_by: nil
+      superseded_by: nil,
+      energy_band_from_related_certificate: "a"
     )
 
       body = {
@@ -1199,7 +1200,7 @@ module FetchAssessmentSummary
           otherRecommendations: [
             { code: "5", text: "Add a big wind turbine.", cO2Impact: "HIGH" },
           ],
-          energyBandFromRelatedCertificate: "a",
+          energyBandFromRelatedCertificate: energy_band_from_related_certificate,
           relatedRrn: related_rrn,
           technicalInformation: {
             occupier: "City Council",

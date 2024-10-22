@@ -14,7 +14,7 @@
         {
           link: '#rating',
           text: 'dec_rr.sections.rating.title',
-          hidden: assessment[:relatedRrn].nil? || assessment[:relatedRrn].empty?
+          hidden: assessment[:relatedRrn].nil? || assessment[:relatedRrn].empty? || assessment[:energyBandFromRelatedCertificate].nil?
         },
         {
           link: '#recommendations',
@@ -73,7 +73,7 @@
       type: 'report',
     } %>
 
-    <% unless assessment[:energyBandFromRelatedCertificate].nil? %>
+    <% unless assessment[:relatedRrn].nil? || assessment[:relatedRrn].empty? || assessment[:energyBandFromRelatedCertificate].nil? %>
       <%== erb :dec_recommendation_report__rating, locals: {
         assessment: assessment,
       } %>
