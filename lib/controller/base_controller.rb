@@ -1,7 +1,6 @@
 require "erubis"
 require "i18n"
 require "i18n/backend/fallbacks"
-# require "sinatra"
 require "sinatra/base"
 require "sinatra/cookies"
 require_relative "../container"
