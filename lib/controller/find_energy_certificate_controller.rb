@@ -1,14 +1,12 @@
 module Controller
   class FindEnergyCertificateController < Controller::BaseController
-
-    FIND_ENERGY_CERTIFICATE_HOST_NAME = "find-energy-certificate"
-    GETTING_NEW_ENERGY_CERTIFICATE_HOST_NAME = "getting-new-energy-certificate"
+    FIND_ENERGY_CERTIFICATE_HOST_NAME = "find-energy-certificate".freeze
+    GETTING_NEW_ENERGY_CERTIFICATE_HOST_NAME = "getting-new-energy-certificate".freeze
 
     EXCLUDE_GREEN_DEAL_REFERRER_PATHS = %w[
-    /find-a-certificate/search-by-postcode
-    /find-a-certificate/search-by-street-name-and-town
-  ].freeze
-
+      /find-a-certificate/search-by-postcode
+      /find-a-certificate/search-by-street-name-and-town
+    ].freeze
 
     find_a_certificate_property_type =
       lambda do
@@ -21,14 +19,14 @@ module Controller
 
         if params["property_type"] == "domestic"
           redirect localised_url(
-                     "/find-a-certificate/search-by-postcode?#{query}",
-                     )
+            "/find-a-certificate/search-by-postcode?#{query}",
+          )
         end
 
         if params["property_type"] == "non_domestic"
           redirect localised_url(
-                     "/find-a-non-domestic-certificate/search-by-postcode?#{query}",
-                     )
+            "/find-a-non-domestic-certificate/search-by-postcode?#{query}",
+          )
         end
 
         if request.post? && params["property_type"].nil?
@@ -183,7 +181,7 @@ module Controller
             @errors[:reference_number] =
               t(
                 "find_certificate_by_reference_number.reference_number_not_registered",
-                )
+              )
           else
             return server_error(e)
           end
@@ -281,7 +279,7 @@ module Controller
               url:
                 localised_url(
                   get_subdomain_host(GETTING_NEW_ENERGY_CERTIFICATE_HOST_NAME),
-                  ),
+                ),
             }
           when Errors::RequestTimeoutError
             status 504
@@ -332,7 +330,7 @@ module Controller
               .execute(
                 params["postcode"],
                 %w[CEPC DEC DEC-RR CEPC-RR AC-CERT AC-REPORT],
-                )[
+              )[
               :data
             ][
               :assessments
@@ -445,7 +443,7 @@ module Controller
             @errors[:reference_number] =
               t(
                 "find_non_dom_certificate_by_reference_number.reference_number_not_registered",
-                )
+              )
           else
             return server_error(e)
           end
@@ -478,7 +476,7 @@ module Controller
                 params["street_name"],
                 params["town"],
                 %w[AC-CERT AC-REPORT DEC DEC-RR CEPC CEPC-RR],
-                )[
+              )[
               :data
             ][
               :assessments
@@ -533,7 +531,7 @@ module Controller
               url:
                 localised_url(
                   get_subdomain_host(GETTING_NEW_ENERGY_CERTIFICATE_HOST_NAME),
-                  ),
+                ),
             }
           when Errors::RequestTimeoutError
             status 200

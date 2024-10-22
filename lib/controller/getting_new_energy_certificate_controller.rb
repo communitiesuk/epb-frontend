@@ -1,7 +1,7 @@
 module Controller
   class GettingNewEnergyCertificateController < Controller::BaseController
-    GETTING_NEW_ENERGY_CERTIFICATE_HOST_NAME = "getting-new-energy-certificate"
-    FIND_ENERGY_CERTIFICATE_HOST_NAME = "find-energy-certificate"
+    GETTING_NEW_ENERGY_CERTIFICATE_HOST_NAME = "getting-new-energy-certificate".freeze
+    FIND_ENERGY_CERTIFICATE_HOST_NAME = "find-energy-certificate".freeze
 
     find_an_assessor_property_type =
       lambda do
@@ -18,8 +18,8 @@ module Controller
 
         if params["property_type"] == "non_domestic"
           redirect localised_url(
-                     "/find-a-non-domestic-assessor/search-by-postcode?#{query}",
-                     )
+            "/find-a-non-domestic-assessor/search-by-postcode?#{query}",
+          )
         end
 
         if request.post? && params["property_type"].nil?

@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
-class FrontendService  < Controller::BaseController
-
+class FrontendService < Controller::BaseController
   get "/healthcheck" do
     status 200
   end

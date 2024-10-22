@@ -8,7 +8,7 @@ require_relative "../container"
 require_relative "../helper/toggles"
 
 module Controller
-  class BaseController  < Sinatra::Base
+  class BaseController < Sinatra::Base
     helpers Helpers
     attr_reader :toggles
 
@@ -39,7 +39,6 @@ module Controller
       also_reload "lib/**/*.rb"
     end
 
-
     before do
       set_locale
       raise MaintenanceMode if request.path != "/healthcheck" && Helper::Toggles.enabled?("frontend-maintenance-mode")
@@ -66,7 +65,7 @@ module Controller
         template,
         locals.merge({ print_view: is_print_view }),
         is_print_view ? :print_layout : :layout,
-        )
+      )
     end
 
     not_found do
