@@ -204,6 +204,7 @@ describe UseCase::FetchCertificate do
           environmentalImpactPotential: 85,
           gasSmartMeterPresent: nil,
           electricitySmartMeterPresent: nil,
+          countryId: 1,
         },
       }
     end

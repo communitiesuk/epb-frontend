@@ -1271,7 +1271,8 @@ module FetchAssessmentSummary
       expiry_date: "2030-01-05",
       superseded_by: "9025-0000-0000-0000-0000",
       gas_smart_meter_present: nil,
-      electricity_smart_meter_present: nil
+      electricity_smart_meter_present: nil,
+      countryId: 1
     )
       FetchAssessmentSummary::AssessmentSummaryErrorStub.fetch(assessment_id)
       property_summary ||= generate_property_summary
@@ -1297,6 +1298,7 @@ module FetchAssessmentSummary
             "addressLine3": address_line3,
             "addressLine4": "",
             "town": "Post-Town1",
+            "countryId": countryId,
             "address": {
               "postcode": "A0 0AA",
               "addressLine1": "1 Some Street",
@@ -1569,6 +1571,7 @@ module FetchAssessmentSummary
             addressLine3: address_line3,
             addressLine4: "",
             town: "London",
+            countryId: countryId,
             "address": {
               postcode:,
               addressLine1: "Flat 33",

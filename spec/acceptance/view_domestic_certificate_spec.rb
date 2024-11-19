@@ -470,9 +470,21 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       end
     end
 
-    context "when viewing find ways to pay for recommendations section" do
+    context "when viewing find advice and find ways to pay for recommendations section" do
       it "shows the heading" do
-        expect(response.body).to include("Help paying for energy improvements")
+        expect(response.body).to have_css "h3",
+                                          text: "Advice on making energy saving improvements"
+      end
+
+      it "shows the text" do
+        expect(response.body).to include(
+                                   '<p class="govuk-body"><a class="govuk-link" href=" https://www.gov.uk/improve-energy-efficiency">Get detailed recommendations and cost estimates</a></p>',
+                                   )
+      end
+
+      it "shows the heading" do
+        expect(response.body).to have_css "h3",
+                                          text: "Help paying for energy saving improvements"
       end
 
       it "shows the text" do
@@ -488,6 +500,27 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
         expect(response.body).to include(
           "https://www.gov.uk/improve-energy-efficiency",
         )
+      end
+
+      it "doesn't show the section for NI" do
+        FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
+          assessment_id: "1234-5678-1234-5678-1234",
+          current_rating: 90,
+          current_band: "b",
+          current_carbon_emission: "2.4",
+          potential_carbon_emission: "1.4",
+          impact_of_loft_insulation: -79,
+          impact_of_cavity_insulation: -67,
+          impact_of_solid_wall_insulation: -69,
+          address_line3: "London",
+          postcode: "BT23 2BB",
+          countryId: 3,
+          )
+
+        expect(response.body).not_to have_css "h3",
+                                          text: "Advice on making energy saving improvements"
+        expect(response.body).not_to have_css "h3",
+                                          text: "Help paying for energy saving improvements"
       end
     end
 

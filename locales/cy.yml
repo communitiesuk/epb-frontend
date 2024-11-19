@@ -1013,9 +1013,9 @@ cy:
           cavity_insulation: "inswleiddio waliau ceudod"
           solid_wall_insulation: "inswleiddio waliau solet"
         more_ways_to_save:
-          heading: "Rhagor o ffyrdd i arbed ynni"
-          cta: "Chwiliwch am ffyrdd i arbed ynni gartref"
-          cta_print: "Chwiliwch am ffyrdd i arbed ynni yn eich cartref drwy edrych ar"
+          heading: "Cyngor ar wneud gwelliannau arbed ynni"
+          cta: "Argymhellion manwl ac amcangyfrifon o’r costau"
+          cta_print: "Argymhellion manwl ac amcangyfrifon o’r costau"
           url: "https://www.gov.uk/improve-energy-efficiency"
           url_print: "www.gov.uk/improve-energy-efficiency"
       environmental_impact:
@@ -1052,7 +1052,7 @@ cy:
           potential_rating_2: "Cyfraddiad posibl ar ôl cwblhau camau 1&nbsp;a&nbsp;2"
           potential_rating_3: "Cyfraddiad posibl ar ôl cwblhau camau 1&nbsp;i"
         paying_for_energy_improvements:
-          title: "Help i dalu am welliannau ynni"
+          title: "Help yn talu am welliannau arbed ynni"
           bus_text: "Efallai y gallwch gael grant gan y %{link}. Bydd hyn yn eich helpu i brynu system wresogi carbon isel, fwy effeithlon ar gyfer yr eiddo hwn."
           bus_link_text: "Cynllun Uwchraddio Boeleri"
           bus_url: "https://www.gov.uk/apply-boiler-upgrade-scheme"
