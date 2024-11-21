@@ -26,7 +26,7 @@ module Helper
       energy_band = assessment[:currentEnergyEfficiencyBand]
 
       unless main_heating_hash.nil? || energy_band.nil?
-        main_heating_bool = main_heating_hash[:description]&.include? "boiler"
+        main_heating_bool = main_heating_hash[:description]&.downcase&.include? "boiler"
         energy_band_bool = %w[a b c].any? { |rating| energy_band&.include? rating }
 
         return (main_heating_bool == true) || (energy_band_bool == true) ? true : false
@@ -42,7 +42,7 @@ module Helper
       main_heating_hash = (assessment[:propertySummary]&.select { |item| item[:name] == "main_heating" })&.first
 
       unless main_heating_hash.nil?
-        return main_heating_hash[:description]&.include? "heat pump"
+        return main_heating_hash[:description]&.downcase&.include? "heat pump"
       end
 
       false

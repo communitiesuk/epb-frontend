@@ -145,6 +145,25 @@ describe Helper::Certificate do
       end
     end
 
+    context "when boiler is present and upper case" do
+      let(:assessment) do
+        {
+          propertySummary: [{ name: "wall", description: "Many walls", energyEfficiencyRating: 2 },
+
+                            { name: "secondary_heating", description: "Heating the house", energyEfficiencyRating: 5 },
+
+                            { name: "main_heating", description: "Boiler", energyEfficiencyRating: 3 },
+
+                            { name: "roof", description: "(another dwelling above)", energyEfficiencyRating: 0 }],
+          currentEnergyEfficiencyBand: "e",
+        }
+      end
+
+      it "returns true" do
+        expect(helper.hide_home_upgrade?(assessment)).to be true
+      end
+    end
+
     context "when main_heating not present" do
       let(:assessment) do
         {
@@ -271,6 +290,24 @@ describe Helper::Certificate do
                             { name: "secondary_heating", description: "Heating the house", energyEfficiencyRating: 5 },
 
                             { name: "main_heating", description: "heat pump", energyEfficiencyRating: 3 },
+
+                            { name: "roof", description: "(another dwelling above)", energyEfficiencyRating: 0 }],
+        }
+      end
+
+      it "returns true" do
+        expect(helper.hide_bus?(assessment)).to be true
+      end
+    end
+
+    context "when main heating is heat pump and capitalised" do
+      let(:assessment) do
+        {
+          propertySummary: [{ name: "wall", description: "Many walls", energyEfficiencyRating: 2 },
+
+                            { name: "secondary_heating", description: "Heating the house", energyEfficiencyRating: 5 },
+
+                            { name: "main_heating", description: "Heat Pump", energyEfficiencyRating: 3 },
 
                             { name: "roof", description: "(another dwelling above)", energyEfficiencyRating: 0 }],
         }
