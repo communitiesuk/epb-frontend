@@ -1015,7 +1015,7 @@ cy:
         more_ways_to_save:
           heading: "Cyngor ar wneud gwelliannau arbed ynni"
           cta: "Argymhellion manwl ac amcangyfrifon o’r costau"
-          cta_print: "Argymhellion manwl ac amcangyfrifon o’r costau"
+          cta_print: "Argymhellion manwl ac amcangyfrifon o’r costau: "
           url: "https://www.gov.uk/improve-energy-efficiency"
           url_print: "www.gov.uk/improve-energy-efficiency"
       environmental_impact:
@@ -1053,9 +1053,23 @@ cy:
           potential_rating_3: "Cyfraddiad posibl ar ôl cwblhau camau 1&nbsp;i"
         paying_for_energy_improvements:
           title: "Help yn talu am welliannau arbed ynni"
-          bus_text: "Efallai y gallwch gael grant gan y %{link}. Bydd hyn yn eich helpu i brynu system wresogi carbon isel, fwy effeithlon ar gyfer yr eiddo hwn."
+          help_text: "Efallai y byddwch yn gymwys i gael help gyda chost gwelliannau:"
+          hug_text: "Gwelliannau arbed ynni am ddim: "
+          hug_link_text: "Grant Uwchraddio Cartrefi"
+          hug_url: "https://www.gov.uk/apply-home-upgrade-grant"
+          hug_print_link_text: "Grant Uwchraddio Cartrefi (www.gov.uk/apply-home-upgrade-grant)"
+          insulation_text: "Inswleiddio:"
+          insulation_link_text: "Cynllun Inswleiddio Mawr Prydain"
+          insulation_url: "https://www.gov.uk/apply-great-british-insulation-scheme"
+          insulation_print_link_text: "Cynllun Inswleiddio Mawr Prydain (www.gov.uk/apply-great-british-insulation-scheme)"
+          bus_text: "Pympiau gwres a boeleri biomas: "
           bus_link_text: "Cynllun Uwchraddio Boeleri"
           bus_url: "https://www.gov.uk/apply-boiler-upgrade-scheme"
+          bus_print_link_text: "Cynllun Uwchraddio Boeleri (www.gov.uk/apply-boiler-upgrade-scheme)"
+          eco_text: "Help gan eich cyflenwr ynni: "
+          eco_link_text: "Rhwymedigaeth Cwmnïau Ynni"
+          eco_url: "https://www.gov.uk/energy-company-obligation"
+          eco_print_link_text: "Rhwymedigaeth Cwmnïau Ynni (www.gov.uk/energy-company-obligation)"
       information:
         title: "Pwy dylech chi gysylltu â nhw ynglŷn â’r dystysgrif hon"
         assessor:

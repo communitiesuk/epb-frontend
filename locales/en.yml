@@ -1016,7 +1016,7 @@ en:
         more_ways_to_save:
           heading: "Advice on making energy saving improvements"
           cta: "Get detailed recommendations and cost estimates"
-          cta_print: "Get detailed recommendations and cost estimates"
+          cta_print: "Get detailed recommendations and cost estimates: "
           url: "https://www.gov.uk/improve-energy-efficiency"
           url_print: "www.gov.uk/improve-energy-efficiency"
       environmental_impact:
@@ -1054,9 +1054,23 @@ en:
           potential_rating_3: "Potential rating after completing steps 1&nbsp;to"
         paying_for_energy_improvements:
           title: "Help paying for energy saving improvements"
-          bus_text: "You might be able to get a grant from the %{link}. This will help you buy a more efficient, low carbon heating system for this property."
+          help_text: "You may be eligible for help with the cost of improvements:"
+          hug_text: "Free energy saving improvements: "
+          hug_link_text: "Home Upgrade Grant"
+          hug_url: "https://www.gov.uk/apply-home-upgrade-grant"
+          hug_print_link_text: "Home Upgrade Grant (www.gov.uk/apply-home-upgrade-grant)"
+          insulation_text: "Insulation: "
+          insulation_link_text: "Great British Insulation Scheme"
+          insulation_url: "https://www.gov.uk/apply-great-british-insulation-scheme"
+          insulation_print_link_text: "Great British Insulation Scheme (www.gov.uk/apply-great-british-insulation-scheme)"
+          bus_text: "Heat pumps and biomass boilers: "
           bus_link_text: "Boiler Upgrade Scheme"
           bus_url: "https://www.gov.uk/apply-boiler-upgrade-scheme"
+          bus_print_link_text: "Boiler Upgrade Scheme (www.gov.uk/apply-boiler-upgrade-scheme)"
+          eco_text: "Help from your energy supplier: "
+          eco_link_text: "Energy Company Obligation"
+          eco_url: "https://www.gov.uk/energy-company-obligation"
+          eco_print_link_text: "Energy Company Obligation (www.gov.uk/energy-company-obligation)"
       information:
         title: "Who to contact about this certificate"
         assessor:

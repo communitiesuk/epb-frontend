@@ -68,6 +68,154 @@ describe Helper::Certificate do
     end
   end
 
+  describe "#hide_boiler_upgrade" do
+    context "when boiler present" do
+      let(:assessment) do
+        {
+          propertySummary: [{ name: "wall", description: "Many walls", energyEfficiencyRating: 2 },
+
+                            { name: "secondary_heating", description: "Heating the house", energyEfficiencyRating: 5 },
+
+                            { name: "main_heating", description: "boiler", energyEfficiencyRating: 3 },
+
+                            { name: "roof", description: "(another dwelling above)", energyEfficiencyRating: 0 }],
+          currentEnergyEfficiencyBand: "b",
+        }
+      end
+
+      it "returns true" do
+        expect(helper.hide_home_upgrade?(assessment)).to be true
+      end
+    end
+
+    context "when boiler is not present and rating is lower than or equal to d" do
+      let(:assessment) do
+        {
+          propertySummary: [{ name: "wall", description: "Many walls", energyEfficiencyRating: 2 },
+
+                            { name: "secondary_heating", description: "Heating the house", energyEfficiencyRating: 5 },
+
+                            { name: "main_heating", description: "Room heaters, electric", energyEfficiencyRating: 3 },
+
+                            { name: "roof", description: "(another dwelling above)", energyEfficiencyRating: 0 }],
+          currentEnergyEfficiencyBand: "d",
+        }
+      end
+
+      it "returns false" do
+        expect(helper.hide_home_upgrade?(assessment)).to be false
+      end
+    end
+
+    context "when boiler is not present or rating is higher than or equal to d" do
+      let(:assessment) do
+        {
+          propertySummary: [{ name: "wall", description: "Many walls", energyEfficiencyRating: 2 },
+
+                            { name: "secondary_heating", description: "Heating the house", energyEfficiencyRating: 5 },
+
+                            { name: "main_heating", description: "Room heaters, electric", energyEfficiencyRating: 3 },
+
+                            { name: "roof", description: "(another dwelling above)", energyEfficiencyRating: 0 }],
+          currentEnergyEfficiencyBand: "b",
+        }
+      end
+
+      it "returns true" do
+        expect(helper.hide_home_upgrade?(assessment)).to be true
+      end
+    end
+
+    context "when boiler is present and rating is lower than or equal to d" do
+      let(:assessment) do
+        {
+          propertySummary: [{ name: "wall", description: "Many walls", energyEfficiencyRating: 2 },
+
+                            { name: "secondary_heating", description: "Heating the house", energyEfficiencyRating: 5 },
+
+                            { name: "main_heating", description: "boiler", energyEfficiencyRating: 3 },
+
+                            { name: "roof", description: "(another dwelling above)", energyEfficiencyRating: 0 }],
+          currentEnergyEfficiencyBand: "e",
+        }
+      end
+
+      it "returns true" do
+        expect(helper.hide_home_upgrade?(assessment)).to be true
+      end
+    end
+
+    context "when main_heating not present" do
+      let(:assessment) do
+        {
+          propertySummary: [{ name: "wall", description: "Many walls", energyEfficiencyRating: 2 },
+
+                            { name: "secondary_heating", description: "Heating the house", energyEfficiencyRating: 5 },
+
+                            { name: "roof", description: "(another dwelling above)", energyEfficiencyRating: 0 }],
+        }
+      end
+
+      it "returns false" do
+        expect(helper.hide_home_upgrade?(assessment)).to be false
+      end
+    end
+
+    context "when property summary not present" do
+      let(:assessment) do
+        {
+          boop: [{ name: "wall", description: "Many walls", energyEfficiencyRating: 2 },
+
+                 { name: "secondary_heating", description: "Heating the house", energyEfficiencyRating: 5 },
+
+                 { name: "roof", description: "(another dwelling above)", energyEfficiencyRating: 0 }],
+        }
+      end
+
+      it "returns false" do
+        expect(helper.hide_home_upgrade?(assessment)).to be false
+      end
+    end
+  end
+
+  describe "#hide_if_rating_higher_than_d?" do
+    context "when rating is higher than or equal to d" do
+      let(:assessment) do
+        {
+          currentEnergyEfficiencyBand: "b",
+        }
+      end
+
+      it "returns true" do
+        expect(helper.hide_if_rating_higher_than_d?(assessment)).to be true
+      end
+    end
+
+    context "when rating is lower than or equal to d" do
+      let(:assessment) do
+        {
+          currentEnergyEfficiencyBand: "e",
+        }
+      end
+
+      it "returns false" do
+        expect(helper.hide_if_rating_higher_than_d?(assessment)).to be false
+      end
+    end
+
+    context "when rating not present" do
+      let(:assessment) do
+        {
+          currentEnergyEfficiencyBand: nil,
+        }
+      end
+
+      it "returns false" do
+        expect(helper.hide_if_rating_higher_than_d?(assessment)).to be false
+      end
+    end
+  end
+
   describe "#hide_smart_meters?" do
     context "when both gas and electric smart meters are set to nil" do
       let(:assessment) do
@@ -92,6 +240,44 @@ describe Helper::Certificate do
 
       it "returns false" do
         expect(helper.hide_smart_meters?(assessment)).to be false
+      end
+    end
+  end
+
+  describe "#hide_bus?" do
+    context "when main heating is boiler" do
+      let(:assessment) do
+        {
+          propertySummary: [{ name: "wall", description: "Many walls", energyEfficiencyRating: 2 },
+
+                            { name: "secondary_heating", description: "Heating the house", energyEfficiencyRating: 5 },
+
+                            { name: "main_heating", description: "boiler", energyEfficiencyRating: 3 },
+
+                            { name: "roof", description: "(another dwelling above)", energyEfficiencyRating: 0 }],
+        }
+      end
+
+      it "returns false" do
+        expect(helper.hide_bus?(assessment)).to be false
+      end
+    end
+
+    context "when main heating is heat pump" do
+      let(:assessment) do
+        {
+          propertySummary: [{ name: "wall", description: "Many walls", energyEfficiencyRating: 2 },
+
+                            { name: "secondary_heating", description: "Heating the house", energyEfficiencyRating: 5 },
+
+                            { name: "main_heating", description: "heat pump", energyEfficiencyRating: 3 },
+
+                            { name: "roof", description: "(another dwelling above)", energyEfficiencyRating: 0 }],
+        }
+      end
+
+      it "returns true" do
+        expect(helper.hide_bus?(assessment)).to be true
       end
     end
   end

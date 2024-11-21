@@ -1272,10 +1272,11 @@ module FetchAssessmentSummary
       superseded_by: "9025-0000-0000-0000-0000",
       gas_smart_meter_present: nil,
       electricity_smart_meter_present: nil,
-      countryId: 1
+      country_id: 1,
+      main_heating_source: "Room heaters, electric"
     )
       FetchAssessmentSummary::AssessmentSummaryErrorStub.fetch(assessment_id)
-      property_summary ||= generate_property_summary
+      property_summary ||= generate_property_summary(main_heating_source)
       green_deal_plan = generate_green_deal_plan if green_deal_plan == []
 
       if assessment_id == "1111-1111-1111-1111-1112"
@@ -1298,7 +1299,7 @@ module FetchAssessmentSummary
             "addressLine3": address_line3,
             "addressLine4": "",
             "town": "Post-Town1",
-            "countryId": countryId,
+            "countryId": country_id,
             "address": {
               "postcode": "A0 0AA",
               "addressLine1": "1 Some Street",
@@ -1571,7 +1572,7 @@ module FetchAssessmentSummary
             addressLine3: address_line3,
             addressLine4: "",
             town: "London",
-            countryId: countryId,
+            countryId: country_id,
             "address": {
               postcode:,
               addressLine1: "Flat 33",
@@ -1713,7 +1714,7 @@ module FetchAssessmentSummary
       ]
     end
 
-    def self.generate_property_summary
+    def self.generate_property_summary(main_heating_source)
       [
         { name: "wall", description: "Many walls", energyEfficiencyRating: 2 },
         {
@@ -1723,7 +1724,7 @@ module FetchAssessmentSummary
         },
         {
           name: "main_heating",
-          description: "Room heaters, electric",
+          description: main_heating_source,
           energyEfficiencyRating: 3,
         },
         {

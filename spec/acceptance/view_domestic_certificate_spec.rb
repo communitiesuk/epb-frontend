@@ -478,49 +478,127 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
 
       it "shows the text" do
         expect(response.body).to include(
-                                   '<p class="govuk-body"><a class="govuk-link" href=" https://www.gov.uk/improve-energy-efficiency">Get detailed recommendations and cost estimates</a></p>',
-                                   )
-      end
-
-      it "shows the heading" do
-        expect(response.body).to have_css "h3",
-                                          text: "Help paying for energy saving improvements"
-      end
-
-      it "shows the text" do
-        expect(response.body).to include(
-          'You might be able to get a grant from the <a class="govuk-link" href="https://www.gov.uk/apply-boiler-upgrade-scheme">Boiler Upgrade Scheme</a>. This will help you buy a more efficient, low carbon heating system for this property.',
+          '<p class="govuk-body"><a class="govuk-link" href=" https://www.gov.uk/improve-energy-efficiency">Get detailed recommendations and cost estimates</a></p>',
         )
       end
+    end
 
-      it "shows the link" do
-        expect(response.body).to include(
-          "https://www.gov.uk/apply-boiler-upgrade-scheme",
-        )
-        expect(response.body).to include(
-          "https://www.gov.uk/improve-energy-efficiency",
-        )
-      end
-
+    describe "when viewing get help paying for improvements section" do
       it "doesn't show the section for NI" do
         FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
           assessment_id: "1234-5678-1234-5678-1234",
-          current_rating: 90,
-          current_band: "b",
-          current_carbon_emission: "2.4",
-          potential_carbon_emission: "1.4",
-          impact_of_loft_insulation: -79,
-          impact_of_cavity_insulation: -67,
-          impact_of_solid_wall_insulation: -69,
-          address_line3: "London",
-          postcode: "BT23 2BB",
-          countryId: 3,
-          )
+          country_id: 3,
+        )
 
         expect(response.body).not_to have_css "h3",
-                                          text: "Advice on making energy saving improvements"
+                                              text: "Advice on making energy saving improvements"
         expect(response.body).not_to have_css "h3",
-                                          text: "Help paying for energy saving improvements"
+                                              text: "Help paying for energy saving improvements"
+      end
+
+      context "when one or more bullet points present" do
+        it "shows the heading" do
+          expect(response.body).to have_css "h3",
+                                            text: "Help paying for energy saving improvements"
+        end
+      end
+
+      context "when no bullet points are present" do
+        it "doesn't show the heading" do
+          FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
+            assessment_id: "1234-5678-1234-5678-1234",
+            main_heating_source: "heat pump",
+            current_band: "b",
+          )
+          expect(response.body).not_to have_css "h3",
+                                                text: "Help paying for energy saving improvements"
+        end
+      end
+
+      context "when the home upgrade link is relevant" do
+        it "shows the home upgrade link" do
+          FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
+            assessment_id: "1234-5678-1234-5678-1234",
+            current_band: "d",
+          )
+          expect(response.body).to have_css "a",
+                                            text: "Home Upgrade Grant"
+        end
+
+        it "doesn't show the home upgrade section for properties with gas boilers" do
+          FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
+            assessment_id: "1234-5678-1234-5678-1234",
+            main_heating_source: "boiler with radiators or underfloor heating",
+          )
+
+          expect(response.body).not_to have_css "p",
+                                                text: "Free energy saving improvements"
+          expect(response.body).not_to have_css "a",
+                                                text: "Home Upgrade Grant"
+        end
+      end
+
+      context "when the insulation scheme is relevant" do
+        it "shows the insulation scheme link" do
+          FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
+            assessment_id: "1234-5678-1234-5678-1234",
+            current_band: "e",
+          )
+          expect(response.body).to have_css "a",
+                                            text: "Great British Insulation Scheme"
+        end
+
+        it "doesn't show the insulation scheme link" do
+          FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
+            assessment_id: "1234-5678-1234-5678-1234",
+            current_band: "b",
+          )
+
+          expect(response.body).not_to have_css "a",
+                                                text: "Great British Insulation Scheme"
+        end
+      end
+
+      context "when the BUS scheme is relevant" do
+        it "shows the BUS scheme link" do
+          FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
+            assessment_id: "1234-5678-1234-5678-1234",
+            main_heating_source: "boiler with radiators or underfloor heating",
+          )
+          expect(response.body).to have_css "a",
+                                            text: "Boiler Upgrade Scheme"
+        end
+
+        it "doesn't show the BUS scheme link" do
+          FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
+            assessment_id: "1234-5678-1234-5678-1234",
+            main_heating_source: "heat pump",
+          )
+
+          expect(response.body).not_to have_css "a",
+                                                text: "Boiler Upgrade Scheme"
+        end
+      end
+
+      context "when the Energy Company Obligation link is relevant" do
+        it "shows the insulation scheme link" do
+          FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
+            assessment_id: "1234-5678-1234-5678-1234",
+            current_band: "e",
+          )
+          expect(response.body).to have_css "a",
+                                            text: "Energy Company Obligation"
+        end
+
+        it "doesn't show the insulation scheme link" do
+          FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
+            assessment_id: "1234-5678-1234-5678-1234",
+            current_band: "b",
+          )
+
+          expect(response.body).not_to have_css "a",
+                                                text: "Energy Company Obligation"
+        end
       end
     end
 
