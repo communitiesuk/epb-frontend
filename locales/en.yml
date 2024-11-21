@@ -1071,6 +1071,12 @@ en:
           eco_link_text: "Energy Company Obligation"
           eco_url: "https://www.gov.uk/energy-company-obligation"
           eco_print_link_text: "Energy Company Obligation (www.gov.uk/energy-company-obligation)"
+          nest_text: "Speak to an advisor from Nest"
+          nest_url: "https://www.gov.wales/get-help-energy-efficiency-your-home-nest"
+          nest_print_url: " (www.gov.wales/get-help-energy-efficiency-your-home-nest)"
+          nest_border_text: "If you live in Wales, "
+          nest_border_url_text: "speak to an advisor from Nest"
+          nest_border_print_text: "speak to an advisor from Nest (www.gov.wales/get-help-energy-efficiency-your-home-nest)"
       information:
         title: "Who to contact about this certificate"
         assessor:

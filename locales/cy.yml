@@ -1070,6 +1070,12 @@ cy:
           eco_link_text: "Rhwymedigaeth Cwmnïau Ynni"
           eco_url: "https://www.gov.uk/energy-company-obligation"
           eco_print_link_text: "Rhwymedigaeth Cwmnïau Ynni (www.gov.uk/energy-company-obligation)"
+          nest_text: "Siarad ag un o gynghorwyr Nyth"
+          nest_url: "https://www.gov.wales/get-help-energy-efficiency-your-home-nest"
+          nest_print_url: " (www.gov.wales/get-help-energy-efficiency-your-home-nest)"
+          nest_border_text: "Os ydych chi’n byw yng Nghymru, "
+          nest_border_url_text: "siarad ag un o gynghorwyr Nyth"
+          nest_border_print_text: "siarad ag un o gynghorwyr Nyth (www.gov.wales/get-help-energy-efficiency-your-home-nest)"
       information:
         title: "Pwy dylech chi gysylltu â nhw ynglŷn â’r dystysgrif hon"
         assessor:

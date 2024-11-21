@@ -600,6 +600,28 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
                                                 text: "Energy Company Obligation"
         end
       end
+
+      context "when the certificate is for an address in Wales" do
+        it "shows the nest link" do
+          FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
+            assessment_id: "1234-5678-1234-5678-1234",
+            country_id: 2,
+          )
+          expect(response.body).to have_css "a",
+                                            text: "Speak to an advisor from Nest"
+        end
+      end
+
+      context "when the certificate is for an address in Wales boarders" do
+        it "shows the nest link" do
+          FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
+            assessment_id: "1234-5678-1234-5678-1234",
+            country_id: 4,
+          )
+          expect(response.body).to have_css "p",
+                                            text: "If you live in Wales,"
+        end
+      end
     end
 
     context "when viewing environmental impact section" do
