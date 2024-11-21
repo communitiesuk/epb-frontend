@@ -1,0 +1,64 @@
+<div class="govuk-body epc-blue-bottom allow-break printable-area">
+  <% unless assessment[:countryId] == 3 %>
+    <h3 class="govuk-heading-m"><%= t('domestic_epc.sections.effect_on_bills.more_ways_to_save.heading') %></h3>
+    <% if print_view %>
+      <p class="govuk-body"><%= t('domestic_epc.sections.effect_on_bills.more_ways_to_save.cta_print') %> <a class="govuk-link" href=" <%= t('domestic_epc.sections.effect_on_bills.more_ways_to_save.url') %>"><%= t('domestic_epc.sections.effect_on_bills.more_ways_to_save.url_print') %></a></p>
+    <% else %>
+      <p class="govuk-body"><a class="govuk-link" href=" <%= t('domestic_epc.sections.effect_on_bills.more_ways_to_save.url') %>"><%= t('domestic_epc.sections.effect_on_bills.more_ways_to_save.cta') %></a></p>
+    <% end %>
+
+    <% unless (hide_home_upgrade == true) && (hide_if_rating_higher_than_d == true) && (hide_bus == true) %>
+      <h3 class="govuk-heading-m"><%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.title') %></h3>
+      <p class="govuk-body">
+        <%== t('domestic_epc.sections.recommendations.paying_for_energy_improvements.help_text') %>
+      </p>
+    <% end %>
+    <ul class="govuk-list govuk-list--bullet">
+      <% unless hide_home_upgrade %>
+        <% if print_view %>
+          <li>
+            <%== t('domestic_epc.sections.recommendations.paying_for_energy_improvements.hug_text') %><a class="govuk-link" href=" <%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.hug_url') %>"><%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.hug_print_link_text') %></a>
+          </li>
+        <% else %>
+          <li>
+            <%== t('domestic_epc.sections.recommendations.paying_for_energy_improvements.hug_text') %><a class="govuk-link" href=" <%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.hug_url') %>"><%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.hug_link_text') %></a>
+          </li>
+        <% end %>
+      <% end %>
+
+      <% unless hide_if_rating_higher_than_d %>
+        <% if print_view %>
+          <li>
+            <%== t('domestic_epc.sections.recommendations.paying_for_energy_improvements.insulation_text') %><a class="govuk-link" href=" <%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.insulation_url') %>"><%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.insulation_print_link_text') %></a>
+          </li>
+        <% else %>
+          <li>
+            <%== t('domestic_epc.sections.recommendations.paying_for_energy_improvements.insulation_text') %><a class="govuk-link" href=" <%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.insulation_url') %>"><%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.insulation_link_text') %></a>
+          </li>
+        <% end %>
+      <% end %>
+      <% unless hide_bus %>
+        <% if print_view %>
+          <li>
+            <%== t('domestic_epc.sections.recommendations.paying_for_energy_improvements.bus_text') %><a class="govuk-link" href=" <%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.bus_url') %>"><%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.bus_print_link_text') %></a>
+          </li>
+        <% else %>
+          <li>
+            <%== t('domestic_epc.sections.recommendations.paying_for_energy_improvements.bus_text') %><a class="govuk-link" href=" <%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.bus_url') %>"><%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.bus_link_text') %></a>
+          </li>
+        <% end %>
+      <% end %>
+      <% unless hide_if_rating_higher_than_d %>
+        <% if print_view %>
+          <li>
+            <%== t('domestic_epc.sections.recommendations.paying_for_energy_improvements.eco_text') %><a class="govuk-link" href=" <%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.eco_url') %>"><%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.eco_print_link_text') %></a>
+          </li>
+        <% else %>
+          <li>
+            <%== t('domestic_epc.sections.recommendations.paying_for_energy_improvements.eco_text') %><a class="govuk-link" href=" <%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.eco_url') %>"><%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.eco_link_text') %></a>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
