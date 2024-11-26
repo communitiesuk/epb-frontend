@@ -80,10 +80,12 @@ describe Helper::Certificate do
 
                             { name: "roof", description: "(another dwelling above)", energyEfficiencyRating: 0 }],
           currentEnergyEfficiencyBand: "b",
+          countryId: 1,
         }
       end
 
       it "returns true" do
+        pp assessment
         expect(helper.hide_home_upgrade?(assessment)).to be true
       end
     end
@@ -99,11 +101,32 @@ describe Helper::Certificate do
 
                             { name: "roof", description: "(another dwelling above)", energyEfficiencyRating: 0 }],
           currentEnergyEfficiencyBand: "d",
+          countryId: 1,
         }
       end
 
       it "returns false" do
         expect(helper.hide_home_upgrade?(assessment)).to be false
+      end
+    end
+
+    context "when boiler is not present and rating is lower than or equal to d but it is in wales" do
+      let(:assessment) do
+        {
+          propertySummary: [{ name: "wall", description: "Many walls", energyEfficiencyRating: 2 },
+
+                            { name: "secondary_heating", description: "Heating the house", energyEfficiencyRating: 5 },
+
+                            { name: "main_heating", description: "Room heaters, electric", energyEfficiencyRating: 3 },
+
+                            { name: "roof", description: "(another dwelling above)", energyEfficiencyRating: 0 }],
+          currentEnergyEfficiencyBand: "d",
+          countryId: 2,
+        }
+      end
+
+      it "returns true" do
+        expect(helper.hide_home_upgrade?(assessment)).to be true
       end
     end
 
@@ -118,6 +141,7 @@ describe Helper::Certificate do
 
                             { name: "roof", description: "(another dwelling above)", energyEfficiencyRating: 0 }],
           currentEnergyEfficiencyBand: "b",
+          countryId: 1,
         }
       end
 
@@ -137,6 +161,7 @@ describe Helper::Certificate do
 
                             { name: "roof", description: "(another dwelling above)", energyEfficiencyRating: 0 }],
           currentEnergyEfficiencyBand: "e",
+          countryId: 1,
         }
       end
 
@@ -156,6 +181,7 @@ describe Helper::Certificate do
 
                             { name: "roof", description: "(another dwelling above)", energyEfficiencyRating: 0 }],
           currentEnergyEfficiencyBand: "e",
+          countryId: 1,
         }
       end
 
@@ -172,6 +198,8 @@ describe Helper::Certificate do
                             { name: "secondary_heating", description: "Heating the house", energyEfficiencyRating: 5 },
 
                             { name: "roof", description: "(another dwelling above)", energyEfficiencyRating: 0 }],
+          countryId: 1,
+          currentEnergyEfficiencyBand: "e",
         }
       end
 
@@ -188,6 +216,8 @@ describe Helper::Certificate do
                  { name: "secondary_heating", description: "Heating the house", energyEfficiencyRating: 5 },
 
                  { name: "roof", description: "(another dwelling above)", energyEfficiencyRating: 0 }],
+          countryId: 1,
+          currentEnergyEfficiencyBand: "e",
         }
       end
 
@@ -315,6 +345,48 @@ describe Helper::Certificate do
 
       it "returns true" do
         expect(helper.hide_bus?(assessment)).to be true
+      end
+    end
+  end
+
+  describe "#hide_nest_upgrade" do
+    context "when rating is higher than or equal to d" do
+      let(:assessment) do
+        {
+          currentEnergyEfficiencyBand: "b",
+          countryId: 2,
+        }
+      end
+
+      it "returns true" do
+        expect(helper.hide_nest_upgrade?(assessment)).to be true
+      end
+    end
+
+    context "when rating is lower than or equal to d but not in Wales" do
+      let(:assessment) do
+        {
+          currentEnergyEfficiencyBand: "e",
+          countryId: 1,
+        }
+      end
+
+      it "returns true" do
+
+        expect(helper.hide_nest_upgrade?(assessment)).to be true
+      end
+    end
+
+    context "when rating is lower than or equal to d and is in Wales" do
+      let(:assessment) do
+        {
+          currentEnergyEfficiencyBand: "e",
+          countryId: 2,
+        }
+      end
+
+      it "returns false" do
+        expect(helper.hide_nest_upgrade?(assessment)).to be false
       end
     end
   end

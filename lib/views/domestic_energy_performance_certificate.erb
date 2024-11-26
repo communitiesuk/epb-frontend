@@ -23,6 +23,7 @@
     hide_home_upgrade = Helper::Certificate.hide_home_upgrade?(assessment)
     hide_if_rating_higher_than_d = Helper::Certificate.hide_if_rating_higher_than_d?(assessment)
     hide_bus = Helper::Certificate.hide_bus?(assessment)
+    hide_nest_upgrade = Helper::Certificate.hide_nest_upgrade?(assessment)
   %>
 
   <div class="govuk-grid-column-one-third govuk-!-display-none-print">
@@ -275,6 +276,7 @@
       hide_home_upgrade: hide_home_upgrade,
       hide_if_rating_higher_than_d: hide_if_rating_higher_than_d,
       hide_bus: hide_bus,
+      hide_nest_upgrade: hide_nest_upgrade,
     } %>
 
     <%== erb :domestic_energy_performance_certificate__assessor_information, locals: { assessment: assessment , print_view: print_view} %>
