@@ -14,11 +14,11 @@
         <p class="govuk-body">
           <a class="govuk-link" href=" <%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.nest_url') %>"><%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.nest_text') %><%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.nest_print_url') %></a>
         </p>
-        <% else %>
+      <% end %>
+      <% if assessment[:countryId] == 4 %>
         <p class="govuk-body">
           <%== t('domestic_epc.sections.recommendations.paying_for_energy_improvements.nest_border_text') %><a class="govuk-link" href=" <%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.nest_url') %>"><%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.nest_border_print_text') %></a>
         </p>
-
       <% end %>
     <% end %>
 
@@ -27,7 +27,8 @@
       <p class="govuk-body">
         <a class="govuk-link" href=" <%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.nest_url') %>"><%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.nest_text') %></a>
       </p>
-    <% else %>
+    <% end %>
+    <% if assessment[:countryId] == 4 %>
       <p class="govuk-body">
         <%== t('domestic_epc.sections.recommendations.paying_for_energy_improvements.nest_border_text') %><a class="govuk-link" href=" <%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.nest_url') %>"><%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.nest_border_url_text') %></a>
       </p>
