@@ -22,31 +22,30 @@ module Helper
     end
 
     def self.hide_home_upgrade?(assessment)
-
       main_heating_hash = (assessment[:propertySummary]&.select { |item| item[:name] == "main_heating" })&.first
       energy_band = assessment[:currentEnergyEfficiencyBand]
       country_id = assessment[:countryId]
       check_array = []
 
-      unless main_heating_hash.nil?
+      if main_heating_hash.nil?
+        return false
+      else
         check_array << main_heating_hash[:description]&.downcase&.include?("boiler")
-      else
-        return false
       end
 
-      unless energy_band.nil?
-        check_array <<  %w[a b c].any? { |rating| energy_band&.include? rating }
-      else
+      if energy_band.nil?
         return false
+      else
+        check_array << %w[a b c].any? { |rating| energy_band&.include? rating }
       end
 
-      unless country_id.nil?
-        check_array << (country_id == 2 ? true : false)
-      else
+      if country_id.nil?
         return false
+      else
+        check_array << (country_id == 2)
       end
 
-      return (check_array.include?(true) ? true : false)
+      (check_array.include?(true) ? true : false)
     end
 
     def self.hide_if_rating_higher_than_d?(assessment)
@@ -67,7 +66,7 @@ module Helper
       wrong_rating = %w[a b c].any? { |rating| assessment[:currentEnergyEfficiencyBand]&.include? rating }
       not_in_wales = (assessment[:countryId] == 1)
 
-      return (wrong_rating == true) || (not_in_wales == true) ? true : false
+      (wrong_rating == true) || (not_in_wales == true) ? true : false
     end
   end
 end

@@ -372,7 +372,6 @@ describe Helper::Certificate do
       end
 
       it "returns true" do
-
         expect(helper.hide_nest_upgrade?(assessment)).to be true
       end
     end

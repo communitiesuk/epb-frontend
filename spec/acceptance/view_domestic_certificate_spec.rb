@@ -545,12 +545,12 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
             main_heating_source: " radiators or underfloor heating",
             current_band: "d",
             country_id: 4,
-            )
+          )
 
           expect(response.body).to have_css "li",
-                                                text: "Free energy saving improvements if you live in England:"
+                                            text: "Free energy saving improvements if you live in England:"
           expect(response.body).to have_css "a",
-                                                text: "Home Upgrade Grant"
+                                            text: "Home Upgrade Grant"
         end
       end
 
@@ -626,9 +626,19 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
           expect(response.body).to have_css "a",
                                             text: "Speak to an advisor from Nest"
         end
+
+        it "shows the nest improvements link" do
+          FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
+            assessment_id: "1234-5678-1234-5678-1234",
+            country_id: 2,
+            current_band: "d",
+          )
+          expect(response.body).to have_css "li",
+                                            text: "Free energy saving improvements: "
+        end
       end
 
-      context "when the certificate is for an address in Wales boarders" do
+      context "when the certificate is for an address in Welsh boarders" do
         it "shows the nest link" do
           FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
             assessment_id: "1234-5678-1234-5678-1234",
@@ -637,30 +647,16 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
           expect(response.body).to have_css "p",
                                             text: "If you live in Wales,"
         end
-      end
 
-      context "when the certificate is for an address in Wales boarders" do
         it "shows the nest improvements link" do
           FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
             assessment_id: "1234-5678-1234-5678-1234",
             country_id: 4,
             current_band: "d",
-            )
+          )
 
           expect(response.body).to have_css "li",
                                             text: "Free energy saving improvements if you live in Wales:"
-        end
-      end
-
-      context "when the certificate is for an address in Wales" do
-        it "shows the nest improvements link" do
-          FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
-            assessment_id: "1234-5678-1234-5678-1234",
-            country_id: 2,
-            current_band: "d",
-            )
-          expect(response.body).to have_css "li",
-                                            text: "Free energy saving improvements: "
         end
       end
     end
