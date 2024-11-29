@@ -1058,7 +1058,7 @@ cy:
           hug_link_text: "Grant Uwchraddio Cartrefi"
           hug_url: "https://www.gov.uk/apply-home-upgrade-grant"
           hug_print_link_text: "Grant Uwchraddio Cartrefi (www.gov.uk/apply-home-upgrade-grant)"
-          hug_boarder_text: "Gwelliannau arbed ynni am ddim os ydych chi’n byw yn Lloegr: "
+          hug_border_text: "Gwelliannau arbed ynni am ddim os ydych chi’n byw yn Lloegr: "
           insulation_text: "Inswleiddio:"
           insulation_link_text: "Cynllun Inswleiddio Mawr Prydain"
           insulation_url: "https://www.gov.uk/apply-great-british-insulation-scheme"
@@ -1080,7 +1080,7 @@ cy:
           nest_upgrade_text: "Gwelliannau arbed ynni am ddim: "
           nest_upgrade_url: "https://www.gov.wales/get-free-home-energy-efficiency-improvements-nest"
           nest_upgrade_print_link_text: "Nyth (www.gov.wales/get-free-home-energy-efficiency-improvements-nest)"
-          nest_upgrade_boarder_text: "Gwelliannau arbed ynni am ddim os ydych chi’n byw yng Nghymru: "
+          nest_upgrade_border_text: "Gwelliannau arbed ynni am ddim os ydych chi’n byw yng Nghymru: "
           nest_upgrade_link_text: "Nyth"
       information:
         title: "Pwy dylech chi gysylltu â nhw ynglŷn â’r dystysgrif hon"

@@ -1059,7 +1059,7 @@ en:
           hug_link_text: "Home Upgrade Grant"
           hug_url: "https://www.gov.uk/apply-home-upgrade-grant"
           hug_print_link_text: "Home Upgrade Grant (www.gov.uk/apply-home-upgrade-grant)"
-          hug_boarder_text: "Free energy saving improvements if you live in England: "
+          hug_border_text: "Free energy saving improvements if you live in England: "
           insulation_text: "Insulation: "
           insulation_link_text: "Great British Insulation Scheme"
           insulation_url: "https://www.gov.uk/apply-great-british-insulation-scheme"
@@ -1081,7 +1081,7 @@ en:
           nest_upgrade_text: "Free energy saving improvements: "
           nest_upgrade_url: "https://www.gov.wales/get-free-home-energy-efficiency-improvements-nest"
           nest_upgrade_print_link_text: "Nest (www.gov.wales/get-free-home-energy-efficiency-improvements-nest)"
-          nest_upgrade_boarder_text: "Free energy saving improvements if you live in Wales: "
+          nest_upgrade_border_text: "Free energy saving improvements if you live in Wales: "
           nest_upgrade_link_text: "Nest"
 
       information:
