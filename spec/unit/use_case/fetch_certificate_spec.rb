@@ -205,6 +205,7 @@ describe UseCase::FetchCertificate do
           gasSmartMeterPresent: nil,
           electricitySmartMeterPresent: nil,
           countryId: 1,
+          countryName: "England",
         },
       }
     end

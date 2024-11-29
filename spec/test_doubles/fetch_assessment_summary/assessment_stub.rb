@@ -1273,6 +1273,7 @@ module FetchAssessmentSummary
       gas_smart_meter_present: nil,
       electricity_smart_meter_present: nil,
       country_id: 1,
+      country_name: "England",
       main_heating_source: "Room heaters, electric"
     )
       FetchAssessmentSummary::AssessmentSummaryErrorStub.fetch(assessment_id)
@@ -1300,6 +1301,7 @@ module FetchAssessmentSummary
             "addressLine4": "",
             "town": "Post-Town1",
             "countryId": country_id,
+            "countryName": country_name,
             "address": {
               "postcode": "A0 0AA",
               "addressLine1": "1 Some Street",
@@ -1573,6 +1575,7 @@ module FetchAssessmentSummary
             addressLine4: "",
             town: "London",
             countryId: country_id,
+            countryName: country_name,
             "address": {
               postcode:,
               addressLine1: "Flat 33",
