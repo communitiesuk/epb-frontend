@@ -1272,7 +1272,6 @@ module FetchAssessmentSummary
       superseded_by: "9025-0000-0000-0000-0000",
       gas_smart_meter_present: nil,
       electricity_smart_meter_present: nil,
-      country_id: 1,
       country_name: "England",
       main_heating_source: "Room heaters, electric"
     )
@@ -1300,7 +1299,6 @@ module FetchAssessmentSummary
             "addressLine3": address_line3,
             "addressLine4": "",
             "town": "Post-Town1",
-            "countryId": country_id,
             "countryName": country_name,
             "address": {
               "postcode": "A0 0AA",
@@ -1574,7 +1572,6 @@ module FetchAssessmentSummary
             addressLine3: address_line3,
             addressLine4: "",
             town: "London",
-            countryId: country_id,
             countryName: country_name,
             "address": {
               postcode:,
