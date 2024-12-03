@@ -80,12 +80,11 @@ describe Helper::Certificate do
 
                             { name: "roof", description: "(another dwelling above)", energyEfficiencyRating: 0 }],
           currentEnergyEfficiencyBand: "b",
-          countryId: 1,
+          countryName: "England",
         }
       end
 
       it "returns true" do
-        pp assessment
         expect(helper.hide_home_upgrade?(assessment)).to be true
       end
     end
@@ -101,7 +100,7 @@ describe Helper::Certificate do
 
                             { name: "roof", description: "(another dwelling above)", energyEfficiencyRating: 0 }],
           currentEnergyEfficiencyBand: "d",
-          countryId: 1,
+          countryName: "England",
         }
       end
 
@@ -121,7 +120,7 @@ describe Helper::Certificate do
 
                             { name: "roof", description: "(another dwelling above)", energyEfficiencyRating: 0 }],
           currentEnergyEfficiencyBand: "d",
-          countryId: 2,
+          countryName: "Wales",
         }
       end
 
@@ -130,7 +129,7 @@ describe Helper::Certificate do
       end
     end
 
-    context "when boiler is not present or rating is higher than or equal to d" do
+    context "when boiler is not present and rating is lower than or equal to d but is on the Wales and England border" do
       let(:assessment) do
         {
           propertySummary: [{ name: "wall", description: "Many walls", energyEfficiencyRating: 2 },
@@ -140,8 +139,28 @@ describe Helper::Certificate do
                             { name: "main_heating", description: "Room heaters, electric", energyEfficiencyRating: 3 },
 
                             { name: "roof", description: "(another dwelling above)", energyEfficiencyRating: 0 }],
-          currentEnergyEfficiencyBand: "b",
-          countryId: 1,
+          currentEnergyEfficiencyBand: "d",
+          countryName: "England and Wales",
+        }
+      end
+
+      it "returns false" do
+        expect(helper.hide_home_upgrade?(assessment)).to be false
+      end
+    end
+
+    context "when boiler is not present or rating is higher than d" do
+      let(:assessment) do
+        {
+          propertySummary: [{ name: "wall", description: "Many walls", energyEfficiencyRating: 2 },
+
+                            { name: "secondary_heating", description: "Heating the house", energyEfficiencyRating: 5 },
+
+                            { name: "main_heating", description: "Room heaters, electric", energyEfficiencyRating: 3 },
+
+                            { name: "roof", description: "(another dwelling above)", energyEfficiencyRating: 0 }],
+          currentEnergyEfficiencyBand: "c",
+          countryName: "England",
         }
       end
 
@@ -161,7 +180,7 @@ describe Helper::Certificate do
 
                             { name: "roof", description: "(another dwelling above)", energyEfficiencyRating: 0 }],
           currentEnergyEfficiencyBand: "e",
-          countryId: 1,
+          countryName: "England",
         }
       end
 
@@ -170,7 +189,7 @@ describe Helper::Certificate do
       end
     end
 
-    context "when boiler is present and upper case" do
+    context "when boiler is present and the description is not all lower case" do
       let(:assessment) do
         {
           propertySummary: [{ name: "wall", description: "Many walls", energyEfficiencyRating: 2 },
@@ -181,7 +200,7 @@ describe Helper::Certificate do
 
                             { name: "roof", description: "(another dwelling above)", energyEfficiencyRating: 0 }],
           currentEnergyEfficiencyBand: "e",
-          countryId: 1,
+          countryName: "England",
         }
       end
 
@@ -198,7 +217,7 @@ describe Helper::Certificate do
                             { name: "secondary_heating", description: "Heating the house", energyEfficiencyRating: 5 },
 
                             { name: "roof", description: "(another dwelling above)", energyEfficiencyRating: 0 }],
-          countryId: 1,
+          countryName: "England",
           currentEnergyEfficiencyBand: "e",
         }
       end
@@ -216,7 +235,7 @@ describe Helper::Certificate do
                  { name: "secondary_heating", description: "Heating the house", energyEfficiencyRating: 5 },
 
                  { name: "roof", description: "(another dwelling above)", energyEfficiencyRating: 0 }],
-          countryId: 1,
+          countryName: "England",
           currentEnergyEfficiencyBand: "e",
         }
       end
@@ -350,11 +369,11 @@ describe Helper::Certificate do
   end
 
   describe "#hide_nest_upgrade" do
-    context "when rating is higher than or equal to d" do
+    context "when rating is higher than d" do
       let(:assessment) do
         {
           currentEnergyEfficiencyBand: "b",
-          countryId: 2,
+          countryName: "Wales",
         }
       end
 
@@ -367,7 +386,7 @@ describe Helper::Certificate do
       let(:assessment) do
         {
           currentEnergyEfficiencyBand: "e",
-          countryId: 1,
+          countryName: "England",
         }
       end
 
@@ -380,7 +399,20 @@ describe Helper::Certificate do
       let(:assessment) do
         {
           currentEnergyEfficiencyBand: "e",
-          countryId: 2,
+          countryName: "Wales",
+        }
+      end
+
+      it "returns false" do
+        expect(helper.hide_nest_upgrade?(assessment)).to be false
+      end
+    end
+
+    context "when rating is lower than or equal to d and is on the border of England and Wales" do
+      let(:assessment) do
+        {
+          currentEnergyEfficiencyBand: "e",
+          countryName: "England and Wales",
         }
       end
 

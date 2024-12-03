@@ -484,10 +484,10 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
     end
 
     describe "when viewing get help paying for improvements section" do
-      it "doesn't show the section for NI" do
+      it "doesn't show the section for assessments not in England or Wales" do
         FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
           assessment_id: "1234-5678-1234-5678-1234",
-          country_id: 3,
+          country_name: "Scotland",
         )
 
         expect(response.body).not_to have_css "h3",
@@ -509,7 +509,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
             assessment_id: "1234-5678-1234-5678-1234",
             main_heating_source: "heat pump",
             current_band: "b",
-            country_id: 3,
+            country_name: "England",
           )
           expect(response.body).not_to have_css "h3",
                                                 text: "Help paying for energy saving improvements"
@@ -517,40 +517,76 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       end
 
       context "when the home upgrade link is relevant" do
-        it "shows the home upgrade link" do
-          FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
-            assessment_id: "1234-5678-1234-5678-1234",
-            current_band: "d",
-          )
-          expect(response.body).to have_css "a",
-                                            text: "Home Upgrade Grant"
-        end
+        context "when the property does not have a gas boiler" do
+          it "shows the home upgrade link for properties in England" do
+            FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
+              assessment_id: "1234-5678-1234-5678-1234",
+              current_band: "d",
+              country_name: "England",
+            )
+            expect(response.body).to have_css "a",
+                                              text: "Home Upgrade Grant"
+          end
 
+          it "shows the home upgrade section for properties on the border" do
+            FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
+              assessment_id: "1234-5678-1234-5678-1234",
+              current_band: "d",
+              country_name: "England and Wales",
+            )
+
+            expect(response.body).to have_css "li",
+                                              text: "Free energy saving improvements if you live in England:"
+            expect(response.body).to have_css "a",
+                                              text: "Home Upgrade Grant"
+          end
+        end
+      end
+
+      context "when the home upgrade link is not relevant" do
         it "doesn't show the home upgrade section for properties with gas boilers" do
           FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
             assessment_id: "1234-5678-1234-5678-1234",
             main_heating_source: "boiler with radiators or underfloor heating",
             current_band: "d",
+            country_name: "England",
           )
 
-          expect(response.body).not_to have_css "li",
-                                                text: "Free energy saving improvements"
           expect(response.body).not_to have_css "a",
                                                 text: "Home Upgrade Grant"
         end
 
-        it "shows the home upgrade section for properties with gas boilers" do
+        it "doesn't show the home upgrade section for properties with an A-C rating" do
           FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
             assessment_id: "1234-5678-1234-5678-1234",
-            main_heating_source: " radiators or underfloor heating",
-            current_band: "d",
-            country_id: 4,
+            current_band: "a",
+            country_name: "England",
           )
 
-          expect(response.body).to have_css "li",
-                                            text: "Free energy saving improvements if you live in England:"
-          expect(response.body).to have_css "a",
-                                            text: "Home Upgrade Grant"
+          expect(response.body).not_to have_css "a",
+                                                text: "Home Upgrade Grant"
+        end
+
+        it "doesn't show the home upgrade section for properties in Wales" do
+          FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
+            assessment_id: "1234-5678-1234-5678-1234",
+            current_band: "d",
+            country_name: "Wales",
+          )
+
+          expect(response.body).not_to have_css "a",
+                                                text: "Home Upgrade Grant"
+        end
+
+        it "doesn't show the home upgrade section for properties in Northern Ireland" do
+          FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
+            assessment_id: "1234-5678-1234-5678-1234",
+            current_band: "d",
+            country_name: "Northern Ireland",
+          )
+
+          expect(response.body).not_to have_css "a",
+                                                text: "Home Upgrade Grant"
         end
       end
 
@@ -621,7 +657,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
         it "shows the nest link" do
           FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
             assessment_id: "1234-5678-1234-5678-1234",
-            country_id: 2,
+            country_name: "Wales",
           )
           expect(response.body).to have_css "a",
                                             text: "Speak to an advisor from Nest"
@@ -630,33 +666,39 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
         it "shows the nest improvements link" do
           FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
             assessment_id: "1234-5678-1234-5678-1234",
-            country_id: 2,
+            country_name: "Wales",
             current_band: "d",
           )
           expect(response.body).to have_css "li",
                                             text: "Free energy saving improvements: "
+          expect(response.body).to have_css "a",
+                                            text: "Nest"
         end
       end
 
-      context "when the certificate is for an address in Welsh boarders" do
+      context "when the certificate is for an address on the England and Wales border" do
         it "shows the nest link" do
           FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
             assessment_id: "1234-5678-1234-5678-1234",
-            country_id: 4,
+            country_name: "England and Wales",
           )
           expect(response.body).to have_css "p",
                                             text: "If you live in Wales,"
+          expect(response.body).to have_css "a",
+                                            text: "speak to an advisor from Nest"
         end
 
         it "shows the nest improvements link" do
           FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
             assessment_id: "1234-5678-1234-5678-1234",
-            country_id: 4,
+            country_name: "England and Wales",
             current_band: "d",
           )
 
           expect(response.body).to have_css "li",
                                             text: "Free energy saving improvements if you live in Wales:"
+          expect(response.body).to have_css "a",
+                                            text: "Nest"
         end
       end
     end

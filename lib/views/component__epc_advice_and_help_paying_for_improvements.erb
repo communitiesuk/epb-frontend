@@ -1,5 +1,5 @@
 <div class="govuk-body epc-blue-bottom allow-break printable-area">
-  <% unless assessment[:countryId] == 3 %>
+  <% if assessment[:countryName] == "Wales" or assessment[:countryName] == "England and Wales" or assessment[:countryName] == "England" %>
 
 
     <h3 class="govuk-heading-m"><%= t('domestic_epc.sections.effect_on_bills.more_ways_to_save.heading') %></h3>
@@ -9,31 +9,29 @@
       <p class="govuk-body"><a class="govuk-link" href=" <%= t('domestic_epc.sections.effect_on_bills.more_ways_to_save.url') %>"><%= t('domestic_epc.sections.effect_on_bills.more_ways_to_save.cta') %></a></p>
     <% end %>
 
-    <% if print_view  %>
-      <% if assessment[:countryId] == 2 %>
+    <% if assessment[:countryName] == "Wales" %>
+      <% if print_view  %>
         <p class="govuk-body">
           <a class="govuk-link" href=" <%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.nest_url') %>"><%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.nest_text') %><%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.nest_print_url') %></a>
         </p>
-      <% end %>
-      <% if assessment[:countryId] == 4 %>
+      <% else %>
         <p class="govuk-body">
-          <%== t('domestic_epc.sections.recommendations.paying_for_energy_improvements.nest_border_text') %><a class="govuk-link" href=" <%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.nest_url') %>"><%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.nest_border_print_text') %></a>
+          <a class="govuk-link" href=" <%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.nest_url') %>"><%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.nest_text') %></a>
         </p>
       <% end %>
     <% end %>
 
-
-    <% if assessment[:countryId] == 2 %>
-      <p class="govuk-body">
-        <a class="govuk-link" href=" <%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.nest_url') %>"><%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.nest_text') %></a>
-      </p>
+    <% if assessment[:countryName] == "England and Wales" %>
+      <% if print_view  %>
+        <p class="govuk-body">
+          <a class="govuk-link" href=" <%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.nest_url') %>"><%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.nest_text') %><%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.nest_print_url') %></a>
+        </p>
+      <% else %>
+        <p class="govuk-body">
+          <%== t('domestic_epc.sections.recommendations.paying_for_energy_improvements.nest_border_text') %><a class="govuk-link" href=" <%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.nest_url') %>"><%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.nest_border_url_text') %></a>
+        </p>
+      <% end %>
     <% end %>
-    <% if assessment[:countryId] == 4 %>
-      <p class="govuk-body">
-        <%== t('domestic_epc.sections.recommendations.paying_for_energy_improvements.nest_border_text') %><a class="govuk-link" href=" <%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.nest_url') %>"><%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.nest_border_url_text') %></a>
-      </p>
-    <% end %>
-
 
     <% unless (hide_home_upgrade == true) && (hide_if_rating_higher_than_d == true) && (hide_bus == true) %>
       <h3 class="govuk-heading-m"><%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.title') %></h3>
@@ -45,7 +43,7 @@
     <ul class="govuk-list govuk-list--bullet">
       <% unless hide_home_upgrade %>
 
-        <% if assessment[:countryId] == 4 %>
+        <% if assessment[:countryName] == "England and Wales" %>
           <% if print_view %>
             <li>
               <%== t('domestic_epc.sections.recommendations.paying_for_energy_improvements.hug_border_text') %><a class="govuk-link" href=" <%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.hug_url') %>"><%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.hug_print_link_text') %></a>
@@ -55,43 +53,42 @@
               <%== t('domestic_epc.sections.recommendations.paying_for_energy_improvements.hug_border_text') %><a class="govuk-link" href=" <%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.hug_url') %>"><%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.hug_link_text') %></a>
             </li>
           <% end %>
-        <% end %>
-
-
-        <% if print_view %>
-          <li>
-            <%== t('domestic_epc.sections.recommendations.paying_for_energy_improvements.hug_text') %><a class="govuk-link" href=" <%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.hug_url') %>"><%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.hug_print_link_text') %></a>
-          </li>
-        <% else %>
-          <li>
-            <%== t('domestic_epc.sections.recommendations.paying_for_energy_improvements.hug_text') %><a class="govuk-link" href=" <%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.hug_url') %>"><%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.hug_link_text') %></a>
-          </li>
+        <% elsif assessment[:countryName] == "England" %>
+          <% if print_view %>
+            <li>
+              <%== t('domestic_epc.sections.recommendations.paying_for_energy_improvements.hug_text') %><a class="govuk-link" href=" <%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.hug_url') %>"><%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.hug_print_link_text') %></a>
+            </li>
+          <% else %>
+            <li>
+              <%== t('domestic_epc.sections.recommendations.paying_for_energy_improvements.hug_text') %><a class="govuk-link" href=" <%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.hug_url') %>"><%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.hug_link_text') %></a>
+            </li>
+          <% end %>
         <% end %>
       <% end %>
 
       <% unless hide_nest_upgrade %>
-        <% if print_view %>
-          <% if assessment[:countryId] == 2 %>
+        <% if assessment[:countryName] == "Wales" %>
+          <% if print_view %>
             <li>
               <%== t('domestic_epc.sections.recommendations.paying_for_energy_improvements.nest_upgrade_text') %><a class="govuk-link" href=" <%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.nest_upgrade_url') %>"><%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.nest_upgrade_print_link_text') %></a>
             </li>
-          <%  else %>
+          <% else %>
+            <li>
+              <%== t('domestic_epc.sections.recommendations.paying_for_energy_improvements.nest_upgrade_text') %><a class="govuk-link" href=" <%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.nest_upgrade_url') %>"><%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.nest_upgrade_link_text') %></a>
+            </li>
+          <% end %>
+        <% elsif assessment[:countryName] == "England and Wales" %>
+          <% if print_view %>
             <li>
               <%== t('domestic_epc.sections.recommendations.paying_for_energy_improvements.nest_upgrade_border_text') %><a class="govuk-link" href=" <%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.nest_upgrade_url') %>"><%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.nest_upgrade_print_link_text') %></a>
             </li>
+          <%  else %>
+            <li>
+              <%== t('domestic_epc.sections.recommendations.paying_for_energy_improvements.nest_upgrade_border_text') %><a class="govuk-link" href=" <%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.nest_upgrade_url') %>"><%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.nest_upgrade_link_text') %></a>
+            </li>
           <% end %>
         <% end %>
-        <% if assessment[:countryId] == 2 %>
-          <li>
-            <%== t('domestic_epc.sections.recommendations.paying_for_energy_improvements.nest_upgrade_text') %><a class="govuk-link" href=" <%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.nest_upgrade_url') %>"><%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.nest_upgrade_link_text') %></a>
-          </li>
-        <% else %>
-          <li>
-            <%== t('domestic_epc.sections.recommendations.paying_for_energy_improvements.nest_upgrade_border_text') %><a class="govuk-link" href=" <%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.nest_upgrade_url') %>"><%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.nest_upgrade_link_text') %></a>
-          </li>
-        <% end %>
       <% end %>
-
 
       <% unless hide_if_rating_higher_than_d %>
         <% if print_view %>

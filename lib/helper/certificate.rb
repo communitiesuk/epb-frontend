@@ -24,7 +24,7 @@ module Helper
     def self.hide_home_upgrade?(assessment)
       main_heating_hash = (assessment[:propertySummary]&.select { |item| item[:name] == "main_heating" })&.first
       energy_band = assessment[:currentEnergyEfficiencyBand]
-      country_id = assessment[:countryId]
+      country_name = assessment[:countryName]
       check_array = []
 
       if main_heating_hash.nil?
@@ -39,10 +39,11 @@ module Helper
         check_array << %w[a b c].any? { |rating| energy_band&.include? rating }
       end
 
-      if country_id.nil?
+      if country_name.nil?
         return false
       else
-        check_array << (country_id == 2)
+        not_in_england = !["England", "England and Wales"].include?(country_name)
+        check_array << not_in_england
       end
 
       (check_array.include?(true) ? true : false)
@@ -63,10 +64,11 @@ module Helper
     end
 
     def self.hide_nest_upgrade?(assessment)
+      country_name = assessment[:countryName]
       wrong_rating = %w[a b c].any? { |rating| assessment[:currentEnergyEfficiencyBand]&.include? rating }
-      not_in_wales = (assessment[:countryId] == 1)
+      in_wales = ["Wales", "England and Wales"].include?(country_name)
 
-      (wrong_rating == true) || (not_in_wales == true) ? true : false
+      (wrong_rating == true) || (in_wales == false) ? true : false
     end
   end
 end
