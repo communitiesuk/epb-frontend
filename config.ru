@@ -68,9 +68,7 @@ csp_options = {
   style_src: "'nonce-#{ENV['SCRIPT_NONCE']}' 'self'",
   img_src: "'self' data:",
   report_uri: Sentry.csp_report_uri,
-  report_ratio: 0.01,
-  frame_ancestors: 'none',
-  form_action: 'self'
+  report_ratio: 0.01
 }.delete_if { |_, value| value.nil? || value=='' }
 
 use Middleware::ContentSecurityPolicy, **Helper::GoogleCsp.add_options_for_google_analytics(csp_options)
