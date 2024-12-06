@@ -24,7 +24,7 @@
     <% if assessment[:countryName] == "England and Wales" %>
       <% if print_view  %>
         <p class="govuk-body">
-          <a class="govuk-link" href=" <%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.nest_url') %>"><%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.nest_text') %><%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.nest_print_url') %></a>
+          <%== t('domestic_epc.sections.recommendations.paying_for_energy_improvements.nest_border_text') %> <a href=" <%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.nest_url') %>" class="govuk-link"><%= t('domestic_epc.sections.recommendations.paying_for_energy_improvements.nest_border_print_text') %></a>
         </p>
       <% else %>
         <p class="govuk-body">
