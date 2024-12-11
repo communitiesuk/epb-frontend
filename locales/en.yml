@@ -1016,9 +1016,8 @@ en:
         more_ways_to_save:
           heading: "Advice on making energy saving improvements"
           cta: "Get detailed recommendations and cost estimates"
-          cta_print: "Get detailed recommendations and cost estimates: "
           url: "https://www.gov.uk/improve-energy-efficiency"
-          url_print: "www.gov.uk/improve-energy-efficiency"
+          url_print: " (www.gov.uk/improve-energy-efficiency)"
       environmental_impact:
         title: "Impact on the environment"
         eir_rating: "This property’s environmental impact rating is %{current_environmental_impact_rating}. It has the potential to be %{potential_environmental_impact_rating}."

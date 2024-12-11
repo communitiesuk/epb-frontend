@@ -1015,9 +1015,8 @@ cy:
         more_ways_to_save:
           heading: "Cyngor ar wneud gwelliannau arbed ynni"
           cta: "Argymhellion manwl ac amcangyfrifon o’r costau"
-          cta_print: "Argymhellion manwl ac amcangyfrifon o’r costau: "
           url: "https://www.gov.uk/improve-energy-efficiency"
-          url_print: "www.gov.uk/improve-energy-efficiency"
+          url_print: " (www.gov.uk/improve-energy-efficiency)"
       environmental_impact:
         title: "Effaith ar yr amgylchedd"
         eir_rating: "Cyfraddiad effaith amgylcheddol yr eiddo hwn yw %{current_environmental_impact_rating}. Mae gan yr eiddo y potensial i fod yn %{potential_environmental_impact_rating}."

@@ -4,7 +4,9 @@
 
     <h3 class="govuk-heading-m"><%= t('domestic_epc.sections.effect_on_bills.more_ways_to_save.heading') %></h3>
     <% if print_view %>
-      <p class="govuk-body"><%= t('domestic_epc.sections.effect_on_bills.more_ways_to_save.cta_print') %> <a class="govuk-link" href=" <%= t('domestic_epc.sections.effect_on_bills.more_ways_to_save.url') %>"><%= t('domestic_epc.sections.effect_on_bills.more_ways_to_save.url_print') %></a></p>
+      <p class="govuk-body">
+        <a class="govuk-link" href=" <%= t('domestic_epc.sections.effect_on_bills.more_ways_to_save.url') %>"><%= t('domestic_epc.sections.effect_on_bills.more_ways_to_save.cta') %><%= t('domestic_epc.sections.effect_on_bills.more_ways_to_save.url_print') %></a>
+      </p>
     <% else %>
       <p class="govuk-body"><a class="govuk-link" href=" <%= t('domestic_epc.sections.effect_on_bills.more_ways_to_save.url') %>"><%= t('domestic_epc.sections.effect_on_bills.more_ways_to_save.cta') %></a></p>
     <% end %>
