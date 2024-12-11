@@ -35,6 +35,7 @@ module Controller
       require "sinatra/reloader"
       register Sinatra::Reloader
       also_reload "lib/**/*.rb"
+      set :host_authorization, { permitted_hosts: [] }
     end
 
     before do
