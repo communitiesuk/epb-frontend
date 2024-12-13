@@ -245,9 +245,9 @@
       assessment: assessment }
     %>
 
-    <div id="recommendations" class="govuk-body printable-area epc-recommendations">
+    <div id="recommendations" class="govuk-body printable-area epc-recommendations epc-blue-bottom">
       <h2 class="govuk-heading-l"><%= t('domestic_epc.sections.recommendations.title') %></h2>
-      <div class="allow-break <%= assessment[:recommendedImprovements].empty? ? 'epc-blue-bottom' : ''%>">
+      <div class="allow-break">
         <% if assessment[:recommendedImprovements].empty? %>
           <p class="govuk-body "><%= t('domestic_epc.sections.recommendations.summary.no_recommendations_summary') %></p>
         <% else %>
@@ -262,22 +262,21 @@
           </details>
         <% end %>
       </div>
+      <% unless print_view %>
+        <%== erb :domestic_energy_performance_certificate__recommended_improvements, locals: { recommendations: assessment[:recommendedImprovements] } %>
+      <% else %>
+        <%== erb :domestic_energy_performance_certificate__recommended_improvements_tabulated, locals: { recommendations: assessment[:recommendedImprovements] } %>
+      <% end %>
+
+      <%== erb :component__epc_advice_and_help_paying_for_improvements, locals: {
+        assessment: assessment,
+        print_view: print_view,
+        hide_home_upgrade: hide_home_upgrade,
+        hide_if_rating_higher_than_d: hide_if_rating_higher_than_d,
+        hide_bus: hide_bus,
+        hide_nest_upgrade: hide_nest_upgrade,
+      } %>
     </div>
-
-    <% unless print_view %>
-    <%== erb :domestic_energy_performance_certificate__recommended_improvements, locals: { recommendations: assessment[:recommendedImprovements] } %>
-    <% else %>
-    <%== erb :domestic_energy_performance_certificate__recommended_improvements_tabulated, locals: { recommendations: assessment[:recommendedImprovements] } %>
-    <% end %>
-
-    <%== erb :component__epc_advice_and_help_paying_for_improvements, locals: {
-      assessment: assessment,
-      print_view: print_view,
-      hide_home_upgrade: hide_home_upgrade,
-      hide_if_rating_higher_than_d: hide_if_rating_higher_than_d,
-      hide_bus: hide_bus,
-      hide_nest_upgrade: hide_nest_upgrade,
-    } %>
 
     <%== erb :domestic_energy_performance_certificate__assessor_information, locals: { assessment: assessment , print_view: print_view} %>
 
