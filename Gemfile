@@ -21,7 +21,6 @@ group :test do
 end
 
 gem "csv", "~> 3.3"
-gem "dartsass-ruby", "~> 3.0"
 gem "epb-auth-tools", "~> 1.1.0"
 gem "erubis", "~> 2.7"
 gem "i18n", "~> 1.14.6"
@@ -32,6 +31,7 @@ gem "rackup", "~> 2.1"
 gem "rake", "~> 13.2.1"
 gem "rubocop-govuk", "~> 5.0"
 gem "rubocop-rspec", "~> 3.0"
+gem "sassc-embedded"
 gem "sentry-ruby", "~> 5.19"
 gem "sinatra", "~> 4.1"
 gem "sinatra-contrib"

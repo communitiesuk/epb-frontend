@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require "fileutils"
-require "sassc"
+require "sassc-embedded"
 
 def build_sass(source, destination)
   scss = File.read(source)

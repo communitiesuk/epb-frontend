@@ -37,8 +37,6 @@ GEM
       bigdecimal
       rexml
     csv (3.3.0)
-    dartsass-ruby (3.0.2)
-      sass-embedded (~> 1.54, < 1.67)
     diff-lcs (1.5.1)
     drb (2.2.1)
     epb-auth-tools (1.1.0)
@@ -51,7 +49,9 @@ GEM
       logger
     faraday-net_http (3.3.0)
       net-http
-    google-protobuf (3.25.5)
+    google-protobuf (4.29.3)
+      bigdecimal
+      rake (>= 13)
     hashdiff (1.1.1)
     hashie (5.0.0)
     i18n (1.14.6)
@@ -157,9 +157,11 @@ GEM
     ruby-progressbar (1.13.0)
     ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
-    sass-embedded (1.66.1)
-      google-protobuf (~> 3.23)
-      rake (>= 13.0.0)
+    sass-embedded (1.83.1)
+      google-protobuf (~> 4.29)
+      rake (>= 13)
+    sassc-embedded (1.80.1)
+      sass-embedded (~> 1.80)
     securerandom (0.3.1)
     selenium-webdriver (4.27.0)
       base64 (~> 0.2)
@@ -217,7 +219,6 @@ DEPENDENCIES
   capybara-selenium (~> 0.0.6)
   compare-xml (~> 0.66)
   csv (~> 3.3)
-  dartsass-ruby (~> 3.0)
   epb-auth-tools (~> 1.1.0)
   erubis (~> 2.7)
   i18n (~> 1.14.6)
@@ -230,6 +231,7 @@ DEPENDENCIES
   rspec (~> 3.13)
   rubocop-govuk (~> 5.0)
   rubocop-rspec (~> 3.0)
+  sassc-embedded
   selenium-webdriver (~> 4.27.0)
   sentry-ruby (~> 5.19)
   sinatra (~> 4.1)
