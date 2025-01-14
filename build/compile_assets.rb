@@ -5,7 +5,7 @@ require "sassc-embedded"
 
 def build_sass(source, destination)
   scss = File.read(source)
-  css = SassC::Engine.new(scss, style: :compressed, quiet_deps: true).render
+  css = SassC::Engine.new(scss, style: :compressed, quiet: true).render
 
   File.write(destination, css)
 end
