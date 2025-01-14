@@ -1,7 +1,7 @@
 $govuk-global-styles: true;
 $govuk-assets-path: '';
 
-@import "./node_modules/govuk-frontend/dist/govuk/all";
+@import "./node_modules/govuk-frontend/dist/govuk/index";
 @import "./assets/components/ac-certs";
 @import "./assets/components/ac-reports";
 @import "./assets/components/analytics";

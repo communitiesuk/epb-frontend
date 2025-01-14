@@ -3,7 +3,7 @@
 $govuk-global-styles: true;
 $govuk-assets-path: '';
 
-@import "./node_modules/govuk-frontend/dist/govuk/all";
+@import "./node_modules/govuk-frontend/dist/govuk/index";
 @import "./assets/components/_print";
 @import "./assets/components/epc-box";
 @import "./assets/components/eer-graph";
