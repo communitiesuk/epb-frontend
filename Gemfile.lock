@@ -16,7 +16,7 @@ GEM
       public_suffix (>= 2.0.2, < 7.0)
     ast (2.4.2)
     base64 (0.2.0)
-    bigdecimal (3.1.8)
+    bigdecimal (3.1.9)
     capybara (3.40.0)
       addressable
       matrix
@@ -168,7 +168,7 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
-    sentry-ruby (5.21.0)
+    sentry-ruby (5.22.1)
       bigdecimal
       concurrent-ruby (~> 1.0, >= 1.0.2)
     sinatra (4.1.1)
@@ -234,7 +234,7 @@ DEPENDENCIES
   rubocop-rspec (~> 3.3)
   sassc-embedded
   selenium-webdriver (~> 4.27.0)
-  sentry-ruby (~> 5.19)
+  sentry-ruby (~> 5.22)
   sinatra (~> 4.1)
   sinatra-contrib
   timecop (~> 0.9.10)
