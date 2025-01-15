@@ -194,7 +194,7 @@ GEM
     unicode-display_width (3.1.4)
       unicode-emoji (~> 4.0, >= 4.0.4)
     unicode-emoji (4.0.4)
-    unleash (5.0.7)
+    unleash (5.1.1)
       murmurhash3 (~> 0.1.7)
     uri (0.13.1)
     version_gem (1.1.4)
@@ -238,7 +238,7 @@ DEPENDENCIES
   sinatra (~> 4.1)
   sinatra-contrib
   timecop (~> 0.9.10)
-  unleash (~> 5.0.5)
+  unleash (~> 5.1.1)
   webdrivers (~> 5.2.0)
   webmock (~> 3.23)
   zeitwerk (~> 2.7.0)

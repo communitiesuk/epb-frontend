@@ -1137,7 +1137,6 @@ module FetchAssessmentSummary
       superseded_by: nil,
       energy_band_from_related_certificate: "a"
     )
-
       body = {
         data: {
           optOut: opt_out,
