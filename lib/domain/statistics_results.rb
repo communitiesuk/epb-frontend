@@ -22,7 +22,7 @@ module Domain
 
     def set_results
       @results.each do |country, v|
-        list = v.select { |i| i[:assessmentType] == "SAP" || i[:assessmentType] == "RdSAP" }
+        list = v.select { |i| %w[SAP RdSAP].include?(i[:assessmentType]) }
         list.each do |row|
           matching_value = match_with_warehouse(month: row[:month], country:, assessment_type: row[:assessmentType])
           update(list:, avg_co2: avg_co2(matched_date_and_country: matching_value), date: row[:month], assessment_type: row[:assessmentType])
