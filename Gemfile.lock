@@ -52,6 +52,7 @@ GEM
       logger
     faraday-net_http (3.3.0)
       net-http
+    ffi (1.16.3)
     google-protobuf (4.29.3)
       bigdecimal
       rake (>= 13)
@@ -71,7 +72,6 @@ GEM
     multi_json (1.15.0)
     multi_xml (0.7.1)
       bigdecimal (~> 3.1)
-    murmurhash3 (0.1.7)
     mustermann (3.0.3)
       ruby2_keywords (~> 0.0.1)
     net-http (0.4.1)
@@ -196,8 +196,8 @@ GEM
     unicode-display_width (3.1.4)
       unicode-emoji (~> 4.0, >= 4.0.4)
     unicode-emoji (4.0.4)
-    unleash (5.1.1)
-      murmurhash3 (~> 0.1.7)
+    unleash (6.1.2)
+      yggdrasil-engine (~> 1.0.1)
     uri (0.13.1)
     version_gem (1.1.4)
     webdrivers (5.2.0)
@@ -211,10 +211,12 @@ GEM
     websocket (1.2.11)
     xpath (3.2.0)
       nokogiri (~> 1.8)
+    yggdrasil-engine (1.0.3-x86_64-linux)
+      ffi (~> 1.16.3)
     zeitwerk (2.7.1)
 
 PLATFORMS
-  ruby
+  x86_64-linux
 
 DEPENDENCIES
   capybara (~> 3.40)
@@ -239,7 +241,7 @@ DEPENDENCIES
   sinatra (~> 4.1)
   sinatra-contrib
   timecop (~> 0.9.10)
-  unleash (~> 5.1.1)
+  unleash (~> 6.1.2)
   webdrivers (~> 5.2.0)
   webmock (~> 3.23)
   zeitwerk (~> 2.7.1)
