@@ -23,7 +23,7 @@ end
 gem "csv", "~> 3.3"
 gem "epb-auth-tools", "~> 1.1.0"
 gem "erubis", "~> 2.7"
-gem "i18n", "~> 1.14.6"
+gem "i18n", "~> 1.14.7"
 gem "puma", "~> 6.6"
 gem "rack", "~> 3.1.10"
 gem "rack-contrib", "~> 2.5.0"
