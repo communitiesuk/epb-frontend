@@ -21,7 +21,10 @@ describe "Integration::Rackup" do
       )
     process_id = process.pid
 
-    process.readline # wait for initial output from server; ensures it's started
+    # Wait until the Puma server has started up before commencing tests
+    loop do
+      break if process.readline.include?("Listening on http://127.0.0.1:9393")
+    end
   end
 
   after(:all) { Process.kill("KILL", process_id) if process_id }

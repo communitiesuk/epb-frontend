@@ -19,7 +19,10 @@ describe "Journey::NavigateToRelatedCertificate", :journey, type: :feature do
       )
     process_id = process.pid
 
-    nil unless process.readline.include?("port=9393")
+    # Wait until the Puma server has started up before commencing tests
+    loop do
+      break if process.readline.include?("Listening on http://127.0.0.1:9393")
+    end
   end
 
   after(:all) { Process.kill("KILL", process_id) if process_id }
