@@ -10,6 +10,7 @@ require "nokogiri"
 require "compare-xml"
 require "zeitwerk"
 require "capybara/rspec"
+require "capybara-lockstep"
 require "active_support"
 require "active_support/cache"
 require "active_support/notifications"
@@ -126,6 +127,7 @@ RSpec.configure do |config|
   )
 
   config.before { OauthStub.token }
+  config.after { Capybara.reset_sessions! }
 end
 
 RSpec::Matchers.define(:redirect_to) do |path|
@@ -155,6 +157,22 @@ RSpec::Matchers.define :match_html do |expected_html, **options|
   end
 end
 
-Capybara.default_driver = :selenium_chrome_headless
+Capybara.register_driver :selenium_chrome_headless do |app|
+  version = Capybara::Selenium::Driver.load_selenium
+  options_key = Capybara::Selenium::Driver::CAPS_VERSION.satisfied_by?(version) ? :capabilities : :options
+  browser_options = Selenium::WebDriver::Chrome::Options.new.tap do |opts|
+    opts.add_argument("--headless")
+    opts.add_argument("--no-sandbox")
+    opts.add_argument("--disable-gpu")
+    opts.add_argument("--disable-infobars")
+    # opts.add_argument('--window-size=1280,1024')
+    opts.add_argument("--disable-backgrounding-occluded-windows")
+  end
+
+  Capybara::Selenium::Driver.new(app, **{:browser => :chrome, options_key => browser_options})
+end
+
 Capybara.javascript_driver = :selenium_chrome_headless
+Capybara.default_driver = :selenium_chrome_headless
+# Capybara.javascript_driver = :selenium_chrome_headless
 Capybara.app_host = "http://localhost:9393"

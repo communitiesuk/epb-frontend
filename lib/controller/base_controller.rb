@@ -3,6 +3,7 @@ require "i18n"
 require "i18n/backend/fallbacks"
 require "sinatra/base"
 require "sinatra/cookies"
+require "capybara-lockstep"
 require_relative "../container"
 require_relative "../helper/toggles"
 
@@ -10,7 +11,7 @@ module Controller
   class BaseController < Sinatra::Base
     helpers Helpers
     attr_reader :toggles
-
+    include Capybara::Lockstep::Helper
     set :views, "lib/views"
     set :erb, escape_html: true
     set :public_folder, proc { File.join(root, "/../../public") }
