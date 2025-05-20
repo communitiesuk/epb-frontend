@@ -10,6 +10,7 @@ require "nokogiri"
 require "compare-xml"
 require "zeitwerk"
 require "capybara/rspec"
+require "capybara-lockstep"
 require "active_support"
 require "active_support/cache"
 require "active_support/notifications"
@@ -126,6 +127,7 @@ RSpec.configure do |config|
   )
 
   config.before { OauthStub.token }
+  config.after { Capybara.reset_sessions! }
 end
 
 RSpec::Matchers.define(:redirect_to) do |path|

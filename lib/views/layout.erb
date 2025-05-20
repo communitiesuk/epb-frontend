@@ -20,7 +20,7 @@
   <link rel="apple-touch-icon" href="<%= assets_path('/images/govuk-icon-180.png') %>">
   <link rel="manifest" href="<%= assets_path('/manifest.json') %>">
   <!-- End of Favicon section -->
-
+  <script nonce="<%= script_nonce %>"><%= capybara_lockstep_js %></script>
 <%== erb :partial__include_analytics %>
 
 </head>
