@@ -11,13 +11,13 @@ module Controller
   class BaseController < Sinatra::Base
     helpers Helpers
     attr_reader :toggles
-    include Capybara::Lockstep::Helper
     set :views, "lib/views"
     set :erb, escape_html: true
     set :public_folder, proc { File.join(root, "/../../public") }
     set :static_cache_control, [:public, { max_age: 60 * 60 * 24 * 7 }] if ENV["ASSETS_VERSION"]
 
     if ENV["STAGE"] == "test"
+      include Capybara::Lockstep::Helper
       set :show_exceptions, :after_handler
     end
 
