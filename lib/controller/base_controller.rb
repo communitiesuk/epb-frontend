@@ -10,6 +10,7 @@ module Controller
   class BaseController < Sinatra::Base
     helpers Helpers
     attr_reader :toggles
+
     set :views, "lib/views"
     set :erb, escape_html: true
     set :public_folder, proc { File.join(root, "/../../public") }

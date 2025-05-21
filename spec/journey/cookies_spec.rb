@@ -1,26 +1,28 @@
 # frozen_string_literal: true
 
-def retry_operation(max_attempts: 50)
-  attempts = 0
-  begin
-    attempts += 1
-    yield
-  rescue StandardError => e
-    if attempts < max_attempts
-      sleep(1) # Optional: Add delay between retries
-      retry
-    else
-      raise "Operation failed after #{max_attempts} attempts. Last error: #{e.message}"
+shared_context "when awaiting responses" do
+  def retry_operation(max_attempts: 50)
+    attempts = 0
+    begin
+      attempts += 1
+      yield
+    rescue StandardError => e
+      if attempts < max_attempts
+        sleep(1) # Optional: Add delay between retries
+        retry
+      else
+        raise "Operation failed after #{max_attempts} attempts. Last error: #{e.message}"
+      end
     end
   end
 end
-
 
 describe "Journey::CookiesOnOurService", :journey, type: :feature do
   let(:url) do
     "http://find-energy-certificate.local.gov.uk:9393/cookies"
   end
 
+  include_context "when awaiting responses"
   process_id = nil
 
   before(:all) do
