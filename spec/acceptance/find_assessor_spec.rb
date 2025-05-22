@@ -47,7 +47,7 @@ describe "Acceptance::Assessor", type: :feature do
         get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/search-by-postcode"
       end
 
-      it "includes the gov header" do
+      it "includes the gov service navigation" do
         expect(response.body).to have_link "Get a new energy certificate"
       end
 
@@ -550,7 +550,7 @@ describe "Acceptance::Assessor", type: :feature do
         get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/search-by-name"
       end
 
-      it "includes the gov header" do
+      it "includes the gov service navigation" do
         expect(response.body).to have_link "Get a new energy certificate"
       end
 

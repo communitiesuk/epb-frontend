@@ -14,11 +14,11 @@
   <title><%=@page_title || "#{t('layout.head.title')} – #{t('layout.body.govuk')}"%></title>
 
   <!-- All this for a Favicon... -->
-  <link rel="shortcut icon" type="image/x-icon" sizes="16x16 32x32 48x48" href="<%= assets_path('/images/favicon.ico') %>" />
-  <link rel="icon" sizes="any" href="<%= assets_path('/images/favicon.svg') %>" type="image/svg+xml">
-  <link rel="mask-icon" href="<%= assets_path('/images/govuk-icon-mask.svg') %>" color="#0b0c0c">
-  <link rel="apple-touch-icon" href="<%= assets_path('/images/govuk-icon-180.png') %>">
-  <link rel="manifest" href="<%= assets_path('/manifest.json') %>">
+    <link rel="shortcut icon" type="image/x-icon" sizes="16x16 32x32 48x48" href="<%= assets_path('/images/favicon.ico') %>" />
+    <link rel="icon" sizes="any" href="<%= assets_path('/images/favicon.svg') %>" type="image/svg+xml">
+    <link rel="mask-icon" href="<%= assets_path('/images/govuk-icon-mask.svg') %>" color="#0b0c0c">
+    <link rel="apple-touch-icon" href="<%= assets_path('/images/govuk-icon-180.png') %>">
+    <link rel="manifest" href="<%= assets_path('/manifest.json') %>">
   <!-- End of Favicon section -->
   <% if ENV["STAGE"] == "test" %>
     <script nonce="<%= script_nonce %>"><%= capybara_lockstep_js %></script>
@@ -36,7 +36,7 @@
 <%== erb :component__cookie_banner %>
 <a href="#main-content" class="govuk-skip-link" data-module="govuk-skip-link"><%=t('layout.body.skip')%></a>
 
-<header class="govuk-header govuk-!-display-none-print" role="banner" data-module="header">
+<header class="govuk-header govuk-header--full-width-border govuk-!-display-none-print" role="banner" data-module="header">
   <div class="govuk-header__container govuk-width-container">
     <div class="govuk-header__logo">
       <a href="https://www.gov.uk" class="govuk-header__link govuk-header__link--homepage">
@@ -55,12 +55,21 @@
         </svg>
       </a>
     </div>
-    <div class="govuk-header__content">
-      <a href="<%= localised_url('/') %>" class="govuk-header__link govuk-header__service-name"><%=get_gov_header
-        %></a>
-    </div>
   </div>
 </header>
+
+<section aria-label="Service information" class="govuk-service-navigation"
+         data-module="govuk-service-navigation">
+  <div class="govuk-width-container">
+    <div class="govuk-service-navigation__container">
+      <span class="govuk-service-navigation__service-name">
+        <a href="<%= localised_url('/') %>" class="govuk-service-navigation__link">
+          <%= get_gov_header %>
+        </a>
+      </span>
+    </div>
+  </div>
+</section>
 
 <div class="govuk-width-container govuk-body">
   <% unless ENV["STAGE"] == "production" %>

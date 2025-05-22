@@ -62,7 +62,7 @@ describe "Acceptance::AccessibilityStatement", type: :feature do
         expect(response.body).to have_link("Service performance", href: "/service-performance")
       end
 
-      it "includes the gov header" do
+      it "includes the gov service navigation" do
         expect(response.body).to have_link "Get a new energy certificate"
       end
 
@@ -82,7 +82,7 @@ describe "Acceptance::AccessibilityStatement", type: :feature do
         )
       end
 
-      it "includes the gov header" do
+      it "includes the gov service navigation" do
         expect(response.body).to have_link "Find an energy certificate"
       end
 
