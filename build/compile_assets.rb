@@ -33,6 +33,10 @@ unless File.directory?(public_target("./public"))
   FileUtils.mkdir_p(public_target("./public"))
 end
 
+unless File.directory?(public_target("./public/rebrand"))
+  FileUtils.mkdir_p(public_target("./public/rebrand"))
+end
+
 puts "Building Application SASS files"
 build_sass "./assets/sass/application.scss", public_target("./public/application.css")
 
@@ -52,6 +56,12 @@ FileUtils.copy_entry "./node_modules/govuk-frontend/dist/govuk/assets/images", p
 
 puts "Copying GOVUKFrontend manifest"
 FileUtils.copy_entry "./node_modules/govuk-frontend/dist/govuk/assets/manifest.json", public_target("./public/manifest.json")
+
+puts "Copying GOVUKFrontend rebrand images"
+FileUtils.copy_entry "./node_modules/govuk-frontend/dist/govuk/assets/rebrand/images", public_target("./public/rebrand/images")
+
+puts "Copying GOVUKFrontend rebrand manifest"
+FileUtils.copy_entry "./node_modules/govuk-frontend/dist/govuk/assets/rebrand/manifest.json", public_target("./public/rebrand/manifest.json")
 
 puts "Compiling and copying JavaScript"
 unless File.directory?(public_target("./public/javascript"))
