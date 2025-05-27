@@ -10,8 +10,8 @@ end
 
 group :test do
   gem "capybara", "~> 3.40"
-  gem "capybara-selenium", "~> 0.0.6"
   gem "capybara-lockstep", "~> 2.2"
+  gem "capybara-selenium", "~> 0.0.6"
   gem "compare-xml", "~>0.66"
   gem "rack-test", "~> 2.2.0"
   gem "rspec", "~>3.13"
