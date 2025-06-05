@@ -74,9 +74,9 @@ module Controller
             @container
               .get_object(:find_certificate_by_postcode_use_case)
               .execute(params["postcode"])[
-              :data
+              :data,
             ][
-              :assessments
+              :assessments,
             ]
           erb_template = :find_certificate_by_postcode_results
           search_results_heading = locals[:results].size.positive? ? t("#{erb_template}.list", count: count_certificates(locals[:results]), postcode: CGI.escapeHTML(params["postcode"].upcase)) : t("#{erb_template}.no_results.no_postcode", postcode: CGI.escapeHTML(params["postcode"].upcase))
@@ -152,13 +152,13 @@ module Controller
             @container
               .get_object(:find_certificate_by_id_use_case)
               .execute(params["reference_number"])[
-              :data
+              :data,
             ][
-              :assessments
+              :assessments,
             ][
-              0
+              0,
             ][
-              :assessmentId
+              :assessmentId,
             ]
           redirect localised_url("/energy-certificate/#{fetched_assessment_id}"),
                    303
@@ -205,9 +205,9 @@ module Controller
             @container
               .get_object(:find_certificate_by_street_name_and_town_use_case)
               .execute(params["street_name"], params["town"], %w[RdSAP SAP])[
-              :data
+              :data,
             ][
-              :assessments
+              :assessments,
             ]
 
           erb_template = :find_certificate_by_street_name_and_town_results
@@ -323,9 +323,9 @@ module Controller
                 params["postcode"],
                 %w[CEPC DEC DEC-RR CEPC-RR AC-CERT AC-REPORT],
               )[
-              :data
+              :data,
             ][
-              :assessments
+              :assessments,
             ]
 
           erb_template = :find_non_dom_certificate_by_postcode_results
@@ -402,13 +402,13 @@ module Controller
             @container
               .get_object(:find_certificate_by_id_use_case)
               .execute(params["reference_number"])[
-              :data
+              :data,
             ][
-              :assessments
+              :assessments,
             ][
-              0
+              0,
             ][
-              :assessmentId
+              :assessmentId,
             ]
 
           redirect localised_url("/energy-certificate/#{fetched_assessment_id}"),
@@ -469,9 +469,9 @@ module Controller
                 params["town"],
                 %w[AC-CERT AC-REPORT DEC DEC-RR CEPC CEPC-RR],
               )[
-              :data
+              :data,
             ][
-              :assessments
+              :assessments,
             ]
 
           erb_template = :find_non_dom_certificate_by_street_name_and_town_results

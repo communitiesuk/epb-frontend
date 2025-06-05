@@ -45,7 +45,7 @@ module Controller
           @page_title = "#{t('error.error')}#{@page_title}"
         end
 
-        if params["domestic_type"] && (request.referrer && !request.referrer.include?("/find-an-assessor/search-by-postcode"))
+        if params["domestic_type"] && request.referrer && !request.referrer.include?("/find-an-assessor/search-by-postcode")
           redirect localised_url("/find-an-assessor/search-by-postcode?#{query}")
         end
 

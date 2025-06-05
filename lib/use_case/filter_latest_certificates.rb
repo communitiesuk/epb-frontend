@@ -49,7 +49,7 @@ module UseCase
       address_certificates.each do |prev_certificate|
         if !(
              Helpers.domestic_certificate_type? certificate[
-                                                                            :typeOfAssessment
+                                                                            :typeOfAssessment,
                                                                           ]
            ) && !same_assessment_type?(prev_certificate, certificate)
           next
