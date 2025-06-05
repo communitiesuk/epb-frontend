@@ -206,7 +206,7 @@ describe "design_system__table", type: :view do
         File.expand_path("#{File.dirname(__FILE__)}/examples/table.yaml"),
       ),
     )[
-      "examples",
+      "examples"
     ]
   end
 

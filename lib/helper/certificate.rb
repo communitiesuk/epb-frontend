@@ -46,7 +46,7 @@ module Helper
         check_array << not_in_england
       end
 
-      check_array.include?(true) || false
+      (check_array.include?(true) ? true : false)
     end
 
     def self.hide_if_rating_higher_than_d?(assessment)
