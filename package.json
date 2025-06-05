@@ -16,11 +16,11 @@
     "node": "~20"
   },
   "dependencies": {
-    "govuk-frontend": "^5.10.0"
+    "govuk-frontend": "^5.10.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.26.4",
-    "@babel/core": "^7.26.8",
+    "@babel/core": "^7.27.4",
     "@babel/eslint-parser": "^7.26.8",
     "@babel/preset-env": "^7.26.8",
     "decomment": "^0.9.5",
