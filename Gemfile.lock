@@ -117,7 +117,7 @@ GEM
     rackup (2.2.1)
       rack (>= 3)
     rainbow (3.1.1)
-    rake (13.2.1)
+    rake (13.3.0)
     regexp_parser (2.10.0)
     rexml (3.4.0)
     rspec (3.13.0)
@@ -178,7 +178,7 @@ GEM
     sassc-embedded (1.80.1)
       sass-embedded (~> 1.80)
     securerandom (0.4.1)
-    selenium-webdriver (4.32.0)
+    selenium-webdriver (4.33.0)
       base64 (~> 0.2)
       logger (~> 1.4)
       rexml (~> 3.2, >= 3.2.5)
@@ -244,12 +244,12 @@ DEPENDENCIES
   rack-contrib (~> 2.5.0)
   rack-test (~> 2.2.0)
   rackup (~> 2.2)
-  rake (~> 13.2.1)
+  rake (~> 13.3.0)
   rspec (~> 3.13)
   rubocop-govuk (~> 5.1)
   rubocop-rspec (~> 3.6)
   sassc-embedded
-  selenium-webdriver (~> 4.32.0)
+  selenium-webdriver (~> 4.33)
   sentry-ruby (~> 5.24)
   sinatra (~> 4.1)
   sinatra-contrib
@@ -257,7 +257,7 @@ DEPENDENCIES
   unleash (~> 5.1.1)
   webdrivers (~> 5.2.0)
   webmock (~> 3.25)
-  zeitwerk (~> 2.7.1)
+  zeitwerk (~> 2.7)
 
 RUBY VERSION
    ruby 3.3.4p94
