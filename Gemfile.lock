@@ -19,7 +19,7 @@ GEM
     ast (2.4.2)
     base64 (0.2.0)
     benchmark (0.4.0)
-    bigdecimal (3.1.9)
+    bigdecimal (3.2.2)
     capybara (3.40.0)
       addressable
       matrix
@@ -57,7 +57,7 @@ GEM
       logger
     faraday-net_http (3.3.0)
       net-http
-    google-protobuf (4.29.3)
+    google-protobuf (4.31.1)
       bigdecimal
       rake (>= 13)
     hashdiff (1.2.0)
@@ -172,10 +172,10 @@ GEM
     ruby-progressbar (1.13.0)
     ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
-    sass-embedded (1.83.1)
-      google-protobuf (~> 4.29)
+    sass-embedded (1.89.2)
+      google-protobuf (~> 4.31)
       rake (>= 13)
-    sassc-embedded (1.80.1)
+    sassc-embedded (1.80.4)
       sass-embedded (~> 1.80)
     securerandom (0.4.1)
     selenium-webdriver (4.33.0)
