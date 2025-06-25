@@ -1267,6 +1267,7 @@ module FetchAssessmentSummary
       recommended_improvements: false,
       addendum: nil,
       lzc_energy_sources: nil,
+      date_registered: "2020-05-04",
       expiry_date: "2030-01-05",
       superseded_by: "9025-0000-0000-0000-0000",
       gas_smart_meter_present: nil,
@@ -1282,7 +1283,7 @@ module FetchAssessmentSummary
         body = {
           "data": {
             "dateOfAssessment": "2020-05-04",
-            "dateRegistered": "2020-05-04",
+            "dateRegistered": date_registered,
             "dwellingType": "Dwelling-Type0",
             "typeOfAssessment": "RdSAP",
             "totalFloorArea": total_floor_area,

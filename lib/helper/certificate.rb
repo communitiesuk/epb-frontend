@@ -1,5 +1,8 @@
 module Helper
   class Certificate
+
+    RDSAP10_2_LIVE_DATE = Date.parse('2025-06-23')
+
     def self.hide_bills_text?(assessment)
       assessment[:heatingCostCurrent]&.chomp(".00") == "0" ||
         assessment[:heatingCostPotential]&.chomp(".00") == "0" ||
@@ -69,6 +72,10 @@ module Helper
       in_wales = ["Wales", "England and Wales"].include?(country_name)
 
       (wrong_rating == true) || (in_wales == false) ? true : false
+    end
+
+    def self.predates_rdsap_10_2?(assessment)
+      assessment[:dateRegistered] < RDSAP10_2_LIVE_DATE
     end
   end
 end

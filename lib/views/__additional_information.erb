@@ -9,10 +9,17 @@
       <% if snakecase_key == "addendum_number" %>
 
         <% value.each do |number| %>
-          <li>
-            <%= t("domestic_epc.sections.breakdown.additional_information.addendum_number_#{number}.title") %>
-            <p class="govuk-hint"><%= t("domestic_epc.sections.breakdown.additional_information.addendum_number_#{number}.details") %></p>
-          </li>
+          <% if [13,14].include?(number) and predates_rdsap_10_2 %>
+            <li>
+              <%= t("domestic_epc.sections.breakdown.additional_information.addendum_number_#{number}_old.title") %>
+              <p class="govuk-hint"><%= t("domestic_epc.sections.breakdown.additional_information.addendum_number_#{number}_old.details") %></p>
+            </li>
+          <% else %>
+            <li>
+              <%= t("domestic_epc.sections.breakdown.additional_information.addendum_number_#{number}.title") %>
+              <p class="govuk-hint"><%= t("domestic_epc.sections.breakdown.additional_information.addendum_number_#{number}.details") %></p>
+            </li>
+          <% end %>
         <% end %>
       <% end %>
 

@@ -965,12 +965,30 @@ cy:
           addendum_number_12:
             title: "Mae’r annedd yn defnyddio tanwydd biomas nad yw ar gaelyn yr opsiynau tanwydd yn yr RdSAP"
             details: "Nid yw’r math o danwydd y mae’r anheddiad yn ei ddefnyddio wedi ei restru yn yr opsiynau sydd ar gael. Defnyddiwyd y math cyfatebol tebycaf o danwydd ar gyfer yr asesiad."
-          addendum_number_13:
+          addendum_number_13_old:
             title: "Cartref mewn Parc yw’r annedd"
             details: "Mae’r annedd yn Home Park."
-          addendum_number_14:
+          addendum_number_14_old:
             title: "Mae gan yr annedd nodwedd arbed ynni arbennig"
             details: "Mae gan yr annedd nodwedd arbed ynni arbennig sy’n cael ei chydnabod yn yr asesiad, ond mae ei heffaith ar yr arbedion a ddangosir ar gyfer mesurau gwella wedi’i hanwybyddu."
+          addendum_number_13:
+            title: "Mae gan yr annedd nodwedd arbed ynni arbennig"
+            details: "Mae gan yr anheddiad nodwedd arbed ynni arbennig. Mae hyn wedi’i gynnwys yn yr asesiad, ond dim yn y mesurau gwella arbed ynni."
+          addendum_number_14:
+            title: "Ardal gadwraeth"
+            details: "Ardal gadwraeth."
+          addendum_number_15:
+            title: "Argymhellir ffotofoltäig"
+            details: "Argymhellir ffotofoltäig. Ystyriwch hefyd storio batri a dargyfeiriwr ffotofoltäig."
+          addendum_number_16:
+            title: "Storio batri annibynnol o'r ffotofoltäig ar gael"
+            details: "Storio batri annibynnol o'r ffotofoltäig ar gael. Nid yw hyn wedi'i gynnwys yn yr asesiad."
+          addendum_number_17:
+            title: "Storfa gwres yn newid cyflwr ar gael"
+            details: "Storfa gwres yn newid cyflwr ar gael. Nid yw hyn wedi'i gynnwys yn yr asesiad."
+          addendum_number_18:
+            title: "Insiwleiddio muriau cyd"
+            details: "Insiwleiddio muriau cyd."
       smart_meters:
         title: "Mesuryddion clyfar"
         smart_meter_presence:

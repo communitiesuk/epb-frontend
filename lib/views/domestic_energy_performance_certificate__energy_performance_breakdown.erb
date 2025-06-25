@@ -55,7 +55,8 @@
 
   <% unless assessment[:addendum].nil? %>
     <%== erb :__additional_information, locals: {
-      addendum: assessment[:addendum]
+      addendum: assessment[:addendum],
+      predates_rdsap_10_2: Helper::Certificate.predates_rdsap_10_2?(assessment)
     } %>
   <% end %>
 </div>

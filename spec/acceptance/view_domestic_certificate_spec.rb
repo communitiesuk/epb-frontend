@@ -942,6 +942,45 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
         end
       end
 
+      context "when there are addenda 13 and 14 that predate RdSAP 10.2" do
+        before do
+          FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
+            assessment_id: "1111-1111-1111-1111-1112",
+            date_registered: "2020-05-04",
+            addendum: {
+              addendumNumber: [13,14],
+            },
+            )
+        end
+
+        let(:response) { get "/energy-certificate/1111-1111-1111-1111-1112" }
+
+        it "shows Additional information section with all details", :aggregate_failures do
+          expect(response.body).to have_css "li", text: "Dwelling is a Park Home"
+          expect(response.body).to have_css "li", text: "Dwelling has a special energy saving feature"
+        end
+      end
+
+      context "when there are addenda 13 and 14 that are later than RdSAP 10.2" do
+        before do
+          FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
+            assessment_id: "1111-1111-1111-1111-1112",
+            date_registered: "2025-06-25",
+            addendum: {
+              addendumNumber: [13,14],
+            },
+            )
+        end
+
+        let(:response) { get "/energy-certificate/1111-1111-1111-1111-1112" }
+
+        it "shows Additional information section with all details", :aggregate_failures do
+          expect(response.body).to include('<h3 class="govuk-heading-m">Additional information</h3>')
+          expect(response.body).to have_css "li", text: "Dwelling has a special energy saving feature"
+          expect(response.body).to have_css "li", text: "Conservation area"
+        end
+      end
+
       context "when there is no additional information" do
         it "does not show Additional information section" do
           expect(response.body).not_to include(

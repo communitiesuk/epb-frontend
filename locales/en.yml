@@ -965,12 +965,30 @@ en:
           addendum_number_12:
             title: "Dwelling is using a biomass fuel that is not in the RdSAP fuel options"
             details: "The dwelling uses a type of fuel that is not included in the available options. The nearest equivalent fuel type was used for the assessment."
-          addendum_number_13:
+          addendum_number_13_old:
             title: "Dwelling is a Park Home"
             details: "This dwelling is a Park Home."
-          addendum_number_14:
+          addendum_number_14_old:
             title: "Dwelling has a special energy saving feature"
             details: "The dwelling has a special energy saving feature which is recognised in the assessment, but its impact on the savings shown for improvement measures is ignored."
+          addendum_number_13:
+            title: "Dwelling has a special energy saving feature"
+            details: "The dwelling has a special energy saving feature which is recognised in the assessment, but its impact on the savings shown for improvement measures is ignored."
+          addendum_number_14:
+            title: "Conservation area"
+            details: "Conservation area."
+          addendum_number_15:
+            title: "PV recommended"
+            details: "When considering the PV installation consider installing PV battery and a PV diverter for water heating."
+          addendum_number_16:
+            title: "PV-independent battery storage present"
+            details: "The assessment does not include PV-independent battery storage."
+          addendum_number_17:
+            title: "‘Phase changing’ heat storage present"
+            details: "The assessment does not include ‘Phase-changing’ heat storage."
+          addendum_number_18:
+            title: "Party wall insulation"
+            details: "Party wall is a property of two homes. If acoustic issues are important seek professional advice before insulating party wall. Insulating party wall on one side may cause condensation risk to adjoining property."
       smart_meters:
         title: "Smart meters"
         smart_meter_presence:
