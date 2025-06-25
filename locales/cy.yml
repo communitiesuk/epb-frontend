@@ -981,11 +981,11 @@ cy:
             title: "Argymhellir ffotofoltäig"
             details: "Argymhellir ffotofoltäig. Ystyriwch hefyd storio batri a dargyfeiriwr ffotofoltäig."
           addendum_number_16:
-            title: "Storio batri annibynnol o'r ffotofoltäig ar gael"
-            details: "Storio batri annibynnol o'r ffotofoltäig ar gael. Nid yw hyn wedi'i gynnwys yn yr asesiad."
+            title: "Storio batri annibynnol o’r ffotofoltäig ar gael"
+            details: "Storio batri annibynnol o’r ffotofoltäig ar gael. Nid yw hyn wedi’i gynnwys yn yr asesiad."
           addendum_number_17:
             title: "Storfa gwres yn newid cyflwr ar gael"
-            details: "Storfa gwres yn newid cyflwr ar gael. Nid yw hyn wedi'i gynnwys yn yr asesiad."
+            details: "Storfa gwres yn newid cyflwr ar gael. Nid yw hyn wedi’i gynnwys yn yr asesiad."
           addendum_number_18:
             title: "Insiwleiddio muriau cyd"
             details: "Insiwleiddio muriau cyd."
@@ -2056,7 +2056,7 @@ cy:
     try_later: "Byddwch yn gallu defnyddio’r gwasanaeth yn nes ymlaen."
     help_desk:
       need_support: "%{link} os oes arnoch chi angen cymorth i ddod o hyd i dystysgrif neu adroddiad ynni."
-      link: "Cysylltwch â'n desg gymorth"
+      link: "Cysylltwch â’n desg gymorth"
 
   date:
     abbr_month_names:
