@@ -167,7 +167,7 @@ module Helpers
     filtered_query_params = if uri.query
                               uri.query.split("&").each_with_object({}) do |pair, hash|
                                 key, val = pair.split("=")
-                                hash[key.to_sym] = val unless filtered_params.include?(key.to_sym)
+                                hash[key.to_sym] = val unless key.nil? || filtered_params.include?(key.to_sym)
                               end
                             else
                               {}
