@@ -179,7 +179,7 @@ GEM
     sassc-embedded (1.80.4)
       sass-embedded (~> 1.80)
     securerandom (0.4.1)
-    selenium-webdriver (4.33.0)
+    selenium-webdriver (4.34.0)
       base64 (~> 0.2)
       logger (~> 1.4)
       rexml (~> 3.2, >= 3.2.5)
@@ -250,7 +250,7 @@ DEPENDENCIES
   rubocop-govuk (~> 5.1)
   rubocop-rspec (~> 3.6)
   sassc-embedded
-  selenium-webdriver (~> 4.33)
+  selenium-webdriver (~> 4.34)
   sentry-ruby (~> 5.25)
   sinatra (~> 4.1)
   sinatra-contrib
