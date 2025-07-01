@@ -98,12 +98,21 @@
 <section aria-label="Service information" class="govuk-service-navigation"
          data-module="govuk-service-navigation">
   <div class="govuk-width-container">
-    <div class="govuk-service-navigation__container">
+    <div class="govuk-service-navigation__container epb-service-navigation">
       <span class="govuk-service-navigation__service-name">
         <a href="<%= localised_url('/') %>" class="govuk-service-navigation__link">
           <%= get_gov_header %>
         </a>
       </span>
+      <% if @display_language_toggle %>
+      <nav aria-label="Menu" class="govuk-service-navigation__wrapper">
+        <ul class="govuk-service-navigation__list" id="navigation">
+          <li class="govuk-service-navigation__item language_toggle">
+              <%== erb :_toggle_to_welsh %>
+          </li>
+        </ul>
+      </nav>
+      <% end %>
     </div>
   </div>
 </section>
@@ -120,10 +129,6 @@
         </span>
       </p>
     </div>
-  <% end %>
-
-  <% if @display_language_toggle %>
-    <%== erb :_toggle_to_welsh %>
   <% end %>
 
   <main id="main-content" class="govuk-main-wrapper" role="main">
