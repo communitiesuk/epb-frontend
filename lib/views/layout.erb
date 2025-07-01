@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="<%= I18n.locale.to_s %>" class="<%= Helper::Toggles.enabled?("frontend-govuk-rebrand") ? 'govuk-template--rebranded' : 'govuk-template' %>">
+<html lang="<%= I18n.locale.to_s %>" class="<%= Helper::Toggles.enabled?("frontend-govuk-rebrand", default: true) ? 'govuk-template--rebranded' : 'govuk-template' %>">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -14,7 +14,7 @@
   <title><%=@page_title || "#{t('layout.head.title')} – #{t('layout.body.govuk')}"%></title>
 
   <!-- All this for a Favicon... -->
-  <% if !Helper::Toggles.enabled?("frontend-govuk-rebrand") %>
+  <% if !Helper::Toggles.enabled?("frontend-govuk-rebrand", default: true) %>
     <link rel="shortcut icon" type="image/x-icon" sizes="16x16 32x32 48x48" href="<%= assets_path('/images/favicon.ico') %>" />
     <link rel="icon" sizes="any" href="<%= assets_path('/images/favicon.svg') %>" type="image/svg+xml">
     <link rel="mask-icon" href="<%= assets_path('/images/govuk-icon-mask.svg') %>" color="#0b0c0c">
@@ -49,7 +49,7 @@
   <div class="govuk-header__container govuk-width-container">
     <div class="govuk-header__logo">
       <a href="https://www.gov.uk" class="govuk-header__link govuk-header__link--homepage">
-        <% if !Helper::Toggles.enabled?("frontend-govuk-rebrand") %>
+        <% if !Helper::Toggles.enabled?("frontend-govuk-rebrand", default: true) %>
           <svg
             focusable="false"
             role="img"
@@ -133,7 +133,7 @@
 
 <footer class="govuk-footer" role="contentinfo">
   <div class="govuk-width-container">
-    <% if Helper::Toggles.enabled?("frontend-govuk-rebrand") %>
+    <% if Helper::Toggles.enabled?("frontend-govuk-rebrand", default: true) %>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         focusable="false"
