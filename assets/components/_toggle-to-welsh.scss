@@ -1,6 +1,6 @@
 .language-toggle__list {
-  margin-top: 1em;
   text-align: right;
+  padding-left: 0;
 }
 .language-toggle__list-item {
   display: inline-block;
@@ -17,4 +17,7 @@
   height: 1em;
   margin-left: 0.5em;
   margin-right: 0.5em;
+}
+.epb-service-navigation {
+  justify-content: space-between;
 }
