@@ -73,11 +73,7 @@ module Controller
           locals[:results] =
             @container
               .get_object(:find_certificate_by_postcode_use_case)
-              .execute(params["postcode"])[
-              :data
-            ][
-              :assessments
-            ]
+              .execute(params["postcode"])[:data][:assessments]
           erb_template = :find_certificate_by_postcode_results
           search_results_heading = locals[:results].size.positive? ? t("#{erb_template}.list", count: count_certificates(locals[:results]), postcode: CGI.escapeHTML(params["postcode"].upcase)) : t("#{erb_template}.no_results.no_postcode", postcode: CGI.escapeHTML(params["postcode"].upcase))
           @page_title = "#{search_results_heading} – #{t('services.find_an_energy_certificate')} – #{t('layout.body.govuk')}"
@@ -151,15 +147,7 @@ module Controller
           fetched_assessment_id =
             @container
               .get_object(:find_certificate_by_id_use_case)
-              .execute(params["reference_number"])[
-              :data
-            ][
-              :assessments
-            ][
-              0
-            ][
-              :assessmentId
-            ]
+              .execute(params["reference_number"])[:data][:assessments][0][:assessmentId]
           redirect localised_url("/energy-certificate/#{fetched_assessment_id}"),
                    303
         rescue StandardError => e
@@ -204,11 +192,7 @@ module Controller
           locals[:results] =
             @container
               .get_object(:find_certificate_by_street_name_and_town_use_case)
-              .execute(params["street_name"], params["town"], %w[RdSAP SAP])[
-              :data
-            ][
-              :assessments
-            ]
+              .execute(params["street_name"], params["town"], %w[RdSAP SAP])[:data][:assessments]
 
           erb_template = :find_certificate_by_street_name_and_town_results
           number_of_results = count_certificates(locals[:results])
@@ -322,11 +306,7 @@ module Controller
               .execute(
                 params["postcode"],
                 %w[CEPC DEC DEC-RR CEPC-RR AC-CERT AC-REPORT],
-              )[
-              :data
-            ][
-              :assessments
-            ]
+              )[:data][:assessments]
 
           erb_template = :find_non_dom_certificate_by_postcode_results
           search_results_heading = locals[:results].length.positive? ? t("#{erb_template}.list", length: count_certificates(locals[:results]), postcode: CGI.escapeHTML(params["postcode"].upcase)) : t("find_certificate_by_postcode_results.no_results.no_postcode", postcode: CGI.escapeHTML(params["postcode"].upcase))
@@ -401,15 +381,7 @@ module Controller
           fetched_assessment_id =
             @container
               .get_object(:find_certificate_by_id_use_case)
-              .execute(params["reference_number"])[
-              :data
-            ][
-              :assessments
-            ][
-              0
-            ][
-              :assessmentId
-            ]
+              .execute(params["reference_number"])[:data][:assessments][0][:assessmentId]
 
           redirect localised_url("/energy-certificate/#{fetched_assessment_id}"),
                    303
@@ -468,11 +440,7 @@ module Controller
                 params["street_name"],
                 params["town"],
                 %w[AC-CERT AC-REPORT DEC DEC-RR CEPC CEPC-RR],
-              )[
-              :data
-            ][
-              :assessments
-            ]
+              )[:data][:assessments]
 
           erb_template = :find_non_dom_certificate_by_street_name_and_town_results
           @page_title = "#{t("#{erb_template}.list", length: count_certificates(locals[:results]), query: "#{params['street_name']} #{params['town']}")} – #{t('services.find_an_energy_certificate')} – #{t('layout.body.govuk')}"

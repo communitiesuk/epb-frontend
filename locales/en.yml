@@ -1220,9 +1220,13 @@ en:
       title: "Cavity wall insulation"
       description: "Cavity wall insulation"
 
-    7:
+    7_old:
       title: "Internal or external wall insulation"
       description: "Internal or external wall insulation"
+
+    7:
+      title: "Internal wall insulation"
+      description: "Internal wall insulation"
 
     8:
       title: "Double glazed windows"
@@ -1417,7 +1421,7 @@ en:
       description: "Floor insulation (solid floor)"
 
     59:
-      title: "High heat retention storage heaters"
+      title: "High heat retention storage heaters and dual immersion cylinder and dual rate meter"
       description: "High heat retention storage heaters"
 
     60:
@@ -1425,16 +1429,44 @@ en:
       description: "High heat retention storage heaters"
 
     61:
-      title: "High heat retention storage heaters"
+      title: "High heat retention storage heaters and dual immersion cylinder and dual rate meter"
       description: "High heat retention storage heaters"
 
     62:
-      title: "High heat retention storage heaters"
+      title: "High heat retention storage heaters and dual rate meter"
       description: "High heat retention storage heaters"
 
     63:
       title: "Party wall insulation"
       description: "Party wall insulation"
+
+    65:
+      title: "External wall insulation"
+      description: "External wall insulation"
+
+    66:
+     title: "Internal and cavity wall insulation"
+     description: ".."
+
+    70:
+      title: "Water heating controls"
+      description: "Water heating controls"
+
+    72:
+      title: "Add PV Battery"
+      description: "PV Battery"
+
+    73:
+      title: "Add PV diverter"
+      description: "PV Diverter"
+
+    75:
+      title: "Air or ground source heat pump"
+      description: "Air or ground source heat pump"
+
+    76:
+      title: "Air or ground source heat pump with underfloor heating"
+      description: ".."
 
   disclosure_code:
     1:

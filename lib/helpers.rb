@@ -188,17 +188,15 @@ module Helpers
     Helper::Assets.data_uri_svg path
   end
 
-  def recommendation_header(recommendation)
+  def recommendation_header(recommendation, predates_rdsap_10_2)
     if recommendation[:improvementCode] &&
         !recommendation[:improvementCode].to_s.empty?
       OpenStruct.new(
         {
           title:
-            t("improvement_code.#{recommendation[:improvementCode]}.title"),
+            [7].include?(recommendation[:improvementCode]) && predates_rdsap_10_2 ? t("improvement_code.#{recommendation[:improvementCode]}_old.title") : t("improvement_code.#{recommendation[:improvementCode]}.title"),
           description:
-            t(
-              "improvement_code.#{recommendation[:improvementCode]}.description",
-            ),
+            [7].include?(recommendation[:improvementCode]) && predates_rdsap_10_2 ? t("improvement_code.#{recommendation[:improvementCode]}_old.description") : t("improvement_code.#{recommendation[:improvementCode]}.description"),
         },
       )
     else

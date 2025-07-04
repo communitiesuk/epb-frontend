@@ -948,9 +948,9 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
             assessment_id: "1111-1111-1111-1111-1112",
             date_registered: "2020-05-04",
             addendum: {
-              addendumNumber: [13,14],
+              addendumNumber: [13, 14],
             },
-            )
+          )
         end
 
         let(:response) { get "/energy-certificate/1111-1111-1111-1111-1112" }
@@ -967,9 +967,9 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
             assessment_id: "1111-1111-1111-1111-1112",
             date_registered: "2025-06-25",
             addendum: {
-              addendumNumber: [13,14],
+              addendumNumber: [13, 14],
             },
-            )
+          )
         end
 
         let(:response) { get "/energy-certificate/1111-1111-1111-1111-1112" }

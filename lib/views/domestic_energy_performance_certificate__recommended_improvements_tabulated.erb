@@ -9,7 +9,7 @@
         t('domestic_epc.sections.recommendations.list.yearly_saving'),
       ].each_with_index.map { |entry, index| { text: entry, format: index > 0 ? 'numeric' : nil } },
       rows: recommendations.each_with_index.map do |recommendation, index|
-        header = recommendation_header(recommendation)
+        header = recommendation_header(recommendation, predates_rdsap_10_2)
         [
           "%s. %s" % [index + 1, header.description],
           recommendation[:indicativeCost] ? resolve_bad_encoding_chars(recommendation[:indicativeCost]) : t('domestic_epc.sections.recommendations.list.information_unavailable'),

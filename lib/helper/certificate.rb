@@ -1,7 +1,6 @@
 module Helper
   class Certificate
-
-    RDSAP10_2_LIVE_DATE = Date.parse('2025-06-23')
+    RDSAP10_2_LIVE_DATE = Date.parse("2025-06-23")
 
     def self.hide_bills_text?(assessment)
       assessment[:heatingCostCurrent]&.chomp(".00") == "0" ||
@@ -49,7 +48,7 @@ module Helper
         check_array << not_in_england
       end
 
-      (check_array.include?(true) ? true : false)
+      check_array.include?(true) || false
     end
 
     def self.hide_if_rating_higher_than_d?(assessment)

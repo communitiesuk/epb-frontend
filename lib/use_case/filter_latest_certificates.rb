@@ -48,9 +48,7 @@ module UseCase
       found_matching_type = false
       address_certificates.each do |prev_certificate|
         if !(
-             Helpers.domestic_certificate_type? certificate[
-                                                                            :typeOfAssessment
-                                                                          ]
+             Helpers.domestic_certificate_type? certificate[:typeOfAssessment]
            ) && !same_assessment_type?(prev_certificate, certificate)
           next
         end

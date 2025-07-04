@@ -262,10 +262,11 @@
           </details>
         <% end %>
       </div>
+      <% predates_rdsap_10_2 = Helper::Certificate.predates_rdsap_10_2?(assessment) %>
       <% unless print_view %>
-        <%== erb :domestic_energy_performance_certificate__recommended_improvements, locals: { recommendations: assessment[:recommendedImprovements] } %>
+        <%== erb :domestic_energy_performance_certificate__recommended_improvements, locals: { recommendations: assessment[:recommendedImprovements], predates_rdsap_10_2: predates_rdsap_10_2 } %>
       <% else %>
-        <%== erb :domestic_energy_performance_certificate__recommended_improvements_tabulated, locals: { recommendations: assessment[:recommendedImprovements] } %>
+        <%== erb :domestic_energy_performance_certificate__recommended_improvements_tabulated, locals: { recommendations: assessment[:recommendedImprovements], predates_rdsap_10_2: predates_rdsap_10_2 } %>
       <% end %>
 
       <%== erb :component__epc_advice_and_help_paying_for_improvements, locals: {

@@ -1004,6 +1004,7 @@ cy:
         url_link: "https://www.smartenergygb.org/using-your-smart-meter"
         no_meters_url_link_text: "Rhagor o wybodaeth am sut i gael mesurydd clyfar"
         no_meters_url_link: "https://www.smartenergygb.org/"
+
       effect_on_bills:
         title: "Sut mae hyn yn effeithio ar eich biliau ynni"
         average_household:
@@ -1099,6 +1100,7 @@ cy:
           nest_upgrade_print_link_text: "Nyth (www.gov.wales/get-free-home-energy-efficiency-improvements-nest)"
           nest_upgrade_border_text: "Gwelliannau arbed ynni am ddim os ydych chi’n byw yng Nghymru: "
           nest_upgrade_link_text: "Nyth"
+
       information:
         title: "Pwy dylech chi gysylltu â nhw ynglŷn â’r dystysgrif hon"
         assessor:
@@ -1218,9 +1220,13 @@ cy:
       title: "Inswleiddio waliau ceudod"
       description: "Inswleiddio waliau ceudod"
 
-    "7":
+    "7_old":
       title: "Inswleiddio waliau mewnol neu allanol"
       description: "Inswleiddio waliau mewnol neu allanol"
+
+    "7":
+      title: "Inswleiddio waliau mewnol"
+      description: "Inswleiddio waliau mewnol"
 
     "8":
       title: "Ffenestri gwydr dwbl"
@@ -1415,7 +1421,7 @@ cy:
       description: "Inswleiddio’r llawr (llawr solet)"
 
     "59":
-      title: "Gwresogyddion storio sy’n cadw llawer o wres"
+      title: "Gwresogyddion storio sy’n cadw llawer o wres a silindr sydd â dau dwymwr tanddwr a mesurydd cyfradd ddeuol"
       description: "Gwresogyddion storio sy’n cadw llawer o wres"
 
     "60":
@@ -1423,16 +1429,44 @@ cy:
       description: "Gwresogyddion storio sy’n cadw llawer o wres"
 
     "61":
-      title: "Gwresogyddion storio sy’n cadw llawer o wres"
+      title: "Gwresogyddion storio sy’n cadw llawer o wres a silindr sydd â dau dwymwr tanddwr a mesurydd cyfradd ddeuol"
       description: "Gwresogyddion storio sy’n cadw llawer o wres"
 
     "62":
-      title: "Gwresogyddion storio sy’n cadw llawer o wres"
+      title: "Gwresogyddion storio sy’n cadw llawer o wres a mesurydd cyfradd ddeuol"
       description: "Gwresogyddion storio sy’n cadw llawer o wres"
 
     "63":
       title: "Inswleiddio mur cydrannol"
       description: "Inswleiddio mur cydrannol"
+
+    65:
+      title: "Inswleiddio waliau allanol"
+      description: "Inswleiddio waliau allanol"
+
+    66:
+      title: "Insiwleiddio waliau ceudod a mewnol"
+      description: ".."
+
+    70:
+      title: "Uwchraddio rheolyddion gwres dŵr"
+      description: "Uwchraddio rheolyddion gwres dŵr"
+
+    72:
+      title: "Ychwanegu batris storio ynni"
+      description: "Batris storio ynni"
+
+    73:
+      title: "Ychwanegu dargyfeiriwr ffotofoltäig"
+      description: "Dargyfeiriwr ffotofoltäig"
+
+    75:
+      title: "Pwmp gwres o’r aer neu’r ddaear"
+      description: "Pwmp gwres o’r aer neu’r ddaear"
+
+    76:
+     title: "Pwmp gwres sy’n tarddu yn yr awyr neu’r ddaear gyda gwres dan y llawr"
+     description: ".."
 
   disclosure_code:
     "1":

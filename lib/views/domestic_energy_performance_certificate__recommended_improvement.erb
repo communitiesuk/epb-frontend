@@ -1,4 +1,4 @@
-<% header = recommendation_header(recommendation) %>
+<% header = recommendation_header(recommendation, predates_rdsap_10_2) %>
 <h3 class="govuk-heading-m"><%= t('domestic_epc.sections.recommendations.list.title')%> <%= index + 1 %>: <%= header.title %></h3>
 <% unless header.title.downcase.include? header.description.downcase %>
 <p class="govuk-body"><%=  header.description  %></p>

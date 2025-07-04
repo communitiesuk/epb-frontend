@@ -7,9 +7,7 @@ describe UseCase::FindCertificateById do
 
     it "raises CertificateNotFound error" do
       expect {
-        find_certificate.execute("4567-6789-4567-6789-4567")[:data][
-          :assessments
-        ]
+        find_certificate.execute("4567-6789-4567-6789-4567")[:data][:assessments]
       }.to raise_error(Errors::CertificateNotFound)
     end
   end
@@ -48,9 +46,7 @@ describe UseCase::FindCertificateById do
 
     it "returns list of certificates" do
       expect(
-        find_certificate.execute("4567-6789-4567-6789-4567")[:data][
-          :assessments
-        ],
+        find_certificate.execute("4567-6789-4567-6789-4567")[:data][:assessments],
       ).to eq(valid_certificates)
     end
   end
