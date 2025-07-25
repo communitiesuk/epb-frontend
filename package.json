@@ -22,7 +22,7 @@
     "@babel/cli": "^7.26.4",
     "@babel/core": "^7.27.7",
     "@babel/eslint-parser": "^7.26.8",
-    "@babel/preset-env": "^7.26.8",
+    "@babel/preset-env": "^7.28.0",
     "decomment": "^0.9.5",
     "jest": "^30.0.4",
     "jest-environment-jsdom": "^29.7.0",
