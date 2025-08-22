@@ -1048,6 +1048,86 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
         expect(response.body).to include("Paid off 29 March 2025")
       end
 
+      it "shows the measure type instead of the product when the product is Not Applicable" do
+        expect(response.body).to include("Double glazing")
+      end
+
+      context "when the product is Not Applicable" do
+        FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
+          assessment_id: "1111-1111-1111-1111-7846",
+          green_deal_plan: [
+            {
+              greenDealPlanId: "ABC123456DEF",
+              startDate: "2020-01-30",
+              endDate: "2030-02-28",
+              providerDetails: {
+                name: "The Bank",
+              },
+              interest: {
+                rate: 12.3,
+                fixed: true,
+              },
+              chargeUplift: {
+                amount: 1.25,
+                date: "2025-03-29",
+              },
+              ccaRegulated: true,
+              structureChanged: false,
+              measuresRemoved: false,
+              measures: [
+                {
+                  sequence: 0,
+                  measureType: "Loft insulation",
+                  product: "WarmHome lagging stuff (TM)",
+                  repaidDate: "2025-03-29",
+                },
+                {
+                  sequence: 1,
+                  product: "Not Applicable",
+                },
+              ],
+              charges: [
+                {
+                  sequence: 0,
+                  startDate: "2020-03-29",
+                  endDate: "2030-03-29",
+                  dailyCharge: "0.33",
+                },
+                {
+                  sequence: 1,
+                  startDate: "2020-03-29",
+                  endDate: "2030-03-29",
+                  dailyCharge: "0.01",
+                },
+              ],
+              savings: [
+                {
+                  fuelCode: "39",
+                  fuelSaving: 23_253,
+                  standingChargeFraction: 0,
+                },
+                {
+                  fuelCode: "40",
+                  fuelSaving: -6331,
+                  standingChargeFraction: -0.9,
+                },
+                {
+                  fuelCode: "41",
+                  fuelSaving: -15_561,
+                  standingChargeFraction: 0,
+                },
+              ],
+              estimatedSavings: 1566,
+            },
+          ],
+        )
+        let(:response) { get "/energy-certificate/1111-1111-1111-1111-7846" }
+
+        it "shows Not Applicable when there is no measure type" do
+          expect(response.body).to include("Not Applicable")
+        end
+      end
+
       it "shows the plan number" do
         expect(response.body).to include("Plan number")
         expect(response.body).to include("ABC123456DEF")

@@ -87,7 +87,7 @@ describe UseCase::FetchCertificate do
                 },
                 {
                   measureType: "Double glazing",
-                  product: "Not applicable",
+                  product: "Not Applicable",
                   sequence: 1,
                 },
               ],

@@ -1700,7 +1700,7 @@ module FetchAssessmentSummary
             {
               sequence: 1,
               measureType: "Double glazing",
-              product: "Not applicable",
+              product: "Not Applicable",
             },
           ],
           charges:,
