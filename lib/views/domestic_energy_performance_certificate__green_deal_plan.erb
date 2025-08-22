@@ -44,7 +44,11 @@
   <dl class="govuk-summary-list">
     <% green_deal_plan[:measures].each do |green_deal_product| %>
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= green_deal_product[:product] %></dt>
+        <% if green_deal_product[:product] == "Not Applicable" && !green_deal_product[:measureType].nil? %>
+          <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= green_deal_product[:measureType] %></dt>
+        <% else %>
+          <dt class="govuk-summary-list__key govuk-!-width-one-half"><%= green_deal_product[:product] %></dt>
+        <% end %>
         <dd class="govuk-summary-list__value govuk-!-width-one-half"><%= ((green_deal_product[:repaidDate] == nil) or green_deal_product[:repaidDate].empty?) ? "" : "#{t('domestic_epc.sections.green_deal.paid_off_header')} #{date(green_deal_product[:repaidDate])}" %></dd>
       </div>
     <% end %>
