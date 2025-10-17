@@ -1,2 +1,4 @@
 User-agent: *
+Allow: /find-a-certificate/type-of-property
+Allow: /find-an-assessor/type-of-property
 Disallow: /
