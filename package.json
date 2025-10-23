@@ -25,7 +25,7 @@
     "@babel/preset-env": "^7.28.3",
     "decomment": "^0.9.5",
     "jest": "^30.0.4",
-    "jest-environment-jsdom": "^29.7.0",
+    "jest-environment-jsdom": "^30.2.0",
     "standard": "^17.1.2"
   },
   "scripts": {
