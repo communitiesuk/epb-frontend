@@ -11,6 +11,10 @@ module Middleware
     def call(env)
       status, headers, body = @app.call(env)
       headers["Permissions-Policy"] = SITE_POLICY if html?(headers) || javascript?(headers)
+      headers["Referrer-Policy"] = "strict-origin-when-cross-origin"
+      headers["Strict-Transport-Security"] = "max-age=300; includeSubDomains; preload"
+      headers.delete "x-frame-options"
+      headers.delete "x-xss-protection"
       [status, headers, body]
     end
 

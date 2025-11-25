@@ -24,7 +24,7 @@ module Helper
     end
 
     def self.hide_home_upgrade?(assessment)
-      main_heating_hash = (assessment[:propertySummary]&.select { |item| item[:name] == "main_heating" })&.first
+      main_heating_hash = assessment[:propertySummary]&.select { |item| item[:name] == "main_heating" }&.first
       energy_band = assessment[:currentEnergyEfficiencyBand]
       country_name = assessment[:countryName]
       check_array = []
@@ -56,7 +56,7 @@ module Helper
     end
 
     def self.hide_bus?(assessment)
-      main_heating_hash = (assessment[:propertySummary]&.select { |item| item[:name] == "main_heating" })&.first
+      main_heating_hash = assessment[:propertySummary]&.select { |item| item[:name] == "main_heating" }&.first
 
       unless main_heating_hash.nil?
         return main_heating_hash[:description]&.downcase&.include? "heat pump"
