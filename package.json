@@ -16,13 +16,14 @@
     "node": "~20"
   },
   "dependencies": {
-    "govuk-frontend": "^5.11.2"
+    "govuk-frontend": "^5.14.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.28.3",
     "@babel/core": "^7.28.4",
     "@babel/eslint-parser": "^7.28.4",
     "@babel/preset-env": "^7.28.3",
+    "baseline-browser-mapping": "^2.9.14",
     "decomment": "^0.9.5",
     "jest": "^30.0.4",
     "jest-environment-jsdom": "^29.7.0",
