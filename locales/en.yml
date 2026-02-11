@@ -218,6 +218,11 @@ en:
         phone: "0330 223 6278"
         email: "certification@kaizencertification.co.uk"
         url: "https://kaizencertification.co.uk/"
+      vulcan:
+        name: "Vulcan"
+        phone: "020 8051 2260"
+        email: "hello@usevulcan.app"
+        url: "https://usevulcan.app"
 
   find_assessor_by_postcode:
     top_heading: "What is the property’s postcode?"
