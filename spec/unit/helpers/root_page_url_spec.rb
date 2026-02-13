@@ -23,6 +23,19 @@ describe "Helpers.root_page_url", type: :helper do
     end
   end
 
+  context "when a static start page has been set to the string NULL" do
+    before do
+      stub_const "ENV", { "STATIC_START_PAGE_FINDING_EN" => "NULL" }
+      def frontend_service_helpers.request
+        OpenStruct.new(hostname: "find-energy-certificate.service.gov.uk")
+      end
+    end
+
+    it "resolves the root page url as '/'" do
+      expect(frontend_service_helpers.root_page_url).to eq "/"
+    end
+  end
+
   context "when a static start page has been configured and the current hostname is for finding certificates" do
     static_url = "https://www.gov.uk/my-lovely-service-for-finding"
 

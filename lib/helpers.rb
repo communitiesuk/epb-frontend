@@ -425,13 +425,13 @@ module Helpers
     lang ||= I18n.locale.to_s
     case [!is_finding_service, lang == "cy"]
     when [false, false]
-      ENV["STATIC_START_PAGE_FINDING_EN"]
+      ENV["STATIC_START_PAGE_FINDING_EN"] == "NULL" ? nil : ENV["STATIC_START_PAGE_FINDING_EN"]
     when [false, true]
-      ENV["STATIC_START_PAGE_FINDING_CY"]
+      ENV["STATIC_START_PAGE_FINDING_CY"] == "NULL" ? nil : ENV["STATIC_START_PAGE_FINDING_CY"]
     when [true, false]
-      ENV["STATIC_START_PAGE_GETTING_EN"]
+      ENV["STATIC_START_PAGE_GETTING_EN"] == "NULL" ? nil : ENV["STATIC_START_PAGE_GETTING_EN"]
     when [true, true]
-      ENV["STATIC_START_PAGE_GETTING_CY"]
+      ENV["STATIC_START_PAGE_GETTING_CY"] == "NULL" ? nil : ENV["STATIC_START_PAGE_GETTING_CY"]
     end
   end
 
