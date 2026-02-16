@@ -16,7 +16,7 @@
     "node": "~20"
   },
   "dependencies": {
-    "govuk-frontend": "^5.14.0"
+    "govuk-frontend": "^6.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.28.3",
