@@ -84,7 +84,7 @@ describe "Journey::FindDomesticCertificate", :journey, type: :feature do
     before do
       visit "http://find-energy-certificate.local.gov.uk:9393"
       click_on "Welsh (Cymraeg)"
-      click_on "Dechreuwch nawr"
+      click_on "Dechrau nawr"
       find("#label-domestic").click
       click_on "Parhau"
       fill_in "postcode", with: "SW1A 2AA"

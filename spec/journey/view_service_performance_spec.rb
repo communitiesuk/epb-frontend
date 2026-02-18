@@ -41,7 +41,7 @@ describe "view Service Performance page", :journey, type: :feature do
     before do
       visit "http://find-energy-certificate.local.gov.uk:9393"
       click_on "Welsh (Cymraeg)"
-      click_on "Dechreuwch nawr"
+      click_on "Dechrau nawr"
       click_on "Perfformiad y gwasanaeth"
     end
 

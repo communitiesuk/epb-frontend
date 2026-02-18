@@ -318,7 +318,7 @@ cy:
       epc: "tystysgrifau perfformiad ynni (EPCs)"
       dec: "tystysgrifau ynni i’w harddangos (DECs) i adeiladau cyhoeddus"
       air_con_cert_report: "tystysgrifau ac adroddiadau ar archwiliadau systemau aerdymheru"
-    cta: "Dechreuwch nawr"
+    cta: "Dechrau nawr"
     before_you_start:
       title: "Cyn ichi ddechrau"
       switch_language:
