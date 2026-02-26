@@ -516,35 +516,30 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
         end
       end
 
-      context "when the home upgrade link is relevant" do
-        context "when the property does not have a gas boiler" do
-          it "shows the home upgrade link for properties in England" do
-            FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
-              assessment_id: "1234-5678-1234-5678-1234",
-              current_band: "d",
-              country_name: "England",
-            )
-            expect(response.body).to have_css "a",
-                                              text: "Home Upgrade Grant"
-          end
+      context "when the Warm Homes Local Grant is relevant" do
+        it "shows the Warm Homes Local Grant section for properties with an D-G rating" do
+          FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
+            assessment_id: "1234-5678-1234-5678-1234",
+            current_band: "g",
+            country_name: "England",
+          )
 
-          it "shows the home upgrade section for properties on the border" do
-            FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
-              assessment_id: "1234-5678-1234-5678-1234",
-              current_band: "d",
-              country_name: "England and Wales",
-            )
-
-            expect(response.body).to have_css "li",
-                                              text: "Free energy saving improvements if you live in England:"
-            expect(response.body).to have_css "a",
-                                              text: "Home Upgrade Grant"
-          end
+          expect(response.body).to have_css "a",
+                                            text: "Warm Homes Local Grant"
         end
-      end
 
-      context "when the home upgrade link is not relevant" do
-        it "doesn't show the home upgrade section for properties with gas boilers" do
+        it "shows the Warm Homes Local Grant link for properties on the border" do
+          FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
+            assessment_id: "1234-5678-1234-5678-1234",
+            current_band: "d",
+            country_name: "England and Wales",
+          )
+
+          expect(response.body).to have_css "a",
+                                            text: "Warm Homes Local Grant"
+        end
+
+        it "show the Warm Homes Local Grant link section for properties with gas boilers" do
           FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
             assessment_id: "1234-5678-1234-5678-1234",
             main_heating_source: "boiler with radiators or underfloor heating",
@@ -552,8 +547,32 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
             country_name: "England",
           )
 
+          expect(response.body).to have_css "a",
+                                            text: "Warm Homes Local Grant"
+        end
+      end
+
+      context "when the Warm Homes Local Grant is not relevant" do
+        it "doesn't show the Warm Homes Local Grant for properties in Wales" do
+          FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
+            assessment_id: "1234-5678-1234-5678-1234",
+            current_band: "d",
+            country_name: "Wales",
+          )
+
           expect(response.body).not_to have_css "a",
-                                                text: "Home Upgrade Grant"
+                                                text: "Warm Homes Local Grant"
+        end
+
+        it "doesn't show the Warm Homes Local Grant for properties in Northern Ireland" do
+          FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
+            assessment_id: "1234-5678-1234-5678-1234",
+            current_band: "d",
+            country_name: "Northern Ireland",
+          )
+
+          expect(response.body).not_to have_css "a",
+                                                text: "Warm Homes Local Grant"
         end
 
         it "doesn't show the home upgrade section for properties with an A-C rating" do
@@ -564,50 +583,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
           )
 
           expect(response.body).not_to have_css "a",
-                                                text: "Home Upgrade Grant"
-        end
-
-        it "doesn't show the home upgrade section for properties in Wales" do
-          FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
-            assessment_id: "1234-5678-1234-5678-1234",
-            current_band: "d",
-            country_name: "Wales",
-          )
-
-          expect(response.body).not_to have_css "a",
-                                                text: "Home Upgrade Grant"
-        end
-
-        it "doesn't show the home upgrade section for properties in Northern Ireland" do
-          FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
-            assessment_id: "1234-5678-1234-5678-1234",
-            current_band: "d",
-            country_name: "Northern Ireland",
-          )
-
-          expect(response.body).not_to have_css "a",
-                                                text: "Home Upgrade Grant"
-        end
-      end
-
-      context "when the insulation scheme is relevant" do
-        it "shows the insulation scheme link" do
-          FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
-            assessment_id: "1234-5678-1234-5678-1234",
-            current_band: "e",
-          )
-          expect(response.body).to have_css "a",
-                                            text: "Great British Insulation Scheme"
-        end
-
-        it "doesn't show the insulation scheme link" do
-          FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
-            assessment_id: "1234-5678-1234-5678-1234",
-            current_band: "b",
-          )
-
-          expect(response.body).not_to have_css "a",
-                                                text: "Great British Insulation Scheme"
+                                                text: "Warm Homes Local Grant"
         end
       end
 

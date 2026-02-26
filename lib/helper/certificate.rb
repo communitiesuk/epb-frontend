@@ -23,34 +23,6 @@ module Helper
       assessment[:gasSmartMeterPresent].nil? || assessment[:electricitySmartMeterPresent].nil? ? true : false
     end
 
-    def self.hide_home_upgrade?(assessment)
-      main_heating_hash = assessment[:propertySummary]&.select { |item| item[:name] == "main_heating" }&.first
-      energy_band = assessment[:currentEnergyEfficiencyBand]
-      country_name = assessment[:countryName]
-      check_array = []
-
-      if main_heating_hash.nil?
-        return false
-      else
-        check_array << main_heating_hash[:description]&.downcase&.include?("boiler")
-      end
-
-      if energy_band.nil?
-        return false
-      else
-        check_array << %w[a b c].any? { |rating| energy_band&.include? rating }
-      end
-
-      if country_name.nil?
-        return false
-      else
-        not_in_england = !["England", "England and Wales"].include?(country_name)
-        check_array << not_in_england
-      end
-
-      check_array.include?(true) || false
-    end
-
     def self.hide_if_rating_higher_than_d?(assessment)
       %w[a b c].any? { |rating| assessment[:currentEnergyEfficiencyBand]&.include? rating }
     end
