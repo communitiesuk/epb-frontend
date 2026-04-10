@@ -1,3 +1,12 @@
+User-agent: Applebot
+Disallow: /
+
+User-agent: Bingbot
+Disallow: /energy-certificate/*
+
+User-agent: Googlebot
+Disallow: /energy-certificate/*
+
 User-agent: *
 Allow: /find-a-certificate/type-of-property
 Allow: /find-an-assessor/type-of-property
