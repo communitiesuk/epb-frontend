@@ -7,7 +7,7 @@ phases:
       nodejs: 20
     commands:
       - bundle install
-      - npm install
+      - npm ci
       - make hosts
   build:
     commands:

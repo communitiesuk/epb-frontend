@@ -13,7 +13,7 @@ phases:
   pre_build:
     commands:
       - n $NODE_20_VERSION
-      - npm install
+      - npm ci
       - bundle install
       - make assets-version
       - make frontend-build
