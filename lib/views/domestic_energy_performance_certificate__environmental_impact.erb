@@ -1,8 +1,8 @@
 <div id="energy" class="govuk-body epc-page-break epc-blue-bottom printable-area epc-environmental-impact">
   <h2 class="govuk-heading-l"><%= t('domestic_epc.sections.environmental_impact.title') %></h2>
-  <p class="govuk-body"><%== t('domestic_epc.sections.environmental_impact.eir_rating',
-                               :current_environmental_impact_rating => eir_rating_band(assessment[:environmentalImpactCurrent].to_i).upcase,
-                               :potential_environmental_impact_rating => eir_rating_band(assessment[:environmentalImpactPotential].to_i).upcase) %></p>
+  <p class="govuk-body">
+    <%== t('domestic_epc.sections.environmental_impact.eir_rating',:current_environmental_impact_rating => eir_rating_band(assessment[:environmentalImpactCurrent].to_i).upcase) %><% unless eir_rating_band(assessment[:environmentalImpactPotential].to_i) > eir_rating_band(assessment[:environmentalImpactCurrent].to_i) %> <%== t('domestic_epc.sections.environmental_impact.eir_potential_rating', :potential_environmental_impact_rating => eir_rating_band(assessment[:environmentalImpactPotential].to_i).upcase) %><% end %>
+  </p>
   <p class="govuk-body"><%== t('domestic_epc.sections.environmental_impact.rating_scale') %></p>
   <h3 class="govuk-heading-m"><%= t('domestic_epc.sections.environmental_impact.heading') %></h3>
   <dl class="govuk-summary-list">
@@ -19,6 +19,8 @@
       <dd id="eir-potential-production" class="govuk-summary-list__value"><%= BigDecimal(assessment[:potentialCarbonEmission]).to_f.round(1) %><%== t('domestic_epc.sections.environmental_impact.tonnes_of_carbon_emission', carbon: 'CO2') %></dd>
     </div>
   </dl>
-  <p class="govuk-body"><%== t('domestic_epc.sections.environmental_impact.making_changes') %></p>
+  <% unless BigDecimal(assessment[:potentialCarbonEmission]).to_f > BigDecimal(assessment[:currentCarbonEmission]).to_f %>
+    <p class="govuk-body"><%== t('domestic_epc.sections.environmental_impact.making_changes') %></p>
+  <% end %>
   <p class="govuk-body"><%== t('domestic_epc.sections.environmental_impact.environmental_impact_rating') %></p>
 </div>

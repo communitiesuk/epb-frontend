@@ -1273,7 +1273,9 @@ module FetchAssessmentSummary
       gas_smart_meter_present: nil,
       electricity_smart_meter_present: nil,
       country_name: "England",
-      main_heating_source: "Room heaters, electric"
+      main_heating_source: "Room heaters, electric",
+      environmental_impact_current: 76,
+      environmental_impact_potential: 85
     )
       FetchAssessmentSummary::AssessmentSummaryErrorStub.fetch(assessment_id)
       property_summary ||= generate_property_summary(main_heating_source)
@@ -1637,8 +1639,8 @@ module FetchAssessmentSummary
               },
             ],
             lzcEnergySources: lzc_energy_sources,
-            environmentalImpactCurrent: 76,
-            environmentalImpactPotential: 85,
+            environmentalImpactCurrent: environmental_impact_current,
+            environmentalImpactPotential: environmental_impact_potential,
             gasSmartMeterPresent: gas_smart_meter_present,
             electricitySmartMeterPresent: electricity_smart_meter_present,
           },

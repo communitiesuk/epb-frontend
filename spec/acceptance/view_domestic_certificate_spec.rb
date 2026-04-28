@@ -692,7 +692,8 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
 
       it "shows the summary text" do
         expect(response.body).to have_css "p",
-                                          text: "This property’s environmental impact rating is C. It has the potential to be B."
+                                          text:
+                                            "This property’s environmental impact rating is C. It has the potential to be B."
       end
 
       it "shows the carbon emission section" do
@@ -744,6 +745,74 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
         it "shows the correct carbon emission values" do
           expect(response.body).to include(">7.8 tonnes of CO2</dd>")
           expect(response.body).to include(">6.5 tonnes of CO2</dd>")
+        end
+      end
+
+      context "when an EPC has lower 'potential' environmental impact rating than the current value" do
+        before do
+          FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
+            assessment_id: "1234-1234-1234-1234-6543",
+            environmental_impact_current: 89,
+            environmental_impact_potential: 80,
+          )
+          response
+        end
+
+        let(:response) { get "/energy-certificate/1234-1234-1234-1234-6543" }
+
+        it "does show the current rating" do
+          expect(response.body).to include("This property’s environmental impact rating is B.")
+        end
+
+        it "does not show the potential rating" do
+          expect(response.body).not_to include("It has the potential to be C.")
+        end
+      end
+
+      context "when an EPC has the same 'potential' environmental impact rating than the current value" do
+        before do
+          FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
+            assessment_id: "1234-1234-1234-1234-6546",
+            environmental_impact_potential: 80,
+            environmental_impact_current: 80,
+          )
+          response
+        end
+
+        let(:response) { get "/energy-certificate/1234-1234-1234-1234-6546" }
+
+        it "does show the current rating" do
+          expect(response.body).to include("This property’s environmental impact rating is C.")
+        end
+
+        it "does shows the potential rating" do
+          expect(response.body).to include("It has the potential to be C.")
+        end
+      end
+
+      context "when an EPC has a higher 'potential' CO2 emission than the current value" do
+        before do
+          FetchAssessmentSummary::AssessmentStub.fetch_rdsap(
+            assessment_id: "1234-1234-1234-1234-6545",
+            current_carbon_emission: "0.9",
+            potential_carbon_emission: "1.7",
+          )
+          response
+        end
+
+        let(:response) { get "/energy-certificate/1234-1234-1234-1234-6545" }
+
+        it "shows the carbon emissions" do
+          expect(response.body).to include(">This property produces</")
+          expect(response.body).to include(">0.9 tonnes of CO2</dd>")
+          expect(response.body).to include(
+            ">This property’s potential production</",
+          )
+          expect(response.body).to include(">1.7 tonnes of CO2</dd>")
+        end
+
+        it "does not show the 'making_changes' text" do
+          expect(response.body).not_to include("You could improve this property’s CO2 emissions by making the suggested changes. This will help to protect the environment.")
         end
       end
     end
