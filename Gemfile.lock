@@ -60,7 +60,7 @@ GEM
       rake (>= 13)
     hashdiff (1.2.1)
     hashie (5.0.0)
-    i18n (1.14.7)
+    i18n (1.14.8)
       concurrent-ruby (~> 1.0)
     json (2.19.5)
     jwt (2.10.2)
@@ -103,7 +103,7 @@ GEM
     puma (7.2.0)
       nio4r (~> 2.0)
     racc (1.8.1)
-    rack (3.2.3)
+    rack (3.2.6)
     rack-contrib (2.5.0)
       rack (< 4)
     rack-protection (4.2.1)
@@ -118,7 +118,7 @@ GEM
     rackup (2.2.1)
       rack (>= 3)
     rainbow (3.1.1)
-    rake (13.3.1)
+    rake (13.4.2)
     regexp_parser (2.12.0)
     rexml (3.4.4)
     rspec (3.13.2)
@@ -227,7 +227,7 @@ GEM
     websocket (1.2.11)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    zeitwerk (2.7.5)
+    zeitwerk (2.8.2)
 
 PLATFORMS
   ruby
@@ -240,13 +240,13 @@ DEPENDENCIES
   csv (~> 3.3)
   epb-auth-tools (~> 1.1.0)
   erubis (~> 2.7)
-  i18n (~> 1.14.7)
+  i18n (~> 1.14.8)
   puma (~> 7.1)
-  rack (~> 3.2.3)
+  rack (~> 3.2.6)
   rack-contrib (~> 2.5.0)
   rack-test (~> 2.2.0)
   rackup (~> 2.2)
-  rake (~> 13.3.1)
+  rake (~> 13.4.2)
   rspec (~> 3.13)
   rubocop-govuk (~> 5.2)
   rubocop-rspec (~> 3.9)
@@ -259,7 +259,7 @@ DEPENDENCIES
   unleash (~> 5.1.1)
   webdrivers (~> 5.2.0)
   webmock (~> 3.26)
-  zeitwerk (~> 2.7)
+  zeitwerk (~> 2.8)
 
 RUBY VERSION
    ruby 3.4.7p58
