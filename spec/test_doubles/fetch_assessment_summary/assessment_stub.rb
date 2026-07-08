@@ -6,17 +6,19 @@ module FetchAssessmentSummary
       assessment_id:,
       executive_summary: "My\nSummary\t\tInspected",
       sub_systems: [
-        volumeDefinitions: "VOL001 The Shop",
-        id: "VOL001/SYS001 R410A Inverter Split Systems to Sales Area",
-        description:
+        {
+          volumeDefinitions: "VOL001 The Shop",
+          id: "VOL001/SYS001 R410A Inverter Split Systems to Sales Area",
+          description:
           "This sub system comprised of; 4Nr 10kW R410A Mitsubishi Heavy Industries inverter driven split AC condensers.",
-        coolingOutput: "40",
-        areaServed: "Sales Area",
-        inspectionDate: "2019-05-20",
-        coolingPlantCount: "4",
-        ahuCount: "0",
-        terminalUnitsCount: "4",
-        controlsCount: "5",
+          coolingOutput: "40",
+          areaServed: "Sales Area",
+          inspectionDate: "2019-05-20",
+          coolingPlantCount: "4",
+          ahuCount: "0",
+          terminalUnitsCount: "4",
+          controlsCount: "5",
+        },
       ],
       pre_inspection_checklist: {
         essential: {
