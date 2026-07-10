@@ -228,5 +228,8 @@ ENV["EPB_API_URL"] = "http://test-api.gov.uk"
 ENV["STAGE"] = "test"
 ENV["EPB_UNLEASH_URI"] = "https://test-toggle-server/api"
 ENV["EPB_DATA_WAREHOUSE_API_URL"] = "http://epb-data-warehouse-api"
+ENV["SCRIPT_NONCE"] = SecureRandom.random_number(16**10).to_s(16).rjust(10, "0") if ENV["SCRIPT_NONCE"].nil?
+ENV["GTM_PROPERTY_FINDING"] = "G-FINDING"
+ENV["GTM_PROPERTY_GETTING"] = "G-GETTING"
 
 run FrontendService.new
