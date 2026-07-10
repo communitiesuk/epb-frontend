@@ -27,10 +27,6 @@ describe "Partial include analytics", type: :feature do
     it "includes the partial in the layout" do
       expect(response.body).to include("https://www.googletagmanager.com/gtm.js?id=")
     end
-
-    it "includes the partial no script in the layout" do
-      expect(response.body).to include("https://www.googletagmanager.com/ns.html?id")
-    end
   end
 
   context "when the cookie_consent cookie is true" do
@@ -44,10 +40,6 @@ describe "Partial include analytics", type: :feature do
 
     it "includes the partial in the layout" do
       expect(response.body).to include("https://www.googletagmanager.com/gtm.js?id=")
-    end
-
-    it "includes the partial no script in the layout" do
-      expect(response.body).to include("https://www.googletagmanager.com/ns.html?id")
     end
 
     it "include the gtag script" do

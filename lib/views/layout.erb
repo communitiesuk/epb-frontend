@@ -33,7 +33,6 @@
   document.body.classList.remove("no-js");
   document.body.className += ' js-enabled' + ('noModule' in HTMLScriptElement.prototype ? ' govuk-frontend-supported' : '');
 </script>
-<%== erb :partial__include_analytics_noscript %>
 <%== erb :component__cookie_banner %>
 <a href="#main-content" class="govuk-skip-link" data-module="govuk-skip-link"><%=t('layout.body.skip')%></a>
 
