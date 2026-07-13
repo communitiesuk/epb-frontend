@@ -37,13 +37,13 @@
           <legend class="govuk-fieldset__legend govuk-visually-hidden"><%= t("cookies.form_title") %></legend>
           <div class="govuk-radios">
             <div class="govuk-radios__item">
-              <input id="cookies-setting" class="govuk-radios__input" name="cookies_setting" type="radio" value="true" />
+              <input id="cookies-setting" class="govuk-radios__input" name="cookies_setting" type="radio" value="true" <%= cookie_consent? ? "checked" : "" %> />
               <label id="cookies-setting-true-label" class="govuk-label govuk-radios__label" for="cookies-setting">
                 <%= t("cookies.form_yes") %>
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input id="cookies-setting-false" class="govuk-radios__input" name="cookies_setting" type="radio" value="false" />
+              <input id="cookies-setting-false" class="govuk-radios__input" name="cookies_setting" type="radio" value="false" <%= cookie_consent? ? "" : "checked" %> />
               <label id="cookies-setting-false-label" class="govuk-label govuk-radios__label" for="cookies-setting-false">
                 <%= t("cookies.form_no") %>
               </label>

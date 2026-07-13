@@ -1,102 +1,102 @@
 # frozen_string_literal: true
 
-shared_context "when awaiting responses" do
-  def retry_operation(max_attempts: 50)
-    attempts = 0
-    begin
-      attempts += 1
-      yield
-    rescue StandardError => e
-      if attempts < max_attempts
-        sleep(1) # Optional: Add delay between retries
-        retry
-      else
-        raise "Operation failed after #{max_attempts} attempts. Last error: #{e.message}"
-      end
-    end
-  end
-end
-
 describe "Journey::CookiesOnOurService", :journey, type: :feature do
-  let(:url) do
-    "http://find-energy-certificate.local.gov.uk:9393/cookies"
-  end
-
-  include_context "when awaiting responses"
   process_id = nil
 
   before(:all) do
-    process =
-      IO.popen(
-        [
-          "rackup",
-          "config_test.ru",
-          "-q",
-          "-o",
-          "127.0.0.1",
-          "-p",
-          "9393",
-          { err: %i[child out] },
-        ],
-      )
+    process = IO.popen(["rackup", "config_test.ru", "-q", "-o", "127.0.0.1", "-p", "9393", { err: %i[child out] }])
     process_id = process.pid
-
-    # Wait until the Puma server has started up before commencing tests
-    loop do
-      break if process.readline.include?("Listening on http://127.0.0.1:9393")
-    end
+    loop { break if process.readline.include?("Listening on http://127.0.0.1:9393") }
   end
 
   after(:all) { Process.kill("KILL", process_id) if process_id }
 
-  context "when selecting to not use cookies" do
-    before do
+  before do
+    # Clear the cookies
+    Capybara.reset_sessions!
+  end
+
+  shared_examples "a cookie choices page" do
+    let(:analytics_script_host) { "https://www.googletagmanager.com/" }
+
+    it "shows a user as opted into cookies by default" do
       visit url
-      find("#cookies-setting-false-label").click
-      find("button").click
+      within_fieldset "Cookies on our service" do
+        expect(page).to have_checked_field "Use cookies that measure my website use", visible: :all
+      end
+      expect(page).to have_css %(script[src^="#{analytics_script_host}"]), visible: :all
     end
 
-    let(:session) do
-      Capybara.current_session.driver.browser.manage
-    end
+    it "allows a user to opt out of cookies and retains this setting" do
+      visit url
+      within_fieldset "Cookies on our service" do
+        choose "Do not use cookies that measure my website use", allow_label_click: true
+      end
+      click_button "Save settings"
+      expect(page).to have_css "[role=alert]", text: "You’ve set your cookie preferences"
+      expect(page).to have_checked_field "Do not use cookies that measure my website use", visible: :all
+      expect(page).to have_no_css %(script[src^="#{analytics_script_host}"]), visible: :all
 
-    let(:cookie) do
-      retry_operation do
-        session.cookie_named("cookie_consent")
+      click_link home_link_text, match: :first
+      expect(page).to have_no_css %(script[src^="#{analytics_script_host}"]), visible: :all
+      expect(page).to have_no_text banner_title
+
+      click_link "Cookies"
+      within_fieldset "Cookies on our service" do
+        expect(page).to have_checked_field "Do not use cookies that measure my website use", visible: :all
       end
     end
 
-    it "shows the success page" do
-      expect(page).to have_css("h2", text: "Success")
-      expect(page).to have_css("h3", text: "You’ve set your cookie preferences")
+    it "allows a user to opt into cookies and retains this setting" do
+      visit url
+      within_fieldset "Cookies on our service" do
+        choose "Use cookies that measure my website use", allow_label_click: true
+      end
+      click_button "Save settings"
+      expect(page).to have_css "[role=alert]", text: "You’ve set your cookie preferences"
+      expect(page).to have_checked_field "Use cookies that measure my website use", visible: :all
+      expect(page).to have_css %(script[src^="#{analytics_script_host}"]), visible: :all
+
+      click_link home_link_text, match: :first
+      expect(page).to have_css %(script[src^="#{analytics_script_host}"]), visible: :all
+      expect(page).to have_no_text banner_title
+
+      click_link "Cookies"
+      within_fieldset "Cookies on our service" do
+        choose "Use cookies that measure my website use", allow_label_click: true, visible: :all
+      end
     end
 
-    it "has set the cookie_consent to be false" do
-      expect(cookie[:value]).to eq "false"
+    it "removes existing _ga cookies when opting out" do
+      visit url
+      page.driver.browser.manage.add_cookie(
+        name: "_ga",
+        value: "foo",
+        path: "/",
+        domain: URI(page.current_url).host,
+      )
+      ga_cookies = page.driver.browser.manage.all_cookies.filter { it[:name].start_with?("_ga") }
+      expect(ga_cookies.length).to be_positive
+
+      within_fieldset "Cookies on our service" do
+        choose "Do not use cookies that measure my website use", allow_label_click: true
+      end
+      click_button "Save settings"
+
+      ga_cookies = page.driver.browser.manage.all_cookies.filter { it[:name].start_with?("_ga") }
+      expect(ga_cookies.length).to be_zero
     end
   end
 
-  context "when selecting to use cookies" do
-    before do
-      visit url
-      find("#cookies-setting-true-label").click
-      find("button").click
-    end
+  it_behaves_like "a cookie choices page" do
+    let(:url) { "http://find-energy-certificate.local.gov.uk:9393/cookies" }
+    let(:banner_title) { "Cookies on Find an energy certificate" }
+    let(:home_link_text) { "Find an energy certificate" }
+  end
 
-    let(:cookie) do
-      retry_operation do
-        browser = Capybara.current_session.driver.browser.manage
-        browser.cookie_named("cookie_consent")
-      end
-    end
-
-    it "shows the success page" do
-      expect(page).to have_css("h2", text: "Success")
-      expect(page).to have_css("h3", text: "You’ve set your cookie preferences")
-    end
-
-    it "has set the cookie_consent to be true" do
-      expect(cookie[:value]).to eq "true"
-    end
+  it_behaves_like "a cookie choices page" do
+    let(:url) { "http://getting-new-energy-certificate.local.gov.uk:9393/cookies" }
+    let(:banner_title) { "Cookies on Get a new energy certificate" }
+    let(:home_link_text) { "Get a new energy certificate" }
   end
 end

@@ -23,9 +23,7 @@ const cookieConsent = (tagId, _, gtag, resolvers) => {
         cookies.displayCookieBanner()
       }
 
-      // If we're on the cookie page, let's present which option is selected (opt-in style)
       if (onCookiePage) {
-        document.getElementById('cookies-setting' + (cookieValue === 'true' ? '' : '-false')).checked = true
         cookies.cookieFormHandler()
       }
     },
@@ -154,14 +152,6 @@ const cookieConsent = (tagId, _, gtag, resolvers) => {
           document.cookie = name + value + expires + path + domain
         }
       }
-    },
-
-    eraseOnPageChange: function () {
-      document.addEventListener('visibilitychange', () => {
-        if (document.visibilityState === 'hidden') {
-          cookies.erase()
-        }
-      })
     },
 
     cookieFormHandler: function () {
