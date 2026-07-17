@@ -1,32 +1,42 @@
 <div class="govuk-body epc-blue-bottom printable-area">
-  <div class="epc-box-summary govuk-!-margin-bottom-5">
-    <div class="epc-box-element epb-box-element-full-height govuk-body">
-      <%==
-        compact_address(
-          [
-            assessment[:address][:addressLine1],
-            assessment[:address][:addressLine2],
-            assessment[:address][:addressLine3],
-            assessment[:address][:addressLine4]
-          ],
-          assessment[:address][:town],
-          assessment[:address][:postcode],
-        ).map { |line| "<span>#{line}</span>" }.join("\n")
-      %>
+  <dl class="epc-box-summary govuk-!-margin-bottom-5">
+    <div class="epc-box-summary__address">
+      <dt class="govuk-visually-hidden"><%= t("component.epc_summary_compact.address") %></dt>
+      <dd>
+        <%== safe_join(
+            compact_address(
+              [
+                assessment[:address][:addressLine1],
+                assessment[:address][:addressLine2],
+                assessment[:address][:addressLine3],
+                assessment[:address][:addressLine4],
+              ],
+              assessment[:address][:town],
+              assessment[:address][:postcode],
+            ),
+            "<br> "
+          )
+        %>
+      </dd>
     </div>
-    <div class="epc-box-element">
-      <div class="govuk-body epc-extra-box">
-        <label><%= t("component.epc_summary_compact.#{type}.identifier") %></label>
-        <span class="govuk-!-font-weight-bold"><%= assessment[:assessmentId] %></span>
-      </div>
-
-      <div class="govuk-body epc-extra-box">
-        <label><%= assessment[:dateOfExpiry] < Date.today ?
+    <div class="epc-box-summary__id">
+      <dt>
+        <%= t("component.epc_summary_compact.#{type}.identifier") %>
+      </dt>
+      <dd class="govuk-!-font-weight-bold">
+        <%== safe_join(assessment[:assessmentId].split(/(?<=-)/), "<wbr>") %>
+      </dd>
+    </div>
+    <div class="epc-box-summary__expiry">
+      <dt>
+        <%= assessment[:dateOfExpiry] < Date.today ?
                      t("component.epc_summary_compact.#{type}.expired") :
                      t("component.epc_summary_compact.#{type}.valid_until")
-        %></label>
-        <span class="govuk-!-font-weight-bold"><%= date(assessment[:dateOfExpiry]) %></span>
-      </div>
+        %>
+      </dt>
+      <dd class="govuk-!-font-weight-bold">
+        <%= date(assessment[:dateOfExpiry]) %>
+      </dd>
     </div>
-  </div>
+  </dl>
 </div>

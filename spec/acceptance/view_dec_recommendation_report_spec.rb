@@ -69,13 +69,12 @@ describe "Acceptance::DecRecommendationReport", type: :feature do
     end
 
     it "shows the summary section" do
-      expect(response.body).to have_css "span", text: "1 Lonely Street"
-      expect(response.body).to have_css "span", text: "Post-Town0"
-      expect(response.body).to have_css "span", text: "A0 0AA"
-      expect(response.body).to have_css "label", text: "Report number"
-      expect(response.body).to have_css "span", text: "1234-5678-1234-5678-1234"
-      expect(response.body).to have_css "label", text: "Valid until"
-      expect(response.body).to have_css "span", text: "1 January 2030"
+      expect(response.body).to have_css "dt", text: "Address"
+      expect(response.body).to have_css "dd", text: "1 Lonely Street Post-Town0 A0 0AA"
+      expect(response.body).to have_css "dt", text: "Report number"
+      expect(response.body).to have_css "dd", text: "1234-5678-1234-5678-1234"
+      expect(response.body).to have_css "dt", text: "Valid until"
+      expect(response.body).to have_css "dd", text: "1 January 2030"
     end
 
     it "shows the rating section", :aggregate_failures do
@@ -281,8 +280,8 @@ describe "Acceptance::DecRecommendationReport", type: :feature do
     end
 
     it "shows the expired summary section" do
-      expect(response.body).to have_css "label", text: "This report expired on"
-      expect(response.body).to have_css "span", text: "10 February 2011"
+      expect(response.body).to have_css "dt", text: "This report expired on"
+      expect(response.body).to have_css "dd", text: "10 February 2011"
     end
   end
 
@@ -324,11 +323,11 @@ describe "Acceptance::DecRecommendationReport", type: :feature do
     let(:response) { get "/energy-certificate/0000-0000-0000-0000-1111" }
 
     it "shows the expired on message in the epc blue box" do
-      expect(response.body).to have_css(".epc-extra-box label", text: "This report expired on")
+      expect(response.body).to have_css("dt", text: "This report expired on")
     end
 
     it "shows the expired date in the epc blue box" do
-      expect(response.body).to have_css(".epc-extra-box span", text: "21 February 2012")
+      expect(response.body).to have_css("dd", text: "21 February 2012")
     end
 
     it "shows an expired warning message" do

@@ -43,13 +43,12 @@ describe "Acceptance::AirConditioningInspectionCertificate", type: :feature do
     end
 
     it "shows the summary section", :aggregate_failures do
-      expect(response.body).to have_css "span", text: "66 Primrose Hill"
-      expect(response.body).to have_css "span", text: "London"
-      expect(response.body).to have_css "span", text: "SW1B 2BB"
-      expect(response.body).to have_css "label", text: "Certificate number"
-      expect(response.body).to have_css "span", text: "0000-0000-0000-0000-9999"
-      expect(response.body).to have_css "label", text: "Valid until"
-      expect(response.body).to have_css "span", text: "21 September 2024"
+      expect(response.body).to have_css "dt", text: "Address"
+      expect(response.body).to have_css "dd", text: "66 Primrose Hill London SW1B 2BB"
+      expect(response.body).to have_css "dt", text: "Certificate number"
+      expect(response.body).to have_css "dd", text: "0000-0000-0000-0000-9999"
+      expect(response.body).to have_css "dt", text: "Valid until"
+      expect(response.body).to have_css "dd", text: "21 September 2024"
     end
 
     it "shows the Assessment details section" do
@@ -257,9 +256,8 @@ describe "Acceptance::AirConditioningInspectionCertificate", type: :feature do
     end
 
     it "shows the expired summary section" do
-      expect(response.body).to have_css "label",
-                                        text: "This certificate expired on"
-      expect(response.body).to have_css "span", text: "21 May 2012"
+      expect(response.body).to have_css "dt", text: "This certificate expired on"
+      expect(response.body).to have_css "dd", text: "21 May 2012"
     end
   end
 
@@ -306,11 +304,11 @@ describe "Acceptance::AirConditioningInspectionCertificate", type: :feature do
     let(:response) { get "/energy-certificate/0000-0000-0000-0000-1111" }
 
     it "shows the expired on message in the epc blue box" do
-      expect(response.body).to have_css(".epc-extra-box label", text: "This certificate expired on")
+      expect(response.body).to have_css("dt", text: "This certificate expired on")
     end
 
     it "shows the expired date in the epc blue box" do
-      expect(response.body).to have_css(".epc-extra-box span", text: "21 February 2012")
+      expect(response.body).to have_css("dd", text: "21 February 2012")
     end
 
     it "shows an expired warning message" do

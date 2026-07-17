@@ -645,6 +645,7 @@ cy:
       certificate_id: "Rhif y dystysgrif"
       floor_area: "Cyfanswm arwynebedd yr eiddo yw %{total_floor_area} o fetrau sgwâr"
     epc_summary_compact:
+      address: "Cyfeiriad"
       certificate:
         valid_until: "Dilys tan"
         expired: "Daeth y dystysgrif hon i ben ar"

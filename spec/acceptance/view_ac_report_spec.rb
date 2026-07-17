@@ -34,14 +34,12 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
     end
 
     it "shows the summary section" do
-      expect(response.body).to have_css "span", text: "The Bank Plc"
-      expect(response.body).to have_css "span",
-                                        text: "49-51 Northumberland Street"
-      expect(response.body).to have_css "span", text: "NE1 7AF"
-      expect(response.body).to have_css "label", text: "Report number"
-      expect(response.body).to have_css "span", text: "0000-0000-0000-0000-9999"
-      expect(response.body).to have_css "label", text: "Valid until"
-      expect(response.body).to have_css "span", text: "6 February 2025"
+      expect(response.body).to have_css "dt", text: "Address"
+      expect(response.body).to have_css "dd", text: "The Bank Plc 49-51 Northumberland Street NEWCASTLE UPON TYNE NE1 7AF"
+      expect(response.body).to have_css "dt", text: "Report number"
+      expect(response.body).to have_css "dd", text: "0000-0000-0000-0000-9999"
+      expect(response.body).to have_css "dt", text: "Valid until"
+      expect(response.body).to have_css "dd", text: "6 February 2025"
     end
 
     it "can show the Assessor's details section" do
@@ -493,8 +491,8 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
     end
 
     it "shows the expired summary section" do
-      expect(response.body).to have_css "label", text: "This report expired on"
-      expect(response.body).to have_css "span", text: "24 March 2010"
+      expect(response.body).to have_css "dt", text: "This report expired on"
+      expect(response.body).to have_css "dd", text: "24 March 2010"
     end
 
     it "shows an expired warning message" do

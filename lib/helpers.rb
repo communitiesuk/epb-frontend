@@ -525,4 +525,8 @@ module Helpers
   def cookie_consent?
     request.cookies["cookie_consent"].nil? || request.cookies["cookie_consent"] == "true"
   end
+
+  def safe_join(array, html)
+    array.map { CGI.escapeHTML(it) }.join(html)
+  end
 end
