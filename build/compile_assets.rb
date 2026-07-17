@@ -6,12 +6,13 @@ require "sassc-embedded"
 def build_sass(source, destination)
   scss = File.read(source)
   # The following deprecation warnings are suppressed because they are known issues from govuk-frontend:
-  # mixed-decls: https://github.com/alphagov/govuk-frontend/issues/5143
   # global-builtin: https://github.com/alphagov/govuk-frontend/issues/1791
   # slash-div: https://github.com/alphagov/govuk-frontend/issues/2238
   # import: https://github.com/alphagov/govuk-frontend/issues/1791
+  # if-functions: https://github.com/alphagov/govuk-frontend/issues/6579
+  # color-function: https://github.com/alphagov/govuk-frontend/issues/6147
   # To add to this list check the deprecations that can be added here https://sass-lang.com/documentation/cli/dart-sass/#silence-deprecation
-  css = SassC::Engine.new(scss, style: :compressed, silence_deprecations: %w[mixed-decls global-builtin slash-div import if-function color-functions]).render
+  css = SassC::Engine.new(scss, style: :compressed, silence_deprecations: %w[global-builtin slash-div import if-function color-functions]).render
 
   File.write(destination, css)
 end
