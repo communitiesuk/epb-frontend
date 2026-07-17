@@ -7,13 +7,11 @@ describe('when rendering service performance in Welsh', () => {
   const savedLocation = window.location
 
   beforeEach(() => {
-    delete window.location
-    window.location = Object.assign(new URL('http://find-energy-certificate.epb-frontend/service-performance?lang=cy'), {
-      ancestorOrigins: '',
-      assign: jest.fn(),
-      reload: jest.fn(),
-      replace: jest.fn()
-    })
+    window.history.pushState(
+      {},
+      '',
+      '/service-performance?lang=cy',
+    )
 
     document.body.innerHTML =
       '<h2 class="govuk-heading-l">Data domestig – adeilad presennol (RdSAP)</h2>' +
@@ -113,13 +111,11 @@ describe('when rendering service performance in English', () => {
   const savedLocation = window.location
 
   beforeEach(() => {
-    delete window.location
-    window.location = Object.assign(new URL('http://find-energy-certificate.epb-frontend/service-performance'), {
-      ancestorOrigins: '',
-      assign: jest.fn(),
-      reload: jest.fn(),
-      replace: jest.fn()
-    })
+    window.history.pushState(
+      {},
+      '',
+      '/service-performance',
+    )
 
     document.body.innerHTML =
       '<h2 class="govuk-heading-l">Domestic data – existing building (RdSAP)</h2>' +
