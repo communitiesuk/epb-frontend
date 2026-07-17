@@ -1,11 +1,7 @@
 #other_certificates_and_reports {
-  // tailwind style class
-
-  .whitespace-nowrap {
-    white-space: nowrap;
-  }
-
+  .email,
   .tel {
-    white-space: nowrap;
+    display: inline-block;
+    word-break: break-word;
   }
 }
