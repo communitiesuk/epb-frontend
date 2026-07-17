@@ -1,5 +1,7 @@
 $govuk-global-styles: true;
 $govuk-assets-path: '';
+// TODO: remove in govuk-frontend v6
+$govuk-new-typography-scale: true;
 
 @import "./node_modules/govuk-frontend/dist/govuk/index";
 @import "./assets/components/ac-certs";
