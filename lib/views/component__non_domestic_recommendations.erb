@@ -1,79 +1,87 @@
 <div id="recommendations" class="govuk-body epc-blue-bottom printable-area">
   <h2 class="govuk-heading-l"><%= t('component.recommendations.title') %></h2>
   <% if assessment[:shortPaybackRecommendations].size > 0 %>
-    <table class="govuk-table">
-      <caption class="govuk-table__caption"><%= t('component.recommendations.table.three_years_heading') %></caption>
-      <thead class="govuk-table__head">
-      <tr class="govuk-table__row">
-        <th scope="col" class="govuk-table__header govuk-!-width-three-quarters"><%= t('component.recommendations.table.recommendation_heading') %></th>
-        <th scope="col" class="govuk-table__header govuk-!-width-three-quarters"><%= t('component.recommendations.table.potential_impact_heading') %></th>
-      </tr>
-      </thead>
-      <tbody class="govuk-table__body">
-        <% assessment[:shortPaybackRecommendations].each do |recommendation| %>
+    <div class="scrollable">
+      <table class="govuk-table">
+        <caption class="govuk-table__caption"><%= t('component.recommendations.table.three_years_heading') %></caption>
+        <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header govuk-!-width-three-quarters"><%= t('component.recommendations.table.recommendation_heading') %></th>
+          <th scope="col" class="govuk-table__header govuk-!-width-three-quarters"><%= t('component.recommendations.table.potential_impact_heading') %></th>
+        </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <% assessment[:shortPaybackRecommendations].each do |recommendation| %>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><%= recommendation[:text] %></th>
+              <td class="govuk-table__cell"><%= recommendation[:cO2Impact].capitalize %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  <% end %>
+  <% if assessment[:mediumPaybackRecommendations].size > 0 %>
+    <div class="scrollable">
+      <table class="govuk-table">
+        <caption class="govuk-table__caption"><%= t('component.recommendations.table.three_to_seven_years_heading') %></caption>
+        <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header govuk-!-width-three-quarters"><%= t('component.recommendations.table.recommendation_heading') %></th>
+          <th scope="col" class="govuk-table__header govuk-!-width-three-quarters"><%= t('component.recommendations.table.potential_impact_heading') %></th>
+        </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+        <% assessment[:mediumPaybackRecommendations].each do |recommendation| %>
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><%= recommendation[:text] %></th>
             <td class="govuk-table__cell"><%= recommendation[:cO2Impact].capitalize %></td>
           </tr>
         <% end %>
-      </tbody>
-    </table>
-  <% end %>
-  <% if assessment[:mediumPaybackRecommendations].size > 0 %>
-    <table class="govuk-table">
-      <caption class="govuk-table__caption"><%= t('component.recommendations.table.three_to_seven_years_heading') %></caption>
-      <thead class="govuk-table__head">
-      <tr class="govuk-table__row">
-        <th scope="col" class="govuk-table__header govuk-!-width-three-quarters"><%= t('component.recommendations.table.recommendation_heading') %></th>
-        <th scope="col" class="govuk-table__header govuk-!-width-three-quarters"><%= t('component.recommendations.table.potential_impact_heading') %></th>
-      </tr>
-      </thead>
-      <tbody class="govuk-table__body">
-      <% assessment[:mediumPaybackRecommendations].each do |recommendation| %>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><%= recommendation[:text] %></th>
-          <td class="govuk-table__cell"><%= recommendation[:cO2Impact].capitalize %></td>
-        </tr>
-      <% end %>
-      </tbody>
-    </table>
+        </tbody>
+      </table>
+    </div>
   <% end %>
   <% if assessment[:longPaybackRecommendations].size > 0 %>
-    <table class="govuk-table">
-      <caption class="govuk-table__caption"><%= t('component.recommendations.table.more_than_seven_years_heading') %></caption>
-      <thead class="govuk-table__head">
-      <tr class="govuk-table__row">
-        <th scope="col" class="govuk-table__header govuk-!-width-three-quarters"><%= t('component.recommendations.table.recommendation_heading') %></th>
-        <th scope="col" class="govuk-table__header govuk-!-width-three-quarters"><%= t('component.recommendations.table.potential_impact_heading') %></th>
-      </tr>
-      </thead>
-      <tbody class="govuk-table__body">
-      <% assessment[:longPaybackRecommendations].each do |recommendation| %>
+    <div class="scrollable">
+      <table class="govuk-table">
+        <caption class="govuk-table__caption"><%= t('component.recommendations.table.more_than_seven_years_heading') %></caption>
+        <thead class="govuk-table__head">
         <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><%= recommendation[:text] %></th>
-          <td class="govuk-table__cell"><%= recommendation[:cO2Impact].capitalize %></td>
+          <th scope="col" class="govuk-table__header govuk-!-width-three-quarters"><%= t('component.recommendations.table.recommendation_heading') %></th>
+          <th scope="col" class="govuk-table__header govuk-!-width-three-quarters"><%= t('component.recommendations.table.potential_impact_heading') %></th>
         </tr>
-      <% end %>
-      </tbody>
-    </table>
+        </thead>
+        <tbody class="govuk-table__body">
+        <% assessment[:longPaybackRecommendations].each do |recommendation| %>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><%= recommendation[:text] %></th>
+            <td class="govuk-table__cell"><%= recommendation[:cO2Impact].capitalize %></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
   <% end %>
   <% if assessment[:otherRecommendations].size > 0 %>
-    <table class="govuk-table">
-      <caption class="govuk-table__caption"><%= t('component.recommendations.table.additional_heading') %></caption>
-      <thead class="govuk-table__head">
-      <tr class="govuk-table__row">
-        <th scope="col" class="govuk-table__header govuk-!-width-three-quarters"><%= t('component.recommendations.table.recommendation_heading') %></th>
-        <th scope="col" class="govuk-table__header govuk-!-width-three-quarters"><%= t('component.recommendations.table.potential_impact_heading') %></th>
-      </tr>
-      </thead>
-      <tbody class="govuk-table__body">
-      <% assessment[:otherRecommendations].each do |recommendation| %>
+    <div class="scrollable">
+      <table class="govuk-table">
+        <caption class="govuk-table__caption"><%= t('component.recommendations.table.additional_heading') %></caption>
+        <thead class="govuk-table__head">
         <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><%= recommendation[:text] %></th>
-          <td class="govuk-table__cell"><%= recommendation[:cO2Impact].capitalize %></td>
+          <th scope="col" class="govuk-table__header govuk-!-width-three-quarters"><%= t('component.recommendations.table.recommendation_heading') %></th>
+          <th scope="col" class="govuk-table__header govuk-!-width-three-quarters"><%= t('component.recommendations.table.potential_impact_heading') %></th>
         </tr>
-      <% end %>
-      </tbody>
-    </table>
+        </thead>
+        <tbody class="govuk-table__body">
+        <% assessment[:otherRecommendations].each do |recommendation| %>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><%= recommendation[:text] %></th>
+            <td class="govuk-table__cell"><%= recommendation[:cO2Impact].capitalize %></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
   <% end %>
 </div>

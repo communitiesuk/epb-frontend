@@ -1,46 +1,48 @@
-<table class="govuk-table epb-search-results">
-  <thead class="govuk-table__head">
-    <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header govuk-!-width-one-half"><%= t('find_non_dom_certificate_results.table.address') %></th>
-      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"><%= t('find_non_dom_certificate_results.table.type') %></th>
-      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"><%= t('find_non_dom_certificate_results.table.expiry') %></th>
-    </tr>
-  </thead>
-  <tbody class="govuk-table__body">
-    <% certificate.each do |_address_id, results| %>
-    <% address_lines = compact_address(
-                          [
-                            results[:addressLine1],
-                            results[:addressLine2],
-                            results[:addressLine3],
-                            results[:addressLine4]
-                          ],
-                          results[:town],
-                          results[:postcode]
-                        ).join(", ") %>
+<div class="scrollable">
+  <table class="govuk-table epb-search-results">
+    <thead class="govuk-table__head">
       <tr class="govuk-table__row">
-        <th scope="row" class="govuk-table__header" rowspan="<%= results[:certificates].count %>">
-          <%= address_lines %>
-        </th>
+        <th scope="col" class="govuk-table__header govuk-!-width-one-half"><%= t('find_non_dom_certificate_results.table.address') %></th>
+        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"><%= t('find_non_dom_certificate_results.table.type') %></th>
+        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"><%= t('find_non_dom_certificate_results.table.expiry') %></th>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      <% certificate.each do |_address_id, results| %>
+      <% address_lines = compact_address(
+                            [
+                              results[:addressLine1],
+                              results[:addressLine2],
+                              results[:addressLine3],
+                              results[:addressLine4]
+                            ],
+                            results[:town],
+                            results[:postcode]
+                          ).join(", ") %>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header" rowspan="<%= results[:certificates].count %>">
+            <%= address_lines %>
+          </th>
 
-        <% results[:certificates].sort_by { |h| h[:typeOfAssessment] }.each do |result| %>
-          <td class="govuk-table__cell govuk-!-border-bottom-none">
-              <a class="govuk-link" rel="nofollow" href="<%=localised_url("/energy-certificate/" + result[:assessmentId]) %>">
-                <%= result[:typeOfAssessment].upcase %>
-                <span class="govuk-visually-hidden">for <%= address_lines %></span>
-              </a><br /><br />
-          </td>
-          <td class="govuk-table__cell date">
-            <span>
-                <%= date(result[:dateOfExpiry]) %>
-            </span>
-              <% if Date.parse(result[:dateOfExpiry]) < Date.today %>
-                <br />
-                <strong class="govuk-tag govuk-tag--red govuk-!-font-weight-bold govuk-!-margin-top-1"><%= t('find_non_dom_certificate_results.expired')%></strong>
-              <% end %>
+          <% results[:certificates].sort_by { |h| h[:typeOfAssessment] }.each do |result| %>
+            <td class="govuk-table__cell govuk-!-border-bottom-none">
+                <a class="govuk-link" rel="nofollow" href="<%=localised_url("/energy-certificate/" + result[:assessmentId]) %>">
+                  <%= result[:typeOfAssessment].upcase %>
+                  <span class="govuk-visually-hidden">for <%= address_lines %></span>
+                </a><br /><br />
             </td>
-        </tr>
-        <% end %>
-    <% end %>
-  </tbody>
-</table>
+            <td class="govuk-table__cell date">
+              <span>
+                  <%= date(result[:dateOfExpiry]) %>
+              </span>
+                <% if Date.parse(result[:dateOfExpiry]) < Date.today %>
+                  <br />
+                  <strong class="govuk-tag govuk-tag--red govuk-!-font-weight-bold govuk-!-margin-top-1"><%= t('find_non_dom_certificate_results.expired')%></strong>
+                <% end %>
+              </td>
+          </tr>
+          <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div>

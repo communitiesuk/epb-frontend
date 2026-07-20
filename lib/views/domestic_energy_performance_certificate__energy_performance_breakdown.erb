@@ -4,17 +4,27 @@
   <p class="govuk-body"><%= t('domestic_epc.sections.breakdown.intro') %></p>
   <p class="govuk-body"><%= t('domestic_epc.sections.breakdown.assessment_rating_explanation') %></p>
 
-  <table class="govuk-table">
-    <thead class="govuk-table__head">
-      <tr class="govuk-table__row">
-        <th scope="col" class="govuk-table__header"><%= t('domestic_epc.sections.breakdown.heading_feature') %></th>
-        <th scope="col" class="govuk-table__header"><%= t('domestic_epc.sections.breakdown.heading_description') %></th>
-        <th scope="col" class="govuk-table__header"><%= t('domestic_epc.sections.breakdown.heading_rating') %></th>
-      </tr>
-    </thead>
-    <tbody class="govuk-table__body">
+  <div class="scrollable">
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header"><%= t('domestic_epc.sections.breakdown.heading_feature') %></th>
+          <th scope="col" class="govuk-table__header"><%= t('domestic_epc.sections.breakdown.heading_description') %></th>
+          <th scope="col" class="govuk-table__header"><%= t('domestic_epc.sections.breakdown.heading_rating') %></th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <% assessment[:propertySummary]&.each do |property_item| %>
+          <% if property_item[:energyEfficiencyRating].to_i > 0 %>
+            <tr class="govuk-table__row">
+              <th class="govuk-table__cell govuk-!-font-weight-regular"><%= t("property_summary.type." + property_item[:name])%></th>
+              <td class="govuk-table__cell"><%=property_item[:description]%></td>
+              <td class="govuk-table__cell"><%=t('energy_performance_rating.' + property_item[:energyEfficiencyRating].to_s + '.energy_performance')%></td>
+            </tr>
+          <% end %>
+        <% end %>
       <% assessment[:propertySummary]&.each do |property_item| %>
-        <% if property_item[:energyEfficiencyRating].to_i > 0 %>
+        <% if property_item[:energyEfficiencyRating].zero? %>
           <tr class="govuk-table__row">
             <th class="govuk-table__cell govuk-!-font-weight-regular"><%= t("property_summary.type." + property_item[:name])%></th>
             <td class="govuk-table__cell"><%=property_item[:description]%></td>
@@ -22,17 +32,9 @@
           </tr>
         <% end %>
       <% end %>
-    <% assessment[:propertySummary]&.each do |property_item| %>
-      <% if property_item[:energyEfficiencyRating].zero? %>
-        <tr class="govuk-table__row">
-          <th class="govuk-table__cell govuk-!-font-weight-regular"><%= t("property_summary.type." + property_item[:name])%></th>
-          <td class="govuk-table__cell"><%=property_item[:description]%></td>
-          <td class="govuk-table__cell"><%=t('energy_performance_rating.' + property_item[:energyEfficiencyRating].to_s + '.energy_performance')%></td>
-        </tr>
-      <% end %>
-    <% end %>
-    </tbody>
-  </table>
+      </tbody>
+    </table>
+  </div>
 
   <% unless assessment[:lzcEnergySources].nil?%>
     <h3 class="govuk-heading-m"><%= t('domestic_epc.sections.breakdown.low_zero_carbon_energy_sources.title') %></h3>

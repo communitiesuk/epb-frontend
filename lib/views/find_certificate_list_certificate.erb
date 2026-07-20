@@ -1,45 +1,47 @@
-<table class="govuk-table epb-search-results">
-  <thead class="govuk-table__head">
-  <tr class="govuk-table__row">
-    <th scope="col" class="govuk-table__header"><%= t('find_certificate_results.table.address') %></th>
-    <th scope="col" class="govuk-table__header"><%= t('find_certificate_results.table.rating') %></th>
-    <th scope="col" class="govuk-table__header"><%= t('find_certificate_results.table.expiry') %></th>
-  </tr>
-  </thead>
-  <tbody class="govuk-table__body">
-  <% certificate.each do |_addressId, results| %>
-    <% results[:certificates].each do |result|
-      expire = Date.parse(result[:dateOfExpiry]) < Date.today
-      %>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">
-            <a class="govuk-link" rel="nofollow" href="<%= localised_url("/energy-certificate/" + result[:assessmentId]) %>">
-              <% present_address_lines = [
-                   results[:addressLine1]&.strip,
-                   results[:addressLine2]&.strip,
-                   results[:addressLine3]&.strip,
-                   results[:addressLine4]&.strip]
-                 .compact.reject(&:empty?)
-              %>
-              <%= compact_address(
-                    present_address_lines.take(2),
-                    results[:town],
-                    results[:postcode]
-                  ).join(", ")
-              %>
-            </a>
-          </th>
-          <td class="govuk-table__cell"><%= result[:currentEnergyEfficiencyBand].upcase %></td>
-          <td class="govuk-table__cell date">
-            <span>
-              <%= date(result[:dateOfExpiry]) %>
-            </span>
-            <% if Date.parse(result[:dateOfExpiry]) < Date.today %>
-              <br /><strong class="govuk-tag govuk-tag--red govuk-!-font-weight-bold govuk-!-margin-top-1"><%= t('find_certificate_results.expired')%></strong>
-            <% end %>
-          </td>
-        </tr>
+<div class="scrollable">
+  <table class="govuk-table epb-search-results">
+    <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header"><%= t('find_certificate_results.table.address') %></th>
+      <th scope="col" class="govuk-table__header"><%= t('find_certificate_results.table.rating') %></th>
+      <th scope="col" class="govuk-table__header"><%= t('find_certificate_results.table.expiry') %></th>
+    </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+    <% certificate.each do |_addressId, results| %>
+      <% results[:certificates].each do |result|
+        expire = Date.parse(result[:dateOfExpiry]) < Date.today
+        %>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">
+              <a class="govuk-link" rel="nofollow" href="<%= localised_url("/energy-certificate/" + result[:assessmentId]) %>">
+                <% present_address_lines = [
+                     results[:addressLine1]&.strip,
+                     results[:addressLine2]&.strip,
+                     results[:addressLine3]&.strip,
+                     results[:addressLine4]&.strip]
+                   .compact.reject(&:empty?)
+                %>
+                <%= compact_address(
+                      present_address_lines.take(2),
+                      results[:town],
+                      results[:postcode]
+                    ).join(", ")
+                %>
+              </a>
+            </th>
+            <td class="govuk-table__cell"><%= result[:currentEnergyEfficiencyBand].upcase %></td>
+            <td class="govuk-table__cell date">
+              <span>
+                <%= date(result[:dateOfExpiry]) %>
+              </span>
+              <% if Date.parse(result[:dateOfExpiry]) < Date.today %>
+                <br /><strong class="govuk-tag govuk-tag--red govuk-!-font-weight-bold govuk-!-margin-top-1"><%= t('find_certificate_results.expired')%></strong>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
       <% end %>
-    <% end %>
-  </tbody>
-</table>
+    </tbody>
+  </table>
+</div>

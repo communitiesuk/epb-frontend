@@ -1,34 +1,36 @@
 <% unless values.nil? %>
   <div id="<%= assessment_type.downcase %>-<%= country_key %>" class="govuk-body">
-    <table class="govuk-table" >
-      <thead class="govuk-table__head">
-      <tr class="govuk-table__row">
-        <th scope="col" class="govuk-table__header month"><%= t('service_performance.contents.epcs_upload.tables.headers.month') %> </th>
-        <th scope="col" class="govuk-table__header govuk-table__header--numeric number-uploaded"><%= t(assessment_type.downcase == "dec-rr" ? 'service_performance.contents.epcs_upload.tables.headers.reps_uploaded' : 'service_performance.contents.epcs_upload.tables.headers.certs_uploaded') %></th>
-        <% if show_average_rating %>
-          <th scope="col" class="govuk-table__header govuk-table__header--numeric average-energy-rating"><%= t('service_performance.contents.epcs_upload.tables.headers.avg_rating') %></th>
-        <% end %>
-        <% if show_average_co2 %>
-          <th scope="col" class="govuk-table__header govuk-table__header--numeric average-co2-emission"><%= t('service_performance.contents.epcs_upload.tables.headers.avg_co2_emission') %></th>
-        <% end %>
-      </tr>
-      </thead>
-
-      <tbody class="govuk-table__body">
-      <% values.each do |row| -%>
-        <tr class="govuk-table__row" >
-          <th class="govuk-table__cell month-year" ><%= (I18n.t :abbr_month_names, :scope => :date)[Date.parse(row[:month].to_s + "-01").month] %> <%= Date.parse(row[:month].to_s + "-01").strftime("%Y") %></th>
-          <td class="govuk-table__cell govuk-table__cell--numeric num-assessments"><%= row[:numAssessments].to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse %></td>
+    <div class="scrollable">
+      <table class="govuk-table" >
+        <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header month"><%= t('service_performance.contents.epcs_upload.tables.headers.month') %> </th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric number-uploaded"><%= t(assessment_type.downcase == "dec-rr" ? 'service_performance.contents.epcs_upload.tables.headers.reps_uploaded' : 'service_performance.contents.epcs_upload.tables.headers.certs_uploaded') %></th>
           <% if show_average_rating %>
-           <td class="govuk-table__cell govuk-table__cell--numeric rating-average"><%= row[:ratingAverage].round(2) %></td>
+            <th scope="col" class="govuk-table__header govuk-table__header--numeric average-energy-rating"><%= t('service_performance.contents.epcs_upload.tables.headers.avg_rating') %></th>
           <% end %>
-          <% if show_average_co2   %>
-            <td class="govuk-table__cell govuk-table__cell--numeric average-co2-value"><%=  row.key?(:avgCo2Emission) ? row[:avgCo2Emission].round(2) : "n/a" %></td>
+          <% if show_average_co2 %>
+            <th scope="col" class="govuk-table__header govuk-table__header--numeric average-co2-emission"><%= t('service_performance.contents.epcs_upload.tables.headers.avg_co2_emission') %></th>
           <% end %>
         </tr>
-      <% end %>
-      </tbody>
-    </table>
+        </thead>
+
+        <tbody class="govuk-table__body">
+        <% values.each do |row| -%>
+          <tr class="govuk-table__row" >
+            <th class="govuk-table__cell month-year" ><%= (I18n.t :abbr_month_names, :scope => :date)[Date.parse(row[:month].to_s + "-01").month] %> <%= Date.parse(row[:month].to_s + "-01").strftime("%Y") %></th>
+            <td class="govuk-table__cell govuk-table__cell--numeric num-assessments"><%= row[:numAssessments].to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse %></td>
+            <% if show_average_rating %>
+             <td class="govuk-table__cell govuk-table__cell--numeric rating-average"><%= row[:ratingAverage].round(2) %></td>
+            <% end %>
+            <% if show_average_co2   %>
+              <td class="govuk-table__cell govuk-table__cell--numeric average-co2-value"><%=  row.key?(:avgCo2Emission) ? row[:avgCo2Emission].round(2) : "n/a" %></td>
+            <% end %>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
 
     <a href="service-performance/download-csv?country=<%= country_key.gsub("_", '-') %>" class="gov-link" download>
       <%= t('service_performance.contents.epcs_upload.download_link')%><%=
