@@ -10,7 +10,7 @@ describe('when rendering service performance in Welsh', () => {
     window.history.pushState(
       {},
       '',
-      '/service-performance?lang=cy',
+      '/service-performance?lang=cy'
     )
 
     document.body.innerHTML =
@@ -114,7 +114,7 @@ describe('when rendering service performance in English', () => {
     window.history.pushState(
       {},
       '',
-      '/service-performance',
+      '/service-performance'
     )
 
     document.body.innerHTML =
