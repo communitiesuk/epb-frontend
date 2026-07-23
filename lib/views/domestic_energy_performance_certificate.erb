@@ -111,7 +111,7 @@
     <div class="govuk-body epc-blue-bottom printable-area epc-box-container">
       <div class="epc-box<% unless print_view %> govuk-!-margin-bottom-5<% end %>">
           <p class="epc-address govuk-body">
-          <%==
+          <%== safe_join(
             compact_address(
               [
                 assessment[:addressLine1],
@@ -121,7 +121,9 @@
               ],
               assessment[:town],
               assessment[:postcode]
-            ).map{|e| CGI.escape_html(e)}.join('<br />') %>
+            ),
+            "<br> ")
+          %>
           </p>
         <div class="epc-rating-box">
           <p class="epc-rating-title govuk-body">

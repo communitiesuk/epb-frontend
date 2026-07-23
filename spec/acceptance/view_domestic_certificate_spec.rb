@@ -61,8 +61,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
         postcode: "SW1B 2BB",
       )
 
-      expect(response.body).to have_css "p",
-                                        text: "Flat 332 Marsham StreetLondonSW1B 2BB"
+      expect(response.body).to have_css "p", text: "Flat 33 2 Marsham Street London SW1B 2BB"
     end
 
     it "shows the certificate number" do
