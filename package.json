@@ -20,9 +20,9 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.29.7",
-    "@babel/core": "^7.29.7",
+    "@babel/core": "^8.0.1",
     "@babel/eslint-parser": "^7.29.7",
-    "@babel/preset-env": "^7.29.7",
+    "@babel/preset-env": "^8.0.2",
     "baseline-browser-mapping": "^2.10.37",
     "decomment": "^0.9.5",
     "jest": "^30.4.2",
