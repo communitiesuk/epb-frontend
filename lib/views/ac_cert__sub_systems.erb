@@ -1,28 +1,19 @@
 <div id="sub_systems" class="govuk-body epc-blue-bottom printable-area">
   <h2 class="govuk-heading-l"><%= t('ac_cert.sections.subsystems.title') %></h2>
 
-  <% if assessment[:subsystems]%>
-    <div class="scrollable">
-      <table class="govuk-table">
-        <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th class="govuk-table__header"><%= t('ac_cert.sections.subsystems.number') %></th>
-          <th class="govuk-table__header"><%= t('ac_cert.sections.subsystems.description') %></th>
-          <th class="govuk-table__header"><%= t('ac_cert.sections.subsystems.refrigerant_type') %></th>
-          <th class="govuk-table__header"><%= t('ac_cert.sections.subsystems.age') %></th>
-        </tr>
-        </thead>
-        <tbody class="govuk-table__body">
-        <% assessment[:subsystems].each do |subsystem| %>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell epc-subsystem-id"><%== subsystem[:number] %></td>
-            <td class="govuk-table__cell"><%== subsystem[:description] %></td>
-            <td class="govuk-table__cell"><%== subsystem[:refrigerantType] %></td>
-            <td class="govuk-table__cell"><%== subsystem[:age] %></td>
-          </tr>
-        <% end %>
-        </tbody>
-      </table>
-    </div>
+  <% assessment[:subsystems].each do |s| %>
+
+    <h3 class="govuk-heading-m"><%= s[:number] %></h3>
+
+    <%== erb :component__summary_list, locals: {
+      list: {
+        "description": s[:description],
+        "refrigerant_type": s[:refrigerantType],
+        "age": s[:age]
+      },
+      translation_prefix: 'ac_cert.sections.subsystems.',
+      skip_null: true
+    } %>
+
   <% end %>
 </div>

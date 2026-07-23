@@ -20,7 +20,8 @@
         },
         {
           link: '#sub_systems',
-          text: 'ac_cert.sections.subsystems.title'
+          text: 'ac_cert.sections.subsystems.title',
+          hidden: assessment[:subsystems].empty?
         },
         {
           link: '#assessor_details',
@@ -66,9 +67,11 @@
       assessment: assessment,
     } %>
 
-    <%== erb :ac_cert__sub_systems, locals: {
-      assessment: assessment,
-    } %>
+    <% unless assessment[:subsystems].empty? %>
+      <%== erb :ac_cert__sub_systems, locals: {
+        assessment: assessment,
+      } %>
+    <% end %>
 
     <%== erb :component__assessor_details, locals: {
       assessment: assessment,
