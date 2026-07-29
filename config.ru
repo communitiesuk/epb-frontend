@@ -67,8 +67,6 @@ csp_options = {
   script_src: "'nonce-#{ENV['SCRIPT_NONCE']}'",
   style_src: "'nonce-#{ENV['SCRIPT_NONCE']}' 'self'",
   img_src: "'self' data:",
-  report_uri: Sentry.csp_report_uri,
-  report_ratio: 0.01,
   frame_ancestors: "'none'",
   form_action: "'self'"
 }.delete_if { |_, value| value.nil? || value=='' }
