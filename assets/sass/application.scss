@@ -1,7 +1,5 @@
 $govuk-global-styles: true;
 $govuk-assets-path: '';
-// TODO: remove in govuk-frontend v6
-$govuk-new-typography-scale: true;
 
 @import "./node_modules/govuk-frontend/dist/govuk/index";
 @import "./assets/components/ac-certs";
@@ -12,7 +10,6 @@ $govuk-new-typography-scale: true;
 @import "./assets/components/eer-graph";
 @import "./assets/components/environmental-impact";
 @import "./assets/components/environment-banner";
-@import "./assets/components/expired-text";
 @import "./assets/components/how-building-compares";
 @import "./assets/components/rating-label";
 @import "./assets/components/recaptcha";

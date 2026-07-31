@@ -2,20 +2,18 @@
 
 $govuk-global-styles: true;
 $govuk-assets-path: '';
-// TODO: remove in govuk-frontend v6
-$govuk-new-typography-scale: true;
 
-@import "./node_modules/govuk-frontend/dist/govuk/index";
-@import "./assets/components/_print";
-@import "./assets/components/epc-box";
-@import "./assets/components/eer-graph";
-@import "./assets/components/environmental-impact";
-@import "./assets/components/environment-banner";
-@import "./assets/components/how-building-compares";
-@import "./assets/components/rating-label";
-@import "./assets/components/recommended-improvements";
-@import "./assets/components/ac-certs";
-@import "./assets/components/ac-reports";
+@use "./node_modules/govuk-frontend/dist/govuk/index";
+@use "./assets/components/_print";
+@use "./assets/components/epc-box";
+@use "./assets/components/eer-graph";
+@use "./assets/components/environmental-impact";
+@use "./assets/components/environment-banner";
+@use "./assets/components/how-building-compares";
+@use "./assets/components/rating-label";
+@use "./assets/components/recommended-improvements";
+@use "./assets/components/ac-certs";
+@use "./assets/components/ac-reports";
 
 //hack to target safari (10.1+) ONLY as print rendering significantly different
 //see https://browserstrangeness.bitbucket.io/css_hacks.html#safari
