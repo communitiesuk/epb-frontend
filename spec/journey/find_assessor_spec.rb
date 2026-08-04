@@ -34,21 +34,25 @@ describe "Journey::FindAssessor", :journey, type: :feature do
   context "when finding a domestic assessor by postcode" do
     before do
       visit getting_domain
-      click_on "Start now"
-      find("#label-domestic").click
-      click_on "Continue"
-      find("#label-domesticRdSap").click
-      click_on "Continue"
+      click_link "Start now"
+      within_fieldset "What type of property is the certificate for?" do
+        choose "A domestic property", allow_label_click: true
+      end
+      click_button "Continue"
+      within_fieldset "Is this an existing or new building?" do
+        choose "Existing building", allow_label_click: true
+      end
+      click_button "Continue"
     end
 
     it "shows a link to find your postcode if you don't know it" do
-      expect(page.find_link("Find a postcode on Royal Mail’s postcode finder", href: "https://www.royalmail.com/find-a-postcode")).to be_truthy
+      expect(page).to have_link "Find a postcode on Royal Mail’s postcode finder", href: "https://www.royalmail.com/find-a-postcode"
     end
 
     context "when searching on a postcode that has known assessors associated" do
       before do
-        fill_in "postcode", with: "SW1A 2AA"
-        click_on "Find"
+        fill_in "Enter the postcode", with: "SW1A 2AA"
+        click_button "Find"
       end
 
       it "shows assessor search results" do
@@ -83,8 +87,8 @@ describe "Journey::FindAssessor", :journey, type: :feature do
 
     context "when attempting to search using an empty postcode" do
       before do
-        fill_in "postcode", with: ""
-        click_on "Find"
+        fill_in "Enter the postcode", with: ""
+        click_button "Find"
       end
 
       it "shows an error message indicating a full postcode should be entered", :aggregate_failures do
@@ -96,10 +100,10 @@ describe "Journey::FindAssessor", :journey, type: :feature do
 
     context "when attempting to search using a postcode with assessors, but with an SQL injection attempt" do
       before do
-        fill_in "postcode", with: "SW1A 2AA'; DROP TABLE assessors;"
-        click_on "Find"
-        fill_in "postcode", with: "SW1A 2AA"
-        click_on "Find"
+        fill_in "Enter the postcode", with: "SW1A 2AA'; DROP TABLE assessors;"
+        click_button "Find"
+        fill_in "Enter the postcode", with: "SW1A 2AA"
+        click_button "Find"
       end
 
       it "shows a list of assessors as the SQL injection attempt has not worked" do
@@ -109,8 +113,8 @@ describe "Journey::FindAssessor", :journey, type: :feature do
 
     context "when entering an invalid postcode" do
       before do
-        fill_in "postcode", with: "NOT A POSTCODE"
-        click_on "Find"
+        fill_in "Enter the postcode", with: "NOT A POSTCODE"
+        click_button "Find"
       end
 
       it "shows an error message indicating a valid postcode should be entered", :aggregate_failures do
@@ -124,17 +128,21 @@ describe "Journey::FindAssessor", :journey, type: :feature do
   context "when finding a domestic assessor by name" do
     before do
       visit getting_domain
-      click_on "Start now"
-      find("#label-domestic").click
-      click_on "Continue"
-      find("#label-domesticRdSap").click
-      click_on "Continue"
-      click_on "find an assessor by name"
+      click_link "Start now"
+      within_fieldset "What type of property is the certificate for?" do
+        choose "A domestic property", allow_label_click: true
+      end
+      click_button "Continue"
+      within_fieldset "Is this an existing or new building?" do
+        choose "Existing building", allow_label_click: true
+      end
+      click_button "Continue"
+      click_link "find an assessor by name"
     end
 
     context "when searching on an empty name" do
       before do
-        click_on "Search"
+        click_button "Search"
       end
 
       it "shows an error message that the full name being searched should be entered" do
@@ -144,8 +152,8 @@ describe "Journey::FindAssessor", :journey, type: :feature do
 
     context "when searching with only one name" do
       before do
-        fill_in "name", with: "Supercommon"
-        click_on "Search"
+        fill_in "Enter the assessor’s full name", with: "Supercommon"
+        click_button "Search"
       end
 
       it "shows an error message that the full name being searched should be entered" do
@@ -155,8 +163,8 @@ describe "Journey::FindAssessor", :journey, type: :feature do
 
     context "when a name is searched on matching an assessor who has not supplied an email address or phone number" do
       before do
-        fill_in "name", with: "Supercommon Name"
-        click_on "Search"
+        fill_in "Enter the assessor’s full name", with: "Supercommon Name"
+        click_button "Search"
       end
 
       it "displays error messages that both email and telephone have not been supplied", :aggregate_failures do
@@ -184,15 +192,18 @@ describe "Journey::FindAssessor", :journey, type: :feature do
 
   context "when finding a non-domestic assessor by postcode" do
     before do
-      visit "#{getting_domain}/find-an-assessor/type-of-property"
-      find("#label-non-domestic").click
-      click_on "Continue"
+      visit getting_domain
+      click_link "Start now"
+      within_fieldset "What type of property is the certificate for?" do
+        choose "A non-domestic property", allow_label_click: true
+      end
+      click_button "Continue"
     end
 
     context "when entering an empty postcode" do
       before do
-        fill_in "postcode", with: ""
-        click_on "Find"
+        fill_in "Enter the postcode", with: ""
+        click_button "Find"
       end
 
       it "displays an error message that a full postcode should be used to search", :aggregate_failures do
@@ -204,8 +215,8 @@ describe "Journey::FindAssessor", :journey, type: :feature do
 
     context "when entering an invalid postcode" do
       before do
-        fill_in "postcode", with: "NOT A POSTCODE"
-        click_on "Find"
+        fill_in "Enter the postcode", with: "NOT A POSTCODE"
+        click_button "Find"
       end
 
       it "displays an error message that a valid postcode should be used to search", :aggregate_failures do
@@ -217,8 +228,8 @@ describe "Journey::FindAssessor", :journey, type: :feature do
 
     context "when entering a postcode for which there are known assessors" do
       before do
-        fill_in "postcode", with: "SW1A 2AA"
-        click_on "Find"
+        fill_in "Enter the postcode", with: "SW1A 2AA"
+        click_button "Find"
       end
 
       it "displays text suggesting that the user can search again by entering the postcode of the property" do
@@ -255,12 +266,18 @@ describe "Journey::FindAssessor", :journey, type: :feature do
 
   context "when finding a non-domestic assessor by name" do
     before do
-      visit "#{getting_domain}/find-a-non-domestic-assessor/search-by-name"
+      visit getting_domain
+      click_link "Start now"
+      within_fieldset "What type of property is the certificate for?" do
+        choose "A non-domestic property", allow_label_click: true
+      end
+      click_button "Continue"
+      click_link "find an assessor by name"
     end
 
     context "when searching using an empty name" do
       before do
-        click_on "Search"
+        click_button "Search"
       end
 
       it "shows an error message that the full name of the search assessor should be used for search", :aggregate_failures do
@@ -272,8 +289,8 @@ describe "Journey::FindAssessor", :journey, type: :feature do
 
     context "when searching using just a first name" do
       before do
-        fill_in "name", with: "John"
-        click_on "Search"
+        fill_in "Enter the assessor’s full name", with: "John"
+        click_button "Search"
       end
 
       it "shows an error message that the full name of the search assessor should be used for search", :aggregate_failures do
@@ -285,8 +302,8 @@ describe "Journey::FindAssessor", :journey, type: :feature do
 
     context "when searching with a name that matches known assessors" do
       before do
-        fill_in "name", with: "Supercommon Name"
-        click_on "Search"
+        fill_in "Enter the assessor’s full name", with: "Supercommon Name"
+        click_button "Search"
       end
 
       it "displays search results" do
@@ -298,10 +315,13 @@ describe "Journey::FindAssessor", :journey, type: :feature do
   context "when a property type is not chosen at the property type stage" do
     before do
       visit getting_domain
-      click_on "Start now"
-      find("#label-domestic").click
-      click_on "Continue"
-      click_on "Continue"
+      click_link "Start now"
+      within_fieldset "What type of property is the certificate for?" do
+        choose "A domestic property", allow_label_click: true
+      end
+      click_button "Continue"
+      find "h1", text: "Is this an existing or new building?"
+      click_button "Continue"
     end
 
     it "displays an error message indicating a property type should be chosen", :aggregate_failures do
@@ -314,8 +334,8 @@ describe "Journey::FindAssessor", :journey, type: :feature do
   context "when a property type is not chosen at the domestic property type stage" do
     before do
       visit getting_domain
-      click_on "Start now"
-      click_on "Continue"
+      click_link "Start now"
+      click_button "Continue"
     end
 
     it "displays an error message indicating a property type should be chosen", :aggregate_failures do

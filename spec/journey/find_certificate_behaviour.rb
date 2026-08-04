@@ -4,22 +4,24 @@ shared_examples "shows the Get a new energy certificate start page" do
   end
 end
 
-shared_examples "a certificate search function" do |certificate_type:, property_type_label_element:, url_fragment:, find_a_postcode_text:, find_by_street_and_town_text:, find_by_street_and_town_header:, find_by_certificate_number_text:, search_by_postcode_header:, certificates_text_in_result_count:, text_in_street_and_town_results:, search_by_certificate_number_header:, link_text_in_postcode_search_results:|
+shared_examples "a certificate search function" do |certificate_type:, property_type_label:, url_fragment:, find_a_postcode_text:, find_by_street_and_town_text:, find_by_street_and_town_header:, find_by_certificate_number_text:, certificate_number_label:, search_by_postcode_header:, certificates_text_in_result_count:, text_in_street_and_town_results:, search_by_certificate_number_header:, link_text_in_postcode_search_results:|
   context "when searching for a #{certificate_type} certificate" do
     before do
       visit "http://find-energy-certificate.local.gov.uk:9393"
-      click_on "Start now"
-      find("##{property_type_label_element}").click
-      click_on "Continue"
+      click_link "Start now"
+      within_fieldset "What type of property is the certificate for?" do
+        choose property_type_label, allow_label_click: true
+      end
+      click_button "Continue"
     end
 
     it "shows a link to find your postcode if you don't know it" do
-      expect(page.find_link(find_a_postcode_text, href: "https://www.royalmail.com/find-a-postcode")).to be_truthy
+      expect(page).to have_link find_a_postcode_text, href: "https://www.royalmail.com/find-a-postcode"
     end
 
     context "with a postcode for which certificates exist" do
       before do
-        fill_in "postcode", with: "SW1A 2AA"
+        fill_in "Enter the postcode", with: "SW1A 2AA"
         click_button "Find"
       end
 
@@ -29,7 +31,7 @@ shared_examples "a certificate search function" do |certificate_type:, property_
 
       context "when selecting a known certificate from the results list" do
         before do
-          click_on link_text_in_postcode_search_results, match: :first
+          click_link link_text_in_postcode_search_results, match: :first
         end
 
         it "shows the certificate with the expected header" do
@@ -39,7 +41,7 @@ shared_examples "a certificate search function" do |certificate_type:, property_
 
       context "when selecting to get a new energy certificate" do
         before do
-          click_on "get a new energy certificate"
+          click_link "get a new energy certificate"
         end
 
         include_examples "shows the Get a new energy certificate start page"
@@ -48,8 +50,8 @@ shared_examples "a certificate search function" do |certificate_type:, property_
 
     context "with a postcode for which no certificates exist" do
       before do
-        fill_in "postcode", with: "E1 4FF"
-        click_on "Find"
+        fill_in "Enter the postcode", with: "E1 4FF"
+        click_button "Find"
       end
 
       context "when clicking on the link to get a new energy certificate" do
@@ -93,8 +95,8 @@ shared_examples "a certificate search function" do |certificate_type:, property_
 
     context "with an empty postcode" do
       before do
-        fill_in "postcode", with: ""
-        click_on("Find")
+        fill_in "Enter the postcode", with: ""
+        click_button "Find"
       end
 
       it "shows an error page with validation including a link to the form element", :aggregate_failures do
@@ -106,8 +108,8 @@ shared_examples "a certificate search function" do |certificate_type:, property_
 
     context "with an invalid postcode" do
       before do
-        fill_in "postcode", with: "SW%1 0AA"
-        click_on "Find"
+        fill_in "Enter the postcode", with: "SW%1 0AA"
+        click_button "Find"
       end
 
       it "shows an appropriate error message to enter a valid postcode" do
@@ -117,8 +119,8 @@ shared_examples "a certificate search function" do |certificate_type:, property_
 
     context "with a postcode that is too longer" do
       before do
-        fill_in "postcode", with: "NOT A POSTCODE"
-        click_on "Find"
+        fill_in "Enter the postcode", with: "NOT A POSTCODE"
+        click_button "Find"
       end
 
       it "shows an appropriate error message to enter a valid postcode" do
@@ -128,8 +130,8 @@ shared_examples "a certificate search function" do |certificate_type:, property_
 
     context "with an incomplete postcode" do
       before do
-        fill_in "postcode", with: "SW1"
-        click_on "Find"
+        fill_in "Enter the postcode", with: "SW1"
+        click_button "Find"
       end
 
       it "shows an appropriate error message to enter a valid postcode" do
@@ -150,13 +152,13 @@ shared_examples "a certificate search function" do |certificate_type:, property_
 
     context "with a certificate number (RRN)" do
       before do
-        click_on find_by_certificate_number_text
+        click_link find_by_certificate_number_text
       end
 
       context "when the certificate number exists" do
         before do
-          fill_in "reference_number", with: "4567-6789-4567-6789-4567"
-          click_on "Find"
+          fill_in certificate_number_label, with: "4567-6789-4567-6789-4567"
+          click_button "Find"
         end
 
         it "shows the certificate page", :aggregate_failures do
@@ -168,8 +170,8 @@ shared_examples "a certificate search function" do |certificate_type:, property_
 
       context "when the certificate number has a valid format but does not exist" do
         before do
-          fill_in "reference_number", with: "9900-0000-0000-0000-0099"
-          click_on "Find"
+          fill_in certificate_number_label, with: "9900-0000-0000-0000-0099"
+          click_button "Find"
         end
 
         it "shows an error page with a message that no certificate was found with the number", :aggregate_failures do
@@ -181,8 +183,8 @@ shared_examples "a certificate search function" do |certificate_type:, property_
 
       context "when the certificate number is too long" do
         before do
-          fill_in "reference_number", with: "4567-6789-4567-6789-4567-1234"
-          click_on "Find"
+          fill_in certificate_number_label, with: "4567-6789-4567-6789-4567-1234"
+          click_button "Find"
         end
 
         it "displays an error page with a validation link to the form element", :aggregate_failures do
@@ -195,14 +197,14 @@ shared_examples "a certificate search function" do |certificate_type:, property_
 
     context "with street and town" do
       before do
-        click_on find_by_street_and_town_text
+        click_link find_by_street_and_town_text
       end
 
       context "when searching with a street and town that match known certificates" do
         before do
-          fill_in "street_name", with: "1 Makeup Street"
-          fill_in "town", with: "Beauty Town"
-          click_on "Find"
+          fill_in "Enter the street", with: "1 Makeup Street"
+          fill_in "Enter the town or city", with: "Beauty Town"
+          click_button "Find"
         end
 
         it "shows a results page indicating matching results" do
@@ -212,9 +214,9 @@ shared_examples "a certificate search function" do |certificate_type:, property_
 
       context "when searching with a street and town that do not match known certificates" do
         before do
-          fill_in "street_name", with: "Madeup Street"
-          fill_in "town", with: "Madeup Town"
-          click_on "Find"
+          fill_in "Enter the street", with: "Madeup Street"
+          fill_in "Enter the town or city", with: "Madeup Town"
+          click_button "Find"
         end
 
         it "shows a message saying that no certificates were found for the given location" do
@@ -224,8 +226,8 @@ shared_examples "a certificate search function" do |certificate_type:, property_
 
       context "when searching with an empty street name" do
         before do
-          fill_in "town", with: "Beauty Town"
-          click_on "Find"
+          fill_in "Enter the town or city", with: "Beauty Town"
+          click_button "Find"
         end
 
         it "shows an error page with the message to enter a street", :aggregate_failures do
@@ -237,8 +239,8 @@ shared_examples "a certificate search function" do |certificate_type:, property_
 
       context "when searching with an empty town name" do
         before do
-          fill_in "street_name", with: "1 street ave"
-          click_on "Find"
+          fill_in "Enter the street", with: "1 street ave"
+          click_button "Find"
         end
 
         it "shows an error page with the message to enter a town", :aggregate_failures do
@@ -250,7 +252,7 @@ shared_examples "a certificate search function" do |certificate_type:, property_
 
       context "when searching with empty street and town" do
         before do
-          click_on "Find"
+          click_button "Find"
         end
 
         it "shows an error page with messages both to enter a street and enter a town", :aggregate_failures do
@@ -264,10 +266,10 @@ shared_examples "a certificate search function" do |certificate_type:, property_
 
       context "when searching with a street and town that have no matching certificates and clicking the link to get a new certificate" do
         before do
-          fill_in "street_name", with: "Madeup Street"
-          fill_in "town", with: "Madeup Town"
-          click_on "Find"
-          click_on "get a new energy certificate"
+          fill_in "Enter the street", with: "Madeup Street"
+          fill_in "Enter the town or city", with: "Madeup Town"
+          click_button "Find"
+          click_link "get a new energy certificate"
         end
 
         include_examples "shows the Get a new energy certificate start page"

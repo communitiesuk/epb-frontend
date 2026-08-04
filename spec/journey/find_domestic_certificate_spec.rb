@@ -30,12 +30,13 @@ describe "Journey::FindDomesticCertificate", :journey, type: :feature do
   after(:all) { Process.kill("KILL", process_id) if process_id }
 
   it_behaves_like "a certificate search function", certificate_type: "domestic",
-                                                   property_type_label_element: "label-domestic",
+                                                   property_type_label: "A domestic property",
                                                    url_fragment: "find-a-certificate",
                                                    find_a_postcode_text: "find a postcode on Royal Mail’s postcode finder",
                                                    find_by_street_and_town_text: "find an energy certificate using the street name and town",
                                                    find_by_street_and_town_header: "What is the address?",
                                                    find_by_certificate_number_text: "find an energy certificate by using its certificate number",
+                                                   certificate_number_label: "Enter a certificate number",
                                                    search_by_postcode_header: "What is the postcode?",
                                                    search_by_certificate_number_header: "What is the certificate number?",
                                                    certificates_text_in_result_count: "EPCs",
@@ -69,8 +70,8 @@ describe "Journey::FindDomesticCertificate", :journey, type: :feature do
   context "when clicking continue without selecting type of property" do
     before do
       visit "http://find-energy-certificate.local.gov.uk:9393"
-      click_on "Start now"
-      click_on "Continue"
+      click_link "Start now"
+      click_button "Continue"
     end
 
     it "shows an error page with a validation that links to the form elements for choosing a type of property", :aggregate_failures do
@@ -83,11 +84,13 @@ describe "Journey::FindDomesticCertificate", :journey, type: :feature do
   context "when using the site in Welsh and performing a search on a postcode with domestic certificates against it" do
     before do
       visit "http://find-energy-certificate.local.gov.uk:9393"
-      click_on "Welsh (Cymraeg)"
-      click_on "Dechrau nawr"
-      find("#label-domestic").click
-      click_on "Parhau"
-      fill_in "postcode", with: "SW1A 2AA"
+      click_link "Welsh (Cymraeg)"
+      click_link "Dechrau nawr"
+      within_fieldset "Tystysgrif i ba fath o eiddo yw hi?" do
+        choose "Eiddo domestig", allow_label_click: true
+      end
+      click_button "Parhau"
+      fill_in "Rhowch y cod post", with: "SW1A 2AA"
       click_button "Chwiliwch"
     end
 
