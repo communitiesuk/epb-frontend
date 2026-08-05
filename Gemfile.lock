@@ -262,7 +262,7 @@ GEM
       ffi (~> 1.17.2)
     yggdrasil-engine (1.2.2-x86_64-linux)
       ffi (~> 1.17.2)
-    zeitwerk (2.8.2)
+    zeitwerk (2.8.3)
 
 PLATFORMS
   arm64-darwin-25
