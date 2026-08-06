@@ -1,34 +1,6 @@
 # frozen_string_literal: true
 
-require "net/http"
-
-describe "Integration::Rackup" do
-  process_id = nil
-
-  before(:all) do
-    process =
-      IO.popen(
-        [
-          "rackup",
-          "config_test.ru",
-          "-q",
-          "-o",
-          "127.0.0.1",
-          "-p",
-          "9393",
-          { err: %i[child out] },
-        ],
-      )
-    process_id = process.pid
-
-    # Wait until the Puma server has started up before commencing tests
-    loop do
-      break if process.readline.include?("Listening on http://127.0.0.1:9393")
-    end
-  end
-
-  after(:all) { Process.kill("KILL", process_id) if process_id }
-
+describe "Integration::Rackup", :journey do
   let(:request_assessor) do
     Net::HTTP.new("getting-new-energy-certificate.local.gov.uk", 9_393)
   end

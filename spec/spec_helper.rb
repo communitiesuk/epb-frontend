@@ -157,6 +157,18 @@ RSpec::Matchers.define :match_html do |expected_html, **options|
   end
 end
 
+RSpec.configure do |config|
+  config.before(:all, :journey) do
+    process = IO.popen(["rackup", "config_test.ru", "-q", "-o", "127.0.0.1", "-p", "9393", { err: %i[child out] }])
+    @process_id = process.pid
+    loop { break if process.readline.include?("Listening on http://127.0.0.1:9393") }
+  end
+
+  config.after(:all, :journey) do
+    Process.kill("KILL", @process_id) if @process_id
+  end
+end
+
 Capybara.register_driver :custom_chrome_headless do |app|
   version = Capybara::Selenium::Driver.load_selenium
   options_key = Capybara::Selenium::Driver::CAPS_VERSION.satisfied_by?(version) ? :capabilities : :options
