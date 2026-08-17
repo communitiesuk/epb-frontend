@@ -127,3 +127,120 @@ Add the following line to your hosts file (/etc/hosts for macOS and most linux d
 `127.0.0.1 getting-new-energy-certificate.epb-frontend find-energy-certificate.epb-frontend getting-new-energy-certificate.local.gov.uk find-energy-certificate.local.gov.uk epb-frontend epb-register-api epb-auth-server epb-feature-flag`
 
 You then should be able to access the locally deployed website via `http://find-energy-certificate.epb-frontend/` and `http://getting-new-energy-certificate.epb-frontend/`
+
+## Environmental variables
+
+#### `APP_ENV`
+
+Set the [Sintra environment](https://sinatrarb.com/intro.html#environments).
+Should be one of "production", "development" or "test".
+
+Sinatra will fallback to `RACK_ENV` or "development" if unset.
+
+#### `RACK_ENV`
+
+Used by rackup to choose the [default middleware stack](https://github.com/rack/rackup/blob/f3fa1d6ada90e9e7aa1f712488ddde87ea2a2075/lib/rackup/server.rb#L273).
+Should be one of "development" (default) or "deployment". If set to any other value no middleware stack is loaded.
+
+#### `STAGE`
+
+The EPB environment. Can be one of "test", "development", "integration", "staging" or "production".
+
+- Sets the unleash feature flag service app name to `toggles-#{stage}`
+- When "test", configures exceptions and enabled Capybara lock-step
+- When "test", disables directing to the service start for intermediate pages on forms
+- Unless "development" or "test", enables Sentry and sets its environment value
+- Unless "production", sets the tag used in the phase banner
+
+#### `ASSETS_VERSION`
+
+The value of the cache busting prefix used for serving assets.
+
+This is a random number generated for each production build by `make assets-version` and saved to an `./ASSETS_VERSION` file.
+
+Do not set this for local development.
+
+#### `EPB_API_URL`
+
+The URL of the register API.
+
+#### `EPB_DATA_WAREHOUSE_API_URL`
+
+The URL of the data warehouse API.
+
+#### `EPB_AUTH_CLIENT_ID`
+
+The client id for connecting to the API services.
+
+#### `EPB_AUTH_CLIENT_SECRET`
+
+The client secret for connecting to the API services.
+
+#### `EPB_AUTH_SERVER`
+
+The URL of the auth server for connecting to the register API.
+
+#### `EPB_RECAPTCHA_SITE_KEY`
+
+The key for the Google Recaptcha service.
+
+#### `EPB_RECAPTCHA_SITE_SECRET`
+
+The secret for the Google Recaptcha service.
+
+#### `EPB_SUSPECTED_BOT_USER_AGENTS`
+
+A JSON formatted array of strings containing a list of user-agent strings that should be presented with a recaptcha.
+
+#### `EPB_UNLEASH_URI`
+
+The URL of the unleash feature flag service.
+
+#### `EPB_UNLEASH_AUTH_TOKEN`
+
+Authentication token for the unleash feature flag service.
+
+#### `GTM_PROPERTY_FINDING`
+
+The Google tag manager container id used to load Google Analytics for the "Find an energy certificate" service.
+
+This is selected if the host domain starts with "find"
+
+#### `GTM_PROPERTY_GETTING`
+
+The Google tag manager container id used to load Google Analytics for the "Get a new energy certificate" service.
+
+This is selected if the host domain does not start with "find"
+
+#### `SCRIPT_NONCE`
+
+The nonce used by the Content-Security-Policy to protect against XSS attacks.
+
+#### `STATIC_START_PAGE_FINDING_CY`
+
+URL of the gov.uk hosted start page for the [Welsh "Find an energy certificate" service](https://www.gov.uk/dod-o-hyd-i-dystysgrif-ynni)
+
+This is selected if the host domain name starts with "find" and the language is "cy".
+
+#### `STATIC_START_PAGE_FINDING_EN`
+
+URL of the gov.uk hosted start page for the [English "Find an energy certificate" service](https://www.gov.uk/find-energy-certificate)
+
+This is selected if the host domain name starts with "find" and the language is not "cy".
+
+#### `STATIC_START_PAGE_GETTING_CY`
+
+URL of the gov.uk hosted start page for the [Welsh "Get a new energy certificate" service](https://www.gov.uk/cael-tystysgrif-ynni-newydd)
+
+This is selected if the host domain name does not start with "find" and the language is "cy".
+
+#### `STATIC_START_PAGE_GETTING_EN`
+
+URL of the gov.uk hosted start page for the [English "Get a new energy certificate" service](https://www.gov.uk/get-new-energy-certificate)
+
+This is selected if the host domain name does not start with "find" and the language is not "cy".
+
+#### `SUPPRESS_REDIRECT_TO_SERVICE_START`
+
+If "true", prevents the user being redirected back to the gov.uk hosted service start page when following
+a deep-link from a third party website to an intermediary page.
