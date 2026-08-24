@@ -1,6 +1,3 @@
-/**
- * @jest-environment jsdom
- */
 /* eslint-env jest */
 import { copyToClipboard } from '../share-certificate.js'
 
