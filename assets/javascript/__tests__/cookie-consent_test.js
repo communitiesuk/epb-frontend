@@ -1,6 +1,3 @@
-/**
- * @jest-environment jsdom
- */
 /* eslint-env jest */
 
 import cookieConsent from '../cookie-consent'

@@ -1,0 +1,31 @@
+name: Lint and test
+
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: echo "127.0.0.1 getting-new-energy-certificate.local.gov.uk find-energy-certificate.local.gov.uk" | sudo tee -a /etc/hosts
+      - name: Prepare assets
+        run: bundle exec ruby ./build/compile_assets.rb
+      - name: Lint
+        run: make lint
+      - name: Test
+        run: make test

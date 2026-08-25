@@ -1,6 +1,3 @@
-/**
- * @jest-environment jsdom
- */
 /* eslint-env jest */
 import { initButtons, getUrlParameter } from '../service-performance.js'
 describe('when rendering service performance in Welsh', () => {

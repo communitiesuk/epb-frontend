@@ -8,7 +8,7 @@ help:
 .PHONY: frontend-build
 frontend-build: ## Run the frontend build process to compile sass and move asset files to public
 	@echo "Building frontend assets..."
-	ruby ./build/compile_assets.rb
+	@bundle exec ruby ./build/compile_assets.rb
 
 frontend-build-watch:
 	@$(SHELL) ./scripts/frontend-build-watch.sh
@@ -29,6 +29,10 @@ assets-version:
 .PHONY: run
 run:
 	@bundle exec rackup -p 9292 ${ARGS}
+
+.PHONY: lint
+lint:
+	@bundle exec rubocop && npm run lint
 
 .PHONY: formatmak
 format:
