@@ -6,13 +6,14 @@ env:
 
 phases:
   install:
+    runtime-versions:
+      nodejs: 22
     commands:
       - nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://127.0.0.1:2375 --storage-driver=overlay2&
       - timeout 30 sh -c "until docker info; do echo .; sleep 1; done"
 
   pre_build:
     commands:
-      - n $NODE_22_VERSION
       - npm ci
       - bundle install
       - make assets-version
