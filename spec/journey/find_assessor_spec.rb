@@ -221,8 +221,8 @@ describe "Journey::FindAssessor", :journey, type: :feature do
 
         it "displays accreditation scheme contact details", :aggregate_failures do
           expect(page).to have_content "Contact details for Stroma Certification Ltd:"
-          expect(page).to have_content "Email: certification@stroma.com"
-          expect(page).to have_content "Telephone: 0330 124 9660"
+          expect(page).to have_content "Email: enquiries@elmhurstenergy.co.uk"
+          expect(page).to have_content "Telephone: 01455 883 250"
         end
       end
 

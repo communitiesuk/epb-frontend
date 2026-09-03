@@ -345,8 +345,8 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
             expect(response.body).to include(
               "Contact details for Stroma Certification Ltd:",
             )
-            expect(response.body).to include("certification@stroma.com")
-            expect(response.body).to include("0330 124 9660")
+            expect(response.body).to include("enquiries@elmhurstenergy.co.uk")
+            expect(response.body).to include("01455 883 250")
           end
 
           it "shows Sterling contact details" do
