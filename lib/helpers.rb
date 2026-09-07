@@ -448,47 +448,6 @@ module Helpers
     !root_url.nil? && !root_url.empty? ? root_url : localised_url("#{get_subdomain_host('getting-new-energy-certificate')}/")
   end
 
-  # Use reCAPTCHA only if the appropriate environment variables are set
-  # To disable reCAPTCHA remove these ENV variables from the deployed app
-  def using_recaptcha?
-    %w[EPB_RECAPTCHA_SITE_KEY EPB_RECAPTCHA_SITE_SECRET].all? { |key| ENV.key? key }
-  end
-
-  def recaptcha_pass?
-    return true unless using_recaptcha?
-
-    response_token = params["g-recaptcha-response"]
-    return false if response_token.nil?
-
-    begin
-      recaptcha = Net::HTTP.post_form URI("https://www.google.com/recaptcha/api/siteverify"), {
-        secret: ENV["EPB_RECAPTCHA_SITE_SECRET"],
-        response: response_token,
-      }
-      JSON.parse(recaptcha.body)["success"]
-    rescue StandardError
-      false
-    end
-  end
-
-  def recaptcha_site_key
-    ENV["EPB_RECAPTCHA_SITE_KEY"].to_s
-  end
-
-  def bot_user_agent?
-    suspected_bot_user_agents.include? request.user_agent
-  end
-
-  def should_show_recaptcha?
-    using_recaptcha? && bot_user_agent?
-  end
-
-  def suspected_bot_user_agents
-    JSON.parse(ENV["EPB_SUSPECTED_BOT_USER_AGENTS"])
-  rescue StandardError
-    []
-  end
-
   def to_csv(view_model_array)
     return "" if view_model_array.empty?
 

@@ -68,8 +68,6 @@ module Controller
 
           params["postcode"].strip!
 
-          raise Errors::BotDetected if bot_user_agent? && !recaptcha_pass?
-
           locals[:results] =
             @container
               .get_object(:find_certificate_by_postcode_use_case)
@@ -106,24 +104,10 @@ module Controller
                 t('layout.body.govuk')
               }"
             @errors[:postcode] = t("validation_errors.postcode_invalid")
-          when Errors::BotDetected
-            status 400
-            cache_control :no_cache, :no_store
-            @page_title =
-              "#{t('error.error')}#{
-                t('find_certificate_by_postcode.top_heading')
-              } – #{t('services.find_an_energy_certificate')} – #{
-                t('layout.body.govuk')
-              }"
-            @errors[:postcode] = "Please verify that you’re a human and try again."
           else
             return server_error(e)
           end
         end
-      end
-
-      if should_show_recaptcha?
-        cache_control :no_cache, :no_store
       end
 
       show(erb_template, locals)
@@ -298,8 +282,6 @@ module Controller
 
           params["postcode"].strip!
 
-          raise Errors::BotDetected if bot_user_agent? && !recaptcha_pass?
-
           locals[:results] =
             @container
               .get_object(:find_certificate_by_postcode_use_case)
@@ -340,24 +322,10 @@ module Controller
                 t('layout.body.govuk')
               }"
             @errors[:postcode] = t("validation_errors.postcode_invalid")
-          when Errors::BotDetected
-            status 400
-            cache_control :no_cache, :no_store
-            @page_title =
-              "#{t('error.error')}#{
-                t('find_certificate_by_postcode.top_heading')
-              } – #{t('services.find_an_energy_certificate')} – #{
-                t('layout.body.govuk')
-              }"
-            @errors[:postcode] = t("validation_errors.captcha_error")
           else
             return server_error(e)
           end
         end
-      end
-
-      if should_show_recaptcha?
-        cache_control :no_cache, :no_store
       end
 
       show(erb_template, locals)

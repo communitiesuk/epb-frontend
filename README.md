@@ -180,18 +180,6 @@ The client secret for connecting to the API services.
 
 The URL of the auth server for connecting to the register API.
 
-#### `EPB_RECAPTCHA_SITE_KEY`
-
-The key for the Google Recaptcha service.
-
-#### `EPB_RECAPTCHA_SITE_SECRET`
-
-The secret for the Google Recaptcha service.
-
-#### `EPB_SUSPECTED_BOT_USER_AGENTS`
-
-A JSON formatted array of strings containing a list of user-agent strings that should be presented with a recaptcha.
-
 #### `EPB_UNLEASH_URI`
 
 The URL of the unleash feature flag service.
