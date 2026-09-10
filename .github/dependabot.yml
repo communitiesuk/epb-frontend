@@ -4,6 +4,8 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
+    allow:
+      - dependency-type: all   # includes direct and indirect dependencies
 
   - package-ecosystem: "npm"
     directory: "/"
