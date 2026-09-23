@@ -29,7 +29,7 @@ group :test do
   gem "compare-xml", "~>1.0"
   gem "rack-test", "~> 2.2.0"
   gem "rspec", "~>3.13"
-  gem "selenium-webdriver", "~> 4.48"
+  gem "selenium-webdriver", "~> 4.49"
   gem "timecop", "~> 0.9.11"
   gem "webdrivers", "~> 5.2.0"
   gem "webmock", "~> 3.26"
