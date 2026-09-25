@@ -226,6 +226,7 @@ ENV["EPB_AUTH_CLIENT_SECRET"] = "test.client.secret"
 ENV["EPB_AUTH_SERVER"] = "http://test-auth-server.gov.uk"
 ENV["EPB_API_URL"] = "http://test-api.gov.uk"
 ENV["STAGE"] = "test"
+ENV["APP_ENV"] = "test"
 ENV["EPB_UNLEASH_URI"] = "https://test-toggle-server/api"
 ENV["EPB_DATA_WAREHOUSE_API_URL"] = "http://epb-data-warehouse-api"
 ENV["SCRIPT_NONCE"] = SecureRandom.random_number(16**10).to_s(16).rjust(10, "0") if ENV["SCRIPT_NONCE"].nil?

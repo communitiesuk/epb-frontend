@@ -43,7 +43,7 @@ module Helpers
   def get_subdomain_host(subdomain)
     current_url = request.url
 
-    return "http://#{subdomain}.local.gov.uk:9393" if settings.development?
+    return "http://#{subdomain}.local.gov.uk:9393" if settings.test?
 
     if current_url.include?("integration")
       "https://#{subdomain}-integration.digital.communities.gov.uk"

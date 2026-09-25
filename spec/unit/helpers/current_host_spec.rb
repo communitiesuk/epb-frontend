@@ -14,7 +14,8 @@ describe "Helpers.get_subdomain_host" do
 
   let(:settings) do
     settings = Object.new
-    def settings.development?
+
+    def settings.test?
       false
     end
 

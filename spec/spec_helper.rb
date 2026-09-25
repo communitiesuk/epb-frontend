@@ -25,6 +25,7 @@ ENV["EPB_AUTH_SERVER"] = AUTH_URL
 ENV["EPB_API_URL"] = "http://test-api.gov.uk"
 ENV["EPB_DATA_WAREHOUSE_API_URL"] = "http://epb-data-warehouse-api"
 ENV["STAGE"] = "test"
+ENV["APP_ENV"] = "test"
 ENV["EPB_UNLEASH_URI"] = "https://test-toggle-server/api"
 
 I18n.load_path = Dir[File.join(File.dirname(__FILE__), "/../locales", "*.yml")]
