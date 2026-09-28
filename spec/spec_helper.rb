@@ -10,7 +10,6 @@ require "nokogiri"
 require "compare-xml"
 require "zeitwerk"
 require "capybara/rspec"
-require "capybara-lockstep"
 require "active_support"
 require "active_support/cache"
 require "active_support/notifications"
@@ -192,3 +191,22 @@ end
 Capybara.default_driver = :custom_chrome_headless
 Capybara.javascript_driver = :custom_chrome_headless
 Capybara.app_host = "http://localhost:9393"
+
+# # TODO remove when next version of Capybara is released
+# Chrome 134 can thrown
+# Selenium::WebDriver::Error::UnknownError:
+# unknown error: unhandled inspector error: {"code":-32000,"message":"Node with given id does not belong to the document"}
+#
+# Capybara's retry mechanism should catch and retry on this error but it does not.
+#
+# This patch ensures Capybara's internal synchronize retry will retry on these errors
+#
+# See https://github.com/teamcapybara/capybara/issues/2800
+# And https://github.com/teamcapybara/capybara/blob/53e7254c528d13a8ff5f4438085eb9dda0a287b0/lib/capybara/node/base.rb#L134
+class Capybara::Node::Base
+  prepend(Module.new do
+    protected def catch_error?(error, errors = nil)
+      super || (error.is_a?(Selenium::WebDriver::Error::UnknownError) && error.message.include?("Node with given id does not belong to the document"))
+    end
+  end)
+end

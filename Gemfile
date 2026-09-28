@@ -24,7 +24,6 @@ gem "zeitwerk", "~> 2.8"
 
 group :test do
   gem "capybara", "~> 3.40"
-  gem "capybara-lockstep", "~> 2.3"
   gem "capybara-selenium", "~> 0.0.6"
   gem "compare-xml", "~>1.0"
   gem "rack-test", "~> 2.2.0"

@@ -147,7 +147,7 @@ Should be one of "development" (default) or "deployment". If set to any other va
 The EPB environment. Can be one of "test", "development", "integration", "staging" or "production".
 
 - Sets the unleash feature flag service app name to `toggles-#{stage}`
-- When "test", configures exceptions and enabled Capybara lock-step
+- When "test", configures exceptions
 - When "test", disables directing to the service start for intermediate pages on forms
 - Unless "development" or "test", enables Sentry and sets its environment value
 - Unless "production", sets the tag used in the phase banner
