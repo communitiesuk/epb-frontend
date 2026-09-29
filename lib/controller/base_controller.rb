@@ -3,21 +3,36 @@ require "i18n"
 require "i18n/backend/fallbacks"
 require "sinatra/base"
 require "sinatra/cookies"
+require "sinatra/custom_logger"
 require_relative "../container"
 require_relative "../helper/toggles"
 
 module Controller
   class BaseController < Sinatra::Base
     helpers Helpers
+    helpers Sinatra::CustomLogger
     attr_reader :toggles
 
     set :views, "lib/views"
     set :erb, escape_html: true
     set :public_folder, proc { File.join(root, "/../../public") }
     set :static_cache_control, [:public, { max_age: 60 * 60 * 24 * 7 }] if ENV["ASSETS_VERSION"]
+    set :logger, Logger.new($stdout, level: Logger::DEBUG)
 
-    if ENV["STAGE"] == "test"
+    configure :production do
+      logger.level = Logger::ERROR
+    end
+
+    configure :development do
+      require "sinatra/reloader"
+      register Sinatra::Reloader
+      also_reload "lib/**/*.rb"
+      set :host_authorization, { permitted_hosts: [] }
       set :show_exceptions, :after_handler
+    end
+
+    configure :test do
+      logger.level = Logger::FATAL
     end
 
     def initialize(*args)
@@ -25,18 +40,9 @@ module Controller
       setup_locales
       @toggles = Helper::Toggles
       @container = Container.new
-      @logger = Logger.new($stdout)
-      @logger.level = Logger::INFO
     end
 
     Helper::Assets.setup_cache_control(self)
-
-    configure :development do
-      require "sinatra/reloader"
-      register Sinatra::Reloader
-      also_reload "lib/**/*.rb"
-      set :host_authorization, { permitted_hosts: [] }
-    end
 
     before do
       set_locale
@@ -105,7 +111,7 @@ module Controller
         error[:backtrace] = exception.backtrace
       end
 
-      @logger.error JSON.generate(error)
+      logger.error JSON.generate(error)
       @page_title =
         "#{t('error.500.heading')} – #{t('layout.body.govuk')}"
       status(was_timeout ? 504 : 500)
