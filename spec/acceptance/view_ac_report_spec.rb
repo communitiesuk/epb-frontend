@@ -34,12 +34,14 @@ describe "Acceptance::AirConditioningInspectionReport", type: :feature do
     end
 
     it "shows the summary section" do
-      expect(response.body).to have_css "dt", text: "Address"
-      expect(response.body).to have_css "dd", text: "The Bank Plc 49-51 Northumberland Street NEWCASTLE UPON TYNE NE1 7AF"
-      expect(response.body).to have_css "dt", text: "Report number"
-      expect(response.body).to have_css "dd", text: "0000-0000-0000-0000-9999"
-      expect(response.body).to have_css "dt", text: "Valid until"
-      expect(response.body).to have_css "dd", text: "6 February 2025"
+      Timecop.freeze Time.utc(2001, 6, 21) do
+        expect(response.body).to have_css "dt", text: "Address"
+        expect(response.body).to have_css "dd", text: "The Bank Plc 49-51 Northumberland Street NEWCASTLE UPON TYNE NE1 7AF"
+        expect(response.body).to have_css "dt", text: "Report number"
+        expect(response.body).to have_css "dd", text: "0000-0000-0000-0000-9999"
+        expect(response.body).to have_css "dt", text: "Valid until"
+        expect(response.body).to have_css "dd", text: "6 February 2025"
+      end
     end
 
     it "can show the Assessor's details section" do

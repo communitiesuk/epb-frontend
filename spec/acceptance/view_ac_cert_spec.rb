@@ -8,7 +8,6 @@ describe "Acceptance::AirConditioningInspectionCertificate", type: :feature do
 
   context "when an ac certificate exists" do
     before do
-      Timecop.freeze(Time.utc(2023, 6, 21))
       FetchAssessmentSummary::AssessmentStub.fetch_ac_cert(
         assessment_id: "0000-0000-0000-0000-9999",
       )
@@ -43,12 +42,14 @@ describe "Acceptance::AirConditioningInspectionCertificate", type: :feature do
     end
 
     it "shows the summary section", :aggregate_failures do
-      expect(response.body).to have_css "dt", text: "Address"
-      expect(response.body).to have_css "dd", text: "66 Primrose Hill London SW1B 2BB"
-      expect(response.body).to have_css "dt", text: "Certificate number"
-      expect(response.body).to have_css "dd", text: "0000-0000-0000-0000-9999"
-      expect(response.body).to have_css "dt", text: "Valid until"
-      expect(response.body).to have_css "dd", text: "21 September 2024"
+      Timecop.freeze Time.utc(2001, 6, 21) do
+        expect(response.body).to have_css "dt", text: "Address"
+        expect(response.body).to have_css "dd", text: "66 Primrose Hill London SW1B 2BB"
+        expect(response.body).to have_css "dt", text: "Certificate number"
+        expect(response.body).to have_css "dd", text: "0000-0000-0000-0000-9999"
+        expect(response.body).to have_css "dt", text: "Valid until"
+        expect(response.body).to have_css "dd", text: "21 September 2024"
+      end
     end
 
     it "shows the Assessment details section" do

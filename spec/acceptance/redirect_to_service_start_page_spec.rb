@@ -19,7 +19,8 @@ RSpec.describe "Redirect to service start page" do
 
   context "when testing redirecting" do
     before do
-      stub_const("ENV", { "STAGE" => "redirect-test" })
+      allow(ENV).to receive(:[]).and_call_original
+      allow(ENV).to receive(:[]).with("STAGE").and_return("redirect-test")
 
       FetchAssessmentSummary::AssessmentStub.fetch_rdsap(assessment_id: "0000-0000-0000-0000-0001")
       FetchAssessmentSummary::AssessmentStub.fetch_dec_summary(assessment_id: "0000-0000-0000-0000-0001")
@@ -36,40 +37,41 @@ RSpec.describe "Redirect to service start page" do
     end
 
     it "returns status 200 when a referrer is nil" do
+      header "referer", nil
       response = get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/type-of-property"
       expect(response.status).to eq(200)
     end
 
     it "returns status 200 when a referrer is empty" do
-      env "HTTP_REFERER", ""
+      header "referer", ""
       response = get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/type-of-property"
 
       expect(response.status).to eq(200)
     end
 
     it "returns status 303 when a referrer is outside of the service" do
-      env "HTTP_REFERER", "http://example.com"
+      header "referer", "http://example.com"
       response = get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/type-of-property"
 
       expect(response.status).to eq(303)
     end
 
     it "returns a response that specifies no cache and no store if the referrer is outside of the service" do
-      env "HTTP_REFERER", "http://example.com"
+      header "referer", "http://example.com"
       response = get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/type-of-property"
 
       expect(response.headers["Cache-Control"]).to eq "no-cache, no-store"
     end
 
     it "returns status 200 when a referrer is GOV.UK start page" do
-      env "HTTP_REFERER", "https://www.gov.uk/find-energy-certificate"
+      header "referer", "https://www.gov.uk/find-energy-certificate"
       response = get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/type-of-property"
 
       expect(response.status).to eq(200)
     end
 
     it "returns status 200 when a referrer is within the services" do
-      env "HTTP_REFERER", "https://getting-new-energy-certificate.service.gov.uk/find-an-assessor/type-of-domestic-property"
+      header "referer", "https://getting-new-energy-certificate.service.gov.uk/find-an-assessor/type-of-domestic-property"
       response = get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/type-of-property"
 
       expect(response.status).to eq(200)
@@ -112,11 +114,12 @@ RSpec.describe "Redirect to service start page" do
 
     context "when SUPPRESS_REDIRECT_TO_SERVICE_START environment variable is set to true" do
       before do
-        stub_const("ENV", ENV.merge({ "SUPPRESS_REDIRECT_TO_SERVICE_START" => "true" }))
+        allow(ENV).to receive(:[]).and_call_original
+        allow(ENV).to receive(:[]).with("SUPPRESS_REDIRECT_TO_SERVICE_START").and_return("true")
       end
 
       it "returns status 200 when a referrer is outside of the service" do
-        env "HTTP_REFERER", "http://example.com"
+        header "referer", "http://example.com"
         response = get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/type-of-property"
 
         expect(response.status).to eq(200)
