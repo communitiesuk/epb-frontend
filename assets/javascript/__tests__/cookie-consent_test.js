@@ -1,4 +1,4 @@
-/* eslint-env jest */
+import { expect, describe, test, jest, beforeEach } from '@jest/globals'
 
 import cookieConsent from '../cookie-consent'
 
@@ -18,7 +18,7 @@ describe('using GTM (Google Tag Manager)', () => {
   describe('when cookies have not been accepted or rejected', () => {
     beforeEach(init)
 
-    it('actively denies consent', () => {
+    test('actively denies consent', () => {
       expect(window.dataLayer).toStrictEqual(expectedDatalayer({ granted: false }))
     })
   })
@@ -32,7 +32,7 @@ describe('using GTM (Google Tag Manager)', () => {
       init()
     })
 
-    it('actively grants consent', () => {
+    test('actively grants consent', () => {
       expect(window.dataLayer).toStrictEqual(expectedDatalayer({ granted: true }))
     })
   })
@@ -46,7 +46,7 @@ describe('using GTM (Google Tag Manager)', () => {
       init()
     })
 
-    it('actively denies consent', () => {
+    test('actively denies consent', () => {
       expect(window.dataLayer).toStrictEqual(expectedDatalayer({ granted: false }))
     })
   })
@@ -58,7 +58,7 @@ describe('using GTM (Google Tag Manager)', () => {
       acceptButton.dispatchEvent(clickEvent)
     })
 
-    it('has actively denied consent, but additionally actively grants it', () => {
+    test('has actively denied consent, but additionally actively grants it', () => {
       expect(window.dataLayer).toStrictEqual(
         expectedDatalayer({ granted: false }).concat([['consent', 'update', { analytics_storage: 'granted' }]])
       )
@@ -82,15 +82,12 @@ describe('when calling the reject cookie function to remove _ga* cookies  ', () 
     const objCookie = cookieConsent(window.GOOGLE_PROPERTY, window, gtag)
     objCookie.rejectCookieConsent()
   })
-  afterEach(() => {
-    window.dataLayer = []
-  })
 
-  it('removes all cookies that starts with _ga', () => {
+  test('removes all cookies that starts with _ga', () => {
     expect(window.document.cookie).not.toContain('_ga')
   })
 
-  it('set the cookie_consent cookie to false', () => {
+  test('set the cookie_consent cookie to false', () => {
     expect(window.document.cookie).toContain('cookie_consent=false')
   })
 })

@@ -1,12 +1,10 @@
-export { copyToClipboard }
-
-function clickHandler () { // eslint-disable-line no-unused-vars
+export function clickHandler () { // eslint-disable-line no-unused-vars
   copyToClipboard()
   changeTextAndIconAnimation()
   maintainTabIndexOrder()
 }
 
-function copyToClipboard () {
+export async function copyToClipboard () {
   const input = document.body.appendChild(document.createElement('input'))
   input.value = window.location.href
   input.select()
@@ -15,7 +13,7 @@ function copyToClipboard () {
     document.execCommand('copy')
   }
 
-  navigator.permissions.query({ name: 'clipboard-write' })
+  return navigator.permissions.query({ name: 'clipboard-write' })
     .then((result) => {
       if (result.state === 'granted' || result.state === 'prompt') {
         navigator.clipboard.writeText(input.value)
