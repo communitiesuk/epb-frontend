@@ -5,11 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#0b0c0c">
   <meta name="robots" content="noindex, nofollow">
-
-  <!--[if gt IE 8]><!-->
   <link href="<%= assets_path('/printable.css') %>" media="print" rel="stylesheet" type="text/css">
   <link href="<%= assets_path('/application.css') %>" media="screen" rel="stylesheet" type="text/css">
-  <!--<![endif]-->
 <% unless @skip_custom_css %>
   <link href="<%= assets_path('/print-certificates.css') %>" media="print" rel="stylesheet" type="text/css">
 <% end %>
