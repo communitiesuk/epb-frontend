@@ -181,9 +181,9 @@
     </div>
   </div>
 </footer>
-<script type="module" src="<%= assets_path('/javascript/govuk.js') %>" nonce="<%= script_nonce %>"></script>
+<script type="module" src="<%= assets_path('/javascript/govuk-frontend.min.js') %>" nonce="<%= script_nonce %>"></script>
 <script type="module" nonce="<%= script_nonce %>">
-  import { initAll } from '<%= assets_path('/javascript/govuk.js') %>'
+  import { initAll } from '<%= assets_path('/javascript/govuk-frontend.min.js') %>'
   initAll()
 </script>
 </body>
