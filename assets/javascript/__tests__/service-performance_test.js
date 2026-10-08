@@ -1,8 +1,8 @@
-/* eslint-env jest */
-import { initButtons, getUrlParameter } from '../service-performance.js'
-describe('when rendering service performance in Welsh', () => {
-  const savedLocation = window.location
+import { expect, describe, test, beforeEach } from '@jest/globals'
 
+import { initButtons, getUrlParameter } from '../service-performance.js'
+
+describe('when rendering service performance in Welsh', () => {
   beforeEach(() => {
     window.history.pushState(
       {},
@@ -81,9 +81,6 @@ describe('when rendering service performance in Welsh', () => {
       '  </div>' +
       '</div>'
   })
-  afterEach(() => {
-    window.location = savedLocation
-  })
 
   test('gets the language from the query string', () => {
     expect(getUrlParameter('lang')).toBe('cy')
@@ -105,8 +102,6 @@ describe('when rendering service performance in Welsh', () => {
 })
 
 describe('when rendering service performance in English', () => {
-  const savedLocation = window.location
-
   beforeEach(() => {
     window.history.pushState(
       {},
@@ -184,9 +179,6 @@ describe('when rendering service performance in English', () => {
       '    </div>' +
       '  </div>' +
       '</div>'
-  })
-  afterEach(() => {
-    window.location = savedLocation
   })
 
   test('gets the language from the query string', () => {

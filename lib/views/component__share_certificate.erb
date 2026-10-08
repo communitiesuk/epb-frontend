@@ -1,4 +1,3 @@
-<script type = "text/javascript" src="<%= assets_path('/javascript/share-certificate.js') %>" nonce="<%= script_nonce %>"></script>
 <div class="component__print govuk-!-display-none-print">
 
   <h2 class="govuk-heading-m"><%= t("component.share.share_#{type}")%></h2>
@@ -24,8 +23,9 @@
         </span>
           <%= t("component.share.copy_link")%>
         </button>
-        <script nonce="<%= script_nonce %>">
-          var copyButton = document.getElementById('copyToClipboardButton');
+        <script type="module" nonce="<%= script_nonce %>">
+          import { clickHandler } from "<%= assets_path('/javascript/share-certificate.js') %>";
+          const copyButton = document.getElementById('copyToClipboardButton');
           copyButton.classList.add('display-inline');
           copyButton.addEventListener("click", clickHandler)
         </script>
