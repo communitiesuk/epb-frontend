@@ -16,12 +16,6 @@
     "govuk-frontend": "^6.5.1"
   },
   "devDependencies": {
-    "@babel/cli": "^7.29.7",
-    "@babel/core": "^7.29.7",
-    "@babel/eslint-parser": "^7.29.7",
-    "@babel/preset-env": "^7.29.7",
-    "baseline-browser-mapping": "^2.10.37",
-    "decomment": "^0.9.5",
     "jest": "^30.5.2",
     "jest-environment-jsdom": "^30.5.2",
     "standard": "^17.1.2"
@@ -30,15 +24,14 @@
     "fmt": "npm run lint-fix",
     "lint": "standard \"assets/javascript/**/*.js\"",
     "lint-fix": "standard --fix \"assets/javascript/**/*.js\"",
-    "test": "jest",
-    "copy-without-comments": "node ./build/copy-without-comments.js"
+    "test": "NODE_OPTIONS='--experimental-vm-modules' NODE_NO_WARNINGS=1 jest"
   },
   "standard": {
-    "parser": "@babel/eslint-parser",
     "globals": [
       "location",
-      "MutationObserver",
-      "MouseEvent"
+      "resolvers",
+      "MouseEvent",
+      "MutationObserver"
     ]
   }
 }
