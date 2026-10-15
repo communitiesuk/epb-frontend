@@ -1,5 +1,6 @@
 require "compare-xml"
-require "erubis"
+require "erubi"
+require "tilt"
 require "nokogiri"
 require "ostruct"
 
@@ -26,7 +27,8 @@ describe "ported design system components (in ERB) against govuk-frontend fixtur
 
   fixtures.each do |component, component_fixtures|
     context "when testing the #{component.to_s.gsub('_', ' ')} ERB against its govuk-frontend fixtures" do
-      let(:template) { Erubis::EscapedEruby.new File.read("lib/views/design_system__#{component}.erb") }
+      let(:template_path) { "lib/views/design_system__#{component}.erb" }
+      let(:template) { Tilt::ErubiTemplate.new(template_path, nil, escape: true) }
 
       component_fixtures[:fixtures].each do |fixture|
         it "passes against the #{fixture[:name]} fixture" do
@@ -34,13 +36,10 @@ describe "ported design system components (in ERB) against govuk-frontend fixtur
           class << bound_context
             include ERB::Util
             include Helpers
-
-            def get_binding
-              binding
-            end
           end
+
           expected = fixture[:html]
-          actual = template.result(bound_context.get_binding)
+          actual = template.render(bound_context)
           expect(actual).to match_html expected
         end
       end

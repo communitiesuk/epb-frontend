@@ -1,4 +1,5 @@
-require "erubis"
+require "erubi"
+require "tilt"
 require "i18n"
 require "i18n/backend/fallbacks"
 require "sinatra/base"
