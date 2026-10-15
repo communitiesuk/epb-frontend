@@ -49,7 +49,7 @@ GEM
     epb-auth-tools (1.2.1)
       jwt (~> 3.2.0)
       oauth2 (>= 1.4, < 3.0)
-    erubi (1.13.1)
+    erubis (2.7.0)
     faraday (2.14.4)
       faraday-net_http (>= 2.0, < 3.5)
       json
@@ -282,7 +282,7 @@ DEPENDENCIES
   compare-xml (~> 1.0)
   csv (~> 3.3)
   epb-auth-tools (~> 1.2.1)
-  erubi (~> 1.13.1)
+  erubis (~> 2.7)
   i18n (~> 1.15.2)
   puma (~> 8.0)
   rack (~> 3.2.7)
@@ -298,7 +298,6 @@ DEPENDENCIES
   sentry-ruby (~> 7.1)
   sinatra (~> 4.2)
   sinatra-contrib
-  tilt
   timecop (~> 0.9.11)
   unleash (~> 6.7.1)
   webdrivers (~> 5.2.0)

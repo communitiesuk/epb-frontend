@@ -1,5 +1,4 @@
-require "erubi"
-require "tilt"
+require "erubis"
 require "date"
 
 describe "expired_print_version_component", type: :view do
@@ -28,16 +27,11 @@ describe "expired_print_version_component", type: :view do
   end
 
   def render(type)
-    context = create_context(
-      type:,
-      assessment: {
-        dateOfExpiry: Date.new(2020, 10, 8),
-        supersededBy: nil,
-      },
-      print_view: true,
-    )
-
-    template.render(context)
+    Erubis::EscapedEruby
+      .new(template)
+      .result(create_binding({ type:,
+                               assessment: { dateOfExpiry: Date.new(2020, 10, 8), supersededBy: nil },
+                               print_view: true }))
   end
 
   def mount(type)
@@ -45,25 +39,23 @@ describe "expired_print_version_component", type: :view do
   end
 
   def template
-    @template ||= Tilt::ErubiTemplate.new(
-      "lib/views/component__expired_print_version.erb",
-      nil,
-      escape: true,
-    )
+    File.read("lib/views/component__expired_print_version.erb")
   end
 
   def expired_print_version(type)
     mount(type).find(".epc-blue-bottom")
   end
 
-  def create_context(hash)
+  def create_binding(hash)
     context = OpenStruct.new(**hash)
-
     class << context
       include ERB::Util
       include Helpers
-    end
 
-    context
+      def get_binding
+        binding
+      end
+    end
+    context.get_binding
   end
 end

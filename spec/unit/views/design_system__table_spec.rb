@@ -1,5 +1,4 @@
-require "erubi"
-require "tilt"
+require "erubis"
 
 describe "design_system__table", type: :view do
   it "can have additional classes" do
@@ -210,8 +209,9 @@ describe "design_system__table", type: :view do
   end
 
   def render(example_name)
-    context = create_context(symbolize_keys(example(example_name)["data"]))
-    template.render(context)
+    Erubis::EscapedEruby
+      .new(template)
+      .result(create_binding(symbolize_keys(example(example_name)["data"])))
   end
 
   def mount(example_name)
@@ -223,21 +223,20 @@ describe "design_system__table", type: :view do
   end
 
   def template
-    @template ||= Tilt::ErubiTemplate.new(
-      "lib/views/#{self.class.top_level_description}.erb",
-      nil,
-      escape: true,
-    )
+    File.read("lib/views/#{self.class.top_level_description}.erb")
   end
 
-  def create_context(hash)
+  def create_binding(hash)
     context = OpenStruct.new(**hash)
     class << context
       include ERB::Util
       include Helpers
-    end
 
-    context
+      def get_binding
+        binding
+      end
+    end
+    context.get_binding
   end
 
   def symbolize_keys(hash)
