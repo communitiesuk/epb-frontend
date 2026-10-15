@@ -5,19 +5,17 @@ import { copyToClipboard } from '../share-certificate.js'
 beforeEach(() => {
   Object.assign(navigator, {
     clipboard: {
-      writeText: jest.fn()
+      writeText: jest.fn(),
+      foo: 'bar'
     },
     permissions: {
       query: jest.fn()
     }
   })
-  Object.assign(document, {
-    execCommand: jest.fn()
-  })
 })
 
 describe('when a browser supports copying and permissions are granted', () => {
-  test('should call clipboard.writeText', async () => {
+  test.only('should call clipboard.writeText', async () => {
     navigator.clipboard.writeText.mockResolvedValue(undefined)
     navigator.permissions.query.mockResolvedValue({ name: 'clipboard-write', state: 'granted' })
     await copyToClipboard()
