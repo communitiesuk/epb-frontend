@@ -278,6 +278,7 @@ GEM
 PLATFORMS
   aarch64-linux
   arm64-darwin-25
+  arm64-darwin-27
   x86_64-linux
 
 DEPENDENCIES
@@ -310,7 +311,7 @@ DEPENDENCIES
   zeitwerk (~> 2.8)
 
 RUBY VERSION
-   ruby 3.4.9p82
+  ruby 4.0.7p0
 
 BUNDLED WITH
-   2.3.22
+  4.0.23
