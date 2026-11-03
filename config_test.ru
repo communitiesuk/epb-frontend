@@ -1,5 +1,18 @@
 # frozen_string_literal: true
 
+if /^true$/i.match?(ENV.fetch("COVERAGE", nil))
+  require "simplecov"
+  # This will be combined with the main report
+  SimpleCov.command_name "Journey"
+  SimpleCov.at_exit do
+    # Do not generate a report
+    SimpleCov.result
+  end
+  SimpleCov.start do
+    enable_coverage :branch
+  end
+end
+
 require "net/http"
 require "zeitwerk"
 require "webmock"

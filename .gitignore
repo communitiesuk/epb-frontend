@@ -25,3 +25,5 @@ yarn.lock
 
 # ignore any assets version file
 ASSETS_VERSION
+
+coverage

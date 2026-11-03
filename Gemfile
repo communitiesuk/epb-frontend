@@ -30,6 +30,7 @@ group :test do
   gem "rack-test", "~> 2.2.0"
   gem "rspec", "~>3.13"
   gem "selenium-webdriver", "~> 4.51"
+  gem "simplecov", "~>1.3.2"
   gem "timecop", "~> 0.9.11"
   gem "webdrivers", "~> 5.2.0"
   gem "webmock", "~> 3.34"

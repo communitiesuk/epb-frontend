@@ -1,5 +1,16 @@
 # frozen_string_literal: true
 
+if /^true$/i.match?(ENV.fetch("COVERAGE", nil))
+  require "simplecov"
+  SimpleCov.start do
+    enable_coverage :branch
+    cover "lib/**/*.rb"
+    group "Gateways", "lib/gateway"
+    group "Use cases", "lib/use_case"
+    group "Controllers", "lib/controller"
+  end
+end
+
 require "rspec"
 require "rack/test"
 require "webmock/rspec"
@@ -174,7 +185,10 @@ RSpec.configure do |config|
   end
 
   config.after(:all, :journey) do
-    Process.kill("KILL", @process_id) if @process_id
+    if @process_id
+      Process.kill("INT", @process_id)
+      Process.wait(@process_id)
+    end
   end
 end
 
