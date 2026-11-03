@@ -2,9 +2,6 @@ version: 0.2
 
 phases:
   install:
-    runtime-versions:
-      ruby: 3.4
-      nodejs: 24
     commands:
       - bundle install
       - npm ci
