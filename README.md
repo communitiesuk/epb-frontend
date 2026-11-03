@@ -28,27 +28,6 @@ This short guide will use `Git`.
 
 ## Test
 
-### Prerequisites
-
-You must add additional local hosts to your hosts file on your machine with:
-
-```
-127.0.0.1	getting-new-energy-certificate.epb-frontend
-127.0.0.1	find-energy-certificate.epb-frontend
-127.0.0.1	getting-new-energy-certificate.local.gov.uk
-127.0.0.1	find-energy-certificate.local.gov.uk
-```
-
-You can add these to your hosts file automatically by running `$ sudo make hosts`.
-You can check what hosts you already have by typing `$ cat /etc/hosts` in the
-frontend directory.
-
-Don't forget to ensure bundle and npm dependencies are up to date
-
-### Test suites
-
-To run the respective test suites:
-
 - All tests: `$ make test`
 - User-journey tests: `$ make journey`
 

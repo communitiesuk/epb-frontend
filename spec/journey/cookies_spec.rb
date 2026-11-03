@@ -79,13 +79,13 @@ describe "Journey::CookiesOnOurService", :journey, type: :feature do
   end
 
   it_behaves_like "a cookie choices page" do
-    let(:url) { "http://find-energy-certificate.local.gov.uk:9393/cookies" }
+    let(:url) { "http://find-energy-certificate.localhost:9393/cookies" }
     let(:banner_title) { "Cookies on Find an energy certificate" }
     let(:home_link_text) { "Find an energy certificate" }
   end
 
   it_behaves_like "a cookie choices page" do
-    let(:url) { "http://getting-new-energy-certificate.local.gov.uk:9393/cookies" }
+    let(:url) { "http://getting-new-energy-certificate.localhost:9393/cookies" }
     let(:banner_title) { "Cookies on Get a new energy certificate" }
     let(:home_link_text) { "Get a new energy certificate" }
   end

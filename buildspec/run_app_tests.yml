@@ -5,7 +5,6 @@ phases:
     commands:
       - bundle install
       - npm ci
-      - make hosts
   build:
     commands:
       - make frontend-build

@@ -2,10 +2,10 @@
 
 describe "Integration::Rackup", :journey do
   let(:request_assessor) do
-    Net::HTTP.new("getting-new-energy-certificate.local.gov.uk", 9_393)
+    Net::HTTP.new("getting-new-energy-certificate.localhost", 9_393)
   end
   let(:request_certificate) do
-    Net::HTTP.new("find-energy-certificate.local.gov.uk", 9_393)
+    Net::HTTP.new("find-energy-certificate.localhost", 9_393)
   end
 
   describe "GET /getting-new-energy-certificate" do

@@ -106,12 +106,12 @@ describe "Journey::CookieBanner", :journey, type: :feature do
   end
 
   it_behaves_like "there is a cookie banner" do
-    let(:url) { "http://find-energy-certificate.local.gov.uk:9393/" }
+    let(:url) { "http://find-energy-certificate.localhost:9393/" }
     let(:banner_title) { "Cookies on Find an energy certificate" }
   end
 
   it_behaves_like "there is a cookie banner" do
-    let(:url) { "http://getting-new-energy-certificate.local.gov.uk:9393" }
+    let(:url) { "http://getting-new-energy-certificate.localhost:9393" }
     let(:banner_title) { "Cookies on Get a new energy certificate" }
   end
 end

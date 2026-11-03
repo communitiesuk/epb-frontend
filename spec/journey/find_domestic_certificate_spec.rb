@@ -20,7 +20,7 @@ describe "Journey::FindDomesticCertificate", :journey, type: :feature do
   context "when accessing a certificate page via a provided link" do
     context "with a certificate that exists" do
       before do
-        visit "http://find-energy-certificate.local.gov.uk:9393/energy-certificate/4567-6789-4567-6789-4568"
+        visit "http://find-energy-certificate.localhost:9393/energy-certificate/4567-6789-4567-6789-4568"
       end
 
       it "does not display a back link" do
@@ -30,7 +30,7 @@ describe "Journey::FindDomesticCertificate", :journey, type: :feature do
 
     context "with a certificate that is cancelled or not for issue" do
       before do
-        visit "http://find-energy-certificate.local.gov.uk:9393/energy-certificate/0000-0000-0000-0000-0666"
+        visit "http://find-energy-certificate.localhost:9393/energy-certificate/0000-0000-0000-0000-0666"
       end
 
       it "shows a page that links to the find an energy certificate page", :aggregate_failures do
@@ -43,7 +43,7 @@ describe "Journey::FindDomesticCertificate", :journey, type: :feature do
 
   context "when clicking continue without selecting type of property" do
     before do
-      visit "http://find-energy-certificate.local.gov.uk:9393"
+      visit "http://find-energy-certificate.localhost:9393"
       click_link "Start now"
       click_button "Continue"
     end
@@ -57,7 +57,7 @@ describe "Journey::FindDomesticCertificate", :journey, type: :feature do
 
   context "when using the site in Welsh and performing a search on a postcode with domestic certificates against it" do
     before do
-      visit "http://find-energy-certificate.local.gov.uk:9393"
+      visit "http://find-energy-certificate.localhost:9393"
       click_link "Welsh (Cymraeg)"
       click_link "Dechrau nawr"
       within_fieldset "Tystysgrif i ba fath o eiddo yw hi?" do

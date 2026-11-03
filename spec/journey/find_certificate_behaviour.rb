@@ -7,7 +7,7 @@ end
 shared_examples "a certificate search function" do |certificate_type:, property_type_label:, url_fragment:, find_a_postcode_text:, find_by_street_and_town_text:, find_by_street_and_town_header:, find_by_certificate_number_text:, certificate_number_label:, search_by_postcode_header:, certificates_text_in_result_count:, text_in_street_and_town_results:, search_by_certificate_number_header:, link_text_in_postcode_search_results:|
   context "when searching for a #{certificate_type} certificate" do
     before do
-      visit "http://find-energy-certificate.local.gov.uk:9393"
+      visit "http://find-energy-certificate.localhost:9393"
       click_link "Start now"
       within_fieldset "What type of property is the certificate for?" do
         choose property_type_label, allow_label_click: true
@@ -141,8 +141,8 @@ shared_examples "a certificate search function" do |certificate_type:, property_
 
     context "with a postcode followed by an SQL injection attempt" do
       before do
-        visit "http://find-energy-certificate.local.gov.uk:9393/#{url_fragment}/search-by-postcode?postcode=A0+0AA%27%3B+DROP+TABLE+assessments%3B"
-        visit "http://find-energy-certificate.local.gov.uk:9393/#{url_fragment}/search-by-postcode?postcode=SW1A+2AA"
+        visit "http://find-energy-certificate.localhost:9393/#{url_fragment}/search-by-postcode?postcode=A0+0AA%27%3B+DROP+TABLE+assessments%3B"
+        visit "http://find-energy-certificate.localhost:9393/#{url_fragment}/search-by-postcode?postcode=SW1A+2AA"
       end
 
       it "shows assessments in a list of links to demonstrate that the SQL injection attempt has not worked" do

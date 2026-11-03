@@ -2,7 +2,7 @@
 
 describe "Journey::FindAssessor", :journey, type: :feature do
   let(:getting_domain) do
-    "http://getting-new-energy-certificate.local.gov.uk:9393"
+    "http://getting-new-energy-certificate.localhost:9393"
   end
 
   context "when finding a domestic assessor by postcode" do

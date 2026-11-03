@@ -19,7 +19,7 @@ describe "Journey::FindNonDomesticCertificate", :journey, type: :feature do
 
   context "when using the site in Welsh and performing a search on a postcode with non-domestic certificates against it" do
     before do
-      visit "http://find-energy-certificate.local.gov.uk:9393"
+      visit "http://find-energy-certificate.localhost:9393"
       click_link "Welsh (Cymraeg)"
       click_link "Dechrau nawr"
       within_fieldset "Tystysgrif i ba fath o eiddo yw hi?" do

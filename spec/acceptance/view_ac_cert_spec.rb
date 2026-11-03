@@ -304,7 +304,7 @@ describe "Acceptance::AirConditioningInspectionCertificate", type: :feature do
 
     it "shows a link to get the get service within the warning message" do
       expect(response.body).to have_css(".govuk-warning-text a")
-      expect(response.body).to have_link("get a new certificate", href: "http://getting-new-energy-certificate.local.gov.uk:9393/")
+      expect(response.body).to have_link("get a new certificate", href: "http://getting-new-energy-certificate.localhost:9393/")
     end
   end
 
