@@ -76,6 +76,7 @@ describe "Journey::FindAssessor", :journey, type: :feature do
       before do
         fill_in "Enter the postcode", with: "SW1A 2AA'; DROP TABLE assessors;"
         click_button "Find"
+        assert_text "Enter a valid UK postcode using only letters and numbers in the format LS1 4AP"
         fill_in "Enter the postcode", with: "SW1A 2AA"
         click_button "Find"
       end
