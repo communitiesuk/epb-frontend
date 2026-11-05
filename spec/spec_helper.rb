@@ -4,7 +4,7 @@ if /^true$/i.match?(ENV.fetch("COVERAGE", nil))
   require "simplecov"
   SimpleCov.start do
     enable_coverage :branch
-    cover "lib/**/*.rb"
+    cover "lib/**/*.{rb,rake}"
     group "Gateways", "lib/gateway"
     group "Use cases", "lib/use_case"
     group "Controllers", "lib/controller"
