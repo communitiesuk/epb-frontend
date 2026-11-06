@@ -37,6 +37,20 @@ shared_examples "a certificate search function" do |certificate_type:, property_
         it "shows the certificate with the expected header" do
           expect(page).to have_content "Energy performance certificate (EPC)"
         end
+
+        it "allows you to copy the ceriticate url" do
+          click_button "Copy link to clipboard"
+          expect(page).to have_button "Copied"
+        end
+
+        it "allows you to email the certificate url" do
+          expect(page).to have_link "Email", href: /^mailto:/
+        end
+
+        it "allows you to print the certificate" do
+          expect(page).to have_content "Energy performance certificate (EPC)"
+          expect(page).to have_link "Print", href: "#{page.current_path}?print=true"
+        end
       end
 
       context "when selecting to get a new energy certificate" do

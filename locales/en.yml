@@ -610,6 +610,7 @@ en:
       email_body_part_2: "at"
       copy_link: "Copy link to clipboard"
       print_link: "Print"
+      copied: "Copied"
     administrative_information:
       title: "Administrative information"
       assessor:

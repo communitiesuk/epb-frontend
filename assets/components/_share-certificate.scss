@@ -1,52 +1,21 @@
-#share-list {
+.epb-share-list {
   list-style-type: none;
   padding: 0;
   margin: 0;
+}
 
-  a:link, a:active, a:visited, a:hover {
+.epb-share-list__item {
+  margin-bottom: govuk-spacing(4);
+}
+
+.epb-share-list__link:not([hidden]) {
+  display: inline-flex;
+  gap: govuk-spacing(2);
+  align-items: center;
+  text-decoration: none;
+
+  &:link, &:active, &:visited, &:hover {
     text-decoration: none;
   }
-
-  span.copied {
-    padding-top: 5px;
-    padding-right: 5px;
-    padding-bottom: 5px;
-  }
-
-  // tailwind style class
-  .display-none {
-    display: none;
-  }
 }
-
-#copyToClipboardButton {
-  text-decoration: none;
-  text-align: left;
-  border: none;
-  padding: 0;
-  outline: none;
-  color: #1d70b8;
-  background-color: white;
-  display: none;
-  cursor: pointer;
-
-  //tailwind style class
-  &.display-inline {
-    display: inline;
-  }
-}
-
-#copyToClipboardButton:focus {
-  @include govuk-focused-text;
-}
-
-#copy-to-clipboard-margin {
-  margin-bottom: 0;
-}
-
-.share-icon {
-  padding-top: 5px;
-  padding-right: 5px;
-}
-
 

@@ -610,6 +610,7 @@ cy:
       email_body_part_2: "yn"
       copy_link: "Copïo’r ddolen i’r clipfwrdd"
       print_link: "Argraffu"
+      copied: "Copïwyd"
     administrative_information:
       title: "Gwybodaeth weinyddol"
       assessor:

@@ -2,47 +2,38 @@
 
   <h2 class="govuk-heading-m"><%= t("component.share.share_#{type}")%></h2>
 
-  <ul id="share-list">
-    <li>
-      <p class="govuk-body">
-        <a id="email"
-           href="mailto:?subject=<%="#{ERB::Util.url_encode("#{t("#{top_heading}.top_heading")} #{t("component.share.email_subject_for")} #{find_address_lines_only(assessment)}")}&body=#{ERB::Util.url_encode("#{t("component.share.email_body_part_1")} #{first_word_downcase(t("#{top_heading}.top_heading"))} #{t("component.share.email_body_part_2")} https://find-energy-certificate.service.gov.uk/energy-certificate/#{assessment[:assessmentId]}")}"%>"
-           target="_blank">
-        <span class="share-icon">
-          <%== inline_svg('/images/email.svg') %>
-        </span>
-          <%= t("component.share.email")%>
-        </a>
-      </p>
+  <ul class="epb-share-list">
+    <li class="epb-share-list__item">
+      <a href="mailto:?subject=<%="#{ERB::Util.url_encode("#{t("#{top_heading}.top_heading")} #{t("component.share.email_subject_for")} #{find_address_lines_only(assessment)}")}&body=#{ERB::Util.url_encode("#{t("component.share.email_body_part_1")} #{first_word_downcase(t("#{top_heading}.top_heading"))} #{t("component.share.email_body_part_2")} https://find-energy-certificate.service.gov.uk/energy-certificate/#{assessment[:assessmentId]}")}"%>"
+         class="epb-share-list__link"
+      >
+        <%== inline_svg('/images/email.svg') %>
+        <%= t("component.share.email")%>
+      </a>
     </li>
-    <li>
-      <p id="copy-to-clipboard-margin" class="govuk-body">
-        <button id="copyToClipboardButton" class="govuk-body" data-clicked-image-src="<%= data_uri_svg('/images/check.svg') %>">
-        <span class="share-icon">
-          <%== inline_svg('/images/copy-link.svg') %>
-        </span>
-          <%= t("component.share.copy_link")%>
+    <li class="epb-share-list__item hide-no-js">
+      <script type="module" src="<%= assets_path('/javascript/copy-url-to-clipboard.js') %>" nonce="<%= script_nonce %>"></script>
+      <epb-copy-url-to-clipboard>
+        <button type="button" class="govuk-link epb-copy-button epb-share-list__link">
+          <slot name="action-message" class="epb-copy-button__label">
+            <%== inline_svg('/images/copy-link.svg') %>
+            <%= t("component.share.copy_link") %>
+          </slot>
+          <slot name="success-message" class="epb-copy-button__label" hidden>
+            <%== inline_svg('/images/check.svg') %>
+            <%= t("component.share.copied") %>
+          </slot>
         </button>
-        <script type="module" nonce="<%= script_nonce %>">
-          import { clickHandler } from "<%= assets_path('/javascript/share-certificate.js') %>";
-          const copyButton = document.getElementById('copyToClipboardButton');
-          copyButton.classList.add('display-inline');
-          copyButton.addEventListener("click", clickHandler)
-        </script>
-      </p>
+      </epb-copy-url-to-clipboard>
     </li>
-    <li>
-      <p class="govuk-body">
-        <a id="link" rel="nofollow" class="display-none" href="<%= localised_url(request.path_info) + (localised_url(request.path_info).include?("?") ? "&" : "?") %>print=true" class="govuk-link govuk-!-margin-bottom-5">
-        <span class="share-icon">
-          <%== inline_svg('/images/print.svg') %>
-        </span>
-          <%= t("component.share.print_link")%>
-        </a>
-        <script nonce="<%= script_nonce %>">
-          document.getElementById('link').classList.remove('display-none');
-        </script>
-      </p>
+    <li class="epb-share-list__item hide-no-js">
+      <a rel="nofollow"
+         href="<%= localised_url(request.path_info) + (localised_url(request.path_info).include?("?") ? "&" : "?") %>print=true"
+         class="epb-share-list__link"
+      >
+        <%== inline_svg('/images/print.svg') %>
+        <%= t("component.share.print_link")%>
+      </a>
     </li>
   </ul>
 </div>
