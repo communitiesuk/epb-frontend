@@ -1,111 +1,56 @@
-import { expect, describe, test, jest, beforeEach } from '@jest/globals'
+import { beforeEach, describe, expect, jest, test } from '@jest/globals'
+import { screen } from '@testing-library/dom'
+import '@testing-library/jest-dom/jest-globals'
+import userEvent from '@testing-library/user-event'
 
-import cookieConsent from '../cookie-consent'
+function createBanner () {
+  document.body.innerHTML = `
+    <div class="govuk-cookie-banner" role="region" aria-label="Cookies" hidden>
+      <div class="govuk-cookie-banner__message" hidden>
+        <h2 class="govuk-cookie-banner__heading govuk-heading-m">Cookies</h2>
+        <p>We use some essential cookies to make this service work.</p>
 
-const acceptButton = document.createElement('button')
+        <button id="accept-button" type="button">
+          Accept analytics cookies
+        </button>
+        <button id="reject-button" type="button">
+          Reject analytics cookies
+        </button>
+        <a href="/cookies">View cookies</a>
+      </div>
 
-const init = () => {
-  callScript()
-  window.onload.call()
+      <div id="confirmation" class="govuk-cookie-banner__message" role="alert" tabindex="-1" hidden>
+        <p class="govuk-body" id="accepted-confirmation" hidden>You’ve accepted analytics cookies</p>
+        <p class="govuk-body" id="rejected-confirmation" hidden>You’ve rejected analytics cookies</p>
+
+        <button id="hide-cookie-message">
+          Hide cookie message
+        </button>
+      </div>
+    </div>
+    <form id="cookies-consent-form">
+      <input type="radio" id="cookies-setting" aria-label="Accept cookies">
+      <input type="radio" id="cookies-setting-false" aria-label="Reject cookies">
+      <input type="submit" value="Save settings">
+    </form>
+  `
 }
 
 beforeEach(() => {
+  document.cookie.split(';').forEach((cookie) => {
+    document.cookie = `${cookie.trim().split('=')[0]}=; max-age=0`
+  })
+})
+
+document.addEventListener('submit', (e) => e.preventDefault())
+
+async function initialize () {
   window.GOOGLE_PROPERTY = 'GTM-XXXXXXX'
   window.dataLayer = []
-})
-
-describe('using GTM (Google Tag Manager)', () => {
-  describe('when cookies have not been accepted or rejected', () => {
-    beforeEach(init)
-
-    test('actively denies consent', () => {
-      expect(window.dataLayer).toStrictEqual(expectedDatalayer({ granted: false }))
-    })
+  createBanner()
+  await jest.isolateModulesAsync(async () => {
+    await import('../cookie-consent')
   })
-
-  describe('when cookies have been accepted', () => {
-    beforeEach(() => {
-      Object.defineProperty(window.document, 'cookie', {
-        writable: true,
-        value: 'cookie_consent=true'
-      })
-      init()
-    })
-
-    test('actively grants consent', () => {
-      expect(window.dataLayer).toStrictEqual(expectedDatalayer({ granted: true }))
-    })
-  })
-
-  describe('when cookies have been rejected', () => {
-    beforeEach(() => {
-      Object.defineProperty(window.document, 'cookie', {
-        writable: true,
-        value: 'cookie_consent=false'
-      })
-      init()
-    })
-
-    test('actively denies consent', () => {
-      expect(window.dataLayer).toStrictEqual(expectedDatalayer({ granted: false }))
-    })
-  })
-
-  describe('when cookies have not been accepted or rejected, but are accepted from user clicking acceptance', () => {
-    beforeEach(() => {
-      init()
-      const clickEvent = new MouseEvent('click', { view: window, bubbles: true, cancelable: false })
-      acceptButton.dispatchEvent(clickEvent)
-    })
-
-    test('has actively denied consent, but additionally actively grants it', () => {
-      expect(window.dataLayer).toStrictEqual(
-        expectedDatalayer({ granted: false }).concat([['consent', 'update', { analytics_storage: 'granted' }]])
-      )
-    })
-  })
-})
-
-describe('when calling the reject cookie function to remove _ga* cookies  ', () => {
-  beforeEach(() => {
-    Object.defineProperty(window.document, 'cookie', {
-      writable: true,
-      value: '_ga=12345; ga_123458=458489489'
-    })
-
-    Object.defineProperty(window.document, 'domain', {
-      writable: true,
-      value: '.find-energy-certificate.service.gov.uk'
-    })
-    init()
-    const gtag = (...args) => window.dataLayer.push(args)
-    const objCookie = cookieConsent(window.GOOGLE_PROPERTY, window, gtag)
-    objCookie.rejectCookieConsent()
-  })
-
-  test('removes all cookies that starts with _ga', () => {
-    expect(window.document.cookie).not.toContain('_ga')
-  })
-
-  test('set the cookie_consent cookie to false', () => {
-    expect(window.document.cookie).toContain('cookie_consent=false')
-  })
-})
-
-function callScript () {
-  jest.resetModules()
-  const resolvers = {
-    cookieBanner: () => ({}),
-    cookieMessage: () => ({}),
-    cookieConfirmation: () => ({}),
-    acceptButton: () => (acceptButton),
-    rejectButton: () => (document.createElement('button')),
-    hideCookieMessageButton: () => (document.createElement('button')),
-    acceptedConfirmationMessage: () => ({}),
-    rejectedConfirmationMessage: () => ({})
-  }
-  const gtag = (...args) => window.dataLayer.push(args)
-  cookieConsent(window.GOOGLE_PROPERTY, window, gtag, resolvers)
 }
 
 function expectedDatalayer ({ granted }) {
@@ -114,3 +59,110 @@ function expectedDatalayer ({ granted }) {
     { event: 'default_consent' }
   ]
 }
+
+describe('when cookies have not been accepted or rejected', () => {
+  test('does not grant analytics storage permissions', async () => {
+    await initialize()
+    expect(window.dataLayer).toStrictEqual(expectedDatalayer({ granted: false }))
+  })
+
+  test('grant analytics storage permissions after accepting', async () => {
+    await initialize()
+    await userEvent.click(screen.getByRole('button', { name: 'Accept analytics cookies' }))
+    expect(window.dataLayer).toStrictEqual([
+      ...expectedDatalayer({ granted: false }),
+      ['consent', 'update', { analytics_storage: 'granted' }]
+    ])
+    expect(screen.queryByRole('region', { name: 'Cookies' })).toHaveTextContent('You’ve accepted analytics cookies')
+    await userEvent.click(screen.getByRole('button', { name: 'Hide cookie message' }))
+    expect(screen.queryByRole('region', { name: 'Cookies' })).not.toBeInTheDocument()
+    expect(document.cookie).toContain('cookie_consent=true')
+  })
+
+  test('does not grant analytics storage permissions after rejecting', async () => {
+    await initialize()
+    await userEvent.click(screen.getByRole('button', { name: 'Reject analytics cookies' }))
+    expect(window.dataLayer).toStrictEqual([
+      ...expectedDatalayer({ granted: false }),
+      ['consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied' }],
+      { event: 'default_consent' }
+    ])
+    expect(screen.queryByRole('region', { name: 'Cookies' })).toHaveTextContent('You’ve rejected analytics cookies')
+    await userEvent.click(screen.getByRole('button', { name: 'Hide cookie message' }))
+    expect(screen.queryByRole('region', { name: 'Cookies' })).not.toBeInTheDocument()
+    expect(document.cookie).toContain('cookie_consent=false')
+  })
+
+  test('deletes ga cookies if storage is rejected', async () => {
+    document.cookie = '_gax=foo;'
+    await initialize()
+    await userEvent.click(screen.getByRole('button', { name: 'Reject analytics cookies' }))
+    expect(document.cookie).not.toContain('_gax=')
+  })
+})
+
+describe('when cookies have previously been accepted', () => {
+  test('does grant analytics storage permissions', async () => {
+    document.cookie = 'cookie_consent=true;'
+    await initialize()
+    expect(window.dataLayer).toStrictEqual(expectedDatalayer({ granted: true }))
+  })
+
+  test('does not show the banner', async () => {
+    document.cookie = 'cookie_consent=true;'
+    await initialize()
+    expect(screen.queryByRole('region', { name: 'Cookies' })).not.toBeInTheDocument()
+  })
+})
+
+describe('when cookies have previously been rejected', () => {
+  test('does grant analytics storage permissions', async () => {
+    document.cookie = 'cookie_consent=false;'
+    await initialize()
+    expect(window.dataLayer).toStrictEqual(expectedDatalayer({ granted: false }))
+  })
+
+  test('does not show the banner', async () => {
+    document.cookie = 'cookie_consent=false;'
+    await initialize()
+    expect(screen.queryByRole('region', { name: 'Cookies' })).not.toBeInTheDocument()
+  })
+})
+
+describe('when on the cookie page', () => {
+  test('does not show the banner', async () => {
+    window.history.pushState({}, '', '/cookies')
+    await initialize()
+    expect(screen.queryByRole('region', { name: 'Cookies' })).not.toBeInTheDocument()
+  })
+
+  test('rejects cookies if the submited with reject cookies', async () => {
+    window.history.pushState({}, '', '/cookies')
+    await initialize()
+    await userEvent.click(screen.getByRole('radio', { name: 'Reject cookies' }))
+    await userEvent.click(screen.getByRole('button', { name: 'Save settings' }))
+    expect(window.dataLayer).toStrictEqual([
+      ...expectedDatalayer({ granted: false }),
+      ['consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied' }],
+      { event: 'default_consent' }
+    ])
+    expect(document.cookie).toContain('cookie_consent=false')
+  })
+
+  test('accepts cookies if the submited with accept cookies', async () => {
+    window.history.pushState({}, '', '/cookies')
+    await initialize()
+    await userEvent.click(screen.getByRole('radio', { name: 'Accept cookies' }))
+    await userEvent.click(screen.getByRole('button', { name: 'Save settings' }))
+    expect(document.cookie).toContain('cookie_consent=true')
+  })
+
+  test('deletes ga cookies if the submited with reject cookies', async () => {
+    document.cookie = '_gax=foo;'
+    window.history.pushState({}, '', '/cookies')
+    await initialize()
+    await userEvent.click(screen.getByRole('radio', { name: 'Reject cookies' }))
+    await userEvent.click(screen.getByRole('button', { name: 'Save settings' }))
+    expect(document.cookie).not.toContain('_gax=')
+  })
+})

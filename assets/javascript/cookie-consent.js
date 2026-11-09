@@ -16,7 +16,6 @@ const cookieConsent = (tagId, _, gtag, resolvers) => {
       cookies.signalGtmConsent(cookieValue === 'true')
 
       if (cookieValue === null && !onCookiePage) {
-        // If we don't have consent or rejection, display cookie question
         cookies.displayCookieBanner()
       }
 
@@ -143,9 +142,9 @@ const cookieConsent = (tagId, _, gtag, resolvers) => {
           const expires = ' expires=' + expDate.toUTCString() + ';'
           const path = ' path=/;'
           let domain
-          if (document.domain.includes('communities')) {
-            domain = ' domain=' + document.domain.split('.').slice(-3).join('.') + ';'
-          } else { domain = ' domain=' + '.' + document.domain + ';' }
+          if (window.location.hostname.includes('communities')) {
+            domain = ' domain=' + window.location.hostname.split('.').slice(-3).join('.') + ';'
+          } else { domain = ' domain=' + '.' + window.location.hostname + ';' }
           document.cookie = name + value + expires + path + domain
         }
       }
@@ -160,32 +159,26 @@ const cookieConsent = (tagId, _, gtag, resolvers) => {
     }
   }
 
-  _.onload = cookies.initialize
-
-  return cookies
+  cookies.initialize()
 }
 
-export default cookieConsent
-
-if (typeof window !== 'undefined') {
-  window.cookies = cookieConsent(
-    window.GOOGLE_PROPERTY,
-    window,
-    window.gtag || function (...args) {
-      window.dataLayer = window.dataLayer || []
-      window.dataLayer.push(args)
-    },
-    typeof resolvers !== 'undefined'
-      ? resolvers
-      : {
-          cookieBanner: () => document.getElementsByClassName('govuk-cookie-banner')[0],
-          cookieMessage: () => document.getElementsByClassName('govuk-cookie-banner__message')[0],
-          cookieConfirmation: () => document.getElementById('confirmation'),
-          acceptButton: () => document.getElementById('accept-button'),
-          rejectButton: () => document.getElementById('reject-button'),
-          hideCookieMessageButton: () => document.getElementById('hide-cookie-message'),
-          acceptedConfirmationMessage: () => document.getElementById('accepted-confirmation'),
-          rejectedConfirmationMessage: () => document.getElementById('rejected-confirmation')
-        }
-  )
-}
+cookieConsent(
+  window.GOOGLE_PROPERTY,
+  window,
+  window.gtag || function (...args) {
+    window.dataLayer = window.dataLayer || []
+    window.dataLayer.push(args)
+  },
+  typeof resolvers !== 'undefined'
+    ? resolvers
+    : {
+        cookieBanner: () => document.getElementsByClassName('govuk-cookie-banner')[0],
+        cookieMessage: () => document.getElementsByClassName('govuk-cookie-banner__message')[0],
+        cookieConfirmation: () => document.getElementById('confirmation'),
+        acceptButton: () => document.getElementById('accept-button'),
+        rejectButton: () => document.getElementById('reject-button'),
+        hideCookieMessageButton: () => document.getElementById('hide-cookie-message'),
+        acceptedConfirmationMessage: () => document.getElementById('accepted-confirmation'),
+        rejectedConfirmationMessage: () => document.getElementById('rejected-confirmation')
+      }
+)
