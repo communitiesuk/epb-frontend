@@ -2,6 +2,7 @@
 
 if /^true$/i.match?(ENV.fetch("COVERAGE", nil))
   require "simplecov"
+  FileUtils.rm_f("coverage/.resultset.json")
   SimpleCov.start do
     enable_coverage :branch
     cover "lib/**/*.{rb,rake}"
