@@ -1,20 +1,22 @@
 module Controller
-  class GettingNewEnergyCertificateController < Controller::BaseController
-    get "/", host_name: /#{GETTING_NEW_ENERGY_CERTIFICATE_HOST_NAME}/ do
+  class GettingNewEnergyCertificateController < BaseController
+    GETTING_HOST_NAME_CONDITION = /#{GETTING_NEW_ENERGY_CERTIFICATE_HOST_NAME}/
+
+    get "/", host_name: GETTING_HOST_NAME_CONDITION do
       redirect(static_start_page, 301) if static_start_page?
       @page_title = "#{t('find_an_assessor.top_heading')} – #{t('services.getting_an_energy_certificate')} – #{t('layout.body.govuk')}"
 
       erb :find_assessor, layout: :layout
     end
 
-    get "/find-an-assessor/type-of-property", host_name: /#{GETTING_NEW_ENERGY_CERTIFICATE_HOST_NAME}/ do
+    get "/find-an-assessor/type-of-property", host_name: GETTING_HOST_NAME_CONDITION do
       @errors = {}
       @page_title = "#{t('find_an_assessor.property_type.question_title')} – #{t('services.getting_an_energy_certificate')} – #{t('layout.body.govuk')}"
 
       show(:find_assessor__property_type, { lang: params[:lang] })
     end
 
-    post "/find-an-assessor/type-of-property", host_name: /#{GETTING_NEW_ENERGY_CERTIFICATE_HOST_NAME}/ do
+    post "/find-an-assessor/type-of-property", host_name: GETTING_HOST_NAME_CONDITION do
       if params["property_type"] == "domestic"
         redirect localised_url("/find-an-assessor/type-of-domestic-property")
       end
@@ -30,14 +32,14 @@ module Controller
       show(:find_assessor__property_type, { lang: params[:lang] })
     end
 
-    get "/find-an-assessor/type-of-domestic-property", host_name: /#{GETTING_NEW_ENERGY_CERTIFICATE_HOST_NAME}/ do
+    get "/find-an-assessor/type-of-domestic-property", host_name: GETTING_HOST_NAME_CONDITION do
       @errors = {}
       @page_title = "#{t('find_an_assessor.domestic_property_type.question_title')} – #{t('services.getting_an_energy_certificate')} – #{t('layout.body.govuk')}"
 
       show(:find_assessor__domestic_type, { lang: params[:lang] })
     end
 
-    post "/find-an-assessor/type-of-domestic-property", host_name: /#{GETTING_NEW_ENERGY_CERTIFICATE_HOST_NAME}/ do
+    post "/find-an-assessor/type-of-domestic-property", host_name: GETTING_HOST_NAME_CONDITION do
       if params["domestic_type"] == "domesticRdSap"
         redirect localised_url("/find-an-assessor/search-by-postcode?domestic_type=domesticRdSap")
       end
@@ -52,8 +54,7 @@ module Controller
       show(:find_assessor__domestic_type, { lang: params[:lang] })
     end
 
-    get "/find-an-assessor/search-by-postcode",
-        host_name: /#{GETTING_NEW_ENERGY_CERTIFICATE_HOST_NAME}/ do
+    get "/find-an-assessor/search-by-postcode", host_name: GETTING_HOST_NAME_CONDITION do
       @errors = {}
       locals = {}
       erb_template = :find_assessor_by_postcode
@@ -121,8 +122,7 @@ module Controller
       show(erb_template, locals)
     end
 
-    get "/find-an-assessor/search-by-name",
-        host_name: /#{GETTING_NEW_ENERGY_CERTIFICATE_HOST_NAME}/ do
+    get "/find-an-assessor/search-by-name", host_name: GETTING_HOST_NAME_CONDITION do
       @errors = {}
       locals = {}
 
@@ -165,8 +165,7 @@ module Controller
       show(erb_template, locals)
     end
 
-    get "/find-a-non-domestic-assessor/search-by-name",
-        host_name: /#{GETTING_NEW_ENERGY_CERTIFICATE_HOST_NAME}/ do
+    get "/find-a-non-domestic-assessor/search-by-name", host_name: GETTING_HOST_NAME_CONDITION do
       @errors = {}
       locals = {}
 
@@ -209,8 +208,7 @@ module Controller
       show(erb_template, locals)
     end
 
-    get "/find-a-non-domestic-assessor/search-by-postcode",
-        host_name: /#{GETTING_NEW_ENERGY_CERTIFICATE_HOST_NAME}/ do
+    get "/find-a-non-domestic-assessor/search-by-postcode", host_name: GETTING_HOST_NAME_CONDITION do
       @errors = {}
       locals = {}
       erb_template = :find_non_domestic_assessor_by_postcode
@@ -281,9 +279,8 @@ module Controller
       show(erb_template, locals)
     end
 
-    get "/help", host_name: /#{GETTING_NEW_ENERGY_CERTIFICATE_HOST_NAME}/ do
-      @page_title =
-        "#{t('get_service_help.top_heading')} – #{t('layout.body.govuk')}"
+    get "/help", host_name: GETTING_HOST_NAME_CONDITION do
+      @page_title = "#{t('get_service_help.top_heading')} – #{t('layout.body.govuk')}"
       erb_template = :help_page
       data = { locals_node: "get_service_help" }
       show(erb_template, data)
