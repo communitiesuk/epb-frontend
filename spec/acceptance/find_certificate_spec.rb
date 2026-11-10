@@ -1,10 +1,9 @@
 # frozen_string_literal: true
 
-describe "Acceptance::Certificate" do
+describe "Acceptance::Certificate", type: :feature do
   include RSpecFrontendServiceMixin
 
-  describe ".get getting-new-energy-certificate/find-a-certificate/type-of-property",
-           type: :feature do
+  describe ".get getting-new-energy-certificate/find-a-certificate/type-of-property" do
     context "when on page to decide property type" do
       let(:response) do
         get "http://find-energy-certificate.local.gov.uk/find-a-certificate/type-of-property"
@@ -44,8 +43,7 @@ describe "Acceptance::Certificate" do
     end
   end
 
-  describe ".get find-energy-certificate/find-a-certificate/search-by-postcode",
-           type: :feature do
+  describe ".get find-energy-certificate/find-a-certificate/search-by-postcode" do
     context "when search page rendered" do
       let(:response) do
         get "http://find-energy-certificate.local.gov.uk/find-a-certificate/search-by-postcode"
@@ -373,8 +371,7 @@ describe "Acceptance::Certificate" do
     end
   end
 
-  describe ".get find-energy-certificate/find-a-certificate/search-by-postcode?lang=cy",
-           type: :feature do
+  describe ".get find-energy-certificate/find-a-certificate/search-by-postcode?lang=cy" do
     context "when entering an empty postcode" do
       let(:response) do
         get "http://find-energy-certificate.local.gov.uk/find-a-certificate/search-by-postcode?lang=cy&postcode="
@@ -432,8 +429,7 @@ describe "Acceptance::Certificate" do
     end
   end
 
-  describe ".get find-energy-certificate/find-a-certificate/search-by-reference-number",
-           type: :feature do
+  describe ".get find-energy-certificate/find-a-certificate/search-by-reference-number" do
     context "when search page rendered" do
       let(:response) do
         get "http://find-energy-certificate.local.gov.uk/find-a-certificate/search-by-reference-number"
@@ -667,8 +663,7 @@ describe "Acceptance::Certificate" do
     end
   end
 
-  describe ".get find-energy-certificate/find-a-certificate/search-by-street-name-and-town",
-           type: :feature do
+  describe ".get find-energy-certificate/find-a-certificate/search-by-street-name-and-town" do
     context "when search page rendered" do
       let(:response) do
         get "http://find-energy-certificate.local.gov.uk/find-a-certificate/search-by-street-name-and-town"
@@ -1157,8 +1152,7 @@ describe "Acceptance::Certificate" do
     end
   end
 
-  describe ".get find-energy-certificate/find-a-certificate/search-by-street-name-and-town?lang=cy",
-           type: :feature do
+  describe ".get find-energy-certificate/find-a-certificate/search-by-street-name-and-town?lang=cy" do
     context "when there are too many results" do
       before do
         CertificatesGateway::TooManyResultsStub.search_by_street_name_and_town(

@@ -1,10 +1,9 @@
 # frozen_string_literal: true
 
-describe "Acceptance::NonDomesticCertificate" do
+describe "Acceptance::NonDomesticCertificate", type: :feature do
   include RSpecFrontendServiceMixin
 
-  describe ".get find-energy-certificate/find-a-non-domestic-certificate/search-by-postcode",
-           type: :feature do
+  describe ".get find-energy-certificate/find-a-non-domestic-certificate/search-by-postcode" do
     context "when search page rendered" do
       let(:response) do
         get "http://find-energy-certificate.local.gov.uk/find-a-non-domestic-certificate/search-by-postcode"
@@ -332,8 +331,7 @@ describe "Acceptance::NonDomesticCertificate" do
     end
   end
 
-  describe ".get getting-new-energy-certificate/find-a-non-domestic-certificate/search-by-street-name-and-town",
-           type: :feature do
+  describe ".get getting-new-energy-certificate/find-a-non-domestic-certificate/search-by-street-name-and-town" do
     context "when search page rendered" do
       let(:response) do
         get "http://find-energy-certificate.local.gov.uk/find-a-non-domestic-certificate/search-by-street-name-and-town"
@@ -742,8 +740,7 @@ describe "Acceptance::NonDomesticCertificate" do
     end
   end
 
-  describe ".get find-energy-certificate.local.gov.uk/find-a-non-domestic-certificate/search-by-reference-number",
-           type: :feature do
+  describe ".get find-energy-certificate.local.gov.uk/find-a-non-domestic-certificate/search-by-reference-number" do
     context "when search page rendered" do
       let(:response) do
         get "http://find-energy-certificate.local.gov.uk/find-a-non-domestic-certificate/search-by-reference-number"

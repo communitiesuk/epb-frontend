@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-describe "Acceptance::Server" do
+describe "Acceptance::Server", type: :feature do
   include RSpecFrontendServiceMixin
 
-  describe ".get /index for getting-new-energy-certificate", type: :feature do
+  describe ".get /index for getting-new-energy-certificate" do
     let(:response) { get "http://getting-new-energy-certificate.local.gov.uk/" }
 
     it "returns status 200" do
@@ -16,7 +16,7 @@ describe "Acceptance::Server" do
     end
   end
 
-  describe ".get /index for find-energy-certificate", type: :feature do
+  describe ".get /index for find-energy-certificate" do
     let(:response) { get "http://find-energy-certificate.local.gov.uk/" }
 
     it "returns status 200" do

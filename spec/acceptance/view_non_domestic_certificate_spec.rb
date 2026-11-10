@@ -3,8 +3,7 @@
 require_relative "./content_security_policy_behaviour"
 require_relative "./shared_language_toggle"
 
-describe "Acceptance::NonDomesticEnergyPerformanceCertificate",
-         type: :feature do
+describe "Acceptance::NonDomesticEnergyPerformanceCertificate", type: :feature do
   include RSpecFrontendServiceMixin
 
   let(:response) { get "/energy-certificate/1234-5678-1234-5678-1234" }
