@@ -35,8 +35,8 @@ module Middleware
 
     def strip_report_uri(headers)
       %w[
-        Content-Security-Policy-Report-Only
-        Content-Security-Policy
+        content-security-policy-report-only
+        content-security-policy
       ].each do |header|
         next unless headers.key?(header)
 
