@@ -3,28 +3,28 @@
 describe "Acceptance::Certificate", type: :feature do
   include RSpecFrontendServiceMixin
 
-  describe ".get getting-new-energy-certificate/find-a-certificate/type-of-property" do
+  describe "GET find-new-energy-certificate/find-a-certificate/type-of-property" do
     context "when on page to decide property type" do
       let(:response) do
         get "http://find-energy-certificate.local.gov.uk/find-a-certificate/type-of-property"
       end
 
       it "displays the tab value the same as the main header value" do
-        expect(response.body).to include(
-          "<title>What type of property is the certificate for? – Find an energy certificate – GOV.UK</title>",
-        )
+        expect(response.status).to eq 200
+        expect(response.body).to have_title "What type of property is the certificate for? – Find an energy certificate – GOV.UK"
       end
     end
+  end
 
+  describe "POST find-new-energy-certificate/find-a-certificate/type-of-property" do
     context "when submitting without deciding a property type" do
       let(:response) do
         post "http://find-energy-certificate.local.gov.uk/find-a-certificate/type-of-property"
       end
 
       it "displays the tab value the same as the main header value" do
-        expect(response.body).to include(
-          "<title>Error: What type of property is the certificate for? – Find an energy certificate – GOV.UK</title>",
-        )
+        expect(response.status).to eq 200
+        expect(response.body).to have_title "What type of property is the certificate for? – Find an energy certificate – GOV.UK"
       end
 
       it "contains the required GDS error summary" do
@@ -41,9 +41,54 @@ describe "Acceptance::Certificate", type: :feature do
         expect(response.body).to have_css "#domestic"
       end
     end
+
+    context "when submitting property_type=domestic" do
+      let(:response) do
+        post "http://find-energy-certificate.local.gov.uk/find-a-certificate/type-of-property", { property_type: "domestic" }
+      end
+
+      it "redirects to the domestic search page" do
+        expect(response.status).to eq 302
+        expect(response.location).to eq "http://find-energy-certificate.local.gov.uk/find-a-certificate/search-by-postcode?property_type=domestic"
+      end
+    end
+
+    context "when submitting property_type=non_domestic" do
+      let(:response) do
+        post "http://find-energy-certificate.local.gov.uk/find-a-certificate/type-of-property", { property_type: "non_domestic" }
+      end
+
+      it "redirects to the non-domestic search page" do
+        expect(response.status).to eq 302
+        expect(response.location).to eq "http://find-energy-certificate.local.gov.uk/find-a-non-domestic-certificate/search-by-postcode?property_type=non_domestic"
+      end
+    end
+
+    context "when submitting property_type in welsh" do
+      let(:response) do
+        post "http://find-energy-certificate.local.gov.uk/find-a-certificate/type-of-property?lang=cy", { property_type: "non_domestic" }
+      end
+
+      it "redirects to the non-domestic search page" do
+        expect(response.status).to eq 302
+        expect(response.location).to eq "http://find-energy-certificate.local.gov.uk/find-a-non-domestic-certificate/search-by-postcode?property_type=non_domestic&lang=cy"
+      end
+    end
+
+    context "when submitting with invalid property_type" do
+      let(:response) do
+        post "http://find-energy-certificate.local.gov.uk/find-a-certificate/type-of-property", { property_type: "xxx" }
+      end
+
+      it "displays a GDS error summary" do
+        expect(response.status).to eq 200
+        expect(response.body).to have_title "What type of property is the certificate for? – Find an energy certificate – GOV.UK"
+        expect(response.body).to have_css "div.govuk-error-summary h2.govuk-error-summary__title", text: "There is a problem"
+      end
+    end
   end
 
-  describe ".get find-energy-certificate/find-a-certificate/search-by-postcode" do
+  describe "GET find-energy-certificate/find-a-certificate/search-by-postcode" do
     context "when search page rendered" do
       let(:response) do
         get "http://find-energy-certificate.local.gov.uk/find-a-certificate/search-by-postcode"
@@ -371,7 +416,7 @@ describe "Acceptance::Certificate", type: :feature do
     end
   end
 
-  describe ".get find-energy-certificate/find-a-certificate/search-by-postcode?lang=cy" do
+  describe "GET find-energy-certificate/find-a-certificate/search-by-postcode?lang=cy" do
     context "when entering an empty postcode" do
       let(:response) do
         get "http://find-energy-certificate.local.gov.uk/find-a-certificate/search-by-postcode?lang=cy&postcode="
@@ -429,7 +474,7 @@ describe "Acceptance::Certificate", type: :feature do
     end
   end
 
-  describe ".get find-energy-certificate/find-a-certificate/search-by-reference-number" do
+  describe "GET find-energy-certificate/find-a-certificate/search-by-reference-number" do
     context "when search page rendered" do
       let(:response) do
         get "http://find-energy-certificate.local.gov.uk/find-a-certificate/search-by-reference-number"
@@ -663,7 +708,7 @@ describe "Acceptance::Certificate", type: :feature do
     end
   end
 
-  describe ".get find-energy-certificate/find-a-certificate/search-by-street-name-and-town" do
+  describe "GET find-energy-certificate/find-a-certificate/search-by-street-name-and-town" do
     context "when search page rendered" do
       let(:response) do
         get "http://find-energy-certificate.local.gov.uk/find-a-certificate/search-by-street-name-and-town"
@@ -856,31 +901,6 @@ describe "Acceptance::Certificate", type: :feature do
         expect(response.body).to have_link "Enter the street name",
                                            href: "#street_name"
         expect(response.body).to have_css "#street_name"
-      end
-    end
-
-    context "when street name entered is many characters" do
-      before do
-        FindCertificate::Stub.search_by_street_name_and_town_one_result(
-          "1 Makeup Street",
-          "Beauty Town",
-        )
-      end
-
-      let(:input) do
-        max_number_of_character = 2084
-        str = "a"
-        max_number_of_character.times do
-          str += "a"
-        end
-        str
-      end
-      let(:response) do
-        get "http://find-energy-certificate.local.gov.uk/find-a-certificate/search-by-street-name-and-town?street_name=1%20Makeup%20Street&town=Beauty%20Town"
-      end
-
-      it "does not raise an error when the input is too long" do
-        expect(response.status).to eq(200)
       end
     end
 
@@ -1152,7 +1172,7 @@ describe "Acceptance::Certificate", type: :feature do
     end
   end
 
-  describe ".get find-energy-certificate/find-a-certificate/search-by-street-name-and-town?lang=cy" do
+  describe "GET find-energy-certificate/find-a-certificate/search-by-street-name-and-town?lang=cy" do
     context "when there are too many results" do
       before do
         CertificatesGateway::TooManyResultsStub.search_by_street_name_and_town(

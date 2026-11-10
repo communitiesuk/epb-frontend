@@ -76,4 +76,22 @@ describe "Acceptance::ViewDecSummary", type: :feature do
       )
     end
   end
+
+  context "when an assessment is unsupported" do
+    before do
+      CertificatesGateway::UnsupportedSchemaStub.fetch_dec_summary(
+        "0000-0000-0000-0000-1111",
+      )
+    end
+
+    it "returns status 404" do
+      expect(response.status).to eq(404)
+    end
+
+    it "shows the error page" do
+      expect(response.body).to include(
+        '<h1 class="govuk-heading-xl">Page not found</h1>',
+      )
+    end
+  end
 end

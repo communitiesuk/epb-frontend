@@ -165,6 +165,27 @@ describe "Acceptance::NonDomesticCertificate", type: :feature do
       end
     end
 
+    context "when entering a postcode that is invalid" do
+      let(:response) do
+        get "http://find-energy-certificate.local.gov.uk/find-a-non-domestic-certificate/search-by-postcode?postcode=SW1A:"
+      end
+
+      it "returns status 400" do
+        expect(response.status).to eq(400)
+      end
+
+      it "displays the find a non-domestic certificate page heading" do
+        expect(response.body).to have_css "h1", text: "What is the postcode?"
+      end
+
+      it "displays an error message" do
+        expect(response.body).to include(
+          '<p id="postcode-error" class="govuk-error-message">',
+        )
+        expect(response.body).to include("Enter a valid UK postcode using only letters and numbers in the format LS1 4AP")
+      end
+    end
+
     context "when entering a postcode as an array" do
       let(:response) do
         get "http://find-energy-certificate.local.gov.uk/find-a-non-domestic-certificate/search-by-postcode?postcode[]=E39GG"
@@ -729,9 +750,19 @@ describe "Acceptance::NonDomesticCertificate", type: :feature do
       end
     end
 
-    context "when entering a street name and town as an array" do
+    context "when entering a town as an array" do
       let(:response) do
-        get "http://find-energy-certificate.local.gov.uk/find-a-non-domestic-certificate/search-by-street-name-and-town?street_name[]=1%20Makeup%20Street&town[]=Beauty%20Town"
+        get "http://find-energy-certificate.local.gov.uk/find-a-non-domestic-certificate/search-by-street-name-and-town?street_name=1%20Makeup%20Street&town[]=Beauty%20Town"
+      end
+
+      it "returns status 400" do
+        expect(response.status).to eq(400)
+      end
+    end
+
+    context "when entering a street name as an array" do
+      let(:response) do
+        get "http://find-energy-certificate.local.gov.uk/find-a-non-domestic-certificate/search-by-street-name-and-town?street_name[]=1%20Makeup%20Street&town=Beauty%20Town"
       end
 
       it "returns status 400" do

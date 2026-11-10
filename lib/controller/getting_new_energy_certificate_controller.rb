@@ -1,82 +1,56 @@
 module Controller
   class GettingNewEnergyCertificateController < Controller::BaseController
-    find_an_assessor_property_type =
-      lambda do
-        query = params.map { |key, value| "#{key}=#{value}" }.join("&")
-        @errors = {}
-        @page_title =
-          "#{t('find_an_assessor.property_type.question_title')} – #{
-            t('services.getting_an_energy_certificate')
-          } – #{t('layout.body.govuk')}"
-
-        if params["property_type"] == "domestic"
-          redirect localised_url("/find-an-assessor/type-of-domestic-property")
-        end
-
-        if params["property_type"] == "non_domestic"
-          redirect localised_url(
-            "/find-a-non-domestic-assessor/search-by-postcode?#{query}",
-          )
-        end
-
-        if request.post? && params["property_type"].nil?
-          @errors = {
-            property_type: t("validation_errors.no_property_type_selected"),
-          }
-          @page_title = "#{t('error.error')}#{@page_title}"
-        end
-
-        show(:find_assessor__property_type, { lang: params[:lang] })
-      end
-
-    find_an_assessor_domestic_type =
-      lambda do
-        query = params.map { |key, value| "#{key}=#{value}" }.join("&")
-        @errors = {}
-        @page_title =
-          "#{t('find_an_assessor.domestic_property_type.question_title')} – #{
-            t('services.getting_an_energy_certificate')
-          } – #{t('layout.body.govuk')}"
-
-        if request.post? && params["domestic_type"].nil?
-          @errors = {
-            domestic_type: t("validation_errors.no_property_type_selected"),
-          }
-          @page_title = "#{t('error.error')}#{@page_title}"
-        end
-
-        if params["domestic_type"] && request.referrer && !request.referrer.include?("/find-an-assessor/search-by-postcode")
-          redirect localised_url("/find-an-assessor/search-by-postcode?#{query}")
-        end
-
-        show(:find_assessor__domestic_type, { lang: params[:lang] })
-      end
-
     get "/", host_name: /#{GETTING_NEW_ENERGY_CERTIFICATE_HOST_NAME}/ do
       redirect(static_start_page, 301) if static_start_page?
-      @page_title =
-        "#{t('find_an_assessor.top_heading')} – #{
-          t('services.getting_an_energy_certificate')
-        } – #{t('layout.body.govuk')}"
+      @page_title = "#{t('find_an_assessor.top_heading')} – #{t('services.getting_an_energy_certificate')} – #{t('layout.body.govuk')}"
 
       erb :find_assessor, layout: :layout
     end
 
-    get "/find-an-assessor/type-of-property",
-        host_name: /#{GETTING_NEW_ENERGY_CERTIFICATE_HOST_NAME}/,
-        &find_an_assessor_property_type
+    get "/find-an-assessor/type-of-property", host_name: /#{GETTING_NEW_ENERGY_CERTIFICATE_HOST_NAME}/ do
+      @errors = {}
+      @page_title = "#{t('find_an_assessor.property_type.question_title')} – #{t('services.getting_an_energy_certificate')} – #{t('layout.body.govuk')}"
 
-    post "/find-an-assessor/type-of-property",
-         host_name: /#{GETTING_NEW_ENERGY_CERTIFICATE_HOST_NAME}/,
-         &find_an_assessor_property_type
+      show(:find_assessor__property_type, { lang: params[:lang] })
+    end
 
-    get "/find-an-assessor/type-of-domestic-property",
-        host_name: /#{GETTING_NEW_ENERGY_CERTIFICATE_HOST_NAME}/,
-        &find_an_assessor_domestic_type
+    post "/find-an-assessor/type-of-property", host_name: /#{GETTING_NEW_ENERGY_CERTIFICATE_HOST_NAME}/ do
+      if params["property_type"] == "domestic"
+        redirect localised_url("/find-an-assessor/type-of-domestic-property")
+      end
 
-    post "/find-an-assessor/type-of-domestic-property",
-         host_name: /#{GETTING_NEW_ENERGY_CERTIFICATE_HOST_NAME}/,
-         &find_an_assessor_domestic_type
+      if params["property_type"] == "non_domestic"
+        redirect localised_url("/find-a-non-domestic-assessor/search-by-postcode?property_type=non_domestic")
+      end
+
+      @errors = {}
+      @page_title = "#{t('error.error')}#{t('find_an_assessor.property_type.question_title')} – #{t('services.getting_an_energy_certificate')} – #{t('layout.body.govuk')}"
+      @errors = { property_type: t("validation_errors.no_property_type_selected") }
+
+      show(:find_assessor__property_type, { lang: params[:lang] })
+    end
+
+    get "/find-an-assessor/type-of-domestic-property", host_name: /#{GETTING_NEW_ENERGY_CERTIFICATE_HOST_NAME}/ do
+      @errors = {}
+      @page_title = "#{t('find_an_assessor.domestic_property_type.question_title')} – #{t('services.getting_an_energy_certificate')} – #{t('layout.body.govuk')}"
+
+      show(:find_assessor__domestic_type, { lang: params[:lang] })
+    end
+
+    post "/find-an-assessor/type-of-domestic-property", host_name: /#{GETTING_NEW_ENERGY_CERTIFICATE_HOST_NAME}/ do
+      if params["domestic_type"] == "domesticRdSap"
+        redirect localised_url("/find-an-assessor/search-by-postcode?domestic_type=domesticRdSap")
+      end
+
+      if params["domestic_type"] == "domesticSap"
+        redirect localised_url("/find-an-assessor/search-by-postcode?domestic_type=domesticSap")
+      end
+
+      @page_title = "#{t('error.error')}#{t('find_an_assessor.domestic_property_type.question_title')} – #{t('services.getting_an_energy_certificate')} – #{t('layout.body.govuk')}"
+      @errors = { domestic_type: t("validation_errors.no_property_type_selected") }
+
+      show(:find_assessor__domestic_type, { lang: params[:lang] })
+    end
 
     get "/find-an-assessor/search-by-postcode",
         host_name: /#{GETTING_NEW_ENERGY_CERTIFICATE_HOST_NAME}/ do
@@ -152,8 +126,6 @@ module Controller
       @errors = {}
       locals = {}
 
-      raise Error::UriTooLong if status.to_s == "414"
-
       erb_template = :find_assessor_by_name
 
       response = @container.get_object(:find_assessor_by_name_use_case)
@@ -197,8 +169,6 @@ module Controller
         host_name: /#{GETTING_NEW_ENERGY_CERTIFICATE_HOST_NAME}/ do
       @errors = {}
       locals = {}
-
-      raise Error::UriTooLong if status.to_s == "414"
 
       erb_template = :find_non_domestic_assessor_by_name
 

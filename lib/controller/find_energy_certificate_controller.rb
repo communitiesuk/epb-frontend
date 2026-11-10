@@ -1,57 +1,35 @@
 module Controller
   class FindEnergyCertificateController < Controller::BaseController
-    find_a_certificate_property_type =
-      lambda do
-        query = params.map { |key, value| "#{key}=#{value}" }.join("&")
-        @errors = {}
-        @page_title =
-          "#{t('find_a_certificate.property_type.question_title')} – #{
-            t('services.find_an_energy_certificate')
-          } – #{t('layout.body.govuk')}"
-
-        if params["property_type"] == "domestic"
-          redirect localised_url(
-            "/find-a-certificate/search-by-postcode?#{query}",
-          )
-        end
-
-        if params["property_type"] == "non_domestic"
-          redirect localised_url(
-            "/find-a-non-domestic-certificate/search-by-postcode?#{query}",
-          )
-        end
-
-        if request.post? && params["property_type"].nil?
-          @errors = {
-            property_type: t("validation_errors.no_property_type_selected"),
-          }
-
-          @page_title = "#{t('error.error')}#{@page_title}"
-        end
-
-        show(:find_certificate__property_type, { lang: params[:lang] })
-      end
-
     get "/", host_name: /#{FIND_ENERGY_CERTIFICATE_HOST_NAME}/ do
       redirect(static_start_page, 301) if static_start_page?
-      @page_title =
-        "#{t('find_a_certificate.top_heading')} – #{
-          t('services.find_an_energy_certificate')
-        } – #{t('layout.body.govuk')}"
+      @page_title = "#{t('find_a_certificate.top_heading')} – #{t('services.find_an_energy_certificate')} – #{t('layout.body.govuk')}"
 
       erb :find_certificate, layout: :layout
     end
 
-    get "/find-a-certificate/type-of-property",
-        host_name: /#{FIND_ENERGY_CERTIFICATE_HOST_NAME}/,
-        &find_a_certificate_property_type
+    get "/find-a-certificate/type-of-property", host_name: /#{FIND_ENERGY_CERTIFICATE_HOST_NAME}/ do
+      @errors = {}
+      @page_title = "#{t('find_a_certificate.property_type.question_title')} – #{t('services.find_an_energy_certificate')} – #{t('layout.body.govuk')}"
 
-    post "/find-a-certificate/type-of-property",
-         host_name: /#{FIND_ENERGY_CERTIFICATE_HOST_NAME}/,
-         &find_a_certificate_property_type
+      show(:find_certificate__property_type, { lang: params[:lang] })
+    end
 
-    get "/find-a-certificate/search-by-postcode",
-        host_name: /#{FIND_ENERGY_CERTIFICATE_HOST_NAME}/ do
+    post "/find-a-certificate/type-of-property", host_name: /#{FIND_ENERGY_CERTIFICATE_HOST_NAME}/ do
+      if params["property_type"] == "domestic"
+        redirect localised_url("/find-a-certificate/search-by-postcode?property_type=domestic")
+      end
+
+      if params["property_type"] == "non_domestic"
+        redirect localised_url("/find-a-non-domestic-certificate/search-by-postcode?property_type=non_domestic")
+      end
+
+      @errors = { property_type: t("validation_errors.no_property_type_selected") }
+      @page_title = "#{t('error.error')}#{t('find_a_certificate.property_type.question_title')} – #{t('services.find_an_energy_certificate')} – #{t('layout.body.govuk')}"
+
+      show(:find_certificate__property_type, { lang: params[:lang] })
+    end
+
+    get "/find-a-certificate/search-by-postcode", host_name: /#{FIND_ENERGY_CERTIFICATE_HOST_NAME}/ do
       @errors = {}
       locals = {}
       erb_template = :find_certificate_by_postcode
@@ -155,11 +133,9 @@ module Controller
       show(erb_template, locals)
     end
 
-    get "/find-a-certificate/search-by-street-name-and-town",
-        host_name: /#{FIND_ENERGY_CERTIFICATE_HOST_NAME}/ do
+    get "/find-a-certificate/search-by-street-name-and-town", host_name: /#{FIND_ENERGY_CERTIFICATE_HOST_NAME}/ do
       @errors = {}
       locals = {}
-      raise Error::UriTooLong if status.to_s == "414"
 
       erb_template = :find_certificate_by_street_name_and_town
 
@@ -194,18 +170,6 @@ module Controller
               }"
             @errors[:street_name] = t("validation_errors.street_name_missing")
             @errors[:town] = t("validation_errors.town_missing")
-
-          when Errors::UriTooLong
-            status 400
-            @page_title =
-              "#{t('error.error')}#{
-                t('find_certificate_by_street_name_and_town.top_heading')
-              } – #{t('services.find_an_energy_certificate')} – #{
-                t('layout.body.govuk')
-              }"
-            if params["street_name"].length > 2042
-              @errors[:street_name] = t("validation_errors.street_name_missing")
-            end
 
           when Errors::StreetNameMissing
             status 400
@@ -550,7 +514,7 @@ module Controller
       when Errors::AssessmentGone
         @page_title = "#{t('error.410.heading')} – #{t('layout.body.govuk')}"
         status 410
-        erb :error_page_410 unless @errors
+        erb :error_page_410
       when Errors::AssessmentNotFound
         not_found
       else

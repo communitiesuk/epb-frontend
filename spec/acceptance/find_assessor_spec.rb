@@ -3,7 +3,7 @@
 describe "Acceptance::Assessor", type: :feature do
   include RSpecFrontendServiceMixin
 
-  describe ".get getting-new-energy-certificate/find-an-assessor/type-of-property" do
+  describe "GET getting-new-energy-certificate/find-an-assessor/type-of-property" do
     context "when on page to decide property type" do
       let(:response) do
         get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/type-of-property"
@@ -13,7 +13,9 @@ describe "Acceptance::Assessor", type: :feature do
         expect(response.body).to have_title "What type of property is the certificate for? – Get a new energy certificate – GOV.UK"
       end
     end
+  end
 
+  describe "POST getting-new-energy-certificate/find-an-assessor/type-of-property" do
     context "when submitting without deciding a property type" do
       let(:response) do
         post "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/type-of-property"
@@ -39,9 +41,54 @@ describe "Acceptance::Assessor", type: :feature do
         expect(response.body).to have_css "#domestic"
       end
     end
+
+    context "when submitting property_type=domestic" do
+      let(:response) do
+        post "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/type-of-property", { property_type: "domestic" }
+      end
+
+      it "redirects to the domestic search page" do
+        expect(response.status).to eq 302
+        expect(response.location).to eq "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/type-of-domestic-property"
+      end
+    end
+
+    context "when submitting property_type=non_domestic" do
+      let(:response) do
+        post "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/type-of-property", { property_type: "non_domestic" }
+      end
+
+      it "redirects to the non-domestic search page" do
+        expect(response.status).to eq 302
+        expect(response.location).to eq "http://getting-new-energy-certificate.local.gov.uk/find-a-non-domestic-assessor/search-by-postcode?property_type=non_domestic"
+      end
+    end
+
+    context "when submitting property_type in welsh" do
+      let(:response) do
+        post "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/type-of-property?lang=cy", { property_type: "non_domestic" }
+      end
+
+      it "redirects to the non-domestic search page in welsh" do
+        expect(response.status).to eq 302
+        expect(response.location).to eq "http://getting-new-energy-certificate.local.gov.uk/find-a-non-domestic-assessor/search-by-postcode?property_type=non_domestic&lang=cy"
+      end
+    end
+
+    context "when submitting with invalid property_type" do
+      let(:response) do
+        post "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/type-of-property", { property_type: "xxx" }
+      end
+
+      it "displays a GDS error summary" do
+        expect(response.status).to eq 200
+        expect(response.body).to have_title "Error: What type of property is the certificate for? – Get a new energy certificate – GOV.UK"
+        expect(response.body).to have_css "div.govuk-error-summary h2.govuk-error-summary__title", text: "There is a problem"
+      end
+    end
   end
 
-  describe ".get getting-new-energy-certificate/find-an-assessor/search-by-postcode" do
+  describe "GET getting-new-energy-certificate/find-an-assessor/search-by-postcode" do
     context "when search page rendered" do
       let(:response) do
         get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/search-by-postcode"
@@ -544,7 +591,7 @@ describe "Acceptance::Assessor", type: :feature do
     end
   end
 
-  describe ".get /find-an-assessor/search-by-name" do
+  describe "GET /find-an-assessor/search-by-name" do
     context "when search page rendered" do
       let(:response) do
         get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/search-by-name"
@@ -823,7 +870,7 @@ describe "Acceptance::Assessor", type: :feature do
     end
   end
 
-  describe ".get getting-new-energy-certificate/find-an-assessor/type-of-domestic-property" do
+  describe "GET getting-new-energy-certificate/find-an-assessor/type-of-domestic-property" do
     context "when on page to decide domestic property type" do
       let(:response) do
         get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/type-of-domestic-property"
@@ -835,16 +882,16 @@ describe "Acceptance::Assessor", type: :feature do
         )
       end
     end
+  end
 
+  describe "POST getting-new-energy-certificate/find-an-assessor/type-of-domestic-property" do
     context "when submitting without deciding a property type" do
       let(:response) do
         post "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/type-of-domestic-property"
       end
 
       it "displays the title the same as the main header value" do
-        expect(response.body).to include(
-          "<title>Error: Is this an existing or new building? – Get a new energy certificate – GOV.UK</title>",
-        )
+        expect(response.body).to have_title "Error: Is this an existing or new building? – Get a new energy certificate – GOV.UK"
       end
 
       it "contains the required GDS error summary" do
@@ -859,6 +906,55 @@ describe "Acceptance::Assessor", type: :feature do
         expect(response.body).to have_link "Select a type of property",
                                            href: "#domesticRdSap"
         expect(response.body).to have_css "#domesticRdSap"
+      end
+    end
+
+    context "when submitting domestic_type=domesticRdSap" do
+      let(:response) do
+        header "referer", "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/type-of-domestic-property"
+        post "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/type-of-domestic-property", { domestic_type: "domesticRdSap" }
+      end
+
+      it "redirects to the rdsap search" do
+        expect(response.status).to eq 302
+        expect(response.location).to eq "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/search-by-postcode?domestic_type=domesticRdSap"
+      end
+    end
+
+    context "when submitting domestic_type=domesticSap" do
+      let(:response) do
+        header "referer", "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/type-of-domestic-property"
+        post "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/type-of-domestic-property", { domestic_type: "domesticSap" }
+      end
+
+      it "redirects to the sap search" do
+        expect(response.status).to eq 302
+        expect(response.location).to eq "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/search-by-postcode?domestic_type=domesticSap"
+      end
+    end
+
+    context "when submitting domestic_type in welsh" do
+      let(:response) do
+        header "referer", "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/type-of-domestic-property"
+        post "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/type-of-domestic-property?lang=cy", { domestic_type: "domesticSap" }
+      end
+
+      it "redirects to the sap search" do
+        expect(response.status).to eq 302
+        expect(response.location).to eq "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/search-by-postcode?domestic_type=domesticSap&lang=cy"
+      end
+    end
+
+    context "when submitting an unknown domestic_type" do
+      let(:response) do
+        header "referer", "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/type-of-domestic-property"
+        post "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/type-of-domestic-property", { domestic_type: "xxx" }
+      end
+
+      it "redirects to the sap search" do
+        expect(response.status).to eq 200
+        expect(response.body).to have_title "Error: Is this an existing or new building? – Get a new energy certificate – GOV.UK"
+        expect(response.body).to have_css "div.govuk-error-summary h2.govuk-error-summary__title", text: "There is a problem"
       end
     end
   end

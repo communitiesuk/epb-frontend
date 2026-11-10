@@ -70,9 +70,6 @@ module Errors
   class ResponseNotPresentError < ApiError
   end
 
-  class UriTooLong < RuntimeError
-  end
-
   class ReportIncomplete < ApiError
   end
 
