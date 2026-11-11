@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "erubi"
 require "tilt"
 require "i18n"
@@ -10,9 +12,13 @@ require_relative "../helper/toggles"
 
 module Controller
   class BaseController < Sinatra::Base
+    FIND_ENERGY_CERTIFICATE_HOST_NAME = "find-energy-certificate"
+    GETTING_NEW_ENERGY_CERTIFICATE_HOST_NAME = "getting-new-energy-certificate"
+    EXCLUDE_GREEN_DEAL_REFERRER_PATHS = %w[/find-a-certificate/search-by-postcode /find-a-certificate/search-by-street-name-and-town].freeze
+
     helpers Helpers
     helpers Sinatra::CustomLogger
-    attr_reader :toggles
+    Helper::Assets.setup_cache_control(self)
 
     set :views, "lib/views"
     set :erb, escape_html: true
@@ -45,8 +51,6 @@ module Controller
       @container = Container.new
     end
 
-    Helper::Assets.setup_cache_control(self)
-
     before do
       set_locale
       halt 503, erb(:service_unavailable) if request.path != "/healthcheck" && Helper::Toggles.enabled?("frontend-maintenance-mode")
@@ -56,14 +60,6 @@ module Controller
         redirect(static_start_page, 303)
       end
     end
-
-    FIND_ENERGY_CERTIFICATE_HOST_NAME = "find-energy-certificate".freeze
-    GETTING_NEW_ENERGY_CERTIFICATE_HOST_NAME = "getting-new-energy-certificate".freeze
-
-    EXCLUDE_GREEN_DEAL_REFERRER_PATHS = %w[
-      /find-a-certificate/search-by-postcode
-      /find-a-certificate/search-by-street-name-and-town
-    ].freeze
 
     not_found do
       status 404
