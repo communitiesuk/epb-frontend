@@ -25,13 +25,6 @@ unless %w[development test].include? environment
   Sentry.init do |config|
     config.include_local_variables = true
     config.environment = environment
-    config.before_send = lambda do |event, hint|
-      if hint[:exception].class.include?(Errors::DoNotReport)
-        nil
-      else
-        event
-      end
-    end
     config.traces_sampler = lambda do |sampling_context|
       transaction_context = sampling_context[:transaction_context]
 

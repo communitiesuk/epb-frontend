@@ -49,7 +49,7 @@ module Controller
 
     before do
       set_locale
-      raise MaintenanceMode if request.path != "/healthcheck" && Helper::Toggles.enabled?("frontend-maintenance-mode")
+      halt 503, erb(:service_unavailable) if request.path != "/healthcheck" && Helper::Toggles.enabled?("frontend-maintenance-mode")
 
       if redirect_to_service_start_page?
         cache_control :no_cache, :no_store
@@ -65,18 +65,9 @@ module Controller
       /find-a-certificate/search-by-street-name-and-town
     ].freeze
 
-    class MaintenanceMode < RuntimeError
-      include Errors::DoNotReport
-    end
-
     not_found do
       status 404
       erb :error_page_404
-    end
-
-    error MaintenanceMode do
-      status 503
-      erb :service_unavailable
     end
 
     error Errors::RequestTimeoutError do |exception|

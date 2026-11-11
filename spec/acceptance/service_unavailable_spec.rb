@@ -9,35 +9,68 @@ describe "Acceptance::ServiceUnavailable", type: :feature do
     end
 
     it "returns a 200 status on any existing route" do
-      expect(response.status).to eq(200)
+      expect(response.status).to eq 200
     end
   end
 
   context "when service unavailable is on" do
     before { Helper::Toggles.set_feature("frontend-maintenance-mode", true) }
-
     after { Helper::Toggles.set_feature("frontend-maintenance-mode", false) }
 
-    let(:response) do
-      get "http://find-energy-certificate.epb-frontend"
+    context "when visiting the home page" do
+      let(:response) do
+        get "http://find-energy-certificate.epb-frontend/"
+      end
+
+      it "returns a 503 status" do
+        expect(response.status).to eq 503
+        expect(response.body).to have_title "Sorry, the service is unavailable"
+        expect(response.body).to have_css 'p.govuk-body a[href^="mailto:"]'
+      end
     end
 
-    it "returns a 503 status on any existing route" do
-      expect(response.status).to eq(503)
+    context "when visiting a deep link" do
+      let(:response) do
+        get "http://getting-new-energy-certificate.epb-frontend/find-an-assessor/type-of-domestic-property"
+      end
+
+      it "returns a 503 status" do
+        expect(response.status).to eq 503
+        expect(response.body).to have_title "Sorry, the service is unavailable"
+        expect(response.body).to have_css 'p.govuk-body a[href^="mailto:"]'
+      end
     end
 
-    it "allows request to the /healthcheck endpoint" do
-      response = get "/healthcheck"
+    context "when visiting the healthcheck page" do
+      let(:response) do
+        get "http://find-energy-certificate.epb-frontend/healthcheck"
+      end
 
-      expect(response.status).to be 200
+      it "returns a 200 status" do
+        expect(response.status).to be 200
+      end
     end
 
-    it "returns a service unavailable page on any existing route" do
-      expect(Capybara.string(response.body).title).to include("Sorry, the service is unavailable")
+    context "when visiting in welsh" do
+      let(:response) do
+        get "http://find-energy-certificate.epb-frontend/accessibility-statement?lang=cy"
+      end
+
+      it "returns the service unavailable page in Welsh" do
+        expect(response.status).to eq 503
+        expect(response.body).to have_title "Ymddiheuriadau. Nid yw’r gwasanaeth ar gael. – GOV.UK"
+      end
     end
 
-    it "displays an email link for the helpdesk within the copy" do
-      expect(Capybara.string(response.body).find(:css, "p.govuk-body a")[:href]).to include "mailto:"
+    context "when visiting a page that doesn't exist" do
+      let(:response) do
+        get "http://find-energy-certificate.epb-frontend/xxxx"
+      end
+
+      it "returns the service unavailable page" do
+        expect(response.status).to eq 503
+        expect(response.body).to have_title "Sorry, the service is unavailable"
+      end
     end
   end
 end
