@@ -137,9 +137,7 @@ describe "Acceptance::Certificate", type: :feature do
       end
 
       it "has a tab content that matches the page heading" do
-        expect(response.body).to include(
-          " <title>Error: What is the postcode? – Find an energy certificate – GOV.UK</title>",
-        )
+        expect(response.body).to have_title "Error: What is the postcode? – Find an energy certificate – GOV.UK"
       end
 
       it "displays the find a certificate page heading" do
@@ -269,9 +267,7 @@ describe "Acceptance::Certificate", type: :feature do
         end
 
         it "has a correct page title" do
-          expect(response.body).to include(
-            "<title>2 EPCs for SW1A 2AA – Find an energy certificate – GOV.UK</title>",
-          )
+          expect(response.body).to have_title "2 EPCs for SW1A 2AA – Find an energy certificate – GOV.UK"
         end
 
         it "shows the information regarding getting a new EPC" do
@@ -331,9 +327,7 @@ describe "Acceptance::Certificate", type: :feature do
         end
 
         it "has a correct page title" do
-          expect(response.body).to include(
-            "<title>No results for E1 4FF – Find an energy certificate – GOV.UK</title>",
-          )
+          expect(response.body).to have_title "No results for E1 4FF – Find an energy certificate – GOV.UK"
         end
 
         it "dynamically shows that there are no certificates for that postcode" do
@@ -489,9 +483,7 @@ describe "Acceptance::Certificate", type: :feature do
       end
 
       it "has a title that matches the page heading" do
-        expect(response.body).to include(
-          "<title>What is the certificate number? – Find an energy certificate – GOV.UK</title>",
-        )
+        expect(response.body).to have_title "What is the certificate number? – Find an energy certificate – GOV.UK"
       end
 
       it "displays the find a certificate page heading" do
@@ -523,9 +515,7 @@ describe "Acceptance::Certificate", type: :feature do
       end
 
       it "has an error title" do
-        expect(response.body).to include(
-          "<title>Error: What is the certificate number? – Find an energy certificate – GOV.UK</title>",
-        )
+        expect(response.body).to have_title "Error: What is the certificate number? – Find an energy certificate – GOV.UK"
       end
 
       it "displays the find a certificate page heading" do
@@ -635,9 +625,7 @@ describe "Acceptance::Certificate", type: :feature do
         end
 
         it "displays an error in the title" do
-          expect(response.body).to include(
-            "<title>Error: What is the certificate number? – Find an energy certificate – GOV.UK</title>",
-          )
+          expect(response.body).to have_title "Error: What is the certificate number? – Find an energy certificate – GOV.UK"
         end
 
         it "displays the find a certificate page heading" do
@@ -723,9 +711,7 @@ describe "Acceptance::Certificate", type: :feature do
       end
 
       it "has a title that matches the page heading" do
-        expect(response.body).to include(
-          "<title>What is the address? – Find an energy certificate – GOV.UK</title>",
-        )
+        expect(response.body).to have_title "What is the address? – Find an energy certificate – GOV.UK"
       end
 
       it "displays the find a certificate page heading" do
@@ -942,9 +928,7 @@ describe "Acceptance::Certificate", type: :feature do
         end
 
         it "has a title that matches the page heading" do
-          expect(response.body).to include(
-            "<title>1 result matching 1 Makeup Street Beauty Town – Find an energy certificate – GOV.UK</title>",
-          )
+          expect(response.body).to have_title "1 result matching 1 Makeup Street Beauty Town – Find an energy certificate – GOV.UK"
         end
 
         it "displays the find a certificate page heading" do
@@ -1008,9 +992,7 @@ describe "Acceptance::Certificate", type: :feature do
         end
 
         it "has a title that matches the page heading" do
-          expect(response.body).to include(
-            "<title>2 results matching Makeup Street Beauty Town – Find an energy certificate – GOV.UK</title>",
-          )
+          expect(response.body).to have_title "2 results matching Makeup Street Beauty Town – Find an energy certificate – GOV.UK"
         end
       end
 
@@ -1031,9 +1013,7 @@ describe "Acceptance::Certificate", type: :feature do
         end
 
         it "has a title" do
-          expect(response.body).to include(
-            "<title>A certificate was not found at this address – Find an energy certificate – GOV.UK</title>",
-          )
+          expect(response.body).to have_title "A certificate was not found at this address – Find an energy certificate – GOV.UK"
         end
 
         it "displays the find a certificate page heading" do

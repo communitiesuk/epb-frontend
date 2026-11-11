@@ -43,9 +43,7 @@ describe "Acceptance::DecRecommendationReport", type: :feature do
     include_examples "show language toggle"
 
     it "has a tab content that shows" do
-      expect(response.body).to include(
-        " <title>Display energy certificate (DEC) recommendation report – Find an energy certificate – GOV.UK</title>",
-      )
+      expect(response.body).to have_title "Display energy certificate (DEC) recommendation report – Find an energy certificate – GOV.UK"
     end
 
     it "shows the contents section" do

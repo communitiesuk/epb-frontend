@@ -221,9 +221,7 @@ describe "Acceptance::NonDomesticCertificate", type: :feature do
         end
 
         it "has a correct page title" do
-          expect(response.body).to include(
-            "<title>2 certificates and reports for SW1A 2AA – Find an energy certificate – GOV.UK</title>",
-          )
+          expect(response.body).to have_title "2 certificates and reports for SW1A 2AA – Find an energy certificate – GOV.UK"
         end
 
         it "displays the find a non-domestic certificate results page heading" do
@@ -293,9 +291,7 @@ describe "Acceptance::NonDomesticCertificate", type: :feature do
         end
 
         it "has a correct page title" do
-          expect(response.body).to include(
-            "<title>No results for E1 4FF – Find an energy certificate – GOV.UK</title>",
-          )
+          expect(response.body).to have_title "No results for E1 4FF – Find an energy certificate – GOV.UK"
         end
 
         it "dynamically shows the title that there are no certificates for that postcode" do
@@ -367,9 +363,7 @@ describe "Acceptance::NonDomesticCertificate", type: :feature do
       end
 
       it "has a title that matches the page heading" do
-        expect(response.body).to include(
-          "<title>What is the address? – Find an energy certificate – GOV.UK</title>\n",
-        )
+        expect(response.body).to have_title "What is the address? – Find an energy certificate – GOV.UK"
       end
 
       it "displays the find a non-domestic certificate page heading" do
@@ -412,9 +406,7 @@ describe "Acceptance::NonDomesticCertificate", type: :feature do
         end
 
         it "displays the title" do
-          expect(response.body).to include(
-            "<title>1 certificates and reports for 1 Makeup Street Beauty Town – Find an energy certificate – GOV.UK</title>",
-          )
+          expect(response.body).to have_title "1 certificates and reports for 1 Makeup Street Beauty Town – Find an energy certificate – GOV.UK"
         end
 
         it "displays the find a certificate page heading" do
@@ -473,9 +465,7 @@ describe "Acceptance::NonDomesticCertificate", type: :feature do
         end
 
         it "has an error title" do
-          expect(response.body).to include(
-            "<title>Error: What is the address? – Find an energy certificate – GOV.UK</title>\n",
-          )
+          expect(response.body).to have_title "Error: What is the address? – Find an energy certificate – GOV.UK"
         end
 
         it "displays the find a certificate page heading" do
@@ -548,9 +538,7 @@ describe "Acceptance::NonDomesticCertificate", type: :feature do
         end
 
         it "has an error title" do
-          expect(response.body).to include(
-            "<title>Error: What is the address? – Find an energy certificate – GOV.UK</title>\n",
-          )
+          expect(response.body).to have_title "Error: What is the address? – Find an energy certificate – GOV.UK"
         end
 
         it "displays the find a certificate page heading" do
@@ -591,9 +579,7 @@ describe "Acceptance::NonDomesticCertificate", type: :feature do
         end
 
         it "has an error title" do
-          expect(response.body).to include(
-            "<title>Error: What is the address? – Find an energy certificate – GOV.UK</title>\n",
-          )
+          expect(response.body).to have_title "Error: What is the address? – Find an energy certificate – GOV.UK"
         end
 
         it "displays the find a certificate page heading" do
@@ -655,9 +641,7 @@ describe "Acceptance::NonDomesticCertificate", type: :feature do
         end
 
         it "has a title indicating no results" do
-          expect(response.body).to include(
-            "<title>A certificate was not found at this address – Find an energy certificate – GOV.UK</title>",
-          )
+          expect(response.body).to have_title "A certificate was not found at this address – Find an energy certificate – GOV.UK"
         end
 
         it "displays the find a certificate page heading" do
@@ -786,9 +770,7 @@ describe "Acceptance::NonDomesticCertificate", type: :feature do
       end
 
       it "displays the title" do
-        expect(response.body).to include(
-          "<title>What is the certificate or report number? – Find an energy certificate – GOV.UK</title>",
-        )
+        expect(response.body).to have_title "What is the certificate or report number? – Find an energy certificate – GOV.UK"
       end
 
       it "displays the find a non-domestic certificate page heading" do
@@ -819,9 +801,7 @@ describe "Acceptance::NonDomesticCertificate", type: :feature do
       end
 
       it "displays an error in the title" do
-        expect(response.body).to include(
-          "<title>Error: What is the certificate or report number? – Find an energy certificate – GOV.UK</title>",
-        )
+        expect(response.body).to have_title "Error: What is the certificate or report number? – Find an energy certificate – GOV.UK"
       end
 
       it "displays the find a non-domestic certificate page heading" do
@@ -923,9 +903,7 @@ describe "Acceptance::NonDomesticCertificate", type: :feature do
         end
 
         it "displays an error in the title" do
-          expect(response.body).to include(
-            "<title>Error: What is the certificate or report number? – Find an energy certificate – GOV.UK</title>",
-          )
+          expect(response.body).to have_title "Error: What is the certificate or report number? – Find an energy certificate – GOV.UK"
         end
 
         it "contains the required GDS error summary" do

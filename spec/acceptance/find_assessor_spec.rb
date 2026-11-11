@@ -22,9 +22,7 @@ describe "Acceptance::Assessor", type: :feature do
       end
 
       it "displays the title the same as the main header value" do
-        expect(response.body).to include(
-          "<title>Error: What type of property is the certificate for? – Get a new energy certificate – GOV.UK</title>",
-        )
+        expect(response.body).to have_title "Error: What type of property is the certificate for? – Get a new energy certificate – GOV.UK"
       end
 
       it "contains the required GDS error summary" do
@@ -363,9 +361,7 @@ describe "Acceptance::Assessor", type: :feature do
         end
 
         it "displays the correct title" do
-          expect(response.body).to include(
-            "<title>7 assessors in order of distance from SW1A 2AA – Get a new energy certificate – GOV.UK</title>",
-          )
+          expect(response.body).to have_title "7 assessors in order of distance from SW1A 2AA – Get a new energy certificate – GOV.UK"
         end
 
         it "displays the Contact an assessor to book an energy assessment page heading" do
@@ -483,9 +479,7 @@ describe "Acceptance::Assessor", type: :feature do
         end
 
         it "displays the correct title" do
-          expect(response.body).to include(
-            "<title>No results for E1 4FF – Get a new energy certificate – GOV.UK</title>",
-          )
+          expect(response.body).to have_title "No results for E1 4FF – Get a new energy certificate – GOV.UK"
         end
 
         it "displays the no results page heading" do
@@ -580,9 +574,7 @@ describe "Acceptance::Assessor", type: :feature do
       end
 
       it "displays the Find an assessor by name title" do
-        expect(response.body).to include(
-          "<title>What is the assessor’s name? – Get a new energy certificate – GOV.UK</title>",
-        )
+        expect(response.body).to have_title "What is the assessor’s name? – Get a new energy certificate – GOV.UK"
       end
 
       it "displays the Find an assessor by name page heading" do
@@ -614,9 +606,7 @@ describe "Acceptance::Assessor", type: :feature do
       end
 
       it "displays the Find an assessor by name error title" do
-        expect(response.body).to include(
-          "<title>Error: What is the assessor’s name? – Get a new energy certificate – GOV.UK</title>",
-        )
+        expect(response.body).to have_title "Error: What is the assessor’s name? – Get a new energy certificate – GOV.UK"
       end
 
       it "displays the Find an assessor by name page heading" do
@@ -651,9 +641,7 @@ describe "Acceptance::Assessor", type: :feature do
       end
 
       it "displays the Find an assessor by name error title" do
-        expect(response.body).to include(
-          "<title>Error: What is the assessor’s name? – Get a new energy certificate – GOV.UK</title>",
-        )
+        expect(response.body).to have_title "Error: What is the assessor’s name? – Get a new energy certificate – GOV.UK"
       end
 
       it "displays an error message" do
@@ -762,9 +750,7 @@ describe "Acceptance::Assessor", type: :feature do
         end
 
         it "displays the correct title" do
-          expect(response.body).to include(
-            "<title>8 results similar to the name R McDonald – Get a new energy certificate – GOV.UK</title>",
-          )
+          expect(response.body).to have_title "8 results similar to the name R McDonald – Get a new energy certificate – GOV.UK"
         end
 
         it "does show that they are loose matches" do
@@ -851,9 +837,7 @@ describe "Acceptance::Assessor", type: :feature do
       end
 
       it "displays the title the same as the main header value" do
-        expect(response.body).to include(
-          "<title>Is this an existing or new building? – Get a new energy certificate – GOV.UK</title>",
-        )
+        expect(response.body).to have_title "Is this an existing or new building? – Get a new energy certificate – GOV.UK"
       end
     end
   end

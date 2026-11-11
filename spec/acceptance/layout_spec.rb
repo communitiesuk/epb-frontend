@@ -24,9 +24,7 @@ describe "Acceptance::AccessibilityStatement", type: :feature do
       end
 
       it "tab value is the same as the main header value" do
-        expect(response.body).to include(
-          "<title>Get a new energy certificate – Get a new energy certificate – GOV.UK</title>",
-        )
+        expect(response.body).to have_title "Get a new energy certificate – Get a new energy certificate – GOV.UK"
       end
 
       it "has a footer" do
@@ -77,9 +75,7 @@ describe "Acceptance::AccessibilityStatement", type: :feature do
       let(:response) { get "http://find-energy-certificate.local.gov.uk/" }
 
       it "tab value is the same as the main header value" do
-        expect(response.body).to include(
-          "<title>Find an energy certificate – Find an energy certificate – GOV.UK</title>",
-        )
+        expect(response.body).to have_title "Find an energy certificate – Find an energy certificate – GOV.UK"
       end
 
       it "includes the gov service navigation" do

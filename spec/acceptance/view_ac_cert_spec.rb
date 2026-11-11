@@ -21,9 +21,7 @@ describe "Acceptance::AirConditioningInspectionCertificate", type: :feature do
     include_examples "show language toggle"
 
     it "has a tab content that shows the page title" do
-      expect(response.body).to include(
-        " <title>Air conditioning inspection certificate – Find an energy certificate – GOV.UK</title>",
-      )
+      expect(response.body).to have_title "Air conditioning inspection certificate – Find an energy certificate – GOV.UK"
     end
 
     it "shows the contents section" do

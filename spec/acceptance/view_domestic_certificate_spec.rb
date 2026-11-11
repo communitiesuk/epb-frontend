@@ -24,9 +24,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
     include_examples "show language toggle"
 
     it "has a tab content that shows the page title" do
-      expect(response.body).to include(
-        " <title>Energy performance certificate (EPC) – Find an energy certificate – GOV.UK</title>",
-      )
+      expect(response.body).to have_title "Energy performance certificate (EPC) – Find an energy certificate – GOV.UK"
     end
 
     it "shows the share certificate section" do
@@ -1715,9 +1713,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
     end
 
     it "shows the tag header that matches the page header" do
-      expect(response.body).to include(
-        "<title>This certificate has been cancelled – GOV.UK</title>",
-      )
+      expect(response.body).to have_title "This certificate has been cancelled – GOV.UK"
     end
 
     it "shows the error header" do
