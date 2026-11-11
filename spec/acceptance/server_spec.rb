@@ -146,6 +146,7 @@ describe "Acceptance::Server", type: :feature do
       test_logger = logger
       test_show_exceptions = show_exceptions
       test_exception = exception
+
       Class.new(FrontendService) do
         set :logger, test_logger
         set :show_exceptions, test_show_exceptions
@@ -176,7 +177,11 @@ describe "Acceptance::Server", type: :feature do
       end
 
       it "logs the error to the log file" do
-        expect(logger).to have_received(:error).with(include('"type":"RuntimeError","message":"boom","backtrace":['))
+        expect(logger).to have_received(:error).with(
+          satisfy do |error|
+            expect(JSON.parse(error)).to eq("type" => "RuntimeError", "message" => "boom", "backtrace" => [])
+          end,
+        )
       end
 
       it "logs the error to sentry" do
@@ -223,7 +228,7 @@ describe "Acceptance::Server", type: :feature do
       end
 
       it "does not log the error to the log file" do
-        expect(logger).not_to have_received(:error).with(include("boom"))
+        expect(logger).not_to have_received(:error)
       end
 
       it "does not log the error to sentry" do
