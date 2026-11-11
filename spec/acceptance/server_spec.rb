@@ -124,6 +124,16 @@ describe "Acceptance::Server", type: :feature do
 
     it "returns status 404" do
       expect(response.status).to eq(404)
+      expect(response.body).to have_title "Page not found – GOV.UK"
+    end
+  end
+
+  describe "GET a non-existent page in welsh" do
+    let(:response) { get "/this-page-does-not-exist?lang=cy" }
+
+    it "returns status 404" do
+      expect(response.status).to eq(404)
+      expect(response.body).to have_title "Y tudalen heb ei ganfod – GOV.UK"
     end
   end
 

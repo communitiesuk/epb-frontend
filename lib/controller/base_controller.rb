@@ -70,9 +70,8 @@ module Controller
     end
 
     not_found do
-      @page_title = "#{t('error.404.heading')} – #{t('layout.body.govuk')}"
       status 404
-      erb :error_page_404 unless @errors
+      erb :error_page_404
     end
 
     error MaintenanceMode do
