@@ -491,33 +491,6 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
           expect(response.body).to include("Enter a valid UK postcode using only letters and numbers in the format LS1 4AP")
         end
       end
-
-      context "when there is no connection" do
-        before do
-          FindAssessor::ByPostcode::NoNetworkStub.search_by_postcode(
-            "D11 4FF",
-            qualification_type: "nonDomesticSp3,nonDomesticCc4,nonDomesticDec,nonDomesticNos3,nonDomesticNos4,nonDomesticNos5",
-          )
-        end
-
-        let(:response) do
-          get "http://getting-new-energy-certificate.local.gov.uk/find-a-non-domestic-assessor/search-by-postcode?postcode=D11+4FF"
-        end
-
-        it "returns status 500" do
-          expect(response.status).to eq(500)
-        end
-
-        it "displays the 500 error page heading" do
-          expect(response.body).to include("Try again later.")
-        end
-
-        it "displays error page body" do
-          expect(response.body).to include(
-            "Sorry, there is a problem with the service",
-          )
-        end
-      end
     end
   end
 
@@ -760,30 +733,6 @@ describe "Acceptance::NonDomesticAssessor", type: :feature do
         it "explains that no assessors by that name" do
           expect(response.body).to include(
             "There are no assessors with this name.",
-          )
-        end
-      end
-
-      context "when there is no connection" do
-        before do
-          FindAssessor::ByName::NoNetworkStub.search_by_name("Breaking Person", qualification_type: "nonDomestic")
-        end
-
-        let(:response) do
-          get "http://getting-new-energy-certificate.local.gov.uk/find-a-non-domestic-assessor/search-by-name?name=Breaking%20Person"
-        end
-
-        it "returns status 500" do
-          expect(response.status).to eq(500)
-        end
-
-        it "displays the 500 error page heading" do
-          expect(response.body).to include("Try again later.")
-        end
-
-        it "displays error page body" do
-          expect(response.body).to include(
-            "Sorry, there is a problem with the service",
           )
         end
       end

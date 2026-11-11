@@ -79,8 +79,17 @@ module Controller
       erb :service_unavailable
     end
 
+    error Errors::RequestTimeoutError do |exception|
+      logger.error JSON.generate(error_details(exception))
+      status 504
+      erb :error_page_500
+    end
+
     error do |exception|
-      server_error(exception)
+      Sentry.capture_exception(exception) if defined?(Sentry)
+      logger.error JSON.generate(error_details(exception))
+      status 500
+      erb :error_page_500
     end
 
   private
@@ -102,14 +111,6 @@ module Controller
         locals.merge({ print_view: is_print_view }),
         is_print_view ? :print_layout : :layout,
       )
-    end
-
-    def server_error(exception)
-      was_timeout = exception.is_a?(Errors::RequestTimeoutError)
-      Sentry.capture_exception(exception) if defined?(Sentry) && !was_timeout
-      logger.error JSON.generate(error_details(exception))
-      status(was_timeout ? 504 : 500)
-      erb :error_page_500
     end
 
     def error_details(exception)

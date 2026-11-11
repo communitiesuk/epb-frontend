@@ -77,45 +77,40 @@ module Controller
           erb_template = :find_assessor_by_postcode_results
           search_results_heading = locals[:results].length.positive? ? t("#{erb_template}.results", count: locals[:results].length, postcode: params["postcode"].upcase) : t("#{erb_template}.no_assessors_heading", postcode: params["postcode"].upcase)
           @page_title = "#{search_results_heading} – #{t('services.getting_an_energy_certificate')} – #{t('layout.body.govuk')}"
-        rescue StandardError => e
-          case e
-          when Errors::PostcodeNotRegistered
-            @page_title =
-              "#{t('find_assessor_by_postcode_results.no_assessors_heading', postcode: params['postcode'].upcase)} – #{
+        rescue Errors::PostcodeNotRegistered
+          @page_title =
+            "#{t('find_assessor_by_postcode_results.no_assessors_heading', postcode: params['postcode'].upcase)} – #{
                 t('services.getting_an_energy_certificate')
               } – #{t('layout.body.govuk')}"
-            locals[:results] = []
-            erb_template = :find_assessor_by_postcode_results
-          when Errors::PostcodeIncomplete
-            status 400
-            @page_title =
-              "#{t('error.error')}#{
+          locals[:results] = []
+          erb_template = :find_assessor_by_postcode_results
+        rescue Errors::PostcodeIncomplete
+          status 400
+          @page_title =
+            "#{t('error.error')}#{
                 t('find_assessor_by_postcode.top_heading')
               } – #{t('services.getting_an_energy_certificate')} – #{
                 t('layout.body.govuk')
               }"
-            @errors[:postcode] = t("validation_errors.postcode_incomplete")
-          when Errors::PostcodeWrongFormat
-            status 400
-            @page_title =
-              "#{t('error.error')}#{
+          @errors[:postcode] = t("validation_errors.postcode_incomplete")
+        rescue Errors::PostcodeWrongFormat
+          status 400
+          @page_title =
+            "#{t('error.error')}#{
                 t('find_assessor_by_postcode.top_heading')
               } – #{t('services.getting_an_energy_certificate')} – #{
                 t('layout.body.govuk')
               }"
-            @errors[:postcode] = t("validation_errors.postcode_wrong_format")
-          when Errors::PostcodeNotValid
-            status 400
-            @page_title =
-              "#{t('error.error')}#{
+          @errors[:postcode] = t("validation_errors.postcode_wrong_format")
+        rescue Errors::PostcodeNotValid
+          status 400
+          @page_title =
+            "#{t('error.error')}#{
                 t('find_assessor_by_postcode.top_heading')
               } – #{t('services.getting_an_energy_certificate')} – #{
                 t('layout.body.govuk')
               }"
-            @errors[:postcode] = t("validation_errors.postcode_invalid")
-          else
-            return server_error(e)
-          end
+          @errors[:postcode] = t("validation_errors.postcode_invalid")
         end
       end
 
@@ -147,18 +142,13 @@ module Controller
           erb_template = :find_assessor_by_name_results
           search_results_heading = t((locals[:meta][:looseMatch] ? "#{erb_template}.results.results_like" : "#{erb_template}.results.results"), count: locals[:results].length, name: params["name"])
           @page_title = "#{search_results_heading} – #{t('services.getting_an_energy_certificate')} – #{t('layout.body.govuk')}"
-        rescue StandardError => e
-          case e
-          when Errors::InvalidName
-            status 400
-            @page_title =
-              "#{t('error.error')}#{t('find_assessor_by_name.top_heading')} – #{
+        rescue Errors::InvalidName
+          status 400
+          @page_title =
+            "#{t('error.error')}#{t('find_assessor_by_name.top_heading')} – #{
                 t('services.getting_an_energy_certificate')
               } – #{t('layout.body.govuk')}"
-            @errors[:name] = t("validation_errors.assessor_name_error")
-          else
-            return server_error(e)
-          end
+          @errors[:name] = t("validation_errors.assessor_name_error")
         end
       end
 
@@ -190,18 +180,13 @@ module Controller
           erb_template = :find_non_domestic_assessor_by_name_results
           search_results_heading = t((locals[:meta][:looseMatch] ? "find_assessor_by_name_results.results.results_like" : "find_assessor_by_name_results.results.results"), count: locals[:results].length, name: params["name"])
           @page_title = "#{search_results_heading} – #{t('services.getting_an_energy_certificate')} – #{t('layout.body.govuk')}"
-        rescue StandardError => e
-          case e
-          when Errors::InvalidName
-            status 400
-            @page_title =
-              "#{t('error.error')}#{t('find_assessor_by_name.top_heading')} – #{
+        rescue Errors::InvalidName
+          status 400
+          @page_title =
+            "#{t('error.error')}#{t('find_assessor_by_name.top_heading')} – #{
                 t('services.getting_an_energy_certificate')
               } – #{t('layout.body.govuk')}"
-            @errors[:name] = t("validation_errors.assessor_name_error")
-          else
-            return server_error(e)
-          end
+          @errors[:name] = t("validation_errors.assessor_name_error")
         end
       end
 
@@ -234,45 +219,40 @@ module Controller
           erb_template = :find_non_domestic_assessor_by_postcode_results
           search_results_heading = locals[:results].length.positive? ? t("find_assessor_by_postcode_results.results", count: locals[:results].length, postcode: params["postcode"].upcase) : t("find_assessor_by_postcode_results.no_assessors_heading", postcode: params["postcode"].upcase)
           @page_title = "#{search_results_heading} – #{t('services.getting_an_energy_certificate')} – #{t('layout.body.govuk')}"
-        rescue StandardError => e
-          case e
-          when Errors::PostcodeNotRegistered
-            @page_title =
-              "#{t('find_assessor_by_postcode_results.no_assessors_heading', postcode: params['postcode'].upcase)} – #{
+        rescue Errors::PostcodeNotRegistered
+          @page_title =
+            "#{t('find_assessor_by_postcode_results.no_assessors_heading', postcode: params['postcode'].upcase)} – #{
                 t('services.getting_an_energy_certificate')
               } – #{t('layout.body.govuk')}"
-            locals[:results] = []
-            erb_template = :find_non_domestic_assessor_by_postcode_results
-          when Errors::PostcodeIncomplete
-            status 400
-            @page_title =
-              "#{t('error.error')}#{
+          locals[:results] = []
+          erb_template = :find_non_domestic_assessor_by_postcode_results
+        rescue Errors::PostcodeIncomplete
+          status 400
+          @page_title =
+            "#{t('error.error')}#{
                 t('find_non_domestic_assessor_by_postcode.top_heading')
               } – #{t('services.getting_an_energy_certificate')} – #{
                 t('layout.body.govuk')
               }"
-            @errors[:postcode] = t("validation_errors.postcode_incomplete")
-          when Errors::PostcodeWrongFormat
-            status 400
-            @page_title =
-              "#{t('error.error')}#{
+          @errors[:postcode] = t("validation_errors.postcode_incomplete")
+        rescue Errors::PostcodeWrongFormat
+          status 400
+          @page_title =
+            "#{t('error.error')}#{
                 t('find_non_domestic_assessor_by_postcode.top_heading')
               } – #{t('services.getting_an_energy_certificate')} – #{
                 t('layout.body.govuk')
               }"
-            @errors[:postcode] = t("validation_errors.postcode_wrong_format")
-          when Errors::PostcodeNotValid
-            status 400
-            @page_title =
-              "#{t('error.error')}#{
+          @errors[:postcode] = t("validation_errors.postcode_wrong_format")
+        rescue Errors::PostcodeNotValid
+          status 400
+          @page_title =
+            "#{t('error.error')}#{
                 t('find_non_domestic_assessor_by_postcode.top_heading')
               } – #{t('services.getting_an_energy_certificate')} – #{
                 t('layout.body.govuk')
               }"
-            @errors[:postcode] = t("validation_errors.postcode_invalid")
-          else
-            return server_error(e)
-          end
+          @errors[:postcode] = t("validation_errors.postcode_invalid")
         end
       end
 

@@ -189,7 +189,7 @@ describe "Acceptance::Server", type: :feature do
       end
     end
 
-    context "when a timeout error is raised in a production environment" do
+    context "when a timeout error" do
       let(:show_exceptions) { false }
       let(:exception) { Errors::RequestTimeoutError }
 

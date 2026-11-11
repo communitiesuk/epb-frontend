@@ -30,8 +30,6 @@ module Controller
       data = use_case.execute
       data[:show_avg_co2] = Helper::Toggles.enabled?("frontend-show-average-co2-emission")
       show(erb_template, data)
-    rescue StandardError => e
-      return server_error(e)
     end
 
     get "/service-performance/download-csv" do

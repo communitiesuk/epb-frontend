@@ -323,28 +323,6 @@ describe "Acceptance::NonDomesticCertificate", type: :feature do
                                             text: "get a new energy certificate"
         end
       end
-
-      context "when there is no connection" do
-        before { FindCertificate::NoNetworkStub.search_by_postcode("D11 4FF", assessment_types: %w[AC-CERT AC-REPORT CEPC CEPC-RR DEC DEC-RR]) }
-
-        let(:response) do
-          get "http://find-energy-certificate.local.gov.uk/find-a-non-domestic-certificate/search-by-postcode?postcode=D11+4FF"
-        end
-
-        it "returns status 500" do
-          expect(response.status).to eq(500)
-        end
-
-        it "displays the 500 error page heading" do
-          expect(response.body).to include("Try again later.")
-        end
-
-        it "displays error page body" do
-          expect(response.body).to include(
-            "Sorry, there is a problem with the service",
-          )
-        end
-      end
     end
   end
 
@@ -704,34 +682,6 @@ describe "Acceptance::NonDomesticCertificate", type: :feature do
           expect(response.body).to have_link("Search by postcode instead", href: "/find-a-non-domestic-certificate/search-by-postcode")
         end
       end
-
-      context "when there is no connection" do
-        before do
-          FindCertificate::NoNetworkStub.search_by_street_name_and_town(
-            "Doesnt Matter",
-            "Nothing",
-            assessment_types: %w[AC-CERT AC-REPORT CEPC CEPC-RR DEC DEC-RR],
-          )
-        end
-
-        let(:response) do
-          get "http://find-energy-certificate.local.gov.uk/find-a-non-domestic-certificate/search-by-street-name-and-town?street_name=Doesnt%20Matter&town=Nothing"
-        end
-
-        it "returns status 500" do
-          expect(response.status).to eq(500)
-        end
-
-        it "displays the 500 error page heading" do
-          expect(response.body).to include("Try again later.")
-        end
-
-        it "displays error page body" do
-          expect(response.body).to include(
-            "Sorry, there is a problem with the service",
-          )
-        end
-      end
     end
 
     context "when entering a town as an array" do
@@ -921,32 +871,6 @@ describe "Acceptance::NonDomesticCertificate", type: :feature do
           ).to have_link "A certificate was not found with this certificate number",
                          href: "#reference_number"
           expect(response.body).to have_css "#reference_number"
-        end
-
-        context "when there is no connection" do
-          before do
-            FindCertificate::NoNetworkStub.search_by_id(
-              "1234-5678-9101-1122-1234",
-            )
-          end
-
-          let(:response) do
-            get "http://find-energy-certificate.local.gov.uk/find-a-non-domestic-certificate/search-by-reference-number?reference_number=1234-5678-9101-1122-1234"
-          end
-
-          it "returns status 500" do
-            expect(response.status).to eq(500)
-          end
-
-          it "displays the 500 error page heading" do
-            expect(response.body).to include("Try again later.")
-          end
-
-          it "displays error page body" do
-            expect(response.body).to include(
-              "Sorry, there is a problem with the service",
-            )
-          end
         end
 
         context "when the search on the API times out" do

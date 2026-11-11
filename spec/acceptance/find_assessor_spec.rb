@@ -792,30 +792,6 @@ describe "Acceptance::Assessor", type: :feature do
         end
       end
 
-      context "when there is no connection" do
-        before do
-          FindAssessor::ByName::NoNetworkStub.search_by_name("Breaking Person", qualification_type: "domestic")
-        end
-
-        let(:response) do
-          get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/search-by-name?name=Breaking%20Person"
-        end
-
-        it "returns status 500" do
-          expect(response.status).to eq(500)
-        end
-
-        it "displays the 500 error page heading" do
-          expect(response.body).to include("Try again later.")
-        end
-
-        it "displays error page body" do
-          expect(response.body).to include(
-            "Sorry, there is a problem with the service",
-          )
-        end
-      end
-
       context "when entering a name in an array" do
         before { FindAssessor::ByName::Stub.search_by_name("Ronald McDonald", "domestic") }
 

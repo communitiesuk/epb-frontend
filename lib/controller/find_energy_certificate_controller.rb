@@ -42,7 +42,6 @@ module Controller
         } – #{t('layout.body.govuk')}"
 
       if params["postcode"]
-
         begin
           raise Errors::PostcodeWrongFormat if params["postcode"].is_a?(Array)
 
@@ -55,38 +54,33 @@ module Controller
           erb_template = :find_certificate_by_postcode_results
           search_results_heading = locals[:results].size.positive? ? t("#{erb_template}.list", count: count_certificates(locals[:results]), postcode: CGI.escapeHTML(params["postcode"].upcase)) : t("#{erb_template}.no_results.no_postcode", postcode: CGI.escapeHTML(params["postcode"].upcase))
           @page_title = "#{search_results_heading} – #{t('services.find_an_energy_certificate')} – #{t('layout.body.govuk')}"
-        rescue StandardError => e
-          case e
-          when Errors::PostcodeIncomplete
-            status 400
-            @page_title =
-              "#{t('error.error')}#{
+        rescue Errors::PostcodeIncomplete
+          status 400
+          @page_title =
+            "#{t('error.error')}#{
+              t('find_certificate_by_postcode.top_heading')
+            } – #{t('services.find_an_energy_certificate')} – #{
+              t('layout.body.govuk')
+            }"
+          @errors[:postcode] = t("validation_errors.postcode_incomplete")
+        rescue Errors::PostcodeWrongFormat
+          status 400
+          @page_title =
+            "#{t('error.error')}#{
                 t('find_certificate_by_postcode.top_heading')
               } – #{t('services.find_an_energy_certificate')} – #{
                 t('layout.body.govuk')
               }"
-            @errors[:postcode] = t("validation_errors.postcode_incomplete")
-          when Errors::PostcodeWrongFormat
-            status 400
-            @page_title =
-              "#{t('error.error')}#{
+          @errors[:postcode] = t("validation_errors.postcode_wrong_format")
+        rescue Errors::PostcodeNotValid
+          status 400
+          @page_title =
+            "#{t('error.error')}#{
                 t('find_certificate_by_postcode.top_heading')
               } – #{t('services.find_an_energy_certificate')} – #{
                 t('layout.body.govuk')
               }"
-            @errors[:postcode] = t("validation_errors.postcode_wrong_format")
-          when Errors::PostcodeNotValid
-            status 400
-            @page_title =
-              "#{t('error.error')}#{
-                t('find_certificate_by_postcode.top_heading')
-              } – #{t('services.find_an_energy_certificate')} – #{
-                t('layout.body.govuk')
-              }"
-            @errors[:postcode] = t("validation_errors.postcode_invalid")
-          else
-            return server_error(e)
-          end
+          @errors[:postcode] = t("validation_errors.postcode_invalid")
         end
       end
 
@@ -113,21 +107,13 @@ module Controller
               .execute(params["reference_number"])[:data][:assessments][0][:assessmentId]
           redirect localised_url("/energy-certificate/#{fetched_assessment_id}"),
                    303
-        rescue StandardError => e
+        rescue Errors::ReferenceNumberNotValid
+          status 400
           @page_title = "#{t('error.error')}#{@page_title}"
-          case e
-          when Errors::ReferenceNumberNotValid
-            status 400
-            @errors[:reference_number] =
-              t("validation_errors.reference_number_not_valid")
-          when Errors::CertificateNotFound
-            @errors[:reference_number] =
-              t(
-                "find_certificate_by_reference_number.reference_number_not_registered",
-              )
-          else
-            return server_error(e)
-          end
+          @errors[:reference_number] = t("validation_errors.reference_number_not_valid")
+        rescue Errors::CertificateNotFound
+          @page_title = "#{t('error.error')}#{@page_title}"
+          @errors[:reference_number] = t("find_certificate_by_reference_number.reference_number_not_registered")
         end
       end
 
@@ -159,69 +145,63 @@ module Controller
           number_of_results = count_certificates(locals[:results])
           result_content = number_of_results == 1 ? "list.one_result" : "list.more_than_one_result"
           @page_title = "#{t("#{erb_template}.#{result_content}", length: number_of_results, query: "#{params['street_name']} #{params['town']}")} – #{t('services.find_an_energy_certificate')} – #{t('layout.body.govuk')}"
-        rescue StandardError => e
-          case e
-          when Errors::AllParamsMissing
-            status 400
-            @page_title =
-              "#{t('error.error')}#{
-                t('find_certificate_by_street_name_and_town.top_heading')
-              } – #{t('services.find_an_energy_certificate')} – #{
-                t('layout.body.govuk')
-              }"
-            @errors[:street_name] = t("validation_errors.street_name_missing")
-            @errors[:town] = t("validation_errors.town_missing")
-
-          when Errors::StreetNameMissing
-            status 400
-            @page_title =
-              "#{t('error.error')}#{
-                t('find_certificate_by_street_name_and_town.top_heading')
-              } – #{t('services.find_an_energy_certificate')} – #{
-                t('layout.body.govuk')
-              }"
-            @errors[:street_name] = t("validation_errors.street_name_missing")
-          when Errors::TownMissing
-            status 400
-            @page_title =
-              "#{t('error.error')}#{
-                t('find_certificate_by_street_name_and_town.top_heading')
-              } – #{t('services.find_an_energy_certificate')} – #{
-                t('layout.body.govuk')
-              }"
-            @errors[:town] = t("validation_errors.town_missing")
-          when Errors::CertificateNotFound
-            @page_title =
-              "#{t('find_certificate_by_street_name_and_town.no_such_address.error').chomp('.')} – #{
-                t('services.find_an_energy_certificate')
-              } – #{t('layout.body.govuk')}"
-            @errors[:generic] = {
-              error:
-                "find_certificate_by_street_name_and_town.no_such_address.error",
-              body:
-                "find_certificate_by_street_name_and_town.no_such_address.body",
-              cta: "find_certificate_by_street_name_and_town.no_such_address.cta",
-              url:
-                localised_url(
-                  get_subdomain_host(GETTING_NEW_ENERGY_CERTIFICATE_HOST_NAME),
-                ),
-            }
-          when Errors::RequestTimeoutError
-            status 504
-            erb_template = :search_by_street_name_and_town__timeout
-            locals[:search_by_postcode_url] = "/find-a-certificate/search-by-postcode"
-          when Errors::TooManyResults
-            status 200
-            @page_title =
-              "#{t('error.too_many_results.heading')} – #{
-                t('services.find_an_energy_certificate')} – #{
-                t('layout.body.govuk')
-              }"
-            erb_template = :error_page_too_many_results
-            locals[:search_by_postcode_url] = "/find-a-certificate/search-by-postcode"
-          else
-            return server_error(e)
-          end
+        rescue Errors::AllParamsMissing
+          status 400
+          @page_title =
+            "#{t('error.error')}#{
+              t('find_certificate_by_street_name_and_town.top_heading')
+            } – #{t('services.find_an_energy_certificate')} – #{
+              t('layout.body.govuk')
+            }"
+          @errors[:street_name] = t("validation_errors.street_name_missing")
+          @errors[:town] = t("validation_errors.town_missing")
+        rescue Errors::StreetNameMissing
+          status 400
+          @page_title =
+            "#{t('error.error')}#{
+              t('find_certificate_by_street_name_and_town.top_heading')
+            } – #{t('services.find_an_energy_certificate')} – #{
+              t('layout.body.govuk')
+            }"
+          @errors[:street_name] = t("validation_errors.street_name_missing")
+        rescue Errors::TownMissing
+          status 400
+          @page_title =
+            "#{t('error.error')}#{
+              t('find_certificate_by_street_name_and_town.top_heading')
+            } – #{t('services.find_an_energy_certificate')} – #{
+              t('layout.body.govuk')
+            }"
+          @errors[:town] = t("validation_errors.town_missing")
+        rescue Errors::CertificateNotFound
+          @page_title =
+            "#{t('find_certificate_by_street_name_and_town.no_such_address.error').chomp('.')} – #{
+              t('services.find_an_energy_certificate')
+            } – #{t('layout.body.govuk')}"
+          @errors[:generic] = {
+            error:
+              "find_certificate_by_street_name_and_town.no_such_address.error",
+            body:
+              "find_certificate_by_street_name_and_town.no_such_address.body",
+            cta: "find_certificate_by_street_name_and_town.no_such_address.cta",
+            url:
+              localised_url(
+                get_subdomain_host(GETTING_NEW_ENERGY_CERTIFICATE_HOST_NAME),
+              ),
+          }
+        rescue Errors::RequestTimeoutError
+          status 504
+          erb_template = :search_by_street_name_and_town__timeout
+          locals[:search_by_postcode_url] = "/find-a-certificate/search-by-postcode"
+        rescue Errors::TooManyResults
+          status 200
+          @page_title =
+            "#{t('error.too_many_results.heading')} – #{
+              t('services.find_an_energy_certificate')} – #{
+              t('layout.body.govuk')
+            }"
+          erb_template = :error_page_too_many_results
+          locals[:search_by_postcode_url] = "/find-a-certificate/search-by-postcode"
         end
       end
 
@@ -257,38 +237,33 @@ module Controller
           erb_template = :find_non_dom_certificate_by_postcode_results
           search_results_heading = locals[:results].length.positive? ? t("#{erb_template}.list", length: count_certificates(locals[:results]), postcode: CGI.escapeHTML(params["postcode"].upcase)) : t("find_certificate_by_postcode_results.no_results.no_postcode", postcode: CGI.escapeHTML(params["postcode"].upcase))
           @page_title = "#{search_results_heading} – #{t('services.find_an_energy_certificate')} – #{t('layout.body.govuk')}"
-        rescue StandardError => e
-          case e
-          when Errors::PostcodeIncomplete
-            status 400
-            @page_title =
-              "#{t('error.error')}#{
+        rescue Errors::PostcodeIncomplete
+          status 400
+          @page_title =
+            "#{t('error.error')}#{
                 t('find_certificate_by_postcode.top_heading')
               } – #{t('services.find_an_energy_certificate')} – #{
                 t('layout.body.govuk')
               }"
-            @errors[:postcode] = t("validation_errors.postcode_incomplete")
-          when Errors::PostcodeWrongFormat
-            status 400
-            @page_title =
-              "#{t('error.error')}#{
+          @errors[:postcode] = t("validation_errors.postcode_incomplete")
+        rescue Errors::PostcodeWrongFormat
+          status 400
+          @page_title =
+            "#{t('error.error')}#{
                 t('find_certificate_by_postcode.top_heading')
               } – #{t('services.find_an_energy_certificate')} – #{
                 t('layout.body.govuk')
               }"
-            @errors[:postcode] = t("validation_errors.postcode_wrong_format")
-          when Errors::PostcodeNotValid
-            status 400
-            @page_title =
-              "#{t('error.error')}#{
+          @errors[:postcode] = t("validation_errors.postcode_wrong_format")
+        rescue Errors::PostcodeNotValid
+          status 400
+          @page_title =
+            "#{t('error.error')}#{
                 t('find_certificate_by_postcode.top_heading')
               } – #{t('services.find_an_energy_certificate')} – #{
                 t('layout.body.govuk')
               }"
-            @errors[:postcode] = t("validation_errors.postcode_invalid")
-          else
-            return server_error(e)
-          end
+          @errors[:postcode] = t("validation_errors.postcode_invalid")
         end
       end
 
@@ -316,32 +291,27 @@ module Controller
 
           redirect localised_url("/energy-certificate/#{fetched_assessment_id}"),
                    303
-        rescue StandardError => e
-          case e
-          when Errors::ReferenceNumberNotValid
-            status 400
-            @page_title =
-              "#{t('error.error')}#{
+        rescue Errors::ReferenceNumberNotValid
+          status 400
+          @page_title =
+            "#{t('error.error')}#{
                 t('find_non_dom_certificate_by_reference_number.top_heading')
               } – #{t('services.find_an_energy_certificate')} – #{
                 t('layout.body.govuk')
               }"
-            @errors[:reference_number] =
-              t("validation_errors.reference_number_not_valid")
-          when Errors::CertificateNotFound
-            @page_title =
-              "#{t('error.error')}#{
+          @errors[:reference_number] =
+            t("validation_errors.reference_number_not_valid")
+        rescue Errors::CertificateNotFound
+          @page_title =
+            "#{t('error.error')}#{
                 t('find_non_dom_certificate_by_reference_number.top_heading')
               } – #{t('services.find_an_energy_certificate')} – #{
                 t('layout.body.govuk')
               }"
-            @errors[:reference_number] =
-              t(
-                "find_non_dom_certificate_by_reference_number.reference_number_not_registered",
-              )
-          else
-            return server_error(e)
-          end
+          @errors[:reference_number] =
+            t(
+              "find_non_dom_certificate_by_reference_number.reference_number_not_registered",
+            )
         end
       end
 
@@ -374,71 +344,66 @@ module Controller
 
           erb_template = :find_non_dom_certificate_by_street_name_and_town_results
           @page_title = "#{t("#{erb_template}.list", length: count_certificates(locals[:results]), query: "#{params['street_name']} #{params['town']}")} – #{t('services.find_an_energy_certificate')} – #{t('layout.body.govuk')}"
-        rescue StandardError => e
-          case e
-          when Errors::AllParamsMissing
-            status 400
-            @page_title =
-              "#{t('error.error')}#{
+        rescue Errors::AllParamsMissing
+          status 400
+          @page_title =
+            "#{t('error.error')}#{
                 t('find_non_dom_certificate_by_street_name_and_town.top_heading')
               } – #{t('services.find_an_energy_certificate')} – #{
                 t('layout.body.govuk')
               }"
-            @errors[:street_name] = t("validation_errors.street_name_missing")
-            @errors[:town] = t("validation_errors.town_missing")
-          when Errors::StreetNameMissing
-            status 400
-            @page_title =
-              "#{t('error.error')}#{
+          @errors[:street_name] = t("validation_errors.street_name_missing")
+          @errors[:town] = t("validation_errors.town_missing")
+        rescue Errors::StreetNameMissing
+          status 400
+          @page_title =
+            "#{t('error.error')}#{
                 t('find_non_dom_certificate_by_street_name_and_town.top_heading')
               } – #{t('services.find_an_energy_certificate')} – #{
                 t('layout.body.govuk')
               }"
-            @errors[:street_name] = t("validation_errors.street_name_missing")
-          when Errors::TownMissing
-            status 400
-            @page_title =
-              "#{t('error.error')}#{
+          @errors[:street_name] = t("validation_errors.street_name_missing")
+        rescue Errors::TownMissing
+          status 400
+          @page_title =
+            "#{t('error.error')}#{
                 t('find_non_dom_certificate_by_street_name_and_town.top_heading')
               } – #{t('services.find_an_energy_certificate')} – #{
                 t('layout.body.govuk')
               }"
-            @errors[:town] = t("validation_errors.town_missing")
-          when Errors::CertificateNotFound
-            @page_title =
-              "#{
+          @errors[:town] = t("validation_errors.town_missing")
+        rescue Errors::CertificateNotFound
+          @page_title =
+            "#{
                 t('find_non_dom_certificate_by_street_name_and_town.no_such_address.error').chomp('.')
               } – #{t('services.find_an_energy_certificate')} – #{
                 t('layout.body.govuk')
               }"
-            @errors[:generic] = {
-              error:
-                "find_non_dom_certificate_by_street_name_and_town.no_such_address.error",
-              body:
-                "find_non_dom_certificate_by_street_name_and_town.no_such_address.body",
-              cta:
-                "find_non_dom_certificate_by_street_name_and_town.no_such_address.cta",
-              url:
-                localised_url(
-                  get_subdomain_host(GETTING_NEW_ENERGY_CERTIFICATE_HOST_NAME),
-                ),
-            }
-          when Errors::RequestTimeoutError
-            status 200
-            erb_template = :search_by_street_name_and_town__timeout
-            locals[:search_by_postcode_url] = "/find-a-non-domestic-certificate/search-by-postcode"
-          when Errors::TooManyResults
-            status 200
-            @page_title =
-              "#{t('error.too_many_results.heading')} – #{
+          @errors[:generic] = {
+            error:
+              "find_non_dom_certificate_by_street_name_and_town.no_such_address.error",
+            body:
+              "find_non_dom_certificate_by_street_name_and_town.no_such_address.body",
+            cta:
+              "find_non_dom_certificate_by_street_name_and_town.no_such_address.cta",
+            url:
+              localised_url(
+                get_subdomain_host(GETTING_NEW_ENERGY_CERTIFICATE_HOST_NAME),
+              ),
+          }
+        rescue Errors::RequestTimeoutError
+          status 200
+          erb_template = :search_by_street_name_and_town__timeout
+          locals[:search_by_postcode_url] = "/find-a-non-domestic-certificate/search-by-postcode"
+        rescue Errors::TooManyResults
+          status 200
+          @page_title =
+            "#{t('error.too_many_results.heading')} – #{
                 t('services.find_an_energy_certificate')} – #{
                 t('layout.body.govuk')
               }"
-            erb_template = :error_page_too_many_results
-            locals[:search_by_postcode_url] = "/find-a-non-domestic-certificate/search-by-postcode"
-          else
-            return server_error(e)
-          end
+          erb_template = :error_page_too_many_results
+          locals[:search_by_postcode_url] = "/find-a-non-domestic-certificate/search-by-postcode"
         end
       end
 

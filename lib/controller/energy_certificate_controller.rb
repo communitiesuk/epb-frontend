@@ -56,16 +56,11 @@ module Controller
                                { assessment: assessment[:data] },
                                use_print_view
       end
-    rescue StandardError => e
-      case e
-      when Errors::AssessmentGone
-        status 410
-        erb :error_page_410
-      when Errors::AssessmentNotFound
-        not_found
-      else
-        return server_error(e)
-      end
+    rescue Errors::AssessmentGone
+      status 410
+      erb :error_page_410
+    rescue Errors::AssessmentNotFound
+      not_found
     end
 
     get "/energy-certificate/:assessment_id/dec_summary" do
