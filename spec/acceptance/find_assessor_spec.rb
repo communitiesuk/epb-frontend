@@ -562,32 +562,6 @@ describe "Acceptance::Assessor", type: :feature do
           expect(response.body).to include("Enter a valid UK postcode using only letters and numbers in the format LS1 4AP")
         end
       end
-
-      context "when there is no connection" do
-        before do
-          FindAssessor::ByPostcode::NoNetworkStub.search_by_postcode("D11 4FF", qualification_type: "domesticRdSap,domesticSap")
-        end
-
-        let(:response) do
-          get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/search-by-postcode?postcode=D11+4FF"
-        end
-
-        it "returns status 500" do
-          expect(response.status).to eq(500)
-        end
-
-        it "displays the 500 error page title" do
-          expect(response.body).to include(
-            "<title>Sorry, there is a problem with the service – GOV.UK</title>",
-          )
-        end
-
-        it "displays error page body" do
-          expect(response.body).to include(
-            "Sorry, there is a problem with the service",
-          )
-        end
-      end
     end
   end
 

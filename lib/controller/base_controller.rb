@@ -19,6 +19,7 @@ module Controller
     set :public_folder, proc { File.join(root, "/../../public") }
     set :static_cache_control, [:public, { max_age: 60 * 60 * 24 * 7 }] if ENV["ASSETS_VERSION"]
     set :logger, Logger.new($stdout, level: Logger::DEBUG)
+    set :dump_errors, false
 
     configure :production do
       logger.level = Logger::ERROR
@@ -30,6 +31,7 @@ module Controller
       also_reload "lib/**/*.rb"
       set :host_authorization, { permitted_hosts: [] }
       set :show_exceptions, :after_handler
+      set :dump_errors, true
     end
 
     configure :test do
@@ -63,6 +65,27 @@ module Controller
       /find-a-certificate/search-by-street-name-and-town
     ].freeze
 
+    class MaintenanceMode < RuntimeError
+      include Errors::DoNotReport
+    end
+
+    not_found do
+      @page_title = "#{t('error.404.heading')} – #{t('layout.body.govuk')}"
+      status 404
+      erb :error_page_404 unless @errors
+    end
+
+    error MaintenanceMode do
+      status 503
+      erb :service_unavailable
+    end
+
+    error do |exception|
+      server_error(exception)
+    end
+
+  private
+
     def show(template, locals, layout = :layout)
       locals[:errors] = @errors
       erb template, layout:, locals:
@@ -82,41 +105,21 @@ module Controller
       )
     end
 
-    not_found do
-      @page_title = "#{t('error.404.heading')} – #{t('layout.body.govuk')}"
-      status 404
-      erb :error_page_404 unless @errors
-    end
-
-    class MaintenanceMode < RuntimeError
-      include Errors::DoNotReport
-    end
-
-    error MaintenanceMode do
-      status 503
-      @page_title =
-        "#{t('service_unavailable.title')} – #{t('layout.body.govuk')}"
-      erb :service_unavailable
-    end
-
     def server_error(exception)
       was_timeout = exception.is_a?(Errors::RequestTimeoutError)
       Sentry.capture_exception(exception) if defined?(Sentry) && !was_timeout
-
-      message =
-        exception.methods.include?(:message) ? exception.message : exception
-
-      error = { type: exception.class.name, message: }
-
-      if exception.methods.include? :backtrace
-        error[:backtrace] = exception.backtrace
-      end
-
-      logger.error JSON.generate(error)
-      @page_title =
-        "#{t('error.500.heading')} – #{t('layout.body.govuk')}"
+      logger.error JSON.generate(error_details(exception))
       status(was_timeout ? 504 : 500)
       erb :error_page_500
+    end
+
+    def error_details(exception)
+      logger.error JSON.generate({
+        type: exception.class.name,
+        message: exception.message,
+        backtrace: exception.backtrace,
+        cause: exception.cause && error_details(exception.cause),
+      })
     end
   end
 end

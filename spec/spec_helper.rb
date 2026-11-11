@@ -27,6 +27,7 @@ require "active_support/cache"
 require "active_support/notifications"
 require "rake"
 require "timecop"
+require "sentry-ruby"
 
 AUTH_URL = "http://test-auth-server.gov.uk"
 
@@ -112,9 +113,7 @@ module RSpecFrontendServiceMixin
   include Rack::Test::Methods
 
   def app
-    Rack::Builder.new do
-      run FrontendService
-    end
+    FrontendService
   end
 end
 

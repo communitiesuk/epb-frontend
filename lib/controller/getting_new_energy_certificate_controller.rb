@@ -114,7 +114,7 @@ module Controller
               }"
             @errors[:postcode] = t("validation_errors.postcode_invalid")
           else
-            server_error(e)
+            return server_error(e)
           end
         end
       end
