@@ -111,19 +111,5 @@ RSpec.describe "Redirect to service start page" do
 
       expect(response.status).to eq(200)
     end
-
-    context "when SUPPRESS_REDIRECT_TO_SERVICE_START environment variable is set to true" do
-      before do
-        allow(ENV).to receive(:[]).and_call_original
-        allow(ENV).to receive(:[]).with("SUPPRESS_REDIRECT_TO_SERVICE_START").and_return("true")
-      end
-
-      it "returns status 200 when a referrer is outside of the service" do
-        header "referer", "http://example.com"
-        response = get "http://getting-new-energy-certificate.local.gov.uk/find-an-assessor/type-of-property"
-
-        expect(response.status).to eq(200)
-      end
-    end
   end
 end

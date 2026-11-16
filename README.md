@@ -207,11 +207,6 @@ URL of the gov.uk hosted start page for the [English "Get a new energy certifica
 
 This is selected if the host domain name does not start with "find" and the language is not "cy".
 
-#### `SUPPRESS_REDIRECT_TO_SERVICE_START`
-
-If "true", prevents the user being redirected back to the gov.uk hosted service start page when following
-a deep-link from a third party website to an intermediary page.
-
 #### `COVERAGE`
 
 If "true", a coverage report will be generated when the rspec tests are run.

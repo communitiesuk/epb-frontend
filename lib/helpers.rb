@@ -367,10 +367,6 @@ module Helpers
   end
 
   def redirect_to_service_start_page?
-    return false if ENV["SUPPRESS_REDIRECT_TO_SERVICE_START"] == "true"
-
-    return false if ENV["STAGE"] == "test"
-
     paths_not_directly_accessible = PARAMS_OF_PATHS_NOT_ACCESSIBLE_DIRECTLY.keys
     return false unless paths_not_directly_accessible.include?(request.path)
 
