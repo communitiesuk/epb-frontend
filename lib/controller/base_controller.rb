@@ -73,7 +73,6 @@ module Controller
     end
 
     error do |exception|
-      Sentry.capture_exception(exception) if defined?(Sentry)
       logger.error JSON.generate(error_details(exception))
       status 500
       erb :error_page_500

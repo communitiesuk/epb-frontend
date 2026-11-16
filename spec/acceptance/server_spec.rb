@@ -159,7 +159,6 @@ describe "Acceptance::Server", type: :feature do
     end
 
     before do
-      allow(Sentry).to receive(:capture_exception)
       allow(logger).to receive(:error)
       get "/test-error"
     end
@@ -183,15 +182,6 @@ describe "Acceptance::Server", type: :feature do
           end,
         )
       end
-
-      it "logs the error to sentry" do
-        expect(Sentry).to have_received(:capture_exception).with(
-          have_attributes(
-            class: RuntimeError,
-            message: "boom",
-          ),
-        )
-      end
     end
 
     context "when a timeout error" do
@@ -210,10 +200,6 @@ describe "Acceptance::Server", type: :feature do
       it "logs the error to the log file" do
         expect(logger).to have_received(:error).with(include('"type":"Errors::RequestTimeoutError","message":"Errors::RequestTimeoutError","backtrace":['))
       end
-
-      it "does not log the error to sentry" do
-        expect(Sentry).not_to have_received(:capture_exception)
-      end
     end
 
     context "when in a development environment" do
@@ -229,10 +215,6 @@ describe "Acceptance::Server", type: :feature do
 
       it "does not log the error to the log file" do
         expect(logger).not_to have_received(:error)
-      end
-
-      it "does not log the error to sentry" do
-        expect(Sentry).not_to have_received(:capture_exception)
       end
     end
   end
