@@ -56,12 +56,16 @@ GEM
       logger
     faraday-net_http (3.5.0)
       net-http (~> 0.5)
+    ffi (1.17.4)
     ffi (1.17.4-aarch64-linux-gnu)
     ffi (1.17.4-arm64-darwin)
     ffi (1.17.4-x86_64-linux-gnu)
     ffi-compiler (1.4.2)
       ffi (>= 1.15.5)
       rake
+    google-protobuf (4.36.2)
+      bigdecimal
+      rake (~> 13.3)
     google-protobuf (4.36.2-aarch64-linux-gnu)
       bigdecimal
       rake (~> 13.3)
@@ -98,6 +102,7 @@ GEM
     logger (1.7.0)
     matrix (0.4.3)
     mini_mime (1.1.5)
+    mini_portile2 (2.8.9)
     minitest (6.1.0)
       drb (~> 2.0)
       prism (>= 1.5, < 3)
@@ -111,6 +116,9 @@ GEM
     net-protocol (0.4.0)
       timeout
     nio4r (2.7.5)
+    nokogiri (1.19.7)
+      mini_portile2 (~> 2.8.2)
+      racc (~> 1.4)
     nokogiri (1.19.7-aarch64-linux-gnu)
       racc (~> 1.4)
     nokogiri (1.19.7-arm64-darwin)
@@ -134,7 +142,7 @@ GEM
       racc
     prism (1.9.0)
     public_suffix (7.0.5)
-    puma (8.0.2)
+    puma (8.0.3)
       nio4r (~> 2.0)
     racc (1.8.1)
     rack (3.2.8)
@@ -206,6 +214,9 @@ GEM
       rubocop (~> 1.81)
     ruby-progressbar (1.13.0)
     rubyzip (3.7.0)
+    sass-embedded (1.106.1)
+      google-protobuf (~> 4.31)
+      rake (~> 13.3)
     sass-embedded (1.106.1-aarch64-linux-gnu)
       google-protobuf (~> 4.31)
     sass-embedded (1.106.1-arm64-darwin)
