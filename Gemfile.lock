@@ -142,7 +142,7 @@ GEM
       racc
     prism (1.9.0)
     public_suffix (7.0.5)
-    puma (8.0.3)
+    puma (8.1.1)
       nio4r (~> 2.0)
     racc (1.8.1)
     rack (3.2.8)
@@ -301,7 +301,7 @@ DEPENDENCIES
   epb-auth-tools (~> 1.2.1)
   erubi (~> 1.13.1)
   i18n (~> 1.15.2)
-  puma (~> 8.0)
+  puma (~> 8.1)
   rack (~> 3.2.8)
   rack-contrib (~> 2.5.0)
   rack-test (~> 2.3.0)
