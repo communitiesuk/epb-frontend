@@ -31,7 +31,7 @@ describe "Journey::FindNonDomesticCertificate", :journey, type: :feature do
     end
 
     it "finds a certificate by postcode" do
-      expect(page).to have_content "2 o dystysgrifau ac adroddiadau ar gyfer SW1A 2AA"
+      expect(page).to have_text "2 o dystysgrifau ac adroddiadau ar gyfer SW1A 2AA"
     end
   end
 end

@@ -11,11 +11,11 @@ describe "Domestic EPCs Smart meters section", type: :feature do
     end
 
     it "does not show the smart meter in the contents" do
-      expect(response.body).not_to have_css("div.component__contents", text: "Smart meters")
+      expect(response.body).to have_no_css("div.component__contents", text: "Smart meters")
     end
 
     it "does not show the smart meter section" do
-      expect(response.body).not_to have_css("div#smart-meters")
+      expect(response.body).to have_no_css("div#smart-meters")
     end
   end
 

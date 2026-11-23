@@ -126,8 +126,8 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
                                          href: "/energy-certificate/9457-0000-0000-0000-2000"
       expect(response.body).to have_css "dt", text: "Valid until"
       expect(response.body).to have_css "dd", text: "4 May 2026"
-      expect(response.body).not_to have_link "0000-0000-0000-0000-5555",
-                                             href: "/energy-certificate/0000-0000-0000-0000-5555"
+      expect(response.body).to have_no_link "0000-0000-0000-0000-5555",
+                                            href: "/energy-certificate/0000-0000-0000-0000-5555"
     end
   end
 
@@ -149,7 +149,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
     it "shows the language toggle" do
       expect(response.body).to have_css "ul.language-toggle__list"
       expect(response.body).to have_link "English"
-      expect(response.body).not_to have_link "Cymraeg"
+      expect(response.body).to have_no_link "Cymraeg"
     end
   end
 
@@ -221,7 +221,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
     end
 
     it "does not show the superseded warning message" do
-      expect(response.body).not_to have_css("div.govuk-warning-text", text: " A new report has replaced this one. See the new certificate")
+      expect(response.body).to have_no_css("div.govuk-warning-text", text: " A new report has replaced this one. See the new certificate")
     end
   end
 
@@ -332,7 +332,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
       end
 
       it "does not show an expired warning message" do
-        expect(response.body).not_to have_css(".govuk-warning-text", text: "This report has expired")
+        expect(response.body).to have_no_css(".govuk-warning-text", text: "This report has expired")
       end
     end
   end

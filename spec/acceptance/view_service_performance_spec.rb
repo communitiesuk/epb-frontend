@@ -58,9 +58,9 @@ describe "Acceptance::ServicePerformance", type: :feature do
       end
 
       it "has a table for DEC, AC-CERT that does not have a column for average rating" do
-        expect(response.body).not_to have_css("#ac-cert.table.govuk-table tr>td.rating-average")
-        expect(response.body).not_to have_css("#dec.table.govuk-table tr>td.rating-average")
-        expect(response.body).not_to have_css("#dec-rr.table.govuk-table tr>td.rating-average")
+        expect(response.body).to have_no_css("#ac-cert.table.govuk-table tr>td.rating-average")
+        expect(response.body).to have_no_css("#dec.table.govuk-table tr>td.rating-average")
+        expect(response.body).to have_no_css("#dec-rr.table.govuk-table tr>td.rating-average")
       end
 
       it "the table has the expected th text" do
@@ -94,8 +94,8 @@ describe "Acceptance::ServicePerformance", type: :feature do
         end
 
         it "the tables for CEPC and DEC not not have the Average CO2 header" do
-          expect(response.body).not_to have_css("#cepc-england table.govuk-table th.average-co2-emission")
-          expect(response.body).not_to have_css("#dec-england table.govuk-table th.average-co2-emission")
+          expect(response.body).to have_no_css("#cepc-england table.govuk-table th.average-co2-emission")
+          expect(response.body).to have_no_css("#dec-england table.govuk-table th.average-co2-emission")
         end
 
         it "the average CO2 values are output" do
@@ -111,7 +111,7 @@ describe "Acceptance::ServicePerformance", type: :feature do
         end
 
         it "the table do not have the avg co2 headers" do
-          expect(response.body).not_to have_css("table.govuk-table th.average-co2-emission")
+          expect(response.body).to have_no_css("table.govuk-table th.average-co2-emission")
         end
       end
     end

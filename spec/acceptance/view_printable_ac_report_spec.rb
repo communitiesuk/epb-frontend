@@ -17,7 +17,7 @@ describe "Acceptance::PrintableAirConditioningRecommendationReport", type: :feat
     end
 
     it "does not show warning text for expiry" do
-      expect(print_response.body).not_to have_css(".govuk-warning-text", text: "This report has expired")
+      expect(print_response.body).to have_no_css(".govuk-warning-text", text: "This report has expired")
     end
   end
 

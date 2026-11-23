@@ -1,6 +1,6 @@
 shared_examples "shows the Get a new energy certificate start page" do
   it "shows the Get a new energy certificate page" do
-    expect(page.find("h1")).to have_content "Get a new energy certificate"
+    expect(page.find("h1")).to have_text "Get a new energy certificate"
   end
 end
 
@@ -26,7 +26,7 @@ shared_examples "a certificate search function" do |certificate_type:, property_
       end
 
       it "shows existence of those certificates on the search results page" do
-        expect(page).to have_content "2 #{certificates_text_in_result_count} for SW1A 2AA"
+        expect(page).to have_text "2 #{certificates_text_in_result_count} for SW1A 2AA"
       end
 
       context "when selecting a known certificate from the results list" do
@@ -35,7 +35,7 @@ shared_examples "a certificate search function" do |certificate_type:, property_
         end
 
         it "shows the certificate with the expected header" do
-          expect(page).to have_content "Energy performance certificate (EPC)"
+          expect(page).to have_text "Energy performance certificate (EPC)"
         end
 
         it "allows you to copy the ceriticate url" do
@@ -48,7 +48,7 @@ shared_examples "a certificate search function" do |certificate_type:, property_
         end
 
         it "allows you to print the certificate" do
-          expect(page).to have_content "Energy performance certificate (EPC)"
+          expect(page).to have_text "Energy performance certificate (EPC)"
           expect(page).to have_link "Print", href: "#{page.current_path}?print=true"
         end
       end
@@ -82,7 +82,7 @@ shared_examples "a certificate search function" do |certificate_type:, property_
         end
 
         it "shows the find EPC by postcode page" do
-          expect(page.find("h1")).to have_content search_by_postcode_header
+          expect(page.find("h1")).to have_text search_by_postcode_header
         end
       end
 
@@ -92,7 +92,7 @@ shared_examples "a certificate search function" do |certificate_type:, property_
         end
 
         it "shows the find EPC by street and town page" do
-          expect(page.find("h1")).to have_content find_by_street_and_town_header
+          expect(page.find("h1")).to have_text find_by_street_and_town_header
         end
       end
 
@@ -102,7 +102,7 @@ shared_examples "a certificate search function" do |certificate_type:, property_
         end
 
         it "shows the find EPC by certificate number page" do
-          expect(page.find("h1")).to have_content search_by_certificate_number_header
+          expect(page.find("h1")).to have_text search_by_certificate_number_header
         end
       end
     end
@@ -114,8 +114,8 @@ shared_examples "a certificate search function" do |certificate_type:, property_
       end
 
       it "shows an error page with validation including a link to the form element", :aggregate_failures do
-        expect(page).to have_content "Enter a full UK postcode in the format LS1 4AP"
-        expect(page).to have_content "There is a problem"
+        expect(page).to have_text "Enter a full UK postcode in the format LS1 4AP"
+        expect(page).to have_text "There is a problem"
         expect(page).to have_link "Enter a full UK postcode in the format LS1 4AP"
       end
     end
@@ -127,7 +127,7 @@ shared_examples "a certificate search function" do |certificate_type:, property_
       end
 
       it "shows an appropriate error message to enter a valid postcode" do
-        expect(page).to have_content "Enter a valid UK postcode using only letters and numbers in the format LS1 4AP"
+        expect(page).to have_text "Enter a valid UK postcode using only letters and numbers in the format LS1 4AP"
       end
     end
 
@@ -138,7 +138,7 @@ shared_examples "a certificate search function" do |certificate_type:, property_
       end
 
       it "shows an appropriate error message to enter a valid postcode" do
-        expect(page).to have_content "Enter a valid UK postcode in the format LS1 4AP"
+        expect(page).to have_text "Enter a valid UK postcode in the format LS1 4AP"
       end
     end
 
@@ -149,7 +149,7 @@ shared_examples "a certificate search function" do |certificate_type:, property_
       end
 
       it "shows an appropriate error message to enter a valid postcode" do
-        expect(page).to have_content "Enter a full UK postcode in the format LS1 4AP"
+        expect(page).to have_text "Enter a full UK postcode in the format LS1 4AP"
       end
     end
 
@@ -160,7 +160,7 @@ shared_examples "a certificate search function" do |certificate_type:, property_
       end
 
       it "shows assessments in a list of links to demonstrate that the SQL injection attempt has not worked" do
-        expect(page).to have_content " #{certificates_text_in_result_count} for SW1A 2AA"
+        expect(page).to have_text " #{certificates_text_in_result_count} for SW1A 2AA"
       end
     end
 
@@ -176,9 +176,9 @@ shared_examples "a certificate search function" do |certificate_type:, property_
         end
 
         it "shows the certificate page", :aggregate_failures do
-          expect(page).to have_content "2 Marsham Street"
-          expect(page).to have_content "Valid until"
-          expect(page).to have_content "5 January 2030"
+          expect(page).to have_text "2 Marsham Street"
+          expect(page).to have_text "Valid until"
+          expect(page).to have_text "5 January 2030"
         end
       end
 
@@ -189,8 +189,8 @@ shared_examples "a certificate search function" do |certificate_type:, property_
         end
 
         it "shows an error page with a message that no certificate was found with the number", :aggregate_failures do
-          expect(page).to have_content "A certificate was not found with this certificate number"
-          expect(page).to have_content "There is a problem"
+          expect(page).to have_text "A certificate was not found with this certificate number"
+          expect(page).to have_text "There is a problem"
           expect(page).to have_link "A certificate was not found with this certificate number"
         end
       end
@@ -202,8 +202,8 @@ shared_examples "a certificate search function" do |certificate_type:, property_
         end
 
         it "displays an error page with a validation link to the form element", :aggregate_failures do
-          expect(page).to have_content "Enter a 20-digit certificate number"
-          expect(page).to have_content "There is a problem"
+          expect(page).to have_text "Enter a 20-digit certificate number"
+          expect(page).to have_text "There is a problem"
           expect(page).to have_link "Enter a 20-digit certificate number"
         end
       end
@@ -222,7 +222,7 @@ shared_examples "a certificate search function" do |certificate_type:, property_
         end
 
         it "shows a results page indicating matching results" do
-          expect(page).to have_content text_in_street_and_town_results
+          expect(page).to have_text text_in_street_and_town_results
         end
       end
 
@@ -234,7 +234,7 @@ shared_examples "a certificate search function" do |certificate_type:, property_
         end
 
         it "shows a message saying that no certificates were found for the given location" do
-          expect(page).to have_content "A certificate was not found at this address."
+          expect(page).to have_text "A certificate was not found at this address."
         end
       end
 
@@ -245,8 +245,8 @@ shared_examples "a certificate search function" do |certificate_type:, property_
         end
 
         it "shows an error page with the message to enter a street", :aggregate_failures do
-          expect(page).to have_content "Enter the street name"
-          expect(page).to have_content "There is a problem"
+          expect(page).to have_text "Enter the street name"
+          expect(page).to have_text "There is a problem"
           expect(page).to have_link "Enter the street name"
         end
       end
@@ -258,8 +258,8 @@ shared_examples "a certificate search function" do |certificate_type:, property_
         end
 
         it "shows an error page with the message to enter a town", :aggregate_failures do
-          expect(page).to have_content "Enter the town or city"
-          expect(page).to have_content "There is a problem"
+          expect(page).to have_text "Enter the town or city"
+          expect(page).to have_text "There is a problem"
           expect(page).to have_link "Enter the town or city"
         end
       end
@@ -270,9 +270,9 @@ shared_examples "a certificate search function" do |certificate_type:, property_
         end
 
         it "shows an error page with messages both to enter a street and enter a town", :aggregate_failures do
-          expect(page).to have_content "Enter the town"
-          expect(page).to have_content "Enter the street name"
-          expect(page).to have_content "There is a problem"
+          expect(page).to have_text "Enter the town"
+          expect(page).to have_text "Enter the street name"
+          expect(page).to have_text "There is a problem"
           expect(page).to have_link "Enter the town or city"
           expect(page).to have_link "Enter the street name"
         end

@@ -21,7 +21,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificatePrintView", type: :fea
     end
 
     it "does not show the related certificates section" do
-      expect(print_response.body).not_to have_css(
+      expect(print_response.body).to have_no_css(
         "h2",
         text: "Other certificates for this property",
       )
@@ -64,7 +64,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificatePrintView", type: :fea
       end
 
       it "does not show an expired warning message" do
-        expect(print_response.body).not_to have_css(".govuk-warning-text", text: "This certificate has expired")
+        expect(print_response.body).to have_no_css(".govuk-warning-text", text: "This certificate has expired")
       end
     end
   end

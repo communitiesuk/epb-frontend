@@ -15,7 +15,7 @@ describe "Acceptance::AccessibilityStatement", type: :feature do
         it "doesn't have a banner in production" do
           page = get "http://getting-new-energy-certificate.local.gov.uk/"
 
-          expect(page.body).not_to have_css("div .govuk-phase-banner")
+          expect(page.body).to have_no_css("div .govuk-phase-banner")
         end
       end
 
