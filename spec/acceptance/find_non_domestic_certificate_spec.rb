@@ -27,7 +27,7 @@ describe "Acceptance::NonDomesticCertificate", type: :feature do
       end
 
       it "has an input field" do
-        expect(response.body).to have_css "input#postcode"
+        expect(response.body).to have_field "postcode"
       end
 
       it "has an label for the postcode" do
@@ -35,7 +35,7 @@ describe "Acceptance::NonDomesticCertificate", type: :feature do
       end
 
       it "has a Find button" do
-        expect(response.body).to have_css "button", text: "Find"
+        expect(response.body).to have_button "Find"
       end
 
       it "has a link to find the postcode if you don't know it" do
@@ -351,12 +351,12 @@ describe "Acceptance::NonDomesticCertificate", type: :feature do
       end
 
       it "has two input fields" do
-        expect(response.body).to have_css "input#street_name"
-        expect(response.body).to have_css "input#town"
+        expect(response.body).to have_field "street_name"
+        expect(response.body).to have_field "town"
       end
 
       it "has a Find button" do
-        expect(response.body).to have_css "button", text: "Find"
+        expect(response.body).to have_button "Find"
       end
 
       it "does not display an error message" do
@@ -729,11 +729,11 @@ describe "Acceptance::NonDomesticCertificate", type: :feature do
       end
 
       it "has an input field" do
-        expect(response.body).to have_css "input#reference_number"
+        expect(response.body).to have_field "reference_number"
       end
 
       it "has a Find button" do
-        expect(response.body).to have_css "button", text: "Find"
+        expect(response.body).to have_button "Find"
       end
 
       it "does not display an error message" do
