@@ -16,8 +16,8 @@ describe "Acceptance::PrintableDisplayEnergyCertificate", type: :feature do
     end
 
     it "shows a back link" do
-      expect(response.body).not_to have_link "Back",
-                                             href: "/energy-certificate/0000-0000-0000-0000-1111"
+      expect(response.body).to have_no_link "Back",
+                                            href: "/energy-certificate/0000-0000-0000-0000-1111"
     end
 
     it "has a banner in non-production environment" do
@@ -30,7 +30,7 @@ describe "Acceptance::PrintableDisplayEnergyCertificate", type: :feature do
       it "doesn't have a banner in production" do
         page = get "http://getting-new-energy-certificate.local.gov.uk/"
 
-        expect(page.body).not_to have_css("div .govuk-phase-banner")
+        expect(page.body).to have_no_css("div .govuk-phase-banner")
       end
     end
 
@@ -173,7 +173,7 @@ describe "Acceptance::PrintableDisplayEnergyCertificate", type: :feature do
       end
 
       it "does not show warning text for expiry" do
-        expect(print_response.body).not_to have_css(".govuk-warning-text", text: "This certificate has expired")
+        expect(print_response.body).to have_no_css(".govuk-warning-text", text: "This certificate has expired")
       end
     end
 
@@ -189,7 +189,7 @@ describe "Acceptance::PrintableDisplayEnergyCertificate", type: :feature do
       let(:print_response) { get "/energy-certificate/1234-5678-1234-5678-1234?print=true" }
 
       it "shows an superseded warning message" do
-        expect(print_response.body).not_to have_css(".govuk-warning-text", text: "A new certificate has replaced this one")
+        expect(print_response.body).to have_no_css(".govuk-warning-text", text: "A new certificate has replaced this one")
       end
 
       it "does not show warning text for expiry" do
@@ -210,24 +210,24 @@ describe "Acceptance::PrintableDisplayEnergyCertificate", type: :feature do
 
     it "removes assessor contact details" do
       expect(response.body).to have_css "h2", text: "Assessment details"
-      expect(response.body).not_to have_css "th", text: "Assessor’s name"
-      expect(response.body).not_to have_css "td", text: "TEST NAME BOI"
+      expect(response.body).to have_no_css "th", text: "Assessor’s name"
+      expect(response.body).to have_no_css "td", text: "TEST NAME BOI"
       expect(response.body).to have_css "th", text: "Accreditation scheme"
       expect(response.body).to have_css "td", text: "Quidos"
-      expect(response.body).not_to have_css "th", text: "Employer/Trading name"
-      expect(response.body).not_to have_css "td", text: "Joe Bloggs Ltd"
-      expect(response.body).not_to have_css "th",
-                                            text: "Employer/Trading address"
-      expect(response.body).not_to have_css "td",
-                                            text: "123 My Street, My City, AB3 4CD"
+      expect(response.body).to have_no_css "th", text: "Employer/Trading name"
+      expect(response.body).to have_no_css "td", text: "Joe Bloggs Ltd"
+      expect(response.body).to have_no_css "th",
+                                           text: "Employer/Trading address"
+      expect(response.body).to have_no_css "td",
+                                           text: "123 My Street, My City, AB3 4CD"
       expect(response.body).to have_css "th", text: "Issue date"
       expect(response.body).to have_css "td", text: "14 May 2020"
       expect(response.body).to have_css "th", text: "Nominated date"
       expect(response.body).to have_css "td", text: "1 January 2020"
-      expect(response.body).not_to have_css "th", text: "Assessor’s declaration"
-      expect(response.body).not_to have_css "td",
-                                            text:
-                                              "The assessor has not indicated whether they have a relation to this property."
+      expect(response.body).to have_no_css "th", text: "Assessor’s declaration"
+      expect(response.body).to have_no_css "td",
+                                           text:
+                                             "The assessor has not indicated whether they have a relation to this property."
     end
   end
 end

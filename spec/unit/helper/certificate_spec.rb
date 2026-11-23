@@ -42,7 +42,7 @@ describe Helper::Certificate do
     context "when all the attributes are null or empty" do
       let(:assessment) do
         {
-          heatDemand: { currentWaterHeatingDemand: nil, currentSpaceHeatingDemand: nil  },
+          heatDemand: { currentWaterHeatingDemand: nil, currentSpaceHeatingDemand: nil },
         }
       end
 
@@ -58,7 +58,7 @@ describe Helper::Certificate do
     context "when the attributes have positive values" do
       let(:assessment) do
         {
-          heatDemand: { currentWaterHeatingDemand: "1", currentSpaceHeatingDemand: "4"  },
+          heatDemand: { currentWaterHeatingDemand: "1", currentSpaceHeatingDemand: "4" },
         }
       end
 

@@ -269,9 +269,9 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
                                          href: "/energy-certificate/0000-0000-0000-0000-0001"
       expect(response.body).to have_css "dt", text: "Valid until"
       expect(response.body).to have_css "dd", text: "4 May 2026"
-      expect(response.body).not_to have_link "0000-0000-0000-0000-0002",
-                                             href: "/energy-certificate/0000-0000-0000-0000-0002"
-      expect(response.body).not_to have_css "dd", text: "4 May 2019 (Expired)"
+      expect(response.body).to have_no_link "0000-0000-0000-0000-0002",
+                                            href: "/energy-certificate/0000-0000-0000-0000-0002"
+      expect(response.body).to have_no_css "dd", text: "4 May 2019 (Expired)"
     end
 
     context "when there are no related assessments" do
@@ -319,11 +319,11 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
       end
 
       it "does not have summary download div" do
-        expect(response.body).not_to have_css "dt", text: "Summary XML"
+        expect(response.body).to have_no_css "dt", text: "Summary XML"
       end
 
       it "does not have summary download link" do
-        expect(response.body).not_to have_link "Download summary"
+        expect(response.body).to have_no_link "Download summary"
       end
     end
   end
@@ -343,7 +343,7 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
     it "shows the language toggle" do
       expect(response.body).to have_css "ul.language-toggle__list"
       expect(response.body).to have_link "English"
-      expect(response.body).not_to have_link "Cymraeg"
+      expect(response.body).to have_no_link "Cymraeg"
     end
   end
 
@@ -358,16 +358,16 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
 
     it "excludes the recommendation report link from the contents section" do
       expect(response.body).to have_css "h2", text: "Certificate contents"
-      expect(response.body).not_to have_link "Recommendation report",
-                                             href: "#recommendation_report"
+      expect(response.body).to have_no_link "Recommendation report",
+                                            href: "#recommendation_report"
     end
 
     it "does not show the recommendation report link" do
-      expect(response.body).not_to have_css "h2", text: "Recommendation report"
-      expect(response.body).not_to have_css "p",
-                                            text:
-                                              "Guidance on improving the energy performance operational rating of this building can be found in the recommendation report."
-      expect(response.body).not_to have_link "recommendation report"
+      expect(response.body).to have_no_css "h2", text: "Recommendation report"
+      expect(response.body).to have_no_css "p",
+                                           text:
+                                             "Guidance on improving the energy performance operational rating of this building can be found in the recommendation report."
+      expect(response.body).to have_no_link "recommendation report"
     end
   end
 
@@ -387,10 +387,10 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
       expect(response.body).to have_css "dd", text: "DCLG, ORCalc, v3.6.3"
       expect(response.body).to have_css "dt", text: "Property reference"
       expect(response.body).to have_css "dd", text: "UPRN-000000000001"
-      expect(response.body).not_to have_css "dt", text: "Assessor’s name"
-      expect(response.body).not_to have_css "dd", text: "TEST NAME BOI"
-      expect(response.body).not_to have_css "dt", text: "Assessor ID"
-      expect(response.body).not_to have_css "dd", text: "SPEC000000"
+      expect(response.body).to have_no_css "dt", text: "Assessor’s name"
+      expect(response.body).to have_no_css "dd", text: "TEST NAME BOI"
+      expect(response.body).to have_no_css "dt", text: "Assessor ID"
+      expect(response.body).to have_no_css "dd", text: "SPEC000000"
       expect(response.body).to have_css "dt", text: "Accreditation scheme"
       expect(response.body).to have_css "dd", text: "Quidos"
       expect(response.body).to have_css "dt",
@@ -398,22 +398,22 @@ describe "Acceptance::DisplayEnergyCertificate", type: :feature do
       expect(response.body).to have_css "dd", text: "01225 667 570"
       expect(response.body).to have_css "dt", text: "Accreditation scheme email"
       expect(response.body).to have_css "dd", text: "info@quidos.co.uk"
-      expect(response.body).not_to have_css "dt", text: "Employer/Trading name"
-      expect(response.body).not_to have_css "dd", text: "Joe Bloggs Ltd"
-      expect(response.body).not_to have_css "dt",
-                                            text: "Employer/Trading address"
-      expect(response.body).not_to have_css "dd",
-                                            text: "123 My Street, My City, AB3 4CD"
+      expect(response.body).to have_no_css "dt", text: "Employer/Trading name"
+      expect(response.body).to have_no_css "dd", text: "Joe Bloggs Ltd"
+      expect(response.body).to have_no_css "dt",
+                                           text: "Employer/Trading address"
+      expect(response.body).to have_no_css "dd",
+                                           text: "123 My Street, My City, AB3 4CD"
       expect(response.body).to have_css "dt", text: "Issue date"
       expect(response.body).to have_css "dd", text: "14 May 2020"
       expect(response.body).to have_css "dt", text: "Nominated date"
       expect(response.body).to have_css "dd", text: "1 January 2020"
       expect(response.body).to have_css "dt", text: "Valid until"
       expect(response.body).to have_css "dd", text: "21 February 2030"
-      expect(response.body).not_to have_css "dt", text: "Assessor’s declaration"
-      expect(response.body).not_to have_css "dd",
-                                            text:
-                                              "The assessor has not indicated whether they have a relation to this property."
+      expect(response.body).to have_no_css "dt", text: "Assessor’s declaration"
+      expect(response.body).to have_no_css "dd",
+                                           text:
+                                             "The assessor has not indicated whether they have a relation to this property."
       expect(response.body).to have_css "dt", text: "Summary XML"
       expect(response.body).to have_link "Download summary",
                                          href: "/energy-certificate/0000-0000-0000-0000-1111/dec_summary"

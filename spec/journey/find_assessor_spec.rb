@@ -30,11 +30,11 @@ describe "Journey::FindAssessor", :journey, type: :feature do
       end
 
       it "shows assessor search results" do
-        expect(page).to have_content "7 assessors in order of distance from SW1A 2AA"
+        expect(page).to have_text "7 assessors in order of distance from SW1A 2AA"
       end
 
       it "display a link to search again" do
-        expect(page).to have_content "Enter a postcode to search again"
+        expect(page).to have_text "Enter a postcode to search again"
       end
 
       context "when clicking the 'more information' link for the first assessor in the results" do
@@ -43,8 +43,8 @@ describe "Journey::FindAssessor", :journey, type: :feature do
         end
 
         it "displays accreditation scheme contact details for this assessor", :aggregate_failures do
-          expect(page).to have_content "epc@cibsecertification.org"
-          expect(page).to have_content "020 8772 3649"
+          expect(page).to have_text "epc@cibsecertification.org"
+          expect(page).to have_text "020 8772 3649"
         end
       end
 
@@ -54,7 +54,7 @@ describe "Journey::FindAssessor", :journey, type: :feature do
         end
 
         it "displays text saying the scheme is no longer accredited" do
-          expect(page).to have_content "EPB 4 U is no longer accredited."
+          expect(page).to have_text "EPB 4 U is no longer accredited."
         end
       end
     end
@@ -66,8 +66,8 @@ describe "Journey::FindAssessor", :journey, type: :feature do
       end
 
       it "shows an error message indicating a full postcode should be entered", :aggregate_failures do
-        expect(page).to have_content "Enter a full UK postcode in the format LS1 4AP"
-        expect(page).to have_content "There is a problem"
+        expect(page).to have_text "Enter a full UK postcode in the format LS1 4AP"
+        expect(page).to have_text "There is a problem"
         expect(page).to have_link "Enter a full UK postcode in the format LS1 4AP"
       end
     end
@@ -82,7 +82,7 @@ describe "Journey::FindAssessor", :journey, type: :feature do
       end
 
       it "shows a list of assessors as the SQL injection attempt has not worked" do
-        expect(page).to have_content "7 assessors in order of distance from SW1A 2AA"
+        expect(page).to have_text "7 assessors in order of distance from SW1A 2AA"
       end
     end
 
@@ -93,8 +93,8 @@ describe "Journey::FindAssessor", :journey, type: :feature do
       end
 
       it "shows an error message indicating a valid postcode should be entered", :aggregate_failures do
-        expect(page).to have_content "Enter a valid UK postcode in the format LS1 4AP"
-        expect(page).to have_content "There is a problem"
+        expect(page).to have_text "Enter a valid UK postcode in the format LS1 4AP"
+        expect(page).to have_text "There is a problem"
         expect(page).to have_link "Enter a valid UK postcode in the format LS1 4AP"
       end
     end
@@ -121,7 +121,7 @@ describe "Journey::FindAssessor", :journey, type: :feature do
       end
 
       it "shows an error message that the full name being searched should be entered" do
-        expect(page).to have_content "Enter a first name and last name"
+        expect(page).to have_text "Enter a first name and last name"
       end
     end
 
@@ -132,7 +132,7 @@ describe "Journey::FindAssessor", :journey, type: :feature do
       end
 
       it "shows an error message that the full name being searched should be entered" do
-        expect(page).to have_content "Enter a first name and last name"
+        expect(page).to have_text "Enter a first name and last name"
       end
     end
 
@@ -143,12 +143,12 @@ describe "Journey::FindAssessor", :journey, type: :feature do
       end
 
       it "displays error messages that both email and telephone have not been supplied", :aggregate_failures do
-        expect(page).to have_content "Email Not Supplied", normalize_ws: true
-        expect(page).to have_content "Telephone Not Supplied", normalize_ws: true
+        expect(page).to have_text "Email Not Supplied", normalize_ws: true
+        expect(page).to have_text "Telephone Not Supplied", normalize_ws: true
       end
 
       it "displays search results for the assessor" do
-        expect(page).to have_content "8 results for the name Supercommon Name"
+        expect(page).to have_text "8 results for the name Supercommon Name"
       end
 
       context "when clicking on a 'more information' link on one of the results" do
@@ -157,9 +157,9 @@ describe "Journey::FindAssessor", :journey, type: :feature do
         end
 
         it "shows accreditation scheme contact details", :aggregate_failures do
-          expect(page).to have_content "Contact details for ECMK:"
-          expect(page).to have_content "info@ecmk.co.uk"
-          expect(page).to have_content "0333 123 1418"
+          expect(page).to have_text "Contact details for ECMK:"
+          expect(page).to have_text "info@ecmk.co.uk"
+          expect(page).to have_text "0333 123 1418"
         end
       end
     end
@@ -182,8 +182,8 @@ describe "Journey::FindAssessor", :journey, type: :feature do
       end
 
       it "displays an error message that a full postcode should be used to search", :aggregate_failures do
-        expect(page).to have_content "Enter a full UK postcode in the format LS1 4AP"
-        expect(page).to have_content "There is a problem"
+        expect(page).to have_text "Enter a full UK postcode in the format LS1 4AP"
+        expect(page).to have_text "There is a problem"
         expect(page).to have_link "Enter a full UK postcode in the format LS1 4AP"
       end
     end
@@ -195,8 +195,8 @@ describe "Journey::FindAssessor", :journey, type: :feature do
       end
 
       it "displays an error message that a valid postcode should be used to search", :aggregate_failures do
-        expect(page).to have_content "Enter a valid UK postcode in the format LS1 4AP"
-        expect(page).to have_content "There is a problem"
+        expect(page).to have_text "Enter a valid UK postcode in the format LS1 4AP"
+        expect(page).to have_text "There is a problem"
         expect(page).to have_link "Enter a valid UK postcode in the format LS1 4AP"
       end
     end
@@ -208,11 +208,11 @@ describe "Journey::FindAssessor", :journey, type: :feature do
       end
 
       it "displays text suggesting that the user can search again by entering the postcode of the property" do
-        expect(page).to have_content "Enter a postcode to search again"
+        expect(page).to have_text "Enter a postcode to search again"
       end
 
       it "displays search results" do
-        expect(page).to have_content "7 assessors in order of distance from SW1A 2AA"
+        expect(page).to have_text "7 assessors in order of distance from SW1A 2AA"
       end
 
       context "when selecting the 'more information' link for a listed assessor" do
@@ -221,9 +221,9 @@ describe "Journey::FindAssessor", :journey, type: :feature do
         end
 
         it "displays accreditation scheme contact details", :aggregate_failures do
-          expect(page).to have_content "Contact details for Stroma Certification Ltd:"
-          expect(page).to have_content "Email: enquiries@elmhurstenergy.co.uk"
-          expect(page).to have_content "Telephone: 01455 883 250"
+          expect(page).to have_text "Contact details for Stroma Certification Ltd:"
+          expect(page).to have_text "Email: enquiries@elmhurstenergy.co.uk"
+          expect(page).to have_text "Telephone: 01455 883 250"
         end
       end
 
@@ -233,7 +233,7 @@ describe "Journey::FindAssessor", :journey, type: :feature do
         end
 
         it "displays text showing that the scheme is no longer accredited" do
-          expect(page).to have_content "EPB 4 U is no longer accredited."
+          expect(page).to have_text "EPB 4 U is no longer accredited."
         end
       end
     end
@@ -256,8 +256,8 @@ describe "Journey::FindAssessor", :journey, type: :feature do
       end
 
       it "shows an error message that the full name of the search assessor should be used for search", :aggregate_failures do
-        expect(page).to have_content "Enter a first name and last name"
-        expect(page).to have_content "There is a problem"
+        expect(page).to have_text "Enter a first name and last name"
+        expect(page).to have_text "There is a problem"
         expect(page).to have_link "Enter a first name and last name"
       end
     end
@@ -269,8 +269,8 @@ describe "Journey::FindAssessor", :journey, type: :feature do
       end
 
       it "shows an error message that the full name of the search assessor should be used for search", :aggregate_failures do
-        expect(page).to have_content "Enter a first name and last name"
-        expect(page).to have_content "There is a problem"
+        expect(page).to have_text "Enter a first name and last name"
+        expect(page).to have_text "There is a problem"
         expect(page).to have_link "Enter a first name and last name"
       end
     end
@@ -282,7 +282,7 @@ describe "Journey::FindAssessor", :journey, type: :feature do
       end
 
       it "displays search results" do
-        expect(page).to have_content("8 results for the name Supercommon Name")
+        expect(page).to have_text("8 results for the name Supercommon Name")
       end
     end
   end
@@ -300,8 +300,8 @@ describe "Journey::FindAssessor", :journey, type: :feature do
     end
 
     it "displays an error message indicating a property type should be chosen", :aggregate_failures do
-      expect(page).to have_content "Select a type of property"
-      expect(page).to have_content "There is a problem"
+      expect(page).to have_text "Select a type of property"
+      expect(page).to have_text "There is a problem"
       expect(page).to have_link "Select a type of property"
     end
   end
@@ -314,8 +314,8 @@ describe "Journey::FindAssessor", :journey, type: :feature do
     end
 
     it "displays an error message indicating a property type should be chosen", :aggregate_failures do
-      expect(page).to have_content "Select a type of property"
-      expect(page).to have_content "There is a problem"
+      expect(page).to have_text "Select a type of property"
+      expect(page).to have_text "There is a problem"
       expect(page).to have_link "Select a type of property"
     end
   end

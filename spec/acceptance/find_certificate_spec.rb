@@ -123,7 +123,7 @@ describe "Acceptance::Certificate", type: :feature do
       end
 
       it "does not display an error message" do
-        expect(response.body).not_to have_text "govuk-error-message"
+        expect(response.body).to have_no_text "govuk-error-message"
       end
     end
 
@@ -479,7 +479,7 @@ describe "Acceptance::Certificate", type: :feature do
       end
 
       it "does not display an error message" do
-        expect(response.body).not_to have_text "govuk-error-message"
+        expect(response.body).to have_no_text "govuk-error-message"
       end
     end
 
@@ -682,7 +682,7 @@ describe "Acceptance::Certificate", type: :feature do
       end
 
       it "does not display an error message" do
-        expect(response.body).not_to have_text "govuk-error-message"
+        expect(response.body).to have_no_text "govuk-error-message"
       end
     end
 
@@ -1002,12 +1002,12 @@ describe "Acceptance::Certificate", type: :feature do
         it "does not contain the GDS error summary" do
           expect(
             response.body,
-          ).not_to have_css "div.govuk-error-summary h2.govuk-error-summary__title",
-                            text: "There is a problem"
+          ).to have_no_css "div.govuk-error-summary h2.govuk-error-summary__title",
+                           text: "There is a problem"
 
           expect(
             response.body,
-          ).not_to have_link "A certificate was not found at this address."
+          ).to have_no_link "A certificate was not found at this address."
         end
       end
 

@@ -377,9 +377,9 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate", type: :feature d
                                          href: "/energy-certificate/0000-0000-0000-0000-0001"
       expect(response.body).to have_css "dt", text: "Valid until"
       expect(response.body).to have_css "dd", text: "4 May 2026"
-      expect(response.body).not_to have_link "0000-0000-0000-0000-0002",
-                                             href: "/energy-certificate/0000-0000-0000-0000-0002"
-      expect(response.body).not_to have_css "dd", text: "4 May 2019 (Expired)"
+      expect(response.body).to have_no_link "0000-0000-0000-0000-0002",
+                                            href: "/energy-certificate/0000-0000-0000-0000-0002"
+      expect(response.body).to have_no_css "dd", text: "4 May 2019 (Expired)"
     end
 
     context "when there are no related assessments" do
@@ -404,7 +404,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate", type: :feature d
       end
 
       it "does not show the superseded warning message" do
-        expect(response.body).not_to have_css("div.govuk-warning-text", text: " A new certificate has replaced this one. See the new certificate")
+        expect(response.body).to have_no_css("div.govuk-warning-text", text: " A new certificate has replaced this one. See the new certificate")
       end
     end
   end
@@ -424,7 +424,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate", type: :feature d
     it "shows the language toggle" do
       expect(response.body).to have_css "ul.language-toggle__list"
       expect(response.body).to have_link "English"
-      expect(response.body).not_to have_link "Cymraeg"
+      expect(response.body).to have_no_link "Cymraeg"
     end
   end
 
@@ -542,7 +542,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificate", type: :feature d
       end
 
       it "does not show an expired warning message" do
-        expect(response.body).not_to have_css(".govuk-warning-text", text: "This certificate has expired")
+        expect(response.body).to have_no_css(".govuk-warning-text", text: "This certificate has expired")
       end
     end
   end

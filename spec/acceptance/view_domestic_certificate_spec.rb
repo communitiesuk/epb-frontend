@@ -79,8 +79,8 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
     end
 
     it "shows the type of assessment" do
-      expect(response.body).to have_selector("span.govuk-visually-hidden", text: "Show information about the ")
-      expect(response.body).to have_selector("span.govuk-details__summary-text", text: "RdSAP")
+      expect(response.body).to have_css("span.govuk-visually-hidden", text: "Show information about the ")
+      expect(response.body).to have_css("span.govuk-details__summary-text", text: "RdSAP")
     end
 
     it "shows the type of assessment description" do
@@ -343,15 +343,15 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
         let(:response) { get "/energy-certificate/1234-1234-1234-1234-1234" }
 
         it "does not show the entire section on how energy bills are affected" do
-          expect(response.body).not_to have_css "h2",
-                                                text:
-                                                  "How this affects your energy bills"
+          expect(response.body).to have_no_css "h2",
+                                               text:
+                                                 "How this affects your energy bills"
         end
 
         it "does not show the link to the energy bill section in the certificate contents" do
-          expect(response.body).not_to have_css "a",
-                                                text:
-                                                  "How this affects your energy bills"
+          expect(response.body).to have_no_css "a",
+                                               text:
+                                                 "How this affects your energy bills"
         end
       end
 
@@ -366,9 +366,9 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
         let(:response) { get "/energy-certificate/1234-1234-1234-1234-1234" }
 
         it "does not show the information about the effect on bills" do
-          expect(response.body).not_to have_css "p",
-                                                text:
-                                                  "An average household would need to spend"
+          expect(response.body).to have_no_css "p",
+                                               text:
+                                                 "An average household would need to spend"
         end
       end
 
@@ -383,9 +383,9 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
         let(:response) { get "/energy-certificate/1234-1234-1234-1234-1234" }
 
         it "does not show the information about the effect on bills" do
-          expect(response.body).not_to have_css "p",
-                                                text:
-                                                  "An average household would need to spend"
+          expect(response.body).to have_no_css "p",
+                                               text:
+                                                 "An average household would need to spend"
         end
       end
 
@@ -401,9 +401,9 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
         let(:response) { get "/energy-certificate/1234-1234-1234-1234-1234" }
 
         it "does not show the heating section" do
-          expect(response.body).not_to have_css "h3",
-                                                text:
-                                                  "Heating this property"
+          expect(response.body).to have_no_css "h3",
+                                               text:
+                                                 "Heating this property"
         end
       end
 
@@ -424,9 +424,9 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
         let(:response) { get "/energy-certificate/1234-1234-1234-1234-1234" }
 
         it "does not show the insulation section" do
-          expect(response.body).not_to have_css "h3",
-                                                text:
-                                                  "Saving energy by installing insulation"
+          expect(response.body).to have_no_css "h3",
+                                               text:
+                                                 "Saving energy by installing insulation"
         end
       end
 
@@ -487,10 +487,10 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
           country_name: "Scotland",
         )
 
-        expect(response.body).not_to have_css "h3",
-                                              text: "Advice on making energy saving improvements"
-        expect(response.body).not_to have_css "h3",
-                                              text: "Help paying for energy saving improvements"
+        expect(response.body).to have_no_css "h3",
+                                             text: "Advice on making energy saving improvements"
+        expect(response.body).to have_no_css "h3",
+                                             text: "Help paying for energy saving improvements"
       end
 
       context "when one or more bullet points present" do
@@ -508,8 +508,8 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
             current_band: "b",
             country_name: "England",
           )
-          expect(response.body).not_to have_css "h3",
-                                                text: "Help paying for energy saving improvements"
+          expect(response.body).to have_no_css "h3",
+                                               text: "Help paying for energy saving improvements"
         end
       end
 
@@ -557,8 +557,8 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
             country_name: "Wales",
           )
 
-          expect(response.body).not_to have_css "a",
-                                                text: "Warm Homes Local Grant"
+          expect(response.body).to have_no_css "a",
+                                               text: "Warm Homes Local Grant"
         end
 
         it "doesn't show the Warm Homes Local Grant for properties in Northern Ireland" do
@@ -568,8 +568,8 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
             country_name: "Northern Ireland",
           )
 
-          expect(response.body).not_to have_css "a",
-                                                text: "Warm Homes Local Grant"
+          expect(response.body).to have_no_css "a",
+                                               text: "Warm Homes Local Grant"
         end
 
         it "doesn't show the home upgrade section for properties with an A-C rating" do
@@ -579,8 +579,8 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
             country_name: "England",
           )
 
-          expect(response.body).not_to have_css "a",
-                                                text: "Warm Homes Local Grant"
+          expect(response.body).to have_no_css "a",
+                                               text: "Warm Homes Local Grant"
         end
       end
 
@@ -600,8 +600,8 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
             main_heating_source: "heat pump",
           )
 
-          expect(response.body).not_to have_css "a",
-                                                text: "Boiler Upgrade Scheme"
+          expect(response.body).to have_no_css "a",
+                                               text: "Boiler Upgrade Scheme"
         end
       end
 
@@ -621,8 +621,8 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
             current_band: "b",
           )
 
-          expect(response.body).not_to have_css "a",
-                                                text: "Energy Company Obligation"
+          expect(response.body).to have_no_css "a",
+                                               text: "Energy Company Obligation"
         end
       end
 
@@ -860,18 +860,18 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
                                           text: "the average energy rating is D"
         expect(response.body).to have_css "li",
                                           text: "the average energy score is 60"
-        expect(response.body).not_to have_css "p",
-                                              text: "For properties in England and Wales:"
+        expect(response.body).to have_no_css "p",
+                                             text: "For properties in England and Wales:"
       end
 
       it "does not show the Simple Energy Advice text" do
-        expect(response.body).not_to have_css "a",
-                                              text:
-                                                "Find ways to save energy in your home."
+        expect(response.body).to have_no_css "a",
+                                             text:
+                                               "Find ways to save energy in your home."
         expect(
           response.body,
-        ).not_to have_link "Find ways to save energy in your home.",
-                           href: "https://www.gov.uk/improve-energy-efficiency"
+        ).to have_no_link "Find ways to save energy in your home.",
+                          href: "https://www.gov.uk/improve-energy-efficiency"
       end
     end
 
@@ -1404,7 +1404,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
 
       context "when there are CANCELLED related certificates" do
         it "does not show cancelled related certificates" do
-          expect(response.body).not_to have_css(
+          expect(response.body).to have_no_css(
             "dd",
             text: "9024-0000-0000-0000-0000",
           )
@@ -1428,7 +1428,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
         end
 
         it "does not show the superseded warning message" do
-          expect(response.body).not_to have_css("div.govuk-warning-text", text: " A new certificate has replaced this one. See the new certificate")
+          expect(response.body).to have_no_css("div.govuk-warning-text", text: " A new certificate has replaced this one. See the new certificate")
         end
       end
     end
@@ -1464,7 +1464,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
     it "shows the language toggle" do
       expect(response.body).to have_css "ul.language-toggle__list"
       expect(response.body).to have_link "English"
-      expect(response.body).not_to have_link "Cymraeg"
+      expect(response.body).to have_no_link "Cymraeg"
     end
   end
 
@@ -1816,7 +1816,7 @@ describe "Acceptance::DomesticEnergyPerformanceCertificate", type: :feature do
       end
 
       it "does not show an expired warning message" do
-        expect(response.body).not_to have_css(".govuk-warning-text", text: "This certificate has expired")
+        expect(response.body).to have_no_css(".govuk-warning-text", text: "This certificate has expired")
       end
     end
   end

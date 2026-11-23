@@ -17,7 +17,7 @@ describe "Acceptance::PrintableAirConditioningCertificate", type: :feature do
     end
 
     it "does not show warning text for expiry" do
-      expect(print_response.body).not_to have_css(".govuk-warning-text", text: "This certificate has expired")
+      expect(print_response.body).to have_no_css(".govuk-warning-text", text: "This certificate has expired")
     end
   end
 

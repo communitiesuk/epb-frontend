@@ -17,7 +17,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
     end
 
     it "does not show warning text for expiry" do
-      expect(print_response.body).not_to have_css(".govuk-warning-text", text: "This report has expired")
+      expect(print_response.body).to have_no_css(".govuk-warning-text", text: "This report has expired")
     end
   end
 
@@ -34,7 +34,7 @@ describe "Acceptance::NonDomesticEnergyPerformanceCertificateRecommendationRepor
     let(:print_response) { get "/energy-certificate/1234-5678-1234-5678-1234?print=true" }
 
     it "does not show an superseded warning message" do
-      expect(print_response.body).not_to have_css(".govuk-warning-text", text: "A new report has replaced this one")
+      expect(print_response.body).to have_no_css(".govuk-warning-text", text: "A new report has replaced this one")
     end
 
     it "shows warning text for expiry" do

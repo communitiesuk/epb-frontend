@@ -24,7 +24,7 @@ describe "Journey::FindDomesticCertificate", :journey, type: :feature do
       end
 
       it "does not display a back link" do
-        expect(page).not_to have_content("Back")
+        expect(page).to have_no_text("Back")
       end
     end
 
@@ -36,7 +36,7 @@ describe "Journey::FindDomesticCertificate", :journey, type: :feature do
       it "shows a page that links to the find an energy certificate page", :aggregate_failures do
         expect(page).to have_link "check if there is a new certificate"
         within("main") { click_link "check if there is a new certificate" }
-        expect(page).to have_content "Find an energy certificate"
+        expect(page).to have_text "Find an energy certificate"
       end
     end
   end
@@ -49,8 +49,8 @@ describe "Journey::FindDomesticCertificate", :journey, type: :feature do
     end
 
     it "shows an error page with a validation that links to the form elements for choosing a type of property", :aggregate_failures do
-      expect(page).to have_content "Select a type of property"
-      expect(page).to have_content "There is a problem"
+      expect(page).to have_text "Select a type of property"
+      expect(page).to have_text "There is a problem"
       expect(page).to have_link "Select a type of property"
     end
   end
@@ -69,7 +69,7 @@ describe "Journey::FindDomesticCertificate", :journey, type: :feature do
     end
 
     it "shows the expected results page for the postcode, in Welsh" do
-      expect(page).to have_content "2 EPCs ar gyfer SW1A 2AA"
+      expect(page).to have_text "2 EPCs ar gyfer SW1A 2AA"
     end
   end
 end

@@ -231,7 +231,7 @@ describe "Acceptance::AirConditioningInspectionCertificate", type: :feature do
     it "shows the language toggle" do
       expect(response.body).to have_css "ul.language-toggle__list"
       expect(response.body).to have_link "English"
-      expect(response.body).not_to have_link "Cymraeg"
+      expect(response.body).to have_no_link "Cymraeg"
     end
   end
 
@@ -260,14 +260,14 @@ describe "Acceptance::AirConditioningInspectionCertificate", type: :feature do
 
     it "removes assessor contact details" do
       expect(response.body).to have_css "h2", text: "Assessor’s details"
-      expect(response.body).not_to have_css "dt", text: "Assessor’s name"
-      expect(response.body).not_to have_css "dd", text: "TEST NAME BOI"
-      expect(response.body).not_to have_css "dt", text: "Assessor ID"
-      expect(response.body).not_to have_css "dd", text: "SPEC000000"
-      expect(response.body).not_to have_css "dt", text: "Employer/Trading name"
-      expect(response.body).not_to have_css "dd", text: "Joe Bloggs Ltd"
-      expect(response.body).not_to have_css "dt", text: "Employer/Trading address"
-      expect(response.body).not_to have_css "dd", text: "123 My Street, My City, AB3 4CD"
+      expect(response.body).to have_no_css "dt", text: "Assessor’s name"
+      expect(response.body).to have_no_css "dd", text: "TEST NAME BOI"
+      expect(response.body).to have_no_css "dt", text: "Assessor ID"
+      expect(response.body).to have_no_css "dd", text: "SPEC000000"
+      expect(response.body).to have_no_css "dt", text: "Employer/Trading name"
+      expect(response.body).to have_no_css "dd", text: "Joe Bloggs Ltd"
+      expect(response.body).to have_no_css "dt", text: "Employer/Trading address"
+      expect(response.body).to have_no_css "dd", text: "123 My Street, My City, AB3 4CD"
       expect(response.body).to have_css "dt", text: "Accreditation scheme"
       expect(response.body).to have_css "dd", text: "Quidos"
       expect(response.body).to have_css "dt", text: "Accreditation scheme telephone"
