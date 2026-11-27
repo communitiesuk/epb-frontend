@@ -34,5 +34,5 @@ group :test do
   gem "simplecov", "~>1.3.2"
   gem "timecop", "~> 0.9.11"
   gem "webdrivers", "~> 5.2.0"
-  gem "webmock", "~> 3.38"
+  gem "webmock", "~> 3.40"
 end
